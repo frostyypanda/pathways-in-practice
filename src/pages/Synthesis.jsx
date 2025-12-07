@@ -2,12 +2,37 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { DataManager } from '../utils/DataManager';
 import SequencePlayer from '../components/SequencePlayer';
+import QuizControls from '../components/QuizControls';
 import { ArrowLeft } from 'lucide-react';
 
 const Synthesis = () => {
     const { id } = useParams();
     const [synthesis, setSynthesis] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [quizSettings, setQuizSettings] = useState(() => {
+        const saved = localStorage.getItem('openSynth_quizSettings');
+        if (saved) {
+            return JSON.parse(saved);
+        }
+        return {
+            reactant: true,
+            name: true,
+            conditions: true,
+            product: true,
+            notes: true
+        };
+    });
+
+    const toggleQuizSetting = (id) => {
+        setQuizSettings(prev => {
+            const newSettings = {
+                ...prev,
+                [id]: !prev[id]
+            };
+            localStorage.setItem('openSynth_quizSettings', JSON.stringify(newSettings));
+            return newSettings;
+        });
+    };
 
     useEffect(() => {
         const loadSynthesis = async () => {
@@ -40,7 +65,8 @@ const Synthesis = () => {
                 </div>
             </header>
 
-            <SequencePlayer synthesis={synthesis} />
+            <QuizControls settings={quizSettings} onToggle={toggleQuizSetting} />
+            <SequencePlayer synthesis={synthesis} quizSettings={quizSettings} />
         </div>
     );
 };
