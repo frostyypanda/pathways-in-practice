@@ -6,6 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **IMPORTANT**: When the user asks a question (e.g., "could we do X?", "is it possible to Y?"), ANSWER THE QUESTION FIRST. Do not immediately start implementing, writing scripts, or making changes. Explain the options, feasibility, and tradeoffs, then wait for confirmation before proceeding.
 
+## Tool Usage
+
+- **perplexity_ask**: OK to use without approval for quick searches
+- **perplexity_research**: NEVER use without explicit user approval (expensive)
+
 ## Project Overview
 
 OpenSynth is an offline-first React PWA for viewing and studying organic chemistry total syntheses. It uses a "Git-as-Database" architecture where all synthesis data is stored as JSON files in the repository.

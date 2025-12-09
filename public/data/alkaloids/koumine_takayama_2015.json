@@ -7,18 +7,69 @@
         "author": "Takayama, H.",
         "year": 2015,
         "journal": "Org. Lett.",
-        "doi": "10.1021/acs.orglett.5b02138"
+        "doi": "10.1021/acs.orglett.5b02138",
+        "source_url": "???"
     },
     "sequence": [
         {
             "step_id": 1,
-            "reaction_type": "Epoxide Opening",
-            "reagents": "BnNH2, H2O",
-            "conditions": "Reflux, 12h",
-            "yield": "95%",
-            "reactant_smiles": "C1OC1",
-            "product_smiles": "NC(Cc1ccccc1)",
-            "notes": "Regioselective opening of the epoxide."
+            "reaction_type": "Double Epoxide Opening / Cyclization",
+            "reagents": "BnNH₂ (Benzylamine)",
+            "conditions": "H₂O, reflux",
+            "yield": "???",
+            "reactant_smiles": "C1CC2OC2CC3OC31",
+            "product_smiles": "OC1CC2CC(O)CC1N2Cc3ccccc3",
+            "notes": "Formation of bicyclic diol (9-benzyl-9-azabicyclo[3.3.1]nonane-2,6-diol) via double nucleophilic attack by amine"
+        },
+        {
+            "step_id": 2,
+            "reaction_type": "TFAA Modification",
+            "reagents": "TFAA (Trifluoroacetic anhydride)",
+            "conditions": "DCM, reflux",
+            "yield": "???",
+            "reactant_smiles": "OC1CC2CC(O)CC1N2Cc3ccccc3",
+            "product_smiles": "???",
+            "notes": "Intermediate modification - likely activation of alcohols"
+        },
+        {
+            "step_id": 3,
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH",
+            "conditions": "???",
+            "yield": "55% (over 3 steps)",
+            "reactant_smiles": "???",
+            "product_smiles": "OC1CC2CC=CCC1N2Cc3ccccc3",
+            "notes": "Formation of bicyclic allylic alcohol (9-benzyl-9-azabicyclo[3.3.1]non-2-en-6-ol)"
+        },
+        {
+            "step_id": 4,
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)₂ (Oxalyl chloride), DMSO, NEt₃",
+            "conditions": "DCM, -78°C",
+            "yield": "88%",
+            "reactant_smiles": "OC1CC2CC=CCC1N2Cc3ccccc3",
+            "product_smiles": "O=C1CC2CC=CCC1N2Cc3ccccc3",
+            "notes": "Oxidation of alcohol to ketone (9-benzyl-9-azabicyclo[3.3.1]non-2-en-6-one)"
+        },
+        {
+            "step_id": 5,
+            "reaction_type": "Lewis Acid Mediated Rearrangement",
+            "reagents": "BF₃·THF",
+            "conditions": "DCM, -78°C",
+            "yield": "76%",
+            "reactant_smiles": "O=C1CC2CC=CCC1N2Cc3ccccc3",
+            "product_smiles": "OC1CC2CC3CC1N(Cc4ccccc4)C3=O",
+            "notes": "BF₃-mediated rearrangement converts enone to bridged lactam (2-azabicyclo[3.3.1]nonane) with secondary alcohol"
+        },
+        {
+            "step_id": 6,
+            "reaction_type": "Acetylation",
+            "reagents": "Ac₂O (Acetic anhydride), DMAP",
+            "conditions": "DCM, rt",
+            "yield": "96%",
+            "reactant_smiles": "OC1CC2CC3CC1N(Cc4ccccc4)C3=O",
+            "product_smiles": "CC(=O)OC1CC2CC3CC1N(Cc4ccccc4)C3=O",
+            "notes": "Alcohol protected as acetate ester - final product Koumine"
         }
     ]
 }
