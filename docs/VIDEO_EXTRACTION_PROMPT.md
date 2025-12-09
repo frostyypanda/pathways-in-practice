@@ -1,12 +1,4 @@
-# Prompt for AI Video Analysis - Synthesis Extraction
 
-Use this prompt when asking an AI to analyze a video recording of a chemical synthesis viewer and extract data for OpenSynth.
-
----
-
-## The Prompt
-
-```
 You are analyzing a video recording of a chemical synthesis viewer application. Your task is to extract all synthesis data and generate a complete JSON file.
 
 ## Video Structure
@@ -31,29 +23,22 @@ From the header, identify:
 ### 2. For EACH Step, Extract:
 - **step_id**: The step number (1, 2, 3...)
 - **reaction_type**: Identify the reaction (e.g., "Oxidation", "Wittig", "Aldol", "Protection", "Reduction")
-- **reagents**: All reagents shown (e.g., "TBDPSOTf, 2,6-lutidine")
+- **reagents**: Text names of reagents shown (e.g., "TBDPSOTf, 2,6-lutidine"). Only include reagents that are shown as text labels, NOT those shown as drawn structures.
+- **reagent_smiles**: SMILES strings for reagents shown as drawn molecular structures (not text labels). Use SMILES dot notation to separate multiple structures (e.g., "CCO.CC(=O)O"). Leave as empty string "" if no structures are drawn. Note: A reagent should appear in EITHER `reagents` OR `reagent_smiles`, never both. If a structure is drawn with a text label, prefer `reagent_smiles` and omit from `reagents`.
 - **conditions**: Temperature, solvent, time (e.g., "CH₂Cl₂, -78°C to 23°C")
 - **yield**: Percentage if shown (e.g., "88%")
-- **reactant_smiles**: Convert the LEFT structure to SMILES notation
-- **product_smiles**: Convert the RIGHT structure to SMILES notation
+- **reactant_smiles**: Convert the LEFT structure to SMILES notation. If multiple reactants are shown, use SMILES dot notation to combine them (e.g., "CCO.CC=O" for two reactants).
+- **reactant_split_by_plus**: Set to `true` if multiple reactants are shown with a "+" symbol between them, `false` if they are just shown side by side without a "+". Omit this field if there is only one reactant.
+- **product_smiles**: Convert the RIGHT structure to SMILES notation. If multiple products are shown, use SMILES dot notation to combine them (e.g., "CCO.CC=O" for two products).
+- **product_split_by_plus**: Set to `true` if multiple products are shown with a "+" symbol between them, `false` if they are just shown side by side without a "+". Omit this field if there is only one product.
+- **reagent_split_by_plus**: Set to `true` if multiple reagent structures (in `reagent_smiles`) are shown with a "+" symbol between them, `false` if they are just shown side by side. Omit this field if there are zero or one reagent structures.
 - **notes**: Brief description of what the transformation accomplishes
 
 ### 3. SMILES Generation Rules
 - Carefully analyze each 2D structure
 - Include stereochemistry where shown (use @, @@, /, \)
-- Common groups to recognize:
-  - Ns = nosyl = 2-nitrobenzenesulfonyl
-  - TBDPS = tert-butyldiphenylsilyl
-  - Bn = benzyl
-  - Ac = acetyl
-  - THP = tetrahydropyranyl
-  - Bz = benzoyl
-  - MOM = methoxymethyl
-  - TBS/TBDMS = tert-butyldimethylsilyl
-  - PMB = para-methoxybenzyl
-  - Ts = tosyl = para-toluenesulfonyl
-  - Ms = mesyl = methanesulfonyl
 - Verify: Product of step N should match reactant of step N+1
+- **Abbreviations**: You may use abbreviations for common groups by enclosing them in square brackets, e.g., `[OEt]`, `[Ph]`, `[TBDPS]`, `[OAc]`, `[Bz]`. If they are shown in an abbreviated way in the video, do NOT draw them out, keep the abbreviation as it is. If they are drawn out, do not abbreviate them.
 
 ### 4. Output Format
 
@@ -75,11 +60,15 @@ Generate JSON in this exact format:
         {
             "step_id": 1,
             "reaction_type": "[Reaction name]",
-            "reagents": "[All reagents]",
+            "reagents": "[All reagents text]",
+            "reagent_smiles": "[SMILES of drawn reagents]",
+            "reagent_split_by_plus": false,
             "conditions": "[Solvent, temp, time]",
             "yield": "[XX%]",
             "reactant_smiles": "[SMILES]",
+            "reactant_split_by_plus": false,
             "product_smiles": "[SMILES]",
+            "product_split_by_plus": false,
             "notes": "[What this step accomplishes]"
         }
     ]
@@ -89,6 +78,7 @@ Generate JSON in this exact format:
 
 - Watch the ENTIRE video - scroll through ALL steps
 - Do NOT skip any steps
+- **Multiple syntheses**: If a video contains multiple syntheses (different molecules), create a separate JSON file for each synthesis. Each JSON file must follow all the rules and format specified above.
 - If a structure is unclear, make your best interpretation and add a note
 - Use "???" only if data is truly not visible
 - Pay attention to stereochemistry indicators in the drawings
@@ -105,27 +95,77 @@ Before submitting, verify:
 - [ ] Reaction types are correctly identified
 ```
 
----
-
-## Common Reaction Types
-
-| Reaction | Description |
-|----------|-------------|
-| Protection | Adding a protecting group (TBS, Bn, Ac, etc.) |
-| Deprotection | Removing a protecting group |
-| Oxidation | Increasing oxidation state (alcohol→ketone, etc.) |
-| Reduction | Decreasing oxidation state (ketone→alcohol, etc.) |
-| Wittig Olefination | C=C bond formation using phosphorus ylide |
-| Horner-Wadsworth-Emmons | Modified Wittig with phosphonate |
-| Aldol Addition | β-hydroxy carbonyl formation |
-| Grignard Addition | Nucleophilic addition of RMgX |
-| Diels-Alder | [4+2] cycloaddition |
-| Swern Oxidation | DMSO/oxalyl chloride oxidation |
-| Jones Oxidation | CrO₃-based oxidation |
-| Mitsunobu | Alcohol inversion/substitution |
-| Suzuki Coupling | Pd-catalyzed C-C with boronic acid |
-| Heck Reaction | Pd-catalyzed aryl-alkene coupling |
 
 ## Example Output
 
-See `public/data/alkaloids/cathafoline_garg_2018.json` for a real example.
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cathafoline-garg-2018",
+        "molecule_name": "16-epi-2(S)-Cathafoline",
+        "class": "Alkaloid",
+        "author": "Garg, N.K.",
+        "year": 2018,
+        "journal": "???",
+        "doi": "???",
+        "source_url": "???"
+    },
+    "sequence": [
+        {
+            "step_id": 1,
+            "reaction_type": "Deprotection",
+            "reagents": "LiOH·H₂O",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 23°C",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "C#CCN(C1C=CCC(OC(=O)c2ccccc2)C1)S(=O)(=O)c3ccccc3[N+](=O)[O-]",
+            "product_smiles": "C#CCN(C1C=CCC(O)C1)S(=O)(=O)c2ccccc2[N+](=O)[O-]",
+            "notes": "Conversion of benzoate ester (OBz) to alcohol (OH)"
+        },
+        {
+            "step_id": 2,
+            "reaction_type": "Oxidation",
+            "reagents": "PCC (Pyridinium chlorochromate)",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, 23°C",
+            "yield": "93%",
+            "reactant_smiles": "C#CCN(C1C=CCC(O)C1)S(=O)(=O)c2ccccc2[N+](=O)[O-]",
+            "product_smiles": "C#CCN(C1C=CCC(=O)C1)S(=O)(=O)c2ccccc2[N+](=O)[O-]",
+            "notes": "Oxidation of alcohol to ketone"
+        },
+        {
+            "step_id": 3,
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "TBDPSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, -78°C to 23°C",
+            "yield": "88%",
+            "reactant_smiles": "C#CCN(C1C=CCC(=O)C1)S(=O)(=O)c2ccccc2[N+](=O)[O-]",
+            "product_smiles": "C#CCN(C1=CC=CC(O[Si](C(C)(C)C)(c2ccccc2)c3ccccc3)=C1)S(=O)(=O)c4ccccc4[N+](=O)[O-]",
+            "notes": "Conversion of ketone to silyl enol ether (OTBDPS)"
+        },
+        {
+            "step_id": 4,
+            "reaction_type": "Palladium-Catalyzed Oxidative Cyclization",
+            "reagents": "(i) Pd(OAc)₂, AgOTf; (ii) p-TsOH·H₂O",
+            "reagent_smiles": "",
+            "conditions": "PhMe, t-BuOH, 40°C",
+            "yield": "???",
+            "reactant_smiles": "C#CCN(C1=CC=CC(O[Si](C(C)(C)C)(c2ccccc2)c3ccccc3)=C1)S(=O)(=O)c4ccccc4[N+](=O)[O-]",
+            "product_smiles": "???",
+            "notes": "Formation of bicyclic enone framework"
+        },
+        {
+            "step_id": 5,
+            "reaction_type": "Ueno-Stork Radical Cyclization",
+            "reagents": "(i) AcOH, H₂O; (ii) n-Bu₃SnH, AIBN",
+            "reagent_smiles": "",
+            "conditions": "(i) THF, 75°C; (ii) toluene, 75°C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "CCOC1C(I)CC(C(=O)OC)C(CN(CC#C)S(=O)(=O)c2ccccc2[N+](=O)[O-])=C1",
+            "product_smiles": "CCOC1C2CC(C(=O)OC)C3(CN(C2)S(=O)(=O)c4ccccc4[N+](=O)[O-])C=CC31",
+            "notes": "Radical cyclization forms tricyclic core - propargyl radical cyclizes onto double bond to form bridged 5-membered ring system"
+        }
+    ]
+}
+

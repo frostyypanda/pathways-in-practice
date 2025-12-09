@@ -5,34 +5,90 @@
     "meta": {
       "type": "object",
       "properties": {
-        "id": { "type": "string" },
-        "molecule_name": { "type": "string" },
-        "class": { "type": "string" },
-        "author": { "type": "string" },
-        "year": { "type": "integer" },
-        "journal": { "type": "string" },
-        "doi": { "type": "string" },
-        "patent_url": { "type": "string" }
+        "id": {
+          "type": "string"
+        },
+        "molecule_name": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "journal": {
+          "type": "string"
+        },
+        "doi": {
+          "type": "string"
+        },
+        "patent_url": {
+          "type": "string"
+        }
       },
-      "required": ["id", "molecule_name", "author", "year"]
+      "required": [
+        "id",
+        "molecule_name",
+        "author",
+        "year"
+      ]
     },
     "sequence": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "step_id": { "type": "integer" },
-          "reaction_type": { "type": "string" },
-          "reagents": { "type": "string" },
-          "conditions": { "type": "string" },
-          "yield": { "type": "string" },
-          "reactant_smiles": { "type": "string" },
-          "product_smiles": { "type": "string" },
-          "notes": { "type": "string" }
+          "step_id": {
+            "type": "integer"
+          },
+          "reaction_type": {
+            "type": "string"
+          },
+          "reagents": {
+            "type": "string"
+          },
+          "reagent_smiles": {
+            "type": "string"
+          },
+          "reagent_split_by_plus": {
+            "type": "boolean"
+          },
+          "conditions": {
+            "type": "string"
+          },
+          "yield": {
+            "type": "string"
+          },
+          "reactant_smiles": {
+            "type": "string"
+          },
+          "reactant_split_by_plus": {
+            "type": "boolean"
+          },
+          "product_smiles": {
+            "type": "string"
+          },
+          "product_split_by_plus": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
         },
-        "required": ["step_id", "reactant_smiles", "product_smiles"]
+        "required": [
+          "step_id",
+          "reactant_smiles",
+          "product_smiles"
+        ]
       }
     }
   },
-  "required": ["meta", "sequence"]
+  "required": [
+    "meta",
+    "sequence"
+  ]
 }

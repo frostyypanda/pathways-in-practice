@@ -64,7 +64,7 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
             <div className="reaction-container">
                 <div className="molecule-block">
                     {renderQuizContent('reactant',
-                        <MoleculeCanvas smiles={currentStep.reactant_smiles} width={300} height={250} />
+                        <MoleculeCanvas smiles={currentStep.reactant_smiles} width={300} height={250} showPlusSeparator={currentStep.reactant_split_by_plus} />
                     )}
                 </div>
 
@@ -72,6 +72,11 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
                     {renderQuizContent('conditions', (
                         <>
                             <div className="reagents">{currentStep.reagents}</div>
+                            {currentStep.reagent_smiles && (
+                                <div className="reagent-structures" style={{ display: 'flex', justifyContent: 'center', marginBottom: '4px' }}>
+                                    <MoleculeCanvas smiles={currentStep.reagent_smiles} width={150} height={80} showPlusSeparator={currentStep.reagent_split_by_plus} />
+                                </div>
+                            )}
                             <div className="arrow-line">
                                 <ArrowRight size={48} />
                             </div>
@@ -83,7 +88,7 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
 
                 <div className="molecule-block">
                     {renderQuizContent('product',
-                        <MoleculeCanvas smiles={currentStep.product_smiles} width={300} height={250} />
+                        <MoleculeCanvas smiles={currentStep.product_smiles} width={300} height={250} showPlusSeparator={currentStep.product_split_by_plus} />
                     )}
                 </div>
             </div>
