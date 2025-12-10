@@ -27,6 +27,10 @@ npm run preview   # Preview production build
 npm run data:import   # Runs python3 scripts/data_ingestion/fetch_real_ord_data.py
 ```
 
+## Deployment
+
+See `docs/deployment.md` for full deployment instructions (Azure Blob Storage).
+
 ## Architecture
 
 ### Data Flow
