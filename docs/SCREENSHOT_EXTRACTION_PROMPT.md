@@ -25,6 +25,7 @@ From the header (top right), identify:
 - Molecule name
 - Author name
 - Year of publication
+- **Source citation**: Look for journal/source information which may include journal name, year, volume, and page numbers (e.g., "Mini. Rev. Med. Chem. 2004, 4, 207"). Include the full citation with year, volume, and page numbers - not just the journal name.
 
 ### 2. For EACH Step (Screenshot), Extract:
 - **step_id**: The step number (1, 2, 3...) from the bottom right corner
@@ -87,18 +88,18 @@ Generate JSON in this exact format (one per synthesis):
 - **Sort first**: Always sort screenshots by step number before processing
 - **Group by synthesis**: Screenshots may contain steps from multiple different syntheses - identify them by the header info and create separate JSON files
 - Do NOT skip any steps - check that step numbers are sequential
-- **Missing steps**: If any steps are missing (gaps in step numbers, or total count doesn't match), report this clearly in your response. Format: "MISSING STEPS: [Synthesis Name] - steps [X, Y, Z] missing out of [total] steps"
+- **Verify step count**: The step counter in the bottom right shows "X/N" format (e.g., "3/9" means step 3 of 9 total). You MUST have exactly N screenshots for each synthesis. If you have fewer screenshots than N, report the missing ones.
+- **Missing steps**: If any steps are missing (gaps in step numbers, or total count doesn't match N), report this clearly in your response. Format: "MISSING STEPS: [Synthesis Name] - steps [X, Y, Z] missing out of N total steps"
 - If a structure is unclear, make your best interpretation and add a note
 - Use "???" only if data is truly not visible
 - Pay attention to stereochemistry indicators in the drawings
-- The step counter format "X/Y" tells you total steps (Y) - verify you have all steps
 
 ## Quality Checklist
 
 Before submitting, verify:
 - [ ] Screenshots sorted by step number within each synthesis
 - [ ] Screenshots grouped correctly by synthesis (same molecule name/author/year)
-- [ ] All steps captured (no gaps in step numbers)
+- [ ] Step count matches: You have exactly N screenshots where N is from the "X/N" counter (no gaps in step numbers)
 - [ ] All SMILES are valid
 - [ ] Product of step N = Reactant of step N+1
 - [ ] Reagents match what's shown on screen

@@ -19,6 +19,7 @@ From the header, identify:
 - Molecule name
 - Author name
 - Year of publication
+- **Source citation**: Look for journal/source information which may include journal name, year, volume, and page numbers (e.g., "Mini. Rev. Med. Chem. 2004, 4, 207"). Include the full citation with year, volume, and page numbers - not just the journal name.
 
 ### 2. For EACH Step, Extract:
 - **step_id**: The step number (1, 2, 3...)
@@ -76,18 +77,19 @@ Generate JSON in this exact format:
 
 ## Important Notes
 
+- **Analyze each frame carefully**: Pause on each step and carefully examine all details - molecular structures, reagents, conditions, and yields. Do not rush through frames.
 - Watch the ENTIRE video - scroll through ALL steps
 - Do NOT skip any steps
+- **Verify step count**: The step counter in the bottom right shows "X/N" format (e.g., "3/9" means step 3 of 9 total). You MUST extract exactly N steps. If your output has fewer steps than N, you have missed steps - go back and find them.
 - **Multiple syntheses**: If a video contains multiple syntheses (different molecules), create a separate JSON file for each synthesis. Each JSON file must follow all the rules and format specified above.
 - If a structure is unclear, make your best interpretation and add a note
 - Use "???" only if data is truly not visible
 - Pay attention to stereochemistry indicators in the drawings
-- Count total steps from the step counter (e.g., "X/25" means 25 total steps)
 
 ## Quality Checklist
 
 Before submitting, verify:
-- [ ] All steps captured (check step counter)
+- [ ] Step count matches: Your output has exactly N steps where N is from the "X/N" counter
 - [ ] All SMILES are valid
 - [ ] Product of step N = Reactant of step N+1
 - [ ] Reagents match what's shown on screen
