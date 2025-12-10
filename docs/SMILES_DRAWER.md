@@ -2,6 +2,14 @@
 
 This project uses a modified fork of [SmilesDrawer](https://github.com/reymond-group/smilesDrawer) to render molecular structures from SMILES strings.
 
+## IMPORTANT: Must Use Our Fork
+
+**DO NOT use the official SmilesDrawer from npm/unpkg/CDN.** This project requires our modified fork that supports custom abbreviations like `[OEt]`, `[TBDPS]`, `[Ph]`, etc.
+
+The app loads the library from `/public/smiles-drawer.min.js` (configured in `index.html`).
+
+If you see parse errors like `Expected "+", "-", ":", "@", "H", "]", or [a-z] but "E" found` for SMILES with abbreviations, you're likely using the wrong version.
+
 ## Fork Location
 
 The forked repository is at: `e:\repos\smiles-drawer-fork\`

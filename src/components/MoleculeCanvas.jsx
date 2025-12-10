@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 // Single molecule canvas component
 const SingleMoleculeCanvas = React.memo(({ smiles, width = 300, height = 200, theme = 'light' }) => {
+    const canvasRef = useRef(null);
     const [error, setError] = React.useState(null);
 
     useEffect(() => {
