@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMILES Tester - OpenSynth</title>
+    <script src="smiles-drawer.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        .smiles-input {
+            font-family: monospace;
+            min-width: 300px;
+        }
+        .status {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.error { background: #f8d7da; color: #721c24; }
+        .example-btn {
+            padding: 6px 12px;
+            font-family: monospace;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fff;
+        }
+        .example-btn:hover {
+            background: #e9ecef;
+        }
+        a.back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">&larr; Back to OpenSynth</a>
+    <h1>SMILES Tester</h1>
+    <p>Test SMILES rendering with custom abbreviations like [TBDPS], [OEt], [OAc], [Ph], [Bz], etc.</p>
+
+    <div class="test-section">
+        <h2>Interactive SMILES Tester</h2>
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="flex: 1;">
+                <textarea id="smiles-input" rows="3" style="width: 100%; font-family: monospace; font-size: 14px; padding: 10px;">CC(=O)O[TBDPS]</textarea>
+                <div style="margin-top: 10px;">
+                    <button onclick="renderSmiles()" style="padding: 10px 20px; font-size: 14px; cursor: pointer;">Render</button>
+                    <span id="render-status" class="status" style="margin-left: 10px;"></span>
+                </div>
+                <div style="margin-top: 15px;">
+                    <strong>Quick examples:</strong>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                        <button class="example-btn" onclick="setExample('CC[TBDPS]')">CC[TBDPS]</button>
+                        <button class="example-btn" onclick="setExample('C[OEt]')">C[OEt]</button>
+                        <button class="example-btn" onclick="setExample('[Ph]C=O')">[Ph]C=O</button>
+                        <button class="example-btn" onclick="setExample('CC(=O)[OAc]')">CC(=O)[OAc]</button>
+                        <button class="example-btn" onclick="setExample('[TMS]C#C[TMS]')">[TMS]C#C[TMS]</button>
+                        <button class="example-btn" onclick="setExample('C[Ns]')">C[Ns]</button>
+                        <button class="example-btn" onclick="setExample('[PMB]OC')">[PMB]OC</button>
+                        <button class="example-btn" onclick="setExample('c1ccccc1')">Benzene</button>
+                        <button class="example-btn" onclick="setExample('CCO')">Ethanol</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <svg id="main-svg" width="400" height="300" style="border: 1px solid #ccc; background: white;"></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Predefined Tests</h2>
+        <details>
+            <summary style="cursor: pointer; font-weight: bold;">Custom Abbreviation Tests (click to expand)</summary>
+            <div id="custom-tests" style="margin-top: 10px;"></div>
+        </details>
+        <details style="margin-top: 10px;">
+            <summary style="cursor: pointer; font-weight: bold;">Standard Element Tests (click to expand)</summary>
+            <div id="standard-tests" style="margin-top: 10px;"></div>
+        </details>
+    </div>
+
+    <script>
+        const drawer = new SmilesDrawer.SvgDrawer({ width: 300, height: 200 });
+        const mainDrawer = new SmilesDrawer.SvgDrawer({ width: 400, height: 300 });
+
+        function renderSmiles() {
+            const input = document.getElementById('smiles-input').value.trim();
+            const svg = document.getElementById('main-svg');
+            const status = document.getElementById('render-status');
+
+            svg.innerHTML = '';
+            status.className = 'status';
+            status.textContent = '';
+
+            if (!input) {
+                status.textContent = 'Please enter a SMILES string';
+                status.classList.add('error');
+                return;
+            }
+
+            try {
+                SmilesDrawer.parse(input, (tree) => {
+                    mainDrawer.draw(tree, svg, 'light', false);
+                    status.textContent = 'Rendered successfully';
+                    status.classList.add('success');
+                }, (err) => {
+                    status.textContent = 'Parse Error: ' + (err.message || err);
+                    status.classList.add('error');
+                    console.error('Parse error:', err);
+                });
+            } catch (e) {
+                status.textContent = 'Error: ' + e.message;
+                status.classList.add('error');
+                console.error('Render error:', e);
+            }
+        }
+
+        function setExample(smiles) {
+            document.getElementById('smiles-input').value = smiles;
+            renderSmiles();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('smiles-input');
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    renderSmiles();
+                }
+            });
+            renderSmiles();
+        });
+
+        const customTests = [
+            { smiles: 'CC[TBDPS]', description: 'Ethyl with TBDPS group' },
+            { smiles: 'C[OEt]', description: 'Methyl with OEt (ethoxy)' },
+            { smiles: 'CC(=O)[OAc]', description: 'Acetyl with OAc' },
+            { smiles: '[Ph]C=O', description: 'Benzaldehyde with Ph abbreviation' },
+            { smiles: 'C[Ns]', description: 'Methyl with Ns (nosyl)' },
+            { smiles: '[TBDPS]O[TBDPS]', description: 'Two TBDPS groups' },
+            { smiles: 'CC[Bz]', description: 'Ethyl with Bz (benzoyl)' },
+            { smiles: '[TMS]C#C[TMS]', description: 'Bis-TMS acetylene' },
+            { smiles: 'C[PMB]', description: 'Methyl with PMB group' },
+        ];
+
+        const standardTests = [
+            { smiles: 'CCO', description: 'Ethanol' },
+            { smiles: 'c1ccccc1', description: 'Benzene (aromatic)' },
+            { smiles: '[Na+].[Cl-]', description: 'Sodium chloride' },
+            { smiles: 'CC(=O)O', description: 'Acetic acid' },
+            { smiles: 'C[C@H](O)CC', description: 'Chiral center' },
+        ];
+
+        function runTests(tests, containerId) {
+            const container = document.getElementById(containerId);
+            tests.forEach((test) => {
+                const row = document.createElement('div');
+                row.className = 'test-row';
+
+                const smilesSpan = document.createElement('span');
+                smilesSpan.className = 'smiles-input';
+                smilesSpan.textContent = test.smiles;
+
+                const descSpan = document.createElement('span');
+                descSpan.textContent = test.description;
+
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('width', '200');
+                svg.setAttribute('height', '150');
+
+                const status = document.createElement('span');
+                status.className = 'status';
+
+                try {
+                    SmilesDrawer.parse(test.smiles, (tree) => {
+                        drawer.draw(tree, svg, 'light', false);
+                        status.textContent = 'Success';
+                        status.classList.add('success');
+                    }, (err) => {
+                        status.textContent = 'Parse Error: ' + err;
+                        status.classList.add('error');
+                    });
+                } catch (e) {
+                    status.textContent = 'Error: ' + e.message;
+                    status.classList.add('error');
+                }
+
+                row.appendChild(smilesSpan);
+                row.appendChild(descSpan);
+                row.appendChild(svg);
+                row.appendChild(status);
+                container.appendChild(row);
+            });
+        }
+
+        runTests(customTests, 'custom-tests');
+        runTests(standardTests, 'standard-tests');
+    </script>
+</body>
+</html>
