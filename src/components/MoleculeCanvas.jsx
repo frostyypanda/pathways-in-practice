@@ -66,7 +66,7 @@ const MoleculeCanvas = React.memo(({ smiles, width = 300, height = 200, theme = 
     const singleWidth = Math.floor(width / molecules.length) - 10;
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+        <div className="molecule-canvas-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
             {molecules.map((mol, index) => (
                 <React.Fragment key={index}>
                     <SingleMoleculeCanvas

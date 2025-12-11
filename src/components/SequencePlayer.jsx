@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MoleculeCanvas from './MoleculeCanvas';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import OrganicArrow from './OrganicArrow';
 
 const SequencePlayer = ({ synthesis, quizSettings }) => {
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
@@ -41,16 +42,20 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
         }
     };
 
-    const renderQuizContent = (partId, content, className = "") => {
-        if (isVisible(partId)) {
-            return content;
-        }
+    const renderQuizContent = (partId, content, sizeClass = "size-large") => {
+        const isRev = isVisible(partId);
         return (
-            <div
-                className={`quiz-hidden-placeholder ${className}`}
-                onClick={() => reveal(partId)}
-                title="Click to reveal"
-            />
+            <div className={`quiz-box-wrapper ${sizeClass}`}>
+                {isRev ? (
+                    <div className="quiz-content-revealed">{content}</div>
+                ) : (
+                    <div
+                        className="quiz-hidden-placeholder"
+                        onClick={() => reveal(partId)}
+                        title="Click to reveal"
+                    />
+                )}
+            </div>
         );
     };
 
@@ -58,38 +63,56 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
         <div className="sequence-player">
             <div className="player-header">
                 <h2>Step {currentStep.step_id} / {totalSteps}</h2>
-                {renderQuizContent('name', <p className="reaction-type">{currentStep.reaction_type}</p>)}
             </div>
 
             <div className="reaction-container">
                 <div className="molecule-block">
-                    {renderQuizContent('reactant',
-                        <MoleculeCanvas smiles={currentStep.reactant_smiles} width={300} height={250} showPlusSeparator={currentStep.reactant_split_by_plus} />
-                    )}
+                    {renderQuizContent('reactant', (
+                        <div className="molecule-canvas-container">
+                            <MoleculeCanvas smiles={currentStep.reactant_smiles} width={300} height={250} showPlusSeparator={currentStep.reactant_split_by_plus} />
+                        </div>
+                    ), 'size-large')}
                 </div>
 
                 <div className="reaction-arrow">
                     {renderQuizContent('conditions', (
-                        <>
-                            <div className="reagents">{currentStep.reagents}</div>
-                            {currentStep.reagent_smiles && (
-                                <div className="reagent-structures" style={{ display: 'flex', justifyContent: 'center', marginBottom: '4px' }}>
-                                    <MoleculeCanvas smiles={currentStep.reagent_smiles} width={150} height={80} showPlusSeparator={currentStep.reagent_split_by_plus} />
-                                </div>
-                            )}
-                            <div className="arrow-line">
-                                <ArrowRight size={48} />
+                        <div className="arrow-content-wrapper">
+                            <div className="reagents-structures-group">
+                                {currentStep.reagent_smiles && (
+                                    <div className="reagent-structures" style={{ display: 'flex', justifyContent: 'center' }}>
+                                        <MoleculeCanvas smiles={currentStep.reagent_smiles} width={150} height={80} showPlusSeparator={currentStep.reagent_split_by_plus} />
+                                    </div>
+                                )}
                             </div>
-                            <div className="conditions">{currentStep.conditions}</div>
-                            <div className="yield">{currentStep.yield} yield</div>
-                        </>
-                    ))}
+                            <div className="reagents-text-group">
+                                <div className="reagents">{currentStep.reagents}</div>
+                            </div>
+                            <div className="arrow-group">
+                                <div className="conditions">{currentStep.conditions}</div>
+                                <div className="arrow-line">
+                                    <OrganicArrow width={105} />
+                                </div>
+                                <div className="yield">{currentStep.yield} yield</div>
+                            </div>
+                        </div>
+                    ), 'size-medium')}
                 </div>
 
                 <div className="molecule-block">
-                    {renderQuizContent('product',
-                        <MoleculeCanvas smiles={currentStep.product_smiles} width={300} height={250} showPlusSeparator={currentStep.product_split_by_plus} />
-                    )}
+                    {renderQuizContent('product', (
+                        <div className="molecule-canvas-container">
+                            <MoleculeCanvas smiles={currentStep.product_smiles} width={300} height={250} showPlusSeparator={currentStep.product_split_by_plus} />
+                        </div>
+                    ), 'size-large')}
+                </div>
+            </div>
+
+            <div className="reaction-info-section">
+                <div className="reaction-name-box">
+                    {renderQuizContent('name', <p className="reaction-type">{currentStep.reaction_type}</p>, 'size-auto')}
+                </div>
+                <div className="notes-section">
+                    {renderQuizContent('notes', <p>{currentStep.notes}</p>, 'size-auto')}
                 </div>
             </div>
 
@@ -97,9 +120,12 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
                 <button onClick={handlePrev} disabled={currentStepIndex === 0} className="control-btn">
                     <ChevronLeft /> Previous
                 </button>
-                <div className="notes">
-                    {renderQuizContent('notes', <p>{currentStep.notes}</p>)}
+
+                <div className="citation-info">
+                    <span>{synthesis.meta.author}, {synthesis.meta.year}</span>
+                    <span className="journal-name">{synthesis.meta.journal}</span>
                 </div>
+
                 <button onClick={handleNext} disabled={currentStepIndex === totalSteps - 1} className="control-btn">
                     Next <ChevronRight />
                 </button>

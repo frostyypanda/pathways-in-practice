@@ -56,12 +56,10 @@ const Synthesis = () => {
 
     return (
         <div className="synthesis-page">
-            <header className="synthesis-header">
-                <Link to="/" className="back-link"><ArrowLeft /> Back to Library</Link>
-                <h1>{synthesis.meta.molecule_name}</h1>
-                <div className="meta-info">
-                    <span>{synthesis.meta.author}, {synthesis.meta.year}</span>
-                    <span>{synthesis.meta.journal}</span>
+            <header className="synthesis-header compact-header">
+                <div className="header-split">
+                    <Link to="/" className="back-link"><ArrowLeft size={16} /> Back to Library</Link>
+                    <h1 className="compact-title">{synthesis.meta.molecule_name}</h1>
                 </div>
             </header>
 

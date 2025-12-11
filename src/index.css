@@ -150,7 +150,14 @@ body {
 
 /* Synthesis Page */
 .synthesis-header {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.header-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .back-link {
@@ -160,14 +167,42 @@ body {
   text-decoration: none;
   color: var(--accent-color);
   font-weight: 500;
-  margin-bottom: 20px;
+  font-size: 0.9rem;
+  /* Smaller font */
+  flex: 1;
+  /* Take up left half */
+  justify-content: flex-start;
 }
 
-.meta-info {
+.compact-title {
+  font-size: 0.9rem;
+  /* Same size as back link */
+  margin: 0;
+  color: var(--primary-color);
+  flex: 1;
+  /* Take up right half */
+  text-align: right;
+  /* Aligned right */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.synthesis-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.meta-info.bottom {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  /* Stack vertically on bottom probably better for space */
+  gap: 5px;
   color: #666;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 /* Sequence Player */
@@ -206,6 +241,20 @@ body {
   align-items: center;
   min-width: 150px;
   color: #555;
+  width: 100%;
+  /* Ensure full width for internal flexing */
+}
+
+.arrow-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.reagents-text-group {
+  margin: 5px 0;
+  text-align: center;
 }
 
 .arrow-line {
@@ -229,54 +278,349 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--border-color);
+  width: 100%;
 }
 
-.control-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
+.notes-section,
+.reaction-name-box {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 40px;
+}
+
+.reaction-name-box {
+  margin-bottom: 10px;
+}
+
+.notes-section {
+  margin-bottom: 20px;
+}
+
+.notes-section p,
+.reaction-name-box p.reaction-type {
+  color: #666;
+  font-style: italic;
+  background: #f8f9fa;
+  padding: 10px;
+  /* Tighter padding */
   border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.2s;
+  border: 1px dashed #ddd;
+  margin: 0;
 }
 
-.control-btn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-}
-
-.control-btn:not(:disabled):hover {
-  background: #34495e;
+.reaction-name-box p.reaction-type {
+  font-style: normal;
+  font-weight: 500;
 }
 
 .notes {
-  max-width: 500px;
-  color: #666;
-  font-style: italic;
+  /* Legacy class kept if needed, but styling moved to notes-section mostly */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+
+  /* Reduce global padding */
+  .app-container {
+    padding: 10px 2px 0 2px;
+    /* Added top padding (10px), removed bottom padding */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Reduce header spacing */
+  .synthesis-header,
+  .synthesis-footer {
+    padding: 0 10px;
+    /* Keep text away from edges */
+    margin-bottom: 5px;
+  }
+
+  /* Increase header size slightly */
+  .back-link,
+  .compact-title {
+    font-size: 1rem;
+    /* Increased from 0.9rem */
+  }
+
+  /* Compact sequence player */
+  .sequence-player {
+    padding: 10px 5px;
+    /* Minimal horizontal padding */
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+  }
+
+  .player-header {
+    margin-bottom: 5px;
+    /* Reduced from 10px */
+  }
+
+  .player-header h2 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  /* Compact Controls & Notes */
+  .player-controls {
+    margin-top: 5px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .citation-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.1;
+    padding: 0 5px;
+  }
+
+  .citation-info span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  /* Make nav buttons smaller to fit text */
+  .control-btn {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .notes-section {
+    margin-bottom: 5px;
+  }
+
+  .reaction-name-box {
+    margin-bottom: 5px;
+  }
+
+  .reaction-container {
+    margin-bottom: 5px;
+  }
+
+  /* Scale down reaction content to fit on screen */
+  .molecule-canvas {
+    max-width: 85%;
+    /* Reduced from 100% to save vertical space */
+  }
+
+  /* Tighten footer */
+  .synthesis-footer {
+    margin-top: 5px;
+    /* Significantly reduced */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* Minimal bottom padding */
+    border-top: none;
+    /* Optional: remove border to make it feel closer */
+  }
+
+  .meta-info.bottom {
+    gap: 2px;
+    font-size: 0.8rem;
+    /* Slightly smaller citation */
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .reaction-container {
     flex-direction: column;
+    width: 100%;
+    gap: 0;
+    /* Eliminate gap between flex items */
   }
 
+  .molecule-block {
+    width: 100%;
+    min-width: 0;
+    /* Reset min-width to prevent overflow */
+  }
+
+  .molecule-canvas {
+    max-width: 100%;
+    /* Scale down if needed */
+    width: auto;
+    /* Allow auto width based on height/aspect */
+    height: auto;
+    object-fit: contain;
+  }
+
+  .molecule-canvas-container {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  /* Portrait Mode: Vertical Stack, Arrow Horizontal Split */
   .reaction-arrow {
-    transform: rotate(90deg);
-    margin: 20px 0;
+    margin: 0;
+    transform: none;
+    width: 100%;
   }
 
+  /* Split Layout for Arrow Box */
+  .arrow-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* Center the whole block */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .reagents-structures-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    /* Match placeholder min-height approx */
+  }
+
+  /* Constrain molecule canvas to prevent layout shift */
+  .molecule-block .molecule-canvas-container {
+    height: 200px;
+    /* Match placeholder height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .molecule-block .molecule-canvas-container canvas {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* STRICT SIZE SYSTEM for Quiz Boxes */
+  .quiz-box-wrapper {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    /* Border handled by children or here? Placeholder has border usually. */
+  }
+
+  /* Revealed content wrapper */
+  .quiz-content-revealed {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Placeholder overrides to fill wrapper */
+  .quiz-box-wrapper .quiz-hidden-placeholder {
+    width: 100%;
+    height: 100%;
+    /* Fill the wrapper */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #ccc;
+    /* Consistent border */
+    border-radius: 8px;
+    padding: 0;
+    /* Override any specific fixed heights from previous steps */
+  }
+
+  /* SIZE VARIANTS */
+  .size-large {
+    height: 200px;
+  }
+
+  .size-medium {
+    height: 80px;
+  }
+
+  .size-auto {
+    min-height: 40px;
+    height: auto;
+  }
+
+  .reagents-text-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5px;
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .arrow-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arrow-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reaction-arrow .arrow-line {
+    /* FORCE HORIZONTAL ARROW as requested */
+    transform: none;
+    margin: 0;
+  }
+
+
+
+  /* Ensure text remains horizontal */
   .reaction-arrow .reagents,
   .reaction-arrow .conditions,
   .reaction-arrow .yield {
-    transform: rotate(-90deg);
+    transform: none;
+  }
+}
+
+/* Landscape Mode on Mobile: Force Horizontal Layout */
+@media (max-width: 900px) and (orientation: landscape) {
+  .reaction-container {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .reaction-arrow {
+    margin: 0 10px;
+    transform: none;
+  }
+
+  .reaction-arrow .arrow-line {
+    transform: none;
+    /* Point right */
+    margin: 5px 0;
+  }
+
+  .molecule-block {
+    /* Allow shrinking if needed in landscape */
+    min-width: 200px;
   }
 }
