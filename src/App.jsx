@@ -13,9 +13,7 @@ function App() {
     return <DesktopView />;
   }
 
-  if (deviceState === 'MOBILE_LANDSCAPE') {
-    return <MobileLandscapeView />;
-  }
+
 
   return (
     <Router>

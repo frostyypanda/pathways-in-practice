@@ -3,8 +3,7 @@ import MoleculeCanvas from './MoleculeCanvas';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import OrganicArrow from './OrganicArrow';
 
-const SequencePlayer = ({ synthesis, quizSettings }) => {
-    const [currentStepIndex, setCurrentStepIndex] = useState(0);
+const SequencePlayer = ({ synthesis, quizSettings, currentStepIndex, setCurrentStepIndex, isLandscape }) => {
     const [revealedParts, setRevealedParts] = useState({});
 
     // Reset revealed parts when step changes
@@ -18,6 +17,12 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
 
     const currentStep = synthesis.sequence[currentStepIndex];
     const totalSteps = synthesis.sequence.length;
+
+    // Adjust canvas dimensions for landscape
+    const canvasWidth = isLandscape ? 200 : 300;
+    const canvasHeight = isLandscape ? 120 : 250;
+    const reagentWidth = isLandscape ? 130 : 150;
+    const reagentHeight = isLandscape ? 60 : 80;
 
     const handleNext = () => {
         if (currentStepIndex < totalSteps - 1) {
@@ -61,15 +66,13 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
 
     return (
         <div className="sequence-player">
-            <div className="player-header">
-                <h2>Step {currentStep.step_id} / {totalSteps}</h2>
-            </div>
+            {/* Header moved to parent */}
 
             <div className="reaction-container">
                 <div className="molecule-block">
                     {renderQuizContent('reactant', (
                         <div className="molecule-canvas-container">
-                            <MoleculeCanvas smiles={currentStep.reactant_smiles} width={300} height={250} showPlusSeparator={currentStep.reactant_split_by_plus} />
+                            <MoleculeCanvas smiles={currentStep.reactant_smiles} width={canvasWidth} height={canvasHeight} showPlusSeparator={currentStep.reactant_split_by_plus} />
                         </div>
                     ), 'size-large')}
                 </div>
@@ -80,7 +83,7 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
                             <div className="reagents-structures-group">
                                 {currentStep.reagent_smiles && (
                                     <div className="reagent-structures" style={{ display: 'flex', justifyContent: 'center' }}>
-                                        <MoleculeCanvas smiles={currentStep.reagent_smiles} width={150} height={80} showPlusSeparator={currentStep.reagent_split_by_plus} />
+                                        <MoleculeCanvas smiles={currentStep.reagent_smiles} width={reagentWidth} height={reagentHeight} showPlusSeparator={currentStep.reagent_split_by_plus} />
                                     </div>
                                 )}
                             </div>
@@ -90,7 +93,7 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
                             <div className="arrow-group">
                                 <div className="conditions">{currentStep.conditions}</div>
                                 <div className="arrow-line">
-                                    <OrganicArrow width={105} />
+                                    <OrganicArrow width={isLandscape ? 80 : 105} />
                                 </div>
                                 <div className="yield">{currentStep.yield} yield</div>
                             </div>
@@ -101,7 +104,7 @@ const SequencePlayer = ({ synthesis, quizSettings }) => {
                 <div className="molecule-block">
                     {renderQuizContent('product', (
                         <div className="molecule-canvas-container">
-                            <MoleculeCanvas smiles={currentStep.product_smiles} width={300} height={250} showPlusSeparator={currentStep.product_split_by_plus} />
+                            <MoleculeCanvas smiles={currentStep.product_smiles} width={canvasWidth} height={canvasHeight} showPlusSeparator={currentStep.product_split_by_plus} />
                         </div>
                     ), 'size-large')}
                 </div>

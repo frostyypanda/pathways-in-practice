@@ -19,9 +19,8 @@ const useDeviceDetection = () => {
                 return;
             }
 
-            // Mobile Landscape: Height <= 600px (standard phone logical height in landscape) AND landscape orientation
-            // We use 600px as a safe upper bound for phone landscape heights (iPhone 14 Pro Max is ~430px)
-            if (height <= 600 && orientation === 'landscape') {
+            // Mobile Landscape: Height <= 900px (increased to support wider range of mobile devices)
+            if (height <= 900 && orientation === 'landscape') {
                 setDeviceState('MOBILE_LANDSCAPE');
                 return;
             }
