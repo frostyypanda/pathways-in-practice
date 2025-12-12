@@ -72,7 +72,7 @@ npm run preview
 
 ## Live Demo
 
-Visit the live application at: [https://opensynth19904.z20.web.core.windows.net/](https://opensynth19904.z20.web.core.windows.net/)
+Visit the live application at: [https://pathwayspractice.org](https://pathwayspractice.org)
 
 ## Contributing
 
