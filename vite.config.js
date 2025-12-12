@@ -10,8 +10,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'OpenSynth',
-        short_name: 'OpenSynth',
+        name: 'Pathways Practice',
+        short_name: 'Pathways',
         description: 'Community-driven chemical synthesis library',
         theme_color: '#2c3e50',
         icons: [

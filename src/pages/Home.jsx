@@ -31,8 +31,11 @@ const Home = () => {
     return (
         <div className="home-page">
             <header className="app-header">
-                <h1>OpenSynth</h1>
-                <p>Community-driven chemical synthesis library</p>
+                <img src="/logo-transparent.png" alt="Pathways Practice Logo" className="app-logo" />
+                <div className="header-text">
+                    <h1>Pathways Practice</h1>
+                    <p>Community-driven chemical synthesis library</p>
+                </div>
             </header>
 
             <div className="search-bar">
