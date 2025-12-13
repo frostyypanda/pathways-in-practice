@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import MoleculeCanvas from './MoleculeCanvas';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Layers, CornerUpLeft } from 'lucide-react';
 import OrganicArrow from './OrganicArrow';
 
-const SequencePlayer = ({ synthesis, quizSettings, currentStepIndex, setCurrentStepIndex, isLandscape }) => {
+const SequencePlayer = ({ sequence, synthesis, quizSettings, currentStepIndex, setCurrentStepIndex, isLandscape, isInSubsteps, onEnterSubsteps, onExitSubsteps }) => {
     const [revealedParts, setRevealedParts] = useState({});
 
     // Reset revealed parts when step changes
@@ -11,12 +11,13 @@ const SequencePlayer = ({ synthesis, quizSettings, currentStepIndex, setCurrentS
         setRevealedParts({});
     }, [currentStepIndex]);
 
-    if (!synthesis || !synthesis.sequence || synthesis.sequence.length === 0) {
+    if (!sequence || sequence.length === 0) {
         return <div>No synthesis data available.</div>;
     }
 
-    const currentStep = synthesis.sequence[currentStepIndex];
-    const totalSteps = synthesis.sequence.length;
+    const currentStep = sequence[currentStepIndex];
+    const totalSteps = sequence.length;
+    const hasSubsteps = currentStep.substeps && currentStep.substeps.length > 0;
 
     // Adjust canvas dimensions for landscape
     const canvasWidth = isLandscape ? 200 : 300;
@@ -86,6 +87,16 @@ const SequencePlayer = ({ synthesis, quizSettings, currentStepIndex, setCurrentS
                                         <MoleculeCanvas smiles={currentStep.reagent_smiles} width={reagentWidth} height={reagentHeight} showPlusSeparator={currentStep.reagent_split_by_plus} />
                                     </div>
                                 )}
+                                {hasSubsteps && (
+                                    <button
+                                        className="substeps-btn"
+                                        onClick={() => onEnterSubsteps(currentStep.substeps)}
+                                        title={`View ${currentStep.substeps.length} substeps`}
+                                    >
+                                        <Layers size={14} />
+                                        View Substeps ({currentStep.substeps.length})
+                                    </button>
+                                )}
                             </div>
                             <div className="reagents-text-group">
                                 <div className="reagents">{currentStep.reagents}</div>
@@ -120,18 +131,32 @@ const SequencePlayer = ({ synthesis, quizSettings, currentStepIndex, setCurrentS
             </div>
 
             <div className="player-controls">
-                <button onClick={handlePrev} disabled={currentStepIndex === 0} className="control-btn">
-                    <ChevronLeft /> Previous
-                </button>
+                {isInSubsteps && currentStepIndex === 0 ? (
+                    <button onClick={onExitSubsteps} className="control-btn return-btn">
+                        <CornerUpLeft size={16} /> Return
+                    </button>
+                ) : (
+                    <button onClick={handlePrev} disabled={currentStepIndex === 0} className="control-btn">
+                        <ChevronLeft /> Previous
+                    </button>
+                )}
 
-                <div className="citation-info">
-                    <span>{synthesis.meta.author}, {synthesis.meta.year}</span>
-                    <span className="journal-name">{synthesis.meta.journal}</span>
-                </div>
+                {!isInSubsteps && (
+                    <div className="citation-info">
+                        <span>{synthesis.meta.author}, {synthesis.meta.year}</span>
+                        <span className="journal-name">{synthesis.meta.journal}</span>
+                    </div>
+                )}
 
-                <button onClick={handleNext} disabled={currentStepIndex === totalSteps - 1} className="control-btn">
-                    Next <ChevronRight />
-                </button>
+                {isInSubsteps && currentStepIndex === totalSteps - 1 ? (
+                    <button onClick={onExitSubsteps} className="control-btn return-btn">
+                        Return <CornerUpLeft size={16} />
+                    </button>
+                ) : (
+                    <button onClick={handleNext} disabled={currentStepIndex === totalSteps - 1} className="control-btn">
+                        Next <ChevronRight />
+                    </button>
+                )}
             </div>
         </div>
     );

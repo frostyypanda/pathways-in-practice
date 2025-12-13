@@ -27,6 +27,8 @@ const Synthesis = () => {
     });
 
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
+    // Navigation stack for substeps: each entry is { sequence, stepIndex }
+    const [navigationStack, setNavigationStack] = useState([]);
 
     const toggleQuizSetting = (id) => {
         setQuizSettings(prev => {
@@ -37,6 +39,39 @@ const Synthesis = () => {
             localStorage.setItem('openSynth_quizSettings', JSON.stringify(newSettings));
             return newSettings;
         });
+    };
+
+    // Get current sequence based on navigation stack
+    const getCurrentSequence = () => {
+        if (navigationStack.length === 0) {
+            return synthesis?.sequence || [];
+        }
+        // Navigate through the stack to get the current substeps sequence
+        let currentSeq = synthesis?.sequence || [];
+        for (const frame of navigationStack) {
+            const step = currentSeq[frame.stepIndex];
+            if (step?.substeps) {
+                currentSeq = step.substeps;
+            }
+        }
+        return currentSeq;
+    };
+
+    const isInSubsteps = navigationStack.length > 0;
+
+    const enterSubsteps = (substeps) => {
+        // Push current state to stack and reset step index for substeps
+        setNavigationStack(prev => [...prev, { stepIndex: currentStepIndex }]);
+        setCurrentStepIndex(0);
+    };
+
+    const exitSubsteps = () => {
+        if (navigationStack.length > 0) {
+            const newStack = [...navigationStack];
+            const lastFrame = newStack.pop();
+            setNavigationStack(newStack);
+            setCurrentStepIndex(lastFrame.stepIndex);
+        }
     };
 
     useEffect(() => {
@@ -57,25 +92,36 @@ const Synthesis = () => {
     if (loading) return <div className="loading">Loading synthesis...</div>;
     if (!synthesis) return <div className="error">Synthesis not found.</div>;
 
-    const totalSteps = synthesis.sequence ? synthesis.sequence.length : 0;
+    const currentSequence = getCurrentSequence();
+    const totalSteps = currentSequence.length;
 
     return (
         <div className="synthesis-page">
             <header className="synthesis-header compact-header">
                 <div className="header-split">
-                    <Link to="/" className="back-link"><ArrowLeft size={16} /> Back to Library</Link>
+                    {isInSubsteps ? (
+                        <button onClick={exitSubsteps} className="back-link">
+                            <ArrowLeft size={16} /> Back to Parent Step
+                        </button>
+                    ) : (
+                        <Link to="/" className="back-link"><ArrowLeft size={16} /> Back to Library</Link>
+                    )}
                     {totalSteps > 0 && <span className="step-counter">Step {currentStepIndex + 1} / {totalSteps}</span>}
-                    <h1 className="compact-title">{synthesis.meta.molecule_name}</h1>
+                    {!isInSubsteps && <h1 className="compact-title">{synthesis.meta.molecule_name}</h1>}
                 </div>
             </header>
 
             <QuizControls settings={quizSettings} onToggle={toggleQuizSetting} />
             <SequencePlayer
+                sequence={currentSequence}
                 synthesis={synthesis}
                 quizSettings={quizSettings}
                 currentStepIndex={currentStepIndex}
                 setCurrentStepIndex={setCurrentStepIndex}
                 isLandscape={isLandscape}
+                isInSubsteps={isInSubsteps}
+                onEnterSubsteps={enterSubsteps}
+                onExitSubsteps={exitSubsteps}
             />
         </div>
     );

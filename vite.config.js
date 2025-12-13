@@ -11,7 +11,7 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
         name: 'Pathways Practice',
-        short_name: 'Pathways',
+        short_name: 'PathwaysPractice',
         description: 'Community-driven chemical synthesis library',
         theme_color: '#2c3e50',
         icons: [
