@@ -88,3 +88,12 @@ Synthesis JSON files follow this structure:
 ## Quiz Mode
 
 Quiz settings are persisted to localStorage under `openSynth_quizSettings`. When a part is hidden, clicking the placeholder reveals it.
+
+## Documentation Reminders
+
+**IMPORTANT**: After significant changes, remind the user to update `README.md`. Significant changes include:
+- Moving to a new domain
+- Publishing to App Store / Play Store
+- Adding new features (multiple choice quiz, new UI modes, etc.)
+- Major UI/UX changes
+- New integrations or technical changes
