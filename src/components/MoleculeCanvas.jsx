@@ -1,9 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 
 // Single molecule canvas component
+// Renders at 2x resolution for crisp display on all screens
 const SingleMoleculeCanvas = React.memo(({ smiles, width = 300, height = 200, theme = 'light' }) => {
     const canvasRef = useRef(null);
     const [error, setError] = React.useState(null);
+
+    // Use 2x scale for high-resolution rendering
+    const scale = 2;
+    const renderWidth = width * scale;
+    const renderHeight = height * scale;
 
     useEffect(() => {
         if (!smiles || !canvasRef.current || !window.SmilesDrawer) return;
@@ -13,8 +19,8 @@ const SingleMoleculeCanvas = React.memo(({ smiles, width = 300, height = 200, th
 
         try {
             const drawer = new window.SmilesDrawer.Drawer({
-                width: width,
-                height: height,
+                width: renderWidth,
+                height: renderHeight,
                 compactDrawing: false,
             });
 
@@ -28,7 +34,7 @@ const SingleMoleculeCanvas = React.memo(({ smiles, width = 300, height = 200, th
             console.error(`Failed to initialize SmilesDrawer for SMILES "${smiles}":`, e);
             setError(e.message || "Init Error");
         }
-    }, [smiles, width, height, theme]);
+    }, [smiles, renderWidth, renderHeight, theme]);
 
     if (error) {
         return (
@@ -43,8 +49,9 @@ const SingleMoleculeCanvas = React.memo(({ smiles, width = 300, height = 200, th
     return (
         <canvas
             ref={canvasRef}
-            width={width}
-            height={height}
+            width={renderWidth}
+            height={renderHeight}
+            style={{ width: `${width}px`, height: `${height}px` }}
             className="molecule-canvas"
         />
     );
