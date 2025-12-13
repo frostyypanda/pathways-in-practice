@@ -1,6 +1,64 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
+  "definitions": {
+    "step": {
+      "type": "object",
+      "properties": {
+        "step_id": {
+          "type": "string",
+          "description": "Step identifier (e.g., '1', '1.1', '1.1.1' for nested substeps)"
+        },
+        "reaction_type": {
+          "type": "string"
+        },
+        "reagents": {
+          "type": "string",
+          "description": "Text names of reagents shown as labels (not drawn structures)"
+        },
+        "reagent_smiles": {
+          "type": "string",
+          "description": "SMILES for reagents shown as drawn molecular structures"
+        },
+        "reagent_split_by_plus": {
+          "type": "boolean"
+        },
+        "conditions": {
+          "type": "string"
+        },
+        "yield": {
+          "type": "string"
+        },
+        "reactant_smiles": {
+          "type": "string"
+        },
+        "reactant_split_by_plus": {
+          "type": "boolean"
+        },
+        "product_smiles": {
+          "type": "string"
+        },
+        "product_split_by_plus": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "substeps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/step"
+          },
+          "description": "Nested substeps (supports up to 4-5 levels deep)"
+        }
+      },
+      "required": [
+        "step_id",
+        "reactant_smiles",
+        "product_smiles"
+      ]
+    }
+  },
   "properties": {
     "meta": {
       "type": "object",
@@ -26,8 +84,9 @@
         "doi": {
           "type": "string"
         },
-        "patent_url": {
-          "type": "string"
+        "source_url": {
+          "type": "string",
+          "description": "Source URL - extract from the final step of the main sequence"
         }
       },
       "required": [
@@ -40,51 +99,9 @@
     "sequence": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "step_id": {
-            "type": "integer"
-          },
-          "reaction_type": {
-            "type": "string"
-          },
-          "reagents": {
-            "type": "string"
-          },
-          "reagent_smiles": {
-            "type": "string"
-          },
-          "reagent_split_by_plus": {
-            "type": "boolean"
-          },
-          "conditions": {
-            "type": "string"
-          },
-          "yield": {
-            "type": "string"
-          },
-          "reactant_smiles": {
-            "type": "string"
-          },
-          "reactant_split_by_plus": {
-            "type": "boolean"
-          },
-          "product_smiles": {
-            "type": "string"
-          },
-          "product_split_by_plus": {
-            "type": "boolean"
-          },
-          "notes": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "step_id",
-          "reactant_smiles",
-          "product_smiles"
-        ]
-      }
+        "$ref": "#/definitions/step"
+      },
+      "description": "Array of synthesis steps, always starting with step_id '1'"
     }
   },
   "required": [
