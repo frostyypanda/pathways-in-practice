@@ -245,15 +245,43 @@ def call_llm(model_alias: str, messages: list) -> dict:
     except Exception:
         cost = None
 
+    # Extract detailed token info
+    usage = response.usage
+    prompt_tokens = usage.prompt_tokens
+    completion_tokens = usage.completion_tokens
+    total_tokens = usage.total_tokens
+
+    # Try to get thinking tokens from completion_tokens_details (Gemini 2.5+)
+    thinking_tokens = 0
+    reasoning_tokens = 0
+    if hasattr(usage, 'completion_tokens_details') and usage.completion_tokens_details:
+        details = usage.completion_tokens_details
+        thinking_tokens = getattr(details, 'thinking_tokens', 0) or 0
+        reasoning_tokens = getattr(details, 'reasoning_tokens', 0) or 0
+
+    # Cache info
+    cached_tokens = 0
+    if hasattr(usage, 'prompt_tokens_details') and usage.prompt_tokens_details:
+        cached_tokens = getattr(usage.prompt_tokens_details, 'cached_tokens', 0) or 0
+
+    # Get reasoning/thinking content if available
+    message = response.choices[0].message
+    reasoning_content = getattr(message, 'reasoning_content', None)
+    thinking_content = getattr(message, 'thinking', None)
+
     return {
-        "content": response.choices[0].message.content,
+        "content": message.content,
+        "reasoning_content": reasoning_content,
+        "thinking": thinking_content,
         "usage": {
-            "prompt_tokens": response.usage.prompt_tokens,
-            "completion_tokens": response.usage.completion_tokens,
-            "total_tokens": response.usage.total_tokens,
-            # Cache info if available
-            "cached_tokens": getattr(getattr(response.usage, "prompt_tokens_details", None), "cached_tokens", 0) or 0,
+            "prompt_tokens": prompt_tokens,
+            "completion_tokens": completion_tokens,
+            "total_tokens": total_tokens,
+            "cached_tokens": cached_tokens,
+            "thinking_tokens": thinking_tokens,
+            "reasoning_tokens": reasoning_tokens,
         },
+        "usage_raw": str(usage),  # Raw usage for debugging
         "cost": cost,
         "model": response.model,
     }
@@ -352,13 +380,35 @@ Please validate these against the screenshot and provide corrected SMILES."""
             print("LLM Response:")
             print("="*60)
             print(result["content"])
+
+            # Show reasoning/thinking content if available
+            if result.get("reasoning_content"):
+                print("\n" + "="*60)
+                print("REASONING/THINKING CONTENT:")
+                print("="*60)
+                print(result["reasoning_content"])
+            elif result.get("thinking"):
+                print("\n" + "="*60)
+                print("THINKING:")
+                print("="*60)
+                print(result["thinking"])
+
             print("\n" + "-"*60)
             print(f"Model: {result['model']}")
-            print(f"Tokens: {result['usage']['prompt_tokens']:,} input + {result['usage']['completion_tokens']:,} output = {result['usage']['total_tokens']:,} total")
+            print(f"\nToken Breakdown:")
+            print(f"  Input:  {result['usage']['prompt_tokens']:,} tokens")
+            print(f"  Output: {result['usage']['completion_tokens']:,} tokens")
+            if result['usage']['thinking_tokens']:
+                print(f"    - Thinking: {result['usage']['thinking_tokens']:,} tokens")
+                print(f"    - Response: {result['usage']['completion_tokens'] - result['usage']['thinking_tokens']:,} tokens")
+            if result['usage']['reasoning_tokens']:
+                print(f"    - Reasoning: {result['usage']['reasoning_tokens']:,} tokens")
+            print(f"  Total:  {result['usage']['total_tokens']:,} tokens")
             if result['usage']['cached_tokens']:
-                print(f"Cached: {result['usage']['cached_tokens']:,} tokens")
+                print(f"  Cached: {result['usage']['cached_tokens']:,} tokens")
             if result['cost'] is not None:
-                print(f"Cost: ${result['cost']:.6f}")
+                print(f"\nCost: ${result['cost']:.6f}")
+            print(f"\nRaw usage: {result['usage_raw']}")
 
     finally:
         conn.close()
