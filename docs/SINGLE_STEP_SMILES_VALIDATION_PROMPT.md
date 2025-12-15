@@ -17,6 +17,8 @@ You will receive:
 3. **Previous step product SMILES** (optional): For continuity check (should match current reactant)
 4. **Next step reactant SMILES** (optional): For continuity check (should match current product)
 
+**Note**: The previous/next step SMILES are also unverified and may contain inaccuracies or artifacts. Use them as a reference for continuity, but do not assume they are correct. If there's a mismatch, flag it—either step could be wrong.
+
 ## Your Task
 
 Validate, filter, and correct the provided SMILES to match what's shown in the screenshot.
@@ -73,7 +75,7 @@ If provided:
 - **Previous product** should match **current reactant** (or be very similar)
 - **Current product** should match **next reactant**
 
-Flag any mismatches - this helps identify which step has the error.
+Flag any mismatches—but remember the adjacent step SMILES are also unverified. A mismatch means one of the steps has an error, not necessarily the current one. Report what you observe so discrepancies can be investigated.
 
 ## Output Format
 
