@@ -85,6 +85,19 @@ Synthesis JSON files follow this structure:
 }
 ```
 
+## Adding New Syntheses
+
+When adding a new synthesis JSON file:
+1. Create the JSON file in `public/data/{class}/` (e.g., `public/data/terpenes/molecule_author_year.json`)
+2. **IMPORTANT**: Add an entry to `public/data/index.json` with:
+   - `id`: matches `meta.id` in the synthesis file
+   - `molecule_name`: display name
+   - `class`: molecule class (Terpene, Pharmaceutical, Alkaloid, etc.)
+   - `author`: author name
+   - `year`: publication year
+   - `path`: relative path from `/data/` (e.g., `/data/terpenes/aberrarone_carreira_2022.json`)
+   - `step_count`: number of steps in the synthesis
+
 ## Quiz Mode
 
 Quiz settings are persisted to localStorage under `openSynth_quizSettings`. When a part is hidden, clicking the placeholder reveals it.

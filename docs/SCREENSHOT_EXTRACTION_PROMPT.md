@@ -1,4 +1,4 @@
-You are analyzing a directory of synthesis screenshot files. Your task is to extract synthesis data and generate a recursive JSON structure that reflects the hierarchy of the files.
+You are analyzing a directory of synthesis screenshot files along with pre-extracted SMILES data. Your task is to extract synthesis data, validate and clean the provided SMILES, and generate a recursive JSON structure that reflects the hierarchy of the files.
 
 ## 1. Screenshot Structure
 
@@ -31,7 +31,58 @@ The filenames follow a recursive pattern:
    - Place the child Step Object inside the parent's `substeps` array
    - **Do not flatten the structure** - JSON nesting depth must match filename nesting depth
 
-## 3. Pre-processing: Sort and Group
+## 3. SMILES Input Format
+
+You will receive pre-extracted SMILES data in JSON format alongside the screenshots. Each synthesis step has THREE associated SMILES fields grouped together:
+
+```json
+{
+  "sequence_01": {
+    "reactant": "CC1=CC=C(N)N=C1",
+    "reagent": "CC.CC.CC.[Tb+3]",
+    "product": "CC1=CC=C(Br)N=C1.C"
+  },
+  "sequence_02": {
+    "reactant": "CC1=CC=C(Br)N=C1.CI",
+    "reagent": "C(CO)O.CC.[Cl-].[Mg+2]",
+    "product": "CC1=CN=C(C=C1)C2=CC=C(C)C=N2.CCCCCCC"
+  },
+  "sequence_02_sub_01": {
+    "reactant": "...",
+    "reagent": "...",
+    "product": "..."
+  }
+}
+```
+
+### Understanding the Input
+
+- **reactant**: SMILES for the structure(s) shown on the LEFT of the arrow
+- **reagent**: SMILES for any drawn reagent structures shown above/below the arrow (NOT text labels)
+- **product**: SMILES for the structure(s) shown on the RIGHT of the arrow
+
+The JSON keys match the screenshot filenames (e.g., `sequence_01` corresponds to `sequence_01.png`).
+
+### Known Issues with Pre-extracted SMILES
+
+The SMILES extraction program often produces **junk artifacts** that you must filter out:
+
+1. **Multiple SMILES fragments**: The extractor may capture multiple molecules, some correct, some noise
+   - Example: `CC1=CC=C(Br)N=C1.C` - the `.C` is junk
+   - Example: `CC1=CC=C(Br)N=C1.CI` - the `.CI` is likely junk
+
+2. **Repeated small fragments**: Often indicates OCR/extraction noise
+   - Example: `CC.CC.CC.CC.CC.CC` - repeated ethane is noise
+
+3. **Long alkyl chains**: Usually extraction artifacts from background/borders
+   - Example: `CCCCCCCCCCC.CCCCCCCCCCCC.CCCCCCCCCC` - long chains are typically junk
+
+4. **Wrong metal ions**: OCR may misread labels
+   - Example: `[Tb+3]` appearing in reagents when the image shows `NaNO₂`
+
+5. **Reagent SMILES for text-only reagents**: If reagents are shown as TEXT labels (not drawn structures), the `reagent` field in the input JSON should be ignored entirely
+
+## 4. Pre-processing: Sort and Group
 
 **CRITICAL FIRST STEP**: Before extracting any data:
 
@@ -42,7 +93,7 @@ The filenames follow a recursive pattern:
 
 **IMPORTANT**: The `sequence` array always starts with `step_id: "1"`. Even if screenshots show steps 18-25, your first main step should be `step_id: "1"`.
 
-## 4. JSON Structure
+## 5. JSON Structure
 
 ### Schema
 
@@ -96,19 +147,75 @@ Each step in `sequence` (and nested `substeps`) must have:
 - **product_smiles**: SMILES for RIGHT structure(s). Use dot notation for multiple products.
 - **\*_split_by_plus**: Set to `true` if structures shown with "+" symbol between them, `false` if side-by-side. Omit if only one structure.
 
-## 5. SMILES Generation Rules
+## 6. SMILES Processing Rules
 
-- Carefully analyze each 2D structure
-- Include stereochemistry where shown (use `@`, `@@`, `/`, `\`)
-- **Verify continuity**: Product of step N should match reactant of step N+1
-- **Abbreviations**: Use ANY abbreviation for protecting groups by enclosing in square brackets (must start with uppercase). Examples: `[OEt]`, `[OMe]`, `[OAc]`, `[OBz]`, `[Ph]`, `[Bn]`, `[TBDPS]`, `[TBS]`, `[TIPS]`, `[TMS]`, `[PMB]`, `[Boc]`, `[Fmoc]`, `[Cbz]`, `[Ts]`, `[Ns]`, `[Bz]`, `[Ac]`
-- If shown abbreviated in screenshot, keep abbreviated. If drawn out, do not abbreviate.
+Your task is to **validate, filter, and refine** the provided SMILES—NOT generate them from scratch.
 
-## 6. Source URL Extraction
+### Step 1: Visual Validation
+
+For each structure in the screenshot, compare against the provided SMILES:
+1. Count heavy atoms (non-hydrogen) - does the SMILES match the drawn structure?
+2. Verify ring systems match
+3. Check functional groups are correct
+4. Confirm stereochemistry where shown (use `@`, `@@`, `/`, `\`)
+
+### Step 2: Filter Junk SMILES
+
+Junk SMILES are only those ones which are NOT included in the image.
+When the provided SMILES contains multiple dot-separated fragments, filter as follows:
+
+1. **Identify the target molecule**: Look at the screenshot to understand what molecule SHOULD be there
+2. **Keep only matching fragments**: Select the SMILES fragment(s) that match the drawn structure
+3. **Remove noise patterns**:
+   - Single atoms or very small fragments (`.C`, `.N`, `.O`)
+   - Repeated identical fragments (`CC.CC.CC.CC`)
+   - Long unbranched alkyl chains (`CCCCCCCCC`) unless actually in the structure
+   - Metal ions that don't match the reaction (`[Tb+3]`, `[Mg+2]` unless specified)
+   - Random salts/counterions not relevant to the chemistry
+
+**Example filtering**:
+```
+Input:  CC1=CN=C(C=C1)C2=CC=C(C)C=N2.CCCCCCCCCCC.CCCCCCCCCCCC.CCCCCC.CCCCCC
+Output: CC1=CN=C(C=C1)C2=CC=C(C)C=N2
+```
+
+### Step 3: Handle Reagent SMILES
+
+- If reagents are shown as **TEXT labels** (e.g., "Pd/C, NaOH"), put them in `reagents` field and leave `reagent_smiles` empty
+- If reagents are **DRAWN structures**, validate/filter the `reagent` SMILES from the input JSON and put in `reagent_smiles`
+- If the input `reagent` SMILES is entirely junk (doesn't match any drawn structure), discard it completely
+
+### Step 4: Apply Abbreviations
+
+**CRITICAL**: If a group is shown ABBREVIATED in the screenshot but EXPANDED in the SMILES, convert to the abbreviated form.
+
+Common abbreviations (enclose in square brackets, must start with uppercase):
+- Protecting groups: `[TBDPS]`, `[TBS]`, `[TIPS]`, `[TMS]`, `[PMB]`, `[Boc]`, `[Fmoc]`, `[Cbz]`, `[Tr]`
+- Esters/ethers: `[OMe]`, `[OEt]`, `[OAc]`, `[OBz]`, `[OBn]`
+- Common groups: `[Ph]`, `[Bn]`, `[Ts]`, `[Ns]`, `[Bz]`, `[Ac]`, `[Piv]`
+
+**Rules**:
+- If shown abbreviated in screenshot → use abbreviation in SMILES
+- If drawn out fully in screenshot → keep expanded SMILES (do NOT abbreviate)
+- Match the screenshot's representation exactly
+
+**Example**:
+```
+Screenshot shows: [structure]-O-Si(t-Bu)(Ph)2 abbreviated as "OTBDPS"
+Input SMILES:  CC(C)(C)[Si](OC1=CC=CC=C1)(c2ccccc2)c3ccccc3
+Output SMILES: [OTBDPS]C1=CC=CC=C1
+```
+
+### Step 5: Verify Continuity
+
+- Product SMILES of step N should match reactant SMILES of step N+1
+- If they don't match, investigate which SMILES needs correction
+
+## 7. Source URL Extraction
 
 **IMPORTANT**: The `source_url` in the `meta` object should be extracted from the **final step of the main sequence** (the last `sequence_X.png` file, not substeps). Look for any URL or citation reference displayed in that screenshot.
 
-## 7. Output Format Example
+## 8. Output Format Example
 
 Input files:
 - `sequence_1.png`
@@ -199,7 +306,7 @@ Output JSON:
 }
 ```
 
-## 8. Quality Checklist
+## 9. Quality Checklist
 
 Before submitting, verify:
 - [ ] Screenshots sorted by filename
@@ -207,15 +314,19 @@ Before submitting, verify:
 - [ ] All main steps captured (no gaps in step numbers)
 - [ ] **Sequence starts with step_id "1"**
 - [ ] All substeps nested under correct parents based on filename hierarchy
+- [ ] **SMILES validated against screenshot structures** (atom count, rings, functional groups)
+- [ ] **Junk SMILES fragments filtered out** (no random alkyl chains, repeated fragments, wrong ions)
+- [ ] **Abbreviations applied correctly** (match screenshot representation)
 - [ ] All SMILES are chemically valid
 - [ ] Product of step N = Reactant of step N+1
 - [ ] Reagents match what's shown (text in `reagents`, drawn in `reagent_smiles`)
+- [ ] **Reagent SMILES empty when reagents are text-only labels**
 - [ ] Yields captured where visible
 - [ ] Reaction types correctly identified
 - [ ] **Source URL extracted from final main step**
 - [ ] JSON is valid and properly nested
 
-## 9. Missing Steps
+## 10. Missing Steps
 
 If any steps are missing from the screenshots, report them:
 
