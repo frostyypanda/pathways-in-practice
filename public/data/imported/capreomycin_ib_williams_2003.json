@@ -1,0 +1,267 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "capreomycin-ib-williams-2003",
+        "molecule_name": "Capreomycin IB",
+        "class": "Natural Product",
+        "author": "Williams",
+        "year": 2003
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Mixed Anhydride Formation / Carboxylic Acid Activation",
+            "reagents": "NMM",
+            "reagent_smiles": "CCOC(=O)Cl",
+            "conditions": "EtOAc, 0°C",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCCC[C@H](C(=O)O)N[Boc]",
+            "product_smiles": "CCOC(=O)OC(=O)[C@H](CCCNC[Boc])N[Boc]",
+            "notes": "Formation of a mixed anhydride from a Boc-protected lysine derivative with ethyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Arndt–Eistert Homologation (Diazotization)",
+            "reagents": "CH2N2",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCCC[C@@H]([Boc]N)C(=O)OC(=O)OCC",
+            "product_smiles": "[Boc]NCCC[C@@H]([Boc]N)C(=O)C(=[N+]=[N-])",
+            "notes": "Conversion of a mixed anhydride to a diazoketone via reaction with diazomethane. The chiral center configuration is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Arndt-Eistert Homologation",
+            "reagents": "C₆H₅COAg, CH₃OH, NEt₃, H₂O",
+            "reagent_smiles": "[Ag+].O=C([O-])c1ccccc1.CO.CCN(CC)CC.O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCCC[C@H](C(=O)C=[N+]=[N-])N[Boc]",
+            "product_smiles": "[Boc]NCCC[C@H](CC(=O)O)N[Boc]",
+            "notes": "Arndt-Eistert homologation of an alpha-diazo ketone to a carboxylic acid, with retention of stereochemistry at the alpha-carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Carboxylic acid activation / Esterification",
+            "reagents": "DCC",
+            "reagent_smiles": "O=C1CCC(=O)N1O",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@H](CC(=O)O)CC[NH][Boc]",
+            "product_smiles": "[Boc]N[C@H](CC(=O)ON1C(=O)CCC1=O)CC[NH][Boc]",
+            "notes": "Di-Boc protected amino acid is converted to N-hydroxysuccinimide ester using DCC and N-hydroxysuccinimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling / Peptide Bond Formation",
+            "reagents": "NMM",
+            "reagent_smiles": "COC(=O)[C@H](CN)[N][Cbz]",
+            "conditions": "CH2Cl2",
+            "yield": "92%",
+            "reactant_smiles": "[Boc]NCCC[C@@H](CC(=O)ON1C(=O)CCC1=O)[N][Boc]",
+            "product_smiles": "[Boc]NCCC[C@@H](CC(=O)NC[C@H](C(=O)OC)[N][Cbz])[N][Boc]",
+            "notes": "Amide coupling of an N-hydroxysuccinimide (NHS) ester with a primary amine, forming a peptide bond.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Hoffman Rearrangement",
+                    "reagents": "PIDA",
+                    "reagent_smiles": "",
+                    "conditions": "EtOAc, CH3CN, 20 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Cbz]N[C@H](CC(=O)N)C(=O)O",
+                    "product_smiles": "COC(=O)[C@H](CN)[Cbz]N",
+                    "notes": "Hofmann rearrangement of an amide (beta-amide, alpha-amino acid derivative) to an amine, with simultaneous esterification of the carboxylic acid to a methyl ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis (Saponification)",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]NCCC[C@@H]([Boc]N)CC(=O)NC[C@@H](C(=O)OC)[Cbz]N",
+            "product_smiles": "[Boc]NCCC[C@@H]([Boc]N)CC(=O)NC[C@@H](C(=O)O)[Cbz]N",
+            "notes": "Base-catalyzed hydrolysis of methyl ester to carboxylic acid. Boc and Cbz protecting groups remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Peptide Coupling / Amide Formation",
+            "reagents": "EDCI, HOBt, NMM",
+            "reagent_smiles": "N[C@H](C(=O)OCC)[C@@H](OCC)OCC.Cl",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "[Boc]N[C@@H](CCC[Boc]N)C(=O)NCC(=O)N[C@H](C[Cbz]N)C(=O)O",
+            "product_smiles": "[Boc]N[C@@H](CCC[Boc]N)C(=O)NCC(=O)N[C@H](C[Cbz]N)C(=O)N(C(=O)OCC)C([C@@H](OCC)OCC)",
+            "notes": "Amide bond formation between the C-terminal carboxylic acid of the reactant and the alpha-amine of the reagent.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Spiro Orthoester Formation / Acetalization",
+                    "reagents": "TiCl4, NEt3",
+                    "reagent_smiles": "C(OCC)(OCC)OCC",
+                    "conditions": "CH2Cl2, -78 °C - 0 °C",
+                    "yield": "85%",
+                    "reactant_smiles": "O=C1OC[C@H]([Ph])[C@@H]([Ph])N(C1)[Cbz]",
+                    "product_smiles": "C(OCC)(OCC)1OC[C@H]([Ph])[C@@H]([Ph])N(C1)[Cbz]",
+                    "notes": "Formation of a spiro orthoester from a lactone carbonyl via reaction with triethyl orthoformate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Hydrogenation",
+                    "reagents": "H2, Pd(OH)2",
+                    "reagent_smiles": "",
+                    "conditions": "THF: MeOH",
+                    "yield": "99%",
+                    "reactant_smiles": "[Cbz]N1[C@@H](c2ccccc2)COC(=O)[C@H]1C(OCC)(OCC)",
+                    "product_smiles": "N[C@@H](C(=O)O)C(OCC)(OCC)",
+                    "notes": "Hydrogenation of N-Cbz group and lactone ring opening to form a free amine and carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Fischer Esterification",
+                    "reagents": "EtOH, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "Δ",
+                    "yield": "96%",
+                    "reactant_smiles": "CCOC([C@H](C(=O)O)N)OCC",
+                    "product_smiles": "CCOC(=O)[C@H](C(OCC)OCC)N.Cl",
+                    "notes": "Acid-catalyzed esterification of a carboxylic acid to its ethyl ester, forming the amine hydrochloride salt.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "H2",
+            "reagent_smiles": "CCO.O[Pd](O)O",
+            "conditions": "EtOH",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]HN[C@@H](CCCNC[Boc])C(=O)N[C@@H](CN[Cbz])C(=O)NC(C(O[Et])O[Et])C(=O)O[Et]",
+            "product_smiles": "[Boc]HN[C@@H](CCCNC[Boc])C(=O)N[C@@H](CN)C(=O)NC(C(O[Et])O[Et])C(=O)O[Et]",
+            "notes": "Cbz protecting group is removed to yield a primary amine via hydrogenolysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Macrocyclization (Amide bond formation)",
+            "reagents": "DIC, HOBt",
+            "reagent_smiles": "O=C(OC(C)(C)C)N[C@H](C(=O)N)[C@@H](C)C(=O)O",
+            "conditions": "THF, DMF, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "O=C(OC(C)(C)C)N[C@H](CCCNC(=O)OC(C)(C)C)C(=O)NCC([C@H](N))C(=O)NC(C(OCC)OCC)C(=O)OCC",
+            "product_smiles": "CCOC(=O)C(C(OCC)OCC)NC(=O)NCC([C@H]1N)C(=O)N[C@H](C(=O)N)[C@@H](C)N(C(=O)OC(C)(C)C)C(=O)2[C@H](CCCNC(=O)OC(C)(C)C)N(C(=O)OC(C)(C)C)C12",
+            "notes": "A macrocyclic peptide is formed by two amide bond formations: the reactant's `NH2` side chain reacts with the reagent's `COOH` group, and the reactant's Lysine C-terminal `C(=O)` reacts with the reagent's N-terminal `BocHN` group (where the N becomes a tertiary amide within the ring). The reactant's N-terminal Boc group and its Lysine side chain Boc group remain. The acetal group on the product remains.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Peptide coupling",
+                    "reagents": "NH3, HOBt",
+                    "reagent_smiles": "N[C@@H](C)C(=O)[OBzl]",
+                    "conditions": "DMF",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@H](CC(=O)N)C(=O)OC1=CC=C(C=C1)[N+](=O)[O-]",
+                    "product_smiles": "[Boc]N[C@@H](CC(=O)N)C(=O)N[C@@H](C)C(=O)[OBzl]",
+                    "notes": "Amide bond formation via activated ester (4-nitrophenyl ester) and free amine, preserving stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Debenzylation / Hydrogenolysis",
+                    "reagents": "H2, Pd",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C[C@@H](C(=O)[OBn])NC(=O)[C@H](CC(=O)N)N[Boc]",
+                    "product_smiles": "C[C@@H](C(=O)O)NC(=O)[C@H](CC(=O)N)N[Boc]",
+                    "notes": "Hydrogenolysis of a benzyl ester to a carboxylic acid, with a Boc-protected amine and an asparagine residue.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hoffman Rearrangement",
+            "reagents": "PhI(O2CCF3)2, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DMF, H2O",
+            "yield": "87%",
+            "reactant_smiles": "CCOC(=O)[C@H](C(OCC)OCC)NC(=O)C(CNC(=O)C[C@H](CCCNC(=O)OC(C)(C)C)NC(=O)OC(C)(C)C)NC(=O)[C@H](C)NC(=O)[C@H](CC(=O)N)NC(=O)OC(C)(C)C",
+            "product_smiles": "CCOC(=O)[C@H](C(OCC)OCC)NC(=O)C(CNC(=O)C[C@H](CCCNC(=O)OC(C)(C)C)NC(=O)OC(C)(C)C)NC(=O)[C@H](C)NC(=O)[C@H](CN)NC(=O)OC(C)(C)C",
+            "notes": "Hoffman rearrangement of a primary amide to an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection (Catalytic Hydrogenation)",
+            "reagents": "H2, Pd-C",
+            "reagent_smiles": "CCO.[Pd]",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "[Cbz]N[C@@H]1C(=O)N[C@H](C)C(=O)N[C@@H](CCCNC(=O)OC(C)(C)C)C(=O)N[C@H](CCCNC(=O)OC(C)(C)C)C(=O)N[C@@H]([C@H](C(OCC)OCC)C(=O)OCC)C(=O)N[C@@H](CC[C@@H]2N=C([NH])N[CH2][CH2][C@H]2C(=O)N1)[NH]C(=O)OC(C)(C)C.Cl",
+            "product_smiles": "N[C@@H]1C(=O)N[C@H](C)C(=O)N[C@@H](CCCNC(=O)OC(C)(C)C)C(=O)N[C@H](CCCNC(=O)OC(C)(C)C)C(=O)N[C@@H]([C@H](C(OCC)OCC)C(=O)OCC)C(=O)N[C@@H](CC[C@@H]2N=C([NH])N[CH2][CH2][C@H]2C(=O)N1)[NH]C(=O)OC(C)(C)C.Cl",
+            "notes": "Catalytic hydrogenation of a Cbz-protected macrocyclic peptide. The Cbz group is removed to yield a free amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, EtOH",
+            "reagent_smiles": "CCO.[Li+].[OH-]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "N[C@@H](CCC1CNC(=N)N1)C(=O)N[C@@H](C)C(=O)N(C(=O)OC(C)(C)C)[C@@H](CCCNC(=O)OC(C)(C)C)C(=O)N[C@@H](C)C(=O)NC(C(=O)OCC)(C(OCC)OCC).Cl",
+            "product_smiles": "N[C@@H](CCC1CNC(=N)N1)C(=O)N[C@@H](C)C(=O)N(C(=O)OC(C)(C)C)[C@@H](CCCNC(=O)OC(C)(C)C)C(=O)N[C@@H](C)C(=O)NC(C(=O)O)(C(OCC)OCC).Cl",
+            "notes": "Hydrolysis of the ethyl ester to a carboxylic acid at the C-terminus of the peptide.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Macrocyclization / Peptide Bond Formation",
+            "reagents": "EDCI, HOAt",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, DMF, rt",
+            "yield": "20% (3 steps)",
+            "reactant_smiles": "CC(C)OC(=O)N[C@@H]([C@@H](C)O)C(=O)N1[C@H](C(=O)N[C@@H](C)C(=O)N[C@@H](N)CC(=O)N[C@H](CCCNC(=O)OC(C)(C)C)NC(=O)OC(C)(C)C)C[C@@H]2C(=N)N(C1)[C@H](C(=O)O)[C@@H](OCC)OCC.[ClH]",
+            "product_smiles": "CC(C)OC(=O)N[C@@H]([C@@H](C)O)C(=O)N1[C@H](C(=O)N[C@@H](C)C(=O)N[C@H](C(=O)N2[C@H]([C@@H]3C[NH+]C(=N)N23)[C@H](C(=O)N[C@@H](CC(=O)N[C@H](CCCNC(=O)OC(C)(C)C)NC(=O)OC(C)(C)C)[C@@H](OCC)OCC)C)C)C1.[ClH]",
+            "notes": "Formation of a new amide bond between the free alpha-amine of the diaminopropionic acid (Dap) residue and the carboxylic acid of the capreomycinic acid (Cpa) residue to complete the macrocyclic peptide.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "HCOOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(OC(C)(C)C)N[C@H](C)C(=O)N[C@H](C)C(=O)N[C@H](CCCN(C(=O)OC(C)(C)C))C(=O)N1[C@H](CCC(=O)N=C(C)C1)C(=O)N[C@H](C(OCC)OCC)C(=O)N[C@H](C2CCNC(=N)N2)C(=O)N.Cl",
+            "product_smiles": "N[C@H](C)C(=O)N[C@H](C)C(=O)N[C@H](CCCN)C(=O)N1[C@H](CCC(=O)N=C(C)C1)C(=O)N[C@H](C(OCC)OCC)C(=O)N[C@H](C2CCNC(=N)N2)C(=O)N",
+            "notes": "Deprotection of N-terminal Boc and Lysine side-chain Boc groups to their corresponding primary amines using formic acid. The HCl salt is also removed.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Acetal hydrolysis, Dehydration, Intramolecular cyclization",
+            "reagents": "2N HCl, urea",
+            "reagent_smiles": "",
+            "conditions": "acetone, Δ, rt",
+            "yield": "50-60%",
+            "reactant_smiles": "N[C@H]1C(=O)N[C@H](C)C(=O)N[C@H](CCCN)C(=O)N[C@H]2C(=O)N[C@@H](C(OCC)OCC)C(=O)N[C@H](CCCN3C(=O)NC(=N)N3)C(=O)N[C@H](C(=O)N1)CN2",
+            "product_smiles": "N[C@H]1C(=O)N[C@H](C)C(=O)N[C@H](CCCN)C(=O)N[C@H]2C(=O)N[C@H](C=C(N)C(=O)N)C(=O)N[C@H](CCCN3C(=O)NC(=N)N3)C(=O)N[C@H](C(=O)N1)CN2.Cl",
+            "notes": "Hydrolysis of the diethyl acetal of Capreomycin IA precursor to an aldehyde, followed by intramolecular condensation via dehydration and other steps to form Capreomycin IB, featuring an alpha,beta-dehydro-beta-amino-beta-carbamoyl propanoic acid residue and a cyclic urea moiety. The yield is for a 2-step process.",
+            "substeps": []
+        }
+    ]
+}

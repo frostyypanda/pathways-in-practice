@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lazertinib-leclaza-janssen-unknown-2024",
+        "molecule_name": "Lazertinib (Leclaza Janssen)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Nucleophilic Substitution (SNAr)",
+            "reagents": "morpholine, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "96%",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)F)[N+](=O)[O-])N",
+            "product_smiles": "COC1=C(C=C(C(=C1)N2CCOCC2)[N+](=O)[O-])N",
+            "notes": "Fluorine is substituted by morpholine via an SNAr reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Formylation",
+            "reagents": "HCO2H, AcOH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "91%",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)N2CCOCC2)[N+](=O)[O-])N",
+            "product_smiles": "COC1=C(C=C(C(=C1)N2CCOCC2)[N+](=O)[O-])NC=O",
+            "notes": "The amino group of the aromatic reactant is formylated to a formamide group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitro group reduction",
+            "reagents": "NH4HCO2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "EtOH, THF",
+            "yield": "68%",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)N2CCOCC2)[N+](=O)[O-])NC=O",
+            "product_smiles": "COC1=C(C=C(C(=C1)N2CCOCC2)N)NC=O",
+            "notes": "Reduction of a nitro group to an amine using ammonium formate as a hydrogen source and palladium on carbon catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide formation",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "C(CCl)C(=O)Cl.CC#N",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)N2CCOCC2)N)NC=O",
+            "product_smiles": "COC1=C(C=C(C(=C1)N2CCOCC2)NC(=O)CCCl)NC=O",
+            "notes": "Acylation of an aromatic amine with an acyl chloride to form a secondary amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination",
+            "reagents": "Et3N, MeCN",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)N2CCOCC2)NC(=O)CCCl)NC=O",
+            "product_smiles": "C=CC(=O)NC1=CC(=C(C=C1N2CCOCC2)OC)NC=O",
+            "notes": "Elimination of HCl from a 3-chloropropanamide to form an acrylamide. The reaction states '2 steps' but only the overall transformation is shown.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Aromatic Nucleophilic Substitution (SNAr)",
+            "reagents": "t-BuONa",
+            "reagent_smiles": "CS(=O)(=O)C1=NC=CC(=N1)N2C=C(C3=CC=CC=C3)C(=N2)C=O",
+            "conditions": "THF, DMA",
+            "yield": "",
+            "reactant_smiles": "C=CC(=O)NC1=CC(=C(C=C1N2CCOCC2)OC)NC=O",
+            "product_smiles": "C=CC(=O)NC1=CC(=C(C=C1N2CCOCC2)OC)N(C=O)C3=NC=CC(=N3)N4C=C(C=O)C(=N4)C5=CC=CC=C5",
+            "notes": "The nitrogen of the formamide group in the reactant acts as a nucleophile, displacing the methylsulfonyl group on the pyrimidine of the drawn reagent. The pyrazole ring in the drawn reagent (phenyl at C4, aldehyde at C5) is depicted with the substituents swapped in the product (aldehyde at C4, phenyl at C5). The provided SMILES reflect the exact structures shown in the screenshot for each component, despite this internal inconsistency in the diagram itself.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "N-Arylation (SNAr)",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "CSC1=NC=CC(=N1)Cl",
+                    "conditions": "DMF",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C=C1)C2=NNC=C2C=O",
+                    "product_smiles": "CSC1=NC=CC(=N1)N2C=C(C3=CC=CC=C3)C(=N2)C=O",
+                    "notes": "The pyrazole nitrogen of 3-phenyl-1H-pyrazole-4-carbaldehyde acts as a nucleophile, displacing chloride from 4-chloro-2-(methylthio)pyrimidine in the presence of potassium carbonate (K2CO3) in DMF.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Sulfide Oxidation",
+                    "reagents": "(NH4)6Mo7O24, H2O2",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, EtOH",
+                    "yield": "75% (2 steps)",
+                    "reactant_smiles": "CSC1=NC=CC(=N1)N2C=C(C3=CC=CC=C3)C(=N2)C=O",
+                    "product_smiles": "CS(=O)(=O)C1=NC=CC(=N1)N2C=C(C3=CC=CC=C3)C(=N2)C=O",
+                    "notes": "Oxidation of a methylthio group (sulfide) to a methylsulfone group (sulfone).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O",
+            "yield": "56%",
+            "reactant_smiles": "C=CC(=O)NC1=CC(=C(C=C1N2CCOCC2)OC)N(C(=O)H)C3=NC=CC(=N3)N4C=C(C=O)C(=N4)C5=CC=CC=C5",
+            "product_smiles": "C=CC(=O)NC1=CC(=C(C=C1N2CCOCC2)OC)NC3=NC=CC(=N3)N4C=C(C=O)C(=N4)C5=CC=CC=C5",
+            "notes": "Deprotection of N-formyl group to a secondary amine. The yield is reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Amination",
+            "reagents": "Me2NH2Cl, DIEA, STAB-H",
+            "reagent_smiles": "",
+            "conditions": "DMA",
+            "yield": "92%",
+            "reactant_smiles": "C=CC(=O)NC1=CC(=C(C=C1N5CCOCC5)OC)NC2=NC=CC(=N2)N3C=C(C=O)C(=N3)C4=CC=CC=C4",
+            "product_smiles": "C=CC(=O)NC1=CC(=C(C=C1N2CCOCC2)OC)NC3=NC=CC(=N3)N4C=C(CN(C)C)C(=N4)C5=CC=CC=C5",
+            "notes": "Aldehyde group is reductively aminated with dimethylamine to a dimethylaminomethyl group.",
+            "substeps": []
+        }
+    ]
+}

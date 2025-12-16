@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lifitegrast-xiidra-shire-unknown-2024",
+        "molecule_name": "Lifitegrast (Xiidra Shire)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine protection",
+            "reagents": "Boc2O, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "H2O, dioxane",
+            "yield": "98%",
+            "reactant_smiles": "C1=CC(=CC(=C1)C[C@H](C(=O)O)N)Br",
+            "product_smiles": "[Boc]N[C@H](CC1=CC=CC(=C1)Br)C(=O)O",
+            "notes": "Protection of the primary amine of 3-bromophenylalanine with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Copper-catalyzed C-S coupling / Sulfone formation",
+            "reagents": "CH3SO2Na, CuI, K2CO3",
+            "reagent_smiles": "C1C[C@@H](C(=O)O)NC1",
+            "conditions": "DMSO, 87 °C",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=CC(=C1)Br)C(=O)O",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC=CC(=C1)S(=O)(=O)C)C(=O)O",
+            "notes": "Copper-catalyzed coupling of an aryl bromide with a methyl sulfinate derivative to form an aryl methyl sulfone, mediated by (S)-proline.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Esterification",
+            "reagents": "BnOH, EDC, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C - 5 °C",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=CC(=C1)S(=O)(=O)C)C(=O)O",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC=CC(=C1)S(=O)(=O)C)C(=O)OCC2=CC=CC=C2",
+            "notes": "Carboxylic acid is esterified with benzyl alcohol (BnOH) using EDC/DMAP coupling.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Boc deprotection, ketone to ester transformation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 15 °C",
+            "yield": "94%",
+            "reactant_smiles": "CC(=O)[C@H](CC1=CC=CC(=C1)S(=O)(=O)C)N[Boc]",
+            "product_smiles": "CS(=O)(=O)C1=CC(=CC=C1)C[C@H](C(=O)O[Bn])N",
+            "notes": "The Boc protecting group is removed from the amine, and the methyl ketone is transformed into a benzyl ester, retaining the stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Formation",
+            "reagents": "NMM, H2O",
+            "reagent_smiles": "C1CN([Tr])CC2=C1C(=C(C(=C2)Cl)C(=O)Cl)Cl",
+            "conditions": "IPAc, 20 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "CS(=O)(=O)C1=CC(=CC=C1)C[C@H](C(=O)OCC2=CC=CC=C2)N",
+            "product_smiles": "C1CN([Tr])CC2=C1C(=C(C(=C2Cl)C(=O)N[C@H](CC3=CC=CC(=C3)S(=O)(=O)C)C(=O)OCC4=CC=CC=C4)Cl)C1",
+            "notes": "Amide bond formation between a primary amine (from amino acid ester) and an acid chloride.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Reductive Amination",
+                    "reagents": "NaBH3CN",
+                    "reagent_smiles": "NCCN.Cl",
+                    "conditions": "",
+                    "yield": "35%",
+                    "reactant_smiles": "C1=C(C=C(C=C1C=O)Cl)Cl",
+                    "product_smiles": "C(CNCC1=CC(=CC(=C1)Cl)Cl)Cl",
+                    "notes": "Aldehyde undergoes reductive amination with 2-chloroethylamine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Intramolecular Friedel-Crafts Alkylation / Cyclization",
+                    "reagents": "AlCl3, NH4Cl",
+                    "reagent_smiles": "",
+                    "conditions": "185 °C",
+                    "yield": "91%",
+                    "reactant_smiles": "ClCCNCc1cc(Cl)cc(Cl)c1",
+                    "product_smiles": "Clc1ccc2c(c1Cl)CNCC2",
+                    "notes": "Intramolecular cyclization of an N-(2-chloroethyl)benzylamine derivative to form a tetrahydroisoquinoline.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "N-protection",
+                    "reagents": "Ph3CCl, DIPEA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "89%",
+                    "reactant_smiles": "C1CNCC2=C1C(=CC(=C2)Cl)Cl",
+                    "product_smiles": "C1CN(CC2=C1C(=CC(=C2)Cl)Cl)[Tr]",
+                    "notes": "N-protection of a secondary amine with a trityl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Directed ortho metalation (DOM) / Carboxylation",
+                    "reagents": "n-BuLi, TMEDA, CO2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "75%",
+                    "reactant_smiles": "Clc1cc(Cl)c2c(c1)CN(CC2)[Tr]",
+                    "product_smiles": "Clc1c(C(=O)O)c(Cl)c2c(c1)CN(CC2)[Tr]",
+                    "notes": "Carboxylation of an aryl chloride via directed ortho metalation, installing a carboxylic acid group between two existing chlorine atoms on the aromatic ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.5",
+                    "reaction_type": "Acylation / Acid Chloride Formation",
+                    "reagents": "SOCl2, NMM",
+                    "reagent_smiles": "O=S(Cl)Cl.CN1CCOCC1",
+                    "conditions": "IPAc, 10-15 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1CN(CC2=C1C(=C(C(=C2)Cl)C(=O)O)Cl)[Tr]",
+                    "product_smiles": "C1CN(CC2=C1C(=C(C(=C2)Cl)C(=O)Cl)Cl)[Tr]",
+                    "notes": "Conversion of a carboxylic acid to an acid chloride using thionyl chloride and N-methylmorpholine (NMM).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane, rt",
+            "yield": "88%",
+            "reactant_smiles": "CS(=O)(=O)C1=CC(=CC=C1)C[C@@H](C(=O)OCC2=CC=CC=C2)NC(=O)C3=C(C4=C(C=C3Cl)CN([Tr])CC4)Cl",
+            "product_smiles": "CS(=O)(=O)C1=CC(=CC=C1)C[C@@H](C(=O)OCC2=CC=CC=C2)NC(=O)C3=C(C4=C(C=C3Cl)CNCC4)Cl",
+            "notes": "Deprotection of Trityl group. Yield reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Formation / Acylation",
+            "reagents": "NMM",
+            "reagent_smiles": "C1=CC(=CC2=C1C=CO2)C(=O)Cl",
+            "conditions": "MEK, 20 °C",
+            "yield": "",
+            "reactant_smiles": "CS(=O)(=O)C1=CC(=CC=C1)C[C@@H](C(=O)OCC2=CC=CC=C2)NC(=O)C3=C(C4=C(C=C3Cl)CNCC4)Cl",
+            "product_smiles": "CS(=O)(=O)C1=CC(=CC=C1)C[C@@H](C(=O)OCC2=CC=CC=C2)NC(=O)C3=C(C4=C(C=C3Cl)CN(CC4)C(=O)C5=CC=C6C=COC6=C5)Cl",
+            "notes": "Acylation of a secondary amine with 1-benzofuran-5-carbonyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Benzyl Ester Hydrolysis",
+            "reagents": "NaOH, TBAH",
+            "reagent_smiles": "",
+            "conditions": "H2O, acetone, 25 °C",
+            "yield": "79%",
+            "reactant_smiles": "CS(=O)(=O)C1=CC(=CC=C1)C[C@@H](C(=O)[OBn])NC(=O)C2=C(Cl)C3=C(C=C2Cl)CN(CC3)C(=O)C4=CC=C5C=COC5=C4",
+            "product_smiles": "CS(=O)(=O)C1=CC(=CC=C1)C[C@@H](C(=O)O)NC(=O)C2=C(Cl)C3=C(C=C2Cl)CN(CC3)C(=O)C4=CC=C5C=COC5=C4",
+            "notes": "Hydrolysis of a benzyl ester to a carboxylic acid using NaOH and a phase-transfer catalyst (TBAH). The reaction proceeds with retention of stereochemistry at the chiral center.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "jambolanin-i-minehan-2021",
+        "molecule_name": "Jambolanin I",
+        "class": "Natural Product",
+        "author": "Minehan",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "THF",
+            "reagent_smiles": "[Li]CH2P(=O)(OC)OC",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=C1CC[C@@H](C)CC1=O)C",
+            "product_smiles": "CC(=C1CC[C@@H](C)CC1(CP(=O)(OC)OC)O)C",
+            "notes": "Nucleophilic addition of dimethyl (lithiomethyl)phosphonate to the ketone of (+)-pulegone, forming a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylic Dehydration / Rearrangement",
+            "reagents": "Ce(OTf)3",
+            "reagent_smiles": "",
+            "conditions": "iPrOH, 80 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C(C(=C)C)=CC(O)(CP(=O)(OC)OC)CC1",
+            "product_smiles": "C[C@H]1C(C(=C)C)=C(CP(=O)(OC)OC)CCC1",
+            "notes": "Dehydration and rearrangement of a tertiary allylic alcohol to a substituted cyclohexadiene, likely catalyzed by Lewis acid Ce(OTf)3.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, DMS, MeOH",
+            "reagent_smiles": "CSC.CO",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "C=C(C)C1=C(C[C@H](C)CC1)CP(=O)(OC)OC",
+            "product_smiles": "O=P(OC)(OC)CC(=O)CC[C@H](C)CCC(=O)C(=O)C",
+            "notes": "Ozonolysis of internal alkene and isopropenyl group followed by reductive workup (DMS) leads to ring-opening and formation of multiple carbonyl groups, including an alpha-diketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Horner Wadsworth Emmons Olefination",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "60%",
+            "reactant_smiles": "C[C@H](CCC(=O)C(=O)C)CC(=O)CP(=O)(OC)OC",
+            "product_smiles": "C[C@H]1CC(=O)C=C(C(=O)C)CCC1",
+            "notes": "Intramolecular Horner-Wadsworth-Emmons olefination to form a 7-membered alpha,beta-unsaturated cyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Addition",
+            "reagents": "MeMgBr",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC(=CC(=O)C1)C(=O)C",
+            "product_smiles": "C[C@H]1CCC(=CC(=O)C1)C(C)(C)O",
+            "notes": "Methylmagnesium bromide adds to the ketone of the acetyl group, forming a tertiary alcohol. The ring ketone and the double bond remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Silylation (Alcohol Protection)",
+            "reagents": "TESCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CCC(=CC(=O)C1)C(C)(C)O",
+            "product_smiles": "[OTES]C(C)(C)C1=CC(=O)C[C@H](C)CC1",
+            "notes": "Tertiary alcohol is protected as a triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Michael/Nef Reaction",
+            "reagents": "LDA, HCl",
+            "reagent_smiles": "CCC(=C)[N+](=O)[O-]",
+            "conditions": "THF, -78 to -20 °C",
+            "yield": "48%",
+            "reactant_smiles": "CC[Si](CC)(CC)OC(C)(C)1C=CC(=O)C[C@H](C)CC1",
+            "product_smiles": "CC[Si](CC)(CC)OC(C)(C)1C=CC(=O)[C@@H](CC(=O)CC)[C@H](C)CC1",
+            "notes": "Michael addition of 2-nitrobut-1-ene to an enone, followed by Nef reaction to convert the nitro group to a ketone. Two stereocenters are maintained/formed; one existing methyl-bearing chiral center and one new chiral center from the addition.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Aldol Condensation / Cyclization",
+            "reagents": "KOtBu, THF, tBuOH",
+            "reagent_smiles": "CC(C)(C)O.CC(C)(C)[O-].[K+]",
+            "conditions": "40 °C",
+            "yield": "",
+            "reactant_smiles": "CCC(=O)C[C@@H]1[C@H](C)CCC(=CC1=O)C(C)(C)[OTES]",
+            "product_smiles": "[OTES]C(C)(C)C1=CC2=C(C)C(=O)C[C@@H]2[C@H](C)CC1",
+            "notes": "Intramolecular aldol cyclization of a diketone followed by dehydration to form a fused bicyclic enone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (Silyl ether)",
+            "reagents": "TBAF, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "12% (2 steps)",
+            "reactant_smiles": "[OTES]C(C)(C)C1=CC2=C(C)C(=O)C[C@H]2[C@@H](C)CC1",
+            "product_smiles": "C[C@@H]1CCC(=CC2=C(C)C(=O)C[C@H]12)C(C)(C)O",
+            "notes": "TES ether deprotection to tertiary alcohol.",
+            "substeps": []
+        }
+    ]
+}

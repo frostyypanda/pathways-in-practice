@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dictamnol-wender-1999",
+        "molecule_name": "Dictamnol",
+        "class": "Natural Product",
+        "author": "Wender",
+        "year": 1999
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Johnson-Claisen rearrangement",
+            "reagents": "EtCO₂H, MeC(OEt)₃",
+            "reagent_smiles": "CCC(=O)O.CC(OCC)(OCC)OCC",
+            "conditions": "170 °C",
+            "yield": "",
+            "reactant_smiles": "C#CCO",
+            "product_smiles": "CCOC(=O)CCC=C=C(C)C",
+            "notes": "Johnson-Claisen rearrangement of propargyl alcohol with methyl triethoxyorthoacetate to form an allenic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "THF",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "-78 to 0 °C",
+            "yield": "74%",
+            "reactant_smiles": "CCOC(=O)CC=C=C(C)C",
+            "product_smiles": "CC(=C=CCCO)C",
+            "notes": "Reduction of an ethyl ester to a primary alcohol using lithium aluminum hydride. The allene moiety remains untouched. The drawn stereochemical indicator on the terminal allene carbon with two identical methyl groups is geometrically inconsistent for defining chirality at that carbon; the provided SMILES reflects the achiral structure as implicitly depicted.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, TEA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "OCCC=C=C[C@@H](C)C",
+            "product_smiles": "[OMs]CC=C=C[C@@H](C)C",
+            "notes": "Conversion of a primary alcohol to its corresponding mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Finkelstein reaction",
+            "reagents": "NaI, acetone",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "C[C@@H]1C=C=C([C@H](C)CCC(COS(=O)(=O)C)C1)",
+            "product_smiles": "C[C@@H]1C=C=C([C@H](C)CCC(CI)C1)",
+            "notes": "Finkelstein reaction converting a primary mesylate into a primary iodide, with retention of allene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Metal-halogen exchange",
+            "reagents": "pentane",
+            "reagent_smiles": "CC(C)(C)[Li].CCOCC",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C=C/CCC[I]",
+            "product_smiles": "C/C=C=C/CCC[Li]",
+            "notes": "Conversion of an alkyl iodide to an alkyllithium reagent via metal-halogen exchange using t-BuLi.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Organolithium addition to Weinreb amide",
+            "reagents": "",
+            "reagent_smiles": "CN(C(=O)/C=C/C1CC1)OC",
+            "conditions": "Et2O, -78 °C",
+            "yield": "82%",
+            "reactant_smiles": "[Li]CCC=C=C(C)",
+            "product_smiles": "C1CC1/C=C/C(=O)CCC=C=C(C)C",
+            "notes": "Formation of a ketone via nucleophilic addition of an allenyllithium to a Weinreb amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Itsuno-Corey reduction",
+            "reagents": "(R)-CBS, BH3·SMe2",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78%",
+            "reactant_smiles": "CC(=C=CCC(=O)/C=C/C1CC1)C",
+            "product_smiles": "O[C@@H]1CCC(C(=C=C(C)C))C/C=C(/C2CC2)C1",
+            "notes": "Asymmetric reduction of ketone to chiral alcohol with concurrent cyclization. Note a carbon count discrepancy between reactant and product images (14C vs 16C) implying an unstated reagent or issue in drawing/transcription.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Allene-Ene Cyclization",
+            "reagents": "[Rh(CO)2Cl]2",
+            "reagent_smiles": "",
+            "conditions": "DCE, 80 °C",
+            "yield": "76%",
+            "reactant_smiles": "CC(C)=C=CCC[C@H](O)/C=C/C1CC1",
+            "product_smiles": "O[C@H]1CC[C@@H]2[C@@H]1C(=C)C=CCC2",
+            "notes": "Rhodium-catalyzed intramolecular allene-ene cyclization to form a bicyclo[5.3.0]decene derivative (Dictamnol).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)OI1(C2=CC=CC=C2C(=O)O1)OC(=O)C",
+            "conditions": "DCM, 0 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=C1C[C@H]2C[C@H](O)C[C@H]2C=CCC1",
+            "product_smiles": "C=C1C[C@H]2C[C](=O)CC[C@H]2C=CCC1",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin periodinane. The cis-fused bicyclic system and the stereochemistry of the remaining chiral centers are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Grignard Reaction / Carbonyl Addition",
+            "reagents": "MeMgBr",
+            "reagent_smiles": "C[Mg]Br",
+            "conditions": "Et2O, 0 °C",
+            "yield": "50%",
+            "reactant_smiles": "O=C1CC[C@@H]2[C@H]1C(=C)C=CCC2",
+            "product_smiles": "O[C@@](C)1CC[C@@H]2[C@H]1C(=C)C=CCC2",
+            "notes": "Addition of methylmagnesium bromide to a cyclic ketone to form a tertiary alcohol, (+)-Dictamnol. Stereochemistry at the newly formed alcohol center is controlled.",
+            "substeps": []
+        }
+    ]
+}

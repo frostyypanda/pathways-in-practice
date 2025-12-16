@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "grandisol-list-2010",
+        "molecule_name": "Grandisol",
+        "class": "Natural Product",
+        "author": "List",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA, allyl bromide",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1CCOC1=O",
+            "product_smiles": "C=CC[C@@]1(C)CCOC1=O",
+            "notes": "Alpha-alkylation of a methyl lactone with allyl bromide, establishing a chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Lactone Reduction",
+            "reagents": "DIBALH",
+            "reagent_smiles": "",
+            "conditions": "toluene, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "O=C1OCC[C@](C)(CC=C)1",
+            "product_smiles": "O[C@@H]1OC[C@](C)(CC=C)C1",
+            "notes": "Reduction of a lactone to a lactol (hemiacetal) using DIBALH, retaining the stereochemistry of the existing chiral center and establishing a new one.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation, Silyl Ether Formation, Ring Opening",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "92%",
+            "reactant_smiles": "O[C@H]1CC[C@@](C)(CC=C)O1",
+            "product_smiles": "C=CC[C@@](C)(CCO[TBDPS])C=O",
+            "notes": "The tetrahydrofuran-2-ol undergoes ring opening. The C2-alcohol is oxidized to an aldehyde, and the original ring oxygen becomes a primary alcohol, which is then protected as a TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Gilbert Seyferth homologation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(=O)C(=[N+]=[N-])P(=O)(OC)OC",
+            "conditions": "MeOH",
+            "yield": "87%",
+            "reactant_smiles": "C=CC[C@@](C)(CCO[OTBDPS])C=O",
+            "product_smiles": "C=CC[C@@](C)(C#C)CCO[OTBDPS]",
+            "notes": "Aldehyde is converted to an alkyne via Gilbert-Seyferth homologation. The stereochemistry at the adjacent chiral center is retained (R).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA, MeOTf",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "C=CC[C@](C)(C#C)CCO[TBDPS]",
+            "product_smiles": "C=CC[C@](C)(C#CC)CCO[TBDPS]",
+            "notes": "Methylation of a terminal alkyne using LDA and methyl trifluoromethanesulfonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Pauson-Khand / [2+2] cycloaddition with cyclopropane formation",
+            "reagents": "HG II",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl3, mw, 75 °C",
+            "yield": "83%",
+            "reactant_smiles": "[TBDPS]OCH2CH2[C@](C)(C#CC)C=CC",
+            "product_smiles": "C=C(C)C1=C2C([C@](C)(CCO[TBDPS]))C1C2",
+            "notes": "Intramolecular reaction forming a bicyclic system from an alkyne-alkene precursor.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Raney-Ni",
+            "reagent_smiles": "",
+            "conditions": "iPrOH, hexanes",
+            "yield": "63%",
+            "reactant_smiles": "C=C(C)C1=CC[C@]1(C)CCO[OTBDPS]",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@]1(C)CCO[OTBDPS]",
+            "notes": "Selective hydrogenation of the internal cyclobutene alkene, while the external isopropenyl alkene is retained. The stereochemistry at the quaternary carbon is preserved. A new chiral center is formed with a dashed hydrogen at the hydrogenated carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@](C=C(C))(CCO[TBDPS])C1",
+            "product_smiles": "C[C@H]1CC[C@@](C=C(C))(CCO)C1",
+            "notes": "Acid-catalyzed deprotection of tert-butyldiphenylsilyl (TBDPS) ether to form the primary alcohol, Grandisol.",
+            "substeps": []
+        }
+    ]
+}

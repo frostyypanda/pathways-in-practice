@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fukinone-piers-1970",
+        "molecule_name": "Fukinone",
+        "class": "Natural Product",
+        "author": "Piers",
+        "year": 1970
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-Alkylation",
+            "reagents": "t-BuOH, KOtBu",
+            "reagent_smiles": "BrC(=C)CC(=O)OCC",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "CCCCS/C=C/1\\C(=O)C(C)CC(C)C1",
+            "product_smiles": "CCCCS/C=C/1\\C(=O)[C@@](C)(C(=C)CC(=O)OCC)CC[CH](C)C1",
+            "notes": "Alpha-alkylation of a cyclohexanone derivative with an alpha-bromoacrylate. The new group is introduced at the C3 position (adjacent to the ketone and also bearing a methyl group).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive Desulfurization / Ester Hydrolysis",
+            "reagents": "KOH",
+            "reagent_smiles": "C(COCCO)O",
+            "conditions": "reflux",
+            "yield": "90%",
+            "reactant_smiles": "O=C1C(=C(SCCCC))CC[C@@H](C)[C@](C)(CC(=C)CC(=O)OCC)1",
+            "product_smiles": "O=C1CC[C@@H](C)[C@](C)(CC(=C)CC(=O)O)CC1",
+            "notes": "Reductive cleavage of the vinyl sulfide group and hydrolysis of the ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Lactonization / Intramolecular Cyclization",
+            "reagents": "Ac2O, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "85%",
+            "reactant_smiles": "O=C1CC(C)CC[C@@](C)(C(=C)CC(=O)O)C1",
+            "product_smiles": "C[C@H]1CCC(=C)[C@@]2(C)[C@H]1C(=C)C(=O)O2",
+            "notes": "Intramolecular dehydration and cyclization of a keto-carboxylic acid to form a fused bicyclic lactone with two exocyclic double bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactone to Ketone Conversion",
+            "reagents": "Et2O, MeLi",
+            "reagent_smiles": "CCOCC.[Li]C",
+            "conditions": "-25 °C",
+            "yield": "70%",
+            "reactant_smiles": "C[C@H]1CCC2=C1[C@@](C)(CC(=C)C(=O)OC2)",
+            "product_smiles": "C[C@H]1CCC2=C1[C@@](C)(CC(=C)C(=O)CC2)",
+            "notes": "Conversion of a bicyclic lactone to a bicyclic ketone (Fukinone), involving the loss of one oxygen atom, using methyllithium in diethyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enolization",
+            "reagents": "NaOMe, Octalone",
+            "reagent_smiles": "",
+            "conditions": "Benzene, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC[C@]2(C)C1=CC(=O)C(=C)C2",
+            "product_smiles": "C[C@H]1CCCC2=CC(=O)/C(=C\\O)/C[C@]12C",
+            "notes": "Base-catalyzed conversion of an exocyclic methylene group to an enol (vinyl alcohol) in an alpha,beta-unsaturated ketone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, NaOEt",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "84% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CCCC2=CC(=O)/C(=C\\O)/C[C@]12C",
+            "product_smiles": "C[C@@H]1CCC[C@@H]2CC(=O)/C(=C\\O)/C[C@]12C",
+            "notes": "Selective hydrogenation of an alpha,beta-unsaturated double bond within a fused ring system. The bridgehead double bond is reduced, adding two hydrogens and creating a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dehydrogenation / Oxidation",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "60%",
+            "reactant_smiles": "C[C@H]1CCC[C@H]2CC(=O)/C(=C\\O)/C[C@]12C",
+            "product_smiles": "C[C@H]1CCC[C@H]2CC(=O)/C(=C\\C=O)/C[C@]12C",
+            "notes": "Oxidation of an enol to an alpha,beta-unsaturated aldehyde using DDQ.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "Ag2O",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O",
+            "yield": "92%",
+            "reactant_smiles": "C[C@H]1CCC[C@@H]2CC(=O)C(=C[C@@]12C)C=O",
+            "product_smiles": "C[C@H]1CCC[C@@H]2CC(=O)C(=C[C@@]12C)C(=O)O",
+            "notes": "Oxidation of an α,β-unsaturated aldehyde to an α,β-unsaturated carboxylic acid using silver oxide (Tollens-like oxidation).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification",
+            "reagents": "MeI, Ag2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "92%",
+            "reactant_smiles": "C[C@H]1CCC[C@H]2CC(=O)C(=C[C@]12C)C(=O)O",
+            "product_smiles": "C[C@H]1CCC[C@H]2CC(=O)C(=C[C@]12C)C(=O)OC",
+            "notes": "Methylation of carboxylic acid to methyl ester using iodomethane and silver oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "H2, PtO2",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "97%",
+            "reactant_smiles": "C[C@H]1CCC[C@@H]2CC(=O)C(=C[C@]12C)C(=O)OC",
+            "product_smiles": "C[C@H]1CCC[C@@H]2CC(=O)C(C[C@]12C)C(=O)OC",
+            "notes": "Reduction of an α,β-unsaturated ketone (enone) to a saturated ketone using catalytic hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Grignard-like Addition to Ester",
+            "reagents": "NaOH, MeLi",
+            "reagent_smiles": "",
+            "conditions": "Ether, Et₂O",
+            "yield": "80%",
+            "reactant_smiles": "C[C@H]1CCC[C@@H]2CC(=O)C(C[C@]12C)C(=O)OC",
+            "product_smiles": "C[C@H]1CCC[C@@H]2CC(=O)C(C[C@]12C)C(C)(C)O",
+            "notes": "Methyl ester converted to tertiary alcohol via reaction with methyl lithium.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Dehydration",
+            "reagents": "SOCl2, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "C[C@H]1CCC[C@H]2CC(=O)C(C[C@@]12C)C(C)(C)O",
+            "product_smiles": "C[C@H]1CCC[C@H]2CC(=O)C(C[C@@]12C)C(=C)C",
+            "notes": "Dehydration of a tertiary alcohol to form an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Isomerization",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "C=C(C)C1CC(=O)C2[C@H](C)CC[C@@]3(C)[C@@H]2CCC13",
+            "product_smiles": "CC(=C1CC(=O)C2[C@H](C)CC[C@@]3(C)[C@@H]2CCC13)C",
+            "notes": "Acid-catalyzed double bond migration (isomerization) from an isopropenyl group to an isopropylidene group, forming an α,β-unsaturated ketone (Fukinone).",
+            "substeps": []
+        }
+    ]
+}

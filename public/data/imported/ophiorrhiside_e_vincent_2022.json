@@ -1,0 +1,255 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ophiorrhiside-e-vincent-2022",
+        "molecule_name": "Ophiorrhiside E",
+        "class": "Natural Product",
+        "author": "Vincent",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Silylation",
+            "reagents": "nBuLi, THF",
+            "reagent_smiles": "C[Si](C)(C)Cl",
+            "conditions": "-78 °C",
+            "yield": "99%",
+            "reactant_smiles": "C#CCO",
+            "product_smiles": "[TMS]C#CCO",
+            "notes": "Protection of the terminal alkyne of propargyl alcohol with a trimethylsilyl (TMS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation",
+            "reagents": "AcONa, PCC, SiO₂",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "99%",
+            "reactant_smiles": "[TMS]C#CCO",
+            "product_smiles": "[TMS]C#CC=O",
+            "notes": "Oxidation of a primary propargylic alcohol to a propargylic aldehyde using PCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Knoevenagel Condensation",
+            "reagents": "TFA, MS 4Å",
+            "reagent_smiles": "CCSC(=O)CC(=O)OC",
+            "conditions": "CH₂Cl₂, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "[TMS]C#CC=O",
+            "product_smiles": "CCSC(=O)C(=CC#[TMS])C(=O)OC",
+            "notes": "Knoevenagel condensation of (trimethylsilyl)propynal with methyl 3-(ethylthio)-3-oxopropanoate, forming an α,β-unsaturated thioester/ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Michael Addition",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "O=CCCCSc1ccccc1.O[TMS]C(c1ccccc1)(c2ccccc2)[C@@H]3CCCN3",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CCSC(=O)C(=CC#[TMS])C(=O)OC",
+            "product_smiles": "CCSC(=O)C([C@H](C#C[TMS])[C@@H](CCSc1ccccc1)C=O)C(=O)OC",
+            "notes": "Organocatalytic Michael addition of a phenylthioaldehyde to an α,β-unsaturated ester containing a terminal TMS-alkyne, forming two new chiral centers.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Nucleophilic Substitution",
+                    "reagents": "Et3N, DMF",
+                    "reagent_smiles": "ClCCC#N",
+                    "conditions": "0 °C to rt",
+                    "yield": "95%",
+                    "reactant_smiles": "C1=CC=C(C=C1)SH",
+                    "product_smiles": "C1=CC=C(C=C1)SCCC#N",
+                    "notes": "Thiophenol reacts with 3-chloropropionitrile via nucleophilic substitution at the alkyl halide to form the corresponding thioether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "DIBAL",
+                    "reagent_smiles": "",
+                    "conditions": "benzene",
+                    "yield": "98%",
+                    "reactant_smiles": "C1=CC=C(C=C1)SCCC#N",
+                    "product_smiles": "C1=CC=C(C=C1)SCCC=O",
+                    "notes": "Reduction of a nitrile to an aldehyde using DIBAL.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Tandem Reductive Cyclization / Desulfurization",
+            "reagents": "Pd/C, Et3SiH, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "O=C[C@@H](CCSC1=CC=CC=C1)[C@@H](C#C[TMS])C(C(=O)SCC)C(=O)OC",
+            "product_smiles": "COC(=O)C1=COC(O)[C@@H](CCSC2=CC=CC=C2)[C@@H](C#C[TMS])1",
+            "notes": "Intramolecular cyclization forming a dihydropyran ring, with reduction of an aldehyde to an alcohol and desulfurization of an ethyl thioester. The two existing chiral centers retain their stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Glycosylation",
+            "reagents": "BF3•Et2O, MS 3Å",
+            "reagent_smiles": "CC(=O)OC[C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)OC(=N)C(Cl)(Cl)Cl)OC(=O)C)OC(=O)C)OC(=O)C",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "87%",
+            "reactant_smiles": "COC(=O)C1=CO[CH](O)[C@H](CCSC2=CC=CC=C2)[C@H]1C#[TMS]",
+            "product_smiles": "CC(=O)OC[C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O[C@H]2[C@H](CCSC3=CC=CC=C3)[C@H](C#[TMS])C(=CO2)C(=O)OC)OC(=O)C)OC(=O)C)OC(=O)C",
+            "notes": "Glycosylation of a dihydropyran alcohol with a glucose trichloroacetimidate donor.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Acetylation",
+                    "reagents": "AcONa",
+                    "reagent_smiles": "CC(=O)OC(=O)C",
+                    "conditions": "H2O, 100 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "O[C@@H]1[C@@H](O)[C@H](O)[C@@H](O)[C@@H](CO)O1",
+                    "product_smiles": "CC(=O)O[C@@H]1[C@@H](OC(=O)C)[C@H](OC(=O)C)[C@@H](OC(=O)C)[C@@H](COC(=O)C)O1",
+                    "notes": "Penta-acetylation of alpha-D-glucopyranose.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Deacetylation",
+                    "reagents": "DMF",
+                    "reagent_smiles": "C1=CC=C(C=C1)CN",
+                    "conditions": "60 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(=O)OC[C@@H]1[C@H]([C@@H]([C@H]([C@@H](OC(=O)C)O1)OC(=O)C)OC(=O)C)OC(=O)C",
+                    "product_smiles": "CC(=O)OC[C@@H]1[C@H]([C@@H]([C@H]([C@@H](O)O1)OC(=O)C)OC(=O)C)OC(=O)C",
+                    "notes": "Selective deacetylation of the anomeric acetate group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Glycosyl Trichloroacetimidate Formation",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "C(#N)C(Cl)(Cl)Cl",
+                    "conditions": "CH2Cl2, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(=O)OC[C@@H]1[C@H]([C@@H]([C@H]([C@@H](O)O1)OC(=O)C)OC(=O)C)OC(=O)C",
+                    "product_smiles": "CC(=O)OC[C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)OC(=N)C(Cl)(Cl)Cl)OC(=O)C)OC(=O)C)OC(=O)C",
+                    "notes": "Formation of an alpha-glycosyl trichloroacetimidate from a free anomeric hydroxyl group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAT",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)OC[C@H]1[C@@H]([C@H]([C@@H]([C@H](O1)O[C@H]2[C@H](CCSC3=CC=CC=C3)[C@H](C#C[TMS])C=C(C(=O)OC)O2)OC(=O)C)OC(=O)C)OC(=O)C",
+            "product_smiles": "CC(=O)OC[C@H]1[C@@H]([C@H]([C@@H]([C@H](O1)O[C@H]2[C@H](CCSC3=CC=CC=C3)[C@H](C#C)C=C(C(=O)OC)O2)OC(=O)C)OC(=O)C)OC(=O)C",
+            "notes": "Desilylation of a TMS-protected alkyne to a terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydroboration-Oxidation, Sulfide Oxidation",
+            "reagents": "Cp2ZrHCl, 9-BBN, THF, H2O2, H2O",
+            "reagent_smiles": "",
+            "conditions": "30 °C, 0 °C",
+            "yield": "70%",
+            "reactant_smiles": "COC(=O)C=C1O[C@@H](O[C@H]2[C@@H](OC(C)=O)[C@H](OC(C)=O)[C@@H](OC(C)=O)[C@H](COC(C)=O)O2)[C@@H](CCSC3=CC=CC=C3)[C@H](C#C)C1",
+            "product_smiles": "COC(=O)C=C1O[C@@H](O[C@H]2[C@@H](OC(C)=O)[C@H](OC(C)=O)[C@@H](OC(C)=O)[C@H](COC(C)=O)O2)[C@@H](CCS(=O)C3=CC=CC=C3)[C@H](CC=O)C1",
+            "notes": "Schwartz's reagent-mediated hydroboration of an internal alkyne to form an aldehyde via vinyl zirconium intermediate, followed by oxidation. Simultaneously, the phenyl sulfide is oxidized to a phenyl sulfoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Elimination/Reduction",
+            "reagents": "1,2-dichlorobenzene, OP(OMe)3",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "68%",
+            "reactant_smiles": "CC(=O)OC[C@@H]1[C@H]([C@@H]([C@H]([C@@H](O1)O[C@H]2[C@H](CCS(=O)C3=CC=CC=C3)[C@H](CC=O)C(=CO2)C(=O)OC)OC(=O)C)OC(=O)C)OC(=O)C",
+            "product_smiles": "C=C[C@@H]1[C@H](CC=O)C(=CO[C@H]1O[C@H]2[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O2)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "notes": "Elimination of sulfoxide to form vinyl group, likely via a Ramberg-Bäcklund type elimination or similar phosphite-mediated reduction/elimination.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "88%",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC=O)C(=CO[C@H]1O[C@H]2[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O2)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "product_smiles": "C=C[C@@H]1[C@H](CC(=O)O)C(=CO[C@H]1O[C@H]2[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O2)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "notes": "Aldehyde is oxidized to a carboxylic acid using Jones reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Acyl chloride formation",
+            "reagents": "",
+            "reagent_smiles": "C(=O)(C(=O)Cl)Cl",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC(=O)O)C(=CO[C@H]1O[C@H]2[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O2)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "product_smiles": "C=C[C@@H]1[C@H](CC(=O)Cl)C(=CO[C@H]1O[C@H]2[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O2)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Friedel-Crafts Acylation / Electrophilic Aromatic Substitution",
+            "reagents": "SnCl4, Et2O, CH2Cl2",
+            "reagent_smiles": "CNC(=O)CC1=CNC2=C1C=CC=C2",
+            "conditions": "0 °C to rt",
+            "yield": "44% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC(=O)Cl)C(=CO[C@H]1O[C@H]2[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O2)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "product_smiles": "C=C[C@@H]1[C@H](CC(=O)C2=C(CC(=O)NC)C3=C(C=CC=C3)N2)C(=CO[C@H]1O[C@H]4[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O4)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "notes": "Acylation of indole C-3 with an activated acyl species (derived from the chloroacetyl group of the reactant) catalyzed by SnCl4.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Amidation",
+                    "reagents": "SOCl2",
+                    "reagent_smiles": "CN",
+                    "conditions": "EtOH, reflux",
+                    "yield": "98%",
+                    "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)CC(=O)O",
+                    "product_smiles": "CNC(=O)CC1=CNC2=C1C=CC=C2",
+                    "notes": "Formation of N-methyl-2-(1H-indol-3-yl)acetamide from indole-3-acetic acid and methylamine using thionyl chloride as activating agent.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement",
+            "reagents": "Et3N",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 80 °C",
+            "yield": "30%",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC(=O)C2=C(CC(=O)NC)C3=C(C=CC=C3)N2)C(=CO[C@H]1O[C@H]4[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O4)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "product_smiles": "C=C[C@@H]1[C@H](CC2=C3C(=CC(=O)N2C)C4=CC=CC=C4N3)C(=CO[C@H]1O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O5)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "notes": "Intramolecular cyclization of an indole derivative leading to a complex fused heterocyclic system, Ophiorrhiside E.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Hydrolysis (Deacetylation)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "30% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC2=C3C(=CC(=O)N2C)C4=CC=CC=C4N3)C(=CO[C@H]1O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O5)OC(=O)C)OC(=O)C)OC(=O)C)C(=O)OC",
+            "product_smiles": "C=C[C@@H]1[C@H](CC2=C3C(=CC(=O)N2C)C4=CC=CC=C4N3)C(=CO[C@H]1O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](CO)O5)O)O)O)C(=O)OC",
+            "notes": "Hydrolysis of the acetate protecting groups on the glucose moiety.",
+            "substeps": []
+        }
+    ]
+}

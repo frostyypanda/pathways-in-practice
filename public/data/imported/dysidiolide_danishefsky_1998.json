@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dysidiolide-danishefsky-1998",
+        "molecule_name": "Dysidiolide",
+        "class": "Natural Product",
+        "author": "Danishefsky",
+        "year": 1998
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCC(=C)C",
+            "product_smiles": "C=C(C)CCCO",
+            "notes": "Reduction of an ethyl ester to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)CCCO",
+            "product_smiles": "C=C(C)CCCO[OTs]",
+            "notes": "Primary alcohol is converted into a tosylate ester, activating it for further reactions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "SN2 reaction / Iodination",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "acetone, Δ",
+            "yield": "92%",
+            "reactant_smiles": "C=C(C)CCCO[Ts]",
+            "product_smiles": "C=C(C)CCCI",
+            "notes": "Displacement of tosylate by iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "DME, HMPA",
+            "reagent_smiles": "C[C]1=C(O[Li])CCCC1",
+            "conditions": "-55 °C to rt",
+            "yield": "49%",
+            "reactant_smiles": "C=C(C)CCCI",
+            "product_smiles": "C=C(C)CCC[C@@]1(C)CCCCC1=O",
+            "notes": "Alpha-alkylation of a lithium enolate (formed from 2-methylcyclohexanone) with an alkyl iodide to form a substituted cyclohexanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enol Triflate Formation",
+            "reagents": "Tf2O",
+            "reagent_smiles": "CC1=CC(=NC(=C1)C(C)(C)C)C(C)(C)C",
+            "conditions": "CH2Cl2",
+            "yield": "87%",
+            "reactant_smiles": "C=C(C)CCC[C@@]1(C)CCCCC1=O",
+            "product_smiles": "C=C(C)CCC[C@@]1(C)C=C([OTf])CCC1",
+            "notes": "Conversion of a ketone to an enol triflate using triflic anhydride and a hindered non-nucleophilic pyridine base (DTBMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Stille cross coupling",
+            "reagents": "Pd(PPh3)4, LiCl",
+            "reagent_smiles": "C=C[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "THF, Δ",
+            "yield": "80%",
+            "reactant_smiles": "C=C(C)CCC[C@@]1(C)CC=C(OS(=O)(=O)C(F)(F)F)CC1",
+            "product_smiles": "C=C(C)CCC[C@@]1(C)CC=C(C=C)CC1",
+            "notes": "Stille cross coupling of a vinyl triflate with tributyl(vinyl)tin to form a diene. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Diels Alder cycloaddition",
+            "reagents": "TMSOTf, CH2Cl2",
+            "reagent_smiles": "[OTBDPS]OC/H=C/HCH(C1OCCO1)",
+            "conditions": "-90 °C",
+            "yield": "67%",
+            "reactant_smiles": "C=CC1=C[C@](C)(CCC=C(C)C)CCC1",
+            "product_smiles": "CCC=C(C)C[C@](C)1[C@H]2C=C[C@H](C)[C@@H](C2[CH](C3OCCO3)CC[OTBDPS])C1",
+            "notes": "Validation revealed a major discrepancy in the connectivity of the dienophile and the resulting side chain in the product. The provided dienophile SMILES and drawn structure show a C4 chain with the OTBDPS and dioxolane groups on the ends, while the product shows a C4 chain where the dioxolane is at one end of the chain and the OTBDPS is at the other, attached to the same carbon from the new ring. The SMILES provided here for the dienophile and product accurately reflect their respective drawn structures.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Conjugate Addition / Alkylation",
+                    "reagents": "Me2CuLi, ICH2CO2Et, HMPA",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, -45 °C then -55 °C to rt",
+                    "yield": "55%",
+                    "reactant_smiles": "C#CC1OCCO1",
+                    "product_smiles": "C1OCCO1/C(C)=C\\CC(=O)OCC",
+                    "notes": "Stereoselective conjugate addition of Gilman reagent (Me2CuLi) to the terminal alkyne, followed by alkylation with ethyl iodoacetate (ICH2CO2Et) to form an E-alkene product.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Ester Reduction",
+                    "reagents": "LiBHEt3",
+                    "reagent_smiles": "[Li][BH](CC)(CC)CC",
+                    "conditions": "THF, -78 to -20 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1OCCO1/C=C(\\C)CC(=O)OCC",
+                    "product_smiles": "C1OCCO1/C=C(\\C)CCO",
+                    "notes": "Reduction of an ethyl ester to a primary alcohol using lithium triethylborohydride, while preserving the alkene and acetal functionalities.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Alcohol Protection",
+                    "reagents": "imidazole, TBDPSCl",
+                    "reagent_smiles": "",
+                    "conditions": "-20 °C to rt",
+                    "yield": "68%",
+                    "reactant_smiles": "C/C=C(\\CCO)/C1OCCO1",
+                    "product_smiles": "C/C=C(\\CCO[TBDPS])/C1OCCO1",
+                    "notes": "Protection of primary alcohol as a TBDPS silyl ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetal hydrolysis",
+            "reagents": "Montmorillonite K 10",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "89%",
+            "reactant_smiles": "C=C(C)CCC[C@@]1(C)CCC[C@H]2C1=CC[C@H](C)[C@]2(CC[OTBDPS])C5OCCO5",
+            "product_smiles": "C=C(C)CCC[C@@]1(C)CCC[C@H]2C1=CC[C@H](C)[C@]2(CC[OTBDPS])C=O",
+            "notes": "Hydrolysis of an ethylene glycol acetal to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wolff-Kishner reduction",
+            "reagents": "H2NNH2, KOtBu, n-butanol",
+            "reagent_smiles": "",
+            "conditions": "150 °C",
+            "yield": "74%",
+            "reactant_smiles": "C=C(C)CCC[C@@]1(C)CCC[C@H]2C1=CC[C@H](C)[C@@]2(CC[OTBDPS])C=O",
+            "product_smiles": "C=C(C)CCC[C@@]1(C)CCC[C@]2(C)C1=CC[C@H](C)[C@]2(C)CCO",
+            "notes": "Wolff-Kishner reduction of a ketone to a methylene, accompanied by the deprotection of a TBDPS ether to a primary alcohol. This transformation is consistent with the harsh basic conditions and high temperature.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ley oxidation",
+            "reagents": "TPAP, NMO",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "90%",
+            "reactant_smiles": "C=C(C)CCC[C@@](C)1CC[C@@H]2C=C3C[C@H](C)[C@@](C)(CCO)[C@@H]2C13",
+            "product_smiles": "C=C(C)CCC[C@@](C)1CC[C@@H]2C=C3C[C@H](C)[C@@](C)(CC=O)[C@@H]2C13",
+            "notes": "Primary alcohol oxidized to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "",
+            "reagent_smiles": "C1=COC=C1[Li]",
+            "conditions": "THF, -78 °C",
+            "yield": "34%",
+            "reactant_smiles": "C=C(C)CCC[C@@]1(C)CCC[C@H]2C1=CC[C@H](C)[C@@]2(C)CC=O",
+            "product_smiles": "C=C(C)CCC[C@@]1(C)CCC[C@H]2C1=CC[C@H](C)[C@@]2(C)C[C@](O)(C3=COC=C3)",
+            "notes": "Nucleophilic addition of 2-furyllithium to an aldehyde, forming a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Photooxygenation / Oxidation / Rearrangement",
+            "reagents": "O2, rose bengal, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, hv, -78 °C",
+            "yield": "77%",
+            "reactant_smiles": "C=C(C)CCC[C@@]1(C)CCC[C@H]2C1=CC[C@H](C)[C@]2(C)C[C@@H](C3=COC=C3)O",
+            "product_smiles": "C=C(C)CCC[C@@]1(C)CCC[C@@H]2C1=C3C[C@H](C)[C@]2(C)C[C@@H](C4=CC(=O)O[C@@H]4O)O",
+            "notes": "Photooxygenation of a furan derivative to a butenolide, accompanied by double bond isomerization in the tricyclic core.",
+            "substeps": []
+        }
+    ]
+}

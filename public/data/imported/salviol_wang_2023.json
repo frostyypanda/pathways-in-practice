@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "salviol-wang-2023",
+        "molecule_name": "Salviol",
+        "class": "Natural Product",
+        "author": "Wang",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Wittig reaction",
+            "reagents": "",
+            "reagent_smiles": "P([Ph])([Ph])([Ph])=C(C)C(=O)OCC",
+            "conditions": "toluene, rt",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(CCC=O)C=C1",
+            "product_smiles": "CCOC(=O)/C(=C/CCC1=CC=C(C=C1)OC)/C",
+            "notes": "Wittig reaction of a methoxy-substituted phenyl-aldehyde with an ethyl 2-(triphenylphosphoranylidene)propanoate ylide to form an E-alpha,beta-unsaturated ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C(=C/CCC1=CC=C(C=C1)OC)/C",
+            "product_smiles": "CO/C(C)=C/CCC1=CC=C(C=C1)OC",
+            "notes": "Ethyl ester reduced to a primary alcohol with DIBAL-H, retaining the E-alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Appel Reaction (Alcohol Bromination)",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "BrC(Br)(Br)Br.P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\CCC1=CC=C(C=C1)OC)/CO",
+            "product_smiles": "C/C(=C\\CCC1=CC=C(C=C1)OC)/CBr",
+            "notes": "Primary alcohol is converted to a primary alkyl bromide using carbon tetrabromide and triphenylphosphine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alkyne-Alkyl Halide Cross-Coupling",
+            "reagents": "Na2SO3, CuI, K2CO3, DBU",
+            "reagent_smiles": "C#CC(C)(C)[OBz]",
+            "conditions": "DMF, 23 °C",
+            "yield": "41% (4 steps)",
+            "reactant_smiles": "C/C(=C\\CCC1=CC=C(C=C1)OC)/CBr",
+            "product_smiles": "C/C(=C\\CCC1=CC=C(C=C1)OC)/CC#CC(C)(C)[OBz]",
+            "notes": "Copper-catalyzed cross-coupling of a propargyl benzoate with an alkyl bromide, replacing the bromide with the alkyne moiety while retaining the alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Gold(I)-catalyzed Intramolecular Cyclization/Rearrangement",
+            "reagents": "Au(SMe2)Cl, AgNTf2, chiral bis-phosphine ligand (drawn)",
+            "reagent_smiles": "",
+            "conditions": "toluene, -25 °C",
+            "yield": "86%",
+            "reactant_smiles": "C/C(=C\\CCC1=CC=C(C=C1)OC)/C#CC(C)(C)OC(=O)C2=CC=CC=C2",
+            "product_smiles": "CC1(C)C=C(C[C@]2(C)C3=C(C=CC(=C3)OC)CC[C@H]12)[OBz]",
+            "notes": "Intramolecular cyclization of an alkyne/alkene/arene system. The complex chiral bis-phosphine ligand is drawn.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis / Tautomerization",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O, 23 °C",
+            "yield": "95%",
+            "reactant_smiles": "CC1(C)C=C([OBz])C[C@]2(C)C3=C(C=CC(=C3)OC)CC[C@@H]12",
+            "product_smiles": "CC1(C)CC(=O)C[C@]2(C)C3=C(C=CC(=C3)OC)CC[C@@H]12",
+            "notes": "Hydrolysis of an enol benzoate to the corresponding ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Bromination",
+            "reagents": "AlCl3, NBS",
+            "reagent_smiles": "[Al](Cl)(Cl)Cl.O=C1CN(Br)C(=O)CC1",
+            "conditions": "DCM, 23 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC1(C)CC(=O)C[C@]2(C)C3=C(C=CC(=C3)OC)CC[C@@H]12",
+            "product_smiles": "CC1(C)CC(=O)C[C@]2(C)C3=C(CC[C@@H]12)C=C(C(=C3)OC)Br",
+            "notes": "Electrophilic aromatic bromination of a methoxy-substituted tetralin derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(dppf)Cl2, Cs2CO3",
+            "reagent_smiles": "[K+].[F-]B(F)(F)C(=C)C",
+            "conditions": "THF, H2O, 100 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CC(=O)C[C@]2(C)C3=C(CC[C@@]12C)C=C(C(=C3)OC)Br",
+            "product_smiles": "C=C(C)C1=CC2=C(C=C1OC)[C@@]3(C)CC(=O)CC(C)(C)[C@@H]3CC2",
+            "notes": "Aromatic bromine undergoes Suzuki coupling with potassium isopropenyltrifluoroborate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 23 °C",
+            "yield": "83%",
+            "reactant_smiles": "C=C(C)C1=CC2=C(C=C1OC)[C@@]3(C)CC(=O)CC(C)(C)[C@@H]3CC2",
+            "product_smiles": "CC(C)C1=CC2=C(C=C1OC)[C@@]3(C)CC(=O)CC(C)(C)[C@@H]3CC2",
+            "notes": "Selective reduction of the alkene (isopropenyl group) to an alkane (isopropyl group). The reported yield of 83% is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)C1=CC2=C(C=C1OC)[C@@](C)(CCC(=O)CC(C)(C)[C@H]3)C23",
+            "product_smiles": "CC(C)C1=CC2=C(C=C1O)[C@@](C)(CCC(=O)CC(C)(C)[C@H]3)C23",
+            "notes": "O-demethylation of an aryl methyl ether to a phenol using boron tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ketone Reduction (Luche Reduction)",
+            "reagents": "NaBH4, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "19%",
+            "reactant_smiles": "CC(C)c1cc(O)c2c1CCC3C(C)(C)[C@@H]4[C@@]3(C)CC(=O)C4",
+            "product_smiles": "CC(C)c1cc(O)c2c1CCC3C(C)(C)[C@@H]4[C@@]3(C)C[C@H](O)C4",
+            "notes": "Diastereoselective reduction of a tricyclic ketone to a secondary alcohol, forming a new stereocenter with the hydroxyl group in a 'down' configuration.",
+            "substeps": []
+        }
+    ]
+}

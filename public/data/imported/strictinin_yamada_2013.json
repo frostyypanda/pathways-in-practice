@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strictinin-yamada-2013",
+        "molecule_name": "Strictinin",
+        "class": "Natural Product",
+        "author": "Yamada",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetylation / Protecting group chemistry",
+            "reagents": "NaOAc, Ac2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "C(C1C(C(C(C(O)O1)O)O)O)O",
+            "product_smiles": "[OAc]C[C@H]1OC([C@H]([OAc])[C@@H]([OAc])[C@H]1[OAc])[OAc]",
+            "notes": "Penta-O-acetylation of D-glucose (pyranose form) to form alpha-D-glucopyranose pentaacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Thioglycosylation",
+            "reagents": "EtSH, ZrCl4",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OAc]C[C@@H]1O[C@H]([OAc])[C@@H]([OAc])[C@H]([OAc])[C@@H]1[OAc]",
+            "product_smiles": "[OAc]C[C@@H]1O[C@@H](SCC)[C@@H]([OAc])[C@H]([OAc])[C@@H]1[OAc]",
+            "notes": "Anomeric acetate group replaced by an ethylthio group with inversion of configuration (beta-anomer to alpha-anomer).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection (Zemplén Deacetylation)",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "CCSC[C@H]1O[C@@H](COC(=O)C)[C@@H](OC(=O)C)[C@H](OC(=O)C)[C@@H](OC(=O)C)1",
+            "product_smiles": "CCSC[C@H]1O[C@@H](CO)[C@@H](O)[C@H](O)[C@@H](O)1",
+            "notes": "Hydrolysis of acetate esters to alcohols under basic conditions (sodium methoxide in methanol).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetalization (Benzylidene acetal formation)",
+            "reagents": "CSA",
+            "reagent_smiles": "C(c1ccccc1)(OC)OC",
+            "conditions": "DMF, 15 torr",
+            "yield": "",
+            "reactant_smiles": "CCSC[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]1O",
+            "product_smiles": "CCSC[C@@H]1O[C@H](CO)[C@@H](O)[C@H]2O[C@H](c3ccccc3)O[C@@H]2[C@@H]1O",
+            "notes": "Benzylidene acetal formation between the C2 and C3 hydroxyl groups of the 1-thioethyl beta-D-galactopyranoside. The reported 92% yield is for 3 steps, not this individual step.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "NaH, BnBr",
+            "reagent_smiles": "[NaH].Br[Bn]",
+            "conditions": "DMF, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCSC[C@H]1O[C@H]([C@H](O)[C@@H](O)[C@@H]2OC(C1)C[C@H]2[Ph])",
+            "product_smiles": "CCSC[C@H]1O[C@H]([C@H]([OBn])[C@@H]([OBn])[C@@H]2OC(C1)C[C@H]2[Ph])",
+            "notes": "Two free hydroxyl groups on the carbohydrate core are converted to benzyloxy ethers via Williamson ether synthesis.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Benzylidene Acetal Cleavage",
+            "reagents": "1M aq HCl, acetone",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CCSC[C@@H]1O[C@H]([C@H](O[Bn])[C@@H](O[Bn])[C@H]2O[C@@H]([Ph])O[C@@H]2C[C@H]1)",
+            "product_smiles": "CCSC[C@@H]1O[C@H]([C@H](CO)[C@H](O)[C@@H](O[Bn])[C@H](O[Bn])1)",
+            "notes": "Acid-catalyzed hydrolysis of 4,6-O-benzylidene acetal to yield free hydroxyl groups at C4 and C6.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Esterification",
+            "reagents": "EDCI·HCl, DMAP",
+            "reagent_smiles": "O=C(O)c1cc([MOM])c([Bn])c([MOM])c1",
+            "conditions": "py/DCM",
+            "yield": "99%",
+            "reactant_smiles": "CCSC[C@@H]1O[C@H](CO[Bn])[C@@H](O)[C@H](O)[C@@H]1O[Bn]",
+            "product_smiles": "CCSC[C@@H]1O[C@H](CO[Bn])[C@@H](OC(=O)c2cc([MOM])c([Bn])c([MOM])c2)[C@H](OC(=O)c3cc([MOM])c([Bn])c([MOM])c3)[C@@H]1O[Bn]",
+            "notes": "Two hydroxyl groups of the thioglucoside reactant are esterified with the 4-benzyloxy-3,5-bis(methoxymethoxy)benzoic acid reagent using EDCI·HCl and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (MOMO ethers)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH/THF, 50 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCSC[C@H]1O[C@@H](COC(=O)c2cc(O[MOMO])c([OBn])c(O[MOMO])c2)[C@H]([OBn])[C@@H](OC(=O)c3cc(O[MOMO])c([OBn])c(O[MOMO])c3)[C@@H]1[OBn]",
+            "product_smiles": "CCSC[C@H]1O[C@@H](COC(=O)c2cc(O)c([OBn])c(O)c2)[C@H]([OBn])[C@@H](OC(=O)c3cc(O)c([OBn])c(O)c3)[C@@H]1[OBn]",
+            "notes": "Acid-catalyzed deprotection of methoxymethyl (MOMO) ethers to hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Coupling",
+            "reagents": "CuCl2, BuNH2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "99%",
+            "reactant_smiles": "CCSC[C@H]1O[C@@H](COC(=O)c2cc(O)c([OBn])c(O)c2)[C@H]([OBn])[C@@H](OC(=O)c3cc(O)c([OBn])c(O)c3)[C@H]1[OBn]",
+            "product_smiles": "CCSC[C@H]1O[C@@H](COC(=O)c2cc(O)c3c(O)c(c4c(=O)o[C@H](O)c(O)c43)c2)[C@H]([OBn])[C@@H](OC(=O)c5cc(O)c([OBn])c(O)c5)[C@H]1[OBn]",
+            "notes": "Copper-catalyzed oxidative coupling of two galloyl groups attached to a sugar, forming a hexahydroxydiphenoyl (HHDP) moiety and a macrocyclic lactone (strictinin derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Thioglycoside Hydrolysis",
+            "reagents": "NIS, TfOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF/DCM",
+            "yield": "98%",
+            "reactant_smiles": "CC[S][C@H]1O[C@H](C(=O)O[C@@H]2[C@@H]([BnO])[C@H]([BnO])[C@H]([BnO])C(=O)c3cc([BnO])c([BnO])c([BnO])c3-c4c([BnO])c([BnO])ccc4)[C@@H]([BnO])[C@H]([BnO])[C@H]1O[Bn]",
+            "product_smiles": "O[CH]1O[C@H](C(=O)O[C@@H]2[C@@H]([BnO])[C@H]([BnO])[C@H]([BnO])C(=O)c3cc([BnO])c([BnO])c([BnO])c3-c4c([BnO])c([BnO])ccc4)[C@@H]([BnO])[C@H]([BnO])[C@H]1O[Bn]",
+            "notes": "Hydrolysis of the anomeric ethyl thioether (SEt) to a hemiacetal (OH) using N-iodosuccinimide (NIS) and trifluoromethanesulfonic acid (TfOH) with water.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Esterification",
+            "reagents": "Et3N",
+            "reagent_smiles": "C1=CC=C(C=C1)COC2=CC(=CC(=C2OCC3=CC=CC=C3)OCC4=CC=CC=C4)C(=O)Cl",
+            "conditions": "DCM",
+            "yield": "97%",
+            "reactant_smiles": "C1=CC=C(C=C1)COC2=CC3=C(C(=C2OCC4=CC=CC=C4)C5=C(C(=C(C=C5C(=O)OC6C(COC3=O)OC(C(C6OCC7=CC=CC=C7)OCC8=CC=CC=C8)O)OCC9=CC=CC=C9)OCC%10=CC=CC=C%10)OCC%11=CC=CC=C%11)OCC%12=CC=CC=C%12",
+            "product_smiles": "C1=CC=C(C=C1)COC2=CC3=C(C(=C2OCC4=CC=CC=C4)C5=C(C(=C(C=C5C(=O)OC6C(COC3=O)OC(C(C6OCC7=CC=CC=C7)OCC8=CC=CC=C8)OC(=O)C%13=CC(=CC(=C%13OCC%14=CC=CC=C%14)OCC%15=CC=CC=C%15)OCC%16=CC=CC=C%16)OCC9=CC=CC=C9)OCC%10=CC=CC=C%10)OCC%11=CC=CC=C%11)OCC%12=CC=CC=C%12",
+            "notes": "Esterification of the anomeric hydroxyl group of the sugar moiety with 3,4,5-tris(benzyloxy)benzoyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Debenzylation / Hydrogenation",
+            "reagents": "Pd(OH)₂, H₂",
+            "reagent_smiles": "",
+            "conditions": "THF/MeOH",
+            "yield": "99%",
+            "reactant_smiles": "O=C1OC[C@H](OC(=O)C2=CC(O[Bn])=C(O[Bn])C(O[Bn])=C2)[C@H](O[Bn])[C@@H](O[Bn])[C@@H]1C3=C4C(O[Bn])=C(O[Bn])C(O[Bn])=C3C(=O)O[C@@H](O[Bn])[C@H](O[Bn])[C@H]4O[Bn]",
+            "product_smiles": "O=C1OC[C@H](OC(=O)C2=CC(O)=C(O)C(O)=C2)[C@H](O)[C@@H](O)[C@@H]1C3=C4C(O)=C(O)C(O)=C3C(=O)O[C@@H](O)[C@H](O)[C@H]4O",
+            "notes": "Catalytic hydrogenation to debenzylate all protected hydroxyl groups of a strictinin precursor, yielding (-)-Strictinin.",
+            "substeps": []
+        }
+    ]
+}

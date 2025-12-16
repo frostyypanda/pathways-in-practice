@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "isoincarvilline-uyeda-2025",
+        "molecule_name": "Isoincarvilline",
+        "class": "Natural Product",
+        "author": "Uyeda",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Substitution (N-alkylation)",
+            "reagents": "K2CO3, KI",
+            "reagent_smiles": "[Ts]N[Boc]",
+            "conditions": "DMF, 50 °C",
+            "yield": "",
+            "reactant_smiles": "ClCC(C)=C(Cl)Cl",
+            "product_smiles": "[Ts]N([Boc])CC(C)=C(Cl)Cl",
+            "notes": "Allylic chloride reacts with N-Boc-N-Ts-amine to form a N-substituted allylic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "CC(=C(Cl)Cl)CN([Boc])[Ts]",
+            "product_smiles": "CC(=C(Cl)Cl)CNH[Ts]",
+            "notes": "Boc deprotection of a sulfonamide to yield a secondary amine. The Tosyl group (Ts) remains.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mitsunobu Alkylation",
+            "reagents": "DIAD, PPh3",
+            "reagent_smiles": "C=C(C)/C=C/CO",
+            "conditions": "THF",
+            "yield": "85%",
+            "reactant_smiles": "CC(=C(Cl)Cl)CN[Ts]",
+            "product_smiles": "[Ts]N(CC(=C(Cl)Cl)C)CC/C=C(C)/C=C",
+            "notes": "Mitsunobu reaction to alkylate a sulfonamide with an allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nickel-catalyzed reductive cyclization",
+            "reagents": "Zn, NMP",
+            "reagent_smiles": "[Ni](Cl)(Cl).c1cc(C2=NOC[C@H]3C4=CC=CC=C4CC32)nc(C5=NOC[C@H]6C7=CC=CC=C7CC65)c1",
+            "conditions": "THF, 0 °C",
+            "yield": "52%",
+            "reactant_smiles": "CC(=C(Cl)Cl)CN(S(=O)(=O)c1ccc(C)cc1)CC=C(C)/C=C",
+            "product_smiles": "CC1=CCC2=C(C)CN(C[C@@H]12)S(=O)(=O)c3ccc(C)cc3",
+            "notes": "Intramolecular cyclization of a dichloroalkene and diene, forming a bicyclic nitrogen-containing compound. The Ts group on nitrogen is retained. A chiral center is formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "NaBO3, H2O, THF",
+            "reagent_smiles": "CC(C)C(C)(C)B",
+            "conditions": "0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC1=CC2=C(C)CN([Ts])C[C@@H]12",
+            "product_smiles": "CC1=C2CC[C@@H]([C@H](C)[C@@H](O)[C@@H]2N([Ts])C1)",
+            "notes": "Stereoselective hydroboration-oxidation of a cyclic alkene to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu Acetylation",
+            "reagents": "DIAD, PPh3",
+            "reagent_smiles": "CC(=O)O",
+            "conditions": "THF, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "C[C@@H]1[C@@H](O)C[C@@H]2C1N([Ts])CCC(C)=C2",
+            "product_smiles": "C[C@@H]1[C@@H](OC(=O)C)C[C@@H]2C1N([Ts])CCC(C)=C2",
+            "notes": "Alcohol is acetylated under Mitsunobu conditions. The stereochemistry at the reacting carbon is depicted as retained (both OH and OAc are shown as down, via dashed lines), which is atypical for a standard Mitsunobu reaction that typically proceeds with inversion.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "H2, Pd(OH)2/C",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH",
+            "yield": "55%",
+            "reactant_smiles": "C[C@@H]1[C@@H]([OAc])C[C@H]2[C@H]1C(=C(C)CN([Ts])C2)",
+            "product_smiles": "C[C@H]1[C@@H]([OAc])C[C@H]2[C@H]1[C@@H](C)[C@H](C)N([Ts])C2",
+            "notes": "Hydrogenation of an enamine-like double bond, leading to two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive deprotection",
+            "reagents": "Na naphthalene",
+            "reagent_smiles": "",
+            "conditions": "DME, -45 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CN([Ts])C[C@@H]2[C@H](C)[C@@H](C[C@H]12)OC(=O)C",
+            "product_smiles": "C[C@H]1C[NH]C[C@@H]2[C@H](C)[C@@H](C[C@H]12)O",
+            "notes": "Reductive removal of N-tosyl protecting group and hydrolysis of O-acetate to hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Amination (N-methylation)",
+            "reagents": "HCHO, NaBH3CN, AcOH",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CNC[C@H]2[C@H](C)[C@H](C[C@H]12)O",
+            "product_smiles": "C[C@@H]1CN(C)C[C@H]2[C@H](C)[C@H](C[C@H]12)O",
+            "notes": "Reductive amination of a secondary amine to a tertiary amine using formaldehyde and sodium cyanoborohydride.",
+            "substeps": []
+        }
+    ]
+}

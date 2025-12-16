@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nicotine-muniz-2019",
+        "molecule_name": "Nicotine",
+        "class": "Natural Product",
+        "author": "Muniz",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sulfonation",
+            "reagents": "VOSO4, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC=NC=C1",
+            "product_smiles": "[Na+].O=S(=O)([O-])c1cnccc1",
+            "notes": "Electrophilic sulfonation of pyridine, yielding 3-pyridinesulfonic acid sodium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Aromatic Substitution (Cyanide Displacement)",
+            "reagents": "NaCN",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "47%",
+            "reactant_smiles": "[Na+].C1=CC(=CN=C1)S(=O)(=O)[O-]",
+            "product_smiles": "C1=CC(=CN=C1)C#N",
+            "notes": "Replacement of a pyridine-3-sulfonate group with a cyanide group to form pyridine-3-carbonitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard reaction",
+            "reagents": "",
+            "reagent_smiles": "CCOCCC[Mg]Br",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CN=C1)C#N",
+            "product_smiles": "CCOCCCC(=O)C1=CN=CC=C1",
+            "notes": "Grignard addition to a nitrile, followed by hydrolysis, to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxime formation",
+            "reagents": "NH2OH",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "CCOCCC(=O)C1=CN=CC=C1",
+            "product_smiles": "CCOCCC/C(=N/O)/C1=CN=CC=C1",
+            "notes": "Ketone undergoes reaction with hydroxylamine to form an E-configured oxime.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxime Reduction",
+            "reagents": "Fe, Zn, AcOH, EtOH",
+            "reagent_smiles": "[Fe].[Zn].CC(=O)O.CCO",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "CCOCCC/C(=N/O)/C1=CN=CC=C1",
+            "product_smiles": "N[CH](C1=CN=CC=C1)CCC OCC",
+            "notes": "Reduction of an oxime to a primary amine using iron and zinc in acetic acid and ethanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ether cleavage / Hydrolysis",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOCCC(C1=CN=CC=C1)N",
+            "product_smiles": "C1=CC(=CN=C1)C(CCCO)N",
+            "notes": "Cleavage of an ethyl ether to an alcohol under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular cyclization / Pyrrolidine synthesis",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "(2 steps)",
+            "yield": "55%",
+            "reactant_smiles": "C1=CC(=CN=C1)C(N)CCCO",
+            "product_smiles": "C1=CC(=CN=C1)C2CCCN2",
+            "notes": "Intramolecular cyclization of an amino alcohol to form a substituted pyrrolidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "CH3I",
+            "reagent_smiles": "CI",
+            "conditions": "CH3OH",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CN=C1)C2CCCN2",
+            "product_smiles": "CN1CCCC1C2=CN=CC=C2",
+            "notes": "N-methylation of the pyrrolidine nitrogen in nor-nicotine to form nicotine.",
+            "substeps": []
+        }
+    ]
+}

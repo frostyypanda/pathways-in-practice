@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pervilleine-b-huang-2013",
+        "molecule_name": "Pervilleine B",
+        "class": "Natural Product",
+        "author": "Huang",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclization / Amidation / Dehydration",
+            "reagents": "MeNH2, PhMe",
+            "reagent_smiles": "CN.Cc1ccccc1",
+            "conditions": "110 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)C[C@@H](O)C(=O)O",
+            "product_smiles": "CN1C(=O)C[C@@H](O)C1=O",
+            "notes": "Cyclization of (S)-malic acid with methylamine in toluene to form (S)-N-methyl-3-hydroxysuccinimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac₂O, DMAP, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "CN1C(=O)C[C@H](C1=O)O",
+            "product_smiles": "CC(=O)O[C@H]1CC(=O)N(C)C1=O",
+            "notes": "Acetylation of a secondary alcohol to an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "THF/H2O, -40 °C",
+            "yield": "81%",
+            "reactant_smiles": "[AcO][C@H]1CC(=O)N(C)C1=O",
+            "product_smiles": "[AcO][C@H]1CC(=O)N(C)[C@H]1O",
+            "notes": "One of the imide carbonyls is reduced to a hemiaminal alcohol using sodium borohydride. The acetate group and the other carbonyl remain unchanged. The stereochemistry of the existing chiral center is preserved, and a new chiral center is formed with a specific relative stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "O-Acetylation",
+            "reagents": "Ac2O, DMAP, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "93%",
+            "reactant_smiles": "[OAc][C@@H]1CC(=O)N(C)[C@H]1O",
+            "product_smiles": "[OAc][C@@H]1CC(=O)N(C)[C@H]1[OAc]",
+            "notes": "Acetylation of the secondary alcohol using acetic anhydride, DMAP, and TEA.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mukaiyama Aldol / Conjugate Addition",
+            "reagents": "TIPSOTf",
+            "reagent_smiles": "C=C(C)[OTMS]",
+            "conditions": "DCM, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "CN1C(=O)C[C@H]([OAc])[C@H]1[OAc]",
+            "product_smiles": "CN1C(=O)C[C@H]([OAc])C1CC(C)=O",
+            "notes": "Stereoselective addition of a silyl enol ether to a lactam, replacing one acetate group with an acetylmethylene chain. The stereochemistry of the newly formed chiral center is unspecified (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrolysis",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)Cl",
+            "conditions": "EtOH",
+            "yield": "67%",
+            "reactant_smiles": "CC(=O)C[C@@H]1N(C)C(=O)C[C@H]([OAc])C1",
+            "product_smiles": "CC(=O)C[C@@H]1N(C)C(=O)C[C@H](O)C1",
+            "notes": "Acetate ester is hydrolyzed to a hydroxyl group. Stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Protection (Silyl Ether)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.c1cnc[nH]1",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "CC(=O)C[C@@H]1N(C)C(=O)C[C@H]1O",
+            "product_smiles": "CC(=O)C[C@@H]1N(C)C(=O)C[C@H]1[OTBS]",
+            "notes": "Alcohol protection via silyl ether formation using TBSCl and imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Silyl enol ether formation",
+            "reagents": "TBSOTf, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C[C@@H]1[C@H](O[Si](C)(C)C(C)(C)C)CC(=O)N1C",
+            "product_smiles": "C=C(O[Si](C)(C)C(C)(C)C)C[C@@H]1[C@H](O[Si](C)(C)C(C)(C)C)CC(=O)N1C",
+            "notes": "Formation of a silyl enol ether from a ketone using TBSOTf and triethylamine (TEA). The existing TBS silyl ether is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cyclization",
+            "reagents": "Tf2O, DTBMP, ZnCl2",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C to rt",
+            "yield": "65%",
+            "reactant_smiles": "C=C([OTBS])C[C@@H]1[C@@H]([OTBS])CC(=O)N1C",
+            "product_smiles": "C1C(=O)CC2N(C)C3(Cl)C(C[OTBS])C1CC23",
+            "notes": "Intramolecular cyclization forming a bicyclic product via 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Radical Dehalogenation",
+            "reagents": "ACCN, Bu3SnH",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 85 °C",
+            "yield": "80%",
+            "reactant_smiles": "CN1C2CCC(=O)C(C[OTBS])C1(Cl)C2",
+            "product_smiles": "CN1C2CCC(=O)C(C[OTBS])C1C2",
+            "notes": "Reductive dehalogenation of a tertiary alkyl chloride using tributyltin hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ketone Reduction / Hydrogenation",
+            "reagents": "H2",
+            "reagent_smiles": "CCO.O=[Pt](=O)=O",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CC1CC2CC(=O)CC1N2C",
+            "product_smiles": "[OTBS]CC1CC2CC(O)CC1N2C",
+            "notes": "Catalytic hydrogenation of a ketone to a secondary alcohol using platinum(IV) oxide and hydrogen gas in ethanol. The TBS-protected alcohol and the N-methyl bicyclic amine remain untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection (Silyl Ether Hydrolysis)",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "acetone, 50 °C",
+            "yield": "",
+            "reactant_smiles": "CN1C2CC(O)C(CO[TBS])CC1C2",
+            "product_smiles": "CN1C2CC(CC1C(C2)O)O",
+            "notes": "Acid-catalyzed deprotection of a primary TBS ether to a primary alcohol, leaving a secondary alcohol intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Esterification",
+            "reagents": "TEA",
+            "reagent_smiles": "COC1=CC(=CC(=C1OC)OC)/C=C/C(=O)Cl",
+            "conditions": "PhMe, 110 °C",
+            "yield": "90% (3 steps)",
+            "reactant_smiles": "CN1C2C(CO)CC(O)C1CC2",
+            "product_smiles": "CN1C2C(COC(=O)/C=C/C3=CC(=C(C(=C3)OC)OC)OC)CC(O)C1CC2",
+            "notes": "Acylation of the primary alcohol of an azabicyclo[3.2.1]octane derivative with a trimethoxyphenyl-substituted acryloyl chloride to form an ester, leaving the secondary alcohol untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Esterification (Acylation)",
+            "reagents": "TEA",
+            "reagent_smiles": "COC1=CC(=CC(=C1OC)OC)C(=O)Cl",
+            "conditions": "PhMe, 110 °C",
+            "yield": "94%",
+            "reactant_smiles": "CN1C2CC(C1CC(C2)OC(=O)/C=C/C3=CC(=C(C(=C3)OC)OC)OC)O",
+            "product_smiles": "CN1C2CC(CC1CC(C2)OC(=O)/C=C/C3=CC(=C(C(=C3)OC)OC)OC)OC(=O)C4=CC(=C(C(=C4)OC)OC)OC",
+            "notes": "Acylation of an alcohol on a tropane derivative using 3,4,5-trimethoxybenzoyl chloride.",
+            "substeps": []
+        }
+    ]
+}

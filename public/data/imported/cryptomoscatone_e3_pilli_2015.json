@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cryptomoscatone-e3-pilli-2015",
+        "molecule_name": "Cryptomoscatone E3",
+        "class": "Natural Product",
+        "author": "Pilli",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective Silyl Ether Formation (Monoprotection)",
+            "reagents": "TBSCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "97%",
+            "reactant_smiles": "OCCC(O)",
+            "product_smiles": "[OTBS]CCCO",
+            "notes": "Selective monoprotection of propane-1,3-diol with TBSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "DMSO, COCl2, Et3N",
+            "reagent_smiles": "CS(C)=O.ClC(=O)C(=O)Cl.CCN(CC)CC",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "90%",
+            "reactant_smiles": "[OTBS]CCCO",
+            "product_smiles": "[OTBS]CCC=O",
+            "notes": "Primary alcohol is oxidized to an aldehyde using Swern conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Allylation",
+            "reagents": "Ti(OiPr)4, BINOL, TFA, 4 Å MS",
+            "reagent_smiles": "C=CC[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "79%",
+            "reactant_smiles": "[OTBS]CCC=O",
+            "product_smiles": "[OTBS]CC[C@H](O)CC=C",
+            "notes": "An aldehyde undergoes asymmetric allylation with allyl tributyltin, catalyzed by Ti(OiPr)4/BINOL, to yield a chiral homoallylic alcohol with a TBS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "Imidazole, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "C=CC[C@H](O)CC[OTBS]",
+            "product_smiles": "C=CC[C@H]([OTBS])CC[OTBS]",
+            "notes": "Secondary alcohol protected as a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "NMO, OsO4, Na2SO3",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@H](CCO[TBS])O[TBS]",
+            "product_smiles": "[TBS]OCC[C@@H](CC(CO)O)O[TBS]",
+            "notes": "Syn-dihydroxylation of an alkene using OsO4 and NMO.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Periodate Cleavage / Oxidation",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "96%",
+            "reactant_smiles": "[TBS]OCC[C@H](O[TBS])[C@@H](O)CO",
+            "product_smiles": "[TBS]OCC[C@H](O[TBS])C=O",
+            "notes": "Periodate cleavage of the 1,2-diol moiety in the reactant to form an aldehyde. The 96% yield is stated for 2 steps, not specifically for this single step.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Mukaiyama Aldol Reaction",
+            "reagents": "BF3·Et2O",
+            "reagent_smiles": "C=C([OTMS])C=C[Ph]",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[TBS]OCC[C@@H](O[TBS])CC=O",
+            "product_smiles": "[TBS]OCC[C@@H](O[TBS])C[C@H](O)CC(=O)/C=C/[Ph]",
+            "notes": "Mukaiyama Aldol reaction of an aldehyde with a silyl dienol ether, forming a beta-hydroxy alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stereoselective Reduction",
+            "reagents": "Et2BOMe, LiBH4",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH, -78 °C",
+            "yield": "43% (2 steps)",
+            "reactant_smiles": "[TBS]OCC[C@@H](O[TBS])C[C@H](O)CC(=O)/C=C/C1=CC=CC=C1",
+            "product_smiles": "[TBS]OCC[C@@H](O[TBS])C[C@H](O)C[C@H](O)/C=C/C1=CC=CC=C1",
+            "notes": "Stereoselective reduction of an alpha,beta-unsaturated ketone to a 1,3-diol, creating a new chiral center with specific relative stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetal formation",
+            "reagents": "PPTS",
+            "reagent_smiles": "CC(C)(OC)OC",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "[TBS]OCC[C@H](C[C@H](C[C@H](/C=C/C1=CC=CC=C1)O)O)O[TBS]",
+            "product_smiles": "[TBS]OCC[C@H](C[C@H]1C[C@H](/C=C/C2=CC=CC=C2)OC(C)(C)O1)O[TBS]",
+            "notes": "Formation of an isopropylidene acetal from two hydroxyl groups, catalyzed by PPTS. Stereochemistry of the O-TBS carbon and the first acetal ring carbon was corrected to match the visual representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection (Silyl Ether, Silyl Acetal)",
+            "reagents": "pyridine, HF·py",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "72%",
+            "reactant_smiles": "[TBS]OCC[C@H]1O[Si](C(C)(C)C)(C)(C)O[C@@H](C1)CH2[C@@H]2OC(C)(C)O[C@@H](C=C/C3=CC=CC=C3)C2",
+            "product_smiles": "OCC[C@H](O)CH2[C@@H]1OC(C)(C)O[C@@H](CH2C=C/C2=CC=CC=C2)C1",
+            "notes": "Selective deprotection of primary TBS ether and cyclic silyl acetal (bridging O3 and O5), while retaining the spiro-isopropylidene acetal (bridging O5 and O7).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]O[C@H](CCO)C[C@H]1OC(C)(C)O[C@H]1/C=C/C2=CC=CC=C2",
+            "product_smiles": "[OTBS]O[C@H](CC=O)C[C@H]1OC(C)(C)O[C@H]1/C=C/C2=CC=CC=C2",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin Periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Asymmetric Allylboration",
+            "reagents": "(+)-IPC2BAllyl, NaBO3",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "O=CCC[C@@H](O[TBS])C[C@H]1OC(C)(C)O[C@@H](C=C/C2=CC=CC=C2)C1",
+            "product_smiles": "C=CCC[C@H](O)C[C@@H](O[TBS])C[C@H]1OC(C)(C)O[C@@H](C=C/C2=CC=CC=C2)C1",
+            "notes": "Asymmetric allylboration of an aldehyde to form a homoallylic alcohol, while preserving a TBS-protected alcohol and an isopropylidene acetal.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Acylation (Esterification)",
+            "reagents": "DIPEA",
+            "reagent_smiles": "C=CC(=O)Cl",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "83%",
+            "reactant_smiles": "C=CC[C@H](C[C@@H](C[C@@H]1C[C@H](/C=C/C2=CC=CC=C2)OC(C)(C)O1)[OTBS])O",
+            "product_smiles": "C=CC[C@H](C[C@@H](C[C@@H]1C[C@H](/C=C/C2=CC=CC=C2)OC(C)(C)O1)[OTBS])OC(=O)C=C",
+            "notes": "Acylation of a secondary alcohol with acryloyl chloride to form an acrylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Ring-closing metathesis (RCM)",
+            "reagents": "Grubbs I",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 40 °C",
+            "yield": "88%",
+            "reactant_smiles": "C=CCC[C@H](OC(=O)C=C)C[C@@H]([OTBS])C[C@@H]3O[C](C)(C)O[C@H]3CH2/C=C/C1=CC=CC=C1",
+            "product_smiles": "O=C1O[C@H](C[C@@H]([OTBS])C[C@@H]2O[C](C)(C)O[C@H]2CH2/C=C/C3=CC=CC=C3)C/C=C/C1",
+            "notes": "Formation of a delta-lactone via ring-closing metathesis (RCM) of a diene. The silyl ether (TBS) and acetonide protecting groups are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection (TBS, Acetonide hydrolysis)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "[TBS]O[C@@H](C[C@H]1CC=CC(=O)O1)C[C@@H]2OC(C)(C)O[C@H]2/C=C/C3=CC=CC=C3",
+            "product_smiles": "C1=CC=C(C=C1)/C=C/[C@H](O)C[C@@H](O)C[C@@H](O)C[C@H]2CC=CC(=O)O2",
+            "notes": "Acid-catalyzed hydrolysis of TBS ether and acetonide to yield corresponding hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

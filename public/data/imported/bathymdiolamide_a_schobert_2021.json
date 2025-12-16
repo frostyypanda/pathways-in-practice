@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bathymdiolamide-a-schobert-2021",
+        "molecule_name": "Bathymdiolamide A",
+        "class": "Natural Product",
+        "author": "Schobert",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine protection (Boc protection)",
+            "reagents": "NaOH",
+            "reagent_smiles": "O=C(OC(C)(C)C)OC(=O)OC(C)(C)C",
+            "conditions": "dioxane, 5 °C",
+            "yield": "",
+            "reactant_smiles": "N[C@@H](CO)C(=O)O",
+            "product_smiles": "O=C(O)[C@@H](N[Boc])CO",
+            "notes": "Amine group of D-Serine is protected with a tert-butoxycarbonyl (Boc) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CI",
+            "conditions": "DMF, 0 °C to rt",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H](CO)C(=O)O",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H](CO)C(=O)OC",
+            "notes": "Methyl ester formation from carboxylic acid using methyl iodide and potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxazolidine Formation / Acetalization",
+            "reagents": "Me2C(OMe)2, PTSA",
+            "reagent_smiles": "COC(C)(C)OC.Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "benzene, reflux",
+            "yield": "89%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@H](CO)C(=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@H](C(=O)OC)COC1(C)C",
+            "notes": "Cyclization of methyl 2-((tert-butoxycarbonyl)amino)-3-hydroxypropanoate to form an oxazolidine ring with 2,2-dimethoxypropane via condensation of the hydroxyl group and the NH of the Boc-protected amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, -78 °C",
+            "yield": "76%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@@H](COC1(C)C)C(=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@@H](C=O)COC1(C)C",
+            "notes": "Partial reduction of a methyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Addition (Allylation)",
+            "reagents": "Zn(C2H3)Br",
+            "reagent_smiles": "C=C[Zn]Br",
+            "conditions": "Et2O, rt",
+            "yield": "77%",
+            "reactant_smiles": "[Boc]N1[C@H](C=O)COC1(C)C",
+            "product_smiles": "[Boc]N1[C@H]([C@@H](O)C=C)COC1(C)C",
+            "notes": "Addition of a vinyl zinc reagent to an aldehyde, forming an allyl alcohol with a new chiral center. The existing chiral center's configuration is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection / Ring Opening",
+            "reagents": "AcCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]([C@H]1COC(C)(C)N1[Boc])O",
+            "product_smiles": "C=C[C@H]([C@@H](CO)N)O",
+            "notes": "Boc group deprotection and oxazolidine ring opening, resulting in an amino alcohol. Stereochemistry at the amine-bearing carbon inverts.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide formation / Acylation",
+            "reagents": "NEt3",
+            "reagent_smiles": "CCCCCCCCCCCC(=O)Cl",
+            "conditions": "THF, rt",
+            "yield": "99% (2 steps)",
+            "reactant_smiles": "C=C[C@@H](O)[C@@H](N)CO",
+            "product_smiles": "CCCCCCCCCCCC(=O)N[C@@H](CO)[C@@H](C=C)O",
+            "notes": "Amidation of a primary amine with an acyl chloride. Stereochemistry at the two chiral centers is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetonide formation / Diol protection",
+            "reagents": "Me2C(OMe)2, BF3·Et2O",
+            "reagent_smiles": "CC(OC)(OC)C.CCOCC.F[B](F)(F)F",
+            "conditions": "acetone, rt",
+            "yield": "94%",
+            "reactant_smiles": "CCCCCCCCCCCC(=O)N[C@H](CO)[C@H](C=C)O",
+            "product_smiles": "CCCCCCCCCCCC(=O)N[C@@H]1COC(C)(C)O[C@@H]1C=C",
+            "notes": "Protection of a 1,2-diol as an acetonide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "K2OsO4, NMO",
+            "reagent_smiles": "[K+].[K+].O=[Os](=O)([O-])[O-].CN1CCOCC1=O",
+            "conditions": "THF/H2O, rt",
+            "yield": "64%",
+            "reactant_smiles": "CCCCCCCCCCCC(=O)N[C@@H]1OC(C)(C)O[C@H]1C=C",
+            "product_smiles": "CCCCCCCCCCCC(=O)N[C@@H]1OC(C)(C)O[C@H]1[C@@H](CO)O",
+            "notes": "Alkene dihydroxylation using potassium osmate and N-methylmorpholine N-oxide (Upjohn dihydroxylation).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification",
+            "reagents": "EDC, DMAP",
+            "reagent_smiles": "O=C(O)CCCCCCCCCCCCCCC",
+            "conditions": "DCM, rt",
+            "yield": "82%",
+            "reactant_smiles": "CCCCCCCCCCCC(=O)N[C@@H]1COC(C)(C)O[C@H]1[C@@H](CO)O",
+            "product_smiles": "CCCCCCCCCCCC(=O)N[C@@H]1COC(C)(C)O[C@H]1[C@@H](COC(=O)CCCCCCCCCCCCCCC)O",
+            "notes": "Esterification of the primary alcohol with hexadecanoic acid using EDC/DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Esterification",
+            "reagents": "EDC, DMAP",
+            "reagent_smiles": "O=C(O)CCC=CCC=CCC=CCCCC",
+            "conditions": "DCM, rt",
+            "yield": "72%",
+            "reactant_smiles": "CCCCCCCCCCCCCCCC(=O)OC[C@H](O)[C@@H](NC(=O)CCCCCCCCCCC)[C@H]1COC(C)(C)O1",
+            "product_smiles": "CCCCCCCCCCCCCCCC(=O)OC[C@H](OC(=O)CCC=CCC=CCC=CCCCC)[C@@H](NC(=O)CCCCCCCCCCC)[C@H]1COC(C)(C)O1",
+            "notes": "Esterification of a secondary alcohol with a C16:3 unsaturated fatty acid using EDC/DMAP coupling.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Sonogashira Coupling",
+                    "reagents": "CuI, NaI, Cs2CO3",
+                    "reagent_smiles": "C#CCO",
+                    "conditions": "DMF, rt",
+                    "yield": "89%",
+                    "reactant_smiles": "CCCC#CCBr",
+                    "product_smiles": "CCCC#CCC#CCO",
+                    "notes": "Sonogashira coupling of 1-bromo-3-hexyne with propargyl alcohol to form an enediyne alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Substitution (Bromination)",
+                    "reagents": "PBr3, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, rt",
+                    "yield": "98%",
+                    "reactant_smiles": "CCCC#CCC#CCO",
+                    "product_smiles": "CCCC#CCC#CCBr",
+                    "notes": "Conversion of a primary alcohol to a primary alkyl bromide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Alkyne Alkylation / Sonogashira-type Coupling",
+                    "reagents": "CuI, NaI, Cs2CO3",
+                    "reagent_smiles": "COC(=O)CCC#C",
+                    "conditions": "DMF, rt",
+                    "yield": "76%",
+                    "reactant_smiles": "CCCC#CCC#CCBr",
+                    "product_smiles": "COC(=O)CCC#CCC#CCC#CCC",
+                    "notes": "Copper-catalyzed cross-coupling of a terminal alkyne (methyl 5-hexynoate) with a primary bromoalkyne to form a long chain with three skipped alkyne units.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Alkyne Reduction (P2-Ni Catalyzed Partial Hydrogenation)",
+                    "reagents": "Ni(OAc)2, NaBH4, (NH2CH2)2, H2",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, rt",
+                    "yield": "98%",
+                    "reactant_smiles": "COC(=O)CCCCC#CC#CC#CCC",
+                    "product_smiles": "COC(=O)CCCCC/C=C\\CC/C=C\\CC/C=C\\CCC",
+                    "notes": "Partial catalytic hydrogenation of three internal alkyne groups to form three cis-alkene groups, mediated by a P2-Ni catalyst system (Ni(OAc)2, NaBH4, ethylenediamine).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acetonide Deprotection",
+            "reagents": "pTsOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "94%",
+            "reactant_smiles": "CCCCCCCCCCCCCCCC(=O)OCC[C@H](OC(=O)CCCC/C=C/C/C=C/C/C=C/CCC)[C@H](NC(=O)CCCC/C=C\\CCCCCC)[C@H]1OC(C)(C)O[C@H]1CO",
+            "product_smiles": "CCCCCCCCCCCCCCCC(=O)OCC[C@H](OC(=O)CCCC/C=C/C/C=C/C/C=C/CCC)[C@H](NC(=O)CCCC/C=C\\CCCCCC)[C@H](O)[C@H](O)CO",
+            "notes": "Acid-catalyzed hydrolysis of an acetonide protecting group to reveal a 1,2-diol. The stereochemistry of the polyol backbone is maintained.",
+            "substeps": []
+        }
+    ]
+}

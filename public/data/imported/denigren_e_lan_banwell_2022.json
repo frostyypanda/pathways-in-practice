@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "denigren-e-lan-banwell-2022",
+        "molecule_name": "Denigren E",
+        "class": "Natural Product",
+        "author": "Lan-Banwell",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Knoevenagel Condensation",
+            "reagents": "ethanolamine",
+            "reagent_smiles": "C1C(=O)NC(=O)N1",
+            "conditions": "water, reflux",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)C=O",
+            "product_smiles": "COC1=CC=C(C=C1)/C=C\\2/C(=O)NC(=O)N2",
+            "notes": "Knoevenagel condensation between 4-methoxybenzaldehyde and hydantoin.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrolysis / Ring-opening",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, reflux",
+            "yield": "85%",
+            "reactant_smiles": "COC1=CC=C(C=C1)/C=C\\2/C(=O)NC(=O)N2",
+            "product_smiles": "COC1=CC=C(C=C1)CC(=O)C(=O)O",
+            "notes": "Hydrolysis and ring-opening of the imidazolidinedione ring to form an alpha-keto acid. The reported yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Pyrrole Synthesis",
+            "reagents": "t-BuLi, I2",
+            "reagent_smiles": "COC1=CC=C(C=C1)CCN",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "COC1=CC=C(C=C1)CC(=O)C(=O)O",
+            "product_smiles": "COC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)OC)C(=C2C(=O)O)C4=CC=C(C=C4)OC)C(=O)O",
+            "notes": "Formation of a highly substituted pyrrole from a keto-acid and an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification (Methylation)",
+            "reagents": "Mel, DBU",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C to rt",
+            "yield": "97%",
+            "reactant_smiles": "COC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)OC)C(=C2C(=O)O)C4=CC=C(C=C4)OC)C(=O)O",
+            "product_smiles": "COC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)OC)C(=C2C(=O)OC)C4=CC=C(C=C4)OC)C(=O)OC",
+            "notes": "Methylation of dicarboxylic acid to dimethyl ester using methyl iodide and DBU.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard reaction (addition to ester)",
+            "reagents": "",
+            "reagent_smiles": "COC1=CC=C(C=C1)[Mg]Br",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "69%",
+            "reactant_smiles": "COC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)OC)C(=C2C(=O)OC)C4=CC=C(C=C4)OC)C(=O)OC",
+            "product_smiles": "COC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)OC)C(=C2C(=O)C4=CC=C(C=C4)OC)C5=CC=C(C=C5)OC)C(=O)C6=CC=C(C=C6)OC",
+            "notes": "Two methyl ester groups are converted to corresponding ketones by reaction with p-methoxyphenylmagnesium bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "AlCl3, LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "67%",
+            "reactant_smiles": "COC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)OC)C(=C2C(=O)C4=CC=C(C=C4)OC)C5=CC=C(C=C5)OC)C(=O)C6=CC=C(C=C6)OC",
+            "product_smiles": "COC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)OC)C(=C2CC4=CC=C(C=C4)OC)C5=CC=C(C=C5)OC)CC6=CC=C(C=C6)OC",
+            "notes": "Reduction of a pyrrole bis-ketone to a bis-benzylpyrrole using AlCl3 and LiAlH4.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "O-Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C to rt",
+            "yield": "61%",
+            "reactant_smiles": "COC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)OC)C(=C2CC4=CC=C(C=C4)OC)C5=CC=C(C=C5)OC)CC6=CC=C(C=C6)OC",
+            "product_smiles": "OC1=CC=C(C=C1)CCN2C(=C(C3=CC=C(C=C3)O)C(=C2CC4=CC=C(C=C4)O)C5=CC=C(C=C5)O)CC6=CC=C(C=C6)O",
+            "notes": "Demethylation of six aryl methyl ethers to form phenols using boron tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "t-BuOOH, Mo(CO)6",
+            "reagent_smiles": "",
+            "conditions": "benzene, 80 °C",
+            "yield": "61%",
+            "reactant_smiles": "C1=C(C=CC(=C1)O)CCN2C(=C(C3=CC=C(C=C3)O)C(=C2CC4=CC=C(C=C4)O)C5=CC=C(C=C5)O)CC6=CC=C(C=C6)O",
+            "product_smiles": "C1=C(C=CC(=C1)O)CCN2C(=C(C3=CC=C(C=C3)O)C(CC4=CC=C(C=C4)O)(C5=CC=C(C=C5)O)C2=O)CC6=CC=C(C=C6)O",
+            "notes": "Oxidation of a substituted pyrrole to a pyrrolinone (3-pyrrolin-2-one derivative).",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "romidepsin-istodax-celgene-unknown-2024",
+        "molecule_name": "Romidepsin (Istodax Celgene)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide Coupling (Peptide Bond Formation)",
+            "reagents": "BOP, DIPEA",
+            "reagent_smiles": "[Fmoc]N[C@@H](C(=O)O)[C@H](O)C",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)[C@@H](N)C(=O)OC",
+            "product_smiles": "[Fmoc]N[C@@H]([C@H](O)C)C(=O)N[C@@H](C(C)C)C(=O)OC",
+            "notes": "Amide bond formation between N-Fmoc-L-threonine and L-valine methyl ester using BOP/DIPEA.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection",
+            "reagents": "DCM, r.t.",
+            "reagent_smiles": "CCNCC",
+            "conditions": "r.t.",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N[C@H]([C@@H](C)O)C(=O)N[C@H](C(C)C)C(=O)OC",
+            "product_smiles": "N[C@H]([C@@H](C)O)C(=O)N[C@H](C(C)C)C(=O)OC",
+            "notes": "Fmoc deprotection of the N-terminal amine using diethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Peptide Coupling / Amide Formation",
+            "reagents": "EDC, HOBt",
+            "reagent_smiles": "O=C(O)[C@@H](N[Alloc])CS[Tr]",
+            "conditions": "DMF, DCM",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "CC(C)[C@@H](C(=O)OC)NC(=O)[C@H]([C@@H](C)O)N",
+            "product_smiles": "CC(C)[C@@H](C(=O)OC)NC(=O)[C@H]([C@@H](C)O)NC(=O)[C@@H](N[Alloc])CS[Tr]",
+            "notes": "Amide bond formation between the primary amine of the threonine residue and the carboxylic acid of the N-Alloc-S-Trityl-cysteine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Tosyl ester formation",
+            "reagents": "Ts2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Alloc]N[C@H](CS[Tr])C(=O)N[C@H]([C@@H](C)O)C(=O)N[C@H](C(C)C)C(=O)OC",
+            "product_smiles": "[Alloc]N[C@H](CS[Tr])C(=O)N[C@H]([C@@H](C)[OTs])C(=O)N[C@H](C(C)C)C(=O)OC",
+            "notes": "The hydroxyl group on the threonine residue is converted to a tosylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination",
+            "reagents": "DABCO",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "[Tr]SC[C@H](NC(=O)OCC=C)C(=O)N[C@@H]([C@H](C)O[Ts])C(=O)N[C@@H](C(C)C)C(=O)OC",
+            "product_smiles": "[Tr]SC[C@H](NC(=O)OCC=C)C(=O)N/C(=C\\C)/C(=O)N[C@@H](C(C)C)C(=O)OC",
+            "notes": "Elimination of a tosylated alcohol within a peptide chain to form an alpha,beta-unsaturated amide. The OTs group and an adjacent proton are removed.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection (Alloc)",
+            "reagents": "Pd(PPh3)2Cl2, Bu3SnH, HOAc",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C/C(=C(/C(=O)N[C@@H](C(C)C)C(=O)OC)\\C)/NC(=O)[C@@H](CS[Tr])N[Alloc]",
+            "product_smiles": "C/C(=C(/C(=O)N[C@@H](C(C)C)C(=O)OC)\\C)/NC(=O)[C@@H](CS[Tr])N",
+            "notes": "Palladium-catalyzed deprotection of Allyloxycarbonyl (Alloc) group to primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Peptide Coupling",
+            "reagents": "",
+            "reagent_smiles": "O=C(O)[C@@H](C(C)C)N[Fmoc]",
+            "conditions": "",
+            "yield": "83% (2 steps)",
+            "reactant_smiles": "N[C@@H](CS[Tr])C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](/C=C\\C)C(=O)OC",
+            "product_smiles": "[Fmoc]N[C@@H](C(C)C)C(=O)N[C@@H](CS[Tr])C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](/C=C\\C)C(=O)OC",
+            "notes": "Amide bond formation between the N-terminus of a peptide and an Fmoc-protected valine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Fmoc Deprotection",
+            "reagents": "Et2NH, MeCN",
+            "reagent_smiles": "CCN(CC).CC#N",
+            "conditions": "0°C to r.t.",
+            "yield": "99%",
+            "reactant_smiles": "[Fmoc]N[C@H](C(C)C)C(=O)N[C@H](CS[Tr])C(=O)N/C(=C\\C)/C(=O)N[C@@H](C(C)C)C(=O)OC",
+            "product_smiles": "N[C@H](C(C)C)C(=O)N[C@H](CS[Tr])C(=O)N/C(=C\\C)/C(=O)N[C@@H](C(C)C)C(=O)OC",
+            "notes": "Removal of the Fmoc protecting group from the N-terminal valine residue.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Amide Coupling",
+            "reagents": "BOP, DIPEA",
+            "reagent_smiles": "OC(=O)C[C@H](O)/C=C/CCS[Tr]",
+            "conditions": "MeCN, DCM",
+            "yield": "99%",
+            "reactant_smiles": "C/C=C/C(=O)N[C@H](C(C)C)C(=O)N[C@H](CS[Tr])C(=O)N[C@H](C(C)C)N",
+            "product_smiles": "C/C=C/C(=O)N[C@H](C(C)C)C(=O)N[C@H](CS[Tr])C(=O)N[C@H](C(C)C)NC(=O)C[C@H](O)/C=C/CCS[Tr]",
+            "notes": "Amide coupling reaction between the primary amine of the reactant and the carboxylic acid reagent. Stereochemistry and Trityl (Tr) abbreviation applied to all chiral centers and protecting groups as shown in the screenshot. The alkene geometry is set to E (trans) as depicted. The `C(=O)OCH3` group drawn on the first Valine residue in both reactant and product structures in the screenshot was determined to be an artifact or misrepresentation of the drawing, as it conflicts with the amide bond connectivity to the Cysteine residue. Therefore, it was omitted from the SMILES to maintain chemical validity as a continuous peptide chain. Isotope `[3H]` was replaced by `[Tr]` as per the image.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Amidation (Weinreb Amide Synthesis)",
+                    "reagents": "i-PrMgCl",
+                    "reagent_smiles": "CNHOC.CC(C)[Mg]Cl",
+                    "conditions": "THF, 0 °C",
+                    "yield": "67%",
+                    "reactant_smiles": "COC(=O)CC(OC)OC",
+                    "product_smiles": "CN(C(=O)CC(OC)OC)OC",
+                    "notes": "Methyl ester converted to Weinreb amide by reaction with N-methyl-O-methylhydroxylamine and isopropylmagnesium chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Nucleophilic Addition",
+                    "reagents": "n-BuLi, THF",
+                    "reagent_smiles": "[Tr]SCCC#C",
+                    "conditions": "-78 °C to 0 °C",
+                    "yield": "67%",
+                    "reactant_smiles": "CN(C(=O)CC(OC)OC)OC",
+                    "product_smiles": "[TBDPS]OCC#CC(=O)CC(OC)OC",
+                    "notes": "Lithiated alkyne (generated from TrS-alkyne and n-BuLi) adds to a Weinreb amide to form a ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Asymmetric Hydrogenation / Ketone Reduction",
+                    "reagents": "Noyori Asymmetric Hydrogenation catalyst",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[OTBDPS]CCC#CC(=O)CC(OC)OC",
+                    "product_smiles": "[OTBDPS]CCC#C[C@@H](O)CC(OC)OC",
+                    "notes": "Asymmetric reduction of an alkynyl ketone to a secondary alcohol using a Noyori catalyst. The TBDPS protecting group and dimethyl acetal remain untouched. Stereochemistry at the newly formed alcohol center is (R).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Alkyne Reduction (to Z-alkene)",
+                    "reagents": "Red-Al",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, 0 °C to r.t.",
+                    "yield": "58% (2 steps)",
+                    "reactant_smiles": "[OTBDPS]CCC#C[C@@H](CC(OC)OC)O",
+                    "product_smiles": "[OTBDPS]CC/C=C/[C@@H](CC(OC)OC)O",
+                    "notes": "Reduction of internal alkyne to a Z-alkene. The TBDPSO protecting group and the dimethoxy acetal are unaffected. The stereochemistry at the hydroxyl-bearing carbon is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.5",
+                    "reaction_type": "Deprotection (Silyl Ether)",
+                    "reagents": "TBAF",
+                    "reagent_smiles": "",
+                    "conditions": "THF, r.t.",
+                    "yield": "",
+                    "reactant_smiles": "COC(C)C[C@@H](O)/C=C/CCO[TBDPS]",
+                    "product_smiles": "COC(C)C[C@@H](O)/C=C/CCO",
+                    "notes": "TBAF-mediated deprotection of a TBDPS ether to yield a primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.6",
+                    "reaction_type": "Tosylation",
+                    "reagents": "TsCl, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "70%",
+                    "reactant_smiles": "COC(C[C@H](O)/C=C/CCO)OC",
+                    "product_smiles": "COC(C[C@H](O)/C=C/CCO[Ts])OC",
+                    "notes": "Primary alcohol is selectively tosylated to form a tosylate ester, while the secondary alcohol and dimethoxy acetal remain unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.7",
+                    "reaction_type": "Acetal Hydrolysis",
+                    "reagents": "LiBF4, MeCN, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "r.t.",
+                    "yield": "",
+                    "reactant_smiles": "COC(C[C@H](O)/C=C/CCO[Ts])OC",
+                    "product_smiles": "O=CCC[C@H](O)/C=C/CCO[Ts]",
+                    "notes": "Hydrolysis of a dimethyl acetal to an aldehyde using LiBF4 as a Lewis acid in acetonitrile and water at room temperature. The chiral alcohol and trans alkene stereochemistry are preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.8",
+                    "reaction_type": "Pinnick oxidation",
+                    "reagents": "Amylene, NaClO2, NaH2PO4",
+                    "reagent_smiles": "",
+                    "conditions": "t-BuOH",
+                    "yield": "",
+                    "reactant_smiles": "O=CCC[C@H](O)/C=C/CCO[Ts]",
+                    "product_smiles": "O=C(O)CC[C@H](O)/C=C/CCO[Ts]",
+                    "notes": "Oxidation of an aldehyde to a carboxylic acid, retaining the chiral alcohol and tosylate groups and the trans alkene geometry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.9",
+                    "reaction_type": "SN2 Substitution",
+                    "reagents": "HSTr, KOt-Bu",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "66%",
+                    "reactant_smiles": "C(=C\\[C@@H](CC(=O)O)O)/CCO[OTs]",
+                    "product_smiles": "C(=C\\[C@@H](CC(=O)O)O)/CCS[STr]",
+                    "notes": "Substitution of a tosylate leaving group with trityl mercaptan.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ester Hydrolysis (Saponification)",
+            "reagents": "LiOH, THF, H2O",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "73%",
+            "reactant_smiles": "[Tr]SC[C@@H]2C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](C[C@H](O)/C=C/CCS[Tr])C(=O)N1C(C(=O)[C@@H](C(C)C)C(=O)OC)=C(\\C)C/C(=O)N2",
+            "product_smiles": "[Tr]SC[C@@H]2C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](C[C@H](O)/C=C/CCS[Tr])C(=O)N1C(C(=O)[C@@H](C(C)C)C(=O)O)=C(\\C)C/C(=O)N2",
+            "notes": "Methyl ester of the Valine side chain is hydrolyzed to a carboxylic acid under basic conditions, forming Romidepsin (Istodax Celgene). The molecule is a cyclic depsipeptide.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Disulfide Formation / Oxidation",
+            "reagents": "I₂, MeOH",
+            "reagent_smiles": "I.I.CO",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "C/C=C\\1/C(=O)N[C@@H](C(C)C)C(=O)O[C@@H](/C=C/CCS[Tr])CC(=O)N[C@H](C(C)C)C(=O)N[C@H](CS[Tr])C(=O)N1",
+            "product_smiles": "C/C=C\\1C(=O)N[C@@H](C(C)C)C(=O)O[C@@H](C/C=C/CCSSC[C@H](C(=O)N[C@@H](C(C)C)C(=O)N[C@H](CC(=O)N1)))",
+            "notes": "Oxidation of trityl-protected thiols to form a disulfide bridge within the macrocyclic structure.",
+            "substeps": []
+        }
+    ]
+}

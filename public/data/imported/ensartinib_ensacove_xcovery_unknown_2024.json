@@ -1,0 +1,170 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ensartinib-ensacove-xcovery-unknown-2024",
+        "molecule_name": "Ensartinib (Ensacove Xcovery)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Kinetic Resolution",
+            "reagents": "N-Boc-D-proline, EDCI, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCE, 0 °C",
+            "yield": "51%",
+            "reactant_smiles": "CC(O)c1c(Cl)cc(F)cc1Cl",
+            "product_smiles": "C[C@H](O)c1c(Cl)cc(F)cc1Cl",
+            "notes": "Kinetic resolution of a racemic alcohol to obtain the (R)-enantiomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr) / Williamson Ether Synthesis",
+            "reagents": "NaH",
+            "reagent_smiles": "Nc1ncc(Br)c(Cl)n1",
+            "conditions": "THF, 65 °C",
+            "yield": "38%",
+            "reactant_smiles": "C[C@H](O)c1c(Cl)cc(F)cc1Cl",
+            "product_smiles": "C[C@H](c1c(Cl)cc(F)cc1Cl)Oc1c(Cl)n=c(N)cn1",
+            "notes": "Alcohol deprotonation with NaH to form an alkoxide, followed by SNAr displacement of bromide from the pyrazine ring to form an ether linkage.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Amination",
+                    "reagents": "NH4OH",
+                    "reagent_smiles": "[NH4+].[OH-]",
+                    "conditions": "130 °C",
+                    "yield": "82%",
+                    "reactant_smiles": "C1=CC(=NN=C1Cl)Cl",
+                    "product_smiles": "C1=CC(=NN=C1Cl)N",
+                    "notes": "Nucleophilic aromatic substitution of one chloride on pyridazine ring with an amine group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Electrophilic Aromatic Bromination",
+                    "reagents": "Br2, NaHCO3",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "35%",
+                    "reactant_smiles": "C1=CC(=NN=C1Cl)N",
+                    "product_smiles": "C1=C(C(=NN=C1Cl)N)Br",
+                    "notes": "Bromination of 3-amino-6-chloropyridazine at the unhindered carbon position.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amine Protection",
+            "reagents": "DMAP",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "DMF",
+            "yield": "87%",
+            "reactant_smiles": "NC1=NC(=CC(Cl)=C1O[C@H](C)C2=C(Cl)C(F)=CC(Cl)=C2)",
+            "product_smiles": "N(C(=O)OC(C)(C)C)(C(=O)OC(C)(C)C)C1=NC(=CC(Cl)=C1O[C@H](C)C2=C(Cl)C(F)=CC(Cl)=C2)",
+            "notes": "Di-Boc protection of the primary amine on the pyrimidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Carbonylation",
+            "reagents": "CO, PdCl2(dppf)·DCM, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "EtOH, DMF 90 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)[N+]1(C(=O)OC(C)(C)C)C=NC(Cl)=NC(O[C@H](C)c2c(Cl)cc(F)cc2Cl)=C1",
+            "product_smiles": "CC(C)(C)OC(=O)[N+]1(C(=O)OC(C)(C)C)C(=O)OCC=NC(Cl)=NC(O[C@H](C)c2c(Cl)cc(F)cc2Cl)=C1",
+            "notes": "C-H carbonylation of the triazine ring to form an ethyl ester. The N,N-di(tert-butoxycarbonyl) group in the ring, as drawn, canonically forms a charged nitrogen atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=NN=C(C(=C1)O[C@@H](C)C2=C(Cl)C=CC(=C2F)Cl)N([Boc])[Boc]",
+            "product_smiles": "OC(=O)C1=NN=C(C(=C1)O[C@@H](C)C2=C(Cl)C=CC(=C2F)Cl)N([Boc])[Boc]",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid. The reported yield of 99% is for a two-step process.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "C[C@@H]1CN(C[C@H](C)N1C(=O)OC(C)(C)C)C(=O)C2=CC=C(N)C=C2",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1nc(N(C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)cc(O[C@H](C)c2c(Cl)ccc(F)c2Cl)n1",
+            "product_smiles": "C[C@@H]1CN(C[C@H](C)N1C(=O)OC(C)(C)C)C(=O)C2=CC=C(NC(=O)c3nc(N(C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)cc(O[C@H](C)c4c(Cl)ccc(F)c4Cl)n3)C=C2",
+            "notes": "Amide bond formation between a pyrimidine carboxylic acid and a 4-aminobenzoyl-2,5-dimethylpiperazine derivative.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Amide Formation",
+                    "reagents": "HATU, DIPEA",
+                    "reagent_smiles": "O=C(O)c1ccc([N+](=O)[O-])cc1",
+                    "conditions": "DMF, 0 °C",
+                    "yield": "70%",
+                    "reactant_smiles": "C[C@H]1CNC[C@@H](C)N1",
+                    "product_smiles": "C[C@H]1CN(C[C@@H](C)N1)C(=O)c2ccc([N+](=O)[O-])cc2",
+                    "notes": "Amide formation between (2R,6S)-2,6-dimethylpiperazine and 4-nitrobenzoic acid, catalyzed by HATU/DIPEA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "N-Boc Protection",
+                    "reagents": "Boc₂O",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, 80 °C",
+                    "yield": "",
+                    "reactant_smiles": "C[C@H]1CN(C[C@@H](C)N1)C(=O)C2=CC=C(C=C2)[N+](=O)[O-]",
+                    "product_smiles": "C[C@H]1CN(C[C@@H](C)N1[Boc])C(=O)C2=CC=C(C=C2)[N+](=O)[O-]",
+                    "notes": "Protection of a secondary amine with a Boc group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Reduction",
+                    "reagents": "H₂, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "97% (2 Steps)",
+                    "reactant_smiles": "C[C@H]1CN(C[C@H](C)N1[Boc])C(=O)C2=CC=C(C=C2)[N+](=O)[O-]",
+                    "product_smiles": "C[C@H]1CN(C[C@H](C)N1[Boc])C(=O)C2=CC=C(C=C2)N",
+                    "notes": "Catalytic hydrogenation of a nitro group to an amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CN(C[C@H](C)N1[Boc])C(=O)C2=CC=C(C=C2)NC(=O)C3=NN=C(C(=C3)O[C@H](C)C4=C(C(=CC=C4Cl)F)Cl)N[Boc]",
+            "product_smiles": "C[C@@H]1CN(C[C@H](C)N1)C(=O)C2=CC=C(C=C2)NC(=O)C3=NN=C(C(=C3)O[C@H](C)C4=C(C(=CC=C4Cl)F)Cl)N",
+            "notes": "Double Boc deprotection of a secondary amine (piperazine) and an exocyclic primary amine (on triazine ring).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Salt formation",
+            "reagents": "HCl, iPrOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "C[C@H]1CN(C[C@@H](C)N1)C(=O)C2=CC=C(C=C2)NC(=O)C3=CN=C(N)C(=C3)O[C@H](C)C4=C(Cl)C=CC(F)=C4Cl",
+            "product_smiles": "C[C@H]1CN(C[C@@H](C)N1)C(=O)C2=CC=C(C=C2)NC(=O)C3=CN=C(N)C(=C3)O[C@H](C)C4=C(Cl)C=CC(F)=C4Cl.Cl.Cl",
+            "notes": "Formation of Enasartinib dihydrochloride. Reaction proceeds in 3 steps.",
+            "substeps": []
+        }
+    ]
+}

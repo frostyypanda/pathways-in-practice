@@ -1,0 +1,254 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strychnine-vollhardt-2000",
+        "molecule_name": "Strychnine",
+        "class": "Natural Product",
+        "author": "Vollhardt",
+        "year": 2000
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydroiodination",
+            "reagents": "57% HI",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C#CC(=O)O",
+            "product_smiles": "O=C(O)/C=C/I",
+            "notes": "Addition of HI across an alkyne, forming a Z-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification (MEM protection)",
+            "reagents": "MEM-Cl, Na2CO3",
+            "reagent_smiles": "COCCOCCl",
+            "conditions": "DMF",
+            "yield": "86%",
+            "reactant_smiles": "C(=C/I)/C(=O)O",
+            "product_smiles": "[MEM]OC(=O)/C=C\\I",
+            "notes": "Esterification of (E)-3-iodoacrylic acid with MEM-Cl, resulting in the (Z)-MEM ester via an observed geometric inversion.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "Pd(PPh3)2Cl2, CuI, Et3N",
+            "reagent_smiles": "C#C[TMS]",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "[MEMO]C(=O)/C=C\\I",
+            "product_smiles": "[MEMO]C(=O)/C=C\\C#C[TMS]",
+            "notes": "Sonogashira coupling of a vinyl iodide with trimethylsilylacetylene, maintaining E-alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis / Deprotection",
+            "reagents": "aq HCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COCCOCOC(=O)/C=C\\C#C[TMS]",
+            "product_smiles": "[TMS]C#C/C=C\\C(=O)O",
+            "notes": "Acidic hydrolysis of a MEMO ester to a carboxylic acid, retaining the alkyne and trimethylsilyl (TMS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acyl Chlorination",
+            "reagents": "(COCl)2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "83% (2 steps)",
+            "reactant_smiles": "[TMS]C#C/C=C\\C(=O)O",
+            "product_smiles": "[TMS]C#C/C=C\\C(=O)Cl",
+            "notes": "Conversion of a carboxylic acid to an acid chloride using oxalyl chloride. The double bond stereochemistry (Z) is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Acylation of Indole, TMS Deprotection",
+            "reagents": "NaOH, TBAC",
+            "reagent_smiles": "CC(=O)NCCC1=CNC2=C1C=CC=C2",
+            "conditions": "CH2Cl2/H2O, 0 °C",
+            "yield": "86%",
+            "reactant_smiles": "[TMS]C#C/C=C\\C(=O)Cl",
+            "product_smiles": "C#C/C=C\\C(=O)N1C=C(CCNC(=O)C)C2=C1C=CC=C2",
+            "notes": "N-acylation of 3-(2-(N-acetamido)ethyl)indole with (Z)-4-(trimethylsilyl)but-3-en-3-ynyl chloride under phase-transfer conditions, followed by simultaneous TMS deprotection.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Amide Formation / Acetylation",
+                    "reagents": "Ac2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)NC=C2CCN",
+                    "product_smiles": "C1=CC2=C(C=C1)NC=C2CCN[Ac]",
+                    "notes": "Acetylation of a primary amine (tryptamine) with acetic anhydride to form an amide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "[2+2+2] Cycloaddition",
+            "reagents": "C₂H₂, CpCo(C₂H₂)₂",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "46%",
+            "reactant_smiles": "C#C/C=C\\C(=O)N1C=C(CCN[Ac])C2=C1C=CC=C2",
+            "product_smiles": "[Ac]NCC[C@@]12C=CC=C3C=CC(=O)N(C4=C1C=CC=C4)[C@@H]32.[Co](C1C=CC=C1)",
+            "notes": "Cobalt-catalyzed [2+2+2] cycloaddition of an enyne-amide with acetylene, forming a fused polycyclic CpCo(η⁴-diene) complex. The 'NHAc' group is abbreviated to '[Ac]' in SMILES to match the screenshot notation.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide hydrolysis",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH/H2O, reflux",
+            "yield": "93%",
+            "reactant_smiles": "[Ac]NCC[C@@]12C=CC=C3C=CC(=O)N(C4=C1C=CC=C4)[C@@H]32",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)C=CC4=CC=C[C@]2(CCN)[C@H]43",
+            "notes": "Hydrolysis of an N-acetyl group to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Decomplexation, Intramolecular Cyclization",
+            "reagents": "Fe(NO3)3.9H2O, THF, MeCN, H2O",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "77%",
+            "reactant_smiles": "C1=CC2=C(C=C1)N3C(=O)C=C[C@@H]4C=CC[C@]2(CCN)[C@H]34",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)CC=C4C=C[C@H]5[C@]2(CCN5)[C@H]43",
+            "notes": "Oxidative decomplexation of the η4-cobaltocene group, followed by intramolecular cyclization of the primary amine to form a new 5-membered ring and rearrangement of the cyclohexadiene system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Alkylation (SN2)",
+            "reagents": "Li2CO3",
+            "reagent_smiles": "[OTBS]OC/C=C(/CBr)\\I",
+            "conditions": "DMA, 40 °C",
+            "yield": "74%",
+            "reactant_smiles": "C1=CC2=C(C=C1)N3C(=O)CC=C4C=C[C@H]5[C@]2(CCN5)[C@H]43",
+            "product_smiles": "[OTBS]OC/C=C(/CN1CC[C@]23C4=C(C=CC=C4)N5C(=O)CC=C(C=C[C@H]21)[C@H]35)\\I",
+            "notes": "N-alkylation of the secondary amine of the strychnine derivative with a bromo-iodo-alkene reagent, forming a tertiary amine.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Protection",
+                    "reagents": "DHP, PTSA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "OCC#CCO",
+                    "product_smiles": "[THPO]CC#CCO",
+                    "notes": "Selective protection of one primary alcohol as a tetrahydropyranyl (THP) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Hydroiodination / Hydroalumination-Iodination",
+                    "reagents": "Red-Al then I₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[THP]OCC#CCO",
+                    "product_smiles": "[THP]OC/C(I)=C/CO",
+                    "notes": "Red-Al mediated hydroiodination of the alkyne results in the formation of an E-vinyl iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1CCOC(C1)OCC(I)=C/CO",
+                    "product_smiles": "C1CCOC(C1)OCC(I)=C/C[OTBS]",
+                    "notes": "Protection of a primary alcohol as a TBS ether in the presence of a THP ether and a vinyl iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Deprotection",
+                    "reagents": "MgBr2",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O",
+                    "yield": "",
+                    "reactant_smiles": "[THP]OC/C=C(I)/CO[TBS]",
+                    "product_smiles": "OC/C=C(I)/CO[TBS]",
+                    "notes": "Deprotection of a THP ether to a primary alcohol under Lewis acid conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.5",
+                    "reaction_type": "Appel reaction",
+                    "reagents": "Ph3P, NBS",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "OCC(I)=C/C[OTBS]",
+                    "product_smiles": "BrCC(I)=C/C[OTBS]",
+                    "notes": "Appel reaction converting a primary alcohol to a primary alkyl bromide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Conjugate Reduction",
+            "reagents": "NaI-OPr",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH",
+            "yield": "90%",
+            "reactant_smiles": "[OTBS]C/C=C(/CN1CC[C@]23C4=C(C=CC=C4)N5C(=O)C=CC=C[C@@H]21[C@@H]35)\\I",
+            "product_smiles": "[OTBS]C/C=C(/CN1CC[C@]23C4=C(C=CC=C4)N5C(=O)CCC=C[C@@H]21[C@@H]35)\\I",
+            "notes": "Conjugate reduction of the alkene adjacent to the amide carbonyl in the polycyclic core.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Radical Cyclization",
+            "reagents": "Bu3SnH, AIBN",
+            "reagent_smiles": "[SnH](CCCC)(CCCC)CCCC.N#CC(C)(C)N=NC(C)(C)C#N",
+            "conditions": "benzene",
+            "yield": "37%",
+            "reactant_smiles": "I/C=C(/C[OTBS])CN1CC[C@@]23C4=CC=CC=C4N5C(=O)CC=C([C@@H]21)[C@@H]35",
+            "product_smiles": "[OTBS]C/C=C\\[C@H]1C[C@@H]2N3CC[C@@]45C6=CC=CC=C6N7C(=O)CC=C([C@H]12)[C@@H]57",
+            "notes": "Reductive radical cyclization involving cleavage of C-I bond, followed by addition to the electron-deficient alkene and subsequent hydrogen abstraction.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "aq HCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS]C/C=C\\1/CN2CC[C@@]34C5=C(C=CC=C5)N6C(=O)CC=C([C@H]1C[C@@H]32)[C@@H]46",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)CC=C4[C@H]/5C[C@H]6[C@]2(CCN6C\\C5=C\\CO)[C@H]43",
+            "notes": "Deprotection of a TBS ether to a primary alcohol using aqueous HCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Cyclization / Ether Formation",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 85 °C",
+            "yield": "28%",
+            "reactant_smiles": "O=C1N2C3=CC=CC=C3C4=C2C[C@H]5[C@H](/C=C(\\CCO)[C@H]6)N(CC[C@@]45)[C@H]6C1",
+            "product_smiles": "O=C1N2C3=CC=CC=C3C4=C2[C@@H]5[C@@H]6CC=CO[C@H]6[C@H]7N(CC[C@@]45)[C@H]7C1",
+            "notes": "Base-catalyzed intramolecular cyclization of an alkene-alcohol to form a pyran ring (Strychnine).",
+            "substeps": []
+        }
+    ]
+}

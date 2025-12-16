@@ -1,0 +1,206 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "variecolortide-a-trauner-2011",
+        "molecule_name": "Variecolortide A",
+        "class": "Natural Product",
+        "author": "Trauner",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Stille coupling",
+            "reagents": "PdCl2, PPh3",
+            "reagent_smiles": "C=CC[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "Brc1ccc2[nH]ccc2c1",
+            "product_smiles": "C=CCCc1ccc2[nH]ccc2c1",
+            "notes": "Stille coupling of 5-bromo-1H-indole with allyltributylstannane to form 5-allyl-1H-indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Cross-metathesis",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "CC=C(C)C",
+            "conditions": "rt",
+            "yield": "79%",
+            "reactant_smiles": "C=CCC1=CC=C2C(=C1)C=CN2",
+            "product_smiles": "CC(C)=CHCC1=CC=C2C(=C1)C=CN2",
+            "notes": "Cross-metathesis of 5-allylindole with 2,3-dimethylbut-2-ene catalyzed by Grubbs II catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chlorination",
+            "reagents": "NCS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC=C(C)Cc1ccc2[nH]c=cc2c1",
+            "product_smiles": "CC=C(C)Cc1ccc2N=CC(Cl)c2c1",
+            "notes": "Indole 3-position chlorination with N-chlorosuccinimide (NCS). The double bond of the pyrrole ring shifts, and chlorine adds to C3.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Prenylation / Cross-coupling",
+            "reagents": "prenyl 9-BBN",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC(=CCC1=CC=C2C(=C1)C(C=N2)Cl)C",
+            "product_smiles": "C=CC(C)(C)C1=CC2=CC(=CC=C2N1)CC=C(C)C",
+            "notes": "Prenylation of 3-chloro-3H-indole to form a 2,5-disubstituted indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Vilsmeier-Haack formylation",
+            "reagents": "",
+            "reagent_smiles": "ClC=[N+](C)C.[O-]P(=O)(Cl)Cl",
+            "conditions": "",
+            "yield": "84%",
+            "reactant_smiles": "C=CC(C)(C)C1=CC2=CC(=CC=C2N1)CC=C(C)C",
+            "product_smiles": "C=CC(C)(C)C1=C(C=O)C2=CC(=CC=C2N1)CC=C(C)C",
+            "notes": "Indole formylation at C2 using a Vilsmeier reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Knoevenagel Condensation",
+            "reagents": "piperidine",
+            "reagent_smiles": "C=C1C(=O)NCC(=O)N1",
+            "conditions": "110°C",
+            "yield": "39%",
+            "reactant_smiles": "C=CC(C)(C)C1=C(C=O)C2=CC(=CC=C2N1)CC=C(C)C",
+            "product_smiles": "CC=C(C)c1ccc2[nH]c(C(C)(C)C=C)c(C=C3C(=O)NC(=O)NC3=O)c2c1",
+            "notes": "Knoevenagel condensation of the indole aldehyde with a barbituric acid derivative. The screenshot depicts the reagent as 5-methylenebarbituric acid and the product as 5-methylene-5-(indolylmethylene)barbituric acid. However, the drawn product structure (and implied by the input SMILES) is chemically impossible due to hypervalency at the C5 position of the barbituric acid moiety (showing two double bonds and two single bonds, totaling 6 bonds). To provide a chemically valid SMILES, the product has been corrected to 5-(indolylmethylene)barbituric acid, which is the expected product from a Knoevenagel condensation with *unsubstituted* barbituric acid. This means the exocyclic methylene group depicted in the reagent and product structures has been removed in the final product SMILES to ensure chemical validity, as its retention at C5 during condensation would lead to hypervalency. The reagent SMILES, however, reflects the drawn 5-methylenebarbituric acid.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Peptide Coupling / Amide Formation",
+                    "reagents": "DIPEA, EDCI, HOBt",
+                    "reagent_smiles": "COC(=O)[C@H](CO)[NH3+]",
+                    "conditions": "",
+                    "yield": "77%",
+                    "reactant_smiles": "[Cbz]NCC(=O)O",
+                    "product_smiles": "[Cbz]NC(=O)CNC(=O)[C@H](CO)C(=O)OC",
+                    "notes": "Amide bond formation between Cbz-glycine and L-serine methyl ester, catalyzed by EDCI/HOBt with DIPEA as base.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Deprotection (Cbz hydrogenolysis)",
+                    "reagents": "HCl, Pd/C, H2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "87%",
+                    "reactant_smiles": "COC(=O)[C@H](CO)NC(=O)CN[Cbz]",
+                    "product_smiles": "COC(=O)[C@H](CO)NC(=O)CN",
+                    "notes": "Hydrogenolytic deprotection of the N-Cbz group of Cbz-glycyl-L-serine methyl ester to yield glycyl-L-serine methyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Cyclization, Dehydration",
+                    "reagents": "SOCl2, NH3",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "57%",
+                    "reactant_smiles": "COC(=O)[C@@H](CO)NC(=O)CN",
+                    "product_smiles": "C=C1C(=O)NCC(=O)N1",
+                    "notes": "Formation of a cyclic imide/diketopiperazine derivative with an exocyclic alkene from a dipeptide methyl ester through cyclization and dehydration/elimination.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Diels Alder cycloaddition",
+            "reagents": "air",
+            "reagent_smiles": "CC1=CC(=O)C2=C(C3=C(C=C(C=C3C=C2C1=O)O)O)O",
+            "conditions": "o-dichlorobenzene, 180 °C",
+            "yield": "48%",
+            "reactant_smiles": "C=CC(C)(C)C1=C(/C=C\\2/C(=O)NC(=C)C(=O)N2)C3=CC(=CC=C3N1)CC=C(C)C",
+            "product_smiles": "C=CC(C)(C)C1=C(/C=C\\2/C(=O)N[C@@]3(C=C4C5=CC(=CC(=C5C(=O)C6=C(C=C(C)C(=C46)O3)O)O)O)C(=O)N2)C7=C(C=CC(=C7)CC=C(C)C)N1",
+            "notes": "Diels-Alder cycloaddition between an indole-substituted pyrimidinedione and a tetrahydroxy-methyl-anthraquinone, forming the polycyclic Variocolortide A.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Transfer Hydrogenation",
+                    "reagents": "HCO2NH4, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH",
+                    "yield": "95%",
+                    "reactant_smiles": "COC1=CC(=CC(=C1)OC)/C=C/C(=O)O",
+                    "product_smiles": "COC1=CC(=CC(=C1)OC)CCC(=O)O",
+                    "notes": "Reduction of an alpha,beta-unsaturated carboxylic acid to a saturated carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Intramolecular Friedel-Crafts Acylation",
+                    "reagents": "MeSO3H",
+                    "reagent_smiles": "CS(=O)(=O)O",
+                    "conditions": "",
+                    "yield": "70%",
+                    "reactant_smiles": "COC1=CC(=CC(=C1)OC)CCC(=O)O",
+                    "product_smiles": "COc1cc(OC)c2c1CCC(=O)C2",
+                    "notes": "Intramolecular cyclization of a propanoic acid derivative to form an indanone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Ring-opening, functionalization, and hydrolysis",
+                    "reagents": "NaOME, H2O2, KOH",
+                    "reagent_smiles": "CCOC(=O)CC(=O)OCC",
+                    "conditions": "toluene, MeOH",
+                    "yield": "50%",
+                    "reactant_smiles": "COC1=CC(=C2C(=C1)CCC2=O)OC",
+                    "product_smiles": "COC1=CC(=C(C(=C1)CC(=O)O)C(=O)O)OC",
+                    "notes": "Indanone ring opens to a benzene dicarboxylic acid derivative, introducing an acetic acid and a carboxylic acid group, with preservation of the methoxy groups.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Cyclic Anhydride Formation",
+                    "reagents": "Ac₂O",
+                    "reagent_smiles": "CC(=O)OC(=O)C",
+                    "conditions": "toluene, 110 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "COc1c(CC(=O)O)c(C(=O)O)c(OC)cc1",
+                    "product_smiles": "COc1c2c(c(OC)cc1)CC(=O)OC2=O",
+                    "notes": "Dehydration of a diacid to form a cyclic anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Annulation / Fused-ring formation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "CC1=CC(=O)C(=CC1=O)Cl",
+                    "conditions": "THF",
+                    "yield": "52%",
+                    "reactant_smiles": "[OMe]C1=CC(=C2C(=C1)CC(=O)OC2=O)[OMe]",
+                    "product_smiles": "CC1=CC(=O)C2=C(C3=C(C=C(C=C3C=C2C1=O)[OMe])[OMe])O",
+                    "notes": "Formation of a naphthoquinone derivative via reaction of a 4-hydroxycoumarin with a quinone, followed by cyclization and aromatization.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.6",
+                    "reaction_type": "Demethylation",
+                    "reagents": "AlCl3, NaCl",
+                    "reagent_smiles": "",
+                    "conditions": "180 °C",
+                    "yield": "75%",
+                    "reactant_smiles": "COc1cc(OC)c2c(c1)C(=O)c1c(O)cc(C)c(=O)c12",
+                    "product_smiles": "Oc1cc(O)c2c(c1)C(=O)c1c(O)cc(C)c(=O)c12",
+                    "notes": "Demethylation of two methoxy groups on an anthraquinone derivative to form hydroxyl groups.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

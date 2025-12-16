@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "gliocladin-c-stephenson-2011",
+        "molecule_name": "Gliocladin C",
+        "class": "Natural Product",
+        "author": "Stephenson",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Indole N-protection",
+            "reagents": "CbzCl, NaOH, Bu4NHSO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@H](CC1=CNC2=CC=CC=C12)C(=O)OC",
+            "product_smiles": "[Boc]N[C@H](CC1=CN([Cbz])C2=CC=CC=C12)C(=O)OC",
+            "notes": "N-protection of the indole nitrogen with a Cbz group using CbzCl under phase-transfer conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Bromination / Intramolecular Cyclization",
+            "reagents": "NBS, PPTS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "91% (2 steps)",
+            "reactant_smiles": "[Boc]N[CH](CC1=CN(C2=CC=CC=C12)[Cbz])C(=O)OC",
+            "product_smiles": "[Boc]N1[C@H](C[C@@]2(C3=C(C=CC=C3)N([C@@H]21)[Cbz])Br)C(=O)OC",
+            "notes": "Intramolecular cyclization of an indole derivative, featuring bromination at the bridgehead position, to form a tetracyclic indoline system.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidation",
+            "reagents": "MeNH2, THF",
+            "reagent_smiles": "CN",
+            "conditions": "rt",
+            "yield": "87%",
+            "reactant_smiles": "[Boc]N1[C@@H](C[C@@]2(C3=C(C=CC=C3)N([C@H]21)[Cbz])Br)C(=O)OC",
+            "product_smiles": "[Boc]N1[C@@H](C[C@@]2(C3=C(C=CC=C3)N([C@H]21)[Cbz])Br)C(=O)NC",
+            "notes": "Ester is converted to N-methyl amide via amidation with methylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Photocatalytic C-C Bond Formation / Spiroindoline Alkylation",
+            "reagents": "[Ru(bpy)₃Cl₂], Bu₃N",
+            "reagent_smiles": "C1=CC2=C(C=C1)NC(=C2)C=O",
+            "conditions": "DMF, blue LED",
+            "yield": "82%",
+            "reactant_smiles": "[Boc]N1[C@H](C[C@@]2(C3=C(C=CC=C3)N([C@H]21)[Cbz])Br)C(=O)NC",
+            "product_smiles": "[Boc]N1[C@H](C[C@@]2(C3=C(C=CC=C3)N([C@H]21)[Cbz])C5=C(C=O)NC6=C5C=CC=C6)C(=O)NC",
+            "notes": "Photocatalytic reductive coupling of a bromo-spiroindoline with indole-3-carbaldehyde, forming a new spiro C-C bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Decarbonylation",
+            "reagents": "[Rh(CO)(Ph3P)3Cl], dppp, DPPA",
+            "reagent_smiles": "",
+            "conditions": "xylenes, 140 °C",
+            "yield": "85%",
+            "reactant_smiles": "[Boc]N1[C@H](C[C@@]2(C3=C(C=CC=C3)N([C@H]21)[Cbz])C5=C(C=O)NC6=C5C=CC=C6)C(=O)NC",
+            "product_smiles": "[Boc]N1[C@H](C[C@@]2(C3=C(C=CC=C3)N([C@H]21)[Cbz])C5=CNC6=C5C=CC=C6)C(=O)NC",
+            "notes": "Decarbonylation of an indole-aldehyde to the corresponding indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-alkylation (Cbz protection)",
+            "reagents": "CbzCl, NaOH, Bu4NHSO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "98%",
+            "reactant_smiles": "[Boc]N1[C@H](C[C@@]2(C3=C(C=CC=C3)N([C@H]21)[Cbz])C5=CNC6=C5C=CC=C6)C(=O)NC",
+            "product_smiles": "[Boc]N1[C@H](C[C@]2(C3=C(C=CC=C3)N([C@H]21)[Cbz])C5=CN(C6=C5C=CC=C6)[Cbz])C(=O)NC",
+            "notes": "N-protection of the indole secondary amine with a Cbz group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative elimination, Deprotection",
+            "reagents": "NBS, DBU",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]N1[C@H](C[C@]2(C3=CC=CC=C3N([C@@H]21)[Cbz])C5=CN([Cbz])C6=C5C=CC=C6)[NHMe]",
+            "product_smiles": "[NHMe]C(=O)C1[C@H]2[C@@]([C](C1)=N2)(C3=CC=CC=C3N2[Cbz])C4=CN([Cbz])C5=C4C=CC=C5",
+            "notes": "Deprotection of Boc group, followed by oxidative elimination to form a dihydropyrrole ring containing both an imine and an alkene. The central 5-membered ring is transformed from saturated to unsaturated. One N-Cbz indole is fused spiro to the central ring, the other N-Cbz indole is fused via an N and a C to the central ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cycloaddition / Annulation",
+            "reagents": "Et3N",
+            "reagent_smiles": "CCOC(=O)C(=O)Cl",
+            "conditions": "150°C, microwave",
+            "yield": "76%",
+            "reactant_smiles": "CNC(=O)C1=N[C@H]2[C@@](C1)(C3=CC=CC=C3N2[Cbz])C5=CN(C6=C5C=CC=C6)[Cbz]",
+            "product_smiles": "[Cbz]N1C=C(C2=C1C=CC=C2)[C@]34C=C5C(=O)N(C)C(=O)C(=O)N5[C@@H]3N(C6=CC=CC=C64)[Cbz]",
+            "notes": "Intramolecular cyclization to form a fused pyrimidine-2,4,6-trione (uracil-like) ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "BCl3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 to 23 °C",
+            "yield": "80%",
+            "reactant_smiles": "CN1C(=O)NC(=O)C2=C1N=C([C@@]3([C@@H]4N([Cbz])C5=CC=CC=C54)[C@@]6N([Cbz])C=C7C=CC=CC76])C2",
+            "product_smiles": "CN1C(=O)NC(=O)C2=C1N=C([C@@]3([C@@H]4NC5=CC=CC=C54)[C@@]6NC=C7C=CC=CC76])C2",
+            "notes": "Deprotection of two Cbz groups to form secondary amines (NH).",
+            "substeps": []
+        }
+    ]
+}

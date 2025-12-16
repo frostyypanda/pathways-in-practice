@@ -1,0 +1,278 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "biliverdin-svenda-2024",
+        "molecule_name": "Biliverdin",
+        "class": "Natural Product",
+        "author": "Svenda",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Henry reaction (nitro-aldol)",
+            "reagents": "KF",
+            "reagent_smiles": "CC=O.CC(C)O",
+            "conditions": "iPrOH, rt",
+            "yield": "95%",
+            "reactant_smiles": "COC(=O)CCC[N+](=O)[O-]",
+            "product_smiles": "CC(C(CCC(=O)OC)[N+](=O)[O-])O",
+            "notes": "Henry reaction (nitro-aldol) of methyl 4-nitrobutanoate with acetaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acetylation (Esterification)",
+            "reagents": "H2SO4, Ac2O",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(C(CCC(=O)OC)[N+](=O)[O-])O",
+            "product_smiles": "CC(C(CCC(=O)OC)[N+](=O)[O-])[OAc]",
+            "notes": "Acetylation of a secondary alcohol to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Pyrrole Synthesis",
+            "reagents": "",
+            "reagent_smiles": "N#CC(=O)OC(C)(C)C",
+            "conditions": "MeCN, THF, -30 °C",
+            "yield": "81%",
+            "reactant_smiles": "CC(C(CCC(=O)OC)[N+](=O)[O-])OC(=O)C",
+            "product_smiles": "CC(C)(C)OC(=O)c1cn([H])c(CC(=O)OC)c1C",
+            "notes": "Intramolecular cyclization involving a nitroalkane derivative and a cyanoacetate to form a substituted pyrrole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Vilsmeier-Haack Formylation",
+            "reagents": "POCl3, DMF",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1=C(C(=O)OC(C)(C)C)NC=C1CCC(=O)OC",
+            "product_smiles": "CC1=C(C(=O)OC(C)(C)C)NC(=C1CCC(=O)OC)C=O",
+            "notes": "Formylation of the pyrrole ring at the unsubstituted position using Vilsmeier-Haack conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis / Deprotection",
+            "reagents": "HCOOH",
+            "reagent_smiles": "O=CO",
+            "conditions": "rt",
+            "yield": "87%",
+            "reactant_smiles": "CC1=C(C(=O)OC(C)(C)C)NC(=C1CCC(=O)OC)C=O",
+            "product_smiles": "CC1=C(C(=O)O)NC(=C1CCC(=O)OC)C=O",
+            "notes": "Hydrolysis of a tert-butyl ester to a carboxylic acid using formic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Decarboxylation",
+            "reagents": "Cu2O, 1,10-phenanthroline",
+            "reagent_smiles": "O=[Cu]O[Cu].c1ccc2c(c1)ccc3c2nccc3",
+            "conditions": "NMP, 170 °C",
+            "yield": "97%",
+            "reactant_smiles": "CC1=C(C(=O)O)NC(=C1CCC(=O)OC)C=O",
+            "product_smiles": "CC1=CNC(=C1CCC(=O)OC)C=O",
+            "notes": "Decarboxylation of a pyrrole carboxylic acid using copper(I) oxide and 1,10-phenanthroline.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Iodination",
+            "reagents": "NIS",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "92%",
+            "reactant_smiles": "O=Cc1[nH]c(C)c(CCC(=O)OC)c1",
+            "product_smiles": "O=Cc1[nH]c(C)c(CCC(=O)OC)c(I)1",
+            "notes": "Iodination of an unsubstituted pyrrole position using N-iodosuccinimide (NIS).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Palladium-catalyzed Borylation",
+            "reagents": "HBpin, Ph(PPh3)2Cl2",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 60 °C",
+            "yield": "80%",
+            "reactant_smiles": "Cc1c(CCC(=O)OC)c(C=O)[nH]c1I",
+            "product_smiles": "Cc1c(CCC(=O)OC)c(C=O)[nH]c1B2OC(C)(C)C(C)(C)O2",
+            "notes": "Palladium-catalyzed borylation of an aryl iodide with pinacolborane to form an aryl pinacolboronate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd2dba3, SPhos",
+            "reagent_smiles": "C=CC1=C(C)/C(=C/I)/NC1=O",
+            "conditions": "",
+            "yield": "47%",
+            "reactant_smiles": "CC1=C(B2OC(C)(C)C(C)(C)O2)NC(=C1CCC(=O)OC)C=O",
+            "product_smiles": "C=CC1=C(C)/C(=C/C2=C(C)C(=C(C=O)N2)CCC(=O)OC)/NC1=O",
+            "notes": "Suzuki-Miyaura coupling of a pyrrole boronate ester with an iodo-maleimide derivative to form a conjugated dipyrrole system.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Electrophilic Addition",
+                    "reagents": "Br2",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, 0 °C",
+                    "yield": "78%",
+                    "reactant_smiles": "CC#CC(=O)OCC",
+                    "product_smiles": "CCOC(=O)/C(Br)=C(/Br)C",
+                    "notes": "Addition of bromine to an alkyne, forming an (E)-dibromoalkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Sonogashira Coupling",
+                    "reagents": "CuI, Et3N",
+                    "reagent_smiles": "C#C[TIPS]",
+                    "conditions": "",
+                    "yield": "78%",
+                    "reactant_smiles": "CCOC(=O)/C(Br)=C(/C)Br",
+                    "product_smiles": "CCOC(=O)/C(Br)=C(/C)C#C[TIPS]",
+                    "notes": "Sonogashira coupling of a vinyl bromide with TIPS-acetylene. The bromine trans to the ester group is replaced by the alkyne, maintaining Z-stereochemistry around the double bond.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Suzuki-Miyaura Coupling",
+                    "reagents": "Pd₂(dba)₃, SPhos",
+                    "reagent_smiles": "[K+].C=C[B-](F)(F)F",
+                    "conditions": "",
+                    "yield": "88%",
+                    "reactant_smiles": "Br/C(=C(/C)\\C#C[TIPS])/C(=O)OCC",
+                    "product_smiles": "C=C/C(=C(/C)\\C#C[TIPS])/C(=O)OCC",
+                    "notes": "Bromo group on an E-enolate is replaced with a vinyl group, retaining the alkene stereochemistry. TIPS is an abbreviation for triisopropylsilyl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Iodolactonization / Iodocyclization",
+                    "reagents": "iodine",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "97%",
+                    "reactant_smiles": "C=C/C(=C/C#C[TIPS])\\C(=O)OCC",
+                    "product_smiles": "C=CC1=C(C)/C(=C(\\I)/[TIPS])/OC1=O",
+                    "notes": "Intramolecular iodocyclization of an alkynyl ester to form a furanone with an exocyclic iodo-TIPS-alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.5",
+                    "reaction_type": "Amidation / Lactone to Lactam Conversion",
+                    "reagents": "NH3, HCO2H",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "C=CC1=C(C)/C(=C(\\I)[TIPS])/OC1=O",
+                    "product_smiles": "C=CC1=C(C)/C(=C(\\I)[TIPS])/NC1=O",
+                    "notes": "Conversion of a γ-lactone to a γ-lactam using ammonia and formic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.6",
+                    "reaction_type": "Desilylation",
+                    "reagents": "TBAF, AcOH, iodine",
+                    "reagent_smiles": "[N+](CCCC)(CCCC)(CCCC)CCCC.[F-].CC(=O)O.II",
+                    "conditions": "",
+                    "yield": "90%",
+                    "reactant_smiles": "C=CC1=C(C)/C([TIPS])=C/I/NC1=O",
+                    "product_smiles": "C=CC1=C(C)/C(=C/I)/NC1=O",
+                    "notes": "Desilylation of an exocyclic vinyl-TIPS group on a substituted pyrrolinone using TBAF, with retention of double bond stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Condensation / Macrocyclization",
+            "reagents": "H2SO4",
+            "reagent_smiles": "COC(=O)CCC1=C(C)C(=CN1)C=C",
+            "conditions": "98%",
+            "yield": "",
+            "reactant_smiles": "C=CC1=C(C)/C(=C/C2=C(C)C(=C(C=O)N2)CCC(=O)OC)/NC1=O",
+            "product_smiles": "COC(=O)CCC5=C(C)C(=[nH])C(=C5)/C=C/C6=C(C)C(=N)C(=C6CCC(=O)OC)/C=C/C7=C(C)C(=O)[nH]C(=C7C=C)/C=C/C8=C(C)C(=O)[nH]C(=C8C=C)/C=C/5",
+            "notes": "Formation of a cyclic tetrapyrrole (biliverdin derivative) via acid-catalyzed condensation. The reaction appears to be a formal 2+2 condensation of the pyrrole-aldehyde (reactant) and the alpha-unsubstituted pyrrole (drawn reagent).",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Nitroaldol (Henry) reaction",
+                    "reagents": "KF",
+                    "reagent_smiles": "CC=O",
+                    "conditions": "iPrOH, rt",
+                    "yield": "95%",
+                    "reactant_smiles": "COC(=O)CCC[N+](=O)[O-]",
+                    "product_smiles": "CC(C(CCC(=O)OC)[N+](=O)[O-])O",
+                    "notes": "Methyl 4-nitrobutanoate reacts with acetaldehyde via a nitroaldol (Henry) reaction, forming a beta-nitro alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Acetylation",
+                    "reagents": "H2SO4",
+                    "reagent_smiles": "CC(=O)OC(=O)C",
+                    "conditions": "DCM, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(C(CCC(=O)OC)[N+](=O)[O-])O",
+                    "product_smiles": "CC(C(CCC(=O)OC)[N+](=O)[O-])[OAc]",
+                    "notes": "Acetylation of a secondary alcohol using acetic anhydride, catalyzed by sulfuric acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Pyrrole synthesis",
+                    "reagents": "TMG",
+                    "reagent_smiles": "N#CCC(=O)OC(C)(C)C",
+                    "conditions": "iPrOH, THF, -30 °C",
+                    "yield": "53%",
+                    "reactant_smiles": "CC(C(CCC(=O)OC)[N+](=O)[O-])OC(=O)C",
+                    "product_smiles": "Cc1c(CCC(=O)OC)[nH]c(C(=O)OC(C)(C)C)c1",
+                    "notes": "Intramolecular cyclization of a nitro compound with a cyanoacetate to form a substituted pyrrole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "C-H Borylation",
+                    "reagents": "[Ir(COD)OCH3]2, B2pin2, dtbbpy",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 80 °C",
+                    "yield": "98%",
+                    "reactant_smiles": "CC1=CNC(=C1CCC(=O)O[Me])C(=O)OC(C)(C)C",
+                    "product_smiles": "CC1=C(B2OC(C)(C)C(C)(C)O2)NC(=C1CCC(=O)O[Me])C(=O)OC(C)(C)C",
+                    "notes": "Ir-catalyzed C-H borylation of a pyrrole derivative at the C5 position (adjacent to the nitrogen and methyl group).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.5",
+                    "reaction_type": "Suzuki-Miyaura Coupling",
+                    "reagents": "Pd2dba3, SPhos",
+                    "reagent_smiles": "O=C1NC(=O)C(I)=C1(C)C=C",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC1=C(B2OC(C)(C)C(C)(C)O2)NC(=C1CCC(=O)OC)C(=O)OC(C)(C)C",
+                    "product_smiles": "C=CC/1=C(C)C(=O)N\\C1=C/C2=C(C)C(=C(C(=O)OC(C)(C)C)N2)CCC(=O)OC",
+                    "notes": "A Suzuki-Miyaura coupling reaction between a pyrrole boronate ester and an iodo-maleimide derivative. An exocyclic E-alkene is formed via C-C bond formation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.6",
+                    "reaction_type": "Deprotection",
+                    "reagents": "TFA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "78% (2 steps)",
+                    "reactant_smiles": "COC(=O)CCC1=C(C)C(=CN1C(=O)OC(C)(C)C)C=CC2=C(C)C(=O)NC2",
+                    "product_smiles": "COC(=O)CCC1=C(C)C(=CN1)C=CC2=C(C)C(=O)NC2",
+                    "notes": "Deprotection of the Boc protecting group on the pyrrole nitrogen using TFA.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

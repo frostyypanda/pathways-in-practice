@@ -1,0 +1,206 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspergilone-a-bayer-2025",
+        "molecule_name": "Aspergilone A",
+        "class": "Natural Product",
+        "author": "Bayer",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Vilsmeier-Haack Formylation",
+            "reagents": "POCl3, DMF",
+            "reagent_smiles": "O=P(Cl)(Cl)Cl",
+            "conditions": "75 °C",
+            "yield": "90%",
+            "reactant_smiles": "COc1cc(Br)cc(OC)c1",
+            "product_smiles": "COc1cc(OC)c(C=O)c(Br)c1",
+            "notes": "A brominated dimethoxybenzene undergoes Vilsmeier-Haack formylation using POCl3 and DMF to introduce an aldehyde group ortho to the bromine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrazone Formation",
+            "reagents": "PhMe, H2O",
+            "reagent_smiles": "NN",
+            "conditions": "90 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(=C(C=O)C(=C1)Br)OC",
+            "product_smiles": "COC1=CC(=C(/C=N/N)C(=C1)Br)OC",
+            "notes": "Condensation of an aldehyde with hydrazine to form a hydrazone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Wolff-Kishner Reduction",
+            "reagents": "KOH, PEG-400",
+            "reagent_smiles": "",
+            "conditions": "PhMe, H2O, 110 °C",
+            "yield": "99% (2 steps)",
+            "reactant_smiles": "COc1cc(OC)c(C=NN)c(Br)c1",
+            "product_smiles": "COc1cc(OC)c(C)c(Br)c1",
+            "notes": "Hydrazone group reduced to a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "96%",
+            "reactant_smiles": "COc1cc(C)c(Br)c(OC)c1",
+            "product_smiles": "Oc1cc(C)c(Br)c(O)c1",
+            "notes": "Demethylation of two methoxy groups on an aromatic ring to form hydroxyl groups using boron tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Protection",
+            "reagents": "",
+            "reagent_smiles": "Cl[Si](C(C)C)(C(C)C)C(C)C.n1cncc1",
+            "conditions": "DCM, rt",
+            "yield": "87%",
+            "reactant_smiles": "Cc1c(Br)cc(O)cc1O",
+            "product_smiles": "Cc1c(Br)cc([OTIPS])cc1[OTIPS]",
+            "notes": "Di-protection of phenolic hydroxyl groups with triisopropylsilyl (TIPS) groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Borylation (Suzuki-Miyaura type)",
+            "reagents": "B2pin2, PdCl2dppf, KOAc",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, 85 °C",
+            "yield": "72%",
+            "reactant_smiles": "[TIPS]Oc1c(Br)c(C)cc(O[TIPS])c1",
+            "product_smiles": "[TIPS]Oc1c(B2OC(C)(C)C(C)(C)O2)c(C)cc(O[TIPS])c1",
+            "notes": "Palladium-catalyzed regioselective borylation of an aryl bromide with bis(pinacolato)diboron.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Aromatic C-C Coupling / Substitution",
+            "reagents": "n-BuLi, MgBr2, MeOH",
+            "reagent_smiles": "CC(C)c1cc(C(C)C)cc(C(C)C)c1C(=O)O[C@@H](C)[Sn](C)(C)C",
+            "conditions": "Et2O, -78 to -41 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]Oc1cc(O[TIPS])cc(C)c1B2OC(C)(C)C(C)(C)O2",
+            "product_smiles": "[TIPS]Oc1cc(O[TIPS])c(C)c([C@H](C)B2OC(C)(C)C(C)(C)O2)c1",
+            "notes": "Aryl-Bpin group of the reactant is substituted by a chiral alkyl-Bpin group via an organometallic reaction involving a chiral organotin reagent. The existing aryl methyl group remains, and two TIPS protected phenol groups are retained.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Esterification",
+                    "reagents": "TBAI, NaOH",
+                    "reagent_smiles": "CCBr",
+                    "conditions": "CHCl3, H2O, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "[i-Pr]c1cc([i-Pr])c(C(=O)O)c([i-Pr])c1",
+                    "product_smiles": "[i-Pr]c1cc([i-Pr])c(C(=O)OCC)c([i-Pr])c1",
+                    "notes": "Carboxylic acid is esterified with bromoethane to form an ethyl ester, facilitated by NaOH as a base and TBAI as a phase transfer catalyst.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Stereoselective Stannylation",
+                    "reagents": "Me3SnCl, s-BuLi, (-)-sparteine",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, -78 °C to rt",
+                    "yield": "67%",
+                    "reactant_smiles": "CCOC(=O)C1=C(C=C(C=C1C(C)C)C(C)C)C(C)C",
+                    "product_smiles": "CC(C)C1=CC(=C(C(=C1)C(C)C)C(=O)O[C@@H](C)[Sn](C)(C)C)C(C)C",
+                    "notes": "Stereoselective stannylation of an ester, replacing the ethoxy group with a chiral trimethylstannyl-substituted alkyl group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Chiral Auxiliary Mediated Boron Homologation",
+            "reagents": "n-BuLi, MgBr2",
+            "reagent_smiles": "O=C(O[C@H](C)[Sn](C)(C)C)c1c(C(C)C)cc(C(C)C)cc1C(C)C",
+            "conditions": "Et2O, -78 to -41 °C, MeOH",
+            "yield": "",
+            "reactant_smiles": "O[Si](C(C)C)(C(C)C)C(C)Cc1c(C)c([C@@H](C)B2OC(C)(C)C(C)(C)O2)cc1O[Si](C(C)C)(C(C)C)C(C)C",
+            "product_smiles": "O[Si](C(C)C)(C(C)C)C(C)Cc1c(C)c([C@@H](C)[C@H](C)B2OC(C)(C)C(C)(C)O2)cc1O[Si](C(C)C)(C(C)C)C(C)C",
+            "notes": "Stereoselective chain extension of a boronic ester, forming a new stereocenter, mediated by a chiral alpha-stannyl ester and n-BuLi.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Esterification / Carboxylate Alkylation",
+                    "reagents": "TBAI, NaOH",
+                    "reagent_smiles": "CCBr",
+                    "conditions": "CHCl3, H2O, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(C)C1=CC(=C(C(=C1)C(C)C)C(=O)O)C(C)C",
+                    "product_smiles": "[OEt]C(=O)C1=C(C=C(C=C1C(C)C)C(C)C)C(C)C",
+                    "notes": "Esterification of 2,4,6-triisopropylisopropylbenzoic acid with bromoethane to form ethyl 2,4,6-triisopropylbenzoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Stereoselective α-stannylation of ester",
+                    "reagents": "s-BuLi, (+)-sparteine",
+                    "reagent_smiles": "C[Sn](C)(C)Cl",
+                    "conditions": "Et2O, -78 °C to rt",
+                    "yield": "67%",
+                    "reactant_smiles": "CCOC(=O)C1=C(C(C)C)C=C(C(C)C)C=C1C(C)C",
+                    "product_smiles": "CC(C)C1=CC(=C(C(=C1)C(C)C)C(=O)O[C@@H](C)[Sn](C)(C)C)C(C)C",
+                    "notes": "The ethyl group of the ester is stereoselectively α-stannylated. The α-carbon of the ethyl moiety is deprotonated by s-BuLi in the presence of (+)-sparteine, forming a chiral carbanion which then reacts with Me3SnCl. The aromatic core and isopropyl substituents remain unchanged.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Deboronation",
+            "reagents": "NaBO3",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, rt",
+            "yield": "60% (3 steps)",
+            "reactant_smiles": "CC1=C(O[TIPS])C=C(O[TIPS])C=C1[C@@H](C)[C@H](C)B2OC(C)(C)C(C)(C)O2",
+            "product_smiles": "CC1=C(O[TIPS])C=C(O[TIPS])C=C1[C@@H](C)[C@H](C)O",
+            "notes": "Oxidative cleavage of a pinacol boronic ester to yield an alcohol with retention of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection (Desilylation)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "[OTIPS]C1=CC(=C(C)C(=C1)[C@@H](C)[C@H](C)O)[OTIPS]",
+            "product_smiles": "OC1=CC(=C(C)C(=C1)[C@@H](C)[C@H](C)O)O",
+            "notes": "Cleavage of triisopropylsilyl (TIPS) protecting groups from a bis-aryl silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Dihydropyranone Formation",
+            "reagents": "HC(OEt)3, TFA",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]([C@H](C)O)C1=CC(=CC(=C1C)O)O",
+            "product_smiles": "C[C@@H]1[C@H](C)OC=C2C(=CC(=O)C(=C12)C)O",
+            "notes": "Intramolecular cyclization of a diol/phenol with triethyl orthoformate under acidic conditions to form a fused dihydropyranone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative alkylation",
+            "reagents": "Cs2CO3, 18-crown-6",
+            "reagent_smiles": "C1=CC=C(C=C1)CI",
+            "conditions": "DMF, 40 °C",
+            "yield": "51%",
+            "reactant_smiles": "CC1=CC(O)=C(C(=O)C(C)=C1)C2=C(O[C@H](C)C=C[C@@H]2C)",
+            "product_smiles": "CC1=CC(=O)C(=C2O[C@H](C)C=C[C@@H]2C)C(=O)C1(CC3=CC=CC=C3)CC4=CC=CC=C4",
+            "notes": "Double benzylic alkylation and oxidation of a hydroxyl group to a ketone on a chromone derivative.",
+            "substeps": []
+        }
+    ]
+}

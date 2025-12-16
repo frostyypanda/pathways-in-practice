@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "humulene-suginome-1984",
+        "molecule_name": "Humulene",
+        "class": "Natural Product",
+        "author": "Suginome",
+        "year": 1984
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Reaction / Organometallic Coupling",
+            "reagents": "THF, HMPA",
+            "reagent_smiles": "Cl[Mg]C(C)(C)C#[TMS]",
+            "conditions": "0 °C",
+            "yield": "98%",
+            "reactant_smiles": "BrC/C=C(\\C)CC/C=C(/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC(C)(C)C#[TMS])/C)C",
+            "notes": "A Grignard reagent, containing a trimethylsilyl-protected alkyne, reacts with an allylic bromide. This forms a new carbon-carbon bond, replacing the bromine with the carbon nucleophile, resulting in an extended polyene chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection (TMS-alkyne)",
+            "reagents": "aq KF",
+            "reagent_smiles": "",
+            "conditions": "DMF, 70-80 °C",
+            "yield": "88%",
+            "reactant_smiles": "C/C(=C/CCC/C=C(\\C)/CC(C)(C)C#[TMS])/C",
+            "product_smiles": "C/C(=C/CCC/C=C(\\C)/CC(C)(C)C#C)/C",
+            "notes": "TMS-protected terminal alkyne deprotected under fluoride conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "SeO2, pyridine",
+            "reagent_smiles": "",
+            "conditions": "95% EtOH, reflux",
+            "yield": "",
+            "reactant_smiles": "C#CC(C)(C)C/C=C(\\C)CCC=C(C)C",
+            "product_smiles": "C#CC(C)(C)C/C=C(\\C)CC/C=C(\\C)/C=O",
+            "notes": "Selenium dioxide oxidation converts a terminal allylic position to an alpha,beta-unsaturated aldehyde. The internal alkene and alkyne functionalities remain untouched. Stereochemistry of both alkenes is E.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "95% EtOH, 0 °C",
+            "yield": "45% (2 steps)",
+            "reactant_smiles": "C#CC(C)(C)C/C=C(\\C)/CC/C=C(\\C)/C=O",
+            "product_smiles": "C#CC(C)(C)C/C=C(\\C)/CC/C=C(\\C)/CO",
+            "notes": "Aldehyde group reduced to a primary alcohol using sodium borohydride. Alkyne and alkene groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Substitution (SN2)",
+            "reagents": "PBr3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "C#CC(C)(C)C/C=C(\\C)/CC/C=C(\\C)/CO",
+            "product_smiles": "C#CC(C)(C)C/C=C(\\C)/CC/C=C(\\C)/CBr",
+            "notes": "Conversion of a primary allylic alcohol to a primary allylic bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydroboration",
+            "reagents": "",
+            "reagent_smiles": "C(C(C)C)C[BH]C(C(C)C)C",
+            "conditions": "THF, -10 °C",
+            "yield": "",
+            "reactant_smiles": "C#CC(C)(C)C/C=C(\\C)/CC/C=C(\\C)/CBr",
+            "product_smiles": "BrC/C=C(\\C)/CC/C=C(\\C)/C(C)(C)/C=C/B(C(C(C)C)C)C(C(C)C)C",
+            "notes": "Terminal alkyne hydroboration to form an E-vinyl borane.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Macrocyclization, Suzuki-Miyaura coupling",
+            "reagents": "Pd(PPh3)4, 4N NaOH",
+            "reagent_smiles": "",
+            "conditions": "PhH, reflux",
+            "yield": "32% (2 steps)",
+            "reactant_smiles": "BrC[C](C)=C\\[CH]CCC/[C](C)=C/[CH]CC(C)(C)/C=C/[B]([Sia])([Sia])",
+            "product_smiles": "C/C/1=C\\CC/C(=C/CC(C)(C)/C=C/C1)/C",
+            "notes": "Macrocyclization of a bromo-borane precursor to form Humulene via Suzuki coupling, forming an 11-membered ring.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "coprinol-dudley-2022",
+        "molecule_name": "Coprinol",
+        "class": "Natural Product",
+        "author": "Dudley",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enol Triflation",
+            "reagents": "Tf2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC1(C)CC(=O)CC(=O)C1",
+            "product_smiles": "CC1(C)CC(=O)C=C(C1)[OTf]",
+            "notes": "Formation of an enol triflate from a 1,3-cyclohexanedione.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ring-opening / Enolate Addition / Rearrangement",
+            "reagents": "LDA",
+            "reagent_smiles": "CCOC(=O)C",
+            "conditions": "EtOAc, THF",
+            "yield": "89%",
+            "reactant_smiles": "C[C@]1(C)CC(=O)C=C(C1)OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "C#CC[C@@](C)(C)CC(=O)CC(=O)OCC",
+            "notes": "Ring-opening reaction of a cyclic enol triflate by ethyl acetate enolate, followed by rearrangement to form an acyclic product containing an alkyne, ketone, and ester. The quaternary stereocenter is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "TBAF-mediated rearrangement / elimination",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "94% (2 steps)",
+            "reactant_smiles": "C#CC[C@@](C)(C)C/C(=C/C(=O)OCC)/[OTf]",
+            "product_smiles": "C#CC[C@@](C)(C)CC#CC(=O)OCC",
+            "notes": "TBAF-mediated transformation of an enol triflate to a product containing two alkyne groups and an ethyl ester. The chiral center's configuration is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "[2+2+2] Cycloaddition",
+            "reagents": "BINAP-Rh(I)",
+            "reagent_smiles": "C#CCO",
+            "conditions": "DCM",
+            "yield": "97%",
+            "reactant_smiles": "C#CC[C@](C)(C)CC#CC(=O)OCC",
+            "product_smiles": "CCOC(=O)C1=C(CCO)C(=CC2=C1C[C@@](C)(C)C2)C",
+            "notes": "Intramolecular [2+2+2] cycloaddition of a diyne with propargyl alcohol, catalyzed by a chiral Rh(I)-BINAP complex, to form a substituted hydrindane aromatic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 180 °C",
+            "yield": "96%",
+            "reactant_smiles": "CCOC(=O)C1=C(CCO)C(=CC2=C1CC(C)(C)C2)C",
+            "product_smiles": "Cc1c(CCO)c2c(cc1C)CC(C)(C)C2",
+            "notes": "Reduction of an ethyl ester to a methyl group (full reduction) using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Aromatic C-H Hydroxylation",
+            "reagents": "HFIP, NaHCO3",
+            "reagent_smiles": "C1=CC2=C(C=C1)C(=O)OOC2=O",
+            "conditions": "H2O, MeOH, 40 °C",
+            "yield": "76%",
+            "reactant_smiles": "CC1=C(CCO)C=C(C)C2=C1C[C@@](C)(C)C2",
+            "product_smiles": "CC1=C(CCO)C(O)=C(C)C2=C1C[C@@](C)(C)C2",
+            "notes": "Aromatic C-H hydroxylation of a methylated bicyclic phenol precursor using o-benzenedicarbonyl peroxide.",
+            "substeps": []
+        }
+    ]
+}

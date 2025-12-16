@@ -1,0 +1,241 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "luminacin-d-wood-2002",
+        "molecule_name": "Luminacin D",
+        "class": "Natural Product",
+        "author": "Wood",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydroiodination of alkyne",
+            "reagents": "RedAl, I₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC#CCO",
+            "product_smiles": "CC/C=C(\\CO)/I",
+            "notes": "Alkyne is reduced and iodinated to form a Z-iodoalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TIPSCl, imd",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "96%",
+            "reactant_smiles": "I\\C=C(/CO)CC",
+            "product_smiles": "I\\C=C(/[OTIPS])CC",
+            "notes": "The primary alcohol is protected as a triisopropylsilyl (TIPS) ether using TIPSCl in the presence of imidazole (imd) and DMF as solvent. The Z-configuration of the trisubstituted alkene is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Heck reaction",
+            "reagents": "Pd(OAc)2, Ag2CO3, PPh3",
+            "reagent_smiles": "C=COCC",
+            "conditions": "",
+            "yield": "78%",
+            "reactant_smiles": "CC/C=C(/C[OTIPS])\\I",
+            "product_smiles": "CC/C=C(/C[OTIPS])\\C(=O)C",
+            "notes": "Heck coupling of an iodoalkene with ethyl vinyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alpha-bromination",
+            "reagents": "TMSOTf, Et3N, NBS",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "CC/C=C(/CO[OTIPS])\\C(=O)C",
+            "product_smiles": "CC/C=C(/CO[OTIPS])\\C(=O)CBr",
+            "notes": "Alpha-bromination of a ketone, likely via silyl enol ether formation (TMSOTf, Et3N) followed by bromination with NBS.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nozaki-Hiyama-Kishi reaction / Reductive Coupling",
+            "reagents": "SmI2, acetaldehyde, K2CO3, MeOH",
+            "reagent_smiles": "CCC/C=C(Br)/C=O",
+            "conditions": "MeOH",
+            "yield": "96%",
+            "reactant_smiles": "CC/C=C(\\C[OTIPS])/C(=O)CBr",
+            "product_smiles": "CC/C=C(\\C[OTIPS])/[C@@H](O)C[C@H](O)C/C=C(Br)/CCC",
+            "notes": "Reductive coupling of an alpha-bromo ketone with an alpha-bromo aldehyde, forming a 1,3-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetal formation (1,3-diol protection)",
+            "reagents": "PPTS",
+            "reagent_smiles": "CC(C)(OC)OC",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CC/C=C(/C[OTIPS])/[C@H](O)C[C@@H](O)/C(=C/CC)/Br",
+            "product_smiles": "CC/C=C(/C[OTIPS])/[C@H]1C[C@@H](/C(=C/CC)/Br)OC(C)(C)O1",
+            "notes": "Formation of a 1,3-dioxane acetal from a 1,3-diol using 2,2-dimethoxypropane and PPTS.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "t-BuLi",
+            "reagent_smiles": "O=CC1=C(O[Bn])C(CO[TBS])=C(O[Bn])C(C=C(C)C)=C1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC[C](Br)=C[C@@H]1CH2[C@H](C=C(CC)CO[TIPS])OC(C)(C)O1",
+            "product_smiles": "CC[C](C(O)C1=C(O[Bn])C(CO[TBS])=C(O[Bn])C(C=C(C)C)=C1)=C[C@@H]2CH2[C@H](C=C(CC)CO[TIPS])OC(C)(C)O2",
+            "notes": "Formation of organolithium from vinyl bromide via halogen-lithium exchange, followed by nucleophilic addition to an aldehyde to form a secondary alcohol and a new carbon-carbon bond.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Iodination",
+                    "reagents": "Me₃BnN⁺ICl₂⁻",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "80%",
+                    "reactant_smiles": "COC(=O)C1=CC=C(C(=C1O)CO)O",
+                    "product_smiles": "COC(=O)C1=CC(=C(C(=C1O)CO)O)I",
+                    "notes": "Electrophilic aromatic iodination of a tri-substituted benzene derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Etherification (O-alkylation)",
+                    "reagents": "BnBr, K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "acetone",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)C1=CC(=C(C(=C1O)CO)O)I",
+                    "product_smiles": "COC(=O)C1=CC(=C(C(=C1[OBn])CO)[OBn])I",
+                    "notes": "Alkylation of two phenolic hydroxyl groups with benzyl bromide using potassium carbonate in acetone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Alcohol Protection (Silylation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF",
+                    "yield": "82%",
+                    "reactant_smiles": "COC(=O)C1=CC(=C(C(=C1OCC2=CC=CC=C2)CO)OCC3=CC=CC=C3)I",
+                    "product_smiles": "COC(=O)C1=CC(=C(C(=C1OCC2=CC=CC=C2)C[OTBS])OCC3=CC=CC=C3)I",
+                    "notes": "Protection of a primary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Stille coupling",
+                    "reagents": "(o-tol)3P, DMF, trans-ClBnPd(PPh3)2",
+                    "reagent_smiles": "[Sn](CCCC)(CCCC)CCCC[C](C)=C",
+                    "conditions": "DMF",
+                    "yield": "85%",
+                    "reactant_smiles": "[TBS]OCC1=C([Bn]O)C(C(=O)OC)=CC(I)=C1[Bn]O",
+                    "product_smiles": "[TBS]OCC1=C([Bn]O)C(C(=O)OC)=CC(C(C)=C)C1[Bn]O",
+                    "notes": "Stille coupling of an aryl iodide with an organotin reagent to form a vinyl-substituted aromatic compound.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Ester Reduction",
+                    "reagents": "DIBAIH",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "CC(=CC1=C(C(=C(C(=C1)C(=O)OC)O[Bn])C[OTBS])O[Bn])C",
+                    "product_smiles": "CC(=CC1=C(C(=C(C(=C1)CO)O[Bn])C[OTBS])O[Bn])C",
+                    "notes": "Methyl ester reduced to primary alcohol using DIBAIH.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.6",
+                    "reaction_type": "Swern oxidation",
+                    "reagents": "(COCl)2, DMSO, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "79% (2 steps)",
+                    "reactant_smiles": "CC(=CC1=C(C(=C(C(=C1)CO)[OBn])C[OTBS])[OBn])C",
+                    "product_smiles": "CC(=CC1=C(C(=C(C(=C1)C=O)[OBn])C[OTBS])[OBn])C",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde using Swern conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "CC/C=C(\\C[OTIPS])/[C@H]1C[C@H](/C(=C\\CC)/C(C2=CC(=C(C(=C2[OBn])C[OTBS])[OBn])C=C(C)C)O)OC(C)(C)O1",
+            "product_smiles": "CC/C=C(\\C[OTIPS])/[C@H]1C[C@H](/C(=C\\CC)/C(=O)C2=CC(=C(C(=C2[OBn])C[OTBS])[OBn])C=C(C)C)OC(C)(C)O1",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "79%",
+            "reactant_smiles": "CC/C=C(\\CO[Si](C(C)C)(C(C)C)C(C)C)/[C@H]1C[C@H](/C(=C/CC)/C(=O)C2=CC(=C(C(=C2OCC3=CC=CC=C3)CO[Si](C)(C)C(C)(C)C)OCC4=CC=CC=C4)C=C(C)C)OC(C)(C)O1",
+            "product_smiles": "CC/C=C(\\CO)/[C@H]1C[C@H](/C(=C/CC)/C(=O)C2=CC(=C(C(=C2OCC3=CC=CC=C3)CO)OCC4=CC=CC=C4)C=C(C)C)OC(C)(C)O1",
+            "notes": "Deprotection of TIPS and TBS silyl ethers to primary alcohols.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Epoxidation",
+            "reagents": "VO(acac)2, TBHP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "HOCH2[C@@H](C=CCC)C[C@@H]1OC(C)(C)O[C@H]1C(=C/CC)/C(=O)c2c([OBn])c(CO)c([OBn])cc2C=C(C)C",
+            "product_smiles": "HOCH2[C@@H](C1(O)C(CC)1)C[C@@H]2OC(C)(C)O[C@H]2C(=C/CC)/C(=O)c3c([OBn])c(CO)c([OBn])cc3C=C(C)C",
+            "notes": "Epoxidation of the terminal alkene in the homoallylic alcohol derivative. Stereochemistry of the newly formed epoxide is unassigned as indicated by wavy bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "CC/C=C(/[C@H]1C[C@H]([C@@]2O[C@@H](CC)C(O)C2)OC(C)(C)O1)\\C(=O)C3=CC(=C(C(=C3OCC4=CC=CC=C4)CO)OCC5=CC=CC=C5)C=C(C)C",
+            "product_smiles": "CC/C=C(/[C@H]1C[C@H]([C@@]2O[C@@H](CC)C(=O)C2)OC(C)(C)O1)\\C(=O)C3=CC(=C(C(=C3OCC4=CC=CC=C4)CO)OCC5=CC=CC=C5)C=C(C)C",
+            "notes": "Dess-Martin oxidation of a secondary alcohol (in spiro ring) to a ketone. The starting SMILES incorrectly depicted a primary alcohol attached to the spiro carbon, oxidizing to an aldehyde. The corrected SMILES now reflects a secondary alcohol C(OH) inside the 5-membered spiro ring (with unspecified stereochemistry as indicated by the wavy bond in the screenshot) which is oxidized to a ketone C(=O) inside the ring. The other alcohol (CH2OH) on the benzene ring remains unreacted, consistent with both the image and the starting SMILES.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acetonide Hydrolysis, Intramolecular Cyclization",
+            "reagents": "THF, H2O",
+            "reagent_smiles": "CC(=O)O",
+            "conditions": "",
+            "yield": "44%",
+            "reactant_smiles": "O=CC1=C([OBn])C(=C(C=C1C=C(C)C)[OBn])C(=O)/C=C(/CC)[C@@H](C[C@H]2OC(C)(C)OC(C=O)(CC)2)",
+            "product_smiles": "O=CC1=C([OBn])C(=C(C=C1C=C(C)C)[OBn])C(=O)/C=C(/CC)[C@@H](C[C@H]2(O)O[C@@H]3[C@H](CC)[C@H](O)[C@@H](O)C23)",
+            "notes": "Acid-catalyzed hydrolysis of the acetonide, followed by intramolecular cyclization of the terminal aldehyde to form a pyranose ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "55%",
+            "reactant_smiles": "O=Cc1c(OBn)cc(C=C(C)C)c(c1C(=O)CC=C(CCC)CO[C@H]2[C@H](O)[C@H](O)C3([C@@H](CC)OC3)C[C@@H]2)OBn",
+            "product_smiles": "O=Cc1c(OBn)cc(C(C)C)c(c1C(=O)CCC(CCC)CO[C@H]2[C@H](O)[C@H](O)C3([C@@H](CC)OC3)C[C@@H]2)OBn",
+            "notes": "Hydrogenation of an alkene and an isopropenyl group.",
+            "substeps": []
+        }
+    ]
+}

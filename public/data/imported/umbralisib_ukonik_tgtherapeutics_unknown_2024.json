@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "umbralisib-ukonik-tgtherapeutics-unknown-2024",
+        "molecule_name": "Umbralisib (Ukonik TGTherapeutics)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acid chloride formation",
+            "reagents": "(COCl)2, DMF",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CC(=C1)F)CC(=O)O",
+            "product_smiles": "C1=CC(=CC(=C1)F)CC(=O)Cl",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Friedel-Crafts Acylation / Demethylation",
+            "reagents": "AlCl3",
+            "reagent_smiles": "COC1=CC=C(C=C1)F",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CC(=C1)F)CC(=O)Cl",
+            "product_smiles": "C1=CC(=CC(=C1)F)CC(=O)C2=C(O)C=CC(F)=C2",
+            "notes": "Friedel-Crafts acylation of 1-fluoro-4-methoxybenzene with 3-fluorophenylacetyl chloride, followed by in-situ demethylation of the methoxy group to a phenol under Lewis acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chromone Synthesis (Pechmann-type Condensation)",
+            "reagents": "Et3N",
+            "reagent_smiles": "CCC(=O)OC(=O)CC",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "Oc1c(C(=O)CCc2cccc(F)c2)ccc(F)c1",
+            "product_smiles": "CCC1=C(c2cccc(F)c2)Oc3cc(F)ccc3C1=O",
+            "notes": "Intramolecular cyclization of a 2-hydroxyphenyl ketone with propionic anhydride to form a chromone derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Radical Bromination",
+            "reagents": "NBS, AIBN",
+            "reagent_smiles": "",
+            "conditions": "CCl4, 80 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1=C(C2=CC=CC(=C2)F)C(=O)C3=CC(=CC=C3O1)F",
+            "product_smiles": "CC(Br)C1=C(C2=CC=CC(=C2)F)C(=O)C3=CC(=CC=C3O1)F",
+            "notes": "Alpha-bromination of the ethyl group at position 2 of the chromenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-Alkylation / Nucleophilic Substitution",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(C)OC1=C(C=C(C=C1)C2=NNC3=NC=NC(=C23)N)F",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C1=C(C2=CC=CC(=C2)F)C(=O)C3=CC(=CC=C3O1)F)Br",
+            "product_smiles": "CC(C)OC1=C(C=C(C=C1)C2=NN(C(C)C3=C(C4=CC=CC(=C4)F)C(=O)C5=CC(=CC=C5O3)F)C6=C2C(=NC=N6)N)F",
+            "notes": "N-alkylation of the 1H-pyrazolo[3,4-d]pyrimidin-4-amine (reagent) with the alpha-bromo ketone derivative (reactant) to form Umbralisib.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Mitsunobu Reaction (Etherification)",
+                    "reagents": "PPh3, DIAD, THF",
+                    "reagent_smiles": "CC(C)O",
+                    "conditions": "45 °C to reflux",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=C(C=C1Br)F)O",
+                    "product_smiles": "CC(C)OC1=C(C=C(C=C1)Br)F",
+                    "notes": "A phenol is converted to an isopropyl ether using Mitsunobu conditions (iPrOH, PPh3, DIAD).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Miyaura Borylation",
+                    "reagents": "B2pin2, Pd(dppf)Cl2, KOAc",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, 80 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)OC1=C(C=C(C=C1)Br)F",
+                    "product_smiles": "CC(C)OC1=C(C=C(C=C1)B2OC(C)(C)C(C)(C)O2)F",
+                    "notes": "Aryl bromide undergoes palladium-catalyzed borylation with bis(pinacolato)diboron to form an aryl pinacol boronate ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Suzuki-Miyaura coupling",
+                    "reagents": "Pd(PPh3)4, Na2CO3",
+                    "reagent_smiles": "Nc1nc[nH]c2ncc(I)c12",
+                    "conditions": "DMF/H2O, EtOH, 80 °C",
+                    "yield": "",
+                    "reactant_smiles": "FC1=C(B2OC(C)(C)C(C)(C)O2)C=CC(OC(C)C)=C1",
+                    "product_smiles": "Nc1nc[nH]c2ncc(C3=CC=C(OC(C)C)C=C3F)c12",
+                    "notes": "Suzuki-Miyaura coupling of a 2-fluoro-4-isopropoxyphenylboronic acid pinacol ester with 6-iodo-9H-purin-2-amine to form 6-(2-fluoro-4-isopropoxyphenyl)-9H-purin-2-amine.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

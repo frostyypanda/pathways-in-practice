@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pentalene-lee-2013",
+        "molecule_name": "Pentalene",
+        "class": "Natural Product",
+        "author": "Lee",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Corey-Fuchs reaction (intermediate)",
+            "reagents": "(PhO)3P, TEA, Br2",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "81%",
+            "reactant_smiles": "CC(=CCC[C@@H](C)CC=O)C",
+            "product_smiles": "CC(=CCC[C@@H](C)CC(Br)Br)C",
+            "notes": "Aldehyde converted to 1,1-dibromoalkyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ozonolysis",
+            "reagents": "Me2S, O3",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H]1CCC(=C(C)C)CCC1[CH](Br)CBr",
+            "product_smiles": "O=CCC[C@H](C)C[CH](Br)CBr",
+            "notes": "Ozonolysis of an exocyclic alkene in a cyclic reactant, leading to ring-opening and formation of an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Julia-Kocienski olefination",
+            "reagents": "KHMDS",
+            "reagent_smiles": "CCS(=O)(=O)c1nncn1-c2ccccc2",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "C[C@H](CCC=O)CC(Br)Br",
+            "product_smiles": "C/C=C/CC[C@H](C)CC(Br)Br",
+            "notes": "Julia-Kocienski olefination of an aldehyde with a tetrazolyl sulfone to form a trans-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Elimination (Dehydrohalogenation)",
+            "reagents": "t-BuOK, 18-crown-6",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC/C=C\\CCC(Br)C(Br)1",
+            "product_smiles": "C[C@H]1CCC#CC/C=C\\C1",
+            "notes": "Double dehydrohalogenation of a vicinal dibromide to form an alkyne, retaining ring structure, methyl stereochemistry, and double bond geometry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Propargylic alcohol formation (with fragmentation)",
+            "reagents": "BuLi, CH2O",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CC(CC#CCH2C/C=C/C)CC1",
+            "product_smiles": "C[C@@H]1CC(CC#CCH2O)CC1",
+            "notes": "The reactant SMILES in the input was an open chain but the image clearly shows a cyclic structure. The product SMILES in the input was also an open chain. Both have been corrected to match the cyclic structures shown in the screenshot. The reaction described (BuLi, CH2O) typically converts a terminal alkyne (R-C≡CH) to a propargylic alcohol (R-C≡CCH2OH). In the screenshot, the reactant has an internal alkyne (part of the chain `-CH2-C≡C-CH2-CH=CH-CH3`) and the product has a different side chain (`-CH2-C≡C-CH2-OH`). This implies a cleavage of the alkene portion of the chain and formation of a propargylic alcohol, which is inconsistent with a straightforward BuLi/CH2O reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Tosylation",
+            "reagents": "Ts₂O, DMAP, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "72%",
+            "reactant_smiles": "C[C@@H]1C(CC#CCO)CCC(C/C=C/C)1",
+            "product_smiles": "C[C@@H]1C(CC#CCO[Ts])CCC(C/C=C/C)1",
+            "notes": "Conversion of a primary alcohol to a tosylate, preparing it as a good leaving group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Allene Formation (cuprate addition)",
+            "reagents": "",
+            "reagent_smiles": "[Li]C[C](C)(C)[OTBS].[Cu]C#N",
+            "conditions": "Et2O",
+            "yield": "94%",
+            "reactant_smiles": "C/C=C/CC[C@H](C)C#CC[OTs]",
+            "product_smiles": "C/C=C/CC[C@H](C)C(=C=C)C[C](C)(C)C[OTBS]",
+            "notes": "Alkyne tosylate undergoes substitution with an organocuprate to form an allene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Desilylation)",
+            "reagents": "TBAF, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CCC(C/C=C/C)C(C(=C=C)CC(C)(C)C[OTBS])C1",
+            "product_smiles": "C[C@@H]1CCC(C/C=C/C)C(C(=C=C)CC(C)(C)CO)C1",
+            "notes": "Removal of a tert-butyldimethylsilyl (TBS) protecting group from a primary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Swern oxidation",
+            "reagents": "DMSO, TEA, (COCl)2",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "88%",
+            "reactant_smiles": "CC/C=C/C[C@@H]1(C)C(C=C=CCC(C)(C)CO)CCCCC1",
+            "product_smiles": "CC/C=C/C[C@@H]1(C)C(C=C=CCC(C)(C)C=O)CCCCC1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde under Swern conditions. The yield is reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Tosylhydrazone formation / Condensation",
+            "reagents": "TsNHNH2",
+            "reagent_smiles": "CO.NN[Ts]",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C/C=C/CC[C@@H](C)C(=C=C)CC(C)(C)C=O",
+            "product_smiles": "C/C=C/CC[C@@H](C)C(=C=C)CC(C)(C)\\C=NN[Ts]",
+            "notes": "Aldehyde is converted to a tosylhydrazone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "NaH",
+            "reagent_smiles": "",
+            "conditions": "PhH, 80 °C",
+            "yield": "88%",
+            "reactant_smiles": "C/C=C/CC[C@H](C)C(=C=C)CC(C)(C)=NN[Ts]",
+            "product_smiles": "C[C@H]1CC2=CC(C)(C)C[C@@]32[C@H](C)CC[C@H]13",
+            "notes": "Intramolecular cyclization involving a vinylallene and a tosylhydrazone, forming a complex tricyclic structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Riley oxidation",
+            "reagents": "pyridine, SeO2",
+            "reagent_smiles": "",
+            "conditions": "PhH",
+            "yield": "40%",
+            "reactant_smiles": "C[C@@H]1CC2=CC(C)(C)C[C@]32[C@H](C)CC[C@]13C",
+            "product_smiles": "C[C@@H]1CC[C@H]2[C@H](C)[C@@H](O)C3=CC(C)(C)C[C@]123",
+            "notes": "Allylic oxidation of an alkene to an allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydrogenation",
+            "reagents": "PtO₂, H₂",
+            "reagent_smiles": "CCO.O=[Pt](=O)=O",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CC[C@]2(C)[C@H](C)[C@H](C3=CC(C)(C)C[C@@H]132)O",
+            "product_smiles": "C[C@@H]1CC[C@]2(C)[C@H](C)[C@H](C3CC(C)(C)C[C@@H]123)O",
+            "notes": "Hydrogenation of a cyclic alkene to a saturated alkane.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "p-TsOH, PhH",
+            "reagent_smiles": "",
+            "conditions": "2 steps",
+            "yield": "88%",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(C)[C@@H](C)[C@@H](C3CC(C)(C)C[C@H]132)O",
+            "product_smiles": "CC1=CC2CC(C)(C)C[C@H]32[C@H](C)CC[C@H]13",
+            "notes": "Acid-catalyzed dehydration of a tricyclic alcohol to form an alkene, leading to a pentalene derivative.",
+            "substeps": []
+        }
+    ]
+}

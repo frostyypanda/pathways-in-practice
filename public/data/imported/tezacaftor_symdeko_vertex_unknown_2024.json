@@ -1,0 +1,218 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tezacaftor-symdeko-vertex-unknown-2024",
+        "molecule_name": "Tezacaftor (Symdeko Vertex)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Bromination",
+            "reagents": "NBS, EtOAc",
+            "reagent_smiles": "O=C1CCC(=O)N1Br.CCOC(=O)C",
+            "conditions": "",
+            "yield": "50%",
+            "reactant_smiles": "Nc1ccc(F)c([N+](=O)[O-])c1",
+            "product_smiles": "Nc1c(Br)c(F)c([N+]([O-])=O)cc1",
+            "notes": "Electrophilic aromatic substitution, bromination ortho to the amino group and meta to the fluoro group, in a substituted benzene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide opening / Alkylation",
+            "reagents": "Zn(ClO4)2, 4AMS",
+            "reagent_smiles": "C1=CC=CC=C1COC[C@H]2CO2",
+            "conditions": "toluene, 80 °C",
+            "yield": "",
+            "reactant_smiles": "NC1=CC(F)=C([N+](=O)[O-])C(Br)=C1",
+            "product_smiles": "C1=CC=CC=C1COC[C@H](O)CNC2=CC(F)=C([N+](=O)[O-])C(Br)=C2",
+            "notes": "Nucleophilic attack of the aniline on the less hindered carbon of (R)-2-(benzyloxymethyl)oxirane, followed by ring opening, retaining the stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitro Reduction",
+            "reagents": "H2, Pt(S)/C",
+            "reagent_smiles": "",
+            "conditions": "i-PrOAc, 30 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)COC[C@@H](CNC2=CC(=C(C=C2Br)[N+](=O)[O-])F)O",
+            "product_smiles": "C1=CC=C(C=C1)COC[C@@H](CNC2=CC(=C(C=C2Br)N)F)O",
+            "notes": "Catalytic hydrogenation of a nitro group to an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Salt formation (amine protonation)",
+            "reagents": "p-TsOH•H2O",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "O[C@@H](COCc1ccccc1)CNC2=C(Br)C(N)=CC(F)=C2",
+            "product_smiles": "O[C@@H](COCc1ccccc1)CNC2=C(Br)C([NH3+])=CC(F)=C2.Cc1ccc(S(=O)(=O)[O-])cc1",
+            "notes": "The primary aryl amine is protonated by p-toluenesulfonic acid to form its ammonium tosylate salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "Pd(OAc)2, dppb, K2CO3, CH3CN",
+            "reagent_smiles": "C#CC(C)(C)COCC1=CC=CC=C1",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "[NH3+]C1=C(Br)C=C(NC[C@@H](O)COCC2=CC=CC=C2)C=C1F.Cc1ccc(S(=O)(=O)[O-])cc1",
+            "product_smiles": "N C1=CC(F)=CC(C#CC(C)(C)COCC2=CC=CC=C2)=C1NC[C@@H](O)COCC3=CC=CC=C3",
+            "notes": "Sonogashira coupling of an aryl bromide with a substituted alkyne. The amine in the reactant, present as a protonated tosylate salt, is deprotonated to a free amine in the product. The stereochemistry of the alcohol center is maintained.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Nucleophilic Substitution (SN1)",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "90%",
+                    "reactant_smiles": "CC(C)(O)C#[TMS]",
+                    "product_smiles": "CC(C)(Cl)C#[TMS]",
+                    "notes": "Tertiary alcohol converted to tertiary alkyl chloride via substitution with HCl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Nucleophilic Substitution / Grignard Coupling",
+                    "reagents": "Mg, THF",
+                    "reagent_smiles": "[Bn]OCH2Cl",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C#[TMS])Cl",
+                    "product_smiles": "C(C)(C#[TMS])(CO[Bn])",
+                    "notes": "Substitution of a tertiary alkyl chloride with a benzyloxymethyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Desilylation",
+                    "reagents": "KOH, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C#[TMS])CO[Bn]",
+                    "product_smiles": "C#CC(C)(C)CO[Bn]",
+                    "notes": "Removal of the trimethylsilyl (TMS) protecting group from a terminal alkyne.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Larock Indole Synthesis",
+            "reagents": "(MeCN)₂PdCl₂, CuI",
+            "reagent_smiles": "",
+            "conditions": "CH₃CN, 80 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C#CC1=CC(=C(C=C1NC[C@H](COCC2=CC=CC=C2)O)F)N)COCC3=CC=CC=C3",
+            "product_smiles": "CC(C)(COCC1=CC=CC=C1)C2=CC3=CC(=C(C=C3N2C[C@H](COCC4=CC=CC=C4)O)F)N",
+            "notes": "Palladium-catalyzed cyclization of an o-alkynylaniline to form an indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amidation",
+            "reagents": "Et3N",
+            "reagent_smiles": "O=C(Cl)C1(CC1)C2=CC=C3C(=C2)OC(F)(F)O3",
+            "conditions": "toluene, CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC(C)(COCC1=CC=CC=C1)C2=CC3=CC(=C(C=C3N2C[C@@H](COCC4=CC=CC=C4)O)F)N",
+            "product_smiles": "CC(C)(COCC1=CC=CC=C1)C2=CC3=CC(=C(C=C3N2C[C@@H](COCC4=CC=CC=C4)O)F)NC(=O)C5(CC5)C6=CC=C7C(=C6)OC(F)(F)O7",
+            "notes": "Amidation of an aniline with an acyl chloride to form an amide.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaAlH₂(OCH₂CH₂OCH₃)₂, aq. NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "toluene",
+                    "yield": "92%",
+                    "reactant_smiles": "O=C(O)C1=CC2=C(C=C1)OC(F)(F)O2",
+                    "product_smiles": "OC(C1=CC2=C(C=C1)OC(F)(F)O2)C",
+                    "notes": "Reduction of carboxylic acid to primary alcohol",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Chlorination",
+                    "reagents": "SOCl2, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "MTBE",
+                    "yield": "100%",
+                    "reactant_smiles": "C1=CC2=C(C=C1CO)OC(F)(F)O2",
+                    "product_smiles": "C1=CC2=C(C=C1CCl)OC(F)(F)O2",
+                    "notes": "Conversion of a benzylic alcohol to a benzylic chloride using thionyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Nucleophilic Substitution (SN2)",
+                    "reagents": "NaCN",
+                    "reagent_smiles": "[Na+].C#N",
+                    "conditions": "DMSO, 30 to 40 °C",
+                    "yield": "100%",
+                    "reactant_smiles": "C1=CC2=C(C=C1CCl)OC(F)(F)O2",
+                    "product_smiles": "C1=C(CC#N)C=C2C(=C1)OC(F)(F)O2",
+                    "notes": "Chloride displaced by cyanide group via SN2 reaction.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Cyclopropanation, Alkylation (via carbanion intermediate)",
+                    "reagents": "Oct4NBr",
+                    "reagent_smiles": "ClCCBr",
+                    "conditions": "50% KOH, 70 °C",
+                    "yield": "100%",
+                    "reactant_smiles": "C1=C(CC#N)C=C2C(=C1)OC(F)(F)O2",
+                    "product_smiles": "C1=C(C=C2C(=C1)OC(F)(F)O2)C3(CC3)C#N",
+                    "notes": "The cyanomethyl group on the benzodioxole is deprotonated by KOH and reacts with 1-bromo-2-chloroethane to form a cyclopropyl nitrile, likely through an intermediate where the cyano-stabilized carbanion attacks one halogenated carbon, followed by intramolecular Sn2 displacement of the other halogen to form the cyclopropane ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Nitrile Hydrolysis",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 80 °C",
+                    "yield": "69%",
+                    "reactant_smiles": "C1=C(C=C2C(=C1)OC(F)(F)O2)C3(CC3)C#N",
+                    "product_smiles": "C1=C(C=C2C(=C1)OC(F)(F)O2)C3(CC3)C(=O)O",
+                    "notes": "Hydrolysis of a nitrile group to a carboxylic acid group under basic conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.6",
+                    "reaction_type": "Acyl Chloride Formation",
+                    "reagents": "SOCl₂, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=C(C=C2C(=C1)OC(F)(F)O2)C3(CC3)C(=O)O",
+                    "product_smiles": "C1=C(C=C2C(=C1)OC(F)(F)O2)C3(CC3)C(=O)Cl",
+                    "notes": "Carboxylic acid is converted to an acyl chloride using thionyl chloride (SOCl₂) and DMF.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Catalytic Hydrogenation / Benzyl Ether Deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "84%",
+            "reactant_smiles": "CC(C)(COCC1=CC=CC=C1)C2=CC3=CC(=C(C=C3N2C[C@H](COCC4=CC=CC=C4)O)F)NC(=O)C5(CC5)C6=CC=C7C(=C6)OC(F)(F)O7",
+            "product_smiles": "CC(C)(CO)C1=CC2=CC(=C(C=C2N1C[C@H](CO)O)F)NC(=O)C3(CC3)C4=CC=C5C(=C4)OC(F)(F)O5",
+            "notes": "Deprotection of two benzyl ether groups to hydroxyl groups via catalytic hydrogenation.",
+            "substeps": []
+        }
+    ]
+}

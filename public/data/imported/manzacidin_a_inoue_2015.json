@@ -1,0 +1,194 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "manzacidin-a-inoue-2015",
+        "molecule_name": "Manzacidin A",
+        "class": "Natural Product",
+        "author": "Inoue",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "AcCl, MeOH",
+            "reagent_smiles": "CC(=O)Cl.CO",
+            "conditions": "0 °C - reflux",
+            "yield": "",
+            "reactant_smiles": "C([C@@H](C(=O)O)N)O",
+            "product_smiles": "COC(=O)[C@@H](CO)N.Cl",
+            "notes": "Fischer esterification of a carboxylic acid with methanol, forming the methyl ester. The amine group is protonated by in-situ generated HCl (from AcCl). Stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxazolidine formation / Condensation",
+            "reagents": "Et3N, 4A sieves",
+            "reagent_smiles": "CC(C)(C)C=O",
+            "conditions": "pentane, reflux",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@@H](CO)N.Cl",
+            "product_smiles": "CC(C)(C)[C@H]1N[C@H](C(=O)OC)C[O]1",
+            "notes": "Formation of a cyclic oxazolidine by condensation of methyl 2-amino-3-hydroxypropanoate with pivalaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc₂O, NaHCO₃",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 50 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)[C@H]1N[C@H](CO1)C(=O)OC",
+            "product_smiles": "CC(C)(C)[C@H]1N([Boc])[C@H](CO1)C(=O)OC",
+            "notes": "Amine protection with Boc₂O to form an N-Boc carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "LiHMDS, MeI",
+            "reagent_smiles": "[Li]N(Si(C)(C)C)Si(C)(C)C.CI",
+            "conditions": "THF, -78 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)(C)[C@H]1N([Boc])[C@@H](C(=O)[OMe])OC1",
+            "product_smiles": "CC(C)(C)[C@H]1N([Boc])[C@@](C)(C(=O)[OMe])OC1",
+            "notes": "Alpha-alkylation of an oxazolidine-derived ester with methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, THF/H2O",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)(C)[C@H]1N([Boc])[C@](C)(CO1)C(=O)[OMe]",
+            "product_smiles": "CC(C)(C)[C@H]1N([Boc])[C@](C)(CO1)C(=O)O",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid using lithium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carboxylic Acid to Telluroester Conversion",
+            "reagents": "NMM, (PhTe)₂, NaBH₄",
+            "reagent_smiles": "CC(C)COC(=O)Cl",
+            "conditions": "THF, MeOH, 0 °C",
+            "yield": "79%",
+            "reactant_smiles": "CC(C)(C)[C@H]1N(C(=O)OC(C)(C)C)[C@](C)(CO1)C(=O)O",
+            "product_smiles": "CC(C)(C)[C@H]1N(C(=O)OC(C)(C)C)[C@](C)(CO1)C(=O)[Te]c1ccccc1",
+            "notes": "The carboxylic acid is activated as a mixed anhydride using isobutyl chloroformate and NMM, then converted to the telluroester using dibenzyl ditelluride ((PhTe)₂) and sodium borohydride (NaBH₄). The stereochemistry at the chiral centers is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Radical Addition",
+            "reagents": "Et3B, (TMS)3SiH",
+            "reagent_smiles": "C=C(C(=O)[OMe])N([Phth])",
+            "conditions": "(CH2Cl)2, air, 50 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC(C)(C)[C@H]1N([Boc])[C@](C)(CO1)C(=O)[Te]C2=CC=CC=C2",
+            "product_smiles": "CC(C)(C)[C@H]1O[C@](C)(C[C@H](N([Phth]))C(=O)[OMe])N([Boc])C1",
+            "notes": "Radical addition of an acyl telluride to methyl N-phthalimidoacrylate, likely via triethylborane and tris(trimethylsilyl)silane.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Amide formation (Phthalimide synthesis)",
+                    "reagents": "Et3N",
+                    "reagent_smiles": "COC(=O)[C@H](CO)N",
+                    "conditions": "toluene, reflux",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)C(=O)OC2=O",
+                    "product_smiles": "COC(=O)[C@H](CO)N1C(=O)C2=C(C=CC=C2)C1=O",
+                    "notes": "Formation of an N-substituted phthalimide from phthalic anhydride and an amino ester, retaining the stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Elimination",
+                    "reagents": "MsCl, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, -20 °C - reflux",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)C(CO)N1C(=O)C2=C(C=CC=C2)C1=O",
+                    "product_smiles": "C=C(C(=O)OC)N1C(=O)C2=C(C=CC=C2)C1=O",
+                    "notes": "Dehydration of a beta-hydroxy ester derivative to an alpha,beta-unsaturated ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Phthalimide Deprotection",
+            "reagents": "NH2NH2, MeOH",
+            "reagent_smiles": "NN",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@]1(CC(=O)OC)N(N([Boc])C(=O)c2ccccc2C(=O))[C@@H](C(C)(C)C)OC1",
+            "product_smiles": "C[C@]1(CC(=O)OC)N(N([Boc]))[C@@H](C(C)(C)C)OC1",
+            "notes": "Deprotection of an N-Boc-N-phthaloyl-hydrazine derivative to an N-Boc-hydrazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cyclization / Dihydropyrimidine Formation",
+            "reagents": "TFA, CH(OMe)₃",
+            "reagent_smiles": "O=C(O)C(F)(F)F.COC(OC)OC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@]1(C(CC(N)C(=O)OC))[C@H]2OC[C@@H](C(C)(C)C)N12C(=O)OC(C)(C)C",
+            "product_smiles": "C[C@@]12[C@H]3C=N[C@@H](C[C@@]1(C)CC(=O)OC)N3[C@H](C(C)(C)C)OC2",
+            "notes": "Formation of a fused dihydropyrimidine ring via reaction of the secondary amine (from Boc deprotection), primary amine, and trimethyl orthoformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acid-catalyzed Hydrolysis and Rearrangement",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)[C@@H]1N2C=N[C@@H](C[C@@]2(C)CO1)C(=O)OC",
+            "product_smiles": "OCC[C@@](C)(N)C[C@@H](C(=O)O)N=CH",
+            "notes": "Hydrolysis of methyl ester and the bicyclic ring system, leading to ring opening, loss of the tert-butyl group, and formation of a primary alcohol, secondary amine, and terminal imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Esterification / Acylation of Alcohol",
+            "reagents": "NaH",
+            "reagent_smiles": "O=C(CCl3)c1c(Br)cc[nH]1",
+            "conditions": "DMF, rt",
+            "yield": "33% (4 steps)",
+            "reactant_smiles": "O=C(O)[C@@H]1NC(=N[C@](C)(CO)C1)",
+            "product_smiles": "O=C(O)[C@@H]1NC(=N[C@](C)(C1)COC(=O)c2c(Br)cc[nH]2)",
+            "notes": "Esterification of a primary alcohol with a 3-bromo-1H-pyrrole-2-carboxylic acid trichloroacetate, likely via deprotonation of the alcohol by NaH to form an alkoxide, followed by nucleophilic acyl substitution.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Acylation",
+                    "reagents": "",
+                    "reagent_smiles": "O=C(Cl)C(Cl)(Cl)Cl",
+                    "conditions": "ether, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CNC=C1",
+                    "product_smiles": "O=C(C(Cl)(Cl)Cl)C1=CNC=C1",
+                    "notes": "Acylation of pyrrole with trichloroacetyl chloride at the 2-position.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, rt",
+                    "yield": "",
+                    "reactant_smiles": "ClC(Cl)(Cl)C(=O)c1cc[nH]c1",
+                    "product_smiles": "ClC(Cl)(Cl)C(=O)c1c[nH]c(Br)c1",
+                    "notes": "Bromination of pyrrole at the 4-position using NBS.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

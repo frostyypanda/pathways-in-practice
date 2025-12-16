@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "peficitinib-smyraf-astellas-unknown-2024",
+        "molecule_name": "Peficitinib (Smyraf Astellas)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Protection / Silylation",
+            "reagents": "NaH, DMF",
+            "reagent_smiles": "Cl[Si](C(C)C)(C(C)C)C(C)C",
+            "conditions": "5 °C",
+            "yield": "79%",
+            "reactant_smiles": "C1=CNC2=NC=CC(=C12)Cl",
+            "product_smiles": "[TIPS]N1C=CC2=C(C=CN=C21)Cl",
+            "notes": "N-protection of the pyrrole nitrogen in 4-chloro-7-azaindole using TIPSCl and NaH.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed Ortho-Lithiation, Esterification",
+            "reagents": "sec-BuLi",
+            "reagent_smiles": "CCOC(=O)Cl",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]N1C=CC2=C(C=CN=C21)Cl",
+            "product_smiles": "CCOC(=O)C1=CN=C2C(=C1Cl)C=CN2[TIPS]",
+            "notes": "Lithiation of the pyrrolo[2,3-c]pyridine at the 6-position, followed by reaction with ethyl chloroformate to form the ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C1=CN=C2C(=C1Cl)C=CN2[TIPS]",
+            "product_smiles": "CCOC(=O)C1=CN=C2C(=C1Cl)C=CN2",
+            "notes": "TIPS deprotection of the indole nitrogen using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH, then HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 60 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=CN=C2C(=C1Cl)C=CN2",
+            "product_smiles": "O=C(O)C1=CN=C2C(=C1Cl)C=CN2",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using a strong base, followed by acidification.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amidation",
+            "reagents": "CDI, NH₄OH",
+            "reagent_smiles": "O=C(N1C=CN=C1)N2C=CN=C2.N",
+            "conditions": "DMF, rt",
+            "yield": "68%",
+            "reactant_smiles": "O=C(O)c1cnc2[nH]cc(Cl)c2c1",
+            "product_smiles": "O=C(N)c1cnc2[nH]cc(Cl)c2c1",
+            "notes": "Conversion of a carboxylic acid to a primary amide using CDI as an activating agent followed by ammonia.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Buchwald-Hartwig Amination (or similar C-N coupling)",
+            "reagents": "TBA",
+            "reagent_smiles": "C1C2CC3C[C@@](C2)(CC1[C@@H]3N)O",
+            "conditions": "NMP, 200 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CNC2=NC=C(C(=C12)Cl)C(=O)N",
+            "product_smiles": "C1=CNC2=NC=C(C(=C12)N[C@H]3C4CC5CC3C[C@@](C5)(C4)O)C(=O)N",
+            "notes": "Amidation of the chloro-pyrrolo[2,3-b]pyridine with 1-aminoadamantan-3-ol.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Amine protection (Carbamate formation)",
+                    "reagents": "CbzCl, NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "38%",
+                    "reactant_smiles": "C1C2CC3CC(C2)(CC1C(N)3)O",
+                    "product_smiles": "C1C2CC3CC(C2)(CC1C(NC(=O)OCC4=CC=CC=C4)3)O",
+                    "notes": "Primary amine is protected as a carbamate (Cbz-protected amine) using benzyl chloroformate (CbzCl) and sodium hydroxide (NaOH) in THF.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Hydrogenation / Cbz Deprotection",
+                    "reagents": "H2, Pd/C",
+                    "reagent_smiles": "CO.[Pd]",
+                    "conditions": "MeOH, rt",
+                    "yield": "98%",
+                    "reactant_smiles": "O[C@@]12CC3CC(C[CH](N[Cbz])C1)CC(C2)C3",
+                    "product_smiles": "C1C2CC3C[C@@](C2)(CC1[C@@H]3N)O",
+                    "notes": "Catalytic hydrogenation deprotects the Cbz group to a primary amine, retaining the stereochemistry of the hydroxyl group and the relative stereochemistry of the amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Salt Formation",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, reflux",
+            "yield": "50% (2 steps)",
+            "reactant_smiles": "C1=CNC2=NC=C(C(=C12)N[C@H]3C4CC5CC3C[C@@](C5)(C4)O)C(=O)N",
+            "product_smiles": "C1=CNC2=NC=C(C(=C12)N[C@H]3C4CC5CC3C[C@@](C5)(C4)O)C(=O)N.Br",
+            "notes": "Formation of Peficitinib hydrobromide salt.",
+            "substeps": []
+        }
+    ]
+}

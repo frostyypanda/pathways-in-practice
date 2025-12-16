@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "magellanine-barriault-2017",
+        "molecule_name": "Magellanine",
+        "class": "Natural Product",
+        "author": "Barriault",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Intramolecular [4+2] Cycloaddition (Povarov Reaction)",
+            "reagents": "TMAD, TBP",
+            "reagent_smiles": "C=CCN[Ts]",
+            "conditions": "150 °C",
+            "yield": "70%",
+            "reactant_smiles": "OCC=CC=C",
+            "product_smiles": "[Ts]N1CCC[C@H]2[C@@H](C1)C=CCC2",
+            "notes": "Intramolecular cyclization of penta-2,4-dien-1-ol and N-allyl-p-toluenesulfonamide to form a bicyclic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Lemieux-Johnson oxidation",
+            "reagents": "OsO₄, NMO, NaIO₄",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Ts]N1CC[C@@H]2CCC=C[C@H]2C1",
+            "product_smiles": "[Ts]N1CC[C@@H](CCC=O)CC[C@H](C=O)C1",
+            "notes": "Alkene cleavage via Lemieux-Johnson oxidation to form a dialdehyde, with ring opening.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Aldol/Knoevenagel Cyclization",
+            "reagents": "Piperidine, HOAc",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "58%",
+            "reactant_smiles": "O=CCC[C@H]1[C@@H]2N([Ts])CCC[C@H]1C(C=O)CC2",
+            "product_smiles": "O=C/C=C1\\C[C@H]2[C@H]1N([Ts])CCC2",
+            "notes": "Intramolecular cyclization of a dialdehyde leading to a bicyclic alpha,beta-unsaturated aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Aldol-type addition / Silyl enol ether formation",
+            "reagents": "LiHMDS, TIPSOTf, DMS",
+            "reagent_smiles": "CCOC(=O)C(CC#CC(=C)C)C(=O)OCC",
+            "conditions": "THF, -78 °C",
+            "yield": "81%",
+            "reactant_smiles": "Cc1ccc(S(=O)(=O)N2CCC[C@H]3[C@H]2C=C(C=O)C3)cc1",
+            "product_smiles": "Cc1ccc(S(=O)(=O)N2CCC[C@H]3[C@H]2C(=C(/C=C/[OTIPS]))[C@](C3)(CC#CC(=C)C)(C(=O)OCC)C(=O)OCC)cc1",
+            "notes": "Addition of a malonate derivative to an aldehyde, followed by silylation of the resulting enolate to form a silyl enol ether and a new quaternary stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular cyclization / Cycloisomerization (Gold-catalyzed)",
+            "reagents": "CSA",
+            "reagent_smiles": "CC(C)C1=CC(=C(C(=C1)C(C)C)C2=C(C=CC(=C2P(C3=CC(=CC(=C3)C(F)(F)F)C(F)(F)F)C4=CC(=CC(=C4)C(F)(F)F)C(F)(F)F)OC)OC)C(C)C.C[N+]#C.[Au+].[SbF6-]",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "CCOC(=O)C(CC#CC(=C)C)([C@H]1/C(=C/O[TIPS])/C[C@@H]2CN(CCC21)[Ts])C(=O)OCC",
+            "product_smiles": "CCOC(=O)C1(C=C2C=C(C)C[C@@H]([C@]32CC4CN(CC[C@@H]4[C@H]13)[Ts])O[TIPS])C(=O)OCC",
+            "notes": "Intramolecular cyclization of an enyne-diester system with a fused bicyclic core, catalyzed by a gold(I) complex, forming a complex tetracyclic product. Stereocenters are inverted or newly formed at the fusion points.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1(C=C2C=C(C)C[C@H]([C@]32CC4CN([Ts])(CCC4[C@@H]13))[OTIPS])C(=O)OCC",
+            "product_smiles": "CCOC(=O)C1(C=C2C=C(C)C[C@H]([C@]32CC4CN([Ts])(CCC4[C@@H]13))O)C(=O)OCC",
+            "notes": "Hydrolysis of a TIPS ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis and Decarboxylation",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "140 °C",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "CCOC(=O)[C@@]1(C(=O)OCC)[C@@]2(C=C(C)C=C[C@@H]3[C@@](O)([C@H]4C[C@@H]5[C@@H](CN([Ts])CC5)C[C@H]14)C23)",
+            "product_smiles": "OC(=O)[C@@H]1C2=CC(C)=CC[C@@H]3[C@]2(O)[C@H]4C[C@@H]5[C@@H](CN([Ts])CC5)C[C@H]14",
+            "notes": "Hydrolysis of one ethyl ester to a carboxylic acid, followed by decarboxylation of the second ester group. The carbon bearing the two ester groups in the reactant becomes a chiral center with a single carboxylic acid group in the product, and its stereochemistry is inverted.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "87%",
+            "reactant_smiles": "CC1=CC=C2C([C@H](O)[C@@H]3[C@@H]4[C@@H](C(C(=O)O)=C1)C(=C4)CC3)[C@H]5CCN([Ts])CC52",
+            "product_smiles": "CC1=CC=C2C(=O)([C@@H]3[C@@H]4[C@@H](C(C(=O)O)=C1)C(=C4)CC3)[C@H]5CCN([Ts])CC52",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "PtO₂, H₂",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "84%",
+            "reactant_smiles": "CC1=CC2=C[C@@H]([C@@H]3[C@H]4CCN(CC4C[C@]23C(=O)C1)[Ts])C(=O)O",
+            "product_smiles": "CC1CC2C[C@@H]([C@@H]3[C@H]4CCN(CC4C[C@]23C(=O)C1)[Ts])C(=O)O",
+            "notes": "Hydrogenation of two carbon-carbon double bonds in a polycyclic structure using platinum(IV) oxide and hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification / Amide Coupling (Steglich-type)",
+            "reagents": "iPrC(O)Cl, NMM, Et3N",
+            "reagent_smiles": "CC1=CSC(=S)N1O",
+            "conditions": "Toluene, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1CC2C[C@@H]([C@@H]3[C@H]4CCN([Ts])CC4C[C@]23C(=O)C1)C(=O)O",
+            "product_smiles": "CC1CC2C[C@@H]([C@@H]3[C@H]4CCN([Ts])CC4C[C@]23C(=O)C1)C(=O)ON5C(=CSC5=S)C",
+            "notes": "Formation of an N-acyloxy-thiazole-2(3H)-thione ester from a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Radical Deoxygenation / Reduction",
+            "reagents": "O2",
+            "reagent_smiles": "CCCCCCCCCC(C)(C)S.P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "LED (365 nm)",
+            "yield": "55%",
+            "reactant_smiles": "CC1C[C@@]23CC[C@H]4C(=O)[C@@H]1C[C@@H]2C[C@H](C(=O)ON5C(=CSC5=S)C)[C@@H]3C[C@H]4N([Ts])CC",
+            "product_smiles": "CC1C[C@@]23CC[C@H]4C(=O)[C@@H]1C[C@@H]2C[C@H](O)[C@@H]3C[C@H]4N([Ts])CC",
+            "notes": "Radical deoxygenation of an activated ester (Barton ester) to yield an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DIAD, HCO2H, PPh3 then LiOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "59%",
+            "reactant_smiles": "C[C@@H]1C(=O)[C@]23CC[C@H]([C@@H](O)CC3)[C@H]4N([Ts])CC[C@@H]2C14",
+            "product_smiles": "C[C@@H]1C(=O)[C@]23CC[C@H]([C@@H](O)CC3)[C@H]4N([Ts])CC[C@@H]2C14",
+            "notes": "Reactant and product structures are drawn identically in the screenshot, including the stereochemistry of the hydroxyl group (dashed wedge). This is unusual for a Mitsunobu reaction, which typically inverts the stereochemistry of an alcohol, or the overall reaction involves an unshown ester formation and hydrolysis regenerating the initial alcohol stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Detosylation / Reductive cleavage of sulfonamide",
+            "reagents": "Na, C10H8",
+            "reagent_smiles": "[Na].c1ccc2c(c1)ccc2",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC(=O)[C@@]23CCC4C[C@H](O)[C@@H]5[C@@H]3N([Ts])CCC54C12",
+            "product_smiles": "C[C@H]1CC(=O)[C@@]23CCC4C[C@H](O)[C@@H]5[C@@H]3NCCC54C12",
+            "notes": "Reductive deprotection of N-tosyl group using sodium and naphthalene (Birch-like conditions) in THF.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reductive Amination",
+            "reagents": "HOAc, CH2O, NaBH3CN",
+            "reagent_smiles": "CC(=O)O.C=O.[Na+].[BH3-]C#N",
+            "conditions": "",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "CC1CC2C[C@H]([C@@]3(C)[C@H]4CCNCC4C[C@]23C(=O)C1)O",
+            "product_smiles": "CC1CC2C[C@H]([C@@]3(C)[C@H]4CCN(C)CC4C[C@]23C(=O)C1)O",
+            "notes": "N-methylation of a secondary amine to a tertiary amine. The yield is stated for 2 steps, but this is a single step transformation shown.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Functional group transformation / Oxidation",
+            "reagents": "LDA, TMSCl then LDA",
+            "reagent_smiles": "CC(C)(C)N=S(Cl)C1=CC=CC=C1",
+            "conditions": "",
+            "yield": "64 %",
+            "reactant_smiles": "C[C@@H]1C[C@H]2C[C@H](O)[C@H]3C[C@H]4N(C)CC[C@H]4[C]23C(=O)C1",
+            "product_smiles": "CC1=CC(=O)[C]23C[C@H]4N(C)CC[C@H]4[C@H]3[C@@H](O)CC2C1",
+            "notes": "Alpha-amination of enolate using a chiral sulfoximine, followed by rearrangement and elimination to form an enone, with inversion of alcohol stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

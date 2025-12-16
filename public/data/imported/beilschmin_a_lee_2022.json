@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "beilschmin-a-lee-2022",
+        "molecule_name": "Beilschmin A",
+        "class": "Natural Product",
+        "author": "Lee",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclization",
+            "reagents": "CS2, KOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "86%",
+            "reactant_smiles": "C1=CC=C(C=C1)C[C@H](CO)N",
+            "product_smiles": "N1C(=S)SC[C@H]1Cc2ccccc2",
+            "notes": "Formation of a 2-thioxo-1,3-thiazolidine from an amino alcohol and carbon disulfide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acylation / Deprotonation",
+            "reagents": "nBuLi",
+            "reagent_smiles": "CCC(=O)Cl",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "S=C1NC[C@@H](Cc2ccccc2)S1",
+            "product_smiles": "CCC(=O)N1C(=S)SC[C@@H](Cc2ccccc2)1",
+            "notes": "N-acylation of a chiral 1,3-thiazolidine-2-thione using propanoyl chloride and n-butyllithium. The stereocenter is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chiral Auxiliary Mediated Aldol Reaction",
+            "reagents": "TiCl4, iPr2NEt, NMP, CH2Cl2",
+            "reagent_smiles": "COC1=C2C(=CC(=C1)C=O)OCO2",
+            "conditions": "0 °C",
+            "yield": "97%",
+            "reactant_smiles": "S=C1N(C(=O)CC)[C@H](CC2=CC=CC=C2)CS1",
+            "product_smiles": "S=C1N(C(=O)[C@H](C)[C@@H](O)c2cc(OC)c3ococo3c2)[C@H](CC4=CC=CC=C4)CS1",
+            "notes": "Aldol addition between a propionyl imide (Evans' auxiliary) and a substituted benzaldehyde, forming two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Stereoselective Lactone Formation",
+            "reagents": "LDA, CH2Br2, LiHMDS, sBuLi, nBuLi, HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 to -20 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "C[C@H](C(=O)N1[C@@H](CC2=CC=CC=C2)SC(=S)C1)[C@@H](O)C3=CC(=C4C(=C3)OCO4)OC",
+            "product_smiles": "C[C@H]1CC(=O)O[C@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "notes": "Stereoselective synthesis of a γ-lactone from a chiral auxiliary-derived β-hydroxy amide, involving formal methylene insertion, auxiliary removal, and cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alpha-alkylation / Methylation",
+            "reagents": "MeI, LiHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H]1CC(=O)O[C@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "product_smiles": "C[C@H]1[C@@H](C)C(=O)O[C@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "notes": "Methylation at the C3 position (alpha to carbonyl) of the lactone ring, leading to a trans relationship between the C3-methyl and C4-methyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Addition (Organolithium to Lactone)",
+            "reagents": "nBuLi",
+            "reagent_smiles": "BrC1=CC(OC)=C([OTBS])C(OC)=C1",
+            "conditions": "THF, -78 °C",
+            "yield": "89%",
+            "reactant_smiles": "C[C@H]1[C@H](C)C(=O)O[C@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "product_smiles": "[OTBS]C1=CC(OC)=C(C=C1OC)C2(O)O[C@H](C3=CC(=C4C(=C3)OCO4)OC)[C@H](C)[C@H]2C",
+            "notes": "Organolithium addition to a lactone, forming a cyclic hemiacetal. The newly formed stereocenter at the point of addition is racemic (indicated by wavy bond). The stereochemistry of the original chiral centers is preserved.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Bromination (Electrophilic Aromatic Substitution)",
+                    "reagents": "NaH, NBS",
+                    "reagent_smiles": "",
+                    "conditions": "CHCl₃, -45 to 60 °C",
+                    "yield": "44%",
+                    "reactant_smiles": "COc1c(O)ccc(OC)c1",
+                    "product_smiles": "COc1c(O)cc(Br)c(OC)c1",
+                    "notes": "Bromination of 2,6-dimethoxyphenol at the para position relative to the hydroxyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂",
+                    "yield": "86%",
+                    "reactant_smiles": "COC1=CC(=CC(=C1O)OC)Br",
+                    "product_smiles": "[TBS]OC1=C(OC)C=C(Br)C=C1OC",
+                    "notes": "Protection of a phenol hydroxyl group as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Cleavage / Reduction of Hemiacetal",
+            "reagents": "BF3•OEt2, NaBH3CN",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "88%",
+            "reactant_smiles": "[TBS]OC1=C(OC)C=CC(OC)=C1C(O)C2OC([C@@H](C)[C@H](C)2)[C@@H]3C=C(OC)C4=CC(=C3)OCO4",
+            "product_smiles": "[TBS]OC1=C(OC)C=CC(OC)=C1[C@H]2OC([C@@H](C)[C@H](C)2)[C@@H]3C=C(OC)C4=CC(=C3)OCO4",
+            "notes": "Stereoselective reduction of a hemiacetal to a tetrahydrofuran with sodium cyanoborohydride and boron trifluoride etherate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection, Methylation",
+            "reagents": "TBAF, MeI, 4Å MS",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "COC1=C(OC)C(O[TBS])=CC(C2OC[C@H](C)[C@@H](C)[C@H]2C3=CC(OC)=C4OCO4C=C3)=C1",
+            "product_smiles": "COC1=CC(C2OC[C@H](C)[C@@H](C)[C@H]2C3=CC(OC)=C4OCO4C=C3)=CC(OC)=C1OC",
+            "notes": "Deprotection of TBS ether to alcohol, followed by O-methylation to form an OMe group.",
+            "substeps": []
+        }
+    ]
+}

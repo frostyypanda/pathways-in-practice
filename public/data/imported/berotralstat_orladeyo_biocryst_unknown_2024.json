@@ -1,0 +1,158 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "berotralstat-orladeyo-biocryst-unknown-2024",
+        "molecule_name": "Berotralstat (Orladeyo BioCryst)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation",
+            "reagents": "KHSO4",
+            "reagent_smiles": "CC(C)(C)[S@@](=O)N",
+            "conditions": "DCM, rt",
+            "yield": "81%",
+            "reactant_smiles": "C1=CC(=CC(=C1)C#N)C=O",
+            "product_smiles": "CC(C)(C)S(=O)N=CC1=CC(=CC=C1)C#N",
+            "notes": "Condensation of m-cyanobenzaldehyde with (S)-tert-butylsulfinamide to form an N-sulfinyl imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard Addition / Reductive Amination",
+            "reagents": "Mg, I2, THF, toluene",
+            "reagent_smiles": "C[Si](C)(C)N(C1=C(C=CC(=C1)Br)F)[Si](C)(C)C",
+            "conditions": "-60 to -35 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)[S@@](=O)N=CC1=CC(=CC=C1)C#N",
+            "product_smiles": "CC(C)(C)[S@@](=O)N[C@@H](C1=CC(=CC=C1)C#N)C2=CC=C(C(=C2)N)F",
+            "notes": "A Grignard reagent equivalent (derived from the bis(trimethylsilyl)amino-bromophenyl fluoride) adds to the chiral sulfinyl imine. Subsequent workup and protonation forms the secondary amine, with the tert-butylsulfinyl group directing the stereochemistry at the new chiral center and remaining in the product.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Amine Silylation / Amine Protection",
+                    "reagents": "TMSOTf, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, rt",
+                    "yield": "87%",
+                    "reactant_smiles": "C1=CC(=C(C=C1Br)N)F",
+                    "product_smiles": "C[Si](C)(C)N(C1=C(C=CC(=C1)Br)F)[Si](C)(C)C",
+                    "notes": "Protection of a primary amine to a bis-trimethylsilyl amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "iPrOH",
+            "yield": "30% (2 steps)",
+            "reactant_smiles": "CC(C)(C)[S@@](=O)N[C@H](C1=CC(=CC=C1)C#N)C2=CC(N)=C(F)C=C2",
+            "product_smiles": "N[C@H](C1=CC(N)=C(F)C=C1)C2=CC(=CC=C2)C#N",
+            "notes": "Acid-catalyzed deprotection of the (R)-tert-butylsulfinamide to form the primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaOMe, NaBH4",
+            "reagent_smiles": "C1CC1C=O",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CC(=C1)[C@@H](C2=CC(=C(C=C2)F)N)N)C#N",
+            "product_smiles": "C1=CC(=CC(=C1)[C@@H](C2=CC(=C(C=C2)F)N)NCC3CC3)C#N",
+            "notes": "Reductive amination of a primary amine with cyclopropanecarbaldehyde, followed by imine reduction.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Salt Formation",
+            "reagents": "iPrOH, toluene, H2O",
+            "reagent_smiles": "C(=O)(C(=O)O)O",
+            "conditions": "iPrOH, toluene, H2O",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "C1=CC(=CC(=C1)[C@H](C2=CC=C(C(=C2)N)F)NCC3CC3)C#N",
+            "product_smiles": "C1=CC(=CC(=C1)[C@H](C2=CC=C(C(=C2)N)F)NCC3CC3)C#N.C(=O)(C(=O)O)O",
+            "notes": "Formation of the oxalic acid salt of the amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Coupling, Boc Deprotection",
+            "reagents": "KOH, H2O, pyridine, T3P",
+            "reagent_smiles": "O=C(O)C1=NN(C2=CC(CNC(=O)OC(C)(C)C)=CC=C2)C=C1C(F)(F)F",
+            "conditions": "toluene, EtOAc",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CC(=C1)[C@H](C2=C(N)C(F)=CC=C2)NCC3CC3)C#N.C(=O)(C(=O)O)O",
+            "product_smiles": "C1=CC(=CC(=C1)[C@H](C2=C(NC(=O)C3=NN(C4=CC(CN)=CC=C4)C=C3C(F)(F)F)C(F)=CC=C2)NCC5CC5)C#N",
+            "notes": "Amide bond formation between the aniline of the reactant and the carboxylic acid of the pyrazole derivative, accompanied by Boc group deprotection on the pyrazole side-chain to form a primary amine.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Pyrazole Synthesis",
+                    "reagents": "SnCl2, NaNO2, HCl",
+                    "reagent_smiles": "C1=COC(=C1)C(=O)CC(=O)C(F)(F)F",
+                    "conditions": "",
+                    "yield": "69%",
+                    "reactant_smiles": "C1=CC(=CC(=C1)C#N)N",
+                    "product_smiles": "C(#N)c1cc(N2N=C(C(F)(F)F)C=C2c3occc3)ccc1",
+                    "notes": "Diazotization of 3-aminobenzonitrile and subsequent cyclocondensation with 1-(furan-2-yl)-4,4,4-trifluorobutane-1,3-dione to form a pyrazole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "KMnO4",
+                    "reagent_smiles": "",
+                    "conditions": "acetone, iPrOH, H2O",
+                    "yield": "69%",
+                    "reactant_smiles": "C#Cc1cccc(N2N=C(C(F)(F)F)C=C2c3ccoc3)c1",
+                    "product_smiles": "O=C(O)C1=CN(c2cc(C#N)ccc2)N=C1C(F)(F)F",
+                    "notes": "Oxidation of the furan ring to a carboxylic acid using potassium permanganate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Reduction",
+                    "reagents": "NiCl2, NaBH4",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=CC(=C1)N2C(=CC(=N2)C(F)(F)F)C(=O)O)C#N",
+                    "product_smiles": "C1=CC(=CC(=C1)N2C(=CC(=N2)C(F)(F)F)C(=O)O)CN",
+                    "notes": "Reduction of meta-cyano group to meta-aminomethyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Amine protection",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "NCCNCCN.CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+                    "conditions": "",
+                    "yield": "70% (2 steps)",
+                    "reactant_smiles": "O=C(O)c1c(C(F)(F)F)cn(n1)c2cc(CN)ccc2",
+                    "product_smiles": "O=C(O)c1c(C(F)(F)F)cn(n1)c2cc(CNC(=O)OC(C)(C)C)ccc2",
+                    "notes": "Boc protection of a primary benzylic amine using di-tert-butyl dicarbonate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amine salt formation / Debenzylation (implied)",
+            "reagents": "HCl, NH3",
+            "reagent_smiles": "",
+            "conditions": "iPrOH, toluene, MTBE, MeOH",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "N#Cc1cccc(c1)[C@@](N)(NCC2CC2)c3ccc(NC(=O)C4=CC(=NN4c5cc(CC6CC6)ccc5)C(F)(F)F)c(F)c3",
+            "product_smiles": "N#Cc1cccc(c1)[C@@](N)(NCC2CC2)c3ccc(NC(=O)C4=CC(=NN4c5cc(CC6CC6)ccc5)C(F)(F)F)c(F)c3.Cl.Cl",
+            "notes": "Formation of Berotralstat HCl (Berotralstat is the free base). This reaction step represents salt formation from the free base. The original SMILES for reactant and product contained significant structural errors regarding the chiral center and a phenyl substituent.",
+            "substeps": []
+        }
+    ]
+}

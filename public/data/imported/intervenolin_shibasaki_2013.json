@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "intervenolin-shibasaki-2013",
+        "molecule_name": "Intervenolin",
+        "class": "Natural Product",
+        "author": "Shibasaki",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ivanov reaction",
+            "reagents": "Li-naphthalenide, TMEDA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "65%",
+            "reactant_smiles": "C1=CC=C(C=C1)N=C=O",
+            "product_smiles": "CC(C(=O)NC1=CC=CC=C1)C(=O)O",
+            "notes": "An Ivanov reaction starting from phenyl isocyanate to form an N-phenyl-2-methylmalonamic acid derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Eaton acylation",
+            "reagents": "P2O5, MsOH",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC(C(=O)NC1=CC=CC=C1)C(=O)O",
+            "product_smiles": "CC1=C(O)C(=O)NC2=CC=CC=C21",
+            "notes": "Eaton acylation converts a carboxylic acid amide with an alpha-methyl group to a 4-hydroxy-3-methylquinolin-2(1H)-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection (Alcohol Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "89%",
+            "reactant_smiles": "CC1=C(C2=C(C=CC=C2)NC1=O)O",
+            "product_smiles": "[OTBS]C1=C(C)C(=O)NC2=C1C=CC=C2",
+            "notes": "Protection of the phenolic hydroxyl group of 4-hydroxy-3-methylquinolin-2(1H)-one as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2O, lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "92%",
+            "reactant_smiles": "CC1=C([OTBS])C2=CC=CC=C2NC1=O",
+            "product_smiles": "CC1=C([OTBS])C2=CC=CC=C2N=C1[OTf]",
+            "notes": "Triflation of a 4-quinolone to form a 2-trifloxyquinoline, preserving the OTBS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "[Pd(PPh3)2Cl2], NaHCO3",
+            "reagent_smiles": "B1(OC(C)(C)C(C)(C)O1)CC/C=C(\\C)CCC/C=C(\\C)C",
+            "conditions": "EtOH/PhMe, 90 °C",
+            "yield": "70%",
+            "reactant_smiles": "[OTBS]C1=C(C)C([OTf])=NC2=CC=CC=C21",
+            "product_smiles": "O=C1C2=CC=CC=C2[NH]C(CCC/C=C(\\C)CCC/C=C(\\C)C)=C1C",
+            "notes": "Suzuki cross coupling of quinoline triflate with an alkenyl boronic ester. Concomitant desilylation and oxidation of the OTBS group to a ketone occurs.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-alkylation",
+            "reagents": "LiOt-Bu",
+            "reagent_smiles": "ClCS#N",
+            "conditions": "THF",
+            "yield": "51%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC1=C(C)C(=O)C2=C(C=CC=C2)N1)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC1=C(C)C(=O)C2=C(C=CC=C2)N1CN=C=S)/C)C",
+            "notes": "N-alkylation of the quinolone nitrogen with chloromethyl thiocyanate (ClCH2SCN) to form an N-alkyl isothiocyanate (N-CH2NCS) derivative.",
+            "substeps": []
+        }
+    ]
+}

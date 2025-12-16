@@ -1,0 +1,194 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "zemiglo-gemigliptin-lg-unknown-2024",
+        "molecule_name": "Zemiglo (Gemigliptin LG)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amidation",
+            "reagents": "NH4HCO3, Boc2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "[tBuO2C]CC[C@@H](C(=O)O)[Boc]",
+            "product_smiles": "[tBuO2C]CC[C@@H](C(=O)N)[Boc]",
+            "notes": "Amide formation from a carboxylic acid using ammonium bicarbonate and di-tert-butyl dicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Dehydration",
+            "reagents": "DMF",
+            "reagent_smiles": "Clc1nc(Cl)nc(Cl)n1",
+            "conditions": "rt",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@@H](N[Boc])C(=O)N",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@@H](N[Boc])C#N",
+            "notes": "Dehydration of a primary amide to a nitrile using cyanuric chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitrile Reduction (Hydrogenation)",
+            "reagents": "H2, Pd(OH)2/C, AcOH",
+            "reagent_smiles": "",
+            "conditions": "45 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@@H](C#N)N[Boc]",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@@H](CN)N[Boc]",
+            "notes": "Catalytic hydrogenation of a nitrile to a primary amine, with Boc and tert-butyl ester groups remaining intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactamization / Intramolecular Cyclization",
+            "reagents": "Et3N",
+            "reagent_smiles": "CCOC(=O)C(F)(F)CCS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F",
+            "conditions": "40 °C then AcOH, CH2Cl2, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@@H](N[Boc])CN",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@@H](N[Boc])CN1C(=O)CC(F)(F)CC1",
+            "notes": "Intramolecular cyclization of an amine with a highly activated ester, forming a 6-membered lactam ring with a difluoro substituent.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Copper-catalyzed conjugate addition",
+                    "reagents": "Cu, TMEDA",
+                    "reagent_smiles": "C=CC(=O)OCC",
+                    "conditions": "THF, 50 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C(Br)(F)F",
+                    "product_smiles": "CCOC(=O)C(F)(F)CCC(=O)OCC",
+                    "notes": "Copper-catalyzed conjugate addition of ethyl 2-bromo-2,2-difluoroacetate to ethyl acrylate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Selective Ester Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "[Na+].[BH4-]",
+                    "conditions": "EtOH, THF, 0 °C",
+                    "yield": "90%",
+                    "reactant_smiles": "CCOC(=O)C(F)(F)CCC(=O)OCC",
+                    "product_smiles": "OCCC(F)(F)CC(=O)OCC",
+                    "notes": "Selective reduction of the ester alpha to the difluoro group to a primary alcohol using sodium borohydride, leaving the other ester intact.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Sulfonate Ester Formation",
+                    "reagents": "Et3N",
+                    "reagent_smiles": "ClS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "75%",
+                    "reactant_smiles": "CCOC(=O)CCC(CO)(F)F",
+                    "product_smiles": "CCOC(=O)CCC(F)(F)COS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F",
+                    "notes": "Primary alcohol is converted into a perfluorobutanesulfonate ester using perfluorobutanesulfonyl chloride and triethylamine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection / Ester Hydrolysis",
+            "reagents": "H3PO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "",
+            "reactant_smiles": "[CO2tBu]C[C@@H](N[Boc])CN1CC(CCC1=O)(F)F",
+            "product_smiles": "O=C(O)C[C@H](N)CN1CC(CCC1=O)(F)F",
+            "notes": "Boc group deprotected to primary amine, and tert-butyl ester hydrolyzed to carboxylic acid under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amine Protection",
+            "reagents": "10 N H2O2",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "",
+            "yield": "84%",
+            "reactant_smiles": "C1CC(CN(C[C@@H](CC(=O)O)N)C1=O)(F)F",
+            "product_smiles": "[Boc]N[C@@H](CC(=O)O)CN1CC(CCC1=O)(F)F",
+            "notes": "Boc protection of a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EDC, HOBT, DIPEA",
+            "reagent_smiles": "C1CNCC2=C1C(=NC(=N2)C(F)(F)F)C(F)(F)F",
+            "conditions": "DMF, rt",
+            "yield": "51%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H](CC(=O)O)CN1CC(CCC1=O)(F)F",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@H](CC1CC(CCC1=O)(F)F)CC(=O)N2CCC3=C(C2)N=C(C(F)(F)F)N=C3C(F)(F)F",
+            "notes": "Amide formation between a carboxylic acid and a secondary amine.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "C-Acylation / Enolate Alkylation",
+                    "reagents": "LHMDS",
+                    "reagent_smiles": "CCOC(=O)C(F)(F)F",
+                    "conditions": "THF, DME, -78 °C to rt",
+                    "yield": "81%",
+                    "reactant_smiles": "[Boc]N1CCC(=O)CC1=O",
+                    "product_smiles": "[Boc]N1CCC(=O)C(C(=O)C(F)(F)F)C1=O",
+                    "notes": "C-acylation of 1-Boc-piperidine-2,4-dione with ethyl trifluoroacetate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Cyclocondensation",
+                    "reagents": "",
+                    "reagent_smiles": "C(=N)(C(F)(F)F)N",
+                    "conditions": "EtOH, 90 °C",
+                    "yield": "23%",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1C(=O)C(C(=O)C(F)(F)F)CCC1",
+                    "product_smiles": "CC(C)(C)OC(=O)N1CCC2=C(C1)N=C(C(F)(F)F)N=C2C(F)(F)F",
+                    "notes": "Formation of a fused pyrido[1,2-a]pyrimidine system from a piperidinedione and a trifluoromethyl amidine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Deprotection",
+                    "reagents": "3 N HCl",
+                    "reagent_smiles": "",
+                    "conditions": "EtOAc, rt",
+                    "yield": "96%",
+                    "reactant_smiles": "[Boc]N1CCC2=C1C(=NC(=N2)C(F)(F)F)C(F)(F)F",
+                    "product_smiles": "C1CNCC2=C1C(=NC(=N2)C(F)(F)F)C(F)(F)F",
+                    "notes": "Boc deprotection of a secondary amine using hydrochloric acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "SOCl2, NaOH (aq)",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H](CC1CC(CCC1=O)(F)F)CC(=O)N2CCC3=C(N=C(C(F)(F)F)N=C3C(F)(F)F)C2",
+            "product_smiles": "N[C@@H](CC(=O)N1CCC2=C(N=C(C(F)(F)F)N=C2C(F)(F)F)C1)CC3CC(CCC3=O)(F)F",
+            "notes": "Boc deprotection to yield the primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Salt Formation",
+            "reagents": "tartaric acid",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H₂O",
+            "yield": "98%",
+            "reactant_smiles": "C1CC(CC(C[C@@H](CC(=O)N2CCC3=C(C2)N=C(C(F)(F)F)N=C3C(F)(F)F)N)C1=O)(F)F",
+            "product_smiles": "C1CC(CC(C[C@@H](CC(=O)N2CCC3=C(C2)N=C(C(F)(F)F)N=C3C(F)(F)F)N)C1=O)(F)F.O=C(O)[C@@H](O)[C@@H](O)C(=O)O",
+            "notes": "Formation of Gemigliptin tartrate salt.",
+            "substeps": []
+        }
+    ]
+}

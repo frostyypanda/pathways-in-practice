@@ -1,0 +1,72 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "isoretronecanol-njardarson-2015",
+        "molecule_name": "Isoretronecanol",
+        "class": "Natural Product",
+        "author": "Njardarson",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation / Condensation",
+            "reagents": "Ti(OiPr)4",
+            "reagent_smiles": "CC(C)(C)[S@@](=O)N",
+            "conditions": "THF, rt",
+            "yield": "89%",
+            "reactant_smiles": "[Ts]OCCC=O",
+            "product_smiles": "[Ts]OCCC=N[S@@](=O)C(C)(C)C",
+            "notes": "Condensation of an aldehyde with chiral tert-butylsulfinamide to form a chiral N-sulfinyl imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Aza-Michael Cyclization",
+            "reagents": "LDA",
+            "reagent_smiles": "CCOC(=O)/C=C/CBr",
+            "conditions": "THF, -78 °C",
+            "yield": "58%",
+            "reactant_smiles": "CC(C)(C)[S@@](=O)N=CCCCO[Ts]",
+            "product_smiles": "CCOC(=O)C1=CCN([C@H]1CCCO[Ts])[S@](=O)C(C)(C)C",
+            "notes": "Intramolecular cyclization leading to a 2,5-dihydropyrrole core.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection, Intramolecular Cyclization",
+            "reagents": "TMSCl, H2O, MeOH then Et3N, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "CCOC(=O)C1=CCN([C@H]1CCCO[OTs])[S@](=O)[tBu]",
+            "product_smiles": "CCOC(=O)C1=CCN2CCC[C@H]12",
+            "notes": "Deprotection of N-sulfinyl-tBu group and intramolecular N-alkylation to form a pyrrolizidine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction (Ester to Alcohol)",
+            "reagents": "DibalH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "CCOC(=O)C1=CCN2CCC[C@@H]12",
+            "product_smiles": "C1C[C@H]2C(=CCN2C1)CO",
+            "notes": "Reduction of an ethyl ester to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "97%",
+            "reactant_smiles": "OCC=C1CC[C@@H]2N1CC2",
+            "product_smiles": "OCC[C@@H]1CC[C@@H]2N1CC2",
+            "notes": "Hydrogenation of the alkene in a pyrrolizine derivative, forming a new stereocenter. The bridgehead stereochemistry is retained.",
+            "substeps": []
+        }
+    ]
+}

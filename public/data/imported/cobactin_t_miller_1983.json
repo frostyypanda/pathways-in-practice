@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cobactin-t-miller-1983",
+        "molecule_name": "Cobactin T",
+        "class": "Natural Product",
+        "author": "Miller",
+        "year": 1983
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection",
+            "reagents": "(Boc)2O, Et3N",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C.CCN(CC)CC",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "N[C@@H](C(=O)O)CCCCO",
+            "product_smiles": "[Boc]N[C@@H](C(=O)O)CCCCO",
+            "notes": "Protection of the alpha-amino group with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation / Hydroxamic Acid Synthesis",
+            "reagents": "BnONH2.HCl, H2O, EDCI",
+            "reagent_smiles": "NOCc1ccccc1.CCN=C=NCCCN(C)C.O",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "[Boc]N[C@@H](CCCCO)C(=O)O",
+            "product_smiles": "[Boc]N[C@@H](CCCCO)C(=O)NOCC1=CC=CC=C1",
+            "notes": "Carboxylic acid is coupled with benzyloxyamine using EDCI to form an N-benzyloxyhydroxamic acid derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "PPh3, DEAD",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@H](CCCCO)C(=O)N[OBn]",
+            "product_smiles": "[Boc]N[C@H]1CCCCN(C1=O)[OBn]",
+            "notes": "Intramolecular Mitsunobu reaction to form a 7-membered lactam, coupling a terminal alcohol with an amide nitrogen. The stereochemistry at the alpha-carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Boc deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "[Boc]N[C@@H]1C(=O)N([OBn])CCCC1",
+            "product_smiles": "N[C@@H]1C(=O)N([OBn])CCCC1",
+            "notes": "Deprotection of a Boc-protected amine to a free amine using trifluoroacetic acid. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EEDQ",
+            "reagent_smiles": "C[C@H](CC(=O)O)O",
+            "conditions": "THF, 50 °C",
+            "yield": "79%",
+            "reactant_smiles": "C1CCC[C@H](C(=O)N1OCC2=CC=CC=C2)N",
+            "product_smiles": "C[C@H](CC(=O)N[C@H]1CCCCN(C1=O)OCC2=CC=CC=C2)O",
+            "notes": "Amide formation between an amine and a carboxylic acid, mediated by EEDQ.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "79%",
+            "reactant_smiles": "C[C@H](CC(=O)N[C@H]1CCCCN(C1=O)OCC2=CC=CC=C2)O",
+            "product_smiles": "C[C@H](CC(=O)N[C@H]1CCCCN(C1=O)O)O",
+            "notes": "Hydrogenolysis of an N-benzyloxy lactam to yield the N-hydroxy lactam.",
+            "substeps": []
+        }
+    ]
+}

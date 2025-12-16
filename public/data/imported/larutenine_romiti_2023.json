@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "larutenine-romiti-2023",
+        "molecule_name": "Larutenine",
+        "class": "Natural Product",
+        "author": "Romiti",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA, HMPA",
+            "reagent_smiles": "ICCCCl",
+            "conditions": "THF, -78 °C",
+            "yield": "71%",
+            "reactant_smiles": "C1CC(=O)OC1",
+            "product_smiles": "ClCCC1CC(=O)OC1",
+            "notes": "Alpha-alkylation of gamma-butyrolactone with 1-chloro-3-iodopropane.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silyl enol ether formation",
+            "reagents": "TMSCl, LDA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1C(CCCCl)CCO1",
+            "product_smiles": "[OTMS]C1=C(CCCCl)CCO1",
+            "notes": "Formation of a silyl enol ether from a gamma-lactone using TMSCl and LDA.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bromination / Oxidative Cyclization",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "[OTMS]C1=C(CCCCl)CCO1",
+            "product_smiles": "C(CC1(CCOC1=O)Br)CCl",
+            "notes": "Conversion of silyl enol ether to alpha-bromo lactone. Reaction proceeds in two steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nickel-catalyzed cross-coupling / Alkylation",
+            "reagents": "NiCl2.glyme",
+            "reagent_smiles": "CC(C)(C)[C@H]1COC(=N1)C2=NC=C(C=C2)C(F)(F)F.[Zr](Cl)(C1C=CC=C1)(C2C=CC=C2)C/C=C/CCCC",
+            "conditions": "dioxane",
+            "yield": "25%",
+            "reactant_smiles": "C(CC1(CCOC1=O)Br)CCl",
+            "product_smiles": "CCCC/C=C/[C@]1(CCCCl)CCOC1=O",
+            "notes": "Nickel-catalyzed stereoselective alkylation of an α-bromo-γ-lactone with an organozirconium reagent, forming a quaternary carbon center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cross-metathesis",
+            "reagents": "HG II",
+            "reagent_smiles": "C=C",
+            "conditions": "toluene, 80 °C",
+            "yield": "78%",
+            "reactant_smiles": "CCCC/C=C/[C@]1(CCCCl)CCOC1=O",
+            "product_smiles": "C=C[C@]1(CCCCl)CCOC1=O",
+            "notes": "Cross-metathesis of an internal alkene with ethylene, catalyzed by Hoveyda-Grubbs 2nd generation catalyst, to produce a terminal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Tandem Intramolecular Cyclization / Lactamization",
+            "reagents": "NaI, Et3N",
+            "reagent_smiles": "C1=CC2=C(C=C1)NC=C2CCN",
+            "conditions": "toluene, 110 °C",
+            "yield": "87%",
+            "reactant_smiles": "C=C[C@]1(CCCCl)CCOC1=O",
+            "product_smiles": "C=C[C@]1(CCCN(CCC2=CNC3=C2C=CC=C3)C1=O)CCO",
+            "notes": "Intramolecular cyclization of tryptamine with an alkyl chloride and concurrent lactone opening and lactam formation to build a complex polycyclic structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetylation / Esterification",
+            "reagents": "",
+            "reagent_smiles": "O=C(C)OC(=O)C.c1ccncc1",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "C=C[C@H]1C(=O)N(CCC2=CNC3=C2C=CC=C3)CCC1CCO",
+            "product_smiles": "C=C[C@H]1C(=O)N(CCC2=CNC3=C2C=CC=C3)CCC1CC[OAc]",
+            "notes": "Acetylation of a primary alcohol to an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization / Lactam Reduction",
+            "reagents": "Tf2O, 2-chloropyridine, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 to 0 °C then MeOH, 0 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "C=C[C@]1(CCCN(CCC2=CNC3=C2C=CC=C3)C1=O)CCO[OAc]",
+            "product_smiles": "C=C[C@]1(CCCN2CCC3=C([C@H]12)NC4=C3C=CC=C4)CCO[OAc]",
+            "notes": "Intramolecular Pictet-Spengler type cyclization of the indole with the activated lactam, followed by reduction of the lactam carbonyl to a methylene group, leading to a complex tetracyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=C[C@]1(CCCN2CCC3=C([C@H]12)NC4=C3C=CC=C4)CC[OAc]",
+            "product_smiles": "C=C[C@]1(CCCN2CCC3=C([C@H]12)NC4=C3C=CC=C4)CCO",
+            "notes": "Reduction of an acetate ester to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Cyclization (Lactamization)",
+            "reagents": "TPAP, NMO, 4Å MS",
+            "reagent_smiles": "",
+            "conditions": "MeCN, CH₂Cl₂",
+            "yield": "74%",
+            "reactant_smiles": "C=C[C@]1(CCCN2CCC3=C([C@H]12)NC4=C3C=CC=C4)CCO",
+            "product_smiles": "C=C[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2",
+            "notes": "Oxidation of a primary alcohol and subsequent cyclization with an indole N-H to form a lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "9-BBN, Et3N, H2O2, NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF, -10 to 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=C[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)C[C@@]4(CCCN5CCC2=C3[C@H]45)CCO",
+            "notes": "Hydroboration-oxidation of a terminal alkene to a primary alcohol. Stereochemistry at the chiral centers is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "[AlH](CC(C)C)CC(C)C",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "74%",
+            "reactant_smiles": "C1=CC2=C(C=C1)N3C(=O)C[C@@]4(CCCN5CCC2=C3[C@H]45)CCO",
+            "product_smiles": "C1=CC2=C(C=C1)N3[C@H](C[C@@]4(CCCN5CCC2=C3[C@H]45)CCO)O",
+            "notes": "Reduction of a lactam carbonyl to a hydroxyl group, forming a cyclic amine alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Etherification / Cyclization",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "H2O",
+            "yield": "86%",
+            "reactant_smiles": "C1=CC2=C(C=C1)N3[C@H](C[C@@]4(CCCN5CCC2=C3[C@H]45)CCO)O",
+            "product_smiles": "C1=CC2=C(C=C1)N3[C@@H]4C[C@@]5(CCCN6CCC2=C3[C@H]56)CO4",
+            "notes": "Acid-catalyzed intramolecular cyclization of a diol to form a cyclic ether (Larutenine).",
+            "substeps": []
+        }
+    ]
+}

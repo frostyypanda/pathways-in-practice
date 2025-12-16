@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dibromophakellstatin-romo-2003",
+        "molecule_name": "Dibromophakellstatin",
+        "class": "Natural Product",
+        "author": "Romo",
+        "year": 2003
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Friedel-Crafts acylation",
+            "reagents": "Et2O",
+            "reagent_smiles": "O=C(Cl)C(Cl)(Cl)Cl",
+            "conditions": "40 °C",
+            "yield": "93%",
+            "reactant_smiles": "c1cc[nH]c1",
+            "product_smiles": "O=C(C(Cl)(Cl)Cl)c1cc[nH]c1",
+            "notes": "Friedel-Crafts acylation of pyrrole with trichloroacetyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation / Acylation",
+            "reagents": "Na2CO3",
+            "reagent_smiles": "C1C[C@@H](CO)NC1",
+            "conditions": "DCM",
+            "yield": "49%",
+            "reactant_smiles": "C1=CNC(=C1)C(=O)C(Cl)(Cl)Cl",
+            "product_smiles": "C1=CNC(=C1)C(=O)N2CCC[C@@H]2CO",
+            "notes": "Amidation of 2-(trichloroacetyl)pyrrole with (S)-Prolinol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "77%",
+            "reactant_smiles": "C1=CNC(=C1)C(=O)N2CCC[C@@H]2CO",
+            "product_smiles": "O=C1N2CCC[C@@H](O)[C@@H]2C3=CNC1=C3",
+            "notes": "Primary alcohol undergoes Dess-Martin oxidation followed by intramolecular cyclization and rearrangement to form a fused polycyclic lactam structure. The original primary alcohol is oxidized, leading to a new carbonyl group, and a new hydroxyl group appears at a different chiral center in the cyclized product.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Elimination / Dehydration",
+            "reagents": "MsCl, DBU",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "67%",
+            "reactant_smiles": "O[C@@H]1C(=O)N2CCC[C@@H]2c3c1ncn3",
+            "product_smiles": "O=C1N2CCC=C2c3c1ncn3",
+            "notes": "Elimination of an alcohol to form an alkene and aromatization of the pyrrole ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Azidation / Electrophilic Azidination",
+            "reagents": "BAIB, TMSN₃, Et₄NI",
+            "reagent_smiles": "",
+            "conditions": "-40 °C to rt",
+            "yield": "41%",
+            "reactant_smiles": "O=C1N2CCCC2C=C(N3)C=CC3=C1",
+            "product_smiles": "O=C1N2CCCC2[C@H]([N-]=[N+]=[N-])[C@@H]([N-]=[N+]=[N-])N3C=CC=C3C1",
+            "notes": "Addition of two azide groups to the α,β-unsaturated lactam, forming two new adjacent stereocenters with defined relative stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Azide reduction",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "75%",
+            "reactant_smiles": "O=C1N2CCC[C@H]([N_3])[C@H]2([N_3])CN(c3c1)C=C3",
+            "product_smiles": "O=C1N2CCC[C@H](N)[C@H]2(N)CN(c3c1)C=C3",
+            "notes": "Catalytic hydrogenation reduces two azide groups to two primary amine groups, preserving stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cyclization / Thiourea formation",
+            "reagents": "TCDI, imidazole",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "69%",
+            "reactant_smiles": "C1=CN2C(=C1)C(=O)N3CCC[C@]3([C@@H]2N)N",
+            "product_smiles": "C1=CN2C(=C1)C(=O)N3CCC[C@@]43[C@H]2NC(=S)N4",
+            "notes": "Formation of a cyclic thiourea from a vicinal diamine using TCDI.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "30% H₂O₂, NH₃",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "91%",
+            "reactant_smiles": "C1=CN2C(=C1)C(=O)N3CCC[C@]43[C@@H]2NC(=S)N4",
+            "product_smiles": "C1=CN2C(=C1)C(=O)N3CCC[C@]43[C@@H]2NC(=O)N4",
+            "notes": "Oxidation of a thiourea to a urea using hydrogen peroxide and ammonia in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "90%",
+            "reactant_smiles": "O=C1N2C(=O)N[C@@H]3[C@H]2CCC[C@@]34[C@@H]1c5cnc6c456",
+            "product_smiles": "C1C[C@]23[C@H](NC(=O)N2)N4C(=CC(=C4Br)Br)C(=O)N3C1",
+            "notes": "Dibromination of the pyrrole ring of phakellistatin using N-bromosuccinimide.",
+            "substeps": []
+        }
+    ]
+}

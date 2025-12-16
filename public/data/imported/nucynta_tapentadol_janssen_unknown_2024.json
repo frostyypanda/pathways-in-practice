@@ -1,0 +1,72 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nucynta-tapentadol-janssen-unknown-2024",
+        "molecule_name": "Nucynta (Tapentadol Janssen)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-amination / Mannich-like reaction",
+            "reagents": "",
+            "reagent_smiles": "CN(C)CCl.CC(=O)Cl.CC#N",
+            "conditions": "rt",
+            "yield": "50%",
+            "reactant_smiles": "CCC(=O)C1=CC(=CC=C1)[OBn]",
+            "product_smiles": "CC(CN(C)C)C(=O)C1=CC(=CC=C1)[OBn]",
+            "notes": "Alpha-amination of the ketone via reaction with chloromethyl(dimethyl)amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Chiral Resolution / Stereoselective Synthesis (likely resolution given L-(-)-DBTA)",
+            "reagents": "L-(-)-DBTA H2O",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 5 °C",
+            "yield": "65%",
+            "reactant_smiles": "CC(CN(C)C)C(=O)C1=CC(=CC=C1)OCC2=CC=CC=C2",
+            "product_smiles": "C[C@H](CN(C)C)C(=O)C1=CC(=CC=C1)OCC2=CC=CC=C2",
+            "notes": "Stereoselective synthesis of the S-enantiomer, likely via diastereomeric salt formation and resolution using L-(-)-DBTA H2O (dibenzoyl-L-tartaric acid monohydrate).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Reaction",
+            "reagents": "EtMgBr",
+            "reagent_smiles": "",
+            "conditions": "THF, 10 °C",
+            "yield": "89%",
+            "reactant_smiles": "C[C@H](CN(C)C)C(=O)C1=CC(=CC=C1)OCC2=CC=CC=C2",
+            "product_smiles": "CC[C@]([C@H](C)CN(C)C)(C1=CC(=CC=C1)OCC2=CC=CC=C2)O",
+            "notes": "Nucleophilic addition of ethylmagnesium bromide to a ketone, forming a tertiary alcohol and introducing a new stereocenter. The existing stereocenter's configuration is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification",
+            "reagents": "(CF3CO)2O",
+            "reagent_smiles": "",
+            "conditions": "2-Me-THF",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]([C@@H](C)CN(C)C)(C1=CC(=CC=C1)[OBn])O",
+            "product_smiles": "CC[C@@]([C@@H](C)CN(C)C)(C1=CC(=CC=C1)[OBn])OC(=O)C(F)(F)F",
+            "notes": "Esterification of a secondary alcohol with trifluoroacetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive deprotection / Hydrogenolysis",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@]([C@H](C)CN(C)C)(C1=CC(=CC=C1)OCC2=CC=CC=C2)OC(=O)C(F)(F)F",
+            "product_smiles": "CC[C@@H]([C@H](C)CN(C)C)C1=CC(=CC=C1)O",
+            "notes": "Reductive cleavage of benzyl ether and trifluoroacetate ester protecting groups to yield Tapentadol.",
+            "substeps": []
+        }
+    ]
+}

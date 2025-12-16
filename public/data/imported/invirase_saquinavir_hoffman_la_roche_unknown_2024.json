@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "invirase-saquinavir-hoffman-la-roche-unknown-2024",
+        "molecule_name": "Invirase (Saquinavir Hoffman-La Roche)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification, Carbamoylation",
+            "reagents": "SOCl2, MeOH, ClCOOCH3, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "C1=CC=C(C=C1)C[C@H](C(=O)O)N",
+            "product_smiles": "COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)OC",
+            "notes": "L-phenylalanine undergoes esterification to form methyl ester, followed by carbamoylation of the amino group with methyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester to Chloromethyl Ketone Conversion",
+            "reagents": "n-BuLi, TMSCl, BrCH2Cl",
+            "reagent_smiles": "",
+            "conditions": "THF, -75 °C",
+            "yield": "76%",
+            "reactant_smiles": "COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)OC",
+            "product_smiles": "COC(=O)N[C@H](CC1=CC=CC=C1)C(=O)CCl",
+            "notes": "Methyl ester of N-carbomethoxy-L-phenylalanine is converted to a chloromethyl ketone via alpha-alkylation/functionalization.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Meerwein-Ponndorf-Verley reduction",
+            "reagents": "Al(i-PrO)3, i-PrOH",
+            "reagent_smiles": "CC(C)O[Al](OC(C)C)OC(C)C.CC(C)O",
+            "conditions": "50 °C",
+            "yield": "89%",
+            "reactant_smiles": "COC(=O)N[C@@H](CC1=CC=CC=C1)C(=O)CCl",
+            "product_smiles": "COC(=O)N[C@@H](CC1=CC=CC=C1)[C@H](O)CCl",
+            "notes": "Ketone reduction to secondary alcohol with stereocontrol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaOH",
+            "reagent_smiles": "CC(C)(C)NC(=O)[C@@H]1CN2CCCC[C@@H]2[C@H]1",
+            "conditions": "H2O, toluene then EtOH, 78 °C",
+            "yield": "92%",
+            "reactant_smiles": "COC(=O)N[C@H](CC1=CC=CC=C1)[C@H](O)CCl",
+            "product_smiles": "CC(C)(C)NC(=O)[C@@H]1CN(C[C@H](O)[C@H](CC2=CC=CC=C2)NC(=O)OC)[C@@H]3CCCC[C@H]31",
+            "notes": "Alkylation of an amine (decahydroisoquinoline derivative) with a chlorohydrin to form a tertiary amine. Stereochemistry is preserved.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Pictet-Spengler Reaction",
+                    "reagents": "CH2O, HCl / H2O then NH3 diluted",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "70%",
+                    "reactant_smiles": "C1=CC=C(C=C1)C[C@H](N)C(=O)O",
+                    "product_smiles": "C1=CC2=C(C=C1)C[NH2+][C@@H](C2)C(=O)[O-]",
+                    "notes": "Formation of a tetrahydroisoquinoline-3-carboxylic acid via Pictet-Spengler reaction from L-phenylalanine and formaldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Amide Formation / Amidation",
+                    "reagents": "",
+                    "reagent_smiles": "O=C(Cl)Cl.N[tBu]",
+                    "conditions": "THF",
+                    "yield": "80%",
+                    "reactant_smiles": "C1=CC2=C(C=C1)C[NH2+][C@@H](C2)C(=O)[O-]",
+                    "product_smiles": "[tBu]NC(=O)[C@@H]1CC2=C(C=CC=C2)CN1",
+                    "notes": "Amidation of a zwitterionic amino acid derivative; carboxylate activated to acid chloride then reacted with tert-butylamine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Hydrogenation",
+                    "reagents": "H2, Ru /Alox",
+                    "reagent_smiles": "",
+                    "conditions": "150 bar, AcOEt, 150 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "[tBu]NC(=O)[C@@H]1CC2=C(C=CC=C2)CN1",
+                    "product_smiles": "[tBu]NC(=O)[C@@H]1C[C@@H]2CCCC[C@@H]2CN1",
+                    "notes": "Catalytic hydrogenation of the aromatic ring of a tetrahydroisoquinoline derivative, retaining existing stereochemistry and forming a cis-fused decalin-like system.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Carbamate Hydrolysis (Deprotection)",
+            "reagents": "NaOH, H2O, EtOH",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "98%",
+            "reactant_smiles": "CC(C)(C)NC(=O)[C@@H]1C[C@H]2CCCC[C@H]2CN1C[C@H]([C@H](CC3=CC=CC=C3)NC(=O)OC)O",
+            "product_smiles": "CC(C)(C)NC(=O)[C@@H]1C[C@H]2CCCC[C@H]2CN1C[C@H]([C@H](CC3=CC=CC=C3)N)O",
+            "notes": "Hydrolysis of a methyl carbamate protecting group to yield a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Coupling, Salt Formation",
+            "reagents": "DCC, N-hydroxypyridone",
+            "reagent_smiles": "O=C(O)[C@@H](CC(=O)N)NC(=O)C1=NC2=CC=CC=C2C=C1",
+            "conditions": "acetone, then CH3SO3H, MeOH",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)NC(=O)[C@@H]1C[C@H]2CCCC[C@]2CN1C[C@H]([C@H](CC3=CC=CC=C3)N)O",
+            "product_smiles": "CC(C)(C)NC(=O)[C@@H]1C[C@H]2CCCC[C@]2C[NH+]1C[C@H]([C@H](CC3=CC=CC=C3)NC(=O)[C@H](CC(=O)N)NC(=O)C1=NC2=CC=CC=C2C=C1)O.CS(=O)(=O)[O-]",
+            "notes": "Amine on the reactant undergoes amide coupling with the quinoline-asparagine derivative. The piperidine nitrogen of the reactant is subsequently protonated by methanesulfonic acid.",
+            "substeps": []
+        }
+    ]
+}

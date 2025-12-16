@@ -1,0 +1,290 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "glecaprevir-mavyret-abbvie-unknown-2024",
+        "molecule_name": "Glecaprevir (Mavyret AbbVie)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Indium-mediated Barbier-type Allylation",
+            "reagents": "In, toluene, DMF",
+            "reagent_smiles": "O=CC(=O)OCC",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=CC(Br)(F)F",
+            "product_smiles": "C=CC(C(C(=O)OCC)O)(F)F",
+            "notes": "Indium-mediated coupling of an allylic gem-difluoro bromide with ethyl glyoxalate to form a beta-difluoro-alpha-hydroxy ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ley oxidation",
+            "reagents": "TPAP, NMO",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "C=CC(C(C(=O)OCC)O)(F)F",
+            "product_smiles": "C=CC(C(=O)C(=O)OCC)(F)F",
+            "notes": "Oxidation of secondary alcohol to alpha-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Condensation, Heterocycle Formation (Quinoxalinone)",
+            "reagents": "Et3N, EtOH",
+            "reagent_smiles": "C1=CC(=C(C=C1)N)N",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=CC(C(=O)C(=O)OCC)(F)F",
+            "product_smiles": "C=CC(C1=NC2=CC=CC=C2NC1=O)(F)F",
+            "notes": "Formation of a quinoxalin-2-one derivative from 1,2-diaminobenzene and an alpha-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Chlorination",
+            "reagents": "POCl3, DMF",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "45%",
+            "reactant_smiles": "C=CC(C1=NC2=CC=CC=C2NC1=O)(F)F",
+            "product_smiles": "C=CC(C1=NC2=CC=CC=C2N=C1Cl)(F)F",
+            "notes": "Chlorination of a quinoxalin-2(1H)-one derivative to a 2-chloroquinoxaline derivative. The reported yield of 45% is over 4 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr) / Williamson Ether Synthesis",
+            "reagents": "NaOt-Bu, THF, DMF",
+            "reagent_smiles": "CCOC(=O)[C@@H]1C[C@H](CN1[Boc])O",
+            "conditions": "0 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "C=CC(C1=NC2=CC=CC=C2N=C1Cl)(F)F",
+            "product_smiles": "C=CC(C1=NC2=CC=CC=C2N=C1O[C@H]3C[C@@H](C(=O)OCC)N(C3)[Boc])(F)F",
+            "notes": "Chloride on quinoxaline is substituted by pyrrolidine alcohol through oxygen.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amine deprotection (Boc deprotection)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane, DCM, rt",
+            "yield": "",
+            "reactant_smiles": "C=CC(C1=NC2=CC=CC=C2N=C1O[C@@H]3C[C@@H](C(=O)OCC)N(C3)C(=O)OC(C)(C)C)(F)F",
+            "product_smiles": "C=CC(C1=NC2=CC=CC=C2N=C1O[C@@H]3C[C@@H](C(=O)OCC)NC3)(F)F",
+            "notes": "Deprotection of a Boc-protected pyrrolidine secondary amine using HCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "C=CCO[C@@H]1CCC[C@H]1OC(=O)N[C@@H](C(=O)O)C(C)(C)C",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "C=CC(C1=NC2=CC=CC=C2N=C1O[C@@H]3C[C@@H](C(=O)OCC)NC3)(F)F",
+            "product_smiles": "C=CCO[C@@H]1CCC[C@H]1OC(=O)N[C@@H](C(=O)N2C[C@@H](C[C@@H]2C(=O)OCC)OC3=C(C(C=C)(F)F)N=C4C=CC=CC4=N3)C(C)(C)C",
+            "notes": "Amide bond formation between a secondary amine and a carboxylic acid using HATU/DIPEA.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Esterification (Acetylation)",
+                    "reagents": "DMAP, pyridine",
+                    "reagent_smiles": "CC(=O)OC(=O)C",
+                    "conditions": "DCM, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1C[C@H]([C@@H](C1)O)O",
+                    "product_smiles": "C1C[C@H]([C@@H](C1)[OAc])[OAc]",
+                    "notes": "Acetylation of trans-1,2-cyclopentanediol to its diacetate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Selective enzymatic hydrolysis",
+                    "reagents": "NaOH, lipase",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, rt",
+                    "yield": "",
+                    "reactant_smiles": "[Ac]O[C@H]1CCC[C@@H]1O[Ac]",
+                    "product_smiles": "O[C@H]1CCC[C@@H]1O[Ac]",
+                    "notes": "Selective hydrolysis of one ester in a diacetate to yield a monoacetate alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "NaH, DMF",
+                    "reagent_smiles": "C=CCBr",
+                    "conditions": "rt",
+                    "yield": "",
+                    "reactant_smiles": "[OAc][C@@H]1CCC[C@H]1O",
+                    "product_smiles": "C=CCO[C@@H]1CCC[C@H]1[OAc]",
+                    "notes": "Alkylation of a secondary alcohol (hydroxyl group) with allyl bromide to form an allyl ether, using sodium hydride as a base. The acetate group remains untouched.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Ester Hydrolysis / Deprotection",
+                    "reagents": "LiOH, MeOH, THF",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "40% (4 steps)",
+                    "reactant_smiles": "C=CCO[C@@H]1CCC[C@H]1[OAc]",
+                    "product_smiles": "C=CCO[C@@H]1CCC[C@H]1O",
+                    "notes": "Hydrolysis of an acetate ester to a hydroxyl group. The reported yield of 40% is for 4 steps, not just this single step.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Carbamate Formation",
+                    "reagents": "THF",
+                    "reagent_smiles": "CC(C)(C)[C@@H](N)C(=O)OC.O=C(Cl)Cl",
+                    "conditions": "rt",
+                    "yield": "",
+                    "reactant_smiles": "C=CCO[C@@H]1CCC[C@H]1O",
+                    "product_smiles": "C=CCO[C@@H]1CCC[C@H]1OC(=O)N[C@@H](C(C)(C)C)C(=O)OC",
+                    "notes": "Alcohol reacts with an amine and phosgene (COCl2) to form a carbamate. Stereochemistry of both chiral centers is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.6",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "NaOH, aq. HCl",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, rt",
+                    "yield": "",
+                    "reactant_smiles": "C=CCO[C@@H]1CCC[C@H]1OC(=O)N[C@H](C(=O)OC)C(C)(C)C",
+                    "product_smiles": "C=CCO[C@@H]1CCC[C@H]1OC(=O)N[C@H](C(=O)O)C(C)(C)C",
+                    "notes": "Methyl ester hydrolysis to carboxylic acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs 2nd generation catalyst",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCO[C@@H]1CCC[C@H]1OC(=O)N[C@H](C(=O)N2C[C@H](C[C@@H]2C(=O)OCC)OC3=C(C(C=C)(F)F)N=C4C=CC=CC4=N3)C(C)(C)C",
+            "product_smiles": "CCOC(=O)[C@@H]1C[C@H]2CN1C(=O)[C@H](C(C)(C)C)NC(=O)O[C@@H]3CCC[C@H]3OC/C=C/C(C4=NC5=CC=CC=C5N=C4O2)(F)F",
+            "notes": "Macrocyclization via Ring-Closing Metathesis (RCM) using a Grubbs 2nd generation catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "aq. MeOH, THF, rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H]1C[C@@H]2CN1C(=O)[C@H](C(C)(C)C)NC(=O)O[C@@H]3CCC[C@H]3OC/C=C/C(C4=NC5=CC=CC=C5N=C4O2)(F)F",
+            "product_smiles": "O=C(O)[C@@H]1C[C@@H]2CN1C(=O)[C@H](C(C)(C)C)NC(=O)O[C@@H]3CCC[C@H]3OC/C=C/C(C4=NC5=CC=CC=C5N=C4O2)(F)F",
+            "notes": "Base-catalyzed hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "CC1(CC1)S(=O)(=O)NC(=O)[C@@]2(C[C@H]2C(F)F)N",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)[C@@H](N)C(=O)N1C[C@@H](C[C@H]1C(=O)O)OC2=NC3=CC=CC=C3N=C2C(F)(F)/C=C/CO[C@H]4CCC[C@H]4O",
+            "product_smiles": "CC(C)(C)[C@@H](NC(=O)[C@@]1(C[C@H]1C(F)F)C(=O)NS(=O)(=O)C2(C)CC2)C(=O)N3C[C@@H](C[C@H]3C(=O)O)OC4=NC5=CC=CC=C5N=C4C(F)(F)/C=C/CO[C@H]6CCC[C@H]6O",
+            "notes": "Amide formation between the primary amine of the tert-butyl amino acid derivative (attached to the pyrrolidine nitrogen) and the carboxylic acid of the cyclopropyl sulfonamide amino acid derivative (the drawn reagent), using HATU and DIPEA.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Knoevenagel Condensation",
+                    "reagents": "CeCl3, NaI",
+                    "reagent_smiles": "[OEt]C(=O)CC(=O)[OEt]",
+                    "conditions": "EtOH, 65 °C",
+                    "yield": "",
+                    "reactant_smiles": "OC(C(F)F)[OEt]",
+                    "product_smiles": "[OEt]C(=O)C(=CC(F)F)C(=O)[OEt]",
+                    "notes": "Condensation of 1-ethoxy-2,2-difluoroethanol with diethyl malonate to form diethyl 2-(2,2-difluoroethylidene)malonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Cyclopropanation (Corey-Chaykovsky-like)",
+                    "reagents": "Me3SOI, t-BuOK",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, rt",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C(=CC(F)F)C(=O)OCC",
+                    "product_smiles": "CCOC(=O)C1(CC1C(F)F)C(=O)OCC",
+                    "notes": "Cyclopropanation of an alpha,beta-unsaturated diester using a sulfoxonium ylide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Enzymatic Hydrolysis",
+                    "reagents": "Esterase ES46.5K, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "30 °C, then HCl pH ~3",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C1(CC1C(F)F)C(=O)OCC",
+                    "product_smiles": "CCOC(=O)[C@@]1(C(=O)O)[C@@H](C(F)F)CC1",
+                    "notes": "Diastereoselective enzymatic hydrolysis of a diethyl ester to a monoester-monocarboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Curtius rearrangement",
+                    "reagents": "DPPA, Et3N, t-BuOH",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, 30 to 90 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)[C@@]1(C(=O)O)[C@@H](C(F)F)C1",
+                    "product_smiles": "CCOC(=O)[C@@]1([NHBoc])[C@@H](C(F)F)C1",
+                    "notes": "Carboxylic acid is converted to a Boc-protected amine (carbamate) with retention of configuration at the chiral centers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.5",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "LiOH, citric acid",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, rt then H2O, pH ~4.5, rt",
+                    "yield": "",
+                    "reactant_smiles": "[NHBoc][C@]1(C(=O)OCC)[C@@H](C(F)F)C1",
+                    "product_smiles": "[NHBoc][C@]1(C(=O)O)[C@@H](C(F)F)C1",
+                    "notes": "Ester hydrolysis of an ethyl ester to a carboxylic acid, preserving cyclopropane stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.6",
+                    "reaction_type": "Amide Coupling / Sulfonamide Formation",
+                    "reagents": "EDCI, Et3N, DMAP",
+                    "reagent_smiles": "CC1(C)CC1S(=O)(=O)N",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "OC(=O)[C@@H]1[C@H](N[Boc])C(C(F)F)1",
+                    "product_smiles": "O=C(NS(=O)(=O)C1(C)CC1)[C@@H]2[C@H](N[Boc])C(C(F)F)2",
+                    "notes": "Carboxylic acid is coupled with 1-methylcyclopropane-1-sulfonamide to form a new amide linkage.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.7",
+                    "reaction_type": "Boc Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, rt",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@]1(CC1C(F)F)C(=O)NS(=O)(=O)C(C)(C)2CC2",
+                    "product_smiles": "N[C@]1(CC1C(F)F)C(=O)NS(=O)(=O)C(C)(C)2CC2",
+                    "notes": "Deprotection of an N-Boc protected amine to the free primary amine.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

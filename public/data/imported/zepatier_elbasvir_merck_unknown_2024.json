@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "zepatier-elbasvir-merck-unknown-2024",
+        "molecule_name": "Zepatier (Elbasvir Merck)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "(COCl)2, 2,6-lutidine",
+            "reagent_smiles": "Brc1cccc(O)c1",
+            "conditions": "DCM, DMF, 22 °C",
+            "yield": "91%",
+            "reactant_smiles": "O=C(O)CC1=C(Br)C=CC(Br)=C1",
+            "product_smiles": "Brc1cccc(OC(=O)CC2=C(Br)C=CC(Br)=C2)c1",
+            "notes": "Esterification of a 2,5-dibromophenylacetic acid with 3-bromophenol, likely via in situ formation of an acid chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Fries Rearrangement",
+            "reagents": "MsOH, Ms2O",
+            "reagent_smiles": "",
+            "conditions": "65 °C",
+            "yield": "91%",
+            "reactant_smiles": "BrC1=CC(Br)=CC=C1CC(=O)OC2=CC(Br)=CC=C2",
+            "product_smiles": "BrC1=CC(Br)=CC=C1CC(=O)C2=CC(Br)=CC(O)=C2",
+            "notes": "Ester rearranges to an ortho-hydroxyketone under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Imine formation / Condensation",
+            "reagents": "NH3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 22 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C(CC(=O)C2=C(C=C(C=C2)Br)O)C(=C1)Br)Br",
+            "product_smiles": "C1=C(C=C(CC(=N)C2=C(C=C(C=C2)Br)O)C(=C1)Br)Br",
+            "notes": "Ketone is converted to an imine using ammonia.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Transfer Hydrogenation (Imine Reduction)",
+            "reagents": "NH4CO2H, Chiral Ru(II) diamine complex catalyst (N-tosyl-N'-(3-phenylpropyl)-1,2-diphenylethylenediamine derivative)",
+            "reagent_smiles": "",
+            "conditions": "DCM, 70 °C",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "Brc1ccc(Br)c(CC(=N)c2c(O)ccc(Br)c2)c1",
+            "product_smiles": "Brc1ccc(Br)c(C[C@H](N)c2c(O)ccc(Br)c2)c1",
+            "notes": "Asymmetric reduction of an imine to a chiral amine using a ruthenium-diamine catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Buchwald-Hartwig Amination / Cyclization",
+            "reagents": "CuI, Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 45 °C",
+            "yield": "91%",
+            "reactant_smiles": "N[C@H](CC1=C(Br)C=CC(Br)=C1)C2=CC(Br)=C(O)C=C2",
+            "product_smiles": "BrC1=CC(O)=C(C=C1)[C@@H]2N3C=CC(Br)=CC3CC2",
+            "notes": "Intramolecular cyclization of a primary amine onto an aryl bromide to form an indoline, catalyzed by CuI/Cs2CO3.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cyclization / Aminal Formation",
+            "reagents": "PhCHO, TFA",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 35 °C",
+            "yield": "93%",
+            "reactant_smiles": "C1=C(C=C(C(=C1)[C@@H]2CC3=CC(=CC=C3N2)Br)O)Br",
+            "product_smiles": "C1=CC=C(C=C1)[C@H]2N3C4=CC=C(C=C4C[C@@H]3C5=C(C=C(C=C5)Br)O2)Br",
+            "notes": "Intramolecular cyclization involving the indoline nitrogen, the phenol hydroxyl, and benzaldehyde to form a bicyclic oxazine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Borylation",
+            "reagents": "Pd2(dba)3, n-BuP(Ad)2, KOAc",
+            "reagent_smiles": "CC1(C)OB(B(OC2(C)C(C)(C)O2)OC1(C)C)",
+            "conditions": "DME, 80 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@@H]2N3C4=CC=C(C=C4C[C@H]3C5=C(C=C(C=C5)Br)O2)Br",
+            "product_smiles": "CC1(C)C(C)(C)OB(C2=CC=C3C(=C2)C[C@H]4C5=C(C=C(C=C5)B6OC(C)(C)C(C)(C)O6)O[C@@H](C7=CC=CC=C7)N34)O1",
+            "notes": "Double borylation of a dibromide using bis(pinacolato)diboron under palladium catalysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd2(dba)3, 4-Me2NC6H4P(t-Bu)2, K2CO3",
+            "reagent_smiles": "[Boc]N1CCC[C@H]1C2=NC(=CN2)Br",
+            "conditions": "DME, H2O, 80 °C then tol",
+            "yield": "82%",
+            "reactant_smiles": "CC1(C)C(C)(C)OB(C2=CC=C3C(=C2)C[C@@H]4C5=C(C=C(C=C5)B6OC(C)(C)C(C)(C)O6)O[C@@H](C7=CC=CC=C7)N34)O1",
+            "product_smiles": "[Boc]N1CCC[C@H]1C2=NC(=CN2)C3=CC=C4C(=C3)C=C5C6=C(C=C(C=C6)C7=CNC(=N7)[C@H]8CCCN8[Boc])O[C@@H](C9=CC=CC=C9)N45.O=C(O)C1=CC=C([N+](=O)[O-])C=C1",
+            "notes": "Double Suzuki-Miyaura coupling of a bis-pinacol boronate with a Boc-protected bromoimidazole. The reaction is followed by treatment with 4-nitrobenzoic acid, forming a salt/associate as indicated in the product structure.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Oxidation",
+                    "reagents": "TEMPO, KBr, KHCO₃, NaOCl",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 5 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N1CCC[C@H]1CO",
+                    "product_smiles": "[Boc]N1CCC[C@H]1C(=O)O",
+                    "notes": "TEMPO-mediated oxidation of primary alcohol to carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Heterocycle Formation",
+                    "reagents": "glyoxal, NH4OH",
+                    "reagent_smiles": "",
+                    "conditions": "22 °C",
+                    "yield": "70% (2 steps)",
+                    "reactant_smiles": "[Boc]N1CCC[C@H]1C(=O)O",
+                    "product_smiles": "[Boc]N1CCC[C@H]1C2=NC=CN2",
+                    "notes": "Conversion of a Boc-protected proline carboxylic acid to an imidazole derivative, likely via a multi-step reaction involving glyoxal and ammonia.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "NBS, Zn, EDTA, NH4OH",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, -15 °C, 30 °C",
+                    "yield": "61%",
+                    "reactant_smiles": "[Boc]N1CCC[C@H]1C2=NC=CN2",
+                    "product_smiles": "[Boc]N1CCC[C@H]1C2=NC(=CN2)Br",
+                    "notes": "Bromination of imidazole ring with N-bromosuccinimide (NBS), followed by workup with zinc and EDTA.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "K2CO3, HCl",
+            "reagent_smiles": "",
+            "conditions": "H2O, 22 °C, then MeOH, 45 °C",
+            "yield": "92%",
+            "reactant_smiles": "[Boc]N1CCC[C@H]1C2=NC(=CN2)C3=CC=C4C(=C3)C=C5C6=C(C=C(C=C6)C7=NC(=CN7)[C@H]8CCCN8[Boc])O[C@H](C9=CC=CC=C9)N45",
+            "product_smiles": "C1=CC=C(C=C1)[C@H]2N3C4=C(C=C(C=C4)C5=NC(=CN5)[C@H]6CCCN6)C=C3C7=C(C=C(C=C7)C8=NC(=CN8)[C@H]9CCCN9)O2",
+            "notes": "Deprotection of two Boc groups on pyrrolidine nitrogens.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amide Formation (Peptide Coupling)",
+            "reagents": "HOBt, EDC",
+            "reagent_smiles": "CC(C)[C@H](C(=O)O)NC(=O)OC",
+            "conditions": "MeCN, 10 °C, then recrystallization 35 °C",
+            "yield": "80%",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@H]2N3C4=C(C=C(C=C4)C5=CNC(=N5)[C@@H]6CCCN6)C=C3C7=C(C=C(C=C7)C8=CNC(=N8)[C@@H]9CCCN9)O2",
+            "product_smiles": "C1=CC=C(C=C1)[C@H]2N3C4=C(C=C(C=C4)C5=CNC(=N5)[C@@H]6CCCN6)C=C3C7=C(C=C(C=C7)C8=CNC(=N8)[C@@H]9CCCN9C(=O)[C@H](C(C)C)NC(=O)OC)O2",
+            "notes": "Amide bond formation between N-methoxycarbonyl-L-valine and one of the pyrrolidine nitrogens of the reactant, specifically on the right-hand side of the molecule.",
+            "substeps": []
+        }
+    ]
+}

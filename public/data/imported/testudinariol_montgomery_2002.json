@@ -1,0 +1,242 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "testudinariol-montgomery-2002",
+        "molecule_name": "Testudinariol",
+        "class": "Natural Product",
+        "author": "Montgomery",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Allene Formation / Copper-catalyzed Reaction",
+            "reagents": "formaldehyde, CuBr, i-Pr2NH",
+            "reagent_smiles": "C=O.Br[Cu].CC(C)NC(C)C",
+            "conditions": "",
+            "yield": "26%",
+            "reactant_smiles": "C#CCCCCO",
+            "product_smiles": "C=C=CCCCCO",
+            "notes": "Terminal alkyne reacts with formaldehyde to form an allene, extending the carbon chain by one carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation",
+            "reagents": "PDC",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "72%",
+            "reactant_smiles": "C=C=CCCCCO",
+            "product_smiles": "C=C=CCCCC(=O)O",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid, with an allene moiety remaining intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acyl Halide Formation",
+            "reagents": "SOCl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "C=C=CCCC(=O)O",
+            "product_smiles": "C=C=CCCC(=O)Cl",
+            "notes": "Carboxylic acid is converted to an acyl chloride using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification",
+            "reagents": "pyridine",
+            "reagent_smiles": "C[C@H](N(CCCC)S(=O)(=O)C)[C@@H](O)c1ccccc1",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "C=C=CCCCC(=O)Cl",
+            "product_smiles": "C=C=CCCCC(=O)O[C@@H](c1ccccc1)[C@H](C)N(CCCC)S(=O)(=O)C",
+            "notes": "Acyl chloride reacts with a chiral N-butyl, N-methylsulfonyl, 1-phenyl-ethanolamine derivative to form an ester. The stereochemistry of the chiral centers in the alcohol is preserved. The abbreviation 'SO2Mes' is interpreted as methylsulfonyl (SO2Me or Ms) rather than mesitylsulfonyl (SO2Mesityl) based on the extracted and corrected SMILES fragment 'S(=O)(=O)C'.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "N-Sulfonylation",
+                    "reagents": "CH₂Cl₂",
+                    "reagent_smiles": "CCN(CC)CC.Cc1cc(C)cc(C)c1S(=O)(=O)Cl",
+                    "conditions": "",
+                    "yield": "100%",
+                    "reactant_smiles": "C[C@@H](N)[C@H](O)c1ccccc1",
+                    "product_smiles": "C[C@@H](NS(=O)(=O)c1cc(C)cc(C)c1)[C@H](O)c1ccccc1",
+                    "notes": "N-sulfonylation of a primary amine using mesitylenesulfonyl chloride and triethylamine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "BnBr, K2CO3",
+                    "reagent_smiles": "BrCC1=CC=CC=C1.CC#N",
+                    "conditions": "MeCN, reflux",
+                    "yield": "95%",
+                    "reactant_smiles": "C[C@H]([NH]S(=O)(=O)C1=C(C)C=C(C)C=C1C)[C@@H](O)[Ph]",
+                    "product_smiles": "CCCCN([C@H](C)[C@@H](O)[Ph])S(=O)(=O)C1=C(C)C=C(C)C=C1C",
+                    "notes": "N-alkylation of a sulfonamide using benzyl bromide and potassium carbonate in acetonitrile under reflux conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Abiko-Masamune aldol reaction",
+            "reagents": "(c-hex)2BOTf, Et3N, HC(O)CH2CH2OBn",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "72%",
+            "reactant_smiles": "C=C=CCCCCC(=O)O[C@H]([Ph])[C@H](C)N([Bu])S(=O)(=O)[Mes]",
+            "product_smiles": "C=C=CCCCCC[C@H]([C@@H](O)CH2CH2O[Bn])C(=O)O[C@H]([Ph])[C@H](C)N([Bu])S(=O)(=O)[Mes]",
+            "notes": "Stereoselective Abiko-Masamune aldol reaction of an ester with 3-(benzyloxy)propanal, forming two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alcohol protection",
+            "reagents": "i-Pr2NEt, CH2Cl2",
+            "reagent_smiles": "ClCOCCO.CCN(C(C)C)C(C)C",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "C#CCC[C@H]([C@H](O)CCCCOCH2c1ccccc1)C(=O)O[C@@H](c2ccccc2)[C@H](C)N(CCCC)S(=O)(=O)c3c(C)cc(C)c(C)c3",
+            "product_smiles": "C#CCC[C@H]([C@H](OCOCCO)CCCCOCH2c1ccccc1)C(=O)O[C@@H](c2ccccc2)[C@H](C)N(CCCC)S(=O)(=O)c3c(C)cc(C)c(C)c3",
+            "notes": "Secondary alcohol is protected as a methoxyethoxymethyl (MEM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF",
+            "yield": "87%",
+            "reactant_smiles": "C=C=CCC[C@H](COCc1ccccc1)[C@@H](OCOCCOC)C(=O)O[C@H](c1ccccc1)[C@@H](C)N(CCCC)S(=O)(=O)c1c(C)cc(C)cc1C",
+            "product_smiles": "C=C=CCC[C@@H](CO)[C@H](OCOCCOC)COCc1ccccc1",
+            "notes": "Ester reduction to a primary alcohol with simultaneous cleavage of the chiral pseudoephedrine-derived auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "93%",
+            "reactant_smiles": "C=C=CCC[C@@H](CO)[C@@H]([OMEM])CC[OBn]",
+            "product_smiles": "C=C=CCC[C@@H](C=O)[C@@H]([OMEM])CC[OBn]",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Reductive Cyclization / Nozaki-Hiyama-Kishi reaction",
+            "reagents": "Ni(COD)2, Me2Zn, Ti(O-i-Pr)4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "62%",
+            "reactant_smiles": "O=C[C@H](OCOCCOC)(CCC#C)CCOCC1=CC=CC=C1",
+            "product_smiles": "C=C(C)[C@H]1CC[C@H]([C@@H](CCOCC2=CC=CC=C2)OCOCCOC)[C@@H]1O",
+            "notes": "Intramolecular cyclization of an aldehyde-alkyne to form a cyclopentanol derivative, involving formation of a new C-C bond and reduction of the aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "2,6-lutidine",
+            "reagent_smiles": "F[S](=O)(=O)O[Si](C(C)C)(C(C)C)C(C)C",
+            "conditions": "CH2Cl2",
+            "yield": "95%",
+            "reactant_smiles": "C=C(C)[C@H]1CC[C@H]([C@@H](CCO[Bn])[OMEM])[C@H]1O",
+            "product_smiles": "C=C(C)[C@H]1CC[C@H]([C@@H](CCO[Bn])[OMEM])[C@H]1[OTIPS]",
+            "notes": "Protection of a secondary alcohol as a triisopropylsilyl (TIPS) ether using TIPSOTf and 2,6-lutidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Birch reduction / Benzyl ether deprotection",
+            "reagents": "Li/NH3",
+            "reagent_smiles": "[Li].N",
+            "conditions": "THF",
+            "yield": "87%",
+            "reactant_smiles": "C=C(C)[C@@H]1CC[C@H]([C@@H](CCOCC2=CC=CC=C2)OCOCCOC)[C@@H]1O[Si](C(C)C)(C(C)C)C(C)C",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@H]([C@@H](CCO)OCOCCOC)[C@@H]1O[Si](C(C)C)(C(C)C)C(C)C",
+            "notes": "Deprotection of a benzyl ether to a primary alcohol using dissolving metal reduction (Birch conditions). Stereochemistry of chiral centers remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Appel reaction",
+            "reagents": "PPh3, imidazole, I2",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "91%",
+            "reactant_smiles": "C=C(C)[C@@H]1CC[C@H]([C@@H](CCO)[OMEM])[C@@H]1[OTIPS]",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@H]([C@@H](CCI)[OMEM])[C@@H]1[OTIPS]",
+            "notes": "Conversion of a primary alcohol to a primary iodide using Appel reaction conditions (PPh3, I2, imidazole). Stereochemistry of the chiral centers and the protecting groups (OTIPS, OMEM) are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Dimerization / Wurtz-type coupling",
+            "reagents": "s-BuLi",
+            "reagent_smiles": "Br/C(=C/[Si](C)(C)C)CC=C(Br)/[Si](C)(C)C",
+            "conditions": "THF",
+            "yield": "38%",
+            "reactant_smiles": "C=C(C)[C@@H]1[C@H]([OTIPS])CC[C@H]([C@H](CC[I])[OMEM])1",
+            "product_smiles": "C=C(C)[C@@H]1[C@H]([OTIPS])CC[C@H]([C@H]([OMEM])CC/C(=C/[Si](C)(C)C)CC=C([Si](C)(C)C)/CC[C@H]([OMEM])[C@H]3CC[C@H]([OTIPS])[C@@H](C(=C)C)3)1",
+            "notes": "Organolithium mediated coupling of iodoethyl groups to a bis-silyl-dibromoalkene, forming a dimeric product with an E,E-diene linker.",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Electrophilic Addition",
+                    "reagents": "Br2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=CCCC=C",
+                    "product_smiles": "BrCC(Br)CCC(Br)CBr",
+                    "notes": "Dibromination of a diene via electrophilic addition to both alkene groups.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "Double Dehydrohalogenation and Silylation",
+                    "reagents": "LDA; Me3SiCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "BrCC(Br)CCC(Br)CCBr",
+                    "product_smiles": "C[Si](C)(C)C#CCCC#C[Si](C)(C)C",
+                    "notes": "A tetrabromoalkane undergoes double elimination with LDA to form diynes, which are then protected/functionalized with trimethylsilyl groups using Me3SiCl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.3",
+                    "reaction_type": "Hydroalumination-Bromination",
+                    "reagents": "DIBALH, Br2",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O",
+                    "yield": "75%",
+                    "reactant_smiles": "C[Si](C)(C)C#CCCC#C[Si](C)(C)C",
+                    "product_smiles": "C[Si](C)(C)/C(Br)=C/CC/C=C(Br)/[Si](C)(C)C",
+                    "notes": "Double hydroalumination of a di-alkyne to form Z,Z-dibromodiene via syn-addition.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Prins-type cyclization",
+            "reagents": "Et2AlCl",
+            "reagent_smiles": "CC[Al](CC)Cl",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@@H]1CC[C@H](O[Si](C(C)C)(C(C)C)C(C)C)[C@H](C1)C[C@@H](OCH2OCH2CH2OCH3)C(/[Si](C)(C)C)=C/CC/C=C(\\[Si](C)(C)C)[C@@H](OCH2OCH2CH2OCH3)C[C@H]2CC[C@H](O[Si](C(C)C)(C(C)C)C(C)C)[C@@H](C(=C)C)C2",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@H](O[Si](C(C)C)(C(C)C)C(C)C)[C@H](C1)C[C@@H]2OCCC(=C)[C@H]2CC[C@@H]3OCCC(=C)[C@H]3C[C@H]4CC[C@H](O[Si](C(C)C)(C(C)C)C(C)C)[C@@H](C(=C)C)C4",
+            "notes": "Intramolecular Lewis acid-catalyzed cyclization of allylsilanes and MEM ethers, forming two tetrahydropyran rings.",
+            "substeps": []
+        }
+    ]
+}

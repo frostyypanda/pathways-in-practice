@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "melazolide-b-newhouse-2022",
+        "molecule_name": "Melazolide B",
+        "class": "Natural Product",
+        "author": "Newhouse",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Jacobsen asymmetric epoxidation",
+            "reagents": "(S,S)-Mn Salen-Cl, NaOCl, 4-PPNO",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "43%",
+            "reactant_smiles": "CC(=O)/C=C/[C@@H]1C=C(C)CCC1(C)C",
+            "product_smiles": "CC(=O)/C=C/[C@@H]1[C@@](O)2[C@](C)CCC1(C)C",
+            "notes": "Asymmetric epoxidation of the cyclohexene double bond, leaving the enone double bond untouched. The stereochemistry of the new epoxide is trans to the adjacent methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Hydrosilylation",
+            "reagents": "[Rh(COD)(OH)]2",
+            "reagent_smiles": "[SiH](C)(C)[Ph]",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CC(=O)/C=C/[C@@H]1CC(C)(C)CC2[C@@H](C)O[C@@H]12",
+            "product_smiles": "C/C(=C/O[Si](C)(C)[Ph])C[C@@H]1CC(C)(C)CC2[C@@H](C)O[C@@H]12",
+            "notes": "Rhodium-catalyzed asymmetric hydrosilylation of an enone to form a silyl enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@]1(C)CC[C@@H]2[C@](C)(C1C\\C=C(C)/O[Si](C)(C)c3ccccc3)O2",
+            "product_smiles": "C[C@]1(C)CC[C@@H]2[C@](C)(C1CC=O)O2",
+            "notes": "Ozonolysis of an enol ether to form an aldehyde, maintaining stereochemistry of the bicyclic core.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Jones oxidation",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "51%",
+            "reactant_smiles": "CC1(C)CC(CC=O)[C@@H]2O[C@H](C)[C@H]12",
+            "product_smiles": "CC1(C)CCC(=O)[C@H](C)2C1CC(=O)O2",
+            "notes": "reaction proceeds in 2 steps",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "KHMDS, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "36%",
+            "reactant_smiles": "CC1(C)C2CCC(=O)C3(C)C2OC(=O)C31",
+            "product_smiles": "CC1(C)C2CC=C([OTMS])C3(C)C2OC(=O)C31",
+            "notes": "Formation of a silyl enol ether from a bicyclic ketone and lactone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Pd-catalyzed deprotection/rearrangement",
+            "reagents": "Pd(OAc)2, dppe, diallyl carbonate",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "CC1(C)OC(=O)C2CC3C(C)C2C1C=C([OTMS])C3",
+            "product_smiles": "CC1(C)OC(=O)C2CC3C(C)C2C1C(=O)C=C3",
+            "notes": "Palladium-catalyzed deprotection of OTMS enol ether and rearrangement to form an α,β-unsaturated ketone (enone) with diallyl carbonate as an allyl scavenger.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation (Baeyer-Villiger type rearrangement / lactone formation)",
+            "reagents": "urea•H₂O₂, DBN",
+            "reagent_smiles": "",
+            "conditions": "H₂O",
+            "yield": "67%",
+            "reactant_smiles": "CC1(C)C2CC3C(C(C)=CC3=O)C2C(=O)O1",
+            "product_smiles": "CC1(C)C2CC3C(C(C)C4C(=O)OC4)C2C(=O)O1",
+            "notes": "Oxidation of an α,β-unsaturated ketone to form a new 5-membered lactone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrazine-mediated reduction and rearrangement",
+            "reagents": "N2H4, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "35%",
+            "reactant_smiles": "CC1(C)C2(C(=O)C=CC(=O)C2)C3C(C)C4C3CC(=O)OC14",
+            "product_smiles": "CC1(C)C2(C(=O)C=C(O)C2C)C3C(C)C4C3CC(=O)OC14",
+            "notes": "Hydrazine-mediated reduction of a diketone moiety with concurrent ring expansion and formation of an allylic alcohol.",
+            "substeps": []
+        }
+    ]
+}

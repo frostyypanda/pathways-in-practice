@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "papyracillic-acid-b-zercher-2012",
+        "molecule_name": "Papyracillic Acid B",
+        "class": "Natural Product",
+        "author": "Zercher",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclization",
+            "reagents": "Et2Zn, CH3CHI2",
+            "reagent_smiles": "COC1=CC(=O)OC1=O",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCOC(=O)CC(=O)C",
+            "product_smiles": "C=CCOC(=O)[C@H]1[C@H](C)[C@](C)(O)O[C@]21C(=CC(=O)O2)OC",
+            "notes": "Zinc-mediated addition and intramolecular cyclization between an allyl beta-keto ester and a methoxymaleic anhydride derivative to form a fused tetrahydrofuran-lactone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Etherification (Methylation) / Acetal formation",
+            "reagents": "TsOH, HC(OMe)3",
+            "reagent_smiles": "",
+            "conditions": "4 Å MS",
+            "yield": "40% (2 steps)",
+            "reactant_smiles": "C=CCOC(=O)[C@H]1[C@H](C)[C@](C)(O)O[C@]21C(=CC(=O)O2)OC",
+            "product_smiles": "C=CCOC(=O)[C@H]1[C@H](C)[C@](C)(OC)O[C@]21C(=CC(=O)O2)OC",
+            "notes": "Methylation of a tertiary alcohol group to a methyl ether, potentially via acetal formation, using trimethyl orthoformate and an acid catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Palladium-catalyzed deallylation",
+            "reagents": "morpholine, Pd(PPh₃)₄",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "74%",
+            "reactant_smiles": "C=CCOC(=O)[C@H]1[C@H](C)[C@](C)(OC)O[C@@]21C(OC)=CC(=O)O2",
+            "product_smiles": "O=C(O)[C@H]1[C@H](C)[C@](C)(OC)O[C@@]21C(OC)=CC(=O)O2",
+            "notes": "Allyl ester is hydrolyzed to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Carboxylic Acid Reduction",
+            "reagents": "CDI, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF, rt, 0 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC1(OC)O[C@]2(OC(=O)C=C(OC)C2)C[C@H](C)[C@H]1C(=O)O",
+            "product_smiles": "CC1(OC)O[C@]2(OC(=O)C=C(OC)C2)C[C@H](C)[C@H]1CO",
+            "notes": "Reduction of a carboxylic acid to a primary alcohol, likely via an activated ester intermediate formed with CDI, followed by reduction with sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "C[C@H]1[C@H](CO)[C@@]2(C(=CC(=O)O2)OC)O[C@@]1(C)OC",
+            "product_smiles": "C[C@H]1[C@H](C[OMs])[C@@]2(C(=CC(=O)O2)OC)O[C@@]1(C)OC",
+            "notes": "Primary alcohol is converted to a mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Nucleophilic Substitution",
+            "reagents": "(PhSe)2, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, THF, 80 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1[C@H](COS(=O)(=O)C)[C@@]2(C(=CC(=O)O2)OC)O[C@@]1(C)OC",
+            "product_smiles": "C[C@H]1[C@H](C[Se]c1ccccc1)[C@@]2(C(=CC(=O)O2)OC)O[C@@]1(C)OC",
+            "notes": "Mesylate is replaced by a phenylseleno group. Diphenyl diselenide is reduced by NaBH4 to generate phenylselenide, which then acts as a nucleophile.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "",
+            "reagent_smiles": "OO",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1[C@H](C[Se]c2ccccc2)[C@@]3(C(=CC(=O)O3)OC)O[C@@]1(C)(OC)OC",
+            "product_smiles": "C[C@H]1[C@H](C[Se+]([O-])(=O)c2ccccc2)[C@@]3(C(=CC(=O)O3)OC)O[C@@]1(C)(OC)OC",
+            "notes": "Oxidation of a phenylselenide to a seleninate-like species using hydrogen peroxide. The drawn product shows `Se(+)` and `O(-)` formal charges with an additional double-bonded oxygen. The SMILES `[Se+]([O-])(=O)` represents this with a positively charged selenium, a negatively charged oxygen, and a double-bonded oxygen. Note that strictly by formal charge rules, this selenium atom would bear a +2 charge, but the image shows only a single +.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Selenoxide Elimination",
+            "reagents": "toluene",
+            "reagent_smiles": "",
+            "conditions": "110 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "C[C@]1(OC)O[C@@]2(C(=CC(=O)O2)OC)[C@@H](C[Se+]([O-])c3ccccc3)[C@H]1C",
+            "product_smiles": "C[C@]1(OC)O[C@@]2(C(=CC(=O)O2)OC)C(=C)[C@H](C)C1",
+            "notes": "A selenoxide elimination is performed, converting the organoselenium precursor to an exocyclic methylene alkene. This is typically a pyrolytic syn-elimination.",
+            "substeps": []
+        }
+    ]
+}

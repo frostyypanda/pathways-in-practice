@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "citreoviranol-brimble-2016",
+        "molecule_name": "Citreoviranol",
+        "class": "Natural Product",
+        "author": "Brimble",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "EOMCl, DIPEA",
+            "reagent_smiles": "ClCOCC.CCN(C(C)C)C(C)C",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "CCOC(=O)C[C@H](C)O",
+            "product_smiles": "CCOCO[C@H](C)CC(=O)OCC",
+            "notes": "The secondary alcohol is protected as an ethoxymethyl (EOM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H, DCM",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCOCO[C@@H](C)CC(=O)OCC",
+            "product_smiles": "CCOCO[C@@H](C)CC=O",
+            "notes": "Reduction of an ethyl ester to an aldehyde using DIBAL-H, with an ethoxymethyl (OEOM) protecting group and a chiral center maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Organozinc addition / Propargylation",
+            "reagents": "Zn, THF",
+            "reagent_smiles": "C#CCBr",
+            "conditions": "0 °C",
+            "yield": "75%",
+            "reactant_smiles": "CCOCO[C@@H](C)CC=O",
+            "product_smiles": "C#CC[C@@H](O)C[C@@H](C)OCOCC",
+            "notes": "Barbier-type addition of propargyl zinc to an aldehyde. The chiral center bearing the OEOM group retains its configuration. The newly formed alcohol chiral center is racemic (indicated by a wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "NaH, TBAI, BnBr",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C, 60 °C",
+            "yield": "54%",
+            "reactant_smiles": "C#CCC(O)C[C@@H](C)[OEOM]",
+            "product_smiles": "C#CC[C@H](C[C@@H](C)[OEOM])[OBn]",
+            "notes": "Williamson ether synthesis converting a secondary alcohol to a secondary benzyl ether. The OEOM protecting group remains unaffected. The wavy bond for the alcohol in the reactant is interpreted as undefined/racemic stereochemistry, hence no stereochemical indicator in the SMILES for that carbon. The product shows specific stereochemistry (dashed bond) for the newly formed benzyl ether, which implies inversion if starting from a single enantiomer of the reactant. The OEOM stereocenter is preserved with a wedge bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "pTSA",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 60 °C",
+            "yield": "98%",
+            "reactant_smiles": "C#CC[C@H](C[C@@H](C)OCOCC)OCC1=CC=CC=C1",
+            "product_smiles": "C#CC[C@H](C[C@@H](C)O)OCC1=CC=CC=C1",
+            "notes": "Deprotection of EOM ether to hydroxyl group using p-toluenesulfonic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sonogashira Coupling",
+            "reagents": "Pd(OAc)2, dtbpf, K2CO3",
+            "reagent_smiles": "COC1=CC(=C(C(=C1)Br)C(=O)OC)OC",
+            "conditions": "NMP, 80 °C",
+            "yield": "70%",
+            "reactant_smiles": "C#CC[C@@H](C[C@H](C)O)[OBn]",
+            "product_smiles": "C[C@H](C[C@@H](CC#CC1=CC(=CC(=C1C(=O)OC)OC)OC)[OBn])O",
+            "notes": "A Sonogashira coupling reaction between a terminal alkyne and an aryl bromide. Stereochemistry and protecting groups (Bn, OH) are retained.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Vilsmeier-Haack Formylation",
+                    "reagents": "",
+                    "reagent_smiles": "O=P(Cl)(Cl)Cl.CN(C)C=O",
+                    "conditions": "100 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "COC1=CC(=CC(=C1)OC)Br",
+                    "product_smiles": "COC1=CC(=C(C=O)C(=C1)Br)OC",
+                    "notes": "Aromatic formylation using Vilsmeier-Haack conditions",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Pinnick oxidation",
+                    "reagents": "NaClO2, NaH2PO4",
+                    "reagent_smiles": "CC=C(C)C",
+                    "conditions": "t-BuOH/H2O",
+                    "yield": "",
+                    "reactant_smiles": "COC1=CC(=C(C=O)C(=C1)Br)OC",
+                    "product_smiles": "COC1=CC(=C(C(=O)O)C(=C1)Br)OC",
+                    "notes": "Oxidation of an aldehyde to a carboxylic acid using Pinnick oxidation conditions. The drawn reagent (2-methylbut-2-ene) acts as a scavenger for excess oxidant.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Esterification",
+                    "reagents": "K2CO3, DMF",
+                    "reagent_smiles": "CI",
+                    "conditions": "80 °C",
+                    "yield": "75%",
+                    "reactant_smiles": "COc1cc(OC)c(C(=O)O)c(Br)c1",
+                    "product_smiles": "COc1cc(OC)c(C(=O)OC)c(Br)c1",
+                    "notes": "Methylation of carboxylic acid to methyl ester using methyl iodide. Reaction occurs in 2 steps, yield is for both steps.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization / Cycloisomerization",
+            "reagents": "AuCl3, AgSbF6, PPTS",
+            "reagent_smiles": "",
+            "conditions": "THF, 50 °C",
+            "yield": "75%",
+            "reactant_smiles": "C[C@@H](C[C@H](CC#CC1=CC(=CC(=C1C(=O)OC)OC)OC)OCC2=CC=CC=C2)O",
+            "product_smiles": "C[C@@H](C[C@H](CC1=CC2=CC(=CC(=C2C(=O)O1)OC)OC)OCC3=CC=CC=C3)O",
+            "notes": "Gold(III)-catalyzed intramolecular cyclization of an alkyne with a methyl ester/methoxy group to form a coumarin derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection and Intramolecular Cyclization",
+            "reagents": "KOH, HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane, rt",
+            "yield": "20%",
+            "reactant_smiles": "C[C@@H](C[C@H](CC1=CC2=CC(=CC(=C2C(=O)O1)OC)OC)OCC3=CC=CC=C3)O",
+            "product_smiles": "C[C@H]1C[C@H](C[C@@]2(CC3=CC(=CC(=C3C(=O)O2)OC)OC)O1)O",
+            "notes": "Deprotection of benzyl ether and intramolecular cyclization to form a spiro-orthoester.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Selective O-demethylation",
+            "reagents": "BCl3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78°C, 15 min",
+            "yield": "84%",
+            "reactant_smiles": "C[C@H]1C[C@H](C[C@@]2(CC3=CC(=CC(=C3C(=O)O2)OC)OC)O1)O",
+            "product_smiles": "C[C@H]1C[C@H](C[C@@]2(CC3=CC(=CC(=C3C(=O)O2)O)OC)O1)O",
+            "notes": "Selective demethylation of the methoxy group ortho to the lactone carbonyl using BCl3.",
+            "substeps": []
+        }
+    ]
+}

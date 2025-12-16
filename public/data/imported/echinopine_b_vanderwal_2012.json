@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "echinopine-b-vanderwal-2012",
+        "molecule_name": "Echinopine B",
+        "class": "Natural Product",
+        "author": "Vanderwal",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Silyl enol ether formation",
+            "reagents": "LDA, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1CCC(=O)CC1",
+            "product_smiles": "CCOC(=O)C1CC=C(CC1)[OTMS]",
+            "notes": "Formation of a silyl enol ether from a beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Simmons-Smith cyclopropanation",
+            "reagents": "Et2Zn, CH2I2",
+            "reagent_smiles": "",
+            "conditions": "PhCH3, -10 °C",
+            "yield": "",
+            "reactant_smiles": "C(O[TMS])1C=CC(C(=O)OCC)CC1",
+            "product_smiles": "CCOC(=O)C1CC2CCC(O[TMS])C2C1",
+            "notes": "Cyclopropanation of an allylic ether and homoallylic ester containing cyclohexene to form a bicyclo[4.1.0]heptane derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ring Expansion / Rearrangement (Cyclopropane cleavage, TMS deprotection)",
+            "reagents": "FeCl3, DMF",
+            "reagent_smiles": "",
+            "conditions": "0 to 50 °C",
+            "yield": "46% (3 steps)",
+            "reactant_smiles": "CCOC(=O)C1CCC2(CC2C1)[OTMS]",
+            "product_smiles": "CCOC(=O)C1(C)CC=CC(=O)CC1",
+            "notes": "Iron(III)-catalyzed ring expansion/rearrangement of a bicyclic cyclopropane-fused TMS ether to a seven-membered enone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Conjugate Addition (Michael Addition)",
+            "reagents": "t-BuLi, CuCN",
+            "reagent_smiles": "C=C(I)CCO[OTBS]",
+            "conditions": "THF, -78 °C",
+            "yield": "75%",
+            "reactant_smiles": "CCOC(=O)C1(C)CC=CC(=O)CC1",
+            "product_smiles": "CCOC(=O)C1(C)CCC(=O)CC(C1)C(=C)CCO[OTBS]",
+            "notes": "Conjugate addition of a vinyl cuprate derived from 1-iodo-3-(tert-butyldimethylsilyloxy)prop-1-ene to an α,β-unsaturated ketone.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Protection",
+                    "reagents": "TBSCl, imidazole, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂, 0 °C",
+                    "yield": "90%",
+                    "reactant_smiles": "C#CCCO",
+                    "product_smiles": "C#CCCO[OTBS]",
+                    "notes": "Protection of a primary alcohol with a tert-butyldimethylsilyl (TBS) group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Hydroiodination of Alkyne",
+                    "reagents": "Ni(dppp)Cl2, DIBAL-H, NIS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, rt",
+                    "yield": "81%",
+                    "reactant_smiles": "C#CCC[OTBS]",
+                    "product_smiles": "[OTBS]CCC(=C)I",
+                    "notes": "Terminal alkyne is converted to a vinyl iodide via hydroalumination (DIBAL-H) followed by iodination (NIS).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1(C)CCC(=O)CC(C1)C(=C)CC[OTBS]",
+            "product_smiles": "CCOC(=O)C1(C)CCC(=O)CC(C1)C(=C)CCO",
+            "notes": "TBS ether deprotection to primary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "71%",
+            "reactant_smiles": "CCOC(=O)C1(C)CCC(=O)CC(C1)C(=C)CCO",
+            "product_smiles": "CCOC(=O)C1(C)CCC(=O)CC(C1)C(=C)CCO[OTs]",
+            "notes": "The primary alcohol is converted to a tosylate. The yield of 71% is reported over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Alkylation / Cyclization",
+            "reagents": "LDA",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCOC(=O)C1(C)CCC(=O)CC(C1)C(=C)CCO[Ts]",
+            "product_smiles": "CCOC(=O)C1CCC(=O)C[C@@H]2[C@H]1CCC(=C)C2",
+            "notes": "Intramolecular cyclization of an enolate (formed by LDA from the ketone) with a tosylate to form a bicyclo[5.3.0]decane system (7-5 fused). The ethyl ester and exocyclic alkene remain.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Wittig olefination",
+            "reagents": "Ph3PCH3Br, BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "CCOC(=O)C1CCC(=O)[C@@H]2CCC(=C)[C@H]2C1",
+            "product_smiles": "CCOC(=O)C1CCC(=C)[C@@H]2CCC(=C)[C@H]2C1",
+            "notes": "Wittig olefination converting a ketone to an exocyclic alkene. The provided SMILES for both reactant and product, despite atom count and relative functional group positions being correct, represent a bridged bicyclic system (bicyclo[3.2.1]octane derivative) when parsed by standard cheminformatics tools, instead of the fused bicyclo[5.3.0]decane system depicted in the screenshot. Stereochemistry on bridgeheads (trans) was corrected.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "CC(C)C[AlH]CC(C)C.CCOCC",
+            "conditions": "Et2O, -78 °C",
+            "yield": "90%",
+            "reactant_smiles": "CCOC(=O)C1CCC(C(=C))[C@@H]2CCC(=C)[C@@H]2C1",
+            "product_smiles": "O=CC1CCC(C(=C))[C@@H]2CCC(=C)[C@@H]2C1",
+            "notes": "Reduction of an ethyl ester to an aldehyde using DIBAL-H at low temperature.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ohira-Bestmann reaction",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(=O)C(=[N+]=[N-])P(=O)(OC)OC",
+            "conditions": "MeOH, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "C=C1CCC(C[C@H]2C(=C)CC[C@@H]12)C=O",
+            "product_smiles": "C=C1CCC(C[C@H]2C(=C)CC[C@H]12)C#C",
+            "notes": "Aldehyde converted to terminal alkyne via Ohira-Bestmann reaction. Stereochemistry at one bridgehead carbon inverted from trans to cis fusion.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Alkylation / MOM Protection of Terminal Alkyne",
+            "reagents": "BuLi, MOMCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -20 °C",
+            "yield": "91%",
+            "reactant_smiles": "C=C1CC/C(=C)/[C@@H]2[C@H]1CCC(=C)[C@H]2C#C",
+            "product_smiles": "C=C1CC/C(=C)/[C@@H]2[C@H]1CCC(=C)[C@H]2C#CCOC",
+            "notes": "Deprotonation of the terminal alkyne by BuLi, followed by alkylation with chloromethyl methyl ether (MOMCl) to form the MOM-protected alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Intramolecular Polycyclization",
+            "reagents": "cat. PtCl2",
+            "reagent_smiles": "",
+            "conditions": "PhCH3, 85 °C",
+            "yield": "56%",
+            "reactant_smiles": "C=C1C[C@H]2[C@@H](C(=C)CC[C@@H](C#CCOC)C[C@H]12)",
+            "product_smiles": "C=C1C[C@@H]2[C@H]3C=C(OC)CC[C@H]3C4C[C@@H](C=C)CC[C@@]142",
+            "notes": "Platinum-catalyzed intramolecular cyclization of an enyne-ether leading to a highly caged polycyclic structure. The reactant has 17 carbons and 1 oxygen. The depicted product, however, contains 19 carbons and 1 oxygen, indicating a discrepancy in atom count or a missing reactant/fragment in the original scheme. The SMILES provided for the product accurately reflects the structure as drawn in the screenshot, which has 19 carbons.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "40%",
+            "reactant_smiles": "C=C1CC[C@@]23C[C@H]4[C@H]1CC[C@@]3(/C=C\\OC)[C@@H]4C2",
+            "product_smiles": "C=C1C[C@@]23CC[C@H]4[C@@H]1C[C@@]4(CC(=O)OC)[C@@H]3CC2",
+            "notes": "Oxidation of an enol ether to a methyl ester using PCC.",
+            "substeps": []
+        }
+    ]
+}

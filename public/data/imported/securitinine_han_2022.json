@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "securitinine-han-2022",
+        "molecule_name": "Securitinine",
+        "class": "Natural Product",
+        "author": "Han",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective Silylation",
+            "reagents": "TBSCl, iPr₂EtN",
+            "reagent_smiles": "C[C@@H](C(C)(C)C)NC(=O)[C@@H](C(C)(C)C)NCC1=NC=CN1C.CCSC1=NN=NN1",
+            "conditions": "THF, -40 °C",
+            "yield": "99%",
+            "reactant_smiles": "O[C@H]1CCC=C[C@@H]1O",
+            "product_smiles": "[OTBS][C@H]1CCC=C[C@@H]1O",
+            "notes": "Selective and enantioselective silylation of a trans-1,2-cyclohex-4-ene diol using a chiral catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Vanadium-catalyzed Epoxidation",
+            "reagents": "VO(OEt)3, TBHP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "[TBS]O[C@H]1[C@@H](O)C=CCC1",
+            "product_smiles": "[TBS]O[C@H]1[C@@H](O)[C@H]2O[C@H]2CCC1",
+            "notes": "Stereoselective epoxidation of an allylic alcohol, producing an epoxide trans to the allylic hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation, Rearrangement",
+            "reagents": "DMP, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "[OTBS][C@@H]1C[C@H](O)[C@@H]2O[C@H]12",
+            "product_smiles": "[OTBS][C@@H]1C[C@@H](O)C=CC1=O",
+            "notes": "Oxidation of a secondary alcohol to a ketone, concurrent with epoxide opening, elimination, and formation of a new alcohol and an alpha,beta-unsaturated ketone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol protection",
+            "reagents": "TBDPSCI, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "O=C1C=C[C@H]([OTBS])C[C@@H](O)C1",
+            "product_smiles": "O=C1C=C[C@H]([OTBS])C[C@@H]([OTBDPS])C1",
+            "notes": "Protection of secondary alcohol to form a TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "ZnBr2",
+            "reagent_smiles": "[Zn](Br)Br.O",
+            "conditions": "H2O, DCM, 50 °C",
+            "yield": "83%",
+            "reactant_smiles": "O=C1[C@@H](O[TBS])C=C[C@H](O[TBDPS])CC1",
+            "product_smiles": "O=C1[C@@H](O)C=C[C@H](O[TBDPS])CC1",
+            "notes": "Selective deprotection of TBS ether in the presence of TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Esterification",
+            "reagents": "EDCI",
+            "reagent_smiles": "CCOP(=O)(CC(=O)O)OCC",
+            "conditions": "DCM",
+            "yield": "96%",
+            "reactant_smiles": "O[C@@H]1CC(=O)C=C[C@H]1[OTBDPS]",
+            "product_smiles": "CCOP(=O)(CC(=O)O[C@@H]1CC(=O)C=C[C@H]1[OTBDPS])OCC",
+            "notes": "Esterification of a secondary alcohol with diethyl phosphonoacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Horner-Wadsworth-Emmons Reaction",
+            "reagents": "K2CO3, 18-crown-6",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "61%",
+            "reactant_smiles": "CCOP(=O)(CC(=O)O[C@@H]1[C@H]([OTBDPS])CC=CC1=O)OCC",
+            "product_smiles": "[OTBDPS][C@H]3C=CC4=CC(=O)O[C@@H]4C3",
+            "notes": "Intramolecular Horner-Wadsworth-Emmons reaction for cyclization leading to an alpha,beta-unsaturated lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cyclization / Annulation",
+            "reagents": "TIPSOTf, Et3N, Bu2BOTf, Et2O",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1CCC[C@@H](OC)[C@H](O)C1",
+            "conditions": "0 °C to 23 °C to -78 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS][C@H]1C=CC2=CC(=O)O[C@@H]2C1",
+            "product_smiles": "[NBoc]1CC[C@@H](C[C@H]1[C@@]23C[C@H](C=CC3=CC(=O)O2)[OTBDPS])[OMe]",
+            "notes": "Complex cyclization reaction forming a tetracyclic core, incorporating the piperidine derivative via new C-C and C-N bonds.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Asymmetric Hydroboration",
+                    "reagents": "taniaphos, B2pin2, CuCl, NaOtBu",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1C(=O)C=CCC1",
+                    "product_smiles": "CC(C)(C)OC(=O)N1C(=O)[C@H]([PinB])CCC1",
+                    "notes": "Asymmetric hydroboration of an N-Boc-protected enamide, forming a chiral boronic ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Boronic ester oxidation",
+                    "reagents": "NaBO3",
+                    "reagent_smiles": "",
+                    "conditions": "THF, H2O",
+                    "yield": "54% (2 steps)",
+                    "reactant_smiles": "O=C1N([Boc])CCC[C@@H]1[B]2OC(C)(C)C(C)(C)O2",
+                    "product_smiles": "O=C1N([Boc])CCC[C@@H]1O",
+                    "notes": "Oxidation of a cyclic lactam bearing a pinacolborane group to the corresponding alcohol, retaining stereochemistry. N-Boc protecting group remains intact.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Methylation",
+                    "reagents": "Me₃OBF₄",
+                    "reagent_smiles": "CN(C)C1=C2C(=CC=C1)C=CC=C2N(C)C",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "72%",
+                    "reactant_smiles": "[Boc]N1CC[C@H](CC1=O)O",
+                    "product_smiles": "[Boc]N1CC[C@H](CC1=O)OC",
+                    "notes": "Methylation of a secondary alcohol to a methyl ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiEt₃BH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1CC[C@@H](CC1=O)OC",
+                    "product_smiles": "CC(C)(C)OC(=O)N1CC[C@@H](CC1O)OC",
+                    "notes": "Reduction of a cyclic amide (lactam) to a hemiaminal using lithium triethylborohydride (Super-Hydride).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "61%",
+            "reactant_smiles": "[Boc]N1CC[C@@H]([OMe])C[C@H]1[C@@]23C[C@H]([OTBDPS])C=CC3=CC(=O)O2",
+            "product_smiles": "[Boc]N1CC[C@@H]([OMe])C[C@H]1[C@@]23C[C@H]([OH])C=CC3=CC(=O)O2",
+            "notes": "Deprotection of TBDPS ether to a hydroxyl group. Yield reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@@H](C[C@H]1[C@@]23C[C@H](C=CC3=CC(=O)O2)O)OC",
+            "product_smiles": "[NH]1CC[C@@H](C[C@H]1[C@@]23C[C@H](C=CC3=CC(=O)O2)O)OC",
+            "notes": "Deprotection of a Boc-protected secondary amine using trifluoroacetic acid (TFA).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Amine Cyclization",
+            "reagents": "Et3N",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "MeOH",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "CO[C@H]1CCN[C@@H]2C1[C@]34C(=O)OC=C3C=C[C@H](O)C42",
+            "product_smiles": "CO[C@H]1CCN2[C@@H]3CC4=CC(=O)O[C@]4(C[C@H]3O)[C@@H]2C1",
+            "notes": "Intramolecular cyclization of an amine with an alkene to form a new C-N bond and a bridged polycyclic system. The double bond in the six-membered ring is saturated, and the spiro center is converted to a bridgehead.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "87%",
+            "reactant_smiles": "CO[C@H]1CC[N@@]2[C@@H]3C[C@H](O)C4=CC(=O)O[C@]4(C3)[C@@H]2C1",
+            "product_smiles": "CO[C@H]1CC[N@@]2[C@@H]3C=CC4=CC(=O)O[C@]4(C3)[C@@H]2C1",
+            "notes": "Dehydration of a secondary alcohol to form an alkene, yielding Securininine.",
+            "substeps": []
+        }
+    ]
+}

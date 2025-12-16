@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "borolithochrome-d-hosokawa-2024",
+        "molecule_name": "Borolithochrome D",
+        "class": "Natural Product",
+        "author": "Hosokawa",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "K2CO3",
+            "reagent_smiles": "COS(=O)(=O)OC",
+            "conditions": "acetone",
+            "yield": "99%",
+            "reactant_smiles": "Cc1c(OC)cccc1C(=O)O",
+            "product_smiles": "Cc1c(OC)cccc1C(=O)OC",
+            "notes": "Methylation of a carboxylic acid to a methyl ester using dimethyl sulfate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Benzylic Bromination",
+            "reagents": "NBS, BPO",
+            "reagent_smiles": "",
+            "conditions": "CCl4, 77 °C",
+            "yield": "94%",
+            "reactant_smiles": "COC(=O)c1c(C)c(OC)ccc1",
+            "product_smiles": "COC(=O)c1c(CBr)c(OC)ccc1",
+            "notes": "Free radical bromination of the benzylic methyl group using NBS and BPO initiator.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaSMe",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)c1c(CBr)c(OC)ccc1",
+            "product_smiles": "COC(=O)c1c(CSC)c(OC)ccc1",
+            "notes": "Methyl 2-(bromomethyl)-3-methoxybenzoate undergoes SN2 reaction with sodium thiomethoxide (NaSMe) to replace bromine with a methylthio group (SMe).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "79%",
+            "reactant_smiles": "COc1c(CSC)c(C(=O)OC)cc1",
+            "product_smiles": "COc1c(CSC)c(CO)cc1",
+            "notes": "Ester reduction to primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "84%",
+            "reactant_smiles": "COc1c(CSC)c(CO)ccc1",
+            "product_smiles": "COc1c(CSC)c(C=O)ccc1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using manganese dioxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Horner-Wadsworth-Emmons (HWE) reaction",
+            "reagents": "NaH",
+            "reagent_smiles": "C=CCP(=O)(OCC)OCC",
+            "conditions": "THF, 0°C",
+            "yield": "60%",
+            "reactant_smiles": "COc1c(CSC)c(C=O)ccc1",
+            "product_smiles": "COc1c(CSC)c(/C=C/C#C)ccc1",
+            "notes": "HWE reaction of an aldehyde to form an enyne. Note: The drawn phosphonate reagent (diethyl allylphosphonate) chemically leads to a butadienyl group, whereas the drawn product shows a butenynyl group. The SMILES for both reagent and product are transcribed as visually depicted in the screenshot, reflecting this discrepancy.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Diels-Alder reaction",
+            "reagents": "xylene",
+            "reagent_smiles": "CC(C)C1=CC2=C(C(=O)C=CC2=O)C(=C1)OC",
+            "conditions": "130 °C",
+            "yield": "",
+            "reactant_smiles": "COc1c(CSCC)c(C=C/C=C)ccc1",
+            "product_smiles": "CC(C)c1cc(OC)c2c1C(=O)CC(c3c(CSCC)c(OC)ccc3)C=CC(=O)c2",
+            "notes": "A [4+2] Diels-Alder cycloaddition between a 1,3-butadiene derivative and a naphthoquinone derivative, forming a complex tetracyclic product with a new cyclohexene ring and a chiral center.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Horner-Wadsworth-Emmons reaction",
+                    "reagents": "NaH, THF",
+                    "reagent_smiles": "COC(=O)CP(=O)(OC)OC",
+                    "conditions": "reflux",
+                    "yield": "57%",
+                    "reactant_smiles": "CC(C)C(=O)C",
+                    "product_smiles": "COC(=O)/C=C(/C)C(C)C",
+                    "notes": "Formation of an alpha,beta-unsaturated ester from a ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Silyl Enol Ether Formation",
+                    "reagents": "TESCl, LDA, THF",
+                    "reagent_smiles": "",
+                    "conditions": "-78 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)/C=C(\\C)C(C)C",
+                    "product_smiles": "[OTES]/C(=C\\C(=C)C(C)C)/OC",
+                    "notes": "Formation of a silyl enol ether from an alpha,beta-unsaturated ester via deprotonation and silylation, with concurrent double bond migration to form an exocyclic alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Diels-Alder Cycloaddition",
+                    "reagents": "CH2Cl2",
+                    "reagent_smiles": "C1=CC(=O)C=CC1=O",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC[Si](CC)(CC)O\\C(=C/C(=C)C(C)C)\\OC",
+                    "product_smiles": "CC[Si](CC)(CC)O[C@@]1(O)C(=C(C(C)C)CC[C@H]2C(=O)C=CC(=O)C21)",
+                    "notes": "Diels-Alder reaction of an enol ether (diene) with p-benzoquinone (dienophile). The methoxy group is eliminated, and the triethylsilyl (TES) group is retained. The product is a bicyclic system with specific stereochemistry at the bridgehead carbons.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Aromatization / Deprotection / Ether Formation",
+                    "reagents": "AcOH",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "51%",
+                    "reactant_smiles": "CC[Si](CC)(CC)OC1(C(=CCC2C(=O)C=CC(=O)C21)C(C)C)O",
+                    "product_smiles": "O=C1C=CC(=O)C2=C(OC)C=C(C(C)C)C=C12",
+                    "notes": "A multi-step reaction (3 steps) involving deprotection of TES ether, aromatization of the cyclohexene ring, and formation of a methoxy group. The carbon skeleton undergoes rearrangement.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dehydrogenation / Aromatization",
+            "reagents": "KOH",
+            "reagent_smiles": "CCO.O",
+            "conditions": "80 °C",
+            "yield": "60%",
+            "reactant_smiles": "CC(C)c1cc(OC)c2c(c1)C(=O)c3c(C(=O)C2)C(c4cccc(C[S]C)c4OC)CC=C3",
+            "product_smiles": "CC(C)c1cc(OC)c2c(c1)C(=O)c3c(C(=O)C2)c(c4cccc(C[S]C)c4OC)ccc3",
+            "notes": "Aromatization of the cyclohexene ring (fused to the anthraquinone) to a benzene ring under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization / Epoxide Formation",
+            "reagents": "MeI, AgOTf, NaH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "COc1ccc(C(C)C)c2c1C(=O)c1c(C(=O)c3c(c(OC)ccc3CSCC)c1)C2",
+            "product_smiles": "COc1ccc(C(C)C)c2c1C(=O)C1=C(C2=O)c2ccc(OC)c3c2C(C=C1)C4C3O4",
+            "notes": "Intramolecular cyclization involving a methylthiomethyl group and an ortho-methoxy group on a pendant phenyl ring, forming an epoxide bridge and eliminating methylthiol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acid-catalyzed epoxide opening and rearrangement (to phenol)",
+            "reagents": "TsOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)C1=CC2=C(C(=C1)OC)C(=O)C3=C4C(=CC=C3)C5=C(C(=CC=C5)OC)C6C24O6",
+            "product_smiles": "CC(C)C1=CC2=C(C(=C1)OC)C(=O)C3=C4C(=CC=C3)C5=C(C(=CC=C5)OC)C(=C24)O",
+            "notes": "4 steps",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Isomerization / Rearrangement",
+            "reagents": "LiCl",
+            "reagent_smiles": "",
+            "conditions": "DMF, 80 °C",
+            "yield": "85%",
+            "reactant_smiles": "COc1c2c(ccc3c2c(C(=O)C2=C(O)C4=C(C=CC=C4C(C(C)C)=C2)OC)C=C3)C=C",
+            "product_smiles": "CC(C)c1ccc(OC)c2c1C(=O)c1c(O)c3ccc(OC)c4c3c(c3ccccc3c12)C=C",
+            "notes": "Intramolecular rearrangement of a polycyclic aromatic compound involving tautomerization and positional shifts of functional groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Boronate formation, dearomatization",
+            "reagents": "4Å MS",
+            "reagent_smiles": "B(OC)(OC)OC.CN(C)CCO",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC(C)C1=CC2=C3C4=C(C=CC=C4C5=C(C(=CC=C5)O)C3=O)C(=C2C(=C1)OC)O",
+            "product_smiles": "CC(C)C1=CC2C(C(=C1)OC)C(=O)C3=CC=CC4=C3C2=C5C6=C4C=CC=C6O[B@-]7(N(C)(C)CCO7)O5",
+            "notes": "Formation of a cyclic boronate ester involving two hydroxyl groups of the reactant and a molecule of N,N-dimethylethanolamine, concurrently dearomatizing the isopropyl- and methoxy-substituted ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Boron complexation / Condensation",
+            "reagents": "4A MS",
+            "reagent_smiles": "CC(C)C1=CC2=C3C4=C(C(=CC(=C4C5=C(C(=CC(=C5)O)O)C3=O)C)OC)C(=C2C(=C1)OC)O",
+            "conditions": "CHCl3, 55 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "CC(C)C1=CC2C(C(=C1)OC)C(=O)C3=CC=CC4=C3C2=C5C6=C4C=CC=C6O[B-]7([N+](C)(C)CCO7)O5",
+            "product_smiles": "CC(C)c1cc(OC)c2c1C(=O)c3cccc4c3c2c5c(O[B-](OC6=C(C)C=C(C(C)C)C7=C6C=C(O)C8=C7C9=CC(=O)C%10=C9C8=C(OC)C=C%10)O5)c(c4)O",
+            "notes": "Formation of a boronate complex (Borolithochrome D) from a boronic ester/amide reactant and a polycyclic phenol reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Demethylation",
+            "reagents": "AlCl3, SMe2",
+            "reagent_smiles": "[Al](Cl)(Cl)Cl.CSC",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "CC(C)C1=CC2=C(C(=C1)OC)C(=O)C3=C(C=C(C)C4=C5C=C(C=C6C5=C(C2=C43)O[B-]7(O6)OC8=CC(=CC9=C%10C(=CC(=C%11C%10=C(C%12=C98)C(=C%11O)O7)OC)C)OC)OC",
+            "product_smiles": "CC(C)C1=CC2=C(C(=C1)O)C(=O)C3=C(C=C(C)C4=C5C=C(C=C6C5=C(C2=C43)O[B-]7(O6)OC8=CC(=CC9=C%10C(=CC(=C%11C%10=C(C%12=C98)C(=C%11O)O7)O)C)O)O",
+            "notes": "Demethylation of three methoxy groups to hydroxyl groups in a complex borolithochrome derivative.",
+            "substeps": []
+        }
+    ]
+}

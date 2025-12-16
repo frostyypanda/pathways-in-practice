@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "discorhabdin-b-tokuyama2-2023",
+        "molecule_name": "Discorhabdin B",
+        "class": "Natural Product",
+        "author": "Tokuyama2",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "ICl, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, H2O, 50 °C",
+            "yield": "62%",
+            "reactant_smiles": "Nc1c(OC)cccc1OC",
+            "product_smiles": "Nc1c(OC)cc(I)c(OC)c1",
+            "notes": "The amino group and methoxy groups activate the aromatic ring. Iodination occurs regioselectively at the para position to the amino group, which is also between the two methoxy groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-alkylation",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "COC(=O)/C=C/CBr",
+            "conditions": "acetone, H2O, 80 °C",
+            "yield": "43%",
+            "reactant_smiles": "COC1=CC(OC)=C(N)C(I)=C1",
+            "product_smiles": "COC1=CC(OC)=C(NC/C=C/C(=O)OC)C(I)=C1",
+            "notes": "Aniline N-alkylation with methyl 4-bromobut-2-enoate (trans), retaining trans stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Heck Reaction / Indole Synthesis",
+            "reagents": "Pd(OAc)2, P(o-Tol)3, Et3N",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 100 °C",
+            "yield": "97%",
+            "reactant_smiles": "IC1=CC(OC)=C(OC)C(NC/C=C/C(=O)OC)=C1",
+            "product_smiles": "COC1=CC=C2C(=CNC2=C1OC)CC(=O)OC",
+            "notes": "Intramolecular Heck cyclization of an aryl iodide and alkene to form a substituted indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[LiH4Al]",
+            "conditions": "THF, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "COC1=C(OC)C2=C(C=C1)NC=C2CC(=O)OC",
+            "product_smiles": "COC1=C(OC)C2=C(C=C1)NC=C2CCO",
+            "notes": "Ester group is reduced to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mitsunobu Azidation",
+            "reagents": "DIAD, PPh3",
+            "reagent_smiles": "O=P(N=[N+]=[N-])(Oc1ccccc1)Oc1ccccc1",
+            "conditions": "toluene, 0 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "[nH]1cc(CCO)c2c1c([OMe])c([OMe])cc2",
+            "product_smiles": "[nH]1cc(CC[N-]=N=N+)c2c1c([OMe])c([OMe])cc2",
+            "notes": "Conversion of a primary alcohol to an azide group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Tosylation",
+            "reagents": "TsCl, t-BuOK, THF",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)Cl)cc1.CC(C)(C)[O-].[K+]",
+            "conditions": "0 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "COc1ccc(OC)c2c1[nH]c(CC[N-]=[N+]=N)c2",
+            "product_smiles": "COc1ccc(OC)c2c1N([Ts])c(CC[N-]=[N+]=N)c2",
+            "notes": "N-tosylation of an indole nitrogen using TsCl and t-BuOK.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Cyclization (Azide)",
+            "reagents": "PIFA, TMSOTf, HFIP, H₂O",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "35%",
+            "reactant_smiles": "COc1ccc2c(c1OC)C=C(CC[N-]=N+=N)N2[Ts]",
+            "product_smiles": "COc1cc(=O)c2c(c1)c3c(n2[Ts])C=C4N=CCC3C4",
+            "notes": "Intramolecular oxidative cyclization of an azidoethyl indole derivative to form a polycyclic imine quinolone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Addition / Enamine Formation",
+            "reagents": "",
+            "reagent_smiles": "[OTBS][C@@H](C(=O)SC1=CC(CCN)=CC=C1OC)C2=C(Cl)C=CC=C2",
+            "conditions": "MeOH, rt",
+            "yield": "57%",
+            "reactant_smiles": "COC1=CC2=C(C=C1)C(=O)C3=C2C4=CN([Ts])C=C4CCC3=N",
+            "product_smiles": "COC1=CC2=C(C=C1)C(=O)C3=C2C4=CN([Ts])C=C4CCC(=C3)NCCSC(=O)[C@@H]([OTBS])C5=C(Cl)C=CC=C5",
+            "notes": "Nucleophilic addition of a primary amine to the quinone-imine system of the reactant, forming an enamine product. The thioester group remains intact.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Protection (Silyl Ether/Ester Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=C(C=C1)Cl)[C@@H](C(=O)O)O",
+                    "product_smiles": "C1=CC(=C(C=C1)Cl)[C@@H]([OTBS])C(=O)[OTBS]",
+                    "notes": "Protection of both the hydroxyl group and the carboxylic acid group with tert-butyldimethylsilyl (TBS) groups.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Silyl ester hydrolysis",
+                    "reagents": "K2CO3, MeOH, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "84% (2 steps)",
+                    "reactant_smiles": "ClC1=CC=CC=C1[C@@H](O[OTBS])C(=O)O[OTBS]",
+                    "product_smiles": "ClC1=CC=CC=C1[C@@H](O[OTBS])C(=O)O",
+                    "notes": "Base-catalyzed hydrolysis of the tert-butyldimethylsilyl (TBS) ester to a carboxylic acid. The TBS ether on the chiral center is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Thioesterification / Intramolecular Cyclization",
+                    "reagents": "DCC",
+                    "reagent_smiles": "[Boc]NCCC1=C(S)C=C(OC)C=C1",
+                    "conditions": "THF, rt",
+                    "yield": "89%",
+                    "reactant_smiles": "[OTBS][C@@H](C(=O)O)C1=CC=CC=C1Cl",
+                    "product_smiles": "O=C1[S+](C2=C(CCN[Boc])C=C(OC)C=C2)C3=CC(Cl)=CC=C3[C@H]([OTBS])1",
+                    "notes": "DCC-mediated thioesterification between a carboxylic acid and a thiol, followed by an intramolecular cyclization that forms a 7-membered benzo[b]thiepin-1-one ring system. The other aryl group is shown attached to the ring sulfur atom, which implies a sulfonium (S+) center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Boc deprotection",
+                    "reagents": "HCl, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "1,4-dioxane, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "COc1ccc(CC[NH][Boc])cc1SC(=O)[C@H]([OTBS])c2ccccc2Cl",
+                    "product_smiles": "COc1ccc(CCN)cc1SC(=O)[C@H]([OTBS])c2ccccc2Cl",
+                    "notes": "Deprotection of a Boc-protected amine to yield the primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Spirocyclization",
+            "reagents": "PIFA, TFE",
+            "reagent_smiles": "",
+            "conditions": "rt, air",
+            "yield": "64%",
+            "reactant_smiles": "Clc1ccccc1[C@H]([OTBS])C(=O)SCCC2=CC=C(OC)C=C2NC3=CC(=O)C4=C5C=C(N([Ts])C5)CCC4=N3",
+            "product_smiles": "Clc1ccccc1[C@@H]([OTBS])C(=O)S[C@]1(C=CC(=O)C=C1)C2CCN3C=C(N([Ts])C4)CCC4=N3C2",
+            "notes": "Intramolecular oxidative spirocyclization forming a new spiro carbon and an S-containing ring, accompanied by inversion of stereochemistry at the existing chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Bromination",
+            "reagents": "PyHBr3",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, MeCN, 35 °C",
+            "yield": "29%",
+            "reactant_smiles": "Clc1ccccc1[C@@H]([OTBS])C(=O)S[C@@]23C=CC(=O)C=C2C(C=C4C(=O)N[C@H](CC4)C3)=C5N([Ts])C=C5",
+            "product_smiles": "Clc1ccccc1[C@@H]([OTBS])C(=O)S[C@@]23C=C(Br)C(=O)C=C2C(C=C4C(=O)N[C@H](CC4)C3)=C5N([Ts])C=C5",
+            "notes": "Bromination of the cyclohexadienone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidative Intramolecular Cyclization",
+            "reagents": "CuBr2",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 80 °C, air",
+            "yield": "33%",
+            "reactant_smiles": "[N]([Ts])1C=C2CCN=C3C2=C1C(=O)C4=C3[C@@]5(CCN4)C=C(C(=O)C=C5SC(=O)[C@@H](C6=C(C=CC=C6)Cl)[OTBS])Br",
+            "product_smiles": "C1CN=C2C3=C(C(=O)C4=C2[C@@]56C=C(C(=O)C=C5[S@H](C6)[N@H]4)Br)[N@H](C=C13)",
+            "notes": "Intramolecular cyclization of a thioester onto the quinone-imine system, forming a new 6-membered sulfur-nitrogen-carbon ring. The reaction proceeds with removal of the 'TBSO' and '2-chlorophenyl' groups. Stereochemistry is set at the new sulfur, nitrogen, and the existing spiro carbon, as well as the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH, 0 °C",
+            "yield": "35%",
+            "reactant_smiles": "C1CN=C2C3=C(C(=O)C4=C2[C@@]56C=C(C(=O)C=C5S[C@@H](C6)N4)Br)N([Ts])C=C13",
+            "product_smiles": "C1CN=C2C3=C(C(=O)C4=C2[C@@]56C=C(C(=O)C=C5S[C@@H](C6)N4)Br)NC=C13",
+            "notes": "Tosyl deprotection of indole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

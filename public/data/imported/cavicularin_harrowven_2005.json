@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cavicularin-harrowven-2005",
+        "molecule_name": "Cavicularin",
+        "class": "Natural Product",
+        "author": "Harrowven",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetal formation / Aldehyde protection",
+            "reagents": "PPTS",
+            "reagent_smiles": "OCCO",
+            "conditions": "benzene, reflux",
+            "yield": "84%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)C=O)O",
+            "product_smiles": "COC1=C(C=C(C=C1)C2OCCO2)O",
+            "notes": "Formation of a cyclic acetal from an aldehyde using ethylene glycol and a mild acid catalyst (PPTS).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aromatic Nucleophilic Substitution (SNAr) / Williamson Ether Synthesis",
+            "reagents": "K2CO3",
+            "reagent_smiles": "O=CC1=CC=C(F)C=C1",
+            "conditions": "DMF, 140 °C",
+            "yield": "84%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)C2OCCO2)O",
+            "product_smiles": "COC1=C(C=C(C=C1)C2OCCO2)OC3=CC=C(C=C3)C=O",
+            "notes": "Phenol reacts with 4-fluorobenzaldehyde in the presence of a base (K2CO3) to form an aryl ether, substituting the fluorine atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "92%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)C2OCCO2)OC3=CC=C(C=C3)C=O",
+            "product_smiles": "COC1=C(C=C(C=C1)C2OCCO2)OC3=CC=C(C=C3)CO",
+            "notes": "Aldehyde group is reduced to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Appel reaction",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)C2OCCO2)OC3=CC=C(C=C3)CO",
+            "product_smiles": "COC1=C(C=C(C=C1)C=O)OC2=CC=C(C=C2)CBr",
+            "notes": "Appel reaction converting primary alcohol to primary bromide and potentially a subsequent hydrolysis/oxidation of 1,3-dioxolane to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Quaternization / Phosphonium Salt Formation",
+            "reagents": "PPh3",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "86%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)C=O)OC2=CC=C(C=C2)CBr",
+            "product_smiles": "COC1=C(C=C(C=C1)C=O)OC2=CC=C(C=C2)C[P+](c1ccccc1)(c2ccccc2)c3ccccc3.[Br-]",
+            "notes": "Formation of a phosphonium salt from a benzyl bromide and triphenylphosphine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetal formation (aldehyde protection)",
+            "reagents": "PPTS",
+            "reagent_smiles": "CC(C)(CO)CO",
+            "conditions": "toluene, reflux",
+            "yield": "97%",
+            "reactant_smiles": "O=CC1=CC(OC)=C(OC2=CC=C(C=C2)C[P+](c3ccccc3)(c4ccccc4)c5ccccc5)C=C1.[Br-]",
+            "product_smiles": "CC1(C)COC(C2=CC(OC)=C(OC3=CC=C(C=C3)C[P+](c4ccccc4)(c5ccccc5)c6ccccc6)C=C2)OC1.[Br-]",
+            "notes": "The aldehyde group is protected as a 1,3-dioxane acetal by reacting with 2,2-dimethylpropane-1,3-diol under acidic (PPTS) conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig olefination",
+            "reagents": "K2CO3, 18-C-6",
+            "reagent_smiles": "O=Cc1c(O)c(OC)cc(C2COC(C)(C)CO2)c1",
+            "conditions": "DCM, reflux",
+            "yield": "66%",
+            "reactant_smiles": "Cc1(C)COC(c2cc(OC)c(Oc3ccc(C[P+](c4ccccc4)(c5ccccc5)c6ccccc6)cc3)cc2)OC1.[Br-]",
+            "product_smiles": "Cc1(C)COC(c2cc(OC)c(Oc3ccc(C=Cc4c(O)c(OC)cc(C5OCC(C)(C)CO5)c4)cc3)cc2)OC1",
+            "notes": "Macrocycle formed via Wittig olefination. The structure drawn in the center (implied 'reagent') is a ketone (4-hydroxy-6-methoxy-3-(2,2-dimethyl-1,3-dioxan-5-yl)isochroman-1-one), but the reaction type (Wittig olefination) and the product structure (which contains a CH=CH alkene linkage) imply an aldehyde partner. The 'reagent_smiles' has been corrected to represent the aldehyde that would yield the depicted product.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Acetal Formation",
+                    "reagents": "PPTS",
+                    "reagent_smiles": "OCC(C)(C)CO",
+                    "conditions": "toluene, reflux",
+                    "yield": "",
+                    "reactant_smiles": "O=Cc1cc(O)ccc1",
+                    "product_smiles": "CC1(C)COC(c2cc(O)ccc2)OC1",
+                    "notes": "Formation of a cyclic acetal (1,3-dioxane) from m-hydroxybenzaldehyde and 2,2-dimethyl-1,3-propanediol, catalyzed by PPTS.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Esterification (Steglich)",
+                    "reagents": "DCC, DMAP",
+                    "reagent_smiles": "COc1ccc(C(=O)O)c(Br)c1",
+                    "conditions": "DMF-DCM, 0 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "CC1(C)COC(C2=CC(=CC=C2)O)OC1",
+                    "product_smiles": "CC1(C)COC(C2=CC=CC(=C2)OC(=O)c3c(Br)ccc(OC)c3)OC1",
+                    "notes": "Phenol esterification with 2-bromo-4-methoxybenzoic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Intramolecular Heck Cyclization",
+                    "reagents": "NaOAc",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 130 °C",
+                    "yield": "38%",
+                    "reactant_smiles": "COc1ccc(C(=O)Oc2ccc(C3COC(C)(C)OC3)cc2)c(Br)c1",
+                    "product_smiles": "COc1ccc2c(c1)C(=O)Oc3ccc(C4COC(C)(C)OC4)cc23",
+                    "notes": "Intramolecular Heck reaction to form a dibenzopyran-6-one derivative, with simultaneous lactone formation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Reduction",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "60%",
+                    "reactant_smiles": "CC1(C)COC(C2=CC3=C(C=C2)C4=CC=C(C=C4C(=O)O3)OC)OC1",
+                    "product_smiles": "CC1(C)COC(C2=CC3=C(C=C2)C4=CC=C(C=C4C(O)O3)OC)OC1",
+                    "notes": "Lactone reduction to lactol/hemiacetal",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, PtO2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "89%",
+            "reactant_smiles": "CC1(C)COC(C2=CC(=C(C=C2)C3=C(C=CC4=CC=C(C=C4)OC5=CC(=CC=C5OC)C6OCC(C)(C)CO6)C=C(C=C3)OC)O)OC1",
+            "product_smiles": "CC1(C)COC(C2=CC(=C(C=C2)C3=C(CCC4=CC=C(C=C4)OC5=CC(=CC=C5OC)C6OCC(C)(C)CO6)C=C(C=C3)OC)O)OC1",
+            "notes": "Hydrogenation of the macrocyclic alkene, reducing the C=C bond to a C-C single bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "NaI, NaOCl, NaOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "COc1ccc(CCOc2ccc(C(OC3CC(C)(C)CO3)c2)cc1)c3c(OC)ccc(c3c4cc(O)c(C(OC5CC(C)(C)CO5)c4)c4)C",
+            "product_smiles": "COc1ccc(CCOc2ccc(C(OC3CC(C)(C)CO3)c2)cc1)c3c(OC)ccc(c3c4cc(O)c(I)c(C(OC5CC(C)(C)CO5)c4)c4)C",
+            "notes": "Iodination of an activated aromatic ring (phenol) in a macrocyclic biaryl system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "O-methylation",
+            "reagents": "",
+            "reagent_smiles": "CI.[K+].[K+].[O-]C(=O)[O-]",
+            "conditions": "acetone, rt",
+            "yield": "88%",
+            "reactant_smiles": "CC1(C)COC(C2=CC=C(C(=C2)[OMe])C3=CC=C(CCC4=C(C=CC(=C4)[OMe])C5=C(C=C(C(=C5)I)C6OCC(C)(C)CO6)O)C=C3)OC1",
+            "product_smiles": "CC1(C)COC(C2=CC=C(C(=C2)[OMe])C3=CC=C(CCC4=C(C=CC(=C4)[OMe])C5=C(C=C(C(=C5)I)C6OCC(C)(C)CO6)[OMe])C=C3)OC1",
+            "notes": "O-methylation of a phenol to its methyl ether using methyl iodide and potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Acetal Hydrolysis / Deprotection",
+            "reagents": "PPTS, acetone",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "83%",
+            "reactant_smiles": "CC1(C)COC(C2=CC=C(C(=C2)OC3=CC=C(CCC4=C(C=CC(=C4)OC)C5=C(C=C(C(=C5)I)C6OCC(C)(C)CO6)OC)C=C3)OC)OC1",
+            "product_smiles": "COC1=CC(=C(C=C1)C2=C(C=C(C=O)C(=C2)I)OC)CCC3=CC=C(C=C3)OC4=CC(=CC=C4OC)C=O",
+            "notes": "Hydrolysis of two 1,3-dioxane acetals to form two aldehyde groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "McMurry reaction",
+            "reagents": "TiCl4, Mg",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt -45 °C to reflux",
+            "yield": "35%",
+            "reactant_smiles": "O=Cc1cc(O2)c(OC)c1-c3ccc(OC)c(I)c3-c4ccc(OC)c(CCC5=CC=C2C=C5)cc4",
+            "product_smiles": "COc1cc2ccc(CCCc3ccc(OC)c(/C=C\\c4ccc(OC)c(I)c4)c3)-c2c(O)c1",
+            "notes": "Intramolecular McMurry reaction of a bis-aldehyde to form a macrocyclic Z-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reduction (Shapiro reaction variant)",
+            "reagents": "TsNHNH₂, NaOAc",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)NN)cc1.[Na+].CC(=O)[O-]",
+            "conditions": "THF, reflux",
+            "yield": "91%",
+            "reactant_smiles": "COC1=CC2=C(C=C1)C3=C(C=C(/C=C\\C4=CC=C(C(=C4)OC5=CC=C(CC2)C=C5)OC)C(=C3)I)OC",
+            "product_smiles": "COC1=CC2=C(C=C1)C3=C(C=C(CC4=CC=C(C(=C4)OC5=CC=C(CC2)C=C5)OC)C(=C3)I)OC",
+            "notes": "Reduction of a macrocyclic vinyl iodide to an alkane.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Radical Cyclization",
+            "reagents": "TTMSS, AIBN",
+            "reagent_smiles": "",
+            "conditions": "toluene, 90 °C",
+            "yield": "",
+            "reactant_smiles": "COc1ccc2C(I)=C(OC)c3cc(CCC4=CC=C(OC)C=C4)ccc3c2c1",
+            "product_smiles": "COc1ccc([C@]23C[C@H]4CC[C@@]2(c5ccc(OC)cc5)c6ccc(OC)cc6O3)C(c7ccc(OC)cc7)C4CCC",
+            "notes": "Intramolecular radical cyclization reaction to form a complex polycyclic system with a tetralin and a bridged bicyclic core.",
+            "substeps": []
+        }
+    ]
+}

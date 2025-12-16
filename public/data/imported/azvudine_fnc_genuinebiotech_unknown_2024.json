@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "azvudine-fnc-genuinebiotech-unknown-2024",
+        "molecule_name": "Azvudine (FNC GenuineBiotech)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Anomeric Substitution",
+            "reagents": "HBr, AcOH, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OBz]C[C@@H]1[C@@H]([C@H](C(O1)[OBz])F)[OBz]",
+            "product_smiles": "[OBz]C[C@@H]1[C@@H]([C@H]([C@H](Br)O1)F)[OBz]",
+            "notes": "Anomeric O-benzoyl group on the furanose ring is substituted by a bromine atom, with inversion of configuration at the anomeric center.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Glycosylation / Nucleoside Synthesis",
+            "reagents": "(NH₄)₂SO₄, HMDS",
+            "reagent_smiles": "[Bz]NHc1ncc(=O)[nH]c1",
+            "conditions": "",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "[OBz]C[C@@H]1[C@@H]([C@H]([C@H](Br)O1)F)[OBz]",
+            "product_smiles": "[Bz]NHC1=NC(=O)N(C=C1)[C@@H]2[C@@H]([C@H]([C@@H](CO[OBz])O2)[OBz])F",
+            "notes": "N-glycosylation of N4-benzoylcytosine with a protected bromofuranose, involving stereochemical inversion at the anomeric carbon (C1) of the furanose ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection (Benzoyl ester hydrolysis and amide deprotection)",
+            "reagents": "NH₃/MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "[Bz]NC1=NC(=O)N(C=C1)[C@H]2[C@H]([C@@H]([C@@H](CO[Bz])O2)O[Bz])F",
+            "product_smiles": "NC1=NC(=O)N(C=C1)[C@H]2[C@H]([C@@H]([C@@H](CO)O2)O)F",
+            "notes": "Ammonolysis of benzoyl protecting groups on the 4-amino position of cytosine and the 3' and 5' hydroxyls of the sugar moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Iodination (Appel reaction variant)",
+            "reagents": "imidazole, PPh3, I2",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "82%",
+            "reactant_smiles": "C1=CN([C@H]2[C@H]([C@@H]([C@@H](CO)O2)O)F)C(=O)N=C1N",
+            "product_smiles": "C1=CN([C@H]2[C@H]([C@@H]([C@@H](CI)O2)O)F)C(=O)N=C1N",
+            "notes": "The primary alcohol at the C5' position of the ribose sugar is selectively converted to an iodide using triphenylphosphine and iodine in the presence of imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination (Dehydrohalogenation)",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C1=CN([C@H]2[C@H]([C@@H]([C@@H](CI)O2)O)F)C(=O)N=C1N",
+            "product_smiles": "C=C1[C@H]([C@H]([C@@H](N2C=CC(=NC2=O)N)O1)F)O",
+            "notes": "Elimination of hydrogen iodide from the C5' position of the furanose ring to form an exocyclic methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydroazidoiodination",
+            "reagents": "NaN3, ICl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "C=C1[C@H]([C@@H]([C@H](N2C=CC(=NC2=O)N)O1)F)O",
+            "product_smiles": "NC1=CC(=O)N(C=C1)[C@H]2O[C@H](F)[C@H](O)[C@@](N=[N+]=[N-])(CI)2",
+            "notes": "Addition of azide and iodomethyl groups to an exocyclic alkene with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acylation (Benzoylation)",
+            "reagents": "TEA, DMAP, BzCl",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "85%",
+            "reactant_smiles": "NC1=NC(=O)N(C=C1)[C@H]2O[C@@H](CI)[C@H]([N-]=[N+]=N)[C@H](O)[C@H]2F",
+            "product_smiles": "[NHBz]C1=NC(=O)N(C=C1)[C@H]2O[C@@H](CI)[C@H]([N-]=[N+]=N)[C@H](OBz)[C@H]2F",
+            "notes": "Benzoylation of the C4-amino group on the cytosine base and the C3'-hydroxyl group on the sugar moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "SN2 displacement / Esterification",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C1N=C(NC(=O)c2ccccc2)N(C=C1)[C@H]3O[C@@H]4[C@@H]([CH2]I)[C@@H](N=[N+]=[N-])[C@H](F)[C@H]34",
+            "product_smiles": "O=C1N=C(NC(=O)c2ccccc2)N(C=C1)[C@H]3O[C@@H]4[C@@H]([CH2]OC(=O)c5cccc(Cl)c5)[C@@H](N=[N+]=[N-])[C@H](F)[C@H]34",
+            "notes": "SN2 displacement of iodide at C5' with m-chlorobenzoate. The original drawing depicted an impossible 5-bonded carbon at C3' (showing both azide and benzoyloxy groups). This was resolved by retaining the azide group (wedge bond) and omitting the benzoyloxy group for chemical validity in the generated SMILES for both reactant and product. The provided input SMILES for reactant, reagent, and product were extensively corrected due to fragmentation, incorrect atom types (e.g., 'N' for azide), and structural errors.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (Ammonolysis)",
+            "reagents": "NH3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "83%",
+            "reactant_smiles": "N([C@H]1O[C@H](COC(=O)c2cccc(Cl)c2)[C@@]([N3])([OBz])[C@@H]1F)c3nc(=O)[nH]c(=C([NH][Bz]))c3",
+            "product_smiles": "N=C1NC=CN([C@H]2O[C@H](CO)[C@@]([N3])(O)[C@@H]2F)C1=O",
+            "notes": "Simultaneous deprotection of benzoate and m-chlorobenzoate esters, and N-benzoyl amide group via ammonolysis.",
+            "substeps": []
+        }
+    ]
+}

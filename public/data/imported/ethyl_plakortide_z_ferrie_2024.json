@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ethyl-plakortide-z-ferrie-2024",
+        "molecule_name": "Ethyl Plakortide Z",
+        "class": "Natural Product",
+        "author": "Ferrie",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Wittig Olefination",
+            "reagents": "t-BuOK",
+            "reagent_smiles": "[Br-].BrCC[P+](c1ccccc1)(c1ccccc1)c1ccccc1.CC(C)(C)O[K]",
+            "conditions": "THF, reflux",
+            "yield": "81%",
+            "reactant_smiles": "CCCCC(=O)CC",
+            "product_smiles": "CCCCC(=C1CC1)CC",
+            "notes": "Ketone undergoes Wittig reaction with a phosphonium ylide (generated in situ from the dibromoethyltriphenylphosphonium bromide and t-BuOK) to form a cyclopropylidene-substituted alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxidation / Acid-catalyzed rearrangement",
+            "reagents": "m-CPBA, p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "CC(CCCC)=C1CC1",
+            "product_smiles": "CCCC1(CC)CCC1=O",
+            "notes": "A spiro-cyclopropylidene alkene undergoes epoxidation with m-CPBA, followed by p-TsOH catalyzed rearrangement to form a cyclobutanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrazone formation",
+            "reagents": "4 Å MS, TFA",
+            "reagent_smiles": "COC[C@H]1CCCN1N",
+            "conditions": "60 °C",
+            "yield": "82%",
+            "reactant_smiles": "CCCCC1(CC)CCC1=O",
+            "product_smiles": "CCCCC1(CC)CC/C(=N/N2CCC[C@H]2COC)C1",
+            "notes": "Condensation of a spirocyclobutanone with (S)-1-amino-2-(methoxymethyl)pyrrolidine to form a hydrazone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Chiral Auxiliary Mediated Alkylation",
+            "reagents": "t-BuLi, EtI",
+            "reagent_smiles": "[Li]C(C)(C)C.CCI",
+            "conditions": "THF, -78 °C",
+            "yield": "86%",
+            "reactant_smiles": "COC[C@H]1CCCN1N=C2CCC(CC)(CCCCC)C2",
+            "product_smiles": "COC[C@H]1CCCN1N=C2[C@@H](CC)CC(CC)(CCCCC)C2",
+            "notes": "Alkylation of an imine (derived from a chiral pyrrolidine auxiliary) with ethyl iodide to form a new stereocenter on the cyclobutane ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "84%",
+            "reactant_smiles": "C(CCCCC)(CC)1[C@@H](CC)CC(=NNC2CCC[C@H](COC)2)1",
+            "product_smiles": "CCCCC1(CC)C[C@@H](CC)C1=O",
+            "notes": "Oxidative cleavage of an exocyclic imine/hydrazine to form a cyclobutanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "CCCCC1(CC)C[C@@H](CC)C1=O",
+            "product_smiles": "CCCCC1(CC)C[C@@H](CC)[C@H](O)C1",
+            "notes": "Reduction of cyclobutanone to cyclobutanol using sodium borohydride. A new chiral center is formed, yielding a trans relationship between the newly formed hydroxyl group and the pre-existing ethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Aerobic Oxidation / Peroxidative Cyclization",
+            "reagents": "O₂, Co(acac)₂",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 40 °C",
+            "yield": "85%",
+            "reactant_smiles": "CCCCC1(CC)C[C@@H](CC)C1O",
+            "product_smiles": "CCCCC1(CC)C[C@@H](CC)C(O)OO1",
+            "notes": "Cobalt-catalyzed aerobic oxidation of a cyclobutanol to form a 1,2-dioxane derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetylation / Esterification",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O[C@H]1OO[C](CCCC)(CC)C[C@@H](CC)1",
+            "product_smiles": "[OAc][C@H]1OO[C](CCCC)(CC)C[C@@H](CC)1",
+            "notes": "The hydroxyl group of the 1,2-dioxane is acetylated to an acetate group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Tandem Mukaiyama Aldol / Acetal Opening",
+            "reagents": "Sc(OTf)3",
+            "reagent_smiles": "C=C([OTMS])[SEt]",
+            "conditions": "DCM",
+            "yield": "17%",
+            "reactant_smiles": "CCCCC1(CC)C[C@@H](CC)[C@H]([OAc])OO1",
+            "product_smiles": "CCCC[C@]1(CC)C[C@@H](CC)[C@H](CC(=O)[SEt])OO1",
+            "notes": "Addition of a silyl ketene thioacetal to a peroxide acetal, with elimination of acetate and C-C bond formation. The peroxide ring is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrolysis / Oxidative Cleavage",
+            "reagents": "LiOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCCC[C@]1(CC)C[C@@H](CC)[C@H](CC(=O)SCC)OO1",
+            "product_smiles": "CCCC[C@]1(CC)C[C@@H](CC)[C@H](CC(=O)O)OO1",
+            "notes": "Hydrolysis of a thioester to a carboxylic acid. The peroxide moiety remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Esterification",
+            "reagents": "CH3CHN2",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCCC[C@]1(CC)C[C@@H](CC)[C@H](CC(=O)O)OO1",
+            "product_smiles": "CCCC[C@]1(CC)C[C@@H](CC)[C@H](CC(=O)OCC)OO1",
+            "notes": "Esterification of carboxylic acid to ethyl ester using diazoethane. Reported yield is for 2 steps.",
+            "substeps": []
+        }
+    ]
+}

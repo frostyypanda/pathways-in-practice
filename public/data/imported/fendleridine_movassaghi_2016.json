@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fendleridine-movassaghi-2016",
+        "molecule_name": "Fendleridine",
+        "class": "Natural Product",
+        "author": "Movassaghi",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification (Acyl Chloride with Alcohol)",
+            "reagents": "Et3N, DMAP",
+            "reagent_smiles": "OCCCCCCCCCC",
+            "conditions": "DCM",
+            "yield": "99%",
+            "reactant_smiles": "C/C=C/C(=O)Cl",
+            "product_smiles": "C/C=C/C(=O)OCCCCCCCCCC",
+            "notes": "Acyl chloride reacts with 1-decanol to form an ester. The trans double bond stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aldol-type Reaction",
+            "reagents": "LDA, DMPU, acetaldehyde",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCCCCCCCCOC(=O)C=CC",
+            "product_smiles": "CCCCCCCCCOC(=O)C(C=C)C(C)O",
+            "notes": "Base-mediated addition to an ester alpha-carbon with acetaldehyde, resulting in an unusual transformation of the crotonate double bond to a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Elimination / Dehydration (via mesylate)",
+            "reagents": "MeSO2Cl, Et3N, DCM",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC.ClCCl",
+            "conditions": "0 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "CCCCCCCCCOC(=O)C(C=C)C(C)O",
+            "product_smiles": "CCCCCCCCCOC(=O)C(=C(\\C)H)/C=C",
+            "notes": "Dehydration of a secondary alcohol to form an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Indole Alkylation (Pictet-Spengler type)",
+            "reagents": "TFA, Et3SiH",
+            "reagent_smiles": "C=CCN(CC(OC)OC)C(=O)C(F)(F)F",
+            "conditions": "DCM, rt",
+            "yield": "89%",
+            "reactant_smiles": "CCCCCCCCCCOC(=O)[C@@](C=C)(C=C)CCC1=CC2=C(C=CC=C2)N1[PMB]",
+            "product_smiles": "CCCCCCCCCCOC(=O)[C@@](C=C)(C=C)CCC1=C(CCN(CC=C)C(=O)C(F)(F)F)C2=C(C=CC=C2)N1[PMB]",
+            "notes": "Indole C3 alkylation using N-allyl-N-(2,2-dimethoxyethyl)trifluoroacetamide. The dimethoxy acetal likely forms an iminium ion, which then reacts with the indole. The stereochemistry at the vinyl-substituted chiral center is retained.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Acylation",
+                    "reagents": "TFAA, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "COC(CN)OC",
+                    "product_smiles": "COC(CNC(=O)C(F)(F)F)OC",
+                    "notes": "Primary amine undergoes trifluoroacetylation to form a trifluoroacetamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "NaH, DMF",
+                    "reagent_smiles": "C=CCBr",
+                    "conditions": "",
+                    "yield": "85%",
+                    "reactant_smiles": "FC(F)(F)C(=O)NCC(OC)OC",
+                    "product_smiles": "C=CCN(CC(OC)OC)C(=O)C(F)(F)F",
+                    "notes": "The amide nitrogen is alkylated with allyl bromide in the presence of sodium hydride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrolysis",
+            "reagents": "MeOH, NaOH",
+            "reagent_smiles": "CO.O.[Na+].[OH-]",
+            "conditions": "H2O, 100 °C",
+            "yield": "98%",
+            "reactant_smiles": "O=C(OCCCCCCCCC)[C@@](C=C)(C=C)CCC1=C(CCN(CC=C)C(=O)C(F)(F)F)C2=C(C=CC=C2)N1[PMB]",
+            "product_smiles": "C=CCNCCC1=C(CC[C@@](C=C)(C=C)C(=O)O)N([PMB])C2=C1C=CC=C2",
+            "notes": "Hydrolysis of the nonyl ester and the N-trifluoroacetyl-N-allyl amide groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Macrolactamization (Amide formation)",
+            "reagents": "Ph3P, I2, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, -5 °C",
+            "yield": "69%",
+            "reactant_smiles": "C=CCNCCC1=C(CC[C@](C=C)(C=C)C(=O)O)N([PMB])C2=C1C=CC=C2",
+            "product_smiles": "C=CCN1CCC2=C(CC[C@](C=C)(C=C)C1=O)N([PMB])C3=C2C=CC=C3",
+            "notes": "Intramolecular amide coupling reaction forming a macrocyclic lactam from an amine and a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "1,2-DCE, 80 °C",
+            "yield": "78%",
+            "reactant_smiles": "C=CCN(CC1)C(=O)[C@@H](C=C)CC2c3c(ccc4c3)cn([PMB])c1c24",
+            "product_smiles": "C=C1C2(CC3)ON4C=C2C5=C3C=CC=C5N([PMB])CC4",
+            "notes": "Intramolecular cycloisomerization via RCM catalyzed by Hoveyda-Grubbs II catalyst, forming an 8-membered oxazocine ring. The lactam carbonyl oxygen becomes an ether oxygen, and the allyl group on nitrogen forms part of the new cyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wacker oxidation",
+            "reagents": "Pd(OAc)2, 1,4-benzoquinone, MeCN, Toluene, H2O, HClO4",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=CC1(CCC2=C3C=CN([PMB])C3=CC=C2)N(C=CO)CC1",
+            "product_smiles": "O=CCC1(CCC2=C3C=CN([PMB])C3=CC=C2)N(C=CO)CC1",
+            "notes": "Wacker oxidation of a terminal alkene (vinyl group) to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "79% (2 steps)",
+            "reactant_smiles": "[PMB]N2C3=C(C=CC=C3)C4=C2CCC5(C=CCN(CC4)C5=O)CC=O",
+            "product_smiles": "[PMB]N2C3=C(C=CC=C3)C4=C2CCC5(C=CCN(CC4)C5=O)CCO",
+            "notes": "Aldehyde reduced to primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Kinetic resolution / Enzymatic Acylation",
+            "reagents": "Amano PS",
+            "reagent_smiles": "CC(=O)OC=C",
+            "conditions": "tBuOMe",
+            "yield": "39%, >98% ee",
+            "reactant_smiles": "[PMB]N1C=C(C2=CC=CC=C21)CC3(CCO)CCC4N(CC3)CC(=O)OC=C",
+            "product_smiles": "[PMB]N1C=C(C2=CC=CC=C21)C[C@@]3(CCO)CCC4N(CC3)CC(=O)OC=C",
+            "notes": "Enzymatic kinetic resolution of an alcohol to give a chiral alcohol product. The spiro carbon stereochemistry is inverted relative to a possible intermediate but established in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrogenation",
+            "reagents": "PtO₂, H₂",
+            "reagent_smiles": "",
+            "conditions": "MeOH, EtOAc",
+            "yield": "",
+            "reactant_smiles": "[PMB]N1c2ccccc2C(=C1)CC[N]3C(=O)O[C@@H](CCO)C=CC3",
+            "product_smiles": "[PMB]N1c2ccccc2C(=C1)CC[N]3C(=O)O[C@@H](CCO)CCC3",
+            "notes": "Catalytic hydrogenation of an alkene (C=C double bond) to an alkane (C-C single bond) in a complex fused ring system, retaining other functionalities and stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Esterification",
+            "reagents": "DMAP",
+            "reagent_smiles": "O=C(Cl)c1ccc([N+](=O)[O-])cc1",
+            "conditions": "DCM",
+            "yield": "82%",
+            "reactant_smiles": "[PMB]N2C3=C(C=CC=C3)C4=C2CC[C@]5(CCCN(CC4)C5=O)CCO",
+            "product_smiles": "[PMB]N2C3=C(C=CC=C3)C4=C2CC[C@]5(CCCN(CC4)C5=O)CCOC(=O)c6ccc([N+](=O)[O-])cc6",
+            "notes": "Esterification of a primary alcohol with 4-nitrobenzoyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reductive Cyclization / Iminium formation",
+            "reagents": "Tf2O",
+            "reagent_smiles": "[SnH](CCCC)(CCCC)CCCC.CC#N",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "[PMB]N1C2=C(C=CC=C2)C3=C1CCC4(CCCN(CC3)C4=O)C[C@@H]OC(=O)C5=CC=C(C=C5)[N+](=O)[O-]",
+            "product_smiles": "[PMB]N1[C@H]2c3ccccc3[C@H]4C5(C4)C[N+]6=C([C@H]4)CCC5C[C@H]2N6O[C@@H]7CC5C(=O)c8ccc([N+](=O)[O-])cc8",
+            "notes": "The reaction involves a reductive cyclization of the lactam with the indole, forming a complex cage-like iminium product. The indole double bond is reduced, and the N-PMB becomes an NH-PMB group. New ring systems and stereocenters are formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Intramolecular Cyclization / Epoxide Formation",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "[N+]1=C2[C@@]34C[C@@H](CC[C@@]3(CCOC(=O)C5=CC=C(C=C5)[N+](=O)[O-])CCC1)[C@H]2N([PMB])C6=C4C=CC=C6",
+            "product_smiles": "[PMB]N2C3=C(C=CC=C3)[C@@]45CCN6CCC[C@]7(CC[C@H]42)CCO[C@]756",
+            "notes": "Intramolecular cyclization of an iminium ion with an ester, followed by epoxide formation. The 4-nitrophenyl ester is a leaving group. The iminium N is reduced to an amine, and a new ether bridge and epoxide are formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection",
+            "reagents": "PhSH, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH, 55 °C",
+            "yield": "84%",
+            "reactant_smiles": "[PMB]N1C2=C(C=CC=C2)[C@@]34CCN5CCC[C@]6(CC[C@H]31)CCO[C@@]645",
+            "product_smiles": "C1=CC2=C(C=C1)N[C@H]3CC[C@]45CCCN6CC[C@]23[C@]46OCC5",
+            "notes": "Deprotection of p-methoxybenzyl (PMB) protecting group from indole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

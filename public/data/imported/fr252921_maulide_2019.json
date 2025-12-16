@@ -1,0 +1,231 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fr252921-maulide-2019",
+        "molecule_name": "FR252921",
+        "class": "Natural Product",
+        "author": "Maulide",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaN3",
+            "reagent_smiles": "",
+            "conditions": "DMF, reflux",
+            "yield": "81%",
+            "reactant_smiles": "CCOC(=O)C[C@H](CCl)O",
+            "product_smiles": "CCOC(=O)C[C@H](C[N-]=[N+]=[N-])O",
+            "notes": "Substitution of a primary alkyl chloride with azide, retaining stereochemistry at the adjacent chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Fráter-Seebach alkylation",
+            "reagents": "LiHMDS, MeI, THF",
+            "reagent_smiles": "",
+            "conditions": "-60 to -20 °C",
+            "yield": "71%",
+            "reactant_smiles": "CCOC(=O)C[C@@H](O)CC[N-]=[N+]=N",
+            "product_smiles": "CCOC(=O)[C@H](C)[C@@H](O)CC[N-]=[N+]=N",
+            "notes": "Alpha-alkylation of an ester enolate with stereocontrol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "98%",
+            "reactant_smiles": "CCOC(=O)[C@@H](C)[C@H](O)CN=[N+]=[N-]",
+            "product_smiles": "CCOC(=O)[C@@H](C)[C@H]([OTBS])CN=[N+]=[N-]",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF/MeOH/H2O, 23 °C",
+            "yield": "96%",
+            "reactant_smiles": "CCOC(=O)[C@H](C)[C@@H](C[N-]=[N+]=[N-])[OTBS]",
+            "product_smiles": "O=C(O)[C@H](C)[C@@H](C[N-]=[N+]=[N-])[OTBS]",
+            "notes": "Saponification of an ethyl ester to a carboxylic acid, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling",
+            "reagents": "Et3N, HATU",
+            "reagent_smiles": "[NH3+]CC/C=C/B1OC(C)(C)C(C)(C)O1.O=C([O-])C(F)(F)F",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "C[C@@H]([C@H](C[N-]=[N+]#N)[OTBS])C(=O)O",
+            "product_smiles": "C[C@@H]([C@H](C[N-]=[N+]#N)[OTBS])C(=O)NCC/C=C/B1OC(C)(C)C(C)(C)O1",
+            "notes": "HATU-mediated amide coupling of a carboxylic acid with an amine-functionalized pinacol boronate trifluoroacetate salt.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Curtius Rearrangement",
+                    "reagents": "DPPA, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "t-BuOH, reflux",
+                    "yield": "65%",
+                    "reactant_smiles": "C#CCCC(=O)O",
+                    "product_smiles": "C#CCCN[Boc]",
+                    "notes": "Conversion of a terminal alkyne carboxylic acid to a Boc-protected amine via Curtius rearrangement conditions (DPPA, Et3N in t-BuOH).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Hydroboration",
+                    "reagents": "(Cp)2ZrHCl, CH2Cl2",
+                    "reagent_smiles": "B1OC(C)(C)C(C)(C)O1.CCN(CC)CC",
+                    "conditions": "60 °C",
+                    "yield": "85%",
+                    "reactant_smiles": "C#CCCNC[Boc]",
+                    "product_smiles": "[Boc]NCC/C=C/B1OC(C)(C)C(C)(C)O1",
+                    "notes": "Zirconium-catalyzed hydroboration of a terminal alkyne (Boc-protected propargylamine) with pinacolborane (HBpin) to form an E-vinylboronate ester with terminal addition of the boron.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "Zn powder, NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "THF/MeOH/H2O, 23 °C",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H]([C@H](C[N-]=[N+]=N)[OTBS])C(=O)NCC/C=C/B1OC(C)(C)C(C)(C)O1",
+            "product_smiles": "C[C@@H]([C@H](CN)[OTBS])C(=O)NCC/C=C/B1OC(C)(C)C(C)(C)O1",
+            "notes": "Azide group reduced to primary amine using zinc and ammonium chloride. TBSO group and boronic ester are unaffected. Stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Macrolactamization",
+            "reagents": "DMAP",
+            "reagent_smiles": "CCCCCCC/C=C/C=C(\\C)/[C@@H](CC(=O)N1[C@H](CC2=CC=CC=C2)CSC1=S)O",
+            "conditions": "CH2Cl2, 23 °C",
+            "yield": "57%",
+            "reactant_smiles": "[OTBS][C@@H]([NH2])[C@H](C)C(=O)NCC/C=C\\B1OC(C)(C)C(C)(C)O1",
+            "product_smiles": "CCCCCCC/C=C/C=C1(\\C)/[C@@H](O)CC(=O)NC[C@@H]([OTBS])[C@H](C)C(=O)NCCC1=C\\B2OC(C)(C)C(C)(C)O2",
+            "notes": "Intramolecular macrolactamization with C-C bond formation between two vinyl carbons, forming a 16-membered macrocycle.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Horner-Wadsworth-Emmons olefination",
+                    "reagents": "NaH, THF",
+                    "reagent_smiles": "CCOC(=O)C(C)P(=O)(OCC)OCC",
+                    "conditions": "0 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCCCCCC=CC=O",
+                    "product_smiles": "CCCCCCC=CC=C(C)C(=O)OCC",
+                    "notes": "Horner-Wadsworth-Emmons olefination of an alpha,beta-unsaturated aldehyde with a phosphonate to form a conjugated diene ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Reduction (ester to primary alcohol)",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCCCCCC/C=C/C=C(/C)C(=O)OCC",
+                    "product_smiles": "CCCCCCC/C=C/C=C(/C)CO",
+                    "notes": "Selective reduction of an ethyl ester to a primary alcohol using DIBAL-H, leaving the conjugated diene system intact. The (E,E) stereochemistry of the diene is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Oxidation",
+                    "reagents": "MnO2",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 20 °C",
+                    "yield": "63% (3 steps)",
+                    "reactant_smiles": "CCCCCCC/C=C/C=C(\\C)CO",
+                    "product_smiles": "CCCCCCC/C=C/C=C(\\C)C=O",
+                    "notes": "Oxidation of a primary allylic alcohol to an alpha,beta-unsaturated aldehyde using manganese dioxide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Evans aldol reaction",
+                    "reagents": "TiCl4, DIPEA",
+                    "reagent_smiles": "CC(=O)N1[C@H]([Ph])CSC1=S",
+                    "conditions": "CH2Cl2, -78 °C",
+                    "yield": "74%",
+                    "reactant_smiles": "CCCCCCC/C=C/C=C(/C)C=O",
+                    "product_smiles": "CCCCCCC/C=C/C=C(/C)[C@@H](O)CC(=O)N1[C@H]([Bn])CSC1=S",
+                    "notes": "Crimmins modification",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Esterification",
+            "reagents": "pyridine, Ghosez's reagent",
+            "reagent_smiles": "O=C(O)[C@@H]1C=C[C@H]1Cl",
+            "conditions": "CHCl3, 23 °C",
+            "yield": "79%",
+            "reactant_smiles": "CCCCCC/C=C/C=C(\\C)/[C@@H](CC(=O)NC[C@@H]([C@H](C)C(=O)NCC/C=C/B1OC(C)(C)C(C)(C)O1)O[Si](C)(C)C(C)(C)C)O",
+            "product_smiles": "CCCCCCC/C=C/C=C(\\C)/[C@@H](CC(=O)NC[C@@H]([C@H](C)C(=O)NCC/C=C/B1OC(C)(C)C(C)(C)O1)O[Si](C)(C)C(C)(C)C)OC(=O)[C@H]2C=C[C@H]2Cl",
+            "notes": "Hydroxyl group of the alcohol is esterified with 3-chloro-cyclobut-1-ene-1-carboxylic acid (activated by Ghosez's reagent) to form the corresponding ester.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Intramolecular [2+2] photocycloaddition",
+                    "reagents": "hv (300 nm)",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, -20 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=O)OC=C1",
+                    "product_smiles": "C1=C[C@H]2[C@H]1C(=O)O2",
+                    "notes": "Intramolecular [2+2] cycloaddition of a 2-pyrone derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Ring Opening / Rearrangement / Chlorination",
+                    "reagents": "HCl (dry)",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, -20 °C",
+                    "yield": "83% (2 steps)",
+                    "reactant_smiles": "C1=C[C@H]2[C@@H]1C(=O)O2",
+                    "product_smiles": "C1=C[C@H](Cl)[C@H](C1)C(=O)O",
+                    "notes": "Lactone ring opening and rearrangement to a cyclobutene carboxylic acid with concomitant chlorination. The reaction involves a stereospecific ring opening/rearrangement under acidic conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Suzuki-Miyaura cross coupling",
+            "reagents": "Pd(PPh3)4, Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O, 23 °C",
+            "yield": "74%",
+            "reactant_smiles": "CCCCCCC/C=C/C=C(\\C)/[C@@H](CC(=O)NC[C@@H]([C@H](C)C(=O)NCC/C=C/B1OC(C)(C)C(C)(C)O1)[OTBS])OC(=O)[C@H]2C=C[C@H]2Cl",
+            "product_smiles": "CCCCCCC/C=C/C=C(\\C)/[C@@H]1CC(=O)NC[C@@H]([C@H](C)C(=O)NCC/C=C/C=C/C=C/C=C/C(=O)O1)[OTBS]",
+            "notes": "A Suzuki-Miyaura cross-coupling reaction between a vinyl boronate and a chlorocyclobutene ester leads to the formation of a macrolactone containing a conjugated tetraene system, presumably via cyclobutene ring-opening and subsequent lactonization.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "[C7H15]/C=C/C=C(\\C)/[C@@H]1OC(=O)/C=C/C=C/CCCCNC(=O)C[C@@H]([OTBS])[C@H](C)C(=O)NC1",
+            "product_smiles": "[C7H15]/C=C/C=C(\\C)/[C@@H]1OC(=O)/C=C/C=C/CCCCNC(=O)C[C@@H](O)[C@H](C)C(=O)NC1",
+            "notes": "Deprotection of TBS silyl ether to alcohol.",
+            "substeps": []
+        }
+    ]
+}

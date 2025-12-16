@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ervestine-bosch-1997",
+        "molecule_name": "Ervestine",
+        "class": "Natural Product",
+        "author": "Bosch",
+        "year": 1997
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation / N-Protection",
+            "reagents": "NaH, SEMCl",
+            "reagent_smiles": "",
+            "conditions": "DMF, THF, 0 °C to RT",
+            "yield": "93%",
+            "reactant_smiles": "CC(=O)C1=CC2=CC=CC=C2N1",
+            "product_smiles": "CC(=O)C1=CC2=C(C=CC=C2)N([SEM])1",
+            "notes": "Indole nitrogen is deprotonated by NaH and subsequently protected with a SEM group using SEMCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Mannich Reaction",
+            "reagents": "iPrN(Cy)Li, CH2N+Me2I-",
+            "reagent_smiles": "C[N+]1=CC=CC(=C1)/C=C/C(=O)OC",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "15%",
+            "reactant_smiles": "CC(=O)C1=CN([SEM])C2=CC=CC=C21",
+            "product_smiles": "[SEM]N1C2=CC=CC=C2C3=C1C(=O)C[C@H]4C(=CN(C)[C@@H]3C4CN(C)C)/C=C/C(=O)OC",
+            "notes": "A Mannich reaction of an N-SEM protected indole with a pyridinium acrylate and dimethylmethyleneammonium iodide to form a complex polycyclic structure. Stereochemistry is preserved as drawn.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Oxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM, -10 °C",
+            "yield": "60%",
+            "reactant_smiles": "[SEM]N1C2=C(C=CC=C2)C3=C1C(=O)C[C@H]4C(=CN(C)[C@H]3C4CN(C)C)/C=C/C(=O)OC",
+            "product_smiles": "[SEM]N1C2=CC=CC=C2C3=C1C(=O)C[C@H]4C(=CN(C)[C@H]3C4C[N+](C)(C)[O-])/C=C/C(=O)OC",
+            "notes": "Oxidation of tertiary amine to N-oxide using mCPBA.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cope Elimination",
+            "reagents": "Toluene",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "75%",
+            "reactant_smiles": "C[N+](C)([O-])CC[C@@H]1C(=O)C2=C([SEM])N3C4=CC=CC=C4C3=C2[C@@H]5[C@H]1C=C(C=C/C(=O)OC)N5C",
+            "product_smiles": "[SEM]N1C2=CC=CC=C2C3=C1C(=O)C(=C)[C@H]4[C@@H]3C=C(C=C/C(=O)OC)N4C",
+            "notes": "Cope elimination of N,N-dimethylamine-N-oxide, generating an exocyclic double bond adjacent to a carbonyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection, Decarboxylation, Cyclization, Iminium Formation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "",
+            "reactant_smiles": "[SEM]N1C2=CC=CC=C2C3=C1C(=O)C[C@@H]4C(=CN(C)[C@@H]3C4=C)/C=C/C(=O)OC",
+            "product_smiles": "C/C=C\\1/C=[N+](C)[C@@H]2C(=C)[C@@H]1CC(=O)C3=C2C4=CC=CC=C4N3",
+            "notes": "Acid-catalyzed deprotection of SEM, ester hydrolysis with decarboxylation, and intramolecular cyclization involving double bond rearrangement to form a new iminium ion.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "MeOH, 0 °C",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "C/C=C/C1=C[N+](C)[C@@H]2[C@H]3CC(=O)C4=C3C(=C)c5c(N42)cccc5",
+            "product_smiles": "C/C=C/C1CN(C)[C@@H]2[C@H]3CC(=O)C4=C3C(=C)c5c(N[H]42)cccc5",
+            "notes": "Reduction of iminium ion to tertiary amine, with a rearrangement leading to N-H formation on the indole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

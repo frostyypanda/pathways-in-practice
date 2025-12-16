@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nostodione-a-martensson-2012",
+        "molecule_name": "Nostodione A",
+        "class": "Natural Product",
+        "author": "Martensson",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "CuI, Et3N, Pd(PPh3)2Cl2",
+            "reagent_smiles": "C#[TMS]",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "C1=CC(=C(I)C=C1)O",
+            "product_smiles": "[TMS]C#CC1=CC=C(O)C=C1",
+            "notes": "Sonogashira coupling of 4-iodophenol with ethynyltrimethylsilane to form 4-((trimethylsilyl)ethynyl)phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[TMS]C#CC1=CC=C(C=C1)O",
+            "product_smiles": "C#CC1=CC=C(C=C1)O",
+            "notes": "Deprotection of trimethylsilyl (TMS) protected alkyne using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol silylation / Protection",
+            "reagents": "TIPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "C#CC1=CC=C(O)C=C1",
+            "product_smiles": "C#CC1=CC=C([OTIPS])C=C1",
+            "notes": "Protection of a phenol as a triisopropylsilyl (TIPS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Weinreb Ketone Synthesis / Acetylide Addition",
+            "reagents": "BuLi",
+            "reagent_smiles": "CN(OC)C(=O)CC1=C(I)NC2=CC=CC=C12",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C#CC1=CC=C(O[TIPS])C=C1",
+            "product_smiles": "O[TIPS]C1=CC=C(C#CC(=O)CC2=C(I)NC3=CC=CC=C23)C=C1",
+            "notes": "Formation of an alpha,beta-alkynyl ketone by addition of a lithium acetylide (generated from terminal alkyne and BuLi) to a Weinreb amide.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Amide Formation (Weinreb Amide Synthesis)",
+                    "reagents": "NMM, ClCO2iPr, NH(Me)OMe-HCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, DMF",
+                    "yield": "81%",
+                    "reactant_smiles": "C1=CC2=C(C=C1)NC=C2CC(=O)O",
+                    "product_smiles": "CN(C(=O)CC1=CNC2=C1C=CC=C2)OC",
+                    "notes": "Conversion of indole-3-acetic acid to its N-methoxy-N-methyl amide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Electrophilic Indole Iodination",
+                    "reagents": "AgOTf, I₂",
+                    "reagent_smiles": "[Ag+].[O-]S(=O)(=O)C(F)(F)F.II",
+                    "conditions": "THF",
+                    "yield": "78%",
+                    "reactant_smiles": "CN(C(=O)CC1=CNC2=C1C=CC=C2)OC",
+                    "product_smiles": "CN(C(=O)CC1=C(I)NC2=CC=CC=C12)OC",
+                    "notes": "Electrophilic iodination of an indole derivative at the C2 position, mediated by AgOTf and I₂.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ketone reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "62% (2 steps)",
+            "reactant_smiles": "[TIPS]OC1=CC=C(C#CC(=O)CC2=C(I)NC3=CC=CC=C23)C=C1",
+            "product_smiles": "[TIPS]OC1=CC=C(C#CC(O)CC2=C(I)NC3=CC=CC=C23)C=C1",
+            "notes": "Reduction of an α,β-unsaturated ketone to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Heck coupling",
+            "reagents": "Pd(OAc)2, PPh3, HCO2H, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]OC1=CC=C(C#CC(O)CC2=C(I)NC3=CC=CC=C23)C=C1",
+            "product_smiles": "C1=CC2=C(C=C1)NC3=C2C(CC(C3)O)=C/C4=CC=C(C=C4)O",
+            "notes": "Intramolecular Heck coupling of iodoindole and alkyne, followed by TIPS deprotection, to form Nostodione A. The hydroxyl on the reactant is depicted with a wavy bond, indicating a racemic mixture, which is reflected in the product where no specific stereochemistry is indicated for the hydroxyl-bearing carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation (Transfer Hydrogenation)",
+            "reagents": "Drawn Ru catalyst",
+            "reagent_smiles": "",
+            "conditions": "acetone, 60 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC/3=C2CC(\\C3=C/C4=CC=C(C=C4)O)O",
+            "product_smiles": "C1=CC2=C(C=C1)NC/3=C2CC(=O)\\C3=C\\C4=CC=C(C=C4)O",
+            "notes": "Oxidation of a secondary alcohol to a ketone using a ruthenium catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Protection (Phenol to Silyl Ether)",
+            "reagents": "TIPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "63% (3 steps)",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC3=C2CC(=O)/C3=C/C4=CC=C(C=C4)O",
+            "product_smiles": "[OTIPS]C1=CC=C(/C=C/2C(=O)CC3=C2NC4=C3C=CC=C4)C=C1",
+            "notes": "Protection of the phenolic hydroxyl group as a triisopropylsilyl (TIPS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Yonemitsu oxidation",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O",
+            "yield": "63%",
+            "reactant_smiles": "[OTIPS]C1=CC=C(C=C1)/C=C\\2/C(=O)CC3=C2NC4=C3C=CC=C4",
+            "product_smiles": "[OTIPS]C1=CC=C(C=C1)/C=C\\2C3=C(C4=C(C=CC=C4)N3)C(=O)C2=O",
+            "notes": "Oxidation of a methylene group adjacent to a ketone in a cyclic system to form a 1,2-diketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "94%",
+            "reactant_smiles": "[OTIPS]C1=CC=C(/C=C/2\\C3=C(C4=C(C=CC=C4)N3)C(=O)C2=O)C=C1",
+            "product_smiles": "OC1=CC=C(/C=C/2\\C3=C(C4=C(C=CC=C4)N3)C(=O)C2=O)C=C1",
+            "notes": "TIPS deprotection to form a phenol.",
+            "substeps": []
+        }
+    ]
+}

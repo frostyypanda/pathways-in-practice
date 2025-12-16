@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "striverdi-respimat-olodaterol-boehringer-ingelheim-unknown-2024",
+        "molecule_name": "Striverdi-Respimat (Olodaterol Boehringer-Ingelheim)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective O-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "BrCc1ccccc1",
+            "conditions": "MIBK, 60 °C",
+            "yield": "76%",
+            "reactant_smiles": "CC(=O)c1c(O)ccc(O)c1",
+            "product_smiles": "CC(=O)c1c(O)ccc([OBn])c1",
+            "notes": "Selective O-alkylation of 1-(2,5-dihydroxyphenyl)ethanone with benzyl bromide, where the 5-hydroxyl group is alkylated while the 2-hydroxyl group (ortho to the acetyl) remains free.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitration",
+            "reagents": "HNO3, AcOH",
+            "reagent_smiles": "",
+            "conditions": "15 to 20 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC(=O)C1=C(O)C=CC([OBn])=C1",
+            "product_smiles": "CC(=O)C1=C(O)C(=[N+](=O)[O-])C=C([OBn])=C1",
+            "notes": "Electrophilic aromatic nitration of a phenolic acetophenone derivative, with a nitro group introduced ortho to the hydroxyl group and meta to the acetyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitro Reduction",
+            "reagents": "H₂, PtO₂",
+            "reagent_smiles": "",
+            "conditions": "3 bar, 2-Me-THF, rt",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C1=C(O)C([N+](=O)[O-])=CC(=C1)[OBn]",
+            "product_smiles": "CC(=O)C1=C(O)C(N)=CC(=C1)[OBn]",
+            "notes": "Reduction of an aromatic nitro group to an amino group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Heterocycle formation (Benzoxazinone synthesis)",
+            "reagents": "",
+            "reagent_smiles": "ClCC(=O)Cl",
+            "conditions": "65 °C",
+            "yield": "81%",
+            "reactant_smiles": "CC(=O)C1=C(C(=CC(=C1)[OBn])N)O",
+            "product_smiles": "CC(=O)C1=C2C(=CC(=C1)[OBn])NC(=O)CO2",
+            "notes": "Cyclization of an ortho-aminophenol with chloroacetyl chloride to form a 2H-1,4-benzoxazin-3(4H)-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alpha-Bromination",
+            "reagents": "",
+            "reagent_smiles": "[N+](CCCC)(CCCC)(CCCC)CCCC.[Br3-]",
+            "conditions": "dioxane:MeOH",
+            "yield": "74%",
+            "reactant_smiles": "CC(=O)C1=C2C(=CC(=C1)OCC3=CC=CC=C3)NC(=O)CO2",
+            "product_smiles": "C1=CC=C(C=C1)COC2=CC(=C3C(=C2)NC(=O)CO3)C(=O)CBr",
+            "notes": "Alpha-bromination of a methyl ketone to form an alpha-bromomethyl ketone using tetrabutylammonium tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Epoxidation / Cyclization",
+            "reagents": "(-)-DIP chloride, THF",
+            "reagent_smiles": "",
+            "conditions": "-30 °C",
+            "yield": "85%",
+            "reactant_smiles": "[BnO]C1=CC(=C2C(=C1)NC(=O)CO2)C(=O)CBr",
+            "product_smiles": "[BnO]C1=CC(=C2C(=C1)NC(=O)CO2)[C@@H]3CO3",
+            "notes": "Asymmetric cyclization of an alpha-bromo ketone to form a chiral epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "No chemical transformation",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, 0 to 20 °C",
+            "yield": "",
+            "reactant_smiles": "[Bn]OC2=CC(=C3C(=C2)NC(=O)CO3)[C@@H]4CO4",
+            "product_smiles": "[Bn]OC2=CC(=C3C(=C2)NC(=O)CO3)[C@@H]4CO4",
+            "notes": "Reactant and product are identical; conditions suggest a workup or purification step.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Epoxide opening / Amination",
+            "reagents": "dioxane",
+            "reagent_smiles": "CC(C)(CC1=CC=C(C=C1)OC)N",
+            "conditions": "97 °C",
+            "yield": "84-90%",
+            "reactant_smiles": "[OBn]C1=CC(=C2C(=C1)NC(=O)CO2)[C@@H]3CO3",
+            "product_smiles": "[OBn]C1=CC(=C2C(=C1)NC(=O)CO2)[C@@H](O)CNC(C)(C)CC3=CC=C(OC)C=C3",
+            "notes": "Nucleophilic attack of the amine on the epoxide, leading to an amino alcohol. The benzyloxy (BnO) group is maintained.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Grignard reaction",
+                    "reagents": "MeMgCl",
+                    "reagent_smiles": "C[Mg]Cl",
+                    "conditions": "toluene, 16-22 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(=O)CC1=CC=C(C=C1)OC",
+                    "product_smiles": "CC(C)(CC1=CC=C(C=C1)OC)O",
+                    "notes": "Grignard reaction of a ketone with methylmagnesium chloride to form a tertiary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Ritter reaction",
+                    "reagents": "AcOH, MeCN, H2SO4, H2O, NH4OH",
+                    "reagent_smiles": "",
+                    "conditions": "50 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(CC1=CC=C(C=C1)OC)O",
+                    "product_smiles": "[Ac]NC(C)(C)CC1=CC=C(C=C1)OC",
+                    "notes": "Ritter reaction converting a tertiary alcohol to a tertiary amide via a nitrilium intermediate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Amide Hydrolysis",
+                    "reagents": "KOH",
+                    "reagent_smiles": "",
+                    "conditions": "ethoxyethanol, ethylene glycol, 150 °C",
+                    "yield": "32-42%",
+                    "reactant_smiles": "CC(=O)NC(C)(C)CC1=CC=C(C=C1)OC",
+                    "product_smiles": "CC(C)(CC1=CC=C(C=C1)OC)N",
+                    "notes": "Basic hydrolysis of an N-acetyl protected amine to a primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Salt formation",
+            "reagents": "",
+            "reagent_smiles": "[ClH]",
+            "conditions": "EtOH:dioxane",
+            "yield": "",
+            "reactant_smiles": "CC(C)(CC1=CC=C(C=C1)OC)NC[C@@H](C2=C3C(=CC(=C2)[OBn])NC(=O)CO3)O",
+            "product_smiles": "CC(C)(CC1=CC=C(C=C1)OC)[NH2+]C[C@@H](C2=C3C(=CC(=C2)[OBn])NC(=O)CO3)O.[Cl-]",
+            "notes": "Formation of the amine hydrochloride salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Debenzylation / Hydrogenolysis",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 40 °C",
+            "yield": "63-70%",
+            "reactant_smiles": "CC(C)(CC1=CC=C(C=C1)OC)NC[C@@H](O)C2=C3C(=CC(=C2)[OBn])NC(=O)CO3.Cl",
+            "product_smiles": "CC(C)(CC1=CC=C(C=C1)OC)NC[C@@H](O)C2=C3C(=CC(=C2)O)NC(=O)CO3.Cl",
+            "notes": "Hydrogenolytic cleavage of the benzyl ether protecting group to yield a phenol.",
+            "substeps": []
+        }
+    ]
+}

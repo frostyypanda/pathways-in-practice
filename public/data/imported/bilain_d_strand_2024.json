@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bilain-d-strand-2024",
+        "molecule_name": "Bilain D",
+        "class": "Natural Product",
+        "author": "Strand",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CNCC(=O)O",
+            "product_smiles": "CNCC(=O)[OMe]",
+            "notes": "Esterification of N-methylglycine to its methyl ester using thionyl chloride and methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amidation / Ammonolysis of Ester",
+            "reagents": "MeNH2",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "49% (2 steps)",
+            "reactant_smiles": "CNCC(=O)OC",
+            "product_smiles": "CNCC(=O)NC",
+            "notes": "An N-methyl glycine methyl ester undergoes amidation with methylamine to form an N,N'-dimethyl-2-aminoacetamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization",
+            "reagents": "(COCl)2, Imidazole, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "40%",
+            "reactant_smiles": "CNCC(=O)NC",
+            "product_smiles": "CN1CC(=O)N(C)C(=O)C1=O",
+            "notes": "Amide cyclization to form a 1,3-dimethylbarbituric acid derivative using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alkylation",
+            "reagents": "PMBBr, Cs2CO3",
+            "reagent_smiles": "BrCc1ccc(OC)cc1.[Cs+].[Cs+].O=C([O-])[O-]",
+            "conditions": "acetone",
+            "yield": "74%",
+            "reactant_smiles": "CN1CC(=O)N(C)C(=O)C1=O",
+            "product_smiles": "CN1C(CC2=CC=C(OC)C=C2)C(=O)N(C)C(=O)C1=O",
+            "notes": "Alkylation of 1,3-dimethylbarbituric acid with 4-methoxybenzyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Asymmetric Alkylation",
+            "reagents": "acetone",
+            "reagent_smiles": "C[C@H](C1=CC=C(C=C1)OC)SN2C(=O)CCC2=O.C1=CC=C2N=C[C@H](N2C=C1)C3=CC=CC=C3",
+            "conditions": "50 °C",
+            "yield": "99%",
+            "reactant_smiles": "CN1C(CC2=CC=C(C=C2)OC)C(=O)N(C)C(=O)C1=O",
+            "product_smiles": "C[C@H](C1=CC=C(C=C1)OC)SC2(CC3=CC=C(C=C3)OC)C(=O)N(C)C(=O)C(=O)N2C",
+            "notes": "Asymmetric electrophilic α-alkylation of a barbituric acid derivative using a chiral sulfur electrophile and a chiral catalyst.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Mitsunobu reaction",
+                    "reagents": "DEAD, PPh3",
+                    "reagent_smiles": "CC(=O)S",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "58%",
+                    "reactant_smiles": "CC(C1=CC=C(OC)C=C1)O",
+                    "product_smiles": "CC(C1=CC=C(OC)C=C1)SC(=O)C",
+                    "notes": "Mitsunobu reaction converting a secondary alcohol to a thioester using thioacetic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "",
+                    "conditions": "THF, reflux",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(C1=CC=C(C=C1)OC)SC(=O)C",
+                    "product_smiles": "CC(C1=CC=C(C=C1)S)OC",
+                    "notes": "Reduction of a thioester to a thiol using lithium aluminum hydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Enantioselective Protonation",
+                    "reagents": "",
+                    "reagent_smiles": "CC(C)C1=CC(=C(C(=C1)C(C)C)S(=O)(=O)N[C@@H](C2=CC=NC3=C2C=C(C=C3)OC)C4C5CCC(CC5)N4C).CC1CC(=O)OC(=O)C1",
+                    "conditions": "MTBE, -30 °C",
+                    "yield": "63%",
+                    "reactant_smiles": "CC(C1=CC=C(C=C1)OC)S",
+                    "product_smiles": "C[C@H](C1=CC=C(C=C1)OC)S",
+                    "notes": "Asymmetric protonation of a racemic thiol using a chiral sulfonylamine catalyst and 3-methylglutaric anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Sulfenylation / Thiol Oxidation",
+                    "reagents": "DIPEA, NCS",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "36%",
+                    "reactant_smiles": "C[C@@H](C1=CC=C(C=C1)OC)S",
+                    "product_smiles": "C[C@@H](C1=CC=C(C=C1)OC)SN2C(=O)CCC2=O",
+                    "notes": "Oxidation of a chiral thiol and reaction with N-chlorosuccinimide to form a N-(alkylthio)succinimide, retaining stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, -20 °C",
+            "yield": "72%",
+            "reactant_smiles": "C[C@H](C1=CC=C(C=C1)OC)S[C]2(CC3=CC=C(C=C3)OC)N(C)C(=O)N(C)C(=O)2",
+            "product_smiles": "C[C@H](C1=CC=C(C=C1)OC)S[C@]2(CC3=CC=C(C=C3)OC)C(=O)N(C)[C@H](C(=O)N2C)O",
+            "notes": "Stereoselective reduction of a carbonyl group in a spiro-hydantoin-like ring system to a secondary alcohol using sodium borohydride. The spiro carbon also gains defined stereochemistry in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Substitution / Thioacetal Formation",
+            "reagents": "PMBSH, BF3•Et2O",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "54%",
+            "reactant_smiles": "O=C1N(C)[C@H](O)C(=O)N(C)[C@]1(CC2=CC=C(OC)C=C2)S[C@H](C)C3=CC=C(OC)C=C3",
+            "product_smiles": "O=C1N(C)[C@H](SCC2=CC=C(OC)C=C2)C(=O)N(C)[C@]1(CC3=CC=C(OC)C=C3)S[C@H](C)C4=CC=C(OC)C=C4",
+            "notes": "Displacement of a hydroxyl group on a hydantoin derivative with p-methoxybenzyl mercaptan (PMBSH) under Lewis acid catalysis (BF3•Et2O) to form a new C-S bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Demethylation, Thioether/Thioacetal Cleavage",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CN1C(=O)[C@@H](SCC2=CC=C(OC)C=C2)N(C)C(=O)[C@@](CC3=CC=C(OC)C=C3)(S[C@H](C)C4=CC=C(OC)C=C4)C1",
+            "product_smiles": "CN1C(=O)[C@@H]([SH])N(C)C(=O)[C@@](CC2=CC=C(O)C=C2)([SH])C1",
+            "notes": "Deprotection of three methoxy phenyl groups to hydroxy phenyl and two thioether/thioacetal groups to thiols using BBr3. The methoxyphenyl-methyl thioether and the methyl-methoxyphenyl-ethyl thioether groups are cleaved to yield thiols, and the three methoxy groups are demethylated to hydroxyl groups. The S-methyl group on the benzylic carbon is also cleaved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Mitsunobu Etherification and Disulfide Formation",
+            "reagents": "PPh3, DIAD, CH2Cl2",
+            "reagent_smiles": "CC(C)=CCO",
+            "conditions": "0 °C to rt",
+            "yield": "45%",
+            "reactant_smiles": "CN1C(=O)[C@H](S)N(C)C(=O)[C@H](CC2=CC=C(O)C=C2)(S)C1",
+            "product_smiles": "CN1C(=O)[C@]2(CC3=CC=C(OC/C=C(C)/C)C=C3)SS[C@H](C(=O)N(C)C1)C2",
+            "notes": "The phenolic hydroxyl group of the reactant undergoes a Mitsunobu reaction with 3-methylbut-2-en-1-ol to form an ether. Concurrently, the two thiol groups form an intramolecular disulfide bridge, creating a bicyclic product.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Methylation / Disulfide cleavage",
+            "reagents": "MeI, (±)-DTT, iPr2NEt",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "89%",
+            "reactant_smiles": "CC(=CCOC1=CC=C(C=C1)CC2(S3)N(C)C(=O)[C@H](S3)N(H)C(=O)2)C",
+            "product_smiles": "CC(=CCOC1=CC=C(C=C1)CC2(C(=O)N(C)[C@H](C(=O)N2C)SC)SC)C",
+            "notes": "N-methylation and S-methylation of a bicyclic compound, accompanied by disulfide bond cleavage.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Sharpless Asymmetric Dihydroxylation",
+            "reagents": "K2OsO4, (DHQ)2PHAL, K3Fe(CN)6, CH3SO2NH2, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "tBuOH, H2O, 0 °C to rt",
+            "yield": "47%",
+            "reactant_smiles": "CC(C)=CCCOC1=CC=C(C=C1)C[C@]2(SC)C(=O)N(C)[C@@H](C(=O)N2C)SC",
+            "product_smiles": "CC(C)([C@H](COC1=CC=C(C=C1)C[C@]2(SC)C(=O)N(C)[C@@H](C(=O)N2C)SC)O)O",
+            "notes": "Sharpless asymmetric dihydroxylation of the terminal prenyl alkene to form a chiral diol.",
+            "substeps": []
+        }
+    ]
+}

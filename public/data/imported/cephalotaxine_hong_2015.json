@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cephalotaxine-hong-2015",
+        "molecule_name": "Cephalotaxine",
+        "class": "Natural Product",
+        "author": "Hong",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li].[AlH4].CCOCC",
+            "conditions": "Et2O",
+            "yield": "95%",
+            "reactant_smiles": "O=C(O)CC1=CC2=C(OCO2)C=C1",
+            "product_smiles": "OCCC1=CC2=C(OCO2)C=C1",
+            "notes": "Reduction of a carboxylic acid to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aromatic Iodination",
+            "reagents": "I2, AgO2CCF3",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "85%",
+            "reactant_smiles": "C1=CC2=C(C=C1CCO)OCO2",
+            "product_smiles": "C(CO)C1=CC2=C(C=C1I)OCO2",
+            "notes": "Regioselective aromatic iodination of 3,4-methylenedioxyphenethyl alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "PdCl2(dppf), K3PO4",
+            "reagent_smiles": "CC1(C)C(C)(C)OB(/C=C/C[TMS])O1",
+            "conditions": "THF, reflux",
+            "yield": "92%",
+            "reactant_smiles": "C(CO)C1=CC2=C(C=C1I)OCO2",
+            "product_smiles": "[TMS]/C=C/C1=CC2=C(C=C1CCO)OCO2",
+            "notes": "Suzuki-Miyaura coupling of an aryl iodide with an alkenyl boronate to form a new carbon-carbon bond, incorporating an E-alkene and a TMS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P, DIAD",
+            "reagent_smiles": "C1CC(=O)NC1=O",
+            "conditions": "THF, rt",
+            "yield": "93%",
+            "reactant_smiles": "[TMS]C/C=C/C1=CC2=C(C=C1CCO)OCO2",
+            "product_smiles": "[TMS]C/C=C/C1=C(CCN2C(=O)CCC2=O)C=C3C(=C1)OCO3",
+            "notes": "Alcohol is converted to an N-alkyl succinimide via Mitsunobu reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "Et2O, 0 °C to rt",
+            "yield": "86%",
+            "reactant_smiles": "C[Si](C)(C)C/C=C/c1cc2c(cc1CCN3C(=O)CCC3=O)OCO2",
+            "product_smiles": "C=CCC(O)1CCC(=O)N1CCc2cc3c(cc2/C=C/C[Si](C)(C)C)OCO3",
+            "notes": "Addition of allylmagnesium bromide to a succinimide carbonyl, forming a cyclic hemiaminal.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Allylsilane Cyclization / Prins-type Cyclization",
+            "reagents": "TiCl4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -60 °C",
+            "yield": "90%",
+            "reactant_smiles": "C=CCC1(CCC(=O)N1CCC2=C(/C=C/C[Si](C)(C)C)C=C3C(=C2)OCO3)O",
+            "product_smiles": "C=CC[C@@]12CCC(=O)N2CCC3=CC4=C(C=C3[C@H]1C=C)OCO4",
+            "notes": "Intramolecular cyclization of an allylsilane with a hydroxyl group, forming a new 7-membered ring and establishing two new stereocenters, with elimination of the TMS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction (Lactam)",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "89%",
+            "reactant_smiles": "C=CC[C@@]12CCC(=O)N2CCC3=CC4=C(C=C3[C@H]1C=C)OCO4",
+            "product_smiles": "C=CC[C@@]12CCCN2CCC3=CC4=C(C=C3[C@H]1C=C)OCO4",
+            "notes": "Lactam carbonyl is reduced to an amine (CH2 group). All other functional groups and stereochemistry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ring-closing metathesis (RCM)",
+            "reagents": "CSA",
+            "reagent_smiles": "Cl[Ru](Cl)(=C1C=CC(=CC1OC(C)C)S(=O)(=O)N(C)C)(N(C2=C(C)C=C(C)C=C2C)C3=NCCN3C4=C(C)C=C(C)C=C4C)",
+            "conditions": "toluene, reflux",
+            "yield": "90%",
+            "reactant_smiles": "C=CC[C@@]12CCCN2CCC3=CC4=C(C=C3[C@H]1C=C)OCO4",
+            "product_smiles": "C1=C[C@H]2C3=CC4=C(C=C3CCN5CCC[C@@]25C1)OCO4",
+            "notes": "Ring-closing metathesis of two terminal alkenes to form a five-membered cyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "K2OsO4, NMO",
+            "reagent_smiles": "CC(C)(C)O.O",
+            "conditions": "tBuOH, H2O",
+            "yield": "84%",
+            "reactant_smiles": "C1=C[C@@H]2C3=CC4=C(C=C3CCN5CCC[C@]25C1)OCO4",
+            "product_smiles": "C1C[C@@H](O)[C@H](O)[C@@H]2C3=CC4=C(C=C3CCN5CCC[C@]25C1)OCO4",
+            "notes": "Asymmetric dihydroxylation of an alkene to form a 1,2-diol. The existing stereocenters are preserved, and the new hydroxyl groups are added with anti-stereochemistry relative to each other.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation (Swern-like)",
+            "reagents": "DMSO, CH2Cl2",
+            "reagent_smiles": "ClC(=O)C(=O)Cl.CCN(CC)CC",
+            "conditions": "",
+            "yield": "83%",
+            "reactant_smiles": "O[C@H]1C[C@H](O)[C@@H]2C[C@]34CCN(C[C@H]3C5=CC6=C(OCO6)C=C45)C12",
+            "product_smiles": "C1C[C@@]23CC(=O)C(=C3C4=CC5=C(C=C4CCN2C1)OCO5)O",
+            "notes": "Oxidation of a vicinal diol to an alpha-hydroxy-beta-ketone, which exists as an enolized cyclic ketone (furanone derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "O-methylation",
+            "reagents": "TMSOMe, TfOH",
+            "reagent_smiles": "CO[Si](C)(C)C.OS(=O)(=O)C(F)(F)F",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "C1C[C@@]23CC(=O)C(=C3C4=CC5=C(C=C4CCN2C1)OCO5)O",
+            "product_smiles": "C[C@@]12C3=C(CCN4CCC[C@]24C=C(C1=O)OC)C=C5C(=C3)OCO5",
+            "notes": "O-methylation of the enol to form a methyl enol ether, catalyzed by triflic acid, involving a double bond shift in the five-membered ring. The stereochemistry at the bridgehead carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF",
+            "yield": "88%",
+            "reactant_smiles": "COC1=C[C@@]23CCCN3CCC4=C(C=C5C(=C4)OCO5)[C@@]2([H])C1=O",
+            "product_smiles": "COC[C@@H]1[C@H](O)[C@@]2([H])[C@@]3CCCN3CCC4=C(C=C5C(=C4)OCO5)[C@@]21",
+            "notes": "Reduction of an alpha,beta-unsaturated ketone (enone) to a saturated alcohol.",
+            "substeps": []
+        }
+    ]
+}

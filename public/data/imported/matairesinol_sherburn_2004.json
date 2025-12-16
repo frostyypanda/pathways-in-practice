@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "matairesinol-sherburn-2004",
+        "molecule_name": "Matairesinol",
+        "class": "Natural Product",
+        "author": "Sherburn",
+        "year": 2004
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Protection",
+            "reagents": "imidazole",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)Cl",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "COC1=C(C=CC(=C1)C=O)O",
+            "product_smiles": "[OTBS]C1=C(C=C(C=C1)C=O)OC",
+            "notes": "Silyl ether formation (protection of phenol)",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aldol Reaction (Evans Aldol)",
+            "reagents": "nBu2BOTf, NEt3",
+            "reagent_smiles": "C/C=C/C(=O)N1[C@H](Cc2ccccc2)COC1=O",
+            "conditions": "CH2Cl2, -78 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)OC1=C(C=C(C=C1)C=O)OC",
+            "product_smiles": "C=C[C@H]([C@@H](C1=CC(=C(C=C1)O[Si](C)(C)C(C)(C)C)OC)O)C(=O)N2[C@H](Cc3ccccc3)COC2=O",
+            "notes": "A highly stereoselective Evans aldol reaction between an aldehyde and a chiral N-acyloxazolidinone, mediated by dibutylboron triflate and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Silylation",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "83%",
+            "reactant_smiles": "C=C[C@@H]([C@@H](O)C1=C(OC)C([OTBS])=CC=C1)C(=O)N2[C@H](CC3=CC=CC=C3)COC2=O",
+            "product_smiles": "C=C[C@@H]([C@@H]([OTBS])C1=C(OC)C([OTBS])=CC=C1)C(=O)N2[C@H](CC3=CC=CC=C3)COC2=O",
+            "notes": "Silylation of a secondary alcohol to form a TBS ether, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "77%",
+            "reactant_smiles": "C=C[C@@H]([C@H](C1=CC(=C(C=C1)[OTBS])OC)[OTBS])C(=O)N2[C@@H]([Bn])COC2=O",
+            "product_smiles": "C=C[C@@H](CO)[C@H](C1=CC(=C(C=C1)[OTBS])OC)",
+            "notes": "Reduction of chiral oxazolidinone auxiliary to primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Esterification / Thiocarbonate formation",
+            "reagents": "pyridine",
+            "reagent_smiles": "ClC(=S)OC1=CC(OC)=C([OTBS])C=C1",
+            "conditions": "CH2Cl2",
+            "yield": "81%",
+            "reactant_smiles": "C=C[C@@H](CO)[C@@H](C1=CC(OC)=C([OTBS])C=C1)[OTBS]",
+            "product_smiles": "C=C[C@@H](COC(=S)OC1=CC(OC)=C([OTBS])C=C1)[C@@H](C2=CC(OC)=C([OTBS])C=C2)[OTBS]",
+            "notes": "Esterification of a primary alcohol with a thiocarbonyl chloride to form a thiocarbonate, typically used as an intermediate for radical deoxygenation (Barton-McCombie reaction).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Radical cyclization / Reduction",
+            "reagents": "(Me3Si)3SiH, AIBN",
+            "reagent_smiles": "",
+            "conditions": "Benzene, 80 °C",
+            "yield": "44%",
+            "reactant_smiles": "[OTBS][C@@H](c1c(OC)c([OTBS])ccc1)[C@H](C=C)COC(=S)Oc1cc(OC)cc([OTBS])c1",
+            "product_smiles": "[OTBS][C@@H](c1c(OC)c([OTBS])ccc1)[C@H]2OC(=O)[C@H]([H])[C@@H](Cc3cc(OC)cc([OTBS])c3)2",
+            "notes": "Radical cyclization of a xanthate to form a gamma-lactone, featuring an intermolecular alkene addition and subsequent reduction.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Desilylation)",
+            "reagents": "TBAF, AcOH, THF",
+            "reagent_smiles": "[F-][N+](CCCC)(CCCC)(CCCC)CCCC.CC(=O)O.C1CCOC1",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "COC1=CC(C[C@H]2C(=O)OC[C@@H]2[C@H]([OTBS])C3=CC(OC)=C([OTBS])C([OTBS])=C3)=C([OTBS])C=C1",
+            "product_smiles": "COC1=CC(C[C@H]2C(=O)OC[C@@H]2[C@H](O)C3=CC(OC)=C(O)C(O)=C3)=C(O)C=C1",
+            "notes": "Deprotection of four TBS (tert-butyldimethylsilyl) ether groups to hydroxyl groups using TBAF and acetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Cleavage",
+            "reagents": "H2, Pd/C, HClO4",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "78%",
+            "reactant_smiles": "COC1=CC(=CC=C1O)C[C@@H]2[C@H](COC2=O)[C@@H](C3=CC=C(C(=C3)OC)O)O",
+            "product_smiles": "COC1=CC(=CC=C1O)C[C@H]2C(=O)OC[C@H]2CC3=CC=C(C(=C3)OC)O",
+            "notes": "Reductive cleavage of a benzylic alcohol on a gamma-lactone ring. The relative stereochemistry of the furanone ring carbons changes from trans (hydrogens) in the reactant to cis (hydrogens) in the product.",
+            "substeps": []
+        }
+    ]
+}

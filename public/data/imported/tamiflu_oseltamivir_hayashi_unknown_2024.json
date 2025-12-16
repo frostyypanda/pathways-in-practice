@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tamiflu-oseltamivir-hayashi-unknown-2024",
+        "molecule_name": "Tamiflu (Oseltamivir Hayashi)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "10 mol% cat., neat",
+            "reagent_smiles": "C=CC(=O)OCC(F)(F)F.[N+]12C[C@H](C(=O)OCC(F)(F)F)[C@H]([Ph])[C@H]1[B-](c3ccccc3C)O2.[N-](S(=O)(=O)C(F)(F)F)S(=O)(=O)C(F)(F)F",
+            "conditions": "rt, 30 h",
+            "yield": "97%",
+            "reactant_smiles": "C=CC=C",
+            "product_smiles": "C1=CC[C@H](CC1)C(=O)OCC(F)(F)F",
+            "notes": "Corey's asymmetric Diels-Alder cycloaddition",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amidation (Ammonolysis)",
+            "reagents": "NH3, CF3CH2OH",
+            "reagent_smiles": "",
+            "conditions": "40 °C, 5 h",
+            "yield": "100%",
+            "reactant_smiles": "C1=CC[C@H](CC1)C(=O)OCC(F)(F)F",
+            "product_smiles": "C1=CC[C@H](CC1)C(=O)N",
+            "notes": "Ammonolysis of a 2,2,2-trifluoroethyl ester to form a primary amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular iodocyclization / Haloamidation",
+            "reagents": "(CO2Cl)2, (CH2Cl)2",
+            "reagent_smiles": "",
+            "conditions": "70 °C, 2h, then t-BuOH, 40 °C",
+            "yield": "83%",
+            "reactant_smiles": "C1=CC[C@@H](CC1)C(=O)N",
+            "product_smiles": "O=C1N[C@H]2CC[C@@H](I)[C@H]2C1",
+            "notes": "Intramolecular cyclization of a cyclohexene carboxamide using oxalyl chloride and iodine to form a bicyclic lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Protection (Carbamate Formation)",
+            "reagents": "(Boc)2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "C1C[C@@H]([C@@H]2C[C@H]1C(=O)N2)I",
+            "product_smiles": "[Boc]N1[C@H]2C[C@H](CC[C@@H]2I)C1=O",
+            "notes": "Protection of a secondary amide (lactam) with a Boc group to form a carbamate, using di-tert-butyl dicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination (Dehydroiodination)",
+            "reagents": "THF",
+            "reagent_smiles": "C1CCCC(=NCCN2CCCCC2)N1",
+            "conditions": "reflux, 12 h",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N1[C@H]2CC[C@@H](I)[C@H]2C(=O)C1",
+            "product_smiles": "[Boc]N1[C@H]2C=CCC[C@H]2C(=O)C1",
+            "notes": "Dehydroiodination of an iodolactam to form an alkene using DBU.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic Bromination",
+            "reagents": "cat. AIBN, NBS",
+            "reagent_smiles": "",
+            "conditions": "CCl4, reflux",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@@H]2C=CC[C@@H](C2)C1=O",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@@H]2C[C@H](Br)C=C[C@@H](C2)C1=O",
+            "notes": "Allylic bromination with double bond migration to form a conjugated enone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ring opening / Elimination / Ethanolysis",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "100%",
+            "reactant_smiles": "[Boc]N1[C@H]2C[C@H](C=C[C@@H]2Br)C1=O",
+            "product_smiles": "CCOC(=O)C1=CC[C@H](N[Boc])CC=C1",
+            "notes": "Base-catalyzed ring opening of a bicyclic bromolactam, elimination of HBr, and ethanolysis of the lactam carbonyl to form a 1,4-cyclohexadiene ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Bromination and amination of cyclohexadiene",
+            "reagents": "5 mol% SnBr4, NBA",
+            "reagent_smiles": "Br[Sn](Br)(Br)Br.CC(=O)NBr",
+            "conditions": "MeCN, -40 °C, 4 h",
+            "yield": "75%",
+            "reactant_smiles": "[CO2Et]C1=CCC=C[C@H](C1)[Boc]",
+            "product_smiles": "[CO2Et]C1=CC[C@H]([NHAc])[C@@H](Br)[C@@H]([Boc])C1",
+            "notes": "Stereoselective bromination/amination of a 1,4-cyclohexadiene derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Aziridine Formation",
+            "reagents": "DME",
+            "reagent_smiles": "CCCC[N+](CCCC)(CCCC)CCCC.[Br-].K.N(Si(C)(C)C)Si(C)(C)C",
+            "conditions": "-20 °C, 10 min",
+            "yield": "82%",
+            "reactant_smiles": "[Ac]N[C@@H]1C=C(C(=O)OCC)CC[C@H](Br)[C@H]1N[Boc]",
+            "product_smiles": "[Ac]N1[C@H]2C=C(C(=O)OCC)C[C@@H](N[Boc])[C@H]12",
+            "notes": "Intramolecular cyclization forming an aziridine ring via dehydrobromination and nucleophilic attack of the activated acetamide nitrogen, using KHMDS as a strong base.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ring-opening / Ether formation",
+            "reagents": "cat. Cu2+, 3-pentanol",
+            "reagent_smiles": "",
+            "conditions": "0 °C, 12 h",
+            "yield": "61%",
+            "reactant_smiles": "CCOC(=O)C1=C[C@H]2[C@@H]([C@H](C1)[Boc]HN)N2[Ac]",
+            "product_smiles": "CCOC(=O)C1=C[C@H](O[CH](CC)CC)[C@@H]([C@H](C1)[Boc]HN)[Ac]HN",
+            "notes": "Aziridine ring opening with 3-pentanol, catalyzed by Cu2+, forming an ether and an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Boc Deprotection / Salt Formation",
+            "reagents": "H3PO4",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C[C@H]([C@@H]([C@@H](C1)NC(=O)OC(C)(C)C)NC(=O)C)OC(CC)CC",
+            "product_smiles": "CCOC(=O)C1=C[C@H]([C@@H]([C@@H](C1)[NH3+])NC(=O)C)OC(CC)CC.[O-]P(=O)(O)O",
+            "notes": "Deprotection of the Boc group to a primary amine, which is then protonated by phosphoric acid to form the dihydrogenphosphate salt. The acetylamino (AcHN) group remains unchanged.",
+            "substeps": []
+        }
+    ]
+}

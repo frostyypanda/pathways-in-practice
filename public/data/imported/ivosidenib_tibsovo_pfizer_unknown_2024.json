@@ -1,0 +1,73 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ivosidenib-tibsovo-pfizer-unknown-2024",
+        "molecule_name": "Ivosidenib (Tibsovo Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Formylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "CCOC=O",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C1C(CC1(F)F)N",
+            "product_smiles": "C1C(CC1(F)F)NC=O",
+            "notes": "Amine reacted with ethyl formate to form a formamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dehydration",
+            "reagents": "POCl₃, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 5 to 10 °C",
+            "yield": "",
+            "reactant_smiles": "C1C(CC1(F)F)NC=O",
+            "product_smiles": "N#CC1CC(C1)(F)F",
+            "notes": "Dehydration of a secondary formamide to a nitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ugi reaction",
+            "reagents": "HCl, NaHCO3, piperidine",
+            "reagent_smiles": "C1=CC(=C(C=C1)Cl)C=NC2=CC(=CN=C2)F.O=C1CNC[C@@H]1C(=O)O",
+            "conditions": "TFE, toluene, 0 °C to rt, 40 to 45 °C, 70 to 80 °C",
+            "yield": "31% (3 steps)",
+            "reactant_smiles": "[C-]#[N+]C1CC(F)(F)C1",
+            "product_smiles": "C[C@H](C1=C(C=CC=C1)Cl)N(C2=CC(=CN=C2)F)C(=O)[C@@H]3CCC(=O)N3",
+            "notes": "Formation of Ivosidenib via Ugi reaction.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Imine formation (Schiff base formation)",
+                    "reagents": "",
+                    "reagent_smiles": "C1=C(C=NC=C1N)F",
+                    "conditions": "heptane, 20 °C to rt",
+                    "yield": "96%",
+                    "reactant_smiles": "C1=CC(=C(C=C1)Cl)C=O",
+                    "product_smiles": "C1=CC(=C(C=C1)Cl)C=NC2=CC(=CN=C2)F",
+                    "notes": "Condensation reaction between 2-chlorobenzaldehyde and 2-amino-5-fluoropyridine to form an imine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Buchwald-Hartwig amination / N-arylation",
+            "reagents": "Pd2(dba)3, (R)-(+)-BINAP, K2CO3",
+            "reagent_smiles": "C1=C(C=C(Cl)N=C1)C#N",
+            "conditions": "toluene, MeOAc, reflux",
+            "yield": "91%",
+            "reactant_smiles": "C[C@H](C1=CC=CC=C1Cl)N(C2=CC(=CN=C2)F)C(=O)[C@H]3CCC(=O)N3",
+            "product_smiles": "C[C@H](C1=CC=CC=C1Cl)N(C2=CC(=CN=C2)F)C(=O)[C@H]3CCC(=O)N3C4=NC=CC(=C4)C#N",
+            "notes": "Pd-catalyzed N-arylation of a pyrrolidinone lactam with 3-chloro-5-cyanopyridine to form Ivosidenib.",
+            "substeps": []
+        }
+    ]
+}

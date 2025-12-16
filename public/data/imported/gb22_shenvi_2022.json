@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "gb22-shenvi-2022",
+        "molecule_name": "GB22",
+        "class": "Natural Product",
+        "author": "Shenvi",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Annulation reaction (Hantzsch-type/Friedlander-type)",
+            "reagents": "NH4OAc, 4A MS",
+            "reagent_smiles": "C=CC(=O)C",
+            "conditions": "toluene, reflux",
+            "yield": "55%",
+            "reactant_smiles": "C1=CC(=O)CC1",
+            "product_smiles": "CC1=NC2=C(C=C1)CCC2=O",
+            "notes": "Annulation between cyclopentenone and methyl vinyl ketone to form a fused pyridone system, catalyzed by ammonium acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Enol silyl ether formation",
+            "reagents": "TMSOTf, Et3N",
+            "reagent_smiles": "C[Si](C)(C)OS(=O)(=O)C(F)(F)F.CCN(CC)CC",
+            "conditions": "DCM, 22°C",
+            "yield": "83%",
+            "reactant_smiles": "Cc1cnc2c(c1)C(=O)CC2",
+            "product_smiles": "Cc1cnc2c(c1)C([OTMS])=CC2",
+            "notes": "Conversion of a cyclic ketone to an enol silyl ether using TMSOTf and Et3N.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclopropanation (Simmons-Smith type)",
+            "reagents": "Et2Zn, TFA, CH2I2",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0°C",
+            "yield": "78%",
+            "reactant_smiles": "Cc1ccc2c(n1)CC=C([OTMS])C2",
+            "product_smiles": "Cc1ccc2c(n1)CC3(C2)[C]([OTMS])3",
+            "notes": "The reactant is a 2-methyl-5H-cyclopenta[b]pyridine derivative with a trimethylsilyl ether. The reaction is a cyclopropanation of the double bond in the 5-membered ring using Et2Zn, TFA, and CH2I2, forming a spirocyclopropane. The trimethylsilyl ether group remains attached to the spiro carbon. The heavy atom count for the reactant is 15 (12C, 1N, 1O, 1Si). The heavy atom count for the product is also 15 (12C, 1N, 1O, 1Si), indicating no net addition of carbon, which is unusual for a typical Simmons-Smith reaction that adds a methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "C-C Coupling / Photoredox-Nickel Catalysis",
+            "reagents": "4CzIPN, NiBr2, bpy, 2,6-lutidine",
+            "reagent_smiles": "COC1=CC=C(C2=C1CCCC2)Br",
+            "conditions": "DMSO, Blue LED, 45°C",
+            "yield": "57%",
+            "reactant_smiles": "C[C]1=CC=C2N=C1CC3C2([OTMS])C3",
+            "product_smiles": "CC1=CC=C2C(=N1)CC(CC2=O)C3=C4CCCCC4=C(C=C3)OC",
+            "notes": "Cyclopropane opening and C-C coupling with aryl bromide under photoredox-nickel dual catalysis, followed by TMS group deprotection and oxidation to ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Friedel-Crafts Type Cyclization",
+            "reagents": "Et₂AlCl",
+            "reagent_smiles": "FC(F)(F)C(O)C(F)(F)F.Cc1ccccc1",
+            "conditions": "80°C",
+            "yield": "86%",
+            "reactant_smiles": "Cc1ccc2c(n1)C[C@H](C3=CC=C(OC)C4=C3CCCC4)CC2=O",
+            "product_smiles": "Cc1ccc2c(n1)C[C@H]3C[C@](O)(C4=C5C=CC(OC)=C4C3)CC2",
+            "notes": "Intramolecular cyclization of a pyridinone to form a complex polycyclic system with a bridged alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Catalytic Hydrogenation (Reduction)",
+            "reagents": "Rh/Al2O3, H2",
+            "reagent_smiles": "",
+            "conditions": "22°C, EtOH/THF",
+            "yield": "95%",
+            "reactant_smiles": "CC1=NC2=C(C=C1)C3(CC(C2)C4=C5CCCCC5=C(C=C43)OC)O",
+            "product_smiles": "CC1CCC2C(CC3CC2(C4=CC(=C5CCCCC5=C34)OC)O)N1",
+            "notes": "Reduction of the pyridine ring to a piperidine using catalytic hydrogenation with Rhodium on Alumina.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "O-Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0°C to 22°",
+            "yield": "75%",
+            "reactant_smiles": "C1CCC2C(CC3CC2(C4=CC(=C5CCCCC5=C34)OC)O)N1",
+            "product_smiles": "C1CCC2C(CC3CC2(C4=CC(=C5CCCCC5=C34)O)O)N1",
+            "notes": "O-demethylation of an aryl methyl ether to a phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Amination (N-methylation)",
+            "reagents": "CH2O (aq.), NaBH3CN",
+            "reagent_smiles": "C=O.[Na+].[BH3CN-]",
+            "conditions": "MeOH, H2O",
+            "yield": "79%",
+            "reactant_smiles": "C1CC2CC(N3CC(C1)C(C3)C4=CC(=C(C5=C4CCC5)O)O2)",
+            "product_smiles": "C1CC2CC(N(C)3CC(C1)C(C3)C4=CC(=C(C5=C4CCC5)O)O2)",
+            "notes": "N-methylation of a secondary amine using formaldehyde and sodium cyanoborohydride.",
+            "substeps": []
+        }
+    ]
+}

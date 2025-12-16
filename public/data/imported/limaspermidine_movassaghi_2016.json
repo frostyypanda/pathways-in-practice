@@ -1,0 +1,266 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "limaspermidine-movassaghi-2016",
+        "molecule_name": "Limaspermidine",
+        "class": "Natural Product",
+        "author": "Movassaghi",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "Et3N, DMAP, DCM",
+            "reagent_smiles": "CCCCCCCCCC[OH]",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC=CC(=O)Cl",
+            "product_smiles": "CCCCCCCCCCOC(=O)C=CC",
+            "notes": "Esterification of crotonyl chloride with 1-decanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aldol Reaction",
+            "reagents": "LDA, DMPU, THF",
+            "reagent_smiles": "CC=O",
+            "conditions": "-78 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCCCCCCCCOC(=O)C/C=C/C",
+            "product_smiles": "CCCCCCCCCOC(=O)C(C=C)C(C)O",
+            "notes": "Ester enolate reacts with acetaldehyde to form a beta-hydroxy ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Michael Addition / Alkylation",
+            "reagents": "LDA, DMPU",
+            "reagent_smiles": "COC1=CC=C(C=C1)CN2C(=CC3=C2C=CC=C3)CCI",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "43%",
+            "reactant_smiles": "CCCCCCCCCOC(=O)/C(=C\\C)/C=C",
+            "product_smiles": "CCCCCCCCCOC(=O)[C@@](C=C)(C=C)CC1=CC2=C(C=CC=C2)N1CC3=CC=C(C=C3)OC",
+            "notes": "Michael addition of the activated indole derivative (likely generated in situ via deprotonation with LDA) to the alpha,beta-unsaturated ester. The iodoethyl group becomes an ethyl group that attaches to the alpha carbon of the ester, creating a new chiral center.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Reductive Amination",
+                    "reagents": "AcOH, MeOH, NaBH3CN",
+                    "reagent_smiles": "COC1=CC=C(C=C1)C=O",
+                    "conditions": "rt then 0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C(=C1)I)N",
+                    "product_smiles": "IC1=CC=CC=C1N[PMB]",
+                    "notes": "2-iodoaniline undergoes reductive amination with 4-methoxybenzaldehyde (PMB-CHO) to form N-(4-methoxybenzyl)-2-iodoaniline.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Sonogashira Coupling",
+                    "reagents": "(Ph3P)2PdCl2, CuI, Et3N",
+                    "reagent_smiles": "C#CCCO",
+                    "conditions": "45 °C",
+                    "yield": "",
+                    "reactant_smiles": "Ic1c(N[PMB])cccc1",
+                    "product_smiles": "OC#CCCc1c(N[PMB])cccc1",
+                    "notes": "Sonogashira coupling of an ortho-iodoaniline derivative with 4-hydroxybut-1-yne.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Intramolecular Indole Cyclization",
+                    "reagents": "DMF",
+                    "reagent_smiles": "[Cu]I",
+                    "conditions": "140 °C",
+                    "yield": "83% (2 steps)",
+                    "reactant_smiles": "[PMB]NC1=CC=CC=C1C#CCCO",
+                    "product_smiles": "[PMB]N1C(CCO)=Cc2c1cccc2",
+                    "notes": "Copper-catalyzed intramolecular cyclization of an o-alkynyl-N-PMB-aniline to form a 2-(2-hydroxyethyl)indole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "Appel reaction",
+                    "reagents": "Ph3P, I2, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "94%",
+                    "reactant_smiles": "c1ccc2c(c1)n([PMB])cc2CCO",
+                    "product_smiles": "c1ccc2c(c1)n([PMB])cc2CCI",
+                    "notes": "Appel reaction converting primary alcohol to alkyl iodide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive amination / Indole C2 alkylation",
+            "reagents": "TFA",
+            "reagent_smiles": "C=CCN(CC(OC)OC)C(=O)C(F)(F)F.[SiH](CC)(CC)CC",
+            "conditions": "DCM, rt",
+            "yield": "89%",
+            "reactant_smiles": "CCCCCCCCCCOC(=O)[C@@](C=C)(C=C)CCC1=CC2=C(C=CC=C2)N1[PMB]",
+            "product_smiles": "CCCCCCCCCCOC(=O)[C@@](C=C)(C=C)CCC1=C(CCN(CC=C)C(=O)C(F)(F)F)C2=C(C=CC=C2)N1[PMB]",
+            "notes": "The indole C2 position is functionalized via a reaction involving the N-trifluoroacetyl-N-allyl-2,2-dimethoxyethylamine reagent and triethylsilane (reductive amination of the acetal). The p-methoxybenzyl (PMB) group on the indole nitrogen and the ester functionality are retained. Stereochemistry at the chiral center is retained.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amine Acylation",
+                    "reagents": "TFAA, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "NCC(OC)OC",
+                    "product_smiles": "COC(CNC(=O)C(F)(F)F)OC",
+                    "notes": "Acylation of a primary amine with trifluoroacetic anhydride to form a trifluoroacetamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "C=CCBr",
+                    "conditions": "DMF",
+                    "yield": "85%",
+                    "reactant_smiles": "COC(CNC(=O)C(F)(F)F)OC",
+                    "product_smiles": "C=CCN(CC(OC)OC)C(=O)C(F)(F)F",
+                    "notes": "N-alkylation of the secondary amide with allyl bromide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis, Amide Deprotection",
+            "reagents": "MeOH, NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "98%",
+            "reactant_smiles": "[PMB]N1c2ccccc2c(CCC[C@@](C=C)(C=C)C(=O)OCCCCCCCCCC)c1CCN(CC=C)C(=O)C(F)(F)F",
+            "product_smiles": "[PMB]N1c2ccccc2c(CCC[C@@](C=C)(C=C)C(=O)O)c1CCNCC=C",
+            "notes": "Ester hydrolysis of a decyl ester and trifluoroacetamide deprotection to yield a carboxylic acid and a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lactamization / Amide coupling",
+            "reagents": "Ph3P, I2, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, -5 °C",
+            "yield": "69%",
+            "reactant_smiles": "C=CCNCCC1=C(CC[C@](C=C)(C=C)C(=O)O)N([PMB])C3=C1C=CC=C3",
+            "product_smiles": "C=CCN1CCC2=C(CC[C@](C=C)(C=C)C1=O)N([PMB])C4=C2C=CC=C4",
+            "notes": "Intramolecular amide formation (lactamization) from a carboxylic acid and an amine to form an 8-membered lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cyclization",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "1,2-DCE, 80 °C",
+            "yield": "78%",
+            "reactant_smiles": "C=CCN1CCC2=C(CC[C@](C=C)C(=O)N1)N([PMB])C3=C2C=CC=C3",
+            "product_smiles": "C=C[C@]1(OC=C[N]2C1)CCC3=C(CC2)N([PMB])C4=C3C=CC=C4",
+            "notes": "Intramolecular cyclization of an allyllactam to form a spiro-oxazine via mercury(II) catalysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wacker oxidation",
+            "reagents": "Pd(OAc)2, 1,4-benzoquinone",
+            "reagent_smiles": "",
+            "conditions": "MeCN, Toluene, H2O, HClO4, rt",
+            "yield": "",
+            "reactant_smiles": "C=CC1(OC=CN2CCC1)CCC3=C4C=CC=C4N([PMB])C3C2",
+            "product_smiles": "O=CCC1(OC=CN2CCC1)CCC3=C4C=CC=C4N([PMB])C3C2",
+            "notes": "Terminal alkene converted to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "O=CCC1(OC2=CC=CC2C(=O)N3CCC4=C(N([PMB])C=C4)C(=O)C13)C",
+            "product_smiles": "OCCC1(OC2=CC=CC2C(=O)N3CCC4=C(N([PMB])C=C4)C(=O)C13)C",
+            "notes": "Aldehyde reduced to primary alcohol; yield over 2 steps. Original SMILES was missing a cyclic ether oxygen and had incorrect reagent fragments.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Enzymatic Reaction (Lipase-catalyzed), Stereoselective",
+            "reagents": "Amano PS, tBuOMe",
+            "reagent_smiles": "CC(=O)OC=C",
+            "conditions": "",
+            "yield": "39%",
+            "reactant_smiles": "[PMB]N2C3=C(C=CC=C3)C4=C2CCC5(C=CCN(CC4)C5=O)CCO",
+            "product_smiles": "[PMB]N2C3=C(C=CC=C3)C4=C2CC[C@]5(C=CCN(CC4)C5=O)CCO",
+            "notes": "Stereoselective transformation forming a new chiral center at the quaternary carbon 'C5'. The reactant and product SMILES describe a lactam-containing ring system, which fundamentally differs from the lactone-containing ring system shown in the image. This discrepancy in the core structure's heteroatom (N vs. O) and likely ring connectivity would require a full re-identification of the complex fused system to accurately match the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrogenation / Reduction",
+            "reagents": "PtO2, H2",
+            "reagent_smiles": "CCOC(=O)C.CO",
+            "conditions": "MeOH, EtOAc",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)CN2C3=C(C=CC=C3)C4=C2CC[C@]5(C=CCN(CCN2)C5=O)CCO",
+            "product_smiles": "COC1=CC=C(C=C1)CN2C3=C(C=CC=C3)C4=C2CC[C@]5(CCCN(CCN2)C5=O)CCO",
+            "notes": "Reduction of an enamine double bond within a lactam ring to a saturated amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Esterification",
+            "reagents": "DMAP",
+            "reagent_smiles": "C1=C(C=CC(=C1)[N+](=O)[O-])C(=O)Cl",
+            "conditions": "DCM",
+            "yield": "82%",
+            "reactant_smiles": "[PMB]N2C3=C(C=CC=C3)C4=C2CC[C@]5(CCO)C(=O)N(CC4)CCC5",
+            "product_smiles": "[PMB]N2C3=C(C=CC=C3)C4=C2CC[C@]5(CCOC(=O)C6=CC=C(C=C6)[N+](=O)[O-])C(=O)N(CC4)CCC5",
+            "notes": "Acylation of primary alcohol with p-nitrobenzoyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Reductive Iminium Cyclization",
+            "reagents": "Tf2O",
+            "reagent_smiles": "CCCC[Sn](CCCC)CCCC",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "[PMB]N1C=C2C(C=CC=C2)=C1[C@@]3(CCOC(=O)C4=CC=C(C=C4)[N+](=O)[O-])C[C@H]5O[C@@H]6[C@H]5C[C@@H]7CC3CC(=O)N8CCC(CC3)C8",
+            "product_smiles": "[H]N1C2=CC=CC=C2C=C1[C@@]3(CCOC(=O)C4=CC=C(C=C4)[N+](=O)[O-])C[C@H]5O[C@@H]6[C@H]5C[C@@H]7C[N+]8=C(CC3)CCC8",
+            "notes": "PMB deprotection, intramolecular cyclization, epoxide opening, and iminium formation via reductive amination of a lactam-derived intermediate.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH(OMe)3",
+            "reagent_smiles": "O=B(OC)(OC)[H-].[Na+].C1CCOC1",
+            "conditions": "THF",
+            "yield": "77%",
+            "reactant_smiles": "[PMB]C[N+]2=C4C3=C(C=CC=C3)[C@]5(C2)CCN6CCC[C@@](CC[C@@]52)(CCOC(=O)C7=CC=C(C=C7)[N+](=O)[O-])[C@@H]46",
+            "product_smiles": "[PMB]CN2C3=C(C=CC=C3)[C@@H]4[C@]5(C2)CCN6CCC[C@@](CC[C@@]52)(CCOC(=O)C7=CC=C(C=C7)[N+](=O)[O-])[C@@H]46",
+            "notes": "Iminium ion reduction to tertiary amine",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection / Ester Hydrolysis",
+            "reagents": "PhSH, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH, 55 °C",
+            "yield": "86%",
+            "reactant_smiles": "[PMB]N2C3=C(C=CC=C3)[C@]45CCN6CCC[C@@](CC[C@@H]42)(CCOC(=O)C7=CC=C(C=C7)[N+](=O)[O-])[C@@H]56",
+            "product_smiles": "C1=CC2=C(C=C1)N[C@H]3CC[C@]4(CCCN5CC[C@@]23[C@@H]45)CCO",
+            "notes": "Deprotection of N-PMB group and hydrolysis of p-nitrobenzoate ester to primary alcohol.",
+            "substeps": []
+        }
+    ]
+}

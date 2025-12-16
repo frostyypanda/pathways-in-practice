@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "perophoramidine-funk-2004",
+        "molecule_name": "Perophoramidine",
+        "class": "Natural Product",
+        "author": "Funk",
+        "year": 2004
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Friedel-Crafts Acylation (of indole)",
+            "reagents": "(COCl)2",
+            "reagent_smiles": "ClC(=O)C(=O)Cl.CCOCC",
+            "conditions": "Et2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C2C=CNC2=CC(=C1)Br",
+            "product_smiles": "C1=CC2=C(C=C1Br)NC=C2C(=O)C(=O)Cl",
+            "notes": "Indole C3 acylation with oxalyl chloride",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "BH3",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "65%",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C(=CN2)C(=O)C(=O)Cl)Br",
+            "product_smiles": "C1=C(C=C2C(=C1)C(=CN2)CCO)Br",
+            "notes": "Reduction of the oxalyl chloride group to a primary alcohol. The reaction is noted as occurring in 2 steps, which is consistent with the strong reducing agent borane (BH3) capable of reducing both carbonyls and the acid chloride equivalent to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Appel reaction",
+            "reagents": "imidazole, PPh3, I2",
+            "reagent_smiles": "",
+            "conditions": "benzene",
+            "yield": "85%",
+            "reactant_smiles": "OCCC1=CNC2=C1C=CC(Br)=C2",
+            "product_smiles": "ICCC1=CNC2=C1C=CC(Br)=C2",
+            "notes": "Appel reaction converts primary alcohol to primary alkyl iodide using triphenylphosphine and iodine in the presence of imidazole base.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-]",
+            "conditions": "DMF, 50 °C",
+            "yield": "94%",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C(=CN2)CCI)Br",
+            "product_smiles": "C1=C(C=C2C(=C1)C(=CN2)CC[N-]=[N+]=[N-])Br",
+            "notes": "SN2 displacement of iodide by azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "THF, tBuOH, H2O",
+            "yield": "92%",
+            "reactant_smiles": "BrC1=CC2=C(C=C1)NC(=C2)CC[N-]=[N+]=N",
+            "product_smiles": "BrC1=CC2=C(C=C1)NC(=O)C2(Br)CC[N-]=[N+]=N",
+            "notes": "Oxidative bromination of a 3-substituted indole to form a 3,3-disubstituted oxindole.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Dearomative Spirocyclization",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "[TIPS]OCCN1C=CC2=CC=CC=C21",
+            "conditions": "CH2Cl2",
+            "yield": "89%",
+            "reactant_smiles": "BrC1=CC2=C(C=C1)C(Br)(CCN=[N+]=[N-])C(=O)[nH]2",
+            "product_smiles": "BrC1=CC2=C(C=C1)C(=O)[nH][C@](Br)3[C@H](C[C@@H](O[TIPS])C4=C[N]C5=CC=CC=C54)C3",
+            "notes": "Intramolecular reaction involving a 5-bromo-3-(2-azidoethyl)-3-bromoindolin-2-one and a 1-(2-((triisopropylsilyl)oxy)ethyl)-1H-indole to form a spirocyclic oxindole-indole system.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Acylation (Friedel-Crafts-like, Vilsmeier-Haack like with indole)",
+                    "reagents": "Et2O",
+                    "reagent_smiles": "ClC(=O)C(=O)Cl",
+                    "conditions": "0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C2C(=C1)C=CN2",
+                    "product_smiles": "C1=CC=C2C(=C1)C(=CN2)C(=O)C(=O)Cl",
+                    "notes": "Indole undergoes acylation at the C3 position with oxalyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "BH3",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 70 °C",
+                    "yield": "75% (2 steps)",
+                    "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)C(=O)C(=O)Cl",
+                    "product_smiles": "C1=CC=C2C(=C1)C(=CN2)CCO",
+                    "notes": "Reduction of an α-keto acyl chloride group attached to an indole to a primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TIPSCI, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "100%",
+                    "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)CCO",
+                    "product_smiles": "C1=CC=C2C(=C1)C(=CN2)CC[OTIPS]",
+                    "notes": "Protection of a primary alcohol as a triisopropylsilyl (TIPS) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Protection (Boc)",
+            "reagents": "NaH, Boc2O",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "[TIPS]OCC[C@]1(C=NC2=CC=CC=C21)[C@]3(CC[N-]=[N+]=[N])C4=CC=C(C=C4NC3=O)Br",
+            "product_smiles": "[TIPS]OCC[C@]1(C=NC2=CC=CC=C21)[C@]3(CC[N-]=[N+]=[N])C4=CC=C(C=C4N(C3=O)[Boc])Br",
+            "notes": "N-Boc protection of a secondary amide (lactam) using NaH and Boc2O.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Staudinger reduction",
+            "reagents": "PPh3",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 50 °C",
+            "yield": "89%",
+            "reactant_smiles": "[TIPS]OCC[C@@]1(CC[N-][N+]#N)C2=CC=CC=C2N=C1C(=O)N([Boc])C3=CC=C(Br)C=C31",
+            "product_smiles": "[TIPS]OCC[C@@]12[C@@H]3C4=CC=CC=C4[N@H]([C@H]1C[N@H]3)C(=O)N(C5=CC=C(Br)C=C52)[Boc]",
+            "notes": "Staudinger reduction of an azide followed by intramolecular cyclization of the resulting amine with an imine to form a new 5-membered pyrrolidine ring, and reduction of the indole C=N to C-NH.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Chlorination",
+            "reagents": "NCS, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "BrC1=CC=C([C@]23C4=CC=CC=C4N[C@@H]2[C@H](C(=O)N([C@H]5[C@@H]3(C[OTIPS]))[NBoc]))C=C1",
+            "product_smiles": "ClC1=CC(Cl)=CC=C1[C@]23C4=CC=CC=C4N[C@@H]2[C@H](C(=O)N([C@H]5[C@@H]3(C[OTIPS]))[NBoc])",
+            "notes": "Double chlorination of the bromophenyl group using N-chlorosuccinimide. The bromine is replaced by a chlorine, and an additional chlorine is added to the meta position.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Nosylation",
+            "reagents": "NaHMDS, NsCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "[TIPS]OC[C@@]1(c2ccc(Br)cc2)C(=O)NC2CC1[C@H](N[Boc])[NH]c3c2cc(Cl)cc3Cl",
+            "product_smiles": "[TIPS]OC[C@@]1(c2ccc(Br)cc2)C(=O)N([Ns])C2CC1[C@H](N[Boc])[NH]c3c2cc(Cl)cc3Cl",
+            "notes": "N-nosylation of the lactam NH.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF, AcOH",
+            "reagent_smiles": "",
+            "conditions": "THF, 40 °C",
+            "yield": "98%",
+            "reactant_smiles": "[TIPS]OC[C@]12C(=O)O[C@H](c3ccc(Br)cc3)[C@]1([C@H]4N([Boc])c5cc(Cl)cc(Cl)c5N[C@H]42)CN([Ns])CC",
+            "product_smiles": "OC[C@]12C(=O)O[C@H](c3ccc(Br)cc3)[C@]1([C@H]4N([Boc])c5cc(Cl)cc(Cl)c5N[C@H]42)CN([Ns])CC",
+            "notes": "Deprotection of TIPS ether to primary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DPPA, DIAD, PPh3",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@H]1[C@H]2N[C@@]3(c4ccc(Br)cc4)C5=CC(Cl)=CC(Cl)=C5[C@]2([C@H](CO)C6=O)C(=O)O[C@H]6[C@H]([C@H]1)N(S(=O)(=O)c7ccc(N(=O)=O)cc7)CC",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@H]1[C@H]2N[C@@]3(c4ccc(Br)cc4)C5=CC(Cl)=CC(Cl)=C5[C@]2([C@H](C[N-]=[N+]=N)C6=O)C(=O)O[C@H]6[C@H]([C@H]1)N(S(=O)(=O)c7ccc(N(=O)=O)cc7)CC",
+            "notes": "Mitsunobu reaction converting a primary alcohol to an azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Staudinger reduction / Intramolecular Cyclization",
+            "reagents": "PMe3",
+            "reagent_smiles": "CP(C)C",
+            "conditions": "THF",
+            "yield": "86%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC(=C2)Br)[C@]3(CCN(C3=O)[Ns])[C@]4(CCN=[N+]=[N-])C5=CC(=CC(=C5N[C@H]41)Cl)Cl",
+            "product_smiles": "[Boc]N1C2=C(C=CC(=C2)Br)[C@]3(CCNC(=O)[C@@]43CCN[Ns])[C@H]1NC5=C4C=C(C=C5Cl)Cl",
+            "notes": "Staudinger reduction of the azide group to an amine, followed by intramolecular cyclization of the amine with the lactam carbonyl to form a new 7-membered ring, and deprotection of the Ns group to form a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "N-Alkylation",
+            "reagents": "Mel, Cs2CO3",
+            "reagent_smiles": "CI.[Cs+].[Cs+].[O-]C(=O)[O-].CC#N",
+            "conditions": "MeCN",
+            "yield": "92%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@H]2CC3=C(C=C(Br)C=C3)[C@]4(CN(S(=O)(=O)c5ccc([N+](=O)[O-])cc5)[C@@]2(C(=O)N[C@H]4)[C@H]1N(H)C6=C5C=C(Cl)C=C6Cl)C5",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@H]2CC3=C(C=C(Br)C=C3)[C@]4(C[N](C)(S(=O)(=O)c5ccc([N+](=O)[O-])cc5)[C@@]2(C(=O)N[C@H]4)[C@H]1N(H)C6=C5C=C(Cl)C=C6Cl)C5",
+            "notes": "N-Methylation of a secondary sulfonylamine (NHNs) to a tertiary sulfonylamine (N(CH3)Ns).",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Imino-ether formation (O-Methylation of lactam)",
+            "reagents": "DIPEA, Me3OBF4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "68%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=CC(Cl)=CC(Cl)=C2C[C@]3([C@H]1)C[C@H]4NC(=O)[C@@H]5[C@H]4C(c6cc(Br)ccc6N[C@H]5C[C@H]3CCN(C)S(=O)(=O)c7ccc([N+](=O)[O-])cc7)",
+            "product_smiles": "COc1nc2[C@H](CCN(C)S(=O)(=O)c3ccc([N+](=O)[O-])cc3)[C@](c4cc(Br)ccc4N[C@H]2C[C@]5(C[C@H](N)C6=CC(Cl)=CC(Cl)=C6N5)C=N1)",
+            "notes": "Conversion of a lactam to an imino methyl ether using Meerwein's salt (trimethyloxonium tetrafluoroborate) and a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Intramolecular Tandem Cyclization",
+            "reagents": "PhSH, Cs2CO3",
+            "reagent_smiles": "c1ccccc1S.[Cs+].O=C([O-])[O-].[Cs+]",
+            "conditions": "DMF, 45 °C",
+            "yield": "70%",
+            "reactant_smiles": "COC=C1N(C2=C(Cl)C=C(Cl)C=C2N[C@H]3C(N4C(C=C(Br)C=C4)=CC3)[C@H](CCN(C)S(=O)(=O)c5ccccc5)C1)CC",
+            "product_smiles": "CN1C2CC3NC4=C(Cl)C=C(Cl)C=C4[C@H]3C(C5=CC=C(Br)C=C5)N[C@@H]2C1",
+            "notes": "Intramolecular cyclization of an N-methyl-N-phenylsulfonyl-ethyl side chain and an enol ether, involving loss of methoxy and phenylsulfonyl groups to form a new polycyclic system with N-Me group.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "65%",
+            "reactant_smiles": "CN1CC[C@@]23C4=CC=C(C=C4N[C@H]5[C@@]3(CCN=C21)C6=C(C(=CC(=C6)Cl)Cl)N5)Br",
+            "product_smiles": "CN1CC[C@@]23C4=CC=C(Br)C=C4N=C5[C@@]3(CCN=C21)C6=C(Cl)C=C(Cl)C=C6N5",
+            "notes": "Oxidative dehydrogenation of Perophoramidine precursor to Perophoramidine using Manganese Dioxide.",
+            "substeps": []
+        }
+    ]
+}

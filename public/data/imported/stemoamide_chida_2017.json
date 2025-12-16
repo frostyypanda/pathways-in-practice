@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "stemoamide-chida-2017",
+        "molecule_name": "Stemoamide",
+        "class": "Natural Product",
+        "author": "Chida",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCCBr",
+            "product_smiles": "O=CCCBr",
+            "notes": "Partial reduction of an ethyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Alkynylation",
+            "reagents": "(S,S)-ProPhenol, ZnMe2",
+            "reagent_smiles": "COC(=O)C#CH",
+            "conditions": "toluene, 0 °C",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "O=CCCCBr",
+            "product_smiles": "COC(=O)C#C[C@@H](CCCBr)O",
+            "notes": "Asymmetric alkynylation of 4-bromobutanal with methyl propiolate to form a chiral propargyl alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Catalytic Hydrogenation / Lactonization",
+            "reagents": "Pd/PEI, H2, HCl aq.",
+            "reagent_smiles": "",
+            "conditions": "MeOH/dioxane, rt",
+            "yield": "72%",
+            "reactant_smiles": "COC(=O)C#C[C@@H](O)CCCBr",
+            "product_smiles": "O=C1C=CC[C@@H](CCCBr)O1",
+            "notes": "Reduction of alkyne to alkene, followed by cyclization of the hydroxyl group with the methyl ester to form a gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Michael Addition / Conjugate Addition",
+            "reagents": "SnCl4",
+            "reagent_smiles": "[OTIPS]c1ccc(n1[PMB])",
+            "conditions": "CH2Cl2, -78 to -60 °C",
+            "yield": "",
+            "reactant_smiles": "BrCCC[C@H]1OC(=O)C=C1",
+            "product_smiles": "[OTIPS]c1ccc(n1[PMB])[C@H]2CC(=O)O[C@H]2CCCBr",
+            "notes": "Michael addition of N-PMB-2-OTIPS-pyrrole to a gamma-bromoalkyl-substituted furanone derivative, forming two adjacent chiral centers in the lactone ring.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Heterocycle transformation / Amine condensation",
+                    "reagents": "HCl, H₂NPMB",
+                    "reagent_smiles": "",
+                    "conditions": "H₂O, rt",
+                    "yield": "61%",
+                    "reactant_smiles": "COC1C=CC(OC)O1",
+                    "product_smiles": "O=C1N([PMB])C=CC1.O=C1N([PMB])CC=C1",
+                    "notes": "Hydrolysis of cyclic acetal (2,5-dimethoxy-2,5-dihydrofuran) and subsequent condensation with 4-methoxybenzylamine to form a mixture of N-PMB-3-pyrrolin-2-one and N-PMB-4-pyrrolin-2-one.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "O-Silylation / Aromatization",
+                    "reagents": "TIPSCl, NaHMDS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "76%",
+                    "reactant_smiles": "O=C1C=CCN1[PMB]",
+                    "product_smiles": "[OTIPS]C1=CC=CN1[PMB]",
+                    "notes": "O-silylation of a 1-PMB-3-pyrrolin-2-one to form a 2-OTIPS-1-PMB-pyrrole via enolization and aromatization.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Pyrrole Reduction and Lactamization",
+            "reagents": "TiCl4, Et3SiH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "[PMB]N1C=C([C@H]2CC(=O)O[C@H]2CCCBr)C=C([OTIPS])C1",
+            "product_smiles": "COC1=CC=C(C=C1)CN2[CH](CCC2=O)[C@H]3CC(=O)O[C@H]3CCCBr",
+            "notes": "The pyrrole ring is reduced to a 2-pyrrolidinone, accompanied by the removal of the OTIPS group and the formation of a new carbonyl at that position.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O",
+            "yield": "94%",
+            "reactant_smiles": "[PMB]N2[C@H](CCC2=O)[C@@H]3CC(=O)O[C@@H]3CCCBr",
+            "product_smiles": "HN2[C@H](CCC2=O)[C@@H]3CC(=O)O[C@@H]3CCCBr",
+            "notes": "Deprotection of PMB group on nitrogen to yield secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular N-Alkylation / Cyclization",
+            "reagents": "NaH, TBAI, TMSOTf",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "57%",
+            "reactant_smiles": "BrCCC[C@@H]1OC(=O)C[C@H]1C2CCC(=O)[NH]2",
+            "product_smiles": "C1CCC[C@@H]2OC(=O)C[C@H]2[C@H]3CCC(=O)N3C1",
+            "notes": "Intramolecular N-alkylation of a lactam NH onto a primary alkyl bromide, forming a new 7-membered ring. The amine is deprotonated by NaH, and TBAI/TMSOTf likely assist in the cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alpha-alkylation (methylation) of lactone",
+            "reagents": "LiHMDS, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "84%",
+            "reactant_smiles": "C1C[C@H]2[C@H]([C@@H]3CC(=O)O2)CCC(=O)N3[C@@H]1",
+            "product_smiles": "C[C@H]1[C@H]2[C@H]3CCC(=O)N3CCC[C@@H]2OC1=O",
+            "notes": "Methylation at the alpha-position of the lactone ring, forming a new stereocenter. The stereochemistry of two existing bridgehead carbons in the reactant SMILES was corrected to match the image, and a new stereocenter on the lactam ring was added.",
+            "substeps": []
+        }
+    ]
+}

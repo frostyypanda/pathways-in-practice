@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vaborbactam-vabomere-melinta-unknown-2024",
+        "molecule_name": "Vaborbactam (Vabomere Melinta)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic Acetylation",
+            "reagents": "PS-Amano Lipase",
+            "reagent_smiles": "",
+            "conditions": "pentane, 30 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC(CC(=O)OC(C)(C)C)O",
+            "product_smiles": "C=C[C@@H](CC(=O)OC(C)(C)C)OC(=O)C",
+            "notes": "Enantioselective acetylation of a secondary alcohol to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H](CC(=O)OC(C)(C)C)OC(=O)C",
+            "product_smiles": "C=C[C@H](CC(=O)OC(C)(C)C)O",
+            "notes": "Hydrolysis of acetate ester to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection (Alcohol)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.c1cnc[nH]1",
+            "conditions": "DCM, rt",
+            "yield": "40%",
+            "reactant_smiles": "C=C[C@H](CC(=O)OC(C)(C)C)O",
+            "product_smiles": "C=C[C@H](CC(=O)OC(C)(C)C)[OTBS]",
+            "notes": "Protection of a secondary alcohol as a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration",
+            "reagents": "[Ir(COD)Cl]2, pinacol borane, dppb",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "96%",
+            "reactant_smiles": "C=C[C@@H](CC(=O)OC(C)(C)C)O[TBS]",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@@H](CCB1OC(C)(C)C(C)(C)O1)O[TBS]",
+            "notes": "Iridium-catalyzed hydroboration of an alkene to form an alkyl boronate, maintaining the stereochemistry of the existing chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Transboronation / Boronic Ester Exchange",
+            "reagents": "",
+            "reagent_smiles": "CC1(C)[C@@H]2C[C@H]1[C@@](C)([C@H](C2)O)O",
+            "conditions": "THF, rt",
+            "yield": "91%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@@H](CCB1OC(C)(C)C(C)(C)O1)[OTBS]",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@@H](CCB1O[C@@H]2C[C@H]3C[C@@H](C3(C)C)[C@@](C)O1)[OTBS]",
+            "notes": "Pinacol boronate ester is converted to a pinanediol boronate ester, retaining the stereochemistry of the chiral side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Borane Functionalization / Electrophilic Halogenation",
+            "reagents": "n-BuLi, ZnCl2",
+            "reagent_smiles": "",
+            "conditions": "heptane, THF, DCM, -60 to 70 °C, then -20 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@H](CCB1O[C@@H]2C[C@@H]3C[C@@H](C3(C)C)[C@]2(C)O1)[OTBS]",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@H](CC[C@@H](Cl)B1O[C@@H]2C[C@@H]3C[C@@H](C3(C)C)[C@]2(C)O1)[OTBS]",
+            "notes": "An alkyl borane is functionalized via reaction with n-BuLi and ZnCl2 to introduce a chlorine atom at the carbon alpha to the boron. A new chiral center is formed with inversion of configuration at the former boron attachment site. The stereochemistry of the pinanediol and TBS-protected alcohol is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Substitution",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@H](CC[C@H](B1O[C@H]2CC3CC(C3(C)C)[C@]2(C)O1)Cl)O[TBS]",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@H](CC[C@@H](B1O[C@H]2CC3CC(C3(C)C)[C@]2(C)O1)N)O[TBS]",
+            "notes": "Chloride group replaced by an amino group with inversion of stereochemistry at the reaction center.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amidation",
+            "reagents": "EDCI, HOBT, NMM",
+            "reagent_smiles": "O=C(O)CC1SC=CC1",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@H](CC[C@@H](B1O[C@H]2CC3CC(C3(C)C)[C@@]2(C)O1)N)[OTBS]",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@H](CC[C@@H](B1O[C@H]2CC3CC(C3(C)C)[C@@]2(C)O1)NC(=O)CC4=CC=CS4)[OTBS]",
+            "notes": "Amidation of a primary amine with 2-thiophenacetic acid using EDCI, HOBT, and NMM.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (acid-catalyzed hydrolysis, transesterification)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "64%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@H]([OTBS])CC[C@H](B1O[C@H]2CC3CC(C3(C)C)[C@@]2(C)O1)NC(=O)CC4=CC=CS4",
+            "product_smiles": "C1=CSC(=C1)CC(=O)N[C@H]2CC[C@@H](CC(=O)O)OB2O",
+            "notes": "Acid-catalyzed deprotection of tert-butyl ester, TBS ether, and pinanediol boronate, leading to a cyclic boronic acid and a carboxylic acid.",
+            "substeps": []
+        }
+    ]
+}

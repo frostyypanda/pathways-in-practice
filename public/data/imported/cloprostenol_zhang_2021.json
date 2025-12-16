@@ -1,0 +1,170 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cloprostenol-zhang-2021",
+        "molecule_name": "Cloprostenol",
+        "class": "Natural Product",
+        "author": "Zhang",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acylation",
+            "reagents": "LDA, THF",
+            "reagent_smiles": "CC(=O)N(C)OC",
+            "conditions": "-78 °C",
+            "yield": "67%",
+            "reactant_smiles": "C/C=C/C(=O)Cl",
+            "product_smiles": "C/C=C/C(=O)CC(=O)N(C)OC",
+            "notes": "Acylation of the Weinreb amide enolate with an acyl chloride to form a beta-keto Weinreb amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "[Ir(COD)Cl]2, H2, chiral ferrocene-based phosphine ligand",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C=C/C(=O)CC(=O)N(C)OC",
+            "product_smiles": "C/C=C/[C@@H](O)CC(=O)N(C)OC",
+            "notes": "Asymmetric hydrogenation of a beta-ketoamide to a beta-hydroxyamide with controlled stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Silylation / Protecting Group Chemistry",
+            "reagents": "TBSCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "C/C=C/[C@@H](CC(=O)N(C)OC)O",
+            "product_smiles": "C/C=C/[C@@H](CC(=O)N(C)OC)[OTBS]",
+            "notes": "Secondary alcohol protected as a TBS ether using TBSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ketone Synthesis (from Weinreb Amide)",
+            "reagents": "nBuLi",
+            "reagent_smiles": "C#CC1OCCO1",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "C/C=C/[C@@H](CC(=O)N(C)OC)[OTBS]",
+            "product_smiles": "C/C=C/[C@@H](CC(=O)C#CC1OCCO1)[OTBS]",
+            "notes": "Nucleophilic addition of an acetylide to a Weinreb amide, forming an alkynyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cyclization / Pauson-Khand type reaction",
+            "reagents": "[Rh(COD)Cl]2, (S)-BINAP, AgSbF6",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "C/C=C/[C@@H](CC(=O)C#CC1OCCO1)[OTBS]",
+            "product_smiles": "C=C[C@@H]1/C(=C/C2OCCO2)/C(=O)C[C@H]1[OTBS]",
+            "notes": "Intramolecular cyclization of an enyne to form a bicyclic cyclopentenone with an adjacent vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Conjugate Reduction",
+            "reagents": "Pd(PPh3)4, Ph2SiH2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C1C[C@H]([OTBS])[C@@H](C=C)C(=C/C2OCCO2)C1",
+            "product_smiles": "O=C1C[C@H]([OTBS])[C@@H](C=C)[C@@H](CC2OCCO2)C1",
+            "notes": "Palladium-catalyzed conjugate reduction of an α,β-unsaturated ketone using diphenylsilane.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "LiBHEt3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC2OCCO2)C(=O)C[C@H]1[OTBS]",
+            "product_smiles": "C=C[C@@H]1[C@H](CC2OCCO2)[C@H](O)C[C@H]1[OTBS]",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection / Hemiacetal Formation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]1[C@@H](CC2OCCO2)C[C@H]([OTBS])[C@@H](O)1",
+            "product_smiles": "C=C[C@@H]1[C@@H]2CC(O)O[C@@H]2C[C@@H]1O",
+            "notes": "Acid-catalyzed deprotection of TBS ether and intramolecular acetal hydrolysis/cyclization to form a hemiacetal.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "HG-II",
+            "reagent_smiles": "C=C[C@H](O)COC1=CC(=CC=C1)Cl",
+            "conditions": "",
+            "yield": "65%",
+            "reactant_smiles": "C=C[C@@H]1[C@H]2C[C](O)O[C@H]2C[C@H]1O",
+            "product_smiles": "C1=CC(=CC=C1)ClOC[C@@H](O)/C=C/[C@@H]2[C@H]3C[C](O)O[C@H]3C[C@H]2O",
+            "notes": "Alkene cross-metathesis reaction catalyzed by HG-II, extending the vinyl chain of the bicyclic reactant with a functionalized aryl ether. The product is Cloprostenol, formed with an E-alkene configuration and retention of stereochemistry on the chain's hydroxyl group. The stereochemistry of the furan hydroxyl group (wiggly bond) is represented as undefined.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "ClC[C@H]1CO1",
+                    "conditions": "2-butanone",
+                    "yield": "81%",
+                    "reactant_smiles": "C1=CC(=CC(=C1)O)Cl",
+                    "product_smiles": "C1=CC(=CC(=C1)OC[C@H]2CO2)Cl",
+                    "notes": "Phenol alkylation with (R)-epichlorohydrin, retaining epoxide stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Epoxide ring-opening",
+                    "reagents": "Me₃Si, nBuLi",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "90%",
+                    "reactant_smiles": "C1=CC(=CC(=C1)OC[C@H]2CO2)Cl",
+                    "product_smiles": "C=C[C@H](COC1=CC=CC(=C1)Cl)O",
+                    "notes": "Epoxide ring-opening to an allylic alcohol with retention of stereochemistry at the chiral center.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Wittig olefination",
+            "reagents": "K tBu",
+            "reagent_smiles": "[Br-][P+](c1ccccc1)(c1ccccc1)(c1ccccc1)CCCC(=O)O",
+            "conditions": "THF",
+            "yield": "69%",
+            "reactant_smiles": "C1=CC(=CC(=C1)Cl)OC[C@@H](O)/C=C/[C@@H]2[C@H]3C[C@@H](O)O[C@H]3C[C@H]2O",
+            "product_smiles": "Clc1cccc(OC[C@@H](O)/C=C/[C@H]2[C@H](O)C[C@H](O)[C@H]2\\C=C/CCCC(=O)O)c1",
+            "notes": "Wittig olefination of an aldehyde (masked as a hemiacetal/hemiketal) to form Cloprostenol.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "SN2 Reaction (Phosphonium Salt Formation)",
+                    "reagents": "",
+                    "reagent_smiles": "P([Ph])([Ph])[Ph]",
+                    "conditions": "toluene",
+                    "yield": "86%",
+                    "reactant_smiles": "C(CCBr)CC(=O)O",
+                    "product_smiles": "[P+]([Ph])([Ph])([Ph])CCCC(=O)O.[Br-]",
+                    "notes": "Formation of a phosphonium salt from 5-bromopentanoic acid and triphenylphosphine.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

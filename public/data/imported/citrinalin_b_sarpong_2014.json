@@ -1,0 +1,290 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "citrinalin-b-sarpong-2014",
+        "molecule_name": "Citrinalin B",
+        "class": "Natural Product",
+        "author": "Sarpong",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Protection",
+            "reagents": "(Boc)2O, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, RT",
+            "yield": "",
+            "reactant_smiles": "N1CCC[C@@H]1C(=O)O",
+            "product_smiles": "[Boc]N1CCC[C@@H]1C(=O)O",
+            "notes": "N-protection of L-proline with Boc group",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "BH3.THF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to RT",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC[C@@H]1C(=O)O",
+            "product_smiles": "[Boc]N1CCC[C@@H]1CO",
+            "notes": "Reduction of a carboxylic acid to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC[C@H]1CO",
+            "product_smiles": "[Boc]N1CCC[C@H]1C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Swern conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Seyferth-Gilbert homologation",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "O=P(OC)(OC)C(=N#N)",
+            "conditions": "0 °C to RT",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC[C@@](C=O)([H])C1",
+            "product_smiles": "[Boc]N1CCC[C@@](C#C)([H])C1",
+            "notes": "Aldehyde is converted to an alkyne via Seyferth-Gilbert homologation, preserving the configuration of the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "Dioxane, 0 °C to RT",
+            "yield": "",
+            "reactant_smiles": "C#C[C@@H]1CCCN1[Boc]",
+            "product_smiles": "C#C[C@@H]1[NH]CCC1",
+            "notes": "Deprotection of N-Boc group with HCl to yield secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acylation (Amide formation)",
+            "reagents": "Et3N",
+            "reagent_smiles": "N#CCH2C(=O)Cl",
+            "conditions": "DCM, 0 °C to RT",
+            "yield": "",
+            "reactant_smiles": "C#C[C@H]1CCCN1",
+            "product_smiles": "C#C[C@H]1CCCN1C(=O)CH2C#N",
+            "notes": "Acylation of a secondary amine with an acyl chloride. Stereochemistry at the chiral center is retained. The 65% yield is noted as being for 3 steps, not specific to this step.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ruthenium-catalyzed cyclization / cycloisomerization",
+            "reagents": "[Ru(Cp)(MeCN)L₂]BF₆",
+            "reagent_smiles": "",
+            "conditions": "Acetone, H₂O, 70 °C",
+            "yield": "98%",
+            "reactant_smiles": "N#CCC(=O)N1CCC[C@H]1C#C",
+            "product_smiles": "O=C1N2CCC[C@H]2CC=C(C#N)C1",
+            "notes": "Intramolecular cyclization of an N-acyl, N-propargyl pyrrolidine derivative with a nitrile group, forming a fused bicyclic dihydropyridinone system. The alkyne undergoes cyclization onto the carbon alpha to the nitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Diels-Alder reaction",
+            "reagents": "SnCl4",
+            "reagent_smiles": "CC(=C([OTBS])/C=C/OC)C",
+            "conditions": "-78 to -42 °C",
+            "yield": "",
+            "reactant_smiles": "C#NC1=CC[C@H]2CCCN2C1=O",
+            "product_smiles": "CC1(C)[C@H]2C[C@H]3CCCN3C(=O)[C@@]2(C=CC1=O)C#N",
+            "notes": "Diels-Alder cycloaddition of a dienophile with an enol ether diene.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Formylation and Enol Ether Formation",
+                    "reagents": "HCO2Me, NaOMe, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)C(=O)C",
+                    "product_smiles": "CC(C)C(=O)/C=C/OC",
+                    "notes": "A methyl ketone undergoes formylation by methyl formate, followed by conversion to an enol ether, forming an alpha,beta-unsaturated ketone with a beta-methoxy group. The double bond has Z stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Enol silyl ether formation",
+                    "reagents": "TBSOTf, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, 0 °C to RT",
+                    "yield": "85%",
+                    "reactant_smiles": "CC(C)C(=O)C=C\\OC",
+                    "product_smiles": "CC(=C([OTBS])C=C\\OC)C",
+                    "notes": "Formation of an E-enol silyl ether from an alpha,beta-unsaturated ketone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Iodination / Halogenation",
+            "reagents": "I₂, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CCl₄, 60 °C",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "CC1(C)[C@@H]2C[C@H]3CCCN3C(=O)[C@@]2(C=CC1=O)C#N",
+            "product_smiles": "CC1(C)[C@@H]2C[C@H]3CCCN3C(=O)[C@@]2(C=C(C1=O)I)C#N",
+            "notes": "Electrophilic iodination of an α,β-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nitrile Hydrolysis",
+            "reagents": "chiral Pt phosphine oxide complex",
+            "reagent_smiles": "CCO.O",
+            "conditions": "EtOH, H2O, RT",
+            "yield": "",
+            "reactant_smiles": "CC1(C)[C@@H]2C[C@H]3CCCN3C(=O)[C@@]2(C=C(C1=O)I)C#N",
+            "product_smiles": "CC1(C)[C@@H]2C[C@H]3CCCN3C(=O)[C@@]2(C=C(C1=O)I)C(=O)N",
+            "notes": "Hydrolysis of a nitrile to a primary amide, catalyzed by a chiral platinum complex in ethanol/water at room temperature.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hofmann rearrangement",
+            "reagents": "Phi(O2CCF3)2, MeOH",
+            "reagent_smiles": "FC(F)(F)C(=O)O[I](OC(=O)C(F)(F)F)c1ccccc1.CO",
+            "conditions": "RT",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "CC1(C)[C@@H]2C[C@H]3CCCN3C(=O)[C@H]2(C=C(C1=O)I)C(=O)N",
+            "product_smiles": "CC1(C)[C@@H]2C[C@H]3CCCN3C(=O)[C@H]2(C=C(C1=O)I)NC(=O)OC",
+            "notes": "Hofmann rearrangement of a primary amide to a methyl carbamate using hypervalent iodine reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "Pd(dppf)Cl2, K3PO4",
+            "reagent_smiles": "CC1(C)C=CC2=C(C=CC(=C2[N+](=O)[O-])B3OC(C)(C)C(C)(C)O3)O1",
+            "conditions": "DMF, 40 °C",
+            "yield": "95%",
+            "reactant_smiles": "COC(=O)N1[C@H]2[C@H]3C[C@H]4CCCN4C(=O)[C@@H]3C(=O)C(C)(C)C2=C1I",
+            "product_smiles": "COC(=O)N1[C@H]2[C@H]3C[C@H]4CCCN4C(=O)[C@@H]3C(=O)C(C)(C)C2=C1c5c([N+](=O)[O-])cc6c(O[C](C)(C)C=C6)c5",
+            "notes": "Suzuki coupling of an iodovinyl carbamate with a nitro-substituted benzopyran boronic ester to form the biaryl product.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Williamson Ether Synthesis / O-Alkylation",
+                    "reagents": "TBAI, K2CO3",
+                    "reagent_smiles": "C#CC(C)(C)Cl",
+                    "conditions": "Acetone, 65 °C",
+                    "yield": "91%",
+                    "reactant_smiles": "Oc1ccc(I)c(c1)[N+](=O)[O-]",
+                    "product_smiles": "C#CC(C)(C)Oc1ccc(I)c(c1)[N+](=O)[O-]",
+                    "notes": "Alkylation of the phenolic hydroxyl group with a tertiary propargyl chloride to form a new ether bond.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Intramolecular Electrophilic Cyclization / Chromene Synthesis",
+                    "reagents": "m-Xylene, BHT",
+                    "reagent_smiles": "",
+                    "conditions": "140 °C",
+                    "yield": "78%",
+                    "reactant_smiles": "C#CC(C)(C)OC1=CC=C(C(=C1)[N+](=O)[O-])I",
+                    "product_smiles": "CC1(C)C=CC2=C(C(=CC=C2O1)I)[N+](=O)[O-]",
+                    "notes": "Intramolecular cyclization of an iodo-nitro-aryl propargyl ether to form a substituted 2H-chromene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Miyaura Borylation",
+                    "reagents": "PhMgCl",
+                    "reagent_smiles": "CC(C)OB1OC(C)(C)C(C)(C)O1",
+                    "conditions": "-40 to 23 °C",
+                    "yield": "44%",
+                    "reactant_smiles": "CC1(C)C=CC2=C(C(=CC=C2O1)I)[N+](=O)[O-]",
+                    "product_smiles": "CC1(C)C=CC2=C(C=CC(=C2[N+](=O)[O-])B3OC(C)(C)C(C)(C)O3)O1",
+                    "notes": "Aryl iodide undergoes borylation to form a pinacol boronate ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "Zn, NH4Cl, HCO2NH4, PTSA",
+            "reagent_smiles": "",
+            "conditions": "MeOH, RT",
+            "yield": "",
+            "reactant_smiles": "CC1(C)Oc2ccc(C=C1)c(c2[N+](=O)[O-])C3=C[C@@]4([C@@H](C[C@@H]5CCCN5C4=O)C(C)(C)C3=O)NC(=O)OC",
+            "product_smiles": "CC1(C)Oc2ccc(C=C1)c3c2[N+]4([O-])=C5C3=C(C(=C4C(C)(C))C(=O)N6[C@@H](C[C@@H]7CCCN7C6=O)[C@@]5)NC(=O)OC",
+            "notes": "Intramolecular reductive cyclization of a nitro group, forming an indolizine N-oxide system.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reduction",
+            "reagents": "NaCNBH3, HCl",
+            "reagent_smiles": "",
+            "conditions": "0 °C to RT",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "CC1(C)C=CC2=C(O1)C=CC3=C2[N+](=O)[O-]C4=C3C=C([C@@H](C(C)(C)[C@@H]5C[C@@H]6CCCN6C5=O)NC(=O)OC)C4",
+            "product_smiles": "CC1(C)C=CC2=C(O1)C=CC3=C2N[C@@H]4C=C3C[C@H](C(C)(C)[C@@H]5C[C@@H]6CCCN6C5=O)[C@@H](NC(=O)OC)C4",
+            "notes": "Reductive opening of an N-oxide and reduction of an adjacent double bond. The reactant is a complex polycyclic system featuring a chromene, an indole-N-oxide moiety, and a fused lactam-pyrrolidine. The N-oxide is reduced to an indole-like NH, and a double bond within the 6-membered ring is saturated. Stereochemistry is carefully maintained and new stereocenters formed are consistent with the drawing.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Wacker oxidation",
+            "reagents": "H2SO4, MeCN, H2O",
+            "reagent_smiles": "O=C1C=CC(=O)C=C1.[Pd](OC(=O)C)(OC(=O)C)",
+            "conditions": "RT",
+            "yield": "71%",
+            "reactant_smiles": "CC1(C)Oc2ccc3c(c2C=C1)Nc4c3C5(C)C[C@H]6[C@@H](NC(=O)OC)C(=O)N7CCC[C@H]76",
+            "product_smiles": "CC1(C)CC(=O)c2c(Oc1)ccc3c2Nc4c3C5(C)C[C@H]6[C@@H](NC(=O)OC)C(=O)N7CCC[C@H]76",
+            "notes": "Oxidation of a chromene alkene to a ketone in a Wacker oxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection",
+            "reagents": "MsCl, Me2S",
+            "reagent_smiles": "CS(=O)(=O)Cl.CSC",
+            "conditions": "40 °C",
+            "yield": "96%",
+            "reactant_smiles": "CC1(C)CC(=O)C2=C(C=CC3=C2NC4=C3C[C@@]5(NC(=O)OMe)[C@@H](C[C@H]6CCCN6C5=O)C4(C)C)O1",
+            "product_smiles": "CC1(C)CC(=O)C2=C(C=CC3=C2NC4=C3C[C@@]5([C@@H](C[C@H]6CCCN6C5=O)C4(C)C)N)O1",
+            "notes": "Methyl carbamate deprotection to primary amine",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Oxidation",
+            "reagents": "Oxone, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "Acetone, H2O, 0 °C to RT",
+            "yield": "45%",
+            "reactant_smiles": "CC1(C)CC(=O)C2=C(C=CC3=C2NC4=C3C[C@@]5([C@@H](C[C@H]6CCCN6C5=O)C4(C)C)N)O1",
+            "product_smiles": "CC1(C)CC(=O)C2=C3C(=CC=C2O1)[C@]4(C[C@@]5([C@H](C[C@H]6CCCCN6C5=O)[C@@]4(C)C)[N+](=O)[O-])C(=O)N3",
+            "notes": "Indole oxidation to cyclic amide and primary amine oxidation to nitro group, leading to a rearranged polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Amide O- and N-methylation (N-alkoxyiminium formation)",
+            "reagents": "Me3OBF4, 4A MS",
+            "reagent_smiles": "",
+            "conditions": "DCM, 45 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CC(=O)C2=C(C=CC3=C2NC(=O)[C@@]43C[C@@]5([C@H](C[C@H]6CCCCN6C5=O)[C@@]4(C)C)[N+](=O)[O-])O1",
+            "product_smiles": "CC1(C)CC(=O)C2=C(C=CC3=C2NC(=O)[C@@]43C[C@@]5([C@H](C[C@H]6CCCC[N+]6(C)(OC)=C5)[C@@]4(C)C)[N+](=O)[O-])O1",
+            "notes": "Formation of an N-methyl-N-methoxyiminium salt from an amide.",
+            "substeps": []
+        }
+    ]
+}

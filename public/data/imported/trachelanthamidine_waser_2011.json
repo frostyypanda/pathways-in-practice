@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "trachelanthamidine-waser-2011",
+        "molecule_name": "Trachelanthamidine",
+        "class": "Natural Product",
+        "author": "Waser",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Johnson-Claisen rearrangement",
+            "reagents": "MeC(OEt)3, EtCO2H",
+            "reagent_smiles": "CC(OCC)(OCC)OCC.CCC(=O)O",
+            "conditions": "100 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)COC/C=C\\CO",
+            "product_smiles": "C=CC(CC(=O)OC)COCC1=CC=CC=C1",
+            "notes": "Johnson-Claisen rearrangement of a benzyloxy-protected allylic alcohol to yield a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester hydrolysis / Saponification",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 80 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC(CC(=O)OC)COCC1=CC=CC=C1",
+            "product_smiles": "C=CC(CC(=O)O)COCC1=CC=CC=C1",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidation / Isocyanate reaction",
+            "reagents": "TsNCO, TEA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "80%",
+            "reactant_smiles": "C=CC(CC(=O)O)CO[Bn]",
+            "product_smiles": "C=CC(CC(=O)NH[Ts])CO[Bn]",
+            "notes": "Carboxylic acid is converted to an N-tosyl amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization (Waser Type)",
+            "reagents": "LiCl, PdCl2",
+            "reagent_smiles": "CC(C)[Si](C#CI1C2=C(C=CC=C2)C(=O)O1)(C(C)C)C(C)C",
+            "conditions": "EtOH",
+            "yield": "72%",
+            "reactant_smiles": "C=CC(CO[Bn])CC(=O)N[Ts]",
+            "product_smiles": "N1([Ts])C(=O)C[C@H](CO[Bn])[C@@H]1CC#C[TIPS]",
+            "notes": "Intramolecular cyclization of an N-Ts amide bearing an allyl group with a hypervalent iodine reagent leading to a 5-membered lactam with two newly formed stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-deprotection",
+            "reagents": "Li/naphthalene",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "77%",
+            "reactant_smiles": "[TIPS]C#CC[C@H]1N([Ts])C(=O)C[C@@H]1O[Bn]",
+            "product_smiles": "[TIPS]C#CC[C@H]1NC(=O)C[C@@H]1O[Bn]",
+            "notes": "Deprotection of N-Tosyl lactam to secondary lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "[TIPS]C#CC[C@H]1[C@@H](CC(=O)N1)[CH2][OBn]",
+            "product_smiles": "C#CC[C@H]1[C@@H](CC(=O)N1)[CH2][OBn]",
+            "notes": "Deprotection of a triisopropylsilyl (TIPS) protected terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydroboration-Iodination (or similar syn-hydroboration followed by electrophilic quench)",
+            "reagents": "InCl3, DIBAL-H, Et3B, I2",
+            "reagent_smiles": "",
+            "conditions": "THF, -50 °C",
+            "yield": "95%",
+            "reactant_smiles": "O=C1N[C@H](CC#C)C[C@@H]1COCC2=CC=CC=C2",
+            "product_smiles": "O=C1N[C@H](C/C=C/I)C[C@@H]1COCC2=CC=CC=C2",
+            "notes": "Alkyne converted to Z-iodoalkene, maintaining stereochemistry of chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular C-N coupling / cyclization (Heck-type)",
+            "reagents": "CuI, Cs2CO3",
+            "reagent_smiles": "NCCN",
+            "conditions": "PhMe, 85 °C",
+            "yield": "73%",
+            "reactant_smiles": "C1=CC=C(C=C1)COC[C@@H]2CC(=O)N[C@H]2C/C=C/I",
+            "product_smiles": "C1=CC=C(C=C1)COC[C@@H]2CC(=O)N3C=CC[C@@H]23",
+            "notes": "Intramolecular cyclization of an iodoalkene-lactam to form a bicyclic lactam system with a new 5-membered ring and a double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Catalytic Hydrogenation / Debenzylation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "99%",
+            "reactant_smiles": "O=C1C[C@@H](C[OBn])[C@@H]3N1C=CC[C@@H]3",
+            "product_smiles": "O=C1C[C@@H](CO)[C@@H]3N1CCC[C@@H]3",
+            "notes": "Catalytic hydrogenation saturates the alkene double bond and deprotects the benzyl ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "94%",
+            "reactant_smiles": "C1C[C@H]2[C@H](CC(=O)N2C1)CO",
+            "product_smiles": "C1C[C@H]2[C@H](CCN2C1)CO",
+            "notes": "Reduction of a cyclic amide (lactam) to a cyclic amine using lithium aluminum hydride.",
+            "substeps": []
+        }
+    ]
+}

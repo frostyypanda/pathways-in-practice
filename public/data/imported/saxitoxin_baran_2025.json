@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "saxitoxin-baran-2025",
+        "molecule_name": "Saxitoxin",
+        "class": "Natural Product",
+        "author": "Baran",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic hydroxylation",
+            "reagents": "FrbA-Rd10bb, α-ketoglutaric acid, L-ascorbic acid, antifoam 204, ammonium Iron (II) sulfate, sodium phosphapte pH 7, air",
+            "reagent_smiles": "",
+            "conditions": "pH 7, air",
+            "yield": "",
+            "reactant_smiles": "C1C[C@@H](C(=O)O)NC1",
+            "product_smiles": "O=C(O)[C@@H]1NCCC[C@H]1O",
+            "notes": "Hydroxylation of L-proline to trans-4-hydroxy-L-proline.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-protection",
+            "reagents": "Boc₂O, Na₂CO₃",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1CN[C@@H]([C@H]1O)C(=O)O",
+            "product_smiles": "[Boc]N1CC[C@@H](C(=O)O)[C@H]1O",
+            "notes": "N-protection of the secondary amine of (2S,3R)-3-hydroxypyrrolidine-2-carboxylic acid with a Boc group. The indicated 61% yield is for 2 steps, not this single step.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection (Alcohol Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@@H]([C@H]1C(=O)O)O",
+            "product_smiles": "[Boc]N1CC[C@@H]([OTBS])[C@H]1C(=O)O",
+            "notes": "The secondary alcohol at C4 of N-Boc-4-hydroxyproline is protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Carboxylic acid activation / Esterification",
+            "reagents": "DIC, DMAP",
+            "reagent_smiles": "C1=CC2=C(C=C1)C(=O)N(O)C2=O",
+            "conditions": "CH2Cl2",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "[Boc]N1C[C@H](C(=O)O)[C@@H]([OTBS])C1",
+            "product_smiles": "[Boc]N1C[C@H](C(=O)ON2C(=O)C3=CC=CC=C3C2=O)[C@@H]([OTBS])C1",
+            "notes": "The carboxylic acid is activated and coupled with N-hydroxyphthalimide to form an N-O ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Cyclization / Reductive Cross-Coupling",
+            "reagents": "Zn powder, NiCl2*glyme, DMF",
+            "reagent_smiles": "Cc1cc(C)c([S@@](=O)/N=C/[C@H](COCC2=CC=CC=C2)NC(=O)OCC3c4ccccc4c5ccccc35)c(C)c1",
+            "conditions": "solvent: DMF",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CC[C@@H]([C@H]1C(=O)ON2C(=O)C3=CC=CC=C3C2=O)O[Si](C)(C)C(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N1C[C@@H]([C@H](C1)[C@@H]2N([C@H]2[C@H](COCC3=CC=CC=C3)NC(=O)OCC4c5ccccc4c6ccccc56)[S@@](=O)c7c(C)cc(C)cc7C)O[Si](C)(C)C(C)(C)C",
+            "notes": "Reductive coupling of an O-acylhydroxamate (proline derivative) with a chiral N-sulfinyl imine to form a pyrrolo[1,2-c]pyrazolidine bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection / Reductive Cleavage",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]NH[C@@H](CO[Bn])[C@@H](N[S@](=O)C1=C(C)C=C(C)C=C1C)[C@@H]2N([Boc])CC[C@H]2O[TBS]",
+            "product_smiles": "[Fmoc]NH[C@@H](CO[Bn])[C@H](N)[C@@H]1NCC[C@H]1O",
+            "notes": "Acid-catalyzed cleavage of Boc and TBS protecting groups, and reductive cleavage of the mesityl sulfoxide to yield a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization, Guanidylation",
+            "reagents": "HgO, Et3N",
+            "reagent_smiles": "CS/C(=N/C(=O)OC(C)(C)C)/NC(=O)OC(C)(C)C",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "O=C(OCc1c2ccccc2c3ccccc13)N[C@@H](COCc1ccccc1)[C@@H](N)[C@H]4[C@H](O)CCN4",
+            "product_smiles": "O=C(OCc1c2ccccc2c3ccccc13)N[C@@H](COCc1ccccc1)[C@@H]1[N@H]2C(=NOC(C)(C)C)N(C(=O)OC(C)(C)C)[C@H]3[C@@H](O)CC[N@]3(C(=NOC(C)(C)C)N(C(=O)OC(C)(C)C))[C@H]12",
+            "notes": "The reactant undergoes a double guanidylation with N,N'-bis(Boc)-S-methylisothiourea followed by intramolecular cyclization to form a bicyclic guanidine system. The primary amine and the pyrrolidine nitrogen react to form the core of the bicyclic structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection and Cyclization",
+            "reagents": "piperidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "75%",
+            "reactant_smiles": "[Boc]N1C(=N[Boc])N([Boc])C2([C@H](N[C@@H]([C@H](CO[Bn])N[Fmoc]))C[C@@H](O)C[C@H]12)",
+            "product_smiles": "[Boc]NC(=N[Boc])N[C@H]1[C@H](CO[Bn])N/C(=N/[Boc])/N3CC[C@@H]([C@@H]13)O",
+            "notes": "Fmoc deprotection followed by intramolecular cyclization to form a new 6-membered ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "TEMPO, NaOCl, NaHCO3, H2O",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)NC(=NC(=O)OC(C)(C)C)N[C@H]1[C@H](COCC2=CC=CC=C2)N/C(=N/C(=O)OC(C)(C)C)/N3CC[C@@H]([C@@H]13)O",
+            "product_smiles": "CC(C)(C)OC(=O)NC(=NC(=O)OC(C)(C)C)N[C@H]1[C@H](COCC2=CC=CC=C2)N/C(=N/C(=O)OC(C)(C)C)/N3CCC(=O)[C@@H]13",
+            "notes": "TEMPO/NaOCl mediated oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "PIFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N=C1N[C@H]2[C@H](COCc3ccccc3)N/C(=N/C(=O)OC(C)(C)C)/N4CCC(=O)[C@@]24NC(=NOC(C)(C)C)NC(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N=C1N[C@H]2[C@H](COCc3ccccc3)N/C(=N/C(=O)OC(C)(C)C)/N4CCC(=O)[C@]24N1",
+            "notes": "Oxidative cyclization of a protected guanidine to form a new 5-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection / Hydrolysis",
+            "reagents": "BCl3, then HCl",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "[Boc]N=C1N[C@H](CO[Bn])[C@@H]2[C@]3(N4C(=O)CC2)[C@@H](NC(=N[Boc])N4)N3",
+            "product_smiles": "[H2N+]=C1N[C@H](CO)[C@@H]2[C@]3(N4C(O)(O)CC2)[C@@H](NC(=[NH2+])N4)N3",
+            "notes": "Deprotection of benzyl ether and Boc protecting groups, leading to formation of protonated guanidine functionalities and hydration of the lactam carbonyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Carbamoylation",
+            "reagents": "formic acid",
+            "reagent_smiles": "O=C=NS(=O)(=O)Cl",
+            "conditions": "5 °C to rt",
+            "yield": "76%",
+            "reactant_smiles": "[NH2+]C1=N[C@H]2CN(C[C@]3(O)O)[C@@H]2[C@@H](CO)NC1=N[NH2+]",
+            "product_smiles": "[NH2+]C1=N[C@H]2CN(C[C@]3(O)O)[C@@H]2[C@@H](COC(=O)N)NC1=N[NH2+]",
+            "notes": "Conversion of primary alcohol to carbamate using chlorosulfonyl isocyanate.",
+            "substeps": []
+        }
+    ]
+}

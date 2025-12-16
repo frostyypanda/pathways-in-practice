@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ritlecitinib-litfulo-pfizer-unknown-2024",
+        "molecule_name": "Ritlecitinib (Litfulo Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection (Boc)",
+            "reagents": "(Boc)2O, EtOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "67%",
+            "reactant_smiles": "CC1=NC=CC(N)=C1",
+            "product_smiles": "CC1=NC=CC(NC(=O)OC(C)(C)C)=C1",
+            "notes": "Protection of a primary aromatic amine with di-tert-butyl dicarbonate to form a tert-butyl carbamate (Boc-protected amine).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, PtO2",
+            "reagent_smiles": "CC(=O)O",
+            "conditions": "50 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC1=CC=C(C=N1)NC(=O)OC(C)(C)C",
+            "product_smiles": "CC1CCC(CN1)NC(=O)OC(C)(C)C",
+            "notes": "Reduction of a 2-methylpyridine to a 2-methylpiperidine, where the N-Boc protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Protection / N-Alkylation (Cbz)",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "Cl[C](=O)O[Bn]",
+            "conditions": "THF, H2O",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H]1CC([C@@H](N[Boc]))CC[NH]1",
+            "product_smiles": "C[C@H]1CC([C@@H](N([Cbz])[Boc]))CC[N]([Cbz])1",
+            "notes": "The ring nitrogen is protected with Cbz, and the secondary amine (already Boc-protected) is further N-alkylated with a Cbz group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Chiral Resolution / Enantioselective Deprotection",
+            "reagents": "Chiral SFC",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "56%",
+            "reactant_smiles": "CC1CCC(CN1[Cbz])N([Cbz])[Boc]",
+            "product_smiles": "C[C@H]1CC[C@H](N[Boc])CN1[Cbz]",
+            "notes": "Enantioselective removal of one Cbz protecting group via chiral SFC, establishing two defined stereocenters with a trans relationship.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Boc deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "Dioxane, DCM, 0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H]1CC[C@H](CN1C(=O)OCC2=CC=CC=C2)NC(=O)OC(C)(C)C",
+            "product_smiles": "C[C@H]1CC[C@H](CN1C(=O)OCC2=CC=CC=C2)N",
+            "notes": "Deprotection of a tert-butyloxycarbonyl (Boc) protecting group on a secondary amine using hydrochloric acid (HCl) to yield a primary amine. The Cbz protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "DIPEA",
+            "reagent_smiles": "CCCCO",
+            "conditions": "n-BuOH, 140 °C",
+            "yield": "86%",
+            "reactant_smiles": "[Cbz]N1[C@@H](C)CC[C@H](N)C1",
+            "product_smiles": "[Cbz]N1[C@@H](C)CC[C@H](NC2=C3C=CNC3=NC(=N2)Cl)C1",
+            "notes": "Nucleophilic aromatic substitution of 4-chloro-7H-pyrrolo[2,3-d]pyrimidine with a Cbz-protected 2-methyl-4-aminopiperidine. The reaction displaces a chlorine atom with the amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, THF, 25-45 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@@H]1CC[C@H](NC2=C3C=CNC3=NC(=N2)Cl)N([Cbz])C1",
+            "product_smiles": "C[C@@H]1CC[C@H](NC2=C3C=CNC3=NC=N2)N1",
+            "notes": "Debenzylation of the piperidine nitrogen and reductive dehalogenation of the pyrrolopyrimidine C2-Cl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Acylation (Amide Formation)",
+            "reagents": "NaHCO3, THF",
+            "reagent_smiles": "C=CC(=O)Cl",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@H](NC2=C3C=CNC3=NC=N2)C[NH]1",
+            "product_smiles": "C=CC(=O)N1[C@H](C)CC[C@H](NC2=C3C=CNC3=NC=N2)C1",
+            "notes": "Acylation of the piperidine nitrogen with acryloyl chloride to form Ritilecitinib. Stereochemistry at C2 (methyl) and C4 (amino) of the piperidine ring is preserved and is cis (e.g., 2R,4R).",
+            "substeps": []
+        }
+    ]
+}

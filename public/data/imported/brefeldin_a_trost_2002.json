@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "brefeldin-a-trost-2002",
+        "molecule_name": "Brefeldin A",
+        "class": "Natural Product",
+        "author": "Trost",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Finkelstein Reaction",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "acetone, 80 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@H](CCl)O",
+            "product_smiles": "ICC[C@H](O)CC(=O)OCC",
+            "notes": "A Finkelstein reaction where the terminal chlorine atom is substituted with an iodine atom, proceeding with retention of configuration at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection of Alcohol",
+            "reagents": "TIPSOTf, Lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@@H](CI)O",
+            "product_smiles": "CCOC(=O)C[C@@H](CI)[OTIPS]",
+            "notes": "The secondary alcohol is protected as a triisopropylsilyl (TIPS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Copper-mediated Allylation",
+            "reagents": "CuI, vinylMgBr, HMPA",
+            "reagent_smiles": "",
+            "conditions": "THF, -20 °C",
+            "yield": "",
+            "reactant_smiles": "IC[C@@H]([OTIPS])CC(=O)OCC",
+            "product_smiles": "C=CCC[C@@H]([OTIPS])CC(=O)OCC",
+            "notes": "Allylic group is introduced to replace the iodide, with retention of configuration at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@H](C(=O)OCC)[OTIPS]",
+            "product_smiles": "C=CC[C@H](CC=O)[OTIPS]",
+            "notes": "Reduction of an ethyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "[2+2] Cycloaddition / Beta-lactone Formation",
+            "reagents": "",
+            "reagent_smiles": "[OTBDPS]OC=C([OTIPS])SC1=CC=CN=C1.Cl[Zn]Cl",
+            "conditions": "DCM",
+            "yield": "68%",
+            "reactant_smiles": "C=CC[C@H](CC=O)[OTIPS]",
+            "product_smiles": "C=CC[C@H](C[C@@H]1C(=O)O[C@H]1[OTBDPS])[OTIPS]",
+            "notes": "Formation of a beta-lactone via [2+2] cycloaddition of an aldehyde with an enol ether ketene equivalent.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "C=C[Si](C)(C)C",
+            "conditions": "DCM, 40 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=CC[C@H](C[C@@H]1[C@H](C(=O)O1)[OTBDPS])[TIPSO]",
+            "product_smiles": "[TIPSO][C@H](C/C=C/C[Si](C)(C)C)C[C@@H]1[C@H](C(=O)O1)[OTBDPS]",
+            "notes": "Cross-metathesis reaction between an allyl group and vinyltrimethylsilane using Grubbs II catalyst, resulting in an E-alkene with a TMS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lewis Acid Catalyzed Cyclization / Rearrangement",
+            "reagents": "TiCl4",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "90%",
+            "reactant_smiles": "[TMS]CCC=CC[C@H]([OTIPS])C[C@H]1OC(=O)[C@@H]1[OTBDPS]",
+            "product_smiles": "C=C[C@@H]1C[C@@H]([OTIPS])[C@H](C(=O)O)[C@H]([OTBDPS])1",
+            "notes": "Intramolecular cyclization and rearrangement of a TMS-substituted enyne with a beta-lactone, catalyzed by TiCl4, to form a substituted cyclopentane carboxylic acid (Brefeldin A core). The TMS group is lost.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Esterification",
+            "reagents": "TMSCHN2",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1CC[C@H](O[TIPS])C[C@H]1[C@H](O[TBDPS])C(=O)O",
+            "product_smiles": "C=C[C@@H]1CC[C@H](O[TIPS])C[C@H]1[C@H](O[TBDPS])C(=O)OC",
+            "notes": "Conversion of a carboxylic acid to its corresponding methyl ester using trimethylsilyldiazomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1C[C@H]([OTIPS])C[C@H]1[C@H](C(=O)OC)[OTBDPS]",
+            "product_smiles": "C=C[C@@H]1C[C@H]([OTIPS])C[C@H]1[C@H](CO)[OTBDPS]",
+            "notes": "Methyl ester is reduced to a primary alcohol using DIBAL-H. All stereocenters and protecting groups (TBDPSO, TIPSO) remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Swern oxidation",
+            "reagents": "DMSO, Et3N, (COCl)2",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=C[C@@H]1CC[C@@H]([OTIPS])[C@H]1[C@H](CO)[OTBDPS]",
+            "product_smiles": "C=C[C@@H]1CC[C@@H]([OTIPS])[C@H]1[C@H](C=O)[OTBDPS]",
+            "notes": "Oxidation of primary alcohol to aldehyde (3 steps indicated in source for yield).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Cross Metathesis",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "C=CCCC[C@H](C)OC(=O)CP(=O)(OCC)OCC",
+            "conditions": "DCM, 40 °C",
+            "yield": "86%",
+            "reactant_smiles": "C=C[C@@H]1C[C@H](C[C@H]1[C@H](C=O)O[TBDPS])O[TIPS]",
+            "product_smiles": "CCOP(=O)(CC(=O)O[C@H](C)CCC/C=C/[C@@H]1C[C@H](C[C@H]1[C@H](C=O)O[TBDPS])O[TIPS])OCC",
+            "notes": "Olefin cross-metathesis between the terminal alkene of the cyclopentane reactant and the terminal alkene of the phosphonate ester reagent, catalyzed by Grubbs II, forming a new trans double bond. The aldehyde, TBDPS, TIPS, and phosphonate ester groups are spectators.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "LiBr, DBU, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CCOP(=O)(CC(=O)O[C@@H](C)CCC/C=C/[C@@H]1CC[C@H]([C@@H](C=O)[OTBDPS])[C@H]1[OTIPS])OCC",
+            "product_smiles": "[OTIPS][C@@H]1C[C@H]2/C=C/CCC[C@H](C)OC(=O)/C=C/[C@@H]([C@H]2C1)[OTBDPS]",
+            "notes": "Horner-Wadsworth-Emmons olefination to form a macrocyclic lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection (Silyl Ether Cleavage)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "39% (2 steps)",
+            "reactant_smiles": "[TIPS]O[C@@H]1C[C@H]2/C=C/CCC[C@H](C)OC(=O)/C=C/[C@H]([C@H]2C1)O[OTBDPS]",
+            "product_smiles": "O[C@@H]1C[C@H]2/C=C/CCC[C@H](C)OC(=O)/C=C/[C@H]([C@H]2C1)O",
+            "notes": "Deprotection of TIPS and TBDPS silyl ethers to yield diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "",
+            "reagent_smiles": "O=C(O)C1=CC=C([N+](=O)[O-])C=C1.CCOC(=O)N=NC(=O)OCC.P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "THF",
+            "yield": "70%",
+            "reactant_smiles": "C[C@H]1O[C@H](C(=O)/C=C/[C@H](O)C[C@H]2[C@@H]3C[C@H](O)C[C@H]3C[C@H]2/C=C/C1)",
+            "product_smiles": "C[C@H]1O[C@H](C(=O)/C=C/[C@@H](OC(=O)C2=CC=C([N+](=O)[O-])C=C2)C[C@H]3[C@@H]4C[C@@H](OC(=O)C5=CC=C([N+](=O)[O-])C=C5)C[C@H]4C[C@H]3/C=C/C1)",
+            "notes": "Mitsunobu reaction converting two secondary alcohols to p-nitrobenzoate esters with inversion of stereochemistry at both centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "C[C@H]1CCC/C=C/[C@@H]2C[C@@H](C[C@H]2[C@@H](/C=C/C(=O)O1)OC3=CC=C(C=C3)[N+](=O)[O-])OC4=CC=C(C=C4)[N+](=O)[O-]",
+            "product_smiles": "C[C@H]1CCC/C=C/[C@@H]2C[C@@H](C[C@H]2[C@@H](/C=C/C(=O)O1)O)O",
+            "notes": "Base-catalyzed deprotection of two 4-nitrophenyl ether protecting groups to yield diol.",
+            "substeps": []
+        }
+    ]
+}

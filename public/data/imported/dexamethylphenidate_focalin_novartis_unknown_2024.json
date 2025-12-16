@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dexamethylphenidate-focalin-novartis-unknown-2024",
+        "molecule_name": "Dexamethylphenidate (Focalin Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection",
+            "reagents": "TEA",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(C)(C)C",
+            "conditions": "MeOH, rt",
+            "yield": "97%",
+            "reactant_smiles": "C1CCN[C@H](C1)C(=O)O",
+            "product_smiles": "[Boc]N1CCCC[C@H]1C(=O)O",
+            "notes": "Protection of a secondary amine with a Boc group using di-tert-butyl dicarbonate (Boc anhydride).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation (Weinreb Amide Synthesis)",
+            "reagents": "BOP, TEA",
+            "reagent_smiles": "CNOC",
+            "conditions": "DCM, rt",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N1CCCC[C@H]1C(=O)O",
+            "product_smiles": "[Boc]N1CCCC[C@H]1C(=O)N(C)OC",
+            "notes": "Carboxylic acid is converted to a Weinreb amide using N,O-dimethylhydroxylamine, BOP, and TEA.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Weinreb Amide Addition / Ketone Formation",
+            "reagents": "PhLi",
+            "reagent_smiles": "[Li]c1ccccc1.CCOCC",
+            "conditions": "Et2O, -23 °C",
+            "yield": "73%",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1C(=O)N(C)OC",
+            "product_smiles": "[Boc]N1CCCC[C@@H]1C(=O)c2ccccc2",
+            "notes": "Addition of phenyllithium to a Weinreb amide to form a phenyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Wittig olefination",
+            "reagents": "P(Ph)₃CH₃Br, KOBuᵗ",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1C(=O)C2=CC=CC=C2",
+            "product_smiles": "[Boc]N1CCCC[C@@H]1C(=C)C2=CC=CC=C2",
+            "notes": "Wittig olefination converts a ketone to an alkene while preserving the existing stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "BH3.THF, NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "H2O, rt",
+            "yield": "64%",
+            "reactant_smiles": "C=C(C1=CC=CC=C1)[C@@H]2CCCCN2[Boc]",
+            "product_smiles": "[Boc]N1CCCC[C@@H]1[C@H](CO)C2=CC=CC=C2",
+            "notes": "Anti-Markovnikov hydration of an alkene to form a primary alcohol, with stereoselective formation of two chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "PDC",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1[C@H](CO)C2=CC=CC=C2",
+            "product_smiles": "[Boc]N1CCCC[C@@H]1[C@H](C2=CC=CC=C2)C(=O)O",
+            "notes": "Primary alcohol oxidized to carboxylic acid using Pyridinium Dichromate (PDC) in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Carboxylic Acid Methylation",
+            "reagents": "CH₂N₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1[C@@H](C2=CC=CC=C2)C(=O)O",
+            "product_smiles": "[Boc]N1CCCC[C@@H]1[C@@H](C2=CC=CC=C2)C(=O)OC",
+            "notes": "Methylation of a carboxylic acid to a methyl ester using diazomethane. Stereochemistry is retained at both chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "67%",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1[C@@H](C2=CC=CC=C2)C(=O)OC",
+            "product_smiles": "COC(=O)[C@H](C1=CC=CC=C1)[C@H]2CCCCN2.Cl",
+            "notes": "Boc deprotection to secondary amine, forming Dexmethylphenidate as its HCl salt. The reported yield of 67% is over 3 steps.",
+            "substeps": []
+        }
+    ]
+}

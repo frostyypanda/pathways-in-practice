@@ -1,0 +1,146 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "trastuzumab-emtansine-kadcyla-genentech-unknown-2024",
+        "molecule_name": "Trastuzumab Emtansine (Kadcyla Genentech)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction (Ester to Alcohol)",
+            "reagents": "",
+            "reagent_smiles": "[Li][AlH](OC)(OC)OC",
+            "conditions": "THF, -40 °C",
+            "yield": "85%",
+            "reactant_smiles": "COc1cc(CC/C=C/C(C)=C/C[C@@H](OC)[C@@H](O)[C@H](C)NC(=O)O[C@H](C)[C@@]2(C)O[C@]2(C)[C@@H](OC(=O)*)C(=O)N(C)c1C)Cl",
+            "product_smiles": "COc1cc(CC/C=C/C(C)=C/C[C@@H](OC)[C@@H](O)[C@H](C)NC(=O)O[C@H](C)[C@@]2(C)O[C@]2(C)[C@@H](O)C(=O)N(C)c1C)Cl",
+            "notes": "Reduction of the ester (R-group) to a primary alcohol using lithium tri(methoxy)aluminum hydride. All stereocenters and macrocyclic structure are maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "DCC, 1M ZnCl2",
+            "reagent_smiles": "C[C@@H](C(=O)O)N(C)C(=O)CCSSC",
+            "conditions": "Et2O, CH2Cl2, r.t.",
+            "yield": "32%",
+            "reactant_smiles": "C/C(=C\\C=C\\[C@H]([C@]1(C[C@@H]([C@@H](C)[C@H]2[C@@](C)([C@H](CC(=O)N(C)C3=C(C(=CC(=C3)C/C(=C/C=C/[C@H](C)OC)/C)OC)Cl)O)O2)OC(=O)N1)O)OC)/C",
+            "product_smiles": "C/C/1=C\\C=C\\[C@H]([C@]2(C[C@](C)([C@@H](C)[C@H]3[C@@](C)([C@H](CC(=O)N(C)C4=C(C(=CC(=C4)C1)OC)Cl)OC(=O)[C@@H](C)N(C)C(=O)CCSSC)O3)OC(=O)N2)O)OC",
+            "notes": "Esterification of an alcohol with a substituted alanine derivative to form a new ester linkage.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Disulfide formation",
+                    "reagents": "H2O",
+                    "reagent_smiles": "CS(=O)(=O)SC",
+                    "conditions": "0°C to r.t.",
+                    "yield": "90%",
+                    "reactant_smiles": "O=C(O)CCS",
+                    "product_smiles": "O=C(O)CCSSC",
+                    "notes": "A thiol reacts with methyl methanethiosulfonate to form a mixed disulfide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Activation of carboxylic acid (NHS ester formation)",
+                    "reagents": "NHS, EDC",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, r.t.",
+                    "yield": "",
+                    "reactant_smiles": "CSCCC(=O)O",
+                    "product_smiles": "CSCCC(=O)ON1C(=O)CCC1=O",
+                    "notes": "The carboxylic acid is activated with NHS and EDC to form an N-hydroxysuccinimide (NHS) ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Amide Coupling / Acylation",
+                    "reagents": "NEt3",
+                    "reagent_smiles": "CN[C@H](C)C(=O)O",
+                    "conditions": "DME, H2O",
+                    "yield": "60% (2 steps)",
+                    "reactant_smiles": "CSSCCC(=O)ON1C(=O)CCC1=O",
+                    "product_smiles": "CN(CC(=O)O)C(=O)CCSSC",
+                    "notes": "Acylation of N-methylalanine with an N-hydroxysuccinimide ester to form a new amide bond.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Disulfide Reduction",
+            "reagents": "0.05M pH 7.5 phosphate buffer, EDTA",
+            "reagent_smiles": "C1[C@@H]([C@@H](CSS1)O)O",
+            "conditions": "EtOAc, MeOH, r.t.",
+            "yield": "",
+            "reactant_smiles": "C/C/1=C\\C=C/[C@H]([C@]2(C[C@@H]([C@@H](C)[C@H]3[C@@](C)([C@H](CC(=O)N(C)C4=C(C(=CC(=C4)C1)OC)Cl)OC(=O)[C@H](C)N(C)C(=O)CCSSC)O3)OC(=O)N2)O)OC",
+            "product_smiles": "C/C/1=C\\C=C/[C@H]([C@]2(C[C@@H]([C@@H](C)[C@H]3[C@@](C)([C@H](CC(=O)N(C)C4=C(C(=CC(=C4)C1)OC)Cl)OC(=O)[C@H](C)N(C)C(=O)CCSH)O3)OC(=O)N2)O)OC",
+            "notes": "Disulfide bond in the side chain is reduced to a thiol group using a cyclic dithiol reagent (like DTT).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Thiol-maleimide conjugation (Michael addition)",
+            "reagents": "0.1M pH 7.0 phosphate buffer, EDTA, DMA",
+            "reagent_smiles": "O=C1C=CC(=O)N1C[C@H]2CC[C@H](CC2)C(=O)NCCC[Ab]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C/1=C\\C=C\\[C@H]([C@]2(C[C@@H]([C@@H](C)[C@H]3[C@](C)([C@H](CC(=O)N(C)C4=C(C(=CC(=C4)C1)OC)Cl)OC(=O)[C@H](C)N(C)C(=O)CCSH)O3)OC(=O)N2)O)OC",
+            "product_smiles": "C/C/1=C\\C=C\\[C@H]([C@]2(C[C@@H]([C@@H](C)[C@H]3[C@](C)([C@H](CC(=O)N(C)C4=C(C(=CC(=C4)C1)OC)Cl)OC(=O)[C@H](C)N(C)C(=O)CCSC5CC(=O)N(C[C@H]6CC[C@H](CC6)C(=O)NCCC[Ab])C5=O)O3)OC(=O)N2)O)OC",
+            "notes": "Conjugation of a thiol-functionalized drug (DM1 analog) to a maleimide-functionalized antibody via Michael addition, forming an Antibody-Drug Conjugate (ADC).",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Amide formation (from amine and anhydride)",
+                    "reagents": "",
+                    "reagent_smiles": "C1=CC(=O)OC1=O",
+                    "conditions": "dioxane, r.t.",
+                    "yield": "",
+                    "reactant_smiles": "C1C[C@@H](CC[C@H]1C(=O)O)N",
+                    "product_smiles": "C1C[C@H](CC[C@@H]1C(=O)O)NC(=O)/C=C/C(=O)O",
+                    "notes": "Amine on trans-4-aminocyclohexanecarboxylic acid reacts with maleic anhydride to form a maleamic acid amide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Cyclization / Maleimide Formation",
+                    "reagents": "Ac2O, NaOAc",
+                    "reagent_smiles": "",
+                    "conditions": "120 °C",
+                    "yield": "20%",
+                    "reactant_smiles": "C1C[C@H](CC[C@@H]1C(=O)O)NC(=O)/C=C/C(=O)O",
+                    "product_smiles": "C1C[C@H](CC[C@@H]1CN2C(=O)C=CC2=O)C(=O)O",
+                    "notes": "Formation of a maleimide derivative from a fumaramic acid derivative. The transformation involves the conversion of the -NH-CO-CH=CH-COOH chain into a -CH2-N(maleimide) group, implying a carbon skeleton rearrangement/insertion and cyclization.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Amide Coupling (NHS Ester formation)",
+                    "reagents": "NHS, EDC",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, r.t.",
+                    "yield": "39%",
+                    "reactant_smiles": "C1C[C@H](CC[C@@H]1CN2C(=O)C=CC2=O)C(=O)O",
+                    "product_smiles": "C1C[C@H](CC[C@@H]1CN2C(=O)C=CC2=O)C(=O)ON3C(=O)CCC3=O",
+                    "notes": "Formation of N-hydroxysuccinimide (NHS) ester from a carboxylic acid using EDC/NHS coupling.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "Bioconjugation (Amide Formation)",
+                    "reagents": "0.1M pH 7.0 phosphate buffer, EDTA",
+                    "reagent_smiles": "",
+                    "conditions": "pH 7.0",
+                    "yield": "88%",
+                    "reactant_smiles": "C1C[C@@H](CC[C@H]1CN2C(=O)C=CC2=O)C(=O)ON3C(=O)CCC3=O",
+                    "product_smiles": "O=C(NCCC)[C@@H]1CC[C@H](CC1)CN2C(=O)C=CC2=O",
+                    "notes": "The N-hydroxysuccinimide (NHS) ester reacts with an amine (presumably from an antibody, represented by the Y-shaped icon) to form an amide linkage, while the maleimide group remains intact.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

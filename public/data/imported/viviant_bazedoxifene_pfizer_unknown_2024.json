@@ -1,0 +1,73 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "viviant-bazedoxifene-pfizer-unknown-2024",
+        "molecule_name": "Viviant (Bazedoxifene Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Indole Synthesis (Fischer-like)",
+            "reagents": "Et3N",
+            "reagent_smiles": "Nc1ccc([OBn])cc1",
+            "conditions": "DMF, 120 °C",
+            "yield": "65%",
+            "reactant_smiles": "CC(Br)C(=O)C1=CC=C([OBn])C=C1",
+            "product_smiles": "[OBn]c1ccc2[nH]c(C)c(c3ccc([OBn])cc3)c2c1",
+            "notes": "Formation of a substituted indole from an α-bromoketone and a benzyloxyaniline via indole cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, H2O",
+            "reagent_smiles": "ClCc1ccc(OCCN2CCCCCC2)cc1",
+            "conditions": "Toluene, -5 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1c(c2ccc([OBn])cc2)[nH]c3ccc([OBn])cc13",
+            "product_smiles": "Cc1c(c2ccc([OBn])cc2)n(Cc3ccc(OCCN4CCCCCC4)cc3)c5ccc([OBn])cc15",
+            "notes": "N-alkylation of the indole nitrogen with a benzyl chloride derivative.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "NaOH, TBAB, H2O, Toluene",
+                    "reagent_smiles": "ClCCN1CCCCCC1",
+                    "conditions": "rt to 90 °C",
+                    "yield": "61%",
+                    "reactant_smiles": "C1=CC(=CC=C1CO)O",
+                    "product_smiles": "N1(CCOC2=CC=C(C=C2)CO)CCCCCC1",
+                    "notes": "Phenolic hydroxyl group reacts with alkyl chloride via Williamson ether synthesis. The benzylic alcohol is unaffected.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Chlorination",
+                    "reagents": "THF",
+                    "reagent_smiles": "ClS(Cl)=O",
+                    "conditions": "55 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1CCCCCN1CCOC2=CC=C(C=C2)CO",
+                    "product_smiles": "C1CCCCCN1CCOC2=CC=C(C=C2)CCl",
+                    "notes": "Conversion of a primary benzyl alcohol to a primary benzyl chloride using thionyl chloride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection (Catalytic Hydrogenation)",
+            "reagents": "H₂, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, 45 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=C(C2=CC=C(C=C2)OCC3=CC=CC=C3)N(CC4=CC=C(C=C4)OCCN5CCCCCC5)C6=CC=C(C=C16)OCC7=CC=CC=C7",
+            "product_smiles": "CC1=C(C2=CC=C(C=C2)O)N(CC3=CC=C(C=C3)OCCN4CCCCCC4)C5=CC=C(C=C15)O",
+            "notes": "Deprotection of two benzyl ether groups to form hydroxyl groups via catalytic hydrogenation.",
+            "substeps": []
+        }
+    ]
+}

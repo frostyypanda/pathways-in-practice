@@ -1,0 +1,72 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tapentadol-chandrasekhar-2019",
+        "molecule_name": "Tapentadol",
+        "class": "Natural Product",
+        "author": "Chandrasekhar",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Mannich Reaction",
+            "reagents": "AcCl",
+            "reagent_smiles": "CN(C)CCl",
+            "conditions": "CH3CN, rt",
+            "yield": "50%",
+            "reactant_smiles": "CCC(=O)C1=CC(=CC=C1)[OBn]",
+            "product_smiles": "CC(CN(C)C)C(=O)C1=CC(=CC=C1)[OBn]",
+            "notes": "Alpha-aminomethylation of a ketone using an iminium species formed in situ.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Chiral resolution",
+            "reagents": "L-(-)-DBTA H2O",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 5 °C",
+            "yield": "65%",
+            "reactant_smiles": "CC(CN(C)C)C(=O)C1=CC(=O[Bn])C=C1",
+            "product_smiles": "C[C@H](CN(C)C)C(=O)C1=CC(=O[Bn])C=C1",
+            "notes": "Chiral resolution of racemic ketone to (S)-enantiomer using L-(-)-dibenzoyl tartaric acid monohydrate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Addition",
+            "reagents": "EtMgBr",
+            "reagent_smiles": "CC[Mg]Br",
+            "conditions": "THF, 10 °C",
+            "yield": "89%",
+            "reactant_smiles": "C[C@@H](CN(C)C)C(=O)C1=CC(=CC=C1)[OBn]",
+            "product_smiles": "CC[C@]([C@@H](C)CN(C)C)(C1=CC(=CC=C1)[OBn])O",
+            "notes": "Grignard addition of ethylmagnesium bromide to a ketone, forming a tertiary alcohol and a new chiral center with 'S' configuration, while retaining the stereochemistry of the existing chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification",
+            "reagents": "",
+            "reagent_smiles": "FC(F)(F)C(=O)OC(=O)C(F)(F)F",
+            "conditions": "2-Me-THF",
+            "yield": "",
+            "reactant_smiles": "CC[C@H](O)([C@@H](C)CN(C)C)c1cccc([OBn])c1",
+            "product_smiles": "CC[C@H](OC(=O)C(F)(F)F)([C@@H](C)CN(C)C)c1cccc([OBn])c1",
+            "notes": "Acylation of a secondary alcohol with trifluoroacetic anhydride to form a trifluoroacetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Catalytic hydrogenation / Reductive deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]([C@H](C)CN(C)C)(C1=CC(=CC=C1)OCC2=CC=CC=C2)OC(=O)C(F)(F)F",
+            "product_smiles": "CC[C@H](O)([C@H](C)CN(C)C)c1cc(O)ccc1",
+            "notes": "Reductive deprotection of benzyl ether and trifluoroacetate ester to yield an alcohol and phenol.",
+            "substeps": []
+        }
+    ]
+}

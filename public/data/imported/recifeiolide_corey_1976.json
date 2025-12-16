@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "recifeiolide-corey-1976",
+        "molecule_name": "Recifeiolide",
+        "class": "Natural Product",
+        "author": "Corey",
+        "year": 1976
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Protection (Alcohol)",
+            "reagents": "PTSA",
+            "reagent_smiles": "C1=CCOCC1",
+            "conditions": "CH2Cl2, 25 °C",
+            "yield": "99%",
+            "reactant_smiles": "C#CCC(C)O",
+            "product_smiles": "C#CCC(C)OC1CCCCO1",
+            "notes": "Protection of a propargylic alcohol as a tetrahydropyranyl (THP) ether using DHP and PTSA catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Radical hydrostannylation",
+            "reagents": "(n-Bu)3SnH, AIBN",
+            "reagent_smiles": "",
+            "conditions": "95 °C",
+            "yield": "92%",
+            "reactant_smiles": "C#CCC(C)OC1CCCCO1",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CC(C)OC1CCCCO1",
+            "notes": "Radical addition of tributyltin hydride to an alkyne, forming an E-vinylstannane.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Stille Coupling",
+            "reagents": "n-BuLi, CuC5H7",
+            "reagent_smiles": "CCOC(=O)CCCCCCI",
+            "conditions": "THF, HMPT, -78 to -45 °C",
+            "yield": "",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CC(C)OC1CCCCO1",
+            "product_smiles": "CCOC(=O)CCCCC/C=C/CC(C)OC1CCCCO1",
+            "notes": "Stille coupling of a vinylstannane with an iodoester (likely via formation of a cuprate from the iodoester) to form a new C-C bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "THP Deprotection",
+            "reagents": "AcOH, MeOH",
+            "reagent_smiles": "CC(=O)O.CO",
+            "conditions": "",
+            "yield": "54% (3 steps)",
+            "reactant_smiles": "CCOC(=O)CCCCCCC/C=C/CC(C)OC1CCCCO1",
+            "product_smiles": "CCOC(=O)CCCCCCC/C=C/CC(C)O",
+            "notes": "Acid-catalyzed deprotection of a THP ether to a secondary alcohol. The overall yield is given for 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrolysis (Ester Saponification)",
+            "reagents": "KOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "98%",
+            "reactant_smiles": "CCOC(=O)CCCCCCC=CCC(O)C",
+            "product_smiles": "OC(=O)CCCCCCC=CCC(O)C",
+            "notes": "Ester group is hydrolyzed to a carboxylic acid, while the alkene and secondary alcohol remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carboxylic Acid Activation / Thioester Formation (Corey-Nicolaou intermediate)",
+            "reagents": "",
+            "reagent_smiles": "S(c1ccccn1)Sc2ccccn2.P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "xylene",
+            "yield": "",
+            "reactant_smiles": "O=C(O)CCC/C=C/CC(O)C",
+            "product_smiles": "N1C=CC=C(SC(=O)CCC/C=C/CC(O)C)C1",
+            "notes": "Conversion of carboxylic acid to a 2-pyridyl thioester using 2,2'-dipyridyl disulfide and triphenylphosphine, an activation step for macrolactonization.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Corey-Nicolaou macrolactonization",
+            "reagents": "xylene",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "52%",
+            "reactant_smiles": "CC(O)C/C=C/CCCCCCC(=O)SC1=CC=CN=C1",
+            "product_smiles": "C[C@H]1C/C=C/CCCCCC(=O)O1",
+            "notes": "Macrolactonization of a thioester alcohol to form a 12-membered lactone (Recifeiolide).",
+            "substeps": []
+        }
+    ]
+}

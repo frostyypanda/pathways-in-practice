@@ -1,0 +1,72 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "trospium-chloride-cobenfy-karuna-unknown-2024",
+        "molecule_name": "Trospium chloride (Cobenfy Karuna)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Chlorination",
+            "reagents": "PCl5",
+            "reagent_smiles": "",
+            "conditions": "0 to 145 °C to rt",
+            "yield": "65-80%",
+            "reactant_smiles": "C1=CC=C(C=C1)C(C2=CC=CC=C2)(C(=O)O)O",
+            "product_smiles": "C1=CC=C(C=C1)C(C2=CC=CC=C2)(C(=O)Cl)Cl",
+            "notes": "Conversion of a tertiary alcohol and a carboxylic acid to an alkyl chloride and an acyl chloride, respectively.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "pyridine",
+            "reagent_smiles": "OC1CC2N([Cbz])C1CCC2",
+            "conditions": "CHCl3",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)C(C2=CC=CC=C2)(C(=O)Cl)Cl",
+            "product_smiles": "ClC(C(=O)OC1CC2N([Cbz])C1CCC2)(C3=CC=CC=C3)C4=CC=CC=C4",
+            "notes": "Esterification of an acid chloride with a tropane-derived secondary alcohol, forming an ester intermediate towards Trospium.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis / Nucleophilic Substitution",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "H2O, reflux",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)C(C2=CC=CC=C2)(C(=O)OC3CC4CCC(C3)N4[Cbz])Cl",
+            "product_smiles": "C1=CC=C(C=C1)C(C2=CC=CC=C2)(C(=O)OC3CC4CCC(C3)N4[Cbz])O",
+            "notes": "Conversion of a tertiary alkyl chloride to a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cbz deprotection, Hydrogenation",
+            "reagents": "Pd/C",
+            "reagent_smiles": "[H][H].[Pd]",
+            "conditions": "MeOH, 50 °C",
+            "yield": "",
+            "reactant_smiles": "[Cbz]N1C2CCC1CC(OC(=O)C(O)(c3ccccc3)c4ccccc4)C2",
+            "product_smiles": "HN1C2CCC1CC(OC(=O)C(O)(c3ccccc3)c4ccccc4)C2",
+            "notes": "Catalytic hydrogenation to remove the Cbz protecting group from the nitrogen of the tropane ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-alkylation, Quaternization, Spiro-cyclization",
+            "reagents": "Et3N, MeCN",
+            "reagent_smiles": "ClCCCCl",
+            "conditions": "45 to 50 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(OC1C2CCC([NH]1)C2)C(O)(c3ccccc3)c4ccccc4",
+            "product_smiles": "[N+]1(CCC2)C3CCC(C1C2)C(OC(=O)C(O)(c4ccccc4)c5ccccc5)C3.[Cl-]",
+            "notes": "N-alkylation of a secondary amine in an N-desmethyltropane derivative with 1,3-dichloropropane to form a spiro-ammonium salt (Trospium chloride).",
+            "substeps": []
+        }
+    ]
+}

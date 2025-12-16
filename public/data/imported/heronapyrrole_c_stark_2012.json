@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "heronapyrrole-c-stark-2012",
+        "molecule_name": "Heronapyrrole C",
+        "class": "Natural Product",
+        "author": "Stark",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Lithiation-electrophilic trapping / Organolithium cross-coupling",
+            "reagents": "t-BuLi",
+            "reagent_smiles": "BrCC/C=C(\\C)CCC",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]N1C=CC(=C1)Br",
+            "product_smiles": "[TIPS]N1C=CC(=C1)CC/C=C(\\C)CCC",
+            "notes": "Lithiation of the 3-bromopyrrole derivative with t-BuLi followed by nucleophilic attack on the bromoalkene, forming a new C-C bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection, Nitration",
+            "reagents": "n-Bu₄NF, AcONO₂",
+            "reagent_smiles": "",
+            "conditions": "THF, rt then EtNO₂, 0 °C",
+            "yield": "23%",
+            "reactant_smiles": "[TIPS]N1C=CC(=C1)C/C=C(\\C)CCC",
+            "product_smiles": "O=[N+]([O-])c1cc[nH]c(C/C=C(\\C)CCC)c1",
+            "notes": "Deprotection of N-TIPS group followed by nitration of the pyrrole ring at the C4 position.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Protection",
+            "reagents": "DMAP",
+            "reagent_smiles": "O=C(OC(C)(C)C)OC(=O)OC(C)(C)C",
+            "conditions": "MeCN",
+            "yield": "91%",
+            "reactant_smiles": "C1=C(CCC/C=C(/C)CCC)C=C([N+](=O)[O-])N1H",
+            "product_smiles": "C1=C(CCC/C=C(/C)CCC)C=C([N+](=O)[O-])N1[Boc]",
+            "notes": "Pyrrole N-H is protected with a Boc group using Boc2O and DMAP in acetonitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sharpless Asymmetric Dihydroxylation",
+            "reagents": "K2OsO4, Corey ligand, K3Fe(CN)6, MeSO2NH2, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH/H2O, 0 °C",
+            "yield": "64%",
+            "reactant_smiles": "O=N(=O)c1c(C)cc(CCC/C(C)=C/CCC=C(C)C)n1C(=O)OC(C)(C)C",
+            "product_smiles": "O=N(=O)c1c(C)cc(CCC/C(C)=C/CC[C@H](O)C(C)(C)O)n1C(=O)OC(C)(C)C",
+            "notes": "Dihydroxylation of the terminal isopropenyl group. Reactant SMILES corrected to include terminal alkene for consistency with product and reaction type, as visual depiction of reactant's terminal chain was saturated.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Shi asymmetric epoxidation",
+            "reagents": "(+)-Shi catalyst, Oxone®, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, DMM buffer, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C=C(C/C=C(\\C)CC/C=C(\\C)CC[C@H](O)C(C)(C)O)C=C1[N+](=O)[O-]",
+            "product_smiles": "[Boc]N1C=C(C=C1[N+](=O)[O-])C[C@H]2[C@@](C)(CC[C@H]3[C@@](C)(CC[C@H](O)C(C)(C)O)O3)O2",
+            "notes": "Shi asymmetric epoxidation of two internal alkenes to form two chiral epoxides.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acid-catalyzed epoxide opening and cyclization",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "PhMe, rt",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C=C(C=C1[N+](=O)[O-])C[C@H]2[C@@](C)(CC[C@H]3[C@@](C)(CC[C@H](C(C)(C)O)O)O3)O2",
+            "product_smiles": "CC(C)(C)OC(=O)N1C=C(C=C1[N+](=O)[O-])C[C@H]([C@@]2(C)CC[C@H]([C@@]3(C)CC[C@H](C(C)(C)O)O3)O2)O",
+            "notes": "Cascade epoxide opening and intramolecular cyclization forming fused tetrahydrofuran rings from a di-epoxide diol precursor.",
+            "substeps": []
+        }
+    ]
+}

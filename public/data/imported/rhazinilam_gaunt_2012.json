@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rhazinilam-gaunt-2012",
+        "molecule_name": "Rhazinilam",
+        "class": "Natural Product",
+        "author": "Gaunt",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CCCI/C(C)=C/CCC(=O)OC(C)(C)C",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CN[Ts]",
+            "product_smiles": "COC(=O)CN([Ts])CCC/C(C)=C/CCC(=O)OC(C)(C)C",
+            "notes": "N-alkylation of a tosylamide with an E-configured iodoalkene, forming a new tertiary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Addition / Baeyer-Villiger Oxidation (inferred)",
+            "reagents": "EthynylMgBr",
+            "reagent_smiles": "C#CMgBr",
+            "conditions": "THF, -20 °C to 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)C(=O)CCC/C=C(\\C)CCCN([Ts])CC(=O)N(C)OC",
+            "product_smiles": "CC(C)(C)OC(=O)CCC/C=C(\\C)CCCN([Ts])CC(=O)C#C",
+            "notes": "The Weinreb amide is converted to an alkynyl ketone via addition of EthynylMgBr, which is a standard transformation. However, simultaneously, the tert-butyl ketone moiety in the reactant is converted to a tert-butyl ester in the product. This latter transformation (ketone to ester) is typically a Baeyer-Villiger oxidation or similar rearrangement, which is not usually accomplished with EthynylMgBr under these conditions. This suggests either a multi-step reaction summarized as one, or an implied oxidant/rearrangement is missing from the reagent list for the ketone to ester conversion.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "PdCl₂(XPhos)₂, 2-NH₂PhB(OH)₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "C/C=C(/CCCN1C=CC(=C1)[OTs])\\CCC(=O)OC(C)(C)C",
+            "product_smiles": "C/C=C(/CCCN1C=CC(=C1)C2=CC=CC=C2N)\\CCC(=O)OC(C)(C)C",
+            "notes": "Suzuki coupling of a pyrrole tosylate with 2-aminophenylboronic acid, forming a C-C bond between the pyrrole and phenyl rings.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O/MeOH/THF",
+            "yield": "",
+            "reactant_smiles": "C/C=C(/CCCN1C=CC(=C1)C2=CC=CC=C2N)\\CCC(=O)OC(C)(C)C",
+            "product_smiles": "C/C=C(/CCCN1C=CC(=C1)C2=CC=CC=C2N)\\CCC(=O)O",
+            "notes": "Hydrolysis of a tert-butyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Oxidative Cyclization",
+            "reagents": "Pd(OAc)2, O2",
+            "reagent_smiles": "CC(=O)O[Pd](OC(=O)C).O=O",
+            "conditions": "dioxane/AcOH/DMSO, 100 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C/[C@H]1CC(=O)NC2=CC=CC=C2C3=C1NCCC3",
+            "product_smiles": "C=CC12CCCC(=O)NC3=C(C=CC=C3)C4=C1N(CCC2)C=C4",
+            "notes": "Intramolecular oxidative cyclization leading to a complex fused polycyclic system with a spiro center. The reaction appears to involve the loss of one carbon atom (a methyl group from the alkene) which is unusual for these conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "33% (2 steps)",
+            "reactant_smiles": "C=CC12CCCC(=O)NC3=C(C=CC=C3)C4=C1N(CCC2)C=C4",
+            "product_smiles": "CCC12CCCC(=O)NC3=C(C=CC=C3)C4=C1N(CCC2)C=C4",
+            "notes": "Catalytic hydrogenation of a vinyl group to an ethyl group.",
+            "substeps": []
+        }
+    ]
+}

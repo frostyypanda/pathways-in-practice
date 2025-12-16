@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "griseoviridin-renata-2024",
+        "molecule_name": "Griseoviridin",
+        "class": "Natural Product",
+        "author": "Renata",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Takai Olefination",
+            "reagents": "CrCl2, CHI3",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, THF, 0 °C to rt",
+            "yield": "61%",
+            "reactant_smiles": "[OtBu]C(=O)C[C@H]1C[C@@H](C=O)OC(C)(C)O1",
+            "product_smiles": "[OtBu]C(=O)C[C@H]1C[C@@H](/C=C/I)OC(C)(C)O1",
+            "notes": "Aldehyde converted to (E)-vinyl iodide via Takai olefination.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, MeOH, THF, 60 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H](CC(=O)[OtBu])C[C@@H](/C=C/I)O1",
+            "product_smiles": "CC1(C)O[C@H](/C=C/I)C[C@@H](CC(=O)O)O1",
+            "notes": "Hydrolysis of tert-butyl ester to carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide Coupling",
+            "reagents": "DIPEA",
+            "reagent_smiles": "COC(=O)[C@H](CO)N.CN(C)C(=[N+](C)C)F.F[P-](F)(F)(F)(F)F",
+            "conditions": "THF",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "CC1(C)O[C@H](/C=C/I)C[C@H](CC(=O)O)O1",
+            "product_smiles": "CC1(C)O[C@H](/C=C/I)C[C@H](CC(=O)N[C@H](CO)C(=O)OC)O1",
+            "notes": "Amide bond formation between a carboxylic acid and methyl serinate using a fluorinated carbodiimide-like coupling reagent (F-TDU, related to TFFH).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclodehydration / Oxazoline Formation",
+            "reagents": "Deoxo-Fluor",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H](/C=C/I)C[C@H](CC(=O)N[C@@H](CO)C(=O)OC)O1",
+            "product_smiles": "CC1(C)O[C@H](/C=C/I)C[C@H](CC2=N[C@@H](CO2)C(=O)OC)O1",
+            "notes": "Formation of a 5-membered oxazoline ring from an amide and a primary alcohol, mediated by Deoxo-Fluor.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Aromatization / Oxidation",
+            "reagents": "DBU, BrCCl3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 to 0 °C",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "CC1(C)O[C@H](/C=C/I)C[C@H](CC2=N[C@@H](C(=O)OC)CO2)O1",
+            "product_smiles": "COC(=O)c1cnco1CC[C@H]2OC(C)(C)O[C@H]2/C=C/I",
+            "notes": "Aromatization of the oxazoline ring to an oxazole ring, losing the chirality at that center.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "98%",
+            "reactant_smiles": "CC1(C)O[C@H](/C=C/I)C[C@H](CC2=NC(=CO2)C(=O)OC)O1",
+            "product_smiles": "CC1(C)O[C@H](/C=C/I)C[C@H](CC2=NC(=CO2)C(=O)O)O1",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid using lithium hydroxide in water and THF.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide bond formation, Macrocyclization",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "N[C@@H](C[SMMTr])C(=O)O[C@H](C)/C=C/C(=O)NC/C=C(Sn([Bu])([Bu])[Bu])",
+            "conditions": "DMF",
+            "yield": "86%",
+            "reactant_smiles": "CC1(C)O[C@H](/C=C/I)C[C@H](CC2=NC(=CO2)C(=O)O)O1",
+            "product_smiles": "I/C=C/[C@@H]1O[C@@](C)(C)O[C@@H]1C[C@H](C2)C3=COC(=N3)C(=O)NC([C@@H](C[SMMTr])C(=O)O[C@H](C)/C=C/C(=O)NC/C=C(Sn([Bu])([Bu])[Bu])C2)",
+            "notes": "Intramolecular amide macrocyclization between the carboxylic acid of the oxazole derivative and the primary amine of the stannane reagent.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Epoxide opening / Grignard reaction (organocuprate mediated)",
+                    "reagents": "CuI",
+                    "reagent_smiles": "C=CMgBr",
+                    "conditions": "THF, -20 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "C[C@H]1CO1",
+                    "product_smiles": "C=CC[C@H](C)O",
+                    "notes": "Nucleophilic attack of vinylmagnesium bromide (likely forming an organocuprate with CuI) on the less hindered carbon of the chiral epoxide, leading to regioselective ring opening. The new C-C bond forms at the unsubstituted carbon of the epoxide, and the oxygen becomes an alcohol. The stereochemistry at the methyl-bearing carbon is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Cross-metathesis",
+                    "reagents": "HG-II",
+                    "reagent_smiles": "C=CC(=O)OC",
+                    "conditions": "DCM, reflux",
+                    "yield": "85%",
+                    "reactant_smiles": "C=CC[C@H](C)O",
+                    "product_smiles": "C[C@@H](C/C=C/C(=O)OC)O",
+                    "notes": "Chiral but-3-en-2-ol undergoes cross-metathesis with methyl acrylate catalyzed by Grubbs II catalyst to form a chiral alpha,beta-unsaturated ester with retention of configuration at the chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Amidation / Nucleophilic Acyl Substitution",
+                    "reagents": "DCM",
+                    "reagent_smiles": "C#CCN.C[Al](C)C",
+                    "conditions": "0 °C to rt",
+                    "yield": "85%",
+                    "reactant_smiles": "C[C@@H](C/C=C/C(=O)OC)O",
+                    "product_smiles": "C#CCNC(=O)/C=C/C[C@@H](C)O",
+                    "notes": "Ester is converted to an amide using propargylamine and trimethylaluminum. The stereochemistry at the secondary alcohol and the E-alkene geometry are retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Hydrostannylation",
+                    "reagents": "CuCN, nBuLi, nBu3SnH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "C#CCNCC(=O)/C=C/C[C@@H](C)O",
+                    "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNCC(=O)/C=C/C[C@@H](C)O",
+                    "notes": "Copper-catalyzed hydrostannylation of a terminal alkyne to form an E-vinylstannane, retaining stereochemistry of the existing alkene and chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Esterification",
+                    "reagents": "EDC, DMAP",
+                    "reagent_smiles": "[Fmoc]N[C@@H](C(=O)O)CSC(c1ccccc1)(c2ccccc2)c3ccc(OC)cc3",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/C[C@@H](C)O",
+                    "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/C[C@@H](C)OC(=O)[C@@H](CSC(c1ccccc1)(c2ccccc2)c3ccc(OC)cc3)N[Fmoc]",
+                    "notes": "Esterification of a secondary alcohol with a protected L-cysteine derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.6",
+                    "reaction_type": "Fmoc Deprotection",
+                    "reagents": "piperidine",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "89% (2 steps)",
+                    "reactant_smiles": "[Bu3Sn]/C=C/CNC(=O)/C=C/C[C@@H](C)OC(=O)[C@@H](C[SMMTr])N[Fmoc]",
+                    "product_smiles": "[Bu3Sn]/C=C/CNC(=O)/C=C/C[C@@H](C)OC(=O)[C@@H](C[SMMTr])N",
+                    "notes": "Fmoc protecting group is removed from the secondary amine to yield a primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd2(dba)3, LiCl",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "71%",
+            "reactant_smiles": "I/C=C/[C@@H]1C[C@H]2OC(C)(C)O[C@H]2CC3=COC(=N3)C(=O)N([SMMTr])[C@@H](CCCC/C=C/[C@@H](C)OC(=O)C/C=C/CCNC(=O)C=C\\[Sn](CCCC)(CCCC)CCCC)C(=O)O1",
+            "product_smiles": "[C@@H]1(CCCC/C=C/[C@@H](C)OC(=O)C/C=C/CCNC(=O)C=C/C=C\\[C@@H]2C[C@H]3OC(C)(C)O[C@H]3CC4=COC(=N4)C(=O)N([SMMTr])C(=O)O1)",
+            "notes": "Intramolecular Stille coupling to form a conjugated diene system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (Thiol, Diol)",
+            "reagents": "TFA, Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 0 °C",
+            "yield": "49%",
+            "reactant_smiles": "C[C@@H]1C/C=C/C(=O)NC/C=C/C=C/[C@@H]2C[C@H](CC3=NC(=CO3)C(=O)N[C@@H](C[SMMTr])C(=O)O1)OC(C)(C)O2",
+            "product_smiles": "C[C@@H]1C/C=C/C(=O)NC/C=C/C=C/[C@@H](O)[C@H](O)CC3=NC(=CO3)C(=O)N[C@@H](CS)C(=O)O1",
+            "notes": "Reductive deprotection of SMMTr-protected thiol and isopropylidene acetal-protected diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Thiol-Ene Cyclization / Reductive Cyclization",
+            "reagents": "SgvP, Opt13, Fdx, Fdr, NaNADP, Na2HPO3, TCEP",
+            "reagent_smiles": "",
+            "conditions": "H2O, DMSO",
+            "yield": "78%",
+            "reactant_smiles": "C[C@@H]1C/C=C/C(=O)NC/C=C/C=C/[C@H](C[C@H](CC2=NC(=CO2)C(=O)N[C@H](CS)C(=O)O1)O)O",
+            "product_smiles": "C[C@@H]1OC(=O)[C@@H](S2)NC(=O)c3ncoc3C[C@H](O)C[C@H](O)C/C=C/C=C/CN(H)C(=O)C/C=C/[C@H](S2)CC1",
+            "notes": "Reductive cyclization of a macrocyclic thiol, forming a 6-membered dihydrothiazine ring and shifting a double bond.",
+            "substeps": []
+        }
+    ]
+}

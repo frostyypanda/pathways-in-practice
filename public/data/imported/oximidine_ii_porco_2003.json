@@ -1,0 +1,242 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "oximidine-ii-porco-2003",
+        "molecule_name": "Oximidine II",
+        "class": "Natural Product",
+        "author": "Porco",
+        "year": 2003
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Brown asymmetric allylation",
+            "reagents": "s-BuLi, (+)-Ipc2BOMe, BF3OEt2",
+            "reagent_smiles": "C=CC(C)[MOM]O",
+            "conditions": "-78 °C",
+            "yield": "80%",
+            "reactant_smiles": "[PMB]OCCC=O",
+            "product_smiles": "C=C[C@@H]([C@@H](CC[PMB]O)O)[MOM]O",
+            "notes": "Asymmetric allylation of an aldehyde with a chiral allylborane to form a homoallylic alcohol with two syn stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "94%",
+            "reactant_smiles": "C=C[C@@H]([OMOM])[C@@H](O)CC[OPMB]",
+            "product_smiles": "C=C[C@@H]([OMOM])[C@@H]([OTBS])CC[OPMB]",
+            "notes": "Silylation of a secondary alcohol to form a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "NMO, OsO4",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]([OMOM])[C@H]([OTBS])CC[OPMB]",
+            "product_smiles": "C(O)CO[C@H]([OMOM])[C@H]([OTBS])CC[OPMB]",
+            "notes": "Syn-dihydroxylation of a terminal alkene, creating a racemic diol center and preserving existing stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Cleavage (1,2-diol to aldehyde)",
+            "reagents": "K2CO3, Pb(OAc)4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[PMB]OCH2CH2[C@@H](O[TBS])[C@H](OCOC)C(O)CO",
+            "product_smiles": "[PMB]OCH2CH2[C@@H](O[TBS])[C@H](OCOC)C=O",
+            "notes": "Oxidative cleavage of the vicinal diol using Lead(IV) acetate to form an aldehyde. Stereochemistry at the PMB-CH2CH2-C(OTBS)-C(OMOM) portion is preserved. The wavy bond on the diol indicates undefined stereochemistry, which is omitted in the SMILES.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Yamamoto olefination",
+            "reagents": "t-BuLi, Ti(OiPr)4, Mel",
+            "reagent_smiles": "C=C[CH](P(c1ccccc1)c2ccccc2)",
+            "conditions": "THF, -78 °C to 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=C[C@@H](O[MOM])[C@H](O[TBS])CCC[PMB]",
+            "product_smiles": "C=C/C=C\\[C@@H](O[MOM])[C@H](O[TBS])CCC[PMB]",
+            "notes": "Yamamoto olefination of an aldehyde to form a 1,3-diene, preserving TBSO, MOM, and PMB protecting groups and existing stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "71%",
+            "reactant_smiles": "C=C/C=C\\[C@@H]([C@H](CC[OPMB])[OTBS])[OMOM]",
+            "product_smiles": "C=C/C=C\\[C@@H]([C@H](CC[OPMB])O)[OMOM]",
+            "notes": "Deprotection of TBS ether to hydroxyl group using TBAF. Reaction occurs over 4 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Esterification / Acylation",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "C/C=C/C=C/C1=CC=CC2=C1C(=O)OC(C)(C)O2",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[OPMB]CC[C@H](O)[C@@H]([OMOM])/C=C/C=C",
+            "product_smiles": "Oc1c(C(=O)O[C@@H](CC[OPMB])[C@H](/C=C/C=C)[OMOM])c(/C=C/C=C/C)ccc1",
+            "notes": "Esterification of a secondary alcohol with an activated salicylic acid derivative, opening the cyclic ketal.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Acetal/Ketal formation, Esterification/Lactonization",
+                    "reagents": "DMAP, SOCl2",
+                    "reagent_smiles": "",
+                    "conditions": "DME, acetone",
+                    "yield": "96%",
+                    "reactant_smiles": "O=C(O)c1c(O)c(O)ccc1",
+                    "product_smiles": "CC1(C)OC2=C(C(=CC=C2)O)C(=O)O1",
+                    "notes": "Formation of a cyclic 1,3-dioxin-4-one by reaction of 2,3-dihydroxybenzoic acid with an unspecified reagent (possibly involving a source of the gem-dimethyl group, e.g., acetone, and a dehydrating agent like SOCl2) from the carboxylic acid and one adjacent hydroxyl group, leaving the other hydroxyl group untouched.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Triflate formation",
+                    "reagents": "Tf2O, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "85%",
+                    "reactant_smiles": "CC1(C)OC2=C(C(=CC=C2)O)C(=O)O1",
+                    "product_smiles": "CC1(C)OC2=C(C(=CC=C2)[OTf])C(=O)O1",
+                    "notes": "Hydroxyl group is converted to a triflate ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Stille Coupling",
+                    "reagents": "Pd2dba3, P(2-furyl)3, LiCl",
+                    "reagent_smiles": "C/C=C/C=C/[Sn](CCCC)(CCCC)CCCC",
+                    "conditions": "DMF, 80 °C",
+                    "yield": "61% (2 steps)",
+                    "reactant_smiles": "CC1(C)OC2=C(C(=CC=C2)OS(=O)(=O)C(F)(F)F)C(=O)O1",
+                    "product_smiles": "C/C=C/C=C/C1=CC=CC2=C1C(=O)OC(C)(C)O2",
+                    "notes": "A Stille coupling reaction where an aryl triflate is coupled with (1E,3E)-penta-1,3-dienyltributylstannane to form a conjugated diene. The reaction is catalyzed by Pd2dba3 and P(2-furyl)3, with LiCl as an additive.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Silylation",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "C/C=C/C=C/C1=CC=CC(=C1C(=O)O[C@@H](CC[OPMB])[C@@H]([OMOM])/C=C/C=C)O",
+            "product_smiles": "C/C=C/C=C/C1=CC=CC(=C1C(=O)O[C@@H](CC[OPMB])[C@@H]([OMOM])/C=C/C=C)[OTBS]",
+            "notes": "Protection of a phenolic hydroxyl group with a TBS silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ring-closing metathesis",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "",
+            "conditions": "DCM, 40 °C",
+            "yield": "48%",
+            "reactant_smiles": "C/C=C/C=C/C1=CC=CC(=C1C(=O)O[C@@H](CC[OPMB])[C@H](/C=C\\C=C)O[OMOM])O[TBS]",
+            "product_smiles": "[OTBS]Oc1cccc2c1[C@H](/C=C\\[C@@H](O[OMOM])[C@@H](CC[OPMB])C(=O)O2)",
+            "notes": "Intramolecular ring-closing metathesis of a diene-substituted benzoate to form a macrolactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection (PMB ether cleavage)",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "DCM/H2O",
+            "yield": "91%",
+            "reactant_smiles": "[OTBS]c1cccc(c1C(=O)O[C@@H]2(O[MOM])([C@@H](CCOc3ccc(OC)cc3)C=C/C=C/C=C\\C2))",
+            "product_smiles": "[OTBS]c1cccc(c1C(=O)O[C@@H]2(O[MOM])([C@@H](CCO)C=C/C=C/C=C\\C2))",
+            "notes": "PMB protecting group is selectively removed under DDQ oxidative conditions, yielding a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "PDC, 4 Å MS",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C1=C2C(=CC=C1)/C=C/C=C\\C=C/[C@H](OCOC)[C@@H](CCO)OC2=O",
+            "product_smiles": "[OTBS]C1=C2C(=CC=C1)/C=C/C=C\\C=C/[C@H](OCOC)[C@@H](CC=O)OC2=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Pyridinium Dichromate (PDC).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Stork-Zhao olefination",
+            "reagents": "",
+            "reagent_smiles": "[P+](C[I])(c1ccccc1)(c2ccccc2)c3ccccc3.[I-].[Na][N]([Si](C)(C)C)[Si](C)(C)C",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "[OTBS]C1=C2C(=CC=C1)/C=C/C=C\\C=C/[C@@H]([C@H](CC=O)OC2=O)[OMOM]",
+            "product_smiles": "[OTBS]C1=C2C(=CC=C1)/C=C/C=C\\C=C/[C@@H]([C@H](C/C=C\\I)OC2=O)[OMOM]",
+            "notes": "Conversion of an aldehyde to a (Z)-iodoalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Buchwald-Hartwig Amination / Copper-catalyzed N-alkylation",
+            "reagents": "CuTC, ethylenediamine, K2CO3",
+            "reagent_smiles": "COC=N/C=C/C(=O)N",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "I/C=C/C[C@H]1OC(=O)c2cccc([OTBS])c2/C=C/C=C/C=C/[C@H]1[OTBS]",
+            "product_smiles": "COC=N/C=C/C(=O)N/C=C/C[C@H]1OC(=O)c2cccc([OTBS])c2/C=C/C=C/C=C/[C@H]1[OTBS]",
+            "notes": "Copper-catalyzed coupling of a vinyl iodide with an amide/amine to form a new C-N bond, forming an advanced macrolactone intermediate.",
+            "substeps": [
+                {
+                    "step_id": "15.1",
+                    "reaction_type": "Oxime formation, Lactone ring-opening",
+                    "reagents": "MeONH2.HCl",
+                    "reagent_smiles": "CON.Cl.O",
+                    "conditions": "H2O",
+                    "yield": "92%",
+                    "reactant_smiles": "C1=CC(=O)OC1O",
+                    "product_smiles": "CO/N=C/C=C\\C(=O)O",
+                    "notes": "Lactone undergoes ring-opening and reaction with methoxylamine to form an O-methyl oxime with a carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.2",
+                    "reaction_type": "Amidation",
+                    "reagents": "ethyl chloroformate, Et3N, NH4OH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, H2O",
+                    "yield": "95%",
+                    "reactant_smiles": "CO/N=C/C=C\\C(=O)O",
+                    "product_smiles": "CO/N=C/C=C\\C(=O)N",
+                    "notes": "Conversion of a carboxylic acid to a primary amide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection (Silyl Ether Hydrolysis)",
+            "reagents": "HF-py, pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "44% (2 steps)",
+            "reactant_smiles": "CO/N=C/C=C/C(=O)N/C=C/C[C@@H]([OTBS])[C@H]1/C=C/C=C/C=C/c2cccc([OTBS])c2C(=O)O1",
+            "product_smiles": "CO/N=C/C=C/C(=O)N/C=C/C[C@@H](O)[C@H]1/C=C/C=C/C=C/c2cccc(O)c2C(=O)O1",
+            "notes": "Deprotection of two TBS groups to hydroxyl groups, retaining stereochemistry and double bond geometry.",
+            "substeps": []
+        }
+    ]
+}

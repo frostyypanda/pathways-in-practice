@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ravidasir-ravidasir-presidio-unknown-2024",
+        "molecule_name": "Ravidasir (Ravidasir Presidio)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Friedel-Crafts Acylation",
+            "reagents": "AlCl3",
+            "reagent_smiles": "C(C(=O)Cl)Cl",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C2C=C(C=CC2=C1)Br",
+            "product_smiles": "C1=C2C=C(C=CC2=CC(=C1)C(=O)CCl)Br",
+            "notes": "Friedel-Crafts acylation of 6-bromonaphthalene with chloroacetyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification / SN2 reaction",
+            "reagents": "Et3N",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C(=O)O",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "C1=C2C=C(C=CC2=CC(=C1)C(=O)CCl)Br",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C(=O)OCC(=O)C2=CC=C3C=C(C=CC3=C2)Br",
+            "notes": "Esterification of 6-bromo-2-(2-chloroacetyl)naphthalene with N-Boc-L-proline.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Imidazole formation / Cyclocondensation",
+            "reagents": "NH4OAc",
+            "reagent_smiles": "",
+            "conditions": "toluene, 110 °C",
+            "yield": "73% (3 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCC[C@@H]1C(=O)OCC(=O)C2=CC=C3C=C(Br)C=CC3=C2",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@@H]1C2=C(C3=CC=C4C=C(Br)C=CC4=C3)NC=N2",
+            "notes": "Formation of a 1H-imidazole ring from a 1,3-dicarbonyl derivative and an ammonium source.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Borylation",
+            "reagents": "B2pin2, KOAc, Pd(dppf)Cl2•DCM",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C2=NC=C(C3=CC=C4C=C(C=CC4=C3)Br)N2",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C2=NC=C(C3=CC=C4C=C(C=CC4=C3)B5OC(C)(C)C(C)(C)O5)N2",
+            "notes": "Suzuki-Miyaura type borylation of an aryl bromide using bis(pinacolato)diboron.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki Coupling",
+            "reagents": "Pd(dppf)Cl2·DCM, K2CO3",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C2=NC3=C(C=C(C=C3)Br)N2",
+            "conditions": "THF, H2O, reflux",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C2=NC=C(C3=CC=C4C=C(C=CC4=C3)B5OC(C)(C)C(C)(C)O5)N2",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C2=NC=C(C3=CC=C4C=C(C=CC4=C3)C5=CC6=C(C=C5)N=C([C@H]7CCCN7C(=O)OC(C)(C)C)N6)N2",
+            "notes": "Suzuki coupling of a naphthalene boronate ester with a bromo-benzimidazole derivative.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amide formation",
+                    "reagents": "HATU, DIPEA",
+                    "reagent_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C(=O)O",
+                    "conditions": "THF, rt",
+                    "yield": "",
+                    "reactant_smiles": "Nc1c(N)ccc(Br)c1",
+                    "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C(=O)Nc2c(N)ccc(Br)c2",
+                    "notes": "Amide bond formation between N-Boc-L-proline and 4-bromo-1,2-diaminobenzene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Benzimidazole formation / Cyclization",
+                    "reagents": "HOAc",
+                    "reagent_smiles": "CC(=O)O",
+                    "conditions": "40 °C",
+                    "yield": "63% (2 steps)",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C(=O)Nc2c(N)ccc(Br)c2",
+                    "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C2=NC3=C(C=C(C=C3)Br)N2",
+                    "notes": "Cyclization of an o-aminophenyl amide to form a 2-substituted benzimidazole derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCC[C@H]1C2=NC3=CC=C(C=C3N2)C4=CC=C(C=C4)C5=CC=C(C=C5)C6=NC7=CC=C([C@H]8CCCN8C(=O)OC(C)(C)C)C=C7N6",
+            "product_smiles": "N1CCC[C@H]1C2=NC3=CC=C(C=C3N2)C4=CC=C(C=C4)C5=CC=C(C=C5)C6=NC7=CC=C([C@H]8CCCN8)C=C7N6",
+            "notes": "Acid-catalyzed deprotection of two tert-butyl carbamate (Boc) protecting groups on the pyrrolidine nitrogens.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling (Peptide Coupling)",
+            "reagents": "HOPO, EDCI, DIPEA",
+            "reagent_smiles": "CC(C)[C@H](C(=O)O)NC(=O)OC",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "C1C[C@@H](C2=NC=C(C3=CC=C4C=C(C=CC4=C3)C5=CC6=C(C=C5)N=C([C@@H]7CCCN7)N6)N2)NC1",
+            "product_smiles": "C1C[C@@H](C2=NC=C(C3=CC=C4C=C(C=CC4=C3)C5=CC6=C(C=C5)N=C([C@@H]7CCCN7C(=O)[C@H](C(C)C)NC(=O)OC)N6)N2)NC1",
+            "notes": "Amide bond formation between the carboxylic acid of the N-protected valine derivative and a secondary amine (pyrrolidine NH) on the main scaffold.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Salt Formation",
+            "reagents": "HCl, EtOH, n-BuOAc",
+            "reagent_smiles": "",
+            "conditions": "rt to 65 °C",
+            "yield": "80% (3 steps)",
+            "reactant_smiles": "COC(=O)N[C@@H](C(C)C)C(=O)N1CCC[C@H]1c2nc[nH]c3ccc(c(c23)C4=CC5=CC=C(c6nc[nH]c6C7CCCN7C(=O)[C@@H](C(C)C)NC(=O)OC)C5=C4)",
+            "product_smiles": "COC(=O)N[C@@H](C(C)C)C(=O)N1CCC[C@H]1c2nc[nH]c3ccc(c(c23)C4=CC5=CC=C(c6nc[nH]c6C7CCCN7C(=O)[C@@H](C(C)C)NC(=O)OC)C5=C4).Cl.Cl",
+            "notes": "Formation of Ravidasvir dihydrochloride salt from Ravidasvir free base. The main molecular structure remains unchanged.",
+            "substeps": []
+        }
+    ]
+}

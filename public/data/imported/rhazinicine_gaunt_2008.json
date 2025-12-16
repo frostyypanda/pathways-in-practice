@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rhazinicine-gaunt-2008",
+        "molecule_name": "Rhazinicine",
+        "class": "Natural Product",
+        "author": "Gaunt",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Directed Silylation / Deprotonation-Electrophile Quench",
+            "reagents": "LDA, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "[Boc]N1C=CC=C1",
+            "product_smiles": "[Boc]N1C([TMS])=CC=C1",
+            "notes": "Deprotonation of N-Boc-pyrrole at the 2-position with LDA, followed by silylation with trimethylsilyl chloride (TMSCl).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "C-H Arylation",
+            "reagents": "[IrCl(cod)]2, dtbpy, B2pin2, 2-iodonitrobenzene, Pd(OAc)2, K3PO4, SPhos",
+            "reagent_smiles": "",
+            "conditions": "hexane, BuOH, 100 °C",
+            "yield": "78%",
+            "reactant_smiles": "[Boc]N1C([TMS])=CC=C1",
+            "product_smiles": "[Boc]N1C([TMS])=CC(C2=C(C=CC=C2)[N+](=O)[O-])=C1",
+            "notes": "Ir/Pd catalyzed C-H arylation of N-Boc-2-TMS-pyrrole with 2-iodonitrobenzene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "DMF",
+            "reagent_smiles": "",
+            "conditions": "120 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C([TMS])=C(C2=C([N+](=O)[O-])C=CC=C2)C=C1",
+            "product_smiles": "[TMS]C1=C(C2=C([N+](=O)[O-])C=CC=C2)C=CN1",
+            "notes": "Deprotection of N-Boc protecting group from a substituted pyrrole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Acylation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "ClC(=O)CCC=CCC(=O)OCC[Si](CC)(CC)CC",
+            "conditions": "THF, -78 °C",
+            "yield": "76%",
+            "reactant_smiles": "C[Si](C)(C)c1c[nH]c(c1)-c2ccccc2[N+](=O)[O-]",
+            "product_smiles": "C[Si](C)(C)c1c(C2=CC=CC=C2[N+](=O)[O-])c[n](c1)C(=O)CCC=CCC(=O)OCC[Si](CC)(CC)CC",
+            "notes": "N-acylation of 2-(2-nitrophenyl)-5-(trimethylsilyl)-1H-pyrrole with a 2-(triethylsilyl)ethyl 4-(chlorocarbonyl)but-3-enoate.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Wittig olefination",
+                    "reagents": "t-BuOK, Ph3PEtBr",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe",
+                    "yield": "80%",
+                    "reactant_smiles": "CCOC(=O)CCC(=O)CCC(=O)OCC",
+                    "product_smiles": "CC=C(CCC(=O)OCC)CCC(=O)OCC",
+                    "notes": "Wittig olefination of a ketone to form an alkene (ethylidene group).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "KOH",
+                    "reagent_smiles": "[K+].[OH-]",
+                    "conditions": "THF/H2O/MeOH",
+                    "yield": "100%",
+                    "reactant_smiles": "CCOC(=O)CCC=CCC(=O)OCC",
+                    "product_smiles": "O=C(O)CCC=CCC(=O)O",
+                    "notes": "Hydrolysis of a diethyl diester to the corresponding diacid using potassium hydroxide in a mixed solvent system. The central double bond (with unspecified E/Z stereochemistry) remains unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Esterification",
+                    "reagents": "Ac2O",
+                    "reagent_smiles": "C[Si](C)(C)CCO",
+                    "conditions": "50 °C",
+                    "yield": "",
+                    "reactant_smiles": "OC(=O)CCC=CCC(=O)O",
+                    "product_smiles": "OC(=O)CCC=CCC(=O)O[TSE]",
+                    "notes": "Selective monoesterification of a dicarboxylic acid with 2-(trimethylsilyl)ethanol (TSE-OH) using acetic anhydride activation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "Acid Chloride Formation",
+                    "reagents": "cat. DMF",
+                    "reagent_smiles": "ClC(=O)C(=O)Cl",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "O=C(O)CCC=CCC(=O)OCCC[Si](C)(C)C",
+                    "product_smiles": "ClC(=O)CCC=CCC(=O)OCCC[Si](C)(C)C",
+                    "notes": "Conversion of a carboxylic acid to an acid chloride using oxalyl chloride, with a 2-(trimethylsilyl)ethyl (TSE) ester remaining untouched. The squiggly bond indicates undefined/mixed stereochemistry for the alkene.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Heck cyclization",
+            "reagents": "Pd(TFA)2, tBuOOBz",
+            "reagent_smiles": "",
+            "conditions": "AcOH/dioxane/DMSO",
+            "yield": "53%",
+            "reactant_smiles": "C[Si](C)(C)c1cc(C2=CC=CC=C2[N+](=O)[O-])cn1C(=O)CCC=C(C)CCC(=O)OCCC[Si](C)(C)C",
+            "product_smiles": "C=C[C@]1(CCC(=O)N2C(=CC(=C12)C3=CC=CC=C3[N+](=O)[O-])[Si](C)(C)C)CCC(=O)OCCC[Si](C)(C)C",
+            "notes": "Intramolecular Heck cyclization leading to a spirocyclic system, involving pyrrole, phenyl nitro, and an internal alkene with concomitant methyl to vinyl transformation. The 6-membered lactam ring and spiro center are formed during cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "C=C[C@]1(CCC(=O)N2C(=CC(=C12)C3=CC=CC=C3[N+](=O)[O-])[TMS])[CO2TSE]",
+            "product_smiles": "CC[C@@]1(CCC(=O)N2C(=CC(=C12)C3=CC=CC=C3[N+](=O)[O-])[TMS])[CO2TSE]",
+            "notes": "Selective hydrogenation of the vinyl group to an ethyl group, maintaining stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "AlCl3",
+            "reagent_smiles": "[Al](Cl)(Cl)Cl",
+            "conditions": "DCM/H2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCC(=O)N2C(=CC(=C12)C3=CC=CC=C3[N+](=O)[O-])[Si](C)(C)C)CCC(=O)OCH2CH2[Si](C)(C)C",
+            "product_smiles": "CC[C@@]1(CCC(=O)N2C(=CC(=C12)C3=CC=CC=C3N)[Si](C)(C)C)CCC(=O)OCH2CH2[Si](C)(C)C",
+            "notes": "Reduction of an aromatic nitro group to an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Multi-step cascade reaction (implied by 3 steps, involving C-N bond formation, possibly deprotection)",
+            "reagents": "Et3N",
+            "reagent_smiles": "C[N+](Cl)c1ccccc1.[I-]",
+            "conditions": "PhMe/THF",
+            "yield": "74% (3 steps)",
+            "reactant_smiles": "CC[C@@]1(CCC(=O)N2C(=CC(=C12)C3=CC=CC=C3N)[Si](C)(C)C)CCC(=O)OCCC[Si](C)(C)C",
+            "product_smiles": "CC[C@@]1(C)CCC(=O)N2C3=CC=CC=C3C4=C1N(C=C4)C(=O)CC2",
+            "notes": "Intramolecular cyclization to form a complex polycyclic structure, also involving protecting group removal (TMS and TSE ester) and possibly a Pictet-Spengler-like or related reaction.",
+            "substeps": []
+        }
+    ]
+}

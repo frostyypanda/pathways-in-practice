@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "grandisol-wenkert-1978",
+        "molecule_name": "Grandisol",
+        "class": "Natural Product",
+        "author": "Wenkert",
+        "year": 1978
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA, allyl bromide",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1CCOC1=O",
+            "product_smiles": "C=CC[C@@]1(C)CCOC1=O",
+            "notes": "Alpha-alkylation of a methyl-substituted gamma-butyrolactone with allyl bromide, forming a new chiral center with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Partial Reduction",
+            "reagents": "DIBALH",
+            "reagent_smiles": "",
+            "conditions": "toluene, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=CC[C@@]1(C)CCOC1=O",
+            "product_smiles": "C=CC[C@@]1(C)CC[C@H](O)O1",
+            "notes": "Partial reduction of a gamma-lactone to a cyclic hemiacetal using DIBALH. Stereochemistry of the existing chiral center is retained, and a new chiral center is formed at the hemiacetal carbon with R configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection of Alcohol (with concurrent ring opening and oxidation)",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "92%",
+            "reactant_smiles": "O1CC[C@@](C)(CC=C)[C@H]1O",
+            "product_smiles": "C=CC[C@@](C)(CC[OTBDPS])C=O",
+            "notes": "Oxidative ring-opening of a cyclic hemiacetal (furanose) to an acyclic aldehyde, followed by silyl protection of the generated primary alcohol. The TBDPS group is explicitly abbreviated in the product structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Gilbert Seyferth homologation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(=O)C(=[N+]=[N-])P(=O)(OC)OC",
+            "conditions": "MeOH",
+            "yield": "87%",
+            "reactant_smiles": "C=CC[C@@](C)(CCO[OTBDPS])C=O",
+            "product_smiles": "C=CC[C@@](C)(C#C)CCO[OTBDPS]",
+            "notes": "Gilbert Seyferth homologation of an aldehyde to an alkyne, retaining stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "None (as drawn)",
+            "reagents": "LDA, MeOTf",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "C=CC[C@](C)(C#C)CCO[OTBDPS]",
+            "product_smiles": "C=CC[C@](C)(C#C)CCO[OTBDPS]",
+            "notes": "The screenshot depicts a 5-membered cyclic ether for both reactant and product, with a 'TBDPSO' label pointing to the ring oxygen, and a chiral carbon within the ring showing three exocyclic substituents (methyl, allyl, ethynyl). However, this drawing is chemically inconsistent with standard valency rules for carbon (pentavalent carbon if the chiral center is in the ring with 3 substituents) and the nature of an ether oxygen (cannot be protected by TBDPS if part of the ring). The provided SMILES represents a linear molecule containing all the depicted functional groups and stereochemistry (allyl, methyl, ethynyl, and an exocyclic -CH2CH2OTBDPS group attached to the chiral center). Given the severe inconsistencies in the drawing, the corrected SMILES assumes the linear connectivity from the input SMILES is the intended structure, and the cyclic depiction in the screenshot is an error in rendering or interpretation. The TBDPS group has been abbreviated to [OTBDPS]. The product is identical to the reactant based on the screenshot, suggesting no net reaction despite the reagents listed.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Enyne Cyclization",
+            "reagents": "HG II",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₃, mw, 75 °C",
+            "yield": "83%",
+            "reactant_smiles": "C=CC[C@](C)(C#CC)CC[OTBDPS]",
+            "product_smiles": "C[C@]1(CC[OTBDPS])C(C(=C)C)C=C1",
+            "notes": "Mercury(II)-catalyzed cyclization of an enyne leading to a substituted cyclobutene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Raney-Ni",
+            "reagent_smiles": "",
+            "conditions": "iPrOH, hexanes",
+            "yield": "63%",
+            "reactant_smiles": "C=C(C)C1=CC[C@]1(C)CCO[OTBDPS]",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@]1(C)CCO[OTBDPS]",
+            "notes": "Reduction of the cyclobutene double bond via hydrogenation, yielding a cyclobutane with two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Silyl ether hydrolysis)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@H]1CC[C@](C)(CCO[TBDPS])C1",
+            "product_smiles": "C=C(C)[C@H]1CC[C@](C)(CCO)C1",
+            "notes": "Acid-catalyzed removal of tert-butyldiphenylsilyl (TBDPS) protecting group from a primary alcohol.",
+            "substeps": []
+        }
+    ]
+}

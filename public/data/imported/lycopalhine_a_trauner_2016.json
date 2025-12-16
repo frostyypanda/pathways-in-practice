@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycopalhine-a-trauner-2016",
+        "molecule_name": "Lycopalhine A",
+        "class": "Natural Product",
+        "author": "Trauner",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification and Amine Protection",
+            "reagents": "TMSCl, Et3N, Boc2O",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "O=C(O)[C@H](N)CCC(=O)O",
+            "product_smiles": "[NHBoc][C@H]([CO2Me])CCC[CO2Me]",
+            "notes": "L-Glutamic acid undergoes dimethyl esterification of both carboxylic acid groups and Boc-protection of the amino group. The (S) stereochemistry at the alpha-carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkylation",
+            "reagents": "LiHMDS, allyl bromide",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N[C@@H](C(=O)OC)CCC(=O)OC",
+            "product_smiles": "C=CC[C@H](C(=O)OC)C[C@@H](C(=O)OC)N[Boc]",
+            "notes": "Alpha-alkylation of the diester with an allyl group via enolate formation using LiHMDS.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reductive Cyclization (Intramolecular Hemiacetal Formation)",
+            "reagents": "DIBAL, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "83%",
+            "reactant_smiles": "COC(=O)[C@H](NC(=O)OC(C)(C)C)C[C@H](C(=O)OC)C=C",
+            "product_smiles": "O1C(O)C[C@H](NC(=O)OC(C)(C)C)C[C@H](C=C)C1",
+            "notes": "Diisobutylaluminum hydride (DIBAL) reduces the two methyl esters. One ester is reduced to an aldehyde, and the other to a primary alcohol. The aldehyde then cyclizes with the primary alcohol to form a six-membered hemiacetal (tetrahydropyran).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Bestmann-Ohira Reaction / Ring-Opening",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "CC(=O)C(=N#N)P(=O)(OC)OC",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "O1C(O)[C@H](NC(=O)OC(C)(C)C)CC[C@@H](CC=C)C1",
+            "product_smiles": "C=CCC[C@H](O)C[C@H](C#C)NC(=O)OC(C)(C)C",
+            "notes": "The hemiacetal ring opens, and the aldehyde formed reacts with the Ohira-Bestmann reagent to form the terminal alkyne. The ring oxygen is incorporated as the secondary alcohol in the product. The relative stereochemistry between the BocHN group and the hydroxyl/allyl group changes from trans in the reactant (wedge/dash) to syn in the product (both wedges).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole, DMAP",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.c1cnc[nH]1.CN(C)c1ccncc1",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@H](C[C@@H](C#C)[Boc]N)CO",
+            "product_smiles": "C=CC[C@@H](C[C@@H](C#C)[Boc]N)[OTBS]",
+            "notes": "The primary alcohol is protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Pauson-Khand reaction",
+            "reagents": "Co2(CO)8",
+            "reagent_smiles": "Cc1ccccc1",
+            "conditions": "PhMe, rt to 70 °C",
+            "yield": "70%",
+            "reactant_smiles": "C=CCC[C@@H](C[C@@H](C#C)N[Boc])C[OTBS]",
+            "product_smiles": "[Boc]N[C@H]1C[C@H](C[C@@]2CC(=O)C=C12)C[OTBS]",
+            "notes": "Intramolecular Pauson-Khand reaction of an enyne with a Boc-protected amine and an OTBS group, forming a bicyclic enone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Conjugate Addition / Grignard Reaction",
+            "reagents": "CuBr•SMe2, TMSCl, HMPA, AcOH",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "THF, -78 to -30 °C, then -30 °C to rt",
+            "yield": "78%",
+            "reactant_smiles": "[Boc]N[C@H]1C[C@H](C[C@@H]2CC(=O)C=C21)CO[TBS]",
+            "product_smiles": "[Boc]N[C@H]1C[C@H](C[C@@H]2CC(=O)[C@@H](C=CCC)C21)CO[TBS]",
+            "notes": "Copper-mediated conjugate addition of allylmagnesium bromide to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Boc, TBS)",
+            "reagents": "AcCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "45 °C",
+            "yield": "92%",
+            "reactant_smiles": "C=CCC[C@]12CC(=O)C[C@H]2C[C@@H](C[C@@H]1N[Boc])CO[TBS]",
+            "product_smiles": "C=CCC[C@]12CC(=O)C[C@H]2C[C@@H](C[C@@H]1N)CO",
+            "notes": "Deprotection of Boc-amine and TBS-ether to yield primary amine and primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Mannich reaction",
+            "reagents": "Et3N, L-proline",
+            "reagent_smiles": "CC(C)(C)OC(=O)NCCC=O",
+            "conditions": "CH2Cl2, rt; DMF, rt",
+            "yield": "60%",
+            "reactant_smiles": "O=C1C[C@@H]2C[C@@H](CO)CC([C@@H](N)C[C@H]2C1)CC=C",
+            "product_smiles": "C=CCC[C@]12[C@H]3C[C@H](CO)CC([C@H](N(CCC)C(=O)OC(C)(C)C)[C@H]3C[C@H]2C1)C(=O)C",
+            "notes": "Mannich reaction to form a new 6-membered ring, fusing the reactant and reagent structures.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amine protection",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "O=C(OC(C)(C)C)OC(=O)OC(C)(C)C",
+            "conditions": "rt",
+            "yield": "93%",
+            "reactant_smiles": "C=CCCC[C@H]1C2C[C@H]3C[C@@H](CO)[C@H]1N[C@@H](CCN(C)[Boc])[C@H]2C(=O)C3",
+            "product_smiles": "C=CCCC[C@H]1C2C[C@H]3C[C@@H](CO)[C@H]1N([Boc])[C@@H](CCN(C)[Boc])[C@H]2C(=O)C3",
+            "notes": "Boc protection of the secondary amine within the polycyclic scaffold.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation (Primary alcohol to Aldehyde)",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, 80 °C",
+            "yield": "79%",
+            "reactant_smiles": "C=CCCC12[C@@H]3C[C@H](C[C@H]1N([Boc])(CC[N](C)[Boc])C2C(=O)C3)CO",
+            "product_smiles": "C=CCCC12[C@@H]3CC(C[C@H]1N([Boc])(CC[N](C)[Boc])C2C(=O)C3)C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using IBX. Stereochemistry at the alpha carbon to the aldehyde becomes undefined (racemic) as indicated by the wavy bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Intramolecular Cyclization / Aldehyde Reduction",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "98%",
+            "reactant_smiles": "C=CCC[C@@H]1C2C3C(C(=O)C2)[C@@H]4C[C@H](C=O)[C@@H]3N([Boc])C([C@H]1N(C)[Boc])C4",
+            "product_smiles": "C=CCC[C@@H]1C2C3C(C(=O)C2)[C@@H]4C[C@@H]5[C@H](O)C([C@@H]3N([Boc])C([C@H]1N(C)[Boc])C4)C5",
+            "notes": "An intramolecular base-catalyzed cyclization forms a new six-membered ring, reducing the aldehyde to a secondary alcohol and creating a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Lemieux-Johnson oxidation",
+            "reagents": "OsO4, NaIO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "dioxane, H2O, r.t.",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@@H]2C[C@@H]3C[C@H]4[C@H](O)C(=O)C2N(C)[C@H]1[C@@H](CCC=C)C4N3[Boc]",
+            "product_smiles": "[Boc]N1[C@@H]2C[C@@H]3C[C@H]4[C@H](O)C(=O)C2N(C)[C@H]1[C@@H](CC=O)C4N3[Boc]",
+            "notes": "Conversion of a terminal alkene to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection, Intramolecular Cyclization",
+            "reagents": "TFA, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "0 °C, rt",
+            "yield": "56% (2 steps)",
+            "reactant_smiles": "[Boc]N(C)CCC(=O)C1C[C@H]2C[C@H]3C[C@H]4C[N]([Boc])C5([C@H](C(=O)[C@H]3C4)[C@@H]1O)[C@H]25",
+            "product_smiles": "CN1C[C@H]2C[C@H]3C[C@H]4[C@H](C(=O)C5)[C@H]3(C4)[C@H]1C[C@@H]5C2O",
+            "notes": "Deprotection of two Boc groups and subsequent intramolecular cyclization to form Lycopalhin A. The aldehyde group reacts to form a new C-N bond and close the fused ring system.",
+            "substeps": []
+        }
+    ]
+}

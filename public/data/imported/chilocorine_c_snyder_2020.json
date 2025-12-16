@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "chilocorine-c-snyder-2020",
+        "molecule_name": "Chilocorine C",
+        "class": "Natural Product",
+        "author": "Snyder",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Oxidation, Decarboxylation",
+            "reagents": "H2O2, Na2WO4, Et4NCl, K3PO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2/H2O, 5 to 23 °C",
+            "yield": "74%",
+            "reactant_smiles": "[NH]1[C@H](C(=O)O)CC[C@@H](C)CC1",
+            "product_smiles": "[N+]1([O-])=CCC[C@@H](C)CC1",
+            "notes": "Oxidation of a piperidine secondary amine with a carboxylic acid to a cyclic nitrone, accompanied by decarboxylation. The stereochemistry of the methyl group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "1,3-Dipolar Cycloaddition",
+            "reagents": "ZnI2",
+            "reagent_smiles": "CC(C)(C1OCCO1)C/C=C(\\[OTBS])OCC",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC=[N+](CC1)[O-]",
+            "product_smiles": "CCOC(=O)[C@@H](C[C](C)(C)C1OCCO1)[C@H]2C[C@H](C)CCN2[OTBS]",
+            "notes": "1,3-dipolar cycloaddition of a cyclic nitrone (from imine N-oxide) with an enol ether, followed by trapping the nitrogen with TBS.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Enol silyl ether formation",
+                    "reagents": "LiHMDS, HMPA/THF, TBSCl",
+                    "reagent_smiles": "",
+                    "conditions": "-78 °C then -78 to 23 °C",
+                    "yield": "78%",
+                    "reactant_smiles": "CCOC(=O)CC1(C)OCCO1",
+                    "product_smiles": "CCOC\\C=C(/O[TBS])CC1(C)OCCO1",
+                    "notes": "Kinetic enolate formation of an ethyl ester with lithium bis(trimethylsilyl)amide (LiHMDS) in HMPA/THF solvent at -78 °C, followed by trapping with tert-butyldimethylsilyl chloride (TBSCl) to yield an E-silyl enol ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF, reflux",
+            "yield": "72% (2 steps)",
+            "reactant_smiles": "CCOC(=O)[C@@H](CC1(C)OCCO1)[C@@H]2C[C@@H](C)CCN2[OTBS]",
+            "product_smiles": "C[C@@H]1CCN([C@@H](C1)[C@@H](CC2(C)OCCO2)CO)O",
+            "notes": "Ester and N-OTBS protecting group are reduced to a primary alcohol and an N-hydroxyl group, respectively.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX, MgSO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 to 0 °C",
+            "yield": "89%",
+            "reactant_smiles": "C[C@H]1CCN([C@H](C1)[C@@H](CC2(C)OCCO2)CO)O",
+            "product_smiles": "[N+]1([O-])C=C[C@H](C)C[C@H](C1)[C@@H](CC2(C)OCCO2)CO",
+            "notes": "Oxidation of an N-hydroxyl piperidine to a 3,4-dihydropyridine N-oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "1,3-Dipolar Cycloaddition",
+            "reagents": "toluene",
+            "reagent_smiles": "C=COCC",
+            "conditions": "55 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CC=C[C@H]([C@H](CO)CC2(C)OCCO2)[N+]1([O-])",
+            "product_smiles": "CCO[C@H]1CC2N(O1)[C@H]([C@H](CO)CC3(C)OCCO3)C[C@@H](C)CC2",
+            "notes": "A [3+2] cycloaddition between a cyclic nitrone and ethyl vinyl ether to form an isoxazolidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Esterification (Benzoylation)",
+            "reagents": "BzCl, DMAP, Et3N",
+            "reagent_smiles": "O=C(Cl)c1ccccc1",
+            "conditions": "toluene",
+            "yield": "68%",
+            "reactant_smiles": "CCO[C@@H]1CC2C[C@@H](C)C[C@H]([C@H](CC3(C)OCCO3)CO)N2O1",
+            "product_smiles": "CCO[C@@H]1CC2C[C@@H](C)C[C@H]([C@H](CC3(C)OCCO3)[OBz])N2O1",
+            "notes": "Benzoylation of a primary alcohol to form a benzoate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-oxide Deoxygenation, Acetal Hydrolysis, and Iminium Cyclization",
+            "reagents": "Mo(CO)6, TFA",
+            "reagent_smiles": "",
+            "conditions": "CH3CN/H2O, reflux",
+            "yield": "70%",
+            "reactant_smiles": "CCO[C@@H]1C[C@@]2(C)C[C@H](C)C[C@H]([C@@H](COC(=O)C4=CC=CC=C4)CC3(C)OCCO3)N2O1",
+            "product_smiles": "C[C@H]1CCC2=[N+]([C@H](C1)C[C@H]3CC2C[C@@H]3COC(=O)C4=CC=CC=C4)CC.O=C([O-])C(F)(F)F",
+            "notes": "The N-oxide is deoxygenated, the ethyl ether group is removed, the acetal is hydrolyzed, and a new iminium ring system is formed via acid-catalyzed cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Addition to Iminium / Strecker-type Reaction",
+            "reagents": "",
+            "reagent_smiles": "[K+].N#CC(=O)[O-].CC(C)O",
+            "conditions": "120 °C",
+            "yield": "47%",
+            "reactant_smiles": "C[C@@H]1C[C@@H]2[C@H](COC(=O)c3ccccc3)C[C@H]3[N+]=C4C[C@H]1C2C34.O=C([O-])C(F)(F)F",
+            "product_smiles": "C[C@@H]1C[C@@H]2[C@H](COC(=O)c3ccccc3)[C@H](C[C@H]4CN)C[C@H]5N(C[C@H]1C2)C45",
+            "notes": "Nucleophilic addition of potassium cyanoacetate to the iminium ion, with subsequent decarboxylation and reduction of the iminium to a tertiary amine and formation of a cyanomethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nitrile Reduction",
+            "reagents": "p-TsOH*H2O, PhI(OH)(OTs)",
+            "reagent_smiles": "O[PH][Pt][PH]O",
+            "conditions": "EtOH/H2O, reflux then CH3CN/H2O, reflux",
+            "yield": "65%",
+            "reactant_smiles": "C[C@]12C[N]3C4C1CC([C@@H](COC(=O)C5=CC=CC=C5)CC#N)[C@H]2C43",
+            "product_smiles": "C[C@]12C[N]3C4C1CC([C@@H](COC(=O)C5=CC=CC=C5)CCN)[C@H]2C43",
+            "notes": "Reduction of a nitrile group to a primary amine in a complex polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "DMF, aq. HCl",
+            "reagent_smiles": "O=C1OC(=O)C(=O)[C@H]1[C@H](CO)O",
+            "conditions": "60 °C",
+            "yield": "60%",
+            "reactant_smiles": "C[N]1C2CC[C@@H]3C(C2)C[C@](CN)([OBz])(C13)",
+            "product_smiles": "C[N]1C2CC[C@@H]3C(C2)C[C](C=O)([OBz])(C13)",
+            "notes": "Oxidation of a primary aminomethyl group to an aldehyde using a cyclic diketone and subsequent acid workup. The stereochemistry at the aldehyde carbon is lost.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acid-catalyzed Dehydration and Rearrangement",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "benzene, 50 °C",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "C[C@@H]1C[C@@H]2N3C[C@H]4[C@@H]1[C@@H](O)[C@@]5(O[C@@H]2[C@H]3C4)C(=O)C6=CC=C(N7C6)C[C@H]8C(SCCS8)C7[C@H]5C[OBz]",
+            "product_smiles": "C[C@@H]1C[C@@H]2N3C[C@H]4[C@@H]1/C=C/5[C@H](C[OBz])C(=O)C6=CC=C(N7C6)C[C@H]8C(SCCS8)C7[C@H]5[C@@H]2[C@H]3C4",
+            "notes": "Acid-catalyzed dehydration of a tertiary alcohol and cleavage of an ether bridge, forming a new exocyclic double bond and reorganizing the polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Dithioacetal Deprotection",
+            "reagents": "Mn(dpm)3, MeSi(OEt)2H",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH/CH2Cl2",
+            "yield": "92%",
+            "reactant_smiles": "CCC1C[C@H]2C[C@@H]3C[C@H]4N2C(=O)/C(=C/[C@@H](C[C@H](C3)N4C1)CO[Bz])C5=CNC6=C5CCC7(SCCS7)CC6",
+            "product_smiles": "CCC1C[C@H]2C[C@@H]3C[C@H]4N2C(=O)/C(=C/[C@@H](C[C@H](C3)N4C1)CO[Bz])C5=CNC6=C5CCC7(=O)CC6",
+            "notes": "Dithioacetal (1,3-dithiolane) is deprotected to a ketone. The complex polycyclic core structure, including all stereocenters and the E-alkene geometry, is preserved. The benzoyl group is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Organolithium Addition / Ketone Alkylation",
+            "reagents": "MeLi",
+            "reagent_smiles": "C[Li]",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CC[C@@H]2N3[C@H](C[C@@H](COC(=O)c4ccccc4)C[C@@H]12)[C@H]4C(=O)c5c(N3C=C5)C[C@@]4C6CCC7(SCCS7)CC6",
+            "product_smiles": "C[C@@H]1CC[C@@H]2N3[C@H](C[C@@H](COC(=O)c4ccccc4)C[C@@H]12)[C@H]4[C@](C)(O)c5c(N3C=C5)C[C@@]4C6CCC7(SCCS7)CC6",
+            "notes": "Addition of methyl lithium to a ketone, forming a tertiary alcohol with a new stereocenter. The hydroxyl group is oriented 'up' and the methyl group 'down'.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Dehydration",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@]1(O)C2=C(C=CN3[C@@H]2)[C@@H]4C5(SCCS)CCC(C[C@@H]([OBz])[C@H]6[C@@H]7C[C@H]8CC[N@]67C8)C5C43",
+            "product_smiles": "C(C)=C1C2=C(C=CN3[C@@H]2)[C@@H]4C5(SCCS)CCC(C[C@@H]([OBz])[C@H]6[C@@H]7C[C@H]8CC[N@]67C8)C5C43",
+            "notes": "Dehydration of a tertiary alcohol to form an exocyclic alkene, conjugated with the pyrrole system.",
+            "substeps": []
+        }
+    ]
+}

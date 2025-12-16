@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "avalevonadifloxacin-emroko-otsuka-unknown-2024",
+        "molecule_name": "Avalevonadifloxacin (EmrokO Otsuka)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Quinoline Synthesis (Pomeranz–Fritsch type variant)",
+            "reagents": "FeSO4, B(OH)3, HCl, sodium m-nitrobenzenesulfonate",
+            "reagent_smiles": "[Na+].O=S([O-])(=O)C=CC=O",
+            "conditions": "H2O, reflux",
+            "yield": "67%",
+            "reactant_smiles": "CC(=O)Nc1c(Br)c(F)c(F)cc1",
+            "product_smiles": "Cc1nc2c(cc(F)c(F)c2Br)c1",
+            "notes": "The reaction involves the cyclization of an N-acetylated aniline derivative to form a quinoline. The drawn reagent is sodium 3-oxoprop-1-ene-1-sulfonate (an α,β-unsaturated aldehyde sulfonate), while the text label for this reagent is 'sodium m-nitrobenzenesulfonate', which is a different compound. The SMILES for `reagent_smiles` is derived from the drawn structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "H2, Pd/C, NaOAc, HOAc",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=NC2=C(C=C1)C(=C(C=C2Br)F)F",
+            "product_smiles": "CC1=NC2=C(CC1)C(=C(C=C2Br)F)F",
+            "notes": "Catalytic hydrogenation of the 3,4-double bond of the quinoline ring system, forming a 3,4-dihydroquinoline derivative. The C=N double bond and the substituted benzene ring remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "H2, Pt/C, NaOAc, HOAc",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "97% (2 steps)",
+            "reactant_smiles": "CC1=NC2=C(CC1)C(=C(C=C2Br)F)F",
+            "product_smiles": "CC1CCC2=C(C(=CC(=C2F)F)Br)N1",
+            "notes": "Catalytic hydrogenation of an imine to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Chiral Resolution / Asymmetric Synthesis",
+            "reagents": "L-DBTA",
+            "reagent_smiles": "CCOC(=O)C.CO.O",
+            "conditions": "EtOAc, MeOH, H2O",
+            "yield": "35%",
+            "reactant_smiles": "CC1CCC2=C(C(=CC(=C2F)F)Br)N1",
+            "product_smiles": "C[C@H]1CCC2=C(C(=CC(=C2F)F)Br)N1",
+            "notes": "An achiral tetrahydroquinoline derivative is converted to a single enantiomer product at the methyl-bearing carbon via a stereoselective reaction, likely a chiral resolution or asymmetric synthesis, using L-DBTA as a chiral resolving agent or catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Quinolone Cyclocondensation",
+            "reagents": "PPA",
+            "reagent_smiles": "CCOC=C(C(=O)OCC)C(=O)OCC",
+            "conditions": "130 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC2=C(C(=CC(=C2F)F)Br)N1",
+            "product_smiles": "CCOC(=O)C1=CN2[C@H](C)CCC3=C(C(=CC(=C32)C1=O)F)F",
+            "notes": "Intramolecular cyclocondensation of a bromo-fluoro-tetrahydroquinoline with diethyl ethoxymethylene malonate to form a quinolone derivative, involving bromine displacement and ring fusion.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C1=CN2[C@@H](C)CCC3=C(C(=CC(=C32)C1=O)F)F",
+            "product_smiles": "C[C@@H]1CCC2=C3C(=CC(=C2F)F)C(=O)C(=CN13)C(=O)O",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Boronate Ester Formation / Chelation",
+            "reagents": "B2O3, Ac2O, HOAc",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "93%",
+            "reactant_smiles": "C[C@H]1CCC2=C3C(=CC(=C2F)F)C(=O)C(=CN13)C(=O)O",
+            "product_smiles": "C[C@H]1CCC2=C3C(=CC(=C2F)F)C(=CN13)C4=C(C(=O)O4)[B-](OC(C)=O)(OC(C)=O)O4",
+            "notes": "Formation of a cyclic boronate ester by chelation of the quinolone's ketone and carboxylic acid functionalities with boron, accompanied by acylation of the boron atom with acetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr), Deboronation",
+            "reagents": "MeCN",
+            "reagent_smiles": "C1CNCCC1O",
+            "conditions": "60 °C",
+            "yield": "74%",
+            "reactant_smiles": "C[C@H]1CCC2=C3C(=CC(F)=C(F)2)C(=O)C(=CN13)C(=O)O[B-](OC(C)=O)(OC(C)=O)[O+]",
+            "product_smiles": "C[C@H]1CCC2=C3C(=CC(=C2N4CCC(CC4)O)F)C(=O)C(=CN13)C(=O)O",
+            "notes": "One fluorine on the quinolone core is replaced by piperidin-4-ol via SNAr, and the boron protecting group is removed to yield the carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification / Amide Coupling",
+            "reagents": "DIC, DMAP, Et3N",
+            "reagent_smiles": "C[C@H](C(=O)O)N[Boc]",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC2=C3C(=CC(=C2N4CCC(CC4)O)F)C(=O)C(=CN13)C(=O)O",
+            "product_smiles": "C[C@H]1CCC2=C3C(=CC(=C2N4CCC(CC4)OC(=O)[C@H](C)N[Boc])F)C(=O)C(=CN13)C(=O)O",
+            "notes": "Esterification of the hydroxyl group on the piperidine ring with Boc-L-alanine using DIC/DMAP/Et3N coupling conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC2=C3C(=CC(=C2N4CCC(CC4)OC(=O)[C@H](C)N[Boc])F)C(=O)C(=CN13)C(=O)O",
+            "product_smiles": "C[C@H]1CCC2=C3C(=CC(=C2N4CCC(CC4)OC(=O)[C@H](C)N)F)C(=O)C(=CN13)C(=O)O",
+            "notes": "Boc deprotection of the secondary amine using trifluoroacetic acid (TFA). The R configuration of the chiral center in the alanine moiety is maintained.",
+            "substeps": []
+        }
+    ]
+}

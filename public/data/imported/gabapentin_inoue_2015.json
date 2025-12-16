@@ -1,0 +1,61 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "gabapentin-inoue-2015",
+        "molecule_name": "Gabapentin",
+        "class": "Natural Product",
+        "author": "Inoue",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Knoevenagel condensation",
+            "reagents": "pyridine, piperidine",
+            "reagent_smiles": "C1CCC(=O)CC1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1(C)OC(=O)CC(=O)O1",
+            "product_smiles": "",
+            "notes": "Knoevenagel condensation of Meldrum's acid derivative with cyclohexanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Conjugate Addition / Tellurium-mediated alkylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "CC(C)(C)OC(=O)NCC(=O)[Te]c1ccccc1",
+            "conditions": "CH2Cl2, air, rt",
+            "yield": "",
+            "reactant_smiles": "CC1(C)OC(=O)C(=C2CCCCC2)C(=O)O1",
+            "product_smiles": "CC(C)(C)OC(=O)NCC1(C2CCCCC2)C(=O)OC(C)(C)OC1=O",
+            "notes": "Conjugate addition of a Boc-protected aminomethyl telluride to a cyclic malonate derivative (Meldrum's acid type), forming a spirocyclic product with a new C-C bond.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Acyl telluride formation / Carboxylic acid activation",
+                    "reagents": "NMM, (PhTe)₂, NaBH₄",
+                    "reagent_smiles": "CC(C)COC(=O)Cl",
+                    "conditions": "THF, MeOH, 0 °C",
+                    "yield": "79%",
+                    "reactant_smiles": "[Boc]NCC(=O)O",
+                    "product_smiles": "[Boc]NCC(=O)[TePh]",
+                    "notes": "Carboxylic acid is activated by isobutyl chloroformate (drawn reagent), followed by reaction with (PhTe)₂ and reduction with NaBH₄ to form an acyl telluride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection / Hydrolysis / Decarboxylation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "[Boc]NCC1(CCCCC1)C2C(=O)OC(C)(C)OC2=O",
+            "product_smiles": "C1CCC(CC1)(CC(=O)O)C[NH3+].Cl-",
+            "notes": "Boc deprotection, followed by hydrolysis of Meldrum's acid derivative and subsequent decarboxylation to form gabapentin hydrochloride.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,254 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "n14-desacetoxytubulysin-h-domling-2020",
+        "molecule_name": "N14-Desacetoxytubulysin H",
+        "class": "Natural Product",
+        "author": "Domling",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Homologation (Diazoketone formation)",
+            "reagents": "IBCF, NMM, CH₂N₂",
+            "reagent_smiles": "ClC(=O)OCC(C)C.CN1CCOCC1.C=[N+]=[N-]",
+            "conditions": "THF, in ether, -20 °C to 0 °C to rt",
+            "yield": "88%",
+            "reactant_smiles": "[Fmoc]N[C@@H](C(C)C)C(=O)O",
+            "product_smiles": "[Fmoc]N[C@@H](C(C)C)C(=O)C=[N+]=[N-]",
+            "notes": "Conversion of Fmoc-protected L-valine to its corresponding diazoketone via mixed anhydride formation with isobutyl chloroformate (IBCF) and N-methylmorpholine (NMM), followed by reaction with diazomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Wolff Rearrangement",
+            "reagents": "",
+            "reagent_smiles": "[Ag]OC(=O)c1ccccc1",
+            "conditions": "Dioxane:H2O, 70 °C",
+            "yield": "95%",
+            "reactant_smiles": "[Fmoc]HN[C@@H](C(C)C)C(=O)C=[N+]=[N-]",
+            "product_smiles": "[Fmoc]HN[C@@H](C(C)C)CC(=O)O",
+            "notes": "Wolff rearrangement of an alpha-diazo ketone (Fmoc protected amino acid derivative) to a carboxylic acid, with retention of stereochemistry at the alpha carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization / Mannich-type reaction",
+            "reagents": "(HCHO)n, PTSA",
+            "reagent_smiles": "",
+            "conditions": "95 °C, toluene",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N[C@H](CC(=O)O)C(C)C",
+            "product_smiles": "[Fmoc]N1COC(=O)C[C@@H]1C(C)C",
+            "notes": "Cyclization of a beta-amino acid with formaldehyde to form a 1,3-oxazinan-2-one ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive opening of lactone/N-acetal",
+            "reagents": "Et3SiH, TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "[Fmoc]N1[C@H](C(C)C)CC(=O)OC1",
+            "product_smiles": "[Fmoc]N(C)[C@H](C(C)C)CC(=O)O",
+            "notes": "Reductive opening of a 1,3-oxazinan-4-one to an N-methylated amino acid derivative. The lactone is reduced to a carboxylic acid and the N-CH2 bridge is cleaved with concurrent N-methylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Carboxylic Acid Reduction (via mixed anhydride)",
+            "reagents": "NMM, NaBH4",
+            "reagent_smiles": "CC(C)COC(=O)Cl",
+            "conditions": "-20 °C, THF",
+            "yield": "96%",
+            "reactant_smiles": "[Fmoc]N(C)[C@H](CC(=O)O)C(C)C",
+            "product_smiles": "[Fmoc]N(C)[C@H](CCO)C(C)C",
+            "notes": "Carboxylic acid is converted to a mixed anhydride using isobutyl chloroformate, followed by reduction with sodium borohydride to yield the primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "CH3CN, 80 °C",
+            "yield": "96%",
+            "reactant_smiles": "[Fmoc]N(C)[C@H](C(C)C)CCO",
+            "product_smiles": "[Fmoc]N(C)[C@H](C(C)C)CC=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ugi reaction (MCR)",
+            "reagents": "ZnBr2",
+            "reagent_smiles": "[Tr]SC(C#N)C(=O)OC.O=C(O)[C@@H](C(C)C)NC(=O)[C@@H]1CCCCN1[Cbz].CC(C)(C)[C@@H]1CCCNC1[C@H]2C=CC=CN2",
+            "conditions": "CH2Cl2, rt",
+            "yield": "71%",
+            "reactant_smiles": "CN([Fmoc])[C@H](C(C)C)CC=O",
+            "product_smiles": "CN([Fmoc])[C@H](C(C)C)C[C@](OC(=O)[C@H](C(C)CC)NC(=O)[C@@H]1CCCCN1[Cbz])(C(=O)N[C@@H](S[Tr])C(=O)OC)",
+            "notes": "4-component Ugi reaction forming a complex peptide-like structure. Stereochemistry controlled by chiral ligand.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "",
+                    "reagents": "TFA",
+                    "reagent_smiles": "C(O)(c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "",
+                    "yield": "97%",
+                    "reactant_smiles": "COC(=O)[C@@H](CS)[NH3+].[Cl-]",
+                    "product_smiles": "CCC(C)[C@@H](C(=O)OC)NC(=O)[C@H]1CCCCN1[Cbz]",
+                    "notes": "The drawn reactant (Cysteine methyl ester hydrochloride) and the drawn product (N-Cbz-2-piperidinecarbonyl-L-Isoleucine methyl ester) do not represent a chemically feasible single reaction step with the specified reagents. The reactant contains sulfur and an amino acid backbone that is completely absent in the product. The reagents (Trt-OH, TFA) suggest S-tritylation, but the product is a dipeptide with a different amino acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "LiOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, MeOH, H2O",
+                    "yield": "95%",
+                    "reactant_smiles": "CCC(C)[C@@H](C(=O)OC)NC(=O)[C@H]1CCCCN1[Cbz]",
+                    "product_smiles": "CCC(C)[C@@H](C(=O)O)NC(=O)[C@H]1CCCCN1[Cbz]",
+                    "notes": "Hydrolysis of a methyl ester to a carboxylic acid using lithium hydroxide in a mixed solvent system.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cyclodehydration",
+            "reagents": "TiCl4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N(C)[C@H](C[C@H](OC(=O)[C@H](C(CC)C)NC(=O)[C@H]1CCCCN1[Cbz])C(=O)N[C@@H](CS[Trt])C(=O)OC)C(C)C",
+            "product_smiles": "[Fmoc]N(C)[C@H](C[C@H](OC(=O)[C@H](C(CC)C)NC(=O)[C@H]1CCCCN1[Cbz])C(=O)N=C(C(=O)OC)CS[C@@H]2)C(C)C",
+            "notes": "2-Thiazoline formation via cyclodehydration of an amide and a thioether using TiCl4.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 70 °C",
+            "yield": "81%",
+            "reactant_smiles": "[Cbz]N1[C@H](CCCC1)C(=O)N[C@H](C(C)CC)C(=O)O[C@H](C[C@@H](C(C)C)[C@H](C)N(C)[Fmoc])C2=NC(CS2)[COOMe]",
+            "product_smiles": "[Cbz]N1[C@H](CCCC1)C(=O)N[C@H](C(C)CC)C(=O)O[C@H](C[C@@H](C(C)C)[C@H](C)N(C)[Fmoc])C2=NC(=CS2)[COOMe]",
+            "notes": "Oxidation of a 4,5-dihydrothiazole (thiazoline) to a thiazole. The yield is reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Fmoc deprotection",
+            "reagents": "Diethylamine",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N(C)[C@H](C(C)C)C[C@H](C1=NC(=CS1)C(=O)OC)OC(=O)[C@@H](C(CC)C)NC(=O)[C@H]2CCCCN2[Cbz]",
+            "product_smiles": "HN(C)[C@H](C(C)C)C[C@H](C1=NC(=CS1)C(=O)OC)OC(=O)[C@@H](C(CC)C)NC(=O)[C@H]2CCCCN2[Cbz]",
+            "notes": "Fmoc protecting group removed from a secondary amine using diethylamine. Cbz group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Ester to Amide Rearrangement",
+            "reagents": "DIPEA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 50 °C",
+            "yield": "93% (2 steps)",
+            "reactant_smiles": "CCC(C)[C@@H](C(=O)O[C@H](C[C@H](C(C)C)N(C)H)C1=NC(=CS1)C(=O)OC)NC(=O)[C@H]2CCCCN2C(=O)OCC3=CC=CC=C3",
+            "product_smiles": "CCC(C)[C@@H](C(=O)N(C)[C@H](C[C@H](C1=NC(=CS1)C(=O)OC)O)C(C)C)NC(=O)[C@H]2CCCCN2C(=O)OCC3=CC=CC=C3",
+            "notes": "Ester hydrolysis followed by intramolecular N-acylation (rearrangement).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH, H2O, rt",
+            "yield": "98%",
+            "reactant_smiles": "CCC(C)[C@@H](C(=O)N(C)[C@H](C[C@H](C1=NC(=CS1)C(=O)OC)O)C(C)C)NC(=O)[C@H]2CCCCN2C(=O)OCC3=CC=CC=C3",
+            "product_smiles": "CCC(C)[C@@H](C(=O)N(C)[C@H](C[C@H](C1=NC(=CS1)C(=O)O)O)C(C)C)NC(=O)[C@H]2CCCCN2C(=O)OCC3=CC=CC=C3",
+            "notes": "Methyl ester hydrolysis to carboxylic acid, Cbz group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Amide Coupling",
+            "reagents": "DIC, PfOH, CH2Cl2, DIPEA, DMF",
+            "reagent_smiles": "C[C@@H](C[C@H](CC1=CC=CC=C1)N)C(=O)O",
+            "conditions": "0 °C to rt, rt",
+            "yield": "88%",
+            "reactant_smiles": "[Cbz]N1[C@H](C(=O)N[C@@H](C(C)CC)C(=O)N(C)[C@H](C(C)C)C[C@H](O)CC2=NC(=CS2)C(=O)O)CCCC1",
+            "product_smiles": "[Cbz]N1[C@H](C(=O)N[C@@H](C(C)CC)C(=O)N(C)[C@H](C(C)C)C[C@H](O)CC2=NC(=CS2)C(=O)N[C@H](C[C@H](C)C(=O)O)CC3=CC=CC=C3)CCCC1",
+            "notes": "Amide coupling reaction between the carboxylic acid of the thiazole in the reactant and the primary amine of the drawn reagent. Stereochemistry at the C(methyl)COOH center of the incoming fragment appears to be inverted (from [C@@H] in reagent to [C@H] in product drawing).",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Dehydration, Cyclization",
+                    "reagents": "AcCl",
+                    "reagent_smiles": "",
+                    "conditions": "75 °C",
+                    "yield": "98%",
+                    "reactant_smiles": "C[C@@H](CC(=O)O)C(=O)O",
+                    "product_smiles": "C[C@H]1CC(=O)OC1=O",
+                    "notes": "Formation of a cyclic anhydride from a dicarboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "Grignard reaction, Anhydride ring opening",
+                    "reagents": "CuI, tBuXPhos",
+                    "reagent_smiles": "BrMgCC1=CC=CC=C1",
+                    "conditions": "-78 °C",
+                    "yield": "70%",
+                    "reactant_smiles": "C[C@H]1CC(=O)OC1=O",
+                    "product_smiles": "C[C@H](CC(=O)CC1=CC=CC=C1)C(=O)O",
+                    "notes": "Nucleophilic addition of benzylmagnesium bromide to (R)-3-methylsuccinic anhydride, leading to ring opening and formation of a keto-carboxylic acid. The stereochemistry at the methyl group is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.3",
+                    "reaction_type": "Asymmetric Reductive Amination",
+                    "reagents": "H2, NH4OAc, Ru(OAc)2, R-Segphos, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "TFE, 80 °C, in EtOH",
+                    "yield": "81%",
+                    "reactant_smiles": "C[C@@H](CC(=O)CC1=CC=CC=C1)C(=O)O",
+                    "product_smiles": "C[C@@H](C[C@H](CC1=CC=CC=C1)[NH3+])C(=O)O.[Cl-]",
+                    "notes": "The ketone is reductively aminated to form a chiral amine. The existing chiral center at the methyl group is retained with (R) configuration. A new chiral center is formed at the amine with (R) configuration. The amine forms an ammonium chloride salt during acidic workup.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "O-acetylation",
+            "reagents": "Ac₂O, Pyridine, H₂O, Dioxane",
+            "reagent_smiles": "CC(=O)OC(=O)C.C1=CC=NC=C1",
+            "conditions": "0 C to rt",
+            "yield": "88%",
+            "reactant_smiles": "[Cbz]N1CCC[C@@H](C(=O)N[C@H]([C@@H](C)CC)C(=O)N(C)[C@@H](C(C)C)C[C@H](O)C2=NC(=CS2)C(=O)N[C@H](CC3=CC=CC=C3)[C@H](C)C(=O)O)C1",
+            "product_smiles": "[Cbz]N1CCC[C@@H](C(=O)N[C@H]([C@@H](C)CC)C(=O)N(C)[C@@H](C(C)C)C[C@H](OC(=O)C)C2=NC(=CS2)C(=O)N[C@H](CC3=CC=CC=C3)[C@H](C)C(=O)O)C1",
+            "notes": "O-acetylation of a secondary alcohol using acetic anhydride and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Hydrogenolysis, Reductive Amination",
+            "reagents": "H₂, Pd/C, Aq. formaldehyde",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "90%",
+            "reactant_smiles": "O=C(OCc1ccccc1)N2CCC[C@H]2NC(=O)[C@H](C(C)CC)N(C)C(=O)[C@H](C(C)C)[C@H](OC(=O)C)C[C@H]3SC(=NC3)C(=O)N[C@H](CC4=CC=CC=C4)[C@@H](C)CC(=O)O",
+            "product_smiles": "CN1CCC[C@H]1NC(=O)[C@H](C(C)CC)N(C)C(=O)[C@H](C(C)C)[C@H](OC(=O)C)C[C@H]2SC(=NC2)C(=O)N[C@H](CC3=CC=CC=C3)[C@@H](C)CC(=O)O",
+            "notes": "Deprotection of Cbz group on piperidine nitrogen via hydrogenolysis, followed by N-methylation of the resulting secondary amine using formaldehyde under reductive conditions.",
+            "substeps": []
+        }
+    ]
+}

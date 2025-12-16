@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "trilaciclib-cosela-g1therapeutics-unknown-2024",
+        "molecule_name": "Trilaciclib (Cosela G1Therapeutics)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "DIPEA",
+            "reagent_smiles": "C1CCC2(CC1)CNC(=O)CN2",
+            "conditions": "DMA",
+            "yield": "53%",
+            "reactant_smiles": "CCOC(=O)C1=CN=C(N=C1Cl)SC",
+            "product_smiles": "CCOC(=O)C1=CN=C(N=C1N2CC3(CCCCCC3)NCC(=O)C2)SC",
+            "notes": "Chloride on the pyrimidine ring is displaced by a secondary amine from the spiro-fused heterocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Boc protection",
+            "reagents": "Boc₂O, DMAP, DCM",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=CN=C(N=C1N(CC(=O)N)C2(CCCCC2)CCC2)SC",
+            "product_smiles": "CCOC(=O)C1=CN=C(N=C1N(CC(=O)N[Boc])C2(CCCCC2)CCC2)SC",
+            "notes": "Boc protection of the secondary amide nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Cyclization / Dieckmann Condensation",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "99% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C1=CN=C(N=C1N2CC(=O)N(CC32CCCCC3)C(=O)OC(C)(C)C)SC",
+            "product_smiles": "CC(C)(C)OC(=O)N1CC2(CCCCC2)N3C(=C(C4=C3N=C(N=C4)SC)O)C1=O",
+            "notes": "Intramolecular cyclization and condensation of an ethyl ester and amide leading to a hydroxylated pyrrolopyrimidine lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2O, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CC2(CCCCC2)N3C(=C(C4=C3N=C(N=C4)[Me]S)O)C1=O",
+            "product_smiles": "CC(C)(C)OC(=O)N1CC2(CCCCC2)N3C(=C(C4=C3N=C(N=C4)[Me]S)[OTf])C1=O",
+            "notes": "Conversion of a pyrrolo[2,3-d]pyrimidine phenol to its triflate derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Detriflation",
+            "reagents": "Et₂SiH₂, Pd(PPh₃)₄",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "[Boc]N1CC2(CCCCC2)N3C(=C(C4=C3N=C(N=C4)SC)[OTf])C1=O",
+            "product_smiles": "[Boc]N1CC2(CCCCC2)N3C(=CC4=C3N=C(N=C4)SC)C1=O",
+            "notes": "Palladium-catalyzed reductive removal of a pyrrolyl triflate using diethylsilane.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection (Boc removal)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "75%",
+            "reactant_smiles": "[Boc]N1CC2(CCCCC2)N3C(=CC4=C3N=C(N=C4)SC)C1=O",
+            "product_smiles": "CSC1=NC2=C(C=C3C(=O)NCC4(CCCCC4)N32)C=N1",
+            "notes": "Boc deprotection using trifluoroacetic acid (TFA).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "oxone",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O",
+            "yield": "95%",
+            "reactant_smiles": "CSC1=NC2=C(C=C3C(=O)NCC4(CCCCC4)N32)C=N1",
+            "product_smiles": "CS(=O)(=O)C1=NC2=C(C=C3C(=O)NCC4(CCCCC4)N32)C=N1",
+            "notes": "Oxidation of a methylthio group to a methylsulfonyl group using oxone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CN1CCN(CC1)c2ccc(N)cn2",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CS(=O)(=O)C1=NC2=C(C=C3C(=O)NCC4(CCCCC4)N32)C=N1",
+            "product_smiles": "CN1CCN(CC1)c2ccc(NC3=NC4=C(C=C5C(=O)NCC6(CCCCC6)N54)C=N3)cn2",
+            "notes": "Displacement of a methylsulfonyl group by a 2-amino-4-(4-methylpiperazin-1-yl)pyridine derivative via nucleophilic aromatic substitution.",
+            "substeps": []
+        }
+    ]
+}

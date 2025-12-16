@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hasubanonine-castle-2006",
+        "molecule_name": "Hasubanonine",
+        "class": "Natural Product",
+        "author": "Castle",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Nitration",
+            "reagents": "HNO3",
+            "reagent_smiles": "CC(=O)O",
+            "conditions": "0 °C",
+            "yield": "96%",
+            "reactant_smiles": "O=Cc1c(OC)c(OC)c(OCC2=ccccc2)cc1",
+            "product_smiles": "O=Cc1c(OC)c(OC)c(OCC2=ccccc2)c([N+](=O)[O-])c1",
+            "notes": "Aromatic nitration of a substituted benzaldehyde, leading to the addition of a nitro group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitro reduction",
+            "reagents": "FeSO4, NH4OH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O, 80 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C(=CC(=C1C=O)[N+](=O)[O-])OCC2=CC=CC=C2)OC",
+            "product_smiles": "COC1=C(C(=CC(=C1C=O)N)OCC2=CC=CC=C2)OC",
+            "notes": "Reduction of an aromatic nitro group to an amine group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sandmeyer-type Iodination",
+            "reagents": "HBF4, KI",
+            "reagent_smiles": "CC(C)(C)ON=O",
+            "conditions": "CH3CN, 0 °C to rt",
+            "yield": "41% (2 steps)",
+            "reactant_smiles": "COC1=C(C(=CC(=C1C=O)N)OCC2=CC=CC=C2)OC",
+            "product_smiles": "COC1=C(C(=CC(=C1C=O)I)OCC2=CC=CC=C2)OC",
+            "notes": "Conversion of an aromatic amine to an aryl iodide using tert-butyl nitrite and potassium iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Suzuki Coupling",
+            "reagents": "Pd(dppf)Cl2, K2CO3",
+            "reagent_smiles": "O=CC1=C(OC)C(OC)=C(B2OC(C)(C)C(C)(C)O2)C=C1",
+            "conditions": "DMSO, 80 °C",
+            "yield": "79%",
+            "reactant_smiles": "O=CC1=C(OC)C(OC)=C(OCC2=CC=CC=C2)C=C1I",
+            "product_smiles": "O=CC1=C(OC)C(OC)=C(C2=CC=C(C=O)C(OC)=C2OC)C=C1OCC3=CC=CC=C3",
+            "notes": "Suzuki coupling reaction between an aryl iodide and an aryl boronic ester to form a biaryl compound.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Aromatic Functionalization / Directed Ortho-Metalation",
+                    "reagents": "n-BuLi, PhLi, ICH2CH2I",
+                    "reagent_smiles": "CNCCN(C)C",
+                    "conditions": "benzene, THF, 0 °C, rt, -78 °C",
+                    "yield": "60%",
+                    "reactant_smiles": "O=CC1=CC(OCC2=CC=CC=C2)=CC(OC)=C1",
+                    "product_smiles": "O=CC1=C(I)C(OC)=CC(OC)=C1",
+                    "notes": "The reaction as depicted involves a complex transformation: the methoxy group at C2 of the reactant is replaced by iodine, new methoxy groups appear at C3 and C5, and the benzyloxy group at C4 is removed. This goes beyond a simple directed ortho-metalation and iodination with the provided reagents.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Borylation (Suzuki-Miyaura type)",
+                    "reagents": "Pd(OAc)2, (BPin)2, KOAc",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 80 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "O=Cc1c(I)c(OC)cc(OC)c1",
+                    "product_smiles": "O=Cc1c(B2OC(C)(C)C(C)(C)O2)c(OC)cc(OC)c1",
+                    "notes": "Palladium-catalyzed borylation of an aryl iodide with bis(pinacolato)diboron.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Wittig reaction",
+            "reagents": "Ph3PCH3Br, n-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "93%",
+            "reactant_smiles": "[OMe]c1c([OMe])ccc(C=O)c1-c1c(C=O)c([OMe])c([OMe])c([BnO])c1",
+            "product_smiles": "C=Cc1cc([OMe])c([OMe])c(c1)-c1c(C=C)c([OMe])c([OMe])c([BnO])c1",
+            "notes": "Double Wittig olefination converting two aldehyde groups to vinyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs-2",
+            "reagent_smiles": "",
+            "conditions": "DCM, 40 °C",
+            "yield": "99%",
+            "reactant_smiles": "C=CC1=C([OMe])C([OMe])=CC(C2=C(C=C)C([OMe])=C([OMe])C=C2[OBn])=C1",
+            "product_smiles": "[OMe]C1=C([OMe])C=C2C=CC3=C(C([OMe])=C([OMe])C=C3[OBn])C2=C1",
+            "notes": "Synthesis of Hasubanonine (Castle 2006). Intramolecular Heck reaction to form a fused tetracyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Catalytic Hydrogenation, Deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "[Pd]",
+            "conditions": "EtOAc",
+            "yield": "95%",
+            "reactant_smiles": "COC1=CC=C2C=CC3=C(C(=C(C=C3C2=C1OC)[BnO])OC)OC",
+            "product_smiles": "COC1=CC=C2CCC3=C(C(=C(C=C3C2=C1OC)O)OC)OC",
+            "notes": "Hydrogenation of the internal alkene and hydrogenolysis of the benzyl ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Dearomatization",
+            "reagents": "KHCO3",
+            "reagent_smiles": "CC(=O)O[I](OC(=O)C)c1ccccc1",
+            "conditions": "MeOH",
+            "yield": "88%",
+            "reactant_smiles": "COC1=CC=C2CCC3=C(C(=C(C=C3C2=C1OC)O)OC)OC",
+            "product_smiles": "COC1=CC=C2CCC3=C(C(C(=O)C=C3C2=C1OC)(OC)OC)OC",
+            "notes": "Oxidative dearomatization of a phenol to a cyclohexadienone, with the incorporation of a methanol molecule to form a geminal dimethoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "C=CC[Mg]Cl",
+            "conditions": "Et2O, -78 °C",
+            "yield": "93%",
+            "reactant_smiles": "COc1c(OC)cc2CCC3=C(C(=O)C=C(OC)C(OC)(OC)C3=C2)",
+            "product_smiles": "COc1c(OC)cc2CCC3=C([C@@](O)(CC=C)C=C(OC)C(OC)(OC)C3=C2)",
+            "notes": "Grignard addition of allylmagnesium chloride to a ketone, forming a tertiary alcohol with a new chiral center and an allyl group. The hydroxyl group is wedged and the allyl group is dashed.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation, Intramolecular Cyclization",
+            "reagents": "KOt-Bu, 18-crown-6",
+            "reagent_smiles": "",
+            "conditions": "THF, -10 °C",
+            "yield": "74%",
+            "reactant_smiles": "C=CC[C@@]1(C=C2C(=C(C1(OC)OC)OC)CCC3=CC=C(C(=C32)OC)OC)O",
+            "product_smiles": "COC1=CC(=C2CCC3=C(C(=O)C(OC)(OC)[C@@H]4C3)C5=C(C=C)C4C25)C(OC)=C1",
+            "notes": "Allylic alcohol oxidized to ketone, followed by intramolecular cyclization of the allyl group to form a new 5-membered ring with an exocyclic methylene, and creation of a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@]12CC(=O)C(C(=C2CCC3=CC=C(C(=C31)OC)OC)OC)(OC)OC",
+            "product_smiles": "COC1=CC=C2CCC3=C(C(C(=O)C[C@]3(CC=O)C2=C1OC)(OC)OC)OC",
+            "notes": "Ozonolysis of an exocyclic alkene to an aldehyde, while preserving the stereochemistry of the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reductive Amination / Cyclization",
+            "reagents": "MeNH2, 4Å MS, MeOH, NaBH3CN",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "62%",
+            "reactant_smiles": "COc1c(OC)ccc2CCC3(C2)C4C(=O)C[C@@H](CC=O)(C3)C5=C(OC)C(OC)(OC)C54",
+            "product_smiles": "CN1CC[C@]23C[C@@]1(C(C(=C3CCC4=CC=C(C(=C42)OC)OC))(OC)OC)O",
+            "notes": "Reductive amination of a dicarbonyl compound with methylamine to form a bridged tertiary amine and alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Rearrangement",
+            "reagents": "TFA, 4Å MS",
+            "reagent_smiles": "",
+            "conditions": "DCM, 35 °C",
+            "yield": "81%",
+            "reactant_smiles": "COc1cc2c(cc1OC)CC[C@]34[C@@H]2[C@H]1[C@](N(C)CC4)([C@@](O)(OC)C(=C3OC)C1OC)",
+            "product_smiles": "COc1cc2c(cc1OC)CC[C@]34[C@H]2[C@H]1[C@](N(C)CC4)([C@H](C1)C(=O)C(=C3OC)OC)",
+            "notes": "Acid-catalyzed complex polycyclic rearrangement to form Hasubanonine.",
+            "substeps": []
+        }
+    ]
+}

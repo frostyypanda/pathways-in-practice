@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycoserramine-z-bonjoch-2012",
+        "molecule_name": "Lycoserramine Z",
+        "class": "Natural Product",
+        "author": "Bonjoch",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Tosylation",
+            "reagents": "TsCl, NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "O=C(O)CCCCN",
+            "product_smiles": "O=C(O)CCCCN[Ts]",
+            "notes": "The primary amine is selectively tosylated to form a secondary tosylamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acylation / Beta-Keto Ester Synthesis",
+            "reagents": "CDI, Mg(O₂CCH₂CO₂t-Bu)₂",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "O=C(O)CCCC[NH][Ts]",
+            "product_smiles": "CC(C)(C)OC(=O)CC(=O)CCCC[NH][Ts]",
+            "notes": "A carboxylic acid is activated with CDI and then coupled with magnesium bis(t-butyl malonate) to form a beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Robinson annulation then Michael addition",
+            "reagents": "LiOAc, LiOH",
+            "reagent_smiles": "C1CC[C@@H](N1)[C@](O[Si](c2ccccc2)(c3ccccc3)c4ccccc4)(c5ccccc5)c6ccccc6",
+            "conditions": "toluene, iPrOH/H₂O",
+            "yield": "72%",
+            "reactant_smiles": "CC(C)(C)OC(=O)CCC(=O)CCCC[NH]Ts",
+            "product_smiles": "CC(C)(C)OC(=O)C1=C(O)[C@@H]2[C@H](C[C@H](C)CC1)C3N(Ts)CCC23",
+            "notes": "Synthesis of Lycoserrramine Z via an organocatalytic annulation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acid-catalyzed decarboxylation and enol-ketone tautomerization (deprotection)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 70 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)C1=C(O)[C@@H]2[C@@H](C)CC[C@H]3N([Ts])CCC[C@]23C1",
+            "product_smiles": "C[C@@H]1C[C@@H]2[C@H]3N([Ts])CCC[C@]3C(=O)CC[C@H]21",
+            "notes": "Tert-butyl ester of an enol is converted to a ketone under acidic conditions, with decarboxylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "BuLi",
+            "reagent_smiles": "CCOP(=O)(CC1=NC=CC=C1)OCC",
+            "conditions": "THF",
+            "yield": "91% (2 steps)",
+            "reactant_smiles": "C[C@H]1C[C@H]2[C@H](CCCN2[Ts])C(=O)C1",
+            "product_smiles": "C[C@H]1C(=C(C2=CC=CC=N2))[C@H]3CCCN([C@H]3C1)[Ts]",
+            "notes": "Horner-Wadsworth-Emmons olefination of a ketone with a pyridin-2-ylmethyl phosphonate, forming an alkene with a wavy bond indicating mixed or undefined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Catalytic Hydrogenation (Alkene Reduction)",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "CO.ClCCl",
+            "conditions": "MeOH/DCM",
+            "yield": "94%",
+            "reactant_smiles": "CC1CCC(=Cc2ccccn2)[C@@H]3CCCN([C@H]3C1)S(=O)(=O)C4=CC=C(C)C=C4",
+            "product_smiles": "CC1CC[C@H](Cc2ccccn2)[C@@H]3CCCN([C@H]3C1)S(=O)(=O)C4=CC=C(C)C=C4",
+            "notes": "Catalytic hydrogenation of an exocyclic alkene to a single bond, forming a new stereocenter. Existing bridgehead stereochemistry is maintained. The tosyl protecting group is also maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Detosylation",
+            "reagents": "48% HBr, PhOH",
+            "reagent_smiles": "",
+            "conditions": "150 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CC[C@H]2C[C@@H](CC3=NC=CC=C3)[C@H]4N(S(=O)(=O)C5=CC=C(C)C=C5)CCC2[C@H]14",
+            "product_smiles": "C[C@@H]1CC[C@H]2C[C@@H](CC3=NC=CC=C3)[C@H]4NCCC2[C@H]14",
+            "notes": "Detosylation of a secondary amine in a decahydroquinoline derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amine protection",
+            "reagents": "Teoc-OSu, K2CO3",
+            "reagent_smiles": "C[Si](C)(C)CCOC(=O)ON1C(=O)CCC1=O.[K+].[K+].[O-]C([O-])=O",
+            "conditions": "CH2Cl2",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "C[C@H]1CCC[C@@H]2[C@H](CCCN2)[C@H]1CC3=NC=CC=C3",
+            "product_smiles": "C[C@H]1CCC[C@@H]2[C@H](CCCN(C(=O)OCC[Si](C)(C)C)2)[C@H]1CC3=NC=CC=C3",
+            "notes": "Secondary amine protected as a Teoc carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "PtO2, H2, AcOH/DCM",
+            "reagent_smiles": "",
+            "conditions": "AcOH/DCM",
+            "yield": "93%",
+            "reactant_smiles": "[Teoc]N1CCC[C@H]2[C@H](C[C@@H](C)[C@H](CC3=CC=CC=N3)[C@@H]21)",
+            "product_smiles": "[Teoc]N1CCC[C@H]2[C@H](C[C@@H](C)[C@H](CC3CCCCN3)[C@@H]21)",
+            "notes": "Catalytic hydrogenation of the pyridine ring to a piperidine ring. The stereochemistry at C-2 of the newly formed piperidine is undefined (wavy bond), indicating a mixture of epimers. The Teoc protecting group and all other stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Oxidation",
+            "reagents": "Na₂WO₄, urea·H₂O₂",
+            "reagent_smiles": "",
+            "conditions": "MeOH/DCM",
+            "yield": "68%",
+            "reactant_smiles": "C[C@H]1CC[C@H]2[C@H]3C[C@H](C[C@H]4CCCCN4)C[C@H]3N([Teoc])C[C@H]21",
+            "product_smiles": "C[C@H]1CC[C@H]2[C@H]3C[C@H](C[C@H]4CCC[N+]4([O-]))C[C@H]3N([Teoc])C[C@H]21",
+            "notes": "Oxidation of a tertiary amine to its N-oxide using sodium tungstate and urea-hydrogen peroxide adduct.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "84%",
+            "reactant_smiles": "C[C@@H]1CC[C@@H]2[C@H]3C[C@@H](C[C@H]1N(C(=O)OC[CH2][Si](C)(C)C)C[C@@H]23)C[C@@H](CC4=[N+]([O-])CCCC4)",
+            "product_smiles": "C[C@@H]1CC[C@@H]2[C@H]3C[C@@H](C[C@H]1[N@H]C[C@@H]23)C[C@@H](CC4=[N+]([O-])CCCC4)",
+            "notes": "Deprotection of Teoc group from secondary amine using trifluoroacetic acid (TFA). The N-oxide moiety remains unchanged.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rimegepant-nurtec-bms-unknown-2024",
+        "molecule_name": "Rimegepant (Nurtec BMS)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Hydrogenation / Ketone Reduction",
+            "reagents": "Rh(R-binapine)(COD)BF4, H2",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "O=C1CCCC(=O)C2=C1N=CC=C2",
+            "product_smiles": "O=C1CCCC([C@H](O)C2)=C2N=CC=C1",
+            "notes": "Asymmetric reduction of one ketone to a secondary alcohol with retention of the other ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol silylation / Protection",
+            "reagents": "TIPSOTf, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "74%",
+            "reactant_smiles": "C1CC(=O)C2=C([C@@H](C1)O)N=CC=C2",
+            "product_smiles": "[OTIPS][C@@H]1CCCC(=O)C2=C1N=CC=C2",
+            "notes": "Protection of a secondary alcohol with TIPSOTf to form a silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "C-H Arylation / Cross-coupling",
+            "reagents": "Pd(OAc)2, P(tBu)3)HBF4, NaOtBu, DBU",
+            "reagent_smiles": "C1=CC(=C(C(=C1)Br)F)F",
+            "conditions": "toluene, 85 °C, iPrOH, H2O",
+            "yield": "57%",
+            "reactant_smiles": "[OTIPS][C@@H]1CCCC(=O)C2=C1N=CC=C2",
+            "product_smiles": "[OTIPS][C@@H]1CC[C@H](C2=C(C(=CC=C2)F)F)C(=O)C3=C1N=CC=C3",
+            "notes": "Palladium-catalyzed C-H arylation of a cyclic ketone with 1-bromo-2,3-difluorobenzene to install a difluorophenyl group, forming a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "Li(tBuO)3AlH",
+            "reagent_smiles": "",
+            "conditions": "MTBE, 0 °C",
+            "yield": "79%",
+            "reactant_smiles": "[OTIPS][C@H]1CC[C@@H](c2c(F)c(F)ccc2)CC(=O)c3c1nccc3",
+            "product_smiles": "[OTIPS][C@H]1CC[C@@H](c2c(F)c(F)ccc2)C[C@H](O)c3c1nccc3",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol. The existing stereocenters are retained, and a new one is formed with high diastereoselectivity.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Salt formation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "[TIPS]O[C@@H]1CC[C@@H](C2=C(C(=CC=C2)F)F)[C@H](C3=C1N=CC=C3)O",
+            "product_smiles": "[TIPS]O[C@@H]1CC[C@@H](C2=C(C(=CC=C2)F)F)[C@H](C3=C1N=CC=C3)O.Cl",
+            "notes": "Formation of hydrochloride salt by protonation of the pyridine nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Chlorination (Appel Reaction)",
+            "reagents": "NCS, PPh3",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "83%",
+            "reactant_smiles": "[OTIPS][C@@H](C)1CC[C@@H](C2=C(C(=CC=C2)F)F)[C@@H](C3=C1N=CC=C3)O.Cl",
+            "product_smiles": "[OTIPS][C@@H](C)1CC[C@@H](C2=C(C(=CC=C2)F)F)[C@@H](C3=C1N=CC=C3)Cl",
+            "notes": "Conversion of tertiary alcohol to alkyl chloride with retention of configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 50 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPSO][C@@H]1CC[C@@H](C2=C(F)C=CC=C2F)[C@H](Cl)C3=CC=CN=C31",
+            "product_smiles": "[TIPSO][C@@H]1CC[C@@H](C2=C(F)C=CC=C2F)[C@@H]([N-]=[N+]=N)C3=CC=CN=C31",
+            "notes": "Chloride is displaced by azide with inversion of configuration at the stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Silyl Ether Cleavage)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, -15 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]O[C@@H]1CC[C@@H](C2=C(F)C=CC=C2F)[C@H](C3=C1N=CC=C3)N=[N-]=N",
+            "product_smiles": "O[C@@H]1CC[C@@H](C2=C(F)C=CC=C2F)[C@H](C3=C1N=CC=C3)N=[N-]=N",
+            "notes": "Desilylation of a TIPS ether to form an alcohol. Stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "O-Carbamoylation / O-Acylation",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "C1=CC2=C(N=C1)NC(=O)N2C3CCN(CC3)C(=O)OC4=CC=C(C=C4)[N+](=O)[O-]",
+            "conditions": "DMF, -10 to 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "[N-]=[N+]=N[C@H]1CC[C@@H](C2=CC=C(F)C(F)=C2)[C@@H]3C[C@H](O)C4=C(C=CC=N4)C13",
+            "product_smiles": "[N-]=[N+]=N[C@H]1CC[C@@H](C2=CC=C(F)C(F)=C2)[C@@H]3C[C@H](OC(=O)N4CCC(CC4)N5C6=C(N=CC=C6)NC5=O)C7=C(C=CC=N7)C13",
+            "notes": "Alcohol reacts with activated p-nitrophenyl carbamate to form a new carbamate, likely via an alkoxide intermediate generated by NaHMDS.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Reductive Amination",
+                    "reagents": "NaBH(OAc)3, TFA",
+                    "reagent_smiles": "CC(C)(C)OC(=O)N1CCC(=O)CC1",
+                    "conditions": "EtOAc, 0 °C",
+                    "yield": "95%",
+                    "reactant_smiles": "C1=CN=C(C(=C1)N)Cl",
+                    "product_smiles": "CC(C)(C)OC(=O)N1CCC(NC2=CC=CN=C2Cl)CC1",
+                    "notes": "The amino group of 2-chloro-3-aminopyridine undergoes reductive amination with Boc-4-piperidone using NaBH(OAc)3.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Buchwald-Hartwig Amination",
+                    "reagents": "Pd(OAc), rac-BINAP, Cs2CO3",
+                    "reagent_smiles": "C1=CC=C(C=C1)C(=N)C2=CC=CC=C2",
+                    "conditions": "toluene, 100 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1CCC(CC1)NC2=C(Cl)C=CC=N2",
+                    "product_smiles": "CC(C)(C)OC(=O)N1CCC(CC1)NC2=C(N=C(C3=CC=CC=C3)C4=CC=CC=C4)N=CC=C2",
+                    "notes": "Buchwald-Hartwig amination replaces the chloride on the pyridine ring with a diphenylmethanimine group, while the piperidine amine is linked to the adjacent carbon on the pyridine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Imine Hydrolysis",
+                    "reagents": "citric acid",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 60 °C",
+                    "yield": "80% (2 steps)",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1CCCC(C1)NC2=CC=CN=C2N=C(C3=CC=CC=C3)C4=CC=CC=C4",
+                    "product_smiles": "CC(C)(C)OC(=O)N1CCC(NC2=C(N)N=CC=C2)CC1",
+                    "notes": "Hydrolysis of a benzhydryl imine to a primary amine, leaving the Boc group intact.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Cyclization / Amide Formation",
+                    "reagents": "CDI, TEA",
+                    "reagent_smiles": "O=C(n1ccnc1)n2ccnc2.CCN(CC)CC",
+                    "conditions": "MeCN, 10 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1CCC(NC2=C(N)N=CC=C2)CC1",
+                    "product_smiles": "CC(C)(C)OC(=O)N1CCC(CC1)N2C3=CC=CN=C3NC2=O",
+                    "notes": "Formation of a 1H-pyrido[2,3-d]pyrimidin-2(1H)-one ring from a 2-amino-3-substituted aminopyridine and CDI.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.5",
+                    "reaction_type": "BOC Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 40 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1CCC(CC1)N2C(=O)NC3=CC=CN=C32",
+                    "product_smiles": "C1=CC2=C(N=C1)NC(=O)N2C3CCNCC3.Cl.Cl",
+                    "notes": "Acid-catalyzed deprotection of a BOC-protected amine, yielding the corresponding free amine as a dihydrochloride salt.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.6",
+                    "reaction_type": "Amine Acylation (Carbamate Formation)",
+                    "reagents": "NMM",
+                    "reagent_smiles": "O=C(Cl)OC1=CC=C([N+]([O-])=O)C=C1",
+                    "conditions": "THF, DMF",
+                    "yield": "54%",
+                    "reactant_smiles": "O=C1NC2=C(N=CC=C2)N1C3CCNCC3",
+                    "product_smiles": "O=C1NC2=C(N=CC=C2)N1C3CCN(CC3)C(=O)OC4=CC=C([N+]([O-])=O)C=C4",
+                    "notes": "The piperidine nitrogen in the reactant reacts with 4-nitrophenyl chloroformate to form a carbamate. NMM acts as a base to deprotonate the initial amine salt.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Staudinger Reaction",
+            "reagents": "toluene, THF",
+            "reagent_smiles": "CP(C)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(OC[C@H]1[C@H]([C@@H](CC2=NCCC1C2)C3=CC=C(F)C(F)=C3)[N-]=[N+]=[N])N4CCC(N5C(=O)NC6=NC=CC=C65)CC4",
+            "product_smiles": "CP(=N[C@H]1[C@H]([C@@H](CC2=NCCC1C2)C3=CC=C(F)C(F)=C3)OC(=O)N4CCC(N5C(=O)NC6=NC=CC=C65)CC4)(C)C",
+            "notes": "Staudinger reduction of an azide to an iminophosphorane, forming the Rimegepant scaffold.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O, 70 °C",
+            "yield": "88%",
+            "reactant_smiles": "CP(=N[C@H]1[C@@H](CC[C@H](C2=C1C=CC=N2)OC(=O)N3CCC(CC3)N4C5=CC=CN=C5NC4=O)C6=C(C(=CC=C6)F)F)(C)C",
+            "product_smiles": "C1=CC(=C(C(=C1)F)F)[C@@H]2CC[C@H](C3=C(C=CC=N3)[C@H]2N)OC(=O)N4CCC(CC4)N5C6=C(C=CC=C6)NC5=O",
+            "notes": "Acid-catalyzed hydrolysis of phosphazene to primary amine. The product is isolated as Rimegepant Sulfate (0.5 equivalents H2SO4) and a hydrate (1.5 equivalents H2O). The SMILES provided is for the free base.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "monanchoradin-a-kato-2024",
+        "molecule_name": "Monanchoradin A",
+        "class": "Natural Product",
+        "author": "Kato",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "nBuLi",
+            "reagent_smiles": "C#CCOC[OTBS]",
+            "conditions": "THF, -78 to -20 °C",
+            "yield": "99%",
+            "reactant_smiles": "C1CCC(CC1)CC=O",
+            "product_smiles": "[OTBS]CCC#CC(CC1CCCCC1)O",
+            "notes": "Addition of a TBS-protected propargyl lithium to an aldehyde.",
+            "substeps": [
+                {
+                    "step_id": "1.1",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C#CCCCO",
+                    "product_smiles": "C#CCCCO[TBS]",
+                    "notes": "Protection of a primary alcohol with TBSCl to form a TBS silyl ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation",
+            "reagents": "AZADOL, BAIB",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "[OTBS]OCCCC#CCC(O)CCCCC",
+            "product_smiles": "[OTBS]OCCCC#CC(=O)CCCCC",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Transfer Hydrogenation",
+            "reagents": "Ru catalyst",
+            "reagent_smiles": "CC(C)C1=CC=C(C)C=C1.C[c]1ccc(S(=O)(=O)N[C@@H](C2=CC=CC=C2)[C@@H](N)C3=CC=CC=C3)cc1",
+            "conditions": "iPrOH (solvent)",
+            "yield": "84%",
+            "reactant_smiles": "[OTBS]CCCCC#CC(=O)CC1CCCCC1",
+            "product_smiles": "[OTBS]CCCCC#C[C@@H](CC1CCCCC1)O",
+            "notes": "Asymmetric reduction of an internal ketone to a chiral secondary alcohol using a chiral ruthenium catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DMEAD, PPh3, THF",
+            "reagent_smiles": "C1=CC2=C(C=C1)C(=O)NC2=O.COC(=O)N=NC(=O)OC.P(c1ccccc1)(c2ccccc2)(c3ccccc3)",
+            "conditions": "0 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "[OTBS]CCCC#C[C@@H](CCCCCC)O",
+            "product_smiles": "[OTBS]CCCC#C[C@H](CCCCCC)[PhthN]",
+            "notes": "Mitsunobu reaction converting a secondary alcohol to a phthalimido group with inversion of stereochemistry. The hexyl chain representation and OTBS/PhthN abbreviations were corrected.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "MeNH2, H2O, EtOH",
+            "reagent_smiles": "",
+            "conditions": "rt to 80 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CCCC#C[C@H](CCCCCC)N1C(=O)C2=CC=CC=C2C1=O",
+            "product_smiles": "[OTBS]CCCC#C[C@H](CCCCCC)N",
+            "notes": "N-phthaloyl deprotection to primary amine using methylamine in aqueous ethanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Guanidine formation / Amine protection",
+            "reagents": "",
+            "reagent_smiles": "CC(C)(C)OC(=O)NC(=NC(=O)OC(C)(C)C)N1N=CC=C1",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS]CCCC#C[C@H](CC1CCCCC1)N",
+            "product_smiles": "CC(C)(C)OC(=O)N/C(=N/C(=O)OC(C)(C)C)/N[C@H](C#CCCCO[OTBS])CC1CCCCC1",
+            "notes": "Transformation occurs in 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Silyl ether hydrolysis)",
+            "reagents": "TBAF, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N/C(=N/C(=O)OC(C)(C)C)/N[C@H](C#CCCO[OTBS])CCC1CCCCC1",
+            "product_smiles": "CC(C)(C)OC(=O)N/C(=N/C(=O)OC(C)(C)C)/N[C@H](C#CCCO)CCC1CCCCC1",
+            "notes": "TBAF-mediated deprotection of TBS ether to form an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "97%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N/C(=N/C(=O)OC(C)(C)C)/N[C@H](C#CCCCO)CC1CCCCC1",
+            "product_smiles": "CC(C)(C)OC(=O)N/C(=N/C(=O)OC(C)(C)C)/N[C@H](C#CCCC[OMs])CC1CCCCC1",
+            "notes": "Conversion of a primary alcohol to a mesylate (OMs) for activation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Heck-type Reaction / Carbonylation / Cyclization",
+            "reagents": "CO, Pd(tfa)2dppf, p-benzoquinone",
+            "reagent_smiles": "",
+            "conditions": "tBuOH, H2O",
+            "yield": "82%",
+            "reactant_smiles": "[Boc]N=C(N[C@H](CCCCCC)C#CCC[OMs])N[Boc]",
+            "product_smiles": "[Boc]N=C1N[C@H](CCCCCC)C(C(=O)O)=C2CCCN2C1",
+            "notes": "Intramolecular cyclization of an alkyne with carbon monoxide insertion and mesylate displacement, catalyzed by palladium, forming a fused tricyclic guanidine derivative with a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "",
+            "reagent_smiles": "O=CO",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "O=C(O)C1=C([C@@H](CCCCCC)NC(=N[NBoc])N2CCCC21)",
+            "product_smiles": "O=C(O)C1=C([C@@H](CCCCCC)NC(=N)N2CCCC21)",
+            "notes": "Deprotection of N-tert-butoxycarbonyl (Boc) protecting group from an imine nitrogen using formic acid.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "selaginellin-s-fujiwara-2020",
+        "molecule_name": "Selaginellin S",
+        "class": "Natural Product",
+        "author": "Fujiwara",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "PdCl2(PPh3)2, CuI, Et3N",
+            "reagent_smiles": "C#CCO",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "I[C]1=CC=C([OTBS])C=C1",
+            "product_smiles": "O[CH2]C#CC1=CC=C([OTBS])C=C1",
+            "notes": "Sonogashira coupling of an aryl iodide with propargyl alcohol, retaining the OTBS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "[OTBS]C1=CC=C(C#CCO)C=C1",
+            "product_smiles": "[OTBS]C1=CC=C(C#CC=O)C=C1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Directed Aldol Addition",
+            "reagents": "LDA",
+            "reagent_smiles": "CC(=O)C1=CC=C(Br)C=C1",
+            "conditions": "THF, -78 °C",
+            "yield": "85%",
+            "reactant_smiles": "O=CC#CC1=CC=C([OTBS])C=C1",
+            "product_smiles": "O=C(C1=CC=C(Br)C=C1)CC(O)C#CC2=CC=C([OTBS])C=C2",
+            "notes": "Aldol addition of an enolate (derived from 4-bromoacetophenone) to an alkyne-substituted aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Dehydration",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "[OTBS]C1=CC=C(C=C1)C#CC(O)CC(=O)C2=CC=C(Br)C=C2",
+            "product_smiles": "[OTBS]C1=CC=C(C=C1)C#C/C=C/C(=O)C2=CC=C(Br)C=C2",
+            "notes": "Dehydration of a secondary alcohol to form an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels Alder cycloaddition",
+            "reagents": "BHT, o-dichlorobenzene",
+            "reagent_smiles": "[OTBS]/C=C/C1=CC=C(C=C1)/C=C/[OTBS]",
+            "conditions": "reflux",
+            "yield": "26%",
+            "reactant_smiles": "[OTBS]C1=CC=C(C=C1)C#C/C=C/C(=O)C2=CC=C(C=C2)Br",
+            "product_smiles": "[OTBS]C[C@H]1C=C[C@@H](C2=CC=C([OTBS])C=C2)[C@H]([C@@H]1C#CC3=CC=C([OTBS])C=C3)C(=O)C4=CC=C(C=C4)Br",
+            "notes": "Diels-Alder reaction of an ynone and a bis-silyl ether diene, forming a highly substituted cyclohexene derivative with preserved stereochemistry.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Horner Wadsworth Emmons olefination",
+                    "reagents": "LDA",
+                    "reagent_smiles": "CCOC(=O)/C=C/CP(=O)(OCC)OCC",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=Cc1ccc([OTBS])cc1",
+                    "product_smiles": "CCOC(=O)/C=C/C=C/c1ccc([OTBS])cc1",
+                    "notes": "Horner-Wadsworth-Emmons olefination of a benzaldehyde with a phosphonate ester to form a dienyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Ester Reduction",
+                    "reagents": "DIBAL",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)/C=C/C=C/C1=CC=C([OTBS])C=C1",
+                    "product_smiles": "O[CH2]/C=C/C=C/C1=CC=C([OTBS])C=C1",
+                    "notes": "Selective reduction of an ethyl ester to a primary alcohol using DIBAL, leaving the conjugated diene and TBS ether intact. Stereochemistry of the double bonds is preserved (trans, trans).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Silyl Ether Formation / Alcohol Protection",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, rt",
+                    "yield": "67% (3 steps)",
+                    "reactant_smiles": "[OTBS]C1=CC=C(/C=C/C=C/CO)C=C1",
+                    "product_smiles": "[OTBS]C1=CC=C(/C=C/C=C/CO[TBS])C=C1",
+                    "notes": "Protection of a primary alcohol with tert-butyldimethylsilyl (TBS) group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Aromatization",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "benzene, 60 °C",
+            "yield": "75%",
+            "reactant_smiles": "BrC1=CC=C(C=C1)C(=O)[C@@H]2[C@H](C#CC3=CC=C([OTBS])C=C3)[C@@H](C[OTBS])C=C[C@H]2C4=CC=C([OTBS])C=C4",
+            "product_smiles": "BrC1=CC=C(C=C1)C(=O)C2=C(C#CC3=CC=C([OTBS])C=C3)C(C[OTBS])=C(C4=CC=C([OTBS])C=C4)C=C2",
+            "notes": "DDQ-mediated oxidation of cyclohexene to an aromatic biphenyl system, leading to loss of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Miyaura-Ishiyama reaction",
+            "reagents": "B2pin2, KOAc, PdCl2(dppf)",
+            "reagent_smiles": "Oc1ccc(B2OC(C)(C)C(C)(C)O2)cc1",
+            "conditions": "DCM, DMSO, 80 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CH2C1=C(C#Cc2ccc([OTBS])cc2)C(=C(C=C1)c2ccc([OTBS])cc2)C(=O)c2ccc(Br)cc2",
+            "product_smiles": "[OTBS]CH2C1=C(C#Cc2ccc(O)cc2)C(=C(C=C1)c2ccc(O)cc2)C(=O)c2ccc(B3OC(C)(C)C(C)(C)O3)cc2",
+            "notes": "Aryl bromide borylation to form a boronate ester, with concomitant deprotection of two phenolic TBS ethers.",
+            "substeps": []
+        }
+    ]
+}

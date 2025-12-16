@@ -1,0 +1,158 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "belantamab-mafodotin-blenrep-gsk-unknown-2024",
+        "molecule_name": "Belantamab Mafodotin (Blenrep GSK)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection (Acylation)",
+            "reagents": "Fmoc-Cl, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 0 °C",
+            "yield": "82%",
+            "reactant_smiles": "C1=CC=C(C=C1)C[C@@H](C(=O)O)N",
+            "product_smiles": "[Fmoc]N[C@@H](CC1=CC=CC=C1)C(=O)O",
+            "notes": "Amine protection of L-Phenylalanine with Fmoc-Cl to form Fmoc-L-Phenylalanine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification / Peptide Coupling",
+            "reagents": "",
+            "reagent_smiles": "CN(C)C(OC(C)(C)C)OC(C)(C)C.COc1cc(CO)c(OC)cc1O",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N[C@@H](CC1=CC=CC=C1)C(=O)O",
+            "product_smiles": "[Fmoc]N[C@@H](CC1=CC=CC=C1)C(=O)OCC2=C(OC)C=C(O)C=C2OC",
+            "notes": "Esterification of Fmoc-L-phenylalanine with 2,5-dimethoxy-4-(hydroxymethyl)phenol using bis(tert-butoxy)dimethylaminomethane as a coupling reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Fmoc Deprotection",
+            "reagents": "Me₂NH",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N[C@@H](CC1=CC=CC=C1)C(=O)OCC2=C(C=C(C=C2)OC)OC",
+            "product_smiles": "COC1=CC(=C(C=C1)COC(=O)[C@@H](CC2=CC=CC=C2)N)OC",
+            "notes": "Fmoc protecting group is removed from the L-phenylalanine derivative, revealing the primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Coupling (Peptide Bond Formation)",
+            "reagents": "TBTU, DIPEA",
+            "reagent_smiles": "O=C(O)[C@H]1N([Fmoc])C[C@@H](OC)[C@@H]1C",
+            "conditions": "DMF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(=C(C=C1)COC(=O)[C@H](CC2=CC=CC=C2)N)OC",
+            "product_smiles": "[Fmoc]N1C[C@@H](OC)[C@@H](C)[C@H]1C(=O)N[C@H](CC2=CC=CC=C2)C(=O)OCC3=C(OC)C=C(OC)C=C3",
+            "notes": "Amide bond formation between a Fmoc-protected 4-methoxy-3-methylproline derivative and a phenylalanine 2,4-dimethoxybenzyl ester.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Boc Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "H₂O, dioxane",
+                    "yield": "",
+                    "reactant_smiles": "C[C@H]([C@H]([C@@H]1CCCN1[Boc])OC)C(=O)O",
+                    "product_smiles": "C[C@H]([C@H]([C@@H]1CCCN1)OC)C(=O)O",
+                    "notes": "Deprotection of Boc amine with HCl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "N-Fmoc protection",
+                    "reagents": "H2O, DIPEA",
+                    "reagent_smiles": "O=C(OCC1C2=CC=CC=C2C3=CC=CC=C13)ON4C(=O)CCC4=O",
+                    "conditions": "dioxane",
+                    "yield": "81% (2 steps)",
+                    "reactant_smiles": "C[C@H]([C@H]([C@H]1CCCN1)OC)C(=O)O",
+                    "product_smiles": "[Fmoc]N1CCC[C@H]1[C@H](OC)[C@H](C)C(=O)O",
+                    "notes": "Amine (pyrrolidine) is protected with Fmoc group using Fmoc-OSu reagent.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Fmoc Deprotection",
+            "reagents": "Me₂NH",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N1CCC[C@H]1[C@@H](OC)[C@@H](C)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)OCC3=C(OC)C=C(OC)C=C3",
+            "product_smiles": "HN1CCC[C@H]1[C@@H](OC)[C@@H](C)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)OCC3=C(OC)C=C(OC)C=C3",
+            "notes": "Fmoc group is removed from the pyrrolidine nitrogen, yielding a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide bond formation (peptide coupling)",
+            "reagents": "TBTU, DIPEA",
+            "reagent_smiles": "[Fmoc]N[C@@H](C(C)C)C(=O)N(C)[C@H]([C@@H](C)CC)C(=O)O[C@@H](C)[C@H](OC)CC(=O)O",
+            "conditions": "DMF, 0 °C",
+            "yield": "68%",
+            "reactant_smiles": "C[C@H]([C@H]([C@@H]1CCCN1)OC)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)OCC3=C(C=C(C=C3)OC)OC",
+            "product_smiles": "[Fmoc]N[C@@H](C(C)C)C(=O)N(C)[C@H]([C@@H](C)CC)C(=O)O[C@@H](C)[C@H](OC)C(=O)N1CCC[C@H]1[C@@H]([C@H](C)OC)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)OCC3=C(C=C(C=C3)OC)OC",
+            "notes": "Coupling of an Fmoc-protected peptide linker with a pyrrolidine-containing fragment to form a larger peptide conjugate, overall 2 steps to achieve the 68% yield.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Fmoc Deprotection",
+            "reagents": "Me2NH",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N(C)[C@H](C(C)C)C(=O)C[C@H](C)C(=O)N(C)[C@@H]([C@H](C)CC)[C@H](OC)C(=O)N1CCC[C@H]1[C@@H](C)O[C@@H](C)[C@H](C)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)OCC3=CC(OC)=C(OC)C=C3",
+            "product_smiles": "CN[C@H](C(C)C)C(=O)C[C@H](C)C(=O)N(C)[C@@H]([C@H](C)CC)[C@H](OC)C(=O)N1CCC[C@H]1[C@@H](C)O[C@@H](C)[C@H](C)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)OCC3=CC(OC)=C(OC)C=C3",
+            "notes": "Deprotection of N-terminal Fmoc protecting group using dimethylamine in dichloromethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Coupling",
+            "reagents": "TBTU, DIPEA",
+            "reagent_smiles": "O=C(O)CCCCCN1C(=O)C=CC1=O",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "HN[C@@H](C(C)C)C(=O)N[C@H]([C@@H](C)CC)C(=O)N(C)[C@@H](C(C)C)C(=O)N[C@H](C(C)C)C(=O)N(C)[C@@H]([C@H](OC)C(=O)N1CCC[C@H]1[C@H](OC)[C@@H](C)C(=O)O[C@@H](CC2=CC=CC=C2)C(=O)OCC3=CC(OC)=C(OC)C=C3",
+            "product_smiles": "O=C1C=CC(=O)N1CCCCCNC(=O)[C@@H](C(C)C)NC(=O)[C@H]([C@@H](C)CC)N(C)C(=O)[C@@H](C(C)C)NC(=O)[C@H](C(C)C)N(C)C(=O)[C@@H]([C@H](OC)C(=O)N2CCC[C@H]2[C@H](OC)[C@@H](C)C(=O)O[C@@H](CC3=CC=CC=C3)C(=O)OCC4=CC(OC)=C(OC)C=C4)",
+            "notes": "Formation of an amide bond between the N-terminal primary amine of the reactant (MMAE derivative) and the carboxylic acid of N-(5-carboxypentyl)maleimide.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Imide formation",
+                    "reagents": "AcOH",
+                    "reagent_smiles": "C1=CC(=O)OC1=O",
+                    "conditions": "",
+                    "yield": "80%",
+                    "reactant_smiles": "NCCCCCC(=O)O",
+                    "product_smiles": "O=C1C=CC(=O)N1CCCCCC(=O)O",
+                    "notes": "Formation of N-substituted maleimide via reaction of a primary amine with maleic anhydride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (DMPM ester hydrolysis)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "27%",
+            "reactant_smiles": "CC[C@H](C)[C@@H]([C@@H](CC(=O)N1CCC[C@H]1[C@@H]([C@@H](C)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)OCC3=CC=C(C=C3OC)OC)OC)OC)N(C)C(=O)[C@@H](CC(=O)[C@H](C(C)C)N(C)C(=O)[C@H](C(C)C)NC(=O)[C@H](C(C)C)N(C)C(=O)CCCCCN4C(=O)C=CC4=O)C(C)C",
+            "product_smiles": "CC[C@H](C)[C@@H]([C@@H](CC(=O)N1CCC[C@H]1[C@@H]([C@@H](C)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)O)OC)OC)N(C)C(=O)[C@@H](CC(=O)[C@H](C(C)C)N(C)C(=O)CCCCCN3C(=O)C=CC3=O)C(C)C",
+            "notes": "Acid-catalyzed hydrolysis of 3,4-dimethoxybenzyl (DMPM) ester to a carboxylic acid.",
+            "substeps": []
+        }
+    ]
+}

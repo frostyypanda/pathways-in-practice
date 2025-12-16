@@ -1,0 +1,242 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bipolarolide-d-lu-2024",
+        "molecule_name": "Bipolarolide D",
+        "class": "Natural Product",
+        "author": "Lu",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "n-BuLi, DIPA, HMPA",
+            "reagent_smiles": "C=C(C)CCI",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "44%",
+            "reactant_smiles": "COC(=O)C(OC)OC",
+            "product_smiles": "C=C(C)CCC(C(=O)OC)(OC)OC",
+            "notes": "Alkylation of an acetal-stabilized carbanion with an alkyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction (Ester to Aldehyde)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=C(C)CCC(C(=O)OC)(OC)OC",
+            "product_smiles": "C=C(C)CCC(C=O)(OC)OC",
+            "notes": "Partial reduction of a methyl ester to an aldehyde using DIBAL-H. The terminal alkene and the gem-dimethoxy groups are stable under these conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "C1=CC=CC1",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=C(C)CCC(C=O)(OC)OC",
+            "product_smiles": "C=C(C)CCC(C=C1C=CC=C1)(OC)OC",
+            "notes": "Wittig-type olefination of an aldehyde dimethyl acetal with cyclopentadiene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "9-BBN, NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "rt to 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "C=C(C)CCC(C=C1C=CC=C1)(OC)OC",
+            "product_smiles": "CC(CCC(C=C1C=CC=C1)(OC)OC)CO",
+            "notes": "Anti-Markovnikov hydration of a terminal alkene to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "PDC, 4 Å MS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "60%",
+            "reactant_smiles": "CC(CCC(C=C1C=CC=C1)(OC)OC)CO",
+            "product_smiles": "CC(CCC(C=C1C=CC=C1)(OC)OC)C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Intramolecular Diels-Alder / Acetal Hydrolysis / Cyclization",
+            "reagents": "PhCO2H, 4 Å MS, HCl",
+            "reagent_smiles": "C1CC[NH][C@H]1C(OSi(C)(C)C)(c2ccccc2)c3ccccc3",
+            "conditions": "PhMe, -30 °C; then THF",
+            "yield": "77%",
+            "reactant_smiles": "CC(CCC(=C1C=CC=C1)(OC)OC)C=O",
+            "product_smiles": "C[C@@]12CCC(=O)[C@H]2C3=CC=CC3=C1",
+            "notes": "Intramolecular Diels-Alder reaction of aldehyde with cyclopentadiene derivative, catalyzed by chiral amine, followed by acetal hydrolysis and cyclization to form the ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Conjugate Addition / Vinylogous Addition",
+            "reagents": "t-BuOK, Cu, HMPA",
+            "reagent_smiles": "IC/C=C(/I)CO[Si](C(C)C)(C(C)C)C(C)C",
+            "conditions": "DMF, t-BuOH",
+            "yield": "44%",
+            "reactant_smiles": "C[C@@]12C=CC3=CC=CC=C3[C@H]1C(=O)CCC2",
+            "product_smiles": "C[C@@]12C(I)[C@@H](CC=C(I)CO[Si](C(C)C)(C(C)C)C(C)C)C3=CC=CC=C3[C@H]1C(=O)CCC2",
+            "notes": "Addition of a vinyl iodide-TIPS reagent to a spiroindene ketone system with formation of new chiral center and introduction of an iodine atom on the ring.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Hydroiodination and Iodination",
+                    "reagents": "TMSCl, NaI",
+                    "reagent_smiles": "Cl[Si](C)(C)C.[Na+].[I-]",
+                    "conditions": "CH3CN",
+                    "yield": "69%",
+                    "reactant_smiles": "HOCC#CCO",
+                    "product_smiles": "C(O)/C(I)=C\\CI",
+                    "notes": "Conversion of a but-2-yne-1,4-diol to an E-1-hydroxy-2,4-diiodobut-2-ene. The alkyne is reduced to an E-alkene, and two iodine atoms are introduced. One alcohol is retained, the other is converted to an iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Alcohol protection",
+                    "reagents": "THF",
+                    "reagent_smiles": "CCN(CC)CC.Cl[Si](C(C)C)(C(C)C)C(C)C",
+                    "conditions": "",
+                    "yield": "90%",
+                    "reactant_smiles": "ICCC/C=C(I)/CO",
+                    "product_smiles": "ICCC/C=C(I)/CO[TIPS]",
+                    "notes": "Formation of a silyl ether from an alcohol using TIPSCl and a base.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Palladium-catalyzed intramolecular cyclization / Heck-type reaction",
+            "reagents": "Pd(OAc)2, AgOAc, R-BINAP",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 80 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPSO]C/C(=C/C[C@]12C3=CC=CC3=C[C@@]2(C)CCC1=O)/I",
+            "product_smiles": "[TIPSO]CC1=CC[C@]23C(=O)CC[C@@]3(C)C=C4[C@@H](C=C[C@@]142)[OAc]",
+            "notes": "Intramolecular cyclization of an iodoalkene to form a complex polycyclic structure, featuring new ring fusions and stereocenters. The TIPS protecting group remains.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH, EtOH",
+            "reagent_smiles": "CCO",
+            "conditions": "",
+            "yield": "74%",
+            "reactant_smiles": "[TIPS]OCC1=CC[C@]23C(=O)CC[C@]3(C)C=C4[C@H](C=C[C@]142)O[Ac]",
+            "product_smiles": "[TIPS]OCC1=CC[C@]23C(=O)CC[C@]3(C)C=C4[C@H](C=C[C@]142)O",
+            "notes": "Hydrolysis of acetate ester to alcohol. Yield is stated for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Enantioselective Oxidation",
+            "reagents": "[Rh(COD)2]BF4, R-BINAP, Cs2CO3, 4 Å MS",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 120 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]OCC1=CC[C@]23C(=O)CC[C@]3(C)C=C4[C@H](C=C[C@]142)O",
+            "product_smiles": "[TIPS]OCC1=CC[C@]23C(=O)CC[C@]3(C)C[C@@H]4C(=O)C=C[C@@]142",
+            "notes": "Oxidation of a secondary allylic alcohol to an alpha,beta-unsaturated ketone with a concomitant double bond rearrangement, catalyzed by a Rhodium complex and chiral R-BINAP ligand.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "C[Mg]Br",
+            "conditions": "toluene, 0 °C",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "[TIPS]OCC1=CC[C@]23C(=O)CC[C@]3(C)C[C@@H]4C(=O)C=C[C@@]412",
+            "product_smiles": "[TIPS]OCC1=CC[C@]23C(=O)CC[C@]3(C)C[C@@H]4[C@@](C)(C=C[C@]142)O",
+            "notes": "Grignard addition of methylmagnesium bromide to the ketone at the bottom-left of the reactant, forming a tertiary alcohol and a new methyl group with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "PDS, NaHCO3, 4 Å MS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "60%",
+            "reactant_smiles": "C[C@]12CCC(=O)[C@]1(C)[C@H]3C[C@H](O)[C@H]4C=C[C@@]5(C[OTIPS])[C@H]25[C@H]34",
+            "product_smiles": "C[C@]12CCC(=O)[C@]1(C)[C@H]3C(=O)C=C[C@H]4[C@@]5(C[OTIPS])[C@H]25[C@H]34",
+            "notes": "Oxidation of a secondary alcohol to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Grignard Addition, Intramolecular Cyclization, Cascade Reaction",
+            "reagents": "",
+            "reagent_smiles": "C/C=C/C[Mg]Cl",
+            "conditions": "PhMe, 0 °C",
+            "yield": "65%",
+            "reactant_smiles": "C[C@@H]1C(=CC(=O)[C@@]23[C@H]1C[C@@H]4C(=C(C[OTIPS])C[C@]42)C(=O)CC3)",
+            "product_smiles": "C=C[C@H](C)C12CC[C@@](C)CC[C@H]([C@@]4(C(=CC[C@]341)C[OTIPS])C(O)O2)O",
+            "notes": "Intramolecular cascade reaction involving a crotyl Grignard addition to a ketone, followed by cyclization to form a tetrahydrofuran ring and a new tertiary alcohol, and rearrangement of a double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "9-BBN, NaOH, THF, Pd(PPh3)4",
+            "reagent_smiles": "I/C=C(\\CO[TBS])C",
+            "conditions": "70 °C",
+            "yield": "87%",
+            "reactant_smiles": "[TIPS]OC[C@H]1C=C[C@H]2[C@]3(C)[C@H]4[C@H](O)C5(C)C=C(C)C(O2)([C@H](C)C=C)C5341",
+            "product_smiles": "[TIPS]OC[C@H]1C=C[C@H]2[C@]3(C)[C@H]4[C@H](O)C5(C)C=C(C)C(O2)([C@H](C)CCC/C=C(/C)CO[TBS])C5341",
+            "notes": "Suzuki-Miyaura coupling of an in-situ formed alkyl borane with an iodoalkene, forming a new C-C bond and a Z-alkene.",
+            "substeps": [
+                {
+                    "step_id": "14.1",
+                    "reaction_type": "Carbozirconation / Iodination",
+                    "reagents": "Cp₂ZrCl₂, AlMe₃, I₂",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂, 0 °C to rt then -30 °C",
+                    "yield": "",
+                    "reactant_smiles": "C#CCO",
+                    "product_smiles": "I/C=C(/CO)C",
+                    "notes": "Terminal alkyne undergoes carbozirconation with AlMe3 followed by iodination to form a Z-vinyl iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.2",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "31% (2 steps)",
+                    "reactant_smiles": "C/C(=C\\I)/CO",
+                    "product_smiles": "C/C(=C\\I)/CO[TBS]",
+                    "notes": "Protection of the primary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection",
+            "reagents": "HF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "96%",
+            "reactant_smiles": "[OTBS]C/C(=C/CC[C@H](C)C1=CC[C@]2(C)C[C@@H]3C(=CC(=O)[C@]34C(=CC[C@]124)C[OTIPS])C)/C",
+            "product_smiles": "C/C(=C/CC[C@H](C)C1=CC[C@]2(C)C[C@@H]3C(=CC(=O)[C@]34C(=CC[C@]124)CO)C)/CO",
+            "notes": "Simultaneous deprotection of TIPS and TBS protecting groups using HF.",
+            "substeps": []
+        }
+    ]
+}

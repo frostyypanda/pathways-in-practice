@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "goniomitine-stoltz-2016",
+        "molecule_name": "Goniomitine",
+        "class": "Natural Product",
+        "author": "Stoltz",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Acylation",
+            "reagents": "Et3N, DMAP",
+            "reagent_smiles": "C1CC(=O)OC1=O",
+            "conditions": "DCM, reflux",
+            "yield": "99%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C=CN2",
+            "product_smiles": "C1=CC2=C(C=C1)N(C=C2)C(=O)CCC(=O)O",
+            "notes": "N-acylation of indole with succinic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "(COCl)2, DMF, DCE",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)N(C=C2)C(=O)CCC(=O)O",
+            "product_smiles": "C1=CC2=C(C=C1)N(C=C2)C(=O)CCC(=O)Cl",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Friedel Craft acylation",
+            "reagents": "AlCl3",
+            "reagent_smiles": "",
+            "conditions": "DCE, 50 °C",
+            "yield": "91% (2 steps)",
+            "reactant_smiles": "C1=CC2=C(C=C1)N(C=C2)C(=O)CCC(=O)Cl",
+            "product_smiles": "O=C1CCC(=O)N2C=C3C=CC=CC3=C12",
+            "notes": "Intramolecular Friedel-Crafts acylation to form a lactam/imide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "84%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C=C3C(=O)CCC(=O)N23",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=C2)C(CCC3=O)O",
+            "notes": "Reduction of one of the ketone groups in the lactam ring to a secondary alcohol using sodium borohydride. The amide carbonyl is untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "TFA, Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to 23 °C",
+            "yield": "61%",
+            "reactant_smiles": "C1=CC2=C(C=C1)N3C(=C2)C(CCC3=O)O",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=C2)CCCC3=O",
+            "notes": "Reduction of a secondary alcohol to an alkane using TFA and triethylsilane.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Electrophilic Bromination",
+            "reagents": "NBS, DCM",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "O=C1CCCCN2C=C3C=CC=CC3C21",
+            "product_smiles": "O=C1CCCCN2C(Br)=C3C=CC=CC3C21",
+            "notes": "Electrophilic bromination of the indole C3 position.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Alkylation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "C=CCOC(=O)C#N",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "BrC1=CN(C(=O)CCC2)C2=C3C=CC=CC31",
+            "product_smiles": "BrC1=CN(C(=O)C(C(=O)OCCC=C)CC2)C2=C3C=CC=CC31",
+            "notes": "Alkylation of the alpha-carbon of the lactam with allyl cyanoformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alkylation",
+            "reagents": "EtI, Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 23 °C",
+            "yield": "76%",
+            "reactant_smiles": "C=CCOC(=O)C1CCC2=C(Br)c3ccccc3N2C1=O",
+            "product_smiles": "C=CCOC(=O)C1(CC)CCC2=C(Br)c3ccccc3N2C1=O",
+            "notes": "Alpha-alkylation of the lactam/ester with iodoethane to introduce an ethyl group at the alpha-carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Decarboxylative Spirocyclization",
+            "reagents": "Pd₂(pmdba)₃",
+            "reagent_smiles": "CC(C)(C)[C@H]1OC(=N[C@@H]1C2=CC(C(F)(F)F)=CC=C2P(C3=CC=C(C(F)(F)F)C=C3)C4=CC=C(C(F)(F)F)C=C4)",
+            "conditions": "tBuOMe",
+            "yield": "83%",
+            "reactant_smiles": "C=CCOC(=O)C1(CC)CC2=C(C3=CC=CC=C3N2C1=O)Br",
+            "product_smiles": "BrC1=C2N(C(=O)[C@@]3(CC)C[C@H](C)CC3CC2)C4=CC=CC=C41",
+            "notes": "Decarboxylative allylation followed by spirocyclization to form a 5-membered carbocycle with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Negishi cross coupling",
+            "reagents": "PdCl2(AtaPhos)2, THF",
+            "reagent_smiles": "[OtBu]C(=O)C[Zn]Cl",
+            "conditions": "65 °C",
+            "yield": "98%",
+            "reactant_smiles": "C=CC[C@]1(CC)CCC2=C(C3=CC=CC=C3N2C1=O)Br",
+            "product_smiles": "C=CC[C@]1(CC)CCC2=C(CC(=O)[OtBu])C3=C(C=CC=C3)N2C1=O",
+            "notes": "Negishi cross-coupling of a bromoindole-lactam with tert-butyl 2-(chlorozincio)acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydroamination (via hydrozirconation)",
+            "reagents": "Cp2Zr(H)Cl",
+            "reagent_smiles": "NS(=O)(=O)O.C1CCOC1",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@]1(CC)CCC2=C(CC(=O)[OtBu])C3=CC=CC=C3N2C1=O",
+            "product_smiles": "CC[C@@]1(CCCN)CCC2=C(CC(=O)[OtBu])C3=CC=CC=C3N2C1=O",
+            "notes": "Alkene hydrozirconation followed by amination to form a primary amine.",
+            "substeps": []
+        }
+    ]
+}

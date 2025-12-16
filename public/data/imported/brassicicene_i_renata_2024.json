@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "brassicicene-i-renata-2024",
+        "molecule_name": "Brassicicene I",
+        "class": "Natural Product",
+        "author": "Renata",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxidation",
+            "reagents": "H₂O₂, DCC, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, H₂O",
+            "yield": "80%",
+            "reactant_smiles": "C=C(C)[C@H]1CC=C(C)CC1",
+            "product_smiles": "C=C(C)[C@H]1CCC2(C)OC2C1",
+            "notes": "Epoxidation of the endocyclic double bond of (S)-Limonene to form an epoxide. The isopropenyl group remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide opening / Rearrangement",
+            "reagents": "Et2AlTMP",
+            "reagent_smiles": "",
+            "conditions": "benzene, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@]12CC[C@H](C=C(C))C[C@@H]1O2",
+            "product_smiles": "C=C(C)[C@H]1CC[C@H](O)C(=C)C1",
+            "notes": "Epoxide opening with regioselective formation of an exocyclic double bond and an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Epoxidation",
+            "reagents": "VO(acac)₂, TBHP",
+            "reagent_smiles": "",
+            "conditions": "toluene, 40 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@@H]1CCC(=C)C(C1)O",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@]2(CO2)[C@@H](C1)O",
+            "notes": "Diastereoselective epoxidation of an exocyclic alkene, converting a terminal double bond into a spiro-epoxide. The stereochemistry of the hydroxyl and isopropenyl groups is retained, and specific stereochemistry for the newly formed epoxide is indicated.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxide Opening",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 50 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@@H]1CC[C@@]2(CO2)[C@@H](C1)O",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@@]2(O)(COC)C[C@@H](C1)O",
+            "notes": "Nucleophilic ring opening of a spiro epoxide by methoxide, forming a vicinal diol and a methoxymethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "NaIO4, NaHCO3, H2O, THF",
+            "reagent_smiles": "",
+            "conditions": "H2O, THF",
+            "yield": "59% (3 steps)",
+            "reactant_smiles": "COC[C@H]1CC[C@@H](C(C)=C)C[C@H](O)C1O",
+            "product_smiles": "O=CCC[C@H](C(C)=C)CC(=O)COC",
+            "notes": "Periodate-mediated oxidative cleavage of a vicinal diol to yield an aldehyde and a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Aldol Condensation",
+            "reagents": "piperidine, AcOH, toluene",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "94%",
+            "reactant_smiles": "C=C(C)[C@H](CCC(=O)COC)CC=O",
+            "product_smiles": "C=C(C)[C@@H]1CC=C(CHO)C(COC)1",
+            "notes": "Intramolecular aldol condensation to form a five-membered ring. Observed carbon count discrepancy: Reactant has 12 carbons, while the drawn product has 11 carbons.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nozaki-Hiyama-Kishi Reaction",
+            "reagents": "Mn, CrCl2, TMSCl",
+            "reagent_smiles": "CC(C)[C@H]1CCC(=C1CCl)C",
+            "conditions": "DMF",
+            "yield": "86%",
+            "reactant_smiles": "C=C(C)[C@H]1CCC(=C1C=O)COC",
+            "product_smiles": "C=C(C)[C@H]1CCC(=C(COC)C1)[C@H]([OTMS])C[C@]2(C)C(=C)CC[C@H](C(C)C)C2",
+            "notes": "Nozaki-Hiyama-Kishi reaction between an α,β-unsaturated aldehyde and a chloromethyl cyclopentene derivative, followed by in-situ silylation of the newly formed alcohol. A rearrangement of the double bond from endocyclic to exocyclic occurs in the right-hand ring system of the reagent during the reaction.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Selective Hydrogenation",
+                    "reagents": "H₂, PtO₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=C(C)[C@@H]1CC=C(C)CC1",
+                    "product_smiles": "CC(C)[C@@H]1CC=C(C)CC1",
+                    "notes": "Selective hydrogenation of the exocyclic double bond of (R)-Limonene to form (R)-p-menth-1-ene, retaining the internal double bond and the stereocenter.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Ozonolysis",
+                    "reagents": "O₃, Me₂S",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CCC[C@@H](C(C)C)C1",
+                    "product_smiles": "CC(C)[C@@H](CCC(=O)C)CC=O",
+                    "notes": "Ozonolysis of 1-methyl-4-isopropylcyclohex-1-ene to form an aldehyde and a ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Intramolecular Aldol Condensation",
+                    "reagents": "piperidine, AcOH, Na2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, reflux",
+                    "yield": "53%",
+                    "reactant_smiles": "CC(C)[C@@H](CCC(=O)C)CC=O",
+                    "product_smiles": "CC(C)[C@@H]1CCC(=C(C)C=O)1",
+                    "notes": "Formation of a cyclopentene via intramolecular aldol condensation (enamine catalysis suggested by piperidine/AcOH). The reported yield covers 3 steps.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "[Na][BH4].CO",
+                    "conditions": "MeOH, DCM, 0 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "CC(C)[C@H]1CCC(=C1C=O)C",
+                    "product_smiles": "CC(C)[C@H]1CCC(=C1CO)C",
+                    "notes": "Reduction of an alpha,beta-unsaturated aldehyde to a primary alcohol using sodium borohydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Chlorination",
+                    "reagents": "(COCl)2, DMSO",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "CC(C)[C@H]1CCC(=C1CO)C",
+                    "product_smiles": "CC(C)[C@H]1CCC(=C1CCl)C",
+                    "notes": "Conversion of a primary alcohol to a primary alkyl chloride using modified Swern conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydroboration-Oxidation followed by PCC Oxidation",
+            "reagents": "9-BBN, NaOAc, PCC",
+            "reagent_smiles": "",
+            "conditions": "THF, DCM, reflux",
+            "yield": "59%",
+            "reactant_smiles": "CC(C)[C@@H]1CCC(=C)[C@]2(C)[C@H]([OTMS])C3=C(COC)C[C@@H](C(=C)C)[C@@H]1C32",
+            "product_smiles": "CC(C)[C@@H]1CCC(=C)[C@]2(C)[C@H]([OTMS])C3=C(COC)C[C@@H]([C@H](C)C=O)[C@@H]1C32",
+            "notes": "Transformation of an isopropenyl group to an alpha-methyl aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cyclization and Desilylation",
+            "reagents": "BF3, Bu4NHF2",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "62%",
+            "reactant_smiles": "COC1=C[C@]2(C)C[C@H](C)[C@@H](C=O)[C@@H]3[C@H]2C[C@](C)(O[Si](C)(C)C)C(=C4CC[C@H](C(C)C)C4)C3",
+            "product_smiles": "COC1=C[C@]2(C)C[C@H](C)[C@@H](C=O)[C@@H]3[C@H]2C[C@](C)(C4=C[C@H](C(C)C)CC4)CCC3",
+            "notes": "Lewis acid-catalyzed intramolecular cyclization of an alkene and aldehyde, followed by desilylation of a silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL, DCM",
+            "reagent_smiles": "[AlH](CC(C)C)CC(C)C",
+            "conditions": "-78 °C",
+            "yield": "86%",
+            "reactant_smiles": "COC/C=C1/CC(=O)[C@H](C)[C@@H]2[C@@]3(C)CCC(=C(C(C)C)[C@]13CC2)C",
+            "product_smiles": "COC/C=C1/C[C@H](O)[C@H](C)[C@@H]2[C@@]3(C)CCC(=C(C(C)C)[C@]13CC2)C",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol with DIBAL.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Enzyme-catalyzed Oxidation",
+            "reagents": "O₂, MoBsc9 L110A Y112R, αKG",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "64%",
+            "reactant_smiles": "CC(C)C1=C2C[C@]3(C)[C@H](O)[C@H](C)CC[C@]4(C)C5CC=C(COC)CCC5C4C21",
+            "product_smiles": "CC(C)C1=C2C[C@]3(C)[C@H](O)[C@H](C)CC[C@]4(C)[C@H]5CC[C@@H](O)[C@](OC)CC5C4C21",
+            "notes": "Oxidative rearrangement of a methoxymethyl-substituted cyclopentene to a fused tetrahydrofuran with a methoxy and a hydroxyl group.",
+            "substeps": []
+        }
+    ]
+}

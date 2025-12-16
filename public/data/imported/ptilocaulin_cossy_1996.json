@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ptilocaulin-cossy-1996",
+        "molecule_name": "Ptilocaulin",
+        "class": "Natural Product",
+        "author": "Cossy",
+        "year": 1996
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxidation",
+            "reagents": "KF/Al2O3, t-BuOOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "C1C=CC(=O)CC1",
+            "product_smiles": "C1CC(=O)C2C(C1)O2",
+            "notes": "Epoxidation of an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide opening / Rearrangement / Alkylation",
+            "reagents": "LDA, then BuLi then TsOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "O=C1C(O2)C2CCC1",
+            "product_smiles": "O=C1C(CCCC)=CCC1",
+            "notes": "Epoxide ring opening with butyl group introduction, followed by rearrangement to an α,β-unsaturated ketone (enone).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketalization / Acetalization",
+            "reagents": "PPTS",
+            "reagent_smiles": "O[C@@H](c1ccccc1)[C@@H](O)c2ccccc2",
+            "conditions": "PhH, 80 °C",
+            "yield": "83%",
+            "reactant_smiles": "O=C1CCCC(=C1)CCCC",
+            "product_smiles": "CCCC/C=C1\\CCC(O[C@@H]([C@@H](O1)c2ccccc2)c3ccccc3)C1",
+            "notes": "Ketalization of 2-butylcyclohex-2-en-1-one with (1S,2S)-1,2-diphenylethane-1,2-diol to form a spiro-1,3-dioxolane.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Simmons-Smith Cyclopropanation",
+            "reagents": "Et2Zn, CH2I2",
+            "reagent_smiles": "CC[Zn]CC.ICI",
+            "conditions": "DCM, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C1(O[C@H](c2ccccc2)[C@@H](c3ccccc3)O1)C=C(CCCC)CCC1",
+            "product_smiles": "C1(O2[C@H](c3ccccc3)[C@@H](c4ccccc4)O2)[C@H]5CCC[C@H]6[C@@H](CCCC)[C@H]5C6",
+            "notes": "Stereoselective cyclopropanation of an exocyclic double bond using Simmons-Smith reaction conditions. The cyclopropane forms anti to the butyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ketal Hydrolysis (Deprotection)",
+            "reagents": "HCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "90%",
+            "reactant_smiles": "CCC[C@H]1[C@@H]2C(O[C@H]([Ph])[C@@H]([Ph])O)CCC2C1",
+            "product_smiles": "CCC[C@H]1[C@@H]2C(=O)CCC2C1",
+            "notes": "Acid-catalyzed hydrolysis of a 1,3-dioxolane ketal (formed from trans-hydrobenzoin) to yield the corresponding ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Photochemical Rearrangement / Ring Expansion",
+            "reagents": "TEA, LiClO4",
+            "reagent_smiles": "",
+            "conditions": "hv, MeCN",
+            "yield": "70%",
+            "reactant_smiles": "CC(C)(C)[C@@H]1[C@H]2CC(=O)CCC21",
+            "product_smiles": "O=C1C(CCCC)[C@H](C)CCC1",
+            "notes": "Photochemical ring expansion of a bicyclic ketone to a substituted cyclohexanone, opening the cyclopropane ring and inserting a carbon from the original ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Silyl enol ether formation",
+            "reagents": "LDA, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1C(CCCC)[C@H](C)CCC1",
+            "product_smiles": "[OTMS]C1=C(CCCC)[C@H](C)CCC1",
+            "notes": "Ketone converted to silyl enol ether. Methyl stereochemistry retained. Butyl stereochemistry remains undefined (wavy bond). Regioselectivity matches thermodynamic enolate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alpha-bromination of silyl enol ether",
+            "reagents": "",
+            "reagent_smiles": "BrBr",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC(=C([OTMS])C(CCCC)1)",
+            "product_smiles": "C[C@H]1CCC(Br)C(=O)C(CCCC)1",
+            "notes": "The silyl enol ether is brominated, forming an alpha-bromo ketone. The OTMS group is removed and a carbonyl is formed at that position. Bromine and butyl groups on the product are shown with wavy bonds, indicating unspecified stereochemistry, while the methyl group retains its defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Elimination (Dehydrobromination)",
+            "reagents": "LiBr, Li2CO3",
+            "reagent_smiles": "[Li+]Br.O=C([O-])[O-].[Li+].[Li+].CN(C)C=O",
+            "conditions": "DMF, 130 °C",
+            "yield": "55%",
+            "reactant_smiles": "O=C1C(CCCC)[C@H](C)CCC(Br)1",
+            "product_smiles": "O=C1C=CC[C@H](C)C(CCCC)1",
+            "notes": "Dehydrobromination of a bromoketone to form an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Sakurai allylation",
+            "reagents": "TiCl4",
+            "reagent_smiles": "C=CC[Si](C)(C)C",
+            "conditions": "DCM, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "O=C1C=C[C@H](C)C(CCCC)C1",
+            "product_smiles": "O=C1[C@@H](CC=C)CC[C@H](C)C(CCCC)C1",
+            "notes": "Sakurai allylation of an α,β-unsaturated ketone to form an allylated cyclohexanone, showing specific stereoselectivity for the new allyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "catBH, Rh(PPh3)3Cl, NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "83%",
+            "reactant_smiles": "O=C1C(CCCC)CC[C@@H](CC=C)[C@H](C)C1",
+            "product_smiles": "O=C1C(CCCC)CC[C@@H](CCCO)[C@H](C)C1",
+            "notes": "Alkene hydroboration-oxidation to a primary alcohol. Stereochemistry of the carbon bearing the butyl group is shown as a wavy bond (racemic/unknown) in the image, and thus no stereodescriptor is applied in the SMILES.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "83%",
+            "reactant_smiles": "CCCC[C@@H]1[C@@H](C)C[C@H](CCCO)CC1=O",
+            "product_smiles": "CCCC[C@@H]1[C@@H](C)C[C@H](CCC=O)CC1=O",
+            "notes": "Oxidation of primary alcohol to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Aldol Cyclization / Dehydration",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "60%",
+            "reactant_smiles": "O=C1C(CCCC)C[C@@H](C)[C@@H](CCC=O)C1",
+            "product_smiles": "O=C1C(CCCC)C[C@@H](C)[C@@H]2[C@@H]1C=CCC2",
+            "notes": "Intramolecular cyclization of an aldehyde-ketone precursor under acidic conditions (HCl) to form a fused bicyclic enone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Guanidine formation / Cyclization",
+            "reagents": "HNO3",
+            "reagent_smiles": "C(=N)(N)N",
+            "conditions": "PhH, 90 °C",
+            "yield": "35%",
+            "reactant_smiles": "C[C@H]1C[C@@H]2CCC=C2C(=O)[C@H]1CCCC",
+            "product_smiles": "CCCCC1=C2[C@@H]3[C@@H](CC[C@@H]3NC(=[NH2+])N2)C[C@@H]1C.[O-][N+]([O-])=O",
+            "notes": "Formation of a bicyclic guanidinium nitrate from a ketone, involving double bond migration and ring expansion.",
+            "substeps": []
+        }
+    ]
+}

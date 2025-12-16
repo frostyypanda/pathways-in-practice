@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "yohimbane-zhao-2024",
+        "molecule_name": "Yohimbane",
+        "class": "Natural Product",
+        "author": "Zhao",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ozonolysis, Acetal Formation",
+            "reagents": "O₃, p-TsOH, NaHCO₃, Me₂S",
+            "reagent_smiles": "",
+            "conditions": "MeOH, CH₂Cl₂",
+            "yield": "",
+            "reactant_smiles": "C1=CCCCCC1",
+            "product_smiles": "COC(CCCCC=O)OC",
+            "notes": "Ozonolysis of cyclooctene followed by reaction in methanol to form a dimethyl acetal on one end, while the other end remains an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "COC(=O)CP(=O)(OC)OC",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC(CCCCCC=O)OC",
+            "product_smiles": "COC(=O)/C=C/CCCCCC(OC)OC",
+            "notes": "An aldehyde is converted to an alpha,beta-unsaturated methyl ester using a phosphonate reagent and a strong base.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "H+",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)/C=C/CCCCC(OC)OC",
+            "product_smiles": "COC(=O)/C=C/CCCCC=O",
+            "notes": "Acid-catalyzed hydrolysis of a dimethyl acetal to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Michael Addition / Organocatalytic Cyclization",
+            "reagents": "",
+            "reagent_smiles": "O=C(Nc1cc(C(F)(F)F)cc(C(F)(F)F)c1)Nc2cc(C(F)(F)F)cc(C(F)(F)F)c2.N1C[C@@H]([C@H](OSi(C)(C)C)(c2ccccc2)c3ccccc3)CC1",
+            "conditions": "Toluene, rt",
+            "yield": "72%",
+            "reactant_smiles": "COC(=O)\\C=C/CCCCC=O",
+            "product_smiles": "COC(=O)C[C@@H]1[C@H](C=O)CCC1",
+            "notes": "Intramolecular asymmetric Michael addition to form a substituted cyclohexanecarbaldehyde, catalyzed by a chiral urea and a chiral secondary amine (MacMillan type catalyst).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Imine Formation (Condensation)",
+            "reagents": "MeOH",
+            "reagent_smiles": "C1=CC=C2C(=C1)C(=CN2)CCN",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C[C@@H]1CCCC[C@H]1C=O",
+            "product_smiles": "COC(=O)C[C@@H]1CCCC[C@H]1C=NCCC2=CNC3=C2C=CC=C3",
+            "notes": "Aldehyde reacts with primary amine to form an imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C[C@@H]1CCCC[C@H]1C=NCCC2=CNC3=C2C=CC=C3",
+            "product_smiles": "C1CC[C@H]2CN(CCC3=CNC4=C3C=CC=C4)C(=O)C[C@@H]2C1",
+            "notes": "An imine is reduced to an amine, which then undergoes intramolecular lactamization with a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Bischler-Napieralski reaction",
+            "reagents": "POCl3, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 50 °C then 0 °C",
+            "yield": "35% (3-steps)",
+            "reactant_smiles": "C1CC[C@H]2CN(CCC3=CNC4=C3C=CC=C4)C(=O)C[C@@H]2C1",
+            "product_smiles": "C1CCC2CN3CCC4=C([C@H]3C[C@@H]2C1)NC5=C4C=CC=C5",
+            "notes": "Bischler-Napieralski cyclization of a lactam-amide onto an indole, followed by reduction, to form a complex polycyclic indole alkaloid (Yohimbane).",
+            "substeps": []
+        }
+    ]
+}

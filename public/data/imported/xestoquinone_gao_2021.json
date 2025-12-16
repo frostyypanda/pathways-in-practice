@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "xestoquinone-gao-2021",
+        "molecule_name": "Xestoquinone",
+        "class": "Natural Product",
+        "author": "Gao",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Monoprotection / Etherification",
+            "reagents": "Amberlyst-15",
+            "reagent_smiles": "COC1=CC=C(C=C1)CO",
+            "conditions": "DCM, 50 °C",
+            "yield": "",
+            "reactant_smiles": "OCCCCCO",
+            "product_smiles": "COC1=CC=C(C=C1)COCCCCCO",
+            "notes": "One hydroxyl group of pentane-1,5-diol is protected as a p-methoxybenzyl (PMB) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Iodination (Appel-type)",
+            "reagents": "PPh3, imidazole, I2",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "HOCCCCCO[PMB]",
+            "product_smiles": "ICCCCCO[PMB]",
+            "notes": "Conversion of a primary alcohol to a primary iodide using triphenylphosphine, iodine, and imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "LDA",
+            "reagent_smiles": "CC(C)C1CCC(=O)C=C1OCC",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "79%",
+            "reactant_smiles": "ICCCCCO[PMB]",
+            "product_smiles": "CCOC1=CC(=O)C(C)(CCCCCO[PMB])CC1",
+            "notes": "Alkylation of an enol ether (masked enolate) with an alkyl iodide to form a new carbon-carbon bond at the alpha-position of the ketone, also forming a quaternary center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Enol Ether Cleavage and Isomerization",
+            "reagents": "LAH, HCl",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C, then rt",
+            "yield": "65%",
+            "reactant_smiles": "CCOC1=CC(C)(CCCCCO[PMB])CCC(=O)C1",
+            "product_smiles": "O=C1C=CC(C)(CCCCCO[PMB])CC1",
+            "notes": "The enol ether is reductively cleaved and the resulting intermediate isomerizes to an alpha,beta-unsaturated ketone. The PMB group is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Deprotection & Dehydrogenation",
+            "reagents": "DDQ, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, rt then 50 °C",
+            "yield": "43%",
+            "reactant_smiles": "CC1(CCCCCO[PMB])C=CC(=O)CC1",
+            "product_smiles": "CC1(CCCCCO)C=CC(=O)C=C1",
+            "notes": "Oxidative deprotection of PMB ether to alcohol, and dehydrogenation (oxidation) of cyclohexenone to cyclohexadienone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "DMSO, rt",
+            "yield": "60%",
+            "reactant_smiles": "CC1(CCCCO)C=CC(=O)C=C1",
+            "product_smiles": "CC1(CCCC=O)C=CC(=O)C=C1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Organocatalytic Asymmetric [4+2] Cycloaddition (Diels-Alder)",
+            "reagents": "toluene",
+            "reagent_smiles": "C1CN[C@@H](C(OSi(C)(C)C)(c2ccccc2)c3ccccc3)C1",
+            "conditions": "rt",
+            "yield": "60%",
+            "reactant_smiles": "CC1(CCCCC=O)C=CC(=O)C=C1",
+            "product_smiles": "C[C@]12CC(=O)C=C[C@@H]2CC[C@@H](C=O)C1",
+            "notes": "Asymmetric [4+2] cycloaddition reaction using a chiral proline-derived organocatalyst (MacMillan catalyst) to form a bicyclic product with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetal Formation",
+            "reagents": "BF3·OEt",
+            "reagent_smiles": "OCCCCO",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CCC[C@@H](C=O)[C@H]2CC(=O)C=C1",
+            "product_smiles": "C[C@@]12CCC[C@@H](C3OCCCO3)[C@H]2CC(=O)C=C1",
+            "notes": "Protection of an aldehyde group as a 1,3-dioxane acetal using propane-1,3-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Photochemical Cascade Cyclization",
+            "reagents": "Ti(Oi-Pr)4",
+            "reagent_smiles": "O=Cc1c(OC)c(C)cc(OC)c1",
+            "conditions": "hv, toluene",
+            "yield": "50%",
+            "reactant_smiles": "C[C@]12CCC[C@H]([C@]2(C)CC(=O)C=C1)C3OCCCO3",
+            "product_smiles": "C[C@]12CCC[C@H](C[C@H]2[C@@H]3C(=O)C=C4C=C(OC)C=C(OC)C4[C@](C)31)C5OCCCO5",
+            "notes": "A complex cascade cyclization involving a cyclohexenone and a substituted benzaldehyde, mediated by titanium under photochemical conditions. The original ketone of the reactant is reduced to a CH2, while the aldehyde group forms a new ketone. New polycyclic ring systems, including an aromatic ring and a cyclohexenone-like ring, are formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dehydrogenation / Aromatization",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "42%",
+            "reactant_smiles": "COC1=C(OC)C=C2C[C@@H](C)[C@@H]3C4CCC([C@H]3C[C@H](C=O)C5=C2C=C1)C6OCCCO6",
+            "product_smiles": "COC1=C(OC)C=C2C(=O)C3=C(C=C2C=C1)[C@@]4(C)[C@@H]5CC[C@H]6C[C@H]4[C@@H]5C(OCCCCO6)",
+            "notes": "Dehydrogenation of a dihydronaphthalene-like system and a cyclohexenone to form a 1,4-dimethoxynaphthoquinone derivative, preserving the complex spiro-bridged acetal and methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation (Alpha-hydroxylation)",
+            "reagents": "O2, tBuOK, tBuOH",
+            "reagent_smiles": "O=O.CC(C)(C)[O-].[K+].CC(C)(C)O",
+            "conditions": "40 °C",
+            "yield": "",
+            "reactant_smiles": "COc1cc2c(cc1OC)C(=O)C1=CC[C@H]3C[C@]4(C)CC(C1)[C@@]3(C5OCCCO5)CC4",
+            "product_smiles": "COc1cc2c(cc1OC)C(=O)C(O)=C1CC[C@H]3C[C@]4(C)CC(C1)[C@@]3(C5OCCCO5)CC4",
+            "notes": "Alpha-hydroxylation of the ketone leading to an alpha-hydroxy-alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection / Cyclization / Aromatization",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "COc1ccc2c(c1OC)C(=O)C3=C2[C@@]4(C)CC[C@H]5[C@@]3(C4)C5(O)OC6CCCCO6",
+            "product_smiles": "C[C@@]12CCCC3=COC(=C31)C(=O)C4=C2C=C5C(=C4)C(=CC=C5OC)OC",
+            "notes": "Acid-catalyzed deprotection of the cyclic hemiketal, followed by cyclization and furan formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation (Demethylation to Quinone)",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O, 0 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "C[C@@]12CCCC3=COC(=C31)C(=O)C4=C2C=C5C(=C4)C(=CC=C5OC)OC",
+            "product_smiles": "C[C@@]12CCCC3=COC(=C31)C(=O)C4=C2C=C5C(=C4)C(=O)C=CC5=O",
+            "notes": "Oxidation of a dimethoxy-substituted aromatic ring to a quinone.",
+            "substeps": []
+        }
+    ]
+}

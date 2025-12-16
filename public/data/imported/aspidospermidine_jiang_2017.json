@@ -1,0 +1,241 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspidospermidine-jiang-2017",
+        "molecule_name": "Aspidospermidine",
+        "class": "Natural Product",
+        "author": "Jiang",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "tBuOAc, HClO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C1N[C@H](C(=O)O)CC1",
+            "product_smiles": "O=C1N[C@H](C(=O)[OtBu])CC1",
+            "notes": "Acid-catalyzed esterification of a carboxylic acid with a tert-butyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection",
+            "reagents": "Boc₂O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH₃CN",
+            "yield": "61%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@@H]1CCC(=O)N1",
+            "product_smiles": "CC(C)(C)OC(=O)[C@@H]1CCC(=O)N1[Boc]",
+            "notes": "N-Boc protection of secondary amide. The yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "LiBHEt3",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C(=O)C[C@@H]([CO2tBu])C1",
+            "product_smiles": "[Boc]N1C(O)C[C@@H]([CO2tBu])C1",
+            "notes": "Reduction of a lactam carbonyl to a hydroxyl group, maintaining the stereochemistry of the ester group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "DMAP, TFAA, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "O[C@H]1CC[C@@H](C(=O)OC(C)(C)C)N1[Boc]",
+            "product_smiles": "[Boc]N1[C@@H](C(=O)OC(C)(C)C)CCC=C1",
+            "notes": "Dehydration of a secondary alcohol on a pyrrolidine ring to form a 4,5-dihydropyrrole (pyrroline). The N-Boc protecting group and the C2-ester group remain unchanged. The stereochemistry at C2 is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels-Alder / Cycloaddition",
+            "reagents": "toluene",
+            "reagent_smiles": "O1C(=O)C=C(CC)C(Br)=C1",
+            "conditions": "reflux",
+            "yield": "54%",
+            "reactant_smiles": "[Boc]N1C=CC[C@H]1C(=O)O[tBu]",
+            "product_smiles": "CCC1[C@H]2C(=C(Br)[C@H]3[C@H]1C(=O)O[C@H]4CN([Boc])[C@H](C(=O)O[tBu])CC34)",
+            "notes": "A 2,5-dihydropyrrole derivative undergoes a Diels-Alder reaction with a 2-pyrone derivative, followed by a cyclization to form a complex polycyclic lactone.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Dehydration and Cyclization",
+                    "reagents": "H2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "70%",
+                    "yield": "70%",
+                    "reactant_smiles": "OC(=O)C(O)CC(=O)O",
+                    "product_smiles": "O=C1OC=CC(=C1)C(=O)O",
+                    "notes": "Dehydration and cyclization of malic acid to form coumalic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Decarboxylative bromination",
+                    "reagents": "NBS, LiOAc",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "75%",
+                    "reactant_smiles": "C1=CC(=O)OC=C1C(=O)O",
+                    "product_smiles": "O=C1OC(Br)=CC(Br)=C1",
+                    "notes": "Dibromination of 4-carboxy-2-pyrone with concomitant decarboxylation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Palladium-catalyzed cross-coupling",
+                    "reagents": "Et3Al•Me2NCH2CH2OH, PdCl2(PPh3)2",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, 100 °C",
+                    "yield": "55%",
+                    "reactant_smiles": "O=C1OC=C(Br)C=C1Br",
+                    "product_smiles": "CCC1=CC(=COC1=O)Br",
+                    "notes": "One bromine atom on the pyrone ring is replaced by an ethyl group via palladium-catalyzed cross-coupling.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC12C=C(C(C3CC(C(=O)OC(C)(C)C)N(C31)C(=O)OC(C)(C)C)OC2=O)Br",
+            "product_smiles": "CCC12C=C(C(C3CC(C(=O)O)NC31)OC2=O)Br",
+            "notes": "Acid-catalyzed deprotection of N-Boc and tert-butyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Protection",
+            "reagents": "CbzCl, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "66%",
+            "reactant_smiles": "CCC12C=C(C(C3CC(C(=O)O)NC31)OC2=O)Br",
+            "product_smiles": "CCC12C=C(C(C3CC(C(=O)O)N(C31)[Cbz])OC2=O)Br",
+            "notes": "N-protection of the amine with benzyl chloroformate to form a carbamate. The stated yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Decarboxylative Reduction",
+            "reagents": "",
+            "reagent_smiles": "O=C(C)OI(OC(=O)C)c1ccccc1.II.CC[SiH](CC)CC",
+            "conditions": "light, DCM",
+            "yield": "92%",
+            "reactant_smiles": "CCC1(C(Br)=C2C(=O)OC(C1)[C@]3(O2)[C@@H]4C[C@@H](C(=O)O)N(C4[C@H]3)C(=O)OCC5=CC=CC=C5)",
+            "product_smiles": "CCC1(C(Br)=C2C(=O)OC(C1)[C@]3(O2)[C@@H]4CCN(C4[C@H]3)C(=O)OCC5=CC=CC=C5)",
+            "notes": "Decarboxylative reduction of the alpha-carboxylic acid to a methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "-40 °C, toluene",
+            "yield": "",
+            "reactant_smiles": "CCC12C=C(C(C3CCN(C31)C(=O)OCC4=CC=CC=C4)OC2=O)Br",
+            "product_smiles": "CC[C@]1(C=C([C@@H]([C@@H]2CCN([C@@H]21)C(=O)OCC3=CC=CC=C3)O)Br)C=O",
+            "notes": "Lactone reduction to aldehyde and alcohol using DIBAL.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Wittig reaction",
+            "reagents": "toluene",
+            "reagent_smiles": "[Ph]3P=CC(=O)OC",
+            "conditions": "reflux",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "CC[C@]1(C=C([C@@H]([C@@H]2CCN([C@@H]21)[Cbz])O)Br)C=O",
+            "product_smiles": "CC[C@@]1(/C=C/C(=O)OC)C=C([C@@H]([C@@H]2CCN([C@@H]21)[Cbz])O)Br",
+            "notes": "Transformation of an aldehyde to an alpha,beta-unsaturated methyl ester via Wittig reaction. The drawing of the Wittig reagent (methyl (triphenylphosphoranylidene)acetate) in the screenshot appears chemically incorrect; the SMILES provided `[Ph]3P=CC(=O)OC` represents the standard reagent for this transformation. The Cbz and Ph groups were abbreviated to match their representation in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive cyclization",
+            "reagents": "Pd/C, H2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "72%",
+            "reactant_smiles": "CC[C@@]1(/C=C/C(=O)OC)C=C([C@@H]([C@@H]2CCN([C@@H]21)[Cbz])O)Br",
+            "product_smiles": "CC[C@H]12CCC(=O)N3[C@H]1CC[C@H](O)[C@@H]3[C@H]2",
+            "notes": "Hydrogenation of two C=C double bonds, Cbz hydrogenolysis, and dehalogenation of vinylic bromide, followed by intramolecular lactam formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "",
+            "reactant_smiles": "CC[C@]1(CCC[C@H](O)[C@@H]2C[C@H](N3C(=O)CC1)[C@@H]32)",
+            "product_smiles": "CC[C@]1(CCC[C@H](O)[C@@H]2C[C@H](N3CCC1)[C@@H]32)",
+            "notes": "Reduction of a cyclic amide (lactam) to a tertiary amine using Lithium Aluminum Hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "77%",
+            "reactant_smiles": "CC[C@@]12CCCN3CC[C@@](C)([C@H](CC1)O)[C@@H]23",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@@H](C(=O)CC1)[C@@H]23",
+            "notes": "2 steps",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Hydrazone formation",
+            "reagents": "PhNHNH2",
+            "reagent_smiles": "c1ccccc1NN",
+            "conditions": "benzene, reflux",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]12CCCN3CC[C@]([H])(C(=O)CC1)[C@@H]23",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@]([H])(C(=NN[Ph])CC1)[C@@H]23",
+            "notes": "Ketone is converted to a phenylhydrazone via condensation with phenylhydrazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Indole formation / Fischer Indole synthesis related rearrangement",
+            "reagents": "AcOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "CC[C@@]12CCCN3CC[C@@H](/C(=N/Nc4ccccc4)/CC1)[C@@H]23",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@]4(C5=C(C=CC=C5)N=C4CC1)[C@@H]23",
+            "notes": "Intramolecular cyclization involving the phenylhydrazine moiety and the imine to form an indole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "83%",
+            "reactant_smiles": "CC[C@]12CCCN3CC[C@]4(C5=C(C=CC=C5)N=C4CC1)[C@@H]23",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@]4(C5=C(C=CC=C5)N[C@@H]4CC1)[C@@H]23",
+            "notes": "Imine reduction using lithium aluminum hydride (LiAlH4) to form Aspidospermidine.",
+            "substeps": []
+        }
+    ]
+}

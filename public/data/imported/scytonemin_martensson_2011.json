@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "scytonemin-martensson-2011",
+        "molecule_name": "Scytonemin",
+        "class": "Natural Product",
+        "author": "Martensson",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Weinreb Amide Formation",
+            "reagents": "NMM, ClCO2iPr, NH(Me)OMe-HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, DMF",
+            "yield": "81%",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC=C2CC(=O)O",
+            "product_smiles": "CN(C(=O)CC1=CNC2=C1C=CC=C2)OC",
+            "notes": "Conversion of indole-3-acetic acid to its N-methyl-N-methoxyamide (Weinreb amide).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Electrophilic Indole Iodination",
+            "reagents": "AgOTf, I₂",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78%",
+            "reactant_smiles": "CN(C(=O)CC1=CNC2=C1C=CC=C2)OC",
+            "product_smiles": "CN(C(=O)CC1=C(I)NC2=CC=CC=C12)OC",
+            "notes": "Indole C2-iodination using AgOTf and I₂.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Addition / Weinreb Amide Ketone Synthesis",
+            "reagents": "THF",
+            "reagent_smiles": "[TMS]C#CLi",
+            "conditions": "-78 °C",
+            "yield": "98%",
+            "reactant_smiles": "CN(OC)C(=O)Cc1c(I)[nH]c2ccccc12",
+            "product_smiles": "[TMS]C#CC(=O)Cc1c(I)[nH]c2ccccc12",
+            "notes": "Nucleophilic addition of lithium (trimethylsilyl)acetylide to a Weinreb amide, forming an α,β-acetylenic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetal formation (Ketone protection)",
+            "reagents": "TMSOTf",
+            "reagent_smiles": "[TMS]OCCO[TMS]",
+            "conditions": "DCM",
+            "yield": "81%",
+            "reactant_smiles": "[TMS]C#CC(=O)CC1=C(I)NC2=CC=CC=C12",
+            "product_smiles": "[TMS]C#CC1(CC2=C(I)NC3=CC=CC=C23)OCCO1",
+            "notes": "The ketone functional group is protected as a cyclic acetal (1,3-dioxolane) using 1,2-bis(trimethylsilyloxy)ethane and trimethylsilyl trifluoromethanesulfonate (TMSOTf) as a catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Tandem Heck-Suzuki couplings",
+            "reagents": "Pd2dba3, (tBu)3PH[BF4], Cs2CO3, MeOPhB(OH)2",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 50 °C",
+            "yield": "47%",
+            "reactant_smiles": "[TMS]C#CC1(CC2=C(I)NC3=CC=CC=C23)OCCO1",
+            "product_smiles": "COC1=CC=C(C=C1)/C(=C\\2C3=C(CC24OCCO4)C5=C(C=CC=C5)N3)/[TMS]",
+            "notes": "Intramolecular Heck reaction followed by Suzuki coupling to form a fused indolo-cyclopentene system with an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetal Hydrolysis / Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "90%",
+            "reactant_smiles": "COC1=CC=C(C=C1)/C(=C/2\\C3=C(CC24OCCO4)C5=C(C=CC=C5)N3)/[TMS]",
+            "product_smiles": "COC1=CC=C(C=C1)/C(=C\\2/C(=O)CC3=C2NC4=C3C=CC=C4)/[TMS]",
+            "notes": "Acid-catalyzed hydrolysis of the cyclic acetal (1,3-dioxolane) protecting group to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "[OMe]C1=CC=C(C=C1)/C(=C\\2/C(=O)CC3=C2NC4=C3C=CC=C4)/[TMS]",
+            "product_smiles": "[OMe]C1=CC=C(C=C1)/C=C\\2/C(=O)CC3=C2NC4=C3C=CC=C4",
+            "notes": "Desilylation of a vinylsilane to form an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Coupling / Dimerization",
+            "reagents": "LDA, FeCl3",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "70%",
+            "reactant_smiles": "COC1=CC=C(C=C1)/C=C/2C(=O)C3C4=C(NC4)C=C23",
+            "product_smiles": "COC1=CC=C(C=C1)/C=C/2\\C3=C(C4=C(C=CC=C4)N3)C(C5C6=C(/C(=C/C7=CC=C(C=C7)OC)/C5=O)NC8=C6C=CC=C8)C2=O",
+            "notes": "Oxidative dimerization of the indole-keto-vinyl reactant via C-C coupling at the alpha-carbon of the 5-membered ring. The product contains two p-methoxyphenyl groups and two E-configured vinyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ether Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "BrB(Br)Br.ClCCl",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)/C=C/2\\C3=C(C4=C(C=CC=C4)N3)C(C5C6=C(/C(=C/C7=CC=C(C=C7)OC)/C5=O)NC8=C6C=CC=C8)C2=O",
+            "product_smiles": "C1=CC2=C(C=C1)NC/3=C2C(C4C5=C(/C(=C/C6=CC=C(C=C6)O)/C4=O)NC7=C5C=CC=C7)C(=O)/C3=C/C8=CC=C(C=C8)O",
+            "notes": "Demethylation of two para-methoxy phenyl groups to para-hydroxy phenyl groups on a complex bis-indole scaffold using Boron Tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "28% (2 steps)",
+            "reactant_smiles": "O=C1C(C2C(C(=O)C3=C(NC4=CC=CC=C4)C(=C\\C5=CC=C(O)C=C5)/C3)C6=CC=CC=C6)NC7=C1C(=C\\C8=CC=C(O)C=C8)/C7",
+            "product_smiles": "O=C1C(=C2C(=O)C3=C(N2C4=CC=CC=C4)C(=C\\C5=CC=C(O)C=C5)/C3)C(=C\\C6=CC=C(O)C=C6)/C7=C1N=C8C=CC=C8C7",
+            "notes": "Oxidation of a dihydro-scytonemin precursor to Scytonemin, converting N-H to C=N and C-H to C=C bonds in the central ring.",
+            "substeps": []
+        }
+    ]
+}

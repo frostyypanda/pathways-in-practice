@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "indolactam-v-garg-2014",
+        "molecule_name": "Indolactam V",
+        "class": "Natural Product",
+        "author": "Garg",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Tosylation",
+            "reagents": "NaH, TsCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "C1=CC(=C2C=CNC2=C1)Br",
+            "product_smiles": "C1=CC(=C2C=CN(C2=C1)[Ts])Br",
+            "notes": "N-tosylation of 4-bromo-1H-indole",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Buchwald-Hartwig Amination / Ullmann-type C-N Coupling",
+            "reagents": "CuI, Cs2CO3",
+            "reagent_smiles": "CC(C)[C@@H](C(=O)O)N",
+            "conditions": "DMSO, 90 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2C=CN(C2=C1)[Ts])Br",
+            "product_smiles": "CC(C)[C@@H](C(=O)O)NC1=C2C=CN(C2=CC=C1)[Ts]",
+            "notes": "Copper-catalyzed amination of an aryl bromide with valine, forming a C-N bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reductive Amination",
+            "reagents": "HCHO, NaBH3CN, AcOH, CH3CN",
+            "reagent_smiles": "C=O.CC(=O)O.CC#N.[Na+].[BH3-]C#N",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H](C(=O)O)NC1=C2C=CN(C2=CC=C1)[Ts]",
+            "product_smiles": "CC(C)[C@@H](C(=O)O)N(C)C1=C2C=CN(C2=CC=C1)[Ts]",
+            "notes": "Methylation of secondary amine via reductive amination using formaldehyde and sodium cyanoborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Coupling / Peptide Synthesis",
+            "reagents": "EDC, HOBT, Et3N",
+            "reagent_smiles": "COC(=O)[C@H](CO)N",
+            "conditions": "CH2Cl2",
+            "yield": "55% (3 steps)",
+            "reactant_smiles": "CC(C)[C@@H](C(=O)O)N(C)C1=C2C=CN(C2=CC=C1)[Ts]",
+            "product_smiles": "CC(C)[C@@H](C(=O)N[C@H](CO)C(=O)OC)N(C)C1=C2C=CN(C2=CC=C1)[Ts]",
+            "notes": "Amide formation between a carboxylic acid (valine derivative on indole) and an amine (methyl L-serinate).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Deprotection, Elimination",
+            "reagents": "Mg",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "50%",
+            "reactant_smiles": "CC(C)[C@@H](C(=O)N[C@@H](CO)C(=O)OC)N(C)C1=C2C=CN([Ts])C2=CC=C1",
+            "product_smiles": "CC(C)[C@@H](C(=O)NC(=C)C(=O)OC)N(C)C1=C2C=CNC2=CC=C1",
+            "notes": "The N-Tosyl protecting group on the indole nitrogen is reductively cleaved to an N-H, and the primary alcohol (CH2OH) is eliminated to form a terminal alkene (C=CH2).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Electrophilic Indole Cyclization / Friedel-Crafts-type Reaction",
+            "reagents": "ZrCl4",
+            "reagent_smiles": "[Zr](Cl)(Cl)(Cl)Cl",
+            "conditions": "CH2Cl2, 34 °C",
+            "yield": "77%",
+            "reactant_smiles": "CC(C)[C@@H](C(=O)NC(=C)C(=O)OC)N(C)c1ccc2c([nH]c2c1)",
+            "product_smiles": "CC(C)[C@@H]1C(=O)N[C@H](C(=O)OC)CC2=C[nH]c3ccccc23N1C",
+            "notes": "Intramolecular cyclization of an N-methylated indole-containing enamide, forming a new six-membered ring via addition of the alkene to the indole C3 position, catalyzed by ZrCl4.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Epimerization",
+            "reagents": "NaHCO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "40 °C",
+            "yield": "55%",
+            "reactant_smiles": "CC(C)[C@H]1C(=O)N[C@H](CC2=CNC3=CC=CC(=C23)N1C)C(=O)OC",
+            "product_smiles": "CC(C)[C@@H]1C(=O)N[C@@H](CC2=CNC3=CC=CC(=C23)N1C)C(=O)OC",
+            "notes": "Epimerization occurred at both chiral centers (the carbon bearing the isopropyl group and the carbon bearing the methyl ester group).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "THF",
+            "reagent_smiles": "[Li][BH4]",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)[C@H]1C(=O)N[C@@H](CC2=CNC3=C2C(=CC=C3)N1C)C(=O)OC",
+            "product_smiles": "CC(C)[C@H]1C(=O)N[C@@H](CC2=CNC3=C2C(=CC=C3)N1C)CO",
+            "notes": "Methyl ester is reduced to a primary alcohol.",
+            "substeps": []
+        }
+    ]
+}

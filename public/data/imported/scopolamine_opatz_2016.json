@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "scopolamine-opatz-2016",
+        "molecule_name": "Scopolamine",
+        "class": "Natural Product",
+        "author": "Opatz",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Diazo Transfer",
+            "reagents": "Et3N, p-ABSA",
+            "reagent_smiles": "",
+            "conditions": "CH3CN, 0 °C-rt",
+            "yield": "89%",
+            "reactant_smiles": "CC(=O)C[CO2Bn]",
+            "product_smiles": "CC(=O)C(=[N+]=[N-])[CO2Bn]",
+            "notes": "Formation of an alpha-diazo-beta-keto ester from a beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "TBSOTf, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C-rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)C(=[N+]=[N-])C(=O)OCC1=CC=CC=C1",
+            "product_smiles": "[OTBS]C(=C)C(=[N+]=[N-])C(=O)OCC1=CC=CC=C1",
+            "notes": "Silylation of a beta-keto diazo ester to form an exocyclic silyl enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Rhodium-catalyzed Cycloaddition / Intramolecular C-H Insertion",
+            "reagents": "Rh2(OOct)4",
+            "reagent_smiles": "[Boc]N1C=CC=C1",
+            "conditions": "hexane, reflux",
+            "yield": "60%",
+            "reactant_smiles": "C(=[N+]=[N-])(C(=O)O[Bn])=C(C=C)[OTBS]",
+            "product_smiles": "[C@@H]1C[C@@H]2N(C(=O)O[Me])[C@@H]1C[C@@H]2C([OTBS])=C(C(=O)O[Bn])",
+            "notes": "Rhodium-catalyzed intramolecular reaction of a diazo-alkene with N-Boc-pyrrole to form an 8-azabicyclo[3.2.1]octene derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection / Oxidation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "81%",
+            "reactant_smiles": "COC(=O)N1[C@@H]2CC[C@H](C=C2[C@H]1[C@@H]([OTBS])[C@@H](C(=O)OCC3=CC=CC=C3))",
+            "product_smiles": "COC(=O)N1[C@@H]2C=C[C@H]1[C@H](C(=O)[C@H]2)C(=O)OCC3=CC=CC=C3",
+            "notes": "Desilylation of TBS ether followed by oxidation to a ketone, potentially with double bond migration to achieve conjugation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Krapcho decarboxylation",
+            "reagents": "LiCl",
+            "reagent_smiles": "",
+            "conditions": "DMSO/H2O, 130 °C",
+            "yield": "41%",
+            "reactant_smiles": "COC(=O)N1[C@@H]2C=C[C@@H]1[C@@H](C(=O)C2)C(=O)OCC3=CC=CC=C3",
+            "product_smiles": "COC(=O)N1[C@@H]2C=C[C@@H]1CC(=O)C2",
+            "notes": "Decarboxylation of a benzyl ester in a bicyclic ketone system under Krapcho conditions (LiCl in DMSO/H2O at high temperature).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "L-Selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C-rt",
+            "yield": "75%",
+            "reactant_smiles": "COC(=O)N1[C@@H]2C=C[C@@H]1CC(=O)C2",
+            "product_smiles": "COC(=O)N1[C@@H]2C=C[C@@H]1C[C@@H](C2)O",
+            "notes": "Reduction of a bicyclic ketone to a secondary alcohol, with retention of ester and alkene functionalities.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4, THF",
+            "reagent_smiles": "",
+            "conditions": "4°C-rt",
+            "yield": "70%",
+            "reactant_smiles": "COC(=O)N1[C@H]2C=C[C@H]1C[C@@H](C2)O",
+            "product_smiles": "CN1[C@H]2C=C[C@H]1C[C@@H](C2)O",
+            "notes": "Reduction of the N-methoxycarbonyl group to an N-methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acid-Base Reaction (Protonation)",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)O)cc1.CCOCC",
+            "conditions": "Et2O, rt",
+            "yield": "",
+            "reactant_smiles": "CN1[C@@H]2C=C[C@H]1C[C@@H](O)C2",
+            "product_smiles": "C[NH+]1[C@@H]2C=C[C@H]1C[C@@H](O)C2.[O-]S(=O)(=O)c1ccc(C)cc1",
+            "notes": "Protonation of a tertiary amine by p-toluenesulfonic acid to form an ammonium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification, Acetate Hydrolysis",
+            "reagents": "benzene, 6 M HCl",
+            "reagent_smiles": "O=C(Cl)C(C1=CC=CC=C1)COC(C)=O",
+            "conditions": "82 °C, rt",
+            "yield": "56% (2 steps)",
+            "reactant_smiles": "C[N+]1[C@@H]2C=C[C@@H]1[C@@H](O)[C@@H]2.O=S(=O)([O-])C1=CC=C(C)C=C1",
+            "product_smiles": "C[N]1[C@@H]2C=C[C@@H]1[C@@H](OC(=O)C(CO)C3=CC=CC=C3)[C@@H]2",
+            "notes": "Esterification of a tropene-diol derivative with an acyl chloride, followed by deprotection (hydrolysis) of the acetate group to a hydroxyl group. The ammonium salt reactant is converted to the neutral amine product.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Epoxidation",
+            "reagents": "35% H2O2, HCO2H",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "16%",
+            "reactant_smiles": "CN1C[C@H]2C=CCC[C@H](C2)OC(=O)[C@@H](CO)C3=CC=CC=C3",
+            "product_smiles": "CN1C2C(O3)C([C@H](C[C@H]1[C@@H]3CC2)OC(=O)[C@@H](CO)C4=CC=CC=C4)",
+            "notes": "Epoxidation of an alkene in a tropane derivative to form an epoxide.",
+            "substeps": []
+        }
+    ]
+}

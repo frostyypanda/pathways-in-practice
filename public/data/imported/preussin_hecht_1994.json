@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "preussin-hecht-1994",
+        "molecule_name": "Preussin",
+        "class": "Natural Product",
+        "author": "Hecht",
+        "year": 1994
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, pyridine",
+            "reagent_smiles": "Cc1ccc(S(Cl)(=O)=O)cc1.n1ccccc1",
+            "conditions": "0 °C",
+            "yield": "54%",
+            "reactant_smiles": "C1CC(=O)N[C@@H]1CO",
+            "product_smiles": "C1CC(=O)N[C@@H]1C[OTs]",
+            "notes": "Formation of a tosylate ester from a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "SN2 Displacement / Alkylation",
+            "reagents": "",
+            "reagent_smiles": "CCCCCCCCCC#C[Li]",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "C1CC(=O)N[C@@H]1C[OTs]",
+            "product_smiles": "C1CC(=O)N[C@@H]1[C9H19]",
+            "notes": "Displacement of the tosylate leaving group by a lithium alkynide, resulting in alkylation at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Protection (Carbamate Formation)",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "ClC(=O)OC",
+            "conditions": "THF, hexane, -78 °C",
+            "yield": "97%",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CCC(=O)N1",
+            "product_smiles": "CCCCCCCCC[C@@H]1CCC(=O)N1C(=O)OC",
+            "notes": "N-protection of a 2-pyrrolidinone lactam with methyl chloroformate after deprotonation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "LiBEt3H",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 - 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CCC(=O)N1C(=O)OC",
+            "product_smiles": "CCCCCCCCC[C@@H]1CCC(O)N1C(=O)OC",
+            "notes": "Lactam reduction to hemiaminal with retention of existing stereochemistry and formation of a new racemic/diastereomeric center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Etherification / Aminal Methylation",
+            "reagents": "CSA",
+            "reagent_smiles": "COC(C)(C)OC",
+            "conditions": "CH2Cl2, 0°C",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CCC(N1C(=O)OC)O",
+            "product_smiles": "CCCCCCCCC[C@@H]1CCC(N1C(=O)OC)OC",
+            "notes": "Conversion of a cyclic hemiaminal (hydroxyl) to an O-methyl aminal (methoxy) using 2,2-dimethoxypropane and camphorsulfonic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Elimination",
+            "reagents": "TMSOTf, DIPEA",
+            "reagent_smiles": "C[Si](C)(C)OS(=O)(=O)C(F)(F)F.CCN(C(C)C)C(C)C",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "89%",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CCC(N1C(=O)OC)OC",
+            "product_smiles": "CCCCCCCCC[C@@H]1CC=CN1C(=O)OC",
+            "notes": "Elimination of methanol to form a 2,3-dihydropyrrole derivative (cyclic enamine).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Paterno-Büchi reaction",
+            "reagents": "PhCHO",
+            "reagent_smiles": "O=Cc1ccccc1",
+            "conditions": "hv, MeCN",
+            "yield": "53%",
+            "reactant_smiles": "CCCCCCCCC[C@H]1CC=CN1C(=O)OC",
+            "product_smiles": "CCCCCCCCC[C@H]1C[C@H]2[C@H]([C@@H](O2)[Ph])N1C(=O)OC",
+            "notes": "Paterno-Büchi reaction involving a 3-pyrroline and benzaldehyde to form a fused tetrahydrofuran-pyrrolidine system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenolysis / Reductive Ether Opening",
+            "reagents": "H2, Pd(OH)2",
+            "reagent_smiles": "CO.[Pd](O)O",
+            "conditions": "MeOH, rt",
+            "yield": "81%",
+            "reactant_smiles": "N1(C(=O)OC)[C@@H](CCCCCCCCC)C[C@H]2[C@H]1O[C@@H](c3ccccc3)C2",
+            "product_smiles": "N1(C(=O)OC)[C@@H](CCCCCCCCC)C[C@@H](O)[C@@H](Cc2ccccc2)1",
+            "notes": "Reductive opening of a fused cyclic ether (oxolane ring) and conversion of an aryl group to a benzyl group, likely through hydrogenolysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 66°C",
+            "yield": "91%",
+            "reactant_smiles": "O=C(OC)N1[C@@H](C[Ph])CC[C@H](O)[C@H](CCCCCCCCC)C1",
+            "product_smiles": "CN1[C@@H](C[Ph])CC[C@H](O)[C@H](CCCCCCCCC)C1",
+            "notes": "Reduction of an N-methyl carbamate to a tertiary methylamine using lithium aluminum hydride.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lingzhiol-kuwahara-2025",
+        "molecule_name": "Lingzhiol",
+        "class": "Natural Product",
+        "author": "Kuwahara",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Diels-Alder / Lactonization",
+            "reagents": "Me3Al, Et2AlCl, DCM",
+            "reagent_smiles": "C1=CC2=CC=C(C(=C2C=C1)C3=C(C=CC4=C3C=CC=C4)O)O.C=CC(=O)OC",
+            "conditions": "-78 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "C=CC=CCO",
+            "product_smiles": "C1=C[C@H]2COC(=O)[C@@H]2CC1",
+            "notes": "A [4+2] cycloaddition (Diels-Alder reaction) between penta-2,4-dien-1-ol and methyl acrylate, followed by intramolecular lactonization, forming a trans-fused bicyclic gamma-lactone. The reaction is catalyzed by a chiral Lewis acid system involving (S)-BINOL, trimethylaluminum, and diethylaluminum chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Michael Addition",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC(=O)OCC(C1=C(C=CC(=C1)OC)OC)[N+](=O)[O-]",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1OC[C@H]2[C@@H]1C=CCC2",
+            "product_smiles": "COC1=CC=C(C(=C1)[C@@H](C[C@]23CCC=C[C@H]3COC2=O)[N+](=O)[O-])OC",
+            "notes": "Intermolecular Michael addition of a nitronate (formed from alpha-acetoxy-nitro-arene) to an alpha,beta-unsaturated lactone, followed by elimination of acetate.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Buchwald-Hartwig C-C Coupling (nitromethylation)",
+                    "reagents": "MeNO2, XPhos, Pd2(dba)3, Cs2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "60 °C",
+                    "yield": "96%",
+                    "reactant_smiles": "COc1c(Br)ccc(OC)c1",
+                    "product_smiles": "COc1c(C[N+](=O)[O-])ccc(OC)c1",
+                    "notes": "Aryl bromide reacts with nitromethane to form an aryl nitromethyl derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Hydroxymethylation",
+                    "reagents": "HCHO, TEA",
+                    "reagent_smiles": "",
+                    "conditions": "1,4-dioxane, rt",
+                    "yield": "83%",
+                    "reactant_smiles": "COC1=CC(=C(C=C1)OC)C[N+](=O)[O-]",
+                    "product_smiles": "COC1=CC(=C(C=C1)OC)C(CO)[N+](=O)[O-]",
+                    "notes": "Addition of a hydroxymethyl group alpha to a nitro group on a benzylic carbon.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Esterification (Acetylation)",
+                    "reagents": "Ce(OTf)3",
+                    "reagent_smiles": "CC(=O)OOC(=O)C",
+                    "conditions": "MeCN, 0 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "COC1=CC(=C(C=C1)OC)C(CO)[N+](=O)[O-]",
+                    "product_smiles": "CC(=O)OCC(C1=C(C=CC(=C1)OC)OC)[N+](=O)[O-]",
+                    "notes": "Acetylation of a primary alcohol to form an acetate ester using acetic anhydride and cerium(III) triflate catalyst.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "O2, DBU",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "COC1=CC=C(C(=C1)[C@@H](C[C@]23CCC=C[C@@H]3COC2=O)[N+](=O)[O-])OC",
+            "product_smiles": "COC1=CC=C(C(=C1)C(=O)C[C@]23CCC=C[C@@H]3COC2=O)OC",
+            "notes": "Oxidation of a secondary nitroalkane to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative cleavage (Lemieux-Johnson oxidation)",
+            "reagents": "OsO4, NaIO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, H2O, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COc1cc(OC)ccc1C(=O)C[C@@]1(OC(=O)C[C@H]2)[C@H]2C=CCC1",
+            "product_smiles": "COc1cc(OC)ccc1C(=O)C[C@@]1(OC(=O)C[C@H](C=O))C(CC=O)CC1",
+            "notes": "Oxidative cleavage of the cyclohexene double bond to form a dialdehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular cyclization / Aldol-type reaction",
+            "reagents": "TrBF₄, DCM",
+            "reagent_smiles": "",
+            "conditions": "-40 to 0 °C",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "COc1cc(OC)c(C(=O)C[C@@]23(CCC=O)[C@@H](C=O)C(=O)OC3O2)cc1",
+            "product_smiles": "COc1cc(OC)c(C(=O)C[C@]23C4CC([C@@H](O)[C@@H]4[C@@H](C=O))C(=O)OC3O2)cc1",
+            "notes": "Intramolecular cyclization involving two aldehyde groups, leading to the formation of a cyclopentane ring and reduction of one aldehyde to a hydroxyl group, while maintaining a six-membered lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Silylation / Alcohol Protection",
+            "reagents": "TESCI, DMAP, imidazole",
+            "reagent_smiles": "Cl[Si](CC)(CC)CC.CN(C)c1ccncc1.c1c[nH]cn1",
+            "conditions": "DMF, rt",
+            "yield": "93%",
+            "reactant_smiles": "COc1ccc(OC)c(C(=O)CC23CC[C@@H](O)[C@]2(C=O)OC(=O)O3)c1",
+            "product_smiles": "CC[Si](CC)(CC)O[C@@H]1CC[C@@]2(CC(=O)c3c(OC)ccc(OC)c3)C(=O)OC[C@]12C=O",
+            "notes": "Protection of a secondary alcohol as a triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "NaClO2, KH2PO4",
+            "reagent_smiles": "CC=C(C)C.CC(C)(C)O.O.[Na+]",
+            "conditions": "H2O, t-BuOH, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "[OTES]O[C@@H]1CC[C@]2(CC(=O)C3=C(C=CC(=C3)OC)OC)C(=O)OC[C@]12C=O",
+            "product_smiles": "[OTES]O[C@@H]1CC[C@]2(CC(=O)C3=C(C=CC(=C3)OC)OC)C(=O)OC[C@]12C(=O)O",
+            "notes": "Pinnick oxidation of an aldehyde to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative cyclization / Dearomatization",
+            "reagents": "(NH4)2S2O8, 2,4,6-collidine",
+            "reagent_smiles": "",
+            "conditions": "DMSO, 80 °C",
+            "yield": "63%",
+            "reactant_smiles": "[OTES][C@H]1CC[C@@]2(CC(=O)C3=C(OC)C=CC(=C3)OC)C(=O)OC[C@@]12C(=O)O",
+            "product_smiles": "[OTES]C1CCC[C@@]23CC(=O)C4=C(OC)C=CC(=C4)OC[C@]13CC(=O)OC2",
+            "notes": "Intramolecular oxidative cyclization leading to a complex polycyclic system. The original carboxylic acid and lactone rearrange/cyclize to form two new lactone rings. The aromatic ring undergoes dearomatization and then rearomatization with the ketone-bearing ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Demethylation / Deprotection",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "80%",
+            "reactant_smiles": "[OTES]OC1CC[C@@]23CC(=O)C4=C(C(=CC=C4OC)OC)[C@]13CC(=O)OC2=O",
+            "product_smiles": "C1=C(C2=C(C(=C1)O)[C@@]34CCC[C@]4(CC2=O)C(=O)OC3O)O",
+            "notes": "Demethylation of two methoxy groups and deprotection of a triethylsilyl (TES) ether to form the corresponding phenols and alcohol.",
+            "substeps": []
+        }
+    ]
+}

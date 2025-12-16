@@ -1,0 +1,194 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sphingofungin-d-beemelmanns-2022",
+        "molecule_name": "Sphingofungin D",
+        "class": "Natural Product",
+        "author": "Beemelmanns",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide Formation (Weinreb Amide Synthesis)",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "CNOC.C[Al](C)C",
+            "conditions": "-15 °C",
+            "yield": "93%",
+            "reactant_smiles": "CC1(C)O[C@@H](C(=O)OC)[C@H](C(=O)OC)O1",
+            "product_smiles": "CC1(C)O[C@@H](C(=O)N(C)OC)[C@H](C(=O)N(C)OC)O1",
+            "notes": "Ester to Weinreb amide transformation using N,O-dimethylhydroxylamine and trimethylaluminum.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard Addition / Ketone Synthesis",
+            "reagents": "THF",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H](C(=O)N(C)OC)[C@@H](C(=O)N(C)OC)O1",
+            "product_smiles": "C=CC(=O)[C@@H]1[C@H](C(=O)N(C)OC)OC(C)(C)O1",
+            "notes": "Addition of vinylmagnesium bromide to a Weinreb amide to form a vinyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Luche reduction",
+            "reagents": "CeCl3, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, -78 °C",
+            "yield": "61% (2 steps)",
+            "reactant_smiles": "C=CC(=O)[C@@H]1[C@@H](C(=O)N(C)OC)OC(C)(C)O1",
+            "product_smiles": "C=C[C@H](O)[C@@H]1[C@@H](C(=O)N(C)OC)OC(C)(C)O1",
+            "notes": "Selective reduction of alpha,beta-unsaturated ketone to allylic alcohol with diastereoselective formation of the S-alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Weinreb Amide Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, H₂O",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]([C@@H]1[C@@H](C(=O)N(C)OC)OC(C)(C)O1)O",
+            "product_smiles": "C=C[C@@H]([C@@H]1[C@@H](C(=O)O)OC(C)(C)O1)O",
+            "notes": "Hydrolysis of a Weinreb amide to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "99% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]([C@@H]1[C@@H](C(=O)O)OC(C)(C)O1)O",
+            "product_smiles": "C=C[C@@H]([C@@H]1[C@@H](C(=O)O)OC(C)(C)O1)[OAc]",
+            "notes": "Acetylation of a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric alpha-amination / Esterification",
+            "reagents": "Ni(OAc)2, Zn, NMM, NMP",
+            "reagent_smiles": "[S@](=O)(OC(C)(C)C)[Mes].[N+](C)(C)ON1C(=O)C2=C(Cl)C(Cl)C(Cl)=C(Cl)C2C1=O.[PF6-]",
+            "conditions": "",
+            "yield": "54%",
+            "reactant_smiles": "O=C(O)[C@H]1OC(C)(C)O[C@H]1[C@H](C=C)OC(=O)C",
+            "product_smiles": "CC(C)(C)OC(=O)[C@@H](N[S@@](=O)[Mes])[C@H]2OC(C)(C)O[C@H]2[C@H](C=C)OC(=O)C",
+            "notes": "Alpha-amination of a carboxylic acid with simultaneous esterification to a tert-butyl ester, using a chiral sulfinamide, a Ni catalyst, and an N-oxyl ammonium salt reagent.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "N-Sulfonylation",
+                    "reagents": "Na2CO3, H2O",
+                    "reagent_smiles": "[Mes]S(=O)(=O)Cl",
+                    "conditions": "EtOAc, THF",
+                    "yield": "92%",
+                    "reactant_smiles": "C1=CC=C2C[C@@H](O)[C@H](N)C2=C1",
+                    "product_smiles": "[Mes]S(=O)(=O)N[C@H]1C2=CC=CC=C2C[C@@H]1O",
+                    "notes": "The primary amine is N-sulfonated with mesitylenesulfonyl chloride in the presence of sodium carbonate and water, retaining the stereochemistry of the chiral centers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Intramolecular Cyclization",
+                    "reagents": "SOCl2, 3,5-lutidine",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -45 °C",
+                    "yield": "81%",
+                    "reactant_smiles": "O[C@H]1[C@H](NS(=O)(=O)[Mes])CC2=CC=CC=C21",
+                    "product_smiles": "[Mes]S(=O)(N1[C@H]2CC3=CC=CC=C3[C@H]2O1)",
+                    "notes": "Intramolecular cyclization of an indanol sulfamide to form a cyclic sulfamidate/sulfamate derivative. The alcohol and sulfonamide react with thionyl chloride to form the cyclic product.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Grignard Reaction, Ring Opening",
+                    "reagents": "MesMgBr",
+                    "reagent_smiles": "Cc1cc(C)c(C)c(c1)[Mg]Br.C1CCOC1",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Mes]S(=O)(=O)N1[C@H]2c3ccccc3C[C@@H](OS1=O)2",
+                    "product_smiles": "[Mes]S(=O)(=O)N[C@H]1c2ccccc2C[C@@H](O[S](=O)[Mes])1",
+                    "notes": "Nucleophilic attack of MesMgBr on the cyclic sulfamidate/sulfate, leading to ring opening, incorporation of a Mes group, and protonation of the nitrogen.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Reductive Cleavage",
+                    "reagents": "Li/NH3, Fe(NO3)3",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "58%",
+                    "reactant_smiles": "[Mes]S(=O)O[C@H]1CC2=C(C=CC=C2)[C@@H]1N[S](=O)(=O)[Mes]",
+                    "product_smiles": "[Mes]S(=O)N",
+                    "notes": "Reductive cleavage of sulfinate ester and sulfonamide groups from an indane derivative to yield mesitylsulfinamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Imine formation / Condensation",
+                    "reagents": "pyrrolidine, 4A MS",
+                    "reagent_smiles": "CC(C)(C)OC(=O)C=O",
+                    "conditions": "CH2Cl2",
+                    "yield": "86%",
+                    "reactant_smiles": "N[S](=O)c1c(C)cc(C)cc1C",
+                    "product_smiles": "CC(C)(C)OC(=O)C=N[S](=O)c1c(C)cc(C)cc1C",
+                    "notes": "Condensation of a mesityl sulfinamide with tert-butyl glyoxylate to form an N-sulfinyl imine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cross-metathesis",
+            "reagents": "G-II, CuI",
+            "reagent_smiles": "C=CCCCCCC[C@H](O)CCCC",
+            "conditions": "CH2Cl2, 40 °C",
+            "yield": "58%",
+            "reactant_smiles": "C=C[C@H]([C@H]1[C@H]([C@H](C(=O)O[tBu])N[S@@](=O)[Mes])OC(C)(C)O1)O[Ac]",
+            "product_smiles": "O=C(O[tBu])[C@H](N[S@@](=O)[Mes])[C@H]1OC(C)(C)O[C@H]1[C@H](O[Ac])/C=C/CCCCCCC[C@H](O)CCCC",
+            "notes": "A cross-metathesis reaction between an allyl group and a terminal alkene, forming a new trans alkene bond.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Organocuprate-mediated epoxide opening",
+                    "reagents": "CuI",
+                    "reagent_smiles": "C=CCCCCCC[Mg]Br",
+                    "conditions": "THF, -40 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCCCC[C@@H]1CO1",
+                    "product_smiles": "C=CCCCCCC[C@@H](O)CCCCC",
+                    "notes": "Nucleophilic ring opening of an epoxide by a Grignard reagent (likely forming an organocuprate with CuI) resulting in a secondary alcohol. The reaction shows attack at the more substituted carbon of the epoxide with inversion of stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (tBu ester, acetonide, N-sulfinamide cleavage)",
+            "reagents": "BCl3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "34%",
+            "reactant_smiles": "O=C(OC(C)(C)C)[C@H](N[S@](=O)c1c(C)cc(C)cc1C)[C@H]2OC(C)(C)O[C@@H]2[C@@H](OC(=O)C)/C=C/CCCCC[C@@H](O)CCCCC",
+            "product_smiles": "O=C(O)[C@H](N)[C@H](O)[C@@H](O)[C@@H](OC(=O)C)/C=C/CCCCC[C@@H](O)CCCCC",
+            "notes": "Deprotection of t-butyl ester, acetonide, and N-mesitylsulfinamide, releasing the carboxylic acid, two hydroxyls, and the primary amine. The O-acetate group and alkene remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "N-Acetylation, O-Deacetylation",
+            "reagents": "Et3N, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "38%",
+            "reactant_smiles": "O=C(O)[C@@H](N)[C@H](O)[C@@H](O)[C@@H](OC(C)=O)/C=C/CCCCC[C@H](O)CCCCC",
+            "product_smiles": "O=C(O)[C@@H](NC(C)=O)[C@H](O)[C@@H](O)[C@@H](O)/C=C/CCCCC[C@H](O)CCCCC",
+            "notes": "The primary amine is N-acetylated and the O-acetate group is hydrolyzed to a hydroxyl group.",
+            "substeps": []
+        }
+    ]
+}

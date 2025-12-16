@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tamiflu-corey-2006",
+        "molecule_name": "Tamiflu",
+        "class": "Natural Product",
+        "author": "Corey",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "10 mol% cat., neat",
+            "reagent_smiles": "C=CC(=O)OCC(F)(F)F.[B-](c1ccccc1C)O[C@H]1[C@@H](Ph)[C@@H]([N+]2C[C@H]1CCC2)H.F3CS(=O)(=O)[N-]S(=O)(=O)CF3",
+            "conditions": "rt, 30 h",
+            "yield": "97%",
+            "reactant_smiles": "C=CC=C",
+            "product_smiles": "C1=CCC[C@@H](C1)C(=O)OCC(F)(F)F",
+            "notes": "Corey's asymmetric Diels-Alder cycloaddition",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aminolysis / Amidation",
+            "reagents": "NH3, CF3CH2OH",
+            "reagent_smiles": "",
+            "conditions": "40 °C, 5 h",
+            "yield": "100%",
+            "reactant_smiles": "C1=CC[C@H](CC1)C(=O)OCC(F)(F)F",
+            "product_smiles": "C1=CC[C@H](CC1)C(=O)N",
+            "notes": "Aminolysis of a 2,2,2-trifluoroethyl ester with ammonia to form a primary amide. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Halocyclization (Iodolactamization)",
+            "reagents": "",
+            "reagent_smiles": "ClC(=O)C(=O)Cl.ClCCCl.CC(C)(C)O",
+            "conditions": "70 °C, 2h, then 40 °C",
+            "yield": "83%",
+            "reactant_smiles": "C1=CC[C@H](CC1)C(=O)N",
+            "product_smiles": "C1C[C@@H]([C@@H]2C[C@H]1C(=O)N2)I",
+            "notes": "Intramolecular iodolactamization of an unsaturated amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-protection",
+            "reagents": "(Boc)₂O, Et₃N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "99%",
+            "reactant_smiles": "I[C@@H]1CC[C@H]2C(=O)N[C@H]12",
+            "product_smiles": "[Boc]N1[C@H]2C[C@H](CC[C@@H]2I)C1=O",
+            "notes": "N-protection of the lactam nitrogen with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination (Dehydrohalogenation)",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux, 12 h",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N1C(=O)[C@H]2CC[C@@H](I)C[C@H]12",
+            "product_smiles": "[Boc]N1C(=O)[C@H]2CC=CC[C@H]12",
+            "notes": "DBU-mediated E2 elimination of HI from an N-Boc-protected iodinated bicyclic imide to form a corresponding alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic Bromination",
+            "reagents": "cat. AIBN, NBS",
+            "reagent_smiles": "",
+            "conditions": "CCl4, reflux",
+            "yield": "95%",
+            "reactant_smiles": "[Boc]N1C(=O)[C@@H]2C=CCC[C@@H]12",
+            "product_smiles": "[Boc]N1C(=O)[C@@H]2C=C[C@H](Br)C[C@@H]12",
+            "notes": "Allylic bromination of a bicyclic lactam using NBS and AIBN, resulting in a double bond shift and introduction of a bromine atom at a new chiral allylic center with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Rearrangement/Cyclization",
+            "reagents": "Cs2CO3, EtOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "Br[C@H]1C=C[C@@H]2[C@@H]1C(=O)N([Boc])[C@@H]2",
+            "product_smiles": "CCOC(=O)C1CCC=C[C@H](C1)N[Boc]",
+            "notes": "Intramolecular rearrangement and ring opening from a bicyclic bromo-lactam to a monocyclic cyclohexene with ester and carbamate groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Allylic functionalization (Bromination and Amination)",
+            "reagents": "SnBr4, NBA",
+            "reagent_smiles": "",
+            "conditions": "MeCN, -40 °C, 4 h",
+            "yield": "75%",
+            "reactant_smiles": "CCOC(=O)C1=CC[C@H](CC1)N[Boc]",
+            "product_smiles": "CCOC(=O)C1=C[C@@H]([C@@H]([C@H](C1)Br)N[Boc])N[Ac]",
+            "notes": "Diastereoselective allylic bromination and amination of a cyclohexene derivative. The double bond remains intact, while a bromo group and an acetamido group are introduced at allylic positions with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Aziridine Formation / Dehydrobromination",
+            "reagents": "n-Bu4NBr, KHMDS",
+            "reagent_smiles": "",
+            "conditions": "DME, -20 °C, 10 min",
+            "yield": "82%",
+            "reactant_smiles": "[Et]OC(=O)C1=C[C@@H]([C@H]([C@H](C1)[Boc]N)Br)[Ac]N",
+            "product_smiles": "[Et]OC(=O)C1=C[C@@H]2[C@@H]([C@H](C1)[Boc]N)[Ac]N2",
+            "notes": "Intramolecular cyclization to form an aziridine ring via dehydrobromination.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Aziridine Ring Opening",
+            "reagents": "cat. Cu2+",
+            "reagent_smiles": "",
+            "conditions": "3-pentanol, 0 °C, 12 h",
+            "yield": "61%",
+            "reactant_smiles": "CCOC(=O)C1=C[C@H]2N([Ac])[C@@H]2[C@H](N[Boc])CC1",
+            "product_smiles": "CCOC(=O)C1=C[C@H](N[Ac])[C@@H](OCH(CC)CC)[C@H](N[Boc])CC1",
+            "notes": "Copper(II) catalyzed nucleophilic ring opening of an aziridine with 3-pentanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection (Boc) / Salt formation",
+            "reagents": "H3PO4, EtOH",
+            "reagent_smiles": "O=P(O)(O)O.CCO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C[C@H](OCCC(C)C)[C@@H]([Ac]N)[C@H]([Boc]N)C1",
+            "product_smiles": "CCOC(=O)C1=C[C@H](OCCC(C)C)[C@@H]([Ac]N)[C@H]([NH3+])C1.[O-]P(=O)(O)O",
+            "notes": "Boc deprotection of the amine to form the ammonium salt, resulting in Tamiflu phosphate salt.",
+            "substeps": []
+        }
+    ]
+}

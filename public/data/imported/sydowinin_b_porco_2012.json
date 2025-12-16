@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sydowinin-b-porco-2012",
+        "molecule_name": "Sydowinin B",
+        "class": "Natural Product",
+        "author": "Porco",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "Br2",
+            "reagent_smiles": "Br2.ClCCl",
+            "conditions": "DCM, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC(=C(C=C1O)C=O)O",
+            "product_smiles": "C1=CC(=C(C(=C1O)C=O)Br)O",
+            "notes": "Bromination of a 2,5-dihydroxybenzaldehyde derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection (MOM ether formation)",
+            "reagents": "MOMCl, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "75%",
+            "reactant_smiles": "O=Cc1c(Br)c(O)cc(O)c1",
+            "product_smiles": "O=Cc1c(Br)c([OMOM])cc([OMOM])c1",
+            "notes": "Protection of both phenolic hydroxyl groups with MOMCl to form MOM ethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=Cc1c(Br)c([OMOM])cc1[OMOM]",
+            "product_smiles": "OCc1c(Br)c([OMOM])cc1[OMOM]",
+            "notes": "Aldehyde reduced to primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "BnBr, NaH",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0°C",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "[OMOM]c1c(Br)c(CO)c([OMOM])cc1",
+            "product_smiles": "[OMOM]c1c(Br)c(C[OBn])c([OMOM])cc1",
+            "notes": "A primary alcohol is converted to a benzyl ether via Williamson ether synthesis using benzyl bromide and sodium hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "t-BuLi, Et2O",
+            "reagent_smiles": "O=Cc1c(OCOC)cc(O[Si](C)(C)C(C)(C)C)cc1OCOC",
+            "conditions": "-78 °C",
+            "yield": "61%",
+            "reactant_smiles": "COCOC1=C(COCC2=CC=CC=C2)C(=C(C=C1)OCOC)Br",
+            "product_smiles": "O=COCCOc1cc(CO[Si](C)(C)C(C)(C)C)cc(OCOC)c1C(O)c1c(OCOC)cc(COCC2=CC=CC=C2)cc1OCOC",
+            "notes": "Halogen-metal exchange generates an aryl lithium, which then adds to an aldehyde to form a secondary alcohol.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Protection (of phenols with MOM groups)",
+                    "reagents": "MOMCl, DIPEA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "67%",
+                    "reactant_smiles": "COC(=O)C1=CC(=CC(=C1)O)O",
+                    "product_smiles": "COC(=O)C1=CC([OMOM])=CC([OMOM])=C1",
+                    "notes": "Methyl 3,5-dihydroxybenzoate is protected with MOMCl to form methyl 3,5-bis(methoxymethoxy)benzoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[MOMO]C1=CC(=CC(=C1)[MOMO])C(=O)OC",
+                    "product_smiles": "[MOMO]C1=CC(=CC(=C1)[MOMO])CO",
+                    "notes": "Methyl ester reduced to a primary alcohol with lithium aluminum hydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Protection (Alcohol to Silyl Ether)",
+                    "reagents": "",
+                    "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.C1=CNC=N1",
+                    "conditions": "DCM",
+                    "yield": "87% (2 steps)",
+                    "reactant_smiles": "COCOC1=CC(=CC(=C1)OCOC)CO",
+                    "product_smiles": "[OTBS]CC1=CC(=CC(=C1)OCOC)OCOC",
+                    "notes": "Protection of benzyl alcohol as a TBS ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Directed Ortho-Metallation / Formylation",
+                    "reagents": "BuLi, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "76%",
+                    "reactant_smiles": "COC1=CC(C[OTBS])=CC(OCOC)=C1",
+                    "product_smiles": "COC1=C(C=O)C(OCOC)=CC(C[OTBS])=C1",
+                    "notes": "Formylation of a 1,3,5-trisubstituted benzene derivative via directed ortho-lithiation and subsequent trapping with DMF to introduce an aldehyde group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "DCM/DMSO",
+            "yield": "78%",
+            "reactant_smiles": "COC1=CC(COC[Si](C)(C)C(C)(C)C)=C(OCOC)C=C1C(O)C2=C(COCC3=CC=CC=C3)C=CC(OCOC)=C2OCOC",
+            "product_smiles": "COC1=CC(COC[Si](C)(C)C(C)(C)C)=C(OCOC)C=C1C(=O)C2=C(COCC3=CC=CC=C3)C=CC(OCOC)=C2OCOC",
+            "notes": "Oxidation of a secondary alcohol (diarylmethanol) to a ketone (diaryl ketone) using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Debenzylation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "THF/MeOH",
+            "yield": "89%",
+            "reactant_smiles": "[MOM]OC1=CC(C[OTBS])=C([MOM])C=C1C(=O)C2=C(C[OBn])C([MOM])=CC([MOM])=C2",
+            "product_smiles": "[MOM]OC1=CC(C[OTBS])=C([MOM])C=C1C(=O)C2=C(CO)C([MOM])=CC([MOM])=C2",
+            "notes": "Hydrogenolytic cleavage of the benzyloxymethyl (CH2OBn) group to a hydroxymethyl (CH2OH) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[MOMO]c1cc(C[OTBS])cc([MOMO])c1C(=O)c2c([MOMO])c(CO)cc([MOMO])c2",
+            "product_smiles": "[MOMO]c1cc(C[OTBS])cc([MOMO])c1C(=O)c2c([MOMO])c(C=O)cc([MOMO])c2",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Pinnick oxidation",
+            "reagents": "NaClO2, NaH2PO4, isobutene",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O, t-BuOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]Cc1c([MOMO])c(C(=O)c2c([MOMO])cc(C=O)c([MOMO])c2)c([MOMO])cc1[MOMO]",
+            "product_smiles": "[OTBS]Cc1c([MOMO])c(C(=O)c2c([MOMO])cc(C(=O)O)c([MOMO])c2)c([MOMO])cc1[MOMO]",
+            "notes": "Oxidation of an aldehyde to a carboxylic acid using sodium chlorite, often referred to as Pinnick oxidation. All other functional groups (ketone, MOMO, OTBS ethers) remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification",
+            "reagents": "TMSCHN2, MeOH/Et2O",
+            "reagent_smiles": "[N-]=[N+]=C[Si](C)(C)C.CO.CCOCC",
+            "conditions": "0 °C",
+            "yield": "65% (3 steps)",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)OCC1=CC(=C(C(=C1)OCOC)C(=O)C2=C(C=CC(=C2C(=O)O)OCOC)OCOC)OCOC",
+            "product_smiles": "CC(C)(C)[Si](C)(C)OCC1=CC(=C(C(=C1)OCOC)C(=O)C2=C(C=CC(=C2C(=O)OC)OCOC)OCOC)OCOC",
+            "notes": "Methylation of a carboxylic acid to its corresponding methyl ester using trimethylsilyldiazomethane (TMSCHN2).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection (MOM, TBS)",
+            "reagents": "TsOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 40 °C",
+            "yield": "77%",
+            "reactant_smiles": "COC(=O)C1=C([MOM])C=CC([MOM])=C1C(=O)C2=C([MOM])C=C(CO[TBS])C([MOM])=C2",
+            "product_smiles": "COC(=O)C1=C(O)C=CC(O)=C1C(=O)C2=C(O)C=C(CO)C(O)=C2",
+            "notes": "Acid-catalyzed hydrolysis of methoxymethyl (MOM) ethers and tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Cyclization / Dehydrative Cyclization",
+            "reagents": "ZnCl₂, H₂O",
+            "reagent_smiles": "Cl[Zn]Cl.O",
+            "conditions": "mw, 120 °C",
+            "yield": "58%",
+            "reactant_smiles": "COC(=O)c1c(O)cc(O)c(C(=O)c2c(O)cc(CO)c(O)c2)c1O",
+            "product_smiles": "COC(=O)c1ccc(O)c2c1C(=O)c3c(O)cc(CO)c(O)c3O2",
+            "notes": "Intramolecular cyclization of a benzophenone derivative to form a xanthone.",
+            "substeps": []
+        }
+    ]
+}

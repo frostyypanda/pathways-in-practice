@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ulodione-a-hong-2022",
+        "molecule_name": "Ulodione A",
+        "class": "Natural Product",
+        "author": "Hong",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "-78 °C, DCM",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCCBr",
+            "product_smiles": "O=CHCCCBr",
+            "notes": "Reduction of an ethyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Henry Reaction (Nitroaldol Reaction)",
+            "reagents": "MeNO2, Et3N",
+            "reagent_smiles": "C[N+](=O)[O-].CCN(CC)CC",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "O=CCCCBr",
+            "product_smiles": "BrCCCC(O)C[N+](=O)[O-]",
+            "notes": "An aldehyde undergoes a Henry reaction with nitromethane in the presence of triethylamine to form a β-nitro alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Elimination (Dehydration)",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "48% (3 steps)",
+            "reactant_smiles": "C(CC(C[N+](=O)[O-])O)CBr",
+            "product_smiles": "C(CCBr)C=C[N+](=O)[O-]",
+            "notes": "Formation of an alpha,beta-unsaturated nitro compound via elimination of an alcohol. Likely proceeds via mesylate formation followed by base-mediated elimination.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Michael Addition / Intramolecular Alkylation",
+            "reagents": "DIPEA",
+            "reagent_smiles": "O=C1CCC(=O)C1",
+            "conditions": "DCM",
+            "yield": "79%",
+            "reactant_smiles": "BrCCC/C=C/[N+](=O)[O-]",
+            "product_smiles": "O=C1CCC2(C1)CCCC2C[N+](=O)[O-]",
+            "notes": "Michael addition of cyclopentane-1,3-dione to a bromo-nitroalkene followed by intramolecular alkylation to form a spirocyclic compound.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ring Expansion / Rearrangement",
+            "reagents": "DABCO, DMF",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "78%",
+            "reactant_smiles": "C1CC(C[N+](=O)[O-])C2(C1)C(=O)CCC2=O",
+            "product_smiles": "C1CC(CC2(C1)C(=O)CCC2=O)[N+](=O)[O-]",
+            "notes": "Base-mediated ring expansion of a nitromethyl spirocyclopentane to a nitro spirocyclohexane.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Michael Addition / Nitro Group Derivatization",
+            "reagents": "Tritone B",
+            "reagent_smiles": "COC(=O)C=C",
+            "conditions": "MeCN",
+            "yield": "90%",
+            "reactant_smiles": "O=C1CCC2(C1)CCC[CH](C2)[N+](=O)[O-]",
+            "product_smiles": "O=C1CCC2(C1)CCC[C@@H](C2)[N@+](CCC(=O)OC)([O-])O",
+            "notes": "A nitronate-type intermediate, generated from the starting nitroalkane, undergoes Michael addition with methyl acrylate, followed by N-alkylation on the nitrogen of the nitro group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "H2O, 50 °C",
+            "yield": "70%",
+            "reactant_smiles": "COC(=O)CC[C@@]1(CCCC2(C1)C(=O)C(=O)CC2)[N+](=O)[O-]",
+            "product_smiles": "O=C(O)CC[C@@]1(CCCC2(C1)C(=O)C(=O)CC2)[N+](=O)[O-]",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization / Elimination",
+            "reagents": "PPA",
+            "reagent_smiles": "",
+            "conditions": "40 °C",
+            "yield": "63%",
+            "reactant_smiles": "O=C1C(=O)CC2(C1)CC[C@H]([N+](=O)[O-])[C@H](CCC(=O)O)CC2",
+            "product_smiles": "O=C1C(=O)CC2(C1)CC3=CC(=O)C(CC3)C2",
+            "notes": "Intramolecular cyclization of the carboxylic acid and elimination of the nitro group to form a fused alpha,beta-unsaturated ketone, likely catalyzed by polyphosphoric acid (PPA).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wittig Olefination",
+            "reagents": "CH2=PPh3",
+            "reagent_smiles": "C=[P](c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "47%",
+            "reactant_smiles": "O=C1CCC(=O)C12CC3CCCC(=O)C=C3C2",
+            "product_smiles": "C=C1CCC(=O)[C@@]12CC3CCCC(=O)C=C3C2",
+            "notes": "Wittig olefination of a spiro diketone, converting one ketone to an exocyclic methylene group with retention of stereochemistry at the spiro center.",
+            "substeps": []
+        }
+    ]
+}

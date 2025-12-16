@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strigol-backwall-2024",
+        "molecule_name": "Strigol",
+        "class": "Natural Product",
+        "author": "Backwall",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "C-C Coupling",
+            "reagents": "CuI, BTEAC, K2CO3, Na2SO3",
+            "reagent_smiles": "C=CCBr",
+            "conditions": "benzene, H2O",
+            "yield": "96%",
+            "reactant_smiles": "C#CC(C)(C)O",
+            "product_smiles": "C=CCC#CC(C)(C)O",
+            "notes": "Propargylation of a tertiary alkynol with allyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Claisen rearrangement",
+            "reagents": "propionic acid",
+            "reagent_smiles": "CCOC(C)(OCC)OCC",
+            "conditions": "140 °C",
+            "yield": "75%",
+            "reactant_smiles": "C=CCC#CC(C)(C)O",
+            "product_smiles": "CCOC(=O)CC(=C=C(C)C)CC=C",
+            "notes": "Johnson-Claisen rearrangement of an alkynol to an allene ester using an orthoester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C to rt",
+            "yield": "92%",
+            "reactant_smiles": "C=CCC(=C=C(C)C)CC(=O)OCC",
+            "product_smiles": "C=CCC(=C=C(C)C)CCO",
+            "notes": "Ester reduction to primary alcohol, allene and alkene groups remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "91%",
+            "reactant_smiles": "C=CCC(CCO)=C=C(C)C",
+            "product_smiles": "C=CCC(CCO[Ts])=C=C(C)C",
+            "notes": "Primary alcohol is converted to its tosylate using TsCl, Et3N, and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Palladium-catalyzed cyclocarbonylation / Intramolecular cyclization",
+            "reagents": "CO, Pd(OAc)₂, DMSO, BQ, AcOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCC(=C=C(C)C)CCO[Ts]",
+            "product_smiles": "C=C(C)C1=C(CCO[Ts])CC(CC(=O)OC)C1=O",
+            "notes": "Pd-catalyzed cyclization of an allene-alkene leading to a five-membered ring with a methyl ester and ketone, likely via carbonylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Elimination",
+            "reagents": "Et3N, silica",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C(C)C1=C(CCO[Ts])CC(CC(=O)OC)C1=O",
+            "product_smiles": "C=C1C(=O)C(CC(=O)OC)C=C(C1=C)",
+            "notes": "Elimination of tosylate group and rearrangement to form a conjugated cyclopentenone with two exocyclic methylenes. Reported yield 84% for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cyclization / Ring Expansion",
+            "reagents": "NaOAc, H2O",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "88%",
+            "reactant_smiles": "COC(=O)CC1CC(=O)C2=C1C(=C)C(C)=C2",
+            "product_smiles": "COC(=O)CC1CC(=O)C2=C(C)C=CCC12",
+            "notes": "Intramolecular cyclization/ring expansion of a bicyclic system from 5,4-fused to 5,6-fused, with saturation of exocyclic double bonds into a new 6-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Conjugate Addition (1,4-addition)",
+            "reagents": "MeLi, CuI",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "COC(=O)CC1CC(=O)C2=C1CC=C(C)C2",
+            "product_smiles": "COC(=O)CC1CC(=O)C2=C1CCC(C)(C)C2",
+            "notes": "Methyl lithium (with CuI forming a Gilman reagent) performs a 1,4-addition to the internal double bond of the six-membered ring, leading to its saturation and the formation of a gem-dimethyl group. The ketone and the side-chain ester in the five-membered ring remain unchanged. The original methyl group on the 6-membered ring becomes one of the gem-dimethyls, and the other methyl is added from the reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "Pd/C, TBHP, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "64%",
+            "reactant_smiles": "COC(=O)CCC1C(=O)C2=C(C1)CCC(C)(C)C2",
+            "product_smiles": "COC(=O)CCC1C(=O)C2=C(C1)C(=O)CC(C)(C)C2",
+            "notes": "Allylic oxidation of a cyclohexene ring to a cyclohexenone using Pd/C and TBHP.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Asymmetric Ketone Reduction / Transfer Hydrogenation",
+            "reagents": "HCO2H, DIPEA, RuCl(p-cymene)[(S,S)-Ts-DPEN]",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 45 °C",
+            "yield": "93%",
+            "reactant_smiles": "CC1(C)CCC(=O)C2=C1C(=O)C(C2)CC(=O)OC",
+            "product_smiles": "CC1(C)CC[C@@H](O)C2=C1C(=O)C(C2)CC(=O)OC",
+            "notes": "Asymmetric reduction of a cyclic ketone to a secondary alcohol with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CCC[C@@H](O)C2=C1C(=O)C(CC(=O)OC)C2",
+            "product_smiles": "CC1(C)CCC[C@@H](O)C2=C1C(=O)C(CC(=O)O)C2",
+            "notes": "Methyl ester hydrolysis to carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction and Lactonization",
+            "reagents": "NaBH4, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "37% (2 steps)",
+            "reactant_smiles": "CC1(C)C2=C(C(=O)C([C@@H](CC(=O)O)[C@@H]2)[C@@H]3O)CC[C@@H]3C1",
+            "product_smiles": "CC1(C)C2=C(C(=O)O[C@@H]3[C@@H]([C@@H]2)[C@@H]3CC[C@@H]4O)CC[C@@H]4C1",
+            "notes": "A bicyclic ketone with a carboxylic acid side chain is reduced, and the resulting alcohol and carboxylic acid are cyclized to form a fused lactone. The reaction appears to be a Luche reduction (NaBH4, CeCl3) followed by lactonization in a two-step process.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Claisen Condensation / Enolization",
+            "reagents": "NaH",
+            "reagent_smiles": "CCOC=O",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C[C@@H](O)[C@H]2C=C1[C@@H]3[C@H]2CC(=O)O3",
+            "product_smiles": "CC1(C)C[C@@H](O)[C@H]2C=C1[C@@H]3[C@H]2/C(=C\\O)/C(=O)O3",
+            "notes": "Claisen condensation of the lactone alpha-methylene with ethyl formate, followed by enolization to form an alpha,beta-unsaturated enol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Etherification (SN2')",
+            "reagents": "K2CO3, NMP",
+            "reagent_smiles": "O=C1OC=C(C)C1Br",
+            "conditions": "NMP",
+            "yield": "23%",
+            "reactant_smiles": "CC1(C)CC[C@@H](O)C2=C1C[C@H]3[C@@H](C2)OC(=O)[C@H]3/C=C\\O",
+            "product_smiles": "CC1(C)CC[C@@H](O)C2=C1C[C@H]3[C@@H](C2)OC(=O)[C@H]3/C=C\\O[C@@H]4C(=O)OC=C(C)C4",
+            "notes": "Formation of (+)-Strigol via etherification of a vinyl alcohol with an allylic bromide, which is a 5-membered lactone (furanone). The yield is reported for 2 steps.",
+            "substeps": []
+        }
+    ]
+}

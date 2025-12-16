@@ -1,0 +1,206 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lonafarnib-zokinvy-merck-unknown-2024",
+        "molecule_name": "Lonafarnib (Zokinvy Merck)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+            "reagents": "Br2, HOAc",
+            "reagent_smiles": "BrBr.CC(=O)O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "Nc1ccc(Cl)c(C(=O)O)c1",
+            "product_smiles": "Nc1cc(Cl)c(Br)c(C(=O)O)c1",
+            "notes": "Aromatic bromination of 2-amino-5-chlorobenzoic acid using bromine in acetic acid, resulting in bromination ortho to the amino group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Sandmeyer Reaction (Diazotization followed by Iodination)",
+            "reagents": "NaNO₂, H₂SO₄, KI",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87% (2 Steps)",
+            "reactant_smiles": "C1=C(C(=C(C=C1Cl)C(=O)O)N)Br",
+            "product_smiles": "C1=C(C(=C(C=C1Cl)C(=O)O)I)Br",
+            "notes": "Conversion of an aromatic amino group to an aryl iodide group via diazotization.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "B(OMe)₃, BH₃•SMe₂",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "98%",
+            "reactant_smiles": "O=C(O)c1c(I)c(Br)cc(Cl)c1",
+            "product_smiles": "OCC1=C(I)C(Br)=CC(Cl)=C1",
+            "notes": "Carboxylic acid reduced to primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol to Alkyl Bromide (Appel-type reaction)",
+            "reagents": "Br2, PPh3",
+            "reagent_smiles": "BrBr.P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "MeCN",
+            "yield": "96%",
+            "reactant_smiles": "C1=C(C=C(C(=C1CO)I)Br)Cl",
+            "product_smiles": "C1=C(C=C(C(=C1CBr)I)Br)Cl",
+            "notes": "Conversion of a benzylic alcohol to the corresponding benzylic bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "C-C Coupling / Alkylation",
+            "reagents": "LDA, THF, MTBE",
+            "reagent_smiles": "CC1=NC(=CC(Br)=C1)C(=O)NC2=CC=CC=C2",
+            "conditions": "-50 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "BrC1=CC(Cl)=CC(I)=C1CBr",
+            "product_smiles": "BrC1=NC(C(=O)NC2=CC=CC=C2)=C(CCC3=C(I)C(Br)=CC(Cl)=C3)C=C1",
+            "notes": "Coupling of a bromomethyl-substituted iodobenzene with a methyl-substituted pyridine via a CH2CH2 linker. The methyl group of the pyridine and the bromomethyl group of the benzene form the linker. The reaction involves elimination of bromine from the benzylic position.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amidocarbonylation",
+                    "reagents": "CO, DBU",
+                    "reagent_smiles": "C1=CC=C(C=C1)N.CC(=O)O[Pd](OC(=O)C).CC(C)O",
+                    "conditions": "toluene, 65 °C",
+                    "yield": "76%",
+                    "reactant_smiles": "CC1=CC(=CN=C1Br)Br",
+                    "product_smiles": "Cc1c(Br)cc(C(=O)Nc2ccccc2)nc1",
+                    "notes": "Palladium-catalyzed amidocarbonylation of 2,5-dibromo-3-methylpyridine with aniline and carbon monoxide to form a N-phenylpyridine-2-carboxamide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-alkylation (N-methylation)",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "DMF, -20 °C",
+            "yield": "64%",
+            "reactant_smiles": "Brc1cnc(C(=O)N[Ph])c(CCC2=C(I)C(Br)=CC(Cl)=C2)c1",
+            "product_smiles": "Brc1cnc(C(=O)N(C)[Ph])c(CCC2=C(I)C(Br)=CC(Cl)=C2)c1",
+            "notes": "Amide nitrogen is methylated using sodium hydride as a base and methyl iodide as the electrophile.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization / Friedel-Crafts Acylation (via Grignard)",
+            "reagents": "4-methoxy-3-methylphenylmagnesium bromide",
+            "reagent_smiles": "COc1ccc(C)c(MgBr)c1",
+            "conditions": "dioxane, 20 °C",
+            "yield": "78%",
+            "reactant_smiles": "CN(c1ccccc1)C(=O)c2nc(cc(CCC3=C(I)C(Br)=CC(Cl)=C3)c2Br)",
+            "product_smiles": "O=C1c2c(Br)cc(Cl)cc2CCC3=C(Br)C=NC=C31",
+            "notes": "Intramolecular cyclization transforming an aryl iodide and an amide into a fused tetracyclic ketone system, via an apparent Grignard-mediated process with loss of N-methyl-N-phenyl amide and iodine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ketone Reduction / Deoxygenation",
+            "reagents": "Zn, Ac2O, TFA, THF",
+            "reagent_smiles": "[Zn].CC(=O)OC(=O)C.O=C(O)C(F)(F)F.C1CCOC1",
+            "conditions": "-20 °C",
+            "yield": "80%",
+            "reactant_smiles": "C1CC2=C(C(=O)C3=C1C=C(C=C3Br)Cl)N=CC(=C2)Br",
+            "product_smiles": "C1CC2=C(CC3=C1C=C(C=C3Br)Cl)N=CC(=C2)Br",
+            "notes": "Reduction of a ketone to a methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Asymmetric Alkylation",
+            "reagents": "LDA, quinine, H2O",
+            "reagent_smiles": "[Boc]N1CCC([OMs])CC1",
+            "conditions": "toluene, 5 to 25 °C",
+            "yield": "95%",
+            "reactant_smiles": "C1CC2=C(CC3=C1C=C(C=C3Br)Cl)N=CC(=C2)Br",
+            "product_smiles": "[Boc]N1CCC(CC1)[C@@H]2C3=C(CCC4=C2N=CC(=C4)Br)C=C(C=C3Br)Cl",
+            "notes": "Asymmetric alkylation of a brominated/chlorinated dibenzo[b,f]azepine derivative with N-Boc-4-piperidinyl mesylate.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Mesylation",
+                    "reagents": "MsCl, Et₃N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1CCC(CC1)O",
+                    "product_smiles": "[Boc]N1CCC(CC1)[OMs]",
+                    "notes": "Conversion of a secondary alcohol to a mesylate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "80 to 25°C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCC(CC1)[C@@H]2C3=C(CCC4=C2N=CC(=C4)Br)C=C(C=C3Br)Cl",
+            "product_smiles": "C1CC2=C([C@@H](C3CCNCC3)C4=C1C=C(C=C4Br)Cl)N=CC(=C2)Br",
+            "notes": "Acid-catalyzed removal of the N-Boc protecting group from piperidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Salt formation (Acid-Base)",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O",
+            "conditions": "EtOH, 70 °C",
+            "yield": "75%",
+            "reactant_smiles": "BrC1=CC(=N)C2=CC[C@H](C3CCNCC3)C4=C(C1=C2)C=CC(Br)=C4Cl",
+            "product_smiles": "BrC1=CC(=N)C2=CC[C@H](C3CCNCC3)C4=C(C1=C2)C=CC(Br)=C4Cl.CC(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O",
+            "notes": "Formation of a salt between Lonafarnib (amine) and N-acetyl-L-phenylalanine (carboxylic acid). The yield is stated as 75% over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Amide formation",
+            "reagents": "HOBT, EDCI",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1CCC(CC1)CC(=O)O",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "[Ac]N[C@H](Cc1ccccc1)C(=O)O.C1CC2=C([C@H](C3CCNCC3)C4=C1C=C(C=C4Br)Cl)N=CC(=C2)Br",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC(CC1)CC(=O)N2CCC(CC2)[C@H]3C4=C(CCC5=C3N=CC(=C5)Br)C=C(C=C4Br)Cl",
+            "notes": "Amide bond formation (peptide coupling) between a secondary amine and a carboxylic acid to synthesize Lonafarnib.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "HCl, EtOH",
+            "reagent_smiles": "CCO.Cl",
+            "conditions": "0 to 25 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC(CC1)CC(=O)N2CCC(CC2)[C@@H]3C4=C(CCC5=C3N=CC(=C5)Br)C=C(C=C4Br)Cl",
+            "product_smiles": "C1CC2=C([C@@H](C3CCN(CC3)C(=O)CC4CCNCC4)C5=C1C=C(C=C5Br)Cl)N=CC(=C2)Br",
+            "notes": "Deprotection of a tert-butoxycarbonyl (Boc) protected secondary amine using HCl in ethanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Urea formation (Carbamoylation)",
+            "reagents": "Urea",
+            "reagent_smiles": "",
+            "conditions": "NMP, 100 °C",
+            "yield": "",
+            "reactant_smiles": "C1CC2=C([C@H](C3CCN(CC3)C(=O)CC4CCNCC4)C5=C1C=C(C=C5Br)Cl)N=CC(=C2)Br",
+            "product_smiles": "C1CC2=C([C@H](C3CCN(CC3)C(=O)CC4CCN(CC4)C(=O)N)C5=C1C=C(C=C5Br)Cl)N=CC(=C2)Br",
+            "notes": "Formation of Lonafarnib (Zokinvy) from its des-carbamoyl precursor. The reported yield of 84% is for 3 steps.",
+            "substeps": []
+        }
+    ]
+}

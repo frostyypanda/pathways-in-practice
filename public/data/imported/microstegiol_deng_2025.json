@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "microstegiol-deng-2025",
+        "molecule_name": "Microstegiol",
+        "class": "Natural Product",
+        "author": "Deng",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Methylation",
+            "reagents": "NaH, Me2SO4",
+            "reagent_smiles": "[NaH].COS(=O)(=O)OC",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)c1cc(O)c(O)c2c1CCC[C@@]3([C@@H](CC2)C(C)(C)CCC3)C(=O)O",
+            "product_smiles": "CC(C)c1cc(OC)c(OC)c2c1CCC[C@@]3([C@@H](CC2)C(C)(C)CCC3)C(=O)OC",
+            "notes": "Methylation of two phenolic hydroxyl groups and one carboxylic acid to form a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4].CCOCC",
+            "conditions": "Et2O, 0 °C to reflux",
+            "yield": "78%",
+            "reactant_smiles": "CC(C)C1=C(C(=C2C(=C1)CC[C@H]3C(C)(C)CCC[C@@]32CC(=O)OC)OC)OC",
+            "product_smiles": "CC(C)C1=C(C(=C2C(=C1)CC[C@H]3C(C)(C)CCC[C@@]32CO)OC)OC",
+            "notes": "Methyl ester is reduced to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "92%",
+            "reactant_smiles": "CC(C)C1=C(OC)C(=C2C(=C1OC)CC[C@@H]3C(C)(C)CCC[C@@]23CO)C",
+            "product_smiles": "CC(C)C1=C(OC)C(=C2C(=C1OC)CC[C@@H]3C(C)(C)CCC[C@@]23C=O)C",
+            "notes": "Oxidation of primary alcohol to aldehyde using Dess-Martin Periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Dithioacetal formation (ketone protection)",
+            "reagents": "I2",
+            "reagent_smiles": "SCCS",
+            "conditions": "CHCl3",
+            "yield": "70%",
+            "reactant_smiles": "CC(C)C1=C(C(=C2C(=C1)CC[C@H]3C(C)(C)CCC[C@@]32C=O)OC)OC",
+            "product_smiles": "CC(C)C1=C(C(=C2C(=C1)CC[C@H]3C(C)(C)CCC[C@@]23C4SCCS4)OC)OC",
+            "notes": "Formation of a 1,3-dithiolane from a ketone using ethane-1,2-dithiol and iodine as a catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Desulfurization",
+            "reagents": "Raney Ni",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH",
+            "yield": "76%",
+            "reactant_smiles": "CC(C)C1=C(C(=C2C(=C1)CC[C@@]3(C)C(C)(C)CCC[C@]23C4SCCS4)OC)OC",
+            "product_smiles": "CC(C)C1=C(C(=C2C(=C1)CC[C@@]3(C)C(C)(C)CCC[C@]23)OC)OC",
+            "notes": "Desulfurization of a spiro-1,3-dithiolane to a methylene group using Raney Ni.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Demethylation (Ether Cleavage)",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)c1cc(OC)c(OC)c2c1CC[C@@H]3C(C)(C)CC[C@H]4[C@@]23C",
+            "product_smiles": "CC(C)c1cc(O)c(O)c2c1CC[C@@H]3C(C)(C)CC[C@H]4[C@@]23C",
+            "notes": "Demethylation of two methoxy groups on an aromatic ring to form two hydroxyl groups (phenols). The tricyclic core structure and its stereochemistry remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "Ag2O, CH2Cl2",
+            "reagent_smiles": "[Ag]2O.ClCCl",
+            "conditions": "CH2Cl2",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)C1=C(O)C(O)=C2C1CC[C@@]3(C)[C@H](C(C)(C)CC[C@@H]23)",
+            "product_smiles": "O=C1C(=O)C(C(C)C)=CC2=C1CC[C@@]3(C)[C@H](C(C)(C)CC[C@@H]23)",
+            "notes": "Oxidation of a catechol derivative to an ortho-quinone using silver(I) oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Isomerization / Rearrangement",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "88%",
+            "reactant_smiles": "CC(C)c1cc(=O)c(=O)c2c1CC[C@@]3(C)[C@@H](CCC(C)(C)C3)C2",
+            "product_smiles": "CC(C)c1cc2c(c(O)c1=O)CC=C[C@]3(C)[C@@H](CCC(C)(C)C3)C2",
+            "notes": "Intramolecular rearrangement of an ortho-quinone to a hydroxydienone with concurrent double bond migration.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Aromatization / Quinone Reduction",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)C1=CC2=C[C@H]3C(C)(C)CCC[C@@]3(C)C=C2C(=O)C1O",
+            "product_smiles": "CC(C)C1=C(O)C(O)=C2C=C[C@H]3C(C)(C)CCC[C@@]3(C)C=C2C1",
+            "notes": "Acid-catalyzed aromatization of a quinone derivative to a hydroquinone (catechol).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "Ag2O",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "75%",
+            "reactant_smiles": "CC(C)C1=CC2=C(C(=C1O)O)[C@@]3(C)CCCC(C)(C)[C@H]3C=C2",
+            "product_smiles": "CC(C)C1=CC2=C(C(=O)C1=O)[C@@]3(C)CCCC(C)(C)[C@H]3C=C2",
+            "notes": "Oxidation of a catechol to an o-quinone using silver(I) oxide. Yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction / Aromatization",
+            "reagents": "toluene",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "66%",
+            "reactant_smiles": "O=C1C(C(C)C)=CC(=O)C2=C1C=CC3[C@]4(C)CCCC(C)(C)[C@@H]3C24",
+            "product_smiles": "O=C1C(C(C)C)=C(O)C=C2C1C=CC3[C@]4(C)CCCC(C)(C)[C@@H]3C24",
+            "notes": "Reduction of a quinone carbonyl to a hydroxyl group, leading to an alpha-hydroxyketone (enolized quinone).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Intramolecular Oxidative Cyclization / Rearrangement",
+            "reagents": "BF₃•OEt₂, DTBMP",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, 0 °C to rt",
+            "yield": "74%",
+            "reactant_smiles": "CC(C)C1=CC2=C3C(=O)C(=C(O)C1=CC=C2)[C@@H]4C[C@@](C)(C)CCC34",
+            "product_smiles": "CC(C)C1=CC2=C(C)C3=C(C(=O)C4=C2[C@](O)C5[C@@](C)CCC35)C1(O)C4",
+            "notes": "Lewis acid-catalyzed intramolecular oxidative cyclization and rearrangement of a naphthoquinone derivative to form microstegiol. The reaction involves the addition of one oxygen atom and the loss of two hydrogen atoms, along with a complex skeletal rearrangement including a methyl shift and cyclization.",
+            "substeps": []
+        }
+    ]
+}

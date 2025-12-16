@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "inavolisib-itovebi-arcusbiosci-unknown-2024",
+        "molecule_name": "Inavolisib (Itovebi ArcusBioSci)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Intramolecular Cyclization / Imine Formation",
+            "reagents": "",
+            "reagent_smiles": "CCO[Mg]OCC.CO",
+            "conditions": "MeTHF",
+            "yield": "",
+            "reactant_smiles": "C1=C(C#N)C(=CC(=C1)Br)OCC[NH3+].[Cl-]",
+            "product_smiles": "C1=C(C=C2C(=C1)C(=NCCO2)N)Br",
+            "notes": "Intramolecular cyclization of an aminonitrile to form a cyclic imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "No net chemical transformation (likely salt formation, purification, or stability study)",
+            "reagents": "HCl",
+            "reagent_smiles": "CCCO",
+            "conditions": "n-PrOH",
+            "yield": "",
+            "reactant_smiles": "N=C1NCCOC2=CC(Br)=CC=C12",
+            "product_smiles": "N=C1NCCOC2=CC(Br)=CC=C12",
+            "notes": "Reactant and product structures are identical. The reaction conditions (HCl, n-PrOH) suggest a potential protonation or a purification step for the amino-imine compound.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Imidazole Formation / Cyclocondensation",
+            "reagents": "KHCO3",
+            "reagent_smiles": "O=CClC",
+            "conditions": "MeTHF, H2O",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C(=NCCO2)N)Br",
+            "product_smiles": "C1=C(C=C2C(=C1)C3=NC=CN3CCO2)Br",
+            "notes": "Formation of a fused imidazole ring from an imine with an exocyclic amine and chloroacetaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Electrophilic Iodination",
+            "reagents": "NIS, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C3=NC=CN3CCO2)Br",
+            "product_smiles": "C1=C(C=C2C(=C1)C3=NC(=C(I)N3CCO2)I)Br",
+            "notes": "Di-iodination of the imidazole ring using N-iodosuccinimide (NIS).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard reaction (Halogen-Metal Exchange / Reduction)",
+            "reagents": "THF",
+            "reagent_smiles": "CC[Mg]Br",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C3=NC(=C(I)N3CCO2)I)Br",
+            "product_smiles": "C1=C(C=C2C(=C1)C3=NC(=CN3CCO2)I)Br",
+            "notes": "One iodine atom on the imidazole ring is selectively replaced by a hydrogen atom. This likely occurs via a halogen-metal exchange with EtMgBr, followed by protonation (e.g., from workup or trace water).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Buchwald-Hartwig Amination / Ullmann-type C-N Coupling",
+            "reagents": "Cu(OAc)2, Cs2CO3",
+            "reagent_smiles": "CN[C@@H]1[C@@H](N)CCCC1.O=C1OC[C@H](C(F)F)N1",
+            "conditions": "2-MeTHF",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C3=NC(=CN3CCO2)I)Br",
+            "product_smiles": "C1=C(C=C2C(=C1)C3=NC(=CN3CCO2)N4[C@@H](COC4=O)C(F)F)Br",
+            "notes": "Copper-catalyzed amination of an aryl iodide with a chiral difluoromethyl-substituted oxazolidinone, using a diamine ligand.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Asymmetric Amine Synthesis",
+                    "reagents": "Ti(OEt)4",
+                    "reagent_smiles": "CC(C)(C)[S@@](=O)N",
+                    "conditions": "60°C",
+                    "yield": "42%",
+                    "reactant_smiles": "CCOC(C(F)F)O",
+                    "product_smiles": "CCOC[C@@H](C(F)F)N[S@@](=O)C(C)(C)C",
+                    "notes": "Asymmetric synthesis of a chiral alpha-amino ether from an alcohol using a chiral sulfinamide and titanium (IV) ethoxide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Amidoalkylation / Pummerer-type rearrangement",
+                    "reagents": "iPrMgCl, THF/NMP",
+                    "reagent_smiles": "CC(C)(C)C(=O)OCI",
+                    "conditions": "-65 °C",
+                    "yield": "75%",
+                    "reactant_smiles": "CCOC(C(F)F)N[S@@](=O)C(C)(C)C",
+                    "product_smiles": "CC(C)(C)C(=O)OC[C@H](C(F)F)N[S@@](=O)C(C)(C)C",
+                    "notes": "Stereoselective amidoalkylation using chiral sulfinamide auxiliary, replacing an alkoxy group with a pivaloyloxymethyl group at the alpha-carbon of the amine, forming a new chiral center. The sulfoxide chirality is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "80 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "CC(C)(C)C(=O)OC[C@@H](C(F)F)N[S@@](=O)C(C)(C)C",
+                    "product_smiles": "C([C@@H](C(F)F)[NH3+])O.[Cl-]",
+                    "notes": "Acidic deprotection of a tert-butyl ester and a tert-butylsulfinyl protecting group on a nitrogen, yielding a protonated primary amine and a primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Cyclization / Oxazolidinone formation",
+                    "reagents": "Et3N, CDI",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "55%",
+                    "reactant_smiles": "C([C@@H](C(F)F)[NH3+])O.[Cl-]",
+                    "product_smiles": "C1[C@@H](C(F)F)NC(=O)O1",
+                    "notes": "Intramolecular cyclization of an amino alcohol to form an oxazolidinone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ullmann C-N Coupling / Aryl amination",
+            "reagents": "Cu2O, K3PO4",
+            "reagent_smiles": "C[C@@H](C(=O)O)N",
+            "conditions": "DMSO",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C3=NC(=CN3CCO2)N4[C@@H](COC4=O)C(F)F)Br",
+            "product_smiles": "C[C@@H](C(=O)O)NC1=CC=C2C(=C1)OCCN3C=C(N=C23)N4[C@@H](COC4=O)C(F)F",
+            "notes": "Aryl amination of brominated benzoxazepine-imidazole with (S)-alanine via Ullmann coupling.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "No net chemical transformation shown",
+            "reagents": "NH3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, THF",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](C(=O)O)NC1=CC=C2C(=C1)OCCN3C=C(N=C23)N4[C@H](COC4=O)C(F)F",
+            "product_smiles": "C[C@@H](C(=O)O)NC1=CC=C2C(=C1)OCCN3C=C(N=C23)N4[C@H](COC4=O)C(F)F",
+            "notes": "Reactant and product structures are visually identical. The provided reagents (NH3, MeOH, THF) are likely for a purification or a non-SMILES altering transformation like salt formation/protonation (if the carboxylic acid were deprotonated, SMILES would typically reflect [O-]). Stereochemistry of the second chiral center (on the oxazolidinone ring) was corrected from (R) to (S) to match the visual representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Amidation",
+            "reagents": "NH3, HOSu, EDC",
+            "reagent_smiles": "",
+            "conditions": "THF, i-PrOH",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](C(=O)O)NC1=CC=C2C(=C1)OCCN3C=C(N=C23)N4[C@H](C(F)F)COC4=O",
+            "product_smiles": "C[C@@H](C(=O)N)NC1=CC=C2C(=C1)OCCN3C=C(N=C23)N4[C@H](C(F)F)COC4=O",
+            "notes": "Amidation of carboxylic acid with ammonia using EDC/HOSu coupling reagents to form the primary amide.",
+            "substeps": []
+        }
+    ]
+}

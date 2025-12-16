@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "chokol-a-mash-1987",
+        "molecule_name": "Chokol A",
+        "class": "Natural Product",
+        "author": "Mash",
+        "year": 1987
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ketalization / Ketone Protection",
+            "reagents": "PPTS",
+            "reagent_smiles": "[Bn]OCH2[C@H](O)[C@H](O)CH2O[Bn]",
+            "conditions": "benzene, reflux",
+            "yield": "92%",
+            "reactant_smiles": "CC1=CCCC1=O",
+            "product_smiles": "CC1=CCCC12O[C@H](CO[Bn])[C@H](CO[Bn])O2",
+            "notes": "Formation of a spiroketal from a cyclic enone and a chiral diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Simmons-Smith cyclopropanation",
+            "reagents": "CH₂I₂, Zn-Cu",
+            "reagent_smiles": "",
+            "conditions": "Et₂O, reflux",
+            "yield": "92%",
+            "reactant_smiles": "CC1=CCCC12O[C@H](C[OBn])[C@@H](C[OBn])O2",
+            "product_smiles": "C[C@@]1(C)CC[C@H](C)[C@@H]2[C@H]1C23O[C@H](C[OBn])[C@@H](C[OBn])O3",
+            "notes": "Simmons-Smith cyclopropanation of the cyclopentene double bond, yielding a bicyclo[3.1.0]hexane derivative. The relative stereochemistry of the two benzyloxy groups on the 1,3-dioxolane ring is retained. The cyclopropanation occurs syn to the methyl group at the spiro carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetal Hydrolysis / Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O",
+            "yield": "73%",
+            "reactant_smiles": "C[C@]12C[C@@H]2CCC13O[C@H](C[O][Bn])[C@@H](C[O][Bn])O3",
+            "product_smiles": "O=C1C[C@@H](C)[C@@H]2C[C@H]12",
+            "notes": "Acid-catalyzed hydrolysis of a spiroketal with concomitant deprotection of benzyl ethers to yield a bicyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclopropane ring opening, Bromination",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "C[Si](C)(C)Br",
+            "conditions": "-25 - 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@]12C[C@@H]2CCC1=O",
+            "product_smiles": "O=C1C[C@@H](CBr)CC[C@H]1C",
+            "notes": "TMSBr-mediated ring opening of the cyclopropane ring in a bicyclic ketone, leading to a bromomethyl-substituted cyclopentanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ketone Protection (Acetal/Ketal Formation)",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "OCCOC",
+            "conditions": "benzene, reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1[C@@H](CCC1=O)CBr",
+            "product_smiles": "C[C@H]1[C@@H](CCC12OCCO2)CBr",
+            "notes": "The ketone functional group is protected as a cyclic ketal using ethylene glycol under acidic conditions (p-TsOH) in benzene solvent with reflux.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "KCN, NaI",
+            "reagent_smiles": "",
+            "conditions": "DMSO, rt",
+            "yield": "59% (over 3 steps)",
+            "reactant_smiles": "C[C@H]1[C@@H](CCC12OCCO2)CBr",
+            "product_smiles": "C[C@H]1[C@@H](CCC12OCCO2)CC#N",
+            "notes": "Bromomethyl group replaced by cyanomethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Alkyation",
+            "reagents": "LiHMDS, THF",
+            "reagent_smiles": "ICCC[OTBS]",
+            "conditions": "-78 °C",
+            "yield": "83%",
+            "reactant_smiles": "C[C@H]1[C@@H](CCC12OCCO2)CC#N",
+            "product_smiles": "C[C@H]1[C@@H]([C@@H](C#N)CCC[OTBS])CCC12OCCO2",
+            "notes": "Alpha-alkylation of a nitrile with an alkyl iodide, forming a new C-C bond and a new chiral center. The stereochemistry of the existing chiral centers is preserved, and the new chiral center is formed diastereoselectively.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "DibalH",
+            "reagent_smiles": "[AlH](CC(C)C)CC(C)C",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1(C[C@@H](C#N)CCC[OTBS])CC2(OCCO2)CCC1",
+            "product_smiles": "C[C@H]1(C[C@@H](C=O)CCC[OTBS])CC2(OCCO2)CCC1",
+            "notes": "Reduction of a nitrile to an aldehyde using Diisobutylaluminum Hydride (DibalH). The acetal and TBS protecting groups remain intact. Stereochemistry at the chiral centers is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction (Aldehyde to Primary Alcohol)",
+            "reagents": "NaBH4, EtOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "53% (2 steps)",
+            "reactant_smiles": "[OTBS]CCCC(C=O)[C@@H]1CCC2([C@H]1C)OCCO2",
+            "product_smiles": "[OTBS]CCCC(CO)[C@@H]1CCC2([C@H]1C)OCCO2",
+            "notes": "Aldehyde is reduced to a primary alcohol using sodium borohydride. The spiroketal and OTBS protecting group remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alcohol Tosylation",
+            "reagents": "TsCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1[C@@H](C(CO)CCC[OTBS])C(CCC1)C2(OCCO2)",
+            "product_smiles": "C[C@H]1[C@@H](C(O[Ts])CCC[OTBS])C(CCC1)C2(OCCO2)",
+            "notes": "The primary alcohol is converted to a tosylate (activated leaving group) using tosyl chloride and pyridine. The acetal and TBS protecting groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Substitution",
+            "reagents": "",
+            "reagent_smiles": "[SeH]C1=CC=CC=C1[N+](=O)[O-]",
+            "conditions": "EtOH, rt",
+            "yield": "",
+            "reactant_smiles": "[C@@H]1(CC([OTs])CCC[OTBS])CCC2([C@H]1C)OCCO2",
+            "product_smiles": "[C@@H]1(CC([Se]C2=CC=CC=C2[N+](=O)[O-])CCC[OTBS])CCC3([C@H]1C)OCCO3",
+            "notes": "Nucleophilic substitution of a tosylate with a selenol (selenylation).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Selenoxide Elimination",
+            "reagents": "H2O2, EtOH",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "77% (3 steps)",
+            "reactant_smiles": "[OTBS]OCCCCC[C@@H](C[Se]c1ccc([N+](=O)[O-])cc1)[C@@H]2CCC3([C@H]2C)OCCO3",
+            "product_smiles": "[OTBS]OCCCCC(=C)C1CCC2([C@H]1C)OCCO2",
+            "notes": "Selenoxide elimination to form a terminal alkene (methylene group). The tert-butyldimethylsilyl (TBS) protecting group and the spiroketal system remain unchanged. The chiral center bearing the selenium group is lost upon alkene formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, MeOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "C[C@@H]1CC[C@H](C=CCCC[OTBS])C12OCCO2",
+            "product_smiles": "C[C@H]1CC(=O)[C@@H](C=CCCCCO)C1",
+            "notes": "Acidic hydrolysis of a spiroketal to a ketone and deprotection of a TBS ether to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Organocerium addition",
+            "reagents": "MeCeCl2, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=C1CC[C@@H](C=CCCCO)[C@H](C)1",
+            "product_smiles": "O[C@]1(C)CC[C@@H](C=CCCCO)[C@H](C)1",
+            "notes": "Methyl addition to ketone to form a tertiary alcohol, with stereocontrol.",
+            "substeps": []
+        }
+    ]
+}

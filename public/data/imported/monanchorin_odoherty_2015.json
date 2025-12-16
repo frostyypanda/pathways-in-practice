@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "monanchorin-odoherty-2015",
+        "molecule_name": "Monanchorin",
+        "class": "Natural Product",
+        "author": "ODoherty",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ketone synthesis",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "C1=COC=C1",
+            "conditions": "THF, -78 °C",
+            "yield": "62%",
+            "reactant_smiles": "CCCCCC(=O)O",
+            "product_smiles": "CCCCCC(=O)C1=CC=CO1",
+            "notes": "Formation of a furan-substituted ketone from a carboxylic acid and furan via organolithium chemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Reduction (Noyori Transfer Hydrogenation)",
+            "reagents": "Et3N, HCO2H, Noyori (S,S)",
+            "reagent_smiles": "CCN(CC)CC.O=CO",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "89%",
+            "reactant_smiles": "O=C(C1=CC=CO1)CCCCC",
+            "product_smiles": "O[C@H](C1=CC=CO1)CCCCC",
+            "notes": "Asymmetric reduction of an alkyl furyl ketone to a chiral secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidative lactonization / rearrangement",
+            "reagents": "NBS, NaHCO3, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "CCCCC[C@@H](C1=CC=CO1)O",
+            "product_smiles": "CCCCC[C@@H]1C(=O)C=C[C@@H](O)O1",
+            "notes": "Furan ring undergoes oxidative rearrangement to a dihydropyranone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "DMAP",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(C)(C)C",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "76%",
+            "reactant_smiles": "CCCCC[C@H]1C(=O)C=C[C@H](O)O1",
+            "product_smiles": "CCCCC[C@H]1C(=O)C=C[C@@H](O[Boc])O1",
+            "notes": "Protection of an alcohol with a Boc group, with inversion of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Pd-catalyzed Protecting Group Exchange",
+            "reagents": "PMBOH, Pd2(dba)3·CHCl3, PPh3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "CCCCC[C@H]1C(=O)C=C[C@@H](O1)OC(=O)OC(C)(C)C",
+            "product_smiles": "CCCCC[C@H]1C(=O)C=C[C@@H]([OPMB])O1",
+            "notes": "Allylic Boc protecting group is removed and replaced by a p-methoxybenzyl (PMB) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Luche Reduction",
+            "reagents": "CeCl3, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCCC[C@H]1C(=O)C=C[C@@H](O[PMB])O1",
+            "product_smiles": "CCCC[C@H]1[C@@H](O)C=C[C@@H](O[PMB])O1",
+            "notes": "Stereoselective reduction of an alpha,beta-unsaturated ketone (lactone) to an allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Carbonate formation / Esterification",
+            "reagents": "DMAP, pyridine",
+            "reagent_smiles": "COC(=O)Cl",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "CCCCC[C@@H]1[C@H](C=C[C@H](O[PMB])O1)O",
+            "product_smiles": "CCCCC[C@@H]1[C@H](C=C[C@H](O[PMB])O1)OC(=O)OC",
+            "notes": "Alcohol is converted to a methyl carbonate ester using methyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Palladium-catalyzed allylic substitution",
+            "reagents": "TMSN3, (AllylPdCl)2, Dppb",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "70%",
+            "reactant_smiles": "O1[C@H]([PMBO])C=C[C@@H](OC(=O)OC)[C@H](CCCCC)1",
+            "product_smiles": "O1[C@H]([PMBO])C=C[C@@H](N=[N+]=[N-])[C@H](CCCCC)1",
+            "notes": "Palladium-catalyzed allylic substitution of methyl carbonate with azide to form an allylic azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Azide Reduction, Alkene Hydrogenation",
+            "reagents": "Pd(OH)2, H2",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH",
+            "yield": "92%",
+            "reactant_smiles": "[PMB]O[C@H]1C=C[C@H](N=[N+]=[N-])[C@@H](CCCCC)C1",
+            "product_smiles": "[PMB]O[C@H]1CC[C@H](N)[C@@H](CCCCC)C1",
+            "notes": "Hydrogenation of an azide group to an amine and reduction of a double bond to a single bond using a palladium catalyst and hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Guanidination",
+            "reagents": "Et3N, AgNO3",
+            "reagent_smiles": "CC(C)(C)OC(=O)NC(=NC(=O)OC(C)(C)C)SC",
+            "conditions": "DMF, 0 °C",
+            "yield": "86%",
+            "reactant_smiles": "CCCCC[C@@H]1[C@H](CC[C@@H]([PMBO])O1)N",
+            "product_smiles": "CCCCC[C@@H]1[C@H](CC[C@@H]([PMBO])O1)NC(=N(C(=O)OC(C)(C)C))NC(=O)OC(C)(C)C",
+            "notes": "Amine reacted with a Boc-protected methyl isothiourea derivative in the presence of base and silver salt to form a protected guanidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection, Cyclization (Guanidinium formation)",
+            "reagents": "TFA, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "98%",
+            "reactant_smiles": "CCCCC[C@H]1[C@@H](CC[C@H]([PMBO])O1)N/C(=N/[Boc])N[Boc]",
+            "product_smiles": "CCCCC[C@H]1O[C@H]2CC[C@@H](N1)C(=[NH2+])N2",
+            "notes": "Deprotection of Boc and PMB groups on the guanidine and alcohol respectively, followed by intramolecular cyclization to form a bicyclic guanidinium salt (Monanchorin).",
+            "substeps": []
+        }
+    ]
+}

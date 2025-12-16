@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hexacyclinol-porco-2006",
+        "molecule_name": "Hexacyclinol",
+        "class": "Natural Product",
+        "author": "Porco",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "Br2, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "AcOH",
+            "yield": "93%",
+            "reactant_smiles": "CC(=O)OC1=CC=C(OC)C=C1",
+            "product_smiles": "Brc1c(OC)ccc(OC(C)=O)c1",
+            "notes": "Bromination of a benzene ring activated by methoxy and acetoxy groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrolysis / Saponification",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OMe]C1=C(Br)C=CC([OAc])=C1",
+            "product_smiles": "[OMe]C1=C(Br)C=CC(O)=C1",
+            "notes": "Acetate ester hydrolysis to form a phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidative dearomatization",
+            "reagents": "PIDA, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "COC1=CC=C(C=C1Br)O",
+            "product_smiles": "O=C1C=CC(OC)(OC)C(Br)C1",
+            "notes": "Oxidation of a 2-bromo-4-methoxyphenol to a 6-bromo-4,4-dimethoxycyclohexa-2,5-dien-1-one (quinone derivative) using PIDA as an oxidant in methanol solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Transketalization",
+            "reagents": "BF3 OEt2",
+            "reagent_smiles": "C(CO)CO.F[B](F)F.CCOCC",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "COC1(OC)C=CC(=O)C=C1Br",
+            "product_smiles": "C1COC2(C=CC(=O)C=C2Br)OC1",
+            "notes": "Formation of a cyclic 1,3-dioxane ketal from a dimethyl ketal using propane-1,3-diol under Lewis acid catalysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Asymmetric Epoxidation",
+            "reagents": "PhCOOH, NaHMDS, L-DIPT",
+            "reagent_smiles": "",
+            "conditions": "toluene, -55 °C",
+            "yield": "85%",
+            "reactant_smiles": "C1COC2(C=CC(=O)C=C2Br)OC1",
+            "product_smiles": "C1COC2(C(=CC(=O)[C@H]3[C@@H]2O3)Br)OC1",
+            "notes": "Epoxidation of an alkene adjacent to a spiro center, with stereocontrol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "LiEt3BH",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "98%",
+            "reactant_smiles": "C1COC2(OC1)C(=C(Br)C(=O)[C@@H]3[C@H]4O[C@H]34C2)",
+            "product_smiles": "C1COC2(OC1)C(=C(Br)[C@@H](O)[C@@H]3[C@H]4O[C@H]34C2)",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol with LiEt3BH. The stereochemistry of the newly formed alcohol is controlled, resulting in the hydroxyl group pointing downwards (anti to the epoxide oxygen).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Stereoinversion of Alcohol / Mitsunobu Reaction",
+            "reagents": "4-nitrobenzoic acid, PPh3, DIAD, NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "C1COC2(C(=C[C@H]([C@@H]3[C@@H]2O3)O)Br)OC1",
+            "product_smiles": "C1COC2(C(=C[C@@H]([C@@H]3[C@@H]2O3)O)Br)OC1",
+            "notes": "Stereoinversion of the hydroxyl group configuration. The reaction likely proceeds via a Mitsunobu-mediated inversion to form an ester, followed by base-catalyzed hydrolysis and epimerization to give the final inverted alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetal Deprotection / Hydrolysis",
+            "reagents": "K10 clay",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "98%",
+            "reactant_smiles": "BrC1=CC2(OCCCCO2)[C@H]3[C@H]4O3[C@@H](O)C1",
+            "product_smiles": "BrC1=CC(=O)[C@H]2[C@H]3O2[C@@H](O)C1",
+            "notes": "Acid-catalyzed hydrolysis of the spiroketal (1,3-dioxane) to a ketone, leaving the alkene, bromine, epoxide, and alcohol intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alcohol Silylation (Protection)",
+            "reagents": "Et3SiCl, 2,6-lutidine, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "83%",
+            "reactant_smiles": "BrC1=CC(=O)[C@@H]2O[C@@H](O)[C@H]2C1",
+            "product_smiles": "BrC1=CC(=O)[C@@H]2O[C@@H]([OTES])[C@H]2C1",
+            "notes": "Protection of a secondary alcohol as a triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Stille cross-coupling",
+            "reagents": "[Pd2(dba)3], AsPh3",
+            "reagent_smiles": "OC(C)(C)/C=C/[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "toluene, 110 °C",
+            "yield": "96%",
+            "reactant_smiles": "O[TES][C@@H]1C=C(Br)C(=O)[C@@H]2[C@H]1O2",
+            "product_smiles": "O[TES][C@@H]1C=C(/C=C/C(C)(C)OC)C(=O)[C@@H]2[C@H]1O2",
+            "notes": "Stille cross-coupling of vinyl bromide with a vinyl stannane, installing a methoxy-substituted alkylidene side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "Et3N, HF",
+            "reagent_smiles": "CCN(CC)CC.F",
+            "conditions": "MeCN, 0 °C-rt",
+            "yield": "",
+            "reactant_smiles": "[OTES][C@@H]1C=C(/C=C/C(C)(C)OC)C(=O)[C@@H]2[C@H]1O2",
+            "product_smiles": "CC(C)(/C=C/C1=C[C@@H](O)[C@H]2[C@@H](C1=O)O2)OC",
+            "notes": "Deprotection of a triethylsilyl (TES) ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "neat, rt",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "[OMe]C([Me])([Me])/C=C/C1=CC(=O)[C@@H]2C[C@H](O)[C@@H]3O[C@H]23",
+            "product_smiles": "[OMe]C([Me])([Me])/C=C/[C@@H]1C[C@@H]2[C@H]3C=C([OMe]C([Me])([Me]))[C@H]4[C@@H]([C@]5([OMe]C([Me])([Me]))/C=C/C5)[C@H]6O[C@H]6C[C@H]4C(=O)[C@@H]2[C@H]7C[C@H](O)[C@H]8O[C@H]78C(=O)C[C@@H](O)[C@@H]13",
+            "notes": "Diels-Alder cycloaddition of two complex enone units to form the highly functionalized polycyclic Hexacyclinol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Biomimetic Polyene Cyclization / Rearrangement",
+            "reagents": "K10 clay",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)(OC)/C=C/[C@H]1C(=C)[C@@H]2[C@](C)(OC)[C@@H]3C=C[C@@H]4[C@@H](C(=O)[C@]2(C)C4)O[C@]4C(=O)[C@H](O)[C@@H](O)[C@]134O",
+            "product_smiles": "CC1=C[C@H]2[C@H]3[C@]4(C)O[C@@H]5C(=O)C[C@H](O)[C@@H](O)[C@@]67[C@@H](C=C[C@H]8[C@H](C(=O)[C@@]2(C)C8)O[C@@]2C[C@H](O)[C@]132)C4O[C@]7(C)C[C@@H]6O5",
+            "notes": "Complex cyclization cascade of a polyene, with loss of two methanol molecules, forming Hexacyclinol.",
+            "substeps": []
+        }
+    ]
+}

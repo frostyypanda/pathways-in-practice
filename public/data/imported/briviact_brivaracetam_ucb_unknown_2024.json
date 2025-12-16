@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "briviact-brivaracetam-ucb-unknown-2024",
+        "molecule_name": "Briviact (Brivaracetam UCB)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "BrCC(=O)OC(C)(C)C",
+            "conditions": "THF, -5 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCC(C(=O)OC)C(=O)OC",
+            "product_smiles": "CCC(CC(=O)OC(C)(C)C)(C(=O)OC)C(=O)OC",
+            "notes": "Malonic ester alkylation with t-butyl-2-bromoacetate",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Decarboxylation",
+            "reagents": "LiBr",
+            "reagent_smiles": "",
+            "conditions": "H2O, DMF",
+            "yield": "94%",
+            "reactant_smiles": "CCCC(CC(=O)OC(C)(C)C)(C(=O)OC)C(=O)OC",
+            "product_smiles": "CCCC(CC(=O)OC(C)(C)C)C(=O)OC",
+            "notes": "Decarboxylation of a malonic ester derivative. The yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Enzymatic Hydrolysis",
+            "reagents": "Bacillus subtilis, NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, 30 °C",
+            "yield": "42%",
+            "reactant_smiles": "CCCC(CC(=O)OC(C)(C)C)C(=O)OC",
+            "product_smiles": "CCC[C@H](CC(=O)OC(C)(C)C)C(=O)O",
+            "notes": "Enzymatic hydrolysis of a methyl ester to a carboxylic acid, creating a new chiral center with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mixed Anhydride Formation",
+            "reagents": "ClCO2Et, Et3N",
+            "reagent_smiles": "CCOC(=O)Cl.CCN(CC)CC",
+            "conditions": "toluene, -5 °C",
+            "yield": "",
+            "reactant_smiles": "CCC[C@H](CC(=O)OC(C)(C)C)C(=O)O",
+            "product_smiles": "CCC[C@H](CC(=O)OC(C)(C)C)C(=O)OC(=O)OCC",
+            "notes": "Formation of an ethyl carbonic anhydride from a carboxylic acid using ethyl chloroformate and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "",
+            "conditions": "-20 °C",
+            "yield": "",
+            "reactant_smiles": "CCC[C@H](CC(=O)OC(C)(C)C)C(=O)OC(=O)OCC",
+            "product_smiles": "CCC[C@H](CC(=O)OC(C)(C)C)CO",
+            "notes": "Selective reduction of the mixed anhydride carbonyl to a primary alcohol using sodium borohydride, with the t-butyl ester remaining intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection, Lactonization",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "25 °C",
+            "yield": "99% (3 steps)",
+            "reactant_smiles": "CCC[C@H](CC(=O)OC(C)(C)C)CO",
+            "product_smiles": "CCC[C@H]1CC(=O)OC1",
+            "notes": "Acid-catalyzed deprotection of tert-butyl ester and subsequent intramolecular lactonization (gamma-lactone formation). The absolute configuration at the chiral center changes from R in the reactant to S in the product due to re-prioritization of substituents upon cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lactone Ring Opening, Esterification",
+            "reagents": "HBr, HOAc, then HCl, EtOH",
+            "reagent_smiles": "",
+            "conditions": "80 °C, then 40 °C",
+            "yield": "72% (2 steps)",
+            "reactant_smiles": "CCC[C@@H]1CC(=O)OC1",
+            "product_smiles": "CCC[C@@H](CH2Br)CC(=O)OCC",
+            "notes": "Acid-catalyzed lactone ring opening followed by esterification. The chiral center configuration is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Multistep cyclization",
+            "reagents": "TBAI, Na2CO3, IPAc, then MTBE",
+            "reagent_smiles": "CC[C@@H](C(=O)N)N",
+            "conditions": "",
+            "yield": "32% (3 steps)",
+            "reactant_smiles": "CCC[C@H](CC(=O)OCC)CBr",
+            "product_smiles": "CCC[C@H]1CC(=O)N(C1)[C@@H](CC)C(=O)N",
+            "notes": "Intramolecular cyclization of an ester and bromoalkane with an aminoamide to form a pyrrolidinone derivative.",
+            "substeps": []
+        }
+    ]
+}

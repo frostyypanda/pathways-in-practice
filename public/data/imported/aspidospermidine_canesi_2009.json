@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspidospermidine-canesi-2009",
+        "molecule_name": "Aspidospermidine",
+        "class": "Natural Product",
+        "author": "Canesi",
+        "year": 2009
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination (Electrophilic Aromatic Substitution)",
+            "reagents": "Br2",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CCC1=CC=C(C=C1)O",
+            "product_smiles": "CCC1=CC(=C(C(=C1)Br)O)Br",
+            "notes": "Electrophilic aromatic bromination of 4-ethylphenol, leading to dibromination at the ortho positions to the hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed ortho metalation, Silylation",
+            "reagents": "HMDS, BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "CCC1=CC(Br)=C(O)C(Br)=C1",
+            "product_smiles": "CCC1=CC(Br)=C(O)C([Si](C)(C)C)=C1",
+            "notes": "Bromine-lithium exchange (with BuLi) and directed ortho-silylation (with HMDS) where one bromine atom is replaced by a trimethylsilyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hosomi-Sakurai reaction",
+            "reagents": "PhI(OAc)2, HFIP",
+            "reagent_smiles": "C=CC[Si](C)(C)C",
+            "conditions": "PhMe, 0 °C",
+            "yield": "56%",
+            "reactant_smiles": "OC1=C([Si](C)(C)C)C(Br)=CC(CC)=C1",
+            "product_smiles": "O=C1C(Br)=CC(C(CC)CC=C)C=C1[Si](C)(C)C",
+            "notes": "Oxidative allylation of a phenol (via in situ quinone formation) to a cyclohexadienone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "9-BBN, H2O2, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "C=CCC1(CC)C=C(C(=O)C(=C1)[Si](C)(C)C)Br",
+            "product_smiles": "CCC1(CCCO)C=C(C(=O)C(=C1)[Si](C)(C)C)Br",
+            "notes": "Terminal alkene converted to primary alcohol via hydroboration-oxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mesylation",
+            "reagents": "",
+            "reagent_smiles": "CS(=O)(=O)Cl.CC1=NC(=CC=C1)C",
+            "conditions": "DCM, rt",
+            "yield": "97%",
+            "reactant_smiles": "CCC1(CCCO)C=CC(Br)=C(C(=O)C1)[Si](C)(C)C",
+            "product_smiles": "CCC1(CCCOS(=O)(=O)C)C=CC(Br)=C(C(=O)C1)[Si](C)(C)C",
+            "notes": "Conversion of a primary alcohol to a mesylate using methanesulfonyl chloride (MsCl) and 2,6-lutidine as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "",
+            "reagents": "NaH",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)OCCNS(=O)(=O)C1=CC=C(C=C1)[N+](=O)[O-]",
+            "conditions": "DMF, 65 °C",
+            "yield": "89%",
+            "reactant_smiles": "CCC1(CCCO[Ms])C=C(C(=O)C(=C1)[Si](C)(C)C)Br",
+            "product_smiles": "CC[C@@]12CCC[N+](CCO[OTBS])([Ns])C2=C(C(=O)C(=C1)Br)[Si](C)(C)C",
+            "notes": "Intramolecular cyclization involving Michael addition and SN2 displacement to form a spirocyclic piperidine system.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Sulfonylation",
+                    "reagents": "Et3N, NsCl",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "C(CO)N",
+                    "product_smiles": "O=S(NCCO)(=O)c1ccc([N+](=O)[O-])cc1",
+                    "notes": "Formation of N-(2-hydroxyethyl)-4-nitrobenzenesulfonamide via sulfonylation of 2-aminoethanol with 4-nitrobenzenesulfonyl chloride (NsCl).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.C1=CN=CN1",
+                    "conditions": "DMF, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=C(C=CC(=C1)S(=O)(=O)NCCO)[N+](=O)[O-]",
+                    "product_smiles": "C1=C(C=CC(=C1)S(=O)(=O)NCC[OTBS])[N+](=O)[O-]",
+                    "notes": "Protection of a primary alcohol with tert-butyldimethylsilyl chloride (TBSCl) to form a TBS ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Sulfonamide Deprotection, Aromatic Nucleophilic Substitution",
+            "reagents": "K2CO3",
+            "reagent_smiles": "S[Ph]",
+            "conditions": "CH3CN, rt",
+            "yield": "85%",
+            "reactant_smiles": "CC[C@@]12CCCC[N]([Ns])(CCO[OTBS])C2=C(C(=O)C(=C1)Br)[Si](C)(C)C",
+            "product_smiles": "CC[C@@]12CCCCN(CCO[OTBS])C2=C(C(=O)C(=C1)S[Ph])[Si](C)(C)C",
+            "notes": "Reductive cleavage of the nosyl (Ns) protecting group from the tertiary nitrogen, simultaneously with aromatic nucleophilic substitution of bromide by thiophenoxide. The N-containing ring is expanded from 6-membered to 7-membered.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "87%",
+            "reactant_smiles": "CC[C@@]1(CC)C2CC(=O)C([TMS])=C(Sc3ccccc3)[C@@]2[NH](CCO[TBS])CC1",
+            "product_smiles": "CC[C@@]1(CC)C2CC(=O)[C@@]3C=C(Sc4ccccc4)[C@@]3N(OCCO)CC1",
+            "notes": "Desilylation of a TBS ether and a TMS group, with a shift in the double bond position.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Chlorination",
+            "reagents": "MsCl, NEt3",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "DCM, rt",
+            "yield": "79%",
+            "reactant_smiles": "CC[C@@]12CCCN(CCO)[C@H]2CC(=O)C(=C1)S[Ph]",
+            "product_smiles": "CC[C@@]12CCCN(CCCl)[C@H]2CC(=O)C(=C1)S[Ph]",
+            "notes": "Conversion of a primary alcohol to a primary alkyl chloride using mesyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "t-BuOK",
+            "reagent_smiles": "",
+            "conditions": "toluene, rt",
+            "yield": "84%",
+            "reactant_smiles": "CC[C@@]12CCCN(CCCl)[C@H]2CC(=O)C(=C1)S[Ph]",
+            "product_smiles": "CC[C@]12CCCN3CC[C@@H]([C@@H]13)C(=O)C(=C2)S[Ph]",
+            "notes": "Intramolecular N-alkylation of the chloroethylamine forms a new pyrrolidine ring, creating a tetracyclic product.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Desulfurization, Alkene Reduction",
+            "reagents": "Raney nickel",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "85%",
+            "reactant_smiles": "CC[C@@]12CCCN3CC[C@@H]([C@@H]13)C(=O)C(=C2)S[Ph]",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@@H](C(=O)CC1)[C@@H]23",
+            "notes": "Raney nickel mediated desulfurization of a thiophenyl group and reduction of an adjacent alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Fischer Indole Synthesis (Intermediate)",
+            "reagents": "PhNHNH₂",
+            "reagent_smiles": "C1=CC=C(C=C1)NN",
+            "conditions": "benzene, 60 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]12CCCN3CC[C@@H](C(=O)CC1)[C@@H]23",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@@H](/C(=N/Nc1ccccc1)/CC1)[C@@H]23",
+            "notes": "Formation of a phenylhydrazone intermediate from a ketone via condensation with phenylhydrazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Indole synthesis (Intramolecular Cyclization)",
+            "reagents": "AcOH",
+            "reagent_smiles": "",
+            "conditions": "118 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@]1(C2CCC(=N[NH]c3ccccc3)C2)CC[C@@H]4N3CCC1[C@@H]34",
+            "product_smiles": "CC[C@]1(CC[C@@H]2N3CCC1C4=C(C=CC=C4)N=C23)",
+            "notes": "Intramolecular cyclization of an imine-phenylhydrazine derivative to form an indole system. This is a type of Fischer indole synthesis.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF, rt",
+            "yield": "43%",
+            "reactant_smiles": "CC[C@@H]1C[C@@H]2CCCN3CCC4(C5=C(C=CC=C5)N=C[C@H]1)[C@]23C",
+            "product_smiles": "CCC1[C@@H]2CCCN3CCC4(C5=C(C=CC=C5)N[C@@H]6[C@H]1)[C@@]23C",
+            "notes": "Imine reduction to a secondary amine using lithium aluminum hydride.",
+            "substeps": []
+        }
+    ]
+}

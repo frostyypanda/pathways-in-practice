@@ -1,0 +1,60 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rooperol-kerwin-2014",
+        "molecule_name": "Rooperol",
+        "class": "Natural Product",
+        "author": "Kerwin",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Friedel-Crafts / Rearrangement / Alkyne formation",
+            "reagents": "AlCl3, allyl alcohol, NaHCO3",
+            "reagent_smiles": "[OTBS]C1=CC=CC=C1[OTBS]",
+            "conditions": "CH2Cl2, -78 °C, rt",
+            "yield": "65%",
+            "reactant_smiles": "ClC1=C(Cl)C(Cl)(Cl)C1",
+            "product_smiles": "C=CCOC(=O)C#CC1=CC(=C(C=C1)[OTBS])[OTBS]",
+            "notes": "Formation of a protected aryl propiolate via reaction of tetrachlorocyclopropene with a silylated catechol, followed by esterification with allyl alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deallylation",
+            "reagents": "Pd2dba3, (Ph)2P(CH2)3P(Ph)2, morpholine",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "88%",
+            "reactant_smiles": "C=CCOC(=O)C#Cc1ccc([OTBS])c([OTBS])c1",
+            "product_smiles": "O=C(O)C#Cc1ccc([OTBS])c([OTBS])c1",
+            "notes": "Palladium-catalyzed deprotection of an allyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Esterification (Steglich)",
+            "reagents": "EDC, DMAP",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)OC1=C(C=C(/C=C/CO)C=C1)O[Si](C)(C)C(C)(C)C",
+            "conditions": "CH2Cl2, rt",
+            "yield": "59%",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)OC1=C(C=C(C=C1)C#CC(=O)O)O[Si](C)(C)C(C)(C)C",
+            "product_smiles": "CC(C)(C)[Si](C)(C)OC1=CC=C(/C=C/COC(=O)C#CC2=CC(=C(C=C2)O[Si](C)(C)C(C)(C)C)O[Si](C)(C)C(C)(C)C)C=C1O[Si](C)(C)C(C)(C)C",
+            "notes": "Esterification of a propiolic acid with an allylic alcohol using EDC and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Decarboxylative allylic coupling",
+            "reagents": "Pd[P(Ph)3]4",
+            "reagent_smiles": "[Pd](P(c1ccccc1)(c1ccccc1)c1ccccc1)(P(c1ccccc1)(c1ccccc1)c1ccccc1)(P(c1ccccc1)(c1ccccc1)c1ccccc1)P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "toluene, 80 °C",
+            "yield": "45%",
+            "reactant_smiles": "[OTBDMS]c1cc(C#CC(=O)OC/C=C/c2cc([OTBDMS])c([OTBDMS])cc2)[OTBDMS]c1",
+            "product_smiles": "[OTBDMS]c1cc(C#CCC/C=C/c2cc([OTBDMS])c([OTBDMS])cc2)[OTBDMS]c1",
+            "notes": "Decarboxylative allylic coupling reaction, removing the ester group and forming a new C-C bond between the alkyne and the allyl system. All TBDMS protecting groups are retained.",
+            "substeps": []
+        }
+    ]
+}

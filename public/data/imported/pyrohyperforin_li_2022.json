@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pyrohyperforin-li-2022",
+        "molecule_name": "Pyrohyperforin",
+        "class": "Natural Product",
+        "author": "Li",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Horner-Wadsworth-Emmons reaction",
+            "reagents": "NaH, THF",
+            "reagent_smiles": "CCOC(=O)CP(=O)(OCC)OCC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CCCC(=O)C",
+            "product_smiles": "C=CCC/C(=C\\C(=O)OCC)\\C",
+            "notes": "Horner-Wadsworth-Emmons reaction of 5-hexen-2-one with diethyl phosphonoacetate to form an alpha,beta-unsaturated ethyl ester with E-stereoselectivity.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, 90 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCC/C(=C/C(=O)OCC)/C",
+            "product_smiles": "C=CCC/C(=C/C(=O)O)/C",
+            "notes": "Hydrolysis of an alpha,beta-unsaturated ethyl ester to the corresponding carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric alpha-allylation / Conjugate addition",
+            "reagents": "nBuLi, allyl-I",
+            "reagent_smiles": "C1CCN(CC1)C[C@H](c2ccccc2)NCCCN[C@H](c3ccccc3)CN4CCCCC4",
+            "conditions": "THF, 0 to -78 °C",
+            "yield": "65%",
+            "reactant_smiles": "C=CCC/C(=C/C(=O)O)/C",
+            "product_smiles": "C=CCCC(=C)[C@@H](CC=C)C(=O)O",
+            "notes": "Asymmetric alpha-allylation of an alpha,beta-unsaturated carboxylic acid, involving double bond migration to an exocyclic position.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "THF, 0 °C",
+            "yield": "62%",
+            "reactant_smiles": "O=C(O)[C@@H](CC=C)C(=C)CCC=C",
+            "product_smiles": "C=CCCC(=C)[C@@H](CC=C)CO",
+            "notes": "Reduction of a carboxylic acid to a primary alcohol using lithium aluminum hydride. The chiral center and all alkene functionalities are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2O, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCCC(=C)[C@@H](CC=C)CO",
+            "product_smiles": "C=CCCC(=C)[C@@H](CC=C)COS(=O)(=O)C(F)(F)F",
+            "notes": "Triflation of a primary alcohol to form a triflate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular cyclization / Domino Reaction",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "C=CCC1=C(C(=C(C(=C1O)CC=C)O)C(=O)O[C@@H]2C[C@@H](C)CC[C@@H]2C(=C)C)OC",
+            "conditions": "THF, PhMe, -20 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CCCC(=C)[C@H](CC=C)COS(=O)(=O)C(F)(F)F",
+            "product_smiles": "C=CCCC(=C)[C@@]1(O)C(C2C(C=C)CC(C=C)C23C=C(OC)C(=O)C(OC(=O)O[C@@H]4C[C@@H](C)CC[C@@H]4C(=C)C)=C3C1)CC=C",
+            "notes": "Intramolecular cyclization of an allyl triflate with a hyperforin-like intermediate to form Pyrohyperforin.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, 1,4-dioxane, H2O",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "28% (3 steps)",
+            "reactant_smiles": "CC(C)[C@H]1CC[C@@H](C(C)=C)C[C@H]1O[C@](=O)[C@H]2[C@@]3(CC=C)[C@H](O)C(CC=C)([C@H](CC=C)C4=CC(=O)C(OC)=C[C@H]43)C2",
+            "product_smiles": "O=C(O)[C@H]1[C@@]2(CC=C)[C@H](O)C(CC=C)([C@H](CC=C)C3=CC(=O)C(OC)=C[C@H]32)C1",
+            "notes": "Saponification of a menthyl ester to its corresponding carboxylic acid, retaining all stereocenters in the polycyclic core and the tertiary alcohol. This step is part of a 3-step sequence.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization / Ether Formation",
+            "reagents": "HfCl4, 1,2-DCE",
+            "reagent_smiles": "Cl[Hf](Cl)(Cl)Cl.ClCCCl",
+            "conditions": "1,2-DCE",
+            "yield": "31%",
+            "reactant_smiles": "C=CCC[C@]1(O)[C@@H]2C3=C(OC)C(=O)C=C[C@H]3C(CC=C)(CC=C)[C@H]1C2",
+            "product_smiles": "C=C[C@H]1C2=C(OC)C(=O)C=C[C@@H]2C(CC=C)(CC=C)[C@H]3C1O[C@H](CCC)[C@@H]3",
+            "notes": "Intramolecular cyclization of an allylic alcohol and a terminal alkene to form a 6-membered cyclic ether (tetrahydropyran derivative). The hydroxyl group attacks the terminal alkene of the 3-butenyl chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cross-metathesis",
+            "reagents": "G-II, isobutylene",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "C=CCCC1(C)[C@H]2C(=C(C=CCCC)[C@@H]([C@H]1C(=O)CC=C)C(=O)C2(CC=C)CC=C)OC",
+            "product_smiles": "CCC=C(C)CC1(C)[C@@H]2C(=C(CCC=C(C)C)[C@@H]([C@H]1C(=O)CC=C)C(=O)C2(CCC(=C)C)CC=C)OC",
+            "notes": "Cross-metathesis of three terminal alkenes with isobutylene to form one 3-methyl-3-butenyl group and two prenyl groups, leaving two allyl groups unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Double TMS Enol Ether Formation",
+            "reagents": "LDA, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)CCC[C@@]1(C)CC(=O)[C@H]2C3=C(OC)C(=O)[C@H]4[C@]1(C(CCC=C(C)C)C2=O)[C@H]3C4(C)CCC=C(C)C",
+            "product_smiles": "C=C(C)CCC[C@@]1(C)C(C=C(O[Si](C)(C)C)[C@H]2C3=C(OC)[C@H]4[C@]1(C(CCC=C(C)C)C2O[Si](C)(C)C)[C@H]3C4(C)CCC=C(C)C",
+            "notes": "Formation of bis-silyl enol ether from a diketone (pyrohyperforin) using LDA and TMSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidative Cyclization / Rearrangement",
+            "reagents": "THF",
+            "reagent_smiles": "I",
+            "conditions": "0 °C",
+            "yield": "95%",
+            "reactant_smiles": "CC(=C)C[C@]12[C@H](OC)[C@]3(C=C(C)C)[C@@H]4C(=C(O[Si](C)(C)C)C3)[C@@]5(C)[C@H](C[C@@H](O[Si](C)(C)C)[C@]4(C)CC=C(C)C)C5(CC=C(C)C)C1(C)CC=C(C)C",
+            "product_smiles": "CC(=C)CC1(C)C(=O)C2(CC=C(C)C)[C@@H]3[C@H]4C(=O)C5=C(OC)[C@@]6(C=C(C)C)[C@@H]3[C@]7(C)C(CC=C(C)C)([C@](C)(C4C7)C1=O)O2",
+            "notes": "Oxidative rearrangement of bis(TMS-ether) precursor to Pyrohyperforin, involving removal of TMS groups, formation of two ketones, and a furanone bridge.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Alpha-acylation / Ketone functionalization",
+            "reagents": "LiTMP, THF",
+            "reagent_smiles": "CC(C)C(=O)C#N",
+            "conditions": "-78 to -35 °C",
+            "yield": "70%",
+            "reactant_smiles": "COC1=C(C=C(C)C=C(C)C)C(=O)[C@@]23[C@@H]4[C@H](C(=O)[C@@](C1=O)(C(C)(CC=C(C)C))[C@](C)(CC=C(C)C))C(C)(CC=C(C)C)[C@]2(C)C43",
+            "product_smiles": "COC1=C(C=C(C)C=C(C)C)C(=O)[C@@]23[C@@H]4[C@H](C(=O)[C@@](C1=O)(C(C)(CC=C(C)C))C(C(=O)C(C)C)(C(C)(CC=C(C)C)))[C@](C)(CC=C(C)C)[C@]2(C)C43",
+            "notes": "Alpha-functionalization of a ketone by addition of an isopropyl ketone group.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Rearrangement",
+            "reagents": "LiCl",
+            "reagent_smiles": "",
+            "conditions": "DMSO, 80 °C",
+            "yield": "22%",
+            "reactant_smiles": "COC1=C(C=C(C)C)C(=O)[C@@]2(CC=C(C)C)[C@H]3C(C(C)C)C(=O)[C@@]2(C)C(=O)[C@]1(CC=C(C)C)[C@@H]3CC=C(C)C",
+            "product_smiles": "CC(C)C(=O)[C@@]1(C(=O)[C@@]2(CC=C(C)C)[C@H]3CC=C(C)C)C4(C)C(=O)C5=C[C@H]2[C@@H]3C4(CC=C(C)C)C=CC(C)(C)O5",
+            "notes": "Intramolecular cyclization and demethylation, likely involving a [4+2] cycloaddition/rearrangement cascade.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "epoxyquinol-a-porco-2002",
+        "molecule_name": "Epoxyquinol A",
+        "class": "Natural Product",
+        "author": "Porco",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination / Electrophilic Aromatic Substitution",
+            "reagents": "Br2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "O=CC1=CC(O)=CC=C1O",
+            "product_smiles": "O=CC1=C(Br)C=CC(O)=C1O",
+            "notes": "Ortho-bromination of 2,5-dihydroxybenzaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silyl Ether Formation / Phenol Protection",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "94%",
+            "reactant_smiles": "O=Cc1c(Br)cc(O)c(O)c1",
+            "product_smiles": "O=Cc1c(Br)cc([OTBS])c(O)c1",
+            "notes": "Selective protection of one phenolic hydroxyl group as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "O-Alkylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "72%",
+            "reactant_smiles": "O=CC1=C(Br)C(O[TBS])=CC(O)=C1",
+            "product_smiles": "O=CC1=C(Br)C(O[TBS])=CC(OC)=C1",
+            "notes": "Phenolic hydroxyl group is methylated to a methoxy group using sodium hydride and methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "EtOH, 0 °C",
+            "yield": "100%",
+            "reactant_smiles": "COc1c(C=O)c(Br)c([OTBS])cc1",
+            "product_smiles": "COc1c(CO)c(Br)c([OTBS])cc1",
+            "notes": "Aldehyde group reduced to primary alcohol using sodium borohydride. Other functional groups (methoxy, bromine, OTBS ether) are unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(c1ccccc1)c2ccccc2.c1cncn1",
+            "conditions": "DMF, rt",
+            "yield": "93%",
+            "reactant_smiles": "COc1c(CO)c(Br)c([OTBS])cc1",
+            "product_smiles": "COc1c(CO[OTBDPS])c(Br)c([OTBS])cc1",
+            "notes": "Protection of the primary alcohol with TBDPS chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "COC1=C(C[OTBDPS])C(Br)=C([OTBS])C=C1",
+            "product_smiles": "COC1=C(C[OTBDPS])C(Br)=C(O)C=C1",
+            "notes": "Selective deprotection of the TBS ether to a hydroxyl group using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Phenol oxidation / Dearomatization",
+            "reagents": "MeOH",
+            "reagent_smiles": "CC(=O)OI(OC(=O)C)c1ccccc1",
+            "conditions": "rt",
+            "yield": "84%",
+            "reactant_smiles": "[OTBDPS]CH2c1c(Br)cc(OC)cc1O",
+            "product_smiles": "[OTBDPS]CH2C1=C(Br)C=C(C(OC)(OC))C(=O)C1",
+            "notes": "Oxidation of a phenol to a cyclohexadienone dimethyl ketal using a hypervalent iodine reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ketalization / Transacetalization",
+            "reagents": "PPTS",
+            "reagent_smiles": "CCC(CC)(CO)CO",
+            "conditions": "benzene",
+            "yield": "70%",
+            "reactant_smiles": "COC1(OC)C=CC(=O)C(Br)=C1CO[TBDPS]",
+            "product_smiles": "CCC1(CC)COC2(OC1)C=CC(=O)C(Br)=C2CO[TBDPS]",
+            "notes": "Formation of a spiroketal from a geminal dimethoxy ketal and 2,2-diethylpropane-1,3-diol, catalyzed by PPTS.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Epoxidation",
+            "reagents": "NaHMDS, L-DIPT, Ph3COOH",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "97%",
+            "reactant_smiles": "O=C1C=C(C2(OCCC(CC)(CC)O2))C(Br)=C(C[OTBDPS])C1",
+            "product_smiles": "O=C1[C@@H]2O[C@@H]2C(C3(OCCC(CC)(CC)O3))C(Br)=C(C[OTBDPS])C1",
+            "notes": "Asymmetric epoxidation of the electron-deficient alkene in the quinone ring adjacent to the carbonyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd(PPh3)4, AsPh3",
+            "reagent_smiles": "C=CC[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "toluene, 110 °C",
+            "yield": "98%",
+            "reactant_smiles": "CCC1(CC)COC2(C(=C(C(=O)[C@@H]3[C@@H]2O3)Br)CO[OTBDPS])OC1",
+            "product_smiles": "CCC1(CC)COC2(C(=C(C(=O)[C@@H]3[C@@H]2O3)C/C=C/C)CO[OTBDPS])OC1",
+            "notes": "Allylation of vinyl bromide via Stille coupling, retaining the stereochemistry of the epoxide and the spiro ketal. The bromine is replaced by a trans-propenyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "48% HF",
+            "reagent_smiles": "CC#N",
+            "conditions": "MeCN",
+            "yield": "82%",
+            "reactant_smiles": "C/C=C/C1=C(CO[TBDPS])C4([C@@H]5[C@H](C1=O)O5)OCC(CC)(CC)CO4",
+            "product_smiles": "C/C=C/C1=C(CO)C(=O)[C@@H]2[C@H](C1=O)O2",
+            "notes": "Deprotection of TBDPS ether and spiroketal to yield Epoxyquinol A. The quinone and epoxide remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction (Ketone to Alcohol)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "C1CCOC1",
+            "conditions": "THF, -78 °C",
+            "yield": "72%",
+            "reactant_smiles": "O=C1[C@H]2O[C@H]2C(=O)C(CO)=C(C/C=C/C)C1",
+            "product_smiles": "[C@H](O)1[C@H]2O[C@H]2C(=O)C(CO)=C(C/C=C/C)C1",
+            "notes": "Selective reduction of one quinone carbonyl to an allylic alcohol, maintaining epoxide and alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "TEMPO, CuCl, O2, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C=C/C1=C(CO)[C@H](O)[C@H]2[C@H](C(=O)C1)O2",
+            "product_smiles": "C/C=C/C1=C(C=O)[C@H](O)[C@H]2[C@H](C(=O)C1)O2",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using TEMPO/CuCl/O2 system.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "MeOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "55% (2 steps)",
+            "reactant_smiles": "O=CC1=C(C=C/C)[C@@H](O)[C@H]2O[C@H]2C1=O",
+            "product_smiles": "C[C@@H]1[C@H]2[C@H](C)O[C@H](O)C3=C([C@H](O)C(=O)[C@@H]4O[C@H]4[C@@H](O)[C@H]3C=C2)C1",
+            "notes": "Complex polycyclization involving Diels-Alder cycloaddition and further cyclizations.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cariprazine-vraylar-gedeonrichter-unknown-2024",
+        "molecule_name": "Cariprazine (Vraylar GedeonRichter)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Catalytic Hydrogenation and Esterification",
+            "reagents": "H2, Pd/C, HCl",
+            "reagent_smiles": "",
+            "conditions": "H2O, 44-48 °C, EtOH, reflux",
+            "yield": "40%",
+            "reactant_smiles": "C1=CC(=CC=C1CC(=O)O)[N+](=O)[O-]",
+            "product_smiles": "CCOC(=O)C[C@@H]1CC[C@H](CC1)N",
+            "notes": "The aromatic nitro group is reduced to an amine, the aromatic ring is hydrogenated to a cyclohexane ring, and the carboxylic acid is esterified with ethanol to form an ethyl ester. The reaction is diastereoselective, forming the trans-1,4-disubstituted product on the cyclohexane ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Boc Protection",
+            "reagents": "Boc₂O, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 5 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@@H]1CC[C@H](N)CC1",
+            "product_smiles": "CCOC(=O)C[C@@H]1CC[C@H](CC1)N[Boc]",
+            "notes": "Protection of a primary amine with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction",
+            "reagents": "NaBH4, AlCl3",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@@H]1CC[C@H](CC1)N[Boc]",
+            "product_smiles": "[Boc]N[C@@H]1CC[C@H](CC1)CCO",
+            "notes": "Reduction of an ethyl ester to a primary alcohol while a Boc protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H]1CC[C@H](CC1)CCO",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H]1CC[C@H](CC1)CCOS(=O)(=O)C",
+            "notes": "Mesylation of a primary alcohol to form an alkyl mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "K2CO3",
+            "reagent_smiles": "C1=CC(=C(C(=C1)Cl)Cl)N2CCNCC2",
+            "conditions": "MeCN, reflux",
+            "yield": "70% (over 4 steps)",
+            "reactant_smiles": "[Boc]N[C@H]1CC[C@H](CC1)CC[OMs]",
+            "product_smiles": "[Boc]N[C@H]1CC[C@H](CC1)CCN2CCN(C3=C(Cl)C(Cl)=CC=C3)CC2",
+            "notes": "Nucleophilic substitution of mesylate by 1-(2,3-dichlorophenyl)piperazine amine, maintaining trans stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, EtOH",
+            "reagent_smiles": "",
+            "conditions": "45-50 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H]1CC[C@H](CC1)CCN2CCN(CC2)c1c(Cl)c(Cl)ccc1",
+            "product_smiles": "C1=CC(=C(C(=C1)N2CCN(CC[C@H]3CC[C@@H](CC3)N)CC2)Cl)Cl",
+            "notes": "Boc deprotection to a primary amine, forming Cariprazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Urea Formation (Carbamoylation)",
+            "reagents": "triphosgene, Et3N, Me2NH",
+            "reagent_smiles": "",
+            "conditions": "DCM, -5 to -10 °C; then iPrOH, 0 to -5 °C",
+            "yield": "96%",
+            "reactant_smiles": "N[C@H]1CC[C@@H](CC1)CCN2CCN(CC2)c3c(Cl)c(Cl)ccc3",
+            "product_smiles": "CN(C)C(=O)N[C@H]1CC[C@@H](CC1)CCN2CCN(CC2)c3c(Cl)c(Cl)ccc3",
+            "notes": "Formation of a dimethylurea derivative from a primary amine using triphosgene and dimethylamine. The cyclohexane stereochemistry and aryl chloride positions were corrected.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Salt Formation",
+            "reagents": "HCl, MeOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O",
+            "yield": "95%",
+            "reactant_smiles": "CN(C)C(=O)N[C@H]1CC[C@@H](CC1)CCN2CCN(CC2)C3=CC=CC(=C3Cl)Cl",
+            "product_smiles": "CN(C)C(=O)N[C@H]1CC[C@@H](CC1)CCN2CC[N+](CC2)C3=CC=CC(=C3Cl)Cl.[Cl-]",
+            "notes": "Formation of Cariprazine hydrochloride salt from its free base.",
+            "substeps": []
+        }
+    ]
+}

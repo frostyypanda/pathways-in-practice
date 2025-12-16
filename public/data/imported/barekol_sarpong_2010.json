@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "barekol-sarpong-2010",
+        "molecule_name": "Barekol",
+        "class": "Natural Product",
+        "author": "Sarpong",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Lactone Reduction",
+            "reagents": "LiAlH4, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@]12CCC[C@@](C)(C)[C@@H]1C[C@@H](C)C(=O)O[C@@]23C(C)CC3",
+            "product_smiles": "CC1(C)CCC[C@]2(C)[C@@H](CCO)[C@@](C)(CC[C@@H]12)O",
+            "notes": "Reduction of a gamma-lactone (sclareolide) to a diol (sclareol) using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Appel reaction",
+            "reagents": "Ph3P, I2",
+            "reagent_smiles": "P(c1ccccc1)(c1ccccc1)c1ccccc1.II",
+            "conditions": "DCM, 0 °C",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "CC1(C)CCCC[C@](C)2[C@@H](CCO)[C@@](C)(O)[C@@H]2CC1",
+            "product_smiles": "CC1=C(CCI)[C@@]2(C)CCCC(C)(C)[C@@H]2CC1",
+            "notes": "Appel reaction for diol conversion to alkyl iodide and alkene formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Elimination (Dehydroiodination)",
+            "reagents": "KOt-Bu",
+            "reagent_smiles": "[K+].[O-]C(C)(C)C",
+            "conditions": "THF",
+            "yield": "98%",
+            "reactant_smiles": "C[C@]12C=C(C)C(CCI)CCC[C@H]1C(C)(C)CCC2",
+            "product_smiles": "C[C@]12C=C(C)C(C=C)CCC[C@H]1C(C)(C)CCC2",
+            "notes": "E2 elimination of a primary iodide to form an exocyclic vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Rhodium-catalyzed [4+3] cycloaddition",
+            "reagents": "Rh2(R-PTAD)4",
+            "reagent_smiles": "[OTBS]C=C(C(=O)OC)C(=[N+]=[N-])",
+            "conditions": "hexanes, 80 °C",
+            "yield": "65%",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(C)C(C)(C)CCC1C2=C(C)C=C",
+            "product_smiles": "C[C@H]1CC[C@@]2(C)C(C)(C)CCC1[C@](C)3C(=O)OC=C([OTBS])CCC32",
+            "notes": "Rhodium carbenoid addition to a diene, forming a 7-membered ring and a new stereocenter at the ring fusion.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "CCO",
+            "conditions": "EtOH",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)C1=C([OTBS])C=C(C2C[C@@H]3[C@](C)(C1)CC[C@@H]4[C@](C)(C3)C(C)(C)CCC4)C=C2",
+            "product_smiles": "COC(=O)C1=C([OTBS])CC(C2C[C@@H]3[C@](C)(C1)CC[C@@H]4[C@](C)(C3)C(C)(C)CCC4)[C@H]2",
+            "notes": "Selective hydrogenation of a conjugated diene system in a polycyclic structure. One double bond is reduced while the other, adjacent to an ester and OTBS group, remains intact. The new chiral center introduced by hydrogenation has alpha stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C1=C(CC[C@H]2[C@@](C)(CC[C@H]3C(C)(C)CCC[C@@]32C)C1)C(=O)OC",
+            "product_smiles": "[OTBS]C1=C(CC[C@H]2[C@@](C)(CC[C@H]3C(C)(C)CCC[C@@]32C)C1)CO",
+            "notes": "Methyl ester reduced to primary alcohol with DIBAL-H. The OTBS group is stable under these conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection, Cyclization, Oxidation",
+            "reagents": "PPTS, PhH",
+            "reagent_smiles": "",
+            "conditions": "90 °C",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "C[C@]12CCC(C)(C)C1CC[C@@H]1[C@@](C)([C@H]2[C@H]1C=C(CO)[OTBS])CC1",
+            "product_smiles": "C[C@]12CCC(C)(C)C1CC[C@@H]1[C@@](C)([C@H]2[C@H]1CC(=O)C(=C)CC1)CC1",
+            "notes": "Acid-catalyzed deprotection of TBS ether, followed by ring-closure/cyclization and likely an elimination/ketonization to form the alpha,beta-unsaturated ketone with an exocyclic methylene in the D-ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=C1CC[C@H]2[C@@](C)(CC[C@H]3C(C)(C)CCC[C@@]32C)CC1=O",
+            "product_smiles": "C=C1CC[C@H]2[C@@](C)(CC[C@H]3C(C)(C)CCC[C@@]32C)C[C@H]1O",
+            "notes": "Reduction of an exocyclic ketone to a secondary alcohol using DIBAL-H. The exocyclic double bond remains unchanged. The reduction is stereoselective, yielding the alcohol with the hydroxyl group in a dashed orientation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive rearrangement/dehydration",
+            "reagents": "(C6F5)3B, HSiEt3",
+            "reagent_smiles": "B(c1c(F)c(F)c(F)c(F)c1F)(c1c(F)c(F)c(F)c(F)c1F)c1c(F)c(F)c(F)c(F)c1F.[SiH](CC)(CC)CC",
+            "conditions": "DCE, 90 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@]12CC[C@@H](O)C(=C)C1CC[C@H]3[C@H]2C(C)(C)CCC[C@H]3C",
+            "product_smiles": "C[C@]12CCC=C(C)C1CC[C@H]3[C@H]2C(C)(C)CCC[C@H]3C",
+            "notes": "Reductive rearrangement of an allylic alcohol and exocyclic alkene to an endocyclic alkene with a methyl group. This reaction corresponds to a step in the synthesis of Barekol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Epoxidation",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "58%",
+            "reactant_smiles": "CC1=CCC2(C)C[C@@H]3C(C)(C)CC[C@@H]3[C@H]2CC1",
+            "product_smiles": "C[C@@]12O[C@@H]1[C@H]3[C@](C)(CC[C@H]4C(C)(C)CCC[C@H]34)[C@H]2CC",
+            "notes": "Epoxidation of the exocyclic double bond to form an epoxide, with stereospecific outcome.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Epoxide rearrangement",
+            "reagents": "aq HClO4",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "CC1(C)CCC[C@@H]2[C@]1(C)CC[C@@H]3[C@]2(C)CC[C@]4(C)[C@@H]3C[C@@]5(C)O[C@@H]45",
+            "product_smiles": "CC1(C)CCC[C@@H]2[C@]1(C)CC[C@@H]3[C@]2(C)CC[C@]4(C)[C@@H]3C[C@H](O)C(=C)C4",
+            "notes": "Acid-catalyzed epoxide ring opening and rearrangement to form an exocyclic alkene and an alcohol.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "mersicarpine-tokuyama-2012",
+        "molecule_name": "Mersicarpine",
+        "class": "Natural Product",
+        "author": "Tokuyama",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation / Condensation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CCCCN",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CCCC=O",
+            "product_smiles": "CCCC=NCCCC",
+            "notes": "Butanal reacts with n-butylamine to form N-butylidenebutylamine (an imine) under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Michael Addition / Imine Alkylation",
+            "reagents": "",
+            "reagent_smiles": "C=CC#N",
+            "conditions": "toluene, 150 °C",
+            "yield": "",
+            "reactant_smiles": "CCCC=NCCCC",
+            "product_smiles": "CCCCN=CC(CC)(CCC#N)CCC#N",
+            "notes": "Imine undergoes a double Michael addition with acrylonitrile to form a highly substituted imine product.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Imine Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91% (3 steps)",
+            "reactant_smiles": "CCCCN=CC(CC)(CCC#N)CCC#N",
+            "product_smiles": "CCC(CCC#N)(CCC#N)C=O",
+            "notes": "Hydrolysis of an N-butyl imine to an aldehyde. The overall transformation occurs over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Amination",
+            "reagents": "2-iodoaniline, AcOH, MeOH, NaB(CN)H3",
+            "reagent_smiles": "C1=CC(=C(C=C1)N)I",
+            "conditions": "90 °C then 50 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCC(CCC#N)(CCC#N)C=O",
+            "product_smiles": "CCC(CCC#N)(CCC#N)CNC1=C(C=CC=C1)I",
+            "notes": "Reductive amination of an aldehyde with 2-iodoaniline.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lactamization / Intramolecular Cyclization",
+            "reagents": "HCl, NaOH",
+            "reagent_smiles": "",
+            "conditions": "Dioxane, 100 °C",
+            "yield": "98%",
+            "reactant_smiles": "IC1=CC=CC=C1NCC(CC)(CCC#N)CCC#N",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)I",
+            "notes": "Intramolecular lactam formation from an amine and a nitrile, likely involving nitrile hydrolysis to a carboxylic acid intermediate followed by cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "Pd(PPh3)4, CuI, Et3N",
+            "reagent_smiles": "C#CC(OCC)(OCC)OCC",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "Ic1c(N2CC[C@@](CC)(CCC#N)CCC(=O)N2)cccc1",
+            "product_smiles": "C#CC(OCC)(OCC)OCCc1c(N2CC[C@@](CC)(CCC#N)CCC(=O)N2)cccc1",
+            "notes": "Sonogashira coupling of an ortho-iodoaryl lactam with a protected alkyne (triethyl orthoester-substituted alkyne).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Orthoester hydrolysis to ester",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(OCC)(OCC)OCC",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(=O)OCC",
+            "notes": "Acid-catalyzed hydrolysis of a propargyl orthoester to a propargyl ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrostannylation",
+            "reagents": "Bu3SnH",
+            "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)H",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(=O)OCC",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C(=C/C(=O)OCC)/C1=C(C=CC=C1)N2C[C@@](CC)(CCC#N)CCC2=O",
+            "notes": "Hydrostannylation of the alkyne to form an (E)-vinylstannane, with retention of configuration at the existing chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Electrophilic Destannylation / Halogenation",
+            "reagents": "I2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C(=C/C(=O)OCC)/C1=C(C=CC=C1)N2C[C@](CC)(CCC#N)CCC2=O",
+            "product_smiles": "IC(=C/C(=O)OCC)/C1=C(C=CC=C1)N2C[C@](CC)(CCC#N)CCC2=O",
+            "notes": "The tributylstannyl group is replaced by iodine on the vinyl moiety. The E-alkene stereochemistry and the chiral center configuration are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Radical Cyclization / Reductive Cyclization",
+            "reagents": "Air",
+            "reagent_smiles": "[SnH](CCCC)(CCCC)CCCC.B(CC)(CC)CC",
+            "conditions": "THF, rt",
+            "yield": "81%",
+            "reactant_smiles": "CCC(CCC#N)C1CCC(=O)N(C1)C2=C(C=CC=C2)/C(=C\\C(=O)OCC)/I",
+            "product_smiles": "CCC(CCC#N)C1CCC(=O)N2C3=C(C=CC=C3)C(CC(=O)OCC)C12",
+            "notes": "Intramolecular reductive cyclization of an iodo-acrylate to form a fused indole-lactam system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation (Dehydrogenation)",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "THF, MeCN, rt",
+            "yield": "94%",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N2C3=C(C=CC=C3)[C@@H](CC(=O)OCC)[C@H]12",
+            "product_smiles": "CC[C@]1(CCC#N)CCC(=O)N2C3=C(C=CC=C3)/C(=C/C(=O)OCC)/[C@H]12",
+            "notes": "Dehydrogenation of the saturated ester side chain to form an alpha,beta-unsaturated ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Decarboxylation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 45 °C",
+            "yield": "55%",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N2C3=C(C=CC=C3)/C(=C/C(=O)OCC)/C12",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N2C3=C(C=CC=C3)C(=O)C12",
+            "notes": "Oxidative transformation of an α,β-unsaturated ethyl ester to a ketone, accompanied by decarboxylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reduction, Cyclization",
+            "reagents": "CoCl2, NaBH4",
+            "reagent_smiles": "Cl[Co]Cl.[Na][BH4]",
+            "conditions": "MeOH, 50 °C",
+            "yield": "",
+            "reactant_smiles": "CCC(CCC#N)C1CC(C(=O)N2C3=CC=CC=C3C(=O)C12)",
+            "product_smiles": "CCC1(CCC2C(=O)N3C4=CC=CC=C4C(C2C3)NC1)",
+            "notes": "Reductive cyclization of nitrile and carbonyl reduction in the piperidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidation",
+            "reagents": "O2, Me2S",
+            "reagent_smiles": "O=O.CS(C)C",
+            "conditions": "rt",
+            "yield": "56% (2 steps)",
+            "reactant_smiles": "CC[C@]12CCCNC3=C1N(C4=C3C=CC=C4)C(=O)CC2",
+            "product_smiles": "CC[C@@]1(O)2CCCN=C3C4=C(C=CC=C4)N(C(=O)CC1)C3",
+            "notes": "Oxidation of an indole-fused lactam. The secondary amine (NH) in the seven-membered ring is oxidized to an imine (N=), and the spiro carbon is hydroxylated.",
+            "substeps": []
+        }
+    ]
+}

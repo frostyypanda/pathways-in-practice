@@ -1,0 +1,158 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tangutorine-hoveyda-2019",
+        "molecule_name": "Tangutorine",
+        "class": "Natural Product",
+        "author": "Hoveyda",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydroiodination",
+            "reagents": "TMSCl, NaI",
+            "reagent_smiles": "Cl[Si](C)(C)C.[Na]I",
+            "conditions": "H2O, MeCN, 0 to 22 °C",
+            "yield": "72%",
+            "reactant_smiles": "C#CCO",
+            "product_smiles": "C=C(CO)I",
+            "notes": "Addition of iodine and hydrogen to an alkyne, forming a vinyl iodide and converting an internal alkyne to a terminal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Radical Addition",
+            "reagents": "n-Bu3SnH, AIBN",
+            "reagent_smiles": "C=CCN",
+            "conditions": "benzene, reflux",
+            "yield": "75%",
+            "reactant_smiles": "C=C(CO)I",
+            "product_smiles": "C=C(CCC#N)CO",
+            "notes": "Radical addition of acrylonitrile to a vinyl iodide, replacing the iodine atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 22 °C",
+            "yield": "97%",
+            "reactant_smiles": "C=C(CCC#N)CO",
+            "product_smiles": "C=C(CCC#N)C[OTBS]",
+            "notes": "Conversion of a primary alcohol to a TBS silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric copper-catalyzed cascade reaction (borylation/amination)",
+            "reagents": "CuMes, NaOMe, B₂(pin)₂, PMHS, i-PrOH",
+            "reagent_smiles": "CC(C)(C)OC(=O)CCC#C",
+            "conditions": "THF, -5 °C",
+            "yield": "80%",
+            "reactant_smiles": "N#CCC(=C)C[OTBS]",
+            "product_smiles": "CC(C)(C)OC(=O)CC[C@H](C(=C)[B]1OC(C)(C)C(C)(C)O1)[C@@H](N)CCC(=C)C[OTBS]",
+            "notes": "Reactant is an isopropenyl nitrile derivative with a TBS ether. The reaction involves a tert-butyl 4-pentynoate, a chiral ferrocene-phosphine catalyst (drawn, but not provided as a correct SMILES in input), CuMes, B₂(pin)₂, etc. to form a complex amino ester with a vinyl boronate and two new chiral centers with specific stereochemistry. The major transformations include borylation of one alkene and amination at another site.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Esterification",
+                    "reagents": "t-BuOH, DCC, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 22 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "C#CCCC(=O)O",
+                    "product_smiles": "C#CCCC(=O)[Ot-Bu]",
+                    "notes": "A carboxylic acid is converted to its tert-butyl ester using t-BuOH, DCC, and DMAP.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Allene Formation (Copper-catalyzed formaldehydylation and rearrangement)",
+                    "reagents": "CuI, HCHO",
+                    "reagent_smiles": "C1CCCCC1NC1CCCCC1",
+                    "conditions": "1,4-dioxane, reflux",
+                    "yield": "85%",
+                    "reactant_smiles": "C#CCCC(=O)[OtBu]",
+                    "product_smiles": "C=C=CCCC(=O)[OtBu]",
+                    "notes": "A terminal alkyne reacts with formaldehyde in the presence of copper iodide and dicyclohexylamine, forming an allene via formal addition of a carbon and subsequent rearrangement.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Protodeboronation",
+            "reagents": "Pd(OAc)2, K2CO3",
+            "reagent_smiles": "CC(=O)O[Pd](OC(=O)C)OC(=O)C.[K+].[K+].[O-]C(=O)[O-].C1CCOC1.O",
+            "conditions": "THF/H2O, 40 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)CC[C@H](C(=C)B1OC(C)(C)C(C)(C)O1)[C@@H](N)CCC(=C)[OTBS]",
+            "product_smiles": "CC(C)(C)OC(=O)CC[C@H](C=C)[C@@H](N)CCC(=C)[OTBS]",
+            "notes": "Protodeboronation of a vinyl pinacol borane to form a terminal alkene under palladium catalysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaCNBH3",
+            "reagent_smiles": "O=CCC1=CNC2=C1C=CC=C2",
+            "conditions": "MeOH/CH2Cl2, 22 °C",
+            "yield": "",
+            "reactant_smiles": "[OtBu]C(=O)CC[C@@H](C=C)[C@@H](N)CCC(=C)C[OTBS]",
+            "product_smiles": "[OtBu]C(=O)CC[C@@H](C=C)[C@@H](NCCC1=CNC2=C1C=CC=C2)CCC(=C)C[OTBS]",
+            "notes": "Reductive amination of a primary amine with indole-3-acetaldehyde, forming a secondary amine. Stereochemistry and other functional groups (t-Bu ester, TBS ether, alkenes) are preserved.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Oxidation",
+                    "reagents": "DMSO",
+                    "reagent_smiles": "O=C1C2=CC=CC=C2[I+](O)[O-]O1",
+                    "conditions": "22 °C",
+                    "yield": "73%",
+                    "reactant_smiles": "C1=CC2=C(C=C1)NC=C2CCO",
+                    "product_smiles": "C1=CC2=C(C=C1)NC=C2CC=O",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde using cyclic IBX (1-hydroxy-1,2-benziodoxol-3(1H)-one 1-oxide).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular lactamization",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 60 °C",
+            "yield": "80% (3 steps)",
+            "reactant_smiles": "C=C[C@@H](NCCC1=CNC2=C1C=CC=C2)[C@H](CCC(=O)O[t-Bu])CCC(=C)CO[OTBS]",
+            "product_smiles": "O=C1CC[C@H](C=C)(CCC(=C)CO[OTBS])[C@@H]1NCCC2=CNC3=C2C=CC=C3",
+            "notes": "Intramolecular cyclization of an amine with a tert-butyl ester to form a six-membered lactam, catalyzed by sodium methoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Molybdenum catalyst",
+            "reagent_smiles": "[Mo](=CC1=CC=CC=C1)(N(C2=C(C(C)C)C=CC=C2C(C)C))(O[C@@](C)(C(F)(F)F)C(F)(F)F)(O[C@@](C)(C(F)(F)F)C(F)(F)F)",
+            "conditions": "toluene, 80 °C",
+            "yield": "91%",
+            "reactant_smiles": "O=C1[C@@H](CCC(=C)C[OTBS])N(CCC2=CNC3=C2C=CC=C3)[C@H](C=C)CC1",
+            "product_smiles": "O=C1CC[C@H]2N(CCC3=CNC4=C3C=CC=C4)[C@@H]2C=C(C[OTBS])CC1",
+            "notes": "Formation of a fused piperidinone-cyclohexene system via ring-closing metathesis of a terminal alkene and an internal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction, Deprotection",
+            "reagents": "Tf2O, NaBH4, 2 M HClaq",
+            "reagent_smiles": "CC1=CC(=NC(=C1)C(C)(C)C)C(C)(C)C",
+            "conditions": "CH2Cl2, -78 to 22 °C; MeOH, 0 °C; 0 to 22 °C",
+            "yield": "92%",
+            "reactant_smiles": "O=C1N(CCC2=CNC3=CC=CC=C32)[C@@H]4C[C@H]5C=C(C[OTBS])CCC5C41",
+            "product_smiles": "C1=CC=C2C(=C1)NC3=C2C[C@H]4N(CC[C@H]5[C@@H]6CC=C(CO)CC6)C34",
+            "notes": "Lactam reduction to amine and TBS deprotection to alcohol.",
+            "substeps": []
+        }
+    ]
+}

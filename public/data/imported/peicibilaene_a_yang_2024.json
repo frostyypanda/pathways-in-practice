@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "peicibilaene-a-yang-2024",
+        "molecule_name": "Peicibilaene A",
+        "class": "Natural Product",
+        "author": "Yang",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ketalization",
+            "reagents": "PPTS",
+            "reagent_smiles": "O[C@H]([Ph])[C@@H](O)[Ph]",
+            "conditions": "benzene, reflux",
+            "yield": "73%",
+            "reactant_smiles": "O=C1CCC(=O)CC1",
+            "product_smiles": "O=C1CCC2(CC1)O[C@H]([Ph])[C@@H]([Ph])O2",
+            "notes": "Formation of a spiroketal from cyclohexanedione and (1R,2S)-1,2-diphenylethane-1,2-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "TBSOTf, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -10 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1CCC2(CC1)O[C@@H]([Ph])[C@H]([Ph])O2",
+            "product_smiles": "[OTBS]C1=CCC2(CC1)O[C@@H]([Ph])[C@H]([Ph])O2",
+            "notes": "Formation of a TBS enol ether from a spiroketal-protected cyclohexanone using TBSOTf and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX, MPO",
+            "reagent_smiles": "",
+            "conditions": "DMSO",
+            "yield": "79% (2 steps)",
+            "reactant_smiles": "C1(O[C@@H]([Ph])[C@H]([Ph])O1)CC=C([OTBS])CC",
+            "product_smiles": "C1(O[C@@H]([Ph])[C@H]([Ph])O1)CC(=O)C=CC",
+            "notes": "Oxidation of allylic silyl ether to a cyclohexadienone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Conjugate Addition and Acetalization",
+            "reagents": "CuBr.SMe2, BF3.OEt2, HC(OMe)3",
+            "reagent_smiles": "[TMS]C#CCC[Mg]Br",
+            "conditions": "THF, -20 to 0 °C",
+            "yield": "37%",
+            "reactant_smiles": "O=C1CC=C[C@@]2(CC1)O[C@H]([Ph])[C@@H]([Ph])O2",
+            "product_smiles": "[TMS]C#CCC[C@@H]1CC(=O)[C@H](C(OC)OC)C[C@@]2(CC1)O[C@H]([Ph])[C@@H]([Ph])O2",
+            "notes": "Copper-catalyzed 1,4-conjugate addition of a TMS-protected alkyne Grignard reagent to the cyclohexenone, followed by in-situ dimethyl acetal formation at the alpha-carbon to the ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acetal Hydrolysis; Carbonyl Rearrangement",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "74%",
+            "reactant_smiles": "[TMS]C#CC[C@H]1C2(CCC(=O)[C@@H](C(OC)(OC))C1)O[C@H]([Ph])[C@@H]([Ph])O2",
+            "product_smiles": "[TMS]C#CC[C@H]1C2(C(C=O)=C(O)CCC1)O[C@H]([Ph])[C@@H]([Ph])O2",
+            "notes": "Acid-catalyzed hydrolysis of dimethyl acetal to an aldehyde, and transformation of a ketone group into an alpha,beta-unsaturated enol-aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Zinc-mediated Grignard addition and rearrangement",
+            "reagents": "ZnBr2",
+            "reagent_smiles": "[Mg](Br)CC#C[TMS]",
+            "conditions": "THF, -20 °C to rt",
+            "yield": "72%",
+            "reactant_smiles": "[TMS]C#CCC[C@H]1CC2(O[C@H]([Ph])[C@@H]([Ph])O2)C=C(O)C(=O)C1",
+            "product_smiles": "[TMS]C#CCC[C@H]2CC(C3(O[C@H]([Ph])[C@@H]([Ph])O3))C(=O)[C@@H](O)[C@H](CC#C[TMS])2",
+            "notes": "Grignard addition of TMS-protected propargylmagnesium bromide to enol-aldehyde, leading to formal 1,2-addition product, concurrent with tautomerization/oxidation of the enol to a ketone and formation of an additional alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Grignard Addition",
+            "reagents": "LaCl3·LiCl",
+            "reagent_smiles": "C[Mg]Cl",
+            "conditions": "THF, -5 to 0 °C",
+            "yield": "60%",
+            "reactant_smiles": "[TMS]C#CC[C@H]1C(=O)C[C@H](O)[C@@H]2C1(OC3([C@H]([Ph])[C@H]([Ph])O3)O)CC#C[TMS]",
+            "product_smiles": "[TMS]C#CC[C@H]1[C@@](C)(O)C[C@H](O)[C@@H]2C1(OC3([C@H]([Ph])[C@H]([Ph])O3)O)CC#C[TMS]",
+            "notes": "Ketone reduced to tertiary alcohol with methyl group addition.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ketal Hydrolysis / Rearrangement",
+            "reagents": "HCl",
+            "reagent_smiles": "Cl.CO",
+            "conditions": "MeOH, 50 °C",
+            "yield": "62%",
+            "reactant_smiles": "C[C@@]1(O[C@@H]([Ph])[C@@H]([Ph])O2)CC[C@H](CCC#[TMS])[C@H](CCC#[TMS])[C@H](O)[C@H](O)C1",
+            "product_smiles": "C[C@@]1(O)(O)C(=O)CC[C@H](CCC#[TMS])[C@H](CCC#[TMS])C1",
+            "notes": "Acid-catalyzed hydrolysis of a spiroketal (dioxolane) leading to a cyclohexanone containing a geminal diol. The phenyl-substituted dioxolane is cleaved, and a rearrangement occurs to form the ketone and the geminal diol on the adjacent quaternary carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "84%",
+            "reactant_smiles": "O=C1[C@@H](CCC#[TMS])CC[C@](C)(O)[C@H](O)[C@@H](CCC#[TMS])C1",
+            "product_smiles": "O=C1[C@@H](CCC#C)CC[C@](C)(O)[C@H](O)[C@@H](CCC#C)C1",
+            "notes": "Desilylation of two TMS-protected terminal alkynes using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular cyclization / cascade reaction",
+            "reagents": "tBuOK, DMSO",
+            "reagent_smiles": "CC(C)(C)O[K].CS(C)=O",
+            "conditions": "",
+            "yield": "64%",
+            "reactant_smiles": "C#CCC[C@H]1C(=O)CC[C@@](C)(O)[C@H](O)C1CCC#C",
+            "product_smiles": "C[C@@]12CCC=C1[C@H](O)C[C@H]3C(=C)[C@H]4[C@]5(C)[C@H](O)[C@@H]2[C@H](O)C543",
+            "notes": "Intramolecular cyclization of a poly-substituted cyclohexanone containing two propargyl groups and hydroxyls to form the tetracyclic natural product Peicibilaene A.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Selective Hydrogenation",
+            "reagents": "H2, [Ir(COD)(PCy3)(py)]PF6",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "78%",
+            "reactant_smiles": "CC1=CC[C@@]23C(=C)C[C@@H]([C@H]4[C@]3(C[C@@]1([C@]42O)O)O)O",
+            "product_smiles": "CC1=CC[C@@]23[C@@H](C)C[C@@H]([C@H]4[C@]3(C[C@@]1([C@]42O)O)O)O",
+            "notes": "Selective hydrogenation of the exocyclic methylene group (C=CH2) to a methyl group (CH-CH3).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Wolff-Kishner Reduction",
+            "reagents": "NH2NH2, KOH",
+            "reagent_smiles": "",
+            "conditions": "diethyleneglycol, 200 °C",
+            "yield": "69%",
+            "reactant_smiles": "C[C@@H]1C[C@@]23[C@@H](C)C[C@](C[C@@H](O)[C@]4(C)C[C@@H](O)[C@@]34C)([C@H]2C(=O)C=C1)O",
+            "product_smiles": "C[C@@H]1C[C@@]23[C@@H](C)C[C@](C[C@@H](O)[C@]4(C)C[C@@H](O)[C@@]34C)([C@H]2CC=C1)O",
+            "notes": "Wolff-Kishner reduction of a ketone to a methylene group, preserving the double bond and two hydroxyl groups. Stereochemistry is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, 80 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC1=CC[C@@]2(C[C@@H](O)C[C@H]3C)C[C@@H]1C[C@](C)([C@H]3O)C2",
+            "product_smiles": "CC1=CC[C@@]2(C[C@H](C[C@H]3C)C(=O))C[C@@H]1C[C@](C)([C@H]3O)C2",
+            "notes": "Oxidation of a secondary alcohol to a ketone using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reduction (Ketone to Alcohol)",
+            "reagents": "AcOH, MeOH",
+            "reagent_smiles": "[N+](C)(C)(C)[BH](OC(C)=O)(OC(C)=O)OC(C)=O",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "C[C@@H]1C[C@@H]2C[C@H]3C=C(C)C[C@@]14[C@@H]2[C@@H](O)C(=O)C[C@]34O",
+            "product_smiles": "C[C@@H]1C[C@@H]2C[C@H]3C=C(C)C[C@@]14[C@@H]2[C@H](O)[C@@H](O)C[C@]34O",
+            "notes": "Stereoselective reduction of a ketone to a diol using tetramethylammonium triacetoxyborohydride. The ketone at C-10 is reduced to a hydroxyl group, and the original hydroxyl group at C-1 is retained.",
+            "substeps": []
+        }
+    ]
+}

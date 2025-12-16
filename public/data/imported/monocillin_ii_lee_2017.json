@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "monocillin-ii-lee-2017",
+        "molecule_name": "Monocillin II",
+        "class": "Natural Product",
+        "author": "Lee",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "H2, [RuCl2(C6H6)]2, (R)-BINAP",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "97%",
+            "reactant_smiles": "CC(=O)CC(=O)OC",
+            "product_smiles": "C[C@@H](CC(=O)OC)O",
+            "notes": "Asymmetric reduction of a β-keto ester to a β-hydroxy ester using a ruthenium-BINAP catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H](CC(=O)OC)O",
+            "product_smiles": "C[C@H](CC(=O)OC)[OTBDPS]",
+            "notes": "Protection of a secondary alcohol as a tert-butyldiphenylsilyl (TBDPS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction (to aldehyde)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, -95 °C",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H](CC(=O)OC)[OTBDPS]",
+            "product_smiles": "C[C@@H](CC=O)[OTBDPS]",
+            "notes": "Methyl ester reduced to aldehyde using DIBAL-H at low temperature.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Carbocyclization / Olefination",
+            "reagents": "KHMDS",
+            "reagent_smiles": "C=CCCCS(=O)N1C=NN(c2ccccc2)1",
+            "conditions": "DME, -78 to 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@H](CC=O)[OTBDPS]",
+            "product_smiles": "C[C@@H](C[OTBDPS])CCC1C=CC=CC1",
+            "notes": "Aldehyde undergoes a transformation involving a sulfoxide/triazole reagent and a strong base to form a 4-substituted 1,3-cyclohexadiene derivative. Stereochemistry of the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "AcCl, MeOH",
+            "reagent_smiles": "CC(=O)Cl.CO",
+            "conditions": "rt",
+            "yield": "97%",
+            "reactant_smiles": "C1C=CCC=C1CC[C@@H](C)[OTBDPS]",
+            "product_smiles": "C1C=CCC=C1CC[C@@H](C)O",
+            "notes": "Cleavage of the TBDPS ether protecting group to yield the corresponding alcohol. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Macrolactonization / Esterification and Intramolecular C-C Bond Formation",
+            "reagents": "DCM",
+            "reagent_smiles": "[OBn]c1c(C(=O)Cl)cc([OBn])c(CC[N+](=O)[O-])c1",
+            "conditions": "rt",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "C=CCC\\C=C/C[C@H](C)O",
+            "product_smiles": "O=C(O[C@H](C)C[C@H]\\C=C/CC2)c1c([OBn])cc([OBn])c(CC2)c1",
+            "notes": "Esterification of the reactant's alcohol with the reagent's acid chloride, followed by intramolecular cyclization of the reagent's 2-nitroethyl group with the reactant's terminal alkene, forming a 13-membered macrolactone.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Vilsmeier-Haack formylation",
+                    "reagents": "POCl3, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "79%",
+                    "reactant_smiles": "[Bn]OC1=CC(CC[N+](=O)[O-])=CC([OBn])=C1",
+                    "product_smiles": "[Bn]OC1=C(C=O)C([OBn])=CC(CC[N+](=O)[O-])=C1",
+                    "notes": "An aromatic aldehyde group is introduced ortho to one of the benzyloxy groups via Vilsmeier-Haack formylation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Oxidation (Pinnick)",
+                    "reagents": "NaClO2, NaH2PO4, 2-methyl-2-butene",
+                    "reagent_smiles": "",
+                    "conditions": "t-BuOH, MeCN, H2O",
+                    "yield": "88%",
+                    "reactant_smiles": "O=Cc1c(O[Bn])cc(CC[N+](=O)[O-])c(O[Bn])c1",
+                    "product_smiles": "O=C(O)c1c(O[Bn])cc(CC[N+](=O)[O-])c(O[Bn])c1",
+                    "notes": "Oxidation of an aldehyde to a carboxylic acid using sodium chlorite (Pinnick oxidation).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Acyl chloride formation",
+                    "reagents": "SOCl2",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C=C1)COC2=CC(=C(C(=C2)CC[N+](=O)[O-])C(=O)O)OCC3=CC=CC=C3",
+                    "product_smiles": "C1=CC=C(C=C1)COC2=CC(=C(C(=C2)CC[N+](=O)[O-])C(=O)Cl)OCC3=CC=CC=C3",
+                    "notes": "Conversion of a carboxylic acid to its corresponding acyl chloride using thionyl chloride (SOCl2).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular 1,3-Dipolar Cycloaddition",
+            "reagents": "benzene",
+            "reagent_smiles": "O=C=Nc1ccc(Cl)cc1.CCN(CC)CC",
+            "conditions": "reflux",
+            "yield": "80%",
+            "reactant_smiles": "C[C@@H]1OC(=O)c2c([OBn])cc([OBn])c(c2CC[N+](=O)[O-])C1CCC/C=C/CCC/C=C/C",
+            "product_smiles": "C[C@@H]1OC(=O)c2c([OBn])cc([OBn])c(c2CC3=NOC(CC/C=C/CC1)C3)",
+            "notes": "Intramolecular 1,3-dipolar cycloaddition of a nitrone (formed in situ from the nitroalkane) with an alkene, facilitated by p-chlorophenyl isocyanate and triethylamine to form a fused isoxazolidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Cleavage of Isoxazoline",
+            "reagents": "Mo(CO)6",
+            "reagent_smiles": "[Mo](C#O)(C#O)(C#O)(C#O)(C#O)(C#O).CC#N.O",
+            "conditions": "MeCN, H2O, reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1OC(=O)c2c(C3=NOC(CC3)C/C=C/CCCCC1)cc(OCC4=CC=CC=C4)cc2OCC5=CC=CC=C5",
+            "product_smiles": "C[C@@H]1C/C=C/CCCCC(=O)CC2=CC(=CC(=C2C(=O)O1)OCC3=CC=CC=C3)OCC4=CC=CC=C4",
+            "notes": "Reductive cleavage of an isoxazoline ring to a ketone, facilitated by molybdenum hexacarbonyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection (Benzyl ether cleavage)",
+            "reagents": "BCl3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@H]1C/C=C/CC/C=C/C(=O)CC2=C(C(=O)O1)C(O[Bn])=CC(O[Bn])=C2",
+            "product_smiles": "C[C@@H]1C/C=C/CC/C=C/C(=O)CC2=C(C(=O)O1)C(O)=CC(O)=C2",
+            "notes": "Cleavage of two benzyl ethers to hydroxyl groups on a macrolactone using boron trichloride.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "danoprevir-danoprevir-array-unknown-2024",
+        "molecule_name": "Danoprevir (Danoprevir Array)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclopropanation",
+            "reagents": "tBuOK, THF",
+            "reagent_smiles": "BrCC=CCBr.CC(C)(C)O[K]",
+            "conditions": "-78 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CN=C([Ph])[Ph]",
+            "product_smiles": "C=CC1(C(=O)OCC)(N=C([Ph])[Ph])CC1",
+            "notes": "Imine derivative undergoes cyclopropanation with 1,4-dibromo-2-butene to form a spiro-cyclopropane product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Imine Hydrolysis",
+            "reagents": "1N aq. HCl",
+            "reagent_smiles": "",
+            "conditions": "Et2O, rt",
+            "yield": "",
+            "reactant_smiles": "C=CC1CC1(C(=O)OCC)N=C([Ph])[Ph]",
+            "product_smiles": "C=CC1CC1(C(=O)OCC)[NH2]",
+            "notes": "Acid-catalyzed hydrolysis of an imine to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diastereoselective Resolution",
+            "reagents": "D-DBTA",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, reflux to 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC1CC1(C(=O)OCC)N",
+            "product_smiles": "C=C[C@@H]1C[C@@]1(C(=O)OCC)N",
+            "notes": "Resolution of a racemic cyclopropane amino ester through diastereomeric salt formation or crystallization using D-DBTA.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acidic workup / No net transformation",
+            "reagents": "1N HCl",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "11% (4 steps)",
+            "reactant_smiles": "C=C[C@H]1C[C@]1(N)(C(=O)OCC)",
+            "product_smiles": "C=C[C@H]1C[C@]1(N)(C(=O)OCC)",
+            "notes": "The reactant and product structures are identical. This step appears to be an acid treatment (e.g., workup or purification), with no net covalent transformation depicted. The reported yield is a cumulative yield for a 4-step sequence, not specific to this step.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIEA",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1[C@@H](C(=O)O)C[C@@H](O)C1",
+            "conditions": "DMF",
+            "yield": "80%",
+            "reactant_smiles": "C=C[C@@H]1C[C@@]1(C(=O)OCC)N",
+            "product_smiles": "C=C[C@@H]1C[C@@]1(C(=O)OCC)NC(=O)[C@@H]2C[C@H](CN2[Boc])O",
+            "notes": "Amide coupling of an amino ester with N-Boc-cis-4-hydroxy-L-proline.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "99%",
+            "reactant_smiles": "C=C[C@@H]1C[C@@]1(C(=O)OCC)NC(=O)[C@H]2C[C@@H](CN2[Boc])O",
+            "product_smiles": "C=C[C@@H]1C[C@@]1(C(=O)OCC)NC(=O)[C@H]2C[C@@H](CN2)O",
+            "notes": "Boc protecting group is removed from the pyrrolidine nitrogen under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIEA",
+            "reagent_smiles": "C=CCC[C@@H](C(=O)O)NC(=O)OC(C)(C)C",
+            "conditions": "DMF",
+            "yield": "87%",
+            "reactant_smiles": "C=C[C@@H]1C[C@@]1(C(=O)OCC)NC(=O)[C@@H]2C[C@H](CN2)O",
+            "product_smiles": "C=CCC[C@@H](C(=O)N1C[C@@H](C[C@H]1C(=O)N[C@@]2(C[C@H]2C=C)C(=O)OCC)O)NC(=O)OC(C)(C)C",
+            "notes": "Amide bond formation between a Boc-protected amino acid and the secondary amine of a hydroxylated pyrrolidine, which is already linked to a cyclopropyl ethyl ester.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Oxidative Cleavage (Periodate Oxidation)",
+                    "reagents": "NaIO4, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "C=CCCCCC(CO)O",
+                    "product_smiles": "C=CCCCCC=O",
+                    "notes": "Oxidative cleavage of a vicinal diol to an aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Knoevenagel Condensation",
+                    "reagents": "Ac2O, pyridine",
+                    "reagent_smiles": "CCOC(=O)C(C(=O)O)NC(=O)C",
+                    "conditions": "",
+                    "yield": "49%",
+                    "reactant_smiles": "C=CCCCCC=O",
+                    "product_smiles": "C=CCCCC/C=C(/C(=O)OCC)\\NC(=O)C",
+                    "notes": "Aldehyde undergoes Knoevenagel condensation with N-acetylaminomalonic acid monoethyl ester, followed by decarboxylation and elimination to form a substituted alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Asymmetric Hydrogenation",
+                    "reagents": "[(COD)Rh((S,S)-Et-DUPHOS)]OTf, H2",
+                    "reagent_smiles": "",
+                    "conditions": "30 psi, EtOH",
+                    "yield": "99%",
+                    "reactant_smiles": "C=CCCC/C=C(C(=O)OCC)NC(=O)C",
+                    "product_smiles": "C=CCCCC[C@H](C(=O)OCC)NC(=O)C",
+                    "notes": "Asymmetric hydrogenation of an alpha-acylaminoacrylate, forming a chiral amino ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "N-Boc protection",
+                    "reagents": "Boc2O, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "C=CCCCCC[C@@H](C(=O)OCC)N[Ac]",
+                    "product_smiles": "C=CCCCCC[C@@H](C(=O)OCC)N[Boc]",
+                    "notes": "Exchange of N-acetyl protecting group for N-Boc protection.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "LiOH, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "83% (2 steps)",
+                    "reactant_smiles": "C=CCCCCCC[C@@H](C(=O)OCC)[NHBoc]",
+                    "product_smiles": "C=CCCCCCC[C@@H](C(=O)O)[NHBoc]",
+                    "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using lithium hydroxide and water, retaining the N-Boc protecting group and alkene.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Hoveyda-Grubbs II",
+            "reagent_smiles": "",
+            "conditions": "DCE, 50 °C",
+            "yield": "52%",
+            "reactant_smiles": "C=CCCCCC[C@@H](C(=O)N1C[C@@H](C[C@H]1C(=O)N[C@@]2(C[C@H]2C=C)C(=O)OCC)O)[Boc]",
+            "product_smiles": "CCOC(=O)[C@]12C[C@H]2/C=C\\CCCCC[C@@H](C(=O)N3C[C@@H](C[C@H]3C(=O)N1)O)[Boc]",
+            "notes": "Intramolecular ring-closing metathesis of a diene to form a macrocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Carbamate Formation",
+            "reagents": "CDI, 4-fluoroisoindoline",
+            "reagent_smiles": "",
+            "conditions": "DCM, 25 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@]12C[C@H]2/C=C\\CCCCC[C@@H](C(=O)N3C[C@@H](C[C@H]3C(=O)N1)O)N[Boc]",
+            "product_smiles": "CCOC(=O)[C@]12C[C@H]2/C=C\\CCCCC[C@@H](C(=O)N3C[C@@H](C[C@H]3C(=O)N1)OC(=O)N4CC5=C(C4)C(=CC=C5)F)N[Boc]",
+            "notes": "Hydroxyl group on pyrrolidine converted to a carbamate with 4-fluoroisoindoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH•H₂O, THF/MeOH/H₂O",
+            "reagent_smiles": "",
+            "conditions": "THF/MeOH/H₂O",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@]12C[C@H]2/C=C\\CCCCC[C@@H](C(=O)N3C[C@@H](C[C@H]3C(=O)N1)OC(=O)N4CC5=CC=CC(=C5C4)F)N[Boc]",
+            "product_smiles": "[Boc]N[C@@H]1CCCCC/C=C\\[C@@H]2C[C@@]2(C(=O)O)NC(=O)[C@H]3C[C@@H](CN3C1=O)OC(=O)N4CC5=C(C4)C(=CC=C5)F",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using lithium hydroxide monohydrate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amide/Sulfonamide Formation (Coupling)",
+            "reagents": "CDI, DBU",
+            "reagent_smiles": "C1CC1S(=O)(=O)N",
+            "conditions": "DCE, 50 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H]1CCCC/C=C\\[C@H](C(=O)N[C@@H](C2CC2)C(=O)O)N4C(=O)O[C@@H]5C[C@H](N5C(=O)N6C7=CC=CC(F)=C7CC6)[C@H]14",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H]1CCCC/C=C\\[C@H](C(=O)N[C@@H](C2CC2)C(=O)NS(=O)(=O)C8CC8)N4C(=O)O[C@@H]5C[C@H](N5C(=O)N6C7=CC=CC(F)=C7CC6)[C@H]14",
+            "notes": "A carboxylic acid is coupled with cyclopropylsulfonamide using CDI and DBU to form a sulfonamide.",
+            "substeps": []
+        }
+    ]
+}

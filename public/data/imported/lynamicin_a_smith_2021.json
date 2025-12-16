@@ -1,0 +1,97 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lynamicin-a-smith-2021",
+        "molecule_name": "Lynamicin A",
+        "class": "Natural Product",
+        "author": "Smith",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Direct C-H Functionalization / Carboxylation",
+            "reagents": "Fe(acac)3",
+            "reagent_smiles": "",
+            "conditions": "cat. CCl4, MeOH, 115 °C",
+            "yield": "82%",
+            "reactant_smiles": "COC(=O)C1=CC=CN1",
+            "product_smiles": "COC(=O)C1=CC=C(C(=O)OC)N1",
+            "notes": "Oxidative C-H functionalization of pyrrole 2-carboxylate to form pyrrole 2,4-dicarboxylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "Br2, H2O",
+            "reagent_smiles": "Br2.O",
+            "conditions": "0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)C1=CC=C(C(=O)OC)N1",
+            "product_smiles": "COC(=O)C1=C(Br)C(Br)=C(C(=O)OC)N1",
+            "notes": "Dibromination of pyrrole at the 3 and 4 positions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd(OAc)2, SPhos, K2CO3",
+            "reagent_smiles": "[Boc]N1C([B]2OC(C)(C)C(C)(C)O2)=Cc3c1cc(Cl)cc3",
+            "conditions": "THF, H2O, 60 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=C(C(=C(C(=O)OC)N1)Br)Br",
+            "product_smiles": "[Boc]N1C=C(C2=C1C=C(Cl)C=C2)C3=C(C(=O)OC)NC(=C3C4=CN([Boc])C=C(C5=C4C=C(Cl)C=C5))C(=O)OC",
+            "notes": "Double Suzuki coupling of dibromopyrrole with N-Boc-5-chloro-2-Bpin-indole.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "N-Protection",
+                    "reagents": "Boc₂O, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "THF, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=CN2)C=C1Cl",
+                    "product_smiles": "[Boc]N1C=CC2=C1C=CC(=C2)Cl",
+                    "notes": "N-protection of 5-chloro-1H-indole with di-tert-butyl dicarbonate (Boc₂O).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "C-H Borylation / Boronoation",
+                    "reagents": "B2pin2, [Ir(COD)Cl]2, Me4Phen",
+                    "reagent_smiles": "",
+                    "conditions": "2-Me THF, 80 °C",
+                    "yield": "93% (2 steps)",
+                    "reactant_smiles": "[Boc]N1C=CC2=C1C=CC(=C2)Cl",
+                    "product_smiles": "[Boc]N1C=C(B2OC(C)(C)C(C)(C)O2)C3=C1C=CC(=C3)Cl",
+                    "notes": "C3-H borylation of N-Boc-5-chloroindole using bis(pinacolato)diboron (B2pin2) and an iridium catalyst ([Ir(COD)Cl]2) with Me4Phen ligand.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection (Boc)",
+            "reagents": "NaOMe, MeOH, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "[Boc]N1C=C(C2=C1C=CC(=C2)Cl)C3=C(C(=O)OC)NC(=C3C4=CN([Boc])C5=C4C=C(C=C5)Cl)C(=O)OC",
+            "product_smiles": "COC(=O)C1=C(C2=CNC3=C2C=C(C=C3)Cl)C(=C(C(=O)OC)N1)C4=CNC5=C4C=C(C=C5)Cl",
+            "notes": "Deprotection of two Boc groups on the indole nitrogens using NaOMe/MeOH/THF. The central pyrrole N-H remains.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "KOH, H2O, MeOH",
+            "reagent_smiles": "",
+            "conditions": "heat",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=C(C2=CNC3=C2C=C(C=C3)Cl)C(=C(C(=O)OC)N1)C4=CNC5=C4C=C(C=C5)Cl",
+            "product_smiles": "COC(=O)C1=C(C2=CNC3=C2C=C(C=C3)Cl)C(=C(C(=O)O)N1)C4=CNC5=C4C=C(C=C5)Cl",
+            "notes": "Selective hydrolysis of one methyl ester group to a carboxylic acid group.",
+            "substeps": []
+        }
+    ]
+}

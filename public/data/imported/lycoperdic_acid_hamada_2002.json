@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycoperdic-acid-hamada-2002",
+        "molecule_name": "Lycoperdic acid",
+        "class": "Natural Product",
+        "author": "Hamada",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA",
+            "reagent_smiles": "C=CCBr",
+            "conditions": "-78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@@H]2N3[C@@H](CCC3=O)CO2",
+            "product_smiles": "C1=CC=C(C=C1)[C@@H]2N3[C@@H](C[C@@H](CC=C)C3=O)CO2",
+            "notes": "Alpha-alkylation of lactam with allyl bromide via LDA deprotonation, forming a new stereocenter with preserved existing stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation",
+            "reagents": "LDA, MoOPh",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "77%",
+            "reactant_smiles": "C=CCC1C[C@H]2CO[C@H](C3=CC=CC=C3)N2C1=O",
+            "product_smiles": "C=CC[C@@]1(C[C@H]2CO[C@H](C3=CC=CC=C3)N2C1=O)O",
+            "notes": "Alpha-hydroxylation of a lactam with LDA and MoOPh.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "THF, NaOH",
+            "reagent_smiles": "B.OO",
+            "conditions": "0°C to rt",
+            "yield": "85%",
+            "reactant_smiles": "C=CC[C@@]1(C[C@H]2CO[C@H](C3=CC=CC=C3)N2C1=O)O",
+            "product_smiles": "C1=CC=C(C=C1)[C@H]2N3[C@H](C[C@@](CCCO)(C3=O)O)CO2",
+            "notes": "Conversion of an allyl alcohol to a diol via hydroboration-oxidation, specifically the alkene is converted to a primary alcohol. Existing stereocenters are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Jones oxidation",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "acetone, -15 °C",
+            "yield": "67%",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@@H]2N3[C@@H](C[C@@](CCCO)(C3=O)O)CO2",
+            "product_smiles": "C1=CC=C(C=C1)[C@@H]2N3[C@@H](C[C@@]4(CCC(=O)O4)C3=O)CO2",
+            "notes": "A Jones oxidation converts the primary alcohol (at the end of the chain) and the secondary alcohol (on the quaternary carbon) into a gamma-lactone. The primary alcohol is oxidized to a carboxylic acid, which then cyclizes with the adjacent secondary alcohol, forming a five-membered lactone ring. All existing stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Cleavage / Ring Opening",
+            "reagents": "RuCl3, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "CH3CN, CCl4, H2O",
+            "yield": "80%",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@@H]2N3[C@@H](C[C@]4(CCC(=O)O4)C3=O)CO2",
+            "product_smiles": "C1=CC=C(C=C1)C(=O)OC(=O)[C@@H]2C[C@@]3(CCC(=O)O3)C(=O)N2",
+            "notes": "Oxidative cleavage of the N-C(Ph) bond and the C-O ether bond, accompanied by ring opening and subsequent formation of a mixed anhydride via oxidation of the carbon formerly bearing the phenyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "64%",
+            "reactant_smiles": "O=C1OC[C@@H]2[C@]13CC(=O)N(C(=O)Oc4ccccc4)[C@H](C2)C3",
+            "product_smiles": "O=C1OC[C@@H]2[C@]1(C[C@H](N)C(=O)O)(C(=O)O)CC2",
+            "notes": "Acid hydrolysis of N-phenylcarbamate and lactam ring, yielding a primary amine and two carboxylic acid groups.",
+            "substeps": []
+        }
+    ]
+}

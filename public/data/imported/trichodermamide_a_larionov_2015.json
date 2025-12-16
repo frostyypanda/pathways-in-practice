@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "trichodermamide-a-larionov-2015",
+        "molecule_name": "Trichodermamide A",
+        "class": "Natural Product",
+        "author": "Larionov",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxime formation",
+            "reagents": "NH2OH",
+            "reagent_smiles": "NO",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "CCOC(=O)C(=O)C",
+            "product_smiles": "CCOC(=O)C(=NO)C",
+            "notes": "Formation of ethyl 2-(hydroxyimino)propanoate (ethyl pyruvate oxime) from ethyl pyruvate and hydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silylation",
+            "reagents": "TBDMSCI, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "CCOC(=O)C(=NO)C",
+            "product_smiles": "CCOC(=O)C(=N[OTBS])C",
+            "notes": "Silylation of an oxime with TBDMSCl to form a silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization",
+            "reagents": "LiTMP",
+            "reagent_smiles": "C1=CC(=O)C=CC1=O",
+            "conditions": "THF, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "CCOC(=O)/C(=N/O[Si](C)(C)C(C)(C)C)/C",
+            "product_smiles": "CCOC(=O)C1=NOC2[C@@H](C3CC(=O)C=C[C@H]3)[C@]12(O)",
+            "notes": "Formation of a fused bicyclic system from an oxime and p-benzoquinone via cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "KBH4, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "90%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@H]2CC(=O)C=C[C@]2(C1)O",
+            "product_smiles": "CCOC(=O)C1=NO[C@H]2C[C@H](O)C=C[C@]2(C1)O",
+            "notes": "Ketone reduced to secondary alcohol with inversion of stereochemistry at the newly formed chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Esterification (Carbonate Formation)",
+            "reagents": "pyridine",
+            "reagent_smiles": "CCOC(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=NOC2[C@H]1C[C@@H](O)C=C[C@]2(O)",
+            "product_smiles": "CCOC(=O)C1=NOC2[C@H]1C[C@@H](OC(=O)OCC)C=C[C@]2(O)",
+            "notes": "Secondary alcohol is esterified with ethyl chloroformate to form an ethyl carbonate. Tertiary alcohol remains unaffected. Stereochemistry is retained at the secondary alcohol carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Aromatization / Elimination",
+            "reagents": "Pd(PPh3)4, BTSA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@@H]2C[C@H](C=C[C@]2(C1)O)OC(=O)OCC",
+            "product_smiles": "CCOC(=O)C1=NO[C@@H]2C=CC=C[C@]2(C1)O",
+            "notes": "Palladium-catalyzed aromatization of cyclohexene ring with elimination of ethyl carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Epoxidation / Dearomatization",
+            "reagents": "Acetonitrile",
+            "reagent_smiles": "CC(C)(C)c1cc(C(C)(C)C)c([O-])c(C=N[C@@H]2CCCC[C@H]2N=Cc3c([O-])c(C(C)(C)C)cc(C(C)(C)C)c3)c1.[Cl-].[Mn+3].O=IC1=CC=CC=C1",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "CCOC(=O)C1=NC[C@@H](O)[C@H]2Oc3ccccc321",
+            "product_smiles": "CCOC(=O)C1=NOC[C@@H]2O[C@H]2[C@H]3C=CCC[C@H]31",
+            "notes": "Intramolecular epoxidation of the alkene formed from dearomatization, catalyzed by a Mn(III)-Salen-like complex.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Epoxide Opening / Selenylation",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "c1ccccc1[SeH]",
+            "conditions": "0 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCOC(=O)C1=NOC([C@@H]2)CC([C@](O)1)C=C[C@@H]3O[C@H]3C2",
+            "product_smiles": "CCOC(=O)C1=NOC([C@@H]2)CC([C@](O)1)C=C[C@H]([Se]c3ccccc3)[C@@H](O)C2",
+            "notes": "Nucleophilic opening of the epoxide by phenylselenol (PhSeH), leading to the formation of a new hydroxyl group and phenylselenyl substituent with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "TMSONa, MsOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@@H]2[C@@H]([C@H](C=C[C@]2(C1)O)[Se]c3ccccc3)O",
+            "product_smiles": "O=C(O)C1=NO[C@@H]2[C@@H]([C@H](C=C[C@]2(C1)O)[Se]c3ccccc3)O",
+            "notes": "Ester hydrolysis of an ethyl ester to a carboxylic acid, preserving the bicyclic system, all stereocenters, the phenylselenide group, and hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU",
+            "reagent_smiles": "COC1=C(OC)C=C2C(=O)OC=C(N)C2=C1",
+            "conditions": "DMF",
+            "yield": "94%",
+            "reactant_smiles": "O=C(O)C1=NOC2[C@H](C=C[C@@H](O)[C@H]([Se]c3ccccc3)[C@@]21O)",
+            "product_smiles": "O=C1OC2=CC(OC)=C(OC)C=C2C=C1NC(=O)C3=NOC4[C@H](C=C[C@@H](O)[C@H]([Se]c5ccccc5)[C@@]43O)",
+            "notes": "Amide coupling of a carboxylic acid with an amine, forming the product Trichodermamide A. The yield of 94% is indicated as an overall yield over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Selenoxide Elimination",
+            "reagents": "H2O2, pyridine",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "90%",
+            "reactant_smiles": "COc1cc2c(cc1OC)OC(=O)C(=C2)NC(=O)C[C@@]1(O)C(=NO[C@H]2[C@@H](O)C=C[C@@H]([Se]c3ccccc3)[C@H](O)C1)",
+            "product_smiles": "COc1cc2c(cc1OC)OC(=O)C(=C2)NC(=O)C[C@@]1(O)C(=NO[C@H]2[C@@H](O)C=CC=C(O)C1)",
+            "notes": "Oxidation of selenide to selenoxide, followed by syn-elimination to form a new alkene and remove the phenylselenyl group. The new double bond forms between the carbon that held the PhSe group and the adjacent carbon that held one of the hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

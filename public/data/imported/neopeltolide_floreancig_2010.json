@@ -1,0 +1,291 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "neopeltolide-floreancig-2010",
+        "molecule_name": "Neopeltolide",
+        "class": "Natural Product",
+        "author": "Floreancig",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Carboalumination-Iodination / Stereoselective Vinyl Iodide Synthesis",
+            "reagents": "Red-Al, I2",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "100%",
+            "reactant_smiles": "CC#CCO",
+            "product_smiles": "IC(C)=C\\CO",
+            "notes": "Conversion of a terminal alkyne alcohol to an E-configured vinyl iodide alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Imidate formation",
+            "reagents": "NaH, Cl3CCN, Et2O",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "96%",
+            "reactant_smiles": "I/C(C)=C/CO",
+            "product_smiles": "I/C(C)=C/COC(=N)C(Cl)(Cl)Cl",
+            "notes": "Addition of alcohol to trichloroacetonitrile to form an O-imidate, retaining alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Overman Rearrangement",
+            "reagents": "TfOH",
+            "reagent_smiles": "CCOC(=O)C[C@@H](O)CC#C[Si](C)(C)C",
+            "conditions": "cyclohexane",
+            "yield": "77%",
+            "reactant_smiles": "CC(=CCOC(=N)C(Cl)(Cl)Cl)I",
+            "product_smiles": "CCOC(=O)C[C@@H](CC#C[Si](C)(C)C)OC/C=C(/C)\\I",
+            "notes": "Stereospecific Overman rearrangement of a vinyl iodide imidate and an alcohol to form a chiral allylic ether.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Epoxidation",
+                    "reagents": "m-CPBA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "70%",
+                    "reactant_smiles": "C=CCC(=O)OCC",
+                    "product_smiles": "CCOC(=O)CC1CO1",
+                    "notes": "Epoxidation of an alkene to form an epoxide using m-CPBA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Asymmetric Hydrolytic Kinetic Resolution (HKR)",
+                    "reagents": "H2O, AcOH",
+                    "reagent_smiles": "CC(C)(C)C1=CC2=C(C(=C1)C(C)(C)C)O[Co]3N(C=C4C=C(C=C(C4O3)C(C)(C)C)C(C)(C)C)[C@H]5CCCC[C@@H]5N=C2",
+                    "conditions": "",
+                    "yield": "44%",
+                    "reactant_smiles": "CCOC(=O)CC1CO1",
+                    "product_smiles": "CCOC(=O)C[C@H]1CO1",
+                    "notes": "Asymmetric hydrolytic kinetic resolution of a racemic terminal epoxide, catalyzed by a chiral cobalt-salen complex, yielding the (R)-epoxide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Epoxide Ring Opening / Acetylide Addition",
+                    "reagents": "toluene",
+                    "reagent_smiles": "[Li]C#C[TMS].Cl[Al](CC)CC",
+                    "conditions": "",
+                    "yield": "85%",
+                    "reactant_smiles": "CCOC(=O)C[C@@H]1CO1",
+                    "product_smiles": "CCOC(=O)C[C@@H](CC#C[TMS])O",
+                    "notes": "Nucleophilic ring opening of an (R)-epoxide by lithium trimethylsilylacetylide, mediated by diethylaluminum chloride, to form an (R)-alcohol. The stereochemistry at the chiral center is retained because the attack occurs at the less substituted carbon of the epoxide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sonogashira Coupling",
+            "reagents": "(Ph3P)2PdCl2, CuI",
+            "reagent_smiles": "C#CCC[C@@H](CCC)O[SiH](C(C)C)C(C)C.CN(C(C)C)C(C)C",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CCOC(=O)C[C@@H](CC#C[Si](C)(C)C)OC/C=C(\\C)I",
+            "product_smiles": "[SiH](C(C)C)C(C)C O[C@@H](CCC)CC#C/C=C(\\C)CO[C@@H](CC#C[Si](C)(C)C)CC(=O)OCC",
+            "notes": "Sonogashira coupling of an iodo-alkene with a terminal alkyne, forming a new C-C triple bond and maintaining the alkene's Z-geometry. Both chiral centers retain their configuration.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Kinetic Resolution",
+                    "reagents": "H2O, AcOH",
+                    "reagent_smiles": "CC(C)(C)c1cc(C(C)(C)C)=C(O[Co]2N=C[C@H]3CCCC[C@@H]3N=Cc4cc(C(C)(C)C)=C(O2)C(C(C)(C)C)=C4)C(C)(C)C",
+                    "conditions": "",
+                    "yield": "47%",
+                    "reactant_smiles": "CCCC1CO1",
+                    "product_smiles": "CCC[C@@H]1CO1",
+                    "notes": "Kinetic resolution of 1,2-epoxypentane using Jacobsen's catalyst to selectively yield the (S)-enantiomer.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Epoxide Ring Opening / Nucleophilic Addition",
+                    "reagents": "EDA·LiCCH",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "71%",
+                    "reactant_smiles": "CCC[C@H]1CO1",
+                    "product_smiles": "CCC[C@@H](CC#C)O",
+                    "notes": "Nucleophilic ring opening of an epoxide by lithium acetylide. The chiral center configuration is inverted during the transformation (R reactant -> S product).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Silyl Ether Formation",
+                    "reagents": "imidazole",
+                    "reagent_smiles": "Cl[SiH](C(C)C)C(C)C",
+                    "conditions": "",
+                    "yield": "77%",
+                    "reactant_smiles": "CCC[C@@H](CC#C)O",
+                    "product_smiles": "C#CC[C@@H](CCC)O[SiH](C(C)C)C(C)C",
+                    "notes": "Protection of a chiral secondary alcohol as a diisopropylsilyl ether. The configuration of the chiral center is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Hydrosilylation / Cyclization",
+            "reagents": "Pt",
+            "reagent_smiles": "C=C[Si](C)(C)O[Si](C)(C)C=C",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@@H](CC#C[Si](C)(C)C)OC\\C=C(/C)C#CC[C@H](CCC)O[SiH](C(C)C)C(C)C",
+            "product_smiles": "CCOC(=O)C[C@@H](CC#C[Si](C)(C)C)OC\\C=C(/C)C[CH2]1[C@H](CCC)O[Si](C(C)C)(C(C)C)C(=C)C1",
+            "notes": "Intramolecular hydrosilylation of the terminal alkyne with a diisopropylsilyl hydride (Si-H) to form a 6-membered oxa-silacycle containing an exocyclic methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Desilylation, Oxidative Cleavage",
+            "reagents": "TBAF, KF, K2CO3, H2O2",
+            "reagent_smiles": "",
+            "conditions": "THF, DMF, 40 °C",
+            "yield": "57%",
+            "reactant_smiles": "CCOC(=O)C[C@@H](CC#C[Si](C)(C)C)OC/C=C(/C)C/C=C/1C[C@H](CCC)O[Si]1(C(C)C)C(C)C",
+            "product_smiles": "CCOC(=O)C[C@@H](CC#C)OC/C=C(\\C)C(=O)C[C@@H](O)C[C@H](CCC)O",
+            "notes": "Desilylation of TIPS and TMS protecting groups, followed by oxidative cleavage of the cyclic silyl enol ether to form a ketone and a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "SmI2-mediated reductive cyclization and esterification",
+            "reagents": "SmI2, EtCHO",
+            "reagent_smiles": "[Sm](I)I.CCC=O",
+            "conditions": "THF",
+            "yield": "77%",
+            "reactant_smiles": "CCC[C@@H](CC(=O)C/C(=C\\CO[C@H](CC#C)CC(=O)OCC)/C)O",
+            "product_smiles": "CCC[C@@H](OC(=O)CC)C[C@@H](O)1C[C@@H](C)CC(O1)[C@@H](CC#C)CC(=O)OCC",
+            "notes": "Intramolecular cyclization involving the reduction of a ketone to an alcohol, conversion of an alkene into a cyclic tetrahydropyran ether, and esterification of the primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "O-Methylation",
+            "reagents": "Me3OBF4, proton sponge",
+            "reagent_smiles": "C[O+](C)C.[BF4-].CN(C)C1=CC=CC2=C(C=CC=C12)N(C)C",
+            "conditions": "DCM",
+            "yield": "93%",
+            "reactant_smiles": "O=C(OCC)C[C@H](CC#C)O[C@@H]1C/C=C(/C)C[C@H](O)CC[C@H](CCC)OC(=O)CC1",
+            "product_smiles": "O=C(OCC)C[C@H](CC#C)O[C@@H]1C/C=C(/C)C[C@H](OC)CC[C@H](CCC)OC(=O)CC1",
+            "notes": "Methylation of a secondary alcohol within a macrocyclic ether using trimethyl oxonium tetrafluoroborate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH, H2O, 45 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1O[C@@H](CCC)(OC(=O)CC)CH2[C@H](OC)CH2C(/C(C))=C\\C[C@H](CC#C)O1",
+            "product_smiles": "O=C1O[C@@H](CCC)(O)CH2[C@H](OC)CH2C(/C(C))=C\\C[C@H](CC#C)O1",
+            "notes": "Basic hydrolysis of a propionate ester on a macrolactone",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Macrolactonization",
+            "reagents": "Et3N, THF, DMAP",
+            "reagent_smiles": "",
+            "conditions": "toluene, 65 °C",
+            "yield": "71%",
+            "reactant_smiles": "CC[C@@H](O)C[C@H](OC)C/C(=C\\CO[C@H](CC#C)CC(=O)OCC)/C",
+            "product_smiles": "CC[C@@H]1OC(=O)C[C@H](CC#C)OC/C=C(\\C)C[C@H](OC)C[C@@H]1",
+            "notes": "Intramolecular lactonization to form a 12-membered macrolactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ruthenium-catalyzed Hydroacetoxylation / Alkyne to Vinyl Acetate",
+            "reagents": "(p-cymeneRuCl2)2, AcOH, Na2CO3",
+            "reagent_smiles": "C1=COC(=C1)P(C2=CC=CO2)C3=CC=CO3",
+            "conditions": "toluene, 80 °C",
+            "yield": "82%",
+            "reactant_smiles": "O=C1OC[C@H](CC)C[C@@H](OC)C/C(C)=C/CO[C@H](CC#C)CC1",
+            "product_smiles": "O=C1OC[C@H](CC)C[C@@H](OC)C/C(C)=C/CO[C@H](CC(=C)OC(=O)C)CC1",
+            "notes": "Conversion of a terminal alkyne to a vinyl acetate via ruthenium catalysis in a macrolactone framework.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "DDQ, LiClO4, 4A MS, 1,2-DCE",
+            "reagent_smiles": "C1=CC(=NC(=C1)CCl)CCl",
+            "conditions": "1,2-DCE",
+            "yield": "57%",
+            "reactant_smiles": "CCC[C@H]1OC(=O)C[C@@H](C(C=C)OC(=O)C)OC[C@H](OC)C/C=C(/C)C[C@H]1",
+            "product_smiles": "CCC[C@H]1OC(=O)C[C@@H]2CC(=O)C[C@H](O2)C[C@H](OC)C/C=C(/C)C[C@H]1O",
+            "notes": "Intramolecular oxidative cyclization of a vinyl acetate side chain to form a fused tetrahydropyranone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "Pd/C",
+            "reagent_smiles": "[H][H].[Pd]",
+            "conditions": "EtOH",
+            "yield": "74%",
+            "reactant_smiles": "CCC[C@@H]1C[C@H](OC)C/C(C)=C/[C@H](C(=O)O[C@H](CC(=O)OC)C[C@@H]1)",
+            "product_smiles": "CCC[C@@H]1C[C@H](OC)C[C@@H](C)C[C@H](C(=O)O[C@H](CC(=O)OC)C[C@@H]1)",
+            "notes": "Hydrogenation of a trisubstituted Z-alkene in a macrocycle to a saturated alkane.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCC[C@H]1C[C@@H](OC)C[C@H](C)C[C@@H]2C[C@H](OC(=O)C[C@H](C1)OC2=O)C",
+            "product_smiles": "CCC[C@H]1C[C@@H](OC)C[C@H](C)C[C@@H]2C[C@H](OC(=O)C[C@H](C1)O[C@H]2O)C",
+            "notes": "Reduction of a ketone to a secondary alcohol using sodium borohydride. The product is Neopeltolide.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Mitsunobu Esterification",
+            "reagents": "DIAD, PPh3",
+            "reagent_smiles": "COC(=O)Nc1cnoc1CC/C=C\\C(=O)O",
+            "conditions": "benzene",
+            "yield": "93%",
+            "reactant_smiles": "CCC[C@@H](C[C@H](OC)[C@@H](C)C[C@@H]1C(=O)O[C@@H](C[C@@H](O)C[C@@H](C)C1)C",
+            "product_smiles": "CCC[C@@H](C[C@H](OC)[C@@H](C)C[C@@H]1C(=O)O[C@@H](C[C@H](OC(=O)C/C=C\\CCC2=COC(=N2)NC(=O)OC)C[C@@H](C)C1)C",
+            "notes": "Mitsunobu esterification of a macrolactone alcohol to synthesize Neopeltolide. Inversion of stereochemistry observed at the alcohol center.",
+            "substeps": [
+                {
+                    "step_id": "15.1",
+                    "reaction_type": "Oxidation",
+                    "reagents": "DMP",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 22 °C",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)NC/C=C/C(=O)N[C@H](CC/C=C/C(=O)O)CO",
+                    "product_smiles": "COC(=O)NC/C=C/C(=O)N[C@H](CC/C=C/C(=O)O)C=O",
+                    "notes": "Oxidation of primary alcohol to aldehyde using Dess-Martin Periodinane (DMP).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.2",
+                    "reaction_type": "Heterocycle Formation",
+                    "reagents": "Ph3PI2, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)NC/C=C\\C(=O)N[C@H](CC/C=C\\C(=O)O)C=O",
+                    "product_smiles": "COC(=O)NC/C=C\\C1=NC(=CO1)CC/C=C\\C(=O)O",
+                    "notes": "Formation of a 1,3-oxazole ring from an amide and an aldehyde, with loss of water.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "equils-apixaban-bms-pfizer-unknown-2024",
+        "molecule_name": "Equils (Apixaban BMS-Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide formation",
+            "reagents": "Et3N",
+            "reagent_smiles": "BrCCCC(=O)Cl",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "Nc1ccc(I)cc1",
+            "product_smiles": "BrCCCC(=O)Nc1ccc(I)cc1",
+            "notes": "Amide formation by reaction of 4-iodoaniline with 5-bromopentanoyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular N-alkylation (Lactam formation)",
+            "reagents": "tBuOK",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "49%",
+            "reactant_smiles": "C(CCBr)CC(=O)NC1=CC=C(C=C1)I",
+            "product_smiles": "I-c1ccc(N2C(=O)CCCC2)cc1",
+            "notes": "Intramolecular cyclization of an N-aryl-bromoalkyl amide to form a 6-membered lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Halogenation",
+            "reagents": "PCl5",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "87%",
+            "reactant_smiles": "C1CCN(C2=CC=C(C=C2)I)C(=O)C1",
+            "product_smiles": "C1CC(C(=O)N(C1)C2=CC=C(C=C2)I)(Cl)Cl",
+            "notes": "Alpha-dichlorination of a lactam with phosphorus pentachloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution (Amination)",
+            "reagents": "",
+            "reagent_smiles": "C1COCCN1",
+            "conditions": "130 °C",
+            "yield": "86%",
+            "reactant_smiles": "C1CC(C(=O)N(C1)C2=CC=C(C=C2)I)(Cl)Cl",
+            "product_smiles": "C1CC(C(=O)N(C1)C2=CC=C(C=C2)I)N3CCOCC3",
+            "notes": "Morpholine reacts with the gem-dichloro lactam, replacing the two chlorine atoms with a morpholino group on the alpha-carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ullmann coupling",
+            "reagents": "Cu(PPh3)3Br, Cs2CO3",
+            "reagent_smiles": "C1CCNC(=O)C1",
+            "conditions": "toluene",
+            "yield": "77%",
+            "reactant_smiles": "C1CC(C(=O)N(C1)C2=CC=C(C=C2)I)N3CCOCC3",
+            "product_smiles": "C1CCN(C2=CC=C(C=C2)N3CCCC(C3=O)N4CCOCC4)C(=O)C1",
+            "notes": "Ullmann coupling between an iodoaryl substrate and piperidin-2-one (delta-valerolactam).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cyclization",
+            "reagents": "Et3N",
+            "reagent_smiles": "[Cl]/C(=N/NC1=CC=C(OC)C=C1)/C(=O)OCC",
+            "conditions": "EtOAc, Then HCl",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "O=C1N(C2=CC=C(C=C2)N3C(=O)[C@H](N4CCOCC4)CCC3)CCC1",
+            "product_smiles": "CCOC(=O)C1=NN(C2=CC=C(C=C2)OC)C3=C1CCN(C4=CC=C(C=C4)N5CCCCC5=O)C3=O",
+            "notes": "Reactant undergoes cyclization with ethyl 2-chloro-2-((4-methoxyphenyl)hydrazono)acetate to form a pyrazolo[1,5-a]pyrimidine system. The morpholino group from the reactant is eliminated during the reaction.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Diazotization",
+                    "reagents": "NaNO₂, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "COC1=CC=C(N)C=C1",
+                    "product_smiles": "COC1=CC=C([N+]#N)C=C1",
+                    "notes": "Conversion of an aromatic primary amine to a diazonium salt.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Hydrazone formation",
+                    "reagents": "NaOAc",
+                    "reagent_smiles": "CCOC(=O)C(C(=O)C)Cl",
+                    "conditions": "EtOH, H2O",
+                    "yield": "60% (2 steps)",
+                    "reactant_smiles": "COC1=CC=C(C=C1)[N+]#N",
+                    "product_smiles": "CCOC(=O)/C(=N/NC1=CC=C(C=C1)OC)/Cl",
+                    "notes": "Diazonium salt reacts with ethyl 2-chloro-3-oxobutanoate to form an arylhydrazone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amidation",
+            "reagents": "HCONH2, MeONa",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "71%",
+            "reactant_smiles": "CCOC(=O)C1=NN(C2=CC=CC=C2)C3=C1CCN(C4=CC=C(C=C4)N5CCCCC5=O)C3=O",
+            "product_smiles": "COC1=CC=C(C=C1)N2N=C(C(=O)N)C3=C2CCN(C4=CC=C(C=C4)N5CCCCC5=O)C3=O",
+            "notes": "Conversion of an ethyl ester to a primary amide (Apixaban). Note a discrepancy: The reactant structure in the screenshot shows a plain phenyl group on the pyrazole nitrogen, while the product structure shows a p-methoxyphenyl group at the same position. This apparent methoxylation is not indicated by the provided reagents (HCONH2, MeONa).",
+            "substeps": []
+        }
+    ]
+}

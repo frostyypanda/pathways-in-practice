@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cyanolide-a-rychnovsky-2011",
+        "molecule_name": "Cyanolide A",
+        "class": "Natural Product",
+        "author": "Rychnovsky",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reformatsky-type reaction",
+            "reagents": "CH(OEt)3, Zn",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "58%",
+            "reactant_smiles": "CCOC(=O)C(C)(C)Br",
+            "product_smiles": "CCOC(=O)C(C)(C)C(OCC)OCC",
+            "notes": "Reformatsky-type addition of an ethyl 2-bromo-2-methylpropanoate equivalent to triethyl orthoformate to form an alpha,alpha-diethoxy ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ketone Formation / Ester to Ketone",
+            "reagents": "LiCH2TMS",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "CCOC(=O)[C@@](C)(OCC)C(OCC)OCC",
+            "product_smiles": "CC(=O)[C@@](C)(OCC)C(OCC)OCC",
+            "notes": "Ester converted to a methyl ketone using lithium (trimethylsilyl)methylide, with retention of stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Enol Triflate Formation",
+            "reagents": "KHMDS, PhNTf₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "CCOC(C[C@@](C)(C)C(=O)C)OCC",
+            "product_smiles": "CCOC(C[C@@](C)(C)C(=C)[OTf])OCC",
+            "notes": "Formation of a vinyl triflate from a ketone via deprotonation and trapping with PhNTf₂.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Kumada coupling",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "C[Si](C)(C)C[Mg]Cl",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "CCOC([C@@](C)(C)C(=C)OS(=O)(=O)C(F)(F)F)OCC",
+            "product_smiles": "CCOC([C@@](C)(C)C(=C)C[Si](C)(C)C)OCC",
+            "notes": "A vinyl triflate undergoes Kumada coupling with (trimethylsilyl)methylmagnesium chloride in the presence of Pd(PPh3)4, replacing the triflate group with the (trimethylsilyl)methyl moiety. The stereochemistry at the quaternary carbon is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acetal hydrolysis (to aldehyde)",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "[Et]OC([C@@](C)(C)C(=C)C[TMS])O[Et]",
+            "product_smiles": "C=C(C[TMS])[C@@](C)(C)C(=O)H",
+            "notes": "Acetal group is hydrolyzed to an aldehyde. The quaternary carbon with two methyl groups is depicted with explicit stereochemistry (dash/wedge), implying a chiral center, even though two identical groups on a carbon would typically make it achiral. The SMILES retains the `[C@@]` stereodescriptor as provided by the extraction, consistent with the drawing's intent to show stereochemistry at that position.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Aldol Addition/Reduction",
+            "reagents": "(-)-sparteine, PhBCl2",
+            "reagent_smiles": "CC(=O)N1C(=S)SC[C@@H]1C(C)(C)C",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "O=C[C@H](C)C(=C)C[Si](C)(C)C",
+            "product_smiles": "C=C(C[Si](C)(C)C)[C@H](C)[C@H](O)CC(=O)N1C(=S)SC[C@@H]1C(C)(C)C",
+            "notes": "Asymmetric aldol addition of a chiral auxiliary-derived enolate to an alpha-branched aldehyde, followed by reduction of the newly formed carbonyl to a hydroxyl group. Two new chiral centers are formed with high diastereoselectivity.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "C=C(C[Si](C)(C)C)C(C)(C)[C@H](O)CC(=O)N1[C@H](C(C)(C)C)CSC1=S",
+            "product_smiles": "C=C(C[Si](C)(C)C)C(C)(C)[C@H](O)CC(=O)O",
+            "notes": "Hydrolysis of an N-acyl thiazolidinethione (chiral auxiliary) to form a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Yamaguchi esterification",
+            "reagents": "Cl3PhCOCl, DMAP, Et3N",
+            "reagent_smiles": "CCC[C@@H](O)C(OC)OC",
+            "conditions": "",
+            "yield": "61%",
+            "reactant_smiles": "C=C(C[TMS])[C@@](C)(C)[C@H](CC(=O)O)O",
+            "product_smiles": "O=C(O[C@@H](CCC)C(OC)OC)C[C@H](O)[C@@](C)(C)C(=C)C[TMS]",
+            "notes": "Yamaguchi esterification of a carboxylic acid with a chiral dimethyl acetal containing alcohol.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Epoxide Ring Opening / Alkylation",
+                    "reagents": "(MeS)2CH2, n-BuLi",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "100%",
+                    "reactant_smiles": "CC[C@@H]1CO1",
+                    "product_smiles": "CCC[C@@H](O)CC(SC)SC",
+                    "notes": "Epoxide ring opening by attack of a bis(methylthio)methyl anion (generated from (MeS)2CH2 and n-BuLi) at the less substituted carbon, with retention of configuration at the existing chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Dithioacetal deprotection / Acetal formation",
+                    "reagents": "",
+                    "reagent_smiles": "I2",
+                    "conditions": "MeOH",
+                    "yield": "62%",
+                    "reactant_smiles": "CC[C@H](O)CC(SC)SC",
+                    "product_smiles": "CC[C@H](O)CC(OC)OC",
+                    "notes": "Conversion of a dithioacetal protecting group to an acetal using iodine in methanol, retaining the stereochemistry of the chiral alcohol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Prins cyclization",
+            "reagents": "TMSOTf",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "76%",
+            "reactant_smiles": "CC[C@H](C(OC)OC)OC(=O)C[C@@H](O)C(C)(C)C(=C)C[CH2][TMS]",
+            "product_smiles": "O=C1O[C@H](CC)C[C@H]2OC[CH2]C(=C)C(C)(C)C[CH2]O[C@@H]2CC(=O)O[C@H](CC)C[C@H]3OC[CH2]C(=C)C(C)(C)C[CH2]O[C@@H]3CC(=O)O1",
+            "notes": "Intramolecular Prins cyclization of an allylic alcohol and dimethoxy acetal, followed by macrolactone formation, to yield Cyanolide A. Likely involves an intermolecular reaction of two molecules of the reactant, then cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "OsO4, NMO, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "82%",
+            "reactant_smiles": "CC[C@@]1C[C@@H]2CC(=C)[C@@](C)(C)[C@@H](CC(=O)O[C@H](CC)C[C@H]3CC(=C)[C@@](C)(C)[C@H](CC(=O)O1)O3)O2",
+            "product_smiles": "CC[C@@]1C[C@@H]2CC(=O)[C@@](C)(C)[C@@H](CC(=O)O[C@H](CC)C[C@H]3CC(=O)[C@@](C)(C)[C@H](CC(=O)O1)O3)O2",
+            "notes": "Oxidative cleavage of two exocyclic alkenes to ketones (Lemieux-Johnson oxidation).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[NaH4B]",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "CC[C@H]1OC(=O)C[C@@](C)(C)[C@H]2OC[C@@H](CC(=O)[C@@](C)(C)[C@H]3OC(=O)C[C@@](C)(CC)[C@@H](CC(=O)[C@@](C)(C)[C@@H](OC1)OC2)O3",
+            "product_smiles": "CC[C@H]1OC(=O)C[C@@]2(C)[C@@H](O)[C@H](OC[C@@H](C[C@@H](O)[C@@]3(C)[C@H](OC(=O)C[C@@]4(CC)[C@@H](O)[C@H](OC[C@@H](C[C@@H](O)[C@@]5(C)[C@@H](OC1)OC3)O4)OC2)OC5",
+            "notes": "Stereoselective reduction of two ketone groups to secondary alcohols using sodium borohydride. Both new hydroxyl groups are formed with the same stereochemistry (wedge bond in the drawing).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Glycosylation",
+            "reagents": "MeOTf, MS 4Å",
+            "reagent_smiles": "S(c1ccccc1)[C@H]1OC[C@H](OC)[C@H](OC)[C@@H]1OC",
+            "conditions": "Et2O",
+            "yield": "21%",
+            "reactant_smiles": "CC[C@H]1OC(=O)C[C@@H](O)C(C)(C)OC[C@@H](CC)OC(=O)C[C@@H](O)C(C)(C)O1",
+            "product_smiles": "CC[C@H]1OC(=O)C[C@@H](O[C@H]2OC[C@H](OC)[C@H](OC)[C@@H]2OC)C(C)(C)OC[C@@H](CC)OC(=O)C[C@@H](O[C@H]3OC[C@H](OC)[C@H](OC)[C@@H]3OC)C(C)(C)O1",
+            "notes": "Double glycosylation of a macrocyclic diol using a phenylthioglycoside donor.",
+            "substeps": []
+        }
+    ]
+}

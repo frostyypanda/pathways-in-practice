@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rhodocorane-i-tambar-2024",
+        "molecule_name": "Rhodocorane I",
+        "class": "Natural Product",
+        "author": "Tambar",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "NaOH, H2O2",
+            "reagent_smiles": "CC(C)C(C)[B]C(C)C(C)C",
+            "conditions": "Et2O, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "C=C(C)[C@@H]1CC=C(C)CC1",
+            "product_smiles": "CC1=CC[C@@H](CC1)[C@@H](C)CO",
+            "notes": "Hydroboration-oxidation of (S)-limonene using disiamylborane, leading to anti-Markovnikov addition to the exocyclic double bond. Both the original and newly formed chiral centers are determined to be (S) based on the image's stereochemical representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Silylation (Protection)",
+            "reagents": "TBSCl, DMAP, imididazole",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "74%",
+            "reactant_smiles": "CC1=CC[C@H](CC1)[C@H](C)CO",
+            "product_smiles": "CC1=CC[C@H](CC1)[C@H](C)O[TBS]",
+            "notes": "Protection of a primary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, PPh3",
+            "reagent_smiles": "",
+            "conditions": "DCM, MeOH, -78 °C to rt",
+            "yield": "83%",
+            "reactant_smiles": "[TBS]OC[C@@H](C)[C@@H]1CC=C(C)CC1",
+            "product_smiles": "[TBS]OC[C@@H](C)[C@@H](CC=O)CCC(=O)C",
+            "notes": "Ozonolysis of an alkene to form an aldehyde and a methyl ketone, with a TBS protected alcohol and two chiral centers maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Aldol Condensation / Dehydration",
+            "reagents": "benzene",
+            "reagent_smiles": "C1CC[NH2+]CC1.[O-]C(=O)C",
+            "conditions": "80 °C",
+            "yield": "82%",
+            "reactant_smiles": "[OTBS]C[C@@H](C)[C@H](CCC(=O)C)CC=O",
+            "product_smiles": "[OTBS]C[C@@H](C)[C@H]1CCC(=C(C)C1)C=O",
+            "notes": "Intramolecular aldol condensation of a dicarbonyl compound (aldehyde and ketone) catalyzed by piperidinium acetate, followed by dehydration, to form a cyclopentene enone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-].CO",
+            "conditions": "MeOH, 0 °C to rt",
+            "yield": "78%",
+            "reactant_smiles": "[OTBS]OC[C@@H](C)[C@H]1CCC(=C1C=O)C",
+            "product_smiles": "[OTBS]OC[C@@H](C)[C@H]1CCC(=C1CO)C",
+            "notes": "Aldehyde group reduced to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "95%",
+            "reactant_smiles": "[OTBS]OC[C@@H](C)[C@@H]1CCC(=C1CO)C",
+            "product_smiles": "[OTBS]OC[C@@H](C)[C@@H]1CCC(=C1COC(=O)C)C",
+            "notes": "Acetylation of a primary alcohol to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Palladium-catalyzed allylic deacetylation and cyclization/rearrangement",
+            "reagents": "Pd(OAc)2, PPh3, HCO2H, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CPME, 80 °C",
+            "yield": "97%",
+            "reactant_smiles": "[OTBS]OC[C@@H](C)[C@H]1CCC(=C1COC(=O)C)C",
+            "product_smiles": "[OTBS]OC[C@@H](C)[C@H]1CC[C@@H](C)C1=C",
+            "notes": "Palladium-catalyzed reaction removes the acetate group, saturates the internal double bond, and forms an exocyclic methylene. The methyl group from the former double bond position is retained on the ring with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃, Me₂S",
+            "reagent_smiles": "",
+            "conditions": "DCM, MeOH, rt",
+            "yield": "76%",
+            "reactant_smiles": "[OTBS]OC[C@H](C)[C@@H]1CC[C@@H](C)C1=C",
+            "product_smiles": "[OTBS]OC[C@H](C)[C@@H]1CC[C@@H](C)C1=O",
+            "notes": "Ozonolysis of an exocyclic alkene to form a ketone, with preservation of stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "s-BuLi",
+            "reagent_smiles": "CC1=CC(=CO1)[OTIPS]",
+            "conditions": "THF, -60 °C",
+            "yield": "63%",
+            "reactant_smiles": "[OTBS]C[C@@H](C)[C@H]1CC[C@@H](C)C1=O",
+            "product_smiles": "[OTBS]C[C@@H](C)[C@H]1CC[C@@H](C)[C@@]1(C1=CC(=CO1)[OTIPS])O",
+            "notes": "Addition of lithiated 2-OTIPS-4-methylfuran to a cyclopentanone, forming a tertiary alcohol.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Enol silylation / Aromatization",
+                    "reagents": "TIPSOTf, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "CC1=CC(=O)OC1",
+                    "product_smiles": "[OTIPS]C1=C(C)C=CO1",
+                    "notes": "Silylation of 3-methyl-2,5-dihydrofuran-2-one to form 2-(triisopropylsilyloxy)-3-methylfuran.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrolysis/Acyl Chloride Reaction (deprotection and ring formation)",
+            "reagents": "AcCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C to rt",
+            "yield": "48%",
+            "reactant_smiles": "[OTBS]OC[C@@H](C)[C@H]1CC[C@@H](C)[C@@]1(O)c2oc([OTIPS])c(C)c2",
+            "product_smiles": "C[C@@H]/1CC[C@H]([C@H](C)CO)\\C1=C/2C=C(C)C(=O)O2",
+            "notes": "Cleavage of TBS and TIPS protecting groups, followed by lactonization and rearrangement to form a furanone derivative with an exocyclic double bond.",
+            "substeps": []
+        }
+    ]
+}

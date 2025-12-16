@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "luciduline-evans-1972",
+        "molecule_name": "Luciduline",
+        "class": "Natural Product",
+        "author": "Evans",
+        "year": 1972
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction / Acylation",
+            "reagents": "NaBH4",
+            "reagent_smiles": "C1=CC=C(C=C1)COC(=O)Cl.[Na+].[BH4-]",
+            "conditions": "-78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC=NC=C1",
+            "product_smiles": "C1=CCC=CN1C(=O)OCC2=CC=CC=C2",
+            "notes": "Pyridine is reduced to 1,4-dihydropyridine and simultaneously acylated with benzyl chloroformate to form 1-benzyl oxycarbonyl-1,4-dihydropyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Diels-Alder Cycloaddition",
+            "reagents": "MeCN, H2O",
+            "reagent_smiles": "C=CC=O.O=C1N(C)C(C)(C)N[C@H](CC2=CC=CC=C2)C1.Cl",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)COC(=O)N2CC=CC=C2",
+            "product_smiles": "[Cbz]N1[C@H](C=O)C=CC2C1CC2",
+            "notes": "A chiral imidazolidinone-catalyzed inverse electron demand Diels-Alder reaction between 1-(benzyloxycarbonyl)-1,2-dihydropyridine and acrolein to form a 2-azabicyclo[2.2.1]hept-5-ene derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "CCO",
+            "conditions": "0 °C",
+            "yield": "33% (3 steps)",
+            "reactant_smiles": "O=CC1C(C=C2)CN([Cbz])C3C1CC23",
+            "product_smiles": "OCC1C(C=C2)CN([Cbz])C3C1CC23",
+            "notes": "Reduction of an aldehyde to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78°C to rt",
+            "yield": "",
+            "reactant_smiles": "C(O)C1C(C=C2)C2N([Cbz])C1",
+            "product_smiles": "O=CC1C(C=C2)C2N([Cbz])C1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Swern conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Addition",
+            "reagents": "DCM",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "-78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "O=C[C@H]1[C@@H]2C[N]([Cbz])[C@@H]2C=C1",
+            "product_smiles": "C=CCC[C@H](O)[C@H]1[C@@H]2C[N]([Cbz])[C@@H]2C=C1",
+            "notes": "Grignard addition of allylmagnesium bromide to an aldehyde, forming a secondary alcohol. The Cbz protecting group is retained. Stereochemistry at the new alcohol center is specified based on the drawing.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Protection",
+            "reagents": "Imidazole, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "61% (3 steps)",
+            "reactant_smiles": "N([Cbz])1CC(C(O)CCC=C)C2C1C=C2",
+            "product_smiles": "N([Cbz])1CC(C([OTBS])CCC=C)C2C1C=C2",
+            "notes": "Protection of secondary alcohol as TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ring-Closing Metathesis",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "81%",
+            "reactant_smiles": "C=CCC(C1CC2C=CC1N(C2)[Cbz])[OTBS]",
+            "product_smiles": "C=C[C@@H]1C[C@H]2C=CCC([C@H]([OTBS])C[C@H]2N1[Cbz])",
+            "notes": "Intramolecular alkene metathesis to form a fused bicyclic amine system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "C=C[C@@H]1C[C@H]2[C@@H](C=CCC2[OTBS])N(C1)[Cbz]",
+            "product_smiles": "C=C[C@@H]1C[C@H]2[C@@H](C=CCC2O)N(C1)[Cbz]",
+            "notes": "Deprotection of a tert-butyldimethylsilyl (TBS) ether to a hydroxyl group using tetrabutylammonium fluoride (TBAF).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1CC[N]([Cbz])[C@H]2[C@H]1C[C@@H](O)C=CC2",
+            "product_smiles": "C=C[C@H]1CC[N]([Cbz])[C@H]2[C@H]1CC(=O)C=CC2",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin Periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Workup/Purification",
+            "reagents": "Basic Al2O3",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1C[C@H]2[C@H](CC=CC2=O)N(C1)[Cbz]",
+            "product_smiles": "C=C[C@@H]1C[C@H]2[C@H](CC=CC2=O)N(C1)[Cbz]",
+            "notes": "The product is identical to the reactant, indicating a workup or purification step. The provided reactant SMILES correctly describes the structure and stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Conjugate Addition",
+            "reagents": "Me2CuLi",
+            "reagent_smiles": "C[Cu]C.[Li+]",
+            "conditions": "Et2O, -78 °C",
+            "yield": "81%",
+            "reactant_smiles": "O=C1/C=C/C[C@@H]2[C@H](C1)N(C(=O)OCC3=CC=CC=C3)CC[C@@H](C=C)C2",
+            "product_smiles": "O=C1C[C@H](C)[C@@H]2[C@H](C1)N(C(=O)OCC3=CC=CC=C3)CC[C@@H](C=C)C2",
+            "notes": "Conjugate addition (1,4-addition) of a methyl group to an α,β-unsaturated ketone. The reaction is stated to be 81% yield over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Wacker oxidation",
+            "reagents": "O2, PdCl2",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, rt",
+            "yield": "78%",
+            "reactant_smiles": "C=C[C@H]1C[C@H]2[C@H](C[C@@H](C)CC2=O)N(C1)[Cbz]",
+            "product_smiles": "CC(=O)[C@H]1C[C@H]2[C@H](C[C@@H](C)CC2=O)N(C1)[Cbz]",
+            "notes": "Wacker oxidation converts a terminal alkene to a methyl ketone, retaining the stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Condensation / Cyclization",
+            "reagents": "LiHMDS, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "62%",
+            "reactant_smiles": "C[C@H]1CC(=O)C[C@H]2[C@@H]1C[N]([C@H](CC(=O)C)C2)[Cbz]",
+            "product_smiles": "O=C1C=C[C@H]2C[N]([C@H]3C[C@H]2C13)[Cbz]",
+            "notes": "Intramolecular cyclization of a diketone to form a bridged bicyclic alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "C=O",
+            "conditions": "EtOH, rt",
+            "yield": "75%",
+            "reactant_smiles": "CC1C2CC(=O)C=CN1([Cbz])C3CC2CC3",
+            "product_smiles": "CC1C2CC(=O)CN1(C)C3CC2CC3",
+            "notes": "Reductive deprotection of N-Cbz, alkene hydrogenation, and N-methylation.",
+            "substeps": []
+        }
+    ]
+}

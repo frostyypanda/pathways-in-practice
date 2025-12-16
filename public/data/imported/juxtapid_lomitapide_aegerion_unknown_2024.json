@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "juxtapid-lomitapide-aegerion-unknown-2024",
+        "molecule_name": "Juxtapid (Lomitapide Aegerion)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "BrCCCCBr",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "85%",
+            "reactant_smiles": "C1=CC2=C(C=C1)C(C3=CC=CC=C23)C(=O)O",
+            "product_smiles": "C1=CC2=C(C=C1)C(CCCCBr)(C3=CC=CC=C23)C(=O)O",
+            "notes": "Deprotonation of fluorene-9-carboxylic acid followed by alkylation with 1,4-dibromobutane at the C9 position, retaining one bromine atom on the side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "COCl2, cat. DMF",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)C(CCCCBr)(C3=CC=CC=C23)C(=O)O",
+            "product_smiles": "C1=CC2=C(C=C1)C(CCCCBr)(C3=C2C=CC=C3)C(=O)Cl",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using phosgene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide formation / Acylation",
+            "reagents": "Et3N, CF3CH2NH2",
+            "reagent_smiles": "CCN(CC)CC.FC(F)(F)CN",
+            "conditions": "0 °C",
+            "yield": "71%",
+            "reactant_smiles": "C1=CC2=C(C=C1)C(CCCCBr)(C3=C2C=CC=C3)C(=O)Cl",
+            "product_smiles": "C1=CC2=C(C=C1)C(CCCCBr)(C3=C2C=CC=C3)C(=O)NCC(F)(F)F",
+            "notes": "Acyl chloride reacts with 2,2,2-trifluoroethylamine to form an amide, with triethylamine as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "SN2",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(C)(C)OC(=O)NC1CCNCC1",
+            "conditions": "DMF, 50 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)C(CCCCBr)(C3=C2C=CC=C3)C(=O)NCC(F)(F)F",
+            "product_smiles": "CC(C)(C)OC(=O)NC1CCN(CCCC2(C3=C(C=CC=C3)C4=C2C=CC=C4)C(=O)NCC(F)(F)F)CC1",
+            "notes": "SN2 reaction of an alkyl bromide with a secondary amine (piperidine derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "4N HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane, rt",
+            "yield": "86%",
+            "reactant_smiles": "c1ccc2c(c1)C(C(=O)NCC(F)(F)F)(CCCCN3CCC(N[Boc])CC3)c4ccccc24",
+            "product_smiles": "C1=CC2=C(C=C1)C(CCCCN3CCC(N)CC3)(C4=C2C=CC=C4)C(=O)NCC(F)(F)F",
+            "notes": "Deprotection of a Boc-protected amine to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Formation (Acylation)",
+            "reagents": "Et3N, DMAP",
+            "reagent_smiles": "O=C(Cl)c1ccccc1-c2ccc(C(F)(F)F)cc2",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)C(CCCCN3CCC(CC3)N)(C4=C2C=CC=C4)C(=O)NCC(F)(F)F",
+            "product_smiles": "C1=CC2=C(C=C1)C(C3=C2C=CC=C3)(C(=O)NCC(F)(F)F)CCCCN4CCC(NC(=O)c5ccccc5-c6ccc(C(F)(F)F)cc6)CC4",
+            "notes": "Amine acylation with an acid chloride to form a secondary amide.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Suzuki coupling",
+                    "reagents": "Pd(OAc)2",
+                    "reagent_smiles": "C1=CC(=C(C=C1)I)C(=O)O",
+                    "conditions": "H2O, rt to 75 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "C1=C(C=CC(=C1)B(O)O)C(F)(F)F",
+                    "product_smiles": "C1=CC=C(C(=C1)C2=CC=C(C=C2)C(F)(F)F)C(=O)O",
+                    "notes": "Suzuki coupling of a boronic acid with 2-iodobenzoic acid to form a substituted biphenyl carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Acyl chloride formation",
+                    "reagents": "COCl₂",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂",
+                    "yield": "",
+                    "reactant_smiles": "O=C(O)C1=CC=CC=C1C2=CC=C(C(F)(F)F)C=C2",
+                    "product_smiles": "O=C(Cl)C1=CC=CC=C1C2=CC=C(C(F)(F)F)C=C2",
+                    "notes": "Conversion of a carboxylic acid to an acyl chloride using phosgene.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Salt Formation",
+            "reagents": "CH3SO3H",
+            "reagent_smiles": "CS(=O)(=O)O",
+            "conditions": "",
+            "yield": "65%",
+            "reactant_smiles": "C1=CC(=C(C=C1)C(=O)NC2CCN(CCCC3(C4=C(C=CC=C4)C5=C3C=CC=C5)C(=O)NCC(F)(F)F)CC2)C6=CC=C(C=C6)C(F)(F)F",
+            "product_smiles": "C1=CC2=C(C=C1)C(CCCCN3CCC(CC3)NC(=O)C4=C(C=CC=C4)C5=CC=C(C=C5)C(F)(F)F)(C6=C2C=CC=C6)C(=O)NCC(F)(F)F.CS(=O)(=O)O",
+            "notes": "Formation of the methanesulfonate salt of Juxtapid (Lomitapide).",
+            "substeps": []
+        }
+    ]
+}

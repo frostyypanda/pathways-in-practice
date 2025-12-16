@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ramonanin-d-sherburn-2014",
+        "molecule_name": "Ramonanin D",
+        "class": "Natural Product",
+        "author": "Sherburn",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sulfonate Ester Formation",
+            "reagents": "PhSO₂Cl, Et₃N",
+            "reagent_smiles": "O=S(Cl)(=O)c1ccccc1.CCN(CC)CC",
+            "conditions": "CH₂Cl₂, 0 °C to rt",
+            "yield": "96%",
+            "reactant_smiles": "COC1=CC(=CC=C1O)C=O",
+            "product_smiles": "COC1=CC(=CC=C1OS(=O)(=O)c2ccccc2)C=O",
+            "notes": "The phenolic hydroxyl group is selectively converted to a benzenesulfonate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard addition and alkyne coupling",
+            "reagents": "",
+            "reagent_smiles": "C#CMgBr.CCMgBr",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "O=Cc1cc(OC)c(OS(=O)(=O)[Ph])cc1",
+            "product_smiles": "OC(c1cc(OC)c(OS(=O)(=O)[Ph])cc1)C#CC(O)c2cc(OC)c(OS(=O)(=O)[Ph])cc2",
+            "notes": "Aldehyde groups react with ethynylmagnesium bromide and are reduced to secondary alcohols, followed by coupling to form a symmetrical alkyne dimer.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "COC1=C([OS(=O)(=O)Ph])C=CC(C(O)C#CC(O)C2=CC=C([OS(=O)(=O)Ph])C(OC)=C2)=C1",
+            "product_smiles": "COC1=C([OS(=O)(=O)Ph])C=CC([OAc])C#CC([OAc])C2=CC=C([OS(=O)(=O)Ph])C(OC)=C2)=C1",
+            "notes": "Diol acetylation using acetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ruthenium-catalyzed En-yne Metathesis",
+            "reagents": "HG II",
+            "reagent_smiles": "C=C",
+            "conditions": "Toluene, 110 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC(=O)OC(c1c(OC)cc(OS(=O)(=O)c2ccccc2)cc1)C#CC(OC(=O)C)c3c(OC)cc(OS(=O)(=O)c4ccccc4)cc3",
+            "product_smiles": "CC(=O)OC(c1c(OC)cc(OS(=O)(=O)c2ccccc2)cc1)C(=C)C(=C)C(OC(=O)C)c3c(OC)cc(OS(=O)(=O)c4ccccc4)cc3",
+            "notes": "Alkyne metathesis with ethylene (H2C=CH2) to form a 1,3-butadiene derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis / Saponification",
+            "reagents": "KOH",
+            "reagent_smiles": "C1CCOC1.CO.[K+].[OH-]",
+            "conditions": "THF, MeOH",
+            "yield": "85%",
+            "reactant_smiles": "C=C(C([Ac])c1cc(OC)c(OS(=O)(=O)[Ph])cc1)C([Ac])c2cc(OC)c(OS(=O)(=O)[Ph])cc2",
+            "product_smiles": "C=C(C(O)c1cc(OC)c(OS(=O)(=O)[Ph])cc1)C(O)c2cc(OC)c(OS(=O)(=O)[Ph])cc2",
+            "notes": "Hydrolysis of two acetate (AcO) groups to two hydroxyl (HO) groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cyclization (intramolecular SN2-type or acid-catalyzed ether formation)",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 61 °C",
+            "yield": "51%",
+            "reactant_smiles": "OC(c1cc(OC)c(OS(=O)(=O)c2ccccc2)cc1)C(=C)C(=C)C(O)c3cc(OC)c(OS(=O)(=O)c4ccccc4)cc3",
+            "product_smiles": "O1[C@@H](c2cc(OC)c(OS(=O)(=O)c3ccccc3)cc2)C(=C)C(=C)[C@H]1c4cc(OC)c(OS(=O)(=O)c5ccccc5)cc4",
+            "notes": "Acid-catalyzed intramolecular ether formation (cyclization) of a 1,4-diol derivative to form a 2,5-disubstituted-3,4-dimethylenetetrahydrofuran. The reaction involves dehydration.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "NaOH",
+            "reagent_smiles": "[Na]O",
+            "conditions": "MeOH, THF, 65 °C",
+            "yield": "23%",
+            "reactant_smiles": "C=C1C(=C)[C@@H](c2cc(OC)c(OS(=O)(=O)[Ph])cc2)O[C@@H]1c3cc(OC)c(OS(=O)(=O)[Ph])cc3",
+            "product_smiles": "C=C1C(=C)[C@@H](c2cc(OC)c(O)cc2)O[C@@H]1c3cc(OC)c(O)cc3",
+            "notes": "Hydrolysis of aryl sulfonate esters to phenols.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dimerization / Polycyclization",
+            "reagents": "DMF",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "24%",
+            "reactant_smiles": "C=C1C(=C)[C@@H](c2cc(OC)c(O)cc2)O[C@H]1c3cc(OC)c(O)cc3",
+            "product_smiles": "C=C1C2(CCC(=C)[C@H](O[C@@H]2c3cc(OC)c(O)cc3)c4cc(OC)c(O)cc4)[C@H](c5cc(OC)c(O)cc5)O[C@H]1c6cc(OC)c(O)cc6",
+            "notes": "Formation of Ramonanin A, a complex polycyclic dimer, from a 3,4-dimethylenetetrahydrofuran derivative.",
+            "substeps": []
+        }
+    ]
+}

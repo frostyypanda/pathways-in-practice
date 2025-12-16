@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strepantibin-a-quideau-2024",
+        "molecule_name": "Strepantibin A",
+        "class": "Natural Product",
+        "author": "Quideau",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sulfone formation",
+            "reagents": "I₂, TBHP",
+            "reagent_smiles": "CC1=CC=C(C=C1)S(=O)[O-].[Na+]",
+            "conditions": "THF, 30 °C",
+            "yield": "89%",
+            "reactant_smiles": "C1=CC=C(C=C1)C#CC(=O)O",
+            "product_smiles": "CC1=CC=C(C=C1)S(=O)(=O)C#CC2=CC=CC=C2",
+            "notes": "Oxidative formation of an alkynyl sulfone from phenylpropiolic acid and sodium p-toluenesulfinate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Substitution / Desulfonylation",
+            "reagents": "KOMe, 3 Å MS",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "66%",
+            "reactant_smiles": "CC1=CC=C(C=C1)S(=O)(=O)C#CC2=CC=CC=C2",
+            "product_smiles": "COC#CC1=CC=CC=C1",
+            "notes": "Methoxide replaces the p-tolylsulfonyl group on the alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "[2+2] Cycloaddition / Aromatization",
+            "reagents": "",
+            "reagent_smiles": "C1=CC=C(C=C1)C2=CC(=O)C2",
+            "conditions": "DCE, 85 °C",
+            "yield": "54%",
+            "reactant_smiles": "COC#CC1=CC=CC=C1",
+            "product_smiles": "Oc1c([Ph])c([OMe])c([Ph])cc1",
+            "notes": "Alkyne undergoes [2+2] cycloaddition with a phenylcyclobutenone, followed by aromatization to yield a substituted phenol.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "[2+2] Cycloaddition",
+                    "reagents": "ZnCu",
+                    "reagent_smiles": "C(=O)(C(Cl)(Cl)Cl)Cl",
+                    "conditions": "Et2O, DME, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C#CC1=CC=CC=C1",
+                    "product_smiles": "C1=CC=C(C=C1)C2=CC(=O)C2(Cl)Cl",
+                    "notes": "[2+2] cycloaddition between phenylacetylene and a dichloroketene equivalent (generated from trichloroacetyl chloride), forming a cyclobutenone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Reductive Dechlorination",
+                    "reagents": "Zn, AcOH, TMEDA",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 0 °C",
+                    "yield": "62%",
+                    "reactant_smiles": "c1ccc(cc1)C2=CC(=O)C(Cl)(Cl)C2",
+                    "product_smiles": "c1ccc(cc1)C2=CC(=O)CC2",
+                    "notes": "Reductive dechlorination of the gem-dichloro group on a cyclobutenone ring using zinc metal in acetic acid and TMEDA.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Williamson Ether Synthesis / O-alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "C=CCBr",
+            "conditions": "acetone, 60 °C",
+            "yield": "99%",
+            "reactant_smiles": "[OMe]c1cc([Ph])cc(O)c1[Ph]",
+            "product_smiles": "C=CCOc1cc([Ph])cc([Ph])c1[OMe]",
+            "notes": "Phenol O-alkylation with allyl bromide to form an allyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Claisen rearrangement",
+            "reagents": "toluene",
+            "reagent_smiles": "Cl[Al](CC)CC",
+            "conditions": "0 °C",
+            "yield": "94%",
+            "reactant_smiles": "C=CCOC1=C([Ph])C([OMe])=CC([Ph])=C1",
+            "product_smiles": "OC1=C(CC=C)C([Ph])=C([OMe])C([Ph])=C1",
+            "notes": "Allyl vinyl ether undergoes Lewis acid-catalyzed Claisen rearrangement to form an ortho-allyl phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkene Isomerization / Double Bond Migration",
+            "reagents": "KO^tBu",
+            "reagent_smiles": "CC(C)(C)[O-].[K+]",
+            "conditions": "THF, 80 °C",
+            "yield": "99%",
+            "reactant_smiles": "COC1=CC([Ph])=C(O)C(CCC=C)=C1[Ph]",
+            "product_smiles": "COC1=CC([Ph])=C(O)C(C=C/C)=C1[Ph]",
+            "notes": "Base-catalyzed isomerization of an allyl group to a trans-propenyl group on a highly substituted phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Dearomatization",
+            "reagents": "TFA",
+            "reagent_smiles": "C1=CC2=C(C=C1)[C@@H]3C4=C(C=CC=C4)[C@H]2[C@@H]([C@@H]3NC(=O)C5=C(C=CC=C5)I(=O)=O)NC(=O)C6=C(C=CC=C6)I(=O)=O",
+            "conditions": "DCM, -20 to -10 °C",
+            "yield": "57%",
+            "reactant_smiles": "[OMe]c1cc([Ph])c(O)c(C/C=C/C)c1[Ph]",
+            "product_smiles": "O=C1C([Ph])=C([OMe])C=C([Ph])[C@]1(O)C/C=C/C",
+            "notes": "Oxidation of a phenol to a cyclohexadienone using a chiral hypervalent iodine reagent. The product has a newly formed chiral center with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Wacker-type Oxidation",
+            "reagents": "[Pd(CH3CN)4](BF4)2, CH3CN, H2O",
+            "reagent_smiles": "[Pd+2](N#CC)(N#CC)(N#CC)(N#CC).F[B-](F)(F)(F).F[B-](F)(F)(F).CC#N.O",
+            "conditions": "",
+            "yield": "40%",
+            "reactant_smiles": "O=C1C([Ph])=C([C@@](O)(/C=C/CC))C([Ph])=C(C=C1)[OMe]",
+            "product_smiles": "O=C1C([Ph])=C([C@@](O)(CC(=O)C))C([Ph])=C(C=C1)[OMe]",
+            "notes": "Oxidative rearrangement of an allyl group to an acetonyl group catalyzed by palladium.",
+            "substeps": []
+        }
+    ]
+}

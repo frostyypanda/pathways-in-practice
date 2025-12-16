@@ -1,0 +1,241 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "drupacine-stoltz-2007",
+        "molecule_name": "Drupacine",
+        "class": "Natural Product",
+        "author": "Stoltz",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Johnson-Claisen Rearrangement",
+            "reagents": "MeC(OEt)₃, CH₃CH₂CO₂H",
+            "reagent_smiles": "CCOC(C)(OCC)OCC.CCC(=O)O",
+            "conditions": "145 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=C1CCCC1O",
+            "product_smiles": "CCOC(=O)CCC1=CCCC1",
+            "notes": "Johnson-Claisen rearrangement of an allylic alcohol with methyl orthoacetate to form an unsaturated ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction (Ester to Primary Alcohol)",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "Et2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCC1=CCCC1",
+            "product_smiles": "OCCC1=CCCC1",
+            "notes": "Ester is reduced to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C1CCC(=C1)CCCO",
+            "product_smiles": "C1CCC(=C1)CCC[OTs]",
+            "notes": "The primary alcohol is converted to its tosylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution (SN2), Amine Alkylation",
+            "reagents": "TsNH₂, K₂CO₃",
+            "reagent_smiles": "NS(=O)(=O)C1=CC=C(C)C=C1.[K+].[K+].O=C([O-])[O-]",
+            "conditions": "MeCN, 90 °C",
+            "yield": "69% (3 steps)",
+            "reactant_smiles": "C1CCC(=C1)CCC[OTs]",
+            "product_smiles": "C1CCC(=C1)CCCNH[Ts]",
+            "notes": "Nucleophilic displacement of the primary tosylate by the tosylamide anion (formed by deprotonation with K₂CO₃). The reported 69% yield is for 3 steps, not for this individual step.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Oxidative Cyclization",
+            "reagents": "Pd(TFA)2, Pyridine, O2, MS 3A",
+            "reagent_smiles": "",
+            "conditions": "Toluene, 80 °C",
+            "yield": "88%",
+            "reactant_smiles": "C1=CCC(CCCN[Ts])C1",
+            "product_smiles": "C1=CC2(CC1)CCCN2[Ts]",
+            "notes": "Intramolecular palladium-catalyzed oxidative cyclization of an alkene and tosylamide to form a spiro[4.4]nonane derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Cleavage",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 65 °C",
+            "yield": "89%",
+            "reactant_smiles": "C1=CC2(CC1)CCCN2[Ts]",
+            "product_smiles": "C1=CC2(CC1)CCCN2",
+            "notes": "Reductive cleavage of N-tosyl sulfonamide to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH(OAc)3",
+            "reagent_smiles": "O1COC2=CC(Br)=C(C=C12)[C@H](O)[C@@H]3OC(C)(C)O3",
+            "conditions": "DCE, rt",
+            "yield": "92%",
+            "reactant_smiles": "C1=CCC2(C1)CCCN2",
+            "product_smiles": "BrC1=CC2=C(OCO2)C=C1[C@@H](O)CN3[C@H]4C[C@@]5(CC4)C=CCC5N3",
+            "notes": "Reductive amination of a spiro-amine with an aldehyde (implied to be derived from the depicted reagent). The reaction forms Drupacine, a complex alkaloid.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Amidation",
+                    "reagents": "",
+                    "reagent_smiles": "C[C@@H]([C@H](C1=CC=CC=C1)O)NC",
+                    "conditions": "EtOH/H2O",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1C(C(=O)O)O)OCO2",
+                    "product_smiles": "C[C@@H]([C@H](C1=CC=CC=C1)O)N(C)C(=O)[C@@H](C2=CC=C3C(=C2)OCO3)O",
+                    "notes": "Amidation of 2-hydroxy-2-(benzo[d][1,3]dioxol-5-yl)acetic acid with (1R,2S)-N-methyl-1-phenylpropan-2-amine (N-methylephedrine derivative), forming a chiral amide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Amide hydrolysis",
+                    "reagents": "H2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C[C@@H]([C@@H](C1=CC=CC=C1)O)N(C)C(=O)[C@@H](C2=CC=C3C(=C2)OCO3)O",
+                    "product_smiles": "O=C(O)[C@@H](O)C1=CC=C2C(=C1)OCO2",
+                    "notes": "Acid-catalyzed hydrolysis of an amide to a carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Ketalization (Acetonide formation)",
+                    "reagents": "H2SO4, Acetone",
+                    "reagent_smiles": "",
+                    "conditions": "-20 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "C1=CC2=C(C=C1[C@@H](C(=O)O)O)OCO2",
+                    "product_smiles": "CC1(C)O[C@@H](C2=CC3=C(C=C2)OCO3)C(=O)O1",
+                    "notes": "Formation of a cyclic acetal (1,3-dioxolan-4-one) from an alpha-hydroxy carboxylic acid and acetone catalyzed by sulfuric acid, protecting both the hydroxyl and carboxylic acid functionalities.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Bromination",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "CC1(C)O[C@H](C2=CC3=C(C=C2)OCO3)C(=O)O1",
+                    "product_smiles": "CC1(C)O[C@H](C2=CC3=C(C=C2Br)OCO3)C(=O)O1",
+                    "notes": "Electrophilic aromatic bromination of a benzodioxole-substituted lactone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Reduction",
+                    "reagents": "DIBAI-H",
+                    "reagent_smiles": "",
+                    "conditions": "Toluene, -78 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "CC1(C)O[C@H](C2=CC3=C(C=C2Br)OCO3)C(=O)O1",
+                    "product_smiles": "CC1(C)O[C@H](C2=CC3=C(C=C2Br)OCO3)[C@@H](O)O1",
+                    "notes": "Reduction of a cyclic ester (lactone) to a cyclic hemiacetal (lactol).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Heck Reaction",
+            "reagents": "n-Bu4NOAc, MeCN, DMF, H2O",
+            "reagent_smiles": "CC1=CC=C(C)C=C1P(C2=CC=C(C)C=C2)C3=C([Pd](OC(C)=O))C=CC=C3",
+            "conditions": "120 °C",
+            "yield": "67%",
+            "reactant_smiles": "C1=C[C@]2(CC1)CCCN2C[C@H](C3=CC4=C(C=C3Br)OCO4)O",
+            "product_smiles": "C[C@H]1C[C@@H]2C=CC[C@]2(N(CC3=CC4=C(C=C3[C@H](O)C5)OCO4)C5)C1",
+            "notes": "Intramolecular Heck cyclization to form a polycyclic alkaloid (Drupaceine). The bromine is replaced by a C-C bond, forming a new 6-membered ring. The double bond in the cyclopentene ring migrates to the newly formed cyclohexene ring, and the original 5-membered ring becomes saturated.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, Pyridine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "92%",
+            "reactant_smiles": "C1=C[C@H]2C3=CC4=C(C=C3[C@@H](CN5CCC[C@@H]25C1)O)OCO4",
+            "product_smiles": "C1=C[C@H]2C3=CC4=C(C=C3[C@@H](CN5CCC[C@@H]25C1)[OAc])OCO4",
+            "notes": "Acetylation of a secondary alcohol to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, Me3NO",
+            "reagent_smiles": "",
+            "conditions": "Acetone/H2O, rt",
+            "yield": "72%",
+            "reactant_smiles": "[OAc][C@H]1CN2CCC[C@@]32CC=C[C@@H]3C4=CC5=C(C=C41)OCO5",
+            "product_smiles": "[OAc][C@H]1CN2CCC[C@@]32C[C@H](O)[C@@H](O)[C@@H]3C4=CC5=C(C=C41)OCO5",
+            "notes": "Dihydroxylation of the alkene to form a trans-diol. This stereochemical outcome (trans-diol from OsO4) is unusual for a direct OsO4 dihydroxylation, which typically forms syn-diols. However, the product structure in the screenshot clearly shows a trans-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "DMSO, TFAA",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "DCM, -78 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "[AcO][C@H]1CN2CCC[C@]32C[C@H]([C@@H]([C@@H]3C4=CC5=C(C=C41)OCO5)O)O",
+            "product_smiles": "[AcO][C@H]1CN2CCC[C@]32CC(=O)C(=C3C4=CC5=C(C=C41)OCO5)O",
+            "notes": "Swern-like oxidation of a cyclic 1,2-diol to an alpha-hydroxy-alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Enol ether formation / Methylation",
+            "reagents": "p-TsOH H2O",
+            "reagent_smiles": "CC(OC)(OC)C",
+            "conditions": "1,4-dioxane, 90 °C",
+            "yield": "67%",
+            "reactant_smiles": "CC(=O)O[C@H]1CN2CCC[C@@]3C(=O)C(=CO)C3C4=CC5=C(C=C41)OCO5",
+            "product_smiles": "CC(=O)O[C@H]1CN2CCC[C@@]3[C@@]4C(=O)C(=COC)C3C5=CC6=C(C=C51)OCO6",
+            "notes": "Methylation of an enol to form an enol methyl ether, involving double bond migration and the creation of a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reduction (ketone and ester)",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH/DCM",
+            "yield": "90%",
+            "reactant_smiles": "[OAc][C@H]1CN2CCC[C@]32C=C(C(=O)[C@H]3C4=CC5=C(C=C41)OCO5)OC",
+            "product_smiles": "O[C@H]1CN2CCC[C@]32C=C([C@@H](O)C4=CC5=C(C=C4[C@H]1)OCO5)OC",
+            "notes": "Reduction of a ketone to a secondary alcohol and hydrolysis/reduction of an acetate ester to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Acid-catalyzed intramolecular cyclization/rearrangement",
+            "reagents": "1 N HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "86%",
+            "reactant_smiles": "C1=C(C2=C(C=C1)OCO2)[C@@H]3C[C@H](O)CN4CCC[C@@]5([C@H]3C=C([C@H](O)C5)OC)CC4",
+            "product_smiles": "COC1([C@H]2O)O[C@@H]3[C@H]4CN5CCC[C@]25C[C@H]3c6cc7c(oco7)cc16",
+            "notes": "An enol ether undergoes acid-catalyzed cyclization and rearrangement to form a complex polycyclic amine (Drupacine), involving the formation of a new cyclic ether and saturation of the alkene.",
+            "substeps": []
+        }
+    ]
+}

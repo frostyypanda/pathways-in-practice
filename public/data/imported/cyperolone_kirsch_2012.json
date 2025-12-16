@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cyperolone-kirsch-2012",
+        "molecule_name": "Cyperolone",
+        "class": "Natural Product",
+        "author": "Kirsch",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "ICH2Cl, MeLi·LiBr",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "99%",
+            "reactant_smiles": "C=C(C)[C@@H]1CC=C(C)C(=O)C1",
+            "product_smiles": "C=C(C)[C@@H]1CC=C(C)C(C1)(CCl)O",
+            "notes": "Nucleophilic addition of a chloromethyl equivalent (likely generated from ICH2Cl and MeLi) to the ketone of (R)-(-)-Carvone, forming a tertiary alcohol and a chloromethyl group at the former carbonyl carbon. The existing stereocenter and alkene are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrolysis / Nucleophilic Substitution (SN2)",
+            "reagents": "KOH, dioxane",
+            "reagent_smiles": "",
+            "conditions": "75 °C",
+            "yield": "57%",
+            "reactant_smiles": "C=C(C)[C@@H]1CCC(C)=C(O)(CCl)CC1",
+            "product_smiles": "C=C(C)[C@@H]1CCC(C)=C(O)(CO)CC1",
+            "notes": "Hydrolysis of a chloromethyl group to a hydroxymethyl group using potassium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Silyl Ether Formation / Alcohol Protection",
+            "reagents": "DMF",
+            "reagent_smiles": "Cl[Si](C(C)C)(C(C)C)C(C)C.C1=CNC=N1",
+            "conditions": "30 °C",
+            "yield": "93%",
+            "reactant_smiles": "C=C(C)[C@H]1CCC(C)=C(C1(O)CO)",
+            "product_smiles": "C=C(C)[C@H]1CCC(C)=C(C1(O)C[OTIPS])",
+            "notes": "Protection of the primary alcohol as a TIPS silyl ether, leaving the tertiary alcohol unprotected.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation, Allylic Transposition",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 23 °C",
+            "yield": "75%",
+            "reactant_smiles": "C=C(C)[C@H]1CC=C(C)C(O)(CO[TIPS])C1",
+            "product_smiles": "C=C(C)[C@H]1CCC(C)=C(CO[TIPS])C(=O)C1",
+            "notes": "Oxidation of an allylic alcohol to an alpha,beta-unsaturated ketone via a Dauben-Michno oxidative transposition.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "C#CC[Mg]Br",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "C=C(C)[C@H]1CC(=C(C)C(=O)C1)CO[TIPS]",
+            "product_smiles": "C#CCC1(C[C@H](CC(=C1C)CO[TIPS])C(=C)C)O",
+            "notes": "Grignard addition of propargylmagnesium bromide to a cyclohexenone ketone, forming a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TES-Cl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "94%",
+            "reactant_smiles": "C#CCC1(C[C@H](CC(=C1C)CO[TIPS])C(=C)C)O",
+            "product_smiles": "C#CCC1(C[C@H](CC(=C1C)CO[TIPS])C(=C)C)O[TES]",
+            "notes": "Protection of a tertiary alcohol with triethylsilyl chloride (TES-Cl).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Platinum-Catalyzed Enyne Cyclization",
+            "reagents": "PtCl4, cod",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 23 °C",
+            "yield": "80%",
+            "reactant_smiles": "C#CCC1(O[TES])C[C@@H](C(=C)C)CC(CO[TIPS])=C(C)C1",
+            "product_smiles": "O[TIPS]C[C@@H]12C=CC[C@]2(C)C(=O)C[C@@H](C1)C(=C)C",
+            "notes": "Intramolecular cyclization of an enyne to form a bicyclic ketone system. Stereochemistry at three centers (two bridgeheads and one in the 6-membered ring) is established.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrazone Formation",
+            "reagents": "TsNHNH2, PTSA",
+            "reagent_smiles": "",
+            "conditions": "THF, 65 °C",
+            "yield": "92%",
+            "reactant_smiles": "[TIPS]OC[C@]12C=CC[C@]2(C)C(=O)C[C@H](C1)C(=C)C",
+            "product_smiles": "[TIPS]OC[C@]12C=CC[C@]2(C)/C(=N/N[Ts])/C[C@H](C1)C(=C)C",
+            "notes": "A ketone is converted to a tosylhydrazone using p-toluenesulfonyl hydrazide and p-toluenesulfonic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Imine Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "77%",
+            "reactant_smiles": "[TIPS]OC[C@@]12C=CC[C@@]2(C)/C(=N/N[Ts])/C[C@@H](C1)C(=C)",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@@]2(C)CC=C[C@@]2(C1)CO[TIPS]",
+            "notes": "Selective reduction of the imine with DIBAL-H to form a secondary amine, maintaining the TIPS group and the isopropenyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C",
+            "yield": "100%",
+            "reactant_smiles": "C=C(C)[C@@H]1CCC2(C)C(=CC[C@H]2[C@H]1CO[TIPS])",
+            "product_smiles": "C=C(C)[C@@H]1CCC2(C)C(=CC[C@H]2[C@H]1CO)",
+            "notes": "Deprotection of a TIPS silyl ether to a primary alcohol using tetrabutylammonium fluoride (TBAF).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Epoxidation",
+            "reagents": "VO(acac)2, CH2Cl2",
+            "reagent_smiles": "CC(C)(C)OO",
+            "conditions": "CH2Cl2",
+            "yield": "89%",
+            "reactant_smiles": "C=C(C)[C@H]1CC[C@@H]2[C@@H](CO)C3C=CC[C@]123C",
+            "product_smiles": "C=C(C)[C@H]1CC[C@@H]2[C@@H](CO)C3[C@H]4O[C@H]4CC[C@]123C",
+            "notes": "Vanadium-catalyzed epoxidation of the cyclohexene double bond, stereochemistry of existing chiral centers retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Parikh-Doering oxidation",
+            "reagents": "SO3·pyr, i-Pr2NEt",
+            "reagent_smiles": "",
+            "conditions": "DMSO/CH2Cl2",
+            "yield": "94%",
+            "reactant_smiles": "CC(C)=C[C@H]1CC[C@@H]2C(C)(C1)[C@H]3[C@H](C[C@H]2O3)CO",
+            "product_smiles": "CC(C)=C[C@H]1CC[C@@H]2C(C)(C1)[C@H]3[C@H](C[C@H]2O3)C(=O)",
+            "notes": "Oxidation of a primary alcohol to a ketone using Parikh-Doering conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Seyferth-Gilbert alkyne synthesis",
+            "reagents": "KOt-Bu",
+            "reagent_smiles": "C(=[N+]=[N-])P(=O)(OC)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H]1C[C@@H](C(=C)C)[C@H]2[C@@]3([C@H]1C(=O)[C@H]4[C@H](O4)[C@@H]3O)C2",
+            "product_smiles": "C[C@H]1C[C@@H](C(=C)C)[C@H]2[C@@]3([C@H]1C#C[C@H]4[C@H](O4)[C@@H]3O)C2",
+            "notes": "Seyferth-Gilbert reaction converts a ketone to an alkyne, specifically homologation to a terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Epoxide Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Li][AlH4].C1CCOC1",
+            "conditions": "THF, 65 °C",
+            "yield": "91%",
+            "reactant_smiles": "C[C@@]1(C#C)[C@H]2CC[C@@H](C(C)=C)[C@H]3C[C@H]1C23O",
+            "product_smiles": "C[C@@]1(C#C)[C@H]2CC[C@@H](C(C)=C)[C@H]3C[C@H]1[C@H](O)C23",
+            "notes": "Reduction of an internal epoxide to a secondary alcohol using lithium aluminum hydride. The epoxide opens regioselectively with inversion of configuration at the attacked carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Alkyne Hydration (Ketone Formation)",
+            "reagents": "HgO, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "H2O/acetone, 23 °C",
+            "yield": "30%",
+            "reactant_smiles": "C[C@@]1(C#C)[C@H]2CC[C@H](O)C[C@@H]1C3=C(C)CC[C@]23C",
+            "product_smiles": "C[C@@]1(C(=O)C)[C@H]2CC[C@@H](O)C[C@@H]1C3=C(C)CC[C@]23C",
+            "notes": "Mercury-catalyzed hydration of a terminal alkyne to a methyl ketone, with inversion of stereochemistry at the secondary alcohol center.",
+            "substeps": []
+        }
+    ]
+}

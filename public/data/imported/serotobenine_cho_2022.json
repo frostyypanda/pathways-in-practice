@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "serotobenine-cho-2022",
+        "molecule_name": "Serotobenine",
+        "class": "Natural Product",
+        "author": "Cho",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "ICl",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, rt",
+            "yield": "99%",
+            "reactant_smiles": "COc1ccccc1CC(=O)O",
+            "product_smiles": "COc1c(CC(=O)O)ccc(I)c1",
+            "notes": "Iodination of 2-methoxyphenylacetic acid, regioselectivity directed by the activating methoxy group, leading to substitution para to methoxy and meta to the acetic acid group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide formation",
+            "reagents": "CDI",
+            "reagent_smiles": "C=CCNCCCC1OCCO1",
+            "conditions": "DCM, rt",
+            "yield": "90%",
+            "reactant_smiles": "COc1c(CC(=O)O)ccc(I)c1",
+            "product_smiles": "C=CCN(CCCC1OCCO1)C(=O)Cc1c(OC)ccc(I)c1",
+            "notes": "Carboxylic acid undergoes amide coupling with a primary amine (containing an allyl group and a dioxolane acetal) using CDI to form the corresponding tertiary amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Copper-catalyzed N-arylation",
+            "reagents": "H2NNHCO2Et, CuI, 1,10-phen, Cs2CO3",
+            "reagent_smiles": "O=C(OCC)NN.[Cu]I.C1=CC=C2C(=C1)C3=NC=CC=C3N=C2.[Cs+].[Cs+].[O-]C(=O)[O-]",
+            "conditions": "DMF, 80 °C",
+            "yield": "89%",
+            "reactant_smiles": "C=CCN(CCCC1OCCO1)C(=O)CC2=C(OC)C=C(I)C=C2",
+            "product_smiles": "C=CCN(CCCC1OCCO1)C(=O)CC2=C(OC)C=C(N(N)C(=O)OCC)C=C2",
+            "notes": "Aryl iodide undergoes copper-catalyzed N-arylation with ethyl hydrazinocarboxylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Indole Synthesis / Acetal Deprotection",
+            "reagents": "HCl, dioxane, n-PrOH",
+            "reagent_smiles": "",
+            "conditions": "110 °C",
+            "yield": "54%",
+            "reactant_smiles": "C=CCN(CCCC1OCCO1)C(=O)CC2=CC(=CC=C2OC)N(C(=O)OCC)N",
+            "product_smiles": "C=CCN1CC2=CN(C3=CC=C(C(=C23)CC1=O)OC)C(=O)OCC",
+            "notes": "Acetal hydrolysis to aldehyde, followed by intramolecular cyclization of the hydrazide to form an indole ring system, coupled with a lactam ring closure. Loss of 1N (as NH3 from hydrazide) and 2C, 2O (from dioxolane ring).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Demethylation",
+            "reagents": "BCl3, TBAI",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "C=CCN1CC2=CN(C3=CC=C(C(=C23)CC1=O)OC)C(=O)OCC",
+            "product_smiles": "C=CCN1CC2=CN(C3=CC=C(C(=C23)CC1=O)O)C(=O)OCC",
+            "notes": "Phenolic methyl ether demethylation to phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "COC1=C(C=CC(=C1)CBr)OCC2=CC=CC=C2",
+            "conditions": "DMF, rt",
+            "yield": "90%",
+            "reactant_smiles": "C=CCN1CC2=CN(C3=CC=C(C(=C23)CC1=O)O)C(=O)OCC",
+            "product_smiles": "C=CCN1CC2=CN(C3=CC=C(C(=C23)CC1=O)OCC4=CC(=C(C=C4)OCC5=CC=CC=C5)OC)C(=O)OCC",
+            "notes": "Phenolic hydroxyl group alkylation with a substituted benzyl bromide to form an ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Alpha-azidation",
+            "reagents": "LiHMDS, NBS, TMSN3",
+            "reagent_smiles": "",
+            "conditions": "THF/DMF, -78 °C then 0 °C",
+            "yield": "70%",
+            "reactant_smiles": "C=CCN1CC2=CN(C3=CC=C(C(=C23)CC1=O)OCC4=CC(=C(C=C4)OCC5=CC=CC=C5)OC)C(=O)OCC",
+            "product_smiles": "C=CCN1CC2=CN(C3=CC=C(C(=C23)C(N=[N+]=[N-])C1=O)OCC4=CC(=C(C=C4)OCC5=CC=CC=C5)OC)C(=O)OCC",
+            "notes": "Azidation of the alpha-carbon to the lactam carbonyl. The stereochemistry at the newly formed chiral center is shown as unspecified (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Azide to Diazo Transformation",
+            "reagents": "DBU",
+            "reagent_smiles": "O=C(ON1C(=O)CCC1=O)c2ccccc2P(c3ccccc3)c4ccccc4",
+            "conditions": "toluene, 0 °C",
+            "yield": "65%",
+            "reactant_smiles": "CCOC(=O)N1C=C2C3=C(C1)C(=O)C(C([N-]=[N+]=N))CN(CC=C)C3C=C(C2)OCC4=CC(=C(C=C4)OCC5=CC=CC=C5)OC",
+            "product_smiles": "CCOC(=O)N1C=C2C3=C(C1)C(=O)C(C=[N+]=[N-])CN(CC=C)C3C=C(C2)OCC4=CC(=C(C=C4)OCC5=CC=CC=C5)OC",
+            "notes": "Conversion of an azide group to a diazo group on a fused indolo-azepanone scaffold using N-(2-(diphenylphosphino)benzoyl)succinimide and DBU.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular C-H insertion / Cyclization",
+            "reagents": "Rh2(R-TCPTTL)4",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "85%",
+            "reactant_smiles": "CCOC(=O)N1C=C2C=C(C=C2C3=C1N(CC=C)CC(=O)C3=N2)OCC4=CC(OC)=C(OCC5=CC=CC=C5)C=C4",
+            "product_smiles": "CCOC(=O)N1C=C2C=C(C=C2C3=C1N(CC=C)CC(=O)[C@@H]4[C@@H](C5=CC(OC)=C(OCC6=CC=CC=C6)C=C5)O4C3)",
+            "notes": "Intramolecular C-H insertion of a diazo ketone into an aryl C-H bond catalyzed by a dirhodium complex, forming a new furan ring and two stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Friedel-Crafts Alkylation / Cyclization",
+            "reagents": "BF3•OEt2",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "70%",
+            "reactant_smiles": "C=CCN1CC2=CN(C3=CC=C4C(=C23)[C@H](C(C5=CC(=C(C=C5)OCC6=CC=CC=C6)OC)O4)C1=O)C(=O)OCC",
+            "product_smiles": "C=CCN1CC2=CN(C3=CC=C4C(=C23)[C@@H]([C@H](C5=CC(=C(C=C5)OCC6=CC=CC=C6)OC)O4)C1=O)C(=O)OCC",
+            "notes": "Lewis acid-catalyzed cyclization forming a dihydrofuran ring, setting specific relative stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "N-Deallylation",
+            "reagents": "Pd(TFA)2, DPPP",
+            "reagent_smiles": "",
+            "conditions": "EtCN, H2O, 120 °C",
+            "yield": "77%",
+            "reactant_smiles": "C=CCN1CC2=CN(C3=CC=C4C(=C23)[C@@H]([C@@H](C5=CC(=C(C=C5)OCC6=CC=CC=C6)OC)O4)C1=O)C(=O)OCC",
+            "product_smiles": "CCOC(=O)N1C=C2CNC(=O)[C@@H]3C4=C2C1=CC=C4O[C@@H]3C5=CC(=C(C=C5)OCC6=CC=CC=C6)OC",
+            "notes": "Palladium-catalyzed deallylation of an N-allyl lactam to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "N-Deprotection",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)N1C=C2CC3NC(=O)[C@@H]4[C@H]5O[C@H]6C=C7C=CC=C(C7=C2)C6=C5[C@H]4C(C8=CC(=C(OC)C=C8)OCC9=CC=CC=C9)O3",
+            "product_smiles": "COC1=CC(=CC=C1OCC2=CC=CC=C2)[C@H]3[C@@H]4C5=C6C(=CNC6=CC=C5O3)CNC4=O",
+            "notes": "Deprotection of N-ethoxycarbonyl group on indole via NaOMe.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydrogenolysis / Deprotection",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH, rt",
+            "yield": "91%",
+            "reactant_smiles": "COc1cc(OCCc2ccccc2)c([C@H]3c4c(C(=O)NCC3)[nH]c3ccc(O4)c34)cc1",
+            "product_smiles": "COc1cc(O)c([C@H]2c3c(C(=O)NCC2)[nH]c2ccc(O3)c23)cc1",
+            "notes": "Reductive deprotection of a benzyl ether to a phenol.",
+            "substeps": []
+        }
+    ]
+}

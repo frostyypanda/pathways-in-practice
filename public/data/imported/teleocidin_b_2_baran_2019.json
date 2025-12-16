@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "teleocidin-b-2-baran-2019",
+        "molecule_name": "Teleocidin B-2",
+        "class": "Natural Product",
+        "author": "Baran",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Acetylation",
+            "reagents": "Ac2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "92%",
+            "reactant_smiles": "C1=CC(=C2C=CNC2=C1)Br",
+            "product_smiles": "[Ac]N1C=CC2=C(C=CC=C21)Br",
+            "notes": "The nitrogen of 4-bromo-1H-indole is acetylated using acetic anhydride (Ac2O).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nickel-catalyzed C-N coupling (Buchwald-Hartwig type amination)",
+            "reagents": "Ni(II), LiBr, DBU",
+            "reagent_smiles": "CC(C)[C@@H](N)C(=O)OC.CN1C=NC(=C1)c2ccccn2",
+            "conditions": "",
+            "yield": "51%",
+            "reactant_smiles": "CC(=O)N1C=CC2=C(Br)C=CC=C21",
+            "product_smiles": "CC(C)[C@@H](C(=O)OC)NC1=C2C=CN(C(=O)C)C2=CC=C1",
+            "notes": "Nickel-catalyzed amination of a 7-bromo-1-acetylindole with (S)-valine methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-methylation",
+            "reagents": "K2CO3, MeI",
+            "reagent_smiles": "",
+            "conditions": "then MeOH",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)[C@H](C(=O)OC)NC1=C2C=CN(C(=O)C)C2=CC=C1",
+            "product_smiles": "CC(C)[C@H](C(=O)OC)N(C)C1=C2C=CN(C(=O)C)C2=CC=C1",
+            "notes": "N-methylation of the aniline nitrogen attached to the indole core.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Aziridine Ring-Opening / Alkylation",
+            "reagents": "MeMgCl, CuCl",
+            "reagent_smiles": "[Boc]N1[C@H](CO[TBS])[C@@H]1",
+            "conditions": "",
+            "yield": "57%",
+            "reactant_smiles": "CC(C)[C@@H](C(=O)OC)N(C)C1=C2C=CN(C(=O)C)C2=CC=C1",
+            "product_smiles": "CC(C)[C@@H](C(=O)OC)N(C)C1=C2C(=CN(C(=O)C)C2=CC=C1)C[C@H](N[Boc])C[OTBS]",
+            "notes": "Indole C3 alkylation with an aziridine derivative, leading to ring-opening.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@H](C(=O)OC)N(C)C1=C2C(=CN([Ac])C2=CC=C1)C[C@H](N[Boc])C[OTBS]",
+            "product_smiles": "CC(C)[C@H](C(=O)OC)N(C)C1=C2C(=CNC2=CC=C1)C[C@H](N)CO",
+            "notes": "Acid-catalyzed deprotection of N-Boc, O-TBS, and N-acetyl protecting groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide formation / Macrocyclization",
+            "reagents": "LDA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "CC(C)[C@@H](C(=O)OC)N(C)c1cccc2c1[nH]c(C[C@@H](N)CO)c2",
+            "product_smiles": "CC(C)[C@H]1C(=O)N[C@@H](CC2=CNC3=CC=CC(=C23)N1C)CO",
+            "notes": "Intramolecular amide formation (lactamization) driven by LDA, forming an 8-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-protection",
+            "reagents": "TIPSCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "CC(C)[C@H]1C(=O)N[C@@H](CC2=CNC3=CC=CC(=C23)N1C)CO",
+            "product_smiles": "CC(C)[C@H]1C(=O)N[C@@H](CC2=CN([TIPS])C3=CC=CC(=C23)N1C)CO",
+            "notes": "Indole N-protection with TIPSCl",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "CN1C2=CC=CC3=C2C=CN([TIPS])C3[C@H](C(=O)N[C@@H](CO)CC1)C(C)C",
+            "product_smiles": "CN1C2=CC=CC3=C2C=CN([TIPS])C3[C@H](C(=O)N[C@@H](C[OTBS])CC1)C(C)C",
+            "notes": "Protection of a primary alcohol as its tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "C-H Borylation",
+            "reagents": "B2pin2, Ir(I)",
+            "reagent_smiles": "CC1=C(C)C2=C(C3=C(C=C2)C(=C(C)C=N3)C)N=C1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@H]1C(=O)N[C@@H](C[OTBS])CC2=CN([NTIPS])C3=C(C=CC=C3)C(=C2)N1C",
+            "product_smiles": "CC(C)[C@H]1C(=O)N[C@@H](C[OTBS])CC2=CN([NTIPS])C3=C(C=C([Bpin])C=C3)C(=C2)N1C",
+            "notes": "Iridium-catalyzed C-H borylation of an indole derivative at the para position relative to the N-methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@H]1N(C)C2=CC([Bpin])=CC3=C2C(=C1C(=O)N[C@@H](CO[OTBS])C3)=CN([NTIPS])",
+            "product_smiles": "CC(C)[C@H]1N(C)C2=CC([Bpin])=CC3=C2C(=C1C(=O)N[C@@H](CO[OTBS])C3)=CN",
+            "notes": "TIPS group on indole nitrogen is deprotected to NH",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc2O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "CN1C2=C(C=C(C=C2)[Bpin])C3=CC[C@H](C[OTBS])NC(=O)[C@@H](C(C)C)C13",
+            "product_smiles": "CN1C2=C(C=C(C=C2)[Bpin])C3=C(N[Boc]C=C3)C[C@H](C[OTBS])NC(=O)[C@@H](C(C)C)C13",
+            "notes": "N-Boc protection of the indole NH",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Hydrolysis / Boronate Oxidation",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Bpin]C1=CC2=C3C(=CN([NBoc])C3=C1)C[C@@H](C[OTBS])NC(=O)[C@H](C(C)C)N2C",
+            "product_smiles": "CC(C)[C@H]1C(=O)N[C@@H](CC2=CN([NBoc])C3=CC(=CC(=C23)N1C)B(O)O)C[OTBS]",
+            "notes": "Conversion of pinacol boronate ester to boronic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd(II)",
+            "reagent_smiles": "CC(C)(C)[C@@H]1COC(=N1)C2=CC=C(C=N2)C(F)(F)F.CC(C)/C(=C/CC(C)O)/C",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "[OTBS]C[C@H]1CC2=CN(C3=CC(=CC(=C23)N(C)[C@@H](C(C)C)C(=O)N1)B(O)O)C(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)[C@@H]1C(=O)N[C@H](C[OTBS])CC2=CN(C3=CC(=CC(=C23)N1C)[C@@](C)(CCC(=O)C)C(C)C)C(=O)OC(C)(C)C",
+            "notes": "Suzuki-Miyaura coupling of a boronic acid with a chiral allylic alcohol using a Pd(II) catalyst and a chiral pyridine-oxazoline ligand, resulting in C-C bond formation, reduction of the alkene, and oxidation of the secondary alcohol to a methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection, Addition",
+            "reagents": "HFIP",
+            "reagent_smiles": "C=CLi",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "CC(C)[C@H]1C(=O)N[C@@H](CC2=CN([NBoc])C3=CC(=CC(=C23)N1C)[C@@](C)(CCC(=O)C)C(C)C)C[OTBS]",
+            "product_smiles": "C=CC(C)(CC[C@@](C)(C(C)C)C1=CC2=C3C(=CNC3=C1)C[C@@H](C[OTBS])NC(=O)[C@H](C(C)C)N2C)O",
+            "notes": "Boc deprotection of the indole nitrogen, and addition of vinyllithium to the ketone, forming a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "HFIP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "C[C@@H](C)C1C(=O)N[C@H](C[C@H]([OTBS])C2=C3C(=CNC4=C2)C=C(C5C[C@@](C)(C(C)C)C6=C5[C@](C)(O)C[C@](C)(C)C=C6)C4=C3)N(C)C1",
+            "product_smiles": "C[C@@H](C)C1C(=O)N[C@H](C[C@H](CO)C2=C3C(=CNC4=C2)C=C(C5C[C@@](C)(C(C)C)C6=C5[C@](C)(O)C[C@](C)(C)C=C6)C4=C3)N(C)C1",
+            "notes": "TBS ether deprotection to primary alcohol.",
+            "substeps": []
+        }
+    ]
+}

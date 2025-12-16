@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dihydrocodeine-opatz-2014",
+        "molecule_name": "Dihydrocodeine",
+        "class": "Natural Product",
+        "author": "Opatz",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-Methylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CI",
+            "conditions": "DMF",
+            "yield": "76%",
+            "reactant_smiles": "COC(=O)C1=CC(=C(C(=C1)O)O)O",
+            "product_smiles": "COC(=O)C1=CC(O)=C(OC)C(O)=C1",
+            "notes": "Regioselective methylation of one hydroxyl group on methyl 3,4,5-trihydroxybenzoate to form methyl 3,5-dihydroxy-4-methoxybenzoate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-Alkylation",
+            "reagents": "BnCl, K2CO3, DMF",
+            "reagent_smiles": "ClCC1=CC=CC=C1.[K+].[K+].[O-]C([O-])=O",
+            "conditions": "155 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C=C(C=C1O)C(=O)OC)O",
+            "product_smiles": "COC1=C([OBn])C=C(C(=O)OC)C=C1[OBn]",
+            "notes": "Double O-alkylation of methyl 3,5-dihydroxy-4-methoxybenzoate with benzyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4, THF",
+            "reagent_smiles": "",
+            "conditions": "0 to 55 °C",
+            "yield": "91% (2 steps)",
+            "reactant_smiles": "[OMe]c1cc(C(=O)OC)cc([OBn])c1[OBn]",
+            "product_smiles": "[OMe]c1cc(CO)cc([OBn])c1[OBn]",
+            "notes": "Reduction of methyl ester to primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Bromination (Appel-like reaction)",
+            "reagents": "NBS, PPh3, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "97%",
+            "reactant_smiles": "COC1=C([OBn])C=C(CO)C=C1[OBn]",
+            "product_smiles": "COC1=C([OBn])C=C(CBr)C=C1[OBn]",
+            "notes": "Primary benzylic alcohol is converted to a primary benzylic bromide using NBS and triphenylphosphine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "C-Alkylation / Dehydrocyanation / Imine Formation",
+            "reagents": "KHMDS",
+            "reagent_smiles": "COC1=CC=C2C(=C1)CCNC2C#N",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC1=C([OBn])C=C(CBr)C=C1[OBn]",
+            "product_smiles": "COC1=CC=C2C(=C1)CCN=C2CC3=CC([OBn])=C(OC)C([OBn])=C3",
+            "notes": "Benzylic bromide reacts with 1-cyano-6-methoxy-1,2,3,4-tetrahydroisoquinoline, likely via C-alkylation followed by elimination of HCN and formation of an imine.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amidation / Formylation",
+                    "reagents": "",
+                    "reagent_smiles": "CCOC=O",
+                    "conditions": "toluene, reflux",
+                    "yield": "",
+                    "reactant_smiles": "COC1=CC=CC(=C1)CCN",
+                    "product_smiles": "COC1=CC=CC(=C1)CCNC=O",
+                    "notes": "Formylation of a primary amine to a formamide using ethyl formate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Bischler-Napieralski cyclization",
+                    "reagents": "PCl5",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 40 °C",
+                    "yield": "83% (2 steps)",
+                    "reactant_smiles": "COC1=CC=CC(=C1)CCNC=O",
+                    "product_smiles": "COc1ccc2c(c1)C=NCCC2",
+                    "notes": "Formation of a 3,4-dihydroisoquinoline from an N-formylphenethylamine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Strecker-type reaction / Amino-cyanation",
+                    "reagents": "",
+                    "reagent_smiles": "CC(C)(C#N)O",
+                    "conditions": "H2O, rt",
+                    "yield": "92%",
+                    "reactant_smiles": "COc1ccc2c(c1)C=NCCC2",
+                    "product_smiles": "COc1ccc2c(c1)CCNC2C#N",
+                    "notes": "Addition of acetone cyanohydrin to an imine to form an alpha-aminonitrile.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Transfer Hydrogenation",
+            "reagents": "Drawn Ru catalyst; HCO2H, NEt3",
+            "reagent_smiles": "",
+            "conditions": "0 °C, DMF",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "[OMe]C1=CC=C2C(=C1)CCN=C2CC3=CC([OBn])=C([OMe])C([OBn])=C3",
+            "product_smiles": "[OMe]C1=CC=C2C(=C1)CCN[C@H]2CC3=CC([OBn])=C([OMe])C([OBn])=C3",
+            "notes": "Asymmetric reduction of an imine to a chiral secondary amine using a ruthenium catalyst (p-cymene)RuCl((R,R)-Ts-DPEN) in the presence of formic acid and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Carbamoylation",
+            "reagents": "NEt3",
+            "reagent_smiles": "COC(=O)Cl",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[OMe]C1=CC=C2C(=C1)CCN[C@@H]2CC3=CC([OBn])=C([OMe])C([OBn])=C3",
+            "product_smiles": "[OMe]C1=CC=C2C(=C1)CCN([C@@H]2CC3=CC([OBn])=C([OMe])C([OBn])=C3)C(=O)[OMe]",
+            "notes": "N-carbamoylation of a secondary amine using methyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Birch Reduction",
+            "reagents": "Li/NH3, t-BuOH",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C2C(=C1)CCN([C@@H]2CC3=CC(=C(C(=C3)OCC4=CC=CC=C4)OC)OCC5=CC=CC=C5)C(=O)OC",
+            "product_smiles": "COC1=CCC2=C(CCN([C@@H]2CC3=CC(=C(C(=C3)O)OC)O)C(=O)OC)C1",
+            "notes": "Birch reduction of a methoxy-substituted tetrahydroisoquinoline derivative and concomitant debenzylation of the aryl benzyl ethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Morhpian Synthesis (Rearrangement/Cyclization/Oxidation/Aromatization)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "COC1=CCC2=C(CCN([C@@H]2CC3=CC(=C(C(=C3)O)OC)O)C(=O)OC)C1",
+            "product_smiles": "COc1c(O)c(O)c2c1C[C@@H]3[C@H]4CCC(=O)C[C@]42CCN3C(=O)OC",
+            "notes": "Rearrangement and cyclization of a tetrahydroquinoline derivative to a morphinan scaffold, involving aromatization of one ring, oxidation of an enol ether to a ketone, and demethylation of an aromatic methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alpha-Bromination",
+            "reagents": "CuBr2, CHCl3, EtOAc",
+            "reagent_smiles": "Br[Cu]Br.ClC(Cl)Cl.CCOC(=O)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C2=C(C[C@@H]3[C@@H]4CCC(=O)C[C@]42CCN3C(=O)OC)C=C1O)O",
+            "product_smiles": "COC1=C(C2=C(C[C@@H]3[C@@H]4CCC(=O)[C@H]([C@]42CCN3C(=O)OC)Br)C=C1O)O",
+            "notes": "Alpha-bromination of a ketone in a complex fused-ring system, forming a new stereocenter alpha to the ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Cyclization / Hemiacetal Formation",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "93% (2 steps)",
+            "reactant_smiles": "COC1=C(O)C=C2C3=C1O[C@@H]4C[C@@H]5[C@@H](CC(=O)[C@H](Br)[C@@]53)CCN4C(=O)OC",
+            "product_smiles": "COC1=C(O)C=C2C3=C1O[C@@H]4C[C@@H]5[C@H](O)[C@@H]6O[C@@H]7[C@@]56CCN4C(=O)OC",
+            "notes": "Intramolecular cyclization and reduction of ketone to hemiacetal via displacement of bromine with NaOH. The C6 ketone is converted to a hydroxyl group, and its oxygen forms a new 5-membered cyclic ether with C7.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2O, pyridine",
+            "reagent_smiles": "FC(F)(F)S(=O)(=O)OS(=O)(=O)C(F)(F)F.c1ccncc1",
+            "conditions": "0 °C",
+            "yield": "97%",
+            "reactant_smiles": "COC(=O)N1CC[C@@H]23[C@H]4C(=O)CC[C@H]2[C@H](C[C@@]3(O4)C5=C(OC)C(O)=CC=C5)C1",
+            "product_smiles": "COC(=O)N1CC[C@@H]23[C@H]4C(=O)CC[C@H]2[C@H](C[C@@]3(O4)C5=C(OC)C([OTf])=CC=C5)C1",
+            "notes": "O-triflation of the C3-hydroxyl group on the morphinan core.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Palladium-catalyzed de-triflation / Reduction",
+            "reagents": "Pd(PPh3)4, HCO2H, NEt3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "80%",
+            "reactant_smiles": "COC1=C2C=C(OS(=O)(=O)C(F)(F)F)C3=C1O[C@H]4[C@@H]5CC(=O)C[C@H]6[C@@H]5CN(C(=O)OC)[C@H]3C246",
+            "product_smiles": "COC1=C2C=CC3=C1O[C@H]4[C@@H]5CC(=O)C[C@H]6[C@@H]5CN(C(=O)OC)[C@H]3C246",
+            "notes": "Aryl triflate reduced to aryl hydrogen using formic acid and triethylamine with Pd(0) catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reduction",
+            "reagents": "DibalH",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "COC1=CC=C2C[C@@H]3[C@@H]4CCC(=O)[C@H]5[C@]4(CCN3C(=O)OC)C2=C1O5",
+            "product_smiles": "CN1CC[C@]23[C@H]4CC[C@@H]([C@@H]2OC5=C3C(=CC=C5OC)C[C@H]41)O",
+            "notes": "Reduction of ketone and N-carbomethoxy group to alcohol and N-methyl group using DibalH.",
+            "substeps": []
+        }
+    ]
+}

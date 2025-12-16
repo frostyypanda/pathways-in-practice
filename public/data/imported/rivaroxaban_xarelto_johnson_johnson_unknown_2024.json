@@ -1,0 +1,72 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rivaroxaban-xarelto-johnson-johnson-unknown-2024",
+        "molecule_name": "Rivaroxaban (Xarelto Johnson&Johnson)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "SO₂Cl, PhCH₃",
+            "reagent_smiles": "ClS(=O)(=O)Cl.Cc1ccccc1",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1sc(Cl)cc1",
+            "product_smiles": "O=C(Cl)c1sc(Cl)cc1",
+            "notes": "Conversion of a thiophene carboxylic acid to its corresponding acyl chloride using sulfuryl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide formation",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "N[C@H](CO)CO",
+            "conditions": "H2O, 2-MeTHF",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "O=C(Cl)C1=CSC(Cl)=C1",
+            "product_smiles": "O=C(NC[C@H](CO)O)C1=CSC(Cl)=C1",
+            "notes": "Amide coupling between a thiophene acyl chloride and (S)-1-amino-2,3-propanediol (serinol).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bromination",
+            "reagents": "HBr, AcOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "71%",
+            "reactant_smiles": "C1=C(C(=O)NC[C@@H](CO)O)SC(=C1)Cl",
+            "product_smiles": "C1=C(C(=O)NC[C@@H](CBr)O)SC(=C1)Cl",
+            "notes": "Selective bromination of a primary alcohol to a primary bromide using HBr in acetic acid. The secondary alcohol and amide functional groups remain unchanged, and the stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "SN2 reaction / Amine alkylation",
+            "reagents": "collidine",
+            "reagent_smiles": "C1=C(C=CC(=C1)N2CCOCC2=O)N",
+            "conditions": "PhCH3, reflux",
+            "yield": "62%",
+            "reactant_smiles": "C1=C(C(=O)NC[C@@H](CBr)O)SC(=C1)Cl",
+            "product_smiles": "C1=C(C=CC(=C1)N2CCOCC2=O)NC[C@@H](CNC(=O)C3=CC=C(Cl)S3)O",
+            "notes": "Primary bromide is displaced by a primary aromatic amine via SN2 reaction. The stereochemistry at the hydroxyl-bearing carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxazolidinone Formation via Cyclization",
+            "reagents": "CDCl, NMP, PhCH3",
+            "reagent_smiles": "",
+            "conditions": "115 °C",
+            "yield": "92%",
+            "reactant_smiles": "C1=C(C=CC(=C1)N2CCOCC2=O)NC[C@H](CNC(=O)C3=CC=C(Cl)S3)O",
+            "product_smiles": "C1=C(C=CC(=C1)N2C[C@H](CNC(=O)C3=CC=C(Cl)S3)OC2=O)N4CCOCC4=O",
+            "notes": "Intramolecular cyclization of a secondary amine and a secondary alcohol to form a 2-oxazolidinone ring.",
+            "substeps": []
+        }
+    ]
+}

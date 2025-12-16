@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vibegron-beova-kyorin-merck-unknown-2024",
+        "molecule_name": "Vibegron (Beova Kyorin-Merck)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidation",
+            "reagents": "TEMPO, PhI(OAc)2",
+            "reagent_smiles": "",
+            "conditions": "H2O, HOAc, MeCN, 20 to 30 °C",
+            "yield": "",
+            "reactant_smiles": "C#CCCCO",
+            "product_smiles": "C#CCCC=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Strecker reaction",
+            "reagents": "KCN, NH4Cl, NH4OH, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C#CCCC=O",
+            "product_smiles": "C#CCCC(N)C#N",
+            "notes": "An aldehyde undergoes a Strecker reaction with cyanide and ammonia to form an alpha-aminonitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amine Protection",
+            "reagents": "Boc₂O",
+            "reagent_smiles": "",
+            "conditions": "40 to 50 °C",
+            "yield": "79% (3 steps)",
+            "reactant_smiles": "C#CCCC(C#N)N",
+            "product_smiles": "C#CCCC(C#N)N[Boc]",
+            "notes": "Protection of a primary amine with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Grignard Reaction (Nitrile to Ketone)",
+            "reagents": "PhMgBr",
+            "reagent_smiles": "C1=CC=CC=C1[Mg]Br",
+            "conditions": "THF, -5 to 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C#CCCC(C#N)N[Boc]",
+            "product_smiles": "C#CCCC(C(=O)C1=CC=CC=C1)N[Boc]",
+            "notes": "A Grignard reaction where phenylmagnesium bromide adds to the nitrile group, followed by (implied) hydrolysis to form a ketone. The Boc-protected amine and terminal alkyne functionalities remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Asymmetric Ketone Reduction",
+            "reagents": "Na₂B₄O₇, NaOH, KRED•p301, β-NADPHNa",
+            "reagent_smiles": "",
+            "conditions": "H₂O, 45 °C",
+            "yield": "95%",
+            "reactant_smiles": "C#CCCC(C(=O)C1=CC=CC=C1)[NHBoc]",
+            "product_smiles": "C#CCC[C@@H]([C@@H](C1=CC=CC=C1)O)[NHBoc]",
+            "notes": "Enzymatic asymmetric reduction of a ketone to a chiral alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "PdCl2, CuI, Et3N",
+            "reagent_smiles": "C1=CC(=CC=C1[N+](=O)[O-])I.CCN(CC)CC",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C#CCC[C@H]([C@@H](C1=CC=CC=C1)O)NC(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@H](CCC#CC1=CC=C(C=C1)[N+](=O)[O-])[C@@H](C2=CC=CC=C2)O",
+            "notes": "Sonogashira coupling of a terminal alkyne with 4-iodonitrobenzene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Boc cleavage)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH, 60 °C",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "[Boc]N[C@H](CCC#CC1=CC=C(C=C1)[N+](=O)[O-])[C@@H](C2=CC=CC=C2)O",
+            "product_smiles": "[NH3+][C@H](CCC#CC1=CC=C(C=C1)[N+](=O)[O-])[C@@H](C2=CC=CC=C2)O.[Cl-]",
+            "notes": "Boc protecting group deprotected to form the amine hydrochloride salt. Stereochemistry is preserved at both chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Imidazoline Formation (Cyclization)",
+            "reagents": "DIPEA, THF, DMA",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@H]([C@@H](CCC#CC2=CC=C(C=C2)[N+](=O)[O-])[NH3+])O.[Cl-]",
+            "product_smiles": "O[C@H](c1ccccc1)[C@@H]2CNC(=N2)CC3=CC=C(C=C3)[N+](=O)[O-]",
+            "notes": "Intramolecular cyclization of an amino alkyne hydrochloride salt to form a 4,5-dihydro-1H-imidazole (imidazoline) derivative, facilitated by base (DIPEA) and heat.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Protection",
+            "reagents": "TMSCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@@H]([C@@H]2CCC(=N2)CC3=CC=C(C=C3)[N+](=O)[O-])O",
+            "product_smiles": "[OTMS][C@@H](C1=CC=CC=C1)[C@@H]2CCC(=N2)CC3=CC=C(C=C3)[N+](=O)[O-]",
+            "notes": "Protection of secondary alcohol to form TMS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrogenation / Nitro Reduction / Silyl Ether Deprotection",
+            "reagents": "H2, Pt/Al2O3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "[OTMS][C@H](c1ccccc1)[C@@H]2NCC=C2CC3=CC=C(C=C3)[N+](=O)[O-]",
+            "product_smiles": "O[C@H](c1ccccc1)[C@@H]2NCC=C2CC3=CC=C(C=C3)N",
+            "notes": "Simultaneous reduction of a nitro group to an amine and deprotection of a TMS ether to a hydroxyl group via catalytic hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EDC HCl, NH4OH",
+            "reagent_smiles": "[Na+].[O-]C(=O)[C@@H]1CC2=NC(=O)NC(=O)C2C1",
+            "conditions": "i-PrOH, H2O",
+            "yield": "93%",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@H](O)[C@@H]2C=CC(CC3=CC=C(N)C=C3)N2",
+            "product_smiles": "C1=CC=C(C=C1)[C@H](O)[C@@H]1C[NH]C(CC2=CC=C(C=C2)NC(=O)[C@@H]3CC4=NC(=O)NC(=O)C4C3)C1",
+            "notes": "Amide coupling reaction between a 3-pyrroline amine and a pyrrolo[1,2-a]pyrimidine carboxylic acid (sodium salt) to form Vibegron. The pyrroline is reduced to a pyrrolidine during the reaction.",
+            "substeps": []
+        }
+    ]
+}

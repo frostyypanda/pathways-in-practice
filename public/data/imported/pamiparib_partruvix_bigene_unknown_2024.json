@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pamiparib-partruvix-bigene-unknown-2024",
+        "molecule_name": "Pamiparib (Partruvix BiGene)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-alkylation (Quaternization)",
+            "reagents": "",
+            "reagent_smiles": "CC(C)(C)OC(=O)CBr",
+            "conditions": "MeCN",
+            "yield": "60%",
+            "reactant_smiles": "CC1=NCCC1",
+            "product_smiles": "CC1=[N+](CCC1)CC(=O)OC(C)(C)C",
+            "notes": "N-alkylation of an imine with tert-butyl bromoacetate to form an iminium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic addition to iminium (Mannich-type)",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "C#[TMS]",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CC1=[N+](CCC1)CC(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)CN1CCCC1(C)C#[TMS]",
+            "notes": "Trimethylsilylacetylene adds to the iminium ion, forming a pyrrolidine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection (Desilylation)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "69% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)CN1CCCC1(C)C#[TMS]",
+            "product_smiles": "C#CC1(C)CCCN1CC(=O)OC(C)(C)C",
+            "notes": "Deprotection of a TMS-protected alkyne to a terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric alkylation / Chiral Induction",
+            "reagents": "THF, MTBE, aq. NaOH",
+            "reagent_smiles": "CC1=CC=C(C=C1)C(=O)OC(C(C(=O)O)OC(=O)C2=CC=C(C)C=C2)C(=O)O",
+            "conditions": "",
+            "yield": "26%",
+            "reactant_smiles": "C#CC1(C)CCCN1CC(=O)OC(C)(C)C",
+            "product_smiles": "C#C[C@]1(C)CCCN1CC(=O)OC(C)(C)C",
+            "notes": "Formation of a chiral center on the pyrrolidine ring with (2R) configuration via chiral auxiliary (Di-p-toluoyl-D-tartaric acid) mediated reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Larock Indole Synthesis / Intramolecular Sonogashira-type Cyclization",
+            "reagents": "Pd(PPh3)2Cl2, CuI, TMG",
+            "reagent_smiles": "COC(=O)C1=C(Br)C=C(F)C(=C1)N[Ts]",
+            "conditions": "DMF",
+            "yield": "85%",
+            "reactant_smiles": "C#C[C@@]1(C)CCCN1CC(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)CN1CCC[C@@]1(C)c2cnc(N[Ts])c3c2ccc(F)c3C(=O)OC",
+            "notes": "Intramolecular Sonogashira coupling of an aryl bromide with an alkyne, followed by indole cyclization. The chiral center at the pyrrolidine C3 is retained.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Aromatic Nitration",
+                    "reagents": "HNO₃, H₂SO₄",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=C(C=C1F)C(=O)O)Br",
+                    "product_smiles": "C1=C(C(=C(C=C1F)[N+](=O)[O-])Br)C(=O)O",
+                    "notes": "Nitration of 2-bromo-5-fluorobenzoic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Esterification",
+                    "reagents": "SOCl₂, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "42%",
+                    "reactant_smiles": "C1=C(C(=C(C=C1F)[N+](=O)[O-])Br)C(=O)O",
+                    "product_smiles": "COC(=O)C1=C(C(=CC(=C1)F)[N+](=O)[O-])Br",
+                    "notes": "Carboxylic acid converted to methyl ester",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Nitro reduction",
+                    "reagents": "Fe, NH4Cl",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, H2O",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)C1=C(C(=CC(=C1)F)[N+](=O)[O-])Br",
+                    "product_smiles": "COC(=O)C1=C(C(=CC(=C1)F)N)Br",
+                    "notes": "Reduction of an aromatic nitro group to an amine using iron and ammonium chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "N-Tosylation / Amine Protection",
+                    "reagents": "TsCl, py",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)C1=C(C(=CC(=C1)F)N)Br",
+                    "product_smiles": "COC(=O)C1=C(C(=CC(=C1)F)[NH][Ts])Br",
+                    "notes": "Amine is tosylated using TsCl and pyridine in DCM.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acid-catalyzed cyclization / Lactam formation / Deprotection",
+            "reagents": "CF3SO3H",
+            "reagent_smiles": "O=S(=O)(O)C(F)(F)F",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "CC(C)(C)OC(=O)CN1CCC[C@]1(C)C2=CC3=C(C=C(C=C3N2[Ts])F)C(=O)OC",
+            "product_smiles": "C[C@@]12CCCN2CC(=O)C3=C1NC4=CC(=CC(=C43)C(=O)OC)F",
+            "notes": "Intramolecular cyclization of an N-tosyl indole derivative and a tert-butyl glycinate to form a fused lactam system, accompanied by deprotection of the N-tosyl and tert-butyl ester groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Pyridazinone formation",
+            "reagents": "NH2NH2, AcOH, (+)-DTTA, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "H2O, MeOH, i-PrOH",
+            "yield": "50%",
+            "reactant_smiles": "C[C@@]12CCCN2CC(=O)C3=C1NC4=CC(=CC(=C43)C(=O)OC)F",
+            "product_smiles": "C[C@@]12CCCN2CC3=NNC(=O)C4=C5C(=CC(=C4)F)NC1=C35",
+            "notes": "Formation of a pyridazinone ring via hydrazinolysis and subsequent cyclization from a methyl ester and an adjacent ketone.",
+            "substeps": []
+        }
+    ]
+}

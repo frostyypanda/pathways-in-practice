@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "zizaene-evans-2023",
+        "molecule_name": "Zizaene",
+        "class": "Natural Product",
+        "author": "Evans",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Corey-Fuchs reaction (aldehyde to geminal dibromide)",
+            "reagents": "Br2, P(OPh)3, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "CC(=CCC[C@H](C)CC=O)C",
+            "product_smiles": "CC(=CCC[C@H](C)CC(Br)Br)C",
+            "notes": "Aldehyde group of (-)-Citronellal is converted to a geminal dibromide using bromine and triphenyl phosphite. The stereocenter at C5 and the isopropenyl group remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Double Elimination",
+            "reagents": "tBuOK, 18-crown-6",
+            "reagent_smiles": "",
+            "conditions": "hexane, 60 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC(C)=CCC[C@@H](C)CC(Br)CBr",
+            "product_smiles": "C#C[C@@H](C)CCC=C(C)C",
+            "notes": "Double dehydrobromination of a vicinal dibromide to form an internal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis (reductive)",
+            "reagents": "O3, DMS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "67%",
+            "reactant_smiles": "C#C[C@@H](C)CCC=C(C)C",
+            "product_smiles": "C#C[C@@H](C)CCC=O",
+            "notes": "Oxidative cleavage of a terminal alkene to an aldehyde, while preserving the alkyne and chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Wittig reaction",
+            "reagents": "NaH",
+            "reagent_smiles": "N(COCCOCC)(COCCOCC)COCCOCC.[Br-].C1CC1C[P+](c2ccccc2)(c3ccccc3)c4ccccc4",
+            "conditions": "THF, 65 °C",
+            "yield": "78%",
+            "reactant_smiles": "C#C[C@H](C)CCC=O",
+            "product_smiles": "C#C[C@H](C)CCC/C=C/C1CC1",
+            "notes": "Wittig reaction of an aldehyde with a cyclopropylmethyltriphenylphosphonium ylide (generated in situ) to form an (E)-alkene. A polyether amine derivative is used as an additive.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Indium-mediated Radical Cyclization",
+            "reagents": "",
+            "reagent_smiles": "C=CCI.In",
+            "conditions": "THF, 70 °C",
+            "yield": "84%",
+            "reactant_smiles": "C#C[C@@H](C)CCC=C1CC1",
+            "product_smiles": "C1CC1=CCC[C@@H](C)2CC(=C)CCC=CC(C=C)CC2",
+            "notes": "Intramolecular cyclization of an alkyne with allyl iodide to form a 9-membered macrocycle with exocyclic methylene and vinyl groups. Significant carbon count discrepancy between reactants (14C) and product image (20C). Product SMILES generated to match the 20-carbon image structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Rh-catalyzed cascade cycloisomerization",
+            "reagents": "[Rh(COD)Cl]2, PPh3",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, 125 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCC(=C)[C@@H](C)CC=C1CC1",
+            "product_smiles": "C=C1CC2CCC3(CC2)[C@@H](C)CCC13",
+            "notes": "Intramolecular cyclization of a polyene containing an enyne and cyclopropylidene, forming a complex tricyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lemieux-Johnson Oxidation (Oxidative Cleavage)",
+            "reagents": "OsO4, NaIO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "H2O, 1,4-dioxane",
+            "yield": "51% (2 steps)",
+            "reactant_smiles": "C=C1C[C@H]2[C@H]3[C@@H]1C[C@H](C)C3C2",
+            "product_smiles": "O=C1C[C@H]2[C@H]3[C@@H]1C[C@H](C)C3C2",
+            "notes": "Oxidative cleavage of an exocyclic terminal alkene to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alpha-Aminomethylation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "[CH2]=[N+](C)C.[I-]",
+            "conditions": "THF, -40 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@@H]2C(=O)C3C[C@H]4C[C@@H]1C432",
+            "product_smiles": "C[C@H]1C[C@@H]2C(=O)[C@H](CN(C)C)C3C[C@H]4C[C@@H]1C432",
+            "notes": "Alpha-aminomethylation of a ketone using dimethylmethyleneammonium iodide (Eschenmoser's salt) and lithium hexamethyldisilazide (LiHMDS) as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Elimination",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "77%",
+            "reactant_smiles": "C[C@H]1CCC2C(=O)C(CN(C)C)C3CCC12C3",
+            "product_smiles": "C[C@H]1CCC2C(=O)C(=C)C3CCC12CC3",
+            "notes": "Oxidation of a tertiary amine to its N-oxide, followed by a Cope elimination to form an exocyclic alkene. The transformation is reported to occur over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Alkylation (Birch-type reduction followed by methylation)",
+            "reagents": "Li, NH3, H2O, THF",
+            "reagent_smiles": "CI",
+            "conditions": "-78 °C",
+            "yield": "66%",
+            "reactant_smiles": "C[C@H]1CCC2C(=O)C(=C)C3CCC12CC3",
+            "product_smiles": "C[C@H]1CCC2C(=O)C(C)(C)C3CCC12C3",
+            "notes": "Reductive alkylation of the exocyclic enone to form a gem-dimethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "THF",
+            "reagent_smiles": "C[Si](C)(C)C[Li]",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C(=O)C23CCC14CC[C@H](C)C3(C2)C4",
+            "product_smiles": "CC1(C)C(O)(C[TMS])C23CCC14CC[C@H](C)C3(C2)C4",
+            "notes": "Addition of (trimethylsilyl)methyllithium to a ketone, forming a tertiary alcohol. The stereochemistry of the newly formed chiral center is unspecified (indicated by wavy lines).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Desilylation, Dehydration, Rearrangement",
+            "reagents": "H2SO4, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "54%",
+            "reactant_smiles": "C[C@H]1CCC2C31CCC(CC3)C(C)(C)C2([TMS])O",
+            "product_smiles": "C[C@H]1CC[C@H]2C(=C)C(C)(C)[C@H]3CC[C@@]12C3",
+            "notes": "Acid-catalyzed desilylation and dehydration followed by rearrangement to (+)-Zizaene.",
+            "substeps": []
+        }
+    ]
+}

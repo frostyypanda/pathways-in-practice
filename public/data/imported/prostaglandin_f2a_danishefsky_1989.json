@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "prostaglandin-f2a-danishefsky-1989",
+        "molecule_name": "Prostaglandin F2a",
+        "class": "Natural Product",
+        "author": "Danishefsky",
+        "year": 1989
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "[2+2] Cycloaddition",
+            "reagents": "Et3N, hexane",
+            "reagent_smiles": "O=C(Cl)Cl",
+            "conditions": "0 °C to 5 °C",
+            "yield": "70%",
+            "reactant_smiles": "C1=CCC=C1",
+            "product_smiles": "C1=C[C@@H]2[C@H](C1)C(=O)C2(Cl)Cl",
+            "notes": "A [2+2] cycloaddition between cyclopentadiene and a ketene derivative to form a bicyclo[3.2.0]heptenone system. The drawn reagent (Cl₂C=O, phosgene) matches the provided reagent SMILES, but for this reaction type (Corey-Paquette), dichloroketene (Cl₂C=C=O) is typically the active species, generated in situ from a precursor.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive Dechlorination",
+            "reagents": "AcOH",
+            "reagent_smiles": "[Zn]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC[C@H]2[C@H]1C(=O)C2(Cl)Cl",
+            "product_smiles": "C1=CC[C@H]2[C@H]1C(=O)C2",
+            "notes": "Reductive removal of gem-dichloro groups from a bicyclic ketone using zinc and acetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Baeyer-Villiger Oxidation",
+            "reagents": "H2O2, AcOH, H2O",
+            "reagent_smiles": "OO.CC(=O)O.O",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "C1=C[C@H]2CC(=O)[C@@H]2C1",
+            "product_smiles": "C1=C[C@H]2[C@@H]C(=O)O[C@@H]2C1",
+            "notes": "Baeyer-Villiger oxidation of a bicyclic ketone to a lactone, with stereochemical inversion/retention depending on migrating group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactone hydrolysis",
+            "reagents": "NaOH, H2O",
+            "reagent_smiles": "[Na+].[OH-].O",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C[C@H]2CC(=O)O[C@@H]2C1",
+            "product_smiles": "O=C(O)C[C@@H]1C=C[C@H](O)C1",
+            "notes": "Hydrolysis of a bicyclic lactone, opening the ring to form a carboxylic acid and alcohol. The relative trans stereochemistry of the chiral centers is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Chiral Resolution (implied, no chemical change shown)",
+            "reagents": "H2O",
+            "reagent_smiles": "C[C@H](N)[Ph]",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C[C@@H](CC(=O)O)[C@H](C1)O",
+            "product_smiles": "C1=C[C@@H](CC(=O)O)[C@H](C1)O",
+            "notes": "Reactant and product structures are identical as depicted. A chiral amine reagent is used, suggesting a resolution or enantioselective process, but no chemical transformation is shown in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Iodolactonization",
+            "reagents": "I2, H2O",
+            "reagent_smiles": "",
+            "conditions": "20 °C",
+            "yield": "85%",
+            "reactant_smiles": "C1=C[C@@H](CC(=O)O)[C@H](C1)O",
+            "product_smiles": "O=C1O[C@H]2[C@H](C1)C[C@H](I)C[C@@H]2O",
+            "notes": "85% yield reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Silylation",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.C1=CNC=N1",
+            "conditions": "DMF, 35 °C",
+            "yield": "85%",
+            "reactant_smiles": "O=C1OC[C@@H]2[C@@H]1[C@H](O)C[C@H]2I",
+            "product_smiles": "O=C1OC[C@@H]2[C@@H]1[C@H]([OTBS])C[C@H]2I",
+            "notes": "Protection of a secondary alcohol with tert-butyldimethylsilyl (TBS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Elimination (Dehydroiodination)",
+            "reagents": "DBN",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "94%",
+            "reactant_smiles": "[OTBS][C@H]1C[C@H](I)[C@@H]2[C@H]1CC(=O)O2",
+            "product_smiles": "[OTBS][C@H]1C=C[C@@H]2[C@H]1CC(=O)O2",
+            "notes": "Dehydroiodination of an iodide using DBN as a base to form an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Conjugate Addition / 1,4-Addition",
+            "reagents": "(C\\C=C\\[C@@H]([OTBS])CCCC)₂CuLi",
+            "reagent_smiles": "C\\C=C\\[C@@H]([OTBS])CCCC",
+            "conditions": "Et₂O/pentane, -78 to -20 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@H]1C=C[C@@H]2[C@H]1CC(=O)O2",
+            "product_smiles": "CCCCC[C@@H](/C=C/[C@H]1C=C[C@@H]([C@@H]1CC(=O)O)[OTBS])[OTBS]",
+            "notes": "Gilman reagent (organocuprate) addition to an α,β-unsaturated lactone, followed by lactone ring-opening to form a carboxylic acid. This is a key step in Corey's prostaglandin synthesis.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrolysis, Lactonization",
+            "reagents": "HCl, H2O, acetone",
+            "reagent_smiles": "",
+            "conditions": "55-60 °C",
+            "yield": "80%",
+            "reactant_smiles": "CCCCC[C@@H]([OTBS])/C=C/[C@H]1C=C[C@H]([OTBS])[C@@H]1CC(=O)O",
+            "product_smiles": "CCCCC[C@@H](/C=C/[C@H]1C=C[C@H]2[C@@H]1CC(=O)O2)O",
+            "notes": "Hydrolysis of two TBS protecting groups, followed by intramolecular lactonization to form a gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Alcohol Protection (THP ether formation)",
+            "reagents": "DHP, TsOH",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "99%",
+            "reactant_smiles": "CCCCC[C@@H](O)/C=C/[C@H]1C=C[C@H]2[C@@H]1CC(=O)O2",
+            "product_smiles": "CCCCC[C@@H]([OTHP])/C=C/[C@H]1C=C[C@H]2[C@@H]1CC(=O)O2",
+            "notes": "Protection of a secondary alcohol as a tetrahydropyranyl (THP) ether using DHP and TsOH in DCM.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction (Lactone to Lactol)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "CC(C)C[AlH]CC(C)C",
+            "conditions": "toluene, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCC[C@@H](/C=C/[C@H]1C=C[C@@H]2[C@]1CC(=O)O2)[OTHP]",
+            "product_smiles": "CCCCC[C@@H](/C=C/[C@H]1C=C[C@@H]2[C@]1CC(O)O2)[OTHP]",
+            "notes": "Diisobutylaluminum hydride (DIBAL-H) reduces the lactone to a hemiacetal (lactol). Stereochemistry of the bicyclic core and the THP-protected alcohol remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Wittig Reaction",
+            "reagents": "",
+            "reagent_smiles": "[P+](C1=CC=CC=C1)(C2=CC=CC=C2)(C3=CC=CC=C3)CCCC(=O)O",
+            "conditions": "DMSO",
+            "yield": "",
+            "reactant_smiles": "CCCCC[C@@H](OC3CCCCO3)/C=C/[C@H]1C=C[C@H]2[C@@H]1C[C@H](O)O2",
+            "product_smiles": "O=C(O)CCCC/C=C\\[C@@H]1C[C@H](O)C=C[C@H]2[C@@H]1[C@@H]2/C=C/[C@@H](OC3CCCCO3)CCCCC",
+            "notes": "Cyclic hemiacetal opening followed by Wittig reaction to form a new carbon-carbon double bond and carboxylic acid group.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidation",
+            "reagents": "CrO₃, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM, -23 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)CCC/C=C/[C@@H]1[C@@H](O)/C=C/[C@H]1[C@H]([OTHP])CCCCCC",
+            "product_smiles": "O=C1C=C[C@@H](C/C=C\\CCCC(=O)O)[C@H]1/C=C/[C@H]([OTHP])CCCCCC",
+            "notes": "Oxidation of a secondary alcohol on the cyclopentene ring to a ketone, forming a conjugated enone system. The double bond in the ring shifts to be conjugated with the newly formed ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "THP Deprotection",
+            "reagents": "AcOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "40 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCC[C@@H](/C=C/[C@H]1C=CC(=O)[C@@H]1C/C=C\\CCCC(=O)O)OC2CCCCO2",
+            "product_smiles": "CCCCC[C@@H](/C=C/[C@H]1C=CC(=O)[C@@H]1C/C=C\\CCCC(=O)O)O",
+            "notes": "Acid-catalyzed hydrolysis of a tetrahydropyranyl (THP) ether protecting group to yield a free alcohol.",
+            "substeps": []
+        }
+    ]
+}

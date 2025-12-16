@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "goniomitine-pagenkopf-2007",
+        "molecule_name": "Goniomitine",
+        "class": "Natural Product",
+        "author": "Pagenkopf",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "nBuLi, EtI, BnBr",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "83%",
+            "reactant_smiles": "C1CCNC(=O)C1",
+            "product_smiles": "CCC1CCCN(CC2=CC=CC=C2)C1=O",
+            "notes": "Sequential N-benzylation and C-ethylation of a lactam. The order of reagents specified (nBuLi, EtI, then BnBr) suggests EtI and BnBr are used to introduce the ethyl and benzyl groups, respectively, on the lactam after deprotonation by nBuLi.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA",
+            "reagent_smiles": "BrCCOC1CCCCO1",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "92%",
+            "reactant_smiles": "CCC1CCCN([Bn])C1=O",
+            "product_smiles": "CCC1(CCOC3CCCCO3)CCCN([Bn])C1=O",
+            "notes": "Alpha-alkylation of a lactam with a bromoalkyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "TsOH",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH",
+            "yield": "90%",
+            "reactant_smiles": "CCC1([THPO]CC)C(=O)N(CC2=CC=CC=C2)CCC1",
+            "product_smiles": "CCC1(CCO)C(=O)N(CC2=CC=CC=C2)CCC1",
+            "notes": "Acid-catalyzed deprotection of a THP ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CCC1(CCCN(CC2=CC=CC=C2)C1=O)CCO",
+            "product_smiles": "CCC1(CCCN(CC2=CC=CC=C2)C1=O)CCOS(=O)(=O)C",
+            "notes": "Mesylation of a primary alcohol to form a mesylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "",
+            "reagent_smiles": "[Na+].[C-]#N",
+            "conditions": "MeCN, 130 °C, microwave",
+            "yield": "70%",
+            "reactant_smiles": "CCC1(CCCN(CC2=CC=CC=C2)C1=O)CCOS(=O)(=O)C",
+            "product_smiles": "CCC1(CCC#N)CCCN(CC2=CC=CC=C2)C1=O",
+            "notes": "The mesylate leaving group is displaced by cyanide. The yield '70%' is stated for '2 steps' in the source image.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Indole Synthesis / Intramolecular Cyclization",
+            "reagents": "TMSOTf, EtNO2",
+            "reagent_smiles": "COC(=O)[C@]1(OC)[C@@H]CCCC1.C[Si](C)(C)OS(=O)(=O)C(F)(F)F.CC[N+](=O)[O-]",
+            "conditions": "",
+            "yield": "74%",
+            "reactant_smiles": "CCC1(CCC#N)CCCN(CC2=CC=CC=C2)C1=O",
+            "product_smiles": "CCOC(=O)c1[nH]c(CCC2(CC)CCCN(Cc3ccccc3)C2=O)c3ccccc13",
+            "notes": "Intramolecular cyclization involving the nitrile and a cyclohexanone derivative (activated by TMSOTf) to form an indole ring system.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Acetal Formation",
+                    "reagents": "acid, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1CCC(=O)CC1",
+                    "product_smiles": "[OMe]C1(CCCCC1)[OMe]",
+                    "notes": "Acid-catalyzed formation of a cyclic dimethoxy acetal from cyclohexanone and methanol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Elimination (formation of enol ether)",
+                    "reagents": "TMSOTf, DIPEA",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "94%",
+                    "reactant_smiles": "COC1(OC)CCCCC1",
+                    "product_smiles": "COC1=CCCCC1",
+                    "notes": "Formation of an enol ether from a dimethyl acetal using TMSOTf and DIPEA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Cyclopropanation (Carbene Addition)",
+                    "reagents": "Cu(TBS)2",
+                    "reagent_smiles": "CCOC(=O)C=N#N",
+                    "conditions": "toluene, 110 °C",
+                    "yield": "",
+                    "reactant_smiles": "COC1=CCCCC1",
+                    "product_smiles": "COC(=O)C1[C@H]2CCCC[C@@]21OC",
+                    "notes": "Carbene addition of ethyl diazoacetate to a cyclic enol ether, catalyzed by a copper complex, forming a bicyclic cyclopropane. The reaction proceeds with specific stereoselectivity, yielding a product where the methoxy group and the hydrogen on the adjacent cyclopropane carbon are trans.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Hydrolysis, Decarboxylation",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O, 150 °C, microwave",
+            "yield": "75%",
+            "reactant_smiles": "CCC1(CCCN(CC2=CC=CC=C2)C1=O)CCC3=C(C4=C(C=CC=C4)N3)C(=O)OCC",
+            "product_smiles": "CCC1(CCCN(CC2=CC=CC=C2)C1=O)CCC3=CC4=C(C=CC=C4)N3",
+            "notes": "Ester hydrolysis followed by decarboxylation of an indole-3-carboxylic ethyl ester under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Mannich Reaction",
+            "reagents": "",
+            "reagent_smiles": "CN(C)CCl",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC(C1=O)N(CC2=CC=CC=C2)CCC1(CC)CCc3cc4ccccc4[nH]3",
+            "product_smiles": "CC(C1=O)N(CC2=CC=CC=C2)CCC1(CC)CCc3c(CN(C)C)c4ccccc4[nH]3",
+            "notes": "Indole C2 functionalization via Mannich reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "N-Methylation (Quaternization)",
+            "reagents": "MeOH",
+            "reagent_smiles": "CI",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC(CCC1=C(CN(C)C)c2[nH]c3ccccc3c21)C(=O)N(Cc4ccccc4)CCCC",
+            "product_smiles": "CCC(CCC1=C(C[N+](C)(C)C)c2[nH]c3ccccc3c21)C(=O)N(Cc4ccccc4)CCCC",
+            "notes": "The tertiary dimethylamine group on the indole ring is methylated by iodomethane (MeI) to form a quaternary ammonium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Cyanation",
+            "reagents": "NaCN, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "C[N+](C)(C)CC1=C(CCC2(CC)CCCN(CC3=CC=CC=C3)C2=O)C4=CC=CC=C4[NH]1",
+            "product_smiles": "N#CCC1=C(CCC2(CC)CCCN(CC3=CC=CC=C3)C2=O)C4=CC=CC=C4[NH]1",
+            "notes": "Nucleophilic substitution of a benzylic quaternary ammonium by cyanide.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive Debenzylation",
+            "reagents": "Na, NH3",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "97%",
+            "reactant_smiles": "CCC1(CCCN(CC2=CC=CC=C2)C1=O)CC3=C(CC#N)C4=C(C=CC=C4)N3",
+            "product_smiles": "CCC1(CCCNC1=O)CC2=C(CC#N)C3=C(C=CC=C3)N2",
+            "notes": "Reductive debenzylation of the N-benzyl lactam protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Pictet-Spengler / Bischler-Napieralski followed by reduction",
+            "reagents": "POCl3, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "PhMe, then EtOH",
+            "yield": "84%",
+            "reactant_smiles": "CCC1(CCCNC1=O)CC2=C(CC#N)C3=C(C=CC=C3)N2",
+            "product_smiles": "CC[C@]12CCCN[C@@H]1N3C4=C(C=CC=C4)C(=C3CC2)CC#N",
+            "notes": "Intramolecular cyclization of indole with activated lactam, followed by reduction of the imine intermediate and lactam carbonyl to form a tetracyclic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC[C@]12CCCN[C@@H]1N3C4=C(C=CC=C4)C(=C3CC2)CC#N",
+            "product_smiles": "CC[C@]12CCCN[C@@H]1N3C4=C(C=CC=C4)C(=C3CC2)CC=O",
+            "notes": "Reduction of a nitrile to an aldehyde using DIBAL-H. The complex polycyclic core and stereochemistry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "44%",
+            "reactant_smiles": "CC[C@]12CCCN[C@@H]1N3C4=C(C=CC=C4)C(=C3CC2)CC=O",
+            "product_smiles": "CC[C@]12CCCN[C@@H]1N3C4=C(C=CC=C4)C(=C3CC2)CCO",
+            "notes": "Aldehyde reduced to primary alcohol. The reported yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Intramolecular Pictet-Spengler Cyclization",
+            "reagents": "TsOH, Et3N",
+            "reagent_smiles": "CC1=CC=C(C=C1)S(=O)(=O)O.CCN(CC)CC",
+            "conditions": "MeOH",
+            "yield": "79%",
+            "reactant_smiles": "CC[C@]12CCCN[C@@H]1N3C4=C(C=CC=C4)C(=C3CC2)CCO",
+            "product_smiles": "CC[C@]12CCCN(C5)[C@@H]1N3c4ccccc4[C@H]5C(CCO)C(CC2)C3",
+            "notes": "Intramolecular cyclization of the secondary amine with the indole double bond, forming a new 6-membered ring and a new chiral center. The indole double bond is saturated.",
+            "substeps": []
+        }
+    ]
+}

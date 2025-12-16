@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sinensilactam-a-kuwahara-2025",
+        "molecule_name": "Sinensilactam A",
+        "class": "Natural Product",
+        "author": "Kuwahara",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Diels-Alder / Lactonization",
+            "reagents": "Me3Al, Et2AlCl",
+            "reagent_smiles": "C1=CC2=CC=C(C(=C2C=C1)C3=C(C=CC4=C3C=CC=C4)O)O.C=CC(=O)OC",
+            "conditions": "DCM, -78 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "C=CC=CCO",
+            "product_smiles": "C1=C[C@@H]2COC(=O)[C@@H]2CC1",
+            "notes": "Intermolecular Diels-Alder reaction between penta-2,4-dien-1-ol and methyl acrylate, followed by intramolecular lactonization, catalyzed by a chiral aluminum complex derived from BINOL.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Lactone Enolate Alkylation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC(=O)OCC([N+](=O)[O-])C1=CC(OC)=CC(OC)=C1",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C[C@H]2COC(=O)[C@H]2CC1",
+            "product_smiles": "COC1=CC(OC)=CC([C@H]([N+](=O)[O-])C[C@@]23CCC=C[C@H]3COC2=O)=C1",
+            "notes": "Alpha-alkylation of a bicyclic lactone with inversion of stereochemistry at the alpha carbon, followed by nucleophilic attack on a benzylic acetate.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Buchwald-Hartwig Amination (or similar C-C coupling with nitromethane)",
+                    "reagents": "MeNO2, XPhos, Pd2(dba)3, Cs2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "60 °C",
+                    "yield": "96%",
+                    "reactant_smiles": "COc1ccc(OC)c(Br)c1",
+                    "product_smiles": "COc1ccc(OC)c(C[N+](=O)[O-])c1",
+                    "notes": "Palladium-catalyzed C-C bond formation between aryl bromide and nitromethane (MeNO2) to form a nitromethyl substituted arene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Henry reaction (nitro-aldol)",
+                    "reagents": "HCHO, TEA",
+                    "reagent_smiles": "C=O.CCN(CC)CC",
+                    "conditions": "1,4-dioxane, rt",
+                    "yield": "83%",
+                    "reactant_smiles": "COC1=CC(=C(C=C1)OC)C[N+](=O)[O-]",
+                    "product_smiles": "COC1=CC(=C(C=C1)OC)C(CO)[N+](=O)[O-]",
+                    "notes": "The benzylic carbon alpha to the nitro group undergoes a Henry reaction (nitro-aldol) with formaldehyde, adding a hydroxymethyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Acetylation (Esterification)",
+                    "reagents": "Ac2O, Ce(OTf)3",
+                    "reagent_smiles": "CC(=O)OC(=O)C.CC#N.[Ce+3].O=S(=O)(O)C(F)(F)F.O=S(=O)(O)C(F)(F)F.O=S(=O)(O)C(F)(F)F",
+                    "conditions": "MeCN, 0 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "[NO2]C(CO)c1c([OMe])ccc([OMe])c1",
+                    "product_smiles": "[NO2]C(C[OAc])c1c([OMe])ccc([OMe])c1",
+                    "notes": "Acetylation of a primary alcohol to an acetate ester using acetic anhydride catalyzed by cerium(III) triflate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidative Denitration",
+            "reagents": "O₂, DBU",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "COC1=CC=C(C(=C1)C(C[C@]23CCC=C[C@@H]3COC2=O)[N+](=O)[O-])OC",
+            "product_smiles": "COC1=CC=C(C(=C1)C(=O)C[C@]23CCC=C[C@@H]3COC2=O)OC",
+            "notes": "Oxidation of a benzylic nitro group to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "OsO4, NaIO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, H2O, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COc1ccc(OC)c(C(=O)C[C@]23CCC=C[C@@H]3COC2=O)c1",
+            "product_smiles": "COc1ccc(OC)c(C(=O)C[C@]2(CCC=O)[C@@H](C=O)COC2=O)c1",
+            "notes": "Oxidative cleavage of an alkene to a dialdehyde (Lemieux-Johnson oxidation).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Demethylation, Intramolecular Cyclization",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 to -20 °C",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "COC1=CC=C(C(=C1)C(=O)C[C@@]2(CCC=O)[C@H](C=O)COC2=O)OC",
+            "product_smiles": "C1=C(C=C(C(=C1)O)C(=O)C[C@]23CC[C@@H]([C@]3(C=O)COC2=O)O)O",
+            "notes": "Phenolic demethylation of methoxy ethers to hydroxyl groups, followed by intramolecular cyclization of an aldehyde side chain to form a fused cyclopentanol ring system, simultaneously converting the spiro system to a fused bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "CSA",
+            "reagent_smiles": "CO[C@@H]1CCNC(=O)C1",
+            "conditions": "DCM, rt",
+            "yield": "85%",
+            "reactant_smiles": "C1=CC(=C(C=C1O)C(=O)C[C@]23CC[C@@H]([C@]3(C=O)COC2=O)O)O",
+            "product_smiles": "O=C1N[C@@H](C[C@@H]1O2)[C@@H]3C(=O)Oc4[C@H](O)[C@]5(C(=O)c6cc(O)ccc6O)C[C@@H](O)[C@]32O5",
+            "notes": "Complex cascade cyclization of an aldehyde with a chiral 2-methoxy-pyrrolidinone reagent, forming a pentacyclic system with multiple new chiral centers.",
+            "substeps": []
+        }
+    ]
+}

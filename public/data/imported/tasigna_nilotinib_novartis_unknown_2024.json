@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tasigna-nilotinib-novartis-unknown-2024",
+        "molecule_name": "Tasigna (Nilotinib Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Guanidinylation",
+            "reagents": "HCl",
+            "reagent_smiles": "C(#N)N",
+            "conditions": "90 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)c1ccc(N)c(C)c1",
+            "product_smiles": "CCOC(=O)c1ccc(NC(=N)N)c(C)c1",
+            "notes": "Aromatic amine is converted to a guanidine derivative using cyanamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protonation",
+            "reagents": "NH4NO3, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)c1ccc(C)c(NC(=N)N)c1",
+            "product_smiles": "[O-][N+]([O-])=O.N=C([NH2+])Nc1c(C)ccc(C(=O)OCC)c1",
+            "notes": "Protonation of the guanidine group to form an ammonium nitrate salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclocondensation",
+            "reagents": "NaOH",
+            "reagent_smiles": "CN(C)/C=C/C(=O)C1=CC=CC=N1",
+            "conditions": "EtOH, reflux",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=CC=C(C)C(=C1)NC(=[NH2+])N.[N+](=O)([O-])[O-]",
+            "product_smiles": "CCOC(=O)C1=CC=C(C)C(=C1)NCC2=NC(=CC=N2)C3=CN=CC=C3",
+            "notes": "Formation of a pyrimidine ring from a guanidinium salt and a dimethylamino enone (a type of Michael addition followed by cyclization).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH, EtOH",
+            "reagent_smiles": "",
+            "conditions": "45 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=CC=C(C)C(=C1)NCC2=NC(=CC=N2)C3=CN=CC=C3",
+            "product_smiles": "CC1=CC=C(C=C1NCC2=NC(=CC=N2)C3=CN=CC=C3)C(=O)O",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Curtius rearrangement",
+            "reagents": "(EtO)2POCN, Et3N",
+            "reagent_smiles": "CC1=CN(C=N1)C2=CC(=CC(=C2)C(F)(F)F)N",
+            "conditions": "DMF, 60 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1c(NCC2=NC(=CC=N2)C3=CN=CC=C3)ccc(C)c1",
+            "product_smiles": "O=C(NC1=CC(=CC(=C1)N2C=C(C)N=C2)C(F)(F)F)c3c(NCC4=NC(=CC=N4)C5=CN=CC=C5)ccc(C)c3",
+            "notes": "Amide bond formation from a carboxylic acid and an amine. The reaction is explicitly labeled as a Curtius rearrangement.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+                    "reagents": "DMF",
+                    "reagent_smiles": "CC1=CNC=N1",
+                    "conditions": "145 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=C(C=C(C=C1C#N)F)C(F)(F)F",
+                    "product_smiles": "CC1=CN(C=N1)C2=CC(=CC(=C2)C(F)(F)F)C#N",
+                    "notes": "Nucleophilic displacement of fluorine on a benzene ring by a pyrazole nitrogen.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Nitrile Hydrolysis",
+                    "reagents": "NaOH, dioxane",
+                    "reagent_smiles": "",
+                    "conditions": "98 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CN(C=N1)C2=CC(=CC(=C2)C(F)(F)F)C#N",
+                    "product_smiles": "CC1=CN(C=N1)C2=CC(=CC(=C2)C(F)(F)F)C(=O)O",
+                    "notes": "Hydrolysis of a cyano group to a carboxylic acid group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Curtius rearrangement",
+                    "reagents": "(PhO)₂PON₃, Et₃N",
+                    "reagent_smiles": "",
+                    "conditions": "t-BuOH, 80 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CN(C=N1)C2=CC(=CC(=C2)C(F)(F)F)C(=O)O",
+                    "product_smiles": "CC1=CN(C=N1)C2=CC(=CC(=C2)C(F)(F)F)N[Boc]",
+                    "notes": "Carboxylic acid is converted to a Boc-protected amine via a Curtius rearrangement.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Boc Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "i-PrOH, 60 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CN(C=N1)C2=CC(=CC(=C2)C(F)(F)F)N[Boc]",
+                    "product_smiles": "CC1=CN(C=N1)C2=CC(=CC(=C2)C(F)(F)F)N",
+                    "notes": "Hydrolytic removal of Boc protecting group from the amine.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

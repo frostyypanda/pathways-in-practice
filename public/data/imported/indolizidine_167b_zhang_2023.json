@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "indolizidine-167b-zhang-2023",
+        "molecule_name": "Indolizidine 167B",
+        "class": "Natural Product",
+        "author": "Zhang",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "MeOH",
+            "reagent_smiles": "O=S(Cl)Cl",
+            "conditions": "reflux",
+            "yield": "93%",
+            "reactant_smiles": "CCC[C@H](C(=O)O)N",
+            "product_smiles": "CCC[C@H](C(=O)OC)N",
+            "notes": "Fischer esterification of an amino acid (L-norvaline) to its methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Paal-Knorr pyrrole synthesis",
+            "reagents": "AcOH, NaOAc",
+            "reagent_smiles": "COC1CCC(OC)O1",
+            "conditions": "H2O, 95 °C",
+            "yield": "87%",
+            "reactant_smiles": "CCC[C@H](C(=O)OC)N",
+            "product_smiles": "CCC[C@H](C(=O)OC)N1C=CC=C1",
+            "notes": "Formation of a pyrrole ring from an alpha-amino ester and a 2,5-dimethoxytetrahydrofuran derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Kulinkovich Reaction",
+            "reagents": "Ti(OiPr)4, EtMgBr",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "69%",
+            "reactant_smiles": "CCC[C@H](C(=O)OC)N1C=CC=C1",
+            "product_smiles": "CCC[C@H](C1(CC1)O)N2C=CC=C2",
+            "notes": "Ester converted to cyclopropanol via Kulinkovich reaction, maintaining stereochemistry at the adjacent chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Cyclization / Rearrangement",
+            "reagents": "Fe(NO3)3",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "",
+            "reactant_smiles": "CCC[C@@H](C1(CC1)O)N2C=CC=C2",
+            "product_smiles": "CCC[C@H]1C(=O)CCC2=CC=CN21",
+            "notes": "Iron(III) catalyzed cyclization-rearrangement of a pyrrole-substituted cyclopropyl alcohol to form an indolizidinone system, involving oxidation of the alcohol to a ketone and ring expansion/fusion.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "MeOH, -60 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "CCC[C@@H]1C(=O)CCC2=CC=CN21",
+            "product_smiles": "CCC[C@@H]1[C@@H](O)CCC2=CC=CN21",
+            "notes": "Diastereoselective reduction of a ketone to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sulfonylation / Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "98%",
+            "reactant_smiles": "CCC[C@H]1CC[C@@H](O)N2C=CC=C12",
+            "product_smiles": "CCC[C@H]1CC[C@@H]([OMs])N2C=CC=C12",
+            "notes": "Secondary alcohol is converted to its mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Elimination",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, 110 °C",
+            "yield": "73%",
+            "reactant_smiles": "CCC[C@H]1CC[C@@H](OS(C)(=O)=O)C2=CC=CN12",
+            "product_smiles": "CCC[C@H]1CC=CC2=CC=CN12",
+            "notes": "Reductive elimination of a mesylate to form an alkene in a pyrrolo[1,2-a]piperidine derivative. Stereochemistry at the propyl-bearing carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "AcOH",
+            "yield": "73%",
+            "reactant_smiles": "CCC[C@@H]1CCCC2=CC=CN12",
+            "product_smiles": "CCC[C@@H]1CCC[C@@H]2CCCN12",
+            "notes": "Stereoselective hydrogenation of an indolizine derivative to an indolizidine, reducing both the pyrrole and the partially saturated 6-membered ring.",
+            "substeps": []
+        }
+    ]
+}

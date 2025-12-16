@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strychnine-reissig-2010",
+        "molecule_name": "Strychnine",
+        "class": "Natural Product",
+        "author": "Reissig",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic Hydrolysis",
+            "reagents": "Lipase AY30",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCC(=O)CCC(=O)OCC",
+            "product_smiles": "CCOC(=O)CCC(=O)CCC(=O)O",
+            "notes": "Regioselective enzymatic hydrolysis of a diester to a monoester-monoacid.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "(COCl)2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCC(=O)CCC(=O)O",
+            "product_smiles": "CCOC(=O)CCC(=O)CCC(=O)Cl",
+            "notes": "Carboxylic acid converted to acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-acylation",
+            "reagents": "",
+            "reagent_smiles": "C1=CC2=C(C=C1)NC=C2CC#N",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCC(=O)CCC(=O)Cl",
+            "product_smiles": "CCOC(=O)CCC(=O)CCC(=O)N1C=C(CC#N)C2=C1C=CC=C2",
+            "notes": "Acylation of the indole nitrogen with an acyl chloride. The nitrogen of indole-3-acetonitrile acts as a nucleophile to attack the acyl chloride, forming an amide bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Samarium-mediated Reductive Cyclization / Barbier-type reaction",
+            "reagents": "SmI₂, HMPA, BrCH₂CN",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCC(=O)CCC(=O)N1C=C(CC#N)C2=C1C=CC=C2",
+            "product_smiles": "O=C1CC[C@@H]2N3C4=CC=CC=C4[C@]5(CC#N)CCC(=O)C5[C@H]2[C@H](O)CC13",
+            "notes": "Intramolecular cyclization of an indole-substituted ketone-ester to a polycyclic alcohol, involving the nitrile group, mediated by SmI₂ and BrCH₂CN.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive cyclization",
+            "reagents": "Raney-Ni, H2",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "O=C1N2[C@H](C3=CC=CC=C3[C@](C[C@H]4[C@]2(O)CCC(=O)CC4)(CC#N)C1)",
+            "product_smiles": "O=C1N2[C@H](C3=CC=CC=C3[C@](C[C@H]4[C@]2(O)CCC5C[C@H]5N)C1)",
+            "notes": "Reductive cyclization of a ketone and nitrile using Raney Nickel and hydrogen to form a piperidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Carbamoylation",
+            "reagents": "DMAP, Et3N",
+            "reagent_smiles": "COC(=O)Cl",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)N3C(=O)CC[C@]4(CC[C@H]5[C@]2(CCN5)[C@H]43)O",
+            "product_smiles": "COC(=O)N1CC[C@]23C4=C(C=CC=C4)N5C(=O)CC[C@@](CC[C@@H]21)([C@@H]35)O",
+            "notes": "Secondary amine is derivatized to a methyl carbamate using methyl chloroformate. Stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Mesylation",
+            "reagents": "DMAP, Et3N, MsCl",
+            "reagent_smiles": "CCN(CC)CC.CS(=O)(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)N1CC[C@]23C4=C(C=CC=C4)N5C(=O)CC[C@@](CC[C@@H]21)([C@@H]35)O",
+            "product_smiles": "COC(=O)N1CC[C@]23C4=C(C=CC=C4)N5C(=O)CC[C@@](CC[C@@H]21)([C@@H]35)[OMs]",
+            "notes": "Alcohol mesylation to form an alkyl mesylate, activating the hydroxyl for further reactions.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Elimination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)N1CC[C@]23C4=C(C=CC=C4)N5C(=O)CC[C@@](CC[C@H]21)([C@H]35)OS(=O)(=O)C",
+            "product_smiles": "COC(=O)N1CC[C@]23C4=C(C=CC=C4)N5C(=O)CCC(=CC[C@H]21)[C@H]35",
+            "notes": "Base-mediated elimination of a mesylate to form an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TMSI",
+            "reagent_smiles": "C[Si](C)(C)I",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)N1CC[C@]23C4=C(C=CC=C4)N5C(=O)CCC(=CC[C@@H]21)[C@@H]35",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)CCC4=CC[C@H]5[C@]2(CCN5)[C@H]43",
+            "notes": "N-methoxycarbonyl deprotection to form a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Alkylation",
+            "reagents": "TBAI, K2CO3",
+            "reagent_smiles": "[Ts]OCC/C=C(/I)\\C[OTBS]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C1N2C3=CC=CC=C3[C@]4([C@H](C=CC[C@@H]5N2CC4)C1)C5",
+            "product_smiles": "O=C1N2C3=CC=CC=C3[C@]4([C@H](C=CC[C@@H]5N(CC/C=C(/I)\\C[OTBS])CC4)C1)C5",
+            "notes": "N-alkylation of the secondary amine in the strychnine scaffold with a TsO-activated iodoalkene bearing an OTBS group.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Protection (of an alcohol)",
+                    "reagents": "DHP, PTSA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C(#CCO)CO",
+                    "product_smiles": "OCCC#CCO[THP]",
+                    "notes": "Selective protection of one primary alcohol group to form a THP ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Hydroalumination-iodination",
+                    "reagents": "Red-Al then I₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1CCOC(C1)OCC#CCO",
+                    "product_smiles": "C1CCOC(C1)OCC/C(I)=C\\CO",
+                    "notes": "Alkyne converted to E-vinyl iodide via hydroalumination and subsequent iodination. THP is a protecting group for the primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Alcohol Silylation (Protection)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[THP]OC/C(=C/CO)/I",
+                    "product_smiles": "[OTBS]C/C=C(/C[THP]O)\\I",
+                    "notes": "The primary alcohol is protected as a TBS ether using TBSCl and imidazole. The THP ether and iodoalkene remain unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Deprotection",
+                    "reagents": "MgBr2",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O",
+                    "yield": "",
+                    "reactant_smiles": "[OTBS]C/C=C(I)/C[OThp]",
+                    "product_smiles": "OC/C=C(I)/C[OTBS]",
+                    "notes": "Deprotection of THP ether to primary alcohol",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.5",
+                    "reaction_type": "Tosylation",
+                    "reagents": "TsCl, Et3N, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "OC/C(I)=C/C[OTBS]",
+                    "product_smiles": "[TsO]C/C(I)=C/C[OTBS]",
+                    "notes": "Primary alcohol is converted to a tosylate using tosyl chloride, triethylamine, and DMAP. The TBS protecting group and the (E)-alkene stereochemistry are retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Heck cyclization",
+            "reagents": "K2CO3, Pd(OAc)2, n-Bu4NCl",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C/C=C(/CN1CCC23C4=C(C=CC=C4)N5C(=O)CCC(=CC[C@@H]21)[C@@H]35)\\I",
+            "product_smiles": "[OTBS]C/C=C/1CN2CCC34C5=C(C=CC=C5)N6C(=O)CC=C([C@H]1C[C@@H]32)[C@@H]46",
+            "notes": "Intramolecular Heck cyclization to form a new six-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Etherification / Cyclization",
+            "reagents": "KOH",
+            "reagent_smiles": "CCO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C1N2C3=CC=CC=C3[C@]45C1[C@@H](C=C(CO))[C@H]6[C@H]4N(CC[C@@]56)C2",
+            "product_smiles": "C1C[C@@H]2C=C[C@H]3[C@H]4[C@H]5N(CC[C@@]6([C@H]5[C@H]4[C@H]3C(=O)C1)C7=CC=CC=C7N6)[C@H]2O5",
+            "notes": "An intramolecular cyclization reaction where an alcohol group adds to an alkene, forming a cyclic ether (lactone derivative) and saturating the double bond, converting a strychnine precursor to strychnine. The reaction is base-catalyzed.",
+            "substeps": []
+        }
+    ]
+}

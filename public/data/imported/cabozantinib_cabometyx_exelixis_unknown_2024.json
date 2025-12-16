@@ -1,0 +1,97 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cabozantinib-cabometyx-exelixis-unknown-2024",
+        "molecule_name": "Cabozantinib (Cabometyx Exelixis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Chlorination",
+            "reagents": "POCl3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 77 °C",
+            "yield": "70%",
+            "reactant_smiles": "COC1=C(C=C2C(=C1)C(=CC=N2)O)OC",
+            "product_smiles": "COC1=C(C=C2C(=C1)C(=CC=N2)Cl)OC",
+            "notes": "Replacement of a hydroxyl group with a chlorine atom on a quinoline core.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aromatic Nucleophilic Substitution (SNAr)",
+            "reagents": "t-BuONa, DMA",
+            "reagent_smiles": "NC1=CC=C(O)C=C1",
+            "conditions": "105 °C",
+            "yield": "72%",
+            "reactant_smiles": "COC1=C(C=C2C(=CC=NC2=C1)Cl)OC",
+            "product_smiles": "NC1=CC=C(C=C1)OC2=NC=CC3=CC(OC)=C(OC)C=C23",
+            "notes": "Chloride at position 4 of the quinoline is displaced by the phenoxide of 4-aminophenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidation (Acyl chloride with amine)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "O=C(Cl)C1(CC1)C(=O)Nc2ccc(F)cc2",
+            "conditions": "THF, H2O, rt",
+            "yield": "96%",
+            "reactant_smiles": "COC1=C(C=C2C(=C1)C(=CC=N2)OC3=CC=C(C=C3)N)OC",
+            "product_smiles": "COC1=C(C=C2C(=C1)C(=CC=N2)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F)OC",
+            "notes": "Amidation of an aniline with a 1,1-disubstituted cyclopropane diacid chloride derivative.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Acyl chloride formation",
+                    "reagents": "SOCl₂, Et₃N",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 5 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1CC1(C(=O)O)C(=O)O",
+                    "product_smiles": "C1CC1(C(=O)Cl)C(=O)O",
+                    "notes": "One carboxylic acid group is selectively converted to an acyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Amidation",
+                    "reagents": "THF",
+                    "reagent_smiles": "C1=C(C=CC(=C1)N)F",
+                    "conditions": "10 °C",
+                    "yield": "70% (2 steps)",
+                    "reactant_smiles": "C1CC1(C(=O)Cl)C(=O)O",
+                    "product_smiles": "C1=C(C=CC(=C1)NC(=O)C2(CC2)C(=O)O)F",
+                    "notes": "Amidation of an acyl chloride with 4-fluoroaniline to form an amide, while a carboxylic acid group on the cyclopropane is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Acid Chloride Formation",
+                    "reagents": "",
+                    "reagent_smiles": "ClC(=O)C(=O)Cl",
+                    "conditions": "DMF, THF, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=C(C=CC(=C1)NC(=O)C2(CC2)C(=O)O)F",
+                    "product_smiles": "C1=C(C=CC(=C1)NC(=O)C2(CC2)C(=O)Cl)F",
+                    "notes": "Conversion of a carboxylic acid to an acid chloride using oxalyl chloride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Salt formation",
+            "reagents": "(S)-malic acid, MEK, H₂O",
+            "reagent_smiles": "C([C@@H](C(=O)O)O)C(=O)O",
+            "conditions": "55 °C to rt",
+            "yield": "75%",
+            "reactant_smiles": "COC1=C(OC)C=C2C(=C1)C=NC(=C2)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F",
+            "product_smiles": "COC1=C(OC)C=C2C(=C1)C=NC(=C2)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F.C([C@@H](C(=O)O)O)C(=O)O",
+            "notes": "Formation of Cabozantinib (S)-malate salt.",
+            "substeps": []
+        }
+    ]
+}

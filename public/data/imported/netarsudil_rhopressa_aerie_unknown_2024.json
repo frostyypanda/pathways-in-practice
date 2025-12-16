@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "netarsudil-rhopressa-aerie-unknown-2024",
+        "molecule_name": "Netarsudil (Rhopressa Aerie)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Benzylic bromination",
+            "reagents": "NBS, AIBN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 80 °C",
+            "yield": "34%",
+            "reactant_smiles": "CC1=CC=C(C=C1)CC(=O)O",
+            "product_smiles": "C1=C(C=CC(=C1)CBr)CC(=O)O",
+            "notes": "Free radical benzylic bromination of the methyl group on the phenyl ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrolysis / Nucleophilic Substitution",
+            "reagents": "NaOH, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "H2O, rt",
+            "yield": "72%",
+            "reactant_smiles": "OC(=O)Cc1ccc(CBr)cc1",
+            "product_smiles": "OC(=O)Cc1ccc(CO)cc1",
+            "notes": "Hydrolysis of a benzyl bromide to a benzyl alcohol. The carboxylic acid is deprotonated by NaOH and then reprotonated by H2SO4.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Fischer Esterification",
+            "reagents": "H2SO4, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "C1=C(C=CC(=C1)CO)CC(=O)O",
+            "product_smiles": "COC(=O)CC1=CC=C(C=C1)CO",
+            "notes": "Esterification of a carboxylic acid with methanol to form a methyl ester using sulfuric acid as a catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification (Steglich)",
+            "reagents": "EDCI, DMAP",
+            "reagent_smiles": "CC1=CC=C(C(=C1)C)C(=O)O",
+            "conditions": "DCM, rt",
+            "yield": "61%",
+            "reactant_smiles": "COC(=O)CC1=CC=C(C=C1)CO",
+            "product_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)CC(=O)OC",
+            "notes": "Esterification of a primary alcohol with 2,4-dimethylbenzoic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "90%",
+            "reactant_smiles": "Cc1cc(C)ccc1C(=O)OCC2=CC=C(CC(=O)OC)C=C2",
+            "product_smiles": "Cc1cc(C)ccc1C(=O)OCC2=CC=C(CC(=O)O)C=C2",
+            "notes": "Selective hydrolysis of the methyl ester to a carboxylic acid using lithium hydroxide, leaving the benzyl ester intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "(COCl)₂",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "99%",
+            "reactant_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(CC(=O)O)C=C2",
+            "product_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(CC(=O)Cl)C=C2",
+            "notes": "Carboxylic acid is converted to an acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide formation",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "O=C1OC[C@@H](N1)Cc2ccccc2",
+            "conditions": "THF, -70 °C",
+            "yield": "64%",
+            "reactant_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)CC(=O)Cl",
+            "product_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)CC(=O)N3C[C@@H](Cc4ccccc4)OC3=O",
+            "notes": "Acyl chloride reacts with deprotonated (S)-4-benzyl-2-oxazolidinone to form an amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Asymmetric alpha-functionalization",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC(C)(C)OC(=O)NCN1C2=CC=CC=C2N=N1",
+            "conditions": "THF, -70 to -30 °C",
+            "yield": "68%",
+            "reactant_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)CC(=O)N3C[C@@H](CC4=CC=CC=C4)OC3=O",
+            "product_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)[C@H](CNC(=O)OC(C)(C)C)C(=O)N3C[C@@H](CC4=CC=CC=C4)OC3=O",
+            "notes": "Alpha-functionalization of the amide enolate using N-Boc-benzotriazole derivative as electrophile, with LiHMDS as base.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative cleavage of oxazolidinone, Amide hydrolysis",
+            "reagents": "LiOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "aq., THF, H2O",
+            "yield": "90%",
+            "reactant_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)[C@@H](N[Boc])C(=O)N3C[C@@H]([Bn])OC3=O",
+            "product_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)[C@@H](N[Boc])C(=O)O",
+            "notes": "Oxidative cleavage of a chiral oxazolidinone auxiliary using LiOH and H2O2, leading to hydrolysis of the amide to a carboxylic acid. The Boc-protected amine and the benzyl ester remain intact. Stereochemistry at the alpha-carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amide Coupling",
+            "reagents": "dimethyl chloroformate, collidine",
+            "reagent_smiles": "N1C=CC2=CC(N)=CC=C21",
+            "conditions": "DMF, 0°C",
+            "yield": "60%",
+            "reactant_smiles": "O=C(O)[C@@H](C[N][Boc])CC1=CC=C(C=C1)COC(=O)C2=C(C)C=CC(=C2)C",
+            "product_smiles": "O=C(NC1=CC2=C(C=C1)C=NC=C2)[C@@H](C[N][Boc])CC3=CC=C(C=C3)COC(=O)C4=C(C)C=CC(=C4)C",
+            "notes": "Amide bond formation via activation of a carboxylic acid with dimethyl chloroformate, followed by coupling with 6-aminoquinoline. Collidine acts as a base. The Boc protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "MsOH",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt, i-PrOH, heptane",
+            "yield": "90%",
+            "reactant_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)[C@@H](CN[Boc])C(=O)NC3=CC4=C(C=C3)C=NC=C4",
+            "product_smiles": "CC1=CC=C(C(=C1)C)C(=O)OCC2=CC=C(C=C2)[C@@H](CN)C(=O)NC3=CC4=C(C=C3)C=NC=C4",
+            "notes": "Deprotection of a Boc-protected primary amine to a free amine using methanesulfonic acid.",
+            "substeps": []
+        }
+    ]
+}

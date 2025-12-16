@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "danicalipin-a-burns-2016",
+        "molecule_name": "Danicalipin A",
+        "class": "Natural Product",
+        "author": "Burns",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Halogenation (Boron-substituted vinyl boronate to vinyl chloride)",
+            "reagents": "ICl, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C - rt",
+            "yield": "74%",
+            "reactant_smiles": "CC1(C)C(C)(C)OB(/C=C/B2OC(=O)N(C)C(=O)O2)O1",
+            "product_smiles": "CN1C(=O)OB(/C=C\\Cl)OC1=O",
+            "notes": "Halogenation of a vinyl boron derivative using ICl, with retention of the MIDA boronate protecting group and inversion of stereochemistry on the vinyl group (trans to cis).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Boronic Ester Exchange / Transesterification",
+            "reagents": "NaOH",
+            "reagent_smiles": "[C@H]([Cy])(O)[C@@H](O)[Cy]",
+            "conditions": "THF, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "CN1C(=O)OB(/C=C\\Cl)OC1=O",
+            "product_smiles": "B(/C=C\\Cl)1O[C@H]([Cy])[C@@H]([Cy])O1",
+            "notes": "Exchange of the MIDA boronate ligand for a chiral diol to form a new cyclic boronic ester. The stereochemistry of the diol is transferred to the cyclic boronate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dichlorocarbene addition / Borane halogenation",
+            "reagents": "LiCHCl2, ZnCl2",
+            "reagent_smiles": "",
+            "conditions": "THF, -100 °C - rt",
+            "yield": "",
+            "reactant_smiles": "Cl\\C=C/B1O[C@H]([Cy])[C@@H]([Cy])O1",
+            "product_smiles": "B1([C@H](Cl)[C@H](Cl))O[C@H]([Cy])[C@@H]([Cy])O1",
+            "notes": "Stereoselective addition of dichlorocarbene equivalent to vinylborane, forming a 1,2-dichloroethylborane derivative with syn-dichloride stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cross-coupling",
+            "reagents": "t-BuLi, MgBr₂, Et₂O",
+            "reagent_smiles": "ICCCCCCCCCC[C](Cl)(Cl)CO[Si](C)(C)C(C)(C)C",
+            "conditions": "THF, hexanes, -78 °C - rt",
+            "yield": "24% (2 steps)",
+            "reactant_smiles": "[B](O[C@H](c1ccccc1)[C@@H](Cl)(c2ccccc2)O)C=C/Cl",
+            "product_smiles": "[B](O[C@H](c1ccccc1)[C@@H](Cl)(c2ccccc2)O)C=C/CCCCCCCCCC[C](Cl)(Cl)CO[Si](C)(C)C(C)(C)C",
+            "notes": "Alkenylboronate undergoes cross-coupling with an organometallic species derived from the alkyl iodide, replacing the vinyl chloride with the long alkyl chain while maintaining the E-stereochemistry of the double bond. The boronate ester moiety remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Chiral Allylboration",
+            "reagents": "n-BuLi, TFAA",
+            "reagent_smiles": "CCCCCC[C@H](Cl)[C@@H](Cl)C=O",
+            "conditions": "-78 °C - rt",
+            "yield": "75%",
+            "reactant_smiles": "[OTBS]C[C](Cl)(Cl)CCCCCCCCCC[C@H](B1O[C@H](C2CCCCC2)[C@H](C2CCCCC2)O1)/C=C/Cl",
+            "product_smiles": "CCCCCC[C@H](Cl)[C@@H](O)[C@H](Cl)/C=C/CCCCCCCCCC[C](Cl)(Cl)C[OTBS]",
+            "notes": "Chiral allylboration of a dichloro-aldehyde with a chiral boron reagent, forming a homoallylic alcohol.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Asymmetric Dichlorination",
+                    "reagents": "t-BuOCl, ClTi(O-iPr)3",
+                    "reagent_smiles": "Oc1c(C=N[C@H](c2ccccc2)[C@@H](O)c3ccccc3)c(C(C)(C)C)cc(C(C)(C)C)c1",
+                    "conditions": "hexanes, -20 °C",
+                    "yield": "86%",
+                    "reactant_smiles": "CCCCCC=CCO",
+                    "product_smiles": "CCCCCC[C@H](Cl)[C@H](CO)Cl",
+                    "notes": "Diastereoselective dichlorination of an allylic alcohol catalyzed by a chiral titanium complex, forming vicinal dichlorides with defined stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "Dess-Martin, NaHCO3",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C - rt",
+                    "yield": "88%",
+                    "reactant_smiles": "CCCCCC[C@H](Cl)[C@@H](CO)Cl",
+                    "product_smiles": "CCCCCC[C@H](Cl)[C@@H](C=O)Cl",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin periodinane.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Bromochlorination, Isotopic Exchange",
+            "reagents": "CD3OD, Me4N(Cl2Br)",
+            "reagent_smiles": "",
+            "conditions": "MeOH-d4, rt",
+            "yield": "",
+            "reactant_smiles": "CCCCC[C@H](Cl)[C@@H](Cl)[C@H](O)[C@@H](Cl)/C=C/CCCCCCCCC(Cl)(Cl)C[OTBS]",
+            "product_smiles": "CCCCC[C@H](Cl)[C@@H](Cl)[C@H]([2H]O)[C@@H](Cl)[C@H](Br)[C@@H](Cl)CCCCCCCCC(Cl)(Cl)C[OTBS]",
+            "notes": "Addition of bromine and chlorine across a trans-alkene double bond, with concomitant exchange of a hydroxyl proton for deuterium from the solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Radical dehalogenation (Bromine reduction), Alcohol reduction (Deuterated to protio)",
+            "reagents": "Bu3SnH, Et3B",
+            "reagent_smiles": "CCCC[SnH](CCCC)CCCC.B(CC)(CC)CC",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCCC[C@H](Cl)[C@@H](Cl)[C@@H](O[2H])[C@H](Cl)[C@@H](Br)[C@H](Cl)CCCCCCCC[C](Cl)(Cl)CO[OTBS]",
+            "product_smiles": "CCCCCC[C@H](Cl)[C@@H](Cl)[C@@H](O)[C@H](Cl)[C@@H][C@H](Cl)CCCCCCCC[C](Cl)(Cl)CO[OTBS]",
+            "notes": "A brominated and deuterated alcohol compound undergoes radical dehalogenation (Br to H) and conversion of OD to OH, using tributyltin hydride and triethylborane at low temperature.",
+            "substeps": []
+        }
+    ]
+}

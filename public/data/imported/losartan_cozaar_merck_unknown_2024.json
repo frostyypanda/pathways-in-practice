@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "losartan-cozaar-merck-unknown-2024",
+        "molecule_name": "Losartan (Cozaar Merck)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imidazole Synthesis",
+            "reagents": "methanol, liquid ammonia",
+            "reagent_smiles": "C(C(=O)CO)O",
+            "conditions": "70 °C, 45psi",
+            "yield": "",
+            "reactant_smiles": "CCCC(=N)N.Cl",
+            "product_smiles": "CCCC1=NC=C(CO)N1",
+            "notes": "Formation of a substituted imidazole from a butyl amidine and glycolic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silylation",
+            "reagents": "TMSCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CCCC1=NC=C(CO)N1",
+            "product_smiles": "CCCC1=NC=C(CO[Si](C)(C)C)N1",
+            "notes": "Protection of a primary alcohol as its Trimethylsilyl (TMS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chlorination",
+            "reagents": "NCS",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCCCC1=NC=C(C[OTMS])N1",
+            "product_smiles": "CCCCC1=NC(=C(C[OTMS])N1)Cl.CCCCC1=NC(Cl)(C[OTMS])N1Cl",
+            "notes": "Chlorination of 2-butyl-4-(trimethylsilanyloxymethyl)-1H-imidazole with NCS, yielding a mixture of mono-chlorinated imidazole and di-chlorinated imidazoline products.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection, Reduction",
+            "reagents": "Zn/ AcOH, MeOH",
+            "reagent_smiles": "CC(=O)O.CO.[Zn]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCCCC1=NC(=C(CO[Si](C)(C)C)N1)Cl.CCCCC1=NC(CO[Si](C)(C)C)(C(=N1)Cl)Cl",
+            "product_smiles": "CCCCC1=NC(=C(CO)N1)Cl",
+            "notes": "Deprotection of trimethylsilyl ether and reduction of one chlorine atom (if starting from the dichloroimidazole) to yield a monochloro alcohol. Both starting materials lead to the same product.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "CAN, AcOH",
+            "reagent_smiles": "[Ce+4].2[NH4+].4[N+](=O)([O-])[O-].CC(=O)O",
+            "conditions": "AcOH",
+            "yield": "",
+            "reactant_smiles": "CCCC1=NC(=C(CO)N1)Cl",
+            "product_smiles": "CCCC1=NC(=C(C=O)N1)Cl",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "BrCc1ccc(Br)cc1",
+            "conditions": "DMAC, -10 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCCc1[nH]c(C=O)c(Cl)n1",
+            "product_smiles": "CCCCCc1n(Cc2ccc(Br)cc2)c(C=O)c(Cl)n1",
+            "notes": "N-alkylation of 4-chloro-5-butyl-1H-imidazole-2-carbaldehyde with 4-bromobenzyl bromide, forming an N-substituted imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "CCCCC1=NC(=C(C=O)N1CC2=CC=C(C=C2)Br)Cl",
+            "product_smiles": "CCCCC1=NC(=C(CO)N1CC2=CC=C(C=C2)Br)Cl",
+            "notes": "Aldehyde group is reduced to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Suzuki Coupling",
+            "reagents": "Pd(OAc)2, Ph3P, K2CO3",
+            "reagent_smiles": "B(O)Oc1ccccc1c2nnn([Tr])n2",
+            "conditions": "THF, H2O, DEM",
+            "yield": "",
+            "reactant_smiles": "CCCCc1nc(CO)c(Cl)n1Cc2ccc(Br)cc2",
+            "product_smiles": "CCCCc1nc(CO)c(Cl)n1Cc2ccc(C3=CC=CC=C3C4=NNN=N4)cc2",
+            "notes": "Suzuki coupling of an aryl bromide with a protected phenylboronic acid, followed by deprotection of the trityl group on the tetrazole to form Losartan.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Tetrazole Formation",
+                    "reagents": "NaN₃",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C=C1)C#N",
+                    "product_smiles": "c1ccc(cc1)C2=NN=N[NH]2",
+                    "notes": "Conversion of benzonitrile to 5-phenyl-1H-tetrazole using sodium azide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "N-alkylation",
+                    "reagents": "Et3N",
+                    "reagent_smiles": "ClC(c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "c1ccc(cc1)C2=NNN=N2",
+                    "product_smiles": "c1ccc(cc1)C2=NN(C(c3ccccc3)(c4ccccc4)c5ccccc5)N=N2",
+                    "notes": "N-tritylation of 5-phenyl-1H-tetrazole",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Ortho-Lithiation / Boronylation",
+                    "reagents": "BuLi, B(O-iPr)3, NH4Cl",
+                    "reagent_smiles": "",
+                    "conditions": "-20 °C, then -25 °C, IPA, H2O",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C=C1)C2=NN([Tr])N=N2",
+                    "product_smiles": "C1=CC(=C(C=C1)B(O)O)C2=NN([Tr])N=N2",
+                    "notes": "Ortho-lithiation followed by reaction with triisopropyl borate to form a boronic acid.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

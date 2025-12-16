@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "magellanine-overman-1993",
+        "molecule_name": "Magellanine",
+        "class": "Natural Product",
+        "author": "Overman",
+        "year": 1993
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Tandem Mitsunobu / Intramolecular Aza-Diels-Alder",
+            "reagents": "TMAD, TBP",
+            "reagent_smiles": "C=CCN([Ts])H",
+            "conditions": "150 °C",
+            "yield": "70%",
+            "reactant_smiles": "OCC/C=C/C=C",
+            "product_smiles": "C1C=CC[C@@H]2C1CCN(C2)[Ts]",
+            "notes": "Formation of an N-tosylated bicyclic amine from a dienol and N-allyltosylamide under Mitsunobu conditions followed by an intramolecular aza-Diels-Alder reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Lemieux-Johnson oxidation",
+            "reagents": "OsO4, NMO, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Ts]N1CCC[C@H]2CC(C=CC2)CC1",
+            "product_smiles": "[Ts]N1CCC[C@H](C(C=O)CCC=O)CC1",
+            "notes": "Oxidative cleavage of an alkene in a fused ring system to a dialdehyde, opening one of the rings.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Aldol Condensation / Annulation",
+            "reagents": "",
+            "reagent_smiles": "C1CCNCC1.CC(=O)O",
+            "conditions": "toluene",
+            "yield": "58%",
+            "reactant_smiles": "O=CCC[C@@H]1C2CC(C=O)[C@@H]2CN(Ts)CC1",
+            "product_smiles": "O=C/C=C1\\C2CC[C@@H](N(Ts)CC2)[C@H]1",
+            "notes": "Intramolecular aldol condensation of a dialdehyde (with one aldehyde as a gamma-aldehyde equivalent in a chain) to form a fused bicyclic alpha,beta-unsaturated aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Tandem Michael-type Addition and Silyl Enol Ether Formation",
+            "reagents": "LiHMDS, TIPSOTf, DMS",
+            "reagent_smiles": "CCOC(=O)C(CC#CC(=C)C)C(=O)OCC",
+            "conditions": "THF, -78 °C",
+            "yield": "81%",
+            "reactant_smiles": "O=CC1=C[C@@H]2[C@H]3CCCN([Ts])CC3C12",
+            "product_smiles": "C1N([Ts])CCC3[C@@H]1[C@H]4C(=C([OTIPS]))C(C([C@@H](CC#CC(=C)C)(C(=O)OCC)C(=O)OCC)C43)",
+            "notes": "An aldehyde undergoes a Michael-type addition with a malonate enolate, followed by formation and protection as a TIPS enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Gold-catalyzed intramolecular cyclization (alkyne-ene)",
+            "reagents": "then CSA",
+            "reagent_smiles": "CC(C)C1=CC(=C(C(=C1)C(C)C)C2=C(C=CC(=C2P(C3=C(C(F)(F)F)C=C(C(F)(F)F)C=C3C(F)(F)F)(C4=C(C(F)(F)F)C=C(C(F)(F)F)C=C4C(F)(F)F))OC)OC)C(C)C.[Au+].[SbF6-].CC#N",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "CCOC(=O)[C@@H](C(=O)OCC)(CC#CC(=C)C)[C@H]1[C@H]2CC[N](S(=O)(=O)C3=CC=C(C)C=C3)C[C@@H]1C[C@H]2/C=C(/O[Si](C(C)C)(C(C)C)C(C)C)",
+            "product_smiles": "CCOC(=O)C1(C=C2C=C(C)C[C@H]([C@]32CC4CN(CC[C@H]4[C@@H]13)S(=O)(=O)C5=CC=C(C)C=C5)O[Si](C(C)C)(C(C)C)C(C)C)C(=O)OCC",
+            "notes": "Intramolecular cyclization catalyzed by a chiral gold complex, followed by an acid workup. The reactant's malonate carbon stereochemistry and enol ether double bond geometry were corrected. The reagent ligand's trifluoromethyl count was corrected to match the image. In the product, the implicit methyl group on a chiral center was removed as it's not present in the drawing, and all explicit Ts and TIPS groups were expanded. The product SMILES from the input, even after corrections, explicitly defines 4 chiral centers, whereas the screenshot depicts 5. This could be a limitation of the original SMILES generation or requires a more complex SMILES string to capture all stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Silyl ether deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1(C=C2C=C(C)C[C@H]([C@]32CC4CN(CCC4[C@@H]13)[Ts])[OTIPS])C(=O)OCC",
+            "product_smiles": "CCOC(=O)C1(C=C2C=C(C)C[C@H]([C@]32CC4CN(CCC4[C@@H]13)[Ts])O)C(=O)OCC",
+            "notes": "Deprotection of a triisopropylsilyl (TIPS) ether to a free hydroxyl group using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis and Decarboxylation",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "140 °C",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C1(C=C2C=C(C)C[C@@H]([C@]32CC4CN(CC[C@@]4[C@H]13)[Ts])O)C(=O)OCC",
+            "product_smiles": "O=C(O)[C@H]1C=C2C=C(C)C[C@@H]([C@]32CC4CN(CC[C@@]4[C@H]13)[Ts])O",
+            "notes": "Hydrolysis of two ethyl ester groups to carboxylic acids, followed by decarboxylation of one carboxylic acid to form a single carboxylic acid in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "87%",
+            "reactant_smiles": "CC1=CC2C[C@@H](C(C(=O)O)[C@@H]3C4C[C@H]5[C@@H](O)[C@]5(C=C(C)CC4)C3N2[Ts])",
+            "product_smiles": "CC1=CC2C[C@@H](C(C(=O)O)[C@@H]3C4C[C@H]5C(=O)[C@]5(C=C(C)CC4)C3N2[Ts])",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "PtO₂, H₂",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "84%",
+            "reactant_smiles": "C[C@H]1C[C@@H]2[C@H]3C[C@H]4C(=O)C5=C(C)C=CC[C@]5([C@H]3C=C[C@@H](C(=O)O)[C@H]2N(C1)[Ts])C4",
+            "product_smiles": "C[C@H]1C[C@@H]2[C@H]3C[C@H]4C(=O)C5=C(C)[C@H](C)[C@]5([C@H]3C[C@H]([C@@H](C(=O)O))[C@H]2N(C1)[Ts])C4",
+            "notes": "Diastereoselective reduction of two alkene double bonds to alkanes.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Active Esterification",
+            "reagents": "iPrC(O)Cl, NMM",
+            "reagent_smiles": "CC1=CSC(=S)N1O.CCN(CC)CC",
+            "conditions": "Toluene, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@@H]2C3C[C@H]4[C@@H](N([Ts])CC4)C3C(=O)[C@@]5(CC2)[C@@H]1[C@@H]5C(=O)O",
+            "product_smiles": "C[C@H]1C[C@@H]2C3C[C@H]4[C@@H](N([Ts])CC4)C3C(=O)[C@@]5(CC2)[C@@H]1[C@@H]5C(=O)ON6C(=CSC6=S)C",
+            "notes": "Carboxylic acid is activated by isobutyryl chloride and NMM, then coupled with 4-methyl-N-hydroxy-1,3-thiazole-2(3H)-thione to form an active ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive Cleavage",
+            "reagents": "O2, CH3(CH2)8C(CH3)2SH, PPh3",
+            "reagent_smiles": "",
+            "conditions": "LED (365 nm)",
+            "yield": "55%",
+            "reactant_smiles": "C[C@H]1CC(=O)[C@@]23[C@@H](CC4[C@H]2[C@@H](C(=O)ON5C(=CSC5=S)C)[C@H]6C4CCN([Ts])CC63)C1",
+            "product_smiles": "C[C@H]1CC(=O)[C@@]23[C@@H](CC4[C@H]2[C@@H](O)[C@H]6C4CCN([Ts])CC63)C1",
+            "notes": "Photoredox reductive cleavage of an N-O acyl derivative to form an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DIAD, HCO2H, PPh3, then LiOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "59%",
+            "reactant_smiles": "C[C@@H]1CCC2(C(=O)C1)[C@H]3[C@H]4C[C@@H](O)[C@H]5[C@@H]4[C@@H]([C@H]23)CN(C5)[Ts]",
+            "product_smiles": "C[C@@H]1CCC2(C(=O)C1)[C@H]3[C@H]4C[C@@H](O)[C@H]5[C@@H]4[C@@H]([C@H]23)CN(C5)[Ts]",
+            "notes": "The Mitsunobu reaction typically converts an alcohol with inversion of stereochemistry or to another functional group. However, the drawn product structure is identical to the reactant, showing no change to the alcohol functional group or its stereochemistry. This is a discrepancy between the stated reaction and the visual representation of the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reductive Deprotection",
+            "reagents": "Na, C10H8",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CC(=O)[C@@]23[C@H]4CC[C@H](N([Ts])CC4)[C@@H]2C[C@@H](O)[C@]13",
+            "product_smiles": "C[C@@H]1CC(=O)[C@@]23[C@H]4CC[C@H](NCC4)[C@@H]2C[C@@H](O)[C@]13",
+            "notes": "Reductive deprotection of a tosylamide to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reductive Amination (N-methylation)",
+            "reagents": "HOAc, CH2O, NaBH3CN",
+            "reagent_smiles": "CC(=O)O.C=O.[Na+].[BH3-]C#N",
+            "conditions": "",
+            "yield": "74%",
+            "reactant_smiles": "C[C@H]1CCC(=O)[C@@]23C[C@H](O)[C@H]4CNCC[C@@]12[C@H]3CC4",
+            "product_smiles": "C[C@H]1CCC(=O)[C@@]23C[C@H](O)[C@H]4CN(C)CC[C@@]12[C@H]3CC4",
+            "notes": "Methylation of a secondary amine to a tertiary amine via reductive amination.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Intramolecular Rearrangement / Cyclization",
+            "reagents": "LDA, TMSCl then LDA",
+            "reagent_smiles": "CC(C)(C)N=S(Cl)C1=CC=CC=C1",
+            "conditions": "",
+            "yield": "64 %",
+            "reactant_smiles": "CN1CCC[C@H]2[C@@H]1C(=O)[C@@]34CC(C)[C@H]([H])C[C@]42C[C@@H](O)C3",
+            "product_smiles": "CN1CCC[C@H]2[C@@H]1C(=O)C=C(C)[C@]34CC[C@H](O)[C@@H]2C34",
+            "notes": "Intramolecular rearrangement and cyclization to form an alkene and invert the alcohol stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

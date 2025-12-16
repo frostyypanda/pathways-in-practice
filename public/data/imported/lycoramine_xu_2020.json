@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycoramine-xu-2020",
+        "molecule_name": "Lycoramine",
+        "class": "Natural Product",
+        "author": "Xu",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Phenol Protection (MOM ether formation)",
+            "reagents": "MOMBr, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 C to rt",
+            "yield": "99%",
+            "reactant_smiles": "COc1c(O)ccc(Br)c1",
+            "product_smiles": "COc1c([OMOM])ccc(Br)c1",
+            "notes": "Protection of phenol with methoxymethyl bromide (MOMBr) to form a MOM ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "LiTMP",
+            "reagent_smiles": "C=C[O-][Li+]",
+            "conditions": "THF, -78 °C",
+            "yield": "64%",
+            "reactant_smiles": "COc1c([OMOM])ccc(Br)c1",
+            "product_smiles": "COc1c([OMOM])c2ccc1C(O)CC2",
+            "notes": "Formation of a cyclobutanol fused to a substituted benzene ring from an aryl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "79%",
+            "reactant_smiles": "O[MOM]C1=C2C(=CC=C1OC)CC2O",
+            "product_smiles": "O[MOM]C1=C2C(=CC=C1OC)CC2=O",
+            "notes": "Oxidation of secondary alcohol to ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "acetone, MeOH, 45 °C",
+            "yield": "99%",
+            "reactant_smiles": "COc1ccc([OMOM])c2c1C(=O)CC2",
+            "product_smiles": "COC1=CC=C2CC(=O)C2=C1O",
+            "notes": "MOM (methoxymethyl) ether deprotection to a hydroxyl group under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "O-alkylation / Elimination",
+            "reagents": "K2CO3",
+            "reagent_smiles": "C1CC2(CC(C1=O)Br)OCCO2",
+            "conditions": "DMF, 80 °C",
+            "yield": "93% (3 steps)",
+            "reactant_smiles": "COC1=CC=C2CC(=O)C2=C1O",
+            "product_smiles": "COC1=C(O[C@H]2CC(=C)CCC3(OCCO3)C2)C=CC4=C1C(=O)CC4",
+            "notes": "Phenol reacts with bromoketone acetal to form an ether, followed by conversion of the ketone to an exocyclic alkene.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Enol Silyl Ether Formation",
+                    "reagents": "LiHMDS, TMSCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=C1CCC2(OCCO2)CC1",
+                    "product_smiles": "[OTMS]C1=CCC2(CC1)OCCO2",
+                    "notes": "Formation of a silyl enol ether from a cyclohexanone spiroketal using LiHMDS and TMSCl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Bromination / Hydrolysis",
+                    "reagents": "NBS, NaOAc",
+                    "reagent_smiles": "",
+                    "conditions": "THF/H2O, rt",
+                    "yield": "",
+                    "reactant_smiles": "[OTMS]C1=CCC2(OCCO2)CC1",
+                    "product_smiles": "O=C1C(Br)CC2(OCCO2)CC1",
+                    "notes": "Bromination of an enol ether and subsequent hydrolysis to an alpha-bromo ketone, while the acetal is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Hydroacylation / Cyclization",
+            "reagents": "[Rh(CO)2Cl]2, P(C6F5)3",
+            "reagent_smiles": "",
+            "conditions": "THF, 130 °C",
+            "yield": "77%",
+            "reactant_smiles": "C=C1CCC2(C[C@@H]1OC3=C4C(=CC=C3OC)CC4=O)OCCO2",
+            "product_smiles": "COC1=CC=C2CC(=O)C[C@@]34CCC5(C[C@@H]3OC1=C24)OCCO5",
+            "notes": "Intramolecular cyclization of an alkene with an indanone, forming a new fused ring system and two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxime formation",
+            "reagents": "NH₂·HCl, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "46%",
+            "reactant_smiles": "COC1=CC=C2CC(=O)C[C@@]34CCC5(C[C@@H]3OC1=C24)OCCO5",
+            "product_smiles": "COC1=CC=C2C\\C(=N/O)/C[C@@]34CCC5(C[C@@H]3OC1=C24)OCCO5",
+            "notes": "Conversion of a ketone to its Z-oxime using hydroxylamine hydrochloride and sodium acetate in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxime tosylation",
+            "reagents": "TsCl, NEt3, DMAP",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)Cl)cc1.CCN(CC)CC.CN(C)c1ccncc1",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C2C/C(=N/O)/C[C@@]34CCC5(C[C@@H]3OC1=C24)OCCO5",
+            "product_smiles": "COC1=CC=C2C/C(=N/OS(=O)(=O)c6ccc(C)cc6)/C[C@@]34CCC5(C[C@@H]3OC1=C24)OCCO5",
+            "notes": "Conversion of an oxime to an oxime tosylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Beckmann Rearrangement",
+            "reagents": "THF/H2O",
+            "reagent_smiles": "",
+            "conditions": "30 °C",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "COC1=CC=C2C/C(=N/[OTs])/C[C@@]34CCC5(C[C@@H]3OC1=C24)OCCO5",
+            "product_smiles": "COC1=CC=C2CNC(=O)C[C@@]34CCC5(C[C@@H]3OC1=C24)OCCO5",
+            "notes": "Beckmann rearrangement of an oxime tosylate to a lactam, expanding the ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C2CNC(=O)C[C@@]34CCC5(C[C@H]3OC1=C24)OCCO5",
+            "product_smiles": "CN1CC2=CC=C(C3=C2[C@@]4(CCC5(C[C@H]4O3)OCCO5)CC1=O)OC",
+            "notes": "N-methylation of the lactam nitrogen using sodium hydride as base and methyl iodide as the methylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ketal Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "acetone, rt",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "CN1CC2=CC=C(OC)C3=C2[C@@]4(CCC5(C[C@@H]4O3)OCCO5)CC1=O",
+            "product_smiles": "CN1CC2=CC=C(OC)C3=C2[C@]4(CCC(=O)C[C@@H]4O3)CC1=O",
+            "notes": "Hydrolysis of a cyclic ketal to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "L-selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CN1CC2=CC=C(C3=C2[C@]4(CCC(=O)C[C@@H]4O3)CC1=O)OC",
+            "product_smiles": "CN1CC2=CC=C(C3=C2[C@]4(CC[C@@H](C[C@@H]4O3)O)CC1=O)OC",
+            "notes": "Diastereoselective reduction of a cyclic ketone to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reduction (Lactam to Cyclic Amine)",
+            "reagents": "LiAlH4, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to reflux",
+            "yield": "59% (2 steps)",
+            "reactant_smiles": "COC1=CC=C2C3=C1[C@@H]4(CC[C@@H](O)[C@H]5O4)CC(=O)N(C)C3C25",
+            "product_smiles": "COC1=CC=C2C3=C1[C@@H]4(CC[C@@H](O)[C@H]5O4)CN(C)C3C25",
+            "notes": "Reduction of a cyclic lactam to a tertiary amine using lithium aluminum hydride.",
+            "substeps": []
+        }
+    ]
+}

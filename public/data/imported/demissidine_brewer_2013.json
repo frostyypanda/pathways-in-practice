@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "demissidine-brewer-2013",
+        "molecule_name": "Demissidine",
+        "class": "Natural Product",
+        "author": "Brewer",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-bromination",
+            "reagents": "CuBr2, MeOH",
+            "reagent_smiles": "[Cu+2].[Br-].[Br-].CO",
+            "conditions": "70 °C",
+            "yield": "76%",
+            "reactant_smiles": "C[C@@]12CCC(=O)C1CC[C@@H]3[C@@H]2CCC4[C@H]3CC[C@@H](O)C4",
+            "product_smiles": "C[C@@]12CCC(=O)[C@@H](Br)C1CC[C@@H]3[C@@H]2CCC4[C@H]3CC[C@@H](O)C4",
+            "notes": "Alpha-bromination of epi-androsterone at C16 with CuBr2 in methanol, forming 16-alpha-bromo-epi-androsterone. The 3-alpha hydroxyl group remains unchanged. Stereochemistry of bromine is alpha (down).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection (Silyl Ether Formation)",
+            "reagents": "TBDPSCl, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CC[C@@H](CC2CC[C@@H]3[C@@H]1CC[C@@]4(C)[C@H]3C[C@@H](C4=O)Br)O",
+            "product_smiles": "[OTBDPS][C@@H]3CC[C@@]4(C)C(CC[C@@H]5[C@@H]4CC[C@@]6(C)[C@H]5C[C@@H](C6=O)Br)C3",
+            "notes": "Formation of a tert-butyldiphenylsilyl (TBDPS) ether from an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis / Nucleophilic Substitution",
+            "reagents": "NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "DMF/DCM",
+            "yield": "84% (2 steps)",
+            "reactant_smiles": "[OTBDPS][C@H]3CC[C@@]4(C)C(CC[C@@H]5[C@@H]4CC[C@@]6(C)[C@H]5C[C@@H](C6=O)Br)C3",
+            "product_smiles": "[OTBDPS][C@H]3CC[C@@]4(C)C(CC[C@@H]5[C@@H]4CC[C@@]6(C)[C@H]5C[C@H](C6=O)O)C3",
+            "notes": "Hydrolysis of C17-bromo group to hydroxyl group with inversion of stereochemistry at C17.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "92%",
+            "reactant_smiles": "[OTBDPS][C@H]1CC[C@@]2(C)C(CC[C@@H]3[C@@H]2CC[C@@]4(C)[C@H]3C[C@H](C4=O)O)C1",
+            "product_smiles": "[OTBDPS][C@H]1CC[C@@]2(C)C(CC[C@@H]3[C@@H]2CC[C@@]4(C)[C@H]3C[C@H](C4=O)[OTBS])C1",
+            "notes": "A secondary alcohol is protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diazoester Addition to Ketone",
+            "reagents": "LDA",
+            "reagent_smiles": "N#NC(C(=O)OCC)",
+            "conditions": "THF, -78 °C",
+            "yield": "66%",
+            "reactant_smiles": "C[C@]12CCC(C(=O)[C@H]1O[OTBS])[C@@H]3[C@@H]2CCC4C[C@@H](C[C@@H](C4(C)C3)O[OTBDPS])C",
+            "product_smiles": "C[C@]12CCC([C@](O)([C@@H]1O[OTBS])C(=N#N)C(=O)OCC)[C@@H]3[C@@H]2CCC4C[C@@H](C[C@@H](C4(C)C3)O[OTBDPS])C",
+            "notes": "Addition of ethyl diazoacetate to a steroid 17-ketone in the presence of LDA, forming a 17-alpha-diazoester-17-beta-hydroxy steroid. The protecting groups at C3 (beta-OTBDPS) and C16 (alpha-OTBS) remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Lewis acid-catalyzed diazo rearrangement/fragmentation",
+            "reagents": "SnCl4",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "CCOC(=O)C(=N#N)[C@@]1(C)[C@@](O)(O[Si](C)(C)C(C)(C)C)[C@@H]2CC[C@]3(C)[C@H](CC[C@@H]4[C@@]3(C)CC[C@@H](O[Si](C(C)(C)C)(c1ccccc1)c2ccccc2)CC4)[C@H]12",
+            "product_smiles": "CCOC(=O)C#C[C@@]1(C)[C@@](CC=O)([C@@H]2CC[C@]3(C)[C@H](CC[C@@H]4[C@@]3(C)CC[C@@H](O[Si](C(C)(C)C)(c1ccccc1)c2ccccc2)CC4)[C@H]12)",
+            "notes": "Transformation of a C17 diazoester, hydroxyl, and silyl ether to an alkyne and an aldehyde, with loss of nitrogen gas and the TBS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Polycyclic N-heterocycle formation via intramolecular cascade reaction",
+            "reagents": "toluene",
+            "reagent_smiles": "C[C@H]1CC[C@H](C(=O)O[Si](C)(C)C)NC1",
+            "conditions": "130 °C, mw",
+            "yield": "80%",
+            "reactant_smiles": "CCOC(=O)C#C[C@@]1(C)CC[C@H]2[C@@H](CCC3C[C@H](CC[C@@]32C)[OTBDPS])[C@@H]1CC=O",
+            "product_smiles": "CCOC(=O)C1=C2[C@H](C[C@H]3[C@@H]4CCC5C[C@H](CC[C@]5(C)[C@H]4CC[C@@]32C)[OTBDPS])N8C[C@H](C)CC[C@H]18",
+            "notes": "Intramolecular cyclization of an aldehyde and alkyne with a chiral piperidine amine to form a complex fused N-heterocyclic steroid derivative.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Chiral Resolution (Salt Formation)",
+                    "reagents": "",
+                    "reagent_smiles": "O=C(O)[C@@H](O)c1ccccc1",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C[C@H]1CC[NH]CC1",
+                    "product_smiles": "C[C@H]1CC[NH2+]CC1.O=C([O-])[C@@H](O)c1ccccc1",
+                    "notes": "Formation of a diastereomeric salt between (R)-3-methylpiperidine and (R)-mandelic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "N-Protection (Bocylation)",
+                    "reagents": "Boc2O, NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "95%",
+                    "reactant_smiles": "[O-]C(=O)[C@@H](O)[Ph].C[C@H]1CCC[NH2+][C@@H](C)C1",
+                    "product_smiles": "[Boc]N1[C@H](C)CCC[C@@H](C)C1",
+                    "notes": "Boc protection of a secondary amine in the presence of a carboxylate and an alcohol (which are unreactive under these conditions).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Carboxylation",
+                    "reagents": "s-BuLi, TMEDA, then CO2",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, -78 °C",
+                    "yield": "78%",
+                    "reactant_smiles": "CC[C@H]1CN([Boc])CCC1",
+                    "product_smiles": "O=C(O)[C@@H]1CN([Boc])CC[C@H](C)C1",
+                    "notes": "Alpha-lithiation of N-Boc-4-methylpiperidine at C2 followed by carboxylation with CO2.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "N-Boc Deprotection",
+                    "reagents": "TFA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "81%",
+                    "reactant_smiles": "O=C(O)[C@H]1[Boc]NCCC[C@@H]1C",
+                    "product_smiles": "O=C(O)[C@H]1[NH2+]CCC[C@@H]1C.FC(F)(F)C(=O)[O-]",
+                    "notes": "Deprotection of N-Boc protected piperidine carboxylic acid using trifluoroacetic acid, forming the corresponding ammonium trifluoroacetate salt.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Silylation, Amine Deprotonation",
+                    "reagents": "poly(vinyl)py, Et₂N-SiMe₃",
+                    "reagent_smiles": "",
+                    "conditions": "H₂O, 95 °C",
+                    "yield": "",
+                    "reactant_smiles": "C[C@H]1CC[C@H](C(=O)O)[NH2+]C1.O=C(C(F)(F)F)[O-]",
+                    "product_smiles": "C[C@H]1CC[C@H](C(=O)O[Si](C)(C)C)NC1",
+                    "notes": "The ammonium salt of the piperidine carboxylic acid is deprotonated, and the carboxylic acid is converted to its trimethylsilyl (TMS) ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dehydrogenation / Oxidation",
+            "reagents": "Pt black, air",
+            "reagent_smiles": "",
+            "conditions": "decalin, 60 °C",
+            "yield": "85%",
+            "reactant_smiles": "[COOEt]C1=C2[C@H](C[C@H]3[C@@H]4CCC5C[C@H](CC[C@]5(C)[C@H]4CC[C@@]32C)[OTBDPS])N8C[C@@H](C)CC[C@H]18",
+            "product_smiles": "[COOEt]C1=C2CC[C@H](C)CN2C3=C1[C@@]4(C)CC[C@H]5[C@@H](CCC6C[C@H](CC[C@@]65C)[OTBDPS])[C@@H]4C3",
+            "notes": "Oxidation of a reduced pyrrolidine-like ring to an indole-like system fused to a steroid core.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "PtO2.H2O, H2",
+            "reagent_smiles": "",
+            "conditions": "AcOH, 60 °C, 40 bar",
+            "yield": "79%",
+            "reactant_smiles": "CCOC(=O)C1=C2CC[C@H](C)CN2C3=C1[C@]4(C)CC[C@H]5[C@H](CCC6C[C@@H](CC[C@]65C)[OTBDPS])[C@@H]4C3",
+            "product_smiles": "CCOC(=O)[C@@H]1[C@H]2CC[C@H](C)CN2[C@@H]3C[C@H]4[C@@H]5CCC6C[C@@H](CC[C@]6(C)[C@H]5CC[C@]4(C)[C@@H]31)[OTBDPS]",
+            "notes": "Stereoselective hydrogenation of the indole C=C bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 60 °C",
+            "yield": "98%",
+            "reactant_smiles": "CCOC(=O)[C@@H]1[C@H]2CC[C@H](C)CN2[C@@]3C[C@H]4[C@@H]5CCC6C[C@H](CC[C@]6(C)[C@H]5CC[C@]4(C)[C@@H]13)[OTBDPS]",
+            "product_smiles": "C[C@H]1CC[C@@]2(C)[C@@H](CO)[C@H]3[C@H](C[C@H]4[C@@H]5CCC6C[C@H](CC[C@]6(C)[C@H]5CC[C@@]43C)[OTBDPS])N2C1",
+            "notes": "Ester reduction to primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Mesylation (Alcohol to Mesylate)",
+            "reagents": "MsCl, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "81%",
+            "reactant_smiles": "C[C@H]1CCC2(C)[C@@H]([C@@H]3C[C@H]4[C@@H]5CCC6C[C@H](CC[C@]6(C)[C@H]5CC[C@H]43C)[OTBDPS])N9C[C@H](O)[C@H](C[C@H]9C)C1",
+            "product_smiles": "C[C@H]1CCC2(C)[C@@H]([C@@H]3C[C@H]4[C@@H]5CCC6C[C@H](CC[C@]6(C)[C@H]5CC[C@H]43C)[OTBDPS])N9C[C@H](OS(=O)(=O)C)[C@H](C[C@H]9C)C1",
+            "notes": "Conversion of a secondary alcohol to its mesylate. The TBDPSO protecting group remains unchanged. Stereochemistry of all chiral centers was carefully validated and corrected according to the provided image. The input SMILES for reactant and product incorrectly represented the alcohol/mesylate as primary and had significant errors in the nitrogen-containing ring system and overall stereochemistry. The reagent SMILES was junk.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "Et3BH",
+            "reagent_smiles": "[BH](CC)(CC)CC",
+            "conditions": "THF",
+            "yield": "93%",
+            "reactant_smiles": "C[C@H]1CC[C@@H]2[C@@H]([OMs])[C@H]3[C@H](C[C@H]4[C@@H]5CCC6C[C@H](CC[C@]6(C)[C@H]5CC[C@@]43C)[OTBDPS])N2C1",
+            "product_smiles": "C[C@H]1CC[C@@H]2([C@@H](C)[C@H]3[C@H](C[C@H]4[C@@H]5CCC6C[C@H](CC[C@]6(C)[C@H]5CC[C@@]43C)[OTBDPS])N2C1)",
+            "notes": "Reduction of a secondary mesylate to a methyl group using triethylborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection (Silyl ether cleavage)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "90%",
+            "reactant_smiles": "C[C@H]1CC[C@@H]2[C@@H](C)[C@H]3[C@H](C[C@H]4[C@@H]5CCC6C[C@H](CC[C@]6(C)[C@H]5CC[C@@]43C)[OTBDPS])N2C1",
+            "product_smiles": "C[C@H]1CC[C@H]2[C@@H](C)[C@H]3[C@H](C[C@H]4[C@@H]5CCC6C[C@H](CC[C@]6(C)[C@H]5CC[C@@]43C)O)N2C1",
+            "notes": "Hydrolysis of a tert-butyldiphenylsilyl (TBDPS) ether to a hydroxyl group, converting the protected steroid to Demissidine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "epothilone-d-avery-2001",
+        "molecule_name": "Epothilone D",
+        "class": "Natural Product",
+        "author": "Avery",
+        "year": 2001
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Stereoselective Epoxide Opening / Carbon-Carbon Coupling",
+            "reagents": "Mg, CuBr-DMS, DMS, Propyne, Lithiohexyne",
+            "reagent_smiles": "C[C@@H]1[C@H](O1)OCC2=CC=C(OC)C=C2",
+            "conditions": "ether, rt, -45 °C, -45 to -23 °C, -78 °C",
+            "yield": "76%",
+            "reactant_smiles": "C=C(C)CCCBr",
+            "product_smiles": "C[C@H]([PMBO])[C@H](O)CC/C=C(\\C)CCC(=C)C",
+            "notes": "Formation of a complex organometallic nucleophile (likely involving a Grignard from the bromide and a lithiated alkyne, potentially via a cuprate) followed by stereoselective ring opening of a chiral epoxide and further carbon chain coupling.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol protection",
+            "reagents": "SEMCI, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "C=C(C)CCC/C=C(\\C)CC[C@@H](O)[C@H](C)O[PMB]",
+            "product_smiles": "C=C(C)CCC/C=C(\\C)CC[C@@H](O[SEM])[C@H](C)O[PMB]",
+            "notes": "Protection of a secondary alcohol as a 2-(trimethylsilyl)ethoxymethyl (SEM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "DDQ, H2O",
+            "reagent_smiles": "N#CC1=C(Cl)C(=O)C(C#N)=C(Cl)C1=O.O",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "C=C(C)CCC/C(=C\\C[C@H](O[PMB])[C@H](C)O[SEM])/C",
+            "product_smiles": "C=C(C)CCC/C(=C\\C[C@H](O)[C@H](C)O[SEM])/C",
+            "notes": "PMB ether deprotection to alcohol using DDQ.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Swern oxidation",
+            "reagents": "DMSO, (COCl)2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "85%",
+            "reactant_smiles": "C=C(C)CCC/C(=C\\C[C@H](O[SEM])[C@H](C)O)/C",
+            "product_smiles": "C=C(C)CCC/C(=C\\C[C@H](O[SEM])C(=O)C)/C",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "CCOP(=O)(CC1=CSC(=N1)C)OCC",
+            "conditions": "THF",
+            "yield": "72%",
+            "reactant_smiles": "C=C(C)CCC/C(=C\\C[C@@H](C(=O)C)OCCOC[Si](C)(C)C)/C",
+            "product_smiles": "C=C(C)CCC/C(=C\\C[C@@H](/C(=C\\C1=CSC(=N1)C)/C)OCCOC[Si](C)(C)C)/C",
+            "notes": "Horner-Wadsworth-Emmons olefination of a ketone with a phosphonate reagent, forming an E-alkene. The OSEM protecting group was correctly identified and applied.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "(i-PC)₂BH, aq. NaBO₃",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "Cc1csc(n1)/C=C(\\C)[C@@H](C)[OSEM]CC/C(C)=C/CC=C(C)C",
+            "product_smiles": "Cc1csc(n1)/C=C(\\C)[C@@H](C)[OSEM]CC/C(C)=C/CC[C@H](C)CO",
+            "notes": "Hydroboration-oxidation of terminal isopropenyl group to primary alcohol with retained stereochemistry at existing chiral center and E-alkenes.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Swern oxidation",
+            "reagents": "DMSO, (COCl)2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "C/C(=C/C[C@@H](/C(=C/C1=CSC(=N1)C)/C)[OSEM])/CCC[C@H](C)CO",
+            "product_smiles": "C/C(=C/C[C@@H](/C(=C/C1=CSC(=N1)C)/C)[OSEM])/CCC[C@H](C)C=O",
+            "notes": "Primary alcohol oxidized to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Aldol Reaction",
+            "reagents": "LDA, ZnCl2",
+            "reagent_smiles": "CCC(=O)C(C)(C)[C@H](CC(=O)O)O[Si](C)(C)C(C)(C)C",
+            "conditions": "THF, -78 to -40 °C then -78 to -50 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=CSC(=N1)/C=C(\\C)[C@@H](OCC[Si](C)(C)C)/C=C(\\C)CCC[C@H](C)C=O",
+            "product_smiles": "CC1=CSC(=N1)/C=C(\\C)[C@@H](OCC[Si](C)(C)C)/C=C(\\C)CCC[C@H](C)C(O)C(C)C(=O)C(C)(C)[C@H](CC(=O)O)O[Si](C)(C)C(C)(C)C",
+            "notes": "Aldol addition of a chiral beta-keto ester derivative to an aldehyde, forming two new chiral centers.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Chiral Auxiliary Mediated Aldol Reaction",
+                    "reagents": "Bu2BOTf, DIPEA",
+                    "reagent_smiles": "CCC(=O)C(C)(C)C=O",
+                    "conditions": "DCM, 0 to -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)[C@@H]1COC(=O)N1C(=O)CSC",
+                    "product_smiles": "CCC(=O)C(C)(C)[C@H](O)[C@@H](SC)C(=O)N1[C@@H](C(C)C)COC1=O",
+                    "notes": "An Evans-type aldol condensation reaction between a chiral oxazolidinone-derived enolate and a keto-aldehyde, resulting in the formation of two new stereocenters with defined stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Desulfurization",
+                    "reagents": "Raney Ni",
+                    "reagent_smiles": "CC(C)=O",
+                    "conditions": "acetone, 60 °C",
+                    "yield": "70%",
+                    "reactant_smiles": "CCC(=O)C(C)(C)[C@@H](O)[C@H](SC)C(=O)N1[C@H](C(C)C)COC1=O",
+                    "product_smiles": "CCC(=O)C(C)(C)[C@@H](O)CC(=O)N1[C@H](C(C)C)COC1=O",
+                    "notes": "Desulfurization of a methylthio group adjacent to a ketone using Raney Nickel. The stereochemistry of the adjacent secondary alcohol and the oxazolidinone chiral center are retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Alcohol Silylation / Alcohol Protection",
+                    "reagents": "TBDMSOTf, 2,6-lutidine",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "95%",
+                    "reactant_smiles": "CCC(=O)C(C)(C)[C@H](CC(=O)N1[C@H](COC1=O)C(C)C)O",
+                    "product_smiles": "CCC(=O)C(C)(C)[C@H]([OTBS])CC(=O)N1[C@H](COC1=O)C(C)C",
+                    "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Oxidative Cleavage / Hydrolysis",
+                    "reagents": "LiOH, H₂O₂",
+                    "reagent_smiles": "",
+                    "conditions": "THF/H₂O, rt",
+                    "yield": "82%",
+                    "reactant_smiles": "CCC(=O)C(C)(C)[C@H]([OTBS])CC(=O)N1[C@@H](C(C)C)COC1=O",
+                    "product_smiles": "CCC(=O)C(C)(C)[C@H]([OTBS])CC(=O)O",
+                    "notes": "Oxidative cleavage of chiral oxazolidinone auxiliary to form carboxylic acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alcohol Protection / Esterification",
+            "reagents": "TrocCl, Py",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=CSC(=N1)/C=C(/C)[C@@H]([OSEM])CCC/C=C(/C)[C@@H](C)[C@H](O)C(=O)C(C)(C)[C@@H]([OTBS])CC(=O)O",
+            "product_smiles": "CC1=CSC(=N1)/C=C(/C)[C@@H]([OSEM])CCC/C=C(/C)[C@@H](C)[C@H]([OTroc])C(=O)C(C)(C)[C@@H]([OTBS])CC(=O)O",
+            "notes": "A secondary alcohol is protected as a 2,2,2-trichloroethyl carbonate (Troc ester) using TrocCl and pyridine. All stereocenters and double bond geometries are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "-20 °C",
+            "yield": "63% (3 steps)",
+            "reactant_smiles": "CC1=CSC(N1)=C/C=C/[C@@H]([OSEM])CCC/C=C(\\C)CCC[C@@H](C)C([OTroc])C(=O)C(C)(C)[C@H]([OTBS])CC(=O)O",
+            "product_smiles": "CC1=CSC(N1)=C/C=C/[C@@H](O)CCC/C=C(\\C)CCC[C@@H](C)C([OTroc])C(=O)C(C)(C)[C@H]([OTBS])CC(=O)O",
+            "notes": "Cleavage of SEM ether to alcohol using trifluoroacetic acid (TFA). The product still contains the Troc ester and TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Yamaguchi lactonization",
+            "reagents": "DMAP",
+            "reagent_smiles": "C1=C(C(=C(C=C1Cl)Cl)C(=O)Cl)Cl.CCN(CC)CC",
+            "conditions": "THF, toluene, rt",
+            "yield": "67%",
+            "reactant_smiles": "CC1=CSC(=N1)C/C=C/[C@H](O)CCC/C=C(/C)[C@@H](C)[C@H]([OTroc])[C@@H](C)C(=O)C(C)(C)[C@@H](CC(=O)O)[OTBS]",
+            "product_smiles": "CC1=CSC(=N1)C/C=C/[C@H]2OC(=O)C[C@@H]([OTBS])C(C)(C)C(=O)[C@@H](C)[C@H]([OTroc])[C@@H](C)C/C=C(/C)CCC2",
+            "notes": "Lactonization of a seco-acid to form a 16-membered macrolactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "HF-Py",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "95%",
+            "reactant_smiles": "Cc1csc(n1)/C=C/[C@@H](C)C/C=C(C)\\CCC[C@@H](C)[C@@H]([C@@H](C)[OTroc])C(=O)C(C)(C)[C@H]([OTBS])CC(=O)O1",
+            "product_smiles": "Cc1csc(n1)/C=C/[C@@H](C)C/C=C(C)\\CCC[C@@H](C)[C@@H]([C@@H](C)[OTroc])C(=O)C(C)(C)[C@H](O)CC(=O)O1",
+            "notes": "Deprotection of TBS ether to hydroxyl group using HF-Py.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection (reductive cleavage)",
+            "reagents": "Zn, aq. NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "MeOH, reflux",
+            "yield": "92%",
+            "reactant_smiles": "Cc1csc(n1)C/C=C(C)/C=C/[C@@H]2OC(=O)C[C@@H](O)C(C)(C)C(=O)[C@@H](C)[C@H]([OTroc])[C@H](C)CC[C@H](C)CC=C2",
+            "product_smiles": "Cc1csc(n1)C/C=C(C)/C=C/[C@@H]2OC(=O)C[C@@H](O)C(C)(C)C(=O)[C@@H](C)[C@H](O)[C@H](C)CC[C@H](C)CC=C2",
+            "notes": "Reductive cleavage of the 2,2,2-trichloroethyl carbonate (Troc) protecting group on the C11 hydroxyl of the epothilone derivative, yielding Epothilone D.",
+            "substeps": []
+        }
+    ]
+}

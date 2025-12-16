@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ucs1025ad-danishefsky-2006",
+        "molecule_name": "UCS1025AD",
+        "class": "Natural Product",
+        "author": "Danishefsky",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imide Formation",
+            "reagents": "Et2NH, AcCl",
+            "reagent_smiles": "NCCCC(=O)OC",
+            "conditions": "THF, reflux",
+            "yield": "51%",
+            "reactant_smiles": "O=C1OC(=O)[C@@H]([OAc])[C@H]1[OAc]",
+            "product_smiles": "O=C1N(CCCC(=O)OC)C(=O)[C@@H]([OAc])[C@H]1[OAc]",
+            "notes": "Anhydride ring opening by a primary amine followed by cyclization to form a succinimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Hydrolysis / Deprotection",
+            "reagents": "AcCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "79%",
+            "reactant_smiles": "[OAc][C@@H]1[C@@H](C(=O)N(CCCC(=O)OC)C1=O)[OAc]",
+            "product_smiles": "COC(=O)CCCN1C(=O)[C@@H]([C@@H](C1=O)O)O",
+            "notes": "Hydrolysis of two acetate groups to form a diol. The trans-stereochemistry of the two chiral centers on the succinimide ring is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection (Silylation)",
+            "reagents": "TMSCl, Et₃N",
+            "reagent_smiles": "Cl[Si](C)(C)C.CCN(CC)CC",
+            "conditions": "CH₂Cl₂",
+            "yield": "85%",
+            "reactant_smiles": "COC(=O)CCCN1C(=O)[C@@H]([C@H](C1=O)O)O",
+            "product_smiles": "COC(=O)CCCN1C(=O)[C@@H]([C@H](C1=O)[OTMS])[OTMS]",
+            "notes": "Diol is protected as a bis-trimethylsilyl (bis-TMS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization / Silylation",
+            "reagents": "TBSOTf, i-Pr₂NEt, CH₂Cl₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "COC(=O)CCCN1C(=O)[C@@H]([C@H](C1=O)[OTMS])[OTMS]",
+            "product_smiles": "[OTBS][C@]12[C@@H](CCN2C(=O)[C@@H]([C@H]1[OTMS])[OTMS])C(=O)OC",
+            "notes": "Intramolecular cyclization involving the alpha-carbon of the methyl ester and an imide carbonyl, forming a bicyclic lactam system. A newly formed hydroxyl is silylated with TBSOTf.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Selective Deprotection",
+            "reagents": "1 N HCl, AcOH, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C1N2CCC[C@H](C(=O)OC)[C@]2([OTBS])[C@H]([OTMS])[C@H]1[OTMS]",
+            "product_smiles": "O=C1N2CCC[C@H](C(=O)OC)[C@]2([OTBS])[C@H](O)[C@H]1O",
+            "notes": "Selective acid-catalyzed hydrolysis of two trimethylsilyl (TMS) ethers to hydroxyl groups. The tert-butyldimethylsilyl (TBS) ether remains protected.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Dehydration and Triflation",
+            "reagents": "Tf2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "76%",
+            "reactant_smiles": "[OTBS][C@]12[C@@H](CCN2C(=O)[C@@H]([C@H]1O)O)C(=O)OC",
+            "product_smiles": "[OTBS][C@@]12C=C(C(=O)N2CC[C@H]1C(=O)OC)[OTf]",
+            "notes": "Formation of an enol triflate from a 1,2-diol. The 76% yield is stated to be over '2 steps'.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive elimination / Stille-type reduction",
+            "reagents": "Bu3SnH, Pd(PPh3)4, LiCl",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "52%",
+            "reactant_smiles": "[OTBS][C@@]12C=C([OTf])C(=O)N2CC[C@H]1C(=O)OC",
+            "product_smiles": "[OTBS][C@@]12C=CC(=O)N2CC[C@H]1C(=O)OC",
+            "notes": "Reductive removal of a vinyl triflate group, resulting in an alpha,beta-unsaturated lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS][C@@]12C=CC(=O)N2CC[C@H]1C(=O)OC",
+            "product_smiles": "[OTBS][C@@]12C=CC(=O)N2CC[C@H]1C(=O)O",
+            "notes": "Methyl ester hydrolysis to carboxylic acid",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Iodolactonization",
+            "reagents": "I2, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, THF",
+            "yield": "84%",
+            "reactant_smiles": "[OTBS][C@@]12C=CC(=O)N2CC[C@H]1C(=O)O",
+            "product_smiles": "C1[C@H]N2C(=O)[C@H]([C@H]3[C@@]2([C@H]1C(=O)O3))I",
+            "notes": "Intramolecular iodolactonization of a bicyclic enamide leading to a tricyclic lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Stereoselective Addition",
+            "reagents": "BET3",
+            "reagent_smiles": "C[C@@H]1C=C[C@H]2CCCC[C@H]2[C@@H]1C=O",
+            "conditions": "toluene, -78 °C",
+            "yield": "99%",
+            "reactant_smiles": "C1CN2C(=O)[C@@H]([C@H]3[C@@]2([C@@H]1C(=O)O3)OP)I",
+            "product_smiles": "C1CN2C(=O)[C@@H]([C@H](O)[C@@H]6C=C[C@H]7CCCC[C@H]7[C@@H]6C)[C@H]3[C@@]2([C@@H]1C(=O)O3)OP",
+            "notes": "Stereoselective addition of a bicyclic amide derivative to an aldehyde.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Ley oxidation",
+                    "reagents": "TPAP, NMO, 4Å MS",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "",
+                    "reactant_smiles": "C/C=C/C=C/CCCCCO",
+                    "product_smiles": "C/C=C/C=C/CCCCC=O",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Wittig olefination",
+                    "reagents": "Ph3P=CH2CO2Me",
+                    "reagent_smiles": "O=C(OC)C=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "THF",
+                    "yield": "52% (2 steps)",
+                    "reactant_smiles": "O=C1CCC(C/C=C/C)/C=C/CCC1",
+                    "product_smiles": "COC(=O)/C=C/1CCC(C/C=C/C)/C=C/CCC1",
+                    "notes": "Wittig olefination of a cyclic ketone to form an alpha,beta-unsaturated ester. The double bonds in the starting material and the newly formed double bond are all E-configured.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Ester Reduction",
+                    "reagents": "DIBAL",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "91%",
+                    "reactant_smiles": "COC(=O)/C1=C/CCCC/C=C/C/C=C/C(C)1",
+                    "product_smiles": "OCC1=C/CCCC/C=C/C/C=C/C(C)1",
+                    "notes": "Reduction of a methyl ester to a primary alcohol using DIBAL, preserving the macrocyclic triene and its stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Ley oxidation",
+                    "reagents": "TPAP, NMO, 4Å MS",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "59%",
+                    "reactant_smiles": "C/C=C/C=C/CCCC/C=C/CO",
+                    "product_smiles": "C/C=C/C=C/CCCC/C=C/C=O",
+                    "notes": "Primary alcohol is oxidized to an aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.5",
+                    "reaction_type": "Intramolecular cyclization",
+                    "reagents": "TFA",
+                    "reagent_smiles": "O=C1N[C@H](C(C)(C)C)[C@H](C)[C@H]1[Bn]",
+                    "conditions": "CH3CN/H2O",
+                    "yield": "71%",
+                    "reactant_smiles": "C/C=C/C=C/CCCC/C=C\\C=O",
+                    "product_smiles": "C[C@@H]1C=C[C@@H]2CCCC[C@H]2[C@H]1C=O",
+                    "notes": "An acyclic polyene aldehyde undergoes an intramolecular cyclization, likely a Diels-Alder reaction, to form a bicyclic aldehyde.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, CH2Cl2",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1C=C[C@H]2CCCC[C@]2(C)[C@H]1C([C@H]3[C@H]4[C@@]5([C@@H](CCN5C3=O)C(=O)O4)O[TBDPS])O",
+            "product_smiles": "C[C@H]1C=C[C@H]2CCCC[C@]2(C)[C@H]1C([C@H]3[C@H]4[C@@]5([C@@H](CCN5C3=O)C(=O)O4)O)O",
+            "notes": "Deprotection of a silyl ether (represented as 'OP' in the screenshot, assumed to be OTBDPS due to TBAF reagent) to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "Dess-Martin oxidation",
+            "reagent_smiles": "CC(=O)OI1(C2=CC=CC=C2C(=O)O1)(OC(=O)C)OC(=O)C",
+            "conditions": "",
+            "yield": "84%",
+            "reactant_smiles": "C[C@@H]1CCC[C@@H]2[C@H](C=C[C@H]12)[C@H](C[C@@H](O)[C@H]3[C@H]4[C@]5(O)OC(=O)C[C@@H]4N(C)C5=O)",
+            "product_smiles": "C[C@@H]1CCC[C@@H]2[C@H](C=C[C@H]12)[C@H](C(=O)[C@H]3[C@H]4[C@]5(O)OC(=O)C[C@@H]4N(C)C5=O)",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin periodinane.",
+            "substeps": []
+        }
+    ]
+}

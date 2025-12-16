@@ -1,0 +1,241 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cystothiazole-charette-2003",
+        "molecule_name": "Cystothiazole",
+        "class": "Natural Product",
+        "author": "Charette",
+        "year": 2003
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enolization and Silylation (S-Silyl Ketene Thioacetal Formation)",
+            "reagents": "LDA, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CCSC(=O)CC",
+            "product_smiles": "CCSC/C([OTMS])=C\\C",
+            "notes": "Formation of an E-configured S-silyl ketene thioacetal from a thioester via LDA deprotonation and TMSCl trapping.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Catalytic Aldol-type reaction (enantioselective)",
+            "reagents": "[Cu((R,R)-Ph-pybox)](SbF₆)₂",
+            "reagent_smiles": "O=CCOCC1=CC=CC=C1",
+            "conditions": "CH₂Cl₂",
+            "yield": "93%",
+            "reactant_smiles": "CCSC([OTMS])=CC",
+            "product_smiles": "CCSC(=O)[C@@H](C)[C@@H](O)C[OBn]",
+            "notes": "Enantioselective addition of a silyl ketene thioacetal to an aldehyde, catalyzed by a copper-bis(oxazoline) complex, forming a beta-hydroxy thioester with two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "O-Methylation",
+            "reagents": "Me3OBF4, proton-sponge",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "CCSC(=O)[C@H](C)[C@H](O)COCC1=CC=CC=C1",
+            "product_smiles": "CCSC(=O)[C@H](C)[C@@H](OC)COCC1=CC=CC=C1",
+            "notes": "Methylation of secondary alcohol to methyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Thioester Reduction / Hydrogenolysis",
+            "reagents": "10% Pd/C",
+            "reagent_smiles": "CC[SiH](CC)CC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCSC(=O)[C@H](C)[C@H](OC)COCC1=CC=CC=C1",
+            "product_smiles": "O=C[C@H](C)[C@H](OC)COCC1=CC=CC=C1",
+            "notes": "Reduction of a thioester to an aldehyde using triethylsilane and palladium on carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Homologation / Beta-ketoester formation",
+            "reagents": "N2CHCO2Me, SnCl2",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "O=C[C@H](C)[C@@H](OC)COCc1ccccc1",
+            "product_smiles": "COC(=O)CC(=O)[C@H](C)[C@@H](OC)COCc1ccccc1",
+            "notes": "Aldehyde converted to a beta-keto methyl ester, retaining the stereochemistry of the two chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "O-Methylation / Enol Ether Formation",
+            "reagents": "NaH, HMPA, Me2SO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CC(=O)[C@H](C)[C@@H](OC)COCC1=CC=CC=C1",
+            "product_smiles": "COC(=O)/C=C(OC)/[C@H](C)[C@@H](OC)COCC1=CC=CC=C1",
+            "notes": "Formation of an E-configured methyl enol ether from a beta-keto ester via methylation. The two existing chiral centers retain their configuration (R,S).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "H2, Pd(OH)2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)/C=C(\\OC)[C@@H](C)[C@H](OC)COCc1ccccc1",
+            "product_smiles": "COC(=O)/C=C(\\OC)[C@@H](C)[C@H](OC)CO",
+            "notes": "Debenzylation of a primary benzylic ether to a primary alcohol under catalytic hydrogenation conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "Dess-Martin oxidation",
+            "reagent_smiles": "O=C1c2ccccc2[I]1(OC(C)=O)(OC(C)=O)OC(C)=O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)/C=C(\\OC)[C@@H](C)[C@@H](OC)CO",
+            "product_smiles": "COC(=O)/C=C(\\OC)[C@@H](C)[C@@H](OC)C=O",
+            "notes": "Primary alcohol oxidized to aldehyde using Dess-Martin Periodinane. Stereochemistry and double bond geometry remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wittig reaction",
+            "reagents": "",
+            "reagent_smiles": "[P+](CCCC)(CCCC)CCCC[CH2]C1=NC(=CS1)C2=NC(=CS2)C(C)C.CS(=O)(=O)[O-]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)/C=C(/OC)[C@H](C)[C@H](OC)C=O",
+            "product_smiles": "COC(=O)/C=C(/OC)[C@H](C)[C@H](OC)/C=C/C1=NC(=CS1)C2=NC(=CS2)C(C)C",
+            "notes": "Wittig reaction between an aldehyde and a phosphonium ylide to form an E-alkene. The existing stereocenters and E-alkene geometry are preserved.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Amide activation / Imidoyl triflate formation",
+                    "reagents": "Tf₂O, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂",
+                    "yield": "",
+                    "reactant_smiles": "CNC(=O)C(C)C",
+                    "product_smiles": "CN=C(O[Tf])C(C)C",
+                    "notes": "Conversion of a secondary amide to an N-methylimidoyl triflate using triflic anhydride and pyridine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Heterocycle Formation",
+                    "reagents": "L-Cysteine.HCl, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "90%",
+                    "reactant_smiles": "CN=C([OTf])C(C)C",
+                    "product_smiles": "CCOC(=O)[C@@H]1CN=C(C(C)C)SC1",
+                    "notes": "Formation of a 4,5-dihydrothiazole from a triflate imine and L-cysteine.HCl. The yield is for two steps.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Dehydrogenation / Aromatization",
+                    "reagents": "BrCCl3, DBU",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(C)C1=NC(C(=O)OCC)CS1",
+                    "product_smiles": "CC(C)C1=NC=C(C(=O)OCC)S1",
+                    "notes": "Dehydrogenation of a 4,5-dihydrothiazole to a thiazole ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Amidation",
+                    "reagents": "MaNH₂",
+                    "reagent_smiles": "CN",
+                    "conditions": "MeOH",
+                    "yield": "92%",
+                    "reactant_smiles": "CCOC(=O)c1ncc(C(C)C)s1",
+                    "product_smiles": "CC(C)c1ncc(C(=O)NC)s1",
+                    "notes": "Conversion of an ethyl ester to an N-methyl carboxamide using methylamine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.5",
+                    "reaction_type": "Amide Activation / Imidoyl Triflate Formation",
+                    "reagents": "Tf2O, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)c1nc(C(=O)NC)cs1",
+                    "product_smiles": "CC(C)c1nc(C(=NC)[OTf])cs1",
+                    "notes": "Conversion of an N-methylamide to an N-methylimidoyl triflate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.6",
+                    "reaction_type": "",
+                    "reagents": "L-Cysteine.HCl, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)c1nc(C(=N(C))OS(=O)(=O)C(F)(F)F)cs1",
+                    "product_smiles": "CCOC(=O)[C@@H]1CSC(=N1)C2=CSC(=N2)C(C)C",
+                    "notes": "Formation of a 2-thiazoline via nucleophilic attack of L-Cysteine on an imine triflate, followed by cyclization and loss of triflate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.7",
+                    "reaction_type": "Dehydrogenation / Aromatization",
+                    "reagents": "BrCCl3, DBU",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "69% (3 steps)",
+                    "reactant_smiles": "CCOC(=O)[C@H]1CSC(=N1)C2=CSC(=N2)C(C)C",
+                    "product_smiles": "CCOC(=O)C1=CSC(=N1)C2=CSC(=N2)C(C)C",
+                    "notes": "Dehydrogenation of the thiazolidine ring to form an aromatic thiazole, resulting in loss of the stereocenter.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.8",
+                    "reaction_type": "Reduction (Ester to Alcohol)",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "[Li+].[AlH4-]",
+                    "conditions": "",
+                    "yield": "93%",
+                    "reactant_smiles": "CCOC(=O)C1=CSC(=N1)C2=CSC(=N2)C(C)C",
+                    "product_smiles": "OCC1=CSC(=N1)C2=CSC(=N2)C(C)C",
+                    "notes": "Ester group is reduced to a primary alcohol using lithium aluminum hydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.9",
+                    "reaction_type": "Mesylation",
+                    "reagents": "MsCl",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)C1=NC(=CS1)C2=NC(=CS2)CO",
+                    "product_smiles": "CC(C)C1=NC(=CS1)C2=NC(=CS2)COS(=O)(=O)C",
+                    "notes": "Conversion of a primary alcohol to a mesylate using methanesulfonyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.10",
+                    "reaction_type": "Phosphonium Salt Formation",
+                    "reagents": "DMF",
+                    "reagent_smiles": "P(CCCC)(CCCC)CCCC",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CS(=O)(=O)OCC1=CSC(=N1)C2=CSC(=N2)C(C)C",
+                    "product_smiles": "[P+](CCCC)(CCCC)CCCCCC1=CSC(=N1)C2=CSC(=N2)C(C)C.[O-]S(=O)(=O)C",
+                    "notes": "Formation of a phosphonium salt by the reaction of a primary mesylate with tributylphosphine.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

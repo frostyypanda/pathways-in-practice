@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "suffranidine-b-han-2023",
+        "molecule_name": "Suffranidine B",
+        "class": "Natural Product",
+        "author": "Han",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Silylation / Alcohol Protection",
+            "reagents": "TBSCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C1=C(CO)OC=C(C1=O)O",
+            "product_smiles": "[OTBS]CC1=CC(=O)C(=CO1)[OTBS]",
+            "notes": "Bis-silylation of Kojic acid with TBSCl to protect both hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection (Silyl Ether Hydrolysis)",
+            "reagents": "HCO2H",
+            "reagent_smiles": "O=CO",
+            "conditions": "(2 steps)",
+            "yield": "60%",
+            "reactant_smiles": "O=C1C(O[TBS])=CC(C[OTBS])=CO1",
+            "product_smiles": "O=C1C(O)=CC(C[OTBS])=CO1",
+            "notes": "Acid-catalyzed selective deprotection of a TBS enol ether, retaining the primary alcohol TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Triflation",
+            "reagents": "PhNTf2, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "98%",
+            "reactant_smiles": "O=C1C=C(O)OC(C[OTBS])=C1",
+            "product_smiles": "O=C1C=C([OTf])OC(C[OTBS])=C1",
+            "notes": "Triflation of an enolized beta-ketoenol, converting a hydroxyl group to a triflate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive removal of triflate",
+            "reagents": "Pd(OAc)2, PPh3, Et3N, HCO2H",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "77%",
+            "reactant_smiles": "O=C1C([OTf])=CC(C[OTBS])=CO1",
+            "product_smiles": "O=C1C=CC(C[OTBS])=CO1",
+            "notes": "Palladium-catalyzed reductive defunctionalization of triflate group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Selective Reduction",
+            "reagents": "Et3SiH, B(C6F5)3, HFIP",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "72%",
+            "reactant_smiles": "[OTBS]CC1=CC(=O)C=CO1",
+            "product_smiles": "[OTBS]CC1=CC(=O)CCO1",
+            "notes": "Selective reduction of one C=C double bond in the 4H-pyran-4-one ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "85%",
+            "reactant_smiles": "C[OTBS]C1=CC(=O)CCO1",
+            "product_smiles": "C(O)C1=CC(=O)CCO1",
+            "notes": "Deprotection of a tert-butyldimethylsilyl (TBS) ether to a primary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "89%",
+            "reactant_smiles": "C1COC(=CC1=O)CO",
+            "product_smiles": "C1COC(=CC1=O)C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cascade Reaction / Multi-component Coupling",
+            "reagents": "Al2O3",
+            "reagent_smiles": "C1CCN2[C@@H]3C=CC4=CC(=O)O[C@]4(C3)C2=C1.C1COC(=CC1=O)C=O",
+            "conditions": "1,2-DCE, 50 °C",
+            "yield": "62%",
+            "reactant_smiles": "C1COC(=CC1=O)C=O",
+            "product_smiles": "",
+            "notes": "A complex cascade reaction involving the lactone-fused quinolizidine and the formyl-dihydropyranone reactant, leading to a product with three quinolizidine units and one modified dihydropyranone unit.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "rt-100°C",
+            "yield": "44%",
+            "reactant_smiles": "C[C@@H]1[C@@H]2C=CC3=CC(=O)OC3(C1=C(CCCN2C)C(C4=C5[C@@]67C[C@@H](C=CC7=CC(=O)O6)N5CCC4)C8=CC(=O)CCO8)O",
+            "product_smiles": "C[C@@]12CCCN3[C@H]4C=CC5=CC(=O)O[C@]5([C@@H]4C)[C@]23C6=C([C@@H]1C7=C8[C@@]9%10C[C@@H](C=CC%10=CC(=O)O9)N8CCC7)OCCC6=O",
+            "notes": "An intramolecular acid-catalyzed cyclization reaction to form Suffranidine B. The product SMILES provided has a discrepancy where the N-methyl group (visually on nitrogen) is represented as a methyl group on a carbon ('C[C@@]12...') at the beginning of the SMILES string, which appears incorrect based on the drawn structure. Full verification of stereochemistry for these complex polycycles from SMILES is challenging without a specialized viewer, but the primary error in methyl placement is noted.",
+            "substeps": []
+        }
+    ]
+}

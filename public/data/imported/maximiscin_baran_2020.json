@@ -1,0 +1,302 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "maximiscin-baran-2020",
+        "molecule_name": "Maximiscin",
+        "class": "Natural Product",
+        "author": "Baran",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydrogenation / Aromatic Reduction",
+            "reagents": "PtO2, H2",
+            "reagent_smiles": "",
+            "conditions": "AcOH, rt",
+            "yield": "97%",
+            "reactant_smiles": "O=C(O)c1c(C)cc(C)cc1C",
+            "product_smiles": "O=C(O)[C@H]1[C@H](C)C[C@H](C)C[C@H]1C",
+            "notes": "Aromatic ring reduction of 2,4,6-trimethylbenzoic acid to 1,2,4,6-tetramethylcyclohexane-1-carboxylic acid, with all substituents in a cis configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation / Amidation",
+            "reagents": "(COCl)2, DMF",
+            "reagent_smiles": "CC(C)(C)[C@@H](C1=NC=CC(=C1)Cl)N",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "84%",
+            "reactant_smiles": "C[C@H]1C[C@@H](C)C[C@H](C)[C@H](C1)C(=O)O",
+            "product_smiles": "C[C@H]1C[C@@H](C)C[C@H](C)[C@H](C1)C(=O)N[C@@H](C2=NC=CC(=C2)Cl)C(C)(C)C",
+            "notes": "Carboxylic acid activated with oxalyl chloride and coupled with chiral amine to form amide.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Imine Formation / Condensation",
+                    "reagents": "Ti(OEt)4",
+                    "reagent_smiles": "CC(C)(C)[S@@](N)=O",
+                    "conditions": "70 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CN=C(C=C1Cl)C=O",
+                    "product_smiles": "CC(C)(C)[S@@](=O)/N=C/C1=NC=CC(=C1)Cl",
+                    "notes": "Condensation of 5-chloro-3-pyridinecarbaldehyde with (R)-tert-butylsulfinamide to form a chiral sulfinyl imine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Asymmetric Grignard Addition to Imine",
+                    "reagents": "t-BuMgCl, THF",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[tBu][S@@](=O)/N=C/C1=NC=CC(=C1)Cl",
+                    "product_smiles": "[tBu][S@@](=O)N[C@@H](C(C)(C)C)C1=NC=CC(=C1)Cl",
+                    "notes": "Diastereoselective addition of t-butyl Grignard reagent to a chiral sulfinyl imine, forming a new chiral center with specific stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Ellman Sulfinamide Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, rt",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)[C@@H](C1=NC=CC(=C1)Cl)N[S@](=O)C(C)(C)C",
+                    "product_smiles": "CC(C)(C)[C@@H]([NH3+])C1=[N+](C=CC(=C1)Cl).[Cl-].[Cl-]",
+                    "notes": "Deprotection of N-tert-butylsulfinamide to form a primary amine. Both the newly formed amine and the pyridine nitrogen are protonated by HCl, forming a dihydrochloride salt. The stereocenter remains unchanged.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "C-H Oxidation / Functionalization",
+            "reagents": "Pd(OAc)2, LiOAc, NaIO4, Ac2O, toluene, MeOH",
+            "reagent_smiles": "",
+            "conditions": "90 °C",
+            "yield": "58%",
+            "reactant_smiles": "C[C@H]1CC[C@@H](C)CC[C@@H](C)C1C(=O)N[C@@H](C(C)(C)C)C2=NC=CC(Cl)=C2",
+            "product_smiles": "COC[C@@H]1CC[C@@H](C)CC[C@@H](C)C1C(=O)N[C@@H](C(C)(C)C)C2=NC=CC(Cl)=C2",
+            "notes": "Oxidation of a methyl group on the cyclohexyl ring to a methoxymethyl group, with inversion of stereochemistry at the point of functionalization.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Cleavage / Ether Deprotection / Lactonization",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "O=C([C@H]1[C@H](C)[C@H](C)C[C@H](C)[C@H](C(OC))C1)N[C@@H](C(C)(C)C)c2cncc(Cl)c2",
+            "product_smiles": "C[C@@H]1C[C@H](C)[C@@H]2C(=O)OC[C@H]2[C@H](C)C1",
+            "notes": "Cleavage of the amide group and methoxymethyl ether, followed by intramolecular lactonization under acidic and thermal conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lactone Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH, rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@H](C)[C@H]2[C@@H]1C(=O)OC[C@@H]2",
+            "product_smiles": "C[C@H]1CC[C@@H](C)[C@H](CO)[C@H]1C(=O)O",
+            "notes": "Base-catalyzed hydrolysis of a bicyclic gamma-lactone to a d-hydroxycarboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative Decarboxylation / Alkylation",
+            "reagents": "AgNO3, Fe2(SO4)3, NaHSO4, Na2S2O8",
+            "reagent_smiles": "C=CS(=O)(=O)c1ccccc1",
+            "conditions": "H2O/MeCN, 40 °C",
+            "yield": "91% (2 steps)",
+            "reactant_smiles": "C[C@@H]1C[C@H](C)[C@@H]([C@@H](C1)CO)C(=O)O",
+            "product_smiles": "C[C@@H]1C[C@H](C)[C@@H](CCS(=O)(=O)c2ccccc2)[C@@H](C1)C=O",
+            "notes": "Decarboxylative oxidation of a carboxylic acid to an aldehyde, with concomitant alkylation of an adjacent carbon (which originally bore a hydroxymethyl group) via addition to vinyl phenyl sulfone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig Olefination",
+            "reagents": "CH3=PPh3Br, n-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -5 °C to rt",
+            "yield": "",
+            "reactant_smiles": "O=C[C@H]1C[C@@H](C)CC[C@H](CC[S](=O)(=O)[Ph])[C@@H]1C",
+            "product_smiles": "C=C[C@H]1C[C@@H](C)CC[C@H](CC[S](=O)(=O)[Ph])[C@@H]1C",
+            "notes": "Wittig olefination of an aldehyde to a vinyl group. Stereochemistry is preserved at the reaction site and other chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Desulfonylation",
+            "reagents": "KHMDS, O2",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CCS(=O)(=O)c2ccccc2)[C@@H](C)C[C@H](C)C[C@H]1C",
+            "product_smiles": "C=C[C@@H]1[C@H](CC(=O)O)[C@@H](C)C[C@H](C)C[C@H]1C",
+            "notes": "Oxidative transformation of a beta-sulfonyl ethyl group to an acetic acid group, with the loss of one carbon and the sulfonyl moiety. All stereocenters on the cyclohexane ring are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification",
+            "reagents": "Me2SO4, morpholine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "50% (3 steps)",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC(=O)O)CC[C@H](C)[C@@H]1C",
+            "product_smiles": "C=C[C@@H]1[C@H](CC(=O)OC)CC[C@H](C)[C@@H]1C",
+            "notes": "Methyl esterification of a carboxylic acid, possibly involving a 3-step sequence as indicated by the yield.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alpha-Functionalization / C-C bond formation (ester acylation)",
+            "reagents": "LDA, Et2O",
+            "reagent_smiles": "N#CCH2C(=O)OC",
+            "conditions": "-78 to 0 °C",
+            "yield": "74%",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC(=O)OC)C[C@@H](C)C[C@H](C)C1",
+            "product_smiles": "C=C[C@@H]1[C@H](C(C(=O)OC)C(=O)OC)C[C@@H](C)C[C@H](C)C1",
+            "notes": "Alpha-carbon of a methyl ester is functionalized with a second methyl ester group via reaction with methyl cyanoacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "KOH",
+            "reagent_smiles": "CCO.CO",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C(C(=O)OC)[C@@H]1C[C@H](C)C[C@@H](C)C[C@H](C)[C@H]1C=C",
+            "product_smiles": "OC(=O)C(C(=O)O)[C@@H]1C[C@H](C)C[C@@H](C)C[C@H](C)[C@H]1C=C",
+            "notes": "Hydrolysis of a dimethyl malonate diester to a malonic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Complex Heterocyclic Annulation",
+            "reagents": "(COCl)2, DMF, DCM",
+            "reagent_smiles": "COC(=O)C1=C[C@@H](O[Si](C)(C)C)[C@H](O[Si](C(C)(C)C)(C)C)[C@]2(OC3(CCCCC3)O2)[C@@H](ON4CCOCC4)C1",
+            "conditions": "rt then ester",
+            "yield": "41% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]1C[C@H](C)C[C@H](C)[C@H]1C(C(=O)O)C(=O)O",
+            "product_smiles": "C=C[C@@H]1C[C@H](C)C[C@H](C)[C@@H]1C2=C(O)C(=O)N(O[C@H]3C(=C(C(=O)OC)C[C@H](O[Si](C(C)(C)C)(C)C)[C@]4(OC5(CCCCC5)O4)C3))C=C2",
+            "notes": "Transformation of a dicarboxylic acid and a cyclohexene-based intermediate into the Maximiscin core via an annulation reaction, likely involving activation of the diacid (e.g., to an acyl chloride) and subsequent cyclization.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Esterification, Acetal Formation",
+                    "reagents": "MeOH, CSA",
+                    "reagent_smiles": "O=C1CCCCC1",
+                    "conditions": "toluene, 160 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "O=C(O)C1=CC[C@@H](O)[C@H](O)[C@H]1O",
+                    "product_smiles": "COC(=O)C1=C[C@H]2[C@H]([C@@H](C1)O)OC3(CCCCC3)O2",
+                    "notes": "Esterification of a carboxylic acid with methanol and formation of a cyclohexylidene acetal from a diol, catalyzed by camphorsulfonic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Triflation",
+                    "reagents": "Tf2O, pyridine, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, rt",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)C1=C[C@H]2[C@H]([C@@H](C1)O)OC3(CCCCC3)O2",
+                    "product_smiles": "COC(=O)C1=C[C@H]2[C@H]([C@@H](C1)[OTf])OC3(CCCCC3)O2",
+                    "notes": "Triflation of a secondary alcohol to form a triflate (good leaving group).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Elimination (Conjugate)",
+                    "reagents": "CsOAc, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "78% (2 steps)",
+                    "reactant_smiles": "COC(=O)C1=C[C@H](OS(=O)(=O)C(F)(F)F)[C@@H]2OC3(CCCCC3)O[C@H](C1)2",
+                    "product_smiles": "COC(=O)C1=CC=C[C@@H]2OC3(CCCCC3)O[C@H](C1)2",
+                    "notes": "Triflate elimination to form a conjugated cyclohexadiene system. The ketal and methyl ester groups are retained, and the stereochemistry of the ketal carbons is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Bromohydrin formation / Electrophilic addition",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN/H₂O",
+                    "yield": "80%",
+                    "reactant_smiles": "COC(=O)C1=C[C@@H]2[C@@H](C=C1)OC3(CCCCC3)O2",
+                    "product_smiles": "COC(=O)C1=C[C@@H]2[C@@H]([C@@H](Br)[C@H](O)C1)OC3(CCCCC3)O2",
+                    "notes": "Addition of Br and OH across one of the double bonds of the cyclohexadiene, forming a bromohydrin. Stereochemistry of the acetal-bearing carbons is retained. Stereochemistry of bromohydrin carbons is anti.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.5",
+                    "reaction_type": "Epoxide formation",
+                    "reagents": "LiHMDS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "83%",
+                    "reactant_smiles": "COC(=O)C1=C[C@@H]2O[C@H]3C4(CCCCC4)O3[C@H](O)[C@@H](Br)C1",
+                    "product_smiles": "COC(=O)C1=C[C@@H]2O[C@H]3C4(CCCCC4)O3[C@@H]5O[C@H]6C156",
+                    "notes": "Intramolecular cyclization forming an epoxide from an adjacent alcohol and bromide. Note: There appears to be a stereochemical inversion or ambiguity in the depiction of the epoxide from reactant to product (reactant: OH 'up', Br 'down'; product: epoxide 'down'). The SMILES are generated to match the explicit drawn stereochemistry of each molecule.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.6",
+                    "reaction_type": "Epoxide opening / Hydroxylation / Amination",
+                    "reagents": "N-Boc-NHOH, DBU",
+                    "reagent_smiles": "CC(C)(C)OC(=O)NO.C1CCCN2C1=NCCCC2",
+                    "conditions": "DCM, rt",
+                    "yield": "70%",
+                    "reactant_smiles": "COC(=O)C1=C[C@@H]2O[C@]3(CCCCC3)O[C@H]2[C@@H](C1)C4O4",
+                    "product_smiles": "CC(C)(C)OC(=O)NO[C@@H]1C(C[C@@H]2[C@H]([C@H]1O)OC3(CCCCC3)O2)C(=O)OC",
+                    "notes": "Epoxide ring opening with N-Boc-N-hydroxylamine followed by formation of an O-NHBoc group and a hydroxyl group, retaining the spiroketal and methyl ester functionalities.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.7",
+                    "reaction_type": "Boc deprotection",
+                    "reagents": "TFA, DCM",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]NO[C@H]1C(C[C@H]2[C@@H]([C@@H]1O)OC3(CCCCC3)O2)C(=O)OC",
+                    "product_smiles": "COC(=O)[C@H]1C[C@@H]2[C@@H]([C@H]([C@H]1ON)O)OC3(CCCCC3)O2",
+                    "notes": "Deprotection of N-Boc-hydroxylamine to hydroxylamine using TFA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.8",
+                    "reaction_type": "Alcohol Silylation / Protection",
+                    "reagents": "TBSCl, imidazole, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "72% (2 steps)",
+                    "reactant_smiles": "COC(=O)[C@H]1C[C@H](ON)[C@@H](O)[C@@H]2OC3(CCCCC3)O[C@@H]12",
+                    "product_smiles": "COC(=O)[C@H]1C[C@H](ON)[C@@H]([OTBS])[C@@H]2OC3(CCCCC3)O[C@@H]12",
+                    "notes": "Protection of a secondary alcohol as a TBS silyl ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.9",
+                    "reaction_type": "Oxime Formation",
+                    "reagents": "",
+                    "reagent_smiles": "O=CC[Si](C)(C)C",
+                    "conditions": "DCM, rt",
+                    "yield": "80%",
+                    "reactant_smiles": "COC(=O)[C@@H]1[C@H](OC2(CCCCC2)O[C@@H](C[C@@H](ON)[C@H]([OTBS])C1)C)",
+                    "product_smiles": "COC(=O)[C@@H]1[C@H](OC2(CCCCC2)O[C@@H](C[C@@H](O/N=C\\C[Si](C)(C)C)[C@H]([OTBS])C1)C)",
+                    "notes": "Formation of an oxime ether by reaction of a hydroxylamine with TMS-acetaldehyde.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

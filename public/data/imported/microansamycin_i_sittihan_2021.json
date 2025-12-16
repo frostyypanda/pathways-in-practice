@@ -1,0 +1,85 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "microansamycin-i-sittihan-2021",
+        "molecule_name": "Microansamycin I",
+        "class": "Natural Product",
+        "author": "Sittihan",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Heck reaction (with aldehyde formation)",
+            "reagents": "PdCl2, NaHCO3, TBAB",
+            "reagent_smiles": "C=CCO",
+            "conditions": "DMF, 70° C",
+            "yield": "71%",
+            "reactant_smiles": "COC1=CC(=CC(=C1)Br)[N+](=O)[O-]",
+            "product_smiles": "COC1=CC(=CC(=C1)CCC=O)[N+](=O)[O-]",
+            "notes": "Aryl bromide undergoes Heck coupling with prop-2-en-1-ol, followed by tautomerization of the resulting enol to an aldehyde, forming a propyl aldehyde chain on the aromatic ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Horner-Wadsworth-Emmons reaction",
+            "reagents": "NaH",
+            "reagent_smiles": "CCC(=O)C(C)=C/CP(=O)(OCC)OCC",
+            "conditions": "THF",
+            "yield": "88%",
+            "reactant_smiles": "COC1=CC(=CC(=C1)CCC=O)[N+](=O)[O-]",
+            "product_smiles": "CCC(=O)C(C)=C/C=C\\CCC1=CC(=CC(=C1)[N+](=O)[O-])OC",
+            "notes": "An aldehyde undergoes a Horner-Wadsworth-Emmons reaction with a phosphonate reagent to form an E,E-diene ketone.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Wittig reaction",
+                    "reagents": "MeCN",
+                    "reagent_smiles": "CCC(=O)C(=P(c1ccccc1)(c2ccccc2)c3ccccc3)C",
+                    "conditions": "",
+                    "yield": "95%",
+                    "reactant_smiles": "CCOP(=O)(CC=O)OCC",
+                    "product_smiles": "CCC(=O)/C(C)=C(/CP(=O)(OCC)OCC)",
+                    "notes": "Wittig reaction between an aldehyde and a phosphonium ylide to form a Z-alkene.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitro group reduction",
+            "reagents": "Zn, AcOH",
+            "reagent_smiles": "[Zn].CC(=O)O",
+            "conditions": "EtOH, 0° C",
+            "yield": "",
+            "reactant_smiles": "CCC(=O)\\C(=C/C=C/CCC1=CC(=CC(=C1)[N+](=O)[O-])OC)/C",
+            "product_smiles": "CCC(=O)\\C(=C/C=C/CCC1=CC(=CC(=C1)N)OC)/C",
+            "notes": "Reduction of an aromatic nitro group to a primary amine using zinc and acetic acid in ethanol at 0°C.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Formation / Acylation",
+            "reagents": "AcCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "CCC(=O)/C(=C/C=C/CCC1=CC(=CC(=C1)N)OC)/C",
+            "product_smiles": "CCC(=O)/C(=C/C=C/CCC1=CC(=CC(=C1)NC(=O)C)OC)/C",
+            "notes": "Acylation of a primary amine group to an amide using acetyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "O-Demethylation",
+            "reagents": "AlCl3, NaI",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "74%",
+            "reactant_smiles": "CCC(=O)\\C(C)=C/C=C/C=C/CCC1=CC(OC)=CC(NC(=O)C)=C1",
+            "product_smiles": "CCC(=O)\\C(C)=C/C=C/C=C/CCC1=CC(O)=CC(NC(=O)C)=C1",
+            "notes": "Lewis acid mediated cleavage of an aryl methyl ether to a phenol.",
+            "substeps": []
+        }
+    ]
+}

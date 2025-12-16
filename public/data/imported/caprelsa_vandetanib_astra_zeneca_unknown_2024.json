@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "caprelsa-vandetanib-astra-zeneca-unknown-2024",
+        "molecule_name": "Caprelsa (Vandetanib Astra-Zeneca)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation / Esterification",
+            "reagents": "BnBr, DIPEA, Et3N",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "93%",
+            "reactant_smiles": "COC1=C(O)C=CC(=C1)C(=O)O",
+            "product_smiles": "COC1=C(OCC2=CC=CC=C2)C=CC(=C1)C(=O)OCC3=CC=CC=C3",
+            "notes": "Double benzylation: phenolic hydroxyl is converted to a benzyl ether, and the carboxylic acid is converted to a benzyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitration",
+            "reagents": "H2SO3, HNO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, H2O, CH3COOH",
+            "yield": "86%",
+            "reactant_smiles": "COC1=C(C=CC(=C1)C(=O)OCC2=CC=CC=C2)OCC3=CC=CC=C3",
+            "product_smiles": "COC1=C(C=C(C(=C1)C(=O)OCC2=CC=CC=C2)[N+](=O)[O-])OCC3=CC=CC=C3",
+            "notes": "Electrophilic aromatic nitration of benzyl 4-(benzyloxy)-3-methoxybenzoate to introduce a nitro group at the 5-position of the benzene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitro group reduction",
+            "reagents": "Na2S2O4",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O, rt to 65 °C",
+            "yield": "92%",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)C(=O)OCC2=CC=CC=C2)[N+](=O)[O-])OCC3=CC=CC=C3",
+            "product_smiles": "COC1=C(C=C(C(=C1)C(=O)OCC2=CC=CC=C2)N)OCC3=CC=CC=C3",
+            "notes": "Reduction of a nitro group to an amine using sodium dithionite.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclocondensation",
+            "reagents": "",
+            "reagent_smiles": "C(=N)N.CC(=O)O",
+            "conditions": "i-BuOH, 97 °C",
+            "yield": "98%",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)C(=O)OCC2=CC=CC=C2)N)OCC3=CC=CC=C3",
+            "product_smiles": "COC1=C(C=C2C(=C1)C(=O)NC=N2)OCC3=CC=CC=C3",
+            "notes": "Synthesis of a quinazolinone derivative from an amino ester and formamidine/acetic acid through a cyclocondensation reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Chlorination / Imidyl chloride formation",
+            "reagents": "DIPEA, POCl₃",
+            "reagent_smiles": "",
+            "conditions": "toluene, 73 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C=C2C(=C1)C(=O)NC=N2)OCC3=CC=CC=C3",
+            "product_smiles": "COC1=C(C=C2C(=C1)C(Cl)NC=N2)OCC3=CC=CC=C3",
+            "notes": "Chlorination of the amide carbonyl of the quinazolinone to form a chloroimine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "SNAr, Debenzylation",
+            "reagents": "toluene, TFA",
+            "reagent_smiles": "C1=C(C=C(C(=C1)N)F)Br",
+            "conditions": "73 °C then 60 °C",
+            "yield": "90%",
+            "reactant_smiles": "COC1=C(C=C2C(=C1)C(Cl)NC=N2)OCC3=CC=CC=C3",
+            "product_smiles": "COC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=C(C=C3F)Br)O",
+            "notes": "Nucleophilic aromatic substitution of the chloride by 4-bromo-2-fluoroaniline, followed by debenzylation of the benzyloxy group to a hydroxyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "NaOH, Adogen 464",
+            "reagent_smiles": "CC1=CC=C(C=C1)S(=O)(=O)OCC2CCN(CC2)C(=O)OC(C)(C)C",
+            "conditions": "H2O, 70 °C",
+            "yield": "77%",
+            "reactant_smiles": "COC1=C(C=C2C(=C1)C(=NC=N2)NC3=C(C=C(C=C3)Br)F)O",
+            "product_smiles": "[Boc]N1CCC(CC1)COC2=CC3=NC=NC(=C3C=C2OC)NC4=CC=C(C=C4F)Br",
+            "notes": "Phenolic hydroxyl group reacted with an alkyl tosylate via a Williamson ether synthesis, resulting in the formation of an ether linkage.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection, N-methylation",
+            "reagents": "HCO2H, HCHO",
+            "reagent_smiles": "O=CO.C=O",
+            "conditions": "80 °C",
+            "yield": "91%",
+            "reactant_smiles": "[Boc]N1CCC(COC2=C(OC)C=C3C(=C2)N=CN=C3NC4=C(F)C=C(Br)C=C4)CC1",
+            "product_smiles": "CN1CCC(COC2=C(OC)C=C3C(=C2)N=CN=C3NC4=C(F)C=C(Br)C=C4)CC1",
+            "notes": "Boc deprotection and N-methylation of piperidine. This is an Eschweiler-Clarke type reaction (reductive amination using formaldehyde and formic acid).",
+            "substeps": []
+        }
+    ]
+}

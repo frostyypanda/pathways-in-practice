@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "epibatidine-trudell-1996",
+        "molecule_name": "Epibatidine",
+        "class": "Natural Product",
+        "author": "Trudell",
+        "year": 1996
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enantioselective α-arylation",
+            "reagents": "",
+            "reagent_smiles": "C[C@@H](c1ccccc1)N([Li])[C@@H](C)c1ccccc1.ClC1=CC=C([I+]C2=CC=C(Cl)C=C2)C=C1.[Cl-]",
+            "conditions": "DMF",
+            "yield": "70%",
+            "reactant_smiles": "[OTBDMS]C1CCC(=O)CC1",
+            "product_smiles": "[OTBDMS][C@H]1CCC(=O)C(C1)C2=CN=C(C=C2)Cl",
+            "notes": "Alpha-arylation of a ketone using a chiral lithium amide and a hypervalent iodonium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epimerization",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "[OTBDMS][C@H]1CCC(=O)C(C1)C2=CN=C(C=C2)Cl",
+            "product_smiles": "[OTBDMS][C@H]1CCC(=O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "notes": "Base-catalyzed epimerization of the alpha-carbon to the ketone, resolving the stereochemistry at that center to a single diastereomer. The stereochemistry of the OTBDMS group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "-98 °C",
+            "yield": "84%",
+            "reactant_smiles": "[OTBDMS][C@H]1CCC(=O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "product_smiles": "[OTBDMS][C@H]1CC[C@H](O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol using NaBH4.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[OTBDMS][C@H]1CC[C@H]([C@@H](C1)C2=CN=C(C=C2)Cl)O",
+            "product_smiles": "[OTBDMS][C@H]1CC[C@H]([C@@H](C1)C2=CN=C(C=C2)Cl)[OMs]",
+            "notes": "Mesylation of a secondary alcohol using mesyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (TBDMS)",
+            "reagents": "Bu4NF",
+            "reagent_smiles": "",
+            "conditions": "THF, RT",
+            "yield": "88%",
+            "reactant_smiles": "[OTBDMS][C@@H]1CC[C@H]([C@@H](C1)C2=CN=C(C=C2)Cl)[OMs]",
+            "product_smiles": "O[C@@H]1CC[C@H]([C@@H](C1)C2=CN=C(C=C2)Cl)[OMs]",
+            "notes": "TBDMS protecting group is removed from the alcohol to yield a free hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P, HN3, DEAD",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3.HN=[N+]=[N-].O=C(OCC)N=NC(=O)OCC",
+            "conditions": "THF, 0 °C to RT",
+            "yield": "94%",
+            "reactant_smiles": "CS(=O)(=O)O[C@@H]1CC[C@@H](C[C@H]1c2cncc(Cl)c2)O",
+            "product_smiles": "CS(=O)(=O)O[C@@H]1CC[C@H](C[C@H]1c2cncc(Cl)c2)[N-]=[N+]=[N-]",
+            "notes": "Mitsunobu reaction converting a secondary alcohol to an azide with inversion of stereochemistry. The mesylate group remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular cyclization",
+            "reagents": "CHCl3",
+            "reagent_smiles": "",
+            "conditions": "heat, 60 h",
+            "yield": "90%",
+            "reactant_smiles": "CS(=O)(=O)O[C@@H]1CC[C@H](C2=CN=C(C=C2)Cl)C[C@H]1[N-]=[N+]=N",
+            "product_smiles": "ClC1=CN=CC=C1[C@@H]2C[C@H]3NCCC[C@@H]23",
+            "notes": "Intramolecular cyclization involving azide reduction and mesylate displacement to form the 8-azabicyclo[3.2.1]octane core of Epibatidine. The graphical depiction of the pyridine bond stereochemistry in the product (dashed) appears to be inconsistent with the standard absolute configuration of (+)-Epibatidine (which typically shows a wedged bond to pyridine).",
+            "substeps": []
+        }
+    ]
+}

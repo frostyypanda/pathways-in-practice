@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "isoavenaciolide-garcia-2013",
+        "molecule_name": "Isoavenaciolide",
+        "class": "Natural Product",
+        "author": "Garcia",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzyme-catalyzed transesterification (kinetic resolution)",
+            "reagents": "vinyl acetate, novozym 435",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "",
+            "yield": "35%",
+            "reactant_smiles": "CCCCCCCC(O)C#C",
+            "product_smiles": "CCCCCCCC[C@@H]([OAc])C#C",
+            "notes": "Enzyme-catalyzed transesterification of a racemic secondary alcohol with vinyl acetate, yielding an enantioenriched acetate product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Hydrolysis / Saponification",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "98%",
+            "reactant_smiles": "CCCCCCCC[C@@H](C#C)[OAc]",
+            "product_smiles": "CCCCCCCC[C@@H](C#C)O",
+            "notes": "Hydrolysis of an acetate ester to an alcohol, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Crabbé allene synthesis",
+            "reagents": "Cy₂NH, CH₂O, CuI",
+            "reagent_smiles": "C1CCCCC1NC1CCCCC1.C=O.[Cu]I",
+            "conditions": "dioxane, 85 °C",
+            "yield": "86%",
+            "reactant_smiles": "CCCCCCCC[C@H](C#C)O",
+            "product_smiles": "CCCCCCCC[C@H](C=C=C)O",
+            "notes": "Conversion of a propargylic alcohol to an allenyl alcohol via Crabbé allene synthesis.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "89%",
+            "reactant_smiles": "CCCCCCCC[C@@H](C=C=C)O",
+            "product_smiles": "CCCCCCCC[C@@H](C=C=C)[OTBS]",
+            "notes": "Protection of a secondary propargylic alcohol (allene) with TBSCl to form a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydroboration / Stereoselective Aldehyde Addition",
+            "reagents": "Cy2BH, N(CH2CH2OH)3",
+            "reagent_smiles": "C1=CSC(=C1)C=O",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "CCCCCCCC[C@H](C=C=C)[OTBS]",
+            "product_smiles": "CCCCCCCC[C@@H]([C@@H](C=C)[C@@H](C1=CC=CS1)O)[OTBS]",
+            "notes": "Stereoselective addition of an allene (via hydroboration) to 2-thiophenecarbaldehyde, forming a diol derivative and creating two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "87%",
+            "reactant_smiles": "CCCCCCCC[C@@H]([C@@H](C=C)[C@H](C1=CC=CS1)O)[OTBS]",
+            "product_smiles": "CCCCCCCC[C@@H]([C@@H](C=C)[C@H](C1=CC=CS1)O)O",
+            "notes": "Deprotection of a TBS ether to a hydroxyl group using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, DMAP, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "95%",
+            "reactant_smiles": "CCCCCCCC[C@@H](O)[C@@H](C=C)[C@H](O)C1=CC=CS1",
+            "product_smiles": "CCCCCCCC[C@@H]([OAc])[C@@H](C=C)[C@H]([OAc])C1=CC=CS1",
+            "notes": "Acetylation of a diol to form a diacetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "Cy2BH, buffered H2O2",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "CCCCCCCC[C@H]([OAc])[C@H](C=C)[C@@H]([OAc])C1=CC=CS1",
+            "product_smiles": "CCCCCCCC[C@H]([OAc])[C@H](CCO)[C@@H]([OAc])C1=CC=CS1",
+            "notes": "Hydroboration-oxidation of the vinyl group to a primary alcohol. All stereocenters are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Cleavage / Oxidation",
+            "reagents": "RuCl3, NaIO4",
+            "reagent_smiles": "[Ru](Cl)(Cl)Cl.O=[I](=O)(=O)[O-].[Na+].O.ClCCl",
+            "conditions": "H2O/CCl4",
+            "yield": "82%",
+            "reactant_smiles": "CCCCCCCC[C@H]([OAc])[C@@H](CCO)[C@H]([OAc])C1=CC=CS1",
+            "product_smiles": "CCCCCCCC[C@H]([OAc])[C@@H](CC(=O)O)[C@H]([OAc])C(=O)O",
+            "notes": "Oxidative cleavage of the thiophene ring and oxidation of the primary alcohol to carboxylic acids. Stereochemistry is preserved at the chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Lactonization / Cyclization",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "aq dioxane",
+            "yield": "71%",
+            "reactant_smiles": "CCCCCCCC[C@@H](OC(=O)C)[C@H](OC(=O)C)[C@@H](C(=O)O)CC(=O)O",
+            "product_smiles": "CCCCCCCC[C@H]1[C@@H]2CC(=O)O[C@H]2C(=O)O1",
+            "notes": "Acid-catalyzed double lactonization from a dihydroxy diacid intermediate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Carboxylation",
+            "reagents": "DMF",
+            "reagent_smiles": "[OMe]MgOC(=O)[OMe]",
+            "conditions": "140 °C",
+            "yield": "",
+            "reactant_smiles": "[C8H17][C@H]1[C@H]2CC(=O)O[C@H]2C(=O)O1",
+            "product_smiles": "[C8H17][C@H]1[C@H]2[C@H](C(=O)[OMe])C(=O)O[C@H]2C(=O)O1",
+            "notes": "Introduction of a methoxycarbonyl group via a magnesium reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Decarboxylative Elimination / Methylene Formation",
+            "reagents": "H2CO, N-Me-aniline, NaOAc, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "O=C1O[C@H](CCCCCCCC)[C@@H]2[C@H]3C(=O)O[C@@H](C(=O)OC)[C@H]31",
+            "product_smiles": "O=C1O[C@H](CCCCCCCC)[C@@H]2[C@H]3C(=O)OC(=C)[C@H]31",
+            "notes": "Methyl ester transformed into exocyclic methylene (C=CH2) group.",
+            "substeps": []
+        }
+    ]
+}

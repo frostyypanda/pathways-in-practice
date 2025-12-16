@@ -1,0 +1,278 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "virgatolide-b-brimble-2013",
+        "molecule_name": "Virgatolide B",
+        "class": "Natural Product",
+        "author": "Brimble",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "HCl (aq.)",
+            "reagent_smiles": "BrBr",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1cc(O)cc(O)c1",
+            "product_smiles": "O=C(O)c1c(Br)c(O)cc(O)c1",
+            "notes": "Bromination of 3,5-dihydroxybenzoic acid at the activated 2-position.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection",
+            "reagents": "BOMCl, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "O=C(O)C1=CC(Br)=C(O)C=C1O",
+            "product_smiles": "[BOM]OC1=CC(Br)=C(O[BOM])C(=C1)C(=O)O[BOM]",
+            "notes": "Protection of carboxylic acid and phenolic hydroxyl groups with benzyloxymethyl (BOM) groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "Brc1c(OCCOC2ccccc2)cc(C(=O)OCCOC3ccccc3)cc1OCCOC4ccccc4",
+            "product_smiles": "Brc1c(OCCOC2ccccc2)cc(CO)cc1OCCOC3ccccc3",
+            "notes": "Reduction of a benzyloxymethyl ester to a primary alcohol using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Parikh-Doering oxidation",
+            "reagents": "SO3•pyr, DIPEA, DMSO",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "BrC1=C(OCCOCC2=CC=CC=C2)C=CC(CO)=C1OCCOCC3=CC=CC=C3",
+            "product_smiles": "BrC1=C(OCCOCC2=CC=CC=C2)C=CC(C=O)=C1OCCOCC3=CC=CC=C3",
+            "notes": "Oxidation of a primary alcohol to an aldehyde. The 61% yield is stated for 4 steps, not just this one.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Wittig olefination",
+            "reagents": "EtPPh3I, t-BuOK, 18-Crown-6",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "O=Cc1cc(O[BOM])c(Br)c(O[BOM])c1",
+            "product_smiles": "CC=Cc1cc(O[BOM])c(Br)c(O[BOM])c1",
+            "notes": "Wittig olefination of an aldehyde to form an alkene (prop-1-enyl derivative). The wavy bond in the product indicates mixed stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkene Isomerization",
+            "reagents": "Ru(CO)ClH(PPh3)4",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "96%",
+            "reactant_smiles": "Brc1c([OBOM])cc(C=CC)cc1[OBOM]",
+            "product_smiles": "Brc1c([OBOM])cc(C/C=C/C)cc1[OBOM]",
+            "notes": "Isomerization of an alkene with undefined stereochemistry to the E-stereoisomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "Pd(OAc)2, RuPhos, K2CO3",
+            "reagent_smiles": "[C@H](O)c1ccccc1[C@@H](C)N(C)C(=O)[C@H](C)C[B-](F)(F)F.[K+]",
+            "conditions": "toluene/H2O, 85 °C",
+            "yield": "52%",
+            "reactant_smiles": "C/C=C/C1=CC([OBOM])=C(Br)C([OBOM])=C1",
+            "product_smiles": "C/C=C/C1=CC([OBOM])=C(C[C@H](C)C(=O)N(C)[C@@H](C)[C@H](O)c2ccccc2)C([OBOM])=C1",
+            "notes": "Suzuki coupling of an aryl bromide with a potassium organotrifluoroborate, forming a new C-C bond.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Boron Homologation / Iodomethylation",
+                    "reagents": "n-BuLi, CH2I2",
+                    "reagent_smiles": "CCCC[Li].ICI",
+                    "conditions": "THF, -78°C",
+                    "yield": "55%",
+                    "reactant_smiles": "CC(C)OB(OC(C)C)OC(C)C",
+                    "product_smiles": "CC(C)OB(CI)OC(C)C",
+                    "notes": "Homologation of a boronic ester using n-butyllithium and diiodomethane to incorporate a -CH2I group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Boronate Transesterification",
+                    "reagents": "pinacol, n-pentane",
+                    "reagent_smiles": "",
+                    "conditions": "n-pentane",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(C)OB(CI)OC(C)C",
+                    "product_smiles": "CC1(C)C(C)(C)OB(CI)O1",
+                    "notes": "Diisopropyl (iodomethyl)boronate undergoes transesterification with pinacol to form the corresponding pinacol ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Stereoselective Alkylation",
+                    "reagents": "LDA",
+                    "reagent_smiles": "CCC(=O)N(C)[C@@H](C)[C@H](O)c1ccccc1",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "73%",
+                    "reactant_smiles": "CC1(C)C(C)(C)OB(CI)O1",
+                    "product_smiles": "c1ccccc1[C@H](O)[C@@H](C)N(C)C(=O)[C@@H](C)C[Bpin]",
+                    "notes": "Stereoselective alkylation of a chiral amide enolate with an iodomethyl pinacol boronate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Boronate to Trifluoroborate Conversion",
+                    "reagents": "KHF2",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN/H2O",
+                    "yield": "77%",
+                    "reactant_smiles": "c1ccccc1[C@@H](O)[C@H](C)N(C)C(=O)[C@H](C)CB1OC(C)(C)C(C)(C)O1",
+                    "product_smiles": "c1ccccc1[C@@H](O)[C@H](C)N(C)C(=O)[C@H](C)C[B-](F)(F)F.[K+]",
+                    "notes": "Conversion of an alkyl pinacolboronate to a potassium alkyltrifluoroborate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Cleavage / Ketone Formation",
+            "reagents": "MeLi",
+            "reagent_smiles": "C[Li]",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "84%",
+            "reactant_smiles": "C[C@H]([C@H](O)c1ccccc1)N(C)C(=O)[C@@H]([OBOM])CC2=C([OBOM])C=C(C/C=C/C)C=C2",
+            "product_smiles": "CC(=O)[C@@H]([OBOM])CC2=C([OBOM])C=C(C/C=C/C)C=C2",
+            "notes": "Nucleophilic cleavage of a tertiary amide by methyl lithium to form a methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Sharpless asymmetric dihydroxylation",
+            "reagents": "AD-mix α",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH/H₂O, rt",
+            "yield": "84%",
+            "reactant_smiles": "CC(=O)[C@@H](C)CC1=C([OBOM])C=C(C/C=C/C)C=C1[OBOM]",
+            "product_smiles": "CC(=O)[C@@H](C)CC1=C([OBOM])C=C(C=C1[OBOM])[C@@H](O)[C@H](O)C",
+            "notes": "Sharpless asymmetric dihydroxylation converts the E-alkene to an (S,R)-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "I2, AgO2CCF3",
+            "reagent_smiles": "II.[Ag]OC(=O)C(F)(F)F",
+            "conditions": "CHCl3, 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "C[C@@H](CC1=C([OBOM])C=C([C@@H]([C@H](C)O)O)C=C1[OBOM])C(=O)C",
+            "product_smiles": "C[C@@H](CC1=C([OBOM])C(I)=C([C@@H]([C@H](C)O)O)C=C1[OBOM])C(=O)C",
+            "notes": "Electrophilic iodination of a highly substituted benzene ring at the electron-rich C3 position.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Carbonylation / Lactonization",
+            "reagents": "Pd(PPh3)4, DIPEA",
+            "reagent_smiles": "[C-]#[O+]",
+            "conditions": "DMF, 100 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC(=O)[C@@H](C)CC1=C([OBOM])C=C([C@@H](O)[C@@H](C)O)C(I)=C1[OBOM]",
+            "product_smiles": "CC(=O)[C@@H](C)CC1=C([OBOM])C=C2C(=O)O[C@@H]([C@@H](C)O)C2=C1[OBOM]",
+            "notes": "Intramolecular carbonylation-lactonization of an aryl iodide with an adjacent diol, forming a fused gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Silylation",
+            "reagents": "TMSOTf, Et3N, DMAP",
+            "reagent_smiles": "C[Si](C)(C)OS(=O)(=O)C(F)(F)F.CCN(CC)CC.CN(C)C1=CC=NC=C1",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](CC1=C(C=C2C(=C1OCOCC3=CC=CC=C3)C(=O)O[C@@H]2[C@H](C)O)OCOCC4=CC=CC=C4)C(=O)C",
+            "product_smiles": "C[C@@H](CC1=C(C=C2C(=C1OCOCC3=CC=CC=C3)C(=O)O[C@@H]2[C@H](C)O[TMS])OCOCC4=CC=CC=C4)C(=C)O[TMS]",
+            "notes": "Dual silylation of ketone and secondary alcohol to form an enol-TMS ether and a silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Mukaiyama Aldol Reaction",
+            "reagents": "BF3•OEt2",
+            "reagent_smiles": "C[C@H](CC=O)[PMBO]",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](CC1=C(C=C2C(=C1[OBOM])C(=O)O[C@@H]2[C@H](C)[OTMS])[OBOM])C(=C)[OTMS]",
+            "product_smiles": "C[C@H](C[C@H](CC(=O)[C@H](C)CC1=C(C=C2[C@@H]([C@H](C)[OTMS])OC(=O)C2=C1[OBOM])[OBOM])O)[PMBO]",
+            "notes": "Intermolecular Mukaiyama aldol reaction between a silyl enol ether (generated in situ from the terminal alkene via conjugate addition, or the alkene directly acting as a nucleophile) and a chiral aldehyde, catalyzed by boron trifluoride etherate, leading to a new beta-hydroxy ketone.",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Etherification (Alcohol Protection)",
+                    "reagents": "CSA",
+                    "reagent_smiles": "COC1=CC=C(C=C1)COC(=N)C(Cl)(Cl)Cl",
+                    "conditions": "DCM, rt",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C[C@H](C)O",
+                    "product_smiles": "CCOC(=O)C[C@H](C)[PMBO]",
+                    "notes": "Stereospecific protection of secondary alcohol as PMB ether using trichloroacetimidate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "56%",
+                    "reactant_smiles": "CCOC(=O)C[C@H](C)O[PMB]",
+                    "product_smiles": "C[C@H](CC=O)O[PMB]",
+                    "notes": "Ester reduction to aldehyde using DIBAL-H. The chiral center configuration is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection (TMS ether)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "65%",
+            "reactant_smiles": "C[C@H](O[PMB])C[C@@H](O)CC(=O)[C@@H](O(CO[Bn]))CC1=C(O(CO[Bn]))C=C2C(=C1O(CO[Bn]))C(=O)O[C@H]2[C@@H](C)[OTMS]",
+            "product_smiles": "C[C@H](O[PMB])C[C@@H](O)CC(=O)[C@@H](O(CO[Bn]))CC1=C(O(CO[Bn]))C=C2C(=C1O(CO[Bn]))C(=O)O[C@H]2[C@@H](C)O",
+            "notes": "TMS ether deprotected to hydroxyl group. Reaction proceeds in 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Hydrogenolysis / Deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "CCOC(=O)C.[Pd]",
+            "conditions": "EtOAc",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](O[PMB])C[C@H](O)CC(=O)[C@H](O[CH2]Oc1ccccc1)CC2=C(O[CH2]Oc3ccccc3)C=C4C(=C2O[CH2]Oc5ccccc5)C(=O)O[C@@H]4[C@@H](C)O",
+            "product_smiles": "C[C@@H](O)C[C@H](O)CC(=O)[C@H](O)CC1=C(O)C=C2C(=C1O)C(=O)O[C@@H]2[C@@H](C)O",
+            "notes": "Hydrogenation to deprotect PMB and BOM groups to alcohols.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Acid-catalyzed intramolecular cyclization / Dehydration",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "55%",
+            "reactant_smiles": "C[C@@H](CC1=C(C=C2C(=C1O)C(=O)O[C@@H]2[C@H](C)O)O)C(=O)C[C@@H](C[C@H](C)O)O",
+            "product_smiles": "C[C@H]1CC2=C(C=C3C(=C2O)C(=O)O[C@@H]3[C@H](C)O)O[C@@]41C[C@@H](C[C@H](C)O4)O",
+            "notes": "Intramolecular acid-catalyzed cyclization forming two new pyran rings, involves dehydration (2 steps).",
+            "substeps": []
+        }
+    ]
+}

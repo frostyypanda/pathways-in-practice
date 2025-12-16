@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "calycanthine-jiang-2021",
+        "molecule_name": "Calycanthine",
+        "class": "Natural Product",
+        "author": "Jiang",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2",
+            "reagent_smiles": "CC(C)O",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C1CC(=O)N[C@H]1C(=O)O",
+            "product_smiles": "CC(C)OC(=O)[C@H]1CCC(=O)N1",
+            "notes": "Esterification of L-Pyroglutamic acid with isopropanol using thionyl chloride as activating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Protection (Bocylation)",
+            "reagents": "Boc2O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "CC(C)OC(=O)[C@H]1CCC(=O)N1",
+            "product_smiles": "CC(C)OC(=O)[C@H]1CCC(=O)N1[Boc]",
+            "notes": "Nitrogen atom of the pyrrolidin-2-one is protected with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Lactam reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC(=O)[C@@H]1CCC(=O)N1[Boc]",
+            "product_smiles": "CC(C)OC(=O)[C@@H]1CC[C@@H](O)N1[Boc]",
+            "notes": "Partial reduction of a lactam carbonyl to a hemiaminal (carbinolamide) using DIBAL-H, with control of the newly formed stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Elimination / Dehydration",
+            "reagents": "DIPEA, DMAP, TFAA",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "CC(C)OC(=O)[C@@H]1N([Boc])C[C@H](O)CC1",
+            "product_smiles": "CC(C)OC(=O)[C@@H]1N([Boc])CC=CC1",
+            "notes": "Dehydration of a secondary alcohol to form an alkene (pyrroline ring). The stereochemistry at C2 is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative alkene functionalization / Intramolecular iodo-acetoxylation",
+            "reagents": "PIDA, I2",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC(=O)[C@@H]1C=CCN1[Boc]",
+            "product_smiles": "CC(C)OC(=O)[C@@H]1N([Boc])[C@H](I)[C@@H]([OAc])C1",
+            "notes": "Addition of iodine and an acetoxy group across the double bond of the dihydropyrrole, forming a pyrrolidine derivative with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Elimination",
+            "reagents": "TFA, toluene",
+            "reagent_smiles": "",
+            "conditions": "130 °C",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "CC(C)OC(=O)[C@@H]1N([Boc])C[C@H]([OAc])[C@H](I)C1",
+            "product_smiles": "CC(C)OC(=O)[C@@H]1N([Boc])CC=C(I)C1",
+            "notes": "Elimination of an acetate group and an iodide from a substituted pyrrolidine to form a pyrroline with a double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "Pd(OAc)2, Cs2CO3, 2-PhC6H4PCy2, 1,4-dioxane",
+            "reagent_smiles": "NC1=C(B2OC(C)(C)C(C)(C)O2)C=CC=C1",
+            "conditions": "65 °C",
+            "yield": "70%",
+            "reactant_smiles": "CC(C)OC(=O)[C@H]1CC(=CN1[Boc])I",
+            "product_smiles": "CC(C)OC(=O)[C@H]1CC(=CN1[Boc])C2=C(N)C=CC=C2",
+            "notes": "Suzuki cross-coupling of an iodo-pyrroline with 2-aminophenyl boronic acid pinacol ester. The Boc group and isopropyl ester are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative dimerization/cyclization",
+            "reagents": "Fe(OTf)3, LPO",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, rt",
+            "yield": "48%",
+            "reactant_smiles": "CC(C)OC(=O)[C@@H]1CC(=CN1[Boc])c2ccccc2N",
+            "product_smiles": "CC(C)OC(=O)[C@@H]1C[C@]23C4=C(C=CC=C4)N[C@@H]5[C@@]3(C[C@@H](C(=O)OC(C)C)N5[Boc])C6=C(C=CC=C6)N[C@H]2N1[Boc]",
+            "notes": "Oxidative cyclization of anilino-pyrroline to form a complex polycyclic alkaloid (Calycanthine derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "CsOH•H₂O, EtOH/H₂O",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC(=O)[C@H]1C[C@@]23C4=C(C=CC=C4)N[C@H]5[C@]3(C[C@H](C(=O)OC(C)C)N5[Boc])C6=C(C=CC=C6)N[C@H]2N1[Boc]",
+            "product_smiles": "OC(=O)[C@H]1C[C@@]23C4=C(C=CC=C4)N[C@H]5[C@]3(C[C@H](C(=O)O)N5[Boc])C6=C(C=CC=C6)N[C@H]2N1[Boc]",
+            "notes": "Hydrolysis of isopropyl esters to carboxylic acids using cesium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification",
+            "reagents": "N-hydroxyphthalimide, DIC, DMAP",
+            "reagent_smiles": "",
+            "conditions": "THF, rt, dark",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@@H](C[C@@]23C4=C(C=CC=C4)N[C@@H]5[C@@]3(C[C@@H](C(=O)O)N5[Boc])C6=C(C=CC=C6)N[C@H]21)C(=O)O",
+            "product_smiles": "[Boc]N1[C@@H](C[C@@]23C4=C(C=CC=C4)N[C@@H]5[C@@]3(C[C@@H](C(=O)ON6C(=O)C7=C(C=CC=C7)C6=O)N5[Boc])C8=C(C=CC=C8)N[C@H]21)C(=O)ON9C(=O)C%10=C(C=CC=C%10)C9=O",
+            "notes": "Formation of N-hydroxyphthalimide esters from dicarboxylic acid using N-hydroxyphthalimide, DIC, and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive Deprotection / Reduction",
+            "reagents": "[Ir(ppy)₂(dtbpy)]PF₆",
+            "reagent_smiles": "CC(C)(C)C(C)C(S)C(C)C(C)(C)C",
+            "conditions": "THF/H₂O, Blue LEDs, rt",
+            "yield": "53%",
+            "reactant_smiles": "[Boc]N1[C@@H](C(=O)ON2C(=O)C3=CC=CC=C3C2=O)[C@H]4[C@]5(C6=CC=CC=C6N[C@@H]7[C@@]5([C@H](C(=O)ON8C(=O)C9=CC=CC=C9C8=O)N7[Boc])C%10=CC=CC=C%10N[C@H]41)",
+            "product_smiles": "[Boc]N1CC[C@]23C4=C(C=CC=C4)N[C@@H]5[C@]3(CCN5[Boc])C6=C(C=CC=C6)N[C@H]21",
+            "notes": "Reductive removal of the phthalimido-oxycarbonyl groups and reduction of the adjacent carbons to methylenes. Yield is over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "TMSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@]23C4=C(C=CC=C4)N[C@@H]5[C@]3(CCN5[Boc])C6=C(C=CC=C6)N[C@H]21",
+            "product_smiles": "N1CC[C@]23C4=C(C=CC=C4)N[C@@H]5[C@]3(CCN5)C6=C(C=CC=C6)N[C@H]21",
+            "notes": "Deprotection of two Boc groups from bis-Boc-calycanthine to yield calycanthine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Carbamoylation",
+            "reagents": "Pyridine",
+            "reagent_smiles": "COC(=O)Cl",
+            "conditions": "-10 °C",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "C1=CC2=C(C=C1)N[C@@H]3[C@@]42CCN3[C@@H]5[C@]64CCN[C@@H]6NC7=CC=CC=C75",
+            "product_smiles": "COC(=O)N1CC[C@]23C4=C(C=CC=C4)N[C@@H]5[C@]3(CCN5C(=O)OC)C6=C(C=CC=C6)N[C@H]21",
+            "notes": "Di-carbamoylation of secondary amines of calycanthine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reduction",
+            "reagents": "Red-Al",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "48%",
+            "reactant_smiles": "COC(=O)N1C[C@H]2N[C@H]3c4cccc(c4)[C@@H]5[C@]6(CCN(C(=O)OC)C6)[C@H]3c7cccc(c7)[C@@H]2N1",
+            "product_smiles": "CN1C[C@H]2N[C@H]3c4cccc(c4)[C@@H]5[C@]6(CCN(C)C6)[C@H]3c7cccc(c7)[C@@H]2N1",
+            "notes": "Reductive cleavage of N-methoxycarbonyl protecting groups to N-methyl groups.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ribociclib-kisqali-novartis-unknown-2024",
+        "molecule_name": "Ribociclib (Kisqali Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "Et3N",
+            "reagent_smiles": "C1CCC(N)C1",
+            "conditions": "DMF, rt",
+            "yield": "92%",
+            "reactant_smiles": "ClC1=NC(Cl)=NC=C1",
+            "product_smiles": "ClC1=NC(NC2CCCC2)=CC=N1",
+            "notes": "Nucleophilic substitution of one chloride on 2,4-dichloropyrimidine with cyclopentylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Copper-catalyzed C-N coupling / Pyrrole annulation",
+            "reagents": "Cs2CO3, CuI, L-proline",
+            "reagent_smiles": "CN(C)C(=O)C(=O)CBr",
+            "conditions": "THF, 40 °C",
+            "yield": "78%",
+            "reactant_smiles": "ClC1=NC(NC2CCCC2)=NC=C1",
+            "product_smiles": "CN(C)C(=O)C1=CC2=NC(Cl)=NC=C2N1C3CCCC3",
+            "notes": "A pyrimidine amine undergoes copper-catalyzed coupling with a bromo-oxoacetamide to form a fused pyrrolo[3,2-d]pyrimidine system.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Amide formation / Amide coupling",
+                    "reagents": "HBTU, DIPEA",
+                    "reagent_smiles": "CNC",
+                    "conditions": "DMF, rt",
+                    "yield": "",
+                    "reactant_smiles": "O=CC(=O)O",
+                    "product_smiles": "CC(=O)C(=O)N(C)C",
+                    "notes": "Amide formation from glyoxylic acid and dimethylamine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Alpha-bromination",
+                    "reagents": "NBS, DCM",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "82%",
+                    "reactant_smiles": "CC(=O)C(=O)N(C)C",
+                    "product_smiles": "CN(C)C(=O)C(=O)CBr",
+                    "notes": "Alpha-bromination of a methyl ketone adjacent to an amide carbonyl group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Buchwald-Hartwig amination",
+            "reagents": "Pd(OAc)2, BINAP, Cs2CO3",
+            "reagent_smiles": "[Boc]N1CCN(CC1)C2=CC(N)=NC=C2",
+            "conditions": "p-dioxane, 90 °C",
+            "yield": "",
+            "reactant_smiles": "CN(C)C(=O)C1=CC2=CN=C(Cl)N=C2N1C3CCCC3",
+            "product_smiles": "CN(C)C(=O)C1=CC2=CN=C(NC3=NC=CC(N4CCN(CC4)[Boc])=C3)N=C2N1C5CCCC5",
+            "notes": "Buchwald-Hartwig amination of an aryl chloride with a Boc-protected aminopyridine-piperazine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "toluene, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCN(CC1)C2=CC=C(N=C2)NC3=NC=C4C=C(C(=O)N(C)C)N(C5CCCC5)C4=N3",
+            "product_smiles": "CN(C)C(=O)C1=CC2=CN=C(NC3=NC=C(C=C3)N4CCNCC4)N=C2N1C5CCCC5",
+            "notes": "Deprotection of the Boc group from the piperazine nitrogen.",
+            "substeps": []
+        }
+    ]
+}

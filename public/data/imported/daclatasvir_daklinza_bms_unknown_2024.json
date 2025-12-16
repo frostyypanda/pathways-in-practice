@@ -1,0 +1,72 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "daclatasvir-daklinza-bms-unknown-2024",
+        "molecule_name": "Daclatasvir (Daklinza BMS)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-bromination of ketone",
+            "reagents": "Br2",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "82%",
+            "reactant_smiles": "CC(=O)C1=CC=C(C=C1)C2=CC=C(C=C2)C(=O)C",
+            "product_smiles": "C1=C(C=CC(=C1)C(=O)CBr)C2=CC=C(C=C2)C(=O)CBr",
+            "notes": "Dibromination of 4,4'-diacetylbiphenyl to 4,4'-bis(bromoacetyl)biphenyl at the alpha-carbons of the methyl ketone groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Double Esterification (SN2)",
+            "reagents": "MeCN, DIPEA",
+            "reagent_smiles": "[Boc]N1CCC[C@H]1C(=O)O",
+            "conditions": "20 to 25 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=CC(=C1)C(=O)CBr)C2=CC=C(C=C2)C(=O)CBr",
+            "product_smiles": "[Boc]N1CCC[C@H]1C(=O)OCC(=O)C2=CC=C(C=C2)C3=CC=C(C=C3)C(=O)COC(=O)[C@H]4CCCN4[Boc]",
+            "notes": "Double esterification of 4,4'-di(bromoacetyl)biphenyl with two equivalents of Boc-L-proline.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Debus-Radziszewski Imidazole Synthesis / Cyclocondensation",
+            "reagents": "NH4OAc",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 100 °C",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "[Boc]N1CCC[C@H]1C(=O)OCC(=O)C2=CC=C(C=C2)C3=CC=C(C=C3)C(=O)COC(=O)[C@@H]4CCCN4[Boc]",
+            "product_smiles": "[Boc]N1CCC[C@H]1c2nc([nH]c2c3ccc(cc3)-c4ccc(c4c5nc([nH]c5)[C@@H]6CCCN6[Boc]))",
+            "notes": "Bis-imidazole formation via cyclocondensation of a bis-ketoester with ammonium acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH, 50 °C",
+            "yield": "90%",
+            "reactant_smiles": "[Boc]N1CCC[C@H]1C2=NC=C(C3=CC=C(C=C3)C4=CC=C(C=C4)C5=CN=C([C@H]6CCCN6[Boc])N5)N2",
+            "product_smiles": "C1C[C@H](C2=NC=C(C3=CC=C(C=C3)C4=CC=C(C=C4)C5=CN=C([C@H]6CCCN6)N5)N2)NC1",
+            "notes": "Acid-catalyzed deprotection of bis-Boc-protected pyrrolidine moieties.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide bond formation / Peptide Coupling",
+            "reagents": "EDC, HOBt, DIPEA, HCl",
+            "reagent_smiles": "CC(C)[C@@H](C(=O)O)NC(=O)OC",
+            "conditions": "MeCN, 10-20°C, EtOH, 50°C",
+            "yield": "74% (3 steps)",
+            "reactant_smiles": "c1nc[nH]c1[C@H]2CCCN2-c3ccc(-c4ccc(cc4)-c5nc[nH]c5[C@H]6CCCN6)cc3",
+            "product_smiles": "COC(=O)N[C@@H](C(C)C)C(=O)N1CC[C@H](C1)c2nc[nH]c2-c3ccc(cc3)-c4ccc(cc4)-c5nc[nH]c5[C@H]6CCCN(C6)C(=O)[C@@H](C(C)C)NC(=O)OC",
+            "notes": "Synthesis of Daclatasvir via amide coupling between an N-(methoxycarbonyl)-L-valine derivative and a bis(pyrrolidin-2-yl-1H-imidazol-4-yl)biphenyl core.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "normilitrone-grover-2024",
+        "molecule_name": "Normilitrone",
+        "class": "Natural Product",
+        "author": "Grover",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation / C-C Bond Formation",
+            "reagents": "tBuLi",
+            "reagent_smiles": "CC(=CCBr)C",
+            "conditions": "THF, -78 °C",
+            "yield": "97%",
+            "reactant_smiles": "CC1=C(C=CC=C1)C(=O)O",
+            "product_smiles": "CC(=CCCC1=C(C=CC=C1)C(=O)O)C",
+            "notes": "Ortho-lithiation of 2-methylbenzoic acid followed by alkylation with 1-bromo-3-methylbut-2-ene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Friedel-Crafts Alkylation / Cyclization",
+            "reagents": "DCM",
+            "reagent_smiles": "[Al](Cl)(Cl)Cl",
+            "conditions": "rt",
+            "yield": "96%",
+            "reactant_smiles": "O=C(O)c1c(CCC=C(C)C)cccc1",
+            "product_smiles": "CC1(C)CCCC2=C(C=CC=C21)C(=O)O",
+            "notes": "Intramolecular Friedel-Crafts cyclization of a benzoic acid derivative containing an isopentenyl side chain to form a bicyclic tetrahydronaphthalene carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Directed C-H Iodination",
+            "reagents": "Pd(OAc)₂, PIDA, I₂",
+            "reagent_smiles": "",
+            "conditions": "DMF, 50 °C",
+            "yield": "86%",
+            "reactant_smiles": "CC1(C)CCCC2=C(C=CC=C21)C(=O)O",
+            "product_smiles": "CC1(C)CCCC2=C(C(=CC=C21)I)C(=O)O",
+            "notes": "Ortho-iodination of 5,5-dimethyl-5,6,7,8-tetrahydronaphthalene-1-carboxylic acid, likely via palladium-catalyzed C-H activation directed by the carboxylic acid group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification",
+            "reagents": "K2CO3, MeI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1(C)CCCC2=C(C(=CC=C21)I)C(=O)O",
+            "product_smiles": "CC1(C)CCCC2=C(C(=CC=C21)I)C(=O)OC",
+            "notes": "Methylation of a carboxylic acid using iodomethane and potassium carbonate to form a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Grignard cyclization",
+            "reagents": "MeMgCl·LiCl, iPrMgCl·LiCl",
+            "reagent_smiles": "",
+            "conditions": "DMF, THF, -20 °C to rt, HCl, H₂O",
+            "yield": "82%",
+            "reactant_smiles": "CC1(C)CCCC2=C(C(=CC=C21)I)C(=O)OC",
+            "product_smiles": "CC1(C)CCCC2=C3C(=CC=C21)C(O)OC3=O",
+            "notes": "Formation of a 3-hydroxyphthalide derivative via halogen-magnesium exchange (at the iodo position) and subsequent intramolecular cyclization of the arylmagnesium species onto the methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Horner-Wadsworth-Emmons Reaction, Lactone Opening",
+            "reagents": "NaH",
+            "reagent_smiles": "CC(C)C(C(=O)OC)P(=O)(Oc1ccccc1)Oc1ccccc1",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "74%",
+            "reactant_smiles": "CC1(C)CCCC2=C3C(=CC=C21)C(O)OC3=O",
+            "product_smiles": "CC(C)/C(=C/C1=CC=C2C(=C1C(=O)O)CCCC2(C)C)\\C(=O)OC",
+            "notes": "Lactone ring of the reactant is opened to a carboxylic acid and a Horner-Wadsworth-Emmons olefination occurs at an adjacent position on the aromatic ring, forming an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH, EtOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "CC(C)C(=CC1=CC=C2C(=C1C(=O)O)CCCC2(C)C)C(=O)OC",
+            "product_smiles": "CC(C)C(=CC1=CC=C2C(=C1C(=O)O)CCCC2(C)C)C(=O)O",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dehydration/Cyclization",
+            "reagents": "toluene",
+            "reagent_smiles": "CC(=O)OOC(=O)C",
+            "conditions": "100 °C",
+            "yield": "67%",
+            "reactant_smiles": "CC(C)\\C(=C/C1=CC=C2C(=C1C(=O)O)CCCC2(C)C)/C(=O)O",
+            "product_smiles": "CC(C)C1=CC2=CC=C3C(=C2C(=O)OC1=O)CCCC3(C)C",
+            "notes": "Formation of a pyrone from a dicarboxylic acid using acetic anhydride. The 67% yield is reported for 2 steps, implying the reactant itself was formed in a previous step.",
+            "substeps": []
+        }
+    ]
+}

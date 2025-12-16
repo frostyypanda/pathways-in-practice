@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "selpercatinib-retevmo-elililly-unknown-2024",
+        "molecule_name": "Selpercatinib (Retevmo EliLilly)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Substitution (Sulfonylation)",
+            "reagents": "HSO3Cl, NaCl",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "85%",
+            "reactant_smiles": "Cc1cc(C)cc(C)c1",
+            "product_smiles": "Cc1cc(C)c(S(Cl)(=O)=O)c(C)c1",
+            "notes": "Sulfonylation of mesitylene to form 2,4,6-trimethylbenzenesulfonyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "Et3N, MTBE",
+            "reagent_smiles": "CC(C)(C)OC(=O)NO",
+            "conditions": "0 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)Cl)C",
+            "product_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)ON[Boc])C",
+            "notes": "Nucleophilic substitution of 2,4,6-trimethylbenzenesulfonyl chloride with N-Boc-hydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)ONC(=O)OC(C)(C)C)C",
+            "product_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)ON)C",
+            "notes": "Boc deprotection of sulfonyloxyamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-amination",
+            "reagents": "",
+            "reagent_smiles": "COC1=CN=CC(=C1)Br",
+            "conditions": "DCM, 0 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)ON)C",
+            "product_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)[O-])C.COC1=C[N+](=CC(=C1)Br)N",
+            "notes": "The N-hydroxy group of the sulfonamide reactant likely serves as the amino source for the pyridine, forming a pyridinium salt with the sulfonate anion.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+                    "reagents": "NaOMe, MeOH",
+                    "reagent_smiles": "[Na+].CO[O-]",
+                    "conditions": "DMF, 90 to 100 °C",
+                    "yield": "86%",
+                    "reactant_smiles": "Brc1cnc(Br)cc1",
+                    "product_smiles": "COc1cnc(Br)cc1",
+                    "notes": "One bromine atom on the pyridine ring is substituted by a methoxy group from sodium methoxide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cyclization",
+            "reagents": "DBU",
+            "reagent_smiles": "C=C(C#N)Cl",
+            "conditions": "MeCN",
+            "yield": "39%",
+            "reactant_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)[O-])C.COC1=C[N+](=CC(=C1)Br)N",
+            "product_smiles": "COC1=CC(=CN2C1=C(C#N)C=N2)Br",
+            "notes": "Formation of an imidazo[1,2-a]pyridine from an N-aminopyridinium salt and alpha-chloroacrylonitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "O-Demethylation",
+            "reagents": "DMF, NaOH",
+            "reagent_smiles": "CCCCCCCCCCS",
+            "conditions": "40 °C",
+            "yield": "91%",
+            "reactant_smiles": "COC1=CC(=CN2C1=C(C#N)C=N2)Br",
+            "product_smiles": "C1=C(C2=C(C#N)C=NN2C=C1Br)O",
+            "notes": "Demethylation of an aryl methyl ether to a phenol using dodecanethiol and sodium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2NPh, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DMF, -5 °C",
+            "yield": "81%",
+            "reactant_smiles": "C1=C(C2=C(C#N)C=NN2C=C1Br)O",
+            "product_smiles": "C1=C(C2=C(C#N)C=NN2C=C1Br)[OTf]",
+            "notes": "Hydroxyl group is converted to a triflate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "PdCl2(dppf)•DCM, KOAc",
+            "reagent_smiles": "CC1(C)C(C)(C)OB(C2=CN=C(C=C2)F)O1",
+            "conditions": "THF, 25 °C",
+            "yield": "82%",
+            "reactant_smiles": "N#CC1=CN(N=C1)C2=C([OTf])C=C(Br)C=C2",
+            "product_smiles": "N#CC1=CN(N=C1)C2=C(C3=CC=NC=C3F)C=C(Br)C=C2",
+            "notes": "Suzuki-Miyaura coupling where a triflate group on the pyrazolo[1,5-a]pyridine core is replaced by a 2-fluoro-4-pyridinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Buchwald-Hartwig Etherification (C-O Coupling)",
+            "reagents": "Me4tbutylXPhos, Pd2(dba)3, H2O, Cs2CO3",
+            "reagent_smiles": "CC1(C)CO1",
+            "conditions": "dioxane, 72 °C",
+            "yield": "56%",
+            "reactant_smiles": "Brc1cc(-c2cncc(F)c2)c3nccc(C#N)c3n1",
+            "product_smiles": "CC(C)(COC1=CN2C(=C(C#N)C=N2)C(=C1)C3=CN=C(C=C3)F)O",
+            "notes": "Palladium-catalyzed coupling of an aryl bromide with an alcohol to form an ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nucleophilic Aromatic Substitution",
+            "reagents": "KOAc",
+            "reagent_smiles": "COc1ccc(CN2CCC(C3)CCC2C3N)nc1",
+            "conditions": "DMSO, 75 °C",
+            "yield": "86%",
+            "reactant_smiles": "CC(C)(O)COC1=CN2C(C(=C1)C3=CN=C(C=C3)F)=C(C#N)C=N2",
+            "product_smiles": "CC(C)(O)COC1=CN2C(C(=C1)C3=CN=C(C=C3)N4CCC(C5)CCC4C5N(Cc6ccc(OC)nc6))=C(C#N)C=N2",
+            "notes": "Amine displaces fluorine on pyridine ring via a C-F coupling reaction. The product is Selpercatinib.",
+            "substeps": []
+        }
+    ]
+}

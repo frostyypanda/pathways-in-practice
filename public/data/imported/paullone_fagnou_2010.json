@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "paullone-fagnou-2010",
+        "molecule_name": "Paullone",
+        "class": "Natural Product",
+        "author": "Fagnou",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection (Boc)",
+            "reagents": "Boc₂O",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "93%",
+            "reactant_smiles": "C1=CC(=C(C=C1)N)I",
+            "product_smiles": "IC1=CC=CC=C1N[Boc]",
+            "notes": "Protection of the primary amine on 2-iodoaniline with di-tert-butyl dicarbonate (Boc₂O) to form the N-Boc protected amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Sonogashira cross-coupling",
+            "reagents": "PdCl₂(PPh₃)₂, Et₃N, CuI",
+            "reagent_smiles": "[TMS]C#C",
+            "conditions": "reflux",
+            "yield": "78%",
+            "reactant_smiles": "[Boc]NC1=CC=CC=C1I",
+            "product_smiles": "[Boc]NC1=C(C#C[TMS])C=CC=C1",
+            "notes": "Sonogashira cross-coupling of a Boc-protected iodoaniline with trimethylsilylacetylene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]NC1=C(C=CC=C1)C#C[TMS]",
+            "product_smiles": "C#CC1=C(C=CC=C1)N[Boc]",
+            "notes": "Removal of a TMS protecting group from a terminal alkyne using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Copper-catalyzed C-H insertion / propargylation",
+            "reagents": "",
+            "reagent_smiles": "CCOC(=O)C=[N+]=[N-].[Cu]I",
+            "conditions": "MeCN, r.t.",
+            "yield": "70%",
+            "reactant_smiles": "C#CC1=C(C=CC=C1)N[Boc]",
+            "product_smiles": "CCOC(=O)CC#CC1=C(C=CC=C1)N[Boc]",
+            "notes": "Addition of ethyl diazoacetate to the terminal alkyne via copper catalysis, extending the alkyne chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Fagnou Indole Synthesis",
+            "reagents": "N-acetylaniline, [Cp*Rh(MeCN)₃][SbF₆], Cu(OAc)₂·H₂O, O₂",
+            "reagent_smiles": "",
+            "conditions": "t-AmOH, 60 °C",
+            "yield": "71%",
+            "reactant_smiles": "CCOC(=O)CC#Cc1ccccc1[NHBoc]",
+            "product_smiles": "CCOC(=O)CC1=C(c2ccccc2[NHBoc])N(C(=O)C)C3=CC=CC=C13",
+            "notes": "Rhodium-catalyzed C-H activation followed by indole formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, CH2Cl2",
+            "yield": "97%",
+            "reactant_smiles": "CCOC(=O)CC1=C(C2=CC=CC=C2NC(=O)OC(C)(C)C)N(C(=O)C)C3=CC=CC=C13",
+            "product_smiles": "CCOC(=O)CC1=C(C2=CC=CC=C2NC(=O)OC(C)(C)C)NC3=CC=CC=C13",
+            "notes": "Deprotection of N-acetyl indole to N-H indole using potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "CCOC(=O)CC1=C(C2=CC=CC=C2N[Boc])NC3=CC=CC=C13",
+            "product_smiles": "CCOC(=O)CC1=C(C2=CC=CC=C2N)NC3=CC=CC=C13",
+            "notes": "Boc group deprotection of an aryl amine using trifluoroacetic acid (TFA).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "DBU, DMF",
+            "reagent_smiles": "",
+            "conditions": "150 °C",
+            "yield": "36%",
+            "reactant_smiles": "CCOC(=O)Cc1c([nH]c2ccccc21)-c1ccccc1N",
+            "product_smiles": "O=C1CC2=C3NC4=CC=CC=C4C3=C(N1)C1=CC=CC=C12",
+            "notes": "Intramolecular cyclization involving ester, amine, and indole to form the polycyclic Paullone scaffold.",
+            "substeps": []
+        }
+    ]
+}

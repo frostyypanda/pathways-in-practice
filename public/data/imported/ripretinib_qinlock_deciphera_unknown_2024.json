@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ripretinib-qinlock-deciphera-unknown-2024",
+        "molecule_name": "Ripretinib (Qinlock Deciphera)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Formylation",
+            "reagents": "CH(OEt)₃, Ac₂O",
+            "reagent_smiles": "",
+            "conditions": "120 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CC(=O)CC(=O)OCC",
+            "product_smiles": "CCOC(=O)CC(=O)C(C=O)C(=O)OCC",
+            "notes": "Alpha-formylation of a beta-keto ester using triethyl orthoformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Pyridine Synthesis (Hantzsch-type)",
+            "reagents": "NH3",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "60%",
+            "reactant_smiles": "CCOC(=O)CC(=O)C(C=O)C(=O)OCC",
+            "product_smiles": "CCOC(=O)C1=C(O)C=C(O)N=C1",
+            "notes": "Formation of 2,4-dihydroxypyridine derivative from a dicarbonyl compound and ammonia (multi-step reaction).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chlorination",
+            "reagents": "POCl3",
+            "reagent_smiles": "ClP(Cl)Cl",
+            "conditions": "reflux",
+            "yield": "90%",
+            "reactant_smiles": "CCOC(=O)C1=C(O)C=C(O)N=C1",
+            "product_smiles": "CCOC(=O)C1=C(Cl)C=C(Cl)N=C1",
+            "notes": "Conversion of a 4,6-dihydroxypyridine-3-carboxylate to a 4,6-dichloropyridine-3-carboxylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Aromatic Substitution",
+            "reagents": "EtNH2",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 to 25 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)c1cc(Cl)nc(Cl)c1",
+            "product_smiles": "CCOC(=O)c1cc(Cl)nc(NCC)c1",
+            "notes": "Ethylamine displaces a chlorine atom on the pyridine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "THF, -50 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C(NCC)C=NC(Cl)=C1",
+            "product_smiles": "OCC1=C(NCC)C=NC(Cl)=C1",
+            "notes": "Ester reduction to primary alcohol using Lithium Aluminium Hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CCNC1=C(CO)C=NC(=C1)Cl",
+            "product_smiles": "CCNC1=C(C=O)C=NC(=C1)Cl",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using manganese dioxide (MnO2).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cyclocondensation / Friedländer-type reaction",
+            "reagents": "KF on alumina, DMA",
+            "reagent_smiles": "CCOC(=O)Cc1cc(N)c(F)c(Br)c1",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CCNC1=CC(C=O)=CN=C1Cl",
+            "product_smiles": "CCN1C(=O)C=C(c2cc(N)c(F)c(Br)c2)C3=CC(Cl)=NC=C13",
+            "notes": "Formation of a 1,6-naphthyridin-2-one derivative through cyclocondensation between an amino-pyridine aldehyde and an activated methylene ester derivative.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Nitration",
+                    "reagents": "HNO₃",
+                    "reagent_smiles": "",
+                    "conditions": "-15 to 5 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "O=C(O)CC1=C(Br)C=CC(F)=C1",
+                    "product_smiles": "O=C(O)CC1=C(Br)C=C([N+](=O)[O-])C(F)=C1",
+                    "notes": "Electrophilic aromatic nitration of 2-bromo-5-fluorophenylacetic acid. The nitro group adds ortho to the fluorine and meta to the bromine and acetic acid substituent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Fischer Esterification",
+                    "reagents": "H2SO4",
+                    "reagent_smiles": "CCO",
+                    "conditions": "85 °C",
+                    "yield": "49%",
+                    "reactant_smiles": "O=C(O)Cc1c(Br)c(F)cc([N+](=O)[O-])c1",
+                    "product_smiles": "CCOC(=O)Cc1c(Br)c(F)cc([N+](=O)[O-])c1",
+                    "notes": "Fischer esterification of 2-(3-bromo-2-fluoro-5-nitrophenyl)acetic acid with ethanol catalyzed by sulfuric acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Nitro reduction",
+                    "reagents": "Fe, NH4",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 55 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "CCOC(=O)CC1=CC(=C(C=C1Br)F)[N+](=O)[O-]",
+                    "product_smiles": "CCOC(=O)CC1=CC(=C(C=C1Br)F)N",
+                    "notes": "Reduction of an aromatic nitro group to an amino group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "NH2CH3",
+            "reagent_smiles": "CN",
+            "conditions": "dioxane, 100 °C",
+            "yield": "89%",
+            "reactant_smiles": "CCN1C(=O)C2=C(C=C(Cl)C=N2)C=C1C3=CC(N)=C(Br)C(F)=C3",
+            "product_smiles": "CCN1C(=O)C2=C(C=C(NC)C=N2)C=C1C3=CC(N)=C(Br)C(F)=C3",
+            "notes": "Chloride at position 7 of the naphthyridinone core is replaced by methylamino group via SNAr reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Urea Formation",
+            "reagents": "Et3N",
+            "reagent_smiles": "O=C=Nc1ccccc1.CCN(CC)CC",
+            "conditions": "THF",
+            "yield": "65%",
+            "reactant_smiles": "CCN1C(=O)C(c2ccc(F)c(N)c2Br)=C3C=CC(=NC=C3)NC1",
+            "product_smiles": "CCN1C(=O)C(c2ccc(F)c(NC(=O)Nc3ccccc3)c2Br)=C3C=CC(=NC=C3)NC1",
+            "notes": "The primary amine on the phenyl group reacts with phenyl isocyanate to form a phenylurea derivative.",
+            "substeps": []
+        }
+    ]
+}

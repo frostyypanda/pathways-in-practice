@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "goniomitine-zu-2017",
+        "molecule_name": "Goniomitine",
+        "class": "Natural Product",
+        "author": "Zu",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enamine Formation",
+            "reagents": "",
+            "reagent_smiles": "C[C@H](C1=CC=C2C=CC=CC2=C1)N",
+            "conditions": "toluene, reflux",
+            "yield": "",
+            "reactant_smiles": "CCC1CCCC1=O",
+            "product_smiles": "CCC1=C(CCC1)N[C@H](C)C2=CC=C3C=CC=CC3=C2",
+            "notes": "Condensation of a ketone with a primary amine to form an enamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Cascade Reaction (Michael Addition/Cycloaddition followed by Oxidation)",
+            "reagents": "",
+            "reagent_smiles": "C=CC#N",
+            "conditions": "23 °C",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "CC1=C(N[C@@H](C)C2=CC=C3C=CC=CC3=C2)CCC1",
+            "product_smiles": "O=C1C[C@](CC)(CCC#N)CC1",
+            "notes": "An enamine-type substrate reacts with acrylonitrile in a cascade reaction that involves a Michael addition or cycloaddition and subsequent oxidation/hydrolysis to form a substituted cyclopentanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diazo Transfer / alpha-Diazo Ketone Formation",
+            "reagents": "KOtBu",
+            "reagent_smiles": "CC(C)C1=CC(=C(C(=C1)C(C)C)S(=O)(=O)N=[N+]=[N-])C(C)C",
+            "conditions": "THF, -78 °C",
+            "yield": "81%",
+            "reactant_smiles": "CC[C@](C)(CCC#N)C1CCC(=O)C1",
+            "product_smiles": "CC[C@](C)(CCC#N)C1CC(=O)C(=[N+]=[N-])C1",
+            "notes": "Formation of an alpha-diazo ketone by reacting a ketone with 2,4,6-triisopropylbenzenesulfonyl azide and potassium tert-butoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Rh-catalyzed Cycloaddition / Insertion",
+            "reagents": "Rh2(OAc)4, LiOH",
+            "reagent_smiles": "COC(=O)C#CC1=CC=CC=C1N.CC(=O)O[Rh].CC(=O)O[Rh]",
+            "conditions": "DCE, 70 °C",
+            "yield": "",
+            "reactant_smiles": "N#CCC[C@@](CC)1CCC(=[N+]=[N-])C1=O",
+            "product_smiles": "COC(=O)C=C1C2=CC=CC=C2N[C@@]3(CC)(CCC#N)C1C(=O)CC3",
+            "notes": "Rh-catalyzed tandem cyclization of an alpha-diazo ketone with an N-alkynyl amine to form a spirooxindole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "BF3∙Et2O",
+            "reagent_smiles": "",
+            "conditions": "DCE, 23 °C",
+            "yield": "51%",
+            "reactant_smiles": "C[C@@]1(CCC#N)CC[C]2(C(=C(C(=O)OC))C3=C(C=CC=C3)N2)C1=O",
+            "product_smiles": "C[C@@]1(CCC#N)CCC2=C(CC(=O)OC)C3=C(C=CC=C3)N2C1=O",
+            "notes": "Intramolecular cyclization involving the indole nitrogen and the exocyclic acrylate, forming a new 6-membered ring. The indole N-H is deprotonated and forms a tertiary amine in the product. The double bond of the acrylate is saturated during cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction, Cyclization",
+            "reagents": "LiAlH4, THF, AcOH",
+            "reagent_smiles": "",
+            "conditions": "-15 °C to 23 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC2=C(CC(=O)OC)C3=C(C=CC=C3)N2C1=O",
+            "product_smiles": "CC[C@H]1C[C@@H]2[N@H]3C4=C(C=CC=C4)[C@H](CCO)C[N@H]3C2C1",
+            "notes": "Reduction of ester to alcohol, lactam to methylene, and nitrile to amine, followed by intramolecular cyclization.",
+            "substeps": []
+        }
+    ]
+}

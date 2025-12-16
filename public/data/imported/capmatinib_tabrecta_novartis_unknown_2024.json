@@ -1,0 +1,158 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "capmatinib-tabrecta-novartis-unknown-2024",
+        "molecule_name": "Capmatinib (Tabrecta Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Boronation (via Grignard/lithiation)",
+            "reagents": "iPrMgCl, B(OMe)3, HCl, THF",
+            "reagent_smiles": "",
+            "conditions": "12 to 20 °C then 7 to 16 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CC(=C1C#N)F)Br",
+            "product_smiles": "B(OC)(OC)c1c(F)cc(C#N)cc1",
+            "notes": "Grignard formation from aryl bromide followed by reaction with trimethyl borate to form an arylboronic acid derivative (dimethyl ester).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Boronic Ester Transesterification",
+            "reagents": "pinacol",
+            "reagent_smiles": "CC(C)(O)C(C)(C)O",
+            "conditions": "cyclohexane, rt to 40 °C",
+            "yield": "41% (2 Steps)",
+            "reactant_smiles": "N#CC1=CC=C(B(OC)OC)C(F)=C1",
+            "product_smiles": "N#CC1=CC=C(B2OC(C)(C)C(C)(C)O2)C(F)=C1",
+            "notes": "Conversion of a boronic acid dimethyl ester to a pinacol boronic ester. Corrected the relative positions of the fluorine and cyano substituents on the benzene ring for both reactant and product to match the screenshot. Extracted 'pinacol' as the drawn reagent SMILES and 'cyclohexane' as a condition.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd(dppf)2Cl2·DCM, K2CO3",
+            "reagent_smiles": "N1=C(N)N=C(Br)N=C1",
+            "conditions": "dioxane, H2O, 86 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC1(C)C(C)(C)OB(C2=C(F)C(C#N)=CC=C2)O1",
+            "product_smiles": "N1=C(N)N=C(C2=C(F)C(C#N)=CC=C2)N=C1",
+            "notes": "Suzuki coupling of a 2-fluoro-3-cyanophenyl boronate ester with a 2-bromo-4-amino-1,3,5-triazine.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Heterocycle formation (Triazine synthesis)",
+                    "reagents": "H2O",
+                    "reagent_smiles": "O=CC=O",
+                    "conditions": "",
+                    "yield": "90%",
+                    "reactant_smiles": "C(=NN)(N)N",
+                    "product_smiles": "Nc1ncncn1",
+                    "notes": "Formation of 3-amino-1,2,4-triazine from aminoguanidine and glyoxal.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Electrophilic Aromatic Bromination",
+                    "reagents": "NBS",
+                    "reagent_smiles": "O=C1CC(=O)N(Br)C1",
+                    "conditions": "MeCN, H2O, 5 to 15 °C",
+                    "yield": "17%",
+                    "reactant_smiles": "Nc1ncncc1",
+                    "product_smiles": "Nc1ncc(Br)c1",
+                    "notes": "Bromination of 2-aminopyrimidine at the 5-position using N-bromosuccinimide (NBS).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclocondensation",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "C1=CC2=C(C=CC(=C2)C[C@@H](O)[C@@H](Cl)N3C(=O)CCC3=O)N=C1",
+            "conditions": "Ethylene glycol, 130 to 140 °C",
+            "yield": "64%",
+            "reactant_smiles": "NC1=NN=CC(=N1)C2=C(F)C=C(C#N)C=C2",
+            "product_smiles": "C1=CC2=CC(=CC=C2N=C1)CC3=CN=C4N=CC(=NN34)C5=C(F)C=C(C#N)C=C5",
+            "notes": "Cyclocondensation of 3-amino-1,2,4,5-tetrazine with a chiral N-(3-chloro-2-hydroxy-3-(quinolin-6-yl)propyl)succinimide intermediate to form a substituted 1,2,4-triazolo[4,3-b]pyridazine (Capmatinib).",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Suzuki-Miyaura coupling",
+                    "reagents": "9-BBN, Pd(OAc)2, PCy3, K2CO3",
+                    "reagent_smiles": "C1=CC2=CC(=CC=C2N=C1)Br",
+                    "conditions": "THF, H2O, reflux",
+                    "yield": "",
+                    "reactant_smiles": "C=CC(OCC)OCC",
+                    "product_smiles": "CCOC(CCC1=CC2=C(C=C1)N=CC=C2)OCC",
+                    "notes": "Suzuki-Miyaura coupling of a vinyl acetal (after hydroboration) with 6-bromoquinoline to form an alkyl-aryl bond.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Acetal Hydrolysis",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "EtOAc, 0 to 5 °C",
+                    "yield": "84% (2 Steps)",
+                    "reactant_smiles": "CCOC(CCC1=CC2=C(C=C1)N=CC=C2)OCC",
+                    "product_smiles": "C1=CC2=C(C=CC(=C2)CCC=O)N=C1",
+                    "notes": "Hydrolysis of a diethyl acetal to an aldehyde, forming an aldehyde with a quinoline substituent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Aminochlorination / Oxyamination (with N-chlorosuccinimide and proline as catalyst)",
+                    "reagents": "DCM, proline",
+                    "reagent_smiles": "C1CC(=O)N(C1=O)Cl",
+                    "conditions": "0 °C to rt",
+                    "yield": "54%",
+                    "reactant_smiles": "C1=CC2=C(C=CC(=C2)CCC=O)N=C1",
+                    "product_smiles": "C1=CC2=C(C=CC(=C2)CC(Cl)C(O)N3C(=O)CCC3=O)N=C1",
+                    "notes": "A quinoline-substituted aldehyde undergoes aminochlorination/oxyamination to form a complex product containing a succinimide, chloro, and hydroxyl group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nitrile hydrolysis",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "C1=CC2=CC(=CC=C2N=C1)CC3=CN=C4N=CC(=NN34)C5=CC(=C(C=C5)C#N)F",
+            "product_smiles": "C1=CC2=CC(=CC=C2N=C1)CC3=CN=C4N=CC(=NN34)C5=CC(=C(C=C5)C(=O)O)F",
+            "notes": "Hydrolysis of a nitrile group to a carboxylic acid under acidic aqueous conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide formation",
+            "reagents": "MeNH2, EDC",
+            "reagent_smiles": "",
+            "conditions": "BuOH, MeCN, DCM, THF, 15 to 30 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=CC(=CC=C2N=C1)CC3=CN=C4N=CC(=NN34)C5=CC(=C(C=C5)C(=O)O)F",
+            "product_smiles": "CNC(=O)C1=C(C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC=C5C(=C4)C=CC=N5)F",
+            "notes": "Amide coupling of a carboxylic acid with methylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Salt Formation / Aqueous Workup",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89% (2 Steps)",
+            "reactant_smiles": "CNC(=O)C1=C(F)C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC=C5C(=C4)C=CC=N5",
+            "product_smiles": "CNC(=O)C1=C(F)C=C(C=C1)C2=NN3C(=CN=C3N=C2)CC4=CC=C5C(=C4)C=CC=N5",
+            "notes": "The core chemical structure of Capmatinib remains unchanged in this step. The reaction describes an aqueous HCl workup which results in the formation of a 2HCl salt and hydrate as indicated by the text. The drawn chemical structures of reactant and product are identical (neutral form).",
+            "substeps": []
+        }
+    ]
+}

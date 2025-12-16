@@ -1,0 +1,60 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nephrosteranic-acid-maulide-2024",
+        "molecule_name": "Nephrosteranic Acid",
+        "class": "Natural Product",
+        "author": "Maulide",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Elimination (discrepancy detected)",
+            "reagents": "nBuLi, benzene",
+            "reagent_smiles": "[PH+](c1ccccc1)(c2ccccc2)c3ccccc3.[I-]",
+            "conditions": "benzene",
+            "yield": "48%",
+            "reactant_smiles": "C[C@@H]1C[C@@H](C(C)C)C[C@@H](OS(=O)c2ccc(C)cc2)C1",
+            "product_smiles": "c1ccccc1[S@](=O)/C=C/c2ccc(OC)cc2",
+            "notes": "The reactant (a cyclohexyl tosylate) does not appear to convert to the product (a vinyl phenyl sulfoxide) under the specified reaction conditions. The drawn structures for reactant and product are chemically unrelated. The drawn reagent (triphenylphosphonium iodide) and nBuLi would typically be used to generate a Wittig ylide for alkene formation, which is inconsistent with the starting material and the type of product shown. This suggests a significant error in the reaction scheme presented.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Aldol-type / Michael Addition",
+            "reagents": "NHTf2, H2O, iPrCHO",
+            "reagent_smiles": "O=C1N(CC#C)CCO1",
+            "conditions": "CH2Cl2",
+            "yield": "58%",
+            "reactant_smiles": "CC1=CC=C(C=C1)[S@@](=O)/C=C/C2=CC=C(C=C2)OC",
+            "product_smiles": "C[C@H]([C@@H](C=O)C1=CC=C(C=C1)OC)C(=O)N2CCOC2=O",
+            "notes": "Stereoselective formation of a β-substituted aldehyde with an N-acyl oxazolidinone moiety. The chiral sulfoxide is a directing group, and the N-propargyl-2-oxazolidinone reagent is incorporated as its N-acyl form (with loss of the propargyl group) suggesting an Evans-type auxiliary transformation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard reaction followed by lactonization (intramolecular ring closure)",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "CCCCCCCCCCC[Mg]Br.Cl[Al](Cl)Cl",
+            "conditions": "-78 °C",
+            "yield": "67%",
+            "reactant_smiles": "C[C@@H]([C@@H](C=O)C1=CC=C(C=C1)OC)C(=O)N2CCOC2=O",
+            "product_smiles": "CCCCCCCCCCC[C@@H]1[C@H]([C@H](C)C(=O)O1)C2=CC=C(C=C2)OC",
+            "notes": "A chiral auxiliary-mediated Grignard reaction is followed by a probable Lewis acid-catalyzed cyclization to form a gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "RuCl3, NaIO4, H2O, CCl4, MeCN",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "CCCCCCCCCCC[C@@H]1OC(=O)[C@@H](C)[C@H]1C2=CC=C(C=C2)OC",
+            "product_smiles": "CCCCCCCCCCC[C@@H]1OC(=O)[C@@H](C)[C@H]1C(=O)O",
+            "notes": "Oxidative cleavage of the p-methoxyphenyl group to a carboxylic acid, preserving the lactone ring and stereocenters.",
+            "substeps": []
+        }
+    ]
+}

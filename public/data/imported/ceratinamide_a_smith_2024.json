@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ceratinamide-a-smith-2024",
+        "molecule_name": "Ceratinamide A",
+        "class": "Natural Product",
+        "author": "Smith",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetal formation (ketone protection)",
+            "reagents": "PTSA",
+            "reagent_smiles": "OCCO",
+            "conditions": "benzene, reflux",
+            "yield": "90%",
+            "reactant_smiles": "C1CC(=O)CCC1=O",
+            "product_smiles": "C1CC2(CCC1=O)OCCO2",
+            "notes": "One ketone of cyclohexanedione is selectively protected as a cyclic acetal using ethylene glycol under acidic conditions (PTSA).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Baeyer-Villiger Oxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "C1CC2(CCC1=O)OCCO2",
+            "product_smiles": "O1CCO1C2(C(=O)OCCC2)",
+            "notes": "Baeyer-Villiger oxidation of a spiroketal-protected cyclohexanone to a spiroketal-protected caprolactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Tebbe Olefination / Enol Ether Formation",
+            "reagents": "Cp2TiCl2, Mg, P(OEt)3, BOMCl",
+            "reagent_smiles": "Cl[Ti]Cl(C1C=C[CH]C1)C2C=C[CH]C2.P(OCC)(OCC)OCC.ClCOCc1ccccc1.[Mg]",
+            "conditions": "4 Å MS, THF, -20 °C to reflux",
+            "yield": "27%",
+            "reactant_smiles": "O=C1OCC2(OCCO2)CCC1",
+            "product_smiles": "C1=C([OBn])\\C=C/OCCC(C1)C2(OCCO2)",
+            "notes": "Conversion of a cyclic lactone to an enol ether using a titanium reagent (Cp2TiCl2/Mg/P(OEt)3) and benzyloxymethyl chloride (BOMCl) to introduce the OBn group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "1,3-Dipolar Cycloaddition",
+            "reagents": "MTBE",
+            "reagent_smiles": "CCOC(=O)C(=NO)Cl.CCN(C(C)C)C(C)C",
+            "conditions": "50 °C",
+            "yield": "44%",
+            "reactant_smiles": "C1(O2CCC(=C/OCC3=CC=CC=C3)C2)OCCO1",
+            "product_smiles": "CCOC(=O)C1=NO[C@H]2[C@@H](OCC3=CC=CC=C3)C4(OCCC2O4)OCCO",
+            "notes": "Formation of a 4,5-dihydroisoxazole ring from an exocyclic vinyl ether and a 2-chloro-2-(hydroxyimino)acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ketone Deprotection (Spiroketal hydrolysis)",
+            "reagents": "HCl, H2O, acetone",
+            "reagent_smiles": "",
+            "conditions": "THF, 50 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]2(CCC3(CCO2)OCCO3)[C@@H]1OCC4=CC=CC=C4",
+            "product_smiles": "CCOC(=O)C1=NO[C@]2(CCC(=O)CCO2)[C@@H]1OCC3=CC=CC=C3",
+            "notes": "Acid-catalyzed hydrolysis of a spiroketal to yield a cyclic ketone, maintaining stereochemistry at the adjacent chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation / Alpha, Beta-Desaturation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC(C)(C)N=S(Cl)c1ccccc1",
+            "conditions": "THF, -78 °C to -20 °C",
+            "yield": "49%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]2(CCC(=O)CCO2)[C@@H]1O[Bn]",
+            "product_smiles": "CCOC(=O)C1=NO[C@]2(CCC(=O)C=CO2)[C@@H]1O[Bn]",
+            "notes": "Alpha, beta-dehydrogenation of a ketone to form an enone within a lactone ring, retaining stereochemistry at the fused ring carbons.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Alpha-bromination",
+            "reagents": "Br2, CH2Cl2",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "0 °C to rt",
+            "yield": "83%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]2(CCC(=O)C=CO2)[C@H]1[OBn]",
+            "product_smiles": "CCOC(=O)C1=NO[C@]2(CCC(=O)C(=CO2)Br)[C@H]1[OBn]",
+            "notes": "Alpha-bromination of ketone with alkene shift to conjugation.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Bromination",
+            "reagents": "LiHMDS, TMSCl, NBS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@@]2(CCC(=O)C(=CO2)Br)[C@@H]1[BnO]",
+            "product_smiles": "CCOC(=O)C1=NO[C@@]2(CC([C@H]Br)C(=O)[C@@H](Br)CO2)[C@@H]1[BnO]",
+            "notes": "Alpha-bromination of ketone and bromination of an enone double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Enol Ether Formation / Alkylation",
+            "reagents": "KHMDS, MeOTf",
+            "reagent_smiles": "[K+].N(Si(C)(C)C)Si(C)(C)C.COS(=O)(=O)C(F)(F)F",
+            "conditions": "THF -78 to 0 °C",
+            "yield": "53% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@@]2(CC(C(=O)C(=CO2)Br)Br)[C@@H]1OCC3=CC=CC=C3",
+            "product_smiles": "CCOC(=O)C1=NO[C@@]2(CC(=C(C(=CO2)Br)OC)Br)[C@@H]1OCC3=CC=CC=C3",
+            "notes": "An alpha-bromoketone undergoes deprotonation and methylation with a concomitant bromine migration to yield a methoxy enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection (Benzyl Ether)",
+            "reagents": "BCl3",
+            "reagent_smiles": "BCl3",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "78%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@@]2(CC(=C(C(=CO2)Br)OC)Br)[C@@H]1[OBn]",
+            "product_smiles": "CCOC(=O)C1=NO[C@@]2(CC(=C(C(=CO2)Br)OC)Br)[C@@H]1O",
+            "notes": "Deprotection of a benzyl ether to an alcohol using boron trichloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amidation (Ester to Amide)",
+            "reagents": "Zr(OtBu)4, HOAt",
+            "reagent_smiles": "O=CNCCC1=CC(OCCN)=C(Br)C=C1Br",
+            "conditions": "toluene, THF, 70 °C",
+            "yield": "61%",
+            "reactant_smiles": "CCOC(=O)C1=NOC2(O[C@H]3C=C(Br)C(OC)=C(Br)C=C3C2)[C@H]1O",
+            "product_smiles": "COC1=C(C[C@@]2([C@@H](C(=NO2)C(=O)NCCCOC3=C(C=C(CCNC(=O)H)C=C3Br)Br)O)OC=C1Br)Br",
+            "notes": "Amidation of an ethyl ester with an amine. The drawn reagent in the scheme has a 2-carbon (ethoxy) linker to the amine (-O-CH2-CH2-NH2), while the product shows a 3-carbon (propoxy) linker from the amide to the aryl ether (-NH-CH2-CH2-CH2-O-aryl). This indicates an inconsistency between the drawn structure of the reagent and the drawn structure of the product. The provided SMILES have been corrected to match the *drawn structures* as they appear in the screenshot.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Amide formation / Imide synthesis",
+                    "reagents": "AcOH, toluene",
+                    "reagent_smiles": "O=C1OC(=O)C2=CC=CC=C12",
+                    "conditions": "reflux",
+                    "yield": "51%",
+                    "reactant_smiles": "NCCC1=CC=C(O)C=C1",
+                    "product_smiles": "O=C1N(CCC2=CC=C(O)C=C2)C(=O)C3=CC=CC=C13",
+                    "notes": "Formation of an imide from a primary amine and an anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "Br2",
+                    "reagent_smiles": "BrBr",
+                    "conditions": "AcOH",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)C(=O)N(CCC3=CC=C(C=C3)O)C2=O",
+                    "product_smiles": "C1=CC2=C(C=C1)C(=O)N(CCC3=CC(=C(C(=C3)Br)O)Br)C2=O",
+                    "notes": "Dibromination of the phenol-substituted aromatic ring at the ortho positions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Williamson Ether Synthesis / Phenol Alkylation",
+                    "reagents": "K2CO3, KI",
+                    "reagent_smiles": "CC(C)(C)OC(=O)NCCCBr",
+                    "conditions": "MeCN, 80 °C",
+                    "yield": "47%",
+                    "reactant_smiles": "C1=CC2=C(C=C1)C(=O)N(CCC3=CC(=C(C(=C3)Br)O)Br)C2=O",
+                    "product_smiles": "CC(C)(C)OC(=O)NCCCCOC1=C(Br)C=C(CCN2C(=O)C3=CC=CC=C3C2=O)C=C1Br",
+                    "notes": "Alkylation of a phenolic hydroxyl group with a Boc-protected amino alkyl bromide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Phthalimide Deprotection (Gabriel variant)",
+                    "reagents": "N2H4, H2O, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, CH2Cl2",
+                    "yield": "68%",
+                    "reactant_smiles": "O=C1C(=O)N(CCC2=CC(Br)=C(OCCN[Boc])C(Br)=C2)C3=CC=CC=C31",
+                    "product_smiles": "NCCC1=CC(Br)=C(OCCN[Boc])C(Br)=C1",
+                    "notes": "Hydrazine-mediated deprotection of phthalimide to yield a primary amine, while a Boc-protected amine remains untouched.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.5",
+                    "reaction_type": "Amide Formation (Formylation)",
+                    "reagents": "EDC, HOBt, iPr₂NEt",
+                    "reagent_smiles": "O=COCC",
+                    "conditions": "DMF, CH₂Cl₂, 0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)OC(=O)NCCOC1=C(Br)C=C(CCN)C=C1Br",
+                    "product_smiles": "CC(C)(C)OC(=O)NCCOC1=C(Br)C=C(CCNC(=O)H)C=C1Br",
+                    "notes": "Primary amine group on the reactant is formylated to a formamide group using ethyl formate and amide coupling reagents (EDC, HOBt, iPr₂NEt).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.6",
+                    "reaction_type": "Boc Deprotection",
+                    "reagents": "TFA",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "57% (2 steps)",
+                    "reactant_smiles": "CC(C)(C)OC(=O)NCCOC1=C(Br)C=C(CCNC(=O)H)C=C1Br",
+                    "product_smiles": "NCCOC1=C(Br)C=C(CCNC(=O)H)C=C1Br",
+                    "notes": "Deprotection of Boc amine to primary amine using trifluoroacetic acid.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

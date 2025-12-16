@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "emindole-sb-pronin-2015",
+        "molecule_name": "Emindole SB",
+        "class": "Natural Product",
+        "author": "Pronin",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Conjugate Addition (Michael Addition)",
+            "reagents": "CuBr",
+            "reagent_smiles": "Br[Mg]CCC=C(C)C.CSC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1=CCC(=O)C1",
+            "product_smiles": "CC(=CCCC1CCC(=O)C1C)C",
+            "notes": "Conjugate addition of a Grignard reagent (converted to a cuprate with CuBr) to a cyclic enone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Enol silyl ether formation",
+            "reagents": "TIPSCl, HMPA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "O=C1C(C)C(CCC=C(C)C)CC1",
+            "product_smiles": "[OTIPS]C1=C(C)C(CCC=C(C)C)CC1",
+            "notes": "Formation of a triisopropylsilyl (TIPS) enol ether from a cyclopentanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization",
+            "reagents": "InBr3",
+            "reagent_smiles": "C#CCCCO[TBS]",
+            "conditions": "CH2Cl2, 23°C",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC[CH]1CC(C)=C(O[TIPS])CC1)C",
+            "product_smiles": "CC(=CCC[CH]1CC(=C)[C]2(C)C3=C[CH](CCCO)[CH]3[CH]1C=C(O[TIPS])C2)C",
+            "notes": "A multi-component cyclization reaction involving an alkyne and an enol silyl ether, forming a tricyclic fused ring system. The TBS protecting group is cleaved to a hydroxyl group during the reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection / Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "50% (2 steps)",
+            "reactant_smiles": "[TIPS]OC1=C(CCC=C(C)C)C2(C)C(CCCCO)C1CCC2",
+            "product_smiles": "O=C1C(CCC=C(C)C)C2(C)C1CCC(CCCCO)C2",
+            "notes": "TIPS group removed and enol ether hydrolyzed/oxidized to a ketone. The alcohol and isopropenyl side chains remain unchanged. The original SMILES for reactant and product were fundamentally flawed in their representation of the bicyclic core and chain lengths, so entirely new SMILES were generated.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Allylic Oxidation (Riley Oxidation)",
+            "reagents": "SeO2, t-BuO2H",
+            "reagent_smiles": "O=[Se]=O.CC(C)(C)OO",
+            "conditions": "",
+            "yield": "68%",
+            "reactant_smiles": "CC1(C)C2CCC(=O)C1C2=C(CCCO)CCC(=C(C)C)C",
+            "product_smiles": "CC1(C)C2CCC(=O)C1C2=C(CCCO)CCC(=C(C)C)CO",
+            "notes": "Oxidation of an allylic methyl group to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Phenylhydrazone Formation (Ketone condensation)",
+            "reagents": "AcOH",
+            "reagent_smiles": "NNc1ccccc1",
+            "conditions": "80°C",
+            "yield": "",
+            "reactant_smiles": "O=C1CCC2C1C(C)(C)C(=CC/C=C(/C)CO)C2CCCO",
+            "product_smiles": "c1ccccc1N/N=C2CCC3C2C(C)(C)C(=CC/C=C(/C)CO)C3CCCO",
+            "notes": "Formation of a phenylhydrazone from a bicyclic ketone and phenylhydrazine under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Fisher Indole Synthesis",
+            "reagents": "ZnCl2",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "C[C@@]1([C@H]2CC[C@H](C=NNC3=CC=CC=C3)C2)[C@@](C)(CC(CO)=C/CC)CCCO",
+            "product_smiles": "C[C@@]1([C@H]2CC[C@H]3NC4=CC=CC=C4C3C2)[C@@](C)(CC(CO)=C/CC)CCCO",
+            "notes": "Intramolecular Fisher indole synthesis of a bicyclic hydrazone to an indole. The reaction forms a new benzene ring fused to the bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation (Parikh-Doering-like)",
+            "reagents": "SO3, Py, i-Pr2NEt",
+            "reagent_smiles": "O=S(=O)=O.n1ccccc1.CS(C)=O.CCN(C(C)C)C(C)C",
+            "conditions": "DMSO",
+            "yield": "",
+            "reactant_smiles": "CC1CCC2(C(=C)CCCO)(CCC=C(C)CO)C1C3=CC=CC=C3[NH]2",
+            "product_smiles": "CC1CCC2(C(=C)CCC=O)(CCC=C(C)/C=O)C1C3=CC=CC=C3[NH]2",
+            "notes": "Oxidation of two primary alcohol groups to their corresponding aldehydes.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "NaOH",
+            "reagent_smiles": "[Na+].[OH-].CCOCC",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "O=C(C)C=CCC=C1C(C)(CCC=O)C2CC3C4=C(C=CC=C4)[NH]C3C21",
+            "product_smiles": "O=C(C)C=CCC=C1C(C)C(O)CCC2N3C4=C(C=CC=C4)C3C21",
+            "notes": "Intramolecular cyclization of an aldehyde and an amine, forming a new 6-membered ring and a tertiary alcohol. One aldehyde group remains unreacted. The secondary amine (NH) becomes a tertiary amine (N).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "Fe(acac)3, PhSiH2(Oi-Pr)",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "C[C@@H]1C[C@@H]2C3C(=C\\C/C=C(\\C)C=O)C4C5C(=CC=CC=5)N(C(O)[C@@H]1)C3C42",
+            "product_smiles": "C[C@@H]1C[C@@H]2C3[C@@H](CC[C@H](C)C=O)C4C5C(=CC=CC=5)N(C(O)[C@@H]1)C3C42",
+            "notes": "Two alkene groups are reduced to alkanes in a 3-step sequence. The aldehyde group is retained. The relative stereochemistry of the polycyclic core is maintained, and a new stereocenter is formed on the side chain (CH(CH3)).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Rearrangement",
+            "reagents": "KHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -30 °C",
+            "yield": "64%",
+            "reactant_smiles": "CC(C=O)C1CC2CC3=C4C2(C)C1(C)CCC(N4C5=C3C=CC=C5)O",
+            "product_smiles": "CC12CCC(C(C)(O)C=O)C2CCC3CC4=C(C31C)NC5=C4C=CC=C5",
+            "notes": "Base-catalyzed intramolecular rearrangement resulting in dealkylation of the indole nitrogen, reduction of the adjacent carbon, and formation of an alpha-hydroxy aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Addition of vinyl lithium reagent (complex carbonyl addition)",
+            "reagents": "",
+            "reagent_smiles": "[Li]/C=C/OCC",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CC12CCC(C(C)C(C=O)O)C2C3CCC4=C(C31C)NC5=C4C=CC=C5",
+            "product_smiles": "CC12CCC(C(C)C(O)/C=C(/OCC)O)C2C3CCC4=C(C31C)NC5=C4C=CC=C5",
+            "notes": "Addition of (Z)-lithium ethoxyethenylide to the alpha-hydroxy aldehyde, leading to the formation of a new carbon-carbon bond and a rearranged enol ether with a geminal hydroxyl and ethoxy group on the newly formed double bond, with (Z)-alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Acid-catalyzed hydrolysis",
+            "reagents": "2 N HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "69% (2 steps)",
+            "reactant_smiles": "CC[O]C(O)/C=C/C1CC[C@@]2(C)C1CC[C@H]34[C@@H]2[C@](C)(C)[C@H](C5=C4NC6=CC=CC=C65)C3",
+            "product_smiles": "O=C/C=C/[C@H](O)C1CC[C@@]2(C)C1CC[C@H]34[C@@H]2[C@](C)(C)[C@H](C5=C4NC6=CC=CC=C65)C3",
+            "notes": "Acid-catalyzed hydrolysis of the enol ether/acetal derivative to an alpha,beta-unsaturated aldehyde and a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/CaCO3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC12CCC(O)C(C=CC=O)C1CC3C4=C(NC5=CC=C4C=C5)C3(C)C2C",
+            "product_smiles": "CC12CCC(O)C(CCC=O)C1CC3C4=C(NC5=CC=C4C=C5)C3(C)C2C",
+            "notes": "Selective hydrogenation of an alpha,beta-unsaturated aldehyde to a saturated aldehyde. The hydroxyl group is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Wittig olefination",
+            "reagents": "Ph3P=CMe2",
+            "reagent_smiles": "C=C(P(c1ccccc1)(c2ccccc2)c3ccccc3)C",
+            "conditions": "",
+            "yield": "55%",
+            "reactant_smiles": "CC1(C)C(O)C(CCC=O)CC1C2(C)C3C(C4=C(NC=C4)C3)CC2",
+            "product_smiles": "CC1(C)C(O)C(CCC(=C)C)CC1C2(C)C3C(C4=C(NC=C4)C3)CC2",
+            "notes": "Aldehyde functionality is converted to an isopropenyl group via Wittig olefination.",
+            "substeps": []
+        }
+    ]
+}

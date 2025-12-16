@@ -1,0 +1,97 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "piflufolastat-f18-pylarify-progenics-unknown-2024",
+        "molecule_name": "Piflufolastat F18 (Pylarify Progenics)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "PMBCl, Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCCCC[C@@H](C(=O)O)N[Fmoc]",
+            "product_smiles": "[Boc]NCCCC[C@@H](C(=O)O[PMB])N[Fmoc]",
+            "notes": "Esterification of a lysine derivative with p-methoxybenzyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Fmoc Deprotection",
+            "reagents": "piperidine",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCCCC[C@@H](N[Fmoc])C(=O)O[PMB]",
+            "product_smiles": "[Boc]NCCCC[C@@H](N)C(=O)O[PMB]",
+            "notes": "Deprotection of the Fmoc protecting group from the alpha-amino of a lysine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Urea Formation",
+            "reagents": "triphosgene, Et3N",
+            "reagent_smiles": "[OPMB]C(=O)CC[C@@H]([NH3+])C(=O)[OPMB]",
+            "conditions": "DCM, -80 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCCCC[C@@H](C(=O)[OPMB])N",
+            "product_smiles": "[Boc]NCCCC[C@@H](C(=O)[OPMB])NC(=O)N[C@H](CCC(=O)[OPMB])C(=O)[OPMB]",
+            "notes": "Formation of a urea linkage between an N-Boc protected lysine derivative and a PMB-protected glutamic acid derivative using triphosgene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TsOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, EtOAc, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCCCC[C@@H](C(=O)O[PMB])NC(=O)N[C@@H](CCC(=O)O[PMB])C(=O)O[PMB]",
+            "product_smiles": "[NH3+]CCCC[C@@H](C(=O)O[PMB])NC(=O)N[C@@H](CCC(=O)O[PMB])C(=O)O[PMB].[TsO-]",
+            "notes": "Acid-catalyzed deprotection of the Boc group to yield the free amine as a tosylate salt. PMB esters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Formation",
+            "reagents": "Et3N, DMF",
+            "reagent_smiles": "C1=C(C=NC(=C1)[18F])C(=O)OC2=C(C(=CC(=C2F)F)F)F",
+            "conditions": "45 °C",
+            "yield": "",
+            "reactant_smiles": "[PMB]OC(=O)CC[C@H](C(=O)O[PMB])NC(=O)N[C@@H](CCCC[NH3+])C(=O)O[PMB].[TsO-]",
+            "product_smiles": "[PMB]OC(=O)CC[C@H](C(=O)O[PMB])NC(=O)N[C@@H](CCCCNC(=O)C1=CC=C([18F])N=C1)C(=O)O[PMB]",
+            "notes": "Nucleophilic acyl substitution: amine acylation with pentafluorophenyl ester to form an amide bond.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "SNAr Radiofluorination",
+                    "reagents": "[18F]TBAF",
+                    "reagent_smiles": "",
+                    "conditions": "40 °C",
+                    "yield": "",
+                    "reactant_smiles": "C[N+](C)(C)C1=CC=C(C=N1)C(=O)OC2=C(C(=CC(=C2F)F)F)F.CC1=CC=C(C=C1)S(=O)(=O)[O-]",
+                    "product_smiles": "C1=C(C=NC(=C1)[18F])C(=O)OC2=C(C(=CC(=C2F)F)F)F",
+                    "notes": "SNAr reaction: displacement of the trimethylammonium leaving group by [18F] to form a radiofluorinated pyridine derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "anisole, TFA",
+            "reagent_smiles": "",
+            "conditions": "45 °C",
+            "yield": "",
+            "reactant_smiles": "[18F]c1ccc(C(=O)NCCCC[C@H](C(=O)OCC(c2ccc(OC)cc2))NC(=O)N[C@H](CCC(=O)OCC(c3ccc(OC)cc3))C(=O)OCC(c4ccc(OC)cc4))cn1",
+            "product_smiles": "[18F]c1ccc(C(=O)NCCCC[C@H](C(=O)O)NC(=O)N[C@H](CCC(=O)O)C(=O)O)cn1",
+            "notes": "Deprotection of p-methoxybenzyl (PMB) esters to carboxylic acids. The reaction uses anisole as a scavenger and TFA as the acid. All three PMB ester groups are cleaved.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "batzelline-d-vanderwal-2024",
+        "molecule_name": "Batzelline D",
+        "class": "Natural Product",
+        "author": "Vanderwal",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Curtius Rearrangement",
+            "reagents": "DPPA, Et3N, EtOH",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1c(OC)c(OC)ccc1",
+            "product_smiles": "CCOC(=O)Nc1c(OC)c(OC)ccc1",
+            "notes": "Conversion of a 2,3-dimethoxybenzoic acid to an ethyl (2,3-dimethoxyphenyl)carbamate via Curtius rearrangement with DPPA and triethylamine, trapped by ethanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amine deprotection / Carbamate hydrolysis",
+            "reagents": "KOH, EtOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "86%",
+            "reactant_smiles": "CCOC(=O)Nc1c(OC)c(OC)ccc1",
+            "product_smiles": "Nc1c(OC)c(OC)ccc1",
+            "notes": "Hydrolysis of an ethyl carbamate protecting group to reveal the primary amine, catalyzed by potassium hydroxide in ethanol under reflux conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "ICl, Na₂CO₃",
+            "reagent_smiles": "",
+            "conditions": "Et₂O, H₂O, -10 °C",
+            "yield": "69%",
+            "reactant_smiles": "COc1c(OC)c(N)ccc1",
+            "product_smiles": "Ic1ccc(N)c(OC)c1OC",
+            "notes": "Aromatic iodination of 2,3-dimethoxyaniline at the para position relative to the amino group using ICl.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Larock Indole Synthesis / Sonogashira Coupling & Cyclization",
+            "reagents": "Pd/C, K2CO3",
+            "reagent_smiles": "CC[Si](CC)(CC)C#CCCO[Si](CC)(CC)CC",
+            "conditions": "DMF, 125 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C(=C(C=C1)I)N)OC",
+            "product_smiles": "CC[Si](CC)(CC)C1=C(CCO[Si](CC)(CC)CC)C2=C(C(=C(C=C2)OC)OC)N1",
+            "notes": "Sonogashira coupling of an aryl iodide with a TES-protected alkyne, followed by intramolecular cyclization to form an indole ring. The TES groups are retained.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Silylation / Protecting Group Chemistry",
+                    "reagents": "TESCl, nBuLi",
+                    "reagent_smiles": "",
+                    "conditions": "THF, - 40 °C to rt",
+                    "yield": "65%",
+                    "reactant_smiles": "C#CCCO",
+                    "product_smiles": "[TES]C#CCCO[TES]",
+                    "notes": "Protection of a terminal alkyne and a primary alcohol as triethylsilyl (TES) ethers.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "[TES]C1=C(CCO[TES])C2=C(C(=C(C=C2)OC)OC)N1",
+            "product_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CCO)OC",
+            "notes": "Acid-catalyzed deprotection of two Triethylsilyl (TES) groups, one directly on the indole ring and one protecting a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alcohol Azidation",
+            "reagents": "DPPA, DBU",
+            "reagent_smiles": "",
+            "conditions": "toluene, 40 °C",
+            "yield": "84%",
+            "reactant_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CCO)OC",
+            "product_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CC[N-]=[N+]=N)OC",
+            "notes": "Conversion of a primary alcohol to an azide using DPPA and DBU.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Acetylation",
+            "reagents": "AcCl, tBuOK",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "COc1cc2c([nH]cc(CCN=[N+]=[N-])c2)c(OC)c1",
+            "product_smiles": "CC(=O)n1cc(CCN=[N+]=[N-])c2c1c(OC)c(OC)cc2",
+            "notes": "N-acetylation of the indole nitrogen using acetyl chloride and potassium tert-butoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "PIFA, TMSOTf, HFIP",
+            "reagent_smiles": "O=C(C(F)(F)F)OI(c1ccccc1)OC(=O)C(F)(F)F.C[Si](C)(C)OS(=O)(=O)C(F)(F)F.OC(C(F)(F)F)C(F)(F)F.O",
+            "conditions": "H2O, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC(=O)N1C=C(CC[N-]-[N+]#N)c2c1cc(OC)c(OC)c2",
+            "product_smiles": "O=C1C=C(OC)C2=CC3=C(N1)C=CN3CC[NH+]C2.C(=O)(C(F)(F)F)[O-]",
+            "notes": "An N-acetyl-3-(azidoethyl)indole derivative with dimethoxy groups undergoes oxidative cyclization to form a protonated tetracyclic system with a quinone and pyrrole moiety, using PIFA and TMSOTf.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Demethylation",
+            "reagents": "Nal",
+            "reagent_smiles": "",
+            "conditions": "acetone, reflux",
+            "yield": "48%",
+            "reactant_smiles": "COC1=C(C=O)C(=O)C2=C1C3=[NH+]CCC4=CNC=C43.O=C([O-])C(F)(F)F",
+            "product_smiles": "C1CNC2=CC(=O)C(=O)C3=C2C1=CN3",
+            "notes": "Iodide-mediated demethylation of an aryl methyl ether, accompanied by neutralization of the iminium.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Electrophilic Chlorination",
+            "reagents": "NCS",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "62%",
+            "reactant_smiles": "O=C1C=CC2=C(C3=CC[NH]C4CCC2[NH]34)C1=O",
+            "product_smiles": "O=C1C=C(Cl)C2=C(C3=CC[NH]C4CCC2[NH]34)C1=O",
+            "notes": "Chlorination of the quinone moiety of the tricyclic system.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "spirolaxine-methyl-ether-phillips-2007",
+        "molecule_name": "Spirolaxine Methyl Ether",
+        "class": "Natural Product",
+        "author": "Phillips",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Brown asymmetric allylation",
+            "reagents": "allylMgBr, (-)-(Ipc)2BOMe",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -100 °C",
+            "yield": "82%",
+            "reactant_smiles": "O=CCCC[OTBS]",
+            "product_smiles": "C=CC[C@H](O)CC[OTBS]",
+            "notes": "Asymmetric allylation of an aldehyde to form a chiral homoallylic alcohol with a TBS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection / Silyl Ether Formation",
+            "reagents": "TBSCl, NaH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CCC[C@@H](O)CCO[OTBS]",
+            "product_smiles": "C=CCC[C@@H](O[OTBS])CCO[OTBS]",
+            "notes": "The secondary alcohol is protected as a tert-butyldimethylsilyl (TBS) ether using TBSCl and NaH. The existing TBS ether, alkene, and stereochemistry are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Kulinkovich reaction",
+            "reagents": "CyMgBr, Ti(iPrO)4",
+            "reagent_smiles": "C[C@H]1CCC(=O)O1",
+            "conditions": "toluene",
+            "yield": "92%",
+            "reactant_smiles": "C=CC[C@@H](CCO[OTBS])[OTBS]",
+            "product_smiles": "C[C@H](O)CC[C](C)(C1CC1)CC[C@@H]([OTBS])CC[OTBS]",
+            "notes": "Kulinkovich cyclopropanation of an alkene with a methyl-substituted lactone to form a cyclopropanol and a spiro cyclopropane.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Radical cyclopropane ring opening, Ketone formation",
+            "reagents": "Fe(NO3)3, Bu3SnH",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "75%",
+            "reactant_smiles": "C[C@H](O)CCC(C)1CC(CC[C@H]([OTBS])CC[OTBS])C1",
+            "product_smiles": "C[C@@H](O)CCC(=O)CCC[C@H]([OTBS])CC[OTBS]",
+            "notes": "Radical-mediated cyclopropane ring opening with inversion of stereochemistry at the secondary alcohol and oxidation to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Spiroketalization, Deprotection",
+            "reagents": "HF",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "89%",
+            "reactant_smiles": "C[C@H](O)CC(=O)CCC[C@@H]([OTBS])CC[OTBS]",
+            "product_smiles": "OCC[C]1(OC2CCC[C@@H](C)O2)OCCC1",
+            "notes": "Deprotection of silyl ethers followed by intramolecular cyclization of three alcohol groups with a ketone to form a spiroketal.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Bromination (Appel Reaction)",
+            "reagents": "",
+            "reagent_smiles": "O=C1CCC(=O)N1Br.P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "OCCC[C@H]1OC2(CCC[C@@H](C)O2)CC1",
+            "product_smiles": "BrCCC[C@H]1OC2(CCC[C@@H](C)O2)CC1",
+            "notes": "Conversion of a primary alcohol to a primary bromide using NBS and triphenylphosphine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "B-alkyl Suzuki cross coupling",
+            "reagents": "Pd(OAc)2, Cy3P, Cs2CO3",
+            "reagent_smiles": "COC1=CC(=C2C(=C1)C(=O)O[C@H](CCB3OC(C)(C)C(C)(C)O3)C2)OC",
+            "conditions": "dioxane, 40 °C",
+            "yield": "",
+            "reactant_smiles": "BrCCC[C@H]1CCCOC2(OC[C@H](C)CC2)O1",
+            "product_smiles": "COC1=CC(=C2C(=C1)C(=O)O[C@H](CCCCC[C@H]3CCCOC4(OC[C@H](C)CC4)O3)C2)OC",
+            "notes": "Suzuki coupling of an alkyl bromide spiroketal with an aryl boronic ester.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Brown asymmetric crotylation",
+                    "reagents": "(-)-Ipc₂Ballyl",
+                    "reagent_smiles": "",
+                    "conditions": "Et₂O, -78 °C",
+                    "yield": "75%",
+                    "reactant_smiles": "COC1=CC(=CC(=C1)OC)C=O",
+                    "product_smiles": "C=CC[C@H](C1=CC(=CC(=C1)OC)OC)O",
+                    "notes": "Brown asymmetric crotylation",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Electrophilic Aromatic Bromination",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "CHCl3",
+                    "yield": "80%",
+                    "reactant_smiles": "C=CC[C@H](C1=CC(=CC(=C1)OC)OC)O",
+                    "product_smiles": "C=CC[C@H](C1=C(Br)C(=CC(=C1)OC)OC)O",
+                    "notes": "Electrophilic aromatic bromination of a resorcinol derivative. Bromination occurs at the activated position ortho to one methoxy group and the benzylic alcohol substituent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Carbamate formation",
+                    "reagents": "NaH, Et2NCOCl",
+                    "reagent_smiles": "[NaH].ClC(=O)N(CC)CC",
+                    "conditions": "THF",
+                    "yield": "82%",
+                    "reactant_smiles": "C=CC[C@H](C1=C(Br)C=C(OC)C=C1OC)O",
+                    "product_smiles": "C=CC[C@H](C1=C(Br)C=C(OC)C=C1OC)OC(=O)N(CC)CC",
+                    "notes": "Alcohol converted to diethylcarbamate using sodium hydride and N,N-diethylcarbamoyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Intramolecular Cyclization (Lactone Formation)",
+                    "reagents": "tBuLi, TsOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "79%",
+                    "reactant_smiles": "COc1cc(OC)c(Br)c([C@@H](C=CC)OC(=O)N(CC)CC)c1",
+                    "product_smiles": "COc1cc(OC)c2c1C(=O)O[C@@H](C=CC)c2",
+                    "notes": "Lithium-halogen exchange (or ortho-lithiation) followed by intramolecular attack of the organolithium on the carbamate carbonyl, leading to lactone formation. The stereochemistry at the benzylic carbon is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Hydroboration",
+                    "reagents": "9-BBN",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "C=CC[C@H]1C2=CC(=CC(=C2C(=O)O1)OC)OC",
+                    "product_smiles": "COC1=CC(=C2C(=C1)[C@H](CCCB3C4CCCC3CCC4)OC2=O)OC",
+                    "notes": "Hydroboration of a terminal alkene with 9-BBN to form an alkylborane.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fluggenine-c-han-2017",
+        "molecule_name": "Fluggenine C",
+        "class": "Natural Product",
+        "author": "Han",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection",
+            "reagents": "(Boc)2O, NaHCO3",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(C)(C)C.O=C([O-])O.[Na+]",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)[C@@H]1CCCN1",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@@H]1C(=O)O",
+            "notes": "Protection of the secondary amine of D-Proline with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation (Weinreb Amide Synthesis)",
+            "reagents": "CDI",
+            "reagent_smiles": "CNHOC",
+            "conditions": "DCM, rt",
+            "yield": "99% (2 steps)",
+            "reactant_smiles": "[Boc]N1CCC[C@H]1C(=O)O",
+            "product_smiles": "[Boc]N1CCC[C@H]1C(=O)N(C)OC",
+            "notes": "Formation of N-methoxy-N-methylamide from carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard reaction / Ketone formation",
+            "reagents": "",
+            "reagent_smiles": "C=CCC[Mg]Br",
+            "conditions": "THF, rt",
+            "yield": "97%",
+            "reactant_smiles": "[Boc]N1CCC[C@H]1C(=O)N(C)OC",
+            "product_smiles": "[Boc]N1CCC[C@H]1C(=O)CCCC=C",
+            "notes": "Grignard addition of 3-butenylmagnesium bromide to a Weinreb amide, forming a ketone. The Boc protecting group and stereochemistry are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ketone Addition / Rearrangement",
+            "reagents": "KOtBu, nBuLi",
+            "reagent_smiles": "COCC#C",
+            "conditions": "THF, -78 °C",
+            "yield": "70%",
+            "reactant_smiles": "C=CCCC(=O)[C@H]1CCCN1[Boc]",
+            "product_smiles": "C=CCC[C@@]([C@H]1CCCN1[Boc])(C(=O)C=C)O",
+            "notes": "Nucleophilic addition of a transformed methyl propargyl ether (presumably via deprotonation to an acetylide and subsequent rearrangement/oxidation to an acryloyl group) to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Ring-Closing Metathesis (RCM)",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "DCM, reflux",
+            "yield": "96%",
+            "reactant_smiles": "C=CCC[C@@]([C@H]1CCCN1[Boc])(C(=O)C=C)O",
+            "product_smiles": "[Boc]N1CC[C@@H](C1)[C@@]2(O)C(=O)C=CCC2",
+            "notes": "Intramolecular ring-closing metathesis using Grubbs' second-generation catalyst (HG-II) forms a bicyclic cyclohexenone from a diene. The Boc protecting group remains intact. The stereochemistry at the bridgehead carbons is preserved relative to the starting material.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Silylation / Enolization",
+            "reagents": "TMSOTf, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "64%",
+            "reactant_smiles": "[Boc]N1CC[C@@H](C1)[C@@]2(O)C(=O)C=CCC2",
+            "product_smiles": "[Boc]N1CC[C@@H](C1)[C@@]2([OTMS])C(=C([OTMS])CC=CC2)",
+            "notes": "Conversion of an alpha-hydroxy ketone to a bis-silyl enol ether, involving silylation of the alcohol and formation of a silyl enol ether from the ketone with concomitant double bond shift.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Rubottom oxidation",
+            "reagents": "DMDO",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CC[C@H](C1)[C@]2(O[Si](C)(C)C)C=C(O[Si](C)(C)C)CC=C2",
+            "product_smiles": "CC(C)(C)OC(=O)N1CC[C@H](C1)[C@]2(O[Si](C)(C)C)C=CCC(=O)[C@H]2O",
+            "notes": "Oxidation of a 1,4-cyclohexadienol bis-silyl ether to a cyclohexenone with a beta-hydroxyl group and a retained silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Rauhut-Currier Reaction",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@@H](C1)[C@@]2([TMS]O)C(=O)C=C[C@H](O)CC2",
+            "product_smiles": "[Boc]N1CC[C@@H]2[C@]1(O)C(=O)C=C([C@H]3CCC(=O)[C@@]4(O)[C@@H]5[Boc]N(CC[C@H]5C4))C[C@H](O)CC2",
+            "notes": "TMS-ether deprotection to an alcohol, followed by an intramolecular Rauhut-Currier reaction (Michael addition and cyclization) to form a complex bicyclic product.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac₂O, Et₃N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "[Boc]N1CC[C@@H](C1)C2(C[C@H](C=C([C@@H]3CC(=O)C(C[C@H]3O)(C4CCCN4[Boc])O)C2=O)O)O",
+            "product_smiles": "[OAc][C@H]1C=C([C@@H]2CC(=O)C(C[C@H]2OC(=O)C)(C3CCCN3[Boc])O)C(=O)C1(C[C@@H]4CCN(C4)[Boc])O",
+            "notes": "Selective di-acetylation of two hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification",
+            "reagents": "DCC",
+            "reagent_smiles": "CCOP(=O)(CC(=O)O)OCC",
+            "conditions": "THF, 90 °C",
+            "yield": "51%",
+            "reactant_smiles": "CC(=O)O[C@@H]1C=C([C@H]2CC(=O)[C@@](C[C@H]2OC(=O)C)([C@H]3CCCN(C3)C(=O)OC(C)(C)C)O)C(=O)[C@](C1)([C@H]4CCN(C4)C(=O)OC(C)(C)C)O",
+            "product_smiles": "CCOP(=O)(OCC)CC(=O)O[C@]([C@@]1(C(=O)C=C([C@H]2CC(=O)[C@@](C[C@H]2OC(=O)C)([C@H]3CCCN(C3)C(=O)OC(C)(C)C)OC(=O)CP(=O)(OCC)OCC)[C@@H]1OC(=O)C)[C@H]4CCN(C4)C(=O)OC(C)(C)C)",
+            "notes": "Two hydroxyl groups are esterified with diethyl phosphonoacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Homer-Wadsworth-Emmons olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "",
+            "conditions": "THF, rt then MeOH",
+            "yield": "52%",
+            "reactant_smiles": "CCOP(=O)(CC(=O)O[C@]1(C[C@H](C[C@@H]([C@H]2CC(=O)[C@@](C[C@H]2OC(=O)C)([C@H]3CCCN3[Boc])OC(=O)CP(=O)(OCC)OCC)C1=O)OC(=O)C)[C@H]4CCN(C4)[Boc])OCC",
+            "product_smiles": "[Boc]N1CC[C@@H](C1)[C@@]23C[C@H](C=C([C@H]4CC5=CC(=O)O[C@@]5(C[C@H]4O)[C@@]6(C)CCCN6[Boc])C3=CC(=O)O2)O",
+            "notes": "Double Homer-Wadsworth-Emmons olefination with subsequent hydrolysis of acetates to alcohols and lactonization.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@@H](C1)[C@@]23C[C@H](C=C([C@H]4CC5=CC(=O)O[C@@]5(C[C@H]4O)[C@@H]6CCCN6[Boc]])C3=CC(=O)O2)O",
+            "product_smiles": "[Boc]N1CC[C@@H](C1)[C@@]23C[C@H](C=C([C@H]4CC5=CC(=O)O[C@@]5(C[C@@H]6CCCN6[Boc]])[C@H]4[OMs]])C3=CC(=O)O2)[OMs]",
+            "notes": "Two hydroxyl groups are converted to mesylates using methanesulfonyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC[C@@]12[C@@H]3C[C@H](C[C@@H]([C@@H]4C(=CC(=O)O5)[C@H](O[Ms])[C@@]5(C[C@H]4C(=O)O2)[C@@]6(C3)[C@H]7CCC[N@@]7([Boc]))O[Ms])C",
+            "product_smiles": "[Boc]N1CCC[C@@]12[C@@H]3C[C@H](C[C@@H]([C@@H]4C(=CC(=O)O5)[C@H](O[Ms])[C@@]5(C[C@H]4C(=O)O2)[C@@]6(C3)[C@H]7CCCN7)O[Ms])C",
+            "notes": "Deprotection of one N-Boc group (top-right pyrrolidine) to yield an N-H amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Double Cyclization / Elimination",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "aq., THF, rt",
+            "yield": "62% (3 steps)",
+            "reactant_smiles": "C[S](=O)(=O)O[C@H]1[C@H]2C=C3C(=O)O[C@]34[C@H]2[C@H]5C=C([C@H]([C@@H]6C=C(C(=O)O[C@]78[C@H]6[C@H]9C[C@@H](N9)C[C@@H]8C[C@@H]7C[C@@H]5N%10CCC%10)[C@H]1OS(=O)(=O)C)C[C@@H]4N%11CCC%11)",
+            "product_smiles": "C1C[C@@H]2[C@@]34C[C@@H](C=C([C@H]5CC6=CC(=O)O[C@]76C[C@@H]5N8CCC[C@H]78)C4=CC(=O)O3)N2C1",
+            "notes": "Intramolecular double cyclization of a bis-mesylate precursor, likely involving double elimination and Michael additions, leading to the formation of Flueggenine C.",
+            "substeps": []
+        }
+    ]
+}

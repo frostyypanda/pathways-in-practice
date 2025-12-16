@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "zearalanone-sasaki-2024",
+        "molecule_name": "Zearalanone",
+        "class": "Natural Product",
+        "author": "Sasaki",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Carboxylic Acid Chlorination (Acyl Chloride Formation)",
+            "reagents": "thionyl chloride",
+            "reagent_smiles": "",
+            "conditions": "benzene, reflux",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(=C(C=C1)C(=O)O)OC",
+            "product_smiles": "COC1=CC(=C(C=C1)C(=O)Cl)OC",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation / Acylation",
+            "reagents": "benzene",
+            "reagent_smiles": "CCNCC",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(=C(C=C1)C(=O)Cl)OC",
+            "product_smiles": "CCN(CC)C(=O)C1=C(C=C(C=C1)OC)OC",
+            "notes": "Amide formation via the reaction of 2,4-dimethoxybenzoyl chloride with diethylamine. The overall yield reported for 2 steps is 87%.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Directed ortho-metalation, Formylation",
+            "reagents": "DMF, sBuLi, TMEDA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "96%",
+            "reactant_smiles": "CCN(CC)C(=O)C1=C(C=C(C=C1)OC)OC",
+            "product_smiles": "CCN(CC)C(=O)C1=C(OC)C=CC(OC)=C1C=O",
+            "notes": "Directed ortho-lithiation of 2,5-dimethoxy-N,N-diethylbenzamide followed by formylation with DMF at the 6-position.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrolysis / Intramolecular Cyclization",
+            "reagents": "HCl, H2O, AcOH",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "",
+            "reactant_smiles": "CCN(CC)C(=O)C1=C(OC)C=C(OC)C=C1C=O",
+            "product_smiles": "COC1=CC(=C2C(=C1)C(O)OC2=O)OC",
+            "notes": "Acid-catalyzed hydrolysis of N,N-diethylamide and intramolecular cyclization involving the aldehyde group to form a lactone and a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Wittig reaction (involving ring opening/elimination)",
+            "reagents": "Ph3PMeBr, tBuOK, 1,4-benzoquinone",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "COC1=CC(=C2C(=C1)C(O)OC2=O)OC",
+            "product_smiles": "C=CC1=CC(=CC(=C1C(=O)O)OC)OC",
+            "notes": "The lactone ring of the reactant is opened and eliminated to form a carboxylic acid and a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu Esterification",
+            "reagents": "PPh3, DEAD, 1,4-benzoquinone",
+            "reagent_smiles": "C[C@H](CCCCO[OTBS])O",
+            "conditions": "toluene, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "C=CC1=CC(=CC(=C1C(=O)O)OC)OC",
+            "product_smiles": "C=CC1=CC(=CC(=C1C(=O)O[C@@H](C)CCCCO[OTBS])OC)OC",
+            "notes": "A carboxylic acid is esterified with a secondary alcohol, resulting in an ester product with inversion of stereochemistry at the chiral center of the alcohol-derived part. The reaction is consistent with a Mitsunobu esterification using PPh3 and DEAD.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Metathesis",
+            "reagents": "Hoveyda-Grubbs Gen 2, 1,4-benzoquinone",
+            "reagent_smiles": "C=CCCCCI",
+            "conditions": "DCM, reflux",
+            "yield": "95%",
+            "reactant_smiles": "C=CC1=CC(=CC(=C1C(=O)O[C@@H](C)CCCCO[Si](C(C)C)(C(C)C)C(C)C)OC)OC",
+            "product_smiles": "CC(C)[Si](C(C)C)(C(C)C)OCCCC[C@@H](C)OC(=O)C1=C(C=C(C=C1\\C=C\\CCCI)OC)OC",
+            "notes": "Ring-opening/ring-closing metathesis (RORCM) reaction of an aryl vinyl ester with 1-iodo-5-hexene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "Jones reagent",
+            "reagent_smiles": "",
+            "conditions": "acetone, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "O=C(O[C@@H](C)CCCC[OTBS])c1c(OC)cc(/C=C/CCCI)c(OC)c1",
+            "product_smiles": "O=C(O[C@@H](C)CCCC(=O)O)c1c(OC)cc(/C=C/CCCI)c(OC)c1",
+            "notes": "Oxidation of the primary alcohol (protected as a TBS ether) to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acid Chloride Formation",
+            "reagents": "(COCl)2, DMF",
+            "reagent_smiles": "C(=O)(Cl)Cl.CN(C)C=O",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](CCCC(=O)O)OC(=O)C1=C(OC)C=C(OC)C=C1/C=C\\CCCI",
+            "product_smiles": "C[C@@H](CCCC(=O)Cl)OC(=O)C1=C(OC)C=C(OC)C=C1/C=C\\CCCI",
+            "notes": "Conversion of a carboxylic acid to an acid chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Thioesterification / Acyl Substitution",
+            "reagents": "NEt3",
+            "reagent_smiles": "C1=CC(=NC=C1)S",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "93% (2 steps)",
+            "reactant_smiles": "C[C@@H](CCCC(=O)Cl)OC(=O)c1c(OC)cc(OC)c(/C=C/CCCI)c1",
+            "product_smiles": "C[C@@H](CCCC(=O)SC1=NC=CC=C1)OC(=O)c2c(OC)cc(OC)c(/C=C/CCCI)c2",
+            "notes": "Acyl chloride reacts with 2-mercaptopyridine in the presence of triethylamine to form a thioester. The configuration of the chiral center and the trans-alkene remain unchanged. The methoxy groups are at positions 2 and 4 relative to the ester, and the alkene chain is at position 5 of the phenyl ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive Macrocyclization / Macrolactonization",
+            "reagents": "CrCl2, Py•(Me)imid•NiCl2, (Me)3tpy•NiI, Cp2ZrCl2, Zn",
+            "reagent_smiles": "",
+            "conditions": "DMA, THF, rt",
+            "yield": "62%",
+            "reactant_smiles": "C[C@@H](CCCC(=O)SC1=NC=CC=N1)OC(=O)C2=C(C=C(C=C2OC)OC)/C=C/CCCI",
+            "product_smiles": "COc1cc(OC)c2c(C=C/CCC(=O)CCC[C@@H](C)OC(=O)c2)c1",
+            "notes": "Intramolecular Ni/Cr-catalyzed reductive coupling of an alkenyl iodide and a thioester forms a 14-membered macrolactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Demethylation",
+            "reagents": "AlI3, TBAI, phloroglucinol",
+            "reagent_smiles": "",
+            "conditions": "toluene, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "COc1cc(OC)c2C(=O)O[C@H](C)CCCC(=O)CCC/C=C/c2c1",
+            "product_smiles": "Oc1cc(O)c2C(=O)O[C@H](C)CCCC(=O)CCC/C=C/c2c1",
+            "notes": "Demethylation of two aryl methoxy groups to form two aryl hydroxy groups on a macrocyclic lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd(OH)2",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1CCCC(=O)CCC/C=C/C2=C(C(=CC(=C2)O)O)C(=O)O1",
+            "product_smiles": "C[C@H]1CCCC(=O)CCCCCC2=CC(=CC(=C2C(=O)O1)O)O",
+            "notes": "Catalytic hydrogenation of an alkene in a macrolactone ring.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,302 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "stephacidin-b-myers-2005",
+        "molecule_name": "Stephacidin B",
+        "class": "Natural Product",
+        "author": "Myers",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "NaO^t-Bu, CH3I",
+            "reagent_smiles": "",
+            "conditions": "THF, >20 °C",
+            "yield": "38%",
+            "reactant_smiles": "O=C1CCC[C@@]2(OCCO2)CC1",
+            "product_smiles": "O=C1C(C)(C)CC[C@@]2(OCCO2)CC1",
+            "notes": "Double alpha-methylation of the ketone, forming a new chiral center with diastereotopic methyl groups. The spiroketal stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silylenol Ether Formation",
+            "reagents": "LiHMDS, Me3SiCl",
+            "reagent_smiles": "",
+            "conditions": "-78 - 23 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@]1(C)C[C@]2(CCC1=O)OCCO2",
+            "product_smiles": "C[C@@]1(C)C[C@]2(CC=C1[OTMS])OCCO2",
+            "notes": "Formation of a silylenol ether from a cyclic ketone using LiHMDS as a base and TMSCl as the silylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Palladium-catalyzed Oxidation",
+            "reagents": "Pd(OAc)2",
+            "reagent_smiles": "CC(=O)O[Pd](OC(=O)C)",
+            "conditions": "CH3CN, 23 °C",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "[OTMS]C1=CC[C@]2(OCCO2)CC[C@](C)(C)C1",
+            "product_smiles": "O=C1C=C[C@]2(OCCO2)C[C@](C)(C)CC1",
+            "notes": "Oxidation of a silyl enol ether to a cyclohexenone, with a spiro ketal and gem-dimethyl group remaining intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Stereoselective Ketone Reduction",
+            "reagents": "BH3.SMe2",
+            "reagent_smiles": "CB1N2CCC[C@@]2([C@H](O1)[Ph])[Ph]",
+            "conditions": "THF, 0 °C",
+            "yield": "98%",
+            "reactant_smiles": "C[C@@]1(C)C[C@]2(C=CC1=O)OCCO2",
+            "product_smiles": "C[C@@]1(C)C[C@]2(C=C[C@H]1O)OCCO2",
+            "notes": "Stereoselective ketone reduction of an enone using a chiral borane catalyst (CBS reduction type).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Protection of alcohol (Silyl ether formation)",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "CC(C)(C)[Si](C1=CC=CC=C1)C2=CC=CC=C2OS(=O)(=O)C(F)(F)F.CC1=NC(=CC=C1)C",
+            "conditions": "23 °C",
+            "yield": "99%",
+            "reactant_smiles": "O[C@@H]1C=C[C@@]2(OCCO2)C[C@](C)(C)C1",
+            "product_smiles": "[OTBDPS][C@@H]1C=C[C@@]2(OCCO2)C[C@](C)(C)C1",
+            "notes": "Protection of the secondary alcohol using TBDPSOTf to form a TBDPS silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "Me2CO, H2O, THF",
+            "yield": "98%",
+            "reactant_smiles": "[OTBDPS][C@H]1C=C[C@]2(OCCO2)[C@@](C)(C)C1",
+            "product_smiles": "[OTBDPS][C@H]1C=CC(=O)C[C@@](C)(C)C1",
+            "notes": "Hydrolysis of a cyclic acetal (1,3-dioxolane) to a ketone under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Conjugate Addition",
+            "reagents": "KHMDS",
+            "reagent_smiles": "CC(C)S(=O)(=O)OCC1=CCN(C(=O)OC(C)(C)C)C1",
+            "conditions": "-35 °C",
+            "yield": "70%",
+            "reactant_smiles": "O=C1C[C@](C)(C)[C@@H]([OTBDPS])C=C1",
+            "product_smiles": "O=C1[C@H](CC2CN([NBoc])CC=C2)C[C@](C)(C)[C@@H]([OTBDPS])C=C1",
+            "notes": "Conjugate addition of a chiral N-Boc-pyrrolidine-2-sulfonyl carbanion to a cyclohexenone with preserved stereocenters and newly formed one.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Lithiation-Formylation",
+                    "reagents": "n-BuLi, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -20 °C; then -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N1C=CCC1",
+                    "product_smiles": "[Boc]N1C=C(C=O)CC1",
+                    "notes": "Lithiation of 1-Boc-2,3-dihydropyrrole, followed by formylation with DMF to yield the 4-carbaldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "59%",
+                    "reactant_smiles": "[Boc]N1CCC=C1C=O",
+                    "product_smiles": "[Boc]N1CCC=C1CO",
+                    "notes": "Reduction of an aldehyde to a primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Sulfonate Ester Formation",
+                    "reagents": "iPrSO₂Cl, NEt₃",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂, 0 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "[Boc]N1CC=C(CO)CC1",
+                    "product_smiles": "[Boc]N1CC=C(COS(=O)(=O)C(C)C)CC1",
+                    "notes": "The primary alcohol is converted to an isopropyl sulfonate ester, commonly used as an activating group for further reactions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Strecker reaction",
+            "reagents": "TMSCN, HFIP",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "81%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C(=C(C[C@@H]2C(=O)C=C[C@H]([OTBDPS])C(C)(C)[C@@H]2)CC1)",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@@]1(C[C@@H]2C(=O)C=C[C@H]([OTBDPS])C(C)(C)[C@@H]2)C#N",
+            "notes": "A Strecker reaction converts the pyrroline ring to a pyrrolidine, incorporating a cyano group with the formation of a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Stereoselective Isomerization/Rearrangement",
+            "reagents": "KHMDS, PivOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "[Boc]N1CCC[C@@]1(C#N[C@H]2C(=O)C=C[C@H]([OTBDPS])CC(C)(C)C2)",
+            "product_smiles": "[Boc]N1CCC[C@@]1(C#N[C@@H]2C(=O)C=C[C@H]([OTBDPS])CC(C)(C)C2)",
+            "notes": "Stereoselective inversion of a stereocenter on the 7-membered ring using a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nitrile Hydrolysis",
+            "reagents": "EtOH, H2O, Platinum catalyst",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCC[C@@]1(C[C@H]2C(=O)C=C[C@H](C2(C)C)[OTBDPS])C#N",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@@]1(C[C@H]2C(=O)C=C[C@H](C2(C)C)[OTBDPS])C(=O)N",
+            "notes": "Hydrolysis of a nitrile group to a primary amide using a platinum-based catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Cyclization / Michael Addition / Reduction",
+            "reagents": "PhSH, NEt3",
+            "reagent_smiles": "Sc1ccccc1.CCN(CC)CC",
+            "conditions": "THF, 70 °C",
+            "yield": "95%",
+            "reactant_smiles": "[Boc]N1CCC[C@@]1(C(=O)N)C2C(=O)C=C[C@@H](C2(C)C)[OTBDPS]",
+            "product_smiles": "[Boc]N1CCC[C@@]12C(=O)N[C@H](O)[C@H](Sc3ccccc3)[C@@H]([OTBDPS])C(C)(C)C2",
+            "notes": "Conjugate addition of thiophenol to the cyclohexenone, followed by an intramolecular cyclization of the primary amide to form a lactam. The ketone is also reduced to a secondary alcohol. The pyrrolidine C-N bond is formed in the cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Alcohol Silylation / Protection",
+            "reagents": "TMSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "98%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCC[C@@]12C(=O)N[C@@H](O)[C@@H]3C[C@](C)(C)[C@@H](O[Si](C(C)(C)C)(c4ccccc4)c5ccccc5)[C@@H](Sc6ccccc6)C[C@@]23",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCC[C@@]12C(=O)N[C@@H](O[Si](C)(C)C)[C@@H]3C[C@](C)(C)[C@@H](O[Si](C(C)(C)C)(c4ccccc4)c5ccccc5)[C@@H](Sc6ccccc6)C[C@@]23",
+            "notes": "Silylation of a secondary hydroxyl group to a TMS ether using TMSOTf and 2,6-lutidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "N-Acylation, Elimination",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "ClC(=O)C(C)(c1ccccc1).CCN(CC)CC",
+            "conditions": "23 °C",
+            "yield": "92%",
+            "reactant_smiles": "[OTBDPS][C@@H]3[C@H](C[C@@]4([C@H](C[C@@]5(CCCN5)C(=O)N4([TMS])))[C@]3(C)C)[SPh]",
+            "product_smiles": "[OTBDPS][C@@H]3[C@H](C=C4[C@H](C[C@@]5(CCCN5)C(=O)N4([C](=O)[C](C)(c1ccccc1))))[C@]3(C)C",
+            "notes": "Acylation of the nitrogen (after deprotection of TMS) and elimination of the SPh group to form an enamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "",
+            "reagent_smiles": "CCC(C)(C)OOC(=O)c1ccccc1",
+            "conditions": "t-BuPh, 119 °C",
+            "yield": "62%",
+            "reactant_smiles": "[OTBDPS]O[C@@H]3[C@H](C=C4[C@H](C[C@@]5(CCCN5C(=O)C(C)(C)c1ccccc1)C(=O)N4)[C@@]3(C)C)S[Ph]",
+            "product_smiles": "[OTBDPS]O[C@@H]3C=C[C@]45C(C[C@@]6(CCCN6C4=O)C(=O)N5C)[C@]3(C)C",
+            "notes": "Intramolecular cyclization involving the cyclohexene nitrogen and pyrrolidine, likely forming a fused cyclic urea system, with the loss of SPh and the C(CH3)2Ph group. This is an oxidative reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "HF",
+            "reagent_smiles": "",
+            "conditions": "CH3CN, 35 °C",
+            "yield": "93%",
+            "reactant_smiles": "CC1(C)[C@H]2[C@@H]3[C@@H]4CCCN4C(=O)[C@H]2C(=C[C@H]1(C)O[OTBDPS])NC3=O",
+            "product_smiles": "CC1(C)[C@H]2[C@@H]3[C@@H]4CCCN4C(=O)[C@H]2C(=C[C@H]1(C)O)NC3=O",
+            "notes": "OTBDPS deprotection of a silyl ether using HF in acetonitrile to yield Stephacidin B.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 23 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)(O)C1=C[C@H]2C[C@H]3C4C(CCCN4C(=O)[C@H]32)NC(=O)1",
+            "product_smiles": "O=C(C)C1=C[C@H]2C[C@H]3C4C(CCCN4C(=O)[C@H]32)NC(=O)1",
+            "notes": "Oxidation of a tertiary alcohol to a ketone. The reactant's hydroxyl-bearing carbon, having two methyl groups, is achiral despite the wedged OH. The product's carbonyl carbon as drawn in the screenshot (with two methyl groups and a double bond, O=C(CH3)2-R) depicts a pentavalent carbon, which is chemically impossible. The provided product SMILES also implies this impossible structure. The corrected product SMILES represents a valid ketone (O=C(CH3)-R), implying the loss of one methyl group during oxidation (C20 reactant to C19 product), which is not a typical outcome for Dess-Martin oxidation of tertiary alcohols.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Alpha-iodination",
+            "reagents": "I2, DMAP, Pyr-CCl4",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1(C)C2CC34CCCN4C(=O)C2(C=CC1=O)NC3=O",
+            "product_smiles": "CC1(C)C2CC34CCCN4C(=O)C2(C=C(C1=O)I)NC3=O",
+            "notes": "Iodination of the alpha-carbon of the enone system. The provided SMILES strings correctly represent the connectivity, functional groups, and atom types. However, they do not encode the relative stereochemistry implied by the bold bonds in the structures shown in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Ullman coupling",
+            "reagents": "Pd2dba3, Cu",
+            "reagent_smiles": "CC1(C)OC=CC2=C1C=C(I)C(=C2)[N+](=O)[O-]",
+            "conditions": "DMSO, 70 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC1(C)C2CC34CCCN4C(=O)C2(C=C(C1=O)I)NC3=O",
+            "product_smiles": "CC1(C)C2CC34CCCN4C(=O)C2(C=C(C5=C(C6=C(C=C5)OC(C)(C)C=C6)[N+](=O)[O-])C1=O)NC3=O",
+            "notes": "Ullmann coupling reaction involving an iodoalkene and an iodoarene to form a new carbon-carbon bond.",
+            "substeps": [
+                {
+                    "step_id": "18.1",
+                    "reaction_type": "Williamson Ether Synthesis / SN2",
+                    "reagents": "TBAI, K2CO3",
+                    "reagent_smiles": "C#C[C@@H](Cl)C",
+                    "conditions": "Me2CO, 65 °C",
+                    "yield": "91%",
+                    "reactant_smiles": "Oc1ccc(I)c([N+](=O)[O-])c1",
+                    "product_smiles": "C#C[C@@H](C)Oc1ccc(I)c([N+](=O)[O-])c1",
+                    "notes": "Phenol alkylation with a secondary alkyl halide. The visual representation suggests retention of configuration at the chiral center, which is unusual for a typical SN2 reaction. Reactant: 4-iodo-5-nitrophenol. Reagent: (S)-3-chloro-1-butyne. Product: (S)-3-(4-iodo-5-nitrophenoxy)-1-butyne.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "18.2",
+                    "reaction_type": "Intramolecular cyclization / Thermal rearrangement",
+                    "reagents": "BHT, m-xylene",
+                    "reagent_smiles": "",
+                    "conditions": "140 °C",
+                    "yield": "78%",
+                    "reactant_smiles": "C#C[C@@](C)(C)OC1=C([N+](=O)[O-])C=CC(I)=C1",
+                    "product_smiles": "O1[C@@](C)(C)C=CC2=C1C=C(I)C([N+](=O)[O-])=C2",
+                    "notes": "Aryl propargyl ether cyclization via a thermal rearrangement in the presence of BHT (an antioxidant) to form a chromene derivative. The relative positions of iodine and nitro group on the aromatic ring shift with respect to the ether oxygen during the reaction.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "19",
+            "reaction_type": "Reductive rearrangement",
+            "reagents": "Zn, NH4Cl",
+            "reagent_smiles": "[Zn].[NH4+].[Cl-].CCO",
+            "conditions": "EtOH, 40 °C",
+            "yield": "49%",
+            "reactant_smiles": "CC1(C)C2CC3C(NC(=O)C4(CCCN4C3=O)C)=C(C(=O)C5=CC6=C(C=C5C2)OC(C)(C)C=C6)[N+](=O)[O-]",
+            "product_smiles": "CC1(C)C2CC3C(NC(=O)C4(CCCN4C3=O)C)=C(C=[N+]([O-])C5=CC6=C(C=C5C2)[O-]C(C)(C)C=C6)",
+            "notes": "Reductive transformation of a nitro-ketone to a nitrone, accompanied by a rearrangement/reduction of the chromene ring system to a charged enolate-like structure.",
+            "substeps": []
+        }
+    ]
+}

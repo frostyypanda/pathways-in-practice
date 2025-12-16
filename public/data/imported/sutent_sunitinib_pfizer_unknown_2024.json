@@ -1,0 +1,72 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sutent-sunitinib-pfizer-unknown-2024",
+        "molecule_name": "Sutent (Sunitinib Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Lactone aminolysis / Ring-opening",
+            "reagents": "H2N(CH2)2NEt2",
+            "reagent_smiles": "NCCN(CC)CC",
+            "conditions": "t-BuOMe, rt",
+            "yield": "93%",
+            "reactant_smiles": "C=C1CC(=O)O1",
+            "product_smiles": "CCN(CC)CCNC(=O)CCC(=O)C",
+            "notes": "Ring-opening of methylidene-oxetane-2-one (a β-lactone) with N,N-diethylethane-1,2-diamine to form an amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrogenation / Paal-Knorr Pyrrole Synthesis (likely mediated by hydrogenation conditions)",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "65-70 °C",
+            "yield": "77%",
+            "reactant_smiles": "CCN(CC)CCNC(=O)CC(=O)C",
+            "product_smiles": "Cc1c(C(=O)NCCN(CC)CC)c(C)c([nH]1)C(=O)OC(C)(C)C",
+            "notes": "Formation of a substituted pyrrole from a 1,4-diketone and a primary amine (intramolecular, likely via Paal-Knorr type cyclization under hydrogenation conditions).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis and Decarboxylation",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "99%",
+            "reactant_smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(C)c1[Boc]",
+            "product_smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(C)c1",
+            "notes": "Tert-butyl ester hydrolysis followed by decarboxylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Vilsmeier-Haack reaction",
+            "reagents": "ClCHNMe2+ Cl-",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(C)c1",
+            "product_smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(C)c(C=[N+](C)C)c1.[Cl-]",
+            "notes": "Electrophilic substitution (formylation followed by iminium formation) on the pyrrole ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Knoevenagel Condensation",
+            "reagents": "KOH",
+            "reagent_smiles": "O=C1NCC2=CC(F)=CC=C21",
+            "conditions": "",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "CCN(CC)CCNC(=O)C1=C(C)NC(=C1C)C=[N+](C)C.[Cl-]",
+            "product_smiles": "CCN(CC)CCNC(=O)C1=C(C)NC(=C1C)/C=C\\2/C3=CC(F)=CC=C3NC2=O",
+            "notes": "Knoevenagel condensation of a pyrrole iminium salt with 5-fluoroindolin-2-one to form Sunitinib. The reaction involves loss of dimethylamine and chloride ion.",
+            "substeps": []
+        }
+    ]
+}

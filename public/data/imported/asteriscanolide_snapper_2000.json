@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "asteriscanolide-snapper-2000",
+        "molecule_name": "Asteriscanolide",
+        "class": "Natural Product",
+        "author": "Snapper",
+        "year": 2000
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Organometallic complexation / Photochemical reaction",
+            "reagents": "Fe2(CO)9",
+            "reagent_smiles": "",
+            "conditions": "hv, benzene, 50 °C",
+            "yield": "64%",
+            "reactant_smiles": "COC(=O)C1=CC=COC1=O",
+            "product_smiles": "[Fe](C1=C(C(=O)OC)C=C1)(C(=O))(C(=O))(C(=O))",
+            "notes": "Photochemical formation of an η4-methyl cyclobutadiene-carboxylate iron tricarbonyl complex from methyl 2-oxopyran-3-carboxylate and diiron nonacarbonyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4, BF3•OEt2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "COC(=O)c1cccc1.[Fe](C#O)(C#O)(C#O)",
+            "product_smiles": "Cc1cccc1.[Fe](C#O)(C#O)(C#O)",
+            "notes": "Reduction of a methyl ester to a methyl group on a cyclopentadienyl iron tricarbonyl complex.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Aminomethylation / Mannich reaction",
+            "reagents": "H3PO4, CH3CO2H",
+            "reagent_smiles": "CN(C)CN(C)C",
+            "conditions": "100 °C",
+            "yield": "67%",
+            "reactant_smiles": "C1=C([Me])C=C1.[Fe](C#O)(C#O)(C#O)",
+            "product_smiles": "C1=C([Me])C(C[NMe2])=C1.[Fe](C#O)(C#O)(C#O)",
+            "notes": "Aminomethylation of (η4-1-methylcyclobutadiene)iron tricarbonyl using N,N,N',N'-tetramethylmethylenediamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cycloaddition / Etherification / Organometallic Reaction",
+            "reagents": "MeI, NaH",
+            "reagent_smiles": "C[C@@]1(O)C=CC[C@H]1",
+            "conditions": "THF/DMF, 50%",
+            "yield": "50%",
+            "reactant_smiles": "C[C]1=C[C](CCN(C)C)=[C]1[Fe](C(=O))(C(=O))(C(=O))",
+            "product_smiles": "[Fe](C(=O))(C(=O))(C(=O))C1=C(C)C(=C1C[C@H]2OC(C)(C)C=CC2)",
+            "notes": "Formation of a fused dihydropyran ring system on the cyclobutadiene-iron tricarbonyl complex, likely via a cyclization involving the dimethylaminoethyl group and the cyclopentenol.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Silyl Enol Ether Formation",
+                    "reagents": "LDA, TMSCl, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC1(C)CCCC1=O",
+                    "product_smiles": "CC1(C)C=C([OTMS])CCC1",
+                    "notes": "Ketone converted to silyl enol ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Saegusa oxidation",
+                    "reagents": "Pd(OAc)2, benzoquinone",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C[C@@]1(C)CCC=C1[OTMS]",
+                    "product_smiles": "C[C@@]1(C)CC=CC1=O",
+                    "notes": "Saegusa oxidation of a silyl enol ether (OTMS protected enol) to an alpha,beta-unsaturated ketone (enone).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Corey-Bakshi-Shibata reduction",
+                    "reagents": "BH3.THF",
+                    "reagent_smiles": "C[B]1OC([C@@H](C2=CC=CC=C2)C3=CC=CC=C3)N4CCC[C@H]41",
+                    "conditions": "THF",
+                    "yield": "56%",
+                    "reactant_smiles": "CC1(C)C=CCC(=O)C1",
+                    "product_smiles": "CC1(C)C=CC[C@H](O)C1",
+                    "notes": "Asymmetric reduction of a ketone to a secondary alcohol using an oxazaborolidine catalyst (Corey-Bakshi-Shibata reduction). The stereochemistry of the newly formed hydroxyl group is dashed (down).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Demetallation & Intramolecular Diels-Alder Reaction",
+            "reagents": "Me3NO",
+            "reagent_smiles": "C[N+](C)(C)[O-].CC(=O)C",
+            "conditions": "acetone, 56 °C",
+            "yield": "63%",
+            "reactant_smiles": "C[C@@]1(C)O[C@@H]2C=C[C@@H]12OCC=C(C)C=C",
+            "product_smiles": "C[C@H]1(C)O[C@@H]2[C@H]3[C@@H]4[C@H]2C=C([C@H]34)[C@H](C)C1",
+            "notes": "The iron tricarbonyl (Fe(CO)3) complex, coordinated to the diene, is removed (oxidative demetallation) under the reaction conditions. The liberated diene then undergoes an intramolecular Diels-Alder (4+2 cycloaddition) reaction with the alkene in the dihydrofuran ring, forming a complex polycyclic product. The reactant SMILES represents the organic ligand, as standard SMILES string representation for such organoiron eta-4 complexes is not universally supported or canonical.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Olefin Metathesis / Ring Expansion",
+            "reagents": "CH2=CH2, benzene",
+            "reagent_smiles": "Cl[Ru](Cl)(P(C1CCCCC1)(C2CCCCC2)C3CCCCC3)(C=C4C=CC=CC=C4)C5=NC(N5C6=C(C)C=C(C)C=C6C)C7=C(C)C=C(C)C=C7C",
+            "conditions": "50-80 °C",
+            "yield": "74%",
+            "reactant_smiles": "C[C@@]1(C)OC[C@@H]3C2C4C1C[C@H]2C3=CC4",
+            "product_smiles": "C[C@@]1(C)OC[C@@H]3[C@H]2C4C1CC(=CC(C)=CCC2)C4",
+            "notes": "Intramolecular ring-opening/ring-closing metathesis of a cyclobutene with a tethered alkene, facilitated by Grubbs 2nd generation catalyst and ethylene, leading to a bicyclic ether with an 8-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "79%",
+            "reactant_smiles": "C[C@@]1(C)C[C@H]2[C@@H]3OC[C@H]2C1C3/C=C/CCC/C(C)=C\\C3",
+            "product_smiles": "C[C@@]1(C)C[C@H]2[C@@H]3OC(=O)[C@H]2C1C3/C=C/CCC/C(C)=C\\C3",
+            "notes": "Oxidation of a cyclic ether (methylene group) to a lactone (carbonyl group) using PCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alkene Reduction",
+            "reagents": "Red-Al, CuBr",
+            "reagent_smiles": "CC(=O)O",
+            "conditions": "THF, AcOH",
+            "yield": "89%",
+            "reactant_smiles": "CC1(C)[C@H]2CC3[C@H]4OC(=O)[C@@H]5[C@H]4C2(C1)[C@H]5C=CC[C@H](C)C=C3",
+            "product_smiles": "CC1(C)[C@H]2CC3[C@H]4OC(=O)[C@@H]5[C@H]4C2(C1)[C@H]5CCCC[C@H](C)CCC3",
+            "notes": "Reductive saturation of two double bonds in the 10-membered ring of Asteriscanolide using Red-Al and CuBr.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "60%",
+            "reactant_smiles": "C[C@H]1CC[C@@H]2[C@H]([C@@H]3OC(=O)C3[C@H](O)[C@@H]2C(C)(C)C)C(C)[C@@H]1C",
+            "product_smiles": "C[C@H]1CC[C@@H]2[C@H]([C@@H]3OC(=O)C3C(=O)[C@@H]2C(C)(C)C)C(C)[C@@H]1C",
+            "notes": "Oxidation of a secondary alcohol to a ketone using PCC.",
+            "substeps": []
+        }
+    ]
+}

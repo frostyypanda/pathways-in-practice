@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "houttuynoid-b-schmalz-2016",
+        "molecule_name": "Houttuynoid B",
+        "class": "Natural Product",
+        "author": "Schmalz",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective Etherification / Alkylation (Williamson ether synthesis variant)",
+            "reagents": "BnBr, K2CO3, KI",
+            "reagent_smiles": "",
+            "conditions": "acetone, reflux",
+            "yield": "",
+            "reactant_smiles": "O=CC1=CC(O)=C(O)C=C1",
+            "product_smiles": "O=CC1=CC(O)=C(O[Bn])C=C1",
+            "notes": "Selective O-alkylation of one of the phenolic hydroxyl groups with benzyl bromide (BnBr) in the presence of base (K2CO3) and iodide (KI), forming a benzyl ether. The other hydroxyl group and the aldehyde group remain untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "ICl, Pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, r.t.",
+            "yield": "86%",
+            "reactant_smiles": "[OBn]c1c(O)ccc(C=O)c1",
+            "product_smiles": "[OBn]c1c(O)c(I)cc(C=O)c1",
+            "notes": "Electrophilic iodination of a phenolic substrate with ortho-hydroxyl and meta-aldehyde groups, leading to iodination at the position ortho to the hydroxyl group and adjacent to the benzyloxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "Pd(PPh3)2Cl2, CuI, NEt3",
+            "reagent_smiles": "C#CCCCCCCCC",
+            "conditions": "DMF, 60 °C",
+            "yield": "51%",
+            "reactant_smiles": "O=Cc1cc([OBn])c(O)c(I)c1",
+            "product_smiles": "CCCCCCCCCc1oc2ccc([OBn])c(C=O)c2c1",
+            "notes": "Intramolecular Sonogashira coupling of an o-iodophenol with a terminal alkyne, followed by cyclization to form a benzofuran derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Pinnick oxidation",
+            "reagents": "THF/water",
+            "reagent_smiles": "[Na+].[O-]P(=O)(O)O.[Na+].[O-]Cl=O.CC=C(C)C",
+            "conditions": "40 °C",
+            "yield": "71%",
+            "reactant_smiles": "CCCCCCCCCc1cc2c(oc1)ccc([OBn])c2C=O",
+            "product_smiles": "CCCCCCCCCc1cc2c(oc1)ccc([OBn])c2C(=O)O",
+            "notes": "Aldehyde oxidation to carboxylic acid",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Carboxylic acid activation / Esterification",
+            "reagents": "HOBt, EDC HCl",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, r.t.",
+            "yield": "87%",
+            "reactant_smiles": "CCCCCCCCC1=CC2=C(C=CC(=C2O1)OCC3=CC=CC=C3)C(=O)O",
+            "product_smiles": "CCCCCCCCC1=CC2=C(C=CC(=C2O1)OCC3=CC=CC=C3)C(=O)ON4C5=C(C=CC=C5)N=N4",
+            "notes": "A carboxylic acid is activated using EDC and HOBt, forming a benzotriazol-1-yl ester. The 'n-H19C9' group represents a nonyl chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Esterification / Transesterification (Benzotriazole as leaving group)",
+            "reagents": "NaH",
+            "reagent_smiles": "CC(=O)OC[C@@H]1OC([C@H](OCC(=O)C2=C(OCC3=CC=CC=C3)C=C(OCC4=CC=CC=C4)C=C2OCC5=CC=CC=C5)[C@H](OC(=O)C)[C@@H](OC(=O)C)[C@H](OC(=O)C))C1",
+            "conditions": "THF, 0 °C",
+            "yield": "76%",
+            "reactant_smiles": "CCCCCCCCC1=CC2=C(C=CC(=C2O1)OCC3=CC=CC=C3)C(=O)ON4C5=C(C=CC=C5)N=N4",
+            "product_smiles": "CCCCCCCCC1=CC2=C(C(=CC=C2C(=O)OC3=CC(=CC(=C3C(=O)CO[C@H]4[C@H](OC(=O)C)[C@@H](OC(=O)C)[C@H](OC(=O)C)[C@@H](COC(=O)C)O4)OCC5=CC=CC=C5)OCC6=CC=CC=C6)OCC7=CC=CC=C7)O1",
+            "notes": "Esterification of an activated ester (benzotriazole ester) with a phenolic hydroxyl (after deprotection from benzyl ether) on a complex sugar derivative.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "O-alkylation (Williamson Ether Synthesis)",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "BrCc1ccccc1",
+                    "conditions": "DMF, 70 °C",
+                    "yield": "",
+                    "reactant_smiles": "Oc1cc(O)c2c(c1)oc([Ph])cc2=O",
+                    "product_smiles": "[Bn]Oc1cc(O[Bn])c2c(c1)oc([Ph])cc2=O",
+                    "notes": "Both phenolic hydroxyl groups are alkylated with benzyl bromide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Chromone ring opening / Acetylation",
+                    "reagents": "KOH, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "diethylene glycol, 120 °C",
+                    "yield": "43% (2 steps)",
+                    "reactant_smiles": "[Bn]Oc1cc([Bn]O)c2c(=O)c=c([Ph])oc2c1",
+                    "product_smiles": "[Bn]Oc1cc(O)c(C(=O)C)c([Bn]O)c1",
+                    "notes": "Decyclization of a chromone derivative, with replacement of the phenyl group at C-2 by an acetyl group and formation of a phenolic hydroxyl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Silylation / Silyl enol ether formation",
+                    "reagents": "LDA, TMSCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(=O)c1c(O)cc(O[Bn])cc1O[Bn]",
+                    "product_smiles": "C=C(O[TMS])c1c(O[TMS])cc(O[Bn])cc1O[Bn]",
+                    "notes": "Formation of a silyl enol ether from a ketone and silylation of a phenol using LDA as a base and TMSCl as the silylating agent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Rubottom oxidation",
+                    "reagents": "mCPBA, NaHCO3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=C(C1=C(O[TMS])C=C(O[Bn])C=C1O[Bn])O[TMS]",
+                    "product_smiles": "[TMS]OCC(=O)C1=C(O[TMS])C=C(O[Bn])C=C1O[Bn]",
+                    "notes": "Rubottom oxidation of a silyl enol ether (Ar-C(OTMS)=CH2) to an alpha-siloxy ketone (Ar-C(=O)CH2OTMS).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Deprotection (Desilylation)",
+                    "reagents": "pTsOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF/water, r.t.",
+                    "yield": "68%",
+                    "reactant_smiles": "[OTMS]CC(=O)C1=C([OTMS])C=C([OBn])C=C1[OBn]",
+                    "product_smiles": "OCCC(=O)C1=C(O)C=C([OBn])C=C1[OBn]",
+                    "notes": "Hydrolysis of two trimethylsilyl (TMS) ether groups to hydroxyl groups using p-toluenesulfonic acid (pTsOH).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.6",
+                    "reaction_type": "Glycosylation / O-Alkylation",
+                    "reagents": "",
+                    "reagent_smiles": "F[B](F)(F).CCOCC",
+                    "conditions": "CH2Cl2, r.t.",
+                    "yield": "62%",
+                    "reactant_smiles": "O=C(CO)c1c(O)cc(O[Bn])cc1O[Bn]",
+                    "product_smiles": "[Ac]OC[C@@H]1O[C@H](OCC(=O)c2c(O[Bn])cc(O[Bn])cc2O[Bn])[C@H](O[Ac])[C@@H](O[Ac])[C@@H]1O[Ac]",
+                    "notes": "Glycosylation of the primary alcohol with a sugar derivative, accompanied by benzylation of the phenolic hydroxyl group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Baker-Venkataraman rearrangement",
+            "reagents": "K2CO3, TBAB",
+            "reagent_smiles": "",
+            "conditions": "toluene, 70 °C",
+            "yield": "57%",
+            "reactant_smiles": "CCCCCCCCC1=CC2=C(C(=CC=C2C(=O)OC3=CC(=CC(=C3C(=O)CO[C@H]4[C@@H]([C@H]([C@@H]([C@@H](CO[Ac])O4)[Ac])[Ac])[Ac])O[Bn])O[Bn])O[Bn])O1",
+            "product_smiles": "CCCCCCCCC1=CC2=C(C(=CC=C2C3=C(C(=O)C4=C(C=C(C=C4O3)O[Bn])O)O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](CO[Ac])O5)[Ac])[Ac])[Ac])O[Bn])O1",
+            "notes": "Intramolecular Baker-Venkataraman rearrangement of an aryl ester to a chromone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Debenzylation",
+            "reagents": "Pd-C, H2",
+            "reagent_smiles": "",
+            "conditions": "THF/EtOH, r.t.",
+            "yield": "",
+            "reactant_smiles": "CCCCCCCCC1=CC2=C(C(=CC=C2C3=C(C(=O)C4=C(C=C(C=C4O3)[OBn])O)O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](CO[OAc])O5)[OAc])[OAc])[OAc])[OBn])O1",
+            "product_smiles": "CCCCCCCCC1=CC2=C(C(=CC=C2C3=C(C(=O)C4=C(C=C(C=C4O3)O)O)O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](CO[OAc])O5)[OAc])[OAc])[OAc])O)O1",
+            "notes": "Catalytic hydrogenation to deprotect two benzyl ethers to hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis (Deprotection)",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH, r.t.",
+            "yield": "99% (2 steps)",
+            "reactant_smiles": "CCCCCCCCC1=CC2=C(C(=CC=C2C3=C(C(=O)C4=C(C=C(C=C4O3)O)O)O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](COC(=O)C)O5)OC(=O)C)OC(=O)C)OC(=O)C)O)O1",
+            "product_smiles": "CCCCCCCCC1=CC2=C(C(=CC=C2C3=C(C(=O)C4=C(C=C(C=C4O3)O)O)O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](CO)O5)O)O)O)O)O1",
+            "notes": "Hydrolysis of tetra-O-acetylglucopyranoside using sodium methoxide in methanol to yield the deprotected glucopyranoside.",
+            "substeps": []
+        }
+    ]
+}

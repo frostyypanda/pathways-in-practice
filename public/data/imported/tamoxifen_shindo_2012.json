@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tamoxifen-shindo-2012",
+        "molecule_name": "Tamoxifen",
+        "class": "Natural Product",
+        "author": "Shindo",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acid Chloride Formation",
+            "reagents": "PCl5",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(O)CC1=CC=C(Br)C=C1",
+            "product_smiles": "O=C(Cl)CC1=CC=C(Br)C=C1",
+            "notes": "The carboxylic acid is converted to an acyl chloride using phosphorus pentachloride (PCl5).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Friedel-Craft acylation",
+            "reagents": "SnCl4",
+            "reagent_smiles": "COC1=CC=CC=C1",
+            "conditions": "",
+            "yield": "78%",
+            "reactant_smiles": "C1=C(C=CC(=C1)Br)CC(=O)Cl",
+            "product_smiles": "COC1=CC=C(C=C1)C(=O)CC2=CC=C(C=C2)Br",
+            "notes": "Friedel-Crafts acylation of anisole with 2-(4-bromophenyl)acetyl chloride to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alkylation",
+            "reagents": "NaH",
+            "reagent_smiles": "CCI",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "COC1=CC=C(C=C1)C(=O)CC2=CC=C(C=C2)Br",
+            "product_smiles": "CCC(C1=CC=C(C=C1)Br)C(=O)C2=CC=C(C=C2)OC",
+            "notes": "Alkylation of the ketone alpha-carbon with ethyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "O-Demethylation",
+            "reagents": "DMF",
+            "reagent_smiles": "CCS[Li]",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "CCC(C1=CC=C(C=C1)Br)C(=O)C2=CC=C(C=C2)OC",
+            "product_smiles": "CCC(C1=CC=C(C=C1)Br)C(=O)C2=CC=C(C=C2)O",
+            "notes": "O-demethylation of an aryl methyl ether to an aryl phenol using ethylthiolithium.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "",
+            "reagent_smiles": "CN(C)CCCl",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "CCC(C1=CC=C(C=C1)Br)C(=O)C2=CC=C(C=C2)O",
+            "product_smiles": "CCC(C1=CC=C(C=C1)Br)C(=O)C2=CC=C(C=C2)OCCN(C)C",
+            "notes": "Alkylation of the phenolic hydroxyl group with a chloroamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Grignard Reaction",
+            "reagents": "PhMgBr",
+            "reagent_smiles": "c1ccccc1[Mg]Br",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC(C1=CC=C(C=C1)Br)C(=O)C2=CC=C(C=C2)OCCN(C)C",
+            "product_smiles": "CCC(C1=CC=C(C=C1)Br)C(O)(c3ccccc3)C2=CC=C(C=C2)OCCN(C)C",
+            "notes": "Grignard addition of phenylmagnesium bromide to a ketone to form a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dehydration",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "84%",
+            "reactant_smiles": "CN(C)CCOc1ccc(C(O)(c2ccccc2)C(CC)c3ccc(Br)cc3)cc1",
+            "product_smiles": "CN(C)CCOc1ccc(C(=C(CC)c2ccc(Br)cc2)c3ccccc3)cc1",
+            "notes": "Dehydration of a tertiary alcohol to a tetrasubstituted alkene (E/Z mixture) under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation / Reductive Debromination",
+            "reagents": "H₂, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "92%",
+            "reactant_smiles": "CC/C(=C(\\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=C(C=C3)Br",
+            "product_smiles": "CC/C(=C(\\C1=CC=CC=C1)/C2=CC=C(C=C2)OCCN(C)C)/C3=CC=CC=C3",
+            "notes": "Reductive debromination of a brominated tamoxifen precursor to tamoxifen.",
+            "substeps": []
+        }
+    ]
+}

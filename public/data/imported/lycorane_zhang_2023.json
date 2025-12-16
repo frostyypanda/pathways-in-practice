@@ -1,0 +1,60 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycorane-zhang-2023",
+        "molecule_name": "Lycorane",
+        "class": "Natural Product",
+        "author": "Zhang",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-alkylation",
+            "reagents": "NaH",
+            "reagent_smiles": "BrC1=CC2=C(OCO2)C=C1CBr",
+            "conditions": "THF, reflux",
+            "yield": "100%",
+            "reactant_smiles": "CC(=O)NC1=C(Cl)C=CC=C1",
+            "product_smiles": "CC(=O)N(CC1=C(Br)C=C2C(=C1)OCO2)C3=C(Cl)C=CC=C3",
+            "notes": "N-alkylation of the acetamide nitrogen with a dibromo-benzodioxole derivative. One bromine atom remains on the benzodioxole ring after the reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Palladium-Catalyzed Cyclization (Lycorane Synthesis)",
+            "reagents": "Pd(PCy3)2, PivOH, Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "Mesitylene, 140°C",
+            "yield": "81%",
+            "reactant_smiles": "CC(=O)N(CC1=C(C=C2C(=C1)OCO2)Br)C3=C(C=CC=C3)Cl",
+            "product_smiles": "C1=CC2=C3C(=C1)CC(=O)N3CC4=CC5=C(C=C42)OCO5",
+            "notes": "Intramolecular palladium-catalyzed cascade cyclization reaction involving C-C and C-N bond formation, leading to a polycyclic lactam structure (Lycorane) from a brominated benzodioxole, an N-acylamine, and a chlorinated phenyl group. One carbon atom (from the acetyl methyl group) is lost during the reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Catalytic Hydrogenation / Aromatic Ring Reduction",
+            "reagents": "Rh/C, H2",
+            "reagent_smiles": "",
+            "conditions": "Trifluoroethanol",
+            "yield": "61%",
+            "reactant_smiles": "C1=CC2=C3C(=C1)CC(=O)N3CC4=CC5=C(C=C42)OCO5",
+            "product_smiles": "O1COC1=C2C=C(C=C2)C[C@H]3N4C(=O)C[C@H]5[C@@H]4CC[C@H]5[C@H]3",
+            "notes": "Selective reduction of the aromatic ring (top-left) to a cyclohexane ring, establishing three new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "95%",
+            "reactant_smiles": "O1COC2=CC3=C(C=C21)C[N]4C(=O)C[C@H]5[C@@H]3[C@H]4C[C@@H]5",
+            "product_smiles": "O1COC2=CC3=C(C=C21)C[N]4CCC[C@H]5[C@@H]3[C@H]4C[C@@H]5",
+            "notes": "Reduction of a cyclic amide (lactam) to a cyclic amine using lithium aluminum hydride.",
+            "substeps": []
+        }
+    ]
+}

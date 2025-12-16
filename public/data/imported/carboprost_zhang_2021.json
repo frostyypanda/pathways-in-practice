@@ -1,0 +1,194 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "carboprost-zhang-2021",
+        "molecule_name": "Carboprost",
+        "class": "Natural Product",
+        "author": "Zhang",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Beta-keto amide synthesis",
+            "reagents": "LDA",
+            "reagent_smiles": "CC(=O)N(C)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "67%",
+            "reactant_smiles": "C/C=C/C(=O)Cl",
+            "product_smiles": "C/C=C/C(=O)CC(=O)N(C)OC",
+            "notes": "Synthesis of a beta-keto Weinreb amide via addition of N-methoxy-N-methylacetamide enolate to an acyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Hydrogenation (Ketone Reduction)",
+            "reagents": "[Ir(COD)Cl]2, H2",
+            "reagent_smiles": "CC(C)(C)[C@@H]1OC(=N1)C[C@@H](C)N[C@H]2C3=CC=CC=C3[Fe]4(C2=C4)C5=CC=CC=C5P(c6ccccc6)c7ccccc7",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C=C/C(=O)CC(=O)N(C)OC",
+            "product_smiles": "C/C=C/[C@@H](CC(=O)N(C)OC)O",
+            "notes": "Asymmetric reduction of a β-keto Weinreb amide to a chiral β-hydroxy Weinreb amide using a chiral iridium catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "C/C=C/[C@@H](CC(=O)N(C)OC)O",
+            "product_smiles": "C/C=C/[C@@H](CC(=O)N(C)OC)[OTBS]",
+            "notes": "Protection of a secondary alcohol with TBSCl to form a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alkynyl Ketone Synthesis",
+            "reagents": "nBuLi",
+            "reagent_smiles": "C#CC1OCCO1",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "C/C=C/[C@@H](CC(=O)N(C)OC)[OTBS]",
+            "product_smiles": "C/C=C/[C@@H](CC(=O)C#CC1OCCO1)[OTBS]",
+            "notes": "Nucleophilic addition of an alkynyl lithium (generated from 1-prop-2-ynyl-1,3-dioxolane and nBuLi) to a Weinreb amide to form an ynone. The TBS protecting group and alkene stereochemistry are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Cycloisomerization / Pauson-Khand type reaction",
+            "reagents": "[Rh(COD)Cl]2, (S)-BINAP, AgSbF6",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "C/C=C/[C@@H](CC(=O)C#CC1OCCO1)[OTBS]",
+            "product_smiles": "O=C1C(=C/C2OCCO2)[C@H](C=C)[C@@H]([OTBS])CC1",
+            "notes": "Rhodium-catalyzed intramolecular cycloisomerization to form a bicyclic cyclopentenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "1,4-Reduction (Hydrosilylation)",
+            "reagents": "Pd(PPh3)4, Ph2SiH2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1/C(=C/C2OCCO2)/C(=O)C[C@H]1[OTBS]",
+            "product_smiles": "C=C[C@@H]1[C@H](CC2OCCO2)C(=O)C[C@H]1[OTBS]",
+            "notes": "Stereoselective 1,4-reduction of an α,β-unsaturated ketone via hydrosilylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Stereoselective Ketone Reduction",
+            "reagents": "LiBHEt₃",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1[C@@H](CC2OCCO2)C(=O)C[C@H]1[OTBS]",
+            "product_smiles": "C=C[C@H]1[C@@H](CC2OCCO2)[C@@H](O)C[C@H]1[OTBS]",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol using lithium triethylborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetal hydrolysis, TBS deprotection, Intramolecular lactol formation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]1[C@@H](C[C@H](O)[C@@H](O[TBS])C1)CC2OCCO2",
+            "product_smiles": "C=C[C@@H]1[C@@H]2C[C@H](O)[C@@H](O)C1O[C@H](O?)C2",
+            "notes": "Hydrolysis of a 1,3-dioxolane acetal and deprotection of a TBS ether, followed by intramolecular cyclization of the intermediate aldehyde with a newly formed hydroxyl group to yield a fused 5-membered lactol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Stereoselective C-C bond formation / Vinyl addition",
+            "reagents": "HG-II",
+            "reagent_smiles": "CCCCC[C@@](C)(C=C)O",
+            "conditions": "",
+            "yield": "66%",
+            "reactant_smiles": "O[C@H]1CC(O)O[C@H]2C[C@@H](C=C)[C@H]12",
+            "product_smiles": "O[C@H]1CC(O)O[C@H]2C[C@@H](/C=C/[C@](O)(C)CCCCC)[C@H]12",
+            "notes": "Stereoselective addition of a carbon chain (derived from HG-II reagent) to the terminal vinyl group of the reactant, forming a new C-C bond and a trans double bond.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Carboxylation of Alkyne",
+                    "reagents": "Cp2ZrCl2, AlMe3, H2O",
+                    "reagent_smiles": "CCOC(=O)Cl",
+                    "conditions": "DCM",
+                    "yield": "41%",
+                    "reactant_smiles": "C#CCCCCC",
+                    "product_smiles": "CCOC(=O)/C=C(\\C)CCCC",
+                    "notes": "Zirconium-catalyzed hydrocarboxylation of a terminal alkyne to form an alpha,beta-unsaturated ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Reduction (Ester to Alcohol)",
+                    "reagents": "",
+                    "reagent_smiles": "[AlH](CC(C)C)CC(C)C",
+                    "conditions": "toluene",
+                    "yield": "80%",
+                    "reactant_smiles": "CCCCOC(=O)/C=C(\\C)CCCCC",
+                    "product_smiles": "OC/C=C(\\C)CCCCC",
+                    "notes": "Ester is reduced to a primary alcohol using DIBAL-H, maintaining the E-stereochemistry of the double bond.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Sharpless Asymmetric Epoxidation",
+                    "reagents": "L-(+)-DET, Ti(OiPr)4, TBHP",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "92%",
+                    "reactant_smiles": "CCCCC/C(=C/CO)/C",
+                    "product_smiles": "CCCCC[C@@]1(C)[C@H](CO)O1",
+                    "notes": "Sharpless asymmetric epoxidation of a Z-allylic alcohol to form an epoxy alcohol with (2R,3R) absolute stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Epoxide ring opening and elimination/rearrangement",
+                    "reagents": "PPh3, I2, pyridine, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "77%",
+                    "reactant_smiles": "CCCCC[C@]1(C)[C@@H](CO)O1",
+                    "product_smiles": "CCCCC[C@@](C)(C=C)O",
+                    "notes": "Conversion of a cis-epoxide bearing a hydroxymethyl group to an allylic alcohol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Wittig Olefination",
+            "reagents": "KOtBu, THF",
+            "reagent_smiles": "[Br-].O=C(O)CCCC[P+](c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "",
+            "yield": "55%",
+            "reactant_smiles": "CCCCC[C@@](C)(/C=C/[C@@H]1[C@H]2C[CH](O)O[C@H]2C[C@H]1O)O",
+            "product_smiles": "CCCCC[C@@](C)(/C=C/[C@@H]1[C@@H](C/C=C/CCCC(=O)O)[C@H](C[C@H]1O)O)",
+            "notes": "A Wittig olefination is performed to extend the side chain of the prostaglandin precursor, opening the cyclic acetal/hemiketal and forming a new trans double bond and a carboxylic acid group, resulting in Carboprost.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Nucleophilic Substitution (SN2) / Phosphonium Salt Formation",
+                    "reagents": "",
+                    "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "toluene",
+                    "yield": "86%",
+                    "reactant_smiles": "BrCCCC(=O)O",
+                    "product_smiles": "O=C(O)CCCC[P+](c1ccccc1)(c2ccccc2)c3ccccc3.[Br-]",
+                    "notes": "Formation of a triphenylphosphonium bromide salt from an alkyl bromide and triphenylphosphine.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

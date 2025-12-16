@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tubingensin-a-garg-2014",
+        "molecule_name": "Tubingensin A",
+        "class": "Natural Product",
+        "author": "Garg",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃",
+            "reagent_smiles": "[O-][O+]=O.CO",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@H]1CCC(=O)C[C@@H]1C",
+            "product_smiles": "CC(=O)[C@H]1CCC(=O)C[C@@H]1C",
+            "notes": "Ozonolysis of an exocyclic alkene (isopropenyl group) to form a methyl ketone (acetyl group). The stereochemistry of the chiral centers is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidative Deacylation & Dehydrogenation",
+            "reagents": "Cu(OAc)₂•H₂O, FeSO₄•7H₂O, MeOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 2 steps",
+            "yield": "57%",
+            "reactant_smiles": "O=C1[C@H](C)CC([C@@H](C(=O)C))CC1",
+            "product_smiles": "O=C1C=CCC([C@H]C)C1",
+            "notes": "Conversion of a substituted cyclohexanone bearing an acetyl group to an alpha,beta-unsaturated cyclohexenone, involving the loss of the acetyl group and formation of a new double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Addition (Organolithium)",
+            "reagents": "MeLiBr",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "O=C1CC=C[C@@H](C)C1",
+            "product_smiles": "CC(O)1CC=C[C@@H](C)C1",
+            "notes": "Nucleophilic addition of methyl lithium to a cyclic alpha,beta-unsaturated ketone, forming a tertiary alcohol. The reaction proceeds via 1,2-addition to the carbonyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "79%",
+            "reactant_smiles": "CC1=CC([C@@H](C))CCC1(O)C",
+            "product_smiles": "CC1=CC(=O)CCC1[C@@H](C)",
+            "notes": "Oxidation of a tertiary alcohol to an alpha,beta-unsaturated ketone, involving double bond migration. The reaction is noted as a '2 steps' process.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Conjugate Addition, Silyl Enol Ether Formation",
+            "reagents": "VinylMgBr, CuI, HMPA, DMIPSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C then HMPA DMIPSCl, -78 to 23 °C",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H]1CCC(=O)C=C1C",
+            "product_smiles": "C=C[C@@H]1C[C@H](C)CC=C1O[DMIPS]",
+            "notes": "1,4-addition of vinyl Grignard (via CuI) to the enone, followed by silyl enol ether formation using DMIPSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Suzuki-Miyaura Cross-Coupling",
+            "reagents": "9-BBN, THF, Pd(PPh3)4, K3PO4, DMF",
+            "reagent_smiles": "COCn1c2ccccc2c3c1c(Br)c(OS(=O)(=O)C(F)(F)F)cc3",
+            "conditions": "-78 to 23 °C, 65 °C",
+            "yield": "64%",
+            "reactant_smiles": "C[C@H]1CCC(=CO[DMIPS])[C@@]1(C)C=C",
+            "product_smiles": "COCn1c2ccccc2c3c1c(Br)c(CC[C@@]4(C)[C@H](C)CC/C(=C/4)O[DMIPS])cc3",
+            "notes": "Hydroboration of terminal alkene to form vinyl borane, followed by Suzuki-Miyaura cross-coupling with aryl triflate.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Bromination",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)NC3=CC(=CC=C23)O",
+                    "product_smiles": "C1=CC2=C(C=C1)NC3=CC(=C(C=C23)Br)O",
+                    "notes": "Electrophilic aromatic bromination of 6-hydroxycarbazole, installing bromine ortho to the hydroxyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Triflation / Sulfonylation (of phenol)",
+                    "reagents": "Tf2O, NEt3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)NC3=CC(=C(C=C23)Br)O",
+                    "product_smiles": "C1=CC2=C(C=C1)NC3=CC(=C(C=C23)Br)[OTf]",
+                    "notes": "Conversion of a phenolic hydroxyl group to its triflate ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "N-Alkylation (N-Protection)",
+                    "reagents": "NaH, MOMCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 to 23 °C",
+                    "yield": "63% (3 steps)",
+                    "reactant_smiles": "C1=CC2=C(C=C1)NC3=CC(=C(C=C23)Br)OS(=O)(=O)C(F)(F)F",
+                    "product_smiles": "[MOM]N1C2=C(C=CC=C2)C3=CC(=C(C=C31)OS(=O)(=O)C(F)(F)F)Br",
+                    "notes": "N-protection of the carbazole nitrogen with methoxymethyl (MOM) group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Mannich Reaction",
+            "reagents": "KF",
+            "reagent_smiles": "[I-].C[N+](C)=C.C1COCCOCCOCCOCCOCCO1",
+            "conditions": "THF, 35 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@](C)(CC2=C(Br)C=C3C4=C(C=CC=C4)N(COC)C3=C2)C=C1O[Si](C)(C)C(C)C",
+            "product_smiles": "C[C@H]1CC(=O)[C@@H](CN(C)C)[C@]1(C)CC2=C(Br)C=C3C4=C(C=CC=C4)N(COC)C3=C2",
+            "notes": "Silyl enol ether (as DMIPS enol ether) reacts with an iminium ion to form a β-amino ketone, likely via fluoride-mediated desilylation to an enolate intermediate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Elimination",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -10 °C",
+            "yield": "55% (2 steps)",
+            "reactant_smiles": "CN(C)CC1C(=O)C[C@@H](C)[C@](C)(CCC2=C(Br)C=C3C4=C(C=CC=C4)N(COC)C3=C2)C1",
+            "product_smiles": "C=C1C(=O)C[C@@H](C)[C@](C)(CCC2=C(Br)C=C3C4=C(C=CC=C4)N(COC)C3=C2)C1",
+            "notes": "Oxidative elimination of a tertiary amine (dimethylamino) group alpha to a ketone to form an exocyclic methylene using mCPBA.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Conjugate Addition / Enol Silylation",
+            "reagents": "TESCl",
+            "reagent_smiles": "[Li][Cu](C#N)CC=C(C)C",
+            "conditions": "THF, -78 °C",
+            "yield": "87%",
+            "reactant_smiles": "O=C1C(=C)C[C@H](C)[C@H](C)[C@H](CC2=CC(Br)=CC3=C2C4=CC=CC=C4N3COC)C1",
+            "product_smiles": "[OTES]OC1=C(CCC=C(C)C)C[C@H](C)[C@H](C)[C@H](CC2=CC(Br)=CC3=C2C4=CC=CC=C4N3COC)C1",
+            "notes": "1,4-conjugate addition of an organocuprate reagent to a cyclohexenone followed by trapping of the resulting enolate with TESCl to form a silyl enol ether. The stereochemistry of the three existing chiral centers is retained (all 'down' relative configuration), and a new alkene is formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "THF",
+            "reagent_smiles": "[Na]N.CC(C)(C)O",
+            "conditions": "23 °C",
+            "yield": "84%",
+            "reactant_smiles": "[OTES]C1=C(CCC=C(C)C)[C@@](C)(CCC2=CC3=C(C=C2Br)C4=C(C=CC=C4)[N]3[MOM])[C@H](C)CC1",
+            "product_smiles": "CC(=CCC1C(=O)CC[C@]2(C)[C@H](C)CCC3=C(C=CC=C3)[N]4[MOM]C2=C4C1)C",
+            "notes": "Intramolecular cyclization involving an aryl bromide and enol ether, mediated by strong base, leading to ketone formation and a new fused ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "3 N HCl, ethylene glycol",
+            "reagent_smiles": "",
+            "conditions": "THF, 55 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC(=CCC[C@@]12C3=C(CC[C@@]2(C)[C@H](C)CCC1=O)C=C4C(=C3)C5=C(C=CC=C5)N4[MOM])C",
+            "product_smiles": "CC(=CCC[C@@]12C3=C(CC[C@@]2(C)[C@H](C)CCC1=O)C=C4C(=C3)C5=C(C=CC=C5)[nH]4)C",
+            "notes": "Acidic deprotection of an N-methoxymethyl (MOM) protecting group on an indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "Na, i-PrOH",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 0 to 23 °C",
+            "yield": "32%",
+            "reactant_smiles": "CC(=CCC[C@@]12C3=C(CC[C@@]2(C)[C@H](C)CCC1=O)C=C4C(=C3)C5=C(C=CC=C5)N4)C",
+            "product_smiles": "CC(=CCC[C@@]12C3=C(CC[C@@]2(C)[C@H](C)CC[C@@H]1O)C=C4C(=C3)C5=C(C=CC=C5)N4)C",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol using sodium and isopropanol (Birch-like reduction).",
+            "substeps": []
+        }
+    ]
+}

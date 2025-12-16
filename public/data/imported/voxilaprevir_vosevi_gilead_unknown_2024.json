@@ -1,0 +1,339 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "voxilaprevir-vosevi-gilead-unknown-2024",
+        "molecule_name": "Voxilaprevir (Vosevi Gilead)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enamine formation",
+            "reagents": "DMF-DMA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 45 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@@H]1N([Boc])CC(=O)C1",
+            "product_smiles": "CC(C)(C)OC(=O)[C@@H]1N([Boc])C=C(N(C)C)CC1",
+            "notes": "Formation of a dimethylamino enamine from a pyrrolidin-4-one using DMF-DMA.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkylation / Nucleophilic addition-elimination",
+            "reagents": "MeMgBr",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 2-MeTHF, -12 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C(=O)C(=C(N(C)C))C[C@@H]1C(=O)OC(C)(C)C",
+            "product_smiles": "[Boc]N1C(=O)C(=C(C))C[C@@H]1C(=O)OC(C)(C)C",
+            "notes": "Methyl Grignard reagent replaces the exocyclic dimethylamino group with a methyl group on the pyrrolidinone ring, retaining the stereochemistry at C2.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd on activated charcoal",
+            "reagent_smiles": "",
+            "conditions": "toluene, 20 °C",
+            "yield": "",
+            "reactant_smiles": "CC=C1C(=O)CN([C@@H]1C(=O)OC(C)(C)C)[Boc]",
+            "product_smiles": "CC[C@H]1C(=O)CN([C@@H]1C(=O)OC(C)(C)C)[Boc]",
+            "notes": "Hydrogenation of an exocyclic alkene to form a new chiral center. The stereochemistry of the newly formed ethyl group is specified as 'back' (dashed bond). The N-Boc protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "ZnCl2, NaBH4, citric acid",
+            "reagent_smiles": "",
+            "conditions": "CPME, H2O, 95 °C, 25 °C, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1C(=O)CN([C@@H]1C(=O)OC(C)(C)C)C(=O)OC(C)(C)C",
+            "product_smiles": "CC[C@@H]1[C@H](CN([C@@H]1C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)O",
+            "notes": "Reduction of the lactam carbonyl to a hydroxyl group using sodium borohydride in the presence of zinc chloride, followed by workup with citric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Boc Deprotection, Transesterification",
+            "reagents": "p-TsOH, MeOH, MTBE",
+            "reagent_smiles": "",
+            "conditions": "25 to 60 °C, 40 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1[C@H](CN([C@@H]1C(=O)OC(C)(C)C)[Boc])O",
+            "product_smiles": "CC[C@@H]1[C@H](CN[C@@H]1C(=O)OC)O",
+            "notes": "Acid-catalyzed deprotection of the N-Boc group and transesterification of the tert-butyl ester to a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-protection",
+            "reagents": "Boc₂O, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 25 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1[C@H](CN[C@@H]1C(=O)OC)O",
+            "product_smiles": "CC[C@@H]1[C@H](CN([C@@H]1C(=O)OC)[Boc])O",
+            "notes": "Amine protection with di-tert-butyl dicarbonate (Boc₂O) to form a carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "SNAr",
+            "reagents": "Cs2CO3, DMA",
+            "reagent_smiles": "C=CCC(C1=NC2=CC=C(C=C2N=C1Cl)OC)(F)F",
+            "conditions": "100 to 110 °C, 40 °C, i-PrOH, H2O",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1[C@H](CN([C@@H]1C(=O)OC)[Boc])O",
+            "product_smiles": "C=CCC(C1=NC2=CC=C(C=C2N=C1O[C@H]3CN([C@@H]([C@@H]3CC)C(=O)OC)[Boc])OC)(F)F",
+            "notes": "Nucleophilic aromatic substitution of chloride by alcohol to form an ether.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Amide Formation",
+                    "reagents": "PPh3, CCl4, Et3N",
+                    "reagent_smiles": "C1=CC=C(C=C1)N",
+                    "conditions": "5 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=CCC(C(=O)O)(F)F",
+                    "product_smiles": "C=CCC(C(=O)NC1=CC=CC=C1)(F)F",
+                    "notes": "Amide bond formation between a carboxylic acid and aniline.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Imidoyl Chloride Formation",
+                    "reagents": "POCl3, K3PO4",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 25 °C, 20 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=CCC(C(=O)NC1=CC=CC=C1)(F)F",
+                    "product_smiles": "C=CCC(C(=NC1=CC=CC=C1)Cl)(F)F",
+                    "notes": "Conversion of an amide to an imidoyl chloride using phosphorus oxychloride (POCl3).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Nucleophilic Substitution",
+                    "reagents": "KCN",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, 25 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=CCC(C(=NC1=CC=CC=C1)Cl)(F)F",
+                    "product_smiles": "C=CCC(C(=NC1=CC=CC=C1)C#N)(F)F",
+                    "notes": "Nucleophilic substitution of a chloride with a cyanide group on an imine carbon.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Friedländer quinoxaline synthesis",
+                    "reagents": "toluene, NaOH",
+                    "reagent_smiles": "COC1=CC(N)=C(N)C=C1.CC(=O)O",
+                    "conditions": "20 to 30 °C, pH ~9",
+                    "yield": "",
+                    "reactant_smiles": "C=CCC(C(=NC1=CC=CC=C1)C#N)(F)F",
+                    "product_smiles": "C=CCC(C1=NC2=CC=C(C=C2N=C1N)OC)(F)F",
+                    "notes": "Cyclization of an imine-nitrile with a 1,2-diamino-4-methoxybenzene to form a quinoxaline derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Deaminative Chlorination",
+                    "reagents": "BCl3, t-BuNO2, NaHCO3, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, i-PrOH, 5 °C, 25 °C, 40 to 25 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=CCC(C1=NC2=CC=C(C=C2N=C1N)OC)(F)F",
+                    "product_smiles": "C=CCC(C1=NC2=CC=C(C=C2N=C1Cl)OC)(F)F",
+                    "notes": "Conversion of an amine to a chloride on a quinoxaline derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)O)cc1.CC1CCCCO1.COC(C)(C)C",
+            "conditions": "20-60 °C (2-MeTHF), 15-20 °C (MTBE)",
+            "yield": "",
+            "reactant_smiles": "C=CCC(C1=NC2=CC=C(C=C2N=C1O[C@H]3CN([C@@H]([C@@H]3CC)C(=O)OC)[Boc])OC)(F)F",
+            "product_smiles": "C=CCC(C1=NC2=CC=C(C=C2N=C1O[C@H]3C[N H2+]([C@@H]([C@@H]3CC)C(=O)OC))OC)(F)F.[OTs-]",
+            "notes": "Boc protecting group is removed from pyrrolidine nitrogen to form an ammonium tosylate salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Amide Coupling / Peptide Synthesis",
+            "reagents": "EDCI, NMM",
+            "reagent_smiles": "C=CCC[C@H]1O[C@@H]1OC(=O)N[C@H](C(=O)O)C(C)(C)C",
+            "conditions": "DMF, 0 to 100 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCC(F)(F)c1nc2ccc(OC)cc2nc1O[C@H]1C[NH2+][C@H](C(=O)OC)[C@H](CC)C1.[O-]S(=O)(=O)c3ccc(C)cc3",
+            "product_smiles": "C=CCC[C@H]1O[C@@H]1OC(=O)N[C@H](C(C)(C)C)C(=O)N2C[C@H](C(=O)OC)[C@H](CC)[C@H]2OC3=NC4=CC(OC)=CC=C4N=C3C(F)(F)CC=C",
+            "notes": "Amine group of the pyrrolidine in the reactant attacks the activated carboxylic acid of the tert-butyl glycine derivative (reagent), forming an amide bond and cyclizing the overall structure. The tosylate counterion is lost. Stereochemistry of all chiral centers is preserved.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Carbonate formation / Esterification",
+                    "reagents": "pyridine",
+                    "reagent_smiles": "C1CC(=O)N(OC(=O)ON2C(=O)CCC2=O)C1=O",
+                    "conditions": "DMF, 45 °C; H2O, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=CC[C@@H]1C[C@H]1O",
+                    "product_smiles": "C=CC[C@@H]1C[C@H]1OC(=O)ON2C(=O)CCC2=O",
+                    "notes": "Alcohol on cyclopropane ring converted to a succinimidyl carbonate using N,N'-Disuccinimidyl carbonate (DSC). Stereochemistry is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Carbamate formation / Hydrolysis of N-acyloxysuccinimide",
+                    "reagents": "K3PO4, NaOH, HCl",
+                    "reagent_smiles": "CC(C)(C)[C@H](C(=O)O)N",
+                    "conditions": "aq., 25 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=CC[C@@H]1C[C@H]1OC(=O)ON2C(=O)CCC2=O",
+                    "product_smiles": "C=CC[C@@H]1C[C@H]1OC(=O)N[C@H](C(=O)O)C(C)(C)C",
+                    "notes": "Nucleophilic attack by (S)-tert-leucine on the N-acyloxysuccinimide activated carbonate, followed by deprotection of the carbamate (presumably by the acidic conditions, although it looks like a direct attack forms the carbamate and N-hydroxysuccinimide is a leaving group, followed by subsequent acidic workup).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "toluene",
+            "reagent_smiles": "[Cl-].[Cl-].[Ru](=[CH]C1=C(OC(C)C)C=C(S(=O)(=O)N(C)C)C=C1)(N1C[N](C2=C(C)C=C(C)C=C2C)C[N]1C3=C(C)C=C(C)C=C3C)",
+            "conditions": "20 to 100 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@H]1C[C@H]1OC(=O)N[C@H](C(=O)N2C[C@@H]([C@@H](CC)[C@H]2C(=O)OC)OC3=NC4=CC(=CC=C4N=C3C(CC=C)(F)F)OC)C(C)(C)C",
+            "product_smiles": "COC1=CC2=NC(C(F)(F)C/C=C/[C@@H]3C[C@H]3OC(=O)N[C@H](C(C)(C)C)C(=O)N4[C@@H](C(=O)OC)C[C@@H](CC)[C@H]4OC2=N)C=C1",
+            "notes": "Formation of a 20-membered macrocycle via Ring-Closing Metathesis using a Grubbs-Hoveyda type ruthenium catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pt/C, H2",
+            "reagent_smiles": "",
+            "conditions": "i-PrOAc, 20 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1[C@H](CN([C@@H]1C(=O)OC)C(=O)[C@H](C(C)(C)C)NC(=O)O[C@@H]2C[C@H]2C/C=C/CC(C3=NC4=CC=C(C=C4N=C3)OC)(F)F)O",
+            "product_smiles": "CC[C@@H]1[C@H](CN([C@@H]1C(=O)OC)C(=O)[C@H](C(C)(C)C)NC(=O)O[C@@H]2C[C@H]2CCCCC(C3=NC4=CC=C(C=C4N=C3)OC)(F)F)O",
+            "notes": "Hydrogenation of the alkene double bond to an alkane using platinum on carbon and hydrogen gas.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, HCl",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH, 40 °C, pH ~3, EtOH/heptane",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1[C@H](CN([C@@H]1C(=O)OC)C(=O)[C@H](C(C)(C)C)NC(=O)O[C@@H]2C[C@H]2CCCCC(C3=NC4=CC=C(C=C4N=C3)OC)(F)F)OC",
+            "product_smiles": "CC[C@@H]1[C@H](CN([C@@H]1C(=O)O)C(=O)[C@H](C(C)(C)C)NC(=O)O[C@@H]2C[C@H]2CCCCC(C3=NC4=CC=C(C=C4N=C3)OC)(F)F)OC",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid under basic conditions followed by acidification.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIPEA, DMAP",
+            "reagent_smiles": "N[C@@](C(=O)NS(=O)(=O)C1CC1)([C@H]2C[C@H]2C(F)F)",
+            "conditions": "DMF, 20 °C then 2 N HCl",
+            "yield": "",
+            "reactant_smiles": "COC1=CC2=NC(C(F)(F)CCCC[C@@H]3C[C@H]3OC(=O)O[C@H]4[C@H](C(=O)O)[C@@H](CC)CN4C(=O)C(C)(C)C)=NC2=C1",
+            "product_smiles": "COC1=CC2=NC(C(F)(F)CCCC[C@@H]3C[C@H]3OC(=O)O[C@H]4[C@H](C(=O)N[C@@](C(=O)NS(=O)(=O)C5CC5)([C@H]6C[C@H]6C(F)F))[C@@H](CC)CN4C(=O)C(C)(C)C)=NC2=C1",
+            "notes": "Amide bond formation between carboxylic acid of reactant and primary amine of reagent to form Voxilaprevir.",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Knoevenagel Condensation",
+                    "reagents": "CeCl3, NaI",
+                    "reagent_smiles": "CCOC(=O)CC(=O)OCC",
+                    "conditions": "EtOH, 65 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(C(F)F)O",
+                    "product_smiles": "[OEt]C(=O)C(=CC(F)F)C(=O)[OEt]",
+                    "notes": "Knoevenagel condensation between a difluoro-hemiacetal and diethyl malonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "Cyclopropanation",
+                    "reagents": "Me₃SOI, t-BuOK",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, rt",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C(=CC(F)F)C(=O)OCC",
+                    "product_smiles": "CCOC(=O)C1(C(=O)OCC)C(C(F)F)C1",
+                    "notes": "Corey-Chaykovsky cyclopropanation of an electron-deficient alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.3",
+                    "reaction_type": "Enzymatic Ester Hydrolysis",
+                    "reagents": "Esterase ES46.5K, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, 30 °C, pH ~3",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C1(CC1C(F)F)C(=O)OCC",
+                    "product_smiles": "CCOC(=O)[C@@]1(C(=O)O)CC1C(F)F",
+                    "notes": "Stereoselective hydrolysis of one ethyl ester of a 1,1,2-trisubstituted cyclopropane diester to a carboxylic acid, creating a new chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.4",
+                    "reaction_type": "Curtius Rearrangement",
+                    "reagents": "DPPA, Et₃N, t-BuOH",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, 30 to 90 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=C(O)[C@]1(C(=O)[OEt])CC[C@@H]1C(F)F",
+                    "product_smiles": "[NHBoc][C@]1(C(=O)[OEt])CC[C@@H]1C(F)F",
+                    "notes": "Curtius rearrangement of a carboxylic acid to a tert-butyl carbamate (Boc-protected amine).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.5",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "LiOH, citric acid",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, H₂O, rt, pH ~4.5",
+                    "yield": "",
+                    "reactant_smiles": "[OEt]C(=O)[C@H]1[C@@H](C(F)F)C[C@H]1[NHBoc]",
+                    "product_smiles": "OC(=O)[C@H]1[C@@H](C(F)F)C[C@H]1[NHBoc]",
+                    "notes": "Hydrolysis of an ethyl ester to a carboxylic acid, retaining stereochemistry. The reaction is performed under basic conditions (LiOH) followed by acidic workup (citric acid).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.6",
+                    "reaction_type": "Amide Coupling",
+                    "reagents": "EDCI, Et3N, DMAP",
+                    "reagent_smiles": "C1(C)(C)(S(N)(=O)=O)CC1",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@]1(C(=O)O)CC1C(F)F",
+                    "product_smiles": "[Boc]N[C@@]1(C(=O)NS(=O)(=O)C2(C)(C)CC2)CC1C(F)F",
+                    "notes": "Amide bond formation between a carboxylic acid and 1,1-dimethylcyclopropane-1-sulfonamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.7",
+                    "reaction_type": "Deprotection (Boc)",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, rt",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@]1(C(=O)NCS(=O)(=O)C2(C)CC2)CC1C(F)F",
+                    "product_smiles": "CC1(CC1)S(=O)(=O)CNC(=O)[C@@]2(CC2C(F)F)N",
+                    "notes": "Boc deprotection of a cyclopropane carboxamide to yield the primary amine.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

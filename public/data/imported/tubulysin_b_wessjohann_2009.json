@@ -1,0 +1,279 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tubulysin-b-wessjohann-2009",
+        "molecule_name": "Tubulysin B",
+        "class": "Natural Product",
+        "author": "Wessjohann",
+        "year": 2009
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Passerini-Dömling reaction",
+            "reagents": "BF3·Et2O",
+            "reagent_smiles": "CC(C)[C@H](NC(=O)OC(C)(C)C)C=O.O=CS",
+            "conditions": "THF, -78 °C – r.t.",
+            "yield": "40%",
+            "reactant_smiles": "[C-]#[N+]C(=CN(C)C)C(=O)OC",
+            "product_smiles": "COC(=O)c1csc(C[C@@H](OC(=O)C)[C@H](NC(=O)OC(C)(C)C)C(C)C)n1",
+            "notes": "The drawn reagent `O=C-SH` (thioformic acid) in the screenshot contradicts the acetate group (`OC(=O)C`) observed in the product, which would typically originate from acetic acid (`CH3COOH`) in a Passerini-type reaction. This suggests either an error in the drawn reagent or that acetic acid was an unstated reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF, r.t.",
+            "yield": "62%",
+            "reactant_smiles": "CC(C)[C@@H](C[C@H](C1=NC(=CS1)C(=O)OC)OC(=O)C)[Boc]N",
+            "product_smiles": "CC(C)[C@@H](C[C@H](C1=NC(=CS1)C(=O)OC)O)[Boc]N",
+            "notes": "Acetate ester hydrolysis to form a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "MeONa",
+            "reagent_smiles": "",
+            "conditions": "MeOH, r.t.",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H](N[Boc])C[C@H](O)c1nc(C(=O)OC)sc1",
+            "product_smiles": "CC(C)[C@@H](N)C[C@H](O)c1nc(C(=O)OC)sc1",
+            "notes": "Boc deprotection to form a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide formation",
+            "reagents": "i-Pr2NEt",
+            "reagent_smiles": "CCC[C@H](C)[C@@H]([N-]=[N+]=N)C(=O)Cl",
+            "conditions": "CH2Cl2, r.t.",
+            "yield": "93%",
+            "reactant_smiles": "CC(C)[C@@H](C[C@H](C1=NC(=CS1)C(=O)OC)O)N",
+            "product_smiles": "CCC[C@H](C)[C@@H]([N-]=[N+]=N)C(=O)N[C@@H](C(C)C)C[C@H](O)C1=NC(=CS1)C(=O)OC",
+            "notes": "Amidation of the primary amine with an azide-substituted acid chloride.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Azide synthesis / Triflation",
+                    "reagents": "Tf2O, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "[Na+].[N-]=[N+]=[N-]",
+                    "product_smiles": "O=S(=O)(C(F)(F)F)N=[N+]=[N-]",
+                    "notes": "Synthesis of triflyl azide from sodium azide using trifluoromethanesulfonic anhydride (Tf2O).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Diazotransfer",
+                    "reagents": "TfN3, CuSO4, K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, MeOH, CH2Cl2",
+                    "yield": "89%",
+                    "reactant_smiles": "CC[C@H](C)[C@@H](N)C(=O)O",
+                    "product_smiles": "CC[C@H](C)[C@H](N=[N+]=[N-])C(=O)O",
+                    "notes": "Conversion of a primary amine to an azide group using trifluoromethanesulfonyl azide (TfN3). The reaction proceeds with retention of configuration at the chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Carboxylic acid to acyl chloride conversion",
+                    "reagents": "hexane",
+                    "reagent_smiles": "ClC(=O)C(=O)Cl.CN(C)C=O",
+                    "conditions": "r.t.",
+                    "yield": "",
+                    "reactant_smiles": "CC[C@@H](C)[C@@H]([N-]=[N+]=[N])C(=O)O",
+                    "product_smiles": "CC[C@@H](C)[C@@H]([N-]=[N+]=[N])C(=O)Cl",
+                    "notes": "Conversion of a carboxylic acid containing an azide and methyl chiral centers to an acyl chloride using oxalyl chloride and DMF.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Silylation / Alcohol Protection",
+            "reagents": "TESOTf, lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "98%",
+            "reactant_smiles": "CC[C@H](C)[C@@H](N=[N+]=[N-])C(=O)N[C@H](C(C)C)C[C@H](O)C1=NC(=CS1)C(=O)OC",
+            "product_smiles": "CC[C@H](C)[C@@H](N=[N+]=[N-])C(=O)N[C@H](C(C)C)C[C@H]([OTES])C1=NC(=CS1)C(=O)OC",
+            "notes": "Protection of a secondary alcohol as its triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Alkylation",
+            "reagents": "KHMDS, THF",
+            "reagent_smiles": "CCCC(=O)OCCl",
+            "conditions": "-45 °C - r.t.",
+            "yield": "52%",
+            "reactant_smiles": "N=[N+]=[N-][C@H]([C@@H](C)CC)C(=O)N[C@H](C(C)C)C[C@@H](O[Si](CC)(CC)CC)C1=NC(=CS1)C(=O)OC",
+            "product_smiles": "N=[N+]=[N-][C@H]([C@@H](C)CC)C(=O)N(COC(=O)CCC)[C@H](C(C)C)C[C@@H](O[Si](CC)(CC)CC)C1=NC(=CS1)C(=O)OC",
+            "notes": "N-alkylation of the amide nitrogen with chloromethyl butanoate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Azide Reduction, Amide Coupling",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "CN1CCCC[C@@H]1C(=O)OC2=C(C(=C(C(=C2F)F)F)F)F",
+            "conditions": "EtOAc",
+            "yield": "65%",
+            "reactant_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)OC)[OTES])C(C)C)C(=O)[C@@H]([N-]=[N+]=[N-])[C@@H](C)CC",
+            "product_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)OC)[OTES])C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]2CCCCN2C",
+            "notes": "Reduction of an azide to an amine, followed by in situ amide coupling with a pentafluorophenyl ester.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Reductive Amination (N-Methylation)",
+                    "reagents": "(CH2O)n, H2, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, H2O, r.t.",
+                    "yield": "89%",
+                    "reactant_smiles": "C1CCN[C@H](C1)C(=O)O",
+                    "product_smiles": "CN1CCCC[C@H]1C(=O)O",
+                    "notes": "The secondary amine of piperidine-2-carboxylic acid is methylated to a tertiary amine using paraformaldehyde and hydrogen with palladium on carbon catalyst, maintaining the stereochemistry at the alpha-carbon.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Esterification",
+                    "reagents": "",
+                    "reagent_smiles": "OC1=C(F)C(F)=C(F)C(F)=C1F.C1CCCCC1N=C=NC2CCCCC2",
+                    "conditions": "EtOAc, r.t.",
+                    "yield": "",
+                    "reactant_smiles": "CN1CCCC[C@H]1C(=O)O",
+                    "product_smiles": "CN1CCCC[C@H]1C(=O)OC2=C(F)C(F)=C(F)C(F)=C2F",
+                    "notes": "Esterification of a (2S)-1-methylpiperidine-2-carboxylic acid with pentafluorophenol using DCC as a coupling agent. The stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "THF",
+            "reagent_smiles": "CC(=O)O.O",
+            "conditions": "r.t.",
+            "yield": "40%",
+            "reactant_smiles": "CCCC(=O)OCN([C@H](C[C@H]([OTES])C1=NC(=CS1)C(=O)OC)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]2CCCCN2C",
+            "product_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)OC)O)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]2CCCCN2C",
+            "notes": "Hydrolysis of a triethylsilyl (TES) ether to a hydroxyl group using acetic acid and water.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "",
+            "reagent_smiles": "C[Sn](C)(C)O",
+            "conditions": "ClCH2CH2Cl, 60 °C",
+            "yield": "",
+            "reactant_smiles": "CCCC(=O)OCN([C@@H](C[C@H](C1=NC(=CS1)C(=O)OC)O)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]2CCCCN2C",
+            "product_smiles": "CCCC(=O)OCN([C@@H](C[C@H](C1=NC(=CS1)C(=O)O)O)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]2CCCCN2C",
+            "notes": "Methyl ester hydrolysis to carboxylic acid using trimethyltin hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "CC(=O)OC(=O)C.C1=CC=NC=C1",
+            "conditions": "0 °C",
+            "yield": "54% (2 steps)",
+            "reactant_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)O)O)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]2CCCCN2C",
+            "product_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)O)[OAc])C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]2CCCCN2C",
+            "notes": "Acetylation of a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Esterification / Carboxylic Acid Activation",
+            "reagents": "C6F5OH",
+            "reagent_smiles": "CC(C)N=C=NC(C)C",
+            "conditions": "CH2Cl2, 0 °C - r.t.",
+            "yield": "",
+            "reactant_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)O)OC(=O)C)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]2CCCCN2C",
+            "product_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)OC2=C(C(=C(C(=C2F)F)F)F)F)OC(=O)C)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]3CCCCN3C",
+            "notes": "Activation of a carboxylic acid to a pentafluorophenyl ester using DIC and pentafluorophenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Esterification",
+            "reagents": "i-Pr2NET",
+            "reagent_smiles": "C[C@H](C[C@H](CC1=CC=C(C=C1)O)[NH3+])C(=O)O",
+            "conditions": "DMF, r.t.",
+            "yield": "67%",
+            "reactant_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)OC2=C(C(=C(C(=C2F)F)F)F)F)OC(=O)C)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]3CCCCN3C",
+            "product_smiles": "CCCC(=O)OCN([C@H](C[C@H](C1=NC(=CS1)C(=O)O[C@H](C[C@H](C)C(=O)O)CC2=CC=C(C=C2)O)OC(=O)C)C(C)C)C(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H]3CCCCN3C",
+            "notes": "Formation of an ester bond from a PFP ester. The reaction is stated to occur in 2 steps. Note: The drawn reagent is an amino acid, but the product shows an ester linkage (esterification) where an amino group would typically react with a PFP ester to form an amide bond (peptide coupling), suggesting a potential discrepancy between the drawn reagent/product or an unshown transformation of the amino acid to an alpha-hydroxy acid.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Oxidation (primary alcohol to aldehyde)",
+                    "reagents": "TEMPO, NaOCl, NaHCO₃",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe, EtOAc, H₂O, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)O)CO",
+                    "product_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)O)C=O",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde using TEMPO/NaOCl system.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Wittig olefination",
+                    "reagents": "CH2Cl2",
+                    "reagent_smiles": "CCOC(=O)C(C)=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)O)C=O",
+                    "product_smiles": "CCOC(=O)/C(C)=C\\[C@H](CC1=CC=C(C=C1)O)N[Boc]",
+                    "notes": "Wittig olefination to form an alpha,beta-unsaturated ester. Yield reported as 44% over 2 steps.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Hydrogenation",
+                    "reagents": "H2, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, r.t.",
+                    "yield": "53%",
+                    "reactant_smiles": "CCOC(=O)/C(=C/[C@H](CC1=CC=C(C=C1)O)NC(=O)OC(C)(C)C)/C",
+                    "product_smiles": "CCOC(=O)[C@H](C)C[C@H](CC1=CC=C(C=C1)O)NC(=O)OC(C)(C)C",
+                    "notes": "Catalytic hydrogenation of an α,β-unsaturated ester, reducing the alkene to an alkane and creating a new chiral center with R stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Ester hydrolysis (Saponification)",
+                    "reagents": "LiOH, THF, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)[C@@H](C)C[C@H](CC1=CC=C(C=C1)O)N[Boc]",
+                    "product_smiles": "C[C@@H](C[C@H](CC1=CC=C(C=C1)O)N[Boc])C(=O)O",
+                    "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.5",
+                    "reaction_type": "Deprotection (Boc)",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "2 M, EtOAc, r.t.",
+                    "yield": "",
+                    "reactant_smiles": "C[C@@H](C[C@H](CC1=CC=C(C=C1)O)N[Boc])C(=O)O",
+                    "product_smiles": "C[C@@H](C[C@H](CC1=CC=C(C=C1)O)[NH3+])C(=O)O.[Cl-]",
+                    "notes": "Boc deprotection of a protected amino acid derivative to yield the hydrochloride salt.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

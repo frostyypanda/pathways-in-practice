@@ -1,0 +1,230 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cephalotaxine-fan-2023",
+        "molecule_name": "Cephalotaxine",
+        "class": "Natural Product",
+        "author": "Fan",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Carbonyl Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1C=O)OCO2",
+            "product_smiles": "C1=CC2=C(C=C1CO)OCO2",
+            "notes": "Reduction of an aldehyde to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1CO)OCO2",
+            "product_smiles": "C1=CC2=C(C=C1CBr)OCO2",
+            "notes": "Conversion of a benzylic alcohol to a benzylic bromide using HBr.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaCN, TBHDPB",
+            "reagent_smiles": "",
+            "conditions": "H2O, decane, reflux",
+            "yield": "",
+            "reactant_smiles": "BrCC1=CC2=C(OCO2)C=C1",
+            "product_smiles": "N#CCC1=CC2=C(OCO2)C=C1",
+            "notes": "Conversion of a primary alkyl bromide to a primary nitrile via nucleophilic substitution.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nitrile Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "[Na]O.CCO.O",
+            "conditions": "EtOH, H2O, reflux",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1CC#N)OCO2",
+            "product_smiles": "C1=CC2=C(C=C1CC(=O)O)OCO2",
+            "notes": "Nitrile group hydrolyzed to carboxylic acid using sodium hydroxide in ethanol/water under reflux.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "O=C(O)Cc1ccc2c(c1)oco2",
+            "product_smiles": "OCCCc1ccc2c(c1)oco2",
+            "notes": "Reduction of a carboxylic acid to a primary alcohol. The methylenedioxybenzene (1,3-benzodioxole) ring system remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, DMAP, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "96%",
+            "reactant_smiles": "C1=CC2=C(C=C1CCO)OCO2",
+            "product_smiles": "C1=CC2=C(C=C1CCO[OTs])OCO2",
+            "notes": "Alcohol is converted to a tosylate ester using tosyl chloride, DMAP, and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH",
+            "reagent_smiles": "O=C1CC[C@@H](C[OTBS])N1H",
+            "conditions": "PhMe, 100 °C",
+            "yield": "78%",
+            "reactant_smiles": "c1cc(CCO[OTs])c2c(c1)OCO2",
+            "product_smiles": "O=C1CC[C@@H](C[OTBS])N1CCc2ccc3c(c2)OCO3",
+            "notes": "N-alkylation of a chiral pyrrolidinone with an alkyl tosylate.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Silylation / Alcohol Protection",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "O=C1N[C@@H](CO)CCC1",
+                    "product_smiles": "O=C1N[C@@H](C[OTBS])CCC1",
+                    "notes": "Protection of a primary alcohol to its TBS ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "Et3N·3HF",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "THF, 60 °C",
+            "yield": "95%",
+            "reactant_smiles": "O1COC2=CC=C(CCN3[C@@H](C[OTBS])CCC3=O)C=C21",
+            "product_smiles": "C1=CC2=C(C=C1CCN3[C@@H](CCC3=O)CO)OCO2",
+            "notes": "Deprotection of a primary TBS ether to a primary alcohol using triethylamine trihydrofluoride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1CC[C@@H](CO)N(CCC2=CC3=C(OCO3)C=C2)C1=O",
+            "product_smiles": "O=C1CC[C@@H](C=O)N(CCC2=CC3=C(OCO3)C=C2)C1=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "InCl3",
+            "reagent_smiles": "",
+            "conditions": "(CH2Cl)2, 60 °C",
+            "yield": "69% (2 steps)",
+            "reactant_smiles": "O=C1CC([C@@H](C=O))C(=O)N1CCC2=CC3=C(OCO3)C=C2",
+            "product_smiles": "C1CC(=O)N2CCC3=CC4=C(C=C3C=C12)OCO4",
+            "notes": "Intramolecular cascade cyclization/annulation reaction transforming an N-alkyl succinimide with an aldehyde into a complex tetracyclic lactam system. Involves loss of the aldehyde oxygen and one of the succinimide carbonyl oxygens, with new ring formation and unsaturation.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular [3+2] Cycloaddition",
+            "reagents": "Rh2(S-PTTL)4",
+            "reagent_smiles": "C=C([OTBS])C(=[N2])C(=O)OC",
+            "conditions": "acetone, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "O=C1CCN2C=C3C(=C2)C=C4C(OCO4)=CC=C31",
+            "product_smiles": "O1COCO1c2ccc3c(c2)C[C@H]4C5=C([OTBS])[C@@H](C(=O)OC)[C@@](C)6N(C5)C(=O)CC6CCC34",
+            "notes": "Rhodium(II)-catalyzed intramolecular [3+2] cycloaddition of an N-containing enamine with a diazo ester to form a polycyclic structure.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Diazo Transfer",
+                    "reagents": "Et3N, p-ABSA",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, 0 °C to rt",
+                    "yield": "97%",
+                    "reactant_smiles": "CC(=O)CC(=O)OC",
+                    "product_smiles": "CC(=O)C(=[N+]=[N-])C(=O)OC",
+                    "notes": "Formation of an α-diazo-β-keto ester from a β-keto ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Enolsilylation",
+                    "reagents": "DCM",
+                    "reagent_smiles": "CCN(CC)CC.O=S(=O)(C(F)(F)F)O[Si](C)(C)C(C)(C)C",
+                    "conditions": "0 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(=O)C(=[N+]=[N-])C(=O)OC",
+                    "product_smiles": "C=C([OTBS])C(=[N+]=[N-])C(=O)OC",
+                    "notes": "Enolsilylation of a diazo-beta-ketoester to form a silyl enol ether with a diazo group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Hydrolysis / Diketone Formation",
+            "reagents": "NaBr",
+            "reagent_smiles": "[Na+].[Br-].CS(C)=O.O",
+            "conditions": "DMSO, H2O, 100 °C",
+            "yield": "82%",
+            "reactant_smiles": "COC(=O)C1=C([OTBS])C2C[C@@H]3C4=CC5=C(C=C4CCC6N(C(=O)C[C@]26)[C@]35)OCO5",
+            "product_smiles": "O=C1CC(=O)C2C[C@@H]3C4=CC5=C(C=C4CCC6N(C(=O)C[C@]26)[C@]35)OCO5",
+            "notes": "Hydrolysis of enol ether and decarboxylation/oxidation of ester to form a cyclic diketone from the protected ester/enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydroxylation and Ketal Formation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "O=C1c2ccccc2I(O)O1",
+            "conditions": "MeOH, DCM",
+            "yield": "58%",
+            "reactant_smiles": "O=C1C[C@@H]2[C@H]3CC(=O)N(CCC4=CC5=C(OCO5)C=C4)[C@H]3CC21",
+            "product_smiles": "COC1(OC)C[C@@H]2[C@H]3CC(=O)N(CCC4=CC5=C(OCO5)C=C4)[C@H]3C[C@@H]21O",
+            "notes": "The ketone in the 5-membered ring is converted to a gem-dimethoxy ketal, and the adjacent chiral carbon is hydroxylated. The stereochemistry of both chiral centers is maintained or set as shown in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "",
+            "reagent_smiles": "[RhH(CO)(P(c1ccccc1)3)3].[SiH3]c1ccccc1",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC1(OC)C[C@@H]2[C@H](O)C(OC)(OC)C2N3CCC4=C(C=C5C(=C4)OCO5)[C@H]3C(=O)",
+            "product_smiles": "COC1(OC)C[C@@H]2[C@H](O)C(OC)(OC)C2N3CCC4=C(C=C5C(=C4)OCO5)[C@H]3C",
+            "notes": "Stereoselective reduction of a lactam carbonyl group to a methylene group using a rhodium catalyst and phenylsilane.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Acid-catalyzed deprotection and elimination/rearrangement",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "47% (2 steps)",
+            "reactant_smiles": "COC1(OC)[C@H]2[C@@H](O)[C@H]3[C@@H]2[C@@H](C)C4N5CCC[C@]43CC6=C(C=C5OCO6)C",
+            "product_smiles": "COC1=CC2C(O)[C@@H]3[C@H]2C4N5CCC[C@]43CC6=C(C=C5OCO6)C1",
+            "notes": "Acid-catalyzed transformation of a gem-dimethoxy alcohol to an enol ether and alcohol.",
+            "substeps": []
+        }
+    ]
+}

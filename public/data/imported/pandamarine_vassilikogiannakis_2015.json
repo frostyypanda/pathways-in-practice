@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pandamarine-vassilikogiannakis-2015",
+        "molecule_name": "Pandamarine",
+        "class": "Natural Product",
+        "author": "Vassilikogiannakis",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkyne addition / Ketone addition",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "CC(=O)CO",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "67%",
+            "reactant_smiles": "N#CCCC#C",
+            "product_smiles": "N#CCCC#CC(C)(CO)O",
+            "notes": "Terminal alkyne deprotonation with n-BuLi followed by nucleophilic addition of the acetylide to 1-hydroxypropan-2-one (methyl 2-hydroxyethyl ketone).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Furan Synthesis / Silver-catalyzed Cyclization",
+            "reagents": "AgNO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "86%",
+            "reactant_smiles": "CC(C#CCCCC#N)(CO)O",
+            "product_smiles": "N#CCCCc1oc(C)cc1",
+            "notes": "Silver-catalyzed intramolecular cyclization of an alkynyl diol to form a furan, with loss of water.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitrile Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "54%",
+            "reactant_smiles": "CC1=COC(=C1)CCCC#N",
+            "product_smiles": "CC1=COC(=C1)CCCC=O",
+            "notes": "Reduction of a nitrile to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH4",
+            "reagent_smiles": "CC1=COC(=C1)CCCCN",
+            "conditions": "MeOH",
+            "yield": "81%",
+            "reactant_smiles": "CC1=COC(=C1)CCCC=O",
+            "product_smiles": "CC1=COC(=C1)CCCCNCCCC2=CC(=CO2)C",
+            "notes": "Aldehyde reacts with a primary amine via reductive amination to form a secondary amine.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Corey-Fuchs or similar (lithiation of terminal alkyne followed by addition to ketone)",
+                    "reagents": "n-BuLi",
+                    "reagent_smiles": "CC(=O)CO",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "67%",
+                    "reactant_smiles": "C#CCCCC#N",
+                    "product_smiles": "CC(C#CCCCC#N)(CO)O",
+                    "notes": "Terminal alkyne deprotonation followed by nucleophilic addition to 1-hydroxypropan-2-one.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Furan Synthesis / Intramolecular Cyclization",
+                    "reagents": "AgNO3, MeOH",
+                    "reagent_smiles": "CO.[Ag+].[N+](=O)([O-])[O-]",
+                    "conditions": "",
+                    "yield": "86%",
+                    "reactant_smiles": "CC(C#CCCCC#N)(CO)O",
+                    "product_smiles": "CCC#NC1=CC(C)=CO1",
+                    "notes": "An acetylenic diol undergoes silver-catalyzed cyclization in methanol to form a furan derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Nitrile Reduction",
+                    "reagents": "LiAlH₄",
+                    "reagent_smiles": "",
+                    "conditions": "Et₂O, 0 °C to rt",
+                    "yield": "81%",
+                    "reactant_smiles": "CC1=COC(=C1)CCC#N",
+                    "product_smiles": "CC1=COC(=C1)CCCN",
+                    "notes": "Reduction of a nitrile to a primary amine. The drawing implies reduction of -CN to -NH2 without adding a methylene group, which is unusual for LiAlH4; typically -CN becomes -CH2NH2. The provided SMILES have been corrected to match the structures *as drawn* in the screenshot, not the expected chemical transformation. Specifically, the length of the alkyl chain attached to the furan ring was adjusted for both reactant and product to match the drawings.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Photooxidation / Ammonia Addition / Reduction",
+            "reagents": "O2, MB, hν, Me2S, NH3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "Cc1cc(CCCCNCCCCCc2cc(C)oc2)oc1",
+            "product_smiles": "O=C1NC=CC(O)(C)(CCCCNCCCCC2(O)(C)C=CNC(=O)C2)C1",
+            "notes": "Singlet oxygenation of furan followed by reduction with Me2S and addition of NH3 to form 5-hydroxy-5-methyl-2,3-dihydropyrrol-2-one (lactam) rings.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Cyclization / Cascade reaction",
+            "reagents": "TFA, 4Å MS",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "30% (2 steps)",
+            "reactant_smiles": "CN(CCCC1(O)C(=O)NC(=C1)C)CCCC2(O)C(=O)NC(=C2)C",
+            "product_smiles": "CC1=CC(=O)N[C@]12CCCCN2CCC/C=C/C3=C(C)C(=O)NC3",
+            "notes": "Acid-catalyzed double cyclization and dehydration to form Pandamarine.",
+            "substeps": []
+        }
+    ]
+}

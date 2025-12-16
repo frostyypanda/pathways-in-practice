@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "mersicarpine-kerr-2008",
+        "molecule_name": "Mersicarpine",
+        "class": "Natural Product",
+        "author": "Kerr",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CCCCN",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CCCC=O",
+            "product_smiles": "CCCC=NCCCC",
+            "notes": "Formation of an imine from butanal and n-butylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Double Michael Addition",
+            "reagents": "toluene",
+            "reagent_smiles": "C=CC#N",
+            "conditions": "150 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCN=CCC",
+            "product_smiles": "CCCCN=[CH]C(CC)(CCC#N)CCC#N",
+            "notes": "Double Michael addition of acrylonitrile to the alpha-carbon of the imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Imine Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91% (3 steps)",
+            "reactant_smiles": "CCCCN=CC(CC)(CCC#N)CCC#N",
+            "product_smiles": "CCC(CCC#N)(CCC#N)C=O",
+            "notes": "Hydrolysis of an imine to an aldehyde, while retaining two nitrile groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaB(CN)H3",
+            "reagent_smiles": "C1=CC(=C(C=C1)N)I",
+            "conditions": "AcOH:MeOH, 90 °C then 50 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCC(CCC#N)(CCC#N)C=O",
+            "product_smiles": "CCC(CCC#N)(CCC#N)CNC1=C(C=CC=C1)I",
+            "notes": "Aldehyde reacts with 2-iodoaniline to form an imine intermediate, which is then reduced by sodium cyanoborohydride to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nitrile hydrolysis and intramolecular lactam formation",
+            "reagents": "HCl, NaOH",
+            "reagent_smiles": "",
+            "conditions": "Dioxane, 100 °C",
+            "yield": "98%",
+            "reactant_smiles": "CC(CCC#N)(CCC#N)CNC1=C(C=CC=C1)I",
+            "product_smiles": "O=C1N(C2=C(I)C=CC=C2)CCC[C@@](CC)(CCC#N)CN1",
+            "notes": "Aniline derivative undergoes intramolecular cyclization via nitrile hydrolysis to form a 7-membered lactam. The original primary amine (part of the reactant) and one of the nitriles form the lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "Pd(PPh3)4, CuI, Et3N",
+            "reagent_smiles": "C#CC(OCC)(OCC)OCC",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)I",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(OCC)(OCC)OCC",
+            "notes": "Sonogashira coupling of an aryl iodide with a propiolic orthoester, forming an internal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetal Hydrolysis / Esterification",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(OCC)(OCC)OCC",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(=O)OCC",
+            "notes": "Acetal (orthoester-like) hydrolysis to form an ethyl ester. Indicated as a two-step process.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrostannylation",
+            "reagents": "Bu3SnH",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(=O)OCC",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C(=C/C(=O)OCC)/C1=C(C=CC=C1)N2C[C@](CC)(CCC#N)CCC2=O",
+            "notes": "Radical hydrostannylation of an alkyne, resulting in an E-configured vinyl stannane. The alkyne is reduced to an alkene with the stereoselective addition of a tributyltin group and hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Iododestannylation",
+            "reagents": "I₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C(=C/C(=O)OCC)/C1=C(C=CC=C1)N2C[C@](CC)(CCC#N)CCC2=O",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)/C(=C\\C(=O)OCC)/I",
+            "notes": "Iododestannylation of an aryl vinyl stannane to form an aryl vinyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Radical Cyclization",
+            "reagents": "Air",
+            "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)H.CCB(CC)CC",
+            "conditions": "THF, rt",
+            "yield": "81%",
+            "reactant_smiles": "O=C1N(c2c(C/C(I)=C\\C(=O)OCC)cccc2)CC[C@](CC)(CCC#N)C1",
+            "product_smiles": "c1cccc2c1N3C(=O)CC[C@](CC)(CCC#N)[C@@H](CC(=O)OCC)[C@H]4C23",
+            "notes": "Radical cyclization of an aryl iodide onto an alkene to form a tetracyclic system. Noted a discrepancy between the reactant's 'EtO2C' text label implying -COOEt, and the product's drawn structure showing a -CH2COOEt group. The SMILES for reactant reflects -COOEt as drawn, and product reflects -CH2COOEt as drawn. The wavy bonds in the product indicate a mixture of diastereomers at the new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidative Dehydrogenation",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "THF, MeCN, rt",
+            "yield": "94%",
+            "reactant_smiles": "CCOC(=O)CC1C2=CC=CC=C2N(C(=O)CCC(C)(CC)CCC#N)C1",
+            "product_smiles": "CCOC(=O)\\C=C(/C1)C2=CC=CC=C2N(C(=O)CCC(C)(CC)CCC#N)C1",
+            "notes": "Oxidative dehydrogenation of a lactam-fused indole derivative using Cerium Ammonium Nitrate (CAN) to form an alpha,beta-unsaturated ethyl ester. Stereochemistry of the newly formed double bond is Z as depicted in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 45 °C",
+            "yield": "55%",
+            "reactant_smiles": "CC[C@@H]1(CCC#N)CCC(=O)N2c3c(cccc3)C(=C/C(=O)OCC)[C@H]12",
+            "product_smiles": "CC[C@@H]1(CCC#N)CCC(=O)N2c3c(cccc3)C(=O)C1C2=O",
+            "notes": "Oxidative cleavage and conversion of an exocyclic vinyl ester to an indole-2,3-dione derivative (isatin-type structure).",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "CoCl2, NaBH4",
+            "reagent_smiles": "[BH4-].[Na+].Cl[Co]Cl",
+            "conditions": "MeOH, 50 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1(CCC#N)C2CC(=O)[CH]C2N(c3ccccc3)C(=O)C1",
+            "product_smiles": "CC[C@@]12CCCNC3=C1N(C4=C3C=CC=C4)C(=O)CC2",
+            "notes": "Reductive cyclization of a keto-nitrile to form a polycyclic indole-lactam derivative (Mersicarpine). The nitrile and one ketone are reduced, and a new ring is formed. The indole nitrogen is retained in a lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidation",
+            "reagents": "O2, Me2S",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "56% (2 steps)",
+            "reactant_smiles": "CC12CCC[NH]C3=C1N(C4=C3C=CC=C4)C(=O)CC2",
+            "product_smiles": "CC[C@@]1(O)C2=CN=C3C4=CC=CC=C4N(C(=O)CC1)C32",
+            "notes": "Oxidative rearrangement/cyclization of a spiro-indoline to Mersicarpine, forming an imine and a tertiary alcohol at the spiro center.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vm55599-williams-2000",
+        "molecule_name": "VM55599",
+        "class": "Natural Product",
+        "author": "Williams",
+        "year": 2000
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reformatsky-type reaction (with allylic bromide, not alpha-haloester)",
+            "reagents": "Zn(Ag)",
+            "reagent_smiles": "[Zn].[Ag]",
+            "conditions": "MeCN",
+            "yield": "63%",
+            "reactant_smiles": "BrCC=C(C)C",
+            "product_smiles": "C=CC(C)(C)C(=O)C",
+            "notes": "Allylic bromide reacts with active zinc to form an organozinc reagent, which then adds to an unstated carbonyl compound to form the ketone shown. Or, more likely, it's an allylic rearrangement and reduction of an intermediate, or it's a reaction with an external electrophile (e.g. acetyl chloride or acetate) to form a new ketone. Given the product, it appears to be a formal insertion of a C=O group followed by rearrangement, or reaction with a source of C(=O)CH3.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrazone formation",
+            "reagents": "PhNHNH2",
+            "reagent_smiles": "c1ccccc1NN",
+            "conditions": "reflux",
+            "yield": "99%",
+            "reactant_smiles": "C=CC(C)(C)C(=O)C",
+            "product_smiles": "C=CC(C)(C)C(C)=NNC1=CC=CC=C1",
+            "notes": "Formation of a phenylhydrazone from a ketone and phenylhydrazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Fischer indole synthesis",
+            "reagents": "ZnCl2",
+            "reagent_smiles": "",
+            "conditions": "Diglyme",
+            "yield": "45%",
+            "reactant_smiles": "CC(=NNC1=CC=CC=C1)C(C)(C)C=C",
+            "product_smiles": "C=CC(C)(C)C1=C(CN(C)C)C2=CC=CC=C2N1",
+            "notes": "A phenylhydrazone undergoes a Fischer indole synthesis to form a substituted indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Indole Alkylation (Mannich-type)",
+            "reagents": "Bu3P",
+            "reagent_smiles": "O=C(OCC)CN=C([Ph])[Ph]",
+            "conditions": "MeCN",
+            "yield": "70%",
+            "reactant_smiles": "C=CC(C)(C)C1=C(CN(C)C)C2=C(C=CC=C2)N1",
+            "product_smiles": "C=CC(C)(C)C1=C(CC(C(=O)OCC)N=C([Ph])[Ph])C2=C(C=CC=C2)N1",
+            "notes": "Indole C3 alkylation with N-diphenylmethylene-glycine ethyl ester, involving the elimination of the dimethylaminomethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Imine Deprotection",
+            "reagents": "NH2OH, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "C=CC(C)(C)C1=C(CC(C(=O)OCC)N=C([Ph])[Ph])C2=C(C=CC=C2)N1",
+            "product_smiles": "C=CC(C)(C)C1=C(CC(C(=O)OCC)N)C2=C(C=CC=C2)N1",
+            "notes": "Hydrolysis/deprotection of diphenylimine to primary amine using hydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amine Protection (Boc)",
+            "reagents": "(Boc)2O, NaOH",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C.[Na+].[OH-]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC(C)(C)C1=C(CC(C(=O)OCC)N)C2=C(C=CC=C2)N1",
+            "product_smiles": "C=CC(C)(C)C1=C(CC(C(=O)OCC)N[Boc])C2=C(C=CC=C2)N1",
+            "notes": "Protection of a primary amine with a Boc group using di-tert-butyl dicarbonate and sodium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, THF",
+            "yield": "78%",
+            "reactant_smiles": "C=CC(C)(C)c1cc2c([nH]1)ccc3c2OC(C(=O)OCC)C[C@H](NC(=O)OC(C)(C)C)C3",
+            "product_smiles": "C=CC(C)(C)c1cc2c([nH]1)ccc3c2OC(C(=O)O)C[C@H](NC(=O)OC(C)(C)C)C3",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid, occurring within a fused indole-pyranone ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide formation / Peptide coupling",
+            "reagents": "Et3N",
+            "reagent_smiles": "CN(C)[P+](N(C)C)(N(C)C)ON1C2=C(C=CC=C2)N=N1.[PF6-].CCOC(=O)C1C(C)(CCN1)O",
+            "conditions": "",
+            "yield": "70-83%",
+            "reactant_smiles": "C=CC(C)(C)C1=C(CC(C(=O)O)[NHBoc])C2=C(C=CC=C2)N1",
+            "product_smiles": "C=CC(C)(C)C1=C(CC(C(=O)N2CCC(C)(C2C(=O)OCC)O)[NHBoc])C3=C(C=CC=C3)N1",
+            "notes": "Formation of an amide bond between a carboxylic acid and a pyrrolidine amine, facilitated by a phosphonium-based coupling reagent.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Michael Addition",
+                    "reagents": "acetonitrile",
+                    "reagent_smiles": "C=CC(=O)C",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CN",
+                    "product_smiles": "CCOC(=O)CNCCC(=O)C",
+                    "notes": "Ethyl 2-aminoacetate undergoes Michael addition with methyl vinyl ketone to form an N-alkylated product, with acetonitrile as solvent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "N-protection",
+                    "reagents": "(Boc)₂O, NaOH, H₂O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "65%",
+                    "reactant_smiles": "CCOC(=O)CNCCC(=O)C",
+                    "product_smiles": "CCOC(=O)CN(CCC(=O)C)C(=O)OC(C)(C)C",
+                    "notes": "N-Boc protection of a secondary amine using di-tert-butyl dicarbonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Intramolecular Aldol-type Cyclization",
+                    "reagents": "KOt-Bu",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "38%",
+                    "reactant_smiles": "CCOC(=O)CN(CCC(=O)C)C(=O)OC(C)(C)C",
+                    "product_smiles": "[EtO2C]C1C(C)(CCN1[Boc])O",
+                    "notes": "Intramolecular cyclization of an N-Boc protected amino ester with a ketone, catalyzed by strong base (KOt-Bu), forming a pyrrolidine derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Deprotection",
+                    "reagents": "TFA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C1C(C)(CCN1[Boc])O",
+                    "product_smiles": "CCOC(=O)C1C(C)(CCN1)O",
+                    "notes": "Boc deprotection of a pyrrolidine-2-carboxylate derivative to yield the corresponding secondary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C=CC(C)(C)c1c2ccccc2[nH]1C[C@@H](N[Boc])C(=O)N3[C@@H](C(=O)OCC)CC[C@](C)(O)3",
+            "product_smiles": "C=CC(C)(C)c1c2ccccc2[nH]1C[C@@H](N)C(=O)N3[C@@H](C(=O)OCC)CC[C@](C)(O)3",
+            "notes": "Deprotection of Boc-protected amine using trifluoroacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Cyclization / Diketopiperazine Formation",
+            "reagents": "toluene",
+            "reagent_smiles": "c1ccc(N)c(O)c1",
+            "conditions": "Δ",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "C=CC(C)(C)c1cc2ccccc2[nH]c1CC(N)C(=O)N1CCC(C)(O)C1C(=O)OCC",
+            "product_smiles": "C=CC(C)(C)c1cc2ccccc2[nH]c1CC1NC(=O)N2CCC(C)(O)C2C(=O)C1",
+            "notes": "Formation of a diketopiperazine ring from a linear amino ester derivative of an indole, leading to a bicyclic lactam system fused to a pyrrolidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "SOCl2, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "C=CC(C)(C)C1=C(C[C@@H]2C(=O)N(C3CCC(C)(O)C3)C(=O)N2)C4=C(C=CC=C4)N1",
+            "product_smiles": "C=CC(C)(C)C1=C(C[C@@H]2C(=O)N(C3CC=C(C)C3)C(=O)N2)C4=C(C=CC=C4)N1",
+            "notes": "Dehydration of a tertiary alcohol in the pyrrolidine ring, forming an exocyclic alkene. Stereochemistry at the chiral center of the diketopiperazine ring is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Cyclization / Methylation",
+            "reagents": "Me3OBF4",
+            "reagent_smiles": "C[O+](C)C.F[B-](F)(F)F",
+            "conditions": "CH2Cl2",
+            "yield": "72%",
+            "reactant_smiles": "C=CC(C)(C)C1=C(CC2C(=O)N3CCC(=C3C(=O)N2)C)C4=C(C=CC=C4)N1",
+            "product_smiles": "C[C@H]1CCN2C(=O)[C@]34CC5=C(C(C)(C)[C@H]4C[C@@]12C(=N3)OC)NC6=C5C=CC=C6",
+            "notes": "Intramolecular cyclization of an alkene and diketopiperazine derivative, accompanied by O-methylation to form a complex polycyclic structure. Trimethyloxonium tetrafluoroborate acts as the methylating agent for the iminium ether formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Acid-catalyzed hydrolysis and intramolecular cyclization",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1CCN2C(=O)[C@]34CC5=C(C(C)(C)[C@H]4C[C@@]12C(=N3)OC)NC6=C5C=CC=C6",
+            "product_smiles": "C[C@H]1CCN2C(=O)[C@]34CC5=C(C(C)(C)[C@H]4C[C@@]12O1[C@H]1[NH]3)NC6=C5C=CC=C6",
+            "notes": "Acid-catalyzed hydrolysis of the imine/enol ether functionality followed by intramolecular epoxide formation from the methoxy group and adjacent carbon, and reduction of the imine nitrogen to a secondary amine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "baphicacanthcusine-a-sarpong-2024",
+        "molecule_name": "Baphicacanthcusine A",
+        "class": "Natural Product",
+        "author": "Sarpong",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Multicomponent Reaction (Sarpong-type)",
+            "reagents": "Et2NH",
+            "reagent_smiles": "O=C1NC2=CC=CC=C2C1=O",
+            "conditions": "EtOH, 40 °C",
+            "yield": "99%",
+            "reactant_smiles": "c1ccc2c(c1)[nH]cc2",
+            "product_smiles": "O=C1NC2=CC=CC=C2C1(O)(c3c[nH]c4ccccc43)c5c[nH]c6ccccc65",
+            "notes": "Double addition of indole to phthalimide, followed by cyclization and hydroxyl addition, forming a spirocyclic compound.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive aromatization",
+            "reagents": "BF3•Et2O, NaBH4, then HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "DME",
+            "yield": "50%",
+            "reactant_smiles": "OC1(C2=CNC3=CC=CC=C32)C(=O)NC4=CC=CC=C41",
+            "product_smiles": "C1=CC2=C(C=C1)NC=C2C3=CNC4=C3C=CC=C4",
+            "notes": "Reduction of a 3-hydroxy-2-oxindole to an indole, forming a 3,3'-biindole.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amine Protection (N-Boc)",
+            "reagents": "Boc2O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "97%",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC=C2C3=CNC4=C3C=CC=C4",
+            "product_smiles": "[Boc]N1C=C(C2=C1C=CC=C2)C3=CN([Boc])C4=C3C=CC=C4",
+            "notes": "Bis-indole nitrogens protected with Boc groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "CCl4, rt",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C=C(C2=C1C=CC=C2)C3=CN(C4=C3C=CC=C4)C(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N1C(Br)=C(C2=C1C=CC=C2)C3=CN(C4=C3C=CC=C4)C(=O)OC(C)(C)C",
+            "notes": "Electrophilic bromination of one indole ring at the C2 position.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Na2CO3, Pd(PPh3)4",
+            "reagent_smiles": "CCOC(=O)/C=C/c1c([Bpin])ccc([OMe])c1",
+            "conditions": "dioxane, H2O, 80 °C",
+            "yield": "90%",
+            "reactant_smiles": "[Boc]N1C=C(C2=C1C=CC=C2)C3=C(Br)N(C4=C3C=CC=C4)[Boc]",
+            "product_smiles": "CCOC(=O)/C=C/c1c(C2=C(C3=C(C=CC=C3)N2[Boc])C4=CN(C5=C4C=CC=C5)[Boc])ccc([OMe])c1",
+            "notes": "Aryl bromide undergoes Suzuki coupling with an aryl boronic ester to form a new C-C bond, yielding a complex bis-indole product. The reaction proceeds with retention of the E-alkene configuration and both Boc protecting groups.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Boronic Acid Pinacol Esterification / Transesterification",
+                    "reagents": "benzene",
+                    "reagent_smiles": "CC(C)(O)C(C)(O)C",
+                    "conditions": "110 °C",
+                    "yield": "96%",
+                    "reactant_smiles": "COC1=CC=C(C=O)C(=C1)B(O)O",
+                    "product_smiles": "COC1=CC(B2OC(C)(C)C(C)(C)O2)=C(C=O)C=C1",
+                    "notes": "Conversion of a boronic acid to its pinacol ester using pinacol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Wittig reaction",
+                    "reagents": "DCM",
+                    "reagent_smiles": "CCOC(=O)C=P(c1ccccc1)(c1ccccc1)c1ccccc1",
+                    "conditions": "rt",
+                    "yield": "85%",
+                    "reactant_smiles": "COc1ccc(C=O)c([Bpin])c1",
+                    "product_smiles": "CCOC(=O)/C=C/c1cc(OC)ccc1[Bpin]",
+                    "notes": "An aldehyde undergoes Wittig reaction with an ethyl (triphenylphosphoranylidene)acetate to form an E-alpha,beta-unsaturated ethyl ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection, Acid-catalyzed Cyclization",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O, 80 °C",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N1c2ccccc2C=C1C(=C(c3cc([OMe])ccc3/C=C/[EtO2C])C4=CN([Boc])c5ccccc54)",
+            "product_smiles": "[EtO2C]CC1C2=CC([OMe])=CC=C2C3=C1NC4=CC=CC=C4C3C5=C1NC6=CC=CC=C6C5",
+            "notes": "Acid-catalyzed deprotection of N-Boc groups followed by intramolecular cyclization of the ethyl acrylate moiety to form a complex polycyclic indolocarbazole system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Dearomatization / Rearrangement",
+            "reagents": "",
+            "reagent_smiles": "CCCC[C@H]1ON(S(=O)(=O)c2ccccc21)C1",
+            "conditions": "DCM, 23 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CC1C2=C(C=C(C=C2)OC)C3=C(C4=C(C=CC=C4)N3)C5=C1C6=C(C=CC=C6)N5",
+            "product_smiles": "CCOC(=O)C[C@H]1C2=C(C=C(C=C2)OC)C3=C(C4=C(C=CC=C4)N3)C5=NC6=C(C=CC=C6)[C@@]15O",
+            "notes": "Oxidative rearrangement of an indole derivative using a chiral N-sulfonyl oxaziridine, leading to the formation of a new 7-membered ring, a C=N double bond, and two new stereocenters with defined configurations.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular cyclization / Rearrangement",
+            "reagents": "Sc(OTf)3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 110 °C",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "[EtO2C]C[C@@H]1C2=C(C=C(C=C2)[OMe])C3=C(C4=C(C=CC=C4)[NH]3)C5=NC6=C(C=CC=C6)[C@]15O",
+            "product_smiles": "[OMe]C1=CC2=C(C=C1)[C@H]3CC(=O)N4C5=C(C=CC=C5)C(=O)[C@]34C6=C2[NH]C7=C6C=CC=C7",
+            "notes": "Complex intramolecular cyclization and rearrangement of a polycyclic alcohol/ester into a lactam/enone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "62%",
+            "reactant_smiles": "[OMe]C1=CC2=C(C=C1)[C@@H]3C4CC(=O)N5C6=C(C=CC=C6)C(=O)[C@]35C7=C2NC8=CC=CC=C8C7=C4",
+            "product_smiles": "[OH]C1=CC2=C(C=C1)[C@@H]3C4CC(=O)N5C6=C(C=CC=C6)C(=O)[C@]35C7=C2NC8=CC=CC=C8C7=C4",
+            "notes": "O-demethylation of a methyl ether to a phenol using BBr3.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Aromatic hydroxylation / Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC3=C2[C@@]45[C@@H](CC(=O)N5C6=C(C=CC=C6)C4=O)C7=C3C=C(C=C7)O",
+            "product_smiles": "C1=CC2=C(C=C1)NC3=C2[C@@]45[C@@H](CC(=O)N5C6=C(C=CC=C6)C4=O)C7=C3C=C(C(=C7)O)O",
+            "notes": "Aromatic hydroxylation of a single phenol to a catechol derivative using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Acetylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "acetone, rt",
+            "yield": "58%",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC3=C2[C@@]45[C@H](CC(=O)N5C6=C(C=CC=C6)C4=O)C7=C3C=C(C(=C7)O)O",
+            "product_smiles": "[OAc]C1=CC2=C(C=C1[OAc])C3=C(C4=C(C=CC=C4)N3)[C@@]56[C@H]2CC(=O)N6C7=C(C=CC=C7)C5=O",
+            "notes": "Acetylation of phenolic hydroxyl groups. Yield reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "Oxone, NaHCO₃",
+            "reagent_smiles": "",
+            "conditions": "acetone, H₂O, 0 °C to rt",
+            "yield": "60%",
+            "reactant_smiles": "[AcO]c1cc([AcO])c2c1C[C@@H]3C(=O)N4C5=CC=CC=C5C(=O)[C@]34C6=C2C=C(C(=O)c7ccccc7)N(H)C6",
+            "product_smiles": "[AcO]c1cc([AcO])c2c1C[C@@H]3C(=O)N4C5=CC=CC=C5C(=O)[C@]34C6=C2[C@H](NC(=O)c7ccccc7)CC6",
+            "notes": "Oxidation of a cyclic enamine to form an amide and a ketone, creating a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deacetylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH, 0 °C",
+            "yield": "67%",
+            "reactant_smiles": "CC(=O)OC1=CC2=C(C=C1OC(=O)C)[C@@]3(C(=O)C4=C(C=CC=C4)N3)[C@@]56[C@H]2CC(=O)N6C7=C(C=CC=C7)C5=O",
+            "product_smiles": "C1=CC2=C(C=C1)N[C@@]3(C4=C(C=C(C(=C4)O)O)[C@H]5CC(=O)N6C7=C(C=CC=C7)C(=O)[C@@]536)C2=O",
+            "notes": "Hydrolysis of two acetate groups to form vicinal diol.",
+            "substeps": []
+        }
+    ]
+}

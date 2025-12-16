@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "trikentrin-a-buszek-2009",
+        "molecule_name": "Trikentrin A",
+        "class": "Natural Product",
+        "author": "Buszek",
+        "year": 2009
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nitration (Electrophilic Aromatic Substitution)",
+            "reagents": "Ac2O, HNO3, NaOH, ClCH2CH2Cl, H2O",
+            "reagent_smiles": "",
+            "conditions": "50 to 80 °C",
+            "yield": "96%",
+            "reactant_smiles": "CCC1=CC=C(N)C=C1",
+            "product_smiles": "CCC1=CC(=C(N)C=C1)[N+](=O)[O-]",
+            "notes": "Electrophilic aromatic nitration of 4-ethylaniline. The nitration occurs ortho to the activating amine group and meta to the ethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Bromination",
+            "reagents": "CuBr2, Br2, t-BuONO",
+            "reagent_smiles": "CC(C)(C)ON=O.BrBr.[Cu+2].[Br-].[Br-]",
+            "conditions": "MeCN, 50 °C",
+            "yield": "82%",
+            "reactant_smiles": "CCCc1ccc(N)c([N+](=O)[O-])c1",
+            "product_smiles": "CCCc1c(Br)ccc([N+](=O)[O-])c1Br",
+            "notes": "4-ethyl-2-nitroaniline undergoes Sandmeyer-type reaction followed by bromination to yield 1-ethyl-2,6-dibromo-4-nitrobenzene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bartoli Indole Synthesis",
+            "reagents": "THF",
+            "reagent_smiles": "C=CMgBr",
+            "conditions": "-40 °C",
+            "yield": "52%",
+            "reactant_smiles": "CCCc1cc(Br)c(Br)c([N+](=O)[O-])c1",
+            "product_smiles": "CCC1=C2C=CNC2=C(C(=C1)Br)Br",
+            "notes": "Bartoli Indole Synthesis of a dibromoethylindole from a dibromoethylnitrobenzene and vinylmagnesium bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Silylation / N-Protection",
+            "reagents": "KHMDS, TBSOTf",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "73%",
+            "reactant_smiles": "CCC1=C2C=CNC2=C(C(=C1)Br)Br",
+            "product_smiles": "CCC1=C2C=CN([TBS])C2=C(C(=C1)Br)Br",
+            "notes": "The indole nitrogen is silylated with a TBS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "n-BuLi, toluene",
+            "reagent_smiles": "C1C=CC=C1",
+            "conditions": "-78 °C to rt",
+            "yield": "77%",
+            "reactant_smiles": "CC1=CC(Br)=C(Br)C2=C1N([TBS])C=C2",
+            "product_smiles": "CC1=CC2C3C=CC(C3)C2=C4N([TBS])C=C4C1",
+            "notes": "A dibrominated indole derivative reacts with n-BuLi to form an aryne, which then undergoes Diels-Alder cycloaddition with cyclopentadiene to form a new fused ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "88%",
+            "reactant_smiles": "CCC1=C2C=CN(C2=C3C4C=CC(C4)C3=C1)[TBS]",
+            "product_smiles": "CCC1=C2C=CN(C2=C3C(=C1)C4CC3[C@H]([C@H]4O)O)[TBS]",
+            "notes": "Cis-dihydroxylation of one of the double bonds in the bicyclic system. The product image depicts a fully saturated bicyclic system (i.e., both original double bonds are reduced, and one site is dihydroxylated), which is an unusual outcome for standard OsO4/NMO conditions that typically target only one alkene. The provided SMILES accurately represent the structures as drawn in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative cleavage (Periodate oxidation)",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "99%",
+            "reactant_smiles": "CCC1=C2C=CN(C2=C3C(=C1)C4CC3[C@H](O)[C@@H]4O)[TBS]",
+            "product_smiles": "CCC1=C2C=CN(C2=C3[C@H](C[C@@H](C=O)C3=C1)C=O)[TBS]",
+            "notes": "Oxidative cleavage of a trans-1,2-diol to a dialdehyde using sodium periodate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Thioacetal formation, N-TBS deprotection",
+            "reagents": "EtSH, BF₃•OEt₂",
+            "reagent_smiles": "CCSC.FB(F)F.CCOCC",
+            "conditions": "-78 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "CCC1=C2C=CN([TBS])C2=C3[C@H](C[C@@H](C=O)C3=C1)C=O",
+            "product_smiles": "CCC1=C2C=CNC2=C3[C@H](C[C@@H]([CH](SCC)SCC)C3=C1)[CH](SCC)SCC",
+            "notes": "Conversion of two aldehyde groups to dithioacetals and deprotection of the N-TBS group to N-H under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Desulfurization",
+            "reagents": "Raney Nickel",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "85%",
+            "reactant_smiles": "CCC1=C2C=CNC2=C3[C@H](C(SCC)SCC)C[C@H](C(SCC)SCC)C3=C1",
+            "product_smiles": "CCC1=C2C=CNC2=C3[C@H](C)C[C@H](C)C3=C1",
+            "notes": "Raney Nickel desulfurization of thioketals to alkanes. Two CH(SEt)2 groups are reduced to CH3 groups. Stereochemistry is retained (cis-methyl groups).",
+            "substeps": []
+        }
+    ]
+}

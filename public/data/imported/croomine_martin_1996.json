@@ -1,0 +1,146 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "croomine-martin-1996",
+        "molecule_name": "Croomine",
+        "class": "Natural Product",
+        "author": "Martin",
+        "year": 1996
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection",
+            "reagents": "(Boc)2O, DIPEA, DMAP",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(C)(C)C",
+            "conditions": "DCM, RT",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@@H]1CCC(=O)N1",
+            "product_smiles": "COC(=O)[C@@H]1CCC(=O)N1[Boc]",
+            "notes": "N-Boc protection of a pyrrolidinone with di-tert-butyl dicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Anodic Oxidation / Alpha-Alkoxylation",
+            "reagents": "Et4NOTs, MeOH",
+            "reagent_smiles": "",
+            "conditions": "Anodic current",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C(=O)CC[C@@H](C(=O)OC)1",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@@H](OC)CC[C@@H](C(=O)OC)1",
+            "notes": "Anodic oxidation of a pyrrolidin-2-one (lactam) in methanol, replacing the lactam carbonyl oxygen with a methoxy group. This creates a new chiral center at C2, and both the new C2-OMe and existing C5-CO2Me groups are in a syn relationship (both shown with wedge bonds). The N-Boc and C5-CO2Me stereochemistry are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Cyclization / Cascade Reaction",
+            "reagents": "TIPSOTf",
+            "reagent_smiles": "CC1=C([OTIPS])C(CCCCBr)=CO1",
+            "conditions": "DCM, 0 °C",
+            "yield": "32%",
+            "reactant_smiles": "[Boc]N1C[C@H](OC)[C@@H](C(=O)OC)C1",
+            "product_smiles": "CC1=C[C@@](CCCCBr)([C@@]2CC[C@@H](C(=O)OC)N2[Boc])OC1=O",
+            "notes": "Intramolecular reaction of a pyrrolidine derivative with a furan-based reagent, resulting in the formation of a fused lactone-pyrrolidine system. The methoxy group is eliminated, and the furan ring undergoes rearrangement and cyclization.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "O-Silylation",
+                    "reagents": "TIPSOTf, Et3N",
+                    "reagent_smiles": "O=S(=O)(C(F)(F)F)O[Si](C(C)C)(C(C)C)C(C)C.CCN(CC)CC",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "CC1=CCOC1=O",
+                    "product_smiles": "[TIPSO]C1=C(C)C=CO1",
+                    "notes": "Silylation of an enolizable lactone using TIPSOTf and triethylamine to form a silyl enol ether (a 2-silyloxy-furan derivative).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Directed Ortho-Metalation / Alkylation",
+                    "reagents": "Br(CH2)4Br, sBuLi, TMEDA",
+                    "reagent_smiles": "BrCCCCBr.CN(C)CCN(C)C.[Li]C(CC)C",
+                    "conditions": "THF, 0 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "[TIPS]OC1=C(C)C=CO1",
+                    "product_smiles": "[TIPS]OC1=C(C)C=C(CCCCBr)O1",
+                    "notes": "Directed ortho-lithiation of 2-(triisopropylsilyloxy)-3-methylfuran at the C5 position, followed by alkylation with 1,4-dibromobutane.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CC1=C[C@@](CCCCBr)([C@@]2CC[C@@H](C(=O)OC)N2[Boc])OC1=O",
+            "product_smiles": "CC1=C[C@@](CCCCBr)([C@@]2CC[C@@H](C(=O)OC)N2)OC1=O",
+            "notes": "Boc deprotection of a pyrrolidine using trifluoroacetic acid (TFA).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrogenation / Reduction",
+            "reagents": "Rh/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, EtOH",
+            "yield": "96% (2 steps)",
+            "reactant_smiles": "CC1=C[C@@](CCCCBr)(C2CC[C@@H](C(=O)OC)N2)OC1=O",
+            "product_smiles": "C[C@@H]1C[C@@](CCCCBr)(C2CC[C@@H](C(=O)OC)N2)OC1=O",
+            "notes": "Hydrogenation of the enol-lactone double bond to a saturated lactone, forming a new chiral center with the methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular SN2 Cyclization",
+            "reagents": "NMM, DMF",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@@](CCCCBr)([C@@]2CC[C@@H](N2)C(=O)OC)OC1=O",
+            "product_smiles": "C[C@H]1C[C@]2(CCCCN3[C@@H](CC[C@@H]23)C(=O)OC)OC1=O",
+            "notes": "Intramolecular cyclization of an alkyl bromide with a secondary amine to form a 7-membered azepane ring. N-methylmorpholine (NMM) acts as a base and DMF is the solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "COC(=O)[C@@H]1CN2C[C@H]3CCCC[C@H]2([C@H](C)CC3=O)O1",
+            "product_smiles": "OC(=O)[C@@H]1CN2C[C@H]3CCCC[C@H]2([C@H](C)CC3=O)O1",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Annulation / Furanone formation",
+            "reagents": "POCl3, DMF",
+            "reagent_smiles": "[TIPS]OC1=C(C)C=CO1",
+            "conditions": "",
+            "yield": "31%",
+            "reactant_smiles": "C[C@@H]1C[C@]2(CCCCN3[C@H](CC[C@H]23)C(=O)O)OC1=O",
+            "product_smiles": "CC1=C[C@H]([C@H]2CC[C@H]3[C@]4(CCCCN32)C[C@@H](C)C(=O)O4)OC1=O",
+            "notes": "Formation of a furanone ring from a carboxylic acid and a TIPS-protected furan, followed by cyclization and attachment to the pyrrolidine core.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Silylation",
+                    "reagents": "TIPSOTf, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "CC1=CCOC1=O",
+                    "product_smiles": "[TIPS]OC1=C(C)C=CO1",
+                    "notes": "Silylation of an alpha,beta-unsaturated lactone to form a silyl furan ether.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

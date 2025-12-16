@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "makaluvamina-d-vanderwal-2024",
+        "molecule_name": "Makaluvamina D",
+        "class": "Natural Product",
+        "author": "Vanderwal",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Curtius Rearrangement / Carbamate Formation",
+            "reagents": "DPPA, Et3N, EtOH",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "",
+            "reactant_smiles": "COc1c(OC)ccc(C(=O)O)c1",
+            "product_smiles": "CCOC(=O)Nc1c(OC)c(OC)ccc1",
+            "notes": "Conversion of 2,3-dimethoxybenzoic acid to ethyl N-(2,3-dimethoxyphenyl)carbamate via Curtius rearrangement and trapping with ethanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Carbamate hydrolysis / Amine deprotection",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "CCOC(=O)Nc1c(OC)c(OC)ccc1",
+            "product_smiles": "Nc1c(OC)c(OC)ccc1",
+            "notes": "Hydrolysis of ethyl N-(2,3-dimethoxyphenyl)carbamate to 2,3-dimethoxyaniline.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "ICI, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, H2O, -10 °C",
+            "yield": "69%",
+            "reactant_smiles": "COC1=C(N)C(=CC=C1OC)",
+            "product_smiles": "COC1=C(N)C(I)=CC=C1OC",
+            "notes": "Iodination of 2,6-dimethoxyaniline using iodine monochloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Larock Indole Synthesis",
+            "reagents": "Pd/C, K2CO3",
+            "reagent_smiles": "[TES]C#CCCO[TES]",
+            "conditions": "DMF, 125 °C",
+            "yield": "",
+            "reactant_smiles": "Nc1c(OC)c(OC)c(I)c1",
+            "product_smiles": "[TES]C1=C(CCO[TES])C2=C(C(=C(C=C2)OC)OC)N1",
+            "notes": "Palladium-catalyzed cyclization of 2,3-dimethoxy-4-iodoaniline with TES-protected alkyne to form an indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "Cl.CCO.O",
+            "conditions": "EtOH, H2O",
+            "yield": "75%",
+            "reactant_smiles": "[TES]C1=C(CC[OTES])C2=C(C(=C(C=C2)OC)OC)N1",
+            "product_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CCO)OC",
+            "notes": "Acid-catalyzed deprotection of two silyl ether groups (TES and OTES) to a primary alcohol. The 75% yield is reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Azide synthesis",
+            "reagents": "DPPA, DBU",
+            "reagent_smiles": "",
+            "conditions": "toluene, 40 °C",
+            "yield": "84%",
+            "reactant_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CCO)OC",
+            "product_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CC[N-]=N=N)OC",
+            "notes": "Conversion of a primary alcohol to an azide",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Acetylation",
+            "reagents": "AcCl, tBuOK",
+            "reagent_smiles": "CC(=O)Cl.CC(C)(C)O[K]",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CC[N-]=[N+]=N)OC",
+            "product_smiles": "CC(=O)N1C=C(CC[N-]=[N+]=N)C2=C1C(=C(C=C2)OC)OC",
+            "notes": "N-Acetylation of the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "PIFA, TMSOTf",
+            "reagent_smiles": "",
+            "conditions": "HFIP, H2O, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC(=O)N1C=C(CCN=[N+]=[N-])C2=C1C(=C(C=C2)OC)OC",
+            "product_smiles": "COC1=CC2=[NH+]CCC3=CNC(=C32)C1=O.C(=O)(C(F)(F)F)[O-]",
+            "notes": "An N-acetylated indole derivative with an azidoethyl side chain undergoes an intramolecular oxidative cyclization with PIFA/TMSOTf to form a complex polycyclic quinone-type structure with an iminium moiety and a trifluoroacetate counterion.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotonation",
+            "reagents": "Basic alumina",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "COC1=CC2=[NH+]CCC3=CNC(=C32)C1=O.C(=O)(C(F)(F)F)[O-]",
+            "product_smiles": "COC1=CC2=NCCC3=CNC(=C32)C1=O",
+            "notes": "Deprotonation of an iminium ion to its neutral imine form.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-methylation",
+            "reagents": "MeI, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "63%",
+            "reactant_smiles": "COC1=CC(=O)C2=C1NC=C(C3=NCCC23)",
+            "product_smiles": "COC1=CC(=O)C2=C1N(C)C=C(C3=[NH+]CCC23).C(=O)(C(F)(F)F)[O-]",
+            "notes": "N-methylation of indole and protonation of basic nitrogen in the presence of trifluoroacetate counterion.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amination / Ammonolysis",
+            "reagents": "NH4Cl, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O, 40 C",
+            "yield": "64%",
+            "reactant_smiles": "CN1C=C2CC[NH+]=C3C=C(C(=O)C1=C23)OC.C(=O)(C(F)(F)F)[O-]",
+            "product_smiles": "CN1C=C2CC[NH+]=C3C=C(C(=O)C1=C23)N.C(=O)(C(F)(F)F)[O-]",
+            "notes": "Substitution of a methoxy group with an amine group on the quinone-like ring system.",
+            "substeps": []
+        }
+    ]
+}

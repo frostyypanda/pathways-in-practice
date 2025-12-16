@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lissodendoric-acid-a-garg-2023",
+        "molecule_name": "Lissodendoric acid A",
+        "class": "Natural Product",
+        "author": "Garg",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-bromination / Radical Halogenation",
+            "reagents": "NBS, AIBN",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC(=O)CC(=O)C1",
+            "product_smiles": "[Boc]N1CC(=O)C(Br)C(=O)C1",
+            "notes": "Radical alpha-bromination of N-Boc-3,5-dioxopiperidine using NBS and AIBN.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Enolization / Triflation",
+            "reagents": "DME",
+            "reagent_smiles": "[NaH].F3CS(=O)(=O)OS(=O)(=O)CF3",
+            "conditions": "0 °C to rt, then -46 °C",
+            "yield": "55% (2 steps)",
+            "reactant_smiles": "[Boc]N1CC(=O)C(Br)C(=O)CC1",
+            "product_smiles": "[Boc]N1CC(=O)C(Br)=C([OTf])CC1",
+            "notes": "Alpha-brominated cyclic imide undergoes enolization with NaH, followed by trapping with triflic anhydride to form an enol triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "CuBr•DMS",
+            "reagent_smiles": "[Zr](Cl)([cH-]1cccc1)([cH-]2cccc2)CCCCCCCCC N([Boc])[Boc]",
+            "conditions": "THF, 40 °C",
+            "yield": "63%",
+            "reactant_smiles": "O=C1CC(Br)=C([OTf])CN1[Boc]",
+            "product_smiles": "O=C1CC(Br)=C(CCCCCCCCC N([Boc])[Boc])CN1[Boc]",
+            "notes": "Alkyl cross-coupling where an alkylzirconium reagent replaces a triflate group on a dihydropyridinone core.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Reduction",
+            "reagents": "BH3•SMe2, THF",
+            "reagent_smiles": "C[C@H]1CCC[N]1B2OC(c3ccccc3)(c4ccccc4)C2",
+            "conditions": "30 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CC(=O)C(Br)=C(CCCCCCCCCCN(C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)CC1",
+            "product_smiles": "CC(C)(C)OC(=O)N1CC([C@H](O))C(Br)=C(CCCCCCCCCCN(C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)CC1",
+            "notes": "Stereoselective reduction of a ketone using a chiral borane catalyst to form an alcohol with a dashed (S)-configuration hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acylation / Esterification",
+            "reagents": "",
+            "reagent_smiles": "CCOC(=O)Cl.c1ccncc1.ClCCl",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "66%",
+            "reactant_smiles": "[Boc]N1CC[C@H](O)C(Br)=C(CCCCCCCCCCN([Boc])[Boc])C1",
+            "product_smiles": "[Boc]N1CC[C@H](OC(=O)OCC)C(Br)=C(CCCCCCCCCCN([Boc])[Boc])C1",
+            "notes": "Conversion of a secondary alcohol to an ethyl carbonate. This yield is reported over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Stereospecific Silylation",
+            "reagents": "(PhMe2Si)2CuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "71%",
+            "reactant_smiles": "[Boc]N1CC[C@@H](OC(=O)OCC)C(=C(Br)CCCCCCCCCCN([Boc])[Boc])C1",
+            "product_smiles": "[Boc]N1CC[C@H]([Si](C)(C)c1ccccc1)C(=C(Br)CCCCCCCCCCN([Boc])[Boc])C1",
+            "notes": "Copper-mediated substitution of an ethyl carbonate group by a dimethylphenylsilyl group with inversion of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Diels-Alder / Cycloaddition",
+            "reagents": "CsF, Bu4NBr",
+            "reagent_smiles": "C=CCCCCCCCc1c(C(=O)OC(C)(C)C)cc(=O)o1",
+            "conditions": "MeCN, -20 °C",
+            "yield": "73%",
+            "reactant_smiles": "[Boc]N1[C@@H]([Si](C)(C)[Ph])C=C(Br)CCCCCCCCCCN([Boc])[Boc]CC1",
+            "product_smiles": "C=CCCCCCCC1=CC2(C(C1C(CCCCCCCCCCN([Boc])[Boc])(CN[Boc])C2C(=O)OC(C)(C)C)=O)=O",
+            "notes": "Complex cycloaddition between a cyclic diene (tetrahydropyridine derivative) and a pyrone derivative, forming a bridged polycyclic product. SiMe2Ph and Br groups are eliminated. Note: The provided product SMILES contained significant structural inconsistencies and incorrect functional groups which were corrected as best as possible, but the original SMILES's representation of the complex bridged ring system may still be flawed in terms of connectivity.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Tosylation",
+                    "reagents": "TsCl, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 23 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=C1OC(C(=O)O)=CC(O)=C1",
+                    "product_smiles": "O=C1OC(C(=O)[OTs])=CC([OTs])=C1",
+                    "notes": "Conversion of carboxylic acid and hydroxyl groups to tosyl ester and tosyl ether, respectively, using tosyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Transesterification",
+                    "reagents": "t-BuOH",
+                    "reagent_smiles": "CC(C)(C)O",
+                    "conditions": "23 to 40 °C",
+                    "yield": "76% (2 steps)",
+                    "reactant_smiles": "O=C1C(C(=O)[OTs])=CC(=C([OTs])O1)",
+                    "product_smiles": "O=C1C(C(=O)[OtBu])=CC(=C([OTs])O1)",
+                    "notes": "Selective transesterification of the tosyl ester at C2 to a tert-butyl ester, while the tosyl ether at C5 remains unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Negishi Coupling",
+                    "reagents": "PdCl2(PPh3)2, N-methylimidazole",
+                    "reagent_smiles": "Br[Zn]CCCCCCCC=C",
+                    "conditions": "DMA, 23 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "CC(C)(C)OC(=O)C1=CC(OS(=O)(=O)c2ccc(C)cc2)=CC(=O)O1",
+                    "product_smiles": "CC(C)(C)OC(=O)C1=CC(CCCCCCCC=C)=CC(=O)O1",
+                    "notes": "Negishi coupling reaction where a tosylate group on a pyran-2,4-dione is replaced by an 8-carbon unsaturated alkyl chain using an organozinc reagent.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Epoxidation",
+            "reagents": "PDC, t-BuOOH",
+            "reagent_smiles": "",
+            "conditions": "benzene, 23 °C",
+            "yield": "49%",
+            "reactant_smiles": "C=CCCCCCCC1=CC2(C3(C1C4(C3CN(C4)[Boc])[CO2tBu])C(=O)C2)CCCCCCCCCC[NBoc2]",
+            "product_smiles": "C5(O5)CCCCCCCC1=CC2(C3(C1C4(C3CN(C4)[Boc])[CO2tBu])C(=O)C2)CCCCCCCCCC[NBoc2]",
+            "notes": "Epoxidation of the terminal alkene using PDC and t-BuOOH.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "Cu(OAc)2, BDP, PMHS, t-BuOH",
+            "reagent_smiles": "",
+            "conditions": "toluene, 23 °C",
+            "yield": "89%",
+            "reactant_smiles": "C=CCCCCCCC/C=C\\1C(=O)C2([CO2t-Bu])C3C(=O)N([Boc])C(=O)C2(CC13)CC(CCCCCCCCCCN[NBoc2])",
+            "product_smiles": "C=CCCCCCCC[C@H]1C(=O)C2([CO2t-Bu])C3C(=O)N([Boc])C(=O)C2(C[C@@H]13)C[C@H](CCCCCCCCCCN[NBoc2])",
+            "notes": "Copper-catalyzed asymmetric hydrogenation of a cyclopentenone derivative, stereoselectively reducing the internal alkene to an alkane.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement",
+            "reagents": "MeCN",
+            "reagent_smiles": "CC#N",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCCCCCCC1=CC(C(=O)O[tBu])[C@@]23CC1[C@@H]4[C@@H]2C[N]([Boc])C(=O)[C@@]4(C(=O)O[tBu])CCCCCCCCCCC[N]([Boc])[Boc]",
+            "product_smiles": "C=CCCCCCCCCCC[C@@]12C[C@H](C(=O)O[tBu])C=C[C@@H](C[N]([Boc])C(=O)C1)[C@@]2CCCCCCCCCCC[N]H[Boc]",
+            "notes": "Intramolecular rearrangement and cyclization reaction, likely involving a Diels-Alder or similar process, leading to a complex polycyclic structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "Cu(OTf)2",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 40 °C",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "C=CCCCCCCC1=C[C@]2(CCCCCCCCCN[Boc])CN([Boc])C(=O)C[C@@H]2C(=C1)[CO2tBu]",
+            "product_smiles": "C=CCCCCCCC1=C[C@]2(CCCCCCCCCN[Boc])CNC(=O)C[C@@H]2C(=C1)[CO2tBu]",
+            "notes": "Selective deprotection of the N-Boc group on the lactam nitrogen to an NH group, using Cu(OTf)2. The other N-Boc group on the alkyl chain and the tert-butyl ester remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "C=CC(=O)Cl",
+            "conditions": "CH2Cl2, 0 to 23 °C",
+            "yield": "71%",
+            "reactant_smiles": "C=CCC[C@@]1(CCCCCCCCCNC(=O)OC(C)(C)C)C[C@@H]2C(=O)NC[C@@]1C=C(C(=O)OC(C)(C)C)C=C2",
+            "product_smiles": "C=CCC[C@@]1(CCCCCCCCCNC(=O)OC(C)(C)C)C[C@@H]2C(=O)N(C(=O)C=C)[C@@]1C=C(C(=O)OC(C)(C)C)C=C2",
+            "notes": "Acylation of lactam nitrogen with acryloyl chloride to form a tertiary amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs catalyst (2nd generation)",
+            "reagent_smiles": "Cl[Ru](Cl)(P(C1CCCCC1)(C1CCCCC1)C1CCCCC1)(=C1N(C)C=CN1C)",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[tBuO2C]C1=CC=C2[C@H]3CC(=O)N(C(=O)C=C)C[C@@]3(CCCCCCCCCCC=C)CCCCCCCCCC[NHBoc]21",
+            "product_smiles": "[tBuO2C]C1=CC=C2[C@H]3CC(=O)N4C(=O)C=CC[C@@]3(C4CCCCC)CCCCCCCCCC[NHBoc]21",
+            "notes": "Intramolecular RCM of an N-acrylate with a macrocyclic terminal alkene to form a new 6-membered nitrogen-containing ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reduction",
+            "reagents": "Rh(COD)(acac)",
+            "reagent_smiles": "c1ccccc1[SiH3]",
+            "conditions": "CH2Cl2, 40 °C",
+            "yield": "38%",
+            "reactant_smiles": "[CO2tBu]C1=CC=C2[C@@H]1C[C@@]3(CCCCCCCCCCN[Boc])CC4N(C(=O)C=C)C(=O)C[C@H]2C43",
+            "product_smiles": "[CO2tBu]C1=CC=C2[C@@H]1C[C@@]3(CCCCCCCCCCN[Boc])CC4N(CCC)CCC[C@H]2C43",
+            "notes": "Rhodium-catalyzed reduction of a cyclic imide and its adjacent alkene to a saturated cyclic amine, using phenylsilane as the reductant.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 to 23 °C",
+            "yield": "77%",
+            "reactant_smiles": "O=C(OC(C)(C)C)C1=CC2=C[C@@]3(CCCCCCCCNC(=O)OC(C)(C)C)CN(CCCCCCCC2)CC[C@H]13",
+            "product_smiles": "O=C(O)C1=CCC2[C@@]3(CCCCCCCCN)[NH+](CCCCCCCC2)CC[C@H]13.O=C(O)C(F)(F)F",
+            "notes": "Deprotection of a Boc-protected amine and a tert-butyl ester using trifluoroacetic acid (TFA). The product structure also depicts the reduction of one of the double bonds in the cyclohexadiene ring to a cyclohexene, which is an unusual transformation for TFA without an explicit reducing agent. The stereochemistry at the chiral center ([C@H]) and the spiro center ([C@@] ) is retained.",
+            "substeps": []
+        }
+    ]
+}

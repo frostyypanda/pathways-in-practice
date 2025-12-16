@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "phyllantidine-wood-2020",
+        "molecule_name": "Phyllantidine",
+        "class": "Natural Product",
+        "author": "Wood",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "acetone, 25 °C",
+            "yield": "74%",
+            "reactant_smiles": "C1=CCC=CC1",
+            "product_smiles": "O[C@@H]1[C@@H](O)C=CCC1",
+            "notes": "cis-dihydroxylation of 1,4-cyclohexadiene",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Selective Silylation (Alcohol Protection)",
+            "reagents": "TBSCl, Imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, 25 °C",
+            "yield": "93%",
+            "reactant_smiles": "O[C@@H]1[C@@H](O)C=CCC1",
+            "product_smiles": "O[C@@H]1[C@@H]([OTBS])C=CCC1",
+            "notes": "Selective protection of one of the two secondary hydroxyl groups with TBSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 to 25 °C",
+            "yield": "87%",
+            "reactant_smiles": "[OTBS][C@H]1CC=CC[C@H]1O",
+            "product_smiles": "O=C1CC=CC[C@H]1[OTBS]",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin Periodinane. The TBS protecting group and stereochemistry at the adjacent carbon are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Organolithium Addition / Conjugate Addition",
+            "reagents": "THF",
+            "reagent_smiles": "C1CCC(=C1)O[Li]",
+            "conditions": "-78 °C",
+            "yield": "90%",
+            "reactant_smiles": "O=C1C=CCC[C@@H]([OTBS])C1",
+            "product_smiles": "O[C@]1([C@@]2CCC(=O)C2)C=CCC[C@@H]([OTBS])C1",
+            "notes": "Addition of a lithium enolate to a cyclohexenone, forming a new C-C bond and multiple stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "HF·pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "[OTBS][C@@H]1CC=CC[C@@]1([C@@H]2CCCC2=O)O",
+            "product_smiles": "HO[C@@H]1CC=CC[C@@]1([C@@H]2CCCC2=O)O",
+            "notes": "TBS silyl ether deprotection to yield a diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cyclic Carbonate Formation",
+            "reagents": "pyridine",
+            "reagent_smiles": "C(=O)(Cl)Cl",
+            "conditions": "DCM, 0 to 25 °C",
+            "yield": "95%",
+            "reactant_smiles": "C1=CC[C@]([C@H]2CCCC2=O)([C@H](C1)O)O",
+            "product_smiles": "C1=CC[C@@]2([C@H]3CCCC3=O)[C@H](C1)OC(=O)O2",
+            "notes": "Formation of a 5-membered cyclic carbonate from a vicinal diol using phosgene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxime formation",
+            "reagents": "NH2OH·HCl, pyridine, i-PrOH",
+            "reagent_smiles": "",
+            "conditions": "40 °C",
+            "yield": "98%",
+            "reactant_smiles": "C1=CC[C@@]2([C@H]3CCCC3=O)[C@H](C1)OC(=O)O2",
+            "product_smiles": "C1=CC[C@]2([C@H]3CCC/C(=N/O)/C3)[C@H](C1)OC(=O)O2",
+            "notes": "Conversion of a ketone to an oxime using hydroxylamine hydrochloride and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "AcOH",
+            "reagent_smiles": "CC(=O)OI(OC(=O)C)c1ccccc1",
+            "conditions": "25 °C",
+            "yield": "64%",
+            "reactant_smiles": "C1=CC[C@@]2([C@@H]3CCC\\C3=N\\O)[C@H](C1)OC(=O)O2",
+            "product_smiles": "CC(=O)O[C@@]1(CCC[C@@H]1[C@@]23CC=CC[C@H]2OC(=O)O3)N=O",
+            "notes": "Conversion of an oxime to an alpha-acetoxy nitroso compound (nitrosation-acetoxylation).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Base-mediated rearrangement and ring expansion",
+            "reagents": "LiOMe",
+            "reagent_smiles": "[Li]OC.C1CCOC1",
+            "conditions": "THF, -80 °C",
+            "yield": "62%",
+            "reactant_smiles": "CC(=O)O[C@@]12CCC[C@@H]([C@@]13CC=CC[C@@H]3OC(=O)O4)N4O2",
+            "product_smiles": "C1=CC[C@]2([C@H]3CCCC(=O)N3O)[C@H](C1)OC(=O)O2",
+            "notes": "Oxaziridine undergoes ring opening and rearrangement, accompanied by ring expansion of the pyrrolidine derivative and loss of the acetate group, to form a cyclic hydroxylamine-lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular iodoetherification",
+            "reagents": "I2, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 80 °C",
+            "yield": "90%",
+            "reactant_smiles": "C1=CC[C@]2([C@H]3CCCC(=O)N3O)[C@@H](C1)OC(=O)O2",
+            "product_smiles": "C1C[C@H]2[C@]34C[C@H]([C@@H](C[C@H]3OC(=O)O4)I)ON2C(=O)C1",
+            "notes": "Intramolecular iodocyclization of an N-hydroxylactam onto an alkene, forming a new oxazine ring and an iodo-substituted cyclohexane ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Dehydroiodination / E2 Elimination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "benzene, 75 °C",
+            "yield": "90%",
+            "reactant_smiles": "C1C[C@@H]2[C@@]34C[C@H]([C@@H](C[C@@H]3OC(=O)O4)I)ON2C(=O)C1",
+            "product_smiles": "C1C[C@@H]2[C@@]34CC(C=C[C@@]3OC(=O)O4)ON2C(=O)C1",
+            "notes": "DBU-mediated dehydroiodination of the iodide to form a new alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "AlH2Cl",
+            "reagent_smiles": "Cl[AlH2]",
+            "conditions": "ether/THF, 25 °C",
+            "yield": "63%",
+            "reactant_smiles": "O=C1N2[C@H](CCC1)O[C@]3(OC(=O)O[C@@H]4C=C[C@H]3)C2",
+            "product_smiles": "C1CCN2[C@H](C1)[C@]3(C[C@H](C=C[C@@H]3O)O2)O",
+            "notes": "Lactam and cyclic carbonate/ketal are reduced to a piperidine and a diol, respectively, using AlH2Cl.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP, DCM",
+            "reagent_smiles": "",
+            "conditions": "26 °C",
+            "yield": "",
+            "reactant_smiles": "C1CCN2[C@H](C1)[C@]3(C[C@H](C=C[C@H]3O)O2)O",
+            "product_smiles": "C1C[C@@H]2[C@]3(C[C@@H](C=CC3=O)ON2C(=O)C1)O",
+            "notes": "Oxidation of a secondary alcohol to a ketone and the alpha-carbon of the piperidine ring to a lactam (amide).",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Lactonization / Rearrangement",
+            "reagents": "Ph3P=C=C=O",
+            "reagent_smiles": "O=C=C=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "µW, 90°C, benzene",
+            "yield": "62% (2 steps)",
+            "reactant_smiles": "O=C1N2O[C@@]3(O)C(=O)C=C[C@H]4CC[C@@H]2C14",
+            "product_smiles": "O=C1N2O[C@@]34C(=O)C=C[C@H]5CC[C@@H]2C15O4",
+            "notes": "Intramolecular cyclization and lactone formation from a keto-alcohol, facilitated by triphenylphosphoranylideneketene, forming a fused furanone system. This involves rearrangement and ring closure.",
+            "substeps": []
+        }
+    ]
+}

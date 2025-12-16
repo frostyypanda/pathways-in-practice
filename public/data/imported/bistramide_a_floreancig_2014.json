@@ -1,0 +1,351 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bistramide-a-floreancig-2014",
+        "molecule_name": "Bistramide A",
+        "class": "Natural Product",
+        "author": "Floreancig",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "83%",
+            "reactant_smiles": "C(CCO)CCl",
+            "product_smiles": "O=CCCCCl",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Swern conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Allylation",
+            "reagents": "(-)-(Ipc)₂BOMe, trans-2-butene, nBuLi, KOtBu, BF₃•OEt₂, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "67%",
+            "reactant_smiles": "O=CCCCCl",
+            "product_smiles": "C=C[C@@H](C)[C@@H](CCCCl)O",
+            "notes": "Asymmetric allylation of an aldehyde, forming an alcohol with two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol protection",
+            "reagents": "TESCl, Imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "99%",
+            "reactant_smiles": "C=C[C@H](C)[C@@H](O)CCCCl",
+            "product_smiles": "C=C[C@H](C)[C@@H]([OTES])CCCCl",
+            "notes": "Protection of secondary alcohol as a triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Heck Reaction",
+            "reagents": "(9-BBN)2, Pd(dppf)Cl2, K3PO4",
+            "reagent_smiles": "CC(=O)C=CI",
+            "conditions": "THF, H2O, CH2Cl2, 0 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "C=C[C@H](C)[C@H](CCCCl)[OTES]",
+            "product_smiles": "CC(=O)/C=C/CCC[C@H](C)[C@H](CCCCl)[OTES]",
+            "notes": "Heck coupling of vinyl iodide with a terminal alkene. A new C-C bond is formed, resulting in an E-configured double bond. The relative stereochemistry of the two chiral centers (methyl and OTES-bearing carbons) is maintained from the reactant to the product as (R,S).",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Hydroiodination / Conjugate Addition",
+                    "reagents": "AcOH",
+                    "reagent_smiles": "[Li]I",
+                    "conditions": "",
+                    "yield": "60%",
+                    "reactant_smiles": "C#CC(=O)C",
+                    "product_smiles": "CC(=O)/C=C/I",
+                    "notes": "Addition of LiI to an alkyne ketone, yielding an E-vinyl iodide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enol Silyl Ether Formation",
+            "reagents": "TESOTf, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "[OTES][C@H](CCCCl)[C@@H](C)CC/C=C/C(=O)C",
+            "product_smiles": "[OTES]C(=C)/C=C/CC[C@@H](C)[C@H](CCCCl)[OTES]",
+            "notes": "Formation of an enol silyl ether from the terminal methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Spiroketalization",
+            "reagents": "Jacobsen's Catalyst, 4 Å MS, DDQ, p-TsOH•H₂O",
+            "reagent_smiles": "C=C[C@@H](C)CCC=O",
+            "conditions": "CH₂Cl₂",
+            "yield": "58%",
+            "reactant_smiles": "[OTES]OC(=C)/C=C/CC[C@H](C)[C@@H](O[OTES])CCCCl",
+            "product_smiles": "C=C[C@@H](C)CC[C@@]1(O2)OCCC(=O)C1O[C@H](CCCCl)[C@H](C)CC2",
+            "notes": "Intramolecular asymmetric cyclization to form a spiroketal and ketone.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Xanthate formation",
+                    "reagents": "NaH, CS₂, MeI",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "CC(=CCC[C@@H](C)CCO)C",
+                    "product_smiles": "CC(=CCC[C@@H](C)CCOC(=S)SC)C",
+                    "notes": "Primary alcohol is converted to an O-methyl dithiocarbonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Chugaev elimination",
+                    "reagents": "",
+                    "reagent_smiles": "",
+                    "conditions": "260 °C",
+                    "yield": "54% (2 steps)",
+                    "reactant_smiles": "CC(=CCC[C@H](C)CCOC(=S)SC)C",
+                    "product_smiles": "C=C[C@H](C)CCC=C(C)C",
+                    "notes": "Thermal elimination of a xanthate ester to form an alkene via a syn-elimination, retaining the stereochemistry of the remote chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Epoxidation",
+                    "reagents": "mCPBA",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "99%",
+                    "reactant_smiles": "C=C[C@@H](C)CCC=C(C)C",
+                    "product_smiles": "C=C[C@@H](C)CCC1C(C)(C)O1",
+                    "notes": "Selective epoxidation of the more substituted internal alkene using mCPBA, while the terminal alkene and chiral center remain unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Oxidative Cleavage / Fragmentation",
+                    "reagents": "HIO₄",
+                    "reagent_smiles": "",
+                    "conditions": "THF, Et₂O",
+                    "yield": "",
+                    "reactant_smiles": "C=C[C@@H](C)CCC1OC(C)(C)C1",
+                    "product_smiles": "C=C[C@H](C)CC=O",
+                    "notes": "Oxidative cleavage of a terminal epoxide and adjacent C-C bond, resulting in an aldehyde and fragmentation of the gem-dimethyl group. Stereochemistry at the chiral center appears to be inverted (dashed methyl in reactant, wedged methyl in product).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Tosylhydrazone formation",
+            "reagents": "TsNHNH2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H](C)CC[C@@H]1CC(=O)C[C@]2(CC[C@H](C)[C@@H](CCCCl)O2)O1",
+            "product_smiles": "C=C[C@H](C)CC[C@@H]1C/C(=N\\N[Ts])/C[C@]2(CC[C@H](C)[C@@H](CCCCl)O2)O1",
+            "notes": "Formation of a tosylhydrazone from a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Na+].[BH3CN]-",
+            "conditions": "MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H](C)CC[C@@]1C/C(=N\\N[Ts])/C[C@]2(CC[C@H](C)[C@H](CCCCl)O2)O1",
+            "product_smiles": "C=C[C@@H](C)CC[C@@]1[C@H](NN[Ts])C[C@]2(CC[C@H](C)[C@H](CCCCl)O2)O1",
+            "notes": "Hydrazone reduction to hydrazine using sodium cyanoborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrazine cleavage / Deprotection",
+            "reagents": "NaOAc, EtOH",
+            "reagent_smiles": "CC(=O)[O-].[Na+].CCO",
+            "conditions": "75 °C",
+            "yield": "54% (3 steps)",
+            "reactant_smiles": "C=C[C@@H](C)CCC[C@@H]1C[C@H]2(NN[Ts])OC3(O1)[C@H]2CC[C@H](C)[C@H](CCCCl)O3",
+            "product_smiles": "C=C[C@@H](C)CCC[C@@H]1C[C@H]2OC3(O1)[C@H]2CC[C@H](C)[C@H](CCCCl)O3",
+            "notes": "Cleavage of a tosylhydrazine to generate a new C-H bond with retention of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Cross-metathesis",
+            "reagents": "Grela-Grubbs",
+            "reagent_smiles": "C=C(C)C=O",
+            "conditions": "CH2Cl2, 40 °C to rt",
+            "yield": "68%",
+            "reactant_smiles": "C=C[C@@H](C)CC[C@H]1CCC[C@H]2O[C@H](CCCCl)C[C@@H](C)C2O1",
+            "product_smiles": "C[C@@H](CC[C@H]1CCC[C@H]2O[C@H](CCCCl)C[C@@H](C)C2O1)/C=C(\\C)/C=O",
+            "notes": "Cross-metathesis of a terminal alkene with methacrolein catalyzed by Grela-Grubbs catalyst to form an alpha,beta-unsaturated aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Asymmetric Alkylation / Methylation",
+            "reagents": "ZnMe2",
+            "reagent_smiles": "C[C@]12CCC([C@@]1(C)C)[C@H](O)[C@@H]2N3CCOCC3",
+            "conditions": "hexanes",
+            "yield": "86%",
+            "reactant_smiles": "C[C@@H](CC[C@H]1CCC[C]2(CC[C@H](C)[C@H](CCCCl)O2)O1)/C=C(\\C)/C=O",
+            "product_smiles": "C[C@@H](CC[C@H]1CCC[C]2(CC[C@H](C)[C@H](CCCCl)O2)O1)/C=C(\\C)[C@H](O)C",
+            "notes": "Asymmetric methylation of an α,β-unsaturated aldehyde using dimethylzinc and a chiral ligand, yielding a secondary allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3, DMF",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-].CN(C)C=O",
+            "conditions": "60 °C",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H](CC[C@@]1([2H])CCC[C@]2(CC[C@H](C)[C@@]([2H])(CCCCl)O2)O1)/C=C(\\C)/[C@H](C)O",
+            "product_smiles": "C[C@@H](CC[C@@]1([2H])CCC[C@]2(CC[C@H](C)[C@@]([2H])(CCC[N-]=[N+]=[N-])O2)O1)/C=C(\\C)/[C@H](C)O",
+            "notes": "Substitution of a terminal chloride with azide using sodium azide in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Staudinger Reduction",
+            "reagents": "",
+            "reagent_smiles": "CP(C)C",
+            "conditions": "THF, H2O",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](CC[C@@]1CCC[C@]2(CC[C@H](C)[C@@](CCC[N-]=[N+]=[N-])O2)O1)/C=C(\\C)/[C@H](C)O",
+            "product_smiles": "C[C@@H](CC[C@@]1CCC[C@]2(CC[C@H](C)[C@@](CCCN)O2)O1)/C=C(\\C)/[C@H](C)O",
+            "notes": "Staudinger reduction of an azide to a primary amine using trimethylphosphine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Amide Formation",
+            "reagents": "DMF",
+            "reagent_smiles": "C/C=C/C(=O)C[C@H]1CC[C@H](C)[C@H](CC(=O)NC[C@@H]([C@H](C)C(=O)ON2C(=O)CCC2=O)O)O1",
+            "conditions": "",
+            "yield": "69%",
+            "reactant_smiles": "C[C@H](O)[C@@H](C)/C=C(\\C)C[C@@]12CCC[C@]3(CC[C@H](C)[C@H](CCCN)O3)O1",
+            "product_smiles": "C/C=C/C(=O)C[C@H]1CC[C@H](C)[C@H](CC(=O)NC[C@@H]([C@H](C)C(=O)NCCC[C@H]2[C@H](C)CC[C@@]3(CCC[C@@]4(C[C@H](O)[C@@H](C)/C=C(\\C)CC)O4)O3)O)O1",
+            "notes": "Amide coupling reaction between an amine and an N-hydroxysuccinimide (NHS) activated ester.",
+            "substeps": [
+                {
+                    "step_id": "14.1",
+                    "reaction_type": "Selective Silyl Ether Formation / Alcohol Protection",
+                    "reagents": "TBSCl, Imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "95%",
+                    "reactant_smiles": "OCCCO",
+                    "product_smiles": "[OTBS]CCC(O)",
+                    "notes": "Selective monoprotection of propane-1,3-diol with TBSCl and imidazole to form a silyl ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.2",
+                    "reaction_type": "Oxidation (Swern-like)",
+                    "reagents": "SO3•Py, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DMSO, CH2Cl2",
+                    "yield": "88%",
+                    "reactant_smiles": "[OTBS]CCCCO",
+                    "product_smiles": "[OTBS]CCC=O",
+                    "notes": "Primary alcohol is oxidized to an aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.3",
+                    "reaction_type": "Asymmetric allylboration / Oxidation",
+                    "reagents": "(+)-(Ipc)2BOMe, cis-2-butene, KOtBu, nBuLi, BF3•OEt2, NaOH, H2O2",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "67 %",
+                    "reactant_smiles": "[TBS]OCCC=O",
+                    "product_smiles": "C=C[C@@H](C)[C@H](CCO[TBS])O",
+                    "notes": "Allylation of an aldehyde using (+)-(Ipc)2BOMe and subsequent oxidation to yield a chiral homoallylic alcohol with TBS protection.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.4",
+                    "reaction_type": "Hydroformylation / Cyclization / Acetylation",
+                    "reagents": "Rh(CO)2acac, H2, CO, Et3N, DMAP",
+                    "reagent_smiles": "C1=CC(=O)NC(=C1)P(c2ccccc2)c3ccccc3.O=C(C)OC(=O)C",
+                    "conditions": "THF, CH2Cl2",
+                    "yield": "91%",
+                    "reactant_smiles": "C=C[C@H](C)[C@@H](CC[OTBS])O",
+                    "product_smiles": "[OAc]C1CC[C@H](C)[C@@H](CC[OTBS])O1",
+                    "notes": "Rhodium-catalyzed hydroformylation of alkene, followed by intramolecular cyclization of the aldehyde with alcohol to form tetrahydropyran, and in-situ acetylation of the resulting hemiacetal.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.5",
+                    "reaction_type": "Anomeric C-C Bond Formation / C-glycosylation",
+                    "reagents": "TMSCl, Et3N",
+                    "reagent_smiles": "C/C=C/C(=O)C",
+                    "conditions": "CH2Cl2, 0 °C to -78 °C",
+                    "yield": "57%",
+                    "reactant_smiles": "[OTBS]CC[C@H]1[C@@H](C)CC[C](OC(=O)C)O1",
+                    "product_smiles": "C/C=C/C(=O)C[C@H]1CC[C@@H](C)[C@]([H])(CCO[OTBS])O1",
+                    "notes": "Anomeric acetate group is replaced by a (2E)-4-oxopent-2-en-1-yl chain. Stereochemistry at the methyl-bearing carbon and the carbon bearing the TBSO-ethyl chain is retained. The anomeric carbon's stereochemistry changes from unspecified (wavy bond) to axial hydrogen (alpha-glycoside configuration).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.6",
+                    "reaction_type": "Oxidation",
+                    "reagents": "H₅IO₆, CrO₃, Na₂HPO₄",
+                    "reagent_smiles": "",
+                    "conditions": "CH₃CN, H₂O, EtOAc, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C/C=C/C(=O)C[C@H]1O[C@@H](CCO[TBS])C[C@@H](C)CC1",
+                    "product_smiles": "C/C=C/C(=O)C[C@H]1O[C@@H](CC(=O)O)C[C@@H](C)CC1",
+                    "notes": "Oxidation of a primary alcohol (derived from TBS ether) to a carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.7",
+                    "reaction_type": "Carboxylic Acid Activation",
+                    "reagents": "NHS, DCC",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "81% (2 steps)",
+                    "reactant_smiles": "C/C=C/C(=O)C[C@H]1OC[C@H](C)C[C@H](CC(=O)O)C1",
+                    "product_smiles": "C/C=C/C(=O)C[C@H]1OC[C@H](C)C[C@H](CC(=O)ON2C(=O)CCC2=O)C1",
+                    "notes": "Activation of a carboxylic acid to an N-hydroxysuccinimide (NHS) ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.8",
+                    "reaction_type": "Amide Coupling",
+                    "reagents": "iPr2NEt",
+                    "reagent_smiles": "NCCC([C@H](O)[C@@H](C)C(=O)O)",
+                    "conditions": "DMF",
+                    "yield": "",
+                    "reactant_smiles": "C[C@@H]1CC[C@@H](O[C@H](CC(=O)ON2C(=O)CCC2=O)C1)CC(=O)/C=C/C",
+                    "product_smiles": "C[C@@H]1CC[C@@H](O[C@H](CC(=O)NC[C@H](O)[C@@H](C)C(=O)O)C1)CC(=O)/C=C/C",
+                    "notes": "Amide coupling of an N-hydroxysuccinimide (NHS) ester with a primary amine, mediated by a base.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.9",
+                    "reaction_type": "Carboxylic Acid Activation / Esterification",
+                    "reagents": "NHS, DCC",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "50% (2 steps)",
+                    "reactant_smiles": "O=C(O)[C@H](C)[C@@H](O)CNC(=O)C[C@H]1O[C@@H](CC(=O)/C=C/C)[C@@H](C)C[C@H]1C",
+                    "product_smiles": "O=C(ON1C(=O)CCC1=O)[C@H](C)[C@@H](O)CNC(=O)C[C@H]1O[C@@H](CC(=O)/C=C/C)[C@@H](C)C[C@H]1C",
+                    "notes": "Formation of N-hydroxysuccinimide ester from carboxylic acid using NHS and DCC.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

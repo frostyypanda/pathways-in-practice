@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "heliophenanthrone-hildebrandt-2005",
+        "molecule_name": "Heliophenanthrone",
+        "class": "Natural Product",
+        "author": "Hildebrandt",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Organozinc addition / Barbier-type reaction",
+            "reagents": "Zn",
+            "reagent_smiles": "C#CCBr",
+            "conditions": "dioxane, sonication",
+            "yield": "67%",
+            "reactant_smiles": "CCOC(=O)C=O",
+            "product_smiles": "C#CCC(C(=O)OCC)O",
+            "notes": "Addition of propargyl bromide to an alpha-keto ester (ethyl glyoxalate) in a zinc-mediated Barbier-type reaction, yielding an alpha-hydroxy ester with an alkyne side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-methylation (Williamson Ether Synthesis)",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "64%",
+            "reactant_smiles": "C#CCC(C(=O)OCC)O",
+            "product_smiles": "C#CCC(C(=O)OCC)OC",
+            "notes": "Methylation of a secondary alcohol to form a methyl ether using sodium hydride and methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C#CCC(C(=O)OCC)OC",
+            "product_smiles": "C#CCC(CO)OC",
+            "notes": "Ester is reduced to a primary alcohol. The alkyne and ether functionalities are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Swern oxidation",
+            "reagents": "oxalyl chloride, DMSO",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -70 °C to rt",
+            "yield": "44% (2 steps)",
+            "reactant_smiles": "C#CCC(CO)OC",
+            "product_smiles": "C#CCC(C=O)OC",
+            "notes": "Primary alcohol oxidized to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkyne addition to aldehyde (Acetylide addition)",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "C[Si](C)(C)C#C",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "58%",
+            "reactant_smiles": "C#CCC(C=O)OC",
+            "product_smiles": "C#CC[C@@H](OC)[C@H](O)C#C[Si](C)(C)C.C#CC[C@@H](OC)[C@@H](O)C#C[Si](C)(C)C",
+            "notes": "Addition of (trimethylsilyl)acetylene to an aldehyde, forming a mixture of two diastereomeric secondary alcohols.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sonogashira cross coupling",
+            "reagents": "PdCl2(PPh3)2, CuI, NEt3",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "C#CCH2[C@@H](OC)[C@H](O)C#C[Si](C)(C)C.CC(=O)c1c(Br)cc(C)cc1",
+            "product_smiles": "CC(=O)c1c(C#CC[C@@H](OC)[C@H](O)C#C[Si](C)(C)C)cc(C)cc1",
+            "notes": "Sonogashira coupling of an aryl bromide with a chiral terminal alkyne, leaving a TMS-protected alkyne group intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "50% (2 steps)",
+            "reactant_smiles": "CC1=CC(=C(C=C1)C(=O)C)C#CC[C@@H](C(C#[TMS])O)OC",
+            "product_smiles": "CC1=CC(=C(C=C1)C(=O)C)C#CC[C@@H](C(C#C)O)OC",
+            "notes": "Deprotection of a TMS-protected alkyne to a terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alcohol protection",
+            "reagents": "imidazole, DMF",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)Cl",
+            "conditions": "90%",
+            "yield": "90%",
+            "reactant_smiles": "Cc1ccc(C(=O)C)c(C#CC[C@H](OC)C[C@H](O)C#C)c1",
+            "product_smiles": "Cc1ccc(C(=O)C)c(C#CC[C@H](OC)C[C@H]([OTBDMS])C#C)c1",
+            "notes": "Protection of a secondary alcohol with TBDMSCl in the presence of imidazole and DMF to form a silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Platinum-catalyzed Enyne Cyclization",
+            "reagents": "PtCl2",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 120 °C",
+            "yield": "25%",
+            "reactant_smiles": "[CH]#C[C@@H](O[TBDMS])[C@H](OC)CC#CC1=C(C(=O)C)C=CC(=C1)C",
+            "product_smiles": "CC1=CC=C2C(=CC3=C(C2=C1)C(=O)C[C@H]([C@@H]3O[TBDMS])OC)C",
+            "notes": "Intramolecular cyclization of an enyne featuring a stereoselective formation of a tricyclic system with two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "HF",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "97%",
+            "reactant_smiles": "CC1=CC=C2C(=CC3=C(C2=C1)C(=O)C[C@H]([C@@H]3[OTBDMS])OC)C",
+            "product_smiles": "CC1=CC=C2C(=CC3=C(C2=C1)C(=O)C[C@H]([C@@H]3O)OC)C",
+            "notes": "Deprotection of a TBDMS ether to a hydroxyl group using hydrofluoric acid.",
+            "substeps": []
+        }
+    ]
+}

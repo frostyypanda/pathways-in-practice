@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cephalotaxine-ishibashi-2008",
+        "molecule_name": "Cephalotaxine",
+        "class": "Natural Product",
+        "author": "Ishibashi",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetal formation (1,3-dioxolane)",
+            "reagents": "pTsOH",
+            "reagent_smiles": "CC(C)(OC)OC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@@H](O)[C@H](O)C(=O)OC",
+            "product_smiles": "COC(=O)[C@@H]1OC(C)(C)O[C@H]1C(=O)OC",
+            "notes": "Protection of a 1,2-diol to form an acetonide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "DibalH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H](C(=O)OC)[C@@H](C(=O)OC)O1",
+            "product_smiles": "CC1(C)O[C@H](CO)[C@@H](CO)O1",
+            "notes": "Diester reduction to primary diol using DibalH, retaining acetonide protection and stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Selective Tosylation",
+            "reagents": "TsCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "CC1(C)O[C@H](CO)[C@@H](CO)O1",
+            "product_smiles": "CC1(C)O[C@H](CO)[C@@H](CO[Ts])O1",
+            "notes": "Selective tosylation of the primary alcohol. The tosyl group (TsO) is abbreviated in the product to match the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sulfonate Esterification",
+            "reagents": "Tf2O, Et3N",
+            "reagent_smiles": "C(F)(F)(F)S(=O)(=O)OS(=O)(=O)C(F)(F)(F).CCN(CC)CC",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H](CO)[C@@H](CO[Ts])O1",
+            "product_smiles": "CC1(C)O[C@H](CO[Tf])[C@@H](CO[Ts])O1",
+            "notes": "Selective triflation of a primary alcohol in the presence of a tosylate to form a trifluoromethanesulfonate (triflate) ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "nBuLi, DMPU",
+            "reagent_smiles": "C#C[Ph]",
+            "conditions": "THF, -20 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@@H](CO[Ts])[C@@H](CO[Tf])O1",
+            "product_smiles": "CC1(C)O[C@@H](CO[Ts])[C@@H](CC#C[Ph])O1",
+            "notes": "SN2 displacement of the triflate leaving group by phenylacetylide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "LiBr",
+            "reagent_smiles": "",
+            "conditions": "DMF, 80 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H](CC#C[Ph])[C@@H](CO[Ts])O1",
+            "product_smiles": "CC1(C)O[C@H](CC#C[Ph])[C@@H](CBr)O1",
+            "notes": "Displacement of tosylate by bromide on a primary carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetal hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H](CC#C[Ph])[C@@H](CBr)O1",
+            "product_smiles": "C(#C[Ph])C[C@H](O)[C@@H](CBr)O",
+            "notes": "Hydrolysis of a cyclic acetal (acetonide) to a 1,2-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Radical cyclization (5-exo-dig)",
+            "reagents": "Bu3SnH, AIBN",
+            "reagent_smiles": "",
+            "conditions": "benzene, reflux",
+            "yield": "53%",
+            "reactant_smiles": "[Ph]C#CCH2[C@H](O)[C@@H](CBr)O",
+            "product_smiles": "C1(=CH[Ph])[C@H](O)[C@@H](O)CC1",
+            "notes": "Intramolecular radical cyclization with debromination (5 steps total for the original source reaction sequence).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Protection (Silyl Ether Formation)",
+            "reagents": "",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(c1ccccc1)c2ccccc2.c1cnc[nH]1",
+            "conditions": "DMF, r.t.",
+            "yield": "91%",
+            "reactant_smiles": "O[C@@H]1C[C@H](O)C/C1=C/c2ccccc2",
+            "product_smiles": "[OTBDPS][C@@H]1C[C@H](O[TBDPS])C/C1=C/c2ccccc2",
+            "notes": "Protection of a 1,2-trans-diol as bis-TBDPS ethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃, Me₂S",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "[OTBDPS][C@@H]1CC(=Cc2ccccc2)C[C@H]1[OTBDPS]",
+            "product_smiles": "[OTBDPS][C@@H]1CC(=O)C[C@H]1[OTBDPS]",
+            "notes": "Ozonolysis of an exocyclic alkene to a ketone, retaining the relative stereochemistry of the vicinal TBDPS-protected alcohols.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Imine formation",
+            "reagents": "Ti(OiPr)4",
+            "reagent_smiles": "NCCC1=C(I)C=C2OC(O1)O2",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1C[C@H]([OTBDPS])CC[C@@H]([OTBDPS])C1",
+            "product_smiles": "C1(=NCCC2=C(I)C=C3OCO2)[C@H]([OTBDPS])CC[C@@H]1[OTBDPS]",
+            "notes": "Formation of an imine from a ketone and a primary amine.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Amine Protection (Boc protection)",
+                    "reagents": "Boc2O, NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, 0 °C to r.t.",
+                    "yield": "98%",
+                    "reactant_smiles": "C1=C(CCN)C=C2C(=C1)OCO2",
+                    "product_smiles": "[Boc]NCCC1=CC=C2C(=C1)OCO2",
+                    "notes": "Protection of a primary amine with a Boc group using di-tert-butyl dicarbonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Electrophilic Aromatic Iodination",
+                    "reagents": "I2, CF3COOAg",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "93%",
+                    "reactant_smiles": "[Boc]NCCC1=CC=C2C(=C1)OCO2",
+                    "product_smiles": "[Boc]NCCC1=C(I)C=C2C(=C1)OCO2",
+                    "notes": "Iodination of the aromatic ring, ortho to the ethylamine chain, with retention of the Boc protecting group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Deprotection",
+                    "reagents": "CF3COOH, CH2Cl2",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to r.t.",
+                    "yield": "100%",
+                    "reactant_smiles": "CC(C)(C)OC(=O)NCCC1=C(C=C2C(=C1)OCO2)I",
+                    "product_smiles": "NCCC1=C(C=C2C(=C1)OCO2)I",
+                    "notes": "Boc protecting group removal from amine using trifluoroacetic acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acylation / Enamide Formation",
+            "reagents": "Et2NPh, DMAP",
+            "reagent_smiles": "C=CC(=O)Cl",
+            "conditions": "-78 °C",
+            "yield": "50% (2 steps)",
+            "reactant_smiles": "[OTBDPS][C@@H]1CC(=NCCC2=C(C=C3C(=C2)OCO3)I)C[C@H]1[OTBDPS]",
+            "product_smiles": "C=CC(=O)N(CCC1=C(C=C2C(=C1)OCO2)I)C3=C[C@H]([OTBDPS])[C@@H]([OTBDPS])C3",
+            "notes": "Intramolecular acylation of the imine nitrogen with acryloyl chloride, followed by rearrangement to form an enamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Radical Cyclization / Tandem Cyclization",
+            "reagents": "Bu3SnH",
+            "reagent_smiles": "C1CCC(CC1)(C#N)N=NC2(CCCCC2)C#N",
+            "conditions": "PhCl, reflux",
+            "yield": "27%",
+            "reactant_smiles": "C=CC(=O)N(CCC1=C(I)C=C2C(=C1)OCO2)C3=C[C@@H](O[TBDPS])[C@H](C3)O[TBDPS]",
+            "product_smiles": "[OTBDPS]O[C@H]1[C@@H]([OTBDPS])C2C13C(=O)NCCC4=C(C=C5C(=C4)OCO5)[C@@H]2C3",
+            "notes": "Intramolecular radical cyclization to form a complex tetracyclic fused system from an iodo-acrylamide precursor.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, r.t.",
+            "yield": "96%",
+            "reactant_smiles": "O1COC2=C1C=CC3=C2CC[N]4C(=O)C[C@@]5([C@H]([C@@H](C[C@]34)[OTBDPS])[OTBDPS])",
+            "product_smiles": "O1COC2=C1C=CC3=C2CC[N]4C(=O)C[C@@]5([C@H]([C@@H](C[C@]34)[OH])[OH])",
+            "notes": "Deprotection of two TBDPS ether groups to form diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Oxidation, Dehydration",
+            "reagents": "TFAA, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, DMSO, -78 °C",
+            "yield": "55%",
+            "reactant_smiles": "O1COC2=C1C=C(C=C2)[C@@H]3[C@H]4[C@H](O)[C@H](O)C[C@@]45N(CCC3)C(=O)C5",
+            "product_smiles": "C1C[C@@]23CC(=O)C(=C3C4=C(CCN2C1=O)C=C5C(=C4)OCO5)O",
+            "notes": "Oxidation of a 1,2-diol to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "O-methylation",
+            "reagents": "MeOTMS, TfOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, r.t.",
+            "yield": "74%",
+            "reactant_smiles": "C1C[C@@]23CC(=O)C(=C3C4=C(CCN2C1=O)C=C5C(=C4)OCO5)O",
+            "product_smiles": "COC1=C[C@@]23CCC(=O)N3CCC4=C(C=C5C(=C4)OCO5)[C@H]2C1=O",
+            "notes": "O-methylation of an enol hydroxyl group to an OMe group with concomitant double bond rearrangement and formation of a new chiral center. Both chiral hydrogens are shown as wedges in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Reduction",
+            "reagents": "THF",
+            "reagent_smiles": "[AlH3]",
+            "conditions": "0 °C",
+            "yield": "87%",
+            "reactant_smiles": "COc1c(C=O)[C@H]2C3=C(CCN4C(=O)C[C@@]24C1)C=C5C(=C3)OCO5",
+            "product_smiles": "COc1c[C@H](O)[C@H]2C3=C(CCN4CCC[C@@]24C1)C=C5C(=C3)OCO5",
+            "notes": "Reduction of a ketone and a lactam carbonyl to a secondary alcohol and a methylene group respectively.",
+            "substeps": []
+        }
+    ]
+}

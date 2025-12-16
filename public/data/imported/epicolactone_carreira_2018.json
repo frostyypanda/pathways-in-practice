@@ -1,0 +1,278 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "epicolactone-carreira-2018",
+        "molecule_name": "Epicolactone",
+        "class": "Natural Product",
+        "author": "Carreira",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Vilsmeier-Haack formylation",
+            "reagents": "DMF, POCl3",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "85%",
+            "reactant_smiles": "COC1=CC(OC)=C(OC)C=C1OC",
+            "product_smiles": "COC1=C(C=O)C(OC)=CC(OC)=C1OC",
+            "notes": "Formylation of 1,3,4,6-tetramethoxybenzene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "THF, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "O=Cc1c([OMe])c([OMe])c([OMe])c([OMe])c1",
+            "product_smiles": "[OMe]c1c(CO)c([OMe])c([OMe])c([OMe])c1",
+            "notes": "Aldehyde reduced to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Etherification",
+            "reagents": "t-BuOK",
+            "reagent_smiles": "IC[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "DMF, 50 °C",
+            "yield": "78%",
+            "reactant_smiles": "COC1=C(CO)C(=C(C(=C1)OC)OC)OC",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)COCC1=C(C=C(C(=C1OC)OC)OC)OC",
+            "notes": "A benzyl alcohol undergoes Williamson ether synthesis with (iodomethyl)tributylstannane.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Stille cross coupling",
+            "reagents": "Pd(PPh3)2Cl2",
+            "reagent_smiles": "BrC1=C(C(=C)C)C(=O)OC1",
+            "conditions": "dioxane, 85 °C",
+            "yield": "55%",
+            "reactant_smiles": "COc1c(OC)c(COCC[Sn](CCCC)(CCCC))c(OC)c1OC",
+            "product_smiles": "C=C(C)c1c(COCc2c(OC)c(OC)c(OC)c(OC)c2)c(=O)oc1",
+            "notes": "Stille cross-coupling reaction between an aryl tin and a bromofuranone derivative, yielding a diaryl ether derivative.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4, H2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=C1OC(O)C(Br)=C1Br",
+                    "product_smiles": "O=C1OCC(Br)=C1Br",
+                    "notes": "Reduction of a cyclic hemiacetal/alcohol to a methylene group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Stille cross coupling",
+                    "reagents": "PdCl2(PhCN)2, Ph3As",
+                    "reagent_smiles": "C=C(C)[Sn](CCCC)(CCCC)CCCC",
+                    "conditions": "NMP",
+                    "yield": "",
+                    "reactant_smiles": "C1C(=C(C(=O)O1)Br)Br",
+                    "product_smiles": "C=C(C)C1=C(C(=O)OC1)Br",
+                    "notes": "Stille cross-coupling reaction replaces a bromine atom with an isopropenyl group on a brominated furanone derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Dearomatization",
+            "reagents": "(NH4)2Ce(NO3)6",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O",
+            "yield": "76%",
+            "reactant_smiles": "C=C(C)C1=C(COCc2c(OC)c(OC)cc(OC)c2OC)C(=O)OC1",
+            "product_smiles": "C=C(C)C1=C(COCC2=C(OC)C(=O)C(OC)=CC2=O)C(=O)OC1",
+            "notes": "Oxidation of a tetramethoxybenzene derivative to a dimethoxy-p-benzoquinone using ceric ammonium nitrate (CAN).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Photocycloaddition",
+            "reagents": "Blue LEDs",
+            "reagent_smiles": "",
+            "conditions": "PhH",
+            "yield": "76%",
+            "reactant_smiles": "COC1=C(OC)C(=O)C2=CC(=O)C1COCC3=C(C=C(C)C)C(=O)OC3",
+            "product_smiles": "COC1=C(OC)C(=O)C2(C1)C3C(=O)C(C4)(C(OC4)=O)C=C(C)C2OC5COC3",
+            "notes": "Intramolecular [2+2] photocycloaddition of a quinone with an isopropenyl group, followed by further cyclizations to form the complex caged structure of Epicolactone. The product is inherently chiral, although no explicit stereodescriptors are shown in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "OsO4, NMO, DCM then Pb(OAc)4",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "C=C(C)C12COCC32COC(=O)C3(C(=O)C(=CC1=O)[OMe])[OMe]",
+            "product_smiles": "CC(=O)C12COCC32COC(=O)C3(C(=O)C(=CC1=O)[OMe])[OMe]",
+            "notes": "Oxidative cleavage of an exocyclic alkene to a methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrolysis / Rearrangement",
+            "reagents": "BF3.2HOAc",
+            "reagent_smiles": "FB(F)F.CC(=O)O",
+            "conditions": "DCM, 40 °C",
+            "yield": "55%",
+            "reactant_smiles": "COC1=C2C(=O)C3(COC(=O)C(C2=O)(OC)C(=O)C)C4(COCC43)C1=O",
+            "product_smiles": "CC(=O)C1(COC(=O)C21COCC32C(=O)C=C(OC)C4(C3C(=O)O4)=O)O",
+            "notes": "Hydrolysis of an enol ether (vinylic methoxy group) with concurrent double bond rearrangement to form an alpha-hydroxy-alpha,beta-unsaturated ketone in a polycyclic system. The bridgehead methoxy group remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Thiocarbonylation",
+            "reagents": "PhOC(S)Cl, NEt3, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "CC(=O)C12CC3(COC(=O)C43COC2(C(=O)C=C[C@@H](O)C4=O)OC)OC",
+            "product_smiles": "CC(=O)C12CC3(COC(=O)C43COC2(C(=O)C=C[C@@H](OC(=S)Oc5ccccc5)C4=O)OC)OC",
+            "notes": "Conversion of a tertiary alcohol to a phenyl thiocarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Barton-McCombie radical deoxygenation",
+            "reagents": "AIBN, Bu3SnH",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 80 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=O)C12COC3C(C4C1(OC(=S)O[Ph])C(C(=O)C=C(OC)C5=O)C4OC(=O)C3)OC(=O)C25",
+            "product_smiles": "CC(=O)C12COC3C(C4C1C(C(=O)C=C(OC)C5=O)C4OC(=O)C3)OC(=O)C25",
+            "notes": "Radical deoxygenation of a phenyl thiocarbonate ester, converting an -OC(=S)OPh group to an implicit hydrogen atom on a bridgehead carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Enolate Triflation",
+            "reagents": "LDA, PhNTf2",
+            "reagent_smiles": "",
+            "conditions": "THF/HMPA, -78 °C",
+            "yield": "51%",
+            "reactant_smiles": "CC(=O)C12COCC32C(=O)C=CC4(COCC41C(=O)OC3=O)[OMe]",
+            "product_smiles": "C=C(C12COC(=O)C32COCC43C(=O)C=CC(C1C4=O)[OMe])[OTf]",
+            "notes": "An acetyl ketone is deprotonated by LDA to form an enolate, which is then trapped by N-phenylbis(trifluoromethanesulfonimide) (PhNTf2) to form a vinyl triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Stille cross coupling",
+            "reagents": "Pd(PPh3)2Cl2",
+            "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)C1=COCCO1",
+            "conditions": "dioxane, 85 °C",
+            "yield": "90%",
+            "reactant_smiles": "C=C(C12COC(=O)C32COCC43C(=O)C=C(C1C4=O)OC)OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "C=C(C5=COCCO5)C12COC(=O)C32COCC43C(=O)C=C(C1C4=O)OC",
+            "notes": "Stille cross coupling replaces a vinyl triflate with a vinyl stannane derived 1,4-dioxene.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Stannylation",
+                    "reagents": "t-BuLi, Bu₃SnCl",
+                    "reagent_smiles": "",
+                    "conditions": "-78 to -40 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=COCCO1",
+                    "product_smiles": "C1=C([Sn](CCCC)(CCCC)CCCC)OCCO1",
+                    "notes": "Direct stannylation of 1,4-dioxine using t-BuLi and Bu3SnCl.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Protonation",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)C12C(=C)C34OC(=O)CC5(O3)C2COCC(C5OC(=O)C4C=C)C(C6=COCCO6)=C",
+            "product_smiles": "COC(=O)C12C(=C)C34OC(=O)CC5(O3)C2COCC(C5OC(=O)C4C=C)C(O)C6OCCO6",
+            "notes": "Protonation of an enol ether to form a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Protection/Silylation",
+            "reagents": "NEt3, DMAP",
+            "reagent_smiles": "ClC[Si](C)(C)Cl",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "COC1=CC=C2O[C@@]34COC(=O)[C@@]23[C@@H]5C(=C)[C@H](OC54C)[C@@]1(O)[C@@]67OCCC6(CC7)",
+            "product_smiles": "COC1=CC=C2O[C@@]34COC(=O)[C@@]23[C@@H]5C(=C)[C@H](OC54C)[C@@]1(O[Si](C)(C)CCl)[C@@]67OCCC6(CC7)",
+            "notes": "Protection of a tertiary alcohol as a chloromethyl dimethylsilyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Finkelstein reaction",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "butanone, 80 °C",
+            "yield": "82%",
+            "reactant_smiles": "C=C1C2=C(C3(C4C(=CC5(COCC45COC3=O)C16COC(=O)C6=O)OC)O[Si](C)(C)CCl)OCCO2",
+            "product_smiles": "C=C1C2=C(C3(C4C(=CC5(COCC45COC3=O)C16COC(=O)C6=O)OC)O[Si](C)(C)CI)OCCO2",
+            "notes": "Halogen exchange of chloromethyl to iodomethyl via Finkelstein reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Reductive Cleavage / Lactonization",
+            "reagents": "SmI2, HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78° C to rt",
+            "yield": "90%",
+            "reactant_smiles": "C=C1C2=C(C3(C4C(=CC5(COCC45C)C63COC(=O)C16COC2=O)OC)O[Si](C)(C)CI)OC",
+            "product_smiles": "C=C1C2(COC(=O)C3C2C4(COC(=O)C(O)(C45C(=C)C6=C(C(=O)O3)C(COC(=O)C65)O)O)O)",
+            "notes": "Reductive cleavage of an iodo(dimethylsilyl)methyl ether and subsequent hydrolysis of a methoxy group, followed by cyclization to form a new lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Alkene Hydrofunctionalization / Complex Rearrangement",
+            "reagents": "TBHP, DBU, HCl",
+            "reagent_smiles": "",
+            "conditions": "DCE, BuOH, 110 °C",
+            "yield": "66%",
+            "reactant_smiles": "C[C@]12OC[C@@]34OC[C@]5(C(=O)[C@H](O)[C@@H]6[C@@H]7[C@@]8(OC[C@@H]9O[C@]%10(C(=O)[C@H]1[C@@H]3[C@]%10%11C)[C@@]%11(C8)[C@@H]97)C(=C)C2)C564",
+            "product_smiles": "C[C@]12OC[C@@]34OC[C@]5(C(=O)[C@H](O)[C@@H]6[C@@H]7[C@@]8(OC[C@@H]9O[C@]%10(C(=O)[C@H]1[C@@H]3[C@]%10%11C)[C@@]%11(C8)[C@@H]97)[C@@](C)(OCCCl)C2)C564",
+            "notes": "The exocyclic methylene group is functionalized to form a new quaternary carbon center, with the addition of a methyl group (indicated as wedge bond) and a 2-chloroethoxy group (indicated as dash bond) across the double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Halide Exchange (Finkelstein Reaction)",
+            "reagents": "NaI",
+            "reagent_smiles": "[Na+].[I-]",
+            "conditions": "butanone, 80 °C",
+            "yield": "92%",
+            "reactant_smiles": "C1=CC(=O)C2C3(COC(=O)C43COCC14C2(C(=O)C(=C(C)OCCCl)O)O)",
+            "product_smiles": "C1=CC(=O)C2C3(COC(=O)C43COCC14C2(C(=O)C(=C(C)OCCI)O)O)",
+            "notes": "Halide exchange of a primary chloride to iodide on a complex polycyclic ether/ketone structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "19",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "Zn",
+            "reagent_smiles": "",
+            "conditions": "EtOH/HOAc, 55 °C",
+            "yield": "93%",
+            "reactant_smiles": "ICCOC1=C(C)C(=O)[C@@H]2[C@@H]3C4(C(=O)O[C@@H]5[C@H]6C(C4(C37C2(C(=O)C(C6(COC75))O)))O)",
+            "product_smiles": "CC1=C(O)C(=O)[C@H]2[C@@H]3C4(C(=O)O[C@@H]5[C@H]6C(C4(C37C2(C(=O)C(C6(COC75))O)))O)",
+            "notes": "Intramolecular zinc-mediated reductive cyclization and rearrangement of an iodoethyl enol ether to form a hydroxylated enol and the complex polycyclic system of Epicolactone.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "buddledone-a-harmata-2012",
+        "molecule_name": "Buddledone A",
+        "class": "Natural Product",
+        "author": "Harmata",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-Alkylation",
+            "reagents": "Et₂NH, n-BuLi",
+            "reagent_smiles": "BrCC=C",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)C#N",
+            "product_smiles": "C=CCC(C)(C)C#N",
+            "notes": "Alpha-alkylation of isobutyronitrile with allyl bromide, forming a new C-C bond at the alpha-carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitrile Reduction (partial)",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "C=CCC(C)(C)C#N",
+            "product_smiles": "C=CCC(C)(C)C=O",
+            "notes": "Partial reduction of a nitrile to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Aldol Addition",
+            "reagents": "LDA",
+            "reagent_smiles": "CC(=O)C",
+            "conditions": "THF, -78 °C",
+            "yield": "82%",
+            "reactant_smiles": "C=CC[C@](C)(C)C=O",
+            "product_smiles": "C=CC[C@](C)(C(O)CC(=O)CC)",
+            "notes": "Aldol addition of an enolate (derived from a ketone) to an aldehyde. The drawn reagent is acetone (CC(=O)C), but the product incorporates a C(=O)CH2CH3 group, implying the enolate was derived from 2-butanone (CH3CH2C(=O)CH3). This is an inconsistency in the provided visual information. The chiral center with two methyl groups retains its configuration. The newly formed alcohol carbon is not specified with stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, TEA",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CCC(C)(C)[C@H](O)CC(=O)CC",
+            "product_smiles": "C=CCC(C)(C)[C@@H]([OMs])CC(=O)CC",
+            "notes": "Conversion of a secondary alcohol to its mesylate, depicted with inversion of stereochemistry at the alcohol carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "DCM, reflux",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "C=CC[C@@](C)(C(CC(=O)CC)OS(=O)(=O)C)",
+            "product_smiles": "CCC(=O)/C=C/[C@@](C)(CC=C)",
+            "notes": "Base-catalyzed mesylate elimination (likely E2) to form an alpha,beta-unsaturated ketone. The stereochemistry of the remote quaternary chiral center is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Macrocyclization / Alkylation",
+            "reagents": "LDA, HMPA",
+            "reagent_smiles": "C=C(C)CCCI",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "72%",
+            "reactant_smiles": "C=CC[C@](C)(C)/C=C/C(=O)CC",
+            "product_smiles": "O=C1C(C)CCCC(=C)CCC[C@](C)(C)CC/C=C/1",
+            "notes": "Intermolecular alkylation of ketone enolate with iodoalkene, followed by intramolecular cyclization to form a 15-membered macrocycle. The initial deprotonation of the ketone's alpha-methylene leads to alkylation by the iodoalkene. Subsequent intramolecular cyclization leads to the formation of the large ring.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Claisen rearrangement (specifically, Johnson-Claisen rearrangement)",
+                    "reagents": "propionic acid, CH3C(OEt)3",
+                    "reagent_smiles": "",
+                    "conditions": "120 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "C=C(C)CO",
+                    "product_smiles": "CCOC(=O)CCC(=C)C",
+                    "notes": "Allylic alcohol undergoes a Johnson-Claisen rearrangement with triethyl orthoacetate to form an unsaturated ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "[Li+].[AlH4-]",
+                    "conditions": "THF, 0 °C",
+                    "yield": "96%",
+                    "reactant_smiles": "CCOC(=O)CCC(=C)C",
+                    "product_smiles": "C=C(C)CCCO",
+                    "notes": "Ester reduction to primary alcohol using LiAlH4.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Tosylation",
+                    "reagents": "p-TsCl, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "88%",
+                    "reactant_smiles": "C=C(C)CCCO",
+                    "product_smiles": "C=C(C)CCCO[OTs]",
+                    "notes": "A primary alcohol is converted to a tosylate using p-toluenesulfonyl chloride and triethylamine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Finkelstein Reaction",
+                    "reagents": "NaI",
+                    "reagent_smiles": "[Na+].[I-]",
+                    "conditions": "acetone, reflux",
+                    "yield": "93%",
+                    "reactant_smiles": "C=C(C)CCCO[OTs]",
+                    "product_smiles": "C=C(C)CCCI",
+                    "notes": "Replacement of a primary tosylate with iodide via a Finkelstein reaction.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "TMS-cyanohydrin formation / Cyano silylation",
+            "reagents": "ZnI2",
+            "reagent_smiles": "C[Si](C)(C)C#N",
+            "conditions": "THF",
+            "yield": "94%",
+            "reactant_smiles": "C[C@]1(C)CCC(=C)C/C=C(C)/CCCC(=O)C(C)=C/C1",
+            "product_smiles": "C[C@]1(C)CCC(=C)C/C=C(C)/CCCC(C#N)(O[Si](C)(C)C)C(C)=C/C1",
+            "notes": "Macrocyclic ketone undergoes TMS-cyanohydrin formation via addition of TMSCN to the carbonyl group, catalyzed by ZnI2. The ketone is converted to a silyloxy nitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization (likely Diels-Alder type)",
+            "reagents": "HG II",
+            "reagent_smiles": "O=C1C=CC(=O)C=C1",
+            "conditions": "toluene, reflux",
+            "yield": "",
+            "reactant_smiles": "[OTMS]C1(C#N)C=C[C@H](C)CC[C@@H](C=C)CC[C](C)(C)C1",
+            "product_smiles": "[OTMS][C@]1(C#N)[C@H]2[C@H](C)CC[C](C)(C)C[C@H]3C=C[C@H]4[C@H]1234",
+            "notes": "Intramolecular cyclization of an alkene and a vinyl group within a macrocycle, forming a tricyclic system with one new double bond. The previous reactant and product SMILES were incorrect.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cyanohydrin hydrolysis / Silyl ether deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "59% (2 steps)",
+            "reactant_smiles": "C[C@H]1CC/C=C(/C)CCC(C)(C)CCC/C=C\\C1(C#N)[OTMS]",
+            "product_smiles": "C[C@H]1CC/C=C(/C)CCC(C)(C)CCC/C=C\\C1C(=O)",
+            "notes": "Deprotection of trimethylsilyl ether and hydrolysis of cyanohydrin to form a ketone, simultaneously removing the nitrile group.",
+            "substeps": []
+        }
+    ]
+}

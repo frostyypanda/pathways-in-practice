@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vfend-voriconazole-pfizer-unknown-2024",
+        "molecule_name": "Vfend (Voriconazole Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Chlorination / Nucleophilic aromatic substitution",
+            "reagents": "POCl3, DMA",
+            "reagent_smiles": "",
+            "conditions": "95 °C",
+            "yield": "95%",
+            "reactant_smiles": "C1=C(C(=NC(=N1)O)O)F",
+            "product_smiles": "C1=C(C(=NC(=N1)Cl)Cl)F",
+            "notes": "Dichlorination of 5-fluoropyrimidine-2,4-diol to 2,4-dichloro-5-fluoropyrimidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard Addition",
+            "reagents": "THF",
+            "reagent_smiles": "CCBr.[Mg]",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C(C(=NC(=N1)Cl)Cl)F",
+            "product_smiles": "[Mg]BrN1C(CC)C(F)=C(Cl)N=C(Cl)1",
+            "notes": "Grignard addition of ethylmagnesium bromide to 2,4-dichloro-5-fluoropyrimidine, forming a dihydropyrimidine N-MgBr adduct.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Elimination/Aromatization (of Grignard dihydropyrimidine)",
+            "reagents": "I2, TEA",
+            "reagent_smiles": "",
+            "conditions": "< 15 °C",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "CC[C@H]1C(F)C=C(Cl)N=C(Cl)N1[Mg]Br",
+            "product_smiles": "CCCc1nc(Cl)nc(Cl)c1F",
+            "notes": "Conversion of a 1-(bromomagnesium)-1,6-dihydropyrimidine to an aromatic pyrimidine via elimination, likely assisted by I2 as an oxidant and TEA as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "NaOH, NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "90 °C, then HCl",
+            "yield": "",
+            "reactant_smiles": "CCC1=C(F)C(=NC(=N1)Cl)Cl",
+            "product_smiles": "CCC1=C(F)C([O-])=NC(Cl)=N1.[NH4+]",
+            "notes": "Hydrolysis of a pyrimidine chloride via SNAr, followed by salt formation with ammonium.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "80%",
+            "reactant_smiles": "CCC1=NC(=NC(=C1F)O)Cl",
+            "product_smiles": "CCC1=NC=NC(=C1F)O",
+            "notes": "Hydrogenolysis of a chloropyrimidine to remove the chlorine atom and form a C-H bond. The ammonium salt of the hydroxyl group remains as a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Chlorination / Nucleophilic Aromatic Substitution",
+            "reagents": "POCl3, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "90%",
+            "reactant_smiles": "CCCc1c(F)c(O)ncn1",
+            "product_smiles": "CCCc1c(F)c(Cl)ncn1",
+            "notes": "The hydroxyl group on the pyrimidine ring is replaced by a chlorine atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Radical Bromination",
+            "reagents": "NBS, AIBN",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "95%",
+            "reactant_smiles": "CCC1=NC=NC(=C1F)Cl",
+            "product_smiles": "CC(Br)C1=NC=NC(=C1F)Cl",
+            "notes": "Radical bromination of the ethyl group at the alpha-carbon using NBS.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reformatsky reaction",
+            "reagents": "Zn, Pb, I2",
+            "reagent_smiles": "C1=C(C=C(C(=C1)C(=O)CN2C=NC=N2)F)F",
+            "conditions": "THF, 5 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(C1=NC=NC(=C1F)Cl)Br",
+            "product_smiles": "CC(C1=NC=NC(=C1F)Cl)[C@](CN2C=NC=N2)(C3=CC=C(C=C3F)F)O",
+            "notes": "Synthesis of Voriconazole (Vfend)",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Catalytic Hydrogenation / Dechlorination",
+            "reagents": "H₂, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H](C1=NC=NC(=C1F)Cl)[C@](CN2C=NC=N2)(C3=CC=C(C=C3F)F)O",
+            "product_smiles": "C[C@H](C1=NC=NC=C1F)[C@](CN2C=NC=N2)(C3=CC=C(C=C3F)F)O",
+            "notes": "Catalytic hydrogenation of the chloropyrimidine derivative to remove the chlorine atom, forming Voriconazole. The wavy bond indicates undefined or relative stereochemistry, but the SMILES provided for both reactant and product specify the known absolute stereochemistry of Voriconazole's precursor and Voriconazole itself, respectively (e.g., (2R,3S) configuration).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Chiral Resolution",
+            "reagents": "(+)-10-camphorsulfonic acid",
+            "reagent_smiles": "O=S(=O)(O)C[C@@]12CCC([C@H]1C(=O)C2)(C)C",
+            "conditions": "chiral resolution",
+            "yield": "80%",
+            "reactant_smiles": "CC(C1=NC=NC=C1F)[C@](CN2N=CN=C2)(C3=C(F)C=C(F)C=C3)O",
+            "product_smiles": "C[C@@H](C1=NC=NC=C1F)[C@](CN2N=CN=C2)(C3=C(F)C=C(F)C=C3)O",
+            "notes": "Resolution of a diastereomeric mixture to yield Voriconazole. The reactant has one defined chiral center and one center shown with a wavy bond, indicating a mixture of stereoisomers at that position. The product is a single diastereomer (Voriconazole) with both chiral centers defined.",
+            "substeps": []
+        }
+    ]
+}

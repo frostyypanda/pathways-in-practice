@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "inducamide-a-sperry-2016",
+        "molecule_name": "Inducamide A",
+        "class": "Natural Product",
+        "author": "Sperry",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Nitration",
+            "reagents": "HNO3, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)C[C@@H](C(=O)O)N",
+            "product_smiles": "O=[N+]([O-])c1ccc2c(c1)cnc2C[C@@H](N)C(=O)O",
+            "notes": "Nitration of L-tryptophan at the 5-position of the indole ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "MeOH, HCl",
+            "reagent_smiles": "CO.Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1[N+](=O)[O-])NC=C2C[C@@H](C(=O)O)N",
+            "product_smiles": "COC(=O)[C@@H](CC1=CNC2=CC(=CC=C12)[N+](=O)[O-])N",
+            "notes": "Esterification of a carboxylic acid with methanol to form a methyl ester. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection (Boc)",
+            "reagents": "Boc₂O, NEt₃, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "COC(=O)[C@H](CC1=CNC2=CC(=CC=C12)[N+](=O)[O-])N",
+            "product_smiles": "[Boc]N[C@H](CC1=CN([Boc])C2=CC(=CC=C12)[N+](=O)[O-])C(=O)OC",
+            "notes": "Double N-Boc protection of the amine and indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nitro Reduction",
+            "reagents": "Zn, AcOH",
+            "reagent_smiles": "[Zn]",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CN([Boc])C2=CC(=CC=C12)[N+](=O)[O-])C(=O)OC",
+            "product_smiles": "[Boc]N[C@@H](CC1=CN([Boc])C2=CC(=CC=C12)N)C(=O)OC",
+            "notes": "Reduction of an aryl nitro group to an aryl amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Sandmeyer Chlorination",
+            "reagents": "p-TsOH, NaNO2, CuCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "32% (2 steps)",
+            "reactant_smiles": "[OMe]C(=O)[C@@H](N[Boc])CC1=CN([Boc])C2=CC(N)=CC=C12",
+            "product_smiles": "[OMe]C(=O)[C@@H](N[Boc])CC1=CN([Boc])C2=CC(Cl)=CC=C12",
+            "notes": "Aniline converted to aryl chloride via a diazonium intermediate, generated using p-TsOH and NaNO2, followed by reaction with CuCl. Both Boc protecting groups and the methyl ester remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CN([Boc])C2=CC(=CC=C12)Cl)C(=O)OC",
+            "product_smiles": "COC(=O)[C@@H](CC1=CNC2=CC(=CC=C12)Cl)N",
+            "notes": "Deprotection of both N-Boc groups (amine and indole nitrogen) using HCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EDC, HOAt, iPrNEt2",
+            "reagent_smiles": "CC1=C(C(=CC=C1Cl)O)C(=O)O",
+            "conditions": "",
+            "yield": "36%",
+            "reactant_smiles": "COC(=O)[C@H](CC1=CNC2=CC(=CC=C12)Cl)N",
+            "product_smiles": "CC1=C(C(=CC=C1Cl)O)C(=O)N[C@H](CC2=CNC3=CC(=CC=C23)Cl)C(=O)OC",
+            "notes": "Amide formation between an amine and a carboxylic acid using EDC/HOAt/DIPEA reagents, retaining the (R) configuration at the chiral center.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Aromatic Chlorination",
+                    "reagents": "NCS, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "78%",
+                    "reactant_smiles": "COC1=C(C(=O)OC)C=C(C)C=C1",
+                    "product_smiles": "COC1=C(C(=O)OC)C=C(C)C(Cl)=C1",
+                    "notes": "Aromatic chlorination of methyl 2-methoxy-4-methylbenzoate with N-Chlorosuccinimide (NCS) and DMF to yield methyl 5-chloro-2-methoxy-4-methylbenzoate. The chlorine adds at the position para to the methyl group and ortho to the methoxy group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Demethylation",
+                    "reagents": "AlCl3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, reflux",
+                    "yield": "99%",
+                    "reactant_smiles": "COC(=O)c1c(C)c(Cl)ccc1OC",
+                    "product_smiles": "COC(=O)c1c(C)c(Cl)ccc1O",
+                    "notes": "Demethylation of an aryl methyl ether to an aryl phenol using AlCl3.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "95%",
+                    "reactant_smiles": "CC1=C(C(=CC=C1Cl)O)C(=O)OC",
+                    "product_smiles": "CC1=C(C(=CC=C1Cl)O)C(=O)O",
+                    "notes": "Hydrolysis of a methyl ester to a carboxylic acid using sodium hydroxide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O",
+            "yield": "78%",
+            "reactant_smiles": "CC1=C(C(=CC=C1Cl)O)C(=O)N[C@@H](CC2=CNC3=CC(=CC=C23)Cl)C(=O)OC",
+            "product_smiles": "CC1=C(C(=CC=C1Cl)O)C(=O)N[C@@H](CC2=CNC3=CC(=CC=C23)Cl)C(=O)O",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid using aqueous base.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "glionitrin-a-strand-2021",
+        "molecule_name": "Glionitrin A",
+        "class": "Natural Product",
+        "author": "Strand",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nitration",
+            "reagents": "H2SO4, HNO3",
+            "reagent_smiles": "",
+            "conditions": "-10 °C",
+            "yield": "72%",
+            "reactant_smiles": "O=C(O)C1CNC2=CC=CC=C21",
+            "product_smiles": "O=C(O)C1CNC2=CC=C(C=C21)[N+](=O)[O-]",
+            "notes": "Electrophilic aromatic nitration of indoline-2-carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "p-TSA",
+            "reagent_smiles": "",
+            "conditions": "MeOH, reflux",
+            "yield": "90%",
+            "reactant_smiles": "C1=C2CC(C(=O)O)NC2=CC(=C1)[N+](=O)[O-]",
+            "product_smiles": "COC(=O)C1CC2=CC=C(C=C2N1)[N+](=O)[O-]",
+            "notes": "Esterification of a carboxylic acid with methanol using p-toluenesulfonic acid as a catalyst to form a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidation (Aminolysis of ester)",
+            "reagents": "MeNH2, H2O",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "91%",
+            "reactant_smiles": "COC(=O)C1CC2=CC=C([N+](=O)[O-])C=C2N1",
+            "product_smiles": "CNC(=O)C1CC2=CC=C([N+](=O)[O-])C=C2N1",
+            "notes": "Methyl ester is converted to N-methyl amide by reaction with methylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Acylation",
+            "reagents": "toluene",
+            "reagent_smiles": "CCOC(=O)C(=O)Cl",
+            "conditions": "80 °C",
+            "yield": "95%",
+            "reactant_smiles": "CNC(=O)C1CC2=CC=C(C=C2N1)[N+](=O)[O-]",
+            "product_smiles": "CCOC(=O)C(=O)N1C2=CC(=CC=C2CC1C(=O)NC)[N+](=O)[O-]",
+            "notes": "N-acylation of indoline with ethyl oxalyl chloride",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Substitution/Cyclization/Thio-Michael Addition (complex)",
+            "reagents": "DCM",
+            "reagent_smiles": "C[C@H](C1=CC=C(C=C1)OC)SN2C(=O)CCC2=O.C1=CC=C(C=C1)[C@@H]2CN3C=CC=CC3=N2",
+            "conditions": "rt",
+            "yield": "80%",
+            "reactant_smiles": "CCOC(=O)C(=O)N1C2=CC(=CC=C2CC1C(=O)NC)[N+](=O)[O-]",
+            "product_smiles": "C[C@H](C1=CC=C(C=C1)OC)S[C@]23CC4=CC=C(C=C4N3C(=O)C(=O)N(C)C2=O)[N+](=O)[O-]",
+            "notes": "A complex reaction involving a chiral N-sulfenated succinimide and a chiral catalyst, forming a spirocyclic compound via likely Michael addition followed by cyclization. The ethoxyoxalyl group and methylcarbamoyl group of the reactant are incorporated into a new six-membered ring system.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Thiol Functionalization",
+                    "reagents": "DIPEA, NCS",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "36%",
+                    "reactant_smiles": "C[C@@H](C1=CC=C(OC)C=C1)S",
+                    "product_smiles": "C[C@@H](C1=CC=C(OC)C=C1)SN2C(=O)CCC2=O",
+                    "notes": "Conversion of an enantiopure thiol to a N-thioimide using N-chlorosuccinimide (NCS) and DIPEA, retaining stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Grignard Addition",
+            "reagents": "MeMgBr",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "41%",
+            "reactant_smiles": "O=[N+]([O-])c1ccc2c(c1)C[C@@]3(S[C@@H](C)c4ccc(OC)cc4)C(=O)N(C)C(=O)N23",
+            "product_smiles": "O=[N+]([O-])c1ccc2c(c1)C[C@@]3(S[C@@H](C)c4ccc(OC)cc4)[C@@](C)(O)N(C)C(=O)N23",
+            "notes": "Grignard addition of methylmagnesium bromide to a cyclic imide carbonyl, forming a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dehydration",
+            "reagents": "p-TSA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "88%",
+            "reactant_smiles": "C[C@H](C1=CC=C(C=C1)OC)S[C@]23CC4=CC=C(C=C4N3C(=O)[C@@](C)(N(C)C2=O)O)[N+](=O)[O-]",
+            "product_smiles": "C=C1C(=O)N2C3=CC(=CC=C3C[C@]2(C(=O)N1C)S[C@H](C)C4=CC=C(C=C4)OC)[N+](=O)[O-]",
+            "notes": "Acid-catalyzed dehydration of a tertiary alcohol to form an exocyclic alkene. The product is Gliotinin A.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "acetone, H2O, rt",
+            "yield": "74%",
+            "reactant_smiles": "C=C1C(=O)N2C3=CC(=CC=C3C[C@]2(C(=O)N1C)S[C@H](C)C4=CC=C(C=C4)OC)[N+](=O)[O-]",
+            "product_smiles": "C[C@H](C1=CC=C(C=C1)OC)S[C@]23CC4=CC=C(C=C4N3C(=O)[C@@](CO)(N(C)C2=O)O)[N+](=O)[O-]",
+            "notes": "Sharpless dihydroxylation of an exocyclic alkene to form a 1,2-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Lewis acid-catalyzed rearrangement and substitution",
+            "reagents": "PMB-SH, BF3•Et2O",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "69%",
+            "reactant_smiles": "CN1C(=O)[C@]([C@H](O)CO)(N(C2=O)C3=C(C=CC(=C3)[N+](=O)[O-]))[C@](C)(S[C@@H](C)c4ccc(OC)cc4)C2",
+            "product_smiles": "CN1C(=O)[C@]([C@H](SCCC2=CC=C(OC)C=C2)CO)(N(C3=O)C4=C(C=CC(=C4)[N+](=O)[O-]))[C@](C[C@@H](C)c5ccc(OC)cc5)(C3)C1",
+            "notes": "Diol group is substituted by PMB-SH. The original S-alkyl group rearranges and is now attached to the spiro carbon via a CH2 bridge, having lost its sulfur.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection and Disulfide Formation with Skeletal Rearrangement",
+            "reagents": "BBr3",
+            "reagent_smiles": "C1=CC(=NC=C1)SSC2=NC=CC=C2",
+            "conditions": "DCM, -20 °C",
+            "yield": "82%",
+            "reactant_smiles": "CN1C(=O)[C@@H](CO)SCC2=CC=C(OC)C=C2C(=O)N(C1)[C@]3(N(C)C[C@@H](C)CC4=CC=C(OC)C=C4)C5=CC=C([N+](=O)[O-])C=C5N3",
+            "product_smiles": "CN1C(=O)[C@H](CO)S2SC3C(CC4=CC([N+](=O)[O-])=CC=C4N(C(=O)C2)C3)N1C(=O)",
+            "notes": "Deprotection of two p-methoxybenzyl (PMB) groups and intramolecular disulfide bond formation. The reaction also involves a significant skeletal rearrangement where the spiro-attached side chain is lost/rearranged.",
+            "substeps": []
+        }
+    ]
+}

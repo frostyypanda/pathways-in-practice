@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tekturna-aliskiren-novartis-unknown-2024",
+        "molecule_name": "Tekturna (Aliskiren Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Williamson Ether Synthesis / O-alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "BrCCCBr",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)C=O)O",
+            "product_smiles": "COC1=C(C=C(C=C1)C=O)OCCCBr",
+            "notes": "Phenol is alkylated with 1,3-dibromopropane to form an ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "SN2 Substitution (Williamson Ether Synthesis)",
+            "reagents": "NaOMe",
+            "reagent_smiles": "[Na+].[O-]C",
+            "conditions": "MeOH",
+            "yield": "72%",
+            "reactant_smiles": "O=Cc1c(OCCCBr)c(OC)ccc1",
+            "product_smiles": "O=Cc1c(OCCCOC)c(OC)ccc1",
+            "notes": "Nucleophilic substitution of an alkyl bromide with methoxide to form a methyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Stereoselective Aldol Reaction",
+            "reagents": "LDA",
+            "reagent_smiles": "CCOC(=O)CC(C)C",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "COCCCOC1=C(C=CC(=C1)C=O)OC",
+            "product_smiles": "CCOC(=O)[C@@H](C(C)C)[C@@H](C1=CC(=C(C=C1)OC)OCCCOC)O",
+            "notes": "Aldol condensation between an aromatic aldehyde and an enolate derived from ethyl 3-methylbutanoate, yielding a beta-hydroxy ester with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetylation",
+            "reagents": "DMAP",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H](C(C)C)[C@@H](C1=CC(=C(C=C1)OC)OCCCOC)O",
+            "product_smiles": "CCOC(=O)[C@@H](C(C)C)[C@@H](C1=CC(=C(C=C1)OC)OCCCOC)[OAc]",
+            "notes": "Acetylation of a secondary alcohol to an acetate ester using acetic anhydride and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination",
+            "reagents": "tBuOK",
+            "reagent_smiles": "CC(C)(C)O[K]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H](C(C)C)[C@@H](C1=CC(=C(C=C1)OC)OCCCOC)OC(=O)C",
+            "product_smiles": "CCOC(=O)/C(C(C)C)=C/C1=CC(=C(C=C1)OC)OCCCOC",
+            "notes": "E2 elimination of acetate to form an E-configured alpha,beta-unsaturated ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrolysis (Ester to Carboxylic Acid)",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "82% (3 steps)",
+            "reactant_smiles": "CCOC(=O)/C(=C\\C1=CC(=C(C=C1)OC)OCCCOC)/C(C)C",
+            "product_smiles": "CC(C)/C(=C\\C1=CC(=C(C=C1)OC)OCCCOC)/C(=O)O",
+            "notes": "Base-catalyzed hydrolysis of an alpha,beta-unsaturated ethyl ester to its corresponding carboxylic acid. The E-stereochemistry of the double bond is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "[Rh(COD)2]BF4, H2",
+            "reagent_smiles": "[Fe](C1=CC=CC=C1)C2=CC(P(c3ccccc3)c4ccccc4)=C([C@@H](C)P(c5cc(C(F)(F)F)cc(C(F)(F)F)c5)(c6cc(C(F)(F)F)cc(C(F)(F)F)c6))C=C2",
+            "conditions": "50 bar",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)/C(=C\\C1=CC(=C(C=C1)OC)OCCCOC)/C(=O)O",
+            "product_smiles": "CC(C)[C@@H](CC1=CC(=C(C=C1)OC)OCCCOC)C(=O)O",
+            "notes": "Asymmetric hydrogenation of an alpha,beta-unsaturated carboxylic acid catalyzed by a chiral Josiphos-rhodium complex.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, I2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)[C@@H](CC1=CC(=C(C=C1)OC)OCCCOC)C(=O)O",
+            "product_smiles": "CC(C)[C@@H](CC1=CC(=C(C=C1)OC)OCCCOC)CO",
+            "notes": "Carboxylic acid is reduced to a primary alcohol using sodium borohydride and iodine. The stereocenter remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Chlorination",
+            "reagents": "SOCl2, Pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "CC(C)[C@@H](CO)CC1=CC(OC)=C(OCCCOC)C=C1",
+            "product_smiles": "CC(C)[C@@H](CCl)CC1=CC(OC)=C(OCCCOC)C=C1",
+            "notes": "Conversion of a primary alcohol to a primary alkyl chloride, retaining stereochemistry at the adjacent chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Kumada coupling",
+            "reagents": "Mg, ClCH2CH2Br, 3% (dppe)NiCl2, Et3N",
+            "reagent_smiles": "Cl/C=C/C[C@H](C(C)C)C(=O)OC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H](CC1=CC(=C(C=C1)OC)OCCCOC)CCl",
+            "product_smiles": "CC(C)[C@@H](CCC/C=C/C[C@H](C(C)C)C(=O)OC)CC1=CC(=C(C=C1)OC)OCCCOC",
+            "notes": "Formation of Grignard reagent from alkyl chloride followed by Kumada coupling with vinyl chloride.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Alkylation",
+                    "reagents": "LDA, tBuOK",
+                    "reagent_smiles": "Cl/C=C/CCl",
+                    "conditions": "",
+                    "yield": "79%",
+                    "reactant_smiles": "CC(C)CC(=O)OC",
+                    "product_smiles": "CC(C)C(C/C=C/Cl)C(=O)OC",
+                    "notes": "Alpha-alkylation of methyl 3-methylbutanoate with (E)-1,4-dichloro-2-butene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Enantioselective Biocatalysis",
+                    "reagents": "PLE",
+                    "reagent_smiles": "",
+                    "conditions": "pH 8",
+                    "yield": "47%",
+                    "reactant_smiles": "CC(C)C(C/C=C/Cl)C(=O)OC",
+                    "product_smiles": "CC(C)[C@@H](C/C=C/Cl)C(=O)OC",
+                    "notes": "Enantioselective conversion of a racemic or prochiral methyl ester to the (S)-enantiomer using Pig Liver Esterase (PLE). The reaction achieves high enantiomeric excess (>99% ee).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@H](C/C=C/C[C@H](C(C)C)C(=O)OC)CC1=CC(=C(C=C1)OC)OCCCOC",
+            "product_smiles": "CC(C)[C@H](C/C=C/C[C@H](C(C)C)C(=O)O)CC1=CC(=C(C=C1)OC)OCCCOC",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid using potassium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Salt formation / Acid-base reaction",
+            "reagents": "HCl, cyclohexylamine",
+            "reagent_smiles": "",
+            "conditions": "80% (3 steps)",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)[C@H](C/C=C/C[C@H](C(C)C)C(=O)O)CC1=CC(=C(C=C1)OC)OCCCOC",
+            "product_smiles": "CC(C)[C@H](C/C=C/C[C@H](C(C)C)C(=O)[O-])CC1=CC(=C(C=C1)OC)OCCCOC.C1CCC(CC1)[NH3+]",
+            "notes": "Formation of a cyclohexylammonium salt of the carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Bromolactonization",
+            "reagents": "TFA, NBS",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COc1c(OCCCOC)c(OC)cc1C[C@H](C(C)C)C/C=C/C[C@@H](C(C)C)C(=O)[O-].C1CCC(CC1)[NH3+]",
+            "product_smiles": "COc1c(OCCCOC)c(OC)cc1C[C@@H](C(C)C)C[C@H](Br)2O[C](=O)[C@H](C(C)C)C2",
+            "notes": "Intramolecular bromolactonization of an unsaturated carboxylic acid (from its cyclohexylammonium salt) to form a gamma-lactone with concomitant alkene functionalization.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Nucleophilic Substitution / Hydrolysis",
+            "reagents": "LiOH, HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H](CC1=C(OC)C=C(OCCCOC)C=C1)C[C@@H]([C@@H]2C[C@@H](C(C)C)C(=O)O2)Br",
+            "product_smiles": "CC(C)[C@@H](CC1=C(OC)C=C(OCCCOC)C=C1)C[C@H]([C@H]2C[C@@H](C(C)C)C(=O)O2)O",
+            "notes": "Bromo-substituent replaced by hydroxyl with inversion of stereochemistry at that chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H](Cc1cc(OC)c(OCCCOC)cc1)C[C@@H]([C@@H]2C[C@H](C(C)C)C(=O)O2)O",
+            "product_smiles": "CC(C)[C@@H](Cc1cc(OC)c(OCCCOC)cc1)C[C@@H]([C@@H]2C[C@H](C(C)C)C(=O)O2)[OMs]",
+            "notes": "Conversion of a secondary alcohol to a mesylate using methanesulfonyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3, DMPU",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "71% (4 steps)",
+            "reactant_smiles": "CC(C)[C@@H](CC1=C(OC)C=C(OCCCOC)C=C1)C[C@H]([OMs])[C@@H]2C[C@@H](C(C)C)C(=O)O2",
+            "product_smiles": "CC(C)[C@@H](CC1=C(OC)C=C(OCCCOC)C=C1)C[C@@H]([N-]=[N+]=N)[C@@H]2C[C@@H](C(C)C)C(=O)O2",
+            "notes": "Mesylate (OMs) group is displaced by azide (N3) with inversion of stereochemistry at the reacting carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Lactone Aminolysis",
+            "reagents": "20 mol % 2-hydroxypyridine, Et3N",
+            "reagent_smiles": "CC(C)(CN)C(=O)N",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)[C@H](CC1=CC(=C(C=C1)OC)OCCCOC)C[C@H]([N3])[C@@H]2C[C@@H](C(C)C)C(=O)O2",
+            "product_smiles": "CC(C)[C@H](CC1=CC(=C(C=C1)OC)OCCCOC)C[C@H]([N3])[C@H](O)C[C@@H](C(C)C)C(=O)NCC(C)(C)C(=O)N",
+            "notes": "Ring-opening of a gamma-lactone with 3-amino-2,2-dimethylpropanamide, forming an amide and a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Azide Reduction",
+            "reagents": "H2, 5% Pd/C",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "COc1c(C[C@@H](C(C)C)C[C@@H](N3)[C@@H](O)C[C@@H](C(C)C)C(=O)NCC(C)(C)C(=O)N)ccc(OCCCOC)c1",
+            "product_smiles": "COc1c(C[C@@H](C(C)C)C[C@@H](N)[C@@H](O)C[C@@H](C(C)C)C(=O)NCC(C)(C)C(=O)N)ccc(OCCCOC)c1",
+            "notes": "Reduction of azide to primary amine. Product is Aliskiren, shown as a 1:2 salt with fumaric acid (Aliskiren 1/2 fumarate).",
+            "substeps": []
+        }
+    ]
+}

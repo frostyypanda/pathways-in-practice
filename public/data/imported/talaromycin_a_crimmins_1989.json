@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "talaromycin-a-crimmins-1989",
+        "molecule_name": "Talaromycin A",
+        "class": "Natural Product",
+        "author": "Crimmins",
+        "year": 1989
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Alkylation",
+            "reagents": "LiHMDS, allylBr",
+            "reagent_smiles": "[Li]N(Si(C)(C)C)Si(C)(C)C.C=CCBr",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCCC(=O)N1[C@H](COC1=O)C(C)C",
+            "product_smiles": "C=CC[C@H](CC)C(=O)N1[C@H](COC1=O)C(C)C",
+            "notes": "Asymmetric alpha-alkylation of an acyl oxazolidinone with allyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF",
+            "yield": "73%",
+            "reactant_smiles": "C=CC[C@@H](CC)C(=O)N1C(=O)OC[C@H](C(C)C)1",
+            "product_smiles": "C=CC[C@@H](CC)CO",
+            "notes": "Cleavage of Evans chiral auxiliary and reduction of acyl group to primary alcohol (2 steps).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "NaH, BnBr",
+            "reagent_smiles": "BrCC1=CC=CC=C1.[NaH]",
+            "conditions": "THF",
+            "yield": "97%",
+            "reactant_smiles": "C=CC[C@@H](CC)CO",
+            "product_smiles": "C=CC[C@@H](CC)CO[Bn]",
+            "notes": "Alcohol is deprotonated by NaH, followed by SN2 reaction with benzyl bromide to form a benzyl ether, preserving the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "BH3·SMe2, THF then NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "THF (solvent)",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@H](CC)C[OBn]",
+            "product_smiles": "CC[C@@H](CCCO)C[OBn]",
+            "notes": "Hydroboration-oxidation of a terminal alkene to a primary alcohol with anti-Markovnikov regioselectivity. The stereochemistry at the chiral center is retained (R).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Jones oxidation",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "76%",
+            "reactant_smiles": "CC[C@H](CCCO)CO[Bn]",
+            "product_smiles": "CC[C@H](CCC(=O)O)CO[Bn]",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Debenzylation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "CCO.[Pd]",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "CC[C@H](CCC(=O)O)C[OBn]",
+            "product_smiles": "CC[C@H](CCC(=O)O)CO",
+            "notes": "Hydrogenation of a benzyl ether to a primary alcohol, preserving the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lactonization",
+            "reagents": "PPTS, PhH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "CC[C@@H](CCC(=O)O)CO",
+            "product_smiles": "CC[C@H]1CCC(=O)OC1",
+            "notes": "Acid-catalyzed intramolecular esterification (lactonization) of a hydroxy acid to form a six-membered lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Ring Opening of Lactone",
+            "reagents": "THF",
+            "reagent_smiles": "[Li]C#C/C=C\\OC",
+            "conditions": "-78 °C",
+            "yield": "95%",
+            "reactant_smiles": "CC[C@H]1CCC(=O)OC1",
+            "product_smiles": "CC[C@H](CCC(=O)C#C/C=C\\OC)CO",
+            "notes": "Nucleophilic addition of an organolithium reagent to a delta-lactone, resulting in ring opening to form a hydroxyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Base-catalyzed methanol addition to enyne",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "92%",
+            "reactant_smiles": "CC[C@H](CCC(=O)C#C/C=C\\OC)CO",
+            "product_smiles": "CC[C@H](CCC(=O)/C=C(\\OC)\\CC(OC)OC)CO",
+            "notes": "Addition of methanol to the alkyne and enol ether moieties, forming an alpha,beta-unsaturated ketone and an acetal, while maintaining the stereochemistry of the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acid-catalyzed cyclization",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O, 65 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H](CCC(=O)C=C(OC)CC(OC)OC)CO",
+            "product_smiles": "O=C1C=COC(=C1)CC[C@@H](CCC)CO.C[C@@H]1CCCCOC2(O1)OC=CC(=O)C2",
+            "notes": "Acid-catalyzed cyclization involving acetal hydrolysis and ring formation, leading to a 4H-pyran-4-one derivative and a spiroketal. Noted carbon atom imbalance between reactant (C15) and products (summing to C22).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Problematic Reaction Depiction",
+            "reagents": "TFA, PhH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "O=C1C=CC(CC[C@H](CC)CO)O1.CC[C@H]1CCCOC12C(=O)C=CCO2",
+            "product_smiles": "CC[C@H]1CCCOC12C(=O)C=CCO2",
+            "notes": "The first reactant (open chain) has 10 carbons (C10H16O3), while the product (spiroketal) has 11 carbons (C11H16O3). This implies a carbon source is missing if the first reactant is intended to be the precursor for the product. Furthermore, the second reactant shown on the left is identical to the product. The overall depiction is chemically inconsistent as written (A + B -> B, with A != B), suggesting an error in the original image's representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "70%",
+            "reactant_smiles": "CC[C@@H]1CC[C@@]2(CC(=O)C=CO2)OC1",
+            "product_smiles": "CC[C@@H]1CC[C@@]2(C[C@@H](O)CCO2)OC1",
+            "notes": "Reduction of an alpha,beta-unsaturated ketone to a saturated alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Alcohol Silylation",
+            "reagents": "TEA",
+            "reagent_smiles": "BrC[Si](C)(C)Cl",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "CC[C@H]1CCC2OC([C@@H](O)C=CO2)[C@H]1",
+            "product_smiles": "CC[C@H]1CCC2OC([C@@H](O[Si](C)(C)CBr)C=CO2)[C@H]1",
+            "notes": "Formation of a silyl ether from an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reductive Radical Cyclization",
+            "reagents": "Bu3SnH, AIBN",
+            "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)H.CC(C)(C#N)N=NC(C)(C)C#N",
+            "conditions": "PhH, 80 °C",
+            "yield": "",
+            "reactant_smiles": "BrC[Si](C)(C)O[C@H]1CC=CC[C@@]2(OC1)CC[C@H](CC)C2",
+            "product_smiles": "CC[C@H]1CCC[C@@]2(OC1)O[C@H]3CC[C@H]4O[Si](C)(C)C[C@H]4CC3",
+            "notes": "Intramolecular radical cyclization of an alkyl bromide across an alkene, forming a new C-C bond and a new fused 5-membered ring containing silicon and oxygen.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Hydrolysis of Silyl Acetal",
+            "reagents": "H2O2, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "78% (3 steps)",
+            "reactant_smiles": "CC[C@H]1CC[C@]2(O[Si](C)(C)O[C@@H]3CC[C@H]4C2)OC1",
+            "product_smiles": "CC[C@H]1CC[C@]2(OC[C@@H](O)[C@H](CO)O2)OC1",
+            "notes": "Hydrolysis of a cyclic dimethylsilyl acetal (protecting a 1,3-diol) to form a new 1,3-diol containing ring. The starting material is a spiroketal derivative.",
+            "substeps": []
+        }
+    ]
+}

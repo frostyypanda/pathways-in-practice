@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tasimelteon-hetlioz-vanda-unknown-2024",
+        "molecule_name": "Tasimelteon (Hetlioz Vanda)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Chlorination",
+            "reagents": "DMF, (COCl)2, MeCN",
+            "reagent_smiles": "",
+            "conditions": "-20 to 5 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C(CCO)C(=C1)O)CCO",
+            "product_smiles": "C1=CC(=C(CCCl)C(=C1)O)CCCl",
+            "notes": "Two primary alcohol groups are converted to primary alkyl chlorides using oxalyl chloride and DMF. The phenolic hydroxyl group remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Williamson Ether Synthesis / Cyclization",
+            "reagents": "Et3N",
+            "reagent_smiles": "",
+            "conditions": "MeCN, -10 to 55 °C",
+            "yield": "",
+            "reactant_smiles": "Oc1c(CCCl)ccc(CCCl)c1",
+            "product_smiles": "C1=CC(=C2CCOC2=C1)CCCl",
+            "notes": "Phenol reacts with an ortho-alkyl chloride to form a 2,3-dihydrobenzofuran ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Elimination / Dehydrohalogenation",
+            "reagents": "Bu4NOH, KI, NaOH",
+            "reagent_smiles": "",
+            "conditions": "MTBE, H2O, 50 °C",
+            "yield": "76% (3 steps)",
+            "reactant_smiles": "C1=CC(=C2CCOC2=C1)CCCl",
+            "product_smiles": "C=CC1=C2CCOC2=CC=C1",
+            "notes": "Dehydrohalogenation of chloroethyl group to form a vinyl group on 2,3-dihydrobenzofuran.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sharpless asymmetric dihydroxylation",
+            "reagents": "K3Fe(CN)6, (DHQ)2PHAL, K2OsO2(OH)4, aq. K2CO3, tBuOH",
+            "reagent_smiles": "",
+            "conditions": "25 °C",
+            "yield": "86%",
+            "reactant_smiles": "C=CC1=C2CCOC2=CC=C1",
+            "product_smiles": "C1=CC(=C2CCOC2=C1)[C@H](CO)O",
+            "notes": "Sharpless asymmetric dihydroxylation of the vinyl group to form a chiral 1,2-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Selective Functionalization / Chlorination",
+            "reagents": "(MeO)3CMe, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 to 5 °C",
+            "yield": "",
+            "reactant_smiles": "c1c([C@@H](O)CO)ccc2c1OCCO2",
+            "product_smiles": "[OAc]C[C@@H](Cl)c1ccc2c(c1)OCCO2",
+            "notes": "Selective O-acetylation of the primary alcohol and chlorination with inversion of configuration at the secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Epoxidation",
+            "reagents": "tBuOK",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 to 5 °C",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "CC(=O)OC[C@H](C1=C2CCOC2=CC=C1)Cl",
+            "product_smiles": "C1=CC(=C2CCOC2=C1)[C@H]3CO3",
+            "notes": "Intramolecular SN2 reaction to form an epoxide, likely preceded by hydrolysis of the acetate to an alcohol, which is then deprotonated by tBuOK.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Epoxide opening / Cyclopropanation",
+            "reagents": "DME",
+            "reagent_smiles": "CCOC(=O)CP(=O)(OCC)OCC.[Na+].[O-]C(C)(C)C",
+            "conditions": "70 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2CCOC2=C1)[C@H]3CO3",
+            "product_smiles": "CCOC(=O)[C@@H]1C[C@H]1C2=C3CCOC3=CC=C2",
+            "notes": "Epoxide opening by a phosphonate carbanion followed by intramolecular cyclopropanation to form a trans-disubstituted cyclopropane.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "aq., 60 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H]1C[C@H]1C2=C3CCOC3=CC=C2",
+            "product_smiles": "O=C([O-])[C@@H]1C[C@H]1C2=C3CCOC3=CC=C2.[Na+]",
+            "notes": "Hydrolysis of an ethyl ester to a sodium carboxylate salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Carboxylate hydrolysis / Acidification",
+            "reagents": "H3PO4",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "[Na+].O=C([O-])[C@@H]1C[C@H]1C2=C3CCOC3=CC=C2",
+            "product_smiles": "O=C(O)[C@@H]1C[C@H]1C2=C3CCOC3=CC=C2",
+            "notes": "Conversion of a sodium carboxylate to its corresponding carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acid chlorination",
+            "reagents": "SOCl2",
+            "reagent_smiles": "Cl[S](Cl)=O",
+            "conditions": "DCM, reflux",
+            "yield": "",
+            "reactant_smiles": "O=C(O)[C@@H]1CC[C@@H]1C2=CC=C3CCOC3=C2",
+            "product_smiles": "O=C(Cl)[C@@H]1CC[C@@H]1C2=CC=C3CCOC3=C2",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amidation / Nucleophilic Acyl Substitution",
+            "reagents": "NH₃",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2CCOC2=C1)[C@@H]3C[C@H]3C(=O)Cl",
+            "product_smiles": "C1=CC(=C2CCOC2=C1)[C@@H]3C[C@H]3C(=O)N",
+            "notes": "Acyl chloride converted to primary amide using ammonia.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Amide Reduction",
+            "reagents": "NaBH4, AcOH",
+            "reagent_smiles": "[Na+].[BH4-].CC(=O)O.C1CCOC1",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2CCOC2=C1)[C@@H]3C[C@H]3C(=O)N",
+            "product_smiles": "C1=CC(=C2CCOC2=C1)[C@@H]3C[C@H]3CN",
+            "notes": "Reduction of a cyclopropyl carboxamide to a cyclopropyl methylamine, preserving the relative stereochemistry of the cyclopropane ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Amidation",
+            "reagents": "Et3N",
+            "reagent_smiles": "CCC(=O)Cl",
+            "conditions": "rt",
+            "yield": "86% (4 steps)",
+            "reactant_smiles": "NC[C@@H]1C[C@H]1C2=CC=CC3=C2CCOC3",
+            "product_smiles": "CCC(=O)NC[C@@H]1C[C@H]1C2=CC=CC3=C2CCOC3",
+            "notes": "Amine acylation with propionyl chloride to form Tasimelteon. The reported yield is for an overall 4-step sequence, not just this step.",
+            "substeps": []
+        }
+    ]
+}

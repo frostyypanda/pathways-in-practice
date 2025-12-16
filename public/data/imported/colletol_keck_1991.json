@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "colletol-keck-1991",
+        "molecule_name": "Colletol",
+        "class": "Natural Product",
+        "author": "Keck",
+        "year": 1991
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "(RuCl2COD)n, (S)-BINAP, H2, NEt3",
+            "reagent_smiles": "",
+            "conditions": "toluene, EtOH, reflux",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)CC(=O)C",
+            "product_smiles": "CCOC(=O)C[C@H](C)O",
+            "notes": "Asymmetric hydrogenation of ethyl acetoacetate to (S)-ethyl 3-hydroxybutanoate using a ruthenium-BINAP catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-benzylation (Keck type)",
+            "reagents": "TFA",
+            "reagent_smiles": "ClC(Cl)(Cl)C(=N)OCC1=CC=CC=C1",
+            "conditions": "Cy:CH2Cl2",
+            "yield": "83 %",
+            "reactant_smiles": "CCOC(=O)C[C@H](C)O",
+            "product_smiles": "CCOC(=O)C[C@H](C)OCC1=CC=CC=C1",
+            "notes": "Stereospecific O-benzylation of a secondary alcohol using trichloroacetimidate and acid catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction (Ester to Aldehyde)",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -90 °C",
+            "yield": "72%",
+            "reactant_smiles": "CCOC(=O)C[C@H](C)[OBn]",
+            "product_smiles": "C[C@H](CC=O)[OBn]",
+            "notes": "Diisobutylaluminium hydride (DIBAL-H) reduction of an ester to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Allylation (Keck Allylation)",
+            "reagents": "TiCl4",
+            "reagent_smiles": "C=CC[Sn](c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "75 %",
+            "reactant_smiles": "C[C@H](CC=O)[OBn]",
+            "product_smiles": "C=CC[C@@H](C[C@H](C)[OBn])O",
+            "notes": "Addition of allyl tributylstannane to an aldehyde in the presence of TiCl4 to form a homoallylic alcohol, with control of two stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "92%",
+            "reactant_smiles": "C=CC[C@@H](C[C@H](C)OCC1=CC=CC=C1)O",
+            "product_smiles": "C=CC[C@@H](C[C@H](C)OCC1=CC=CC=C1)[OTBS]",
+            "notes": "The secondary alcohol is selectively protected as a TBS silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Birch Reduction (Benzyl Ether Deprotection)",
+            "reagents": "Na, NH3",
+            "reagent_smiles": "",
+            "conditions": "EtOH, -78 °C to rt",
+            "yield": "96 %",
+            "reactant_smiles": "C=CC[C@@H]([OTBS])C[C@H](C)[OBn]",
+            "product_smiles": "C=CC[C@@H]([OTBS])C[C@H](C)O",
+            "notes": "Deprotection of benzyl ether (OBn) to alcohol (OH) using Na/NH3 (Birch reduction), while the tert-butyldimethylsilyl ether (OTBS) remains intact. Stereochemistry at both chiral centers is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DEAD, Ph3P",
+            "reagent_smiles": "O=C(O)CP(=O)(OCC)OCC",
+            "conditions": "benzene, rt",
+            "yield": "94 %",
+            "reactant_smiles": "C=CC[C@H](C[C@H](C)O)[OTBS]",
+            "product_smiles": "C=CC[C@H](C[C@H](C)OC(=O)CP(=O)(OCC)OCC)[OTBS]",
+            "notes": "Mitsunobu reaction to convert a secondary alcohol into a phosphonate ester with inversion of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@H](C[C@H](C)OC(=O)CP(=O)(OCC)OCC)[OTBS]",
+            "product_smiles": "CCOP(=O)(CC(=O)O[C@H](C)C[C@@H](CC(CO)O)[OTBS])OCC",
+            "notes": "Terminal alkene dihydroxylation to form a 1,2-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Cleavage (Diol Cleavage)",
+            "reagents": "Pb(OAc)4, CH2Cl2, rt",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "CCOP(=O)(CC(=O)O[C@@H](C)C[C@H](CC(CO)O)[OTBS])OCC",
+            "product_smiles": "CCOP(=O)(CC(=O)O[C@@H](C)C[C@H](CC=O)[OTBS])OCC",
+            "notes": "Oxidative cleavage of a 1,2-diol using lead tetraacetate to yield an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Wittig olefination",
+            "reagents": "CHCl3, DMAP",
+            "reagent_smiles": "P(c1ccccc1)(c1ccccc1)(c1ccccc1)=CC(=O)SCC",
+            "conditions": "reflux, rt",
+            "yield": "79 %",
+            "reactant_smiles": "CCOP(=O)(CC(=O)O[C@@H](C)C[C@H](CC=O)[OTBS])OCC",
+            "product_smiles": "CCOP(=O)(CC(=O)O[C@@H](C)C[C@H](C/C=C/C(=O)SCC)[OTBS])OCC",
+            "notes": "Wittig olefination of an aldehyde with a phosphorane ylide to form a trans-alpha,beta-unsaturated thioester.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "LiCl",
+            "reagent_smiles": "O=C[C@H](C)O.CCN(C(C)C)C(C)C",
+            "conditions": "CH3CN",
+            "yield": "72%",
+            "reactant_smiles": "[COSEt]/C=C/C[C@@H](C[C@@H](C)OC(=O)CP(=O)(OCC)OCC)[OTBS]",
+            "product_smiles": "[COSEt]/C=C/C[C@@H]1([OTBS])C[C@@H](C)OC(=O)/C=C/[C@H](C)O1",
+            "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde with a phosphonate, followed by macrolactonization. The HWE forms a new E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Thioester hydrolysis",
+            "reagents": "AgNO3, 2,6-Lutidine",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, reflux",
+            "yield": "75%",
+            "reactant_smiles": "CCSC(=O)/C=C/[C@H]1C/C=C/C[C@H](O)[C@H](C)C/C=C/C[C@@H](O[TBS])C[C@H](C)OC(=O)C1",
+            "product_smiles": "O=C(O)/C=C/[C@H]1C/C=C/C[C@H](O)[C@H](C)C/C=C/C[C@@H](O[TBS])C[C@H](C)OC(=O)C1",
+            "notes": "Hydrolysis of an alpha,beta-unsaturated thioester to the corresponding carboxylic acid in a macrocyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Macrolactonization",
+            "reagents": "DCC, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, rt",
+            "yield": "",
+            "reactant_smiles": "O=C(O)/C=C/C[C@H]([OTBS])C[C@@H](C)OC(=O)/C=C/C[C@H](C)O",
+            "product_smiles": "O=C1/C=C/C[C@H]([OTBS])C[C@@H](C)OC(=O)/C=C/C[C@H](C)O1",
+            "notes": "Intramolecular esterification (lactone formation) of a hydroxy carboxylic acid catalyzed by DCC/DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection",
+            "reagents": "Dowex 50W-8 H",
+            "reagent_smiles": "",
+            "conditions": "MeOH, reflux",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H]1C[C@H](C)OC(=O)/C=C/[C@@H](C)CC/C=C/C(=O)O1",
+            "product_smiles": "O[C@@H]1C[C@H](C)OC(=O)/C=C/[C@@H](C)CC/C=C/C(=O)O1",
+            "notes": "Deprotection of TBS ether. The yield '71% (2 steps)' is for a sequence of reactions, not just this single step. Note: The product structure shown in the screenshot is labeled 'Colletol' but its connectivity (C14O3) differs from the canonical Colletol (C19H28O5). SMILES generated based on the drawn structure.",
+            "substeps": []
+        }
+    ]
+}

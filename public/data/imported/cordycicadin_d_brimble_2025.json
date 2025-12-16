@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cordycicadin-d-brimble-2025",
+        "molecule_name": "Cordycicadin D",
+        "class": "Natural Product",
+        "author": "Brimble",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "97%",
+            "reactant_smiles": "C=CCC[C@H](C)O",
+            "product_smiles": "C=CCC[C@H](C)[OTBS]",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, PPh3",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CCC[C@@H](C)[OTBS]",
+            "product_smiles": "O=CCC[C@@H](C)[OTBS]",
+            "notes": "Ozonolysis of a terminal alkene to an aldehyde, with a reductive workup using triphenylphosphine. The stereocenter remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Addition",
+            "reagents": "THF",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "-78 to 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "O=CCC[C@@H](C)[OTBS]",
+            "product_smiles": "C=CC(O)CC[C@@H](C)[OTBS]",
+            "notes": "Addition of vinylmagnesium bromide to an aldehyde, forming a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CC(O)CC[C@@H](C)[OTBS]",
+            "product_smiles": "C=CC([OAc])CC[C@@H](C)[OTBS]",
+            "notes": "Acetylation of a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enzymatic ester hydrolysis/re-esterification with stereoinversion",
+            "reagents": "Novozyme 435, NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "30 °C",
+            "yield": "49%",
+            "reactant_smiles": "C=CC(CC[C@@H](C)[OTBS])[OAc]",
+            "product_smiles": "C=C[C@@H](CC[C@H](C)[OTBS])[OAc]",
+            "notes": "The reaction involves an inversion of stereochemistry at the carbon bearing the OTBS group and the establishment of new stereochemistry at the carbon bearing the OAc group. The provided reagent SMILES was junk.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, H2O, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "C=C[C@@H](CC[C@H](C)[OTBS])OC(=O)C",
+            "product_smiles": "C=C[C@@H](CC[C@H](C)O)OC(=O)C",
+            "notes": "Acid-catalyzed hydrolysis of tert-butyldimethylsilyl (TBS) ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Macrolactonization",
+            "reagents": "DCC, DMAP",
+            "reagent_smiles": "C=C[C@H](CC(=O)O)[OTBS]",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H][OAc]CC[C@H](C)O",
+            "product_smiles": "C=C[C@@H]1[OAc]CC[C@H](C)OC(=O)C[C@H](C=C)[OTBS]CC1",
+            "notes": "Intramolecular esterification (macrolactonization) using DCC/DMAP to form a 10-membered cyclic ester. Corrected stereochemistry and applied abbreviations.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection / Ester Hydrolysis",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O, 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "C[C@@H]1OCCC[C@H](C=C)O[Ac]CC[C@H](C=C)O[TBS]C(=O)O1",
+            "product_smiles": "C[C@@H]1OCCC[C@H](C=C)OCC[C@H](C=C)O[TBS]C(=O)O1",
+            "notes": "Hydrolysis of acetate ester to alcohol under basic conditions, TBS ether remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "air",
+            "reagent_smiles": "O=I1c2ccccc2C(=O)O1(=O)=O.CC#N",
+            "conditions": "reflux",
+            "yield": "99%",
+            "reactant_smiles": "O1[C@@H](C)CCC[C@H](O)C=CCC[C@H](C=C)[OTBS]C(=O)C1",
+            "product_smiles": "O1[C@@H](C)CCC(=O)C=CCC[C@H](C=C)[OTBS]C(=O)C1",
+            "notes": "Oxidation of a secondary allylic alcohol to an alpha,beta-unsaturated ketone using IBX. The macrolactone and TBS ether protecting group remain intact. The stereocenter at the alcohol is lost.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "50%",
+            "reactant_smiles": "C=CC(=O)CC[C@H](C)OC(=O)C[C@@H](C=C)[OTBS]",
+            "product_smiles": "[OTBS][C@@H]1C/C=C\\C(=O)CC[C@H](C)OC(=O)CC1",
+            "notes": "Intramolecular ring-closing metathesis forms an 11-membered macrolactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection (TBS ether hydrolysis)",
+            "reagents": "HF, pyridine",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "O=C1OCC[C@@H](C)C/C=C/C(=O)[C@@H](O[TBS])C1",
+            "product_smiles": "O=C1OCC[C@@H](C)C/C=C/C(=O)[C@@H](O)C1",
+            "notes": "Deprotection of a TBS ether to a hydroxyl group on an 11-membered macrolactone containing a ketone and an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Michael Addition / Lactone Ring Opening / Esterification / Alkene Reduction",
+            "reagents": "",
+            "reagent_smiles": "C[C@@H]1CC[C@H](OCC2=CC=C(OC)C=C2)O[C@@H](CC3=CC(=O)OC(C)(C)O3)1",
+            "conditions": "toluene, reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1OC(=O)CCC(=O)/C=C\\[C@H](O)CC1",
+            "product_smiles": "C[C@@H]1CC[C@H](OCC2=CC=C(OC)C=C2)[C@@H](CC(=O)CH2C(=O)O[C@H]3CC[C@@H](C)OC(=O)CCC(=O)CC3)O1",
+            "notes": "The alpha,beta-unsaturated ketone in the 10-membered macrolactone undergoes Michael addition with the isopropenyl lactone from the pyran derivative. The isopropenyl lactone opens to form an ester linkage with the hydroxyl group of the macrolactone, and the alkene in the macrolactone is reduced to an alkane. Stereochemistry is preserved or newly established as shown.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Dieckmann Condensation",
+            "reagents": "DBU, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "74%",
+            "reactant_smiles": "C[C@@H]1CC[C@@H](OCC2=CC=C(C=C2)OC)[C@H](CH2C(=O)O[C@H]3CCC(=O)C[C@H](C)OCCC(=O)C3)O1",
+            "product_smiles": "C[C@@H]1CC[C@@H](OCC2=CC=C(C=C2)OC)[C@H]([C@H]3C(=O)O[C@@H]4CCC(=O)C[C@H](C)OCCC(=O)C4C3)O1",
+            "notes": "An intramolecular cyclization of a diester, forming a new 5-membered beta-ketoester ring fused to the existing 11-membered macrocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection",
+            "reagents": "DDQ, CH2Cl2, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CC[C@@H]([C@H](CC(=O)C2[C@H]3CC(=O)CC[C@@H](C)OC(=O)C[C@H]3OC2=O)O1)[OPMB]",
+            "product_smiles": "C[C@@H]1CC[C@@H]([C@H](CC(=O)C2[C@H]3CC(=O)CC[C@@H](C)OC(=O)C[C@H]3OC2=O)O1)O",
+            "notes": "Deprotection of a para-methoxybenzyl (PMB) ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Intramolecular Aldol Condensation / Dehydration",
+            "reagents": "pTSA, CH2Cl2, H2O",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, H2O",
+            "yield": "55%",
+            "reactant_smiles": "C[C@@H]1CC[C@@H]([C@@H](CC(=O)C2[C@H]3CC(=O)CC[C@@H](C)OC(=O)C[C@H]3OC2=O)O1)O",
+            "product_smiles": "C[C@@H]1CC[C@H]2C/C(=C/3\\[C@H]4CC(=O)CC[C@@H](C)OC(=O)C[C@H]4OC3=O)/C[C@H]2O1",
+            "notes": "Intramolecular cyclization involving the ketone and hydroxyl group to form a new 5-membered ring (cyclopentene) via dehydration.",
+            "substeps": []
+        }
+    ]
+}

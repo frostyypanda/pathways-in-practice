@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sceptrin-jamison-2020",
+        "molecule_name": "Sceptrin",
+        "class": "Natural Product",
+        "author": "Jamison",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "[2+2] Photocycloaddition",
+            "reagents": "Ph2O",
+            "reagent_smiles": "C(=C/CCl)/CCl",
+            "conditions": "hν",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=O)OC1=O",
+            "product_smiles": "O=C1OC(=O)C2[C@H]1[C@H](CCl)[C@@H](CCl)C2",
+            "notes": "Photochemical [2+2] cycloaddition of maleic anhydride with (Z)-1,4-dichloro-2-butene to form a bicyclic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification / Anhydride Ring Opening",
+            "reagents": "MeOH, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "O=C1OC(=O)[C@H]2[C@H]1[C@@H](CCl)[C@H](CCl)C2",
+            "product_smiles": "COC(=O)[C@@H]1[C@@H](CCl)[C@H](CCl)[C@@H]1C(=O)OC",
+            "notes": "Methanolysis of a bicyclic cyclobutane anhydride to form a dimethyl ester. Stereochemistry is preserved at all chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3, KI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 80 °C",
+            "yield": "82%",
+            "reactant_smiles": "COC(=O)[C@@H]1[C@@H](CCl)[C@H](CCl)[C@@H]1C(=O)OC",
+            "product_smiles": "COC(=O)[C@@H]1[C@@H](CN=[N+]=[N-])[C@H](CN=[N+]=[N-])[C@@H]1C(=O)OC",
+            "notes": "Double nucleophilic substitution of chlorides with azides.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrolysis",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)[C@@H]1[C@@H](CN=[N+]=[N-])[C@H](CN=[N+]=[N-])[C@@H]1C(=O)OC",
+            "product_smiles": "O=C(O)[C@H]1[C@@H](CN=[N+]=[N-])[C@H](CN=[N+]=[N-])[C@@H]1C(=O)O",
+            "notes": "Diester hydrolysis (saponification) to dicarboxylic acid. Stereochemistry is inverted at the carbon atoms bearing the ester/acid groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acid Chloride Formation",
+            "reagents": "SOCl2",
+            "reagent_smiles": "O=S(Cl)Cl",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "O=C(O)[C@H]1[C@H](CN=[N+]=[N-])[C@@H](CN=[N+]=[N-])[C@@H]1C(=O)O",
+            "product_smiles": "O=C(Cl)[C@@H]1[C@H](CN=[N+]=[N-])[C@@H](CN=[N+]=[N-])[C@H]1C(=O)Cl",
+            "notes": "Dicarboxylic acid converted to diacid chloride using thionyl chloride, preserving the cyclobutane ring and azide groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Diazoketone Formation / Arndt-Eistert Precursor",
+            "reagents": "CH2N2",
+            "reagent_smiles": "C=[N+]=[N-].ClCCl",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "ClC(=O)[C@H]1[C@H](CN=[N+]=[N-])[C@@H](CN=[N+]=[N-])[C@H]1C(=O)Cl",
+            "product_smiles": "O=C(C=[N+]=[N-])[C@H]1[C@H](C(=O)C=[N+]=[N-])[C@@H](CN=[N+]=[N-])[C@H]1CN=[N+]=[N-]",
+            "notes": "Conversion of bis(acid chloride) to bis(alpha-diazoketone) via reaction with diazomethane. The cyclobutane ring stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Diazo group conversion / Electrophilic addition",
+            "reagents": "48% aq. HBr",
+            "reagent_smiles": "",
+            "conditions": "-10 °C",
+            "yield": "72%",
+            "reactant_smiles": "C=[N+]=[N-]C(=O)[C@@H]1[C@@H](C[N-]=[N+]=N)[C@H](C[N-]=[N+]=N)[C@H]1C(=O)C=[N+]=[N-]",
+            "product_smiles": "BrCC(=O)[C@@H]1[C@@H](C[N-]=[N+]=N)[C@H](C[N-]=[N+]=N)[C@H]1C(=O)CBr",
+            "notes": "Conversion of two diazo-ketone groups to alpha-bromoketone groups, while azidomethyl groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Heterocycle formation (Imidazole synthesis)",
+            "reagents": "DMF",
+            "reagent_smiles": "CC(C)(C)OC(=O)N=C(N)N",
+            "conditions": "",
+            "yield": "30%",
+            "reactant_smiles": "BrCC(=O)[C@H]1[C@H](C[N-]=[N+]#N)[C@@H](C[N-]=[N+]#N)[C@@H]1C(=O)CBr",
+            "product_smiles": "[Boc]NC1=NC(=CN1)[C@H]2[C@H](C[N-]=[N+]#N)[C@@H](C[N-]=[N+]#N)[C@@H]2C3=CNC(=N3)N[Boc]",
+            "notes": "Double cyclization of a bis(alpha-bromoketone) with Boc-protected guanidine to form a bis(2-amino-1H-imidazole) derivative, maintaining cyclobutane stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Staudinger reaction",
+            "reagents": "PPh3, NH4OH",
+            "reagent_smiles": "P(c1ccccc1)(c1ccccc1)c1ccccc1.N.O",
+            "conditions": "THF, reflux",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]NC1=NC(=CN1)[C@@H]2[C@@H](CN=[N+]=[N-])[C@H](CN=[N+]=[N-])[C@H]2C3=CNC(=N3)N[Boc]",
+            "product_smiles": "[Boc]NC1=NC(=CN1)[C@@H]2[C@@H](CN)[C@H](CN)[C@H]2C3=CNC(=N3)N[Boc]",
+            "notes": "Reduction of two azide groups to primary amines on a cyclobutane core.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amide Formation (Acylation)",
+            "reagents": "DMF",
+            "reagent_smiles": "C1=C(C(=O)C(Cl)(Cl)Cl)NC=C1Br",
+            "conditions": "",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)(C)OC(=O)NC1=NC(=CN1)[C@@H]2[C@@H](CN)[C@H](CN)[C@H]2CC(C)(C)OC(=O)NC3=NC(=CN3)",
+            "product_smiles": "CC(C)(C)OC(=O)NC1=NC(=CN1)[C@@H]2[C@@H](CNC(=O)C3=CC(=CN3)Br)[C@H](CNC(=O)C4=CC(=CN4)Br)[C@H]2CC(C)(C)OC(=N5)CN5",
+            "notes": "Double acylation of primary amines on a cyclobutane core with 4-bromo-1H-pyrrole-2-trichloroacetyl. The Boc-protected 2-aminoimidazole groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]NC1=NC(=CN1)[C@@H]2[C@H](CNC(=O)C3=CC(=CN3)Br)[C@H](CNC(=O)C4=CC(=CN4)Br)[C@@H]2C5=CNC(=N5)N[Boc]",
+            "product_smiles": "NC1=NC(=CN1)[C@@H]2[C@H](CNC(=O)C3=CC(=CN3)Br)[C@H](CNC(=O)C4=CC(=CN4)Br)[C@@H]2C5=CNC(=N5)N",
+            "notes": "Deprotection of two Boc-protected 2-aminoimidazole groups using trifluoroacetic acid (TFA). The stereochemistry of the cyclobutane core is retained.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pyrrovobasine-nakamura-2023",
+        "molecule_name": "Pyrrovobasine",
+        "class": "Natural Product",
+        "author": "Nakamura",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC#CCBr",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "N[C@H](CC1=CNC2=C1C=CC=C2)C(=O)OC",
+            "product_smiles": "CC#CCN[C@H](CC1=CNC2=C1C=CC=C2)C(=O)OC",
+            "notes": "N-alkylation of the alpha-amino group of tryptophan methyl ester with 1-bromo-2-butyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Cascade Cyclization / Pictet-Spengler / Lactamization",
+            "reagents": "dioxane",
+            "reagent_smiles": "OC(=O)C(=O)CCC(=O)O",
+            "conditions": "100 °C",
+            "yield": "49% (2 steps)",
+            "reactant_smiles": "CC#CN[C@H](CC1=CNC2=C1C=CC=C2)C(=O)OC",
+            "product_smiles": "CC#CCN1C[C@@H]2N3C(=O)CC[C@H]2C4=C3C=CC=C4[C@H]1C(=O)OC",
+            "notes": "Intramolecular cascade cyclization involving the indole, amine, and alpha-ketoglutaric acid to form a complex polycyclic system, including a lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular cyclization / Rearrangement",
+            "reagents": "NaH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "88%",
+            "reactant_smiles": "CC#CCN1[C@H]2CCC(=O)N3C4=C(C=CC=C4)C(=C23)C[C@@H]1C(=O)OC",
+            "product_smiles": "COC(=O)[C@H]1C2=C(NC3=CC=CC=C32)[C@H]4[C@H](O)C5CN(CC#CC)[C@@H]1C54",
+            "notes": "Lactam opening followed by intramolecular cyclization and rearrangement, resulting in a complex cage-like indole derivative with new stereocenters and functional group positions.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "LiBr",
+            "reagent_smiles": "",
+            "conditions": "DMSO",
+            "yield": "",
+            "reactant_smiles": "CC#CCN1C[C@@H]2C[C@H]3C(O)(C(=O)OC)C=4NC5=CC=CC=C5C4312",
+            "product_smiles": "CC#CCN1C[C@@H]2C[C@H]3C(=O)C=4NC5=CC=CC=C5C4312",
+            "notes": "Oxidation of a secondary alcohol to a ketone, accompanied by the decarboxylation of a methyl ester, forming Pyrrovobasine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-Boc protection",
+            "reagents": "Boc2O, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "56% (2 steps)",
+            "reactant_smiles": "C#CCN1C2C(C(=O)C1)C3C2C4=CC=CC=C4[NH]C3",
+            "product_smiles": "C#CCN1C2C(C(=O)C1)C3C2C4=CC=CC=C4N([Boc])C3",
+            "notes": "Indole nitrogen is protected with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Oxidative Cyclization",
+            "reagents": "Mn(OAc)3, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "49%",
+            "reactant_smiles": "CC#CCN1C[C@H]2C(=O)C[C@@H]1C[C@H]3C4=C(C=CC=C4)N(C3)[Boc]",
+            "product_smiles": "C/C=C\\1/C[C@H]2C3=C(C=CC=C3)N(C2)[Boc]C[C@@H]4C(=O)C[C@@H]1N4",
+            "notes": "Intramolecular cyclization of an N-alkyne containing indole to form a new bridged polycyclic system with a double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig reaction",
+            "reagents": "KOTBu",
+            "reagent_smiles": "COC=P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "THF",
+            "yield": "75%",
+            "reactant_smiles": "CC/C=C/1N2CC3C(C(C(=O)C3)C4=C(N([Boc])C5=CC=CC=C54)C2)C1",
+            "product_smiles": "CC/C=C/1N2CC3C(C(C(/C=C\\OC)C3)C4=C(N([Boc])C5=CC=CC=C54)C2)C1",
+            "notes": "Wittig reaction of a ketone with a methoxymethylidene triphenylphosphorane to form an enol ether with Z-stereoselectivity for the newly formed double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection, Hydrolysis",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC/C=C/1CN2CCC3=C(CC1C(/C=C/OC)C2)N([Boc])C4=CC=CC=C34",
+            "product_smiles": "CC/C=C/1CN2CCC3=C(CC1C(=O)C2)NC4=CC=CC=C34",
+            "notes": "Boc deprotection of indole nitrogen and hydrolysis of enol ether to ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Esterification",
+            "reagents": "I₂, KOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "CC/C=C/C1CN2C3CC(C4=C(NC5=CC=CC=C54)C2)(C=O)C13",
+            "product_smiles": "CC/C=C/C1CN2C3CC(C4=C(NC5=CC=CC=C54)C2)(C(=O)OC)C13",
+            "notes": "Aldehyde is oxidized to a methyl ester in the presence of iodine, potassium hydroxide, and methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Boc Protection",
+            "reagents": "Boc2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "53%",
+            "reactant_smiles": "C/C=C\\1/CN2C3CC4=C(C2CC1C3C(=O)OC)NC5=CC=CC=C45",
+            "product_smiles": "C/C=C\\1/CN2[C@@H]3CC4=C([C@H]2CC1C3C(=O)OC)N(C5=CC=CC=C45)C(=O)OC(C)(C)C",
+            "notes": "3 steps",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Alpha-iodination",
+            "reagents": "LDA, I2",
+            "reagent_smiles": "",
+            "conditions": "THF, -42 to -20 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C\\1/CN2[C@@H]3CC4=C([C@H]2CC1[C@H](C(=O)OC)3)N(C5=CC=CC=C45)[Boc]",
+            "product_smiles": "C/C=C\\1/CN2[C@@H]3CC4=C([C@H]2CC1[C@@H](I)(C(=O)OC)3)N(C5=CC=CC=C45)[Boc]",
+            "notes": "Alpha-iodination of an ester via enolate formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Photoredox Reaction, Cyclopropane Opening, Cyclization",
+            "reagents": "[Ir(dtbbpy)(ppy)2]PF6, DIPEA, (TMS)2NH",
+            "reagent_smiles": "",
+            "conditions": "hv, -50 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1(I)C2CC3C(=C(C)C)CN4C3C2C5=C(N([Boc])C5)C=CC=C4",
+            "product_smiles": "COC(=O)C1C2CC3C(=C(C)C)CN4C3C2C5=C(N([Boc])C5)C=CC=C14",
+            "notes": "Photoredox catalyzed intramolecular cyclization with cyclopropane opening, leading to formation of a new 5-membered ring and loss of iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C/C=C/1/CN2C3CC4=C(C2CC1C3C(=O)OC)N([Boc])C5=CC=CC=C45",
+            "product_smiles": "C/C=C/1/CN2C3CC4=C(C2CC1C3C(=O)OC)NC5=CC=CC=C45",
+            "notes": "Deprotection of a Boc group from the indole nitrogen. The alkene double bond stereochemistry was corrected to match the E-configuration shown in the screenshot. Stereochemistry for the chiral centers (other than the double bond) was not explicitly encoded in the provided SMILES and has not been added.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "1,1-Difluoroalkylation / Cyclization",
+            "reagents": "NH4(OAc), AgBF4",
+            "reagent_smiles": "BrC(F)(F)[Si](C)(C)C",
+            "conditions": "DCE",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@H]1C[C@H]2C[C@H]3C4=C(NC5=CC=CC=C54)C/C=C(C)\\[C@@H]2N1C[C@H]3",
+            "product_smiles": "COC(=O)[C@H]1C[C@H]2C[C@H]3C4=C(NC5=CC=CC=C54)C/C=C(C)\\[C@@H]2[N+]1(C[C@@H]3)C(F)F",
+            "notes": "1,1-Difluoroalkylation of the tertiary amine followed by cyclization. The overall yield over 6 steps is 17%. Stereochemical inversion occurs at the carbon adjacent to the tertiary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Cyclization / Nucleophilic Addition / Reduction (of iminium)",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "C1=CC=C2C(=C1)C(=CN2)CCNC(=O)OCC(Cl)(Cl)Cl",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C/C=C\\1/C[N+]2(C3CC4=C(C2CC1C3C(=O)OC)NC5=CC=CC=C45)C(F)F",
+            "product_smiles": "C/C=C\\1/CN[C@H]2CC3=C([C@H](C[C@@H]1C2C(=O)OC)C4=C(CCNC(=O)OCC(Cl)(Cl)Cl)C5=C(C=CC=C5)N4)NC6=CC=CC=C36",
+            "notes": "This reaction involves the nucleophilic addition of an indole derivative to a complex cyclic iminium ion (derived from the reactant), followed by a cyclization and likely reduction to form the highly complex polycyclic product. The difluoroethyl group is cleaved during the reaction. The product is identified as Pyrrovobasine (Nakamura 2023). Stereochemistry for some centers is missing in the provided SMILES despite being shown in the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Reductive Amination",
+            "reagents": "CH2O, NaBH(OAc)3",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, MeOH, H2O",
+            "yield": "",
+            "reactant_smiles": "C/C=C\\1/CNC2CC3=C([C@H](CC1C2C(=O)OC)C4=C(CCNC(=O)OCC(Cl)(Cl)Cl)C5=C(C=CC=C5)N4)NC6=CC=CC=C36",
+            "product_smiles": "C/C=C\\1/CN(C)C2CC3=C([C@H](CC1C2C(=O)OC)C4=C(CCNC(=O)OCC(Cl)(Cl)Cl)C5=C(C=CC=C5)N4)NC6=CC=CC=C36",
+            "notes": "N-methylation of a secondary amine via reductive amination using formaldehyde and sodium triacetoxyborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Troc deprotection",
+            "reagents": "Zn, AcOH",
+            "reagent_smiles": "[Zn].CC(=O)O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C=C\\1/CN(C)C2CC3=C([C@H](CC1C2C(=O)OC)[C@@H]4=C(CC[NHTroc])C5=C(C=CC=C5)N4)NC6=CC=CC=C36",
+            "product_smiles": "C/C=C\\1/CN(C)C2CC3=C([C@H](CC1C2C(=O)OC)[C@@H]4=C(CCN)C5=C(C=CC=C5)N4)NC6=CC=CC=C36",
+            "notes": "Deprotection of 2,2,2-trichloroethoxycarbonyl (Troc) protecting group to a primary amine using Zinc and Acetic Acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Pyrrole Annulation",
+            "reagents": "AcOH",
+            "reagent_smiles": "C1=CC(CO)(O)OCC1=O",
+            "conditions": "",
+            "yield": "59%",
+            "reactant_smiles": "C/C=C\\1/CN(C)C2CC3=C([C@H](CC1C2C(=O)OC)C4=C(CCN)C5=C(C=CC=C5)N4)NC6=CC=CC=C36",
+            "product_smiles": "C/C=C\\1/CN(C)C2CC3=C([C@H](CC1C2C(=O)OC)C4=C(CCN1C=C(CO)C(C=O)=C1)C5=C(C=CC=C5)N4)NC6=CC=CC=C36",
+            "notes": "Formation of a pyrrole ring from a primary amine and a dihydropyranone derivative, leading to expansion of the indole side chain.",
+            "substeps": [
+                {
+                    "step_id": "18.1",
+                    "reaction_type": "Furan Oxidation",
+                    "reagents": "m-CPBA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "95%",
+                    "reactant_smiles": "HOCC1=COC(=C1)C[OTBS]",
+                    "product_smiles": "O=C1C=CC(O)(C[OTBS])OC1",
+                    "notes": "Oxidation of a furan derivative to a 2H-pyran-2-one derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "18.2",
+                    "reaction_type": "Deprotection",
+                    "reagents": "AcOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, H2O",
+                    "yield": "",
+                    "reactant_smiles": "[OTBS]CC1(C=CC(=O)CO1)O",
+                    "product_smiles": "C1=CC(CO)(O)OCC1=O",
+                    "notes": "Acidic hydrolysis of a TBS ether to a primary alcohol.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

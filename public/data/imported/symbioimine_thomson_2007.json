@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "symbioimine-thomson-2007",
+        "molecule_name": "Symbioimine",
+        "class": "Natural Product",
+        "author": "Thomson",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "COc1cc(OC)cc(CP(=O)(OC)OC)c1",
+            "conditions": "THF, -78°C",
+            "yield": "82%",
+            "reactant_smiles": "COC(=O)CCC/C=C/C=O",
+            "product_smiles": "COC(=O)CCC/C=C/C=C/c1cc(OC)cc(OC)c1",
+            "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde to form a diene product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard reaction, Weinreb amide synthesis",
+            "reagents": "iPrMgCl, NHMe(OMe)",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(=CC(=C1)OC)/C=C/C=C/CCCC(=O)OC",
+            "product_smiles": "CN(OC)C(=O)CCCC/C=C/C=C/C1=CC(=CC(=C1)OC)OC",
+            "notes": "Methyl ester converted to Weinreb amide using isopropylmagnesium chloride and N,O-dimethylhydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Weinreb Ketone Synthesis",
+            "reagents": "MeMgCl",
+            "reagent_smiles": "C[Mg]Cl",
+            "conditions": "THF, -78°C",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "COC1=CC(=CC(=C1)OC)/C=C/C=C/CCCC(=O)N(C)OC",
+            "product_smiles": "COC1=CC(=CC(=C1)OC)/C=C/C=C/CCCC(=O)C",
+            "notes": "Grignard addition of methylmagnesium chloride to a Weinreb amide to form a methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Silyl enol ether formation",
+            "reagents": "LDA, TMSCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "0°C",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)CCC/C=C/C=C/C1=CC(=CC(=C1)OC)OC",
+            "product_smiles": "C=C(CCC/C=C/C=C/C1=CC(=CC(=C1)OC)OC)[OTMS]",
+            "notes": "Formation of a silyl enol ether from an alpha-methyl ketone using LDA, TMSCl, and Et3N.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "C-C Bond Formation / Mukaiyama-type Aldol Reaction",
+            "reagents": "TMSOTf, 2,6-di-tert-butylpyridine",
+            "reagent_smiles": "COC(OC)[C@@H](C)C[OTs]",
+            "conditions": "CH2Cl2, -78°C",
+            "yield": "58%",
+            "reactant_smiles": "C=C(CCC/C=C/C=C/C1=CC(=CC(=C1)[OMe])[OMe])[OTMS]",
+            "product_smiles": "[OMe]C1=CC(=CC(=C1)/C=C/C=C/CCC(=O)C(OC)[C@@H](C)C[OTs])[OMe]",
+            "notes": "Mukaiyama aldol-type addition of an enol silyl ether to a chiral alkyl tosylate (derived from a hemiacetal), forming a new C-C bond. The TMS group is removed, and the ketone is formed. The stereochemistry of one chiral center (bearing Me) is retained, while the other (bearing OMe) is formed as racemic (indicated by wavy bond).",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiBH4",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, 0°C",
+                    "yield": "",
+                    "reactant_smiles": "C[C@@H](C(=O)N1CCSC1=S)C(OC)OC",
+                    "product_smiles": "C[C@@H](CO)C(OC)OC",
+                    "notes": "Amide and thiocarbonyl reduction to primary alcohol; dimethoxy acetal group remains unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Alcohol Tosylation",
+                    "reagents": "TsCl, Pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "61%",
+                    "reactant_smiles": "OCC[C@H](C)C(OC)OC",
+                    "product_smiles": "[OTs]CC[C@H](C)C(OC)OC",
+                    "notes": "Primary alcohol is converted to a tosylate. The stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-].CS(C)=O",
+            "conditions": "DMSO, 50°C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1(C[OTs])C(OC)CC(=O)CCC/C=C/C=C/c2cc(OC)cc(OC)c21",
+            "product_smiles": "C[C@H]1(C[N-]=[N+]=[N-])C(OC)CC(=O)CCC/C=C/C=C/c2cc(OC)cc(OC)c21",
+            "notes": "SN2 displacement of tosylate by azide on a primary alkyl group, forming an alkyl azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Staudinger Aza-Wittig reactions",
+            "reagents": "PPh3",
+            "reagent_smiles": "",
+            "conditions": "benzene, 50°C",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "COC1=CC(OC)=CC=C1C/C=C/C=C/C1CCC(=O)[C@H](CC[N3])C[C@@H](OC)[C@H](C)C1",
+            "product_smiles": "COC1=CC(OC)=CC=C1C/C=C/C=C/C1CCC(=N)C[C@@H](OC)[C@H](C)C1",
+            "notes": "Intramolecular Staudinger Aza-Wittig cyclization of an azido ketone to form an imine within an 11-membered macrocycle. The ketone C=O is converted to C=N, and the azide (N3) is lost, with the CH2CH2 group previously bearing the azide becoming part of the new cyclic imine system. The macrocycle maintains its 11-membered size. Stereochemistry of the methyl and methoxy groups is preserved, with methyl assigned as [C@H] (wedge) and methoxy as [C@@H] (wavy/anti to methyl). The carbon bearing the azidoethyl group in the reactant is also chiral and assigned as [C@H].",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Diels-Alder reaction",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "50°C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC(OC)CCC/C=C/C=C/c2cc(OC)cc(OC)c2C=N1",
+            "product_smiles": "C[C@H]1CN=C2CCC[C@@H]3C=C[C@H](C4=CC(=CC(=C4)OC)OC)[C@@H]1[C@@H]32",
+            "notes": "Intramolecular Diels-Alder reaction of a macrocyclic imine to form a tricyclic system. The methoxy group on the macrocycle is lost during the reaction, likely via protonation by TFA and subsequent elimination/reduction to a saturated CH center.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acylation / Enamide Formation",
+            "reagents": "TFAA, Et3N",
+            "reagent_smiles": "FC(F)(F)C(=O)OC(=O)C(F)(F)F.CCN(CC)CC",
+            "conditions": "",
+            "yield": "37% (2 steps)",
+            "reactant_smiles": "C[C@H]1CN=C2CCC[C@@H]3C=C[C@H](C4=CC(=CC(=C4)OC)OC)[C@H]1[C@@H]32",
+            "product_smiles": "C[C@H]1CN(C2=CCC[C@@H]3C=C[C@H](C4=CC(=CC(=C4)OC)OC)[C@H]1[C@@H]32)C(=O)C(F)(F)F",
+            "notes": "Trifluoroacetylation of an imine, leading to an N-trifluoroacetyl enamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection and Imine Formation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H]1C[C@H]2N(C(=O)C(F)(F)F)C3=CCC[C@H]4C=C[C@H](C5=CC(=CC(=C5)OC)OC)[C@H]2[C@H]43",
+            "product_smiles": "C[C@H]1CC(=NCC2=CCC[C@H]3C=C[C@H](C4=CC(=CC(=C4)OC)OC)[C@H]1[C@H]32)",
+            "notes": "Trifluoroacetamide protecting group is removed under basic conditions (K2CO3/MeOH), accompanied by a rearrangement to form an imine and a shift in one of the double bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "O-demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "82%",
+            "reactant_smiles": "C[C@H]1CN=C2CCC[C@H]3C=C[C@H](C4=CC(OC)=CC(OC)=C4)[C@H]1[C@H]32",
+            "product_smiles": "C[C@H]1CN=C2CCC[C@H]3C=C[C@H](C4=CC(O)=CC(O)=C4)[C@H]1[C@H]32",
+            "notes": "O-demethylation of aryl methyl ethers using boron tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Sulfation, Imine reduction/protonation",
+            "reagents": "SO3, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "27%",
+            "reactant_smiles": "C[C@H]1CN=C2CCC[C@@H]3C=C[C@H](C4=CC(=CC(=C4)O)O)[C@@H]1[C@@H]32",
+            "product_smiles": "C[C@H]1C[NH+][C@H]2CCC[C@@H]3C=C[C@H](C4=CC(=CC(=C4)O)OS(=O)(=O)[O-])[C@@H]1[C@@H]32",
+            "notes": "One phenolic hydroxyl group is sulfated. The imine (N=C) is reduced to a secondary amine (NH-CH) and protonated, resulting in a positively charged nitrogen and a new chiral center at the carbon. The bottom phenolic hydroxyl group is sulfated, and the new hydrogen at the carbon next to nitrogen is a wedge (up).",
+            "substeps": []
+        }
+    ]
+}

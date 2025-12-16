@@ -1,0 +1,85 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "effient-prasugrel-eli-lilly-unknown-2024",
+        "molecule_name": "Effient (Prasugrel Eli-Lilly)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Silylation",
+            "reagents": "TBDMSCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "5 °C",
+            "yield": "91%",
+            "reactant_smiles": "O=C1SC2=C(CCC[NH]C2)C1",
+            "product_smiles": "[OTBDMS]C1=CC2=C(CCC[NH]C2)S1",
+            "notes": "Silylation of a thienopyridinone to form a silyl enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation / Nucleophilic Acyl Substitution",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "FC1=CC=CC=C1[C@@H](Cl)C(=O)C2CC2",
+            "conditions": "H2O, rt",
+            "yield": "65%",
+            "reactant_smiles": "[OTBDMS]C1=CC2=C(CCNC2)S1",
+            "product_smiles": "[OTBDMS]C1=CC2=C(CCN(C2)[C@@H](C(=O)C3CC3)C4=CC=CC=C4F)S1",
+            "notes": "Acylation of a secondary amine with an acyl chloride to form an amide. Stereochemistry at the alpha-carbon of the acyl group is retained (S-configuration).",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Grignard reagent formation",
+                    "reagents": "Mg, Et₂O",
+                    "reagent_smiles": "",
+                    "conditions": "30 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=C(C=C1)F)CBr",
+                    "product_smiles": "C1=CC(=C(C=C1)F)C[Mg]Br",
+                    "notes": "Formation of a Grignard reagent from (2-fluorophenyl)methyl bromide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Grignard reaction with nitrile, followed by hydrolysis",
+                    "reagents": "NH4Cl, H2O",
+                    "reagent_smiles": "C1CC1C#N",
+                    "conditions": "rt",
+                    "yield": "72% (2 Steps)",
+                    "reactant_smiles": "C1=CC(=C(C=C1)F)C[Mg]Br",
+                    "product_smiles": "C1=CC(=C(C=C1)F)CC(=O)C2CC2",
+                    "notes": "Grignard reagent reacts with cyclopropyl cyanide, followed by workup, to form a ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Alpha-chlorination",
+                    "reagents": "CuCl2, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "60 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "C1=CC(=C(C=C1)F)CC(=O)C2CC2",
+                    "product_smiles": "C1=CC(=C(C=C1)F)C(C(=O)C2CC2)Cl",
+                    "notes": "Chlorination of the alpha-carbon of the ketone, which is also benzylic.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "O-Acetylation",
+            "reagents": "Ac₂O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "60%",
+            "reactant_smiles": "[OTBDMS]C1=CC2=C(CCN(C2)C(C3=C(C=CC=C3)F)C(=O)C4CC4)S1",
+            "product_smiles": "CC(=O)OC1=CC2=C(CCN(C2)C(C3=C(C=CC=C3)F)C(=O)C4CC4)S1",
+            "notes": "Acetylation of an alcohol, replacing a TBDMS protecting group with an acetate ester.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hosieine-a-wood-2018",
+        "molecule_name": "Hosieine A",
+        "class": "Natural Product",
+        "author": "Wood",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "ClCC#N",
+            "conditions": "THF",
+            "yield": "80%",
+            "reactant_smiles": "Cc1cc(=O)[nH]cc1",
+            "product_smiles": "Cc1cc(=O)n(CC#N)cc1",
+            "notes": "N-alkylation of a 2-pyridone derivative with chloroacetonitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Negishi coupling / Nitrile alkylation",
+            "reagents": "AlCl3",
+            "reagent_smiles": "C=CC[Zn]Br.Cl[Li]",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "CC1=CC=CC(=O)N1CC#N",
+            "product_smiles": "CC1=CN(CC(=O)/C=C/C)C(=O)C=C1",
+            "notes": "Addition of an allylzinc reagent to a nitrile, followed by hydrolysis, forming an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "CeCl3",
+            "reagent_smiles": "[Li]C#[TMS]",
+            "conditions": "THF",
+            "yield": "95%",
+            "reactant_smiles": "O=C1N(CC(=O)/C=C/C)C(C)=CC=C1",
+            "product_smiles": "O=C1N(CC(O)(C#[TMS])/C=C/C)C(C)=CC=C1",
+            "notes": "Nucleophilic addition of lithium trimethylsilylacetylide to an alpha,beta-unsaturated ketone to form a tertiary propargylic alcohol. The reaction likely proceeds via a chelation-controlled mechanism due to CeCl3 (Luche reduction type conditions often involve chelation, though this is an addition, not reduction).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alpha-Alkylation, Esterification (Alcohol Protection)",
+            "reagents": "LDA",
+            "reagent_smiles": "COC(=O)Cl.CC(C)(C)C(=O)Cl",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "O=C1N(CC(O)(C#[TMS])C/C=C/C)C(C)=CC=C1",
+            "product_smiles": "O=C1N(CC([OPiv])(C#[TMS])C/C=C/C)C(CC(=O)OC)=CC=C1",
+            "notes": "Alpha-alkylation of the 3-methyl group on the 2-pyridone ring with methyl chloroformate, followed by pivaloyl protection of the tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Desilylation",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "C/C=C/[C](C#[TMS])(O[Piv])CN1C(=O)C=CC=C(CC(=O)OC)1",
+            "product_smiles": "C/C=C/[C](C#C)(O[Piv])CN1C(=O)C=CC=C(CC(=O)OC)1",
+            "notes": "Base-catalyzed removal of trimethylsilyl (TMS) protecting group from a terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Rautenstrauch Rearrangement",
+            "reagents": "PPh3AuNTf2, AcOH, CH2Cl2, then MeOH, AcCl, then H2O",
+            "reagent_smiles": "",
+            "conditions": "solvents: CH2Cl2, MeOH, H2O",
+            "yield": "",
+            "reactant_smiles": "O=C1C=C(CC(=O)OC)C=CN(CC(C#C)(O[Piv])/C=C/C)1",
+            "product_smiles": "O=C1C=C(CC(=O)OC)C=CN(CC2=C(C(=O)C[C@H](C)C2))1",
+            "notes": "Gold-catalyzed Rautenstrauch rearrangement of an enyne with a 2-pyridone core.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Michael Addition / Cyclization",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "CC#N",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "O=C1C=C(CN2C(=O)C=CC=C(CC(=O)OC)2)C[C@@H](C)C1",
+            "product_smiles": "C[C@@H]1CC(=O)[C@H]2[C@@H](CN3C(=O)C=C[C@H](CC(=O)OC)C=C3)C[C@H]12",
+            "notes": "Intramolecular cyclization of an N-substituted 2-pyridone derivative via Michael addition to form a tricyclic system with multiple stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Multi-step Reductive Amination / Lactamization",
+            "reagents": "MeNH2, NaB(OAc)3H, AcOH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "42%",
+            "reactant_smiles": "C[C@@H]1C[C@H]2C(=O)C[C@H]3[C@H](C(=O)OC)[C@@H]1CN4C(=O)C=CC=C4[C@@H]23",
+            "product_smiles": "C[C@@H]1C[C@H]2C[C@H]3[C@H]4N(C)C(=O)[C@H]2[C@@H]1CN5C(=O)C=CC=C5[C@@H]34",
+            "notes": "Reductive amination of the ketone with methylamine, followed by cyclization and lactam formation, and N-methylation. Overall 3-step transformation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "BH3",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "60%",
+            "reactant_smiles": "C[C@H]1C[C@@H]2[C@H]3CN4C(=O)C=CC=C4[C@H](C13)C(=O)N2C",
+            "product_smiles": "C[C@H]1C[C@@H]2[C@H]3CN4C(=O)C=CC=C4C(CN2C)[C@H]13",
+            "notes": "Reduction of one lactam carbonyl group to a methylene group.",
+            "substeps": []
+        }
+    ]
+}

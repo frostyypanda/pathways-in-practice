@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspidospermidine-matsuo-2012",
+        "molecule_name": "Aspidospermidine",
+        "class": "Natural Product",
+        "author": "Matsuo",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "BuLi, CbzCl, EtI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "67%",
+            "reactant_smiles": "O=C1NCCCC1",
+            "product_smiles": "CCC1C(=O)N([Cbz])CCC1",
+            "notes": "N-protection of lactam with Cbz group, followed by alpha-alkylation with iodoethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC1CCCCN(C1=O)[Cbz]",
+            "product_smiles": "CCC1CCCCN(C(O)1)[Cbz]",
+            "notes": "Reduction of the lactam carbonyl to a secondary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dehydration",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "93% (2 steps)",
+            "reactant_smiles": "N1([Cbz])C(O)C(CC)CCC1",
+            "product_smiles": "N1([Cbz])CCC=C(CC)C1",
+            "notes": "Dehydration of an N-Cbz-protected piperidinol derivative to form a N-Cbz-protected dihydropyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "[2+2] cycloaddition",
+            "reagents": "Zn/Cu",
+            "reagent_smiles": "O=C(Cl)C(Cl)(Cl)Cl",
+            "conditions": "Et2O, 0°C",
+            "yield": "",
+            "reactant_smiles": "CCC1=CN([Cbz])CCC1",
+            "product_smiles": "CCC12CCCN([Cbz])C1C(C2=O)(Cl)Cl",
+            "notes": "A cyclobutanone is formed via a [2+2] cycloaddition between an enamine and a dichloroketene equivalent.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Dehalogenation",
+            "reagents": "Zn/Cu, NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "CCC12CCCN(C1C(C2=O)(Cl)Cl)C(=O)OCC3=CC=CC=C3",
+            "product_smiles": "N(C(=O)OCC1=CC=CC=C1)C2C(=O)CC3(CC)CCC2",
+            "notes": "Reductive dehalogenation of the gem-dichloro ketone, accompanied by a ketone migration within the cyclobutanone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ketone protection",
+            "reagents": "glycol, TsOH·H₂O",
+            "reagent_smiles": "OCCO.Cc1ccc(S(=O)(=O)O)cc1.O",
+            "conditions": "benzene, 90 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCC12CCCN(C2CC1=O)[Cbz]",
+            "product_smiles": "CCC12CCCN(C2CC13OCCO3)[Cbz]",
+            "notes": "Formation of an ethylene glycol acetal from a ketone using p-toluenesulfonic acid as a catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Cbz deprotection via catalytic hydrogenation)",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "[Pd]",
+            "conditions": "EtOH",
+            "yield": "100%",
+            "reactant_smiles": "CC1(OCCO1)C2C3C4(N(C(=O)OCC5=CC=CC=C5)CCC3)C2",
+            "product_smiles": "CC1(OCCO1)C2C3C4(NCCC3)C2",
+            "notes": "Cbz protecting group is removed from the nitrogen via catalytic hydrogenation with Pd/C and H2 in ethanol, yielding the secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amidation",
+            "reagents": "EDC",
+            "reagent_smiles": "C1=CC2=C(C=C1)NC=C2CC(=O)O",
+            "conditions": "0 °C",
+            "yield": "89%",
+            "reactant_smiles": "CCC1(OCCO1)C2CC3C(CCC[NH]2)C3",
+            "product_smiles": "CCC1(OCCO1)C2CC3C(CCC(N(C(=O)CC4=CNC5=C4C=CC=C5))2)C3",
+            "notes": "Amidation of a secondary amine with 3-indoleacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "N-Alkylation",
+            "reagents": "BnBr, NaH",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "95%",
+            "reactant_smiles": "CCC12CCCN(C2CC13OCCO3)C(=O)CC4=CNC5=C4C=CC=C5",
+            "product_smiles": "CCC12CCCN(C2CC13OCCO3)C(=O)CC4=CN([Bn])C6=C4C=CC=C6",
+            "notes": "N-alkylation of the indole nitrogen using benzyl bromide and sodium hydride as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ketal Hydrolysis",
+            "reagents": "1M HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 80 °C",
+            "yield": "93%",
+            "reactant_smiles": "CCC12CCCN(C2CC13OCCO3)C(=O)CC4=CN([Bn])C5=C4C=CC=C5",
+            "product_smiles": "CCC12CCCN(C2CC1=O)C(=O)CC3=CN([Bn])C4=C3C=CC=C4",
+            "notes": "Hydrolysis of a spiroketal to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement",
+            "reagents": "TMSOTf",
+            "reagent_smiles": "C[Si](C)(C)OS(=O)(=O)C(F)(F)F",
+            "conditions": "PhMe, 110 °C",
+            "yield": "42%",
+            "reactant_smiles": "CCC1(CC(=O)C1)C2CCCN(C(=O)CC3=CN([Bn])C4=CC=CC=C4C3)C2",
+            "product_smiles": "CC[C@]12CCCN3C(=O)C[C@@]4(C5=C(C=CC=C5)N([Bn])[C@H]4CC1=O)[C@H]23",
+            "notes": "Intramolecular cyclization of an indole-lactam precursor with a cyclobutane moiety, leading to a complex polycyclic system, likely via Lewis acid activation and subsequent cascade rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Wolff-Kishner reduction",
+            "reagents": "N2H4·H2O, Na",
+            "reagent_smiles": "",
+            "conditions": "(CH2OH)2, 210 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1([C@@H](C[C@@H]2N(C(=O)C[C@@H]3[C@@](C2)(C4=C(C=CC=C4)N(CC5=CC=CC=C5)[C@H]3)C)C)C(=O)C1)",
+            "product_smiles": "CCC1([C@@H](C[C@@H]2N(C(=O)C[C@@H]3[C@@](C2)(C4=C(C=CC=C4)N(CC5=CC=CC=C5)[C@H]3)C)C)CCC1)",
+            "notes": "Wolff-Kishner reduction of a ketone to a methylene group, leaving a lactam carbonyl untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "71% (2 steps)",
+            "reactant_smiles": "CC[C@]12CCCN3C(=O)C[C@@]4(C5=C(C=CC=C5)N([Bn])[C@H]4CC1)[C@H]23",
+            "product_smiles": "CC[C@]12CCCN3CC[C@@]4(C5=C(C=CC=C5)N([Bn])[C@H]4CC1)[C@H]23",
+            "notes": "Reduction of a lactam to a cyclic amine using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Debenzylation, Hydrogenation",
+            "reagents": "H2, Pd(OH)2",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "93%",
+            "reactant_smiles": "CC[C@]12CCCN3CC[C@@]4(C5=C(C=CC=C5)N([Bn])[C@H]4CC1)[C@H]23",
+            "product_smiles": "CC[C@]12CCCN3CC[C@@]4(C5=C(C=CC=C5)N[C@H]4CC1)[C@H]23",
+            "notes": "Catalytic hydrogenation for the debenzylation of the indole nitrogen, yielding Aspidospermidine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pleiocarpamine-tokuyama-2023",
+        "molecule_name": "Pleiocarpamine",
+        "class": "Natural Product",
+        "author": "Tokuyama",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection (Acylation)",
+            "reagents": "Na2CO3",
+            "reagent_smiles": "ClC(=O)OCC1=CC=CC=C1",
+            "conditions": "1,4-dioxane, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "C(CC(=O)N)[C@@H](C(=O)O)N",
+            "product_smiles": "[Cbz]N[C@@H](CCC(=O)N)C(=O)O",
+            "notes": "Selective protection of the alpha-amine of glutamine via acylation with CbzCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Cyclization / Imide Formation",
+            "reagents": "DMF",
+            "reagent_smiles": "ClS(=O)Cl.CC(=O)[O-].[K+]",
+            "conditions": "-5 °C",
+            "yield": "81%",
+            "reactant_smiles": "[Cbz]N[C@@H](CCC(=O)N)C(=O)O",
+            "product_smiles": "[Cbz]N[C@@H]2CCC(=O)NC2=O",
+            "notes": "Cyclization of a Cbz-protected glutamine derivative to form a glutarimide. SOCl2 likely activates the carboxylic acid to form an acyl chloride, which then reacts with the primary amide to form the imide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Arylation",
+            "reagents": "PhB(OH)2, Cu(OAc)2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C1C[C@@H]([NHCbz])C(=O)NC1=O",
+            "product_smiles": "C1C[C@@H]([NHCbz])C(=O)N(C2=CC=CC=C2)C1=O",
+            "notes": "Copper-catalyzed N-arylation of a glutarimide derivative with phenylboronic acid, replacing N-H with N-phenyl. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Enol triflate formation",
+            "reagents": "PhNTf2, NaHMDS, THF",
+            "reagent_smiles": "N(c1ccccc1)(S(=O)(=O)C(F)(F)F)S(=O)(=O)C(F)(F)F.C1CCOC1.[Na+].N(Si(C)(C)C)(Si(C)(C)C)",
+            "conditions": "-78 °C",
+            "yield": "78%",
+            "reactant_smiles": "O=C1N(c2ccccc2)C(=O)[C@H](N[Cbz])CCC1",
+            "product_smiles": "O=C1N(c2ccccc2)[C@H](N[Cbz])CC=C1OS(=O)(=O)C(F)(F)F",
+            "notes": "Formation of an enol triflate from a cyclic imide using NaHMDS as a base and N-phenylbis(trifluoromethanesulfonimide) as the triflating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Carbonylation",
+            "reagents": "CO, MeOH, Pd(OAc)2, Xantphos, THF",
+            "reagent_smiles": "",
+            "conditions": "45 °C",
+            "yield": "80%",
+            "reactant_smiles": "N1([Ph])C(=O)[C@H](N[Cbz])CC=C([OTf])C1",
+            "product_smiles": "N1([Ph])C(=O)[C@H](N[Cbz])CC=C(C(=O)OC)C1",
+            "notes": "Palladium-catalyzed carbonylation of vinyl triflate to methyl ester, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cbz Deprotection",
+            "reagents": "BBr3, C6HMe5",
+            "reagent_smiles": "",
+            "conditions": "DCM, -10 °C",
+            "yield": "83%",
+            "reactant_smiles": "COC(=O)C1=CC[C@@H](C(=O)N1C2=CC=CC=C2)N[Cbz]",
+            "product_smiles": "COC(=O)C1=CC[C@@H](C(=O)N1C2=CC=CC=C2)N",
+            "notes": "The carbobenzyloxy (Cbz) protecting group is removed to yield a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Alkylation (SN2')",
+            "reagents": "K2CO3",
+            "reagent_smiles": "BrC/C=C(/C)C",
+            "conditions": "MeCN",
+            "yield": "88%",
+            "reactant_smiles": "COC(=O)C1=CC[C@H](C(=O)N1C2=CC=CC=C2)N",
+            "product_smiles": "C/C=C(\\I)CN[C@H]1CC=C(C(=O)OC)N(C2=CC=CC=C2)C1=O",
+            "notes": "Alkylation of primary amine with an allylic bromide, forming a secondary amine and incorporating an iodide via stereospecific reaction.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Hydroiodination",
+                    "reagents": "Nal, TMSCl, MeCN, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C#CCO",
+                    "product_smiles": "C=C(CO)I",
+                    "notes": "Addition of iodine to an alkyne to form a vinyl iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Bromination, Alkene Rearrangement",
+                    "reagents": "NBS, Me2S",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "38% (2 steps)",
+                    "reactant_smiles": "C=C(CO)I",
+                    "product_smiles": "CBr/C=C(\\I)C",
+                    "notes": "Primary alcohol is replaced by a primary bromide, the terminal alkene rearranges to an internal (E)-alkene, and there is an apparent addition of one carbon atom to the main chain.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Radical cyclization",
+            "reagents": "nBu3SnH, AIBN",
+            "reagent_smiles": "",
+            "conditions": "benzene, reflux",
+            "yield": "",
+            "reactant_smiles": "C/C=C(/CN[C@@H]1CC=C(C(=O)OC)N(C2=CC=CC=C2)C1=O)\\I",
+            "product_smiles": "COC(=O)[C@@H]1N(c2ccccc2)C(=O)C[C@@H]2[C@@H]1C[C@H]3CC(=C)C[C@H]2N3",
+            "notes": "Intramolecular radical cyclization of an iodo-alkene to form a fused polycyclic system, likely via tin hydride mediated radical generation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH(OAc)3, AcOH",
+            "reagent_smiles": "O=CCC[N+](=O)[O-]",
+            "conditions": "DCM, -10 °C",
+            "yield": "32% (2 steps)",
+            "reactant_smiles": "C=C1CN[C@H]2C[C@@H]1C[C@H](C(=O)OC)N(C3=CC=CC=C3)C2=O",
+            "product_smiles": "C=C1CN(CCC[N+](=O)[O-])[C@H]2C[C@@H]1C[C@H](C(=O)OC)N(C3=CC=CC=C3)C2=O",
+            "notes": "Secondary amine alkylated with 3-nitropropanal via reductive amination.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Conjugate Addition / Hydro-nitration",
+                    "reagents": "NaNO2, AcOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "91%",
+                    "reactant_smiles": "C=CC=O",
+                    "product_smiles": "O=CCCC[N+](=O)[O-]",
+                    "notes": "Conjugate addition of nitrite to an alpha,beta-unsaturated aldehyde (acrolein) to yield 4-nitrobutanal.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Silylation",
+            "reagents": "[Ir(CO)Cl(PPh3)2]",
+            "reagent_smiles": "O([Si](C)(C)H)[Si](C)(C)H",
+            "conditions": "toluene",
+            "yield": "",
+            "reactant_smiles": "CC(=C1)CN(CCC[N+](=O)[O-])[C@H]2C[C@H]1[C@H](C(=O)OC)N(C3=CC=CC=C3)C2=O",
+            "product_smiles": "CC(=C1)CN(CCC[N+](=O)[O-])[C@H]2C[C@H]1[C@H](C(=O)OC)N(C3=CC=CC=C3)[C@H]2O[SiH](C)C",
+            "notes": "Reductive silylation of a bicyclic lactam to a silylated hemiaminal/aminal derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Cyclization / Heterocycle Formation",
+            "reagents": "toluene",
+            "reagent_smiles": "C[SiH](C)O[SiH](C)C.FC(F)(F)C(O)C(F)(F)F",
+            "conditions": "50 °C",
+            "yield": "49% (2 steps)",
+            "reactant_smiles": "C=C1CN(CCC[N+](=O)[O-])[C@H]2C[C@@H]1[C@@H](C(=O)OC)N(C3=CC=CC=C3)[C@H]2O[SiH](C)C",
+            "product_smiles": "C/C=C/1C[C@@H]2CN3CCC([N+](=O)[O-])[C@H]([C@@H](N(c4ccccc4)C1)C2)[C@@H](C(=O)OC)N3",
+            "notes": "Intramolecular cyclization of an N-alkyl nitroalkane with a deprotected silyl ether, forming a new six-membered ring containing the nitro group and replacing the silyl ether with a nitro group. Also involves complex rearrangement of the nitrogen backbone. The reaction involves 1,1,3,3-tetramethyldisiloxane (TMDS) and hexafluoroisopropanol (HFIP).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Bromination",
+            "reagents": "NBS, KOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "92%",
+            "reactant_smiles": "C[C@H]=C1CN2CCC3C[C@H]1[C@@H]4[C@@H]3N(c5ccccc5)[C@H](C(=O)OC)C[C@H]4[C@H]([N+](=O)[O-])C2",
+            "product_smiles": "C[C@H]=C1CN2CCC3C[C@H]1[C@@H]4[C@@H]3N(c5ccccc5)[C@H](C(=O)OC)C[C@H]4C(Br)([N+](=O)[O-])C2",
+            "notes": "Bromination at the nitro-bearing carbon, resulting in a quaternary center.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Buchwald-Hartwig amination / C-N coupling",
+            "reagents": "Pd(TFA)2, Xantphos, K3PO4",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, 100 °C",
+            "yield": "88%",
+            "reactant_smiles": "COC(=O)[C@@H]1CN(c2ccccc2)[C@H]2[C@@H]1C[C@@H](N3CCC=C(C)C3)[C@]2(Br)[N+](=O)[O-]",
+            "product_smiles": "COC(=O)[C@@H]1CN2C3=CC=CC=C3[C@H]4[C@@H]2[C@@H]1C[C@@H](N5CCC=C(C)C5)[C@@]4([N+](=O)[O-])",
+            "notes": "Intramolecular palladium-catalyzed C-N bond formation to create an indole core, involving removal of bromine and new ring closure.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Denitration / Indole formation",
+            "reagents": "NaCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O, 90 °C",
+            "yield": "77%",
+            "reactant_smiles": "CC/C=C/[C@H]1CN2C[C@@H]3C[C@@]([N+](=O)[O-])(c4ccccc4N5[C@@H]3[C@@H]2C[C@H]1[C@H]5C(=O)OC)",
+            "product_smiles": "CC/C=C/[C@H]1CN2C[C@@H]3C4=CC=CC=C4N([C@H](C)C(=O)OC)C3=C2C[C@H]1",
+            "notes": "Base-catalyzed elimination of nitro group and indole formation with double bond rearrangement.",
+            "substeps": []
+        }
+    ]
+}

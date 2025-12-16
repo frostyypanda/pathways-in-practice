@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "phleghenrine-a-dai-2023",
+        "molecule_name": "Phleghenrine A",
+        "class": "Natural Product",
+        "author": "Dai",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "solvent: AcOH",
+            "yield": "96%",
+            "reactant_smiles": "CC1=CC(=C(C=C1)OC)O",
+            "product_smiles": "BrC1=C(C)C=C(OC)C(O)=C1",
+            "notes": "Aromatic bromination of 4-methyl-2-methoxyphenol using N-bromosuccinimide (NBS) in acetic acid (AcOH). Bromine adds ortho to the methyl group and ortho to the hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation / Dearomatization / Acetalization (Oxidative dearomatization with PIDA in methanol)",
+            "reagents": "PIDA",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1cc(O)c(OC)cc1Br",
+            "product_smiles": "COC1(OC)C(=O)C=CC(C)=C1Br",
+            "notes": "Oxidative dearomatization of a phenol to a dimethoxycyclohexadienone (acetal).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diels-Alder / Polycyclization",
+            "reagents": "",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1C=CCCC1",
+            "conditions": "140 °C",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "O=C1C(OC)(OC)C=C(Br)C(C)=C1",
+            "product_smiles": "C[C@H]1[C@H](Br)[C@]23C(=O)C(OC)(OC)[C@H]4C3[C@H](N(C(=O)OC(C)(C)C)CCC2)[C@@H]14",
+            "notes": "Intramolecular Diels-Alder reaction followed by subsequent steps (likely rearrangements) to form the complex polycyclic product.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Lactam reduction to enamine",
+                    "reagents": "LiEt3BH, DIPEA, DMAP, TFAA",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe, -70 °C to rt",
+                    "yield": "83%",
+                    "reactant_smiles": "[Boc]N1CCCCC1=O",
+                    "product_smiles": "[Boc]N1CCC=CC1",
+                    "notes": "Selective reduction of an N-Boc protected lactam to an N-Boc protected cyclic enamine (1,2,3,6-tetrahydropyridine derivative).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Rearrangement / Dehalogenation",
+            "reagents": "SmI2, HMPA, THF, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "83%",
+            "reactant_smiles": "C[C@]12[C@H](N([Boc])CC[C@@H]1C)C(=O)[C@]3(OC)OC[C@H]2C(=C(Br)C3)C",
+            "product_smiles": "C[C@H]1N([Boc])CC[C@@H]2[C@H]1[C@H]3[C@H]4C(=O)C[C@]4(C)C(=C2)C3",
+            "notes": "Samarium diiodide-mediated reductive dehalogenation and rearrangement, converting a geminal dimethoxy and bromocyclopropene unit into a cyclopentenone with a fused cyclopropane.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkene Isomerization/Rearrangement",
+            "reagents": "TMSCHN2, nBuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "49%",
+            "reactant_smiles": "C[C@]12C=CC(=O)[C@H]3C1[C@H]4N([Boc])CCC4C32",
+            "product_smiles": "C[C@@]12CCC(=O)[C@H]3C1[C@H]4N([Boc])C=CCC4C32",
+            "notes": "Double bond migration from the 5-membered ring to the 6-membered N-heterocycle, with preservation of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Olefination",
+            "reagents": "RhCl(PPh3)3",
+            "reagent_smiles": "[N-]=[N+]=C[Si](C)(C)C.P(c1ccccc1)(c1ccccc1)c1ccccc1.CC(C)O",
+            "conditions": "THF, 60 °C",
+            "yield": "61%",
+            "reactant_smiles": "CC1(C2C=CC3C(=O)CC[C@H]4[C@@H]3C2C5CCCN([Boc])[C@@H]541",
+            "product_smiles": "CC1(C2C=CC3C(=C)CC[C@H]4[C@@H]3C2C5CCCN([Boc])[C@@H]541",
+            "notes": "Rhodium-catalyzed olefination of a ketone to form an exocyclic methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "SeO₂, TBHP",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "81%",
+            "reactant_smiles": "N1([Boc])CCC[C@H]2[C@@H]1C3=C(C)C=C(C3)C(=C)C2",
+            "product_smiles": "N1([Boc])CCC[C@H]2[C@@H]1C3C(=O)C(=C)C(C3)C(=C)C2",
+            "notes": "Allylic oxidation of internal alkene to an α,β-unsaturated ketone with a double bond migration, forming an exocyclic alkene. The Boc protecting group and the other exocyclic alkene remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cyclization / Annulation",
+            "reagents": "AcOH, piperidine, nBuOH",
+            "reagent_smiles": "C=C[N+](C)CC(=O)N.[Cl-]",
+            "conditions": "120 °C",
+            "yield": "",
+            "reactant_smiles": "CC12CCC(N([Boc])C1)[C@H]3[C@H]2C[C@H]4CC(=O)C(=C)C43",
+            "product_smiles": "CC12CCC(N([Boc])C1)[C@H]3[C@H]2C[C@H]4CC5=CC(=O)NC5=CC43",
+            "notes": "Intramolecular cyclization involving an N-acyliminium salt to form an indole-2-one fused system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "51% (2 steps)",
+            "reactant_smiles": "C[C@]12CC[C@@H](N(C(=O)OC(C)(C)C)CC1)C3C2C4=CC(=O)NC=C4",
+            "product_smiles": "C[C@]12CC[C@@H](NCCC1)C3C2C4=CC(=O)NC=C4",
+            "notes": "Boc deprotection using trifluoroacetic acid (TFA).",
+            "substeps": []
+        }
+    ]
+}

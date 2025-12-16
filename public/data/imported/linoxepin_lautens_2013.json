@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "linoxepin-lautens-2013",
+        "molecule_name": "Linoxepin",
+        "class": "Natural Product",
+        "author": "Lautens",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Directed Ortho Metalation (DoM) / Formylation",
+            "reagents": "LDA, DMF",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "Brc1ccc2c(c1)OCO2",
+            "product_smiles": "O=Cc1c(Br)ccc2c1OCO2",
+            "notes": "Directed ortho metalation of 4-bromobenzo[d][1,3]dioxole followed by formylation using DMF to introduce an aldehyde group ortho to the bromine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 65 °C",
+            "yield": "97%",
+            "reactant_smiles": "C1=C(C(=C2C(=C1)OCO2)C=O)Br",
+            "product_smiles": "C1=C(C(=C2C(=C1)OCO2)CO)Br",
+            "notes": "Aldehyde group reduced to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "TMSCl, NaI",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "99%",
+            "reactant_smiles": "C1=C(C(=C2C(=C1)OCO2)CO)Br",
+            "product_smiles": "C1=C(C(=C2C(=C1)OCO2)CI)Br",
+            "notes": "Conversion of a primary alcohol to a primary alkyl iodide (iodomethyl group).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "K2CO3",
+            "reagent_smiles": "COC1=CC=CC(=C1O)I",
+            "conditions": "acetone, 75 °C",
+            "yield": "94%",
+            "reactant_smiles": "C1=C(C(=C2C(=C1)OCO2)CI)Br",
+            "product_smiles": "COC1=CC=CC(=C1OCC2=C3C(=CC=C2Br)OCO3)I",
+            "notes": "Nucleophilic substitution (SN2) where the phenoxide of 2-iodo-6-methoxyphenol displaces the iodide from the iodomethyl group of the 1,3-benzodioxole derivative, forming an ether linkage.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Catellani reaction",
+            "reagents": "Pd(OAc)2, Cs2CO3",
+            "reagent_smiles": "C1[C@@H](I)COC1=O.CC(C)(C)OC(=O)C=C.C1C=CC2C1CCC2",
+            "conditions": "DMF, 90 °C",
+            "yield": "92%",
+            "reactant_smiles": "COC1=C(I)C=C(C=C1)OCC2=C(Br)C=C3OCO3C=C2",
+            "product_smiles": "CC(C)(C)OC(=O)/C=C/c1c(C[C@@H]2CC(=O)OC2)c(OC)c(OCC3=C(Br)C=C4OCO4C=C3)cc1",
+            "notes": "A Catellani reaction coupling the aryl iodide with tert-butyl acrylate and the iodo-lactone, forming C-C bonds on the central phenyl ring. The bromine on the benzodioxole ring remains untouched. The stereochemistry of the lactone is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Lemieux-Johnson oxidation",
+            "reagents": "OsO4, NaIO4, Et3BnNCl",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "98%",
+            "reactant_smiles": "CC(C)COC(=O)/C=C/C1=C(C(=CC=C1C[C@@H]2CC(=O)OC2)OC)OCC3=C4C(=CC=C3Br)OCO4",
+            "product_smiles": "COC1=CC=C(C[C@@H]2CC(=O)OC2)C(=C1OCC3=C4C(=CC=C3Br)OCO4)C=O",
+            "notes": "Oxidative cleavage of an alpha,beta-unsaturated ester to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "TEA, TiCl4",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C to rt",
+            "yield": "49%",
+            "reactant_smiles": "COC1=CC=C(C[C@H]2CC(=O)OC2)C(=C1OCC3=C4C(=CC=C3Br)OCO4)C=O",
+            "product_smiles": "COC1=CC=C2C[C@@]3COC(=O)C3=CC2=C1OCC4=C5C(=CC=C4Br)OCO5",
+            "notes": "Lewis acid-catalyzed intramolecular cyclization of an aldehyde and an alkene, forming a new fused cyclohexene ring and retaining the lactone and ether functionalities.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Heck reaction",
+            "reagents": "PdCl2, PPh3, Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 75 °C",
+            "yield": "76%",
+            "reactant_smiles": "COc1ccc2c(c1)C[C@H]3COC(=O)C3=C2OCCc4c(Br)ccc5oco5c4",
+            "product_smiles": "COc1ccc2c(c1)C[C@H]3COC(=O)C3=C2c4c(COc5c4ccc6oco65)",
+            "notes": "Intramolecular Heck reaction forming the complex polycyclic core of Linoxepin, involving stereocenter preservation and construction of a new aryl-alkene bond and a bridging ether ring.",
+            "substeps": []
+        }
+    ]
+}

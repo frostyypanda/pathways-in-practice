@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "damirone-c-vanderwal-2024",
+        "molecule_name": "Damirone C",
+        "class": "Natural Product",
+        "author": "Vanderwal",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Curtius rearrangement",
+            "reagents": "DPPA, Et3N",
+            "reagent_smiles": "",
+            "conditions": "EtOH, THF, reflux",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1c(OC)c(OC)ccc1",
+            "product_smiles": "CCOC(=O)Nc1c(OC)c(OC)ccc1",
+            "notes": "Conversion of 2,3-dimethoxybenzoic acid to ethyl (2,3-dimethoxyphenyl)carbamate via Curtius rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Carbamate hydrolysis",
+            "reagents": "KOH, EtOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "86%",
+            "reactant_smiles": "CCOC(=O)Nc1c(OC)c(OC)ccc1",
+            "product_smiles": "Nc1c(OC)c(OC)ccc1",
+            "notes": "Hydrolysis of an ethyl carbamate to a primary aniline. The yield is reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "ICI, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, H2O, -10 °C",
+            "yield": "69%",
+            "reactant_smiles": "COC1=C(N)C(OC)=CC=C1",
+            "product_smiles": "COC1=C(N)C(OC)=C(I)C=C1",
+            "notes": "Iodination of 2,3-dimethoxyaniline, directing the iodine to the para position relative to the amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Indole Synthesis / Sonogashira Coupling and Cyclization",
+            "reagents": "Pd/C, K2CO3",
+            "reagent_smiles": "[TES]C#CCCO[TES]",
+            "conditions": "DMF, 125 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C(=C(C=C1)I)N)OC",
+            "product_smiles": "[TES]C1=C(CCO[TES])C2=C(C(=C(C=C2)OC)OC)N1",
+            "notes": "Formation of an indole derivative via cyclization of an iodoaniline with a di-TES protected alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H₂O",
+            "yield": "75%",
+            "reactant_smiles": "[TES]C1=C(CC[OTES])C2=C(C(=C(C=C2)OC)OC)N1",
+            "product_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CCO)OC",
+            "notes": "Acidic hydrolysis of TES and OTES protecting groups to reveal a free indole C-H and a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Azidation",
+            "reagents": "DPPA, DBU",
+            "reagent_smiles": "",
+            "conditions": "toluene, 40 °C",
+            "yield": "84%",
+            "reactant_smiles": "COC1=C(OC)C=C2C(C=C1)=C(CCO)CN2",
+            "product_smiles": "COC1=C(OC)C=C2C(C=C1)=C(CCN=[N+]=[N-])CN2",
+            "notes": "Conversion of a primary alcohol to an azide group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Acetylation",
+            "reagents": "AcCl, tBuOK",
+            "reagent_smiles": "CC(=O)Cl.CC(C)(C)[O-].[K+]",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "COc1cc(OC)c2c1c([nH]c3c2cc(CC[N-]=[N+]=[N-])c3)",
+            "product_smiles": "CC(=O)N1C=C(CC[N-]=[N+]=[N-])C2=C1C(=C(C=C2)OC)OC",
+            "notes": "N-Acetylation of an indole derivative at the nitrogen atom, using acetyl chloride and potassium tert-butoxide as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "PIFA, TMSOTf, HFIP",
+            "reagent_smiles": "",
+            "conditions": "H2O, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC(=O)N1C=C(CCC[N-]=[N+]=N)C2=C1C(=C(C=C2)OC)OC",
+            "product_smiles": "COC1=CC2=[NH+]CCC3=CNC(=C32)C1=O.C(=O)(C(F)(F)F)[O-]",
+            "notes": "Oxidative cyclization of an N-acetylindole with an azide side chain, likely involving a Pummerer-type rearrangement, to form a tetracyclic quinone imine structure. The amine in the reactant was incorrectly identified as an azide in the original SMILES.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "N-Alkylation",
+            "reagents": "MeI, Ag2CO3",
+            "reagent_smiles": "CI.O=C([O-])[O-].[Ag+].[Ag+]",
+            "conditions": "MeOH",
+            "yield": "35%",
+            "reactant_smiles": "COc1cc(=O)c2c(c1=O)c3[nH]ccc3CCC2[NH+].[O-]C(=O)C(F)(F)F",
+            "product_smiles": "COc1cc(=O)c2c(c1=O)c3N(C)C=CC3CCC2N(C)",
+            "notes": "Double N-methylation of a polycyclic amine",
+            "substeps": []
+        }
+    ]
+}

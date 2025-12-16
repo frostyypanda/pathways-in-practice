@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "isophellibiline-funk-2012",
+        "molecule_name": "Isophellibiline",
+        "class": "Natural Product",
+        "author": "Funk",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amidation / Enamine formation",
+            "reagents": "Na2SO4, C6H6, PhNEt2",
+            "reagent_smiles": "NCCCC(=C)Br.ClC(=O)C/C=C/C=C",
+            "conditions": "solvent: C6H6",
+            "yield": "63%",
+            "reactant_smiles": "CC1(C)OCC(=O)CO1",
+            "product_smiles": "C=C/C=C/CC(=O)N(CCCC(=C)Br)C1=COC(C)(C)OC1",
+            "notes": "Formation of an N-acylated enamine via reaction of a cyclic ketone with a primary amine and an acyl chloride. The ketone's oxygen is replaced by the amine nitrogen, forming an imine, which is then acylated and tautomerizes to the enamine.",
+            "substeps": [
+                {
+                    "step_id": "1.1",
+                    "reaction_type": "Hydrobromination of alkyne",
+                    "reagents": "Et4N HBr2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C#CCCCO",
+                    "product_smiles": "C=C(CCCO)Br",
+                    "notes": "Markovnikov hydrobromination of a terminal alkyne to form a vinyl bromide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "1.2",
+                    "reaction_type": "Mesylate formation",
+                    "reagents": "Et₃N, MeClO₂S",
+                    "reagent_smiles": "CCN(CC)CC.CS(=O)(=O)Cl",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=C(CCCO)Br",
+                    "product_smiles": "C=C(CCCOS(=O)(=O)C)Br",
+                    "notes": "Conversion of a primary alcohol to its mesylate ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "1.3",
+                    "reaction_type": "Nucleophilic Substitution",
+                    "reagents": "NaN₃",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=C(CCCOS(=O)(=O)C)Br",
+                    "product_smiles": "C=C(CCC[N-]=[N+]=[N-])Br",
+                    "notes": "Nucleophilic substitution of the mesylate leaving group with azide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "1.4",
+                    "reaction_type": "Staudinger reaction",
+                    "reagents": "PPh3, H2O",
+                    "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3.O",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=C(Br)CCCN=N=N",
+                    "product_smiles": "C=C(Br)CCCN",
+                    "notes": "Staudinger reduction of an alkyl azide to a primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Retro Diels-Alder/Diels-Alder",
+            "reagents": "toluene, PhNEt2",
+            "reagent_smiles": "",
+            "conditions": "110 °C",
+            "yield": "59%",
+            "reactant_smiles": "C=C/C=C/CC(=O)N(CCCC(=C)Br)C1=COC(C)(C)OC1",
+            "product_smiles": "BrC(=C)CCC[N@]1C(=O)C[C@H]2[C@H]3C=CCC[C@@H]3C(=O)C[C@H]12",
+            "notes": "Intramolecular Diels-Alder reaction forming a complex fused polycycle with 3 chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Still-Gennari olefination",
+            "reagents": "KHMDS, 18-crown-6",
+            "reagent_smiles": "COC(=O)CP(=O)(OCC(F)(F)F)OCC(F)(F)F",
+            "conditions": "",
+            "yield": "66%",
+            "reactant_smiles": "BrC(=C)CCCN1[C@H]2C(=O)C[C@@H]3[C@H]4C=C[C@@H](C4)[C@@]3(C=O)[C@@H]2C1",
+            "product_smiles": "BrC(=C)CCCN1[C@H]2C(=O)C[C@@H]3[C@H]4C=C[C@@H](C4)[C@@]3(\\C=C\\C(=O)OC)[C@@H]2C1",
+            "notes": "Still-Gennari olefination of an aldehyde to a Z-alkene ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Heck Cyclization",
+            "reagents": "NaOCOH, DIPEA",
+            "reagent_smiles": "[Pd]12([O-][C](=O)C)O[Pd]1([O-][C](=O)C)O2.CC1=CC=CC=C1P(C2=CC=CC=C2C)CC3=CC=C(CP(C4=CC=CC=C4C)C5=CC=CC=C5C)C=C3",
+            "conditions": "MeCN, reflux",
+            "yield": "",
+            "reactant_smiles": "COC(=O)/C=C/[C@H]1[C@@H]2([C@H]3N(CCC(=C)Br)C(=O)C[C@H]3[C@H]1C4=CC[CH]C[C@H]4)",
+            "product_smiles": "COC(=O)/C=C/[C@H]1[C@@H]2([C@H]3N(CCC(=C)[C@H]2)C(=O)C[C@H]3[C@H]1C4=CC[CH]C[C@H]4)",
+            "notes": "Intramolecular Heck reaction to form an 8-membered ring with an exocyclic methylene and cyclize the alkene of the exocyclic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "COC(=O)/C=C/C1=C(C=C)[C@H]2C3C(N4C(=O)CCC[C@@H]42)C=CCC31",
+            "product_smiles": "OC(=O)/C=C/C1=C(C=C)[C@H]2C3C(N4C(=O)CCC[C@@H]42)C=CCC31",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid using lithium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Lactonization / Cyclization",
+            "reagents": "toluene",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "80%",
+            "reactant_smiles": "O=C(O)/C=C/1[C@@H](C(=C))[C@H]2N3CCCC(=O)C3[C@@H]2C=CCC1",
+            "product_smiles": "O=C1OC(C2)[C@@H](C=C2)C3N4CCCC(=O)C4[C@H]3C=CCC1",
+            "notes": "Intramolecular cyclization of an alkene-carboxylic acid with an exocyclic methylene, forming a lactone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ketal formation (acetalization)",
+            "reagents": "CSA",
+            "reagent_smiles": "OCCO.C(OC)(OC)OC",
+            "conditions": "",
+            "yield": "78%",
+            "reactant_smiles": "O=C1N2[C@@H]3[C@@H]4CC=CC4([C@@H]3[C@H](O)C(=C5CCOC5)C2)C1",
+            "product_smiles": "O=C1N2[C@@H]3[C@@H]4CC=CC4([C@@H]3[C@H](O)C(=C5C[C@@]6(OCCO6)OC5)C2)C1",
+            "notes": "Formation of an ethylene glycol ketal from a cyclic ketone in the presence of acid catalyst (CSA). Other functional groups (lactam, alcohol) remain unaffected. All stereocenters were preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dehydrogenation / Selenoxide Elimination",
+            "reagents": "BuLi, PhSeSePh, H₂O₂, pyridine",
+            "reagent_smiles": "CCC[Li].c1ccccc1[Se][Se]c2ccccc2.OO.c1ccncc1",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "O=C1[N@H]2CCC3=CC4(C[C@@]5(OCCO5)O4)C=C[C@H]3C21",
+            "product_smiles": "O=C1N2C=C3CCC4=C(C[C@@]5(OCCO5)OC4)C=C[C@H]3C2C1",
+            "notes": "Alpha-selenation followed by oxidation and selenoxide elimination leads to alpha,beta-dehydrogenation of the lactam ring, forming a new double bond and changing the stereochemistry at the nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Enolate formation and protonation, Double bond migration, Stereochemical inversion",
+            "reagents": "LDA, HMPA; AcOH",
+            "reagent_smiles": "CC(C)N(C(C)C)[Li].O=P(N(C)C)(N(C)C)N(C)C.CC(=O)O",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "C[C@]1(OCCO1)OC2=C(C[C@@H]3C(N4C(=O)C=CC(CCC4)C2)=C3)C=C",
+            "product_smiles": "C[C@]1(OCCO1)OC2=C(C[C@H]3C(N4C(=O)CCC=CC(C4)C2)=C3)C=C",
+            "notes": "Alpha-proton deprotonation of an α,β-unsaturated lactam using LDA/HMPA, followed by reprotonation with AcOH, resulting in double bond migration within the lactam ring and epimerization of a bridgehead stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Photooxidation / [4+2] Cycloaddition",
+            "reagents": "O2, rose bengal",
+            "reagent_smiles": "",
+            "conditions": "hv",
+            "yield": "",
+            "reactant_smiles": "C1=CCC23C(=C1)CC(=O)N3CCCC4=C2C[C@]5(OCCO5)OC4",
+            "product_smiles": "C1CC2=C(C[C@]3(OCCO3)OC2)C45CC6C=CC5(CC(=O)N4C1)OO6",
+            "notes": "The reaction involves a photooxidation with singlet oxygen ([4+2] cycloaddition) to form an endoperoxide across the conjugated diene system. The provided reactant SMILES is missing stereochemical information for the carbon with the bold bond adjacent to the nitrogen in the 7-membered ring. The provided product SMILES is missing stereochemical information for the carbon adjacent to the nitrogen (same as in reactant) and for the two newly formed chiral carbons of the endoperoxide bridge. These missing stereocenters could not be reliably added without regenerating the entire SMILES, which might alter canonical numbering.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive rearrangement",
+            "reagents": "NH₂CSNH₂, MeOH",
+            "reagent_smiles": "NC(=S)N.CO",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "O=C1N2C[C@@H]3CC4C=C[C@@H]5C3(OOC5)C6C(=O)N(C1)C[C@H]7C4=C(C[C@@]8(OCCO8)OC6)C7",
+            "product_smiles": "O=C1N2C[C@@H]3CC4CC[C@H]5[C@H]3(O)[C@@H](O)C6C(=O)N(C1)C[C@H]7C4=C(C[C@@]8(OCCO8)OC6)C7",
+            "notes": "Reductive cleavage of endoperoxide and reduction of alkene to form diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Silylation / Alcohol Protection",
+            "reagents": "MeCN",
+            "reagent_smiles": "CN(C(=O)C(F)(F)F)[Si](C)(C)C(C)(C)C",
+            "conditions": "",
+            "yield": "65%",
+            "reactant_smiles": "O[C@]1(CC(=O)N2CCC3=C(C[C@@]4(OCCO4)OC3)C2[C@H](O)C=C1)O",
+            "product_smiles": "O[C@]1(CC(=O)N2CCC3=C(C[C@@]4(OCCO4)OC3)C2[C@H](O[TBS])C=C1)O",
+            "notes": "Selective silylation of the secondary alcohol using N-methyl-N-tert-butylsilyltrifluoroacetamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "[OTBS]C1C=C[C@H]2([C@H](O)C(=O)N3[C@H]CC[C@@]4=C(C[C@]5(OCCO5)OC4)C23C1)",
+            "product_smiles": "[OTBS]C1C=C[C@H]2([C@H](OC(=O)C)C(=O)N3[C@H]CC[C@@]4=C(C[C@]5(OCCO5)OC4)C23C1)",
+            "notes": "Acetylation of a tertiary alcohol to an acetate using acetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Elimination",
+            "reagents": "DBU",
+            "reagent_smiles": "C1CN=C2N1CCCCCC2",
+            "conditions": "C6H6, reflux",
+            "yield": "82%",
+            "reactant_smiles": "[OTBS][C@H]1C=C[C@@]2([C@H]1[C@@]([OAc])(C(=O)N3C[C@H](CCCC4=C(C[C@@]5(OCCO5)O4)C23)))",
+            "product_smiles": "[OTBS][C@H]1C=C[C@@]2([C@H]1C=C(C(=O)N3C[C@H](CCCC4=C(C[C@@]5(OCCO5)O4)C23)))",
+            "notes": "DBU-mediated acetate elimination to form an α,β-unsaturated lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Stereoselective Alkene Reduction",
+            "reagents": "L-Selectride; AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "83%",
+            "reactant_smiles": "[OTBS][C@@H]1C=C[C@H]2C=C(C(=O)N3CCCC4=C(C[C@]5(OCCO5)OC4)C23C1)",
+            "product_smiles": "[OTBS][C@@H]1CC[C@H]2C=C(C(=O)N3CCCC4=C(C[C@]5(OCCO5)OC4)C23C1)",
+            "notes": "Stereoselective reduction of the alkene conjugated to the TBSO group in a complex fused ring system, while preserving the enamide and other alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Amide Reduction",
+            "reagents": "AlH3·NEt(Me)2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "[OTBS]C1CC=C2CC(=O)N3CCCC4=C(C[C@]5(OCCO5)OC4)C23C1",
+            "product_smiles": "[OTBS]C1CC=C2CCN3CCCC4=C(C[C@]5(OCCO5)OC4)C23C1",
+            "notes": "Reduction of an amide to a tertiary amine using alane complexed with diethylmethylamine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lysergic-acid-smith-2023",
+        "molecule_name": "Lysergic Acid",
+        "class": "Natural Product",
+        "author": "Smith",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2O, pyridine, toluene",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=CC=C(N=C1)O",
+            "product_smiles": "COC(=O)C1=CC=C(N=C1)O[OTf]",
+            "notes": "Conversion of a pyridine alcohol to its corresponding triflate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic aromatic substitution (SNAr)",
+            "reagents": "NaI, HCl",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "97% (2 steps)",
+            "reactant_smiles": "COC(=O)c1cnc([OTf])cc1",
+            "product_smiles": "COC(=O)c1cnc(I)cc1",
+            "notes": "Triflate leaving group replaced by iodide via SNAr. The reaction proceeds through a formal substitution of trifluoromethanesulfonyloxy group with iodide on the pyridine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "iPrMgCl·LiCl",
+            "reagent_smiles": "BrC1=CC=CC2=C1N([Boc])C=C2C=O",
+            "conditions": "THF, -61 °C to rt",
+            "yield": "85%",
+            "reactant_smiles": "COC(=O)C1=CC=C(I)N=C1",
+            "product_smiles": "COC(=O)C1=CC=C(C(O)C2=CN([Boc])C3=C2C=CC=C3Br)N=C1",
+            "notes": "Grignard-type addition of activated aryl moiety (via iodine-magnesium exchange) to an aldehyde, forming a secondary alcohol. The Boc group and bromine are retained.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Vilsmeier-Haack formylation",
+                    "reagents": "POCl3, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC(=C2C=CNC2=C1)Br",
+                    "product_smiles": "C1=CC(=C2C(=CNC2=C1)C=O)Br",
+                    "notes": "Formylation of 7-bromo-1H-indole at the 3-position.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "N-Protection",
+                    "reagents": "Boc₂O, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC(=C2C(=CNC2=C1)C=O)Br",
+                    "product_smiles": "[Boc]N1C=C(C=O)C2=C(C=CC=C21)Br",
+                    "notes": "N-Boc protection of 7-bromo-1H-indole-3-carbaldehyde.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C=C(C2=C(C=CC=C21)Br)C(C3=NC=C(C=C3)C(=O)OC)O",
+            "product_smiles": "COC(=O)C1=CN=C(C=C1)C(C2=CNC3=CC=CC(=C23)Br)O",
+            "notes": "Boc deprotection of indole nitrogen",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "TFA, Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "THF, 35 °C",
+            "yield": "70%",
+            "reactant_smiles": "COC(=O)C1=CN=C(C=C1)C(C2=CNC3=CC=CC(=C23)Br)O",
+            "product_smiles": "COC(=O)C1=CN=C(C=C1)CC2=CNC3=CC=CC(=C23)Br",
+            "notes": "Reduction of a secondary benzylic alcohol to a methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc₂O, DMAP, CH₂Cl₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=CN=C(C=C1)CC2=CNC3=CC=CC(=C23)Br",
+            "product_smiles": "CC(C)(C)OC(=O)N1C=C(CC2=NC=C(C=C2)C(=O)OC)C3=C(C=CC=C31)Br",
+            "notes": "Indole nitrogen protection with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Methylation",
+            "reagents": "CH2Cl2, MeOH",
+            "reagent_smiles": "COS(=O)(=O)C(F)(F)F.[Na+].[BH4-]",
+            "conditions": "0 °C",
+            "yield": "56%",
+            "reactant_smiles": "COC(=O)C1=CN=C2CCC3=C(C=C(Br)C=C3)C3=CN(C(=O)OC(C)(C)C)C=C3C2",
+            "product_smiles": "COC(=O)C1=CC[C@H]2N(C)C[C@H]3C4=C(C=C(Br)C=C4)C4=CN(C(=O)OC(C)(C)C)C=C4C123",
+            "notes": "Reductive methylation of the pyridine ring to an N-methyl tetrahydropyridine, resulting in two new chiral centers with the same relative stereochemistry (both hydrogens wedged up).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Epimerization",
+            "reagents": "LiTMP, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 to 0 °C",
+            "yield": "54%",
+            "reactant_smiles": "COC(=O)[C@H]1C=CC2C=C(Br)C3=C2C=CN([Boc])[C@H]3C[C@H]1N(C)C",
+            "product_smiles": "COC(=O)[C@@H]1C=CC2C=C(Br)C3=C2C=CN([Boc])[C@H]3C[C@H]1N(C)C",
+            "notes": "Epimerization of the C-8 methyl ester stereocenter from 'up' to 'down' configuration using a strong base (LiTMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Heck Cyclization",
+            "reagents": "Pd₂(dba)₃, PtBu₃•HBF₄, Cy₂NMe",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 100 °C",
+            "yield": "61%",
+            "reactant_smiles": "COC(=O)[C@H]1C=C[C@H](C[C@H]2N(C)C[C@H]3C=CC=C(Br)C4=C3C2N(C(=O)OC(C)(C)C)C=C41)",
+            "product_smiles": "COC(=O)C1=C[C@H](C[C@H]2N(C)C[C@H]3[C@H]2C4=CC=CC([C@H]3C=C(C4)N(C(=O)OC(C)(C)C)C5)=C51)",
+            "notes": "Intramolecular Heck reaction to form a new C-C bond, closing a 5-membered ring and eliminating bromine. Three stereocenters are formed/maintained with H atoms pointed downwards (dashed bonds).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ester Hydrolysis, Isomerization",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 70 °C",
+            "yield": "52%",
+            "reactant_smiles": "CN1C[C@@H]2[C@H](C=C(C(=O)[OMe])C1)C3=CC4=CC=C([NBoc])N4C3=C2",
+            "product_smiles": "CN1C[C@@H]2[C@H](C=C[C@@H](C(=O)O)C1)C3=CC4=CC=C([NBoc])N4C3=C2",
+            "notes": "Methyl ester hydrolysis to carboxylic acid, accompanied by double bond migration and epimerization at C8 to form the natural lysergic acid configuration.",
+            "substeps": []
+        }
+    ]
+}

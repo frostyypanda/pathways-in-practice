@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vonoprazan-takecab-takeda-unknown-2024",
+        "molecule_name": "Vonoprazan (Takecab Takeda)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-Bromination",
+            "reagents": "CuBr2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C1=C(C=CC=C1)F",
+            "product_smiles": "C1=CC(=C(C=C1)F)C(=O)CBr",
+            "notes": "Alpha-bromination of 1-(2-fluorophenyl)ethan-1-one to 2-bromo-1-(2-fluorophenyl)ethan-1-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "C-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CCOC(=O)CC#N",
+            "conditions": "acetone, 45 °C",
+            "yield": "99% (2 steps)",
+            "reactant_smiles": "C1=CC(=C(C=C1)F)C(=O)CBr",
+            "product_smiles": "CCOC(=O)C(CC(=O)C1=C(C=CC=C1)F)C#N",
+            "notes": "Alkylation of ethyl 2-cyanoacetate with 2-bromo-1-(2-fluorophenyl)ethan-1-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Pyrrole Synthesis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "53%",
+            "reactant_smiles": "CCOC(=O)C(CC(=O)C1=C(C=CC=C1)F)C#N",
+            "product_smiles": "CCOC(=O)C1=C(Cl)NC(=C1)C2=C(C=CC=C2)F",
+            "notes": "Acid-catalyzed cyclization of a β-keto-α-cyano ester to form a pyrrole. The nitrile group is lost, and a chlorine atom (presumably from HCl) is incorporated into the pyrrole ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Dechlorination / Catalytic Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "18%",
+            "reactant_smiles": "CCOC(=O)C1=C(Cl)NC(=C1)C2=CC=CC=C2F",
+            "product_smiles": "CCOC(=O)C1=CNC(=C1)C2=CC=CC=C2F",
+            "notes": "Reductive dechlorination of an ethyl pyrrole-carboxylate derivative using catalytic hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "DIBALH",
+            "reagent_smiles": "",
+            "conditions": "toluene, THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=CNC(=C1)C2=C(C=CC=C2)F",
+            "product_smiles": "C1=CC(=C(C=C1)F)C2=CC(=CN2)CO",
+            "notes": "Reduction of an ethyl ester to a primary alcohol using DIBALH.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ley oxidation",
+            "reagents": "TPAP, NMMO",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "OCCc1cnc(-c2ccccc2F)[nH]1",
+            "product_smiles": "O=Cc1cnc(-c2ccccc2F)[nH]1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Ley oxidation conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-sulfonylation",
+            "reagents": "NaH, 15-Crown-5",
+            "reagent_smiles": "C1=CC(=CN=C1)S(=O)(=O)Cl",
+            "conditions": "THF, rt",
+            "yield": "82%",
+            "reactant_smiles": "C1=CC(=C(C=C1)F)C2=CC(=CN2)C=O",
+            "product_smiles": "C1=CC(=C(C=C1)F)C2=CC(=CN2S(=O)(=O)C3=CN=CC=C3)C=O",
+            "notes": "N-sulfonylation of a pyrrole with 3-pyridyl sulfonyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Imine formation / Condensation",
+            "reagents": "MeNH2",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C(C=C1)F)C2=CC(=CN2S(=O)(=O)C3=CN=CC=C3)C=O",
+            "product_smiles": "CN=CC1=CN(C(=C1)C2=C(C=CC=C2)F)S(=O)(=O)C3=CN=CC=C3",
+            "notes": "Condensation of an aldehyde with methylamine to form an imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction (Imine to Amine)",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "",
+            "reactant_smiles": "CN=CC1=CN(C(=C1)C2=C(C=CC=C2)F)S(=O)(=O)C3=CN=CC=C3",
+            "product_smiles": "CNCC1=CN(C(=C1)C2=C(C=CC=C2)F)S(=O)(=O)C3=CN=CC=C3",
+            "notes": "Imine group is reduced to a secondary amine using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Salt Formation",
+            "reagents": "",
+            "reagent_smiles": "C(=C\\C(=O)O)/C(=O)O",
+            "conditions": "MeOH, EtOAc, rt",
+            "yield": "74%",
+            "reactant_smiles": "CNCC1=CN(C(=C1)C2=C(C=CC=C2)F)S(=O)(=O)C3=CN=CC=C3",
+            "product_smiles": "CNCC1=CN(C(=C1)C2=C(C=CC=C2)F)S(=O)(=O)C3=CN=CC=C3.C(=C\\C(=O)O)/C(=O)O",
+            "notes": "Vonoprazan (free base) reacts with fumaric acid to form Vonoprazan Fumarate (a salt). The 74% yield is indicated as being over 3 steps.",
+            "substeps": []
+        }
+    ]
+}

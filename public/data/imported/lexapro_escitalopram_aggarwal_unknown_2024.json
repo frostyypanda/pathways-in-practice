@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lexapro-escitalopram-aggarwal-unknown-2024",
+        "molecule_name": "Lexapro (Escitalopram Aggarwal)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Boc protection",
+            "reagents": "Boc₂O, Et₃N, CH₂Cl₂",
+            "reagent_smiles": "",
+            "conditions": "solvent: CH₂Cl₂",
+            "yield": "96%",
+            "reactant_smiles": "C#CCNHC",
+            "product_smiles": "C#CCN(C)[Boc]",
+            "notes": "Boc protection of a propargyl-N-methyl secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Propargylation / C-C bond formation",
+            "reagents": "Zn(OTf)₂, (+)-NME",
+            "reagent_smiles": "O=Cc1ccc(F)cc1.CCN(CC)CC",
+            "conditions": "PhMe",
+            "yield": "85%",
+            "reactant_smiles": "C#CCN(C)[Boc]",
+            "product_smiles": "[Boc]N(C)CC#C[C@@H](C1=CC=C(C=C1)F)O",
+            "notes": "Asymmetric propargylation of 4-fluorobenzaldehyde with N-Boc-N-methylpropargylamine, forming a propargylic alcohol with (R) stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Catalytic Hydrogenation (Alkyne Reduction)",
+            "reagents": "H2, PtO2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "91%",
+            "reactant_smiles": "[NMeBoc]CC#C[C@@H](O)C1=CC=C(F)C=C1",
+            "product_smiles": "[NMeBoc]CCCC[C@@H](O)C1=CC=C(F)C=C1",
+            "notes": "Catalytic hydrogenation of an alkyne to an alkane, preserving the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acylation / Esterification",
+            "reagents": "CbzCl, Et3N, CH2Cl2",
+            "reagent_smiles": "ClC(=O)OCC1=CC=CC=C1.CCN(CC)CC.ClCCl",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]N(C)CCC[C@@H](C1=CC=C(C=C1)F)O",
+            "product_smiles": "[Boc]N(C)CCC[C@@H](C1=CC=C(C=C1)F)O[Cbz]",
+            "notes": "Alcohol acylation with benzyl chloroformate (CbzCl) to form a benzyloxycarbonyl ester (carbamate).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cross-coupling / C-C bond formation",
+            "reagents": "s-BuLi, Et2O",
+            "reagent_smiles": "CC1=C(C=CC(=C1)C#N)B2OC(C)(C)C(C)(C)O2",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "[NMeBoc]CCC[C@@H](Fc1ccc(cc1))[OCbz]",
+            "product_smiles": "N#Cc1ccc(C)cc1[C@](CCC[NMeBoc])(Fc2ccc(cc2))[OCbz]",
+            "notes": "Stereoselective addition of a 2-methyl-4-cyanophenyl group to a benzylic chiral center, with inversion of configuration, likely via lithiation and subsequent reaction with the boronic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection (Cbz)",
+            "reagents": "MgBr2, MeOH, NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "42%",
+            "reactant_smiles": "N#Cc1ccc(C)c(C([C@@](CCCN[NMeBoc])(c2ccc(F)cc2)[OCbz]))c1",
+            "product_smiles": "N#Cc1ccc(C)c(C([C@@](CCCN[NMeBoc])(c2ccc(F)cc2)O))c1",
+            "notes": "Cleavage of the Cbz ester to yield a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Cyclization / Rearrangement",
+            "reagents": "Pb(OAc)4, I2, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "PhCF3",
+            "yield": "30%",
+            "reactant_smiles": "CC1=CC(=CC=C1[C@](CCC[NMeBoc])(C2=CC=C(C=C2)F)O)C#N",
+            "product_smiles": "[NMeBoc]CCC[C@@]1(C2=CC=CC=C2)C3=CC=C(C=C3CO1)C#N",
+            "notes": "Oxidative cyclization of a tertiary alcohol to form a benzofuran, accompanied by aryl migration and defunctionalization (loss of fluorine and methyl group).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[Boc]N(C)CCC[C@]1(C2=CC=CC=C2)C3=CC=C(C=C3CO1)C#N",
+            "product_smiles": "CNCCC[C@]1(C2=CC=CC=C2)C3=CC=C(C=C3CO1)C#N",
+            "notes": "Boc deprotection using trifluoroacetic acid (TFA) to form the secondary amine, Escitalopram (Lexapro).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Amination",
+            "reagents": "H2CO (aq), NaBH(OAc)3, AcOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@@]2(CC[NH]C)C3=CC=C(C=C3CO2)C#N",
+            "product_smiles": "CN(C)CC[C@@]1(C2=CC=CC=C2)C3=CC=C(C=C3CO1)C#N",
+            "notes": "N-methylation of a secondary amine to a tertiary amine. The reported yield of 71% is for 2 steps, not this single step.",
+            "substeps": []
+        }
+    ]
+}

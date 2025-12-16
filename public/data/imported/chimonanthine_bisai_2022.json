@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "chimonanthine-bisai-2022",
+        "molecule_name": "Chimonanthine",
+        "class": "Natural Product",
+        "author": "Bisai",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Protection",
+            "reagents": "NaH, Boc₂O",
+            "reagent_smiles": "[NaH].O=C(OC(C)(C)C)OC(=O)OC(C)(C)C",
+            "conditions": "THF, 0 - 25 °C",
+            "yield": "96%",
+            "reactant_smiles": "C1=CC/2=C(C=C1)NC(=O)\\C2=C\\3/C4=C(C=CC=C4)NC3=O",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)/C(=C\\3/C4=C(C=CC=C4)N([Boc])C3=O)/C1=O",
+            "notes": "Double N-Boc protection of the indolinone nitrogens.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive Dimerization",
+            "reagents": "Zn dust, AcOH",
+            "reagent_smiles": "",
+            "conditions": "25 °C",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)/C(=C\\3/C4=C(C=CC=C4)N([Boc])C3=O)/C1=O",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)C(C3C4=C(C=CC=C4)N([Boc])C3=O)C1=O",
+            "notes": "Reductive coupling of a bis-indole derivative, reducing the exocyclic double bond to a single bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Catalytic Asymmetric Michael Addition / Spirocyclization",
+            "reagents": "",
+            "reagent_smiles": "C=C1CN2CCC1C[C@H]2[C@H](C3=C4C=CC=CC4=NC=C3)NC(=S)NC5=CC(=CC(=C5)C(F)(F)F)C(F)(F)F.O=[Se](C=C)c1ccccc1",
+            "conditions": "MeCN, 25 °C",
+            "yield": "90%",
+            "reactant_smiles": "[Boc]N1C(=O)C2=CC=CC=C2C1C3C(=O)N([Boc])C4=CC=CC=C4C3",
+            "product_smiles": "[Boc]N1C(=O)C2=CC=CC=C2[C@]1(CC[Se](=O)(=O)c3ccccc3)[C@@](CC[Se](=O)(=O)c4ccccc4)C5=CC=CC=C5N([Boc])C(=O)C",
+            "notes": "A racemic dimeric indolinone undergoes a double Michael addition with phenyl vinyl selenoxide, catalyzed by a chiral thiourea-cinchona catalyst, to form a new spirocyclic dimeric product with defined stereochemistry.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Grignard Reaction / Selenide Synthesis",
+                    "reagents": "",
+                    "reagent_smiles": "C=C[Mg]Br",
+                    "conditions": "THF, 0 - 25 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Ph][Se][Se][Ph]",
+                    "product_smiles": "C=C[Se][Ph]",
+                    "notes": "Nucleophilic attack of vinylmagnesium bromide on diphenyl diselenide forms vinyl phenyl selenide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "Oxone, H₂O",
+                    "reagent_smiles": "",
+                    "conditions": "60 °C",
+                    "yield": "91% (2 steps)",
+                    "reactant_smiles": "C=C[Se][Ph]",
+                    "product_smiles": "C=C[Se](=O)(=O)[Ph]",
+                    "notes": "Oxidation of vinyl phenyl selane to vinyl phenyl selenone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaN3",
+            "reagent_smiles": "[Na+].[N-]=N#N",
+            "conditions": "DMF, 80 °C",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N1C(=O)C2=C(C=CC=C2)[C@@H]1(CC[Se](=O)(=O)[Ph])C3(CC[Se](=O)(=O)[Ph])C(=O)C4=C(C=CC=C4)N3[Boc]",
+            "product_smiles": "[Boc]N1C(=O)C2=C(C=CC=C2)[C@@H]1(CC[N-]=[N+]=[N-])C3(CC[N-]=[N+]=[N-])C(=O)C4=C(C=CC=C4)N3[Boc]",
+            "notes": "Bis-substitution of phenylselenone groups with azide groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Staudinger reaction",
+            "reagents": "PPh3",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3.O",
+            "conditions": "PhMe, H2O, 70 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CCN=[N+]=[N-])(C1=O)[C@@]3(CCN=[N+]=[N-])C4=C(C=CC=C4)N([Boc])C3=O",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CCN)(C1=O)[C@@]3(CCN)C4=C(C=CC=C4)N([Boc])C3=O",
+            "notes": "Staudinger reduction of two azide groups to primary amines.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acylation (Carbamoylation)",
+            "reagents": "ClCO2Me",
+            "reagent_smiles": "COC(=O)Cl",
+            "conditions": "25 °C",
+            "yield": "86%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=C(C=CC=C2)[C@](CCN)(C1=O)[C@@]3(CCN)C4=C(C=CC=C4)N(C3=O)C(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N1C2=C(C=CC=C2)[C@](CCN(C(=O)OC))(C1=O)[C@@]3(CCN(C(=O)OC))C4=C(C=CC=C4)N(C3=O)C(=O)OC(C)(C)C",
+            "notes": "Protection of primary amines as methyl carbamates (Moc groups).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 25 °C",
+            "yield": "97%",
+            "reactant_smiles": "[Moc]NCC[C@@]1(C2=C(C=CC=C2)N(C1=O)[Boc])[C@@]3(CCN[Moc])C4=C(C=CC=C4)N(C3=O)[Boc]",
+            "product_smiles": "[Moc]NCC[C@@]1(C2=C(C=CC=C2)NC1=O)[C@@]3(CCN[Moc])C4=C(C=CC=C4)NC3=O",
+            "notes": "Acid-catalyzed deprotection of N-Boc groups on indole nitrogens.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "Red-Al",
+            "reagent_smiles": "[Na+].[AlH2-](OCC(OC)C)(OCC(OC)C)",
+            "conditions": "PhMe, 110 °C",
+            "yield": "85%",
+            "reactant_smiles": "[Moc]NCC[C@@]1(C2=C(C=CC=C2)NC1=O)[C@]3(CCNC[Moc])C4=C(C=CC=C4)NC3=O",
+            "product_smiles": "CN1CC[C@@]2(C3=C(C=CC=C3)N[C@@H]21)[C@]45CCN(C)[C@H]4NC6=C5C=CC=C6",
+            "notes": "Reductive cleavage of two carbamates to tertiary amines (N-methyl) and reduction of two lactams to pyrrolidines.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "curcusone-b-dai-2021",
+        "molecule_name": "Curcusone B",
+        "class": "Natural Product",
+        "author": "Dai",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Mukiyama Aldol",
+            "reagents": "TBSOTf, NEt3, HC(OEt)3, BF3•OEt2",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0°C to rt then 0°C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@@H]1CCC=C(C=O)C1",
+            "product_smiles": "O=CC1=CCC[C@H](C(OCC)OCC)[C@@H](C(C)=C)C1",
+            "notes": "Mukiyama Aldol reaction of perillyl aldehyde to form a diethyl acetal, creating a new chiral center with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH/DCM, 0°C to rt",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "CCOC([C@H]1C=C(CC[C@@H]1C(=C)C)C=O)OCC",
+            "product_smiles": "CCOC([C@H]1C=C(CC[C@@H]1C(=C)C)CO)OCC",
+            "notes": "Aldehyde reduced to primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "PPh3, DEAD, THF",
+            "reagent_smiles": "O=C1CC=C(O)C1",
+            "conditions": "0° to 50°C",
+            "yield": "",
+            "reactant_smiles": "CCOC([C@H]1CC=C(CO)C[C@@H]1C(=C)C)OCC",
+            "product_smiles": "CCOC([C@H]1CC=C(COC2=CC(=O)CC2)C[C@@H]1C(=C)C)OCC",
+            "notes": "Mitsunobu reaction to convert a primary alcohol into an ether using 3-hydroxy-2-cyclopenten-1-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Claisen Rearrangement",
+            "reagents": "DMF",
+            "reagent_smiles": "",
+            "conditions": "140° to 150°C",
+            "yield": "48% (2 steps)",
+            "reactant_smiles": "CCOC([C@H]1C=C(CC[C@@H]1C(=C)C)COC2=CC(=O)CC2)OCC",
+            "product_smiles": "CCO[C@H]1OC2=C(C(=O)CC2)[C@H]1[C@H]3CCC(=C)[C@@H]3C(=C)C",
+            "notes": "An ortho-Claisen rearrangement of an allylic vinyl ether leads to a fused bicyclic system. The acetal group is converted to a cyclic ether and an ethoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Addition (Organolithium)",
+            "reagents": "TMEDA",
+            "reagent_smiles": "CCOC(=C)[Li]",
+            "conditions": "THF -78°C",
+            "yield": "",
+            "reactant_smiles": "CCO[C@@H]1C[C@H]2[C@@H]3C(=C)CCC[C@@H](C(=C)C)[C@H]3[C@H]2C(=O)C4=C1O4",
+            "product_smiles": "CCO[C@@H]1C[C@H]2[C@@H]3C(=C)CCC[C@@H](C(=C)C)[C@H]3[C@H]2C(O)(C(=C)OCC)C4=C1O4",
+            "notes": "Nucleophilic addition of alpha-ethoxyvinyllithium to the ketone of the enone, forming a tertiary alcohol and a new vinylic ether group. The existing alkenes and stereocenters are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative Rearrangement",
+            "reagents": "FeCl3, TMSCl",
+            "reagent_smiles": "Cl[Fe](Cl)Cl.Cl[Si](C)(C)C",
+            "conditions": "PhMe, rt",
+            "yield": "53%",
+            "reactant_smiles": "CCOC(=C)C1(O)C2=C(CCC1)O[C@@H](OCC)[C@H]3[C@H](C(=C)C)CCC(=C)[C@H]23",
+            "product_smiles": "CCO[C@@H]1C[C@H]23[C@H](C(=C)CC[C@H](C(=C)C)[C@H]2CCC4=C(C(=O)CC4C1)C3=O).C[C@H](C=C)C1CC(=C)[C@@H]2[C@@H]1C3=CC(=O)C=C3C(=O)C2",
+            "notes": "Oxidative rearrangement and cyclization of a complex polycyclic alcohol and enol ether to a mixture of polycyclic ketones, with one product retaining an ethoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Johnson iodination",
+            "reagents": "I2, DMAP, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CCO[C@H]1CC(=O)C2=C(C(=O)CC2)[C@@H]3C(=C)CC[C@H](C(=C)C)[C@@]13C",
+            "product_smiles": "C=C(C)[C@H]1CC[C@@H](C=C)[C@@]2[C@@H]1C=C(I)C(=O)C3=C2C(=O)CC3",
+            "notes": "Elimination of ethoxy group, structural rearrangement to dienone, and subsequent iodination.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille cross coupling",
+            "reagents": "Pd(dppf)Cl2, CuI",
+            "reagent_smiles": "C[Sn](C)(C)C",
+            "conditions": "",
+            "yield": "57% (2 steps)",
+            "reactant_smiles": "C=C(C)[C@H]1CCC(=C)[C@@H]2C3=C(CCC3=O)C(=O)C(=C[C@@H]1)I",
+            "product_smiles": "C=C(C)[C@H]1CCC(=C)[C@@H]2C3=C(CCC3=O)C(=O)C(=C[C@@H]1)C",
+            "notes": "Iodide is replaced by a methyl group via Stille cross coupling using tetramethyltin.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alpha-methylation",
+            "reagents": "HMPA, THF",
+            "reagent_smiles": "N([Si](C)(C)C)[Si](C)(C)C.[K+].CI",
+            "conditions": "-78°C",
+            "yield": "32%",
+            "reactant_smiles": "C=C(C)[C@@H]1CC[C@H]2C(=C)C(=O)C(C)=C3C(=O)CCC32",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@H]2C(=C)C(=O)C(C)=C3C(=O)[C@H](C)CCC32",
+            "notes": "Alpha-methylation of an enone system, forming a new stereocenter at the methyl group addition site. KHMDS acts as a strong base to form the enolate, and MeI as the methylating agent.",
+            "substeps": []
+        }
+    ]
+}

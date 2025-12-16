@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "longiborneol-sarpong-2024",
+        "molecule_name": "Longiborneol",
+        "class": "Natural Product",
+        "author": "Sarpong",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation",
+            "reagents": "Sc(OTf)₃, HMDS",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 90 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C2CCC1(C)C(=O)C2",
+            "product_smiles": "CC1(C)C2CCC1(C)C(=N)C2",
+            "notes": "Ketone is converted to an imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Strecker reaction / alpha-aminonitrile synthesis",
+            "reagents": "LiOMe, TMSCN",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CCC2C3CCC(C(=N)C2)(C)C3C1",
+            "product_smiles": "CC1(C)CCC2C3CCC(C(N)(C#N)C2)(C)C3C1",
+            "notes": "Synthesis of an alpha-aminonitrile from a longibornane-derived imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acylation",
+            "reagents": "TFAA, Et3N",
+            "reagent_smiles": "FC(F)(F)C(=O)OC(=O)C(F)(F)F.CCN(CC)CC",
+            "conditions": "DCM, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC12C(C)(C)CCC13C(C#N)(N)C(C)(C2)C3",
+            "product_smiles": "CC12C(C)(C)CCC13C(C#N)(NC(=O)C(F)(F)F)C(C)(C2)C3",
+            "notes": "Primary amine undergoes trifluoroacetylation to form a trifluoroacetamide. The reported yield is for 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Photocatalytic Giese Addition",
+            "reagents": "K3PO4, light, Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+            "reagent_smiles": "C=CC(=O)C",
+            "conditions": "MeCN, 60 °C",
+            "yield": "41%",
+            "reactant_smiles": "C[C@H]1C2(C)C([C@@H](C)(C)C2)C[C@](C#N)(NC(=O)C(F)(F)F)[C@H]1",
+            "product_smiles": "CC(=O)CCC[C@H]1C2(C)C([C@@H](C)(C)C2)C[C@](C#N)(NC(=O)C(F)(F)F)[C@H]1",
+            "notes": "Photocatalytic Giese addition of methyl vinyl ketone to a bornane derivative. The initial reactant SMILES incorrectly described the bicyclic core as 1,1,7,7-tetramethyl instead of 1,7,7-trimethyl. This was corrected, and explicit stereochemistry was added to match the image. The product SMILES also had the same core error and was corrected accordingly. A significant discrepancy exists in the product image: the C4 bridgehead carbon is depicted with both a methyl group and the new 4-oxopentyl chain, in addition to its three ring bonds, implying 5 bonds to carbon, which is chemically impossible. The product SMILES has been generated based on the chemically plausible assumption that the reaction replaced a hydrogen at the C4 bridgehead with the 4-oxopentyl chain, and that the extra methyl group shown at C4 in the product drawing is an error.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrolysis (alpha-amino nitrile to ketone)",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "H2O, dioxane, microwave, 80 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)CCCC1(C)C2CCC(C)(C)C1C(C#N)(NC(=O)C(F)(F)F)C2",
+            "product_smiles": "CC(=O)CCCC1(C)C2CCC(C)(C)C1C(=O)C2",
+            "notes": "Acid-catalyzed hydrolysis of an alpha-amino nitrile (likely a Strecker adduct) and subsequent deamination/hydrolysis of the trifluoroacetamide to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Wittig reaction",
+            "reagents": "n-BuLi, MePPh3Br",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC(=O)CCCC1(C)C2CCC3(C)C1C(=O)CC23",
+            "product_smiles": "C=C(C)CCCC1(C)C2CCC3(C)C1C(=O)CC23",
+            "notes": "Wittig reaction converting a methyl ketone to an isopropenyl group on a complex tricyclic core.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Enol Acetate Formation",
+            "reagents": "Ac2O, NaHMDS",
+            "reagent_smiles": "O=C(C)OC(=O)C.[Na]N(Si(C)(C)C)Si(C)(C)C",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "89%",
+            "reactant_smiles": "CC1(C)C2CCC(C)(CCCC(C)=C)C(=O)C21",
+            "product_smiles": "C=C(C)CCCC(C)C1CCC(C)(C)C(=C1)[OAc]",
+            "notes": "Ketone converted to an enol acetate using acetic anhydride and NaHMDS.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Reductive Cyclization",
+            "reagents": "Fe(acac)3, Ph(i-PrO)SiH2",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH, 60 °C",
+            "yield": "58%",
+            "reactant_smiles": "CC(=O)OC1=CC2C(C)(C)C3CCC(C)(CCCC(C)=C)C123",
+            "product_smiles": "CC(=O)OC1CCC2(C)C(C)(C)C3C(C)(C)C4CCC1C234",
+            "notes": "Intramolecular cyclization of an enoate to form a complex polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 60 °C",
+            "yield": "54%",
+            "reactant_smiles": "CC(=O)OC1C2C3CCC1(C)C3(C)CCCC2(C)C",
+            "product_smiles": "CC1(C)CCCC2(C)C3CCC2(C)C(C31)O",
+            "notes": "Hydrolysis of longibornyl acetate to longiborneol.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dihydropinidine-ha-2016",
+        "molecule_name": "Dihydropinidine",
+        "class": "Natural Product",
+        "author": "Ha",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aziridination / Intramolecular SN2",
+            "reagents": "CH3CN, K2CO3",
+            "reagent_smiles": "N[C@H](C)[Ph]",
+            "conditions": "0 °C to rt",
+            "yield": "60%",
+            "reactant_smiles": "CCOC(=O)C(CBr)Br",
+            "product_smiles": "CCOC(=O)[C@H]1CN1[C@H](C)[Ph]",
+            "notes": "Intramolecular cyclization of an alpha,beta-dibromoester with a chiral amine to form an aziridine ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "C[C@@H]([Ph])N1[C@@H](C(=O)OCC)[C@@H]1",
+            "product_smiles": "C[C@@H]([Ph])N1[C@@H](CO)[C@@H]1",
+            "notes": "Ester reduction to primary alcohol using lithium aluminum hydride. The stereochemistry of the aziridine ring and the chiral N-substituent is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H]([Ph])N1C[C@H]1CO",
+            "product_smiles": "C[C@H]([Ph])N1C[C@H]1C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde via Swern oxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Wittig olefination",
+            "reagents": "Ph₃P⁺(CH₂)₃OH Br⁻, n-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "C[C@@H](c1ccccc1)N1C[C@H]1C=O",
+            "product_smiles": "C[C@@H](c1ccccc1)N1C[C@H]1/C=C/CCO",
+            "notes": "Wittig olefination of an aziridine-aldehyde with 3-hydroxypropyltriphenylphosphonium bromide (generated in situ with n-BuLi) to form a trans-alkene alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkene Reduction",
+            "reagents": "NBSH, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "73%",
+            "reactant_smiles": "C[C@@H](c1ccccc1)[N]1C[C@H](C/C=C/CCO)1",
+            "product_smiles": "C[C@@H](c1ccccc1)[N]1C[C@H](CCCCO)1",
+            "notes": "Reduction of an alkene in an N-substituted aziridine alcohol to a saturated alkyl alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)₂, DMSO, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, -78 °C",
+            "yield": "94%",
+            "reactant_smiles": "C[C@@H]([Ph])N1C[C@H](CCCCO)1",
+            "product_smiles": "C[C@@H]([Ph])N1C[C@H](CCCC=O)1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Grignard reaction (addition to aldehyde)",
+            "reagents": "C3H7MgBr, THF",
+            "reagent_smiles": "CCC[Mg]Br.C1CCOC1",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "C[C@H](c1ccccc1)N1C[C@H](CCCC=O)C1",
+            "product_smiles": "C[C@H](c1ccccc1)N1C[C@H](CCC(O)CCC)C1",
+            "notes": "An aldehyde undergoes Grignard addition with n-propylmagnesium bromide to form a secondary alcohol. The existing stereocenters in the aziridine system are retained, and no new stereocenter is depicted for the alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "CCCC(O)CCC[C@H]1CN1[C@H](C)[Ph]",
+            "product_smiles": "CCCC(=O)CCC[C@H]1CN1[C@H](C)[Ph]",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin Periodinane.",
+            "substeps": []
+        }
+    ]
+}

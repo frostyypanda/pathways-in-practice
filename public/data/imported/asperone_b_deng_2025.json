@@ -1,0 +1,254 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "asperone-b-deng-2025",
+        "molecule_name": "Asperone B",
+        "class": "Natural Product",
+        "author": "Deng",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@@H](C)O",
+            "product_smiles": "CCOC(=O)[C@H](C)[C@@H](C)O",
+            "notes": "Alpha-methylation of ethyl 3-hydroxybutanoate",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBSCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@H](C)[C@@H](C)O",
+            "product_smiles": "CCOC(=O)[C@H](C)[C@@H](C)[OTBS]",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C[C@H]([OTBS])[C@@H](C)C(=O)OCC",
+            "product_smiles": "C[C@H]([OTBS])[C@@H](C)CO",
+            "notes": "Ester reduction to primary alcohol using DIBAL-H, maintaining stereochemistry and TBS protection.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "81% (4 steps)",
+            "reactant_smiles": "[TBS]O[C@H](C)[C@@H](C)CO",
+            "product_smiles": "[TBS]O[C@H](C)[C@@H](C)C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde. The reported yield is for 4 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Corey-Fuchs reaction",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "84%",
+            "reactant_smiles": "C[C@H]([OTBS])[C@@H](C)C=O",
+            "product_smiles": "C[C@H]([OTBS])[C@@H](C)C=C(Br)Br",
+            "notes": "Aldehyde dibromomethylenation to form a geminal dibromoalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Elimination / Alkyne Formation / Alkylation",
+            "reagents": "nBuLi, ClCO2Me",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS]O[C@H](C)[C@@H](C)C=C(Br)Br",
+            "product_smiles": "[OTBS]O[C@H](C)[C@@H](C)C#CC(=O)OC",
+            "notes": "Formation of a lithium acetylide from a dibromoalkene, followed by electrophilic quench with methyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS][C@@H](C)[C@H](C)C#CC(=O)OC",
+            "product_smiles": "O[C@@H](C)[C@H](C)C#CC(=O)OC",
+            "notes": "TBS silyl ether deprotection to a secondary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Protection (MOM ether formation)",
+            "reagents": "MOMCI, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "98%",
+            "reactant_smiles": "C[C@H](O)[C@@H](C)C#CC(=O)OC",
+            "product_smiles": "C[C@H]([MOM])[C@@H](C)C#CC(=O)OC",
+            "notes": "Protection of a secondary alcohol as its MOM ether, retaining the relative stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Diels-Alder / Aromatization",
+            "reagents": "",
+            "reagent_smiles": "C[Si](C)(C)OC1=CC=C(OSi(C)(C)C)C(C)(C)C1",
+            "conditions": "180 °C",
+            "yield": "95%",
+            "reactant_smiles": "COC(=O)C#C[C@@H](C)[C@H](OCOC)C",
+            "product_smiles": "C[C@H](OCOC)[C@@H](C)C1=C(C(=CC(=C1)O)O)C(=O)OC",
+            "notes": "Aromatizing Diels-Alder cycloaddition reaction between an alkyne and a silyloxy cyclohexadiene, followed by desilylation to form a resorcinol derivative.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Silyl Enol Ether Formation",
+                    "reagents": "TMSOTf, NEt3",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "CC1(C)CC(=O)CC(=O)C1",
+                    "product_smiles": "CC1(C)C=C(C=C(C1)[OTMS])[OTMS]",
+                    "notes": "Formation of a bis-silyl enol ether from 5,5-dimethylcyclohexane-1,3-dione (dimedone).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Protection (Silyl ether formation)",
+            "reagents": "TBSOTf, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "C[C@H]([C@@H](C)[OMOM])C1=C(C(=CC(=C1)O)O)C(=O)OC",
+            "product_smiles": "[OTBS]C1=CC(=C(C(=C1)[OTBS])C(=O)OC)[C@H](C)[C@@H](C)[OMOM]",
+            "notes": "Double silylation of phenolic hydroxyls using TBSOTf, while the MOM ether and methyl ester remain untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "88%",
+            "reactant_smiles": "COC(=O)c1c([C@@H](C)[C@@H](C)OCOC)c(OSi(C)(C)C(C)(C)C)cc(OSi(C)(C)C(C)(C)C)c1",
+            "product_smiles": "OCc1c([C@@H](C)[C@@H](C)OCOC)c(OSi(C)(C)C(C)(C)C)cc(OSi(C)(C)C(C)(C)C)c1",
+            "notes": "Methyl ester is reduced to a primary alcohol. All other functional groups and stereocenters are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reductive Deoxygenation",
+            "reagents": "BF3•Et2O, Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "[OTBS]c1c(CO)c([OTBS])c([C@H](C)[C@@H](C)[OMOM])cc1",
+            "product_smiles": "[OTBS]c1c(C)c([OTBS])c([C@H](C)[C@@H](C)[OMOM])cc1",
+            "notes": "Reductive deoxygenation of a benzylic alcohol to a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection (TBS ethers)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@@H]([C@@H](C)[OMOM])c1c(C)[OTBS]cc([OTBS])c1",
+            "product_smiles": "C[C@@H]([C@@H](C)[OMOM])c1c(C)c(O)cc(O)c1",
+            "notes": "Deprotection of two TBS (tert-butyldimethylsilyl) ether protecting groups on an aromatic ring using TBAF, while the MOM (methoxymethyl) ether remains intact. The stereochemistry of the chiral side chain is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidation",
+            "reagents": "Fremy's Salt, Na2HPO4",
+            "reagent_smiles": "",
+            "conditions": "Acetone, H2O",
+            "yield": "92%",
+            "reactant_smiles": "OC1=CC(=C(C)C1[C@H]([C@@H](C)[OMOM]))O",
+            "product_smiles": "C[C@H]([C@@H](C)[OMOM])C1C(C)C(=O)C=C(C(=O)C(O)C1)",
+            "notes": "Oxidation of a hydroquinone derivative to a hydroxyquinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Diels-Alder Cycloaddition",
+            "reagents": "DMSO",
+            "reagent_smiles": "CC/C=C/C=C/[C@]1(C)[C@@H]([COOtBu])C=C(O1)C(=O).C=CCN1CC[C@@H]1[C@@H](N)C2=C(OC)C=CC3=C2N=CC=C3",
+            "conditions": "30 °C",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@H]([C@H](C)[OMOM])C1=C(C)C(=O)C=C(C1=O)O",
+            "product_smiles": "C[C@@H]([C@H](C)[OMOM])C1=C(C)C(O)=C2C(=O)[C@]3(C)[C@H](C=CC=CC)C(=C([COOtBu])O3)C(=O)[C@]21",
+            "notes": "Chiral Diels-Alder cycloaddition between a quinone and a furanone derivative, catalyzed by a chiral amine, yielding an Asperone B derivative. Extensive corrections were required for the reagent and product SMILES due to structural errors, stereochemistry, and fragment issues.",
+            "substeps": [
+                {
+                    "step_id": "15.1",
+                    "reaction_type": "Asymmetric Cyanosilylation",
+                    "reagents": "TMSCN, (salen)AlCl (S,S), Ph3PO",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -30 °C",
+                    "yield": "90%",
+                    "reactant_smiles": "CCC=CC=CC(=O)C",
+                    "product_smiles": "CC/C=C/C=C/[C@](C)(C#N)[OTMS]",
+                    "notes": "Asymmetric 1,2-addition of TMSCN to an α,β,γ,δ-unsaturated ketone, followed by silylation, forming a chiral cyanohydrin silyl ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.2",
+                    "reaction_type": "Reduction (Nitrile to Aldehyde)",
+                    "reagents": "DIBAL",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O",
+                    "yield": "75%",
+                    "reactant_smiles": "CC/C=C/C=C/[C@@](C)(C#N)O[Si](C)(C)C",
+                    "product_smiles": "CC/C=C/C=C/[C@@](C)(C=O)O[Si](C)(C)C",
+                    "notes": "Stereoselective reduction of a nitrile to an aldehyde using DIBAL, retaining the stereochemistry of the adjacent chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.3",
+                    "reaction_type": "Lewis acid catalyzed addition",
+                    "reagents": "SnCl2",
+                    "reagent_smiles": "[N-]=[N+]=C(C(=O)OC(C)(C)C)",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "76%",
+                    "reactant_smiles": "CC/C=C/C=C/[C@](C)(C=O)[OTMS]",
+                    "product_smiles": "CC/C=C/C=C/[C@](C)(C(=O)CC(=O)[OtBu])[OTMS]",
+                    "notes": "Addition of a carbon chain derived from tert-butyl diazoacetate to an aldehyde, forming a beta-keto ester. The TMS group and diene system remain intact, and the stereochemistry at the chiral center is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.4",
+                    "reaction_type": "Furanone Synthesis",
+                    "reagents": "NaH, TBAF, THF",
+                    "reagent_smiles": "C=CC(=O)O[Piv]",
+                    "conditions": "THF",
+                    "yield": "47%",
+                    "reactant_smiles": "CC/C=C/C=C/[C@](C)(C(=O)CC(=O)[OtBu])[OTMS]",
+                    "product_smiles": "CC/C=C/C=C/[C@]1(C)C(=O)C(=C(/C=C/C)O1)C(=O)[OtBu]",
+                    "notes": "Intramolecular cyclization of a beta-keto ester with a silyl ether, involving TMS deprotection, enolate formation, and subsequent cyclization/dehydration to form a furanone.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

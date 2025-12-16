@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dalesconol-a-luan-2021",
+        "molecule_name": "Dalesconol A",
+        "class": "Natural Product",
+        "author": "Luan",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection (Boc)",
+            "reagents": "Boc₂O",
+            "reagent_smiles": "",
+            "conditions": "toluene, 75 °C",
+            "yield": "90%",
+            "reactant_smiles": "Nc1ccc(Br)c2ccccc21",
+            "product_smiles": "[Boc]Nc1ccc(Br)c2ccccc21",
+            "notes": "Protection of a primary amine (4-bromonaphthalen-1-amine) as its tert-butyl carbamate (Boc) derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Miyaura Borylation",
+            "reagents": "Pd(dppf)Cl2, B2Pin2, KOAc",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane",
+            "yield": "91%",
+            "reactant_smiles": "[Boc]NC1=C2C=CC=CC2=C(C=C1)Br",
+            "product_smiles": "[Boc]NC1=C2C=CC=CC2=C(C=C1)B3OC(C)(C)C(C)(C)O3",
+            "notes": "Brominated naphthalene derivative undergoes palladium-catalyzed Miyaura borylation with bis(pinacolato)diboron (B2Pin2) to form the corresponding pinacolborane ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "Pd(PPh3)4, K2CO3, 1,4-dioxane, H2O",
+            "reagent_smiles": "Ic1ccccc1I",
+            "conditions": "100 °C",
+            "yield": "71%",
+            "reactant_smiles": "CC(C)(C)OC(=O)Nc1ccc(B2OC(C)(C)C(C)(C)O2)c3c1cccc3",
+            "product_smiles": "CC(C)(C)OC(=O)Nc1ccc(-c2c(I)cccc2)c3c1cccc3",
+            "notes": "Suzuki cross-coupling reaction between a naphthalenyl boronate ester and 1,2-diiodobenzene to form a biaryl compound, retaining the Boc protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Palladium-catalyzed Cascade Cyclization",
+            "reagents": "PdCl2, P(4-F-C6H4)3, NBE, Cs2CO3",
+            "reagent_smiles": "CC1(c2ccccc2C#CCCCBr)OCCO1",
+            "conditions": "MeCN, 90 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)Nc1ccc(C2=CC=CC=C2I)c3c1cccc3",
+            "product_smiles": "CC(C)(C)OC(=O)/N=C\\1/CC[C@]2(C3=C1C=CC=C3)C4=C5C(=CC=C4)C6CCC5C2C6c7ccccc7[C@]8(C)OCCO8",
+            "notes": "Intramolecular cyclization of an aryl iodide and an internal alkyne to form a complex polycyclic system with imine formation and stereocenter generation.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Ketone Protection (Acetal Formation)",
+                    "reagents": "H2SO4, DCM, rt",
+                    "reagent_smiles": "C(CO)O.COC(OC)OC",
+                    "conditions": "rt",
+                    "yield": "93%",
+                    "reactant_smiles": "CC(=O)C1=C(C=CC=C1)I",
+                    "product_smiles": "CC1(C2=C(C=CC=C2)I)OCCO1",
+                    "notes": "The ketone functional group is protected as a cyclic acetal (1,3-dioxolane) using ethylene glycol and trimethyl orthoformate under acidic conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Sonogashira reaction",
+                    "reagents": "Pd(PPh3)2Cl2, CuI, Et3N",
+                    "reagent_smiles": "C#CCCCO",
+                    "conditions": "THF, rt",
+                    "yield": "91%",
+                    "reactant_smiles": "CC1(C2=C(C=CC=C2)I)OCCO1",
+                    "product_smiles": "CC1(C2=C(C=CC=C2)C#CCCCO)OCCO1",
+                    "notes": "Sonogashira coupling of an aryl iodide with 4-pentyn-1-ol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Appel Reaction (Alcohol to Alkyl Bromide)",
+                    "reagents": "CBr4, PPh3",
+                    "reagent_smiles": "C(Br)(Br)(Br)Br.P(c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "84%",
+                    "reactant_smiles": "OCCC#Cc1c(C2(C)OCCO2)cccc1",
+                    "product_smiles": "BrCCC#Cc1c(C2(C)OCCO2)cccc1",
+                    "notes": "Conversion of a primary alcohol to a primary alkyl bromide using carbon tetrabromide and triphenylphosphine, protecting a 1,3-dioxolane ketal and an alkyne.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "HCl, Fe2(SO4)3",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "[Boc]N=C1CC[C@]2(C3=C1C=CC=C3)[C@]45C6=CC=CC=C6C7=C5C=CC=C7[C@]2(C8=C9C=CC=C9[C@@](C)(OCCO)O8)C%10=CC=CC=C%108",
+            "product_smiles": "O=C1C[C@@H]C[C@]2(C3=C1C=CC=C3)[C@]45C6=CC=CC=C6C7=C5C=CC=C7[C@]2(C8=C9C=CC=C9C(=O)C8)C%10=CC=CC=C%108",
+            "notes": "Hydrolysis of Boc-protected imine and 1,3-dioxolane to form two ketone groups, with loss of the Boc group and the methyl group originally on the dioxolane spiro carbon. Stereochemistry at the two spiro carbons (central polycycle) and one aliphatic carbon is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative C-H Functionalization / Oxidative Cyclization",
+            "reagents": "CuCl, NHPI, O2",
+            "reagent_smiles": "",
+            "conditions": "PhCN, 30 °C",
+            "yield": "54%",
+            "reactant_smiles": "O=C1CC[C@@]2(C3=CC=CC=C3C(=C[C@H]4C(=O)C5=CC=CC=C5CC24)C6=CC=CC=C6)C(=O)C7=CC=CC=C7C1",
+            "product_smiles": "O=C1CC2(c3ccccc3C(=C[C@@H](c4ccccc4)[C@@H]5C2)C6=CC=CC=C6)[C@H]7C(=O)c8ccccc8C[C@H]571",
+            "notes": "Intramolecular oxidative cyclization of a spiro-indanone derivative, forming two new C-C bonds and two new 5-membered rings. Two CH2 groups are oxidized to CH groups, which then form new C-C bonds with adjacent aromatic rings.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxime Formation",
+            "reagents": "MeONH2, AcOH, EtOH",
+            "reagent_smiles": "CC(=O)O.CCO.CON",
+            "conditions": "120 °C",
+            "yield": "88%",
+            "reactant_smiles": "O=C1C[C@@]23[C@@](C4=CC=CC=C4)(C5=CC=CC=C5)[C@@]2([C@H]6C(=O)C7=CC=CC=C7C8=CC=CC=C86)C3",
+            "product_smiles": "CO/N=C1/C[C@@]23[C@@](C4=CC=CC=C4)(C5=CC=CC=C5)[C@@]2([C@H]6C(/N=OC)C7=CC=CC=C7C8=CC=CC=C86)C3",
+            "notes": "Formation of a bis-O-methyl oxime from a diketone via reaction with O-methylhydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Pd-catalyzed C-H acetoxylation",
+            "reagents": "Pd(OAc)2, P(4-MeO-C6H4)3, oxone",
+            "reagent_smiles": "",
+            "conditions": "TCE, 120 °C",
+            "yield": "",
+            "reactant_smiles": "CO/N=C1/CCc2cccc(c2)[C@@]3(c4cccc(c4)C(=NOC)CC5)[C@H]6c7cccc(c7)C(=NOC)CC63C15",
+            "product_smiles": "CO/N=C1/CCc2ccc(OC(C)=O)c(c2)[C@@]3(c4cccc(c4)C(=NOC)CC5)[C@H]6c7ccc(OC(C)=O)c(c7)C(=NOC)CC63C15",
+            "notes": "Palladium-catalyzed C-H activation followed by acetoxylation at two positions on the aromatic rings of the complex polycyclic reactant. The spiro and bridge stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "HCl, 1,4-dioxane",
+            "reagent_smiles": "",
+            "conditions": "120 °C",
+            "yield": "41% (2 steps)",
+            "reactant_smiles": "C1(=NOC)C[C@@]23C4=Cc5c(OC(=O)C)cccc5C(c5cccc(OC(=O)C)c54)[C@@]2(C=NOC)C=C(OC(=O)C)c2cccc(OC(=O)C)c213",
+            "product_smiles": "O=C1C[C@@]23C4=Cc5c(O)cccc5C(c5cccc(O)c54)[C@@]2(C=O)C=C(O)c2cccc(O)c213",
+            "notes": "Acid-catalyzed hydrolysis of acetate esters to phenols and methoxyimines to ketones in a complex polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Aromatization",
+            "reagents": "Pd(OAc)₂, DMSO, O₂",
+            "reagent_smiles": "CC(=O)O[Pd](OC(C)=O).CS(C)=O.O=O",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "C1=CC(=C2C(=C1)C3=C4C5=C(C(=CC=C5[C@@]63C7=CC=C(C8=C7C(=CC6=O)CC8=O)O)O)C(=O)C4=CC2=O)O",
+            "product_smiles": "C1=CC(=C2C(=C1)C(=O)C3=C4C(=CC=C3O)[C@@]56C7=CC=CC(=C7C(=O)C[C@@]6(CC(=O)C8=C5C=CC=C8O)CC2=O)O)O",
+            "notes": "Oxidative aromatization of a polycyclic diketone to form Dalesconol A using palladium acetate and oxygen.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "stemoamide-plus-cernak-2023",
+        "molecule_name": "Stemoamide-plus",
+        "class": "Natural Product",
+        "author": "Cernak",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Organocatalytic Domino Aza-Michael/Aldol Reaction",
+            "reagents": "L-proline",
+            "reagent_smiles": "N[PMP]",
+            "conditions": "DMF, -15 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CCC=O",
+            "product_smiles": "[PMP]NH[C@@H](CCC(=O)OC)[C@H](C=O)CC(=O)OC",
+            "notes": "The product contains two methyl ester groups and one aldehyde group. The reactant, methyl 4-oxobutanoate, has one methyl ester and one aldehyde. This implies a more complex transformation than a simple 1:1 addition, potentially involving a second equivalent of reactant or an additional reagent, and rearrangement of the aldehyde. The product SMILES reflects the structure exactly as drawn in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylation / Lactonization",
+            "reagents": "Zn, BiCl3",
+            "reagent_smiles": "C=CCBr",
+            "conditions": "DMF/THF, -15 °C to rt",
+            "yield": "",
+            "reactant_smiles": "O=CC[C@H](CCC(=O)OC)[C@H]([NHPMP])CCC(=O)OC",
+            "product_smiles": "C=CC[C@H]1OC(=O)C[C@H]1[C@H]([NHPMP])CCC(=O)OC",
+            "notes": "An aldehyde is allylated, followed by intramolecular esterification to form a gamma-lactone. The NHPMP protecting group and an additional methyl ester remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Lactamization / Amidation",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 100 °C",
+            "yield": "33%",
+            "reactant_smiles": "C=CC[C@@H]1[C@@H]([C@@H](CCC(=O)OC)N[PMP])[C@@H]3OC(=O)C[C@@H]13",
+            "product_smiles": "C=CC[C@@H]1[C@@H]([C@@H]2N([PMP])C(=O)CC2)[C@@H]4OC(=O)C[C@@H]14",
+            "notes": "Intramolecular cyclization of an amine onto a methyl ester to form a pyrrolidinone. Yield of 33% is reported for 3 steps, not just this single step.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "[Ir(cod)Cl]2, dppe, HBpin, NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt then CH2Cl2/H2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@H]1[C@@H]2C(=O)N([PMP])CC[C@@H]2C2OC(=O)C[C@H]12",
+            "product_smiles": "OCC[C@H]1[C@@H]2C(=O)N([PMP])CC[C@@H]2C2OC(=O)C[C@H]12",
+            "notes": "Hydroboration-oxidation of the allyl group to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol to Alkyl Bromide (Appel-type reaction)",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[PMP]N1C(=O)C[C@H]2[C@H]1[C@@]3(CC(=O)O[C@H]3)CCO",
+            "product_smiles": "[PMP]N1C(=O)C[C@H]2[C@H]1[C@@]3(CC(=O)O[C@H]3)CCBr",
+            "notes": "Conversion of a primary alcohol to a primary bromide using CBr4 and PPh3.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection (Oxidative)",
+            "reagents": "CAN, CH2Cl2, MeCN, H2O",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "BrCCC[C@@]12C(=O)OC[C@@H]1[C@H]3C(=O)CN([PMP])[C@H]32",
+            "product_smiles": "BrCCC[C@@]12C(=O)OC[C@@H]1[C@H]3C(=O)CN[C@H]32",
+            "notes": "Oxidative deprotection of N-PMP group using Cerium Ammonium Nitrate (CAN). The 40% yield is for a 3-step sequence.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular N-Alkylation / Cyclization",
+            "reagents": "NaH, TBAI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "66%",
+            "reactant_smiles": "BrCCC[C@H]1OC(=O)C[C@@H]2[C@H]1N[C@@H]3C(=O)CC23",
+            "product_smiles": "O=C1OC[C@H]2[C@@H]3N(CCC2)[C@@H]4C(=O)CC34",
+            "notes": "Intramolecular N-alkylation of a lactam nitrogen with an alkyl bromide to form a fused 7-membered azepane ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alkylation (Methylation)",
+            "reagents": "LiHMDS, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "53%",
+            "reactant_smiles": "[C@@H]1[C@H]2[C@@H]3CCC(=O)N3CCC[C@@H]2OC1=O",
+            "product_smiles": "C[C@@H]1[C@H]2[C@@H]3CCC(=O)N3CCC[C@@H]2OC1=O",
+            "notes": "Alpha-methylation of the lactone via enolization using LiHMDS followed by addition of methyl iodide.",
+            "substeps": []
+        }
+    ]
+}

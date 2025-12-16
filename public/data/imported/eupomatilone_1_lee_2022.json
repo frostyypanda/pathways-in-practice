@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "eupomatilone-1-lee-2022",
+        "molecule_name": "Eupomatilone 1",
+        "class": "Natural Product",
+        "author": "Lee",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclization / Thiazolidine-2-thione Formation",
+            "reagents": "CS2, KOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, reflux",
+            "yield": "86%",
+            "reactant_smiles": "[C@@H](N)(CO)[Bn]",
+            "product_smiles": "S1C[C@@H]([Bn])NC(=S)S1",
+            "notes": "Formation of a 4-benzylthiazolidine-2-thione from a 2-amino-3-phenylpropan-1-ol and carbon disulfide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Acylation",
+            "reagents": "nBuLi, THF",
+            "reagent_smiles": "CCC(=O)Cl",
+            "conditions": "-78 to 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "S=C1NC[C@@H](CC2=CC=CC=C2)S1",
+            "product_smiles": "CCC(=O)N1C(=S)SC[C@@H](CC2=CC=CC=C2)1",
+            "notes": "N-Acylation of a cyclic thiocarbamate with propionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Aldol Addition",
+            "reagents": "TiCl4, NMP",
+            "reagent_smiles": "[OMe]C1=C2C(=CC(=C1)C=O)OCO2.CCN(C(C)C)C(C)C",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "CCC(=O)N1C(=S)SC[C@H]1[Bn]",
+            "product_smiles": "C[C@H]([C@H]([OMe]C1=C2C(=CC(=C1)C)OCO2)O)C(=O)N3C(=S)SC[C@H]3[Bn]",
+            "notes": "TiCl4-mediated asymmetric aldol addition of a propionyl auxiliary to an aryl aldehyde, resulting in a syn-diastereomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactone formation with chiral auxiliary removal",
+            "reagents": "LDA, CH2Br2, LiHMDS, sBuLi, nBuLi, HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to -20 °C, -20 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "C[C@@H]([C@H](C1=CC(=C2C(=C1)OCO2)OC)O)C(=O)N3[C@H](CC4=CC=CC=C4)CSC3=S",
+            "product_smiles": "C[C@H]1CC(=O)O[C@@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "notes": "Intramolecular lactone formation via removal of chiral thiazolidine-2-thione auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "NBS, DMF",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H]1CC(=O)O[C@@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "product_smiles": "C[C@H]1CC(=O)O[C@@H]1C1=C(Br)C=C(OC)C2=C1OCO2",
+            "notes": "Aromatic bromination of the aryl moiety with N-bromosuccinimide (NBS). The bromine adds ortho to the lactone-aryl linkage and meta to the methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd(PPh3)4, K3PO4",
+            "reagent_smiles": "B(O)Oc1cc(OC)c(OC)c(OC)c1",
+            "conditions": "dioxane, 100 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H]1CC(=O)O[C@H]1C2=C(C(=C3C(=C2)OCO3)OC)Br",
+            "product_smiles": "C[C@H]1CC(=O)O[C@H]1C2=C(C3=CC(=C(C(=C3)OC)OC)OC)C(=C4C(=C2)OCO4)OC",
+            "notes": "An aryl bromide undergoes Suzuki coupling with 3,4,5-trimethoxyphenylboronic acid to form a biaryl product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Alpha-Aminomethylation (Mannich-type)",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "[N+]#O",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CC(=O)O[C@@H]1C2=C(C3=CC(=C(C(=C3)OC)OC)OC)C(=C4C(=C2)OCO4)OC",
+            "product_smiles": "C[C@@H]1C(CN(C)C)C(=O)O[C@@H]1C2=C(C3=CC(=C(C(=C3)OC)OC)OC)C(=C4C(=C2)OCO4)OC",
+            "notes": "Alpha-aminomethylation of a gamma-lactone using a Mannich-type reagent. Note that the drawn reagent '=[N]=O' with a positive charge is unusual for direct Mannich reaction to produce CH2NMe2, but SMILES reflects what is drawn.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Elimination",
+            "reagents": "mCPBA, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "97% (2 steps)",
+            "reactant_smiles": "C[C@H]1C(CN(C)C)C(=O)O[C@H]1C2=C(C3=CC(=C(C(=C3)OC)OC)OC)C(=C4C(=C2)OCO4)OC",
+            "product_smiles": "C[C@H]1C(=C)C(=O)O[C@H]1C2=C(C3=CC(=C(C(=C3)OC)OC)OC)C(=C4C(=C2)OCO4)OC",
+            "notes": "Oxidative elimination of a tertiary amine to form an exocyclic alkene via N-oxide intermediate.",
+            "substeps": []
+        }
+    ]
+}

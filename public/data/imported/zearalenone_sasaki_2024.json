@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "zearalenone-sasaki-2024",
+        "molecule_name": "Zearalenone",
+        "class": "Natural Product",
+        "author": "Sasaki",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Carboxylic Acid to Acyl Chloride",
+            "reagents": "thionyl chloride",
+            "reagent_smiles": "OSCl2.c1ccccc1",
+            "conditions": "benzene, reflux",
+            "yield": "",
+            "reactant_smiles": "COc1ccc(C(=O)O)c(OC)c1",
+            "product_smiles": "COc1ccc(C(=O)Cl)c(OC)c1",
+            "notes": "Conversion of 2,5-dimethoxybenzoic acid to 2,5-dimethoxybenzoyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amidation",
+            "reagents": "benzene",
+            "reagent_smiles": "CCNCC",
+            "conditions": "0 °C to rt",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "COc1ccc(OC)cc1C(=O)Cl",
+            "product_smiles": "CCN(CC)C(=O)c1ccc(OC)cc1OC",
+            "notes": "Amidation of 2,4-dimethoxybenzoyl chloride with N,N-diethylamine to form N,N-diethyl-2,4-dimethoxybenzamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ortho-lithiation / Formylation",
+            "reagents": "DMF, sBuLi, TMEDA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "96%",
+            "reactant_smiles": "CCN(CC)C(=O)C1=C(OC)C=C(OC)C=C1",
+            "product_smiles": "CCN(CC)C(=O)C1=C(OC)C=C(OC)C(=C1)C=O",
+            "notes": "Directed ortho-metalation followed by formylation with DMF to install an aldehyde group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acid-catalyzed intramolecular lactonization",
+            "reagents": "HCl, H2O, AcOH",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "",
+            "reactant_smiles": "CCN(CC)C(=O)C1=C(C=C(C=C1C=O)OC)OC",
+            "product_smiles": "COC1=CC(=C2C(=C1)C(O)OC2=O)OC",
+            "notes": "Intramolecular cyclization of an aromatic diethylamide and aldehyde to form a dihydrofuranone lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Wittig reaction / Oxidation / Ring Opening",
+            "reagents": "Ph3PMeBr, tBuOK, 1,4-benzoquinone",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "COC1=CC(=C2C(=C1)C(O)OC2=O)OC",
+            "product_smiles": "C=CC1=CC(=CC(=C1C(=O)O)OC)OC",
+            "notes": "Lactone ring opening, Wittig reaction to introduce a vinyl group, and oxidation to a carboxylic acid. The reported yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu Esterification",
+            "reagents": "PPh3, DEAD, 1,4-benzoquinone",
+            "reagent_smiles": "C[C@H](CCCCO[OTBS])O",
+            "conditions": "toluene, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "COc1cc(OC)cc(C=C)c1C(=O)O",
+            "product_smiles": "COc1cc(OC)cc(C=C)c1C(=O)O[C@@H](C)CCCCO[OTBS]",
+            "notes": "A carboxylic acid undergoes Mitsunobu esterification with a chiral alcohol, resulting in inversion of stereochemistry at the alcohol's chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "Hoveyda-Grubbs Gen 2, 1,4-benzoquinone",
+            "reagent_smiles": "C=CCCCI",
+            "conditions": "DCM, reflux",
+            "yield": "95%",
+            "reactant_smiles": "C=CC1=CC(=CC(=C1C(=O)O[C@H](C)CCCCO[OTBS])OC)OC",
+            "product_smiles": "[OTBS]OCCCC[C@H](C)OC(=O)C1=C(C=C(C=C1/C=C\\CCCI)OC)OC",
+            "notes": "Cross-metathesis reaction between a vinyl-substituted aromatic ester and 1-iodo-5-hexene using Hoveyda-Grubbs Gen 2 catalyst to form a Z-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "Jones reagent",
+            "reagent_smiles": "",
+            "conditions": "acetone, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "[OTBS]CCCC[C@H](C)OC(=O)C1=C(C=C(C=C1\\C=C/CCCI)OC)OC",
+            "product_smiles": "C[C@H](CCCC(=O)O)OC(=O)C1=C(C=C(C=C1\\C=C/CCCI)OC)OC",
+            "notes": "Oxidation of a primary alcohol (protected as TBS ether) to a carboxylic acid using Jones reagent. The stereochemistry of the chiral center and the E-alkene are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "(COCl)2, DMF",
+            "reagent_smiles": "ClC(=O)C(=O)Cl.CN(C)C=O",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](CCCC(=O)O)OC(=O)C1=C(OC)C=C(OC)C=C1\\C=C/CCCI",
+            "product_smiles": "C[C@@H](CCCC(=O)Cl)OC(=O)C1=C(OC)C=C(OC)C=C1\\C=C/CCCI",
+            "notes": "Conversion of carboxylic acid to acid chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Thioesterification / Nucleophilic Acyl Substitution",
+            "reagents": "NEt3",
+            "reagent_smiles": "C1=CC(=NC=C1)S",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "93% (2 steps)",
+            "reactant_smiles": "C[C@@H](CCCC(=O)Cl)OC(=O)C1=C(C=C(C=C1/C=C/CCCI)OC)OC",
+            "product_smiles": "C[C@@H](CCCC(=O)SC1=NC=CC=C1)OC(=O)C2=C(C=C(C=C2OC)OC)/C=C/CCCI",
+            "notes": "Acyl chloride reacts with pyridine-2-thiol (2-mercaptopyridine) to form a thioester.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive Macrocyclization",
+            "reagents": "CrCl2, Py•(Me)imid•NiCl2, (Me)3tpy•NiI, Cp2ZrCl2, Zn",
+            "reagent_smiles": "",
+            "conditions": "DMA, THF, rt",
+            "yield": "62%",
+            "reactant_smiles": "C[C@@H](CCCC(=O)SC1=NC=CC=C1)OC(=O)C2=C(C=C(C=C2OC)OC)/C=C/CCCI",
+            "product_smiles": "COc1cc(OC)c(C(=O)O[C@@H](C)CCCC(=O)CCCC/C=C/c2)c2c1",
+            "notes": "Reductive macrocyclization reaction forming a 16-membered macrolactone via Nozaki-Hiyama-Kishi type coupling. The alkyl iodide and the thioester react to form a new C-C bond, resulting in a ketone within the macrocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Demethylation of aromatic ethers",
+            "reagents": "AlI3, TBAI, phloroglucinol",
+            "reagent_smiles": "",
+            "conditions": "toluene, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "COc1cc(OC)c2c(C(=O)O[C@H](C)CCCC(=O)CCC/C=C\\2)c1",
+            "product_smiles": "C[C@H]1CCCC(=O)CCC/C=C\\C2=C(C(=CC(=C2)O)O)C(=O)O1",
+            "notes": "Demethylation of 7,9-dimethoxyzearalenone to zearalenone.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ibogaine-olson-2025",
+        "molecule_name": "Ibogaine",
+        "class": "Natural Product",
+        "author": "Olson",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Acylation and Pyridine Ring Reduction",
+            "reagents": "NaBH4, MeOH, Phenyl chloroformate",
+            "reagent_smiles": "O=C(Cl)Oc1ccccc1.[Na+].[BH4-]",
+            "conditions": "-78 °C, MeOH",
+            "yield": "93%",
+            "reactant_smiles": "c1ccncc1",
+            "product_smiles": "C1C=C[N]([Cbz])CC=C1",
+            "notes": "Pyridine undergoes N-acylation with phenyl chloroformate followed by a 1,4-reduction of the activated pyridine ring with sodium borohydride to form N-Cbz-1,4-dihydropyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Diels-Alder reaction",
+            "reagents": "Ti(OiPr)2Cl2",
+            "reagent_smiles": "C=CC(=O)N1[C@H]([Bn])COC1=O",
+            "conditions": "DCM, -5 °C",
+            "yield": "98%",
+            "reactant_smiles": "C1=CCN(C=C1)[Cbz]",
+            "product_smiles": "[Bn][C@H]1COC(=O)N1C(=O)C2CC3C=CC2N(C3)[Cbz]",
+            "notes": "Diels-Alder reaction of N-Cbz-1,4-dihydropyridine with a chiral N-acyl oxazolidinone dienophile, catalyzed by titanium(IV) diisopropoxide dichloride. The reaction forms a 1-azabicyclo[2.2.2]oct-5-ene system.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidative Hydrolysis / Auxiliary Cleavage",
+            "reagents": "LiOH, H2O2, THF, H2O, Na2SO3",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "97%",
+            "reactant_smiles": "[Bn][C@H]1COC(=O)N1C(=O)C2CC3C=CC2N(C3)[Cbz]",
+            "product_smiles": "C1=CC2C(CC1CN2[Cbz])C(=O)O",
+            "notes": "Hydrolysis of amide and ester (oxazolidinone), removal of chiral auxiliary using oxidative conditions (LiOH, H2O2) followed by peroxide quench (Na2SO3).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Weinreb Amide Synthesis",
+            "reagents": "DCM",
+            "reagent_smiles": "CNOC.O=C(n1ccnc1)n2ccnc2",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(O)C1CC2C=CC(C1)N(C2)[Cbz]",
+            "product_smiles": "CN(OC)C(=O)C1CC2C=CC(C1)N(C2)[Cbz]",
+            "notes": "Conversion of a carboxylic acid to a Weinreb amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Weinreb Ketone Synthesis",
+            "reagents": "",
+            "reagent_smiles": "C1CC1[Mg]Br",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CN(OC)C(=O)C1CC2C=CC1N(C2)[Cbz]",
+            "product_smiles": "C1CC1C(=O)C2CC3C=CC2N(C3)[Cbz]",
+            "notes": "Grignard reagent attacks a Weinreb amide to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkene Reduction",
+            "reagents": "KOH, BnOH",
+            "reagent_smiles": "",
+            "conditions": "Toluene, rt",
+            "yield": "",
+            "reactant_smiles": "C1CC1C(=O)C2CC3C=CC2N(C3)[Cbz]",
+            "product_smiles": "C1CC1C(=O)C2CC3CCC2N(C3)[Cbz]",
+            "notes": "Reduction of an alkene. The listed yield of 89% is for 3 steps, not this single reaction step.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Michael Addition",
+            "reagents": "Fe(acac)3, PhSiH3",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "iPrOH, 70 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(C1CC1)C2CC3C=CC2N(C3)[Cbz]",
+            "product_smiles": "COC(=O)CCC1CC2CC(C1N(C2)[Cbz])C(=O)C4CC4",
+            "notes": "Reductive conjugate addition of methyl acrylate to the bicyclic alkene, reducing the alkene and forming a new C-C bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester Hydrolysis (Saponification)",
+            "reagents": "LiOH, H₂O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "COC(=O)CCC1CC2CC(C1N(C2)[Cbz])C(=O)C3CC3",
+            "product_smiles": "OC(=O)CCC1CC2CC(C1N(C2)[Cbz])C(=O)C3CC3",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid using lithium hydroxide and water.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Decarboxylative alkylation / Reduction",
+            "reagents": "CsOH, Mes-Acr-Me, (ptolyl)₂S₂",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "71%",
+            "reactant_smiles": "[Cbz]N1C2CC(CCC(=O)O)C1CC(C(=O)C3CC3)C2",
+            "product_smiles": "[Cbz]N1C2CC(CCC)C1CC(C(=O)C3CC3)C2",
+            "notes": "Decarboxylative alkylation of a carboxylic acid to an ethyl group on a complex bicyclic core.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ring Opening / Hydrobromination",
+            "reagents": "HBr, AcOH",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CCC1CC2CC(C1N(C2)[Cbz])C(=O)C3CC3",
+            "product_smiles": "CCC1CC2CC(C(=O)CCCBr)C1N(C2)[Cbz]",
+            "notes": "Acid-catalyzed ring opening of a cyclopropyl ketone to form a bromopropyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular N-Alkylation",
+            "reagents": "Cs2CO3, Na2SO4",
+            "reagent_smiles": "",
+            "conditions": "CH3CN, 60 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1CC2CC(C(=O)CCCBr)C1N(C2)[Cbz]",
+            "product_smiles": "CCC1C2CC3C(=O)CCCN1C23",
+            "notes": "Intramolecular cyclization of the bromo-ketone chain onto the bicyclic nitrogen, accompanied by Cbz deprotection, forming a new 7-membered lactam ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Fischer Indole Synthesis",
+            "reagents": "AcOH",
+            "reagent_smiles": "COC1=CC=C(C=C1)N[N+H3].[Cl-]",
+            "conditions": "DCE, 80 °C",
+            "yield": "28% (3 steps)",
+            "reactant_smiles": "CC[C@H]1C[C@@H]2C[C@H]3C(=O)CCC[N@@]4C2(CC[C@@H]13)C4",
+            "product_smiles": "CC[C@H]1C[C@@H]2C[C@H]3[C@H](C4=C(NC5=C4C=CC(=C5)OC)CC[N@@]6C2(CC[C@@H]13)C6)",
+            "notes": "Fischer indole synthesis of a complex polycyclic ketone with p-methoxyphenylhydrazine hydrochloride to form (+)-Ibogaine.",
+            "substeps": []
+        }
+    ]
+}

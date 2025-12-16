@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "jesterone-porco-2001",
+        "molecule_name": "Jesterone",
+        "class": "Natural Product",
+        "author": "Porco",
+        "year": 2001
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "Br₂, CH₂Cl₂",
+            "reagent_smiles": "BrBr.ClCCl",
+            "conditions": "0 °C",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC(=C(C=C1O)C=O)O",
+            "product_smiles": "C1=CC(=C(C(=C1O)C=O)Br)O",
+            "notes": "Bromination of 2,5-dihydroxybenzaldehyde at the activated C3 position, ortho to the formyl group and between two hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Silylation (Protection)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC(=C(C=O)C(=C1O)Br)O",
+            "product_smiles": "O=CC1=C(Br)C=C(O)C=C1[OTBS]",
+            "notes": "Selective protection of one hydroxyl group with TBSCl to form an OTBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "O-Methylation (Williamson Ether Synthesis)",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "72%",
+            "reactant_smiles": "Oc1c(C=O)c(Br)c([OTBS])cc1",
+            "product_smiles": "COc1c(C=O)c(Br)c([OTBS])cc1",
+            "notes": "Methylation of the phenolic hydroxyl group using sodium hydride and methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 0 °C",
+            "yield": "100%",
+            "reactant_smiles": "COc1c(C=O)c(Br)c([OTBS])cc1",
+            "product_smiles": "COc1c(CO)c(Br)c([OTBS])cc1",
+            "notes": "Aldehyde (CHO) is reduced to a primary alcohol (CH2OH).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Protection of alcohol, aryl methyl ether deprotection",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "93%",
+            "reactant_smiles": "COC1=C(CO)C(Br)=C([OTBS])C=C1",
+            "product_smiles": "OC1=C(CO[OTBDPS])C(Br)=C([OTBS])C=C1",
+            "notes": "Primary alcohol protected as TBDPS ether. Methoxy group demethylated to phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection / Alkylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "Oc1c(C[OTBDPS])cc(Br)c(O[TBS])c1",
+            "product_smiles": "Oc1c(Br)c(C[OTBDPS])c(OC)cc1",
+            "notes": "Selective deprotection of TBS ether and subsequent methylation to OMe, while TBDPS ether and phenol remain intact. Note: Only TBAF is listed as reagent, which typically performs deprotection, not methylation. This implies an unstated methylating agent or a unique reaction condition.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Aromatic C-Alkylation (Prenylation)",
+            "reagents": "NaH, prenyl bromide",
+            "reagent_smiles": "BrCC=C(C)C",
+            "conditions": "toluene, 50 °C, -30 °C",
+            "yield": "49%",
+            "reactant_smiles": "[OTBDPS]OCC1=C(Br)C(O)=CC([OMe])=C1",
+            "product_smiles": "CC(=C)CC1=CC([OMe])=C(CO[OTBDPS])C(Br)=C1O",
+            "notes": "Aromatic C-alkylation of a phenol at the para position with prenyl bromide, mediated by NaH.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Dearomatization",
+            "reagents": "PhI(OAc)2, MeOH",
+            "reagent_smiles": "CC(=O)OI(c1ccccc1)OC(=O)C.CO",
+            "conditions": "",
+            "yield": "83%",
+            "reactant_smiles": "COc1c(Br)c(C[OTBDPS])cc(CCC(=C)C)c1O",
+            "product_smiles": "CC(=CCC1=C(C(=O)C(Br)=C(C(OC)(OC)C1)C[OTBDPS]))C",
+            "notes": "Oxidative dearomatization of a phenol to a cyclohexadienone with formation of a dimethoxy ketal, using hypervalent iodine(III) reagent phenyliodine(III) diacetate (PIDA) in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Spiroketal formation",
+            "reagents": "(2S,4S)-(+)-pentanediol, PPTS, benzene",
+            "reagent_smiles": "",
+            "conditions": "benzene",
+            "yield": "80%",
+            "reactant_smiles": "CC(=CCC1=CC(C(=C(C1=O)Br)C[OTBDPS])(OC)OC)C",
+            "product_smiles": "CC(=CCC1=C[C@]2(C(=C(C1=O)Br)C[OTBDPS])O[C@H](C)C[C@H](C)O2)C",
+            "notes": "Formation of a spiroketal from a gem-dimethoxy cyclohexadienone using (2S,4S)-pentanediol under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Epoxidation",
+            "reagents": "KHMDS, TrOOH",
+            "reagent_smiles": "",
+            "conditions": "THF, -30 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=C1C(Br)=C(C[OTBDPS])[C@@]2(O[C@@H](C)C[C@H](C)O2)C=C(CC=C(C)C)C1",
+            "product_smiles": "O=C1C(Br)=C(C[OTBDPS])[C@]2(O[C@@H](C)C[C@H](C)O2)O[C@H](CC=C(C)C)C12",
+            "notes": "Epoxidation of the cyclohexenone internal double bond, leading to the formation of an epoxide and an inversion of stereochemistry at the spiro center, with the new carbon center also being chiral.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Stille cross coupling",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "C=C[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "toluene, 110 °C",
+            "yield": "88%",
+            "reactant_smiles": "C[C@H]1CC[C@@H](C)OC2(O1)[C@@]3(O2)[C@@H](CC=C)C4=C(C[OTBDPS])C(=O)C(Br)=C4O3",
+            "product_smiles": "C[C@H]1CC[C@@H](C)OC2(O1)[C@@]3(O2)[C@@H](CC=C(C)C)C4=C(C[OTBDPS])C(=O)C(C/C=C/C)=C4O3",
+            "notes": "Stille cross coupling replaces the C-Br bond with an (E)-propenyl group. An unexpected transformation also occurs on the epoxide's side chain, changing an allyl group to a prenyl group (3-methylbut-2-enyl).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection / Ring Opening",
+            "reagents": "HF",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "82%",
+            "reactant_smiles": "C/C=C/C1=C(C[OTBDPS])[C@]2([C@H]3[C@](CC=C(C)C)(C1=O)O3)O[C@H](C)C[C@H](C)O2",
+            "product_smiles": "C/C=C/C1=C(CO)C(=O)[C@H]2[C@](CC=C(C)C)(C1=O)O2",
+            "notes": "Acid-catalyzed deprotection of TBDPS ether and opening of spiro-fused dihydropyran ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ketone Reduction (Selective)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "84%",
+            "reactant_smiles": "CC=C/C1=C(CO)C(=O)[C@H]2[C@@](CC=C(C)C)(O2)C1=O",
+            "product_smiles": "CC=C/C1=C(CO)[C@H](O)[C@H]2[C@@](CC=C(C)C)(O2)C1=O",
+            "notes": "Selective reduction of the top ketone to a secondary alcohol using DIBAL-H, with the epoxide and the other ketone remaining untouched. The newly formed alcohol has an 'up' configuration (wedged OH).",
+            "substeps": []
+        }
+    ]
+}

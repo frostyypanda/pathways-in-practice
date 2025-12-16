@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "gemzar-gemcitabine-hertel-unknown-2024",
+        "molecule_name": "Gemzar (Gemcitabine Hertel)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reformatsky reaction",
+            "reagents": "Zn, THF, Et2O",
+            "reagent_smiles": "CCOC(=O)C(F)(F)Br",
+            "conditions": "",
+            "yield": "65%",
+            "reactant_smiles": "CC1(C)OC[C@H](C=O)O1",
+            "product_smiles": "CC1(C)OC[C@H](C(O)C(F)(F)C(=O)OCC)O1",
+            "notes": "Reformatsky reaction of an aldehyde with ethyl bromodifluoroacetate to form a beta-hydroxy ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrolysis, Lactonization",
+            "reagents": "Dowex 50",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O",
+            "yield": "94%",
+            "reactant_smiles": "CCOC(=O)C(C(C1COC(C)(C)O1)O)(F)F",
+            "product_smiles": "OC[C@H]1[C@H](O)C(F)(F)C(=O)O1",
+            "notes": "Acetonide deprotection and ester hydrolysis followed by intramolecular lactonization to form a difluorolactonol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "O-Silylation",
+            "reagents": "TBDMSOTf, 2,6-Lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "92%",
+            "reactant_smiles": "OC[C@@H]1OC(=O)C(F)(F)[C@H]1O",
+            "product_smiles": "[OTBS]C[C@@H]1OC(=O)C(F)(F)[C@H]1O[TBS]",
+            "notes": "Protection of a primary and a secondary alcohol with TBDMS groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "O=C1OC(F)(F)[C@@H]([OTBDMS])[C@@H]1CO[OTBDMS]",
+            "product_smiles": "OC1OC(F)(F)[C@@H]([OTBDMS])[C@@H]1CO[OTBDMS]",
+            "notes": "Lactone reduction to lactol using DIBAL-H. The wavy bond on the anomeric hydroxyl in the product indicates a mixture of anomers (unspecified stereochemistry at that carbon).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "90%",
+            "reactant_smiles": "[OTBDMS]C[C@@H]1[C@H]([OTBDMS])[C](F)(F)C(O)O1",
+            "product_smiles": "[OTBDMS]C[C@@H]1[C@H]([OTBDMS])[C](F)(F)C([OMs])O1",
+            "notes": "Conversion of an anomeric hydroxyl group to a mesylate. The TBDMS protecting groups remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Glycosylation",
+            "reagents": "TMSOTf",
+            "reagent_smiles": "[NHTMS]C1=NC(=NC=C1)[OTMS]",
+            "conditions": "ClCH₂CH₂Cl, reflux",
+            "yield": "",
+            "reactant_smiles": "[OTBDMS]C[C@@H]1[C@H]([OTBDMS])C(F)(F)C(O1)[OMs]",
+            "product_smiles": "[OTBDMS]C[C@@H]1[C@H]([OTBDMS])C(F)(F)[C@H](N2C=CC(=NC2[OTMS])[NHTMS])O1",
+            "notes": "Formation of a β-N-glycoside by coupling a 2,2-difluoro-2-deoxy-ribose mesylate with a silylated cytosine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "AG 50W-X8 resin",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "[NHTMS]c1ncc(O[TMS])n([C@@H]2O[C@H](C[OTBDMS])C(F)(F)[C@H]2[OTBDMS])c1",
+            "product_smiles": "NC1=NC(=O)N([C@@H]2O[C@H](CO)C(F)(F)[C@H]2O)C=C1",
+            "notes": "Acidic deprotection of silyl protecting groups (TMS and TBDMS) from a protected nucleoside precursor to yield gemcitabine.",
+            "substeps": []
+        }
+    ]
+}

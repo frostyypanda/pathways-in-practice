@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "raikovenal-lu-2024",
+        "molecule_name": "Raikovenal",
+        "class": "Natural Product",
+        "author": "Lu",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "[2+2] Cycloaddition",
+            "reagents": "MeCN",
+            "reagent_smiles": "CCOC#CC",
+            "conditions": "rt to 45 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC(=C=O)C",
+            "product_smiles": "CCOC1=CC(=O)C1(C)C",
+            "notes": "[2+2] cycloaddition of dimethylketene with 1-ethoxy-1-propyne to form a cyclobutenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Vinylic Substitution",
+            "reagents": "tBuLi, Et2O",
+            "reagent_smiles": "C=CCCI",
+            "conditions": "-78 °C",
+            "yield": "43%",
+            "reactant_smiles": "CCOC1=CC(=O)C1(C)C",
+            "product_smiles": "C=CCCC1=CC(=O)C1(C)C",
+            "notes": "Nucleophilic addition of an organolithium reagent to a cyclobutenone, followed by elimination of the ethoxide group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Reductive Silylation",
+            "reagents": "Cu(OAc)2, NaOtBu, Chiral Ferrocene-based Ligand (PCy2, PPh2), THF",
+            "reagent_smiles": "CCO[SiH](C)OCC",
+            "conditions": "rt to -20 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCCC1=CC(=O)C1(C)C",
+            "product_smiles": "C=CCC[C@H]1C=C(C1(C)C)O[Si](C)(OCC)OCC",
+            "notes": "Asymmetric reductive silylation of a cyclobutenone using a chiral ferrocene catalyst and diethoxymethylsilane to form a chiral enol silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Bromination of silyl enol ether",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "C=CCC[C@H]1C=C(O[Si](C)(OCC)OCC)C(C)(C)C1",
+            "product_smiles": "C=CCC[C@H]1C(Br)C(=O)C(C)(C)C1",
+            "notes": "Alpha-bromination of a cyclobutanone derived from a silyl enol ether. The stereochemistry of the bromine is undefined (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular cyclization / Reductive cyclization",
+            "reagents": "NaCl, Cs2CO3, γ-terpinene",
+            "reagent_smiles": "C1=CC2=C(C=C1)N(C3=C2C=CC=C3)C4=C(C#N)C(=C(C(=C4C#N)N5C6=C(C=CC=C6)C7=C5C=CC=C7)N8C9=C(C=CC=C9)C%10=C8C=CC=C%10)N%11C%12=C(C=CC=C%12)C%13=C%11C=CC=C%13",
+            "conditions": "blue LEDs, MeCN",
+            "yield": "50%",
+            "reactant_smiles": "C=CCC[C@H]1C(Br)C(=O)C1(C)C",
+            "product_smiles": "C[C@H]1CC[C@@H]2[C@H]1C(=O)C2(C)C",
+            "notes": "Photocatalytic debromination and intramolecular radical cyclization forming a fused bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Horner-Wadsworth-Emmons Olefination",
+            "reagents": "LDA",
+            "reagent_smiles": "COcCP(=O)([Ph])[Ph]",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "71%",
+            "reactant_smiles": "C[C@@H]1CC[C@H]2[C@@H]1C(=O)C2(C)C",
+            "product_smiles": "C[C@@H]1CC[C@H]2[C@@H]1C(=COC)C2(C)C",
+            "notes": "Ketone undergoes olefination to form an enol ether, using a phosphine oxide reagent and LDA as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis",
+            "reagents": "",
+            "reagent_smiles": "O=C(O)C(Cl)(Cl)Cl",
+            "conditions": "DCM",
+            "yield": "73%",
+            "reactant_smiles": "C[C@@H]1CC[C@H]2[C@@H]1C(=COC)C2(C)C",
+            "product_smiles": "C[C@@H]1CC[C@H]2[C@@H]1[C@H](C=O)C2(C)C",
+            "notes": "Acid-catalyzed hydrolysis of an enol ether to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H, PhMe",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "C[C@@H]1CC[C@H]2[C@@H]1[C@H](/C=C/3\\CCOC3=O)C2(C)C",
+            "product_smiles": "C[C@@H]1CC[C@H]2[C@@H]1[C@H](/C=C(\\CCO)/CO)C2(C)C",
+            "notes": "Lactone reduction to a diol using DIBAL-H. The bicyclic core and alkene stereochemistry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2 (activated)",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "C[C@@H]1CC[C@H]2[C@H]1[C@H](/C=C(\\CCO)\\CO)C2(C)C",
+            "product_smiles": "",
+            "notes": "Oxidation of a primary allylic/homoallylic diol, likely to a dialdehyde.",
+            "substeps": []
+        }
+    ]
+}

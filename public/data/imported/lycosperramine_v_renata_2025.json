@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycosperramine-v-renata-2025",
+        "molecule_name": "Lycosperramine V",
+        "class": "Natural Product",
+        "author": "Renata",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydrolysis",
+            "reagents": "H₂SO₄, H₂O, CPC",
+            "reagent_smiles": "",
+            "conditions": "120 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=C1CC[C@@H](C)CC1=O)C",
+            "product_smiles": "C[C@@H]1CCCC(=O)C1",
+            "notes": "Hydrolysis of an enol derivative (exocyclic double bond) to a ketone, removing an isopropenyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Povarov-type cyclization",
+            "reagents": "CuCl2",
+            "reagent_smiles": "C#CCN",
+            "conditions": "100 °C",
+            "yield": "45%",
+            "reactant_smiles": "C[C@H]1CCC(=O)CC1",
+            "product_smiles": "C[C@H]1CCC2=C(C1)N=CC=C2",
+            "notes": "Cyclization of 3-methylcyclohexanone with propargylamine to form a 6-methyl-5,6,7,8-tetrahydroquinoline derivative. The reaction is a formal multi-component cyclization likely proceeding via an enamine intermediate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "Mn(OAc)3, tBuOOH",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "41%",
+            "reactant_smiles": "C[C@@H]1CCC2=C(C1)N=CC=C2",
+            "product_smiles": "C[C@@H]1CCC(=O)C2=C1N=CC=C2",
+            "notes": "Oxidation of a methylene group in the saturated ring to a ketone, with retention of stereochemistry at the methyl-substituted carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxime Formation",
+            "reagents": "BnONH2, NEt3, MeOH",
+            "reagent_smiles": "NOCc1ccccc1.CCN(CC)CC",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC2=C(C=CC=N2)C(=O)C1",
+            "product_smiles": "C[C@H]1CC2=C(C=CC=N2)/C(=N/[OBn])/C1",
+            "notes": "Ketone undergoes condensation with O-benzylhydroxylamine to form an O-benzyl oxime.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Catalytic Hydrogenation, Reductive Amination, Benzylic Deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "[Pd]",
+            "conditions": "MeOH, rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC2=C(C=CC=N2)/C(=N/[OBn])/C1",
+            "product_smiles": "C[C@H]1CCC([C@@H](N))C2=CC=CN=C12",
+            "notes": "Catalytic hydrogenation of an oxime ether to a primary amine, accompanied by benzylic deprotection.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH(OAc)3",
+            "reagent_smiles": "O=C[C@H]1CCCCN1[Boc]",
+            "conditions": "CH2Cl2, rt",
+            "yield": "86%",
+            "reactant_smiles": "N1=CC=C2C1CC[C@@H](C)[C@H](N)C2",
+            "product_smiles": "N1=CC=C2C1CC[C@@H](C)[C@H](NC[C@H]3CCCCN3[Boc])C2",
+            "notes": "Primary amine reacts with an aldehyde to form an imine, which is then reduced to a secondary amine.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Carboxylic Acid Reduction",
+                    "reagents": "BH3•SMe2",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N1CCCC[C@@H]1C(=O)O",
+                    "product_smiles": "[Boc]N1CCCC[C@@H]1CO",
+                    "notes": "Reduction of a carboxylic acid to a primary alcohol using borane-dimethyl sulfide complex. The Boc protecting group and stereochemistry at C2 are retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "DMP, CH2Cl2",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "77% (2 steps)",
+                    "reactant_smiles": "[Boc]N1CCCC[C@H]1CO",
+                    "product_smiles": "[Boc]N1CCCC[C@H]1C=O",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin periodinane (DMP) while retaining the stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "Ph2P(=O)ONH2, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 60 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1C[C@@H](C2=CC=CN=C2C1)NC[C@@H]3CCCCN3[Boc]",
+            "product_smiles": "C[C@@H]1C[C@H](C[C@H]2CCCCN2[Boc])C3=CC=CN=C3C1",
+            "notes": "Intramolecular cyclization to form a fused polycyclic system. The reaction involves the formation of a new 6-membered ring containing two nitrogen atoms, which bridges the piperidine and the pyridine moieties. Two chiral centers undergo stereochemical inversion during the reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Boc Removal)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "16% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CC[C@@H](C[C@H]2CCCCN2[Boc])C3=CC=CN=C31",
+            "product_smiles": "C[C@@H]1CC[C@@H](C[C@H]2CCCCN2)C3=CC=CN=C31",
+            "notes": "Boc deprotection of the piperidine amine to yield Lycosperramine V.",
+            "substeps": []
+        }
+    ]
+}

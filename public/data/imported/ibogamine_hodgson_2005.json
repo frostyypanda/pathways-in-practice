@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ibogamine-hodgson-2005",
+        "molecule_name": "Ibogamine",
+        "class": "Natural Product",
+        "author": "Hodgson",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation / Acetal deprotection",
+            "reagents": "TsOH",
+            "reagent_smiles": "[S@@](N)(=O)[tBu]",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCCC(OC)(OC)OC",
+            "product_smiles": "CCC/C(=N\\[S@@](=O)[tBu])/OC",
+            "notes": "A trimethyl orthoester is condensed with chiral tert-butylsulfinamide under acidic conditions (TsOH) to form a chiral N-sulfinylimine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "THF",
+            "reagent_smiles": "[Li]Si(C)(C)c1ccccc1",
+            "conditions": "-78 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCC/C(=N\\[S@@](=O)C(C)(C)C)/OC",
+            "product_smiles": "CCC/C=C(/N[S@@](=O)C(C)(C)C)\\[Si](C)(C)c1ccccc1",
+            "notes": "Nucleophilic addition of a silyl anion to a chiral sulfinimine, forming a chiral allylic sulfinamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Cascade Cyclization",
+            "reagents": "LHMDS",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "[Si](C)(C)c1ccccc1\\C=C(/N[S@](=O)C(C)(C)C)/C=C/CC",
+            "product_smiles": "C[C@H]1CC[C@H](C(=O)OC)C[C@H](C(=O)OC)[C@@]1([Si](C)(C)c2ccccc2)N[S@](=O)C(C)(C)C",
+            "notes": "Asymmetric cyclization of an N-sulfinyl imine derivative and methyl acrylate to form a substituted cyclohexyl product.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization / Lactamization",
+            "reagents": "HCl, NaHCO3",
+            "reagent_smiles": "Cl.CO.CCOC(=O)C.[Na+].[O-]C(=O)O",
+            "conditions": "MeOH, EtOAc, reflux",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@H]1C[C@@H](C(=O)OC)[C@H](C[C@H](C(=O)OC)[C@@H]1([Si](C)(C)c2ccccc2)N[S@@](=O)C(C)(C)C)C",
+            "product_smiles": "CCC1([C@H](C[C@@H](C(=O)OC)C[C@H]2)[C@@H]2C(=O)N1[Si](C)(C)c3ccccc3)",
+            "notes": "Intramolecular cyclization of an N-sulfinyl amide precursor to form a bicyclic lactam, with concurrent hydrolysis of the chiral sulfinyl auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lactam activation / Imino triflate formation",
+            "reagents": "Tf2O",
+            "reagent_smiles": "FC(F)(F)S(=O)(=O)OS(=O)(=O)C(F)(F)F",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1NC(CC(=O)OC)C2(S(C)(C)c3ccccc3)C1CCC(CC)C2",
+            "product_smiles": "N=C1(OS(=O)(=O)C(F)(F)F)C(CC(=O)OC)C2(S(C)(C)c3ccccc3)C1CCC(CC)C2",
+            "notes": "Conversion of a lactam to an imino triflate using trifluoromethanesulfonic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Imine Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78%",
+            "reactant_smiles": "C[Si](C)(c1ccccc1)[C@@H]1C[C@@H](CC)C=C2C[C@@H](CC(=O)OC)C1N=C2OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "C[Si](C)(c1ccccc1)[C@@H]1C[C@@H](CC)C2C[C@@H](CC(=O)OC)C1N[C@@H]2",
+            "notes": "Imine reduction with removal of triflate group (via reduction)",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "NH4F",
+            "reagent_smiles": "CC#N.[NH4+].[F-]",
+            "conditions": "MeCN, 75 °C",
+            "yield": "",
+            "reactant_smiles": "CCC[C@H]1C[C@H]2[C@@H]3[C@H]4N[C@H]1[C@H]3C[C@H]2[C@@H](C(=O)OC)[C@@]4([Si](C)(C)c5ccccc5)",
+            "product_smiles": "CCC[C@H]1C[C@H]2[C@@H]3[C@H]4N[C@H]1[C@H]3C[C@H]2[C@@H](C(=O)OC)4",
+            "notes": "Desilylation of the dimethylphenylsilyl group to generate a methyl ester substituted azatricyclic core.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaI, K2CO3",
+            "reagent_smiles": "COC(=O)CCCCl",
+            "conditions": "80 °C",
+            "yield": "81%",
+            "reactant_smiles": "CCC1CC2CC(C1NC2)CC(=O)OC",
+            "product_smiles": "CCC1CC2CC(C1N(CCCC(=O)OC)C2)CC(=O)OC",
+            "notes": "N-alkylation of a secondary amine with methyl 4-chlorobutanoate (via in-situ Finkelstein reaction with NaI), yielding a tertiary amine with two ester groups. The yield of 81% is reported for 2 steps, implying the shown step might be the second of two.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular cyclization / Ketone formation",
+            "reagents": "LHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCC[C@H]1C[C@@H]2C[C@H]3[C@H]4[C@H]1N(CCC(=O)OC)[C@H]2C[C@@H]3[C@@H]4C(=O)OC",
+            "product_smiles": "CCC1C[C@@H]2C[C@H]3[C@H]4[C@H]1N5CC[C@@H](C5=O)[C@H]2C[C@@H]3[CH]4C(=O)OC",
+            "notes": "Intramolecular cyclization of diester to form a cyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Fischer Indole Synthesis",
+            "reagents": "H2SO4, PhNHNH2",
+            "reagent_smiles": "",
+            "conditions": "65 °C",
+            "yield": "42% (2 steps)",
+            "reactant_smiles": "COC(=O)C1CC(=O)C2CN3CC[C@@H](CC21)[C@@H](CC)C3",
+            "product_smiles": "CCC[C@H]1C[C@@H]2CN3CCC4C(C21)[C@H](NC5=CC=CC=C54)C3",
+            "notes": "Fischer indole synthesis transforming a polycyclic ketone with an ester group into an ibogamine derivative. This likely involves indole formation, hydrolysis of the ester, and decarboxylation. The stereochemistry of the ethyl group in the product matches the drawn structure (wedge), which corresponds to (+)-Ibogamine, despite the text label reading (+)-Epiibogamine (which typically has the ethyl group in alpha-orientation). The SMILES reflects the drawn stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

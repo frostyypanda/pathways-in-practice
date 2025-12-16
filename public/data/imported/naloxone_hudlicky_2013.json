@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "naloxone-hudlicky-2013",
+        "molecule_name": "Naloxone",
+        "class": "Natural Product",
+        "author": "Hudlicky",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetylation / Esterification",
+            "reagents": "Ac₂O, DMAP, NEt₃",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CN1CC[C@]23C4=C5C(=CC=C4C[C@@H]1[C@@]3(CCC(=O)[C@@H]2O5)O)O",
+            "product_smiles": "[OAc]C1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@@H]([C@]35CCN4C)O2)O",
+            "notes": "Acetylation of the phenolic hydroxyl group of Oxymorphone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation (N-oxide formation)",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[AcO]C1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@@H]([C@]35CCN4C)O2)O",
+            "product_smiles": "[AcO]C1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@@H]([C@]35CC[N+](C)(C)[O-])O2)O",
+            "notes": "Oxidation of a tertiary amine to an N-oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Burgess dehydration",
+            "reagents": "DCM",
+            "reagent_smiles": "[O-]N(C(=O)OC)S(=O)(=O)[N+](CC)(CC)CC",
+            "conditions": "",
+            "yield": "78% (3 steps)",
+            "reactant_smiles": "CC(=O)Oc1ccc2c1O[C@H]3C[C@H]4[C@@]5(CCC(=O)[C@@H]([C@]35[C@H]2[N+](C)(O-)C4)O)O",
+            "product_smiles": "CC(=O)Oc1ccc2c1O[C@H]3C[C@H]4[C@]5(CCC(=O)[C@@H]6[C@]35[C@H]2C[N](C)C4)O[C@H]6",
+            "notes": "Burgess reagent mediated dehydration of a tertiary alcohol (C14-OH) and concomitant reduction of N-oxide to a tertiary amine, forming a 14,15-epoxy bridge.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ketalization",
+            "reagents": "TMSCl, MeOH",
+            "reagent_smiles": "Cl[Si](C)(C)C.CO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[AcO]C1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@H]6[C@@H]7[C@]5(CCN7C4)CO[C@]63)O2",
+            "product_smiles": "[AcO]C1=CC=C2C[C@@H]3[C@@]45CCC([C@H]6[C@]4(CCN3CO5)C2=C1O6)(OC)OC",
+            "notes": "Conversion of a ketone to a dimethyl acetal.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-Alkylation / Ester Hydrolysis",
+            "reagents": "THF",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "",
+            "yield": "83%",
+            "reactant_smiles": "[OAc]C1=C2[C@H]3[C@H]4CC[C@@]([C@@H](O5)[C@]4(CCN(C)C3)C2=CC=C1)([OMe])[OMe]5",
+            "product_smiles": "C=CCN1CC[C@]23C4=C5C(=CC([OH])=C4C[C@@H]1[C@@]3(CCC([C@@H]2O5)([OMe])[OMe]))O",
+            "notes": "N-demethylation followed by N-allylation, and hydrolysis of the C3-acetate to a C3-hydroxyl group. The C6-gem-dimethoxy protecting group and ether bridges remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ketal Hydrolysis / Deprotection",
+            "reagents": "aq. HCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "81%",
+            "reactant_smiles": "C=CCN1CC[C@]23C4=C5C(=CC=C4C[C@@H]1[C@@]3(CCC([C@@H]2O5)(OC)OC)O)O",
+            "product_smiles": "C=CCN1CC[C@]23C4=C5C(=CC=C4C[C@@H]1[C@@]3(CCC(=O)[C@@H]2O5)O)O",
+            "notes": "Hydrolysis of a gem-dimethoxy group to a ketone.",
+            "substeps": []
+        }
+    ]
+}

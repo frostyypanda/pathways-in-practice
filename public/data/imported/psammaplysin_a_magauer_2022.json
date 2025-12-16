@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "psammaplysin-a-magauer-2022",
+        "molecule_name": "Psammaplysin A",
+        "class": "Natural Product",
+        "author": "Magauer",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "",
+            "reagent_smiles": "C1CC(=O)N(Br)C1=O.CC#N",
+            "conditions": "MeCN, -25 °C",
+            "yield": "",
+            "reactant_smiles": "C1CCC(=O)C(=CO)C1",
+            "product_smiles": "O=CC(Br)C1CCC(=O)C1",
+            "notes": "Alpha-bromination of an enol to form an alpha-bromo aldehyde ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Cascade Reaction / Cyclization",
+            "reagents": "",
+            "reagent_smiles": "CCOC(=O)C[N+](=O)[O-]",
+            "conditions": "MeCN, -25 °C",
+            "yield": "51% (2 steps)",
+            "reactant_smiles": "C1CCC(C=O)(C(=O)C1)Br",
+            "product_smiles": "CCOC(=O)C1=[N+]([O-])O[C@]2(CCCCC2=O)[C@@H]1O",
+            "notes": "A bromoketone containing an aldehyde undergoes a complex cascade reaction with ethyl 2-nitroacetate to form a spiro-fused isoxazoline N-oxide ring system, with loss of bromine. The reaction involves multiple new bond formations and rearrangements.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deoxygenation",
+            "reagents": "",
+            "reagent_smiles": "P(OCC)(OCC)OCC",
+            "conditions": "dioxane, 100 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=[N+]([O-])O[C@]2(CCCCC2=O)[C@H]1O",
+            "product_smiles": "CCOC(=O)C1=NO[C@]2(CCCCC2=O)[C@H]1O",
+            "notes": "Deoxygenation of a cyclic N-oxide using triethyl phosphite to form a cyclic imine (oxazole/isoxazole derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Protection (Alcohol)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "O=C1CCCC[C@]12ON=C(C(=O)OEt)[C@@H]2O",
+            "product_smiles": "O=C1CCCC[C@]12ON=C(C(=O)OEt)[C@@H]2[OTBS]",
+            "notes": "Protection of a secondary alcohol with a TBS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Baeyer-Villiger Oxidation",
+            "reagents": "mCPBA, Na2HPO4",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C1=NOC([C@]2(CCCCC2=O))[C@]1[OTBS]",
+            "product_smiles": "CCOC(=O)C1=NOC([C@]2(CCCCC(=O)O2))[C@]1[OTBS]",
+            "notes": "Baeyer-Villiger oxidation of a cyclohexanone to a 7-membered lactone (ring expansion). Stereochemistry maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic Phosphorylation",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]2(CCCCC(=O)O2)[C@@H]1[OTBS]",
+            "product_smiles": "CCOC(=O)C1=NO[C@]2(CCCC=C(O2)OP(=O)(Oc3ccccc3)Oc4ccccc4)[C@@H]1[OTBS]",
+            "notes": "A 7-membered lactone is transformed into a 6-membered cyclic enol phosphate, forming a double bond within the ring. The TBS group, isoxazole, and ethyl ester remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Elimination / Alkene Formation",
+            "reagents": "Pd(PPh3)4, PhMe2SiH",
+            "reagent_smiles": "",
+            "conditions": "DMF, 65 °C",
+            "yield": "66%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]([C@H]1[OTBS])2OCCCC=C(OP(=O)(O[Ph])O[Ph])C2",
+            "product_smiles": "CCOC(=O)C1=NO[C@]([C@H]1[OTBS])2OCCC=CCC2",
+            "notes": "Palladium-catalyzed reductive elimination of a vinyl phosphate to form an alkene with double bond migration.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "Mn(dpm)3, TBHP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "32%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]2(CCCC=CO2)[C@@H]1[OTBS]",
+            "product_smiles": "CCOC(=O)C1=NO[C@]2(CC(=O)C=CO2)[C@@H]1[OTBS]",
+            "notes": "Manganese-catalyzed allylic oxidation of a cyclic ether, leading to an enone in the ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Bromination",
+            "reagents": "CuBr2, DTBP",
+            "reagent_smiles": "",
+            "conditions": "DCM, EtOAc, 100 °C",
+            "yield": "78%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]2(CCC(=O)C=CO2)[C@H]1[OTBS]",
+            "product_smiles": "CCOC(=O)C1=NO[C@]2(CC(C(=O)C=CO2)Br)[C@H]1[OTBS]",
+            "notes": "Alpha-bromination of the ketone in the seven-membered ring via a radical pathway. The stereochemistry of the existing chiral center bearing the OTBS group was corrected.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Bromination",
+            "reagents": "TBATB, DTBP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 60 °C",
+            "yield": "72%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]2([C@@H]([OTBS])C1)O3C=CC(=O)[C@@H](Br)CC23",
+            "product_smiles": "CCOC(=O)C1=NO[C@]2([C@@H]([OTBS])C1)O3CC[C@H](Br)C(=O)[C@@H](Br)CC23",
+            "notes": "Radical bromination of an alkene within a spirofused oxepane ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Enolate methylation, Elimination, Rearrangement",
+            "reagents": "MeOTf, KHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "53%",
+            "reactant_smiles": "CCOC(=O)C1=NOC([C@@H]1[OTBS])[C@]2OC=C(Br)C(=O)C(Br)CC2",
+            "product_smiles": "CCOC(=O)C1=NOC([C@@H]1[OTBS])[C@]2OC=C(Br)C=C(OC)CC2",
+            "notes": "KHMDS deprotonates the reactant at the alpha-position to the ketone, which is then methylated by MeOTf. This is followed by the elimination of the remaining bromine adjacent to the newly formed double bond and subsequent double bond rearrangement to form the conjugated system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Amide Coupling / Ester Aminolysis",
+            "reagents": "TMSOK, NMI, TCFH, THF",
+            "reagent_smiles": "FC(F)(F)C(=O)O.NCCNOC1=C(Br)C=C(CCC2N(C(=O)C3=CC=CC=C3C2=O))C=C1Br",
+            "conditions": "-15 to 0 °C",
+            "yield": "79%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@]2(CC(=C(C(=CO2)Br)OC)Br)[C@@H]1[OTBS]",
+            "product_smiles": "[OTBS][C@@H]1C(=NO[C@@]21CC(=C(C(=CO2)Br)OC)Br)C(=O)NCCOC3=C(Br)C=C(CCN4C(=O)C5=C(C=CC=C5)C4=O)C=C3Br",
+            "notes": "Amide bond formation via coupling of an ethyl ester with a primary amine, replacing the ethoxy group with the amine fragment.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Imide formation",
+                    "reagents": "AcOH, toluene",
+                    "reagent_smiles": "C1=CC2=C(C=C1)C(=O)OC2=O",
+                    "conditions": "reflux",
+                    "yield": "51%",
+                    "reactant_smiles": "C1=C(C=CC(=C1)O)CCN",
+                    "product_smiles": "C1=CC2=C(C=C1)C(=O)N(CC3=CC=C(C=C3)O)C2=O",
+                    "notes": "The primary amine in the reactant reacts with phthalic anhydride to form the corresponding phthalimide. The phenolic hydroxyl group remains unreacted. This is a dehydration reaction to form an imide linkage.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "Br2",
+                    "reagent_smiles": "BrBr",
+                    "conditions": "AcOH",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)C(=O)N(CCC3=CC=C(C=C3)O)C2=O",
+                    "product_smiles": "C1=CC2=C(C=C1)C(=O)N(CCC3=CC(=C(C(=C3)Br)O)Br)C2=O",
+                    "notes": "Phenol derivative undergoes dibromination ortho to the hydroxyl group on the phenyl ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "K2CO3, KI",
+                    "reagent_smiles": "CC(C)(C)OC(=O)NCCCBr",
+                    "conditions": "MeCN, 80 °C",
+                    "yield": "47% (2 steps)",
+                    "reactant_smiles": "O=C1C2=CC=CC=C2C(=O)N1CCCc3cc(Br)c(O)c(Br)c3",
+                    "product_smiles": "CC(C)(C)OC(=O)NCCCOC1=C(C=C(CCN2C(=O)C3=C(C=CC=C3)C2=O)C=C1Br)Br",
+                    "notes": "Phenol reacts with a Boc-protected alkyl bromide to form an ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Boc deprotection / Amine salt formation",
+                    "reagents": "TFA, DCM",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "[Boc]NCCCCOC1=C(Br)C=C(CCN2C(=O)C3=CC=CC=C3C2=O)C=C1Br",
+                    "product_smiles": "O=C1N(CCC2=CC(Br)=C(OCC[NH3+])C(Br)=C2)C(=O)C3=CC=CC=C31.O=C([O-])C(F)(F)F",
+                    "notes": "Deprotection of a Boc-protected amine to its free amine TFA salt.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, -5 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C(Br)C=C2[C@@H](CC=C1Br)O[C@@]21OC(=NO1)[C@H]([OTBS])C(=O)NCCCCOC3=C(Br)C=C(CCN4C(=O)C5=CC=CC=C5C4=O)C=C3Br",
+            "product_smiles": "COC1=C(Br)C=C2[C@@H](CC=C1Br)O[C@@]21OC(=NO1)[C@H](O)C(=O)NCCCCOC3=C(Br)C=C(CCN4C(=O)C5=CC=CC=C5C4=O)C=C3Br",
+            "notes": "Desilylation of a silyl ether (TBS) to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Phthalimide Deprotection",
+            "reagents": "H2NNH2",
+            "reagent_smiles": "",
+            "conditions": "MeOH, DCM",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "COC1=C(Br)C(Br)=C(C[C@]23ON=C(C(=O)NCCCOC4=CC(Br)=C(CCN5C(=O)C6=CC=CC=C6C5=O)C(Br)=C4)[C@@H](O)3)O2",
+            "product_smiles": "COC1=C(Br)C(Br)=C(C[C@]23ON=C(C(=O)NCCCNC4=CC(Br)=C(CCN)C(Br)=C4)[C@@H](O)3)O2",
+            "notes": "Deprotection of phthalimide-protected amine to a primary amine using hydrazine.",
+            "substeps": []
+        }
+    ]
+}

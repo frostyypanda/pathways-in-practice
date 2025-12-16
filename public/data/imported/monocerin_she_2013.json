@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "monocerin-she-2013",
+        "molecule_name": "Monocerin",
+        "class": "Natural Product",
+        "author": "She",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Debenzylation / Hydrogenolysis",
+            "reagents": "Pd(OH)2, H2",
+            "reagent_smiles": "[H][H].[Pd](O)(O)",
+            "conditions": "EtOAc",
+            "yield": "",
+            "reactant_smiles": "[Bn][C@@H]1COC(=O)N1C(=O)CO[Bn]",
+            "product_smiles": "[Bn][C@@H]1COC(=O)N1C(=O)CO",
+            "notes": "Catalytic hydrogenation of a benzyl ether to a primary alcohol, using Pearlman's catalyst (Pd(OH)2) and hydrogen gas.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection (MOM ether)",
+            "reagents": "MOMCl, DIPEA, TBAI, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "O=C1OC[C@@H](Cc2ccccc2)N1C(=O)CO",
+            "product_smiles": "COCOCC(=O)N1[C@@H](Cc2ccccc2)COC1=O",
+            "notes": "Protection of the primary alcohol as a methoxymethyl (MOM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Evans asymmetric aldol reaction",
+            "reagents": "DIPEA, Bu2BOT",
+            "reagent_smiles": "COc1cc(C=O)c(OC)c(OC)c1",
+            "conditions": "THF, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "COCOCC(=O)N1[C@@H](CC2=CC=CC=C2)COC1=O",
+            "product_smiles": "COc1cc(OC)c([C@@H](O)[C@H](O)C(=O)N2[C@@H](CC3=CC=CC=C3)COC2=O)c(OC)c1",
+            "notes": "Aldol reaction creating two new chiral centers. The SMILES for 3,4,5-trimethoxybenzaldehyde (reagent) and its derivative (product) were corrected from 2,4,6-trimethoxy- isomers. The stereochemistry of the two newly formed chiral centers in the product was corrected based on the drawn wedge/dash bonds. The 'OR' group in the product is explicitly shown in the image but is represented as 'O' (hydroxyl) in SMILES, as 'R' is not a standard SMILES wildcard for an unknown group and is not included in the provided list of approved abbreviations.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction / Protection",
+            "reagents": "MeOH",
+            "reagent_smiles": "[Li][BH4].C1CCOC1",
+            "conditions": "THF/MeOH",
+            "yield": "95%",
+            "reactant_smiles": "COC1=CC(=CC(=C1OC)OC)[C@H](O)[C@@H](O)C(=O)N2[C@@H](CC3=CC=CC=C3)COC2=O",
+            "product_smiles": "COC1=CC(=C(OC)C(=C1)OC)[C@H](O)[C@@H](OCOC)CO",
+            "notes": "Amide reduction to primary alcohol and secondary alcohol protected as MOM ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Primary Alcohol Tosylation",
+            "reagents": "TsCl, TEA",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)Cl)cc1.CCN(CC)CC",
+            "conditions": "DCM, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "[MOM]O[C@H](CO)[C@H](C1=CC(=C(C(=C1)[OMe])[OMe])[OMe])O",
+            "product_smiles": "[MOM]O[C@H](C[OTs])[C@H](C1=CC(=C(C(=C1)[OMe])[OMe])[OMe])O",
+            "notes": "Selective tosylation of the primary alcohol group while retaining the secondary alcohol and MOM protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "TBAI, NaH",
+            "reagent_smiles": "BrCC=CC",
+            "conditions": "THF, 0 °C",
+            "yield": "91%",
+            "reactant_smiles": "COc1cc([C@H](O)[C@@H](OCOC)COS(=O)(=O)c2ccc(C)cc2)c(OC)c1OC",
+            "product_smiles": "COc1cc([C@H](OCC=CC)[C@@H](OCOC)COS(=O)(=O)c2ccc(C)cc2)c(OC)c1OC",
+            "notes": "Alkylation of secondary alcohol with 1-bromo-2-butene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaBH4, (PhSe)2",
+            "reagent_smiles": "[Na][BH4].C1=CC=CC=C1[Se][Se]C1=CC=CC=C1",
+            "conditions": "DMF, 0 °C",
+            "yield": "91%",
+            "reactant_smiles": "COc1cc(C(OCH2CH=CC)[C@H]([OMOM])[C@H](C[OTs]))c(OC)c(OC)c1",
+            "product_smiles": "COc1cc(C(OCH2CH=CC)[C@H]([OMOM])[C@H](C[Se][Ph]))c(OC)c(OC)c1",
+            "notes": "A tosylate group is replaced by a phenylselenide group (SePh) via nucleophilic substitution. Diphenyl diselenide ((PhSe)2) is reduced by sodium borohydride (NaBH4) in situ to generate the phenylselenide nucleophile (PhSe-), which then displaces the tosylate leaving group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Catalytic reaction",
+            "reagents": "Rh(PPh3)3Cl, DABCO",
+            "reagent_smiles": "",
+            "conditions": "EtOH/H2O, 90 °C",
+            "yield": "",
+            "reactant_smiles": "CC=CCO[C@H](C1=CC(=C(C(=C1)OC)OC)OC)[C@@H](C[Se]c1ccccc1)OCOC",
+            "product_smiles": "CC=CCO[C@H](C1=CC(=C(C(=C1)OC)OC)OC)[C@@H](C[Se]c1ccccc1)OCOC",
+            "notes": "Catalytic conditions applied; no structural transformation depicted. The wavy bond in the reactant's allyl ether is explicitly drawn as a methyl group in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Radical cyclization",
+            "reagents": "(TMS)3SiH, Et3B",
+            "reagent_smiles": "",
+            "conditions": "PhMe, -20 °C",
+            "yield": "74 % (2 steps)",
+            "reactant_smiles": "OC=CCCC[O@H](C1=CC(=C(C(=C1)OC)OC)OC)[C@@H](C[Se]c2ccccc2)OCOC",
+            "product_smiles": "C1=CC(=C(C(=C1)OC)OC)OC[C@H]2O[C@H](CCC)C[C@@H](OCC)C2",
+            "notes": "Intramolecular radical cyclization of an alkene and selenide to form a tetrahydrofuran ring. The pentenyl ether and selenophenyl group are involved in the cyclization. The MOM (methoxymethyl) protecting group is replaced by an Et (ethyl) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular cyclization",
+            "reagents": "TiCl4",
+            "reagent_smiles": "",
+            "conditions": "DCM, -40 °C",
+            "yield": "67%",
+            "reactant_smiles": "CCC[C@H]1C[C@@H]([C@@H](C2=CC(=C(C(=C2)OC)OC)OC)O1)OCOC",
+            "product_smiles": "CCC[C@H]1C[C@@H]2[C@@H](O1)C3=C(C=C(OC)C(OC)=C3)C[C@H]2O",
+            "notes": "Lewis acid-catalyzed intramolecular cyclization involving the loss of two methanol units, forming a fused tricyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "",
+            "reagent_smiles": "O=[Ru]=O.[Na+].[O-]I(=O)(=O)=O",
+            "conditions": "THF",
+            "yield": "43%",
+            "reactant_smiles": "CCC[C@H]1C[C@@H]2[C@@H](C3=C(CO2)C(=C(C(=C3)OC)OC)OC)O1",
+            "product_smiles": "CCC[C@H]1C[C@@H]2[C@@H](C3=C(C(=C(C(=C3)OC)OC)OC)C(=O)O2)O1",
+            "notes": "Oxidation of a cyclic ether (dihydropyran) to a lactone using ruthenium dioxide and sodium periodate.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Demethylation",
+            "reagents": "BCl3, DCM",
+            "reagent_smiles": "",
+            "conditions": "-20 °C",
+            "yield": "53%",
+            "reactant_smiles": "CCC[C@H]1C[C@H]2[C@H](C(=O)Oc3c(OC)c(OC)c(OC)c(OC)c3-c2c1)O",
+            "product_smiles": "CCC[C@H]1C[C@H]2[C@H](C(=O)Oc3c(OC)c(OC)c(OC)c(O)c3-c2c1)O",
+            "notes": "Demethylation of a methyl ether using boron trichloride to yield a phenol.",
+            "substeps": []
+        }
+    ]
+}

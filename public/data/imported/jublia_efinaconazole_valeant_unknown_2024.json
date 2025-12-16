@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "jublia-efinaconazole-valeant-unknown-2024",
+        "molecule_name": "Jublia (Efinaconazole Valeant)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amidation",
+            "reagents": "NaOMe",
+            "reagent_smiles": "O1CCNCC1",
+            "conditions": "MTBE, 60 °C; 10 °C to 20 °C; MeOH, 5 °C to 20 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H](C(=O)OC)O",
+            "product_smiles": "C[C@H](C(=O)N1CCOCC1)O",
+            "notes": "Amidation of methyl 2-hydroxypropanoate with morpholine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection (THP Ether Formation)",
+            "reagents": "MsOH",
+            "reagent_smiles": "C1=COCCC1",
+            "conditions": "THF, 5 °C",
+            "yield": "78%",
+            "reactant_smiles": "C[C@H](C(=O)N1CCOCC1)O",
+            "product_smiles": "C[C@H](C(=O)N1CCOCC1)[OTHP]",
+            "notes": "The secondary alcohol is protected as a tetrahydropyranyl (THP) ether using 3,4-dihydropyran and methanesulfonic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard reaction / Ketone formation",
+            "reagents": "THF",
+            "reagent_smiles": "Brc[Mg]c1c(F)ccc(F)c1",
+            "conditions": "25 °C to 35 °C",
+            "yield": "81%",
+            "reactant_smiles": "C[C@H](C(=O)N1CCOCC1)[OTHP]",
+            "product_smiles": "C[C@H](C(=O)c1c(F)ccc(F)c1)[OTHP]",
+            "notes": "Grignard reaction of a chiral morpholine amide with 2,4-difluorophenylmagnesium bromide to form a chiral ketone. The THP protecting group and stereochemistry are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric ketone addition / stereoselective diol formation",
+            "reagents": "Me3SOI, NaOt-Bu",
+            "reagent_smiles": "C1=NC=NN1",
+            "conditions": "THF, DMF, <30 °C, then MsOH",
+            "yield": "51%",
+            "reactant_smiles": "C[C@H](C(=O)C1=CC=C(C=C1F)F)[OTHP]",
+            "product_smiles": "C[C@@H]([C@@](CN1C=NC=N1)(C2=CC=C(C=C2F)F)O)O.CS(=O)(=O)O",
+            "notes": "Stereoselective addition to a ketone, involving the incorporation of a triazolylmethyl group and reduction of the carbonyl to form two new hydroxyl groups (a 1,2-diol). The THP protecting group is removed, and the final product is isolated as a methanesulfonic acid salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxidation",
+            "reagents": "THF, MTBE",
+            "reagent_smiles": "ClS(=O)(=O)C.CCN(CC)CC",
+            "conditions": "-10 °C",
+            "yield": "78%",
+            "reactant_smiles": "C[C@@H]([C@@](CN1C=NC=N1)(C2=CC=C(C=C2F)F)O)O.CS(=O)(=O)O",
+            "product_smiles": "C[C@@H]1[C@@](CN2C=NC=N2)(C3=CC=C(C=C3F)F)O1",
+            "notes": "Intramolecular epoxidation of diol via mesylate intermediate to form a cis-epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Epoxide opening / Amine alkylation",
+            "reagents": "LiOH",
+            "reagent_smiles": "C=C1CCNCC1.Br",
+            "conditions": "CH3CN, 100 °C",
+            "yield": "87%",
+            "reactant_smiles": "C[C@H]1O[C@@]1(Cc2cncn2)(c3c(F)ccc(F)c3)",
+            "product_smiles": "C[C@H](N1CCC(=C)CC1)[C@H](O)(Cn2cncn2)c3c(F)ccc(F)c3",
+            "notes": "Nucleophilic opening of an epoxide by 4-methylenepiperidine, forming a vicinal aminoalcohol (Efinaconazole).",
+            "substeps": []
+        }
+    ]
+}

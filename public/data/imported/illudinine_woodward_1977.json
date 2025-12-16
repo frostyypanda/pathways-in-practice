@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "illudinine-woodward-1977",
+        "molecule_name": "Illudinine",
+        "class": "Natural Product",
+        "author": "Woodward",
+        "year": 1977
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enol Triflation",
+            "reagents": "Tf₂O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, -78 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "O=C1CC(C)(C)CC(=O)C1",
+            "product_smiles": "O=C1CC(C)(C)C=C(C1)[OTf]",
+            "notes": "Formation of an enol triflate from dimedone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "[OTf]C1=CC(=O)CC(C)(C)C1",
+            "product_smiles": "[OTf]C1=C[C@H](O)CC(C)(C)C1",
+            "notes": "Stereoselective reduction of an enone to an allylic alcohol using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Allylic alkylation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CCOC(=O)CC1=CC=NC=C1",
+            "conditions": "THF, -78 °C to reflux",
+            "yield": "75%",
+            "reactant_smiles": "C[C@@]1(C)CC[C@H](O)C=C(OS(=O)(=O)C(F)(F)F)C1",
+            "product_smiles": "C#CCC(C)(C)CC=C(C1=CC=NC=C1)C(=O)OCC",
+            "notes": "Alkylation of an ethyl 2-(pyridin-4-yl)acetate enolate with an allylic triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Terminal Alkyne Bromination",
+            "reagents": "AgNO3, NBS",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "99%",
+            "reactant_smiles": "C#CC[C@](C)(C)CC=C(C1=CC=NC=C1)C(=O)OCC",
+            "product_smiles": "CCOC(=O)C(=CC[C@](C)(C)CC#CBr)C1=CC=NC=C1",
+            "notes": "Bromination of a terminal alkyne to a bromoalkyne using NBS and AgNO3. The stereochemistry of the chiral center is maintained. The alkene geometry is undefined (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels Alder cycloaddition",
+            "reagents": "o-DCB, air",
+            "reagent_smiles": "",
+            "conditions": "200 °C, µW",
+            "yield": "40%",
+            "reactant_smiles": "CCOC(=O)C(=CCC(C)(C)CC#CBr)C1=CC=NC=C1",
+            "product_smiles": "CCOC(=O)C1=C2C=CN=CC2=C(C3=C1CC(C)(C)C3)Br",
+            "notes": "Intramolecular Diels-Alder reaction to form a complex polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Lossen rearrangement",
+            "reagents": "K2CO3, DMSO",
+            "reagent_smiles": "CC(=O)NO",
+            "conditions": "80 °C",
+            "yield": "89%",
+            "reactant_smiles": "CCOC(=O)C1=C2C=CN=CC2=C(C3=C1C[C@@](C)(C)C3)Br",
+            "product_smiles": "CCOC(=O)C1=C2C=CN=CC2=C(C3=C1C[C@@](C)(C)C3)O",
+            "notes": "Bromo group replaced by hydroxyl group via Lossen rearrangement conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "O-methylation",
+            "reagents": "TMSCHN2",
+            "reagent_smiles": "C[Si](C)(C)C=[N+]=[N-]",
+            "conditions": "Benzene, i-BuOH, rt",
+            "yield": "63%",
+            "reactant_smiles": "CCOC(=O)c1ccc(O)c2ncc3c(c12)C(C)(C)CC3",
+            "product_smiles": "CCOC(=O)c1ccc(OC)c2ncc3c(c12)C(C)(C)CC3",
+            "notes": "Methylation of the phenolic hydroxyl group on the quinoline derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=C2C=CN=CC2=C(OC)C3=C1CC(C)(C)C3",
+            "product_smiles": "OC(=O)C1=C2C=CN=CC2=C(OC)C3=C1CC(C)(C)C3",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using strong base.",
+            "substeps": []
+        }
+    ]
+}

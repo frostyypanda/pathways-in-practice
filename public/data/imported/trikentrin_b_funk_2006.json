@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "trikentrin-b-funk-2006",
+        "molecule_name": "Trikentrin B",
+        "class": "Natural Product",
+        "author": "Funk",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nitration",
+            "reagents": "Ac2O, HNO3, NaOH",
+            "reagent_smiles": "",
+            "conditions": "ClCH2CH2Cl, H2O, 50 to 80 °C",
+            "yield": "96%",
+            "reactant_smiles": "CCC1=CC=C(C=C1)N",
+            "product_smiles": "Nc1c([N+](=O)[O-])cc(CC)cc1",
+            "notes": "Electrophilic aromatic nitration of 4-ethylaniline. The amino group activates the ring and directs the nitro group to the ortho position.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Sandmeyer reaction / Electrophilic Aromatic Substitution (Bromination)",
+            "reagents": "CuBr2, Br2",
+            "reagent_smiles": "CC(C)(C)ON=O",
+            "conditions": "MeCN, 50 °C",
+            "yield": "82%",
+            "reactant_smiles": "CCC1=CC(N)=CC(C(=C1)[N+](=O)[O-])",
+            "product_smiles": "CCC1=C([N+](=O)[O-])C(Br)C(Br)=C1",
+            "notes": "Diazotization of the aniline followed by dibromination ortho and meta to the nitro group, with loss of the amino group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bartoli Indole Synthesis",
+            "reagents": "Vinyl magnesium bromide",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "THF, -40 °C",
+            "yield": "52%",
+            "reactant_smiles": "CCC1=CC(=C(C(=C1)Br)Br)[N+](=O)[O-]",
+            "product_smiles": "CCC1=C2C=CNC2=C(C(=C1)Br)Br",
+            "notes": "Bartoli Indole synthesis converting a substituted nitrobenzene to a substituted indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Silylation",
+            "reagents": "KHMDS, TBSOTf",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "73%",
+            "reactant_smiles": "CCC1=C2C=CNC2=C(C(=C1)Br)Br",
+            "product_smiles": "CCC1=C2C=CN(C2=C(C(=C1)Br)Br)[TBS]",
+            "notes": "Indole nitrogen is silylated with a TBS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "n-BuLi, toluene",
+            "reagent_smiles": "C1C=CC=C1",
+            "conditions": "-78 °C to rt",
+            "yield": "77%",
+            "reactant_smiles": "CCc1c(Br)c(Br)c2c(c1)cn2[TBS]",
+            "product_smiles": "CCC1=C2C=CN([TBS])C2=C3C4C=CC(C4)C3=C1",
+            "notes": "Double dehydrobromination of the indole derivative followed by a Diels-Alder cycloaddition with cyclopentadiene to form a benzonorbornadiene-fused indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "88%",
+            "reactant_smiles": "CCC1=C2C=CC3C(C=CN3[TBS])=C2C4C=CC14",
+            "product_smiles": "CCC1=C2C=CC3C(C=CN3[TBS])=C2C4C[C@H](O)[C@H](O)C14",
+            "notes": "Selective cis-dihydroxylation of one double bond within the bicyclo[2.2.2]octa-2,5-diene system, with concomitant saturation of the other double bond, to form a bicyclo[2.2.2]octane diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Periodate Oxidation / Vicinal Diol Cleavage",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "99%",
+            "reactant_smiles": "CCC1=C2C=CN([TBS])C2=C3C(=C1)C4CC3[C@H]([C@H]4O)O",
+            "product_smiles": "CCC1=C2C=CN([TBS])C2=C3[C@H](C[C@@H](C=O)C3=C1)C=O",
+            "notes": "Oxidation of a vicinal diol to a dialdehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dithioacetal formation, N-deprotection",
+            "reagents": "EtSH, BF3•OEt2",
+            "reagent_smiles": "CCSH.FB(F)F.CCOCC",
+            "conditions": "-78 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "CCC1=C2C=CN([TBS]C2=C3[C@H](C[C@H](C=O)C3=C1)C=O)",
+            "product_smiles": "CCC1=C2C=CNC2=C3[C@H](C[C@H](C(SCC)SCC)C3=C1)C(SCC)SCC",
+            "notes": "The two aldehyde groups are converted to dithioacetals using ethanethiol and boron trifluoride diethyl etherate. Simultaneously, the TBS protecting group on the indole nitrogen is removed. The cis stereochemistry of the substituents on the cyclopentane ring is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Desulfurization",
+            "reagents": "Raney Nickel",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "85%",
+            "reactant_smiles": "CCC1=C2C=CNC2=C3[C@H](C(SCC)SCC)C[C@H](C(SCC)SCC)C3=C1",
+            "product_smiles": "CCC1=C2C=CNC2=C3[C@@H](C)C[C@@H](C)C3=C1",
+            "notes": "Desulfurization of bis(ethylthio)methyl groups to methyl groups.",
+            "substeps": []
+        }
+    ]
+}

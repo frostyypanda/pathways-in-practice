@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bulleyanaline-trost-2019",
+        "molecule_name": "Bulleyanaline",
+        "class": "Natural Product",
+        "author": "Trost",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Directed Ortho Metalation / Formylation",
+            "reagents": "LDA, DMF",
+            "reagent_smiles": "",
+            "conditions": "THF, -78°C",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1Br)OCO2",
+            "product_smiles": "O1COC2=C1C(C=O)=C(Br)C=C2",
+            "notes": "Formylation of 5-bromobenzo[d][1,3]dioxole via directed ortho-metalation using LDA and quenching with DMF to form 4-formyl-5-bromobenzo[d][1,3]dioxole.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C(=C1Br)C=O)OCO2",
+            "product_smiles": "C1=CC2=C(C(=C1Br)CO)OCO2",
+            "notes": "Reduction of an aldehyde to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol protection (Silyl ether formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "93%",
+            "reactant_smiles": "C1=CC2=C(C(=C1Br)CO)OCO2",
+            "product_smiles": "C1=CC2=C(C(=C1Br)C[OTBS])OCO2",
+            "notes": "Protection of the primary alcohol with tert-butyldimethylsilyl (TBS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Palladium-catalyzed C-C bond formation / Alpha-alkylation",
+            "reagents": "Pd(OAc)2, DavePhos, LiHMDS",
+            "reagent_smiles": "CCC(=O)O[tBu]",
+            "conditions": "PhMe, -70°C",
+            "yield": "",
+            "reactant_smiles": "BrC1=CC2=C(C=C1CO[TBS])OCO2",
+            "product_smiles": "O1COC2=C(C1)C=C(C(C)C(=O)O[tBu])C(CO[TBS])=C2",
+            "notes": "Palladium-catalyzed alpha-alkylation of tert-butyl propionate enolate with an aryl bromide, forming a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "-78°C",
+            "yield": "51%",
+            "reactant_smiles": "O1COC2=C1C(CO[TBS])=C(C(C)C(=O)OC(C)(C)C)C=C2",
+            "product_smiles": "O1COC2=C1C(CO[TBS])=C(C(C)C=O)C=C2",
+            "notes": "Diisobutylaluminium hydride (DIBAL-H) reduction of a tert-butyl ester to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Catalytic Asymmetric Addition",
+            "reagents": "Chiral Zn Catalyst (complex, Ph-substituted, bis-oxazoline-type), PhMe, 3A MS",
+            "reagent_smiles": "[NHCbz]C=CC1=C(C=C2C(=C1)OCO2)",
+            "conditions": "4°C",
+            "yield": "75%",
+            "reactant_smiles": "CC(C=O)C1=C(CO[OTBS])C2=C(C=C1)OCO2",
+            "product_smiles": "[OTBS]CH2C1=C(C=CC2=C1OCO2)[C@@](C)(C=O)[C@@H](C3=CC=C4C(=C3)OCO4)[NHCbz]",
+            "notes": "Asymmetric addition of an aldehyde to a Cbz-protected enamide, catalyzed by a chiral zinc complex, forming two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Gilbert Seyferth homologation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(=O)C(=[N+]=[N-])P(=O)(OC)(OC)",
+            "conditions": "MeOH",
+            "yield": "73%",
+            "reactant_smiles": "[OTBS]OCC1=C(C=CC2=C1OCO2)[C@](C)(C=O)[C@H](C3=CC=C4C(=C3)OCO4)[NHCbz]",
+            "product_smiles": "C#C[C@](C)(C1=C(CO[OTBS])C2=C(C=C1)OCO2)[C@H](C3=CC=C4C(=C3)OCO4)[NHCbz]",
+            "notes": "Aldehyde is converted to a terminal alkyne via Gilbert Seyferth homologation.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Silyl Ether Deprotection",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "DCM, MeOH, 0°C",
+            "yield": "",
+            "reactant_smiles": "C#C[C@](C)(C1=C(C[OTBS])C2=C(C=C1)OCO2)[C@@H](C3=CC=C4C(=C3)OCO4)NC(=O)OCC5=CC=CC=C5",
+            "product_smiles": "C#C[C@](C)(C1=C(CO)C2=C(C=C1)OCO2)[C@@H](C3=CC=C4C(=C3)OCO4)NC(=O)OCC5=CC=CC=C5",
+            "notes": "Deprotection of a primary TBS (tert-butyldimethylsilyl) ether to a primary alcohol. Stereocenters remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular N-alkylation / Cyclization",
+            "reagents": "Sulfonyldiimidazole, Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "96%",
+            "reactant_smiles": "C#C[C@](C)(C1=C(CO)C2=C(C=C1)OCO2)[C@@H](C3=CC=C4C(=C3)OCO4)N[Cbz]",
+            "product_smiles": "C#C[C@]1(C)C2=C(CN([C@@H]1C3=CC=C4C(=C3)OCO4)[Cbz])C6=C(C=C2)OCO6",
+            "notes": "Intramolecular cyclization of a benzylic alcohol derivative (activated by sulfonyldiimidazole) with a carbamate nitrogen to form a 1,2,3,4-tetrahydroisoquinoline derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Gold-catalyzed intramolecular hydroarylation",
+            "reagents": "IPrAuNTf",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 23°C",
+            "yield": "",
+            "reactant_smiles": "C#C[C@@]1(C)C2=C(CN([C@H]1C3=CC=C4C(=C3)OCO4)[Cbz])C6=C(C=C2)OCO6",
+            "product_smiles": "C[C@@]12C=CC3=CC4=C(C=C3[C@@H]1N(CC5=C2C=CC6=C5OCO6)[Cbz])OCO4",
+            "notes": "Intramolecular hydroarylation of an alkyne with an aryl group, forming a new six-membered ring containing an alkene. Stereochemistry at both chiral centers is maintained relative to each other but inverted in absolute configuration compared to the input SMILES, and the N-Cbz group is abbreviated.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "Red-Al",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 80°C",
+            "yield": "",
+            "reactant_smiles": "C[C@]12C=CC3=CC4=C(C=C3[C@H]1N(CC5=C2C=CC6=C5OCO6)C(=O)OCC7=CC=CC=C7)OCO4",
+            "product_smiles": "C[C@]12C=CC3=CC4=C(C=C3[C@H]1N(C)CC5=C2C=CC6=C5OCO6)OCO4",
+            "notes": "Reduction of N-Cbz group to N-methyl amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Epoxidation",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@]12C=CC3=CC4=C(C=C3[C@H]1N(C)CC5=C2C=CC6=C5OCO6)OCO4",
+            "product_smiles": "C[C@]12C3=C(CN(C)[C@H]2C4=CC5=C(C=C4C6C1O6)OCO5)C7=C(C=C3)OCO7",
+            "notes": "Epoxidation of an alkene to form an epoxide. The stereochemistry of the existing chiral centers is preserved, and the epoxide is formed syn to the methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reductive Epoxide Opening / Dihydroxylation",
+            "reagents": "Na₂S₂O₅, NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "84%",
+            "reactant_smiles": "C[C@]12C3=C(CN(C)[C@@H]2C4=CC5=C(C=C4C6C1O6)OCO5)C7=C(C=C3)OCO7",
+            "product_smiles": "C[C@]12C3=C(CN(C)[C@@H]2C4=CC5=C(C=C4[C@H]([C@@H]1O)O)OCO5)C6=C(C=C3)OCO6",
+            "notes": "Reductive opening of an epoxide in the presence of sodium metabisulfite and sodium hydroxide to form a vicinal diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Etherification / Cyclization",
+            "reagents": "I₂, KOAc, K₂CO₃",
+            "reagent_smiles": "II.CC(=O)O[K].O=C([O-])[O-].[K+].[K+]",
+            "conditions": "EtOH",
+            "yield": "99%",
+            "reactant_smiles": "C[C@]12C3=C(CN(C)[C@@H]2C4=CC5=C(C=C4[C@H]([C@@H]1O)O)OCO5)C6=C(C=C3)OCO6",
+            "product_smiles": "C[C@]12C3=C(C=C4CN(C)[C@@H]5C4)C(=C(C=C3)OCO6)[C@H]5[C@@H](O)[C@H](O2)[C@@H]1C7=CC8=C(C=C7)OCO8",
+            "notes": "Intramolecular cyclization of a diol to form a cyclic ether (iodine-mediated etherification). One hydroxyl group is lost to form the ether linkage, and the other remains.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Hydrolysis, Ring-opening, Acylation",
+            "reagents": "KOH, MeOH, acetone",
+            "reagent_smiles": "",
+            "conditions": "50°C",
+            "yield": "75%",
+            "reactant_smiles": "C[C@]12C3=C(C4=C(C=C3)OCO4)[C@H]5[C@@H](C6=CC7=C(C=C6[C@@H]1N5C)OCO7)O2",
+            "product_smiles": "CC(=O)C[C@@H]1C2=C3C(=CC=C2[C@]4(C)[C@@H](C5=C(C=C6C(=C5)OCO6)[C@@H]([C@@H]4O)O)N1C)OCO3",
+            "notes": "Epoxide ring opening, followed by C-N bond cleavage, and then N-acylation to form an acetyl group. Both hydroxyls are formed pointing up.",
+            "substeps": []
+        }
+    ]
+}

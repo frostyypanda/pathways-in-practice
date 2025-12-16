@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ripostatin-b-christmann-2012",
+        "molecule_name": "Ripostatin B",
+        "class": "Natural Product",
+        "author": "Christmann",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxidation (discrepancy with drawn product)",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "[OAc]CC=C(C)CCC1(C)C(O1)C",
+            "product_smiles": "[OAc]CC=C(C)CCC1(C)C(O1)C",
+            "notes": "The reactant and product structures shown in the screenshot are identical. However, the specified reagent, m-CPBA, is typically used for the epoxidation of alkenes. The alkene present in the reactant structure is depicted as unchanged in the product structure, which is inconsistent with a typical m-CPBA reaction. This suggests the product structure in the screenshot might be misdrawn, or no reaction occurs under these conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylic Substitution (Vinyl Grignard)",
+            "reagents": "THF-DMS",
+            "reagent_smiles": "C=C[Mg]Br.[Cu]I",
+            "conditions": "-30 °C",
+            "yield": "88%",
+            "reactant_smiles": "[OAc]C/C=C(\\CCC1C(C)(C)O1)",
+            "product_smiles": "C=CC/C=C(\\C)/CCC1C(C)(C)O1",
+            "notes": "Substitution of allylic acetate with vinyl Grignard reagent in the presence of CuI. The reaction appears to proceed with inversion of the internal alkene stereochemistry from E (reactant) to Z (product) based on the visual representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "NaIO₄, THF-H₂O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "C1(O1C(C)C)CCC/C=C(\\C)CC=C",
+            "product_smiles": "C=CC/C=C(\\C)CCC=O",
+            "notes": "Oxidative cleavage of a 2,2-dimethyloxirane (likely via acid-catalyzed hydrolysis to a 1,2-diol followed by periodate cleavage) to an aldehyde, with loss of the dimethyl carbonyl fragment (acetone). The internal and terminal alkenes are unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Chiral Auxiliary-mediated Halohydrin Formation, Aldehyde Reduction",
+            "reagents": "TFA, NCS, NaBH4",
+            "reagent_smiles": "CC(C)(C)[C@@H]1NC(=O)N(C)[C@H]1C",
+            "conditions": "CH3CN",
+            "yield": "",
+            "reactant_smiles": "O=CCC=C(C)CC=C",
+            "product_smiles": "C=CC/C=C(\\C)/C[C@@H](CO)Cl",
+            "notes": "Chemo- and stereoselective chlorohydroxylation of the internal alkene of an aldehyde, followed by reduction of the aldehyde to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxide Formation (Intramolecular Williamson Ether Synthesis)",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC/C=C(\\C)/C[C@@H](CO)Cl",
+            "product_smiles": "C=CC/C=C(\\C)/C[C@H]1CO1",
+            "notes": "Intramolecular cyclization of a halohydrin to form an epoxide via SN2 reaction. The stereochemistry at the chiral center inverts from R to S.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Smith-Tietze linchpin-coupling",
+            "reagents": "",
+            "reagent_smiles": "C1SCS(C1)[TBS].O1[C@@H](CCC=C(C)CC2=CC=CC=C2)C1.CCCC[Li]",
+            "conditions": "THF",
+            "yield": "63%",
+            "reactant_smiles": "C=CC/C=C(\\C)/C[C@@H]1CO1",
+            "product_smiles": "C=CC/C=C(\\C)/C[C@@H](O[TBS])CC(C1SCCC1S)C[C@@H](O)CC=C(C)CC2=CC=CC=C2",
+            "notes": "Double epoxide opening and alkylation with 2-TBS-1,3-dithiane via BuLi deprotonation.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "No net reaction shown",
+                    "reagents": "m-CPBA",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂, 0 °C",
+                    "yield": "85%",
+                    "reactant_smiles": "[OAc]C/C=C(\\CCC1C(C)(C)O1)",
+                    "product_smiles": "[OAc]C/C=C(\\CCC1C(C)(C)O1)",
+                    "notes": "The product structure shown in the screenshot is identical to the reactant structure, despite the presence of m-CPBA, which typically epoxidizes alkenes. The alkene in the reactant and product has E-stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Allylic Substitution",
+                    "reagents": "PhMgBr, Li2CuCl4",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "CC1(C)COC1CC/C(C)=C/COCC(C)=O",
+                    "product_smiles": "CC1(C)COC1CC/C(C)=C/Cc1ccccc1",
+                    "notes": "Copper-catalyzed allylic substitution of acetate with phenyl Grignard reagent. The epoxide is retained, and the alkene configuration remains E.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Oxidative Cleavage",
+                    "reagents": "NaIO4",
+                    "reagent_smiles": "",
+                    "conditions": "THF-H2O",
+                    "yield": "91%",
+                    "reactant_smiles": "C/C(=C\\C[Ph])/CCC1C(C)(C)O1",
+                    "product_smiles": "C/C(=C\\C[Ph])/CCC=O",
+                    "notes": "Oxidative cleavage of a 2,2-dimethyloxirane to an aldehyde, while retaining the trans-alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Corey-Chaykovsky reaction",
+                    "reagents": "Me3SI, NaH",
+                    "reagent_smiles": "[S+](C)(C)C.[I-].[NaH]",
+                    "conditions": "DMSO-THF, 0 °C",
+                    "yield": "75%",
+                    "reactant_smiles": "O=CCC/C(=C\\C[Ph])/C",
+                    "product_smiles": "O1CC1CCC/C(=C\\C[Ph])/C",
+                    "notes": "Epoxidation of an α,β-unsaturated aldehyde to form a terminal epoxide, retaining the Z-alkene stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Jacobsen kinetic resolution",
+                    "reagents": "AcOH, H2O",
+                    "reagent_smiles": "CC(C)(C)c1cc(C(C)(C)C)c(O[Co]2)c(C=N[C@@H]3CCCC[C@@H]3N=Cc4c(O2)c(C(C)(C)C)cc(C(C)(C)C)c4)c1",
+                    "conditions": "",
+                    "yield": "48%",
+                    "reactant_smiles": "[Ph]CC/C=C(C)/CCC1CO1",
+                    "product_smiles": "[Ph]CC/C=C(C)/CCC[C@H]1CO1",
+                    "notes": "Kinetic resolution of a terminal epoxide using the Jacobsen Co(II) salen catalyst, yielding the (R)-epoxide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dithiane Deprotection",
+            "reagents": "NBS, AgClO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "acetone-H2O",
+            "yield": "84%",
+            "reactant_smiles": "C=CC/C=C(C)C[C@H]([OTBS])CC1(SCCCS1)C[C@@H](O)CCC/C=C(C)CCc2ccccc2",
+            "product_smiles": "C=CC/C=C(C)C[C@H]([OTBS])CC(=O)C[C@@H](O)CCC/C=C(C)CCc2ccccc2",
+            "notes": "Oxidative deprotection of a 1,3-dithiane to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Samarium Diiodide-mediated reductive transformation and esterification",
+            "reagents": "EtCHO, SmI2",
+            "reagent_smiles": "",
+            "conditions": "-20 °C",
+            "yield": "90%",
+            "reactant_smiles": "C=CC/C=C(\\C)/C[C@H]([OTBS])CC(=O)C[C@@H](O)CC/C=C(\\C)CC1=CC=CC=C1",
+            "product_smiles": "C=CC/C=C(\\C)/C[C@H]([OTBS])C[C@@H](O)C[C@@H](OC(=O)CC)CC/C=C(\\C)CC1=CC=CC=C1",
+            "notes": "Ketone reduced to a secondary alcohol (dashed OH bond). The existing secondary alcohol is esterified with a propionyl group (derived from EtCHO), retaining its stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Yamaguchi esterification",
+            "reagents": "2,4,6-trichlorobenzoyl chloride, 3,4-dihydro[1,2-a]pyrimidin-2-one, DMAP",
+            "reagent_smiles": "OC(=O)C=C(I)CCO[OTBS]",
+            "conditions": "0 °C to rt",
+            "yield": "78%",
+            "reactant_smiles": "C=CC/C=C(\\C)/C[C@H]([OTBS])C[C@H](O)C[C@@H](OC(=O)CC)CC/C=C(\\C)CCC1=CC=CC=C1",
+            "product_smiles": "C=CC/C=C(\\C)/C[C@H]([OTBS])C[C@H](OC(=O)C=C(I)CCO[OTBS])C[C@@H](OC(=O)CC)CC/C=C(\\C)CCC1=CC=CC=C1",
+            "notes": "Yamaguchi esterification of a secondary alcohol with an alpha-iodo-beta-OTBS-ethyl-acrylate derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Stille cross-coupling",
+            "reagents": "Pd2(dba)3.CHCl3, Ph3As",
+            "reagent_smiles": "C=CC[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "DMF, rt",
+            "yield": "93%",
+            "reactant_smiles": "C=CC/C=C(\\C)C[C@H]([OTBS])C[C@H](OC(=O)/C=C(/I)CCO[OTBS])C[C@@H](OC(=O)CC)CC=C(\\C)C[Ph]",
+            "product_smiles": "C=CC/C=C(\\C)C[C@H]([OTBS])C[C@H](OC(=O)/C=C(/CC=C)CCO[OTBS])C[C@@H](OC(=O)CC)CC=C(\\C)C[Ph]",
+            "notes": "Stille cross-coupling of a vinyl iodide with allyltributyltin to form a 1,3-diene.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ring-Closing Metathesis",
+            "reagents": "(CH2Cl)2",
+            "reagent_smiles": "Cl[Ru]1(=C(c2ccc([N+](=O)[O-])cc2OC(C)C)N(c3c(C)cc(C)cc3C)CCN1N(c4c(C)cc(C)cc4C))Cl.O=C1C(F)=C(F)C(=O)C(F)=C1F",
+            "conditions": "60 °C",
+            "yield": "64%",
+            "reactant_smiles": "[OTBS][C@H]1CC/C=C(\\C)/C=CC[C@H](OC(=O)CC)CC/C=C(\\C)c2ccccc2.1(OC(=O)/C=C(\\CC=C)CO[OTBS])",
+            "product_smiles": "[OTBS][C@H]1CC/C=C(\\C)/C/C=C/CC(=O)/C=C(\\CO[OTBS])O[C@H]1[C@H](OC(=O)CC)CC/C=C(\\C)/Cc2ccccc2",
+            "notes": "Grubbs-Hoveyda 2nd generation catalyst-mediated ring-closing metathesis (RCM) of a diene to form a new macrocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Jones oxidation",
+            "reagents": "CrO3, H2SO4, acetone",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "CC(=O)O[C@H]1(CC/C=C(C)/C[Ph])CC[C@@H]([OTBS])C/C=C/C/C=C(\\C)/C[C@H](CC[OTBS])OC(=O)C/C=C/1",
+            "product_smiles": "CC(=O)O[C@H]1(CC/C=C(C)/C[Ph])CC[C@@H]([OTBS])C/C=C/C/C=C(\\C)/C[C@H](CC(=O)O)OC(=O)C/C=C/1",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid using Jones reagent. The TBS ether on the adjacent chiral center remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "HF•py",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "76%",
+            "reactant_smiles": "CCC(=O)O[C@@H]1CC/C(=C/CCc2ccccc2)/C[C@@H](CC/C=C(C)/CC/C=C/CC(OC(=O)C=CC(=O)O)[C@H](O[Si](C)(C)C(C)(C)C)C1)C",
+            "product_smiles": "CCC(=O)O[C@@H]1CC/C(=C/CCc2ccccc2)/C[C@@H](CC/C=C(C)/CC/C=C/CC(OC(=O)C=CC(=O)O)[C@H](O)C1)C",
+            "notes": "Deprotection of a TBS ether to a hydroxyl group using HF•pyridine.",
+            "substeps": []
+        }
+    ]
+}

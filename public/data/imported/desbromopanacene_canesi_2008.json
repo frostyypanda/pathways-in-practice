@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "desbromopanacene-canesi-2008",
+        "molecule_name": "Desbromopanacene",
+        "class": "Natural Product",
+        "author": "Canesi",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (THP Ether Formation)",
+            "reagents": "PPTS, CH2Cl2",
+            "reagent_smiles": "C1=COCCC1",
+            "conditions": "0 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCC1=CC(=CC=C1)O",
+            "product_smiles": "CCC1=CC(=CC=C1)[OTHP]",
+            "notes": "Protection of a phenol with 3,4-dihydropyran to form a tetrahydropyranyl (THP) ether, catalyzed by PPTS.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed ortho metalation (DOM) / Silylation",
+            "reagents": "TMSCl, nBuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "CC1=CC(=CC=C1)[OTHP]",
+            "product_smiles": "CC1=CC(=C(C=C1)[TMS])[OTHP]",
+            "notes": "Directed ortho-metalation of a THP-protected aryl ether using nBuLi, followed by trapping with trimethylsilyl chloride (TMSCl) to introduce a TMS group ortho to the OTHP group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O, 0 °C",
+            "yield": "76%",
+            "reactant_smiles": "CCc1cc(OC2CCCCO2)cc([TMS])c1",
+            "product_smiles": "CCc1cc(O)cc([TMS])c1",
+            "notes": "THP ether deprotection to alcohol",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Dearomatization / Cycloaddition",
+            "reagents": "PIDA, TFE",
+            "reagent_smiles": "C1=COC=C1",
+            "conditions": "-25 °C",
+            "yield": "",
+            "reactant_smiles": "CCc1ccc(O)c([TMS])c1",
+            "product_smiles": "CC/C1=C\\C([TMS])=C2O[C@H]3C=CO[C@@H]3C2C1",
+            "notes": "Oxidative dearomatization of a substituted phenol with PIDA, followed by a cycloaddition with furan, forming a complex polycyclic ether with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (Desilylation)",
+            "reagents": "TBAF, CsF",
+            "reagent_smiles": "",
+            "conditions": "DMF, 100 °C",
+            "yield": "44% (2 steps)",
+            "reactant_smiles": "CCC1=C2C(=C(C=C1)[TMS])O[C@H]3C=CO[C@H]32",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C=CO[C@H]32",
+            "notes": "Desilylation of the TMS group to form the aryl C-H bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxymercuration-demercuration (Alkene Hydration)",
+            "reagents": "H2O, Et2O, NaOH",
+            "reagent_smiles": "CC(=O)O[Hg]OC(=O)C.[NaH4B]",
+            "conditions": "0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C=CO[C@H]32",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H]3CC(O)O[C@H]32",
+            "notes": "Hydration of the internal alkene in the furan ring, forming a new hydroxyl group at the more substituted position (Markovnikov addition). Existing stereocenters are retained, and the new stereocenter is formed as a racemic mixture, indicated by a wavy bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "C-C bond formation (allenylation)",
+            "reagents": "BF3•Et2O",
+            "reagent_smiles": "C[Si](C)(C)C#C",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "63%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@H]3CC(O)O[C@H]32",
+            "product_smiles": "C=C=C[C@H]1C[C@H]2[C@H](C3=C(CC)C=CC=C3O2)O1",
+            "notes": "Lewis acid catalyzed alkynylation of a cyclic hemiacetal with trimethylsilylacetylene, followed by rearrangement to an allenyl product.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pemafibrate-parmodia-kowa-unknown-2024",
+        "molecule_name": "Pemafibrate (Parmodia Kowa)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-Alkylation (Michael Addition)",
+            "reagents": "BnNMe3OH, acrylonitrile",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)O",
+            "product_smiles": "COC1=CC=C(C=C1)OCCC#N",
+            "notes": "Phenol undergoes O-alkylation via Michael addition of its phenoxide to acrylonitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitrile Reduction",
+            "reagents": "BH3•THF, NaOH",
+            "reagent_smiles": "",
+            "conditions": "THF, 65 °C, rt",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "COC1=CC=C(C=C1)OCCC#N",
+            "product_smiles": "COC1=CC=C(C=C1)OCCCN",
+            "notes": "Reduction of a nitrile to a primary amine using borane-THF followed by workup with NaOH.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "O=Cc1cccc(O)c1",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)OCCCN",
+            "product_smiles": "COC1=CC=C(C=C1)OCCCNCC2=CC=CC(=C2)O",
+            "notes": "Amine reacts with 3-hydroxybenzaldehyde, followed by reduction of the imine with sodium borohydride to form a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Alkylation (SNAr)",
+            "reagents": "2-chlorobenzoxazole, Et₃N",
+            "reagent_smiles": "CCN(CC)CC.ClC1=NC2=CC=CC=C2O1",
+            "conditions": "DMF, 75 °C",
+            "yield": "62% (2 steps)",
+            "reactant_smiles": "COC1=CC=C(C=C1)OCCCNCC2=CC=CC(=C2)O",
+            "product_smiles": "COc1ccc(OCCC N(Cc2cc(O)ccc2)c3nc4ccccc4o3)cc1",
+            "notes": "Secondary amine nucleophilically attacks 2-chlorobenzoxazole, displacing chlorine and forming a new C-N bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "O-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC[C@@H](C(=O)OCCCC)OS(=O)(=O)C(F)(F)F",
+            "conditions": "MeCN, rt",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)OCCCN(CC2=CC=CC(=C2)O)C3=NC4=C(C=CC=C4)O3",
+            "product_smiles": "CC[C@H](C(=O)OCCCC)OC1=CC(=CC=C1)CN(CCCOC2=CC=C(C=C2)OC)C3=NC4=C(C=CC=C4)O3",
+            "notes": "O-alkylation of a phenol with an alpha-substituted carboxylic acid triflate ester.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Lactone Ring Opening / Esterification / Iodination",
+                    "reagents": "TMSI, n-BuOH",
+                    "reagent_smiles": "CCCCO.I[Si](C)(C)C",
+                    "conditions": "DCM, -20 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1COC(=O)[C@H]1O",
+                    "product_smiles": "CCCCOC(=O)[C@H](CCI)O",
+                    "notes": "Lactone ring opening via TMSI, followed by esterification with n-butanol and iodide substitution at the position of the original lactone ring oxygen. The stereochemistry of the hydroxyl group is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Hydrogenolysis / Reductive Dehalogenation",
+                    "reagents": "H2, Pd/C, Et3N",
+                    "reagent_smiles": "CCN(CC)CC.[Pd]",
+                    "conditions": "EtOH, rt",
+                    "yield": "",
+                    "reactant_smiles": "CCCCOC(=O)[C@@H](O)CCCOI",
+                    "product_smiles": "CCCCOC(=O)[C@@H](O)CC",
+                    "notes": "Stereospecific hydrogenolysis of an alkyl iodide to an alkane, retaining the chiral center configuration.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Triflation",
+                    "reagents": "Tf2O, 2,6-lutidine",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -20 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCCCOC(=O)[C@H](CC)O",
+                    "product_smiles": "CCCCOC(=O)[C@H](CC)[OTf]",
+                    "notes": "Conversion of a secondary alcohol to a triflate ester, retaining stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "CC[C@@H](C(=O)OCCCC)OC1=CC(=CC=C1)CN(CCCOC2=CC=C(C=C2)OC)C3=NC4=C(C=CC=C4)O3",
+            "product_smiles": "CC[C@@H](C(=O)O)OC1=CC(=CC=C1)CN(CCCOC2=CC=C(C=C2)OC)C3=NC4=C(C=CC=C4)O3",
+            "notes": "Hydrolysis of an n-butyl ester to a carboxylic acid, forming Pemafibrate. The stereochemistry at the chiral center is preserved.",
+            "substeps": []
+        }
+    ]
+}

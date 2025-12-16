@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "eupomatilone-4-lee-2022",
+        "molecule_name": "Eupomatilone 4",
+        "class": "Natural Product",
+        "author": "Lee",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclization (Thiazolidine-2-thione formation)",
+            "reagents": "CS2, KOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "86%",
+            "reactant_smiles": "C1=CC=C(C=C1)C[C@H](CO)N",
+            "product_smiles": "S1C(=S)N[C@H](CC2=CC=CC=C2)CS1",
+            "notes": "Formation of a 1,3-thiazolidine-2-thione from an amino alcohol and carbon disulfide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Acylation",
+            "reagents": "nBuLi, THF",
+            "reagent_smiles": "CCC(=O)Cl",
+            "conditions": "-78 to 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "S=C1N[C@@H](CC2=CC=CC=C2)CS1",
+            "product_smiles": "S=C1N(C(=O)CC)[C@@H](CC2=CC=CC=C2)CS1",
+            "notes": "Acylation of the cyclic secondary amine with propionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Aldol Addition",
+            "reagents": "TiCl4, iPr2NEt",
+            "reagent_smiles": "COC1=C2C(=CC(=C1)C=O)OCO2",
+            "conditions": "NMP, CH2Cl2, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "CCC(=O)N1[C@H](CC2=CC=CC=C2)CSC1=S",
+            "product_smiles": "C[C@@H]([C@H](C1=CC(=C2C(=C1)OCO2)OC)O)C(=O)N3[C@H](CC4=CC=CC=C4)CSC3=S",
+            "notes": "Titanium(IV) chloride-mediated aldol addition of an Evans' propionyl auxiliary to a substituted benzodioxole aldehyde, forming an anti-diastereomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular cyclization / Lactonization",
+            "reagents": "LDA, CH2Br2, LiHMDS, sBuLi, nBuLi, HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt, -20 °C",
+            "yield": "94%",
+            "reactant_smiles": "C[C@H]([C@H](C1=CC(=C2C(=C1)OCO2)OC)O)C(=O)N3[C@H](CC4=CC=CC=C4)CSC3=S",
+            "product_smiles": "C[C@H]1CC(=O)O[C@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "notes": "Intramolecular lactonization with cleavage of chiral thiazolidine auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Aromatic Bromination",
+            "reagents": "NBS, DMF",
+            "reagent_smiles": "O=C1CCC(=O)N1Br.CN(C)C=O",
+            "conditions": "0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H]1CC(=O)O[C@H]1c2ccc(OC)c3oco2",
+            "product_smiles": "C[C@H]1CC(=O)O[C@H]1c2c(Br)cc(OC)c3oco2",
+            "notes": "Electrophilic bromination of the aryl ring using NBS, regioselectively ortho to the lactone group and ortho to the methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd(PPh3)4, K3PO4",
+            "reagent_smiles": "B(O)(O)c1cc(OC)c(OC)c(OC)c1",
+            "conditions": "dioxane, 100 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@@H]1CC(=O)O[C@H]1c2c(Br)c(OC)c3cc(c2)OCO3",
+            "product_smiles": "C[C@@H]1CC(=O)O[C@H]1c2c(C3=CC(OC)=C(OC)C(OC)=C3)c(OC)c4oco2c4",
+            "notes": "Aryl-aryl coupling of a brominated benzodioxole with a trimethoxyphenyl boronic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Aminomethylation / Electrophilic Addition",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CN(C)CC#[N+]",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "COc1cc(OC)c(OC)cc1-c2cc(c(OC)c3oc(C[C@H]4CC(=O)O[C@@H]4C)o3)c(C)c2",
+            "product_smiles": "C[C@H]1[C@@H](CN(C)C)CC(=O)O[C@@H]1C2=C(C3=CC(=C(C(=C3)OC)OC)OC)C(=C4C(=C2)OCO4)OC",
+            "notes": "An enolate, generated from the lactone using LiHMDS, reacts with the dimethylaminomethyl nitrilium ion to form a new carbon-carbon bond alpha to the carbonyl. A new chiral center is formed, adding a dimethylaminomethyl group. The existing stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Elimination",
+            "reagents": "mCPBA, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "97% (2 steps)",
+            "reactant_smiles": "C[C@H]1[C@H](CN(C)C)C(=O)O[C@H]1C2=C(C3=CC(=C(C(=C3)OC)OC)OC)C(=C4C(=C2)OCO4)OC",
+            "product_smiles": "C[C@H]1C(=C)C(=O)O[C@H]1C2=C(C3=CC(=C(C(=C3)OC)OC)OC)C(=C4C(=C2)OCO4)OC",
+            "notes": "Oxidative elimination of the dimethylaminomethyl group to an exocyclic methylene group.",
+            "substeps": []
+        }
+    ]
+}

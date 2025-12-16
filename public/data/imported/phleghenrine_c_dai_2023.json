@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "phleghenrine-c-dai-2023",
+        "molecule_name": "Phleghenrine C",
+        "class": "Natural Product",
+        "author": "Dai",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "NBS, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "COc1cc(C)ccc1O",
+            "product_smiles": "COc1cc(C)c(Br)cc1O",
+            "notes": "Bromination of 4-methyl-2-methoxyphenol with NBS in acetic acid to yield 5-bromo-4-methyl-2-methoxyphenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation / Dearomatization",
+            "reagents": "PIDA, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1cc(Br)c(OC)c(O)c1",
+            "product_smiles": "COc1(OC)C(=O)C=C(Br)C=C1C",
+            "notes": "Oxidation of a phenol to a cyclohexadienone with concomitant formation of a spiro ketal, using PIDA and methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diels-Alder / Cyclization",
+            "reagents": "",
+            "reagent_smiles": "[Boc]N1C=CCCC1",
+            "conditions": "140 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC1=CC(=O)C(C=C1Br)(OC)OC",
+            "product_smiles": "CC1N(C(=O)OC(C)(C)C)CCC[C@@H]1[C@]23[C@@H](C(=O)C(OC)(OC)C2)[C@H](C)[C@@H](Br)C3",
+            "notes": "Complex [4+2] cycloaddition between a dienone and N-Boc-dihydropyridine, followed by intramolecular cyclization over two steps.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Reduction and Enamine Formation",
+                    "reagents": "LiEt3BH, DIPEA, DMAP, TFAA",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe, -70 °C to rt",
+                    "yield": "83%",
+                    "reactant_smiles": "[Boc]N1CCCCC1=O",
+                    "product_smiles": "[Boc]N1C=CCCC1",
+                    "notes": "Reduction of a lactam to a cyclic enamine, protected with a Boc group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Samarium Diiodide Mediated Reductive Cyclization / Dehalogenation / Acetal Cleavage",
+            "reagents": "SmI2, HMPA, THF, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "83%",
+            "reactant_smiles": "C[C@@]12CCC[N]([Boc])[C@@H]1[C@H]3C4C2(C)C(=C(Br)C4C(=O)C3(OC)OC)",
+            "product_smiles": "C[C@H]1C2(C)CCCN3[Boc]C3C4C1CC(=O)C24",
+            "notes": "The reaction involves reduction of the vinylic bromide and reductive cleavage of the gem-dimethoxy acetal, followed by intramolecular cyclization to form a new 5-membered carbocyclic ring, resulting in a more complex bridged polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ring Expansion",
+            "reagents": "TMSCHN2, nBuLi",
+            "reagent_smiles": "C[Si](C)(C)C[N-]=[N+].CCCC[Li]",
+            "conditions": "THF, -78 °C",
+            "yield": "49%",
+            "reactant_smiles": "O=C1CC2[C@@H]3CCC(N(C(=O)OC(C)(C)C)C2)[C@H]3C4(C)C=C14",
+            "product_smiles": "O=C1CCC2[C@@H]3CCC(N(C(=O)OC(C)(C)C)C2)[C@H]3C4(C)C=C14",
+            "notes": "1-carbon ring expansion of the 5-membered ketone ring to a 6-membered ketone ring, accompanied by a double bond shift from exocyclic to endocyclic.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Rhodium-catalyzed olefination",
+            "reagents": "RhCl(PPh3)3",
+            "reagent_smiles": "C[Si](C)(C)C=[N+]=[N-].P(c1ccccc1)(c2ccccc2)c3ccccc3.CC(C)O",
+            "conditions": "THF, 60 °C",
+            "yield": "61%",
+            "reactant_smiles": "CC1=CC2CCC(=O)C3C1CCCN([C@@H]23)C(=O)OC(C)(C)C",
+            "product_smiles": "CC1=CC2CCC(=C)C3C1CCCN([C@@H]23)C(=O)OC(C)(C)C",
+            "notes": "Ketone reduced to an exocyclic methylene group via reaction with (trimethylsilyl)diazomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "SeO₂, TBHP",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "81%",
+            "reactant_smiles": "CC1=C[C@@H]2[C@@H]3CC[C@H](C(=C)C3)[C@@H]2CN1[Boc]",
+            "product_smiles": "O=C1C(=C)[C@@H]2[C@@H]3CC[C@H](C(=C)C3)[C@@H]2CN1[Boc]",
+            "notes": "Allylic oxidation of the internal cyclohexene double bond (with methyl group) to form an α,β-unsaturated ketone with an exocyclic methylene, resulting in the loss of one carbon atom (the methyl group) and the incorporation of an oxygen atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Annulation / Cyclization",
+            "reagents": "AcOH, piperidine",
+            "reagent_smiles": "C=CC=[N+](C)CC(=O)N.[Cl-]",
+            "conditions": "nBuOH, 120 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@]12CCC(=O)C(=C)[C@H]1[C@@H]3N([Boc])CCC[C@@]23C",
+            "product_smiles": "C[C@]12CCC3=C(C=CC(=O)[NH]3)[C@H]1[C@@H]4N([Boc])CCC[C@@]24C",
+            "notes": "Iminium-mediated annulation of a bicyclic ketone with an iminium salt to form a quinolone derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Boc deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "51% (2 steps)",
+            "reactant_smiles": "CC1=CC2C[C@H]3C4(C)CCCN([Boc])[C@H]4[C@H]3C2=C1C(=O)N",
+            "product_smiles": "CC1=CC2C[C@H]3C4(C)CCCN[C@H]4[C@H]3C2=C1C(=O)N",
+            "notes": "Boc deprotection to yield secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Partial Reduction",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "[Sm]",
+            "conditions": "0 °C to rt",
+            "yield": "50%",
+            "reactant_smiles": "C[C@@]12[C@H]3CC[C@@H](N1)C[C@]3([H])[C@@H]2C4=CC(=O)NC=C4",
+            "product_smiles": "C[C@@]12[C@H]3CC[C@@H](N1)C[C@]3([H])[C@@H]2C4=CCC(=O)NC4",
+            "notes": "Partial reduction of an aromatic pyridone ring to a dihydro-pyridone (lactam) using samarium metal.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "greenwaylactam-b-magauer-2023",
+        "molecule_name": "Greenwaylactam B",
+        "class": "Natural Product",
+        "author": "Magauer",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "",
+            "reagent_smiles": "BrP(Br)Br.CCOCC",
+            "conditions": "-41 °C to -9 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=CCC/C=C(\\C)CC/C=C(\\C)CO)C",
+            "product_smiles": "CC(=CCC/C=C(\\C)CC/C=C(\\C)CBr)C",
+            "notes": "Conversion of a primary allylic alcohol to a primary allylic bromide via PBr3.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Electrophilic Cyclization",
+            "reagents": "nBuLi",
+            "reagent_smiles": "C1=CC=C2C(=C1)N(C=C2)S(=O)(=O)c3ccccc3",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "BrCC=C(C)CC=C(C)CC=C(C(C)C)",
+            "product_smiles": "CC(C)=CCCC=C(C)C1CCC(C)=CC1CN2C(C=CC3=CC=CC=C32)S(=O)(=O)c4ccccc4",
+            "notes": "Alkylation of N-sulfonylindole with a farnesyl bromide derivative followed by intramolecular cyclization forming a six-membered ring.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Oxidation / Chlorination (Thiol to Sulfonyl Chloride)",
+                    "reagents": "SOCl2, H2O2",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC=C(C=C1)S",
+                    "product_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "notes": "Oxidation and chlorination of a thiol to a sulfonyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "N-Sulfonylation",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "C1=CC2=C(C=C1)NC=C2",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "product_smiles": "C1=CC2=C(C=C1)N(C=C2)S(=O)(=O)[Ph]",
+                    "notes": "N-sulfonylation of indole using benzenesulfonyl chloride and indole (which acts as a reagent/nucleophile) under basic conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Dihydroxylation",
+            "reagents": "K2OsO4, K2CO3, K3[Fe(CN)6], CH3SO2NH2, tBuOH, H2O, THF",
+            "reagent_smiles": "",
+            "conditions": "rt to 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "[Ph]SO2N1C=C(CC/C=C(\\C)CC/C=C(\\C)CC[C@@]2(C)[C@H]3CC[C@H](C=C(C)C)CC3CC2)C4=CC=CC=C41",
+            "product_smiles": "[Ph]SO2N1C=C(CC/C=C(\\C)CC/C=C(\\C)CC[C@@]2(C)[C@H]3CC[C@H]([C@@H](O)[C@@](C)(O)C)CC3CC2)C4=CC=CC=C41",
+            "notes": "Sharpless asymmetric dihydroxylation of an internal alkene within a complex sesterterpene side chain of an N-phenylsulfonyl indole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C/C(=C/CC1=CC2=C(C=CC=C2)N1S(=O)(=O)[Ph])/CC/C=C(\\C)/CC[C@H](C(C)(C)O)O",
+            "product_smiles": "C/C(=C/CC1=CC2=C(C=CC=C2)N1S(=O)(=O)[Ph])/CC/C=C(\\C)/CC[C@H](C(C)(C)O)O[Ms]",
+            "notes": "Secondary alcohol is converted to a mesylate using methanesulfonyl chloride (MsCl) and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Epoxidation / Cyclization",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "CC1=C(C)[C@H]2C[C@]1(C)CC[C@@H](OS(=O)(=O)C)C(C)(C)O)[C@H]2C/C=C(\\C)CN3C=C4C(=CC=CC4)C3S(=O)(=O)c5ccccc5",
+            "product_smiles": "CC1=C(C)[C@H]2C[C@]1(C)CC[C@@]3(O2)C(C)(C)[C@H]3C/C=C(\\C)CN4C=C5C(=CC=CC5)C4S(=O)(=O)c6ccccc6",
+            "notes": "Intramolecular cyclization to form an epoxide via SN2 displacement of mesylate by alkoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acid-catalyzed cascade cyclization / Epoxide opening",
+            "reagents": "MsOH",
+            "reagent_smiles": "",
+            "conditions": "HFIP, -5 °C",
+            "yield": "57%",
+            "reactant_smiles": "C/C(=C/CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c3ccccc3)/CC/C=C(\\C)/CC[C@H]3C(C)(C)O3",
+            "product_smiles": "CC1(C)C2CCC3(C)C(CC4=C3C5=C(C=CC=C5)N4S(=O)(=O)c6ccccc6)C2(C)CCC1CO",
+            "notes": "Cascade cyclization of a polyene-epoxide initiated by the indole activating group. The epoxide opens to form a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "97%",
+            "reactant_smiles": "CC1(C)C2CCC3(C)C(CC4=C3C5=C(C=CC=C5)N4(S(=O)(=O)c6ccccc6))C2(C)CCC1O",
+            "product_smiles": "CC1(C)C2CCC3(C)C(CC4=C3C5=C(C=CC=C5)N4(S(=O)(=O)c6ccccc6))C2(C)CCC1=O",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin periodinane (DMP). The benzenesulfonyl protecting group on the indole nitrogen remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "KOH, EtOH",
+            "reagent_smiles": "CCO.[K+].[OH-]",
+            "conditions": "85 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)[C@H]2CCC3(C)[C@H]([C@@H](C)C2(C)CCC1=O)C4=C3C5=C(C=CC=C5)N4S(=O)(=O)[Ph]",
+            "product_smiles": "CC1(C)[C@H]2CCC3(C)[C@H]([C@@H](C)C2(C)CCC1=O)C4=C3C5=C(C=CC=C5)N5",
+            "notes": "Deprotection of an N-phenylsulfonyl group from an indole using potassium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation / Indole Cleavage",
+            "reagents": "NaIO4, H2O",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "CC12CCC3C4(C)CCC(=O)C3(C)CC2C1CC5=C4C6=C(C=CC=C6)N5",
+            "product_smiles": "CC1(C)C2CCC3(C)C(CC(=O)NC4=C(C=CC=C4)C3=O)C2(C)CCC1=O",
+            "notes": "Oxidative cleavage of the indole ring and subsequent lactam formation to yield a polycyclic isoindolinone derivative.",
+            "substeps": []
+        }
+    ]
+}

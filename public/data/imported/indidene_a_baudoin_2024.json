@@ -1,0 +1,230 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "indidene-a-baudoin-2024",
+        "molecule_name": "Indidene A",
+        "class": "Natural Product",
+        "author": "Baudoin",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "90%",
+            "reactant_smiles": "CC1(C)OC2=C(C=CC=C2)O1",
+            "product_smiles": "CC1(C)OC2=C(C=C(Br)C=C2)O1",
+            "notes": "Aromatic bromination of a benzodioxole derivative using N-bromosuccinimide (NBS). The bromine adds to the para position relative to one of the oxygen atoms of the fused ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed ortho-metalation, Formylation",
+            "reagents": "n-BuLi, DIPEA, DMF",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "89%",
+            "reactant_smiles": "CC1(C)OC2=C(C=C(C=C2)Br)O1",
+            "product_smiles": "CC1(C)OC2=CC(Br)=C(C=O)C=C2O1",
+            "notes": "Directed ortho-metalation of the aromatic bromide with n-BuLi, followed by formylation with DMF, introduces an aldehyde group ortho to the bromine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Aldehyde Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)C=O)O1",
+            "product_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)CO)O1",
+            "notes": "Reduction of an aldehyde to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Bromination",
+            "reagents": "PBr3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)CO)O1",
+            "product_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)CBr)O1",
+            "notes": "Conversion of a primary benzyl alcohol to a primary benzyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkylation",
+            "reagents": "NaH",
+            "reagent_smiles": "COC(=O)C(CCCOCC1=CC=C(C=C1)C2=CC=CC=C2)C(=O)OC",
+            "conditions": "THF, 0 °C to reflux",
+            "yield": "58%",
+            "reactant_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)CBr)O1",
+            "product_smiles": "CC1(C)OC2=CC=C(C(=C2O1)CC(CCCOCC3=CC=C(C=C3)C4=CC=CC=C4)(C(=O)OC)C(=O)OC)Br",
+            "notes": "SN2 alkylation of the bromomethyl group with dimethyl malonate.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "NaH",
+                    "reagent_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)CBr",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "76%",
+                    "reactant_smiles": "C(CO)CO",
+                    "product_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)COCCCO",
+                    "notes": "One hydroxyl group of propane-1,3-diol reacts with 1-(bromomethyl)-4-phenylbenzene via a Williamson ether synthesis.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Appel reaction (iodination)",
+                    "reagents": "PPh3, I2, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "90%",
+                    "reactant_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)COCCCO",
+                    "product_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)COCCCI",
+                    "notes": "Iodination of a primary alcohol to an alkyl iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Alkylation (Malonic Ester Synthesis)",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "COC(=O)CC(=O)OC",
+                    "conditions": "MeCN, 80 °C",
+                    "yield": "78%",
+                    "reactant_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)COCCCI",
+                    "product_smiles": "COC(=O)C(CCCOCC1=CC=C(C=C1)C2=CC=CC=C2)C(=O)OC",
+                    "notes": "Nucleophilic substitution of an alkyl iodide with dimethyl malonate (after deprotonation).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Heck Reaction",
+            "reagents": "Cs2CO3, CsOPiv, 5Å MS",
+            "reagent_smiles": "[Pd](Cl)C1=N(C2CCCCC2)C3=C(N1)OCCOC3",
+            "conditions": "trifluorotoluene, 140 °C",
+            "yield": "63%",
+            "reactant_smiles": "COC(=O)C(C(=O)OC)(CCCOCC1=CC=C(C=C1)C2=CC=CC=C2)CC3=C(Br)C=C4OC(C)(C)OC4=C3",
+            "product_smiles": "COC(=O)C(C(=O)OC)(C1CC2=C(C=C1)OC(C)(C)OC2)CCOCC3=CC=C(C=C3)C4=CC=CC=C4",
+            "notes": "Intramolecular Heck reaction of an aryl bromide with an enolizable malonate derivative to form a spirocyclic indane system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Decarboxylative Rearrangement/Isomerization",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 140 °C",
+            "yield": "48%",
+            "reactant_smiles": "CC1(C)OC2=C(C3=C(C=C2)C(CCOCC4=CC=C(C=C4)C5=CC=CC=C5)C(C3)(C(=O)OC)C(=O)OC)O1",
+            "product_smiles": "CC1(C)OC2=C(C3=C(C=C2)[C@@H](CCOCC4=CC=C(C=C4)C5=CC=CC=C5)[C@H](C3)C(=O)OC)O1",
+            "notes": "Decarboxylative rearrangement of a gem-diester to a single ester with established *trans* stereochemistry at the two chiral centers of the indane ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Grignard Reaction / Ester Reduction to Tertiary Alcohol",
+            "reagents": "MeMgBr",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "70%",
+            "reactant_smiles": "CC1(C)OC2=C(C3=C(C=C2)[C@@H](CCOCC4=CC=C(C=C4)C5=CC=CC=C5)[C@@H](C3)C(=O)OC)O1",
+            "product_smiles": "CC(C)([C@@H]1CC2=C(C=CC3=C2OC(C)(C)O3)[C@@H]1CCOCC4=CC=C(C=C4)C5=CC=CC=C5)O",
+            "notes": "Ester group is converted to a tertiary alcohol via reaction with methylmagnesium bromide. Stereochemistry at the attacked carbon is retained, and the other chiral center's stereochemistry is also preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)([C@@H]1CC2=C(C=CC3=C2OC(C)(C)O3)[C@H]1CCOCC4=CC=C(C=C4)C5=CC=CC=C5)O",
+            "product_smiles": "CC(C)([C@@H]1CC2=C(C=CC3=C2OC(C)(C)O3)[C@H]1CCO)O",
+            "notes": "Hydrogenolysis of a benzyl ether protecting group to yield a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nickel-catalyzed Oxidative C(sp3)-C(sp2) Cross-Coupling",
+            "reagents": "Ni(COD)2, Triphos, TMP",
+            "reagent_smiles": "CCOCOC1=CC=C(C(=C1)OC)OS(=O)(=O)C(F)(F)F",
+            "conditions": "acetone, mesitylene, 130 °C",
+            "yield": "47%",
+            "reactant_smiles": "CC(C)([C@@H]1CC2=C(C=CC3=C2OC(C)(C)O3)[C@H]1CCO)O",
+            "product_smiles": "CCOCOC1=CC=C(C(=O)C[C@@H]2C3=CC=C4C(=C3C[C@H]2C(C)(C)O)OC(C)(C)O4)C(=C1)OC",
+            "notes": "Oxidative cross-coupling of a primary alcohol-bearing alkyl group with an aryl triflate, forming a ketone.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Phenol protection",
+                    "reagents": "DIPEA, DCM",
+                    "reagent_smiles": "CCOCCl",
+                    "conditions": "0 °C to rt",
+                    "yield": "96%",
+                    "reactant_smiles": "O=Cc1cc(OC)c(O)cc1",
+                    "product_smiles": "O=Cc1cc(OC)c(OCCOCC)cc1",
+                    "notes": "Protection of the phenolic hydroxyl group with ethoxymethyl chloride (EOMCl) in the presence of DIPEA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Baeyer-Villiger Oxidation",
+                    "reagents": "m-CPBA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CCOCOC1=CC=C(C=O)C(=C1)OC",
+                    "product_smiles": "CCOCOC1=CC=C(C(=C1)OC)OC=O",
+                    "notes": "Baeyer-Villiger oxidation of an aldehyde to a formate ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Ester Hydrolysis / Deprotection",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, rt",
+                    "yield": "70% (2 steps)",
+                    "reactant_smiles": "CCOCOC1=CC=C(C(=C1)OC)OC=O",
+                    "product_smiles": "CCOCOC1=CC=C(C(=C1)OC)O",
+                    "notes": "Hydrolysis of a formate ester to a phenol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Triflation",
+                    "reagents": "Tf2O, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "CCOCOC1=CC=C(C(=C1)OC)O",
+                    "product_smiles": "CCOCOC1=CC=C(C(=C1)OC)OS(=O)(=O)C(F)(F)F",
+                    "notes": "The phenolic hydroxyl group is converted to a triflate (OTf) group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "AlCl3, MeNO2",
+            "reagent_smiles": "SCCS",
+            "conditions": "-20 °C",
+            "yield": "26%",
+            "reactant_smiles": "CC(C)(O)[C@H]1CC[C@@H]2c3cc(oc(C)(C)o3)cc(c21)C(=O)c4c(OC)cc(OCH2OCH2CH3)cc4",
+            "product_smiles": "CC(C)(O)[C@H]1CC[C@@H]2c3cc(O)c(O)c(c21)C(=O)c4c(OC)c(O)cc4",
+            "notes": "Deprotection of spiro-dioxolane ketal to catechol and ethoxymethoxy ether to phenol.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "epibatidine-regan-1993",
+        "molecule_name": "Epibatidine",
+        "class": "Natural Product",
+        "author": "Regan",
+        "year": 1993
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic alpha-arylation (via enolate)",
+            "reagents": "DMF",
+            "reagent_smiles": "[Li]N([C@H](C)c1ccccc1)[C@@H](C)c2ccccc2.ClC1=CC=C([I+]C2=CC=C(Cl)C=C2)C=C1.[Cl-]",
+            "conditions": "DMF",
+            "yield": "70%",
+            "reactant_smiles": "[OTBDMS]C1CCC(=O)CC1",
+            "product_smiles": "[OTBDMS][C@H]1CCC(=O)C(C1)c2cnc(Cl)c2",
+            "notes": "Alpha-arylation of a ketone with a diaryliodonium salt, presumably via an enolate formed by the chiral lithium amide base. The reaction proceeds with undefined stereoselectivity at the carbon where the chloropyridine group is introduced (wavy bond), while the stereochemistry of the OTBDMS group is defined as trans to the carbonyl if we assume the standard representation of bold bond as beta/down.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Diastereoselective Epimerization",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "[OTBDMS][C@H]1CCC(=O)C(C1)C2=CN=C(C=C2)Cl",
+            "product_smiles": "[OTBDMS][C@H]1CCC(=O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "notes": "Epimerization at the alpha-carbon to the ketone, converting an undefined stereocenter (wavy bond) to a defined stereocenter (dashed bond) in a diastereoselective manner.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "-98 °C",
+            "yield": "84%",
+            "reactant_smiles": "[OTBDMS][C@H]1CCC(=O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "product_smiles": "[OTBDMS][C@H]1CC[C@@H]([C@@H](C1)C2=CN=C(C=C2)Cl)O",
+            "notes": "Reduction of the ketone to a secondary alcohol using sodium borohydride. The newly formed alcohol shows cis stereochemistry relative to the pyridine group and trans relative to the OTBDMS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "ClC1=CN=C(C=C1)[C@@H]2C[C@H](O)CC[C@@H]2[OTBDMS]",
+            "product_smiles": "ClC1=CN=C(C=C1)[C@@H]2C[C@H]([OMs])CC[C@@H]2[OTBDMS]",
+            "notes": "Conversion of a secondary alcohol to a mesylate. The stereochemistry of the three chiral centers on the cyclohexane ring (bearing OTBDMS, pyridine, and OH/OMs groups) is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "Bu₄NF",
+            "reagent_smiles": "[N+](CCCC)(CCCC)(CCCC)CCCC.[F-]",
+            "conditions": "THF, RT",
+            "yield": "88%",
+            "reactant_smiles": "[OTBDMS][C@@H]1CC[C@H]([C@H](C1)C2=CN=C(Cl)C=C2)[OMs]",
+            "product_smiles": "O[C@@H]1CC[C@H]([C@H](C1)C2=CN=C(Cl)C=C2)[OMs]",
+            "notes": "Deprotection of a TBDMS ether to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P, HN3, DEAD",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to RT",
+            "yield": "94%",
+            "reactant_smiles": "[OMs][C@@H]1CC[C@@H](C[C@H]1C2=CN=C(C=C2)Cl)O",
+            "product_smiles": "[OMs][C@@H]1CC[C@@H](C[C@H]1C2=CN=C(C=C2)Cl)[N-]=[N+]=N",
+            "notes": "Mitsunobu reaction converting an alcohol to an azide with retention of stereochemistry (as depicted in the drawing) and leaving a mesylate unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "",
+            "reagent_smiles": "CHCl3",
+            "conditions": "heat, 60 h",
+            "yield": "90%",
+            "reactant_smiles": "CS(=O)(=O)O[C@@H]1CC[C@@H]([N-]=[N+]=N)C[C@H](C2=CN=C(Cl)C=C2)C1",
+            "product_smiles": "[H][N]1C2CCC1[C@H](C3=CN=C(Cl)C=C3)C2",
+            "notes": "Formation of (+)-Epibatidine in 3 steps, likely involving reduction of azide followed by intramolecular cyclization.",
+            "substeps": []
+        }
+    ]
+}

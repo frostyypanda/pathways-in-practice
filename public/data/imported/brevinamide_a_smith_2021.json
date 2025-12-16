@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "brevinamide-a-smith-2021",
+        "molecule_name": "Brevinamide A",
+        "class": "Natural Product",
+        "author": "Smith",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection (Phthalimide)",
+            "reagents": "Et3N",
+            "reagent_smiles": "C1=CC2=C(C=C1)C(=O)OC2=O",
+            "conditions": "toluene, reflux",
+            "yield": "",
+            "reactant_smiles": "C#CC[C@H](C(=O)O)N",
+            "product_smiles": "C#CC[C@H](C(=O)O)[PhthN]",
+            "notes": "The amino group of the chiral amino acid is protected as a phthalimide using phthalic anhydride. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation / Amide Coupling",
+            "reagents": "CH2Cl2, 2,6-lutidine",
+            "reagent_smiles": "CC(=C(Cl)N(C)C)C.COC(=O)C1=NCCC1",
+            "conditions": "0 °C to rt",
+            "yield": "63%",
+            "reactant_smiles": "C#CC[C@@H](C(=O)O)N[Phth]",
+            "product_smiles": "C#CC[C@@H](C(=O)N1CCC=C1C(=O)OC)N[Phth]",
+            "notes": "Amide formation from carboxylic acid and 2,3-dihydropyrrole-2-carboxylate methyl ester using an in-situ generated acyl activating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sonogashira Coupling",
+            "reagents": "(Ph3P)2PdCl2, CuI, Et3N",
+            "reagent_smiles": "Ic1ccccc1N",
+            "conditions": "CH2Cl2, rt",
+            "yield": "70%",
+            "reactant_smiles": "[PhthN][C@@H](CC#C)C(=O)N1C(C(=O)OC)=CCC1",
+            "product_smiles": "[PhthN][C@@H](CC#Cc1c(N)cccc1)C(=O)N1C(C(=O)OC)=CCC1",
+            "notes": "Sonogashira coupling of a terminal alkyne with o-iodoaniline.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Gold-catalyzed Intramolecular Alkyne Hydroamination/Cyclization (Indole formation)",
+            "reagents": "JohnPhosAu(MeCN)SbF6",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "80%",
+            "reactant_smiles": "COC(=O)C1=CCCN1C(=O)[C@H](CC#CC2=CC=CC=C2N)[PhthN]",
+            "product_smiles": "COC(=O)C1=CCCN1C(=O)[C@H](CC2=CC3=CC=CC=C3N2)[PhthN]",
+            "notes": "Intramolecular cyclization of an o-aminophenyl alkyne derivative via a gold catalyst to form an indole ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Indole Oxidation / Intramolecular Cyclization",
+            "reagents": "MoOPH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, CH2Cl2, rt",
+            "yield": "",
+            "reactant_smiles": "[PhthN][C@H](CC1=CNC2=CC=CC=C21)C(=O)N3C(C(=O)OC)=CCC3",
+            "product_smiles": "O=C1NC2=CC=CC=C2[C@](O[Et])(CC[C@H]([PhthN])C(=O)N3C(C(=O)OC)=CCC3)1",
+            "notes": "Indole core undergoes oxidation at C2 and intramolecular oxy-Michael addition at C3 with ethanol, forming a 3,3-disubstituted oxindole.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acid-catalyzed Allylic Substitution",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "[Sn](CCCC)(CCCC)(CCCC)CC=C(C)C",
+            "conditions": "TFE, 0 °C to rt",
+            "yield": "45% (2 steps)",
+            "reactant_smiles": "CCOC1(CC[C@@H](N2C(=O)C3=CC=CC=C3C2=O)C(=O)N4CCC=C4C(=O)OC)C(=O)C5=CC=CC=C5N1",
+            "product_smiles": "C1=CC=C2C(=O)NC3(C2=C1)(C(C)(C)C=C)CC[C@@H](N4C(=O)C5=CC=CC=C5C4=O)C(=O)N6CCC=C6C(=O)OC",
+            "notes": "The ethoxy group at the C3 position of the indolin-2-one core is substituted by a 2-methyl-3-buten-2-yl group derived from the tributylstannane. The stereochemistry at the adjacent chiral center is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ammonolysis / Diketopiperazine Formation",
+            "reagents": "NH3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=CC(C)(C)C1(C[C@@H]([PhthN])C(=O)N2C(C(=O)OC)CC=C2)C(=O)c3ccccc3N1",
+            "product_smiles": "C=CC(C)(C)C1(C[C@H]2C(=O)N3CCC=C3C(=O)N2)C(=O)c4ccccc4N1",
+            "notes": "Phthalimide deprotection followed by intramolecular amide formation (cyclization) to form a diketopiperazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "LiOH, H2O",
+            "reagent_smiles": "[Li+].[OH-].O",
+            "conditions": "rt",
+            "yield": "54%",
+            "reactant_smiles": "C=CC(C)(C)C1(C[C@H]2C(=O)N3CCCC3C(=O)N2)C(=O)NC4=CC=CC=C4C1",
+            "product_smiles": "CC1(C)C2CC34CCCN4C(=O)C2(C[C@@H]5C(=O)C6=C(C=CC=C6)N5)NC3=O",
+            "notes": "Intramolecular cyclization involving the indolone nitrogen and the isopropenyl group, forming a new six-membered ring. The chiral center at the diketopiperazine undergoes inversion (R to S).",
+            "substeps": []
+        }
+    ]
+}

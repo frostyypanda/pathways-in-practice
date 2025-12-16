@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cefiderocol-fetroja-shionogi-unknown-2024",
+        "molecule_name": "Cefiderocol (Fetroja Shionogi)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Functional Group Transformation",
+            "reagents": "DCM, MeOH",
+            "reagent_smiles": "NOCC(C)(C)C(=O)OC(C)(C)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]NC1=NC(=CS1)C(=O)O",
+            "product_smiles": "CC(C)(C)OC(=O)C(C)(C)O/N=C(\\C1=CSC(=N1)N[Boc])/C(=O)O",
+            "notes": "Conversion of a carboxylic acid to an α-ketooxime with a retained carboxylic acid group via condensation with an aminooxy compound.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Carboxylic Acid Activation / Mesylate Ester Formation",
+            "reagents": "MsCl, TEA, DMA",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC.CC(=O)N(C)C",
+            "conditions": "-5 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)NC1=NC(C(=NOC(C)(C)C(=O)OC(C)(C)C)C(=O)O)=CS1",
+            "product_smiles": "CC(C)(C)OC(=O)NC1=NC(C(=NOC(C)(C)C(=O)OC(C)(C)C)C(=O)OS(=O)(=O)C)=CS1",
+            "notes": "The carboxylic acid functional group is converted into a mesylate ester (methanesulfonyloxycarbonyl) using methanesulfonyl chloride (MsCl) and triethylamine (TEA) as a base, in DMA solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide Formation / Acylation",
+            "reagents": "DMA, NMM",
+            "reagent_smiles": "N[C@@H]1[C@H]2SCC(CCl)=C(C2C1=O)C(=O)[OPMB]",
+            "conditions": "MeCN, -5 °C",
+            "yield": "",
+            "reactant_smiles": "[CO2tBu]C(C)(C)O/N=C(\\C1=CSC(=N1)[Boc])/C(=O)[OMs]",
+            "product_smiles": "[CO2tBu]C(C)(C)O/N=C(\\C1=CSC(=N1)[Boc])/C(=O)N[C@@H]2C(=O)N3C(=C(CCl)CS[C@H]23)C(=O)[OPMB]",
+            "notes": "Acylation of a primary amine of the beta-lactam with an activated mesylate ester, forming a new amide bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "peracetic acid, H2SO4, 3,5-dihydroxybenzoic acid",
+            "reagent_smiles": "",
+            "conditions": "MeCN, -5 °C",
+            "yield": "91%",
+            "reactant_smiles": "[Boc]NC1=NC(S)=C1C(C(=O)O[tBu])(=NO[tBu])C(=O)N[C@H]2C(=O)N3C(=C(CCl)CS[C@H]23)C(=O)O[PMB]",
+            "product_smiles": "[Boc]NC1=NC(S)=C1C(C(=O)O[tBu])(=NO[tBu])C(=O)N[C@H]2C(=O)N3C(=C(CCl)CS(=O)[C@H]23)C(=O)O[PMB]",
+            "notes": "Oxidation of the thiazine sulfur to a sulfoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkylation / Quaternization",
+            "reagents": "H3BO3, NaI",
+            "reagent_smiles": "O=C(NCCN1CCCC1)C2=C(Cl)C([OPMB])=C(C=C2)[OPMB]",
+            "conditions": "NMP, 0 to 7 °C",
+            "yield": "73%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C(C)(C)ON=C(C1=CSC(=N1)NC(=O)OC(C)(C)C)C(=O)N[C@@H]2C(=O)N3C(=C(C(=O)[OPMB])C(CH2Cl)=[S+]([O-])=O[C@@]23C)",
+            "product_smiles": "CC(C)(C)OC(=O)C(C)(C)ON=C(C1=CSC(=N1)NC(=O)OC(C)(C)C)C(=O)N[C@@H]2C(=O)N3C(=C(C(=O)[OPMB])C(CH2[N+]4(CCCC4)CCNC(=O)C5=C(Cl)C([OPMB])=C(C=C5)[OPMB])=[S+]([O-])=O[C@@]23C)",
+            "notes": "Alkylation of a chloromethyl group on a cephalosporin derivative with a pyrrolidine-containing amine to form a quaternary ammonium salt.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Aromatic Chlorination",
+                    "reagents": "NaOCl, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "-7 °C",
+                    "yield": "86%",
+                    "reactant_smiles": "Oc1c(OC)ccc(C=O)c1",
+                    "product_smiles": "Oc1c(OC)c(Cl)c(C=O)cc1",
+                    "notes": "Electrophilic aromatic chlorination of 4-formyl-2-methoxyphenol using sodium hypochlorite.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "O-demethylation",
+                    "reagents": "AlCl3, pyridine, DMA",
+                    "reagent_smiles": "",
+                    "conditions": "PhOMe, 50 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "COc1cc(C=O)c(Cl)c1O",
+                    "product_smiles": "O=Cc1cc(O)c(Cl)c1O",
+                    "notes": "Demethylation of an aryl methyl ether (methoxy group) to a hydroxyl group using aluminum chloride (AlCl3) as a Lewis acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Etherification (Protection of Phenols)",
+                    "reagents": "K2CO3, NaI",
+                    "reagent_smiles": "ClCc1ccc(OC)cc1",
+                    "conditions": "DMF, 40 °C",
+                    "yield": "87%",
+                    "reactant_smiles": "O=Cc1c(Cl)c(O)c(O)cc1",
+                    "product_smiles": "O=Cc1c(Cl)c(O[PMB])c(O[PMB])cc1",
+                    "notes": "Di-etherification of 2-chloro-3,4-dihydroxybenzaldehyde using p-methoxybenzyl chloride (PMBCl).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Aldehyde Oxidation",
+                    "reagents": "H2O2, NaOCl, NaH2PO4",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, H2O, 20 °C",
+                    "yield": "98%",
+                    "reactant_smiles": "O=Cc1c(Cl)c([OPMB])c([OPMB])cc1",
+                    "product_smiles": "O=C(O)c1c(Cl)c([OPMB])c([OPMB])cc1",
+                    "notes": "Oxidation of an aldehyde to a carboxylic acid using hydrogen peroxide and sodium hypochlorite, buffered with sodium dihydrogen phosphate. The two OPMB protecting groups and the chlorine atom remain unaffected.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.5",
+                    "reaction_type": "Esterification (Mesylate formation)",
+                    "reagents": "MsCl, TMA",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -10 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=C(O)c1c(Cl)c(O[PMB])ccc1O[PMB]",
+                    "product_smiles": "O=C(OS(C)(=O)=O)c1c(Cl)c(O[PMB])ccc1O[PMB]",
+                    "notes": "The carboxylic acid functional group is converted into its corresponding methanesulfonate (mesylate) ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.6",
+                    "reaction_type": "Amide Formation / Transamidation",
+                    "reagents": "",
+                    "reagent_smiles": "C1CCN(C1)CCN",
+                    "conditions": "-5 °C",
+                    "yield": "90%",
+                    "reactant_smiles": "CS(=O)(=O)OC(=O)c1c(Cl)c(O[PMB])cc(O[PMB])c1",
+                    "product_smiles": "O=C(NCCN1CCCC1)c2c(Cl)c(O[PMB])cc(O[PMB])c2",
+                    "notes": "Amine nucleophilic attack on a mesylate ester to form an amide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "PCl3, NMP",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]NC1=NC(=CS1)/C(=N/OC(C)(C)C(=O)O[tBu])/C(=O)N[C@@H]2C(=O)N3C(=C(C[N+]4(CCCC4)CCNC(=O)C5=C(Cl)C([OPMB])=C([OPMB])C=C5)CS(=O)[C@H]23)C(=O)[OPMB]",
+            "product_smiles": "[Boc]NC1=NC(=CS1)/C(=N\\OC(C)(C)C(=O)O[tBu])/C(=O)N[C@@H]2C(=O)N3C(=C(C[N+]4(CCCC4)CCNC(=O)C5=C(Cl)C([OPMB])=C([OPMB])C=C5)CS[C@H]23)C(=O)[OPMB]",
+            "notes": "Reduction of a sulfoxide to a sulfide. The oxime ether and ester groups remain unchanged. Abbreviated groups (Boc, tBu, PMB) are used as shown in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "H2SO4, H2O, PhOMe",
+            "reagent_smiles": "",
+            "conditions": "-5 to 15 °C",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "[Boc]NC1=NCSC1C(=NOC(C)(C)C(=O)OC(C)(C)C)C(=O)N[C@@H]2C(=O)N3C(=C(C[N+]4(CCCC4)CCNC(=O)C5=C(Cl)C=C(O[PMB])C(O[PMB])=C5)CS[C@H](C)23)C(=O)O[PMB]",
+            "product_smiles": "H2NC1=NCSC1C(=NOC(C)(C)C(=O)O)C(=O)N[C@@H]2C(=O)N3C(=C(C[N+]4(CCCC4)CCNC(=O)C5=C(Cl)C=C(O)C(O)=C5)CS[C@H](C)23)C(=O)[O-]",
+            "notes": "Deprotection of Boc, three PMB protecting groups (two ethers, one ester) and t-butyl ester using acidic conditions.",
+            "substeps": []
+        }
+    ]
+}

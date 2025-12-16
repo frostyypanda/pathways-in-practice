@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cephalosporin-c-woodward-1966",
+        "molecule_name": "Cephalosporin C",
+        "class": "Natural Product",
+        "author": "Woodward",
+        "year": 1966
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine protection",
+            "reagents": "pyridine",
+            "reagent_smiles": "CC(C)(C)OC(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1(C)N[C@@H](CS1)C(=O)O",
+            "product_smiles": "[Boc]N1[C@@H](CSC1(C)C)C(=O)O",
+            "notes": "Boc protection of the secondary amine using t-butyl chloroformate and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "CH2N2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@H](CSC1(C)C)C(=O)O",
+            "product_smiles": "[Boc]N1[C@H](CSC1(C)C)C(=O)OC",
+            "notes": "Carboxylic acid is methylated to a methyl ester using diazomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "C-H Amination / Addition",
+            "reagents": "DEAD",
+            "reagent_smiles": "",
+            "conditions": "105 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@H](C(=O)OC)CSC1(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@H](C(=O)OC)[C@H](N(C(=O)OC)NC(=O)OC)SC1(C)C",
+            "notes": "Addition of Diethyl Azodicarboxylate (DEAD) to the thiazolidine derivative at the alpha-carbon to the sulfur, forming a hydrazide derivative. Stereochemistry of product's second chiral center inferred assuming H is wedge and the N-N group is dash due to drawing ambiguity.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative cleavage / Hydroxylation",
+            "reagents": "Pb(OAc)4, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "benzene, reflux, then MeOH, reflux",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@H](C(=O)OC)[C@H](NHNHC(=O)OC)SC1(C)C",
+            "product_smiles": "[Boc]N1[C@H](C(=O)OC)[C@H](O)SC1(C)C",
+            "notes": "Oxidative cleavage of a protected carbazate to form an alcohol. The N-N bond is broken, and the carbon previously bearing the hydrazine group is hydroxylated with retention of stereochemistry. The methyl carbazate group is lost.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, i-Pr₂NEt",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "[tBu]OC(=O)N1[C@@H]([MeO2C])[C@H](O)SC1(C)C",
+            "product_smiles": "[tBu]OC(=O)N1[C@@H]([MeO2C])[C@H]([OMs])SC1(C)C",
+            "notes": "O-mesylation of a secondary alcohol using mesyl chloride and diisopropylethylamine in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "SN2 Reaction / Azide Displacement",
+            "reagents": "NaN3, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@@H]([C@@H](OS(=O)(=O)C)SC1(C)C)C(=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@@H]([C@H](N=[N+]=[N-])SC1(C)C)C(=O)OC",
+            "notes": "Nucleophilic substitution (SN2) of the mesylate group by azide, resulting in inversion of stereochemistry at the reacting carbon center. The other chiral center's stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Azide Reduction",
+            "reagents": "Al/Hg",
+            "reagent_smiles": "",
+            "conditions": "MeOH, -15 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@H](C(=O)OC)[C@H]([N-]=N=N)SC1(C)C",
+            "product_smiles": "[Boc]N1[C@H](C(=O)OC)[C@H](N)SC1(C)C",
+            "notes": "Reduction of an azide to a primary amine using aluminum amalgam.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Beta-lactam formation / Intramolecular cyclization",
+            "reagents": "Al[CH2CH(CH3)3]3",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@H](C(=O)OC)[C@H](N)SC1(C)C",
+            "product_smiles": "[Boc]N1[C@H]2C(=O)N[C@H]2SC1(C)C",
+            "notes": "Methyl ester reduction and intramolecular cyclization to form a beta-lactam (Woodward type synthesis of cephalosporin intermediates).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Michael Addition / Tautomerization",
+            "reagents": "",
+            "reagent_smiles": "O=C/C=C(\\C=O)/C(=O)OCC(Cl)(Cl)Cl",
+            "conditions": "n-octane, 80 °C",
+            "yield": "",
+            "reactant_smiles": "[tBuO]C(=O)N1[C@@H]2C(=O)N[C@@H]2SC1(C)C",
+            "product_smiles": "[tBuO]C(=O)N1[C@@H]2C(=O)N(C(C(=O)OCC(Cl)(Cl)Cl)C/C=C(/O)\\C=O)[C@@H]2SC1(C)C",
+            "notes": "Lactam nitrogen functionalized with a malonaldehyde derivative via Michael addition and subsequent tautomerization.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Esterification",
+                    "reagents": "CCl3CH2OH, p-TsOH",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, reflux",
+                    "yield": "",
+                    "reactant_smiles": "C(C(C(=O)O)O)(C(=O)O)O",
+                    "product_smiles": "C(C(Cl)(Cl)Cl)OC(=O)C(C(C(=O)OCC(Cl)(Cl)Cl)O)O",
+                    "notes": "Fischer esterification of a diacid with 2,2,2-trichloroethanol to form a diester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Oxidative Cleavage (Periodate Oxidation)",
+                    "reagents": "NaIO4",
+                    "reagent_smiles": "[Na+].[IO4-].CO.O",
+                    "conditions": "aq. MeOH",
+                    "yield": "",
+                    "reactant_smiles": "ClC(Cl)(Cl)COC(=O)C(O)C(O)C(=O)OCC(Cl)(Cl)Cl",
+                    "product_smiles": "C(C(=O)OCC(Cl)(Cl)Cl)(O)O",
+                    "notes": "Periodate oxidation of the 1,2-diol (tartaric acid derivative). The bond between the two central CH(OH) groups is cleaved, yielding two aldehyde fragments. The product shown is one of the aldehyde fragments (glyoxylate ester) in its hydrated form (geminal diol).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Aldol-type condensation / Knoevenagel condensation",
+                    "reagents": "H2O",
+                    "reagent_smiles": "O=C/C=C/O[Na]",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "OC(O)C(=O)OCC(Cl)(Cl)Cl",
+                    "product_smiles": "O=C/C(C(O)C(=O)OCC(Cl)(Cl)Cl)=C\\O",
+                    "notes": "Aldol-type condensation between 2,2,2-trichloroethyl 2,2-dihydroxyacetate (aldehyde equivalent) and sodium enolate of acrolein, followed by dehydration to form an alpha,beta-unsaturated aldehyde and subsequent enolization.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Dehydration and Oxidation/Rearrangement",
+                    "reagents": "",
+                    "reagent_smiles": "",
+                    "conditions": "DME, n-octane",
+                    "yield": "",
+                    "reactant_smiles": "O=C/C=C(\\O)C(O)C(=O)OCC(Cl)(Cl)Cl",
+                    "product_smiles": "C(=O)OCC(Cl)(Cl)Cl\\C=C(/C=O)\\C=O",
+                    "notes": "Dehydration of an enol/alcohol leading to a dialdehyde product with rearranged double bond and ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection, Rearrangement, Cyclization",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@H]2C(=O)N(C(C(=O)OCC(Cl)(Cl)Cl)C(C=O)C=C(O)C=O)[C@@H]2SC1(C)C",
+            "product_smiles": "N[C@H]1C(=O)N(C(C=O)C(=O)OCC(Cl)(Cl)Cl)2[C@@H]1S/C=C(\\C=O)/C2",
+            "notes": "Deprotection of Boc group, cleavage of the sulfur-containing ring system, and rearrangement to a 7-aminocephalosporin type structure with elimination of the gem-dimethyl and formation of a double bond with an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amide bond formation (peptide coupling)",
+            "reagents": "DCC",
+            "reagent_smiles": "ClC(Cl)(Cl)COC(=O)N[C@H](C(=O)O)CCC(=O)O.C1CCC(CC1)N=C=NC2CCCCC2",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "O=C1N2[C@H](N)[C@H]2SC(C(=O)OCC(Cl)(Cl)Cl)=C1C=O",
+            "product_smiles": "O=C1N2[C@H](NC(=O)CCC[C@H](C(=O)O)NC(=O)OCC(Cl)(Cl)Cl)[C@H]2SC(C(=O)OCC(Cl)(Cl)Cl)=C1C=O",
+            "notes": "Amide coupling between a primary amine and a carboxylic acid using DCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Esterification",
+            "reagents": "",
+            "reagent_smiles": "OCC(Cl)(Cl)Cl.C1CCCCC1N=C=NC1CCCCC1.c1ccncc1",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "O=C1N2[C@H](NC(=O)CCCC(C(=O)O)NC(=O)OCC(Cl)(Cl)Cl)[C@@H]2SC(C=O)=C1C(=O)OCC(Cl)(Cl)Cl",
+            "product_smiles": "O=C1N2[C@H](NC(=O)CCCC(C(=O)OCC(Cl)(Cl)Cl)NC(=O)OCC(Cl)(Cl)Cl)[C@@H]2SC(C=O)=C1C(=O)OCC(Cl)(Cl)Cl",
+            "notes": "The carboxylic acid group on the side chain of the cephalosporin derivative is selectively esterified with 2,2,2-trichloroethanol using DCC and pyridine. The existing 2,2,2-trichloroethyl ester on the cephalosporin core and the 2,2,2-trichloroethyl carbamate protecting group remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reduction",
+            "reagents": "B2H6",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "O=C1N2[C@@H](C(=O)N2C3=C(C=O)C(C(=O)OCC(Cl)(Cl)Cl)S3)[C@H]1NC(=O)CCCC(NC(=O)OCC(Cl)(Cl)Cl)C(=O)OCC(Cl)(Cl)Cl",
+            "product_smiles": "O=C1N2[C@@H](C(=O)N2C3=C(CO)C(C(=O)OCC(Cl)(Cl)Cl)S3)[C@H]1NC(=O)CCCC(NC(=O)OCC(Cl)(Cl)Cl)C(=O)OCC(Cl)(Cl)Cl",
+            "notes": "Reduction of an aldehyde group to a primary alcohol using diborane.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "ClC(Cl)(Cl)COC(=O)NC(CCCC(=O)N[C@@H]1[C@H]2SC(=C(N12)C(=O)OCC(Cl)(Cl)Cl)CO)C(=O)OCC(Cl)(Cl)Cl",
+            "product_smiles": "ClC(Cl)(Cl)COC(=O)NC(CCCC(=O)N[C@@H]1[C@H]2SC(=C(N12)C(=O)OCC(Cl)(Cl)Cl)COC(=O)C)C(=O)OCC(Cl)(Cl)Cl",
+            "notes": "Acetylation of the primary alcohol to an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Solvent/Base mediated step",
+            "reagents": "Pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(CC(C(=O)OCC(Cl)(Cl)Cl)NC(=O)OCC(Cl)(Cl)Cl)N[C@@H]1C(=O)N2C(=C(COC(=O)C)C(=O)OCC(Cl)(Cl)Cl)CS[C@@]12",
+            "product_smiles": "O=C(CC(C(=O)OCC(Cl)(Cl)Cl)NC(=O)OCC(Cl)(Cl)Cl)N[C@@H]1C(=O)N2C(=C(COC(=O)C)C(=O)OCC(Cl)(Cl)Cl)CS[C@@]12",
+            "notes": "Reactant and product structures are visually identical in the screenshot. Pyridine is identified as the reagent/solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection (Reductive)",
+            "reagents": "Zn dust, aq. AcOH",
+            "reagent_smiles": "[Zn]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "ClC(Cl)(Cl)COC(=O)NC(C(=O)OCC(Cl)(Cl)Cl)CCC(=O)N[C@@H]1C(=O)N2C(=C(CS[C@H]12)COC(=O)C)C(=O)OCC(Cl)(Cl)Cl",
+            "product_smiles": "[NH3+]C(C(=O)[O-])CCC(=O)N[C@@H]1C(=O)N2C(=C(CS[C@H]12)COC(=O)C)C(=O)O",
+            "notes": "Reductive removal of two 2,2,2-trichloroethyl esters and a 2,2,2-trichloroethoxycarbonyl (Troc) protecting group from a cephalosporin derivative using zinc dust in aqueous acetic acid.",
+            "substeps": []
+        }
+    ]
+}

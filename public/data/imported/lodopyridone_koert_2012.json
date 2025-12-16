@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lodopyridone-koert-2012",
+        "molecule_name": "Lodopyridone",
+        "class": "Natural Product",
+        "author": "Koert",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-Methylation",
+            "reagents": "Me2SO4, KOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, rt",
+            "yield": "78%",
+            "reactant_smiles": "C1=C(CO)OC=C(C1=O)O",
+            "product_smiles": "COC1=COC(=CC1=O)CO",
+            "notes": "O-methylation of the hydroxyl group on the pyranone ring using dimethyl sulfate and potassium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Jones oxidation (Alcohol oxidation)",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "61%",
+            "reactant_smiles": "COC1=COC(=CC1=O)CO",
+            "product_smiles": "COC1=COC(=CC1=O)C(=O)O",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide formation",
+            "reagents": "EDC, HOBt, py",
+            "reagent_smiles": "NCCC O[TBDPS]",
+            "conditions": "DMF, DCM, rt",
+            "yield": "97%",
+            "reactant_smiles": "COC1=CC(=O)C(=CO1)C(=O)O",
+            "product_smiles": "COC1=CC(=O)C(=CO1)C(=O)NCCC O[TBDPS]",
+            "notes": "Amide coupling of a pyrone carboxylic acid with a TBDPS-protected amino alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Aminolysis / Ring Transformation",
+            "reagents": "MeNH2",
+            "reagent_smiles": "CN",
+            "conditions": "THF, rt",
+            "yield": "92%",
+            "reactant_smiles": "COC1=CC(=O)C=C(C(=O)NCCO[OTBDPS])O1",
+            "product_smiles": "CN1C=C(OC)C(=O)C=C(C(=O)NCCO[OTBDPS])1",
+            "notes": "Aminolysis of a 4-pyrone with methylamine leading to a 4-pyridone derivative. The ring oxygen is replaced by a N-methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Bromination (Electrophilic Aromatic Substitution)",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "97%",
+            "reactant_smiles": "CN1C=C(C(=O)NCC[OTBDPS])C(=O)C(OC)=C1",
+            "product_smiles": "CN1C(Br)=C(C(=O)NCC[OTBDPS])C(=O)C(OC)=C1",
+            "notes": "Bromination of the electron-rich pyridone ring at the C2 position using N-bromosuccinimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Copper-catalyzed thiolation (C-S bond formation) / Nucleophilic Aromatic Substitution",
+            "reagents": "NaSMe, CuI",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 90 °C",
+            "yield": "78%",
+            "reactant_smiles": "[OTBDPS]OCCNC(=O)C1=C(Br)C(=O)C(OC)=CN1C",
+            "product_smiles": "[OTBDPS]OCCNC(=O)C1=C(SC)C(=O)C(OC)=CN1C",
+            "notes": "Replacement of bromide with a methylthio (SMe) group on the pyridone ring. The 78°C under the arrow is interpreted as a 78% yield due to common notation and the presence of another temperature (90°C).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Directed Ortho-Metallation / Electrophilic Iodination",
+            "reagents": "nBuLi, I2",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "[OTBDPS]CCNC(=O)C3=C(C(=O)C(=CN3C)OC)SC",
+            "product_smiles": "[OTBDPS]CCNC(=O)C3=C(C(=O)C(=C(I)N3C)OC)SC",
+            "notes": "Iodination of the pyridone C-H bond via deprotonation with nBuLi followed by reaction with iodine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille coupling",
+            "reagents": "Palladium catalyst (as drawn)",
+            "reagent_smiles": "C[Sn](C)(C)c1cc(nc(s1)c2nc3ccc(Cl)cc3c2)",
+            "conditions": "dioxane, 80°C",
+            "yield": "86%",
+            "reactant_smiles": "[TBDPS]OCCNC(=O)C1=C(SC)C(=O)C(OC)=C(I)N1C",
+            "product_smiles": "[TBDPS]OCCNC(=O)C1=C(SC)C(=O)C(OC)=C(c2cc(nc(s2)c3nc4ccc(Cl)cc4c3))N1C",
+            "notes": "Stille coupling reaction where an iodo-pyridone derivative is coupled with an organotin reagent. The TBDPS group is stable under these conditions.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Directed ortho-metalation / Formylation",
+                    "reagents": "nBuLi, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78°C",
+                    "yield": "",
+                    "reactant_smiles": "[tBu]C(=O)NC1=CC=C(Cl)C=C1",
+                    "product_smiles": "[tBu]C(=O)NC1=C(C=O)C=C(Cl)C=C1",
+                    "notes": "Directed ortho-metalation of the phenyl ring ortho to the pivalamide nitrogen, followed by trapping with DMF to introduce a formyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Quinolinone Synthesis, Intramolecular Cyclization",
+                    "reagents": "LiCH₂CO₂tBu, HCl, H₂O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)C(=O)NC1=C(C=C(C=C1)Cl)C=O",
+                    "product_smiles": "C1=CC(=O)NC2=C1C=C(C=C2)Cl",
+                    "notes": "Intramolecular cyclization of an o-formyl-N-tert-butylbenzamide with a lithium ester enolate (LiCH₂CO₂tBu), followed by acidic hydrolysis, to form a 6-chloro-1H-quinolin-2-one. The tert-butyl amide group is cleaved during the reaction.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Bromination / Halogenation (Lactam to Halo-Heterocycle)",
+                    "reagents": "POBr3",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "71%",
+                    "reactant_smiles": "C1=CC(=O)NC2=C1C=C(C=C2)Cl",
+                    "product_smiles": "C1=CC(=NC2=C1C=C(C=C2)Cl)Br",
+                    "notes": "Conversion of a quinolinone (lactam) to a 2-bromoquinoline. Overall yield reported for 4 steps.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Lithium-halogen exchange, Transmetalation",
+                    "reagents": "nBuLi, ZnCl2",
+                    "reagent_smiles": "CCCC[Li].Cl[Zn]Cl",
+                    "conditions": "THF, -78°C to rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=NC2=C1C=C(C=C2)Cl)Br",
+                    "product_smiles": "C1=CC(=NC2=C1C=C(C=C2)Cl)[Zn]Br",
+                    "notes": "Lithium-halogen exchange of 2-bromoquinoline with nBuLi, followed by transmetalation with ZnCl2 to form an organozinc bromide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Negishi coupling",
+                    "reagents": "Pd(PPh3)4",
+                    "reagent_smiles": "C1=C(Br)N=C(Br)S1",
+                    "conditions": "THF, rt",
+                    "yield": "63%",
+                    "reactant_smiles": "C1=CC(=NC2=C1C=C(C=C2)Cl)[Zn]Br",
+                    "product_smiles": "C1=CC(=NC2=C1C=C(C=C2)Cl)C3=NC(=CS3)Br",
+                    "notes": "Negishi coupling of 7-chloro-2-(bromozincio)quinoline with 2,5-dibromothiazole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.6",
+                    "reaction_type": "Stille-Kelly coupling",
+                    "reagents": "Pd(PPh3)4",
+                    "reagent_smiles": "C[Sn](C)(C)[Sn](C)(C)C",
+                    "conditions": "dioxane, 60°C",
+                    "yield": "80%",
+                    "reactant_smiles": "C1=CC(=NC2=C1C=C(C=C2)Cl)C3=NC(=CS3)Br",
+                    "product_smiles": "C[Sn](C)(C)C1=CSC(=N1)C2=NC3=C(C=C2)C=C(C=C3)Cl",
+                    "notes": "Stille coupling of a bromo-thiazole with hexamethylditin (Me6Sn2) catalyzed by Pd(PPh3)4 to form a trimethylstannyl-thiazole.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

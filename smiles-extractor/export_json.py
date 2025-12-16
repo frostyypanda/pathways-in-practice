@@ -12,11 +12,16 @@ import argparse
 import json
 import os
 import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 
 import psycopg2
 from dotenv import load_dotenv
+
+# Fix Windows console encoding for Unicode output
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 # Load environment variables
 load_dotenv()
@@ -144,11 +149,33 @@ def generate_file_slug(molecule_name: str, author: str, year: int) -> str:
     return f"{name_slug}_{author_slug}_{year}"
 
 
-def generate_json(synthesis_id: int, synthesis_name: str, output_dir: Path, conn) -> dict:
+def generate_json(synthesis_id: int, synthesis_name: str, output_dir: Path, conn, skip_existing: bool = False) -> dict:
     """Generate JSON file for a synthesis."""
     meta = parse_synthesis_name(synthesis_name)
     file_slug = generate_file_slug(meta["molecule_name"], meta["author"], meta["year"])
     id_slug = file_slug.replace("_", "-")
+
+    output_file = output_dir / f"{file_slug}.json"
+
+    # Skip if file already exists and skip_existing is True
+    if skip_existing and output_file.exists():
+        # Count steps from existing file to return proper entry
+        try:
+            with open(output_file, "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+                step_count = len(existing_data.get("sequence", []))
+            print(f"  Skipping (exists): {meta['molecule_name']}")
+            return {
+                "id": id_slug,
+                "molecule_name": meta["molecule_name"],
+                "class": "Natural Product",
+                "author": meta["author"],
+                "year": meta["year"],
+                "path": f"/data/imported/{file_slug}.json",
+                "step_count": step_count,
+            }
+        except Exception:
+            pass  # If we can't read it, regenerate it
 
     print(f"  Exporting: {meta['molecule_name']} ({meta['author']} {meta['year']})")
 
@@ -177,7 +204,6 @@ def generate_json(synthesis_id: int, synthesis_name: str, output_dir: Path, conn
         "sequence": sequence,
     }
 
-    output_file = output_dir / f"{file_slug}.json"
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
     with open(output_file, "w", encoding="utf-8") as f:
@@ -220,6 +246,7 @@ def main():
     parser.add_argument("--synthesis-id", type=int, help="Single synthesis ID to export")
     parser.add_argument("--all", action="store_true", help="Export all syntheses with steps")
     parser.add_argument("--update-index", action="store_true", help="Update index.json")
+    parser.add_argument("--skip-existing", action="store_true", help="Skip files that already exist (for resuming)")
     parser.add_argument("--output-dir", type=Path,
         default=Path(__file__).parent.parent / "public" / "data" / "imported",
         help="Output directory for JSON files")
@@ -250,7 +277,7 @@ def main():
         index_entries = []
         for i, synth in enumerate(syntheses, 1):
             print(f"[{i}/{len(syntheses)}]", end="")
-            entry = generate_json(synth["id"], synth["name"], args.output_dir, conn)
+            entry = generate_json(synth["id"], synth["name"], args.output_dir, conn, skip_existing=args.skip_existing)
             if entry:
                 index_entries.append(entry)
 

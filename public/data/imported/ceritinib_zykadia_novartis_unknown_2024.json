@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ceritinib-zykadia-novartis-unknown-2024",
+        "molecule_name": "Ceritinib (Zykadia Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Nitration",
+            "reagents": "KNO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "0 to 20 °C",
+            "yield": "71%",
+            "reactant_smiles": "CC1=C(C=C(C=C1)F)Cl",
+            "product_smiles": "CC1=C(C=C(C(=C1)[N+](=O)[O-])F)Cl",
+            "notes": "Aromatic nitration of 2-chloro-4-fluoro-1-methylbenzene. The nitro group adds ortho to the methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "CC(C)O",
+            "conditions": "60 °C",
+            "yield": "95%",
+            "reactant_smiles": "CC1=C(C=C(C(=C1)[N+](=O)[O-])F)Cl",
+            "product_smiles": "CC(C)OC1=CC(=C(C)C=C1[N+](=O)[O-])Cl",
+            "notes": "Nucleophilic displacement of fluorine by isopropoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "Pd2(dba)3, K3PO4",
+            "reagent_smiles": "B(O)(O)c1ccncc1.COc1cccc(c1-c2ccccc2P(C3CCCCC3)C4CCCCC4)OC",
+            "conditions": "dioxane, H2O, MW, 150 °C",
+            "yield": "73%",
+            "reactant_smiles": "CC(C)OC1=CC(=C(C)C=C1[N+](=O)[O-])Cl",
+            "product_smiles": "CC(C)OC1=CC(=C(C)C=C1[N+](=O)[O-])C2=CC=NC=C2",
+            "notes": "Suzuki cross coupling of an aryl chloride with 4-pyridylboronic acid, facilitated by an S-Phos ligand.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "HOAc, TFA, PtO2, H2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC1=CC(=C(C)C=C1[N+](=O)[O-])C2=CC=NC=C2",
+            "product_smiles": "CC(C)OC1=CC(=C(C)C=C1N)C2CCNCC2",
+            "notes": "Catalytic hydrogenation of nitro group to amine and pyridine ring to piperidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amine protection",
+            "reagents": "Boc2O, Et3N",
+            "reagent_smiles": "O=C(OC(C)(C)C)OC(=O)OC(C)(C)C.CCN(CC)CC",
+            "conditions": "DCM, 20 °C",
+            "yield": "60%",
+            "reactant_smiles": "CC(C)OC1=CC(=C(C)C=C1N)C2CCNCC2",
+            "product_smiles": "CC(C)OC1=CC(=C(C)C=C1N)C2CCN([Boc])CC2",
+            "notes": "Boc protection of a secondary amine (piperidine).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Buchwald-Hartwig reaction",
+            "reagents": "Xantphos, Pd(OAc)2, Cs2CO3",
+            "reagent_smiles": "CC(C)S(=O)(=O)C1=C(C=CC=C1)NC2=NC(=NC=C2Cl)Cl",
+            "conditions": "THF, MW, 150 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC1=CC(=C(C)C=C1N)C2CCN([Boc])CC2",
+            "product_smiles": "CC(C)OC1=CC(=C(C)C=C1NC2=NC(=C(C=N2)Cl)NC3=C(C=CC=C3)S(=O)(=O)C(C)C)C4CCN([Boc])CC4",
+            "notes": "Buchwald-Hartwig amination forming a pyrimidine linked diarylamine. The amino group of the reactant reacts with one of the chlorines on the pyrimidine of the reagent.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Aromatic Nucleophilic Substitution (SNAr)",
+                    "reagents": "K2CO3, DM",
+                    "reagent_smiles": "CC(C)S",
+                    "conditions": "20 to 100 °C, then H2O",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C(=C1)F)[N+](=O)[O-]",
+                    "product_smiles": "CC(C)SC1=CC=CC=C1[N+](=O)[O-]",
+                    "notes": "Nucleophilic aromatic substitution of fluorine with an isopropylthiolate group, activated by the ortho nitro group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "m-CPBA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 to 25 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)Sc1ccccc1[N+](=O)[O-]",
+                    "product_smiles": "CC(C)S(=O)(=O)c1ccccc1[N+](=O)[O-]",
+                    "notes": "Oxidation of an isopropylthiobenzene to an isopropylsulfonylbenzene using m-CPBA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Nitro group reduction",
+                    "reagents": "H2, Pd",
+                    "reagent_smiles": "CO.[Pd]",
+                    "conditions": "MeOH, rt",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)S(=O)(=O)C1=CC=CC=C1[N+](=O)[O-]",
+                    "product_smiles": "CC(C)S(=O)(=O)C1=CC=CC=C1N",
+                    "notes": "Reduction of a nitro group to an amine using hydrogen and a palladium catalyst in methanol at room temperature.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+                    "reagents": "LiOtBu, AcNMe2, NH4Cl, H2O",
+                    "reagent_smiles": "Clc1ncc(Cl)c(Cl)n1",
+                    "conditions": "19-45 °C, MeOH",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)S(=O)(=O)C1=CC=CC=C1N",
+                    "product_smiles": "CC(C)S(=O)(=O)c1c(Nc2ncc(Cl)c(Cl)n2)cccc1",
+                    "notes": "Aniline reacts with 2,4,6-trichloropyrimidine via nucleophilic aromatic substitution to replace one chlorine with the aniline group, forming N-(2-(isopropylsulfonyl)phenyl)-4,6-dichloropyrimidin-2-amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Boc group)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 20 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC1=CC(=C(C)C=C1NC2=NC=C(C(=N2)NC3=C(C=CC=C3)S(=O)(=O)C(C)C)Cl)C4CCN([Boc])CC4",
+            "product_smiles": "CC(C)OC1=CC(=C(C)C=C1NC2=NC=C(C(=N2)NC3=C(C=CC=C3)S(=O)(=O)C(C)C)Cl)C4CCNCC4",
+            "notes": "The Boc protecting group is removed from the piperidine nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Salt formation",
+            "reagents": "1M HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "35%",
+            "reactant_smiles": "CC(C)OC1=CC(=C(C)C=C1NC2=NC=C(C(=N2)NC3=C(C=CC=C3)S(=O)(=O)C(C)C)Cl)C4CCNCC4",
+            "product_smiles": "CC(C)OC1=CC(=C(C)C=C1NC2=NC=C(C(=N2)NC3=C(C=CC=C3)S(=O)(=O)C(C)C)Cl)C4CCNCC4.Cl",
+            "notes": "Formation of hydrochloride salt (Ceritinib HCl) by protonation of the piperidine nitrogen.",
+            "substeps": []
+        }
+    ]
+}

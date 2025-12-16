@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nintedanib-ofev-boehringer-ingelheim-unknown-2024",
+        "molecule_name": "Nintedanib (Ofev Boehringer-Ingelheim)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "ClS(Cl)=O.CO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1c(Cl)c(N(=O)=O)ccc1",
+            "product_smiles": "COC(=O)c1c(Cl)c(N(=O)=O)ccc1",
+            "notes": "Methyl esterification of a carboxylic acid using thionyl chloride and methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr) / Alkylation",
+            "reagents": "NaOMe, NMP",
+            "reagent_smiles": "COC(=O)CC(=O)OC",
+            "conditions": "75 °C",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "COC(=O)C1=C(Cl)C=CC([N+](=O)[O-])=C1",
+            "product_smiles": "COC(=O)C1=C(C(C(=O)OC)C(=O)OC)C=CC([N+](=O)[O-])=C1",
+            "notes": "Methyl 2-chloro-5-nitrobenzoate reacts with dimethyl malonate in the presence of sodium methoxide to form methyl 2-(bis(methoxycarbonyl)methyl)-5-nitrobenzoate via nucleophilic aromatic substitution, replacing the chlorine atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reductive Cyclization / Reductive Lactamization",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "HOAc, 45 °C",
+            "yield": "87%",
+            "reactant_smiles": "COC(=O)c1ccc(C(C(=O)OC)C(=O)OC)c([N+](=O)[O-])c1",
+            "product_smiles": "COC(=O)C1=CC=C2CC(=O)NC2=C1",
+            "notes": "Reduction of the nitro group to an amine, followed by intramolecular cyclization with a malonate ester (via decarboxylation) to form an indolinone lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-acylation",
+            "reagents": "",
+            "reagent_smiles": "ClCC(=O)OC(=O)CCl",
+            "conditions": "PhMe",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=CC=C2CC(=O)NC2=C1",
+            "product_smiles": "COC(=O)C1=CC=C2CC(=O)N(C2=C1)C(=O)CCl",
+            "notes": "The nitrogen of the indolinone is acylated with a chloroacetyl group using bis(chloroacetyl) anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Knoevenagel condensation / Cyclization / Enol ether formation",
+            "reagents": "(MeO)3CPh, Ac2O",
+            "reagent_smiles": "C(OC)(OC)(OC)c1ccccc1.CC(=O)OC(=O)C",
+            "conditions": "toluene",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "COC(=O)C1=CC=C2CC(=O)N(C2=C1)C(=O)CCl",
+            "product_smiles": "COC(=O)c1ccc2c(c1)N(C(=O)CCl)C(=O)C(=C(OC)[Ph])C2",
+            "notes": "Formation of a substituted 1H-pyrrolo[2,1-a]isoquinoline derivative, likely via a Knoevenagel condensation involving the active methylene and trimethyl orthobenzoate, followed by cyclization and enol ether formation using acetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-deacylation",
+            "reagents": "KOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "63 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=CC=C/2C(=C1)N(C(=O)CCl)C(=O)\\C2=C(/OC)\\[Ph]",
+            "product_smiles": "COC(=O)C1=CC=C2C(=C1)NC(=O)\\C2=C(/OC)\\[Ph]",
+            "notes": "Base-catalyzed deprotection of an N-chloroacetyl group to yield an NH-indolone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amine addition / Condensation",
+            "reagents": "MeOH",
+            "reagent_smiles": "CN1CCN(CC1)CC(=O)N(C)c2ccc(N)cc2",
+            "conditions": "10 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)c1ccc2[nH]c(=O)c(=C(OC)[Ph])c2c1",
+            "product_smiles": "CN1CCN(CC1)CC(=O)N(C)c2ccc(N/C(=C\\3/c4ccc(C(=O)OC)cc4NC3=O)/[Ph])cc2",
+            "notes": "Amine addition to an activated exocyclic double bond of an oxindole.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Amide Formation / Acylation",
+                    "reagents": "EtOAc",
+                    "reagent_smiles": "ClCC(=O)Cl",
+                    "conditions": "70 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CNC1=CC=C(C=C1)[N+](=O)[O-]",
+                    "product_smiles": "CN(C1=CC=C(C=C1)[N+](=O)[O-])C(=O)CCl",
+                    "notes": "Acylation of a secondary amine with an acyl chloride to form an amide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Nucleophilic Substitution",
+                    "reagents": "PhMe",
+                    "reagent_smiles": "CN1CCNCC1",
+                    "conditions": "40 to 55 °C",
+                    "yield": "",
+                    "reactant_smiles": "CN(C1=CC=C(C=C1)[N+](=O)[O-])C(=O)CCl",
+                    "product_smiles": "CN1CCN(CC1)CC(=O)N(C)C2=CC=C(C=C2)[N+](=O)[O-]",
+                    "notes": "Amide nitrogen alkylation via SN2 reaction, replacing chlorine with N-methylpiperazine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Nitro group reduction",
+                    "reagents": "H2, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "i-PrOH, 20 °C",
+                    "yield": "82% (3 steps)",
+                    "reactant_smiles": "CN1CCN(CC1)CC(=O)N(C)C2=CC=C(C=C2)[N+](=O)[O-]",
+                    "product_smiles": "CN1CCN(CC1)CC(=O)N(C)C2=CC=C(C=C2)N",
+                    "notes": "Hydrogenation of a nitro group to an amine using H2 and Pd/C catalyst.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Salt formation",
+            "reagents": "EtSO₃H, MeOH",
+            "reagent_smiles": "",
+            "conditions": "60 to 0 °C",
+            "yield": "82% (3 steps)",
+            "reactant_smiles": "CN1CCN(CC1)CC(=O)N(C)C2=CC=C(C=C2)N/C(=C\\3/C4=CC=C(C=C4NC3=O)C(=O)OC)/C5=CC=CC=C5",
+            "product_smiles": "CN1CCN(CC1)CC(=O)N(C)C2=CC=C(C=C2)N/C(=C\\3/C4=CC=C(C=C4NC3=O)C(=O)OC)/C5=CC=CC=C5.CCS(=O)([O-])O",
+            "notes": "Formation of Nintedanib Esylate (ethanesulfonate salt) from Nintedanib base and ethanesulfonic acid.",
+            "substeps": []
+        }
+    ]
+}

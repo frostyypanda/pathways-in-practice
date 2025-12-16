@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rhazinilam-carreira-2017",
+        "molecule_name": "Rhazinilam",
+        "class": "Natural Product",
+        "author": "Carreira",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "ICCC/C(C)=C/CCC(=O)OC(C)(C)C",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "[Ts]N(H)CC(=O)OC",
+            "product_smiles": "[Ts]N(CC(=O)OC)CCC/C(C)=C/CCC(=O)OC(C)(C)C",
+            "notes": "N-alkylation of the sulfonamide with an iodo-alkene-ester, forming an E-alkene product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Weinreb Amide Formation / Ketone Formation",
+            "reagents": "Me(MeO)NH·HCl, iPrMgCl",
+            "reagent_smiles": "CNOC.CC(C)[Mg]Cl",
+            "conditions": "THF, -20 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)CC/C=C(\\C)CCCN(CC(=O)OC)[Ts]",
+            "product_smiles": "CC(C)(C)C(=O)CC/C=C(\\C)CCCN(CC(=O)N(C)OC)[Ts]",
+            "notes": "The methyl ester is converted to a Weinreb amide. The t-butyl ester is converted to a t-butyl ketone. There is a discrepancy between the drawn product structure (t-butyl ketone) and the listed reagent (iPrMgCl), which would typically lead to an isopropyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Addition / Baeyer-Villiger-like Oxidation",
+            "reagents": "THF",
+            "reagent_smiles": "C#CMgBr",
+            "conditions": "-20 °C to 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)C(=O)CCC/C=C(\\C)CCCN(CC(=O)N(C)OC)[Ts]",
+            "product_smiles": "CC(C)(C)OC(=O)CCC/C=C(\\C)CCCN(CC(=O)C#C)[Ts]",
+            "notes": "The Weinreb amide is converted to an alkynyl ketone via addition of Ethynylmagnesium bromide. Additionally, the tert-butyl ketone moiety is oxidized/rearranged into a tert-butyl ester. This latter transformation is unusual for these reaction conditions, possibly implying a Baeyer-Villiger type oxidation or an unstated reagent/mechanism.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Gold-catalyzed pyrrole formation / Intramolecular cyclization",
+            "reagents": "JohnPhosAuNTf2",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "89%",
+            "reactant_smiles": "C/C=C(\\CCCN(CC(=O)C#C)[Ts])/CCC(=O)OC(C)(C)C",
+            "product_smiles": "C/C=C(/CCCN1C=CC(=C1)[OTs])\\CCC(=O)OC(C)(C)C",
+            "notes": "Gold-catalyzed intramolecular cyclization of an N-propargyl-N-tosyl amide to form a pyrrole ring, involving a tosyl group migration from nitrogen to oxygen.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "PdCl2(XPhos)2, 2-NH2PhB(OH)2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "C/C=C(/CCCN1C=CC(=C1)[OTs])\\CCC(=O)OC(C)(C)C",
+            "product_smiles": "C/C=C(/CCCN1C=CC(=C1)c2c(N)cccc2)\\CCC(=O)OC(C)(C)C",
+            "notes": "Suzuki-Miyaura coupling of a pyrrole tosylate with 2-aminophenylboronic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "[Na+].[OH-].O.CO.C1CCOC1",
+            "conditions": "H2O/MeOH/THF",
+            "yield": "",
+            "reactant_smiles": "C/C=C(\\CCCN1C=CC(=C1)C2=CC=CC=C2N)/CCC(=O)OC(C)(C)C",
+            "product_smiles": "C/C=C(\\CCCN1C=CC(=C1)C2=CC=CC=C2N)/CCC(=O)O",
+            "notes": "Hydrolysis of a tert-butyl ester to a carboxylic acid under basic conditions. The alkene stereochemistry (E) remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Formation, Macrolactamization",
+            "reagents": "Mukaiyama's reagent, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "toluene, rt",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "NC1=C(C2=CN(CCC\\C=C(/CC(=O)O)\\C)C=C2)C=CC=C1",
+            "product_smiles": "N1C(=O)CC\\C=C(/C)\\CCCN2C=CC(=C2)C3=C1C=CC=C3",
+            "notes": "Intramolecular amide formation (macrolactamization) via condensation of an aniline (primary amine) and a carboxylic acid to form a macrocyclic lactam. Mukaiyama's reagent and DIPEA facilitate the reaction. The E-alkene stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Heck reaction / C-H activation",
+            "reagents": "O2, dioxane, AcOH, DMSO",
+            "reagent_smiles": "[Pd](OC(=O)C)OC(=O)C",
+            "conditions": "100 °C",
+            "yield": "",
+            "reactant_smiles": "CC/C=C/CCN1C=CC(=C1C2=C(NC(=O)CCCC1)C=CC=C2)",
+            "product_smiles": "C=CC12CC(=O)NC3=C(C=CC=C3)C4=C1N(CCC2)C=C4",
+            "notes": "Intramolecular oxidative Heck reaction to form a complex polycyclic system with a spiro center.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "33%",
+            "reactant_smiles": "C=CC12CCCC(=O)NC3=C(C=CC=C3)C4=C1N(CCC2)C=C4",
+            "product_smiles": "CCC12CCCC(=O)NC3=C(C=CC=C3)C4=C1N(CCC2)C=C4",
+            "notes": "Hydrogenation of the vinyl group to an ethyl group. Reported yield is for 2 steps.",
+            "substeps": []
+        }
+    ]
+}

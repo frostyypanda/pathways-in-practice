@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dragmacidin-a-jiang-2002",
+        "molecule_name": "Dragmacidin A",
+        "class": "Natural Product",
+        "author": "Jiang",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Vilsmeier-Haack formylation",
+            "reagents": "POCl3, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC(=CC2=C1C=CN2)Br",
+            "product_smiles": "C1=CC2=C(C=C1Br)NC=C2C=O",
+            "notes": "Formylation of 5-bromo-1H-indole at the 3-position.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Tosylation",
+            "reagents": "TsCl, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "C1=CC2=C(C=C1Br)NC=C2C=O",
+            "product_smiles": "C1=CC2=C(C=C1Br)N(C=C2C=O)[Ts]",
+            "notes": "N-Tosylation of indole nitrogen using TsCl and potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Wittig olefination",
+            "reagents": "THF",
+            "reagent_smiles": "C=[P+](c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "-78°C",
+            "yield": "90%",
+            "reactant_smiles": "O=Cc1cn([Ts])c2ccc(Br)cc12",
+            "product_smiles": "C=Cc1cn([Ts])c2ccc(Br)cc12",
+            "notes": "Wittig olefination of an indole-3-carbaldehyde using a methylide to form a vinyl group at the 3-position.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sharpless asymmetric aminohydroxylation",
+            "reagents": "Boc-NCl, K2OsO2(OH)2, (DHQ)2PHAL",
+            "reagent_smiles": "",
+            "conditions": "PrOH/H2O",
+            "yield": "65%",
+            "reactant_smiles": "C=CC1=CN([Ts])C2=C1C=CC(=C2)Br",
+            "product_smiles": "[Boc]N[C@@H](CO)C1=CN([Ts])C2=C1C=CC(=C2)Br",
+            "notes": "Asymmetric aminohydroxylation of 3-vinyl-1-tosylindole to form an N-Boc protected beta-amino alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Tosylation",
+            "reagents": "TsCl, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "[Boc]N[C@H](CO)C1=CN([Ts])C2=C1C=CC(=C2)Br",
+            "product_smiles": "[Boc]N[C@H](CO[Ts])C1=CN([Ts])C2=C1C=CC(=C2)Br",
+            "notes": "The primary alcohol is converted to its tosylate ester using TsCl and DMAP, with stereochemistry at the alpha-carbon retained. The Boc and N-Ts groups on the indole remain untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "[Boc]N[C@@H](C[OTs])C1=CN([Ts])C2=C1C=CC(=C2)Br",
+            "product_smiles": "[Boc]N[C@@H](C[N_3])C1=CN([Ts])C2=C1C=CC(=C2)Br",
+            "notes": "An azide displaces a tosylate via SN2 mechanism. The stereochemistry of the adjacent chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "Brc1ccc2c(c1)cn([Ts])c2[C@H](N[Boc])CC[N-]=[N+]#N",
+            "product_smiles": "Brc1ccc2c(c1)cn([Ts])c2[C@H](N)CC[N-]=[N+]#N",
+            "notes": "Boc deprotection of a secondary amine using trifluoroacetic acid to yield a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide formation",
+            "reagents": "DMF",
+            "reagent_smiles": "Brc1ccc2c(c1)n(H)cc2C(=O)C(=O)Cl.CCN(CC)CC",
+            "conditions": "rt",
+            "yield": "85%",
+            "reactant_smiles": "Brc1ccc2c(c1)n([Ts])cc2[C@@H](N)CC[N3]",
+            "product_smiles": "Brc1ccc2c(c1)n(H)cc2C(=O)C(=O)N[C@@H](CC[N3])c3cn([Ts])c4c3ccc(Br)c4",
+            "notes": "Amide coupling of an amine with an indole-3-oxoacetyl chloride reagent. The chiral center's stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Staudinger reduction",
+            "reagents": "Bu3P",
+            "reagent_smiles": "P(CCCC)(CCCC)CCCC",
+            "conditions": "toluene, 100 °C",
+            "yield": "94%",
+            "reactant_smiles": "Brc1ccc2[nH]c(C(=O)C(=O)N[C@H](CN=[N+]=[N-])c3cn([Ts])c4ccc(Br)cc34)cc2c1",
+            "product_smiles": "O=C1N[C@H](c2cn([Ts])c3ccc(Br)cc23)CC(=N1)c4[nH]c5ccc(Br)cc5c4",
+            "notes": "Staudinger reduction of the azide group to an amine, followed by intramolecular cyclization to form a 3,4-dihydropyrimidin-2(1H)-one ring. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Boc Protection",
+            "reagents": "DMAP, Et3N",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "EtOAc, rt",
+            "yield": "82%",
+            "reactant_smiles": "C1=CC2=C(C=C1Br)NC=C2C3=NC[C@H](C4=CN([Ts])C5=C4C=CC(=C5)Br)NC3=O",
+            "product_smiles": "[Boc]N1C=C(C2=C1C=C(C=C2)Br)C3=NC[C@H](C4=CN([Ts])C5=C4C=CC(=C5)Br)NC3=O",
+            "notes": "N-protection of an indole nitrogen with a Boc group using Boc₂O.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "N-Methylation",
+            "reagents": "Mel, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "acetone, 60 °C",
+            "yield": "100%",
+            "reactant_smiles": "[Boc]N1C=C(C2=C1C=C(C=C2)Br)C3=NC[C@H](C4=CN(C5=C4C=CC(=C5)Br)[Ts])NC3=O",
+            "product_smiles": "[Boc]N1C=C(C2=C1C=C(C=C2)Br)C3=NC[C@H](C4=CN(C5=C4C=CC(=C5)Br)[Ts])N(C)C3=O",
+            "notes": "N-methylation of a secondary amine in the piperazinone ring using iodomethane (Mel) and potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N1C=C(C2=C1C=C(Br)C=C2)C3=NC[C@H](C4=CN([Ts])C5=C4C=CC(=C5)Br)N(C)C3=O",
+            "product_smiles": "CN1[C@H](CN=C(C2=CNC3=C2C=CC(=C3)Br)C1=O)C4=CN([Ts])C5=C4C=CC(=C5)Br",
+            "notes": "Boc group on indole nitrogen is removed using TFA, yielding the free N-H indole. The Ts group and other parts of the molecule remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Imine Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-].CO",
+            "conditions": "MeOH, 0 °C",
+            "yield": "82%",
+            "reactant_smiles": "CN1[C@H](C2=CN(S(=O)(=O)c3ccc(C)cc3)C4=C2C=CC(=C4)Br)CN=C(C5=CNC6=C5C=CC(=C6)Br)C1=O",
+            "product_smiles": "CN1[C@H](C2=CN(S(=O)(=O)c3ccc(C)cc3)C4=C2C=CC(=C4)Br)CN[C@@H](C5=CNC6=C5C=CC(=C6)Br)C1=O",
+            "notes": "Reduction of an imine to a secondary amine using sodium borohydride, forming a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "N-Detosylation",
+            "reagents": "L-Selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "80%",
+            "reactant_smiles": "CN1[C@H](C4=CN([Ts])C5=C4C=CC(=C5)Br)CN[C@H](C2=CNC3=C2C=CC(=C3)Br)C1=O",
+            "product_smiles": "CN1[C@H](C4=CNC5=C4C=CC(=C5)Br)CN[C@H](C2=CNC3=C2C=CC(=C3)Br)C1=O",
+            "notes": "N-detosylation of the indole nitrogen using L-Selectride.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Amide Reduction",
+            "reagents": "BH3.THF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "42%",
+            "reactant_smiles": "CN1[C@@H](C2=CNC3=C2C=CC(=C3)Br)C(=O)N[C@H](C4=CNC5=C4C=CC(=C5)Br)CC1",
+            "product_smiles": "CN1[C@@H](C2=CNC3=C2C=CC(=C3)Br)CCN[C@H](C4=CNC5=C4C=CC(=C5)Br)CC1",
+            "notes": "Reduction of a cyclic amide (lactam) to a piperazine ring.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tanshinone-iia-grover-2024",
+        "molecule_name": "Tanshinone IIA",
+        "class": "Natural Product",
+        "author": "Grover",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ortho-lithiation / Alkylation",
+            "reagents": "tBuLi, THF",
+            "reagent_smiles": "CC(=CCBr)C",
+            "conditions": "-78 °C",
+            "yield": "97%",
+            "reactant_smiles": "CC1=C(C=CC=C1)C(=O)O",
+            "product_smiles": "O=C(O)c1c(CCC=C(C)C)cccc1",
+            "notes": "Deprotonation of 2-methylbenzoic acid using tBuLi, followed by alkylation with 1-bromo-3-methylbut-2-ene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Friedel-Crafts Alkylation",
+            "reagents": "DCM",
+            "reagent_smiles": "[Al](Cl)(Cl)Cl",
+            "conditions": "rt",
+            "yield": "96%",
+            "reactant_smiles": "CC(C)=CCC1=CC=CC=C1C(=O)O",
+            "product_smiles": "CC1(C)CCCC2=C(C1)C=CC=C2C(=O)O",
+            "notes": "Intramolecular cyclization of an alkene onto an aromatic ring to form a tetralin derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Directed C-H Iodination",
+            "reagents": "Pd(OAc)₂, PIDA, I₂",
+            "reagent_smiles": "",
+            "conditions": "DMF, 50 °C",
+            "yield": "86%",
+            "reactant_smiles": "CC1(C)CCCC2=C(C=CC=C21)C(=O)O",
+            "product_smiles": "CC1(C)CCCC2=C1C(I)=C(C(=O)O)C=C2",
+            "notes": "Aromatic C-H iodination ortho to the carboxylic acid, catalyzed by Pd(OAc)₂ and mediated by PIDA and I₂.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification",
+            "reagents": "K2CO3, MeI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1(C)CCCC2=C(C(=CC=C21)I)C(=O)O",
+            "product_smiles": "CC1(C)CCCC2=C(C(=CC=C21)I)C(=O)OC",
+            "notes": "Carboxylic acid is methylated to a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "TMP2Mg, ZnCl2, Pd(dba)2, trifurylphosphine",
+            "reagent_smiles": "CCOC(=O)C1=COC=C1C",
+            "conditions": "toluene, -20 °C to 55 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC1(C)CCCC2=C(C(=CC=C21)I)C(=O)OC",
+            "product_smiles": "COc(=O)c1c(c2oc(C)c(C(=O)OCC)c2)ccc3c1CCCC(C)(C)C3",
+            "notes": "Negishi coupling of an aryl iodide with an organozinc reagent (furan derivative). Noted discrepancy: the furan moiety incorporated into the product structure (Ethyl 2-aryl-4-methylfuran-3-carboxylate) differs from the furan structure provided as a reagent in the reaction scheme (Ethyl 5-methylfuran-2-carboxylate).",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Heterocycle Formation",
+                    "reagents": "nBuLi",
+                    "reagent_smiles": "CCOC=O",
+                    "conditions": "THF, -78 °C",
+                    "yield": "71%",
+                    "reactant_smiles": "[C-]#[N+]CC1=CC=CC=C1",
+                    "product_smiles": "[Ph]c1cc(on1)",
+                    "notes": "Formation of 4-phenyloxazole from benzyl isocyanide and ethyl formate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Diels-Alder type cycloaddition (Huisgen 1,3-dipolar cycloaddition followed by retro-Diels-Alder)",
+                    "reagents": "hydroquinone",
+                    "reagent_smiles": "CCOC(=O)C#C",
+                    "conditions": "220 °C",
+                    "yield": "75%",
+                    "reactant_smiles": "c1ccc(C2=NOC=C2)cc1",
+                    "product_smiles": "CCOC(=O)c1c(C)oc=c1",
+                    "notes": "A 1,3-dipolar cycloaddition of the isoxazole (a masked nitrile ylide) with ethyl propiolate, followed by a retro-Diels-Alder elimination of benzonitrile, to form a furan.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cyclization/Oxidation (Quinone Formation)",
+            "reagents": "LDA, Bu3SnH",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to -55 °C",
+            "yield": "55%",
+            "reactant_smiles": "CCOC(=O)C1=C(C2=C(C3=C(C=C2)C(C)(C)CCC3)C(=O)OC)OC=C1C",
+            "product_smiles": "CC1=COC2=C1C(=O)C(=O)C3=C4CCCC(C)(C)C4=CC=C32",
+            "notes": "Synthesis of Tanshinone IIA involving cyclization and quinone formation from an aryl-furan precursor. The methyl and ethyl esters are removed/transformed.",
+            "substeps": []
+        }
+    ]
+}

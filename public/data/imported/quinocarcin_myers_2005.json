@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "quinocarcin-myers-2005",
+        "molecule_name": "Quinocarcin",
+        "class": "Natural Product",
+        "author": "Myers",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxime formation",
+            "reagents": "NH2OH, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "MeOH, reflux",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)C1=C(C=CC=C1)OC",
+            "product_smiles": "C/C(=N\\O)/C1=C(C=CC=C1)OC",
+            "notes": "Formation of an oxime from a ketone using hydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "C-H activation / Annulation",
+            "reagents": "[Cp*RhCl2]2, Ag2CO3, PivOH",
+            "reagent_smiles": "C=CC(=O)NCC(=O)OC",
+            "conditions": "MeCN, 150 °C",
+            "yield": "51%",
+            "reactant_smiles": "C/C(=N\\O)/C1=C(C=CC=C1)OC",
+            "product_smiles": "CC1=NC(C(=O)NCC(=O)OC)=CC2=C(OC)C=CC=C12",
+            "notes": "Rh-catalyzed C-H activation and annulation between an oxime and an acryloylglycinate to form a substituted quinoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide reduction to imine (using hydrosilylation)",
+            "reagents": "[Ir(COE)2Cl]2",
+            "reagent_smiles": "CC[SiH2]CC",
+            "conditions": "toluene, 60 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=NC(=CC2=CC=CC(=C12)OC)C(=O)NCC(=O)OC",
+            "product_smiles": "CC1=NC(=CC2=CC=CC(=C12)OC)C=NCC(=O)OC",
+            "notes": "Amide C=O is reduced to C=N, forming an imine. The quinoline core, methoxy, methyl, and ester groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Cycloaddition/Conjugate Addition (formal [3+2] cycloaddition)",
+            "reagents": "Cu(MeCN)4BF4, (R)-DM-Segphos, K2CO3",
+            "reagent_smiles": "C=CC(=O)OC(C)(C)C",
+            "conditions": "15 °C, toluene",
+            "yield": "43%",
+            "reactant_smiles": "CC1=NC(=CC2=CC=CC(=C12)OC)C=NCC(=O)OC",
+            "product_smiles": "CC1=NC(=CC2=CC=CC(=C12)OC)[C@H](C(=O)OC(C)(C)C)3N1C[C@H](C(=O)OC)CC31",
+            "notes": "Formation of a pyrrolidine derivative via a copper-catalyzed asymmetric reaction. Yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Amination",
+            "reagents": "HCHO, NaBH3CN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C to rt",
+            "yield": "89%",
+            "reactant_smiles": "CC1=NC(=CC2=CC=CC(=C12)OC)[C@H]3[C@@H](C[C@@H](C(=O)OC)N3)C(=O)OC(C)(C)C",
+            "product_smiles": "CC1=NC(=CC2=CC=CC(=C12)OC)[C@H]3[C@@H](C[C@@H](C(=O)OC)N3C)C(=O)OC(C)(C)C",
+            "notes": "Reductive N-methylation of the pyrrolidine secondary amine using formaldehyde and sodium cyanoborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Benzylic Oxidation",
+            "reagents": "SeO2, dioxane",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC1=NC(=CC2=CC=CC(=C12)OC)[C@H]3CN(C)[C@H](C(=O)OC)C(C(=O)OC(C)(C)C)CC3",
+            "product_smiles": "O=CC1=NC(=CC2=CC=CC(=C12)OC)[C@H]3CN(C)[C@H](C(=O)OC)C(C(=O)OC(C)(C)C)CC3",
+            "notes": "Oxidation of the C2-methyl group of the quinoline ring to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "toluene, AcOH, 60 °C",
+            "yield": "42%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@@H]1C[C@@H](C(=O)OC)N(C)[C@H]1C2=CC3=CC=CC(=C3C(=N2)C=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)[C@@H]1C[C@@H]2C(=O)N3[C@@H](CC4=CC=CC(=C4[C@@H]3C(O))OC)[C@H]1CN2C",
+            "notes": "Intramolecular reductive cyclization of a quinoline-aldehyde with a proline derivative to form a fused polycyclic quinocarcin core. The methyl ester is consumed to form a lactam, and the aldehyde is reduced to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "Ir(CO)(PPh3)2Cl, TMDS, TBAF",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@@H]1C[C@H]2C(=O)N3[C@@H](CC4=CC=CC(=C4[C@@H]3CO)OC)[C@H]1CN2C",
+            "product_smiles": "CC(C)(C)OC(=O)[C@@H]1C[C@H]2[C@@]34N5[C@H](CC6=CC=CC(=C6[C@]75COC3)[C@H]1CN2C)OC",
+            "notes": "Reductive cyclization of a lactam carbonyl and a primary alcohol to form a cyclic ether (oxazabicyclo system).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrolysis (Ester)",
+            "reagents": "HCl, NH3",
+            "reagent_smiles": "",
+            "conditions": "dioxane, MeOH, 0 °C to rt",
+            "yield": "88%",
+            "reactant_smiles": "[Boc][C@@H]1C[C@H]2[C@@]34CCN(C)[C@H](CC5=CC=CC(=C53)OC)[C@H]1[C@@H]4OC[C@H]2O",
+            "product_smiles": "O=C(O)[C@@H]1C[C@H]2[C@@]34CCN(C)[C@H](CC5=CC=CC(=C53)OC)[C@H]1[C@@H]4OC[C@H]2O",
+            "notes": "Hydrolysis of a tert-butyl ester to a carboxylic acid.",
+            "substeps": []
+        }
+    ]
+}

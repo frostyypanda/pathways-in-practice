@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspergillide-b-trost-2012",
+        "molecule_name": "Aspergillide B",
+        "class": "Natural Product",
+        "author": "Trost",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetylide addition",
+            "reagents": "nBuLi, NH4Cl",
+            "reagent_smiles": "CC(=O)N(C)C",
+            "conditions": "Et2O",
+            "yield": "64%",
+            "reactant_smiles": "C#CCCC",
+            "product_smiles": "CCCC#CC(=O)C",
+            "notes": "Terminal alkyne deprotonation with nBuLi, followed by addition to N,N-dimethylacetamide. Quenching with NH4Cl yields the alkynyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Noyori asymmetric hydrogenation",
+            "reagents": "Noyori cat, H2",
+            "reagent_smiles": "",
+            "conditions": "iPrOH",
+            "yield": "70%",
+            "reactant_smiles": "CCCC#CC(=O)C",
+            "product_smiles": "CCCC#C[C@H](C)O",
+            "notes": "Asymmetric hydrogenation of a ketone to a chiral alcohol using Noyori catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alkyne Isomerization / Alkyne Migration",
+            "reagents": "KH",
+            "reagent_smiles": "C(CN)CN",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "CCCC#C[C@H](C)O",
+            "product_smiles": "C#CCCC[C@H](C)O",
+            "notes": "Migration of an internal alkyne to a terminal alkyne under basic conditions (KH) with an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification (Benzoylation)",
+            "reagents": "BzCl, DMAP, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "84%",
+            "reactant_smiles": "C#CCCC[C@H](C)O",
+            "product_smiles": "C#CCCC[C@H](C)[OBz]",
+            "notes": "Benzoylation of a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Stereoselective Propargylation",
+            "reagents": "(S, S)-ProPhenol, Ph3PO, Me2Zn",
+            "reagent_smiles": "O=C/C=C/C(OC)OC",
+            "conditions": "PhCH3, 4 °C",
+            "yield": "82%",
+            "reactant_smiles": "C[C@@H](CCCC#C)[OBz]",
+            "product_smiles": "C[C@@H](CCCC#C[C@@H](O)/C=C/C(OC)OC)[OBz]",
+            "notes": "Stereoselective 1,2-addition of a terminal alkyne to an alpha,beta-unsaturated aldehyde, forming a new propargylic alcohol chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ruthenium-catalyzed Alkyne Hydroxysilylation",
+            "reagents": "Cp*Ru(MeCN)3PF6, BDMS-H",
+            "reagent_smiles": "",
+            "conditions": "DCE",
+            "yield": "89%",
+            "reactant_smiles": "C[C@@H](CCCC#C[C@@H](/C=C/C(OC)OC)O)[OBz]",
+            "product_smiles": "C[C@@H](CCC/C=C(/[BDMS])[C@@H](O)/C=C/C(OC)OC)[OBz]",
+            "notes": "E-selective hydroxysilylation of an internal alkyne, forming a new alkene with an adjacent hydroxyl and a BDMS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenation",
+            "reagents": "",
+            "reagent_smiles": "Cl[Rh](P(c1ccccc1)(c2ccccc2)c3ccccc3)(P(c4ccccc4)(c5ccccc5)c6ccccc6)P(c7ccccc7)(c8ccccc8)c9ccccc9.[H][H]",
+            "conditions": "THF, tBuOH",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](CCC/C=C([BDMS])/[C@@H](/C=C/C(OC)OC)O)[OBz]",
+            "product_smiles": "C[C@@H](CCC/C=C([BDMS])/[C@@H](CCC(OC)OC)O)[OBz]",
+            "notes": "Selective hydrogenation of the internal conjugated alkene using Wilkinson's catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alcohol Silylation (Protection)",
+            "reagents": "",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.C1=CNC=N1",
+            "conditions": "DMF",
+            "yield": "65%",
+            "reactant_smiles": "C[C@@H](CCC/C=C(/[C@@H](CCC(OC)OC)O)[Si](C)(C)C(C)(C)C)[OBz]",
+            "product_smiles": "C[C@@H](CCC/C=C(/[C@@H](CCC(OC)OC)[OTBS])[Si](C)(C)C(C)(C)C)[OBz]",
+            "notes": "Secondary alcohol protected as a TBS ether. (2 steps)",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "PPTS",
+            "reagent_smiles": "",
+            "conditions": "acetone, H2O, 60 °C",
+            "yield": "80%",
+            "reactant_smiles": "C[C@@H](CCC/C=C(\\[TBS])/[C@@H](CCC(OC)OC)O[TBS])O[Bz]",
+            "product_smiles": "C[C@@H](CCC/C=C(\\[TBS])/[C@@H](CCC=O)O[TBS])O[Bz]",
+            "notes": "Hydrolysis of a dimethyl acetal to an aldehyde using PPTS (pyridinium p-toluenesulfonate) in a mixed solvent system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Propargylation / Macrocyclization",
+            "reagents": "(S, S)-ProPhenol, Me2Zn",
+            "reagent_smiles": "C#CC(=O)OC",
+            "conditions": "PhCH3, 4 °C",
+            "yield": "2%",
+            "reactant_smiles": "C[C@@H](CCC/C=C(/[Si](C)(C)C(C)(C)C)\\[C@@H](CCC=O)O[Si](C)(C)C(C)(C)C)OC(=O)c1ccccc1",
+            "product_smiles": "C[C@@H]1(OC(=O)c2ccccc2)C2CC[C@H](O)C(C#CC(=O)OC)CC[C@@H](O[Si](C)(C)C(C)(C)C)/C=C(\\[Si](C)(C)C(C)(C)C)C1C2",
+            "notes": "Addition of methyl propiolate to an aldehyde, followed by intramolecular C-C bond formation to create a 16-membered macrocycle. This is a catalytic asymmetric propargylation, with subsequent macrocyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "MOMCl, NaI, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DME, reflux",
+            "yield": "62%",
+            "reactant_smiles": "C[C@@H](CCC/C=C(\\[TBS])/[C@@H](CC[C@@H](C#CC(=O)OC)O)[OTBS])[OBz]",
+            "product_smiles": "C[C@@H](CCC/C=C(\\[TBS])/[C@@H](CC[C@@H](C#CC(=O)OC)OCOC)[OTBS])[OBz]",
+            "notes": "The secondary alcohol is protected as a methoxymethyl (MOM) ether using MOMCl, NaI, and DIPEA.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reductive Cyclization / Silyl Deprotection",
+            "reagents": "Cp*Ru(MeCN)3PF6, (EtO)3SiH, then CuI, TBAF",
+            "reagent_smiles": "",
+            "conditions": "DCE, rt, 0°C to rt",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "O=C(OC)C#CC[C@@H](OCH2OC)CCC[C@H]([OTBS])C/C=C(\\[TBS])CCC[C@H](C)[Bz]O",
+            "product_smiles": "[Bz]O[C@H](C)CCC/C=C/[C@H]1CC[C@@H](OCH2OC)[C@@H](CC(=O)OC)O1",
+            "notes": "Alkyne undergoes reductive cyclization with alkene to form a tetrahydropyran ring; BDMS and TBS silyl protecting groups are removed.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "aq NaOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "88%",
+            "reactant_smiles": "C[C@@H](CCC/C=C/[C@H]1CC[C@@H]([MOM])[C@H](C[MeO2C])O1)[OBz]",
+            "product_smiles": "C[C@@H](CCC/C=C/[C@H]1CC[C@@H]([MOM])[C@H](C[HO2C])O1)O",
+            "notes": "Base-catalyzed hydrolysis of a benzoate ester to an alcohol and a methyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Yamaguchi macrolactonization",
+            "reagents": "2,4,6-Cl3C6H2COCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "PhCH3, 100 °C",
+            "yield": "73%",
+            "reactant_smiles": "C[C@@H](O)CCC/C=C/[C@H]1CC[C@@H]([MOM])[C@H](CC(=O)O)O1",
+            "product_smiles": "C[C@H]1CCC/C=C/[C@H]2CC[C@@H]([MOM])[C@H](CC(=O)O1)O2",
+            "notes": "Macrolactonization of a seco-acid to form a 16-membered lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "LiBF4",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 75 °C",
+            "yield": "94%",
+            "reactant_smiles": "C[C@H]1CCC/C=C/[C@H]2O[C@H]3C[C@H](O[MOMO])CC(=O)O3C[C@@H]21",
+            "product_smiles": "C[C@H]1CCC/C=C/[C@H]2O[C@H]3C[C@H](O)CC(=O)O3C[C@@H]21",
+            "notes": "MOM deprotection of an alcohol to yield a hydroxyl group.",
+            "substeps": []
+        }
+    ]
+}

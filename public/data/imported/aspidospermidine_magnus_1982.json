@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspidospermidine-magnus-1982",
+        "molecule_name": "Aspidospermidine",
+        "class": "Natural Product",
+        "author": "Magnus",
+        "year": 1982
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-sulfonylation",
+            "reagents": "NaH, imidazole",
+            "reagent_smiles": "COC1=CC=C(C=C1)S(=O)(=O)Cl",
+            "conditions": "glyme, reflux",
+            "yield": "70%",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC=C2C=O",
+            "product_smiles": "COC1=CC=C(C=C1)S(=O)(=O)N2C=C(C=O)C3=C2C=CC=C3",
+            "notes": "Indole nitrogen is sulfonated with 4-methoxybenzenesulfonyl chloride under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Indole Alpha-Methylation / Alkylation",
+            "reagents": "nBuLi, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "43%",
+            "reactant_smiles": "[OMe]C1=CC=C(S(=O)(=O)N2C=C(C=O)C3=C2C=CC=C3)C=C1",
+            "product_smiles": "CC1=C(C=O)C2=C(C=CC=C2)N1S(=O)(=O)C3=CC=C(C=C3)[OMe]",
+            "notes": "Deprotonation of the indole 2-position by n-butyllithium followed by methylation with methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Imine Formation (Condensation)",
+            "reagents": "DCM",
+            "reagent_smiles": "NCCSC1=CC=CC=C1",
+            "conditions": "rt",
+            "yield": "99%",
+            "reactant_smiles": "CC1=C(C=O)C2=C(C=CC=C2)N1S(=O)(=O)C3=CC=C(OC)C=C3",
+            "product_smiles": "CC1=C(C=NCCSC2=CC=CC=C2)C3=CC=CC=C3N1S(=O)(=O)C4=CC=C(OC)C=C4",
+            "notes": "Formation of an imine from an indole-3-carbaldehyde and a primary amine (2-(phenylthio)ethan-1-amine).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cascade Cycloaddition/Cyclization",
+            "reagents": "chlorobenzene",
+            "reagent_smiles": "O=C(OCC)OC(=O)CC(CC)C=C",
+            "conditions": "140 °C",
+            "yield": "33%",
+            "reactant_smiles": "CC1=C(C=NCCSc2ccccc2)C3=C(C=CC=C3)N1S(=O)(=O)C4=CC=C(C=C4)OC",
+            "product_smiles": "CC[C@]12CCC3=C(C4=CC=CC=C4N3S(=O)(=O)C5=CC=C(C=C5)OC)[C@@H]1N(CCSc6ccccc6)C(=O)CC2",
+            "notes": "Intramolecular reaction forming an aspidospermidine core from an indole imine and a dicarbonyl alkene reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "mCPBA, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "CC[C@@]12CCC3=C(C4=CC=CC=C4N3S(=O)(=O)C5=CC=C(C=C5)OC)[C@@H]1N(CCS[Ph])C(=O)CC2",
+            "product_smiles": "CC[C@@]12CCC3=C(C4=CC=CC=C4N3S(=O)(=O)C5=CC=C(C=C5)OC)[C@@H]1N(CCS(=O)[Ph])C(=O)CC2",
+            "notes": "The reaction involves the oxidation of a phenyl sulfide (PhS) to a phenyl sulfoxide (PhS(=O)) using mCPBA. The stereochemistry of the spiro carbon (with the ethyl group) is depicted as a wedge in the image, but its chirality is not explicitly specified in the provided SMILES for reactant and product using standard [C@](A)(B)(C)(D) notation for quaternary centers. The two bridgehead carbons ([C@@]12 and [C@@H]1) have explicit stereochemistry assigned, which appears consistent with the image (H-wedge and H-dash respectively).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Pummerer Rearrangement",
+            "reagents": "(CF3CO)2O",
+            "reagent_smiles": "FC(F)(F)C(=O)OC(=O)C(F)(F)F",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]12CCC3=C(C4=CC=CC=C4N3S(=O)(=O)C5=CC=C([OMe])C=C5)[C@@H]1N(CCS(=O)[Ph])C(=O)CC2",
+            "product_smiles": "CC[C@@]12CCC3=C(C4=CC=CC=C4N3S(=O)(=O)C5=CC=C([OMe])C=C5)[C@@H]1N(CC[C@H](OC(=O)C(F)(F)F)S[Ph])C(=O)CC2",
+            "notes": "Pummerer rearrangement of a sulfoxide to form a trifluoroacetate thioether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cyclization / Intramolecular Friedel-Crafts-type reaction",
+            "reagents": "chlorobenzene",
+            "reagent_smiles": "",
+            "conditions": "140 °C",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "CC[C@@]12CCC3=C(C4=CC=CC=C4N3S(=O)(=O)C5=CC=C(OC)C=C5)[C@@H]1N(CCC(OC(=O)C(F)(F)F)SC6=CC=CC=C6)C(=O)CC2",
+            "product_smiles": "CC[C@@]12CC=C3[C@@]4(C5=C(C=CC=C5)N3S(=O)(=O)C6=CC=C(OC)C=C6)[C@H]1N(C[C@@H]7S(C4)C8=CC=CC=C8)C(=O)CC2",
+            "notes": "Intramolecular cyclization involving the indole and phenyl sulfide, with simultaneous formation of an alpha,beta-unsaturated lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenolysis / Desulfurization",
+            "reagents": "Raney Ni",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 20 °C",
+            "yield": "81%",
+            "reactant_smiles": "CC[C@@]12CC=C3[C@@]4(C5=C(C=CC=C5)N3S(=O)(=O)C6=CC=C(C=C6)OC)[C@H](CN(C(=O)CC1)C24)Sc1ccccc1",
+            "product_smiles": "CC[C@@]12CC=C3[C@@]4(CCN(C(=O)CC1)C24)C5=C(C=CC=C5)N3S(=O)(=O)C6=CC=C(C=C6)OC",
+            "notes": "Reductive removal of a phenylthio group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "THF, 20 °C",
+            "yield": "54%",
+            "reactant_smiles": "CC[C@@]1(C=CC[C@H]2[C@H]1CC(=O)N3CC[C@@]45C(N(S(=O)(=O)C6=CC=C(OC)C=C6)C(C=CC=C7)=C74)C23",
+            "product_smiles": "CC[C@@H]1CC[C@@H]2CN3CCC45C(C=CC=C4)N[C@H]5[C@@H]3[C@H]21",
+            "notes": "Reduction of a lactam, an alkene, and cleavage of an N-sulfonyl protecting group, yielding Aspidospermidine.",
+            "substeps": []
+        }
+    ]
+}

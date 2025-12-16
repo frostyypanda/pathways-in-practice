@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "quinine-maulide-2018",
+        "molecule_name": "Quinine",
+        "class": "Natural Product",
+        "author": "Maulide",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide Formation",
+            "reagents": "CDI",
+            "reagent_smiles": "C1=CC(=NC=C1)C(=O)O",
+            "conditions": "DMF",
+            "yield": "85%",
+            "reactant_smiles": "C1CN2CCC1CC2N",
+            "product_smiles": "C1=CC(=NC=C1)C(=O)NC2CN3CCC2CC3",
+            "notes": "Amidation of 2-amino-1-azabicyclo[2.2.2]octane with pyridine-2-carboxylic acid using CDI as a coupling agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "C-H Arylation",
+            "reagents": "Pd(OAc)2",
+            "reagent_smiles": "COC1=CC=C(C=C1)I",
+            "conditions": "DMF, 100 °C",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC(=NC=C1)C(=O)NC2CN3CCC2CC3",
+            "product_smiles": "COC1=CC=C(C=C1)C2CN3CCC2C(C3)NC(=O)C4=NC=CC=C4",
+            "notes": "Alpha-C-H arylation of a quinuclidine amide using 4-iodoanisole and palladium catalysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "RuCl3, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "H2O, EtOAc, MeCN",
+            "yield": "80%",
+            "reactant_smiles": "COc1ccc(cc1)C[C@@H]2CN3CCC[C@H]2[C@H]3NC(=O)c4ncccc4",
+            "product_smiles": "[O-]C(=O)[C@@H]2C[N+]H3CCC[C@H]2[C@H]3NC(=O)c4ncccc4",
+            "notes": "Oxidative cleavage of the 4-methoxybenzyl group to a carboxylate, and protonation of the tertiary amine nitrogen, forming a zwitterion.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Weinreb Amide Formation",
+            "reagents": "HATU",
+            "reagent_smiles": "CN(C)OC.CCN(CC)CC",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "c1ccncc1C(=O)N[C@H]1CC[N+]H2CCC[C@@H]1C(=O)[O-]C2",
+            "product_smiles": "c1ccncc1C(=O)N[C@H]1CC[N]2CCC[C@@H]1C(=O)N(C)OC2",
+            "notes": "Conversion of a zwitterionic carboxylic acid into a Weinreb amide using N-methyl-N-methoxyamine and HATU coupling reagent. The bicyclic nitrogen is deprotonated in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "72%",
+            "reactant_smiles": "CN(C(=O)C1CN2CCC1C(C2)NC(=O)C3=NC=CC=C3)OC",
+            "product_smiles": "C1=CC(=NC=C1)C(=O)N2C3CN4CCC3C(C4)[C@H]2O",
+            "notes": "Reduction of a Weinreb amide to a secondary alcohol. The reactant SMILES includes an amide (-NH-C(=O)Py) on a bridgehead carbon, while the product SMILES shows the pyridine carbonyl directly attached to the pyrrolidine nitrogen, and the previous amide linkage is absent. This suggests a significant rearrangement or a discrepancy in the drawn structures between reactant and product, beyond a simple DIBAL-H reduction of the Weinreb amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Wittig olefination",
+            "reagents": "Ph3PMeBr, LiHMDS",
+            "reagent_smiles": "",
+            "conditions": "DMSO, THF, -78 °C",
+            "yield": "84%",
+            "reactant_smiles": "C1=CC=NC(=C1)C(=O)N2C3CN4CCC3C(C4)[C@H]2O",
+            "product_smiles": "C1=CC=NC(=C1)C(=O)NC2C=C3CN4CCC3CC24",
+            "notes": "Wittig olefination on a complex quinidine-like derivative, involving the transformation of a cyclic tertiary alcohol to a cyclic secondary enamine. The transformation involves a dehydration and the formation of a double bond within the 5-membered ring, as well as a change from a tertiary amide nitrogen in the reactant to a secondary amide nitrogen in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide hydrolysis / Deprotection",
+            "reagents": "Zn, Zn(OTf)2, HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "C=CC1CN2CCC1C(C2)NC(=O)C3=NC=CC=C3",
+            "product_smiles": "C=CC1CN2CCC1C(C2)N",
+            "notes": "Amide protecting group is removed under reductive conditions, yielding a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Deamination",
+            "reagents": "IBX, pTsOH",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 70 °C",
+            "yield": "77%",
+            "reactant_smiles": "C=C[C@H]1[C@@](N)(C2)CC[N@]3C1CC23",
+            "product_smiles": "C=CC1CN2CCC1C(=O)C2",
+            "notes": "Oxidation of a bridgehead primary amine to a ketone using IBX/pTsOH.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Aldol Addition",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "COC1=CC2=C(C=C1)N=CC=C2C=O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC1CN2CCC1C(=O)C2",
+            "product_smiles": "C=CC1CN2CC([C@@H](O)C3=CC=NC4=C3C=C(OC)C=C4)C(=O)C1C2",
+            "notes": "Nucleophilic addition of 6-methoxyquinoline-4-carbaldehyde to a vinyl-substituted lactam (1-vinyl-1-azabicyclo[2.2.2]octan-3-one), forming a new chiral center with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ketone to Hydrazone Formation (condensation)",
+            "reagents": "Ti(O-i-Pr)3Cl, MsNHNH2",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "C=CC1CN2CCC1C(=O)C2[C@@H](C3=CC=NC4=C3C=C(C=C4)OC)O",
+            "product_smiles": "C=CC1CN2CCC1C(=NNS(=O)(=O)C)C2[C@@H](C3=CC=NC4=C3C=C(C=C4)OC)O",
+            "notes": "Conversion of a ketone to a methanesulfonyl hydrazone. The stereochemistry at the secondary alcohol is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4, MeOH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "53%",
+            "reactant_smiles": "C=CC1CN2CCC1/C(=N\\NS(=O)(=O)C)/C2[C@@H](C3=CC=NC4=C3C=C(C=C4)OC)O",
+            "product_smiles": "COC1=CC=C2N=CC=C(C2=C1)[C@H](O)[C@H]3C[C@H]4N(CC[C@H]4[C@H]3C=C)CC3",
+            "notes": "Reduction of an imine with concomitant removal of mesylhydrazine group, and epimerization at C9 to form (-)-Quinine.",
+            "substeps": []
+        }
+    ]
+}

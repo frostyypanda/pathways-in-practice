@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "callystatin-a-micalizio-2008",
+        "molecule_name": "Callystatin A",
+        "class": "Natural Product",
+        "author": "Micalizio",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H](C)CO",
+            "product_smiles": "CC[C@@H](C)C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using PCC with retention of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Evans aldol",
+            "reagents": "Bu₂BOTf, Et₃N, THF",
+            "reagent_smiles": "O=C1OC[C@H](C(C)C)N1C(=O)CC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC[C@H](C)C=O",
+            "product_smiles": "CC[C@H](C)[C@H](O)[C@H](C)C(=O)N1[C@H](COC1=O)C(C)C",
+            "notes": "Stereoselective aldol reaction between 2-methylbutanal and Evans chiral auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Weinreb Amide Formation / Oxazolidinone Ring Opening",
+            "reagents": "AlMe3",
+            "reagent_smiles": "C[Al](C)C.CNOC",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC[C@H](C)[C@H]([C@H](C)C(=O)N1[C@@H](COC1=O)C(C)C)O",
+            "product_smiles": "CC[C@H](C)[C@H]([C@H](C)C(=O)N(C)OC)O",
+            "notes": "Conversion of an N-acyl oxazolidinone to a Weinreb amide using N,O-dimethylhydroxylamine and trimethylaluminum.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBSOTf, 2,6-Lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "82%",
+            "reactant_smiles": "CC[C@H](C)[C@H]([C@H](C)C(=O)N(C)OC)O",
+            "product_smiles": "CC[C@H](C)[C@H]([C@H](C)C(=O)N(C)OC)[OTBS]",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "DIBALH",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H](C)[C@H]([OTBS])[C@@H](C)C(=O)N(C)OC",
+            "product_smiles": "CC[C@@H](C)[C@H]([OTBS])[C@@H](C)C=O",
+            "notes": "Weinreb amide is reduced to an aldehyde using DIBALH (Diisobutylaluminum hydride).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Propargylation / Sakurai reaction",
+            "reagents": "TiCl4",
+            "reagent_smiles": "C[C@@H]=C=C(C)[TMS]",
+            "conditions": "CH2Cl2",
+            "yield": "65%",
+            "reactant_smiles": "CC[C@H](C)[C@H]([OTBS])[C@H](C)C=O",
+            "product_smiles": "CC#C[C@H](C)[C@H](O)[C@H](C)[C@H]([OTBS])[C@H](CC)",
+            "notes": "An aldehyde undergoes propargylation with an allenylsilane reagent in the presence of TiCl4, forming a homopropargylic alcohol. The allene rearranges to the alkyne in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Alcohol Silylation (Protection)",
+            "reagents": "TMSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC#C[C@H](C)[C@@H]([C@H](C)[C@@H]([C@H](C)CC)[OTBS])O",
+            "product_smiles": "CC#C[C@H](C)[C@@H]([C@H](C)[C@@H]([C@H](C)CC)[OTBS])[OTMS]",
+            "notes": "Protection of a secondary alcohol as a trimethylsilyl (TMS) ether in the presence of a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Chain extension / Carbotitanation",
+            "reagents": "CITi([OiPr])3, C5H9MgCl, Toluene",
+            "reagent_smiles": "CC#CC[C@@H](C)/C=C(\\\\CC)\\\\C=C\\\\[C@@H]1CC=CO[C@H]([OiPr])C1",
+            "conditions": "Toluene",
+            "yield": "75%",
+            "reactant_smiles": "CC[C@@H](C)[C@@H]([OTBS])[C@H](C)[C@H]([OTMS])CC#CC",
+            "product_smiles": "CC[C@@H](C)[C@@H]([OTBS])[C@H](C)[C@H]([OTMS])CC(=C/C)/CC[C@@H](C)/C=C(CC)\\\\C=C/C[C@@H]2CC(O[C@H]([OiPr])C2)O",
+            "notes": "Extension of an alkyne-containing fragment to a dihydropyran derivative, forming a longer chain. The pyran ring becomes saturated in the product, and a new double bond is formed where the alkyne was.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Formylation",
+                    "reagents": "n-BuLi, DMF, KH2PO4",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[TIPS]C#CH",
+                    "product_smiles": "[TIPS]C#CC(=O)H",
+                    "notes": "Formylation of a TIPS-protected terminal alkyne using n-butyllithium and DMF.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Grignard Addition",
+                    "reagents": "THF",
+                    "reagent_smiles": "C=CC[Mg]Br",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "[TIPS]C#CC=O",
+                    "product_smiles": "C=CCC(O)C#[TIPS]",
+                    "notes": "Addition of allylmagnesium bromide to a TIPS-protected propargyl aldehyde to form a racemic secondary propargylic alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Transesterification",
+                    "reagents": "lipase Amano AK",
+                    "reagent_smiles": "C=CC(=O)OC=C",
+                    "conditions": "",
+                    "yield": "46%",
+                    "reactant_smiles": "C=CCC(O)C#[TIPS]",
+                    "product_smiles": "C=CC[C@H](OC(=O)C=C)C#[TIPS]",
+                    "notes": "Enzymatic acetylation of a propargyl alcohol with vinyl acrylate, forming an acrylate ester. The wavy bond for the alcohol group in the reactant indicates racemic or unknown stereochemistry, which is resolved to a specific (R) configuration in the product.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Grubbs ring closing metathesis",
+                    "reagents": "",
+                    "reagent_smiles": "Cl[Ru](=Cc1ccccc1)(Cl)(P(C1CCCCC1)(C2CCCCC2)C3CCCCC3)P(C4CCCCC4)(C5CCCCC5)C6CCCCC6",
+                    "conditions": "",
+                    "yield": "83%",
+                    "reactant_smiles": "C=CC[C@H](C#C[TIPS])OC(=O)C=C",
+                    "product_smiles": "O=C1OC[C@H](C#C[TIPS])CC=C1",
+                    "notes": "Intramolecular ring closing metathesis of a diene with an alkyne-substituted chiral center, forming a 6-membered delta-lactone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Lactone Reduction / Acetal Formation",
+                    "reagents": "DIBAL-H, PPTS",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, i-PrOH",
+                    "yield": "82%",
+                    "reactant_smiles": "[TIPS]C#C[C@@]1([H])CC=CC(=O)O1",
+                    "product_smiles": "[Oi-Pr][C@H]1C=CC[C@]([H])(C#C[TIPS])O1",
+                    "notes": "Reduction of a lactone to a cyclic mixed isopropyl acetal, accompanied by double bond migration.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.6",
+                    "reaction_type": "Deprotection",
+                    "reagents": "TBAF, AcOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "91%",
+                    "reactant_smiles": "CC(C)O[C@H]1C=CC[C@@H](C#C[TIPS])O1",
+                    "product_smiles": "CC(C)O[C@H]1C=CC[C@@H](C#CH)O1",
+                    "notes": "Deprotection of a TIPS-protected terminal alkyne.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.7",
+                    "reaction_type": "Hydrozirconation-Iodination",
+                    "reagents": "Cp₂ZrHCl, I₂",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "86%",
+                    "reactant_smiles": "[Oi-Pr][C@H]1C=CC[C@@H](C#C)O1",
+                    "product_smiles": "[Oi-Pr][C@H]1C=CC[C@@H](/C=C/I)O1",
+                    "notes": "Alkyne converted to E-vinyl iodide; stereochemistry of chiral centers preserved. The relative stereochemistry between the Oi-Pr group and the alkyne/vinyl iodide group is trans.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.8",
+                    "reaction_type": "Negishi coupling",
+                    "reagents": "ZnCl2, t-BuLi, Pd(PPh3)4",
+                    "reagent_smiles": "CC/C=C(\\C)[C@H](C)CC#C[TMS]",
+                    "conditions": "",
+                    "yield": "72%",
+                    "reactant_smiles": "[OiPr][C@@H]1C=CC[C@@H](/C=C/I)O1",
+                    "product_smiles": "[OiPr][C@@H]1C=CC[C@@H](/C=C/C=C(\\C)[C@H](C)CC#C[TMS])O1",
+                    "notes": "Negishi coupling of an iodo-alkene with an organozinc reagent to form a conjugated diene, with retention of stereochemistry at chiral centers and double bonds.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.9",
+                    "reaction_type": "Desilylation",
+                    "reagents": "TBAF",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "83%",
+                    "reactant_smiles": "CC/C(=C/[C@H](C)CC#C[TMS])/C=C/[C@H]1CC=C[C@H]([Oi-Pr])O1",
+                    "product_smiles": "C#CC[C@H](C)/C=C(CC)/C=C/[C@H]1CC=C[C@H]([Oi-Pr])O1",
+                    "notes": "Deprotection of a TMS-protected alkyne to a terminal alkyne.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (acidic hydrolysis)",
+            "reagents": "PPTS, H₂O",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "71%",
+            "reactant_smiles": "CC[C@H](C)[C@H]([C@H](C)[C@H]([C@H](C)/C=C(\\C)/C=C/C[C@@H](C)/C=C(/CC)\\C=C/[C@H]1CC=C[C@H]([OiPr])O1)[OTMS])[OTBS]",
+            "product_smiles": "CC[C@H](C)[C@H]([C@H](C)[C@H]([C@H](C)/C=C(\\C)/C=C/C[C@@H](C)/C=C(/CC)\\C=C/[C@H]1CC=C[C@H](O)O1)O)[OTBS]",
+            "notes": "Acid-catalyzed hydrolysis of an isopropyl ether and a trimethylsilyl ether to hydroxyl groups, while a tert-butyldimethylsilyl ether remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC, AcOH",
+            "reagent_smiles": "",
+            "conditions": "benzene",
+            "yield": "83%",
+            "reactant_smiles": "CC[C@H](C)[C@H](O[Si](C)(C)C(C)(C)C)[C@@H](O)[C@H](C)[C@H](C)CC=C(C)/C=C/C[C@@H](C)C/C=C(\u0002CC)/C=C/[C@H]1OC[C@H](O)/C=C/1",
+            "product_smiles": "CC[C@H](C)[C@H](O[Si](C)(C)C(C)(C)C)C(=O)[C@H](C)[C@H](C)CC=C(C)/C=C/C[C@@H](C)C/C=C(\u0002CC)/C=C/[C@H]1/C=C/CC(=O)O1",
+            "notes": "Oxidation of a secondary alcohol in a dihydropyran ring to a delta-lactone using PCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection (Silyl ether hydrolysis)",
+            "reagents": "HF, pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "41%",
+            "reactant_smiles": "CC[C@H](C)[C@H]([C@@H](C)C(=O)[C@H](C)/C=C(\\C)/C=C/C[C@@H](C)/C=C(/CC)/C=C/[C@H]1CC=CC(=O)O1)[OTBS]",
+            "product_smiles": "CC[C@H](C)[C@H]([C@@H](C)C(=O)[C@H](C)/C=C(\\C)/C=C/C[C@@H](C)/C=C(/CC)/C=C/[C@H]1CC=CC(=O)O1)O",
+            "notes": "Hydrolysis of a TBDMS ether to a hydroxyl group using HF in pyridine and THF.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "seychellene-jung-1980",
+        "molecule_name": "Seychellene",
+        "class": "Natural Product",
+        "author": "Jung",
+        "year": 1980
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "LDA, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "CC1=C(C)C(=O)CCC1",
+            "product_smiles": "CC1=C(C)C(=CCC1)O[TMS]",
+            "notes": "Formation of a trimethylsilyl enol ether from an α,β-unsaturated ketone (enone) using LDA as a base and TMSCl as the silylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Diels Alder cycloaddition",
+            "reagents": "",
+            "reagent_smiles": "C=CC=O",
+            "conditions": "25 °C",
+            "yield": "94%",
+            "reactant_smiles": "C[C]1=C(C)C=C([OTMS])CCC1",
+            "product_smiles": "C=CC(=O)C[C@@H]1C[C@@H]2C[C@H]3C[C@H]([C@@H]1C3(C)C)([OTMS])C2",
+            "notes": "Diels-Alder cycloaddition of a 1,3-cyclohexadiene derivative with acrolein. The product is a complex tricyclic system. Note a discrepancy in heavy atom count: Reactant (13 heavy atoms) + Reagent (4 heavy atoms) = 17 expected heavy atoms. The product as drawn in the screenshot (and reflected in its SMILES) contains 20 heavy atoms. This suggests an inconsistency in the provided visual representation's stoichiometry or an unpictured additional fragment/reagent.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Double Dehydrohalogenation / Elimination",
+                    "reagents": "",
+                    "reagent_smiles": "c1ccc2cnccc2c1",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C(CCl)C(=O)CCCl",
+                    "product_smiles": "C=CC(=O)C=C",
+                    "notes": "Double dehydrochlorination of 1,5-dichloro-3-pentanone using quinoline as a base to form 1,4-pentadien-3-one (divinyl ketone).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Lewis acid-catalyzed intramolecular cyclization",
+            "reagents": "TiCl4",
+            "reagent_smiles": "",
+            "conditions": "DCM, 5%",
+            "yield": "",
+            "reactant_smiles": "C=CC(=O)C1CC2CC(C)(C3C2C(C)=C(O[Si](C)(C)C)C31)C",
+            "product_smiles": "CC1C2CCC3C(C2)C(=O)C(C)(C13)C(=O)",
+            "notes": "Intramolecular cyclization of an enol silyl ether and an alpha,beta-unsaturated ketone, mediated by TiCl4, to form a tricyclic diketone (Seychellene Dione). The OTMS group is removed and converted to a ketone, and the double bond in the side chain is consumed during cyclization to form another ketone and saturate the ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Organolithium addition",
+            "reagents": "MeLi",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1C2CCC(=O)C(C)C3CCC(=O)C(C1)C23",
+            "product_smiles": "CC1C2CCC(=O)C(C)C3CCC(C)(O)C(C1)C23",
+            "notes": "Addition of methyl lithium to one of the ketones, resulting in a tertiary alcohol with an introduced methyl group. The other ketone remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dehydration",
+            "reagents": "POCl3, pyridine",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "46% (2 steps)",
+            "reactant_smiles": "CC1(O)C2CCC3(C)C4CCC(C13)C(=O)C24",
+            "product_smiles": "CC1=CCC2(C)C3(C)CCC(CC13)C(=O)C2C.C=C1CCC2(C)C3CC(CCC3(C)C2=O)C1",
+            "notes": "Dehydration of a tertiary alcohol to yield a mixture of an endocyclic and an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "[Pd]",
+            "conditions": "",
+            "yield": "62%",
+            "reactant_smiles": "CC1=CC2C(C3(C)C)CCC13C(=O)C2.C=C1C(C2C(C3(C)C)CCC23C(=O)C1)C",
+            "product_smiles": "CC1C2CC(C(=O)[C@H]1)C(C)CC2(C)",
+            "notes": "Hydrogenation of a mixture of bicyclic dienone and enone to form a saturated bicyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Organolithium Addition / Grignard-like Reaction",
+            "reagents": "",
+            "reagent_smiles": "[Li]C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC2(C)C(=O)C3(C)C(C2)CCC13C",
+            "product_smiles": "CC(O)1C2(C)CCC3(C)C(C2)CCC(C)[C@H]13C",
+            "notes": "Methylation of a ketone to form a tertiary alcohol with a new chiral center, shown as a racemic mixture (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Elimination / Dehydration",
+            "reagents": "SOCl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC2(C)C3(C)CCC(CC13)C2(C)O",
+            "product_smiles": "C[C@H]1CC[C@]2(C)C(=C)[C@@H]3C[C@H]1CC[C@@]32C",
+            "notes": "Dehydration of an alcohol to an exocyclic alkene (Seychellene) using thionyl chloride.",
+            "substeps": []
+        }
+    ]
+}

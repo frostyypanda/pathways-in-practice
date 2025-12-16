@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "eburnamonine-romiti-2023",
+        "molecule_name": "Eburnamonine",
+        "class": "Natural Product",
+        "author": "Romiti",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Carbometallation / Alkylation of alkyne",
+            "reagents": "EtMgBr, CuI",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C#CCO",
+            "product_smiles": "CCC(=C)CO",
+            "notes": "Addition of ethyl group to a terminal alkyne, catalyzed by copper, forming an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Orthoester Claisen Rearrangement",
+            "reagents": "HC(OEt)3, AcOH",
+            "reagent_smiles": "C(OCC)(OCC)OCC.CC(=O)O",
+            "conditions": "170 °C",
+            "yield": "",
+            "reactant_smiles": "CCC(=C)CO",
+            "product_smiles": "CCC(=C)CCC(=O)OCC",
+            "notes": "Orthoester Claisen rearrangement of an allyl alcohol to form an ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "KOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "41% (3 steps)",
+            "reactant_smiles": "CCC(=C)CCC(=O)OCC",
+            "product_smiles": "CCC(=C)CCC(=O)O",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Formation",
+            "reagents": "CDI, DMAP",
+            "reagent_smiles": "C1=CC2=C(C=C1)NC=C2CCN",
+            "conditions": "DCM, rt",
+            "yield": "99%",
+            "reactant_smiles": "CCC(=C)CCC(=O)O",
+            "product_smiles": "CCC(=C)CCC(=O)NCCC1=CNC2=C1C=CC=C2",
+            "notes": "Amide coupling reaction between a carboxylic acid and tryptamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide reduction",
+            "reagents": "LiAlH4, THF",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "91%",
+            "reactant_smiles": "CCC(=C)CCC(=O)NCCC1=CNC2=C1C=CC=C2",
+            "product_smiles": "CCC(=C)CCCNCCC1=CNC2=C1C=CC=C2",
+            "notes": "Amide carbonyl group reduced to a methylene group, converting an amide into an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acylation / Cyanoformylation",
+            "reagents": "Me2S",
+            "reagent_smiles": "O1C(C#N)(C#N)C(C#N)(C#N)1",
+            "conditions": "1,4-dioxane, 90 °C",
+            "yield": "63%",
+            "reactant_smiles": "CCC(=C)CCCNCCC1=CNC2=C1C=CC=C2",
+            "product_smiles": "CCC(=C)CCCN(CCC1=CNC2=C1C=CC=C2)C(=O)C#N",
+            "notes": "Secondary amine is acylated with a cyanoformyl group derived from 2,2,3,3-tetracyanooxetane, forming a tertiary amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "82%",
+            "reactant_smiles": "CCC(=C)CCCN(CCC1=CNC2=C1C=CC=C2)C(=O)C#N",
+            "product_smiles": "CCC(=C)CCCN(CCC1=CN([Boc])C2=C1C=CC=C2)C(=O)C#N",
+            "notes": "N-Boc protection of indole nitrogen using di-tert-butyl dicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C2C(C=C1)=C(CCN(C(=O)C#N)CCCC(=C)CC)N2[Boc]",
+            "product_smiles": "C1=CC=C2C(C=C1)=C(CCN(C(=O)[C@@]3(CC)CC#N)CCC3)N2[Boc]",
+            "notes": "Intramolecular cyclization involving the terminal alkene and the cyanoamide functionality, forming a 6-membered ring and a new stereocenter. The small structure above the arrow in the screenshot is the reactant itself, indicating an intramolecular process, not an added reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Thermal Deprotection",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "180 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCCN(CCC2=CN([Boc])C3=C2C=CC=C3)C1=O)CC#N",
+            "product_smiles": "CC[C@@]1(CCCN(CCC2=CNC3=C2C=CC=C3)C1=O)CC#N",
+            "notes": "Thermal deprotection of the N-Boc protecting group on the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Bischler-Napieralski Cyclization / Intramolecular Pictet-Spengler type",
+            "reagents": "POCl3, NaBF4",
+            "reagent_smiles": "O=P(Cl)(Cl)Cl.[Na+].[BF4-]",
+            "conditions": "MeCN, reflux, H2O",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "CC[C@@]1(CCCN(CCC2=CNC3=C2C=CC=C3)C1=O)CC#N",
+            "product_smiles": "CC[C@@]1(CC#N)CCC[N+]2=C3C4=C(NC=C4)C=C(CC2)C31.[BF4-]",
+            "notes": "Intramolecular cyclization of an indole-lactam to form an indoloquinolizinium salt via iminium intermediate, catalyzed by POCl3, followed by counterion exchange with NaBF4.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Zn].O.CC(=O)O",
+            "conditions": "",
+            "yield": "24%",
+            "reactant_smiles": "CC[C@@]1(C(=[N+]2)C3=C(NC4=CC=CC=C43)CCC12)CC#N.[BF4-]",
+            "product_smiles": "CC[C@@]1(CCCN2CCC3=C([C@@H]12)NC4=CC=CC=C34)CC#N",
+            "notes": "Reduction of an indoloquinolizinium ion to a tertiary amine indoloquinolizine using zinc metal.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Intramolecular Cyclization / Amidine Formation",
+            "reagents": "NaOMe",
+            "reagent_smiles": "CO[Na]",
+            "conditions": "MeOH, 85 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCCN2CCC3=C([C@@H]12)NC4=CC=CC=C34)CC#N",
+            "product_smiles": "CC[C@@]1([C@@H]2N3CCCC4=CC=CC=C4C3=C2C(=NH)CC1)N",
+            "notes": "Intramolecular cyclization of an indole-substituted nitrile to form a cyclic imine, catalyzed by sodium methoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Imine Hydrolysis / Lactam Formation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "H2O, 80 °C",
+            "yield": "23% (2 steps)",
+            "reactant_smiles": "CC[C@@]12CCCN3CCC4=C([C@@H]13)N(C5=CC=CC=C45)C(=N)C2",
+            "product_smiles": "CC[C@@]12CCCN3CCC4=C([C@@H]13)N(C5=CC=CC=C45)C(=O)C2",
+            "notes": "Hydrolysis of an imine to form a lactam, converting a complex polycyclic amine into (+)-Eburnamonine.",
+            "substeps": []
+        }
+    ]
+}

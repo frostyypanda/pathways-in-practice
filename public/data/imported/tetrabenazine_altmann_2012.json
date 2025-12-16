@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tetrabenazine-altmann-2012",
+        "molecule_name": "Tetrabenazine",
+        "class": "Natural Product",
+        "author": "Altmann",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection",
+            "reagents": "Fmoc-Osu",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "COC1=C(OC)C=C(CCN)C=C1",
+            "product_smiles": "COC1=C(OC)C=C(CCN[Fmoc])C=C1",
+            "notes": "Primary amine is protected with a fluorenylmethyloxycarbonyl (Fmoc) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "ICl, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "[Fmoc]NCCC1=CC(OC)=C(OC)C=C1",
+            "product_smiles": "[Fmoc]NCCC1=C(I)C=C(OC)C(OC)=C1",
+            "notes": "Aromatic iodination of 2-(3,4-dimethoxyphenyl)ethylamine protected as an Fmoc carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd2(dba)3, AsPh3, DMF",
+            "reagent_smiles": "C=C[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "DMF",
+            "yield": "60%",
+            "reactant_smiles": "COC1=C(OC)C=C(I)C(CCN[Fmoc])=C1",
+            "product_smiles": "COC1=C(OC)C=C(C=C)C(CCN[Fmoc])=C1",
+            "notes": "Stille coupling of an iodoaryl ether with vinyltributyltin, replacing the iodide with a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Fmoc Deprotection",
+            "reagents": "NaOt-Bu, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "52%",
+            "reactant_smiles": "C=Cc1cc(CCN[Fmoc])c(OC)c(OC)c1",
+            "product_smiles": "C=Cc1cc(CCN)c(OC)c(OC)c1",
+            "notes": "Fmoc protecting group is removed from the primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling & Pictet-Spengler Cyclization",
+            "reagents": "EDCI",
+            "reagent_smiles": "O=C(O)[C@H](C(C)C)[C@H](O[TBS])C=C.Oc1nnn2c1cccc2",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "COc1cc(OC)c(CCN)c(C=C)c1",
+            "product_smiles": "C=Cc1c2c(c(OC)cc1OC)CCNC2N(C=O)[C@H](C(C)C)[C@@H](O[TBS])C=C",
+            "notes": "Amide bond formation between a primary amine and a carboxylic acid, followed by intramolecular Pictet-Spengler type cyclization to form a 1,2,3,4-tetrahydroisoquinoline derivative.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Evans Aldol Addition",
+                    "reagents": "TiCl4, i-PrNEt, NMP",
+                    "reagent_smiles": "C=CC=O",
+                    "conditions": "-78° C, CH2Cl2",
+                    "yield": "78%",
+                    "reactant_smiles": "CC(C)CCC(=O)N1[C@@H](C)[C@H](c2ccccc2)OC1=O",
+                    "product_smiles": "CC(C)C[C@H]([C@H](O)C=C)C(=O)N1[C@@H](C)[C@H](c2ccccc2)OC1=O",
+                    "notes": "An Evans aldol addition reaction between a chiral N-acyloxazolidinone and acrolein, forming a syn-diastereomeric beta-hydroxy ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Nucleophilic Acyl Substitution / Chiral Auxiliary Cleavage",
+                    "reagents": "THF",
+                    "reagent_smiles": "CCCC[Li].C[Al](C)C.CSCc1ccccc1",
+                    "conditions": "",
+                    "yield": "76%",
+                    "reactant_smiles": "C=C[C@H]([C@H](CC(C)C)C(=O)N1[C@H](C)[C@H](c2ccccc2)OC1=O)O",
+                    "product_smiles": "C=C[C@H]([C@H](CC(C)C)C(=O)[BnS])O",
+                    "notes": "Chiral oxazolidinone auxiliary is cleaved and replaced by a benzylthio group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Thioester Hydrolysis",
+                    "reagents": "LiOH, H2O2",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, THF",
+                    "yield": "89%",
+                    "reactant_smiles": "C=C[C@@H]([C@@H](CC(C)C)C(=O)S[Bn])O",
+                    "product_smiles": "C=C[C@@H]([C@@H](CC(C)C)C(=O)O)O",
+                    "notes": "Hydrolysis of a benzyl thioester to a carboxylic acid with retention of stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Alcohol Protection",
+                    "reagents": "TBSOTf, 2,6-lutidine, K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "THF/MeOH",
+                    "yield": "89%",
+                    "reactant_smiles": "C=C[C@H]([C@H](CC(C)C)C(=O)O)O",
+                    "product_smiles": "C=C[C@H]([C@H](CC(C)C)C(=O)O)[OTBS]",
+                    "notes": "The secondary alcohol is protected as a TBS ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Hoveyda-Grubb's II",
+            "reagent_smiles": "",
+            "conditions": "toluene, 110 °C",
+            "yield": "83%",
+            "reactant_smiles": "C=Cc1c(CCNCC(=O)[C@@H](CC(C)C)[C@@H](C=C)[OTBS])cc(OC)c1OC",
+            "product_smiles": "CC(C)C[C@@H]1[C@@H](/C=C/c2c(CCNC1=O)cc(OC)c2OC)[OTBS]",
+            "notes": "Intramolecular ring-closing metathesis between a terminal alkene and an aryl-alkene to form a 10-membered macrocyclic lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection & Intramolecular Cyclization",
+            "reagents": "TsOH",
+            "reagent_smiles": "",
+            "conditions": "benzene",
+            "yield": "68%",
+            "reactant_smiles": "CC(C)C[C@H]1C(=O)N2CCC3=C(C=C(OC)C(OC)=C3)C=C[C@@H](O[TBS])C12",
+            "product_smiles": "CC(C)C[C@H]1C(=O)N2C3=C(C=C(OC)C(OC)=C3)C[C@H]2[C@@H](O)C13",
+            "notes": "Acid-catalyzed hydrolysis of TBS ether followed by intramolecular cyclization to form a tetracyclic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF",
+            "yield": "68%",
+            "reactant_smiles": "CC(C)C[C@H]1[C@@H](C[C@H]2C3=C(CCN2C1=O)C=C(C(=C3)OC)OC)O",
+            "product_smiles": "CC(C)C[C@H]1CN2CCC3=CC(=C(C=C3[C@H]2C[C@@H]1O)OC)OC",
+            "notes": "Lactam carbonyl reduced to a methylene group, converting the amide to a tertiary amine. Stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ley oxidation",
+            "reagents": "TPAP, NMO",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "58%",
+            "reactant_smiles": "CC(C)C[C@@H]1CN2CCC3=CC(=C(C=C3[C@H]2C[C@@H]1O)OC)OC",
+            "product_smiles": "CC(C)C[C@@H]1CN2CCC3=CC(=C(C=C3[C@H]2CC1=O)OC)OC",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        }
+    ]
+}

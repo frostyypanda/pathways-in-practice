@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "zoloft-sertraline-pfizer-unknown-2024",
+        "molecule_name": "Zoloft (Sertraline Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Reaction",
+            "reagents": "allylMgBr",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "O=Cc1ccccc1",
+            "product_smiles": "C=CCC(O)c1ccccc1",
+            "notes": "Grignard addition of allylmagnesium bromide to benzaldehyde, forming a secondary alcohol with an allyl group. The product is racemic.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Kinetic Resolution",
+            "reagents": "amino lipase PS",
+            "reagent_smiles": "CC(=O)OC=C",
+            "conditions": "",
+            "yield": "40%",
+            "reactant_smiles": "C=CCC(C1=CC=CC=C1)O",
+            "product_smiles": "C=CC[C@H](C1=CC=CC=C1)O",
+            "notes": "Enzymatic kinetic resolution of racemic 1-phenylbut-3-en-1-ol using amino lipase PS and vinyl acetate to yield (R)-1-phenylbut-3-en-1-ol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Carbamate Formation",
+            "reagents": "NaH",
+            "reagent_smiles": "CC(C)N(C(C)C)C(=O)Cl",
+            "conditions": "THF",
+            "yield": "83%",
+            "reactant_smiles": "C=CC[C@H](C1=CC=CC=C1)O",
+            "product_smiles": "C=CC[C@H](C1=CC=CC=C1)OC(=O)N(C(C)C)C(C)C",
+            "notes": "Stereospecific formation of a carbamate from a secondary alcohol using diisopropylcarbamoyl chloride and sodium hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "1,2-Boronate Rearrangement",
+            "reagents": "sec-BuLi",
+            "reagent_smiles": "ClC1=C(Cl)C=CC(=C1)B2OC(C)(C)C(C)(C)O2",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "C=CC[C@@H](C1=CC=CC=C1)OC(=O)N(C(C)C)C(C)C",
+            "product_smiles": "C=CC[C@](C1=CC=CC=C1)(C2=CC(=C(C=C2)Cl)Cl)B3OC(C)(C)C(C)(C)O3",
+            "notes": "Stereospecific conversion of a chiral carbamate to a chiral tertiary boronic ester via 1,2-migration of a dichlorophenyl group from boron to carbon, with inversion of configuration at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Protodeboronation",
+            "reagents": "CsF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "C=CC[C@](C1=CC=CC=C1)(C2=C(Cl)C=CC=C2Cl)B3OC(C)(C)C(C)(C)O3",
+            "product_smiles": "C=CC[C@H](C1=CC=CC=C1)C2=C(Cl)C=CC=C2Cl",
+            "notes": "Stereoretentive protodeboronation of a secondary boronate ester. The pinacol boronate group is replaced by a hydrogen atom while maintaining the stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "9-BBN, H2O2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@H](c1ccccc1)c1c(Cl)c(Cl)ccc1",
+            "product_smiles": "OCCC[C@H](c1ccccc1)c1c(Cl)c(Cl)ccc1",
+            "notes": "Anti-Markovnikov hydration of a terminal alkene to a primary alcohol, with retention of stereochemistry at the non-reacting chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Jones oxidation",
+            "reagents": "H₂CrO₄",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@@H](CCCO)C1=CC(Cl)=C(Cl)C=C1",
+            "product_smiles": "C1=CC=C(C=C1)[C@@H](CCC(=O)O)C1=CC(Cl)=C(Cl)C=C1",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Friedel-Crafts acylation",
+            "reagents": "Friedel-Crafts acylation",
+            "reagent_smiles": "ClS(=O)(=O)O",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@H](CCC(=O)O)C2=CC(=C(C=C2)Cl)Cl",
+            "product_smiles": "C1=CC2=C(C=C1)C(=O)CC[C@H]2C3=CC(=C(C=C3)Cl)Cl",
+            "notes": "Intramolecular Friedel-Crafts acylation using chlorosulfonic acid to form a tetralone derivative. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Amination",
+            "reagents": "MeNHOH.HCl, H2",
+            "reagent_smiles": "",
+            "conditions": "Pd/CaCO3",
+            "yield": "47% (2 steps)",
+            "reactant_smiles": "O=C1CCc([C@H](c2ccc(Cl)c(Cl)c2))c3ccccc13",
+            "product_smiles": "CN[C@@H]1CC[C@H](c2ccc(Cl)c(Cl)c2)c3ccccc13",
+            "notes": "Ketone is converted to a secondary N-methylamine via oxime formation and subsequent catalytic hydrogenation. The stereocenter at C4 is retained, and a new stereocenter at C1 is formed with specific diastereoselectivity (resulting in trans-(1S,4S) Sertraline).",
+            "substeps": []
+        }
+    ]
+}

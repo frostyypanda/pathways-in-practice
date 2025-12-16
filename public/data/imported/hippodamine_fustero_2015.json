@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hippodamine-fustero-2015",
+        "molecule_name": "Hippodamine",
+        "class": "Natural Product",
+        "author": "Fustero",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Reaction",
+            "reagents": "Mg, I2, ethyl formate",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "94%",
+            "reactant_smiles": "C=CCCCBr",
+            "product_smiles": "C=CCCCC(CCCC=C)O",
+            "notes": "Grignard reagent formed from 1-bromo-4-pentene reacts with ethyl formate to produce a symmetrical secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "95%",
+            "reactant_smiles": "C=CCCCC(O)CCCC=C",
+            "product_smiles": "C=CCCCC(=O)CCCC=C",
+            "notes": "Oxidation of a secondary alcohol to a ketone using PCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Imine formation",
+            "reagents": "Ti(OEt)4",
+            "reagent_smiles": "[tBu][S@](=O)N",
+            "conditions": "THF",
+            "yield": "80%",
+            "reactant_smiles": "C=CCCCC(=O)CCCC=C",
+            "product_smiles": "C=CCCCC(=N[S@](=O)[tBu])CCCC=C",
+            "notes": "A ketone is reacted with a chiral tert-butylsulfinamide (Ellman's sulfinamide) in the presence of titanium(IV) ethoxide to form a chiral sulfinyl imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Sulfinylimine Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C=CCCC(=N[S@](=O)C(C)(C)C)CCCC=C",
+            "product_smiles": "C=CCCC(CCCC=C)N[S@](=O)C(C)(C)C",
+            "notes": "Reduction of an N-sulfinylimine to the corresponding sulfinylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cross-metathesis",
+            "reagents": "Ru-II",
+            "reagent_smiles": "C=CC(=O)OC(C)(C)C",
+            "conditions": "DCM",
+            "yield": "60%",
+            "reactant_smiles": "C=CCCCC(CCCC=C)N[S@](=O)C(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)/C=C/CCCC(CCCC/C=C/C(=O)OC(C)(C)C)N[S@](=O)C(C)(C)C",
+            "notes": "Di-cross-metathesis of terminal alkenes with tert-butyl acrylate, retaining sulfinyl stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Michael Addition / Cyclization",
+            "reagents": "NaH, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "63%",
+            "reactant_smiles": "CC(C)(C)OC(=O)/C=C/CCCC(CCC/C=C/C(=O)OC(C)(C)C)N[S@](=O)C(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@@H]1CCC[C@@H](CCC/C=C/C(=O)OC(C)(C)C)N1[S@](=O)C(C)(C)C",
+            "notes": "An intramolecular double Michael addition cyclization forms a piperidine ring. The reactant contains a chiral sulfinyl group, which is retained in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization / Sulfoxide Removal",
+            "reagents": "HCl, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "dioxane, MeOH",
+            "yield": "85%",
+            "reactant_smiles": "O=C(OC(C)(C)C)C[C@H]1CCC[C@@H](CCC/C=C\\C(=O)OC(C)(C)C)N1[S@](=O)C(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@H]1CC[C@@H]2N3CCC[C@@H](CC(=O)OC(C)(C)C)C[C@@H]13",
+            "notes": "An intramolecular cyclization leading to a quinolizidine derivative, accompanied by the removal of a chiral sulfoxide auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Dieckmann Condensation",
+            "reagents": "",
+            "reagent_smiles": "CC(C)(C)[O-].[K+]",
+            "conditions": "THF, reflux",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@@H]1CC[C@@H]2NCCC[C@@H]1C[C@H](CC(=O)OC(C)(C)C)C2",
+            "product_smiles": "CC(C)(C)OC(=O)[C@H]1C(=O)C[C@@H]2N3CCC[C@@H](C[C@@H](C3)CCC2)C1",
+            "notes": "Intramolecular cyclization of a diester to form a bicyclic beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Decarboxylation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@H]1[C@H]2C(=O)C[C@@H]3CCC[C@@H]4CCC[C@H](C1)N423",
+            "product_smiles": "C1C[C@@H]2CCC[C@@H]3CC(=O)C[C@H](C1)N23",
+            "notes": "Decarboxylation of a tert-butyl beta-keto ester to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Wittig reaction",
+            "reagents": "MePPh3Br, n-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF -78 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "C1C[C@@H]2CCC[C@H]3CC(=O)C[C@@H](C1)N23",
+            "product_smiles": "C=C1C[C@@H]2N3[C@@H](CCC2)[C@H]4CCC[C@H]1N34",
+            "notes": "Conversion of a ketone to an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Raney Ni, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "62%",
+            "reactant_smiles": "C=C1C[C@H]2CCC[C@@H]3CCC[C@@H](C1)N32",
+            "product_smiles": "C[C@H]1C[C@H]2CCC[C@@H]3CCC[C@@H](C1)N32",
+            "notes": "Hydrogenation of an exocyclic alkene to a methyl group, forming (-)-Hippodamine.",
+            "substeps": []
+        }
+    ]
+}

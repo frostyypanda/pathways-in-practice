@@ -1,0 +1,242 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "asperone-a-deng-2025",
+        "molecule_name": "Asperone A",
+        "class": "Natural Product",
+        "author": "Deng",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-Alkylation",
+            "reagents": "LDA",
+            "reagent_smiles": "CI",
+            "conditions": "THF, -78 °C to 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@@H](C)O",
+            "product_smiles": "CCOC(=O)[C@H](C)[C@@H](C)O",
+            "notes": "Alpha-methylation of an ethyl ester via enolate formation with LDA and subsequent reaction with methyl iodide (MeI). The stereochemistry of the new methyl group is controlled.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection",
+            "reagents": "TBSCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H](C)[C@@H](C)O",
+            "product_smiles": "CCOC(=O)[C@@H](C)[C@@H]([OTBS])C",
+            "notes": "Silylation of a secondary alcohol with TBSCl to form a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H](C)[C@H]([OTBS])C",
+            "product_smiles": "O[TBS][C@H](C)[C@@H](C)CO",
+            "notes": "Ester reduction to primary alcohol using DIBAL-H, preserving existing stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@H](C)[C@@H](C)CO",
+            "product_smiles": "[OTBS][C@H](C)[C@@H](C)C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using PCC. The reported yield of 81% is for 4 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Corey-Fuchs reaction",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "84%",
+            "reactant_smiles": "[OTBS][C@H](C)[C@@H](C)C=O",
+            "product_smiles": "[OTBS][C@H](C)[C@@H](C)C=C(Br)Br",
+            "notes": "Aldehyde converted to 1,1-dibromoalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkyne formation (dehydrohalogenation/carboxylation)",
+            "reagents": "nBuLi, ClCO₂Me",
+            "reagent_smiles": "CCCC[Li].COC(=O)Cl",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS][C@H](C)[C@@H](C)C=C(Br)Br",
+            "product_smiles": "[OTBS][C@H](C)[C@@H](C)C#CC(=O)OC",
+            "notes": "Double dehydrobromination of a gem-dibromoalkene followed by trapping with methyl chloroformate to form an alkyne ester. Stereochemistry is retained at the adjacent chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Diels-Alder / Aromatization",
+            "reagents": "",
+            "reagent_smiles": "[OTMS]C1=CC(C)(C)C=C([OTMS])CC1",
+            "conditions": "180 °C",
+            "yield": "95%",
+            "reactant_smiles": "[OTBS][C@H](C)[C@@H](C)C#CC(=O)OC",
+            "product_smiles": "COC(=O)C1=C(O)C(=CC(=C1)O)[C@@H](C)[C@H](C)[OTBS]",
+            "notes": "Intermolecular Diels-Alder reaction between an alkyne and a bis-siloxy diene, followed by aromatization and likely desilylation of the phenolic hydroxyls.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Silylation / Enol ether formation",
+                    "reagents": "TMSOTf, NEt3",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "CC1(C)CC(=O)CC(=O)C1",
+                    "product_smiles": "CC1(C)C=C([OTMS])C=C([OTMS])C1",
+                    "notes": "Formation of a bis-TMS enol ether from a cyclic 1,3-dicarbonyl compound.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Silylation",
+            "reagents": "TBSOTf, Et3N",
+            "reagent_smiles": "O=S(=O)(C(F)(F)F)O[Si](C)(C)C(C)(C)C.CCN(CC)CC",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@H](C)[C@H](C)C1=C(C(=CC(=C1)O)O)C(=O)OC",
+            "product_smiles": "[OTBS][C@H](C)[C@H](C)C1=C(C(=CC(=C1)[OTBS])[OTBS])C(=O)OC",
+            "notes": "Regioselective silylation of two phenolic hydroxyl groups to form TBS ethers, while a pre-existing TBS ether on the aliphatic chain remains intact. The stereochemistry of the chiral centers is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "COC(=O)c1c(O[TBS])cc(O[TBS])c(O[TBS])c1[C@@H](C)[C@H](C)O[TBS]",
+            "product_smiles": "OCc1c(O[TBS])cc(O[TBS])c(O[TBS])c1[C@@H](C)[C@H](C)O[TBS]",
+            "notes": "Reduction of a methyl ester to a primary alcohol using DIBAL. All TBS protecting groups and stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Deoxygenation",
+            "reagents": "BF3•Et2O, Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "c1([OTBS])c([OTBS])c(C[C@@H](C)[C@H](C)[OTBS])c([OTBS])c(CO)c1",
+            "product_smiles": "c1([OTBS])c([OTBS])c(C[C@@H](C)[C@H](C)[OTBS])c([OTBS])c(C)c1",
+            "notes": "Reductive deoxygenation of a primary benzylic alcohol to a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "95%",
+            "reactant_smiles": "Cc1c([C@H](C)[C@@H](C)OTBS)c(OTBS)cc(OTBS)c1",
+            "product_smiles": "Cc1c([C@H](C)[C@@H](C)OTBS)c(O)cc(O)c1",
+            "notes": "Selective deprotection of two phenolic TBS ethers using TBAF, leaving the alkyl TBS ether intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "Fremy's Salt, Na₂HPO₄",
+            "reagent_smiles": "",
+            "conditions": "Acetone, H₂O",
+            "yield": "92%",
+            "reactant_smiles": "[OTBS][C@H](C)[C@H](C)c1c(C)c(O)cc(O)c1",
+            "product_smiles": "O=C1C(C)=C([C@H](C)[C@H](C)[OTBS])C(O)=CC1=O",
+            "notes": "Oxidation of a hydroquinone to a quinone using Fremy's Salt (Potassium nitrosodisulfonate). The TBS protecting group and stereochemistry of the side chain are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Asymmetric Cascade Cycloaddition",
+            "reagents": "DMSO",
+            "reagent_smiles": "N1CCC[C@H]1[C@H](C2=C3C=C(OC)C=CC3=NC=C2)N.O=C1OC([C@H](C)/C=C/CC)C(=C1)C(=O)O[tBu]",
+            "conditions": "30 °C",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@H]([C@H]([OTBS])C)C1=C(C)C(=O)C=C(C1=O)O",
+            "product_smiles": "CC/C=C/[C@@H](C)O[C@]1(C(=O)O[tBu])C(=O)[C@@]2([C@H](C)C(=O)C3=C(O)C(=O)[C@H]2([C@@H](C[C@H]([OTBS])C))C3)C1",
+            "notes": "Asymmetric Diels-Alder reaction of quinone with a chiral furanone dienophile, catalyzed by a chiral amine, followed by intramolecular cyclizations to form a complex polycyclic system.",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Stereoselective Cyanosilylation",
+                    "reagents": "TMSCN, (salen)AlCl (S,S), Ph3PO",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -30 °C",
+                    "yield": "90%",
+                    "reactant_smiles": "CCC=CC=CC(=O)C",
+                    "product_smiles": "CC/C=C/C=C/[C@@](C)(C#N)[OTMS]",
+                    "notes": "Cyanosilylation of an α,β,γ,δ-unsaturated ketone to yield a chiral α-trimethylsiloxy nitrile.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "Reduction (Nitrile to Aldehyde)",
+                    "reagents": "DIBAL",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O",
+                    "yield": "75%",
+                    "reactant_smiles": "CC/C=C/C=C/[C@](C)(C#N)[OTMS]",
+                    "product_smiles": "CC/C=C/C=C/[C@](C)(C=O)[OTMS]",
+                    "notes": "Partial reduction of a nitrile to an aldehyde using DIBAL-H. The silyl ether (TMS) and alkene stereochemistry are retained. The chiral center configuration is also retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.3",
+                    "reaction_type": "Homologation / Chain Extension",
+                    "reagents": "SnCl2",
+                    "reagent_smiles": "N=N=CC(=O)OC(C)(C)C",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "76%",
+                    "reactant_smiles": "CC/C=C/C=C/[C@@](C)(C=O)[OTMS]",
+                    "product_smiles": "CC/C=C/C=C/[C@@](C)(C(=O)CC(=O)OC(C)(C)C)[OTMS]",
+                    "notes": "An aldehyde reacts with tert-butyl diazoacetate in the presence of SnCl2 to form a beta-keto ester, extending the carbon chain.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.4",
+                    "reaction_type": "Furanone Synthesis, Tandem Cyclization / Michael Addition",
+                    "reagents": "NaH, TBAF",
+                    "reagent_smiles": "C=CC(=O)OC(=O)C(C)(C)C",
+                    "conditions": "THF",
+                    "yield": "47%",
+                    "reactant_smiles": "CC/C=C/C=C/[C@@](C)(C(=O)CC(=O)OC(C)(C)C)O[Si](C)(C)C",
+                    "product_smiles": "CC/C=C/C=C/[C@](C)OC(=O)C(C(=O)OC(C)(C)C)=C/C=C/C",
+                    "notes": "Deprotection of TMS ether and enolate formation, followed by tandem intramolecular cyclization and Michael addition with acrylic pivalic anhydride to form a furanone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection",
+            "reagents": "HF",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "99%",
+            "reactant_smiles": "CC/C=C/C=C/[C@@]1(C)OC(=C(C(=O)[OtBu])C1=O)[C@@]2(C)[C@@H](C(C)[C@@H](C)[OTBS])C3([C@](C)(O)C(=O)C(=C(O)C3=O)C2)",
+            "product_smiles": "CC/C=C/C=C/[C@@]1(C)OC(=C(C(=O)O)C1=O)[C@@]2(C)[C@@H](C(C)[C@@H](C)O)C3([C@](C)(O)C(=O)C(=C(O)C3=O)C2)",
+            "notes": "Deprotection of t-butyl ester to carboxylic acid and TBS ether to alcohol.",
+            "substeps": []
+        }
+    ]
+}

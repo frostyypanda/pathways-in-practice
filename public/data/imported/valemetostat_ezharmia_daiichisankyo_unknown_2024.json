@@ -1,0 +1,170 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "valemetostat-ezharmia-daiichisankyo-unknown-2024",
+        "molecule_name": "Valemetostat (Ezharmia DaiichiSankyo)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection",
+            "reagents": "Boc2O, Et3N",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H]1CC[C@H](CC1)N",
+            "product_smiles": "CCOC(=O)[C@@H]1CC[C@H](CC1)N[Boc]",
+            "notes": "Protection of a primary amine with Boc anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "KBH4, LiCl",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "[CO2Et][C@@H]1CC[C@H](CC1)[NHBoc]",
+            "product_smiles": "[NHBoc][C@@H]1CC[C@H](CC1)CO",
+            "notes": "Reduction of an ethyl ester to a primary alcohol. The Boc protecting group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "NaOCl, TEMPO, KBr, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "H2O, EtOAc",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H]1CC[C@H](CO)CC1",
+            "product_smiles": "[Boc]N[C@@H]1CC[C@H](C=O)CC1",
+            "notes": "TEMPO-mediated oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Corey-Fuchs reaction",
+            "reagents": "CBr4, PPh3, TEA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H]1CC[C@H](CC1)C=O",
+            "product_smiles": "[Boc]N[C@@H]1CC[C@H](CC1)C=C(Br)Br",
+            "notes": "Aldehyde is converted to a gem-dibromoalkene via Corey-Fuchs reaction. The trans stereochemistry on the cyclohexane ring is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination",
+            "reagents": "i-PrMgCl, TMEDA",
+            "reagent_smiles": "",
+            "conditions": "THF, PhMe",
+            "yield": "66%",
+            "reactant_smiles": "[NHBoc][C@H]1CC[C@@H](C/C=C(\\Br)Br)CC1",
+            "product_smiles": "C#C[C@@H]1CC[C@H](CC1)[NHBoc]",
+            "notes": "Formation of an alkyne from a gem-dibromoalkene via double dehydrohalogenation (Corey-Fuchs type reaction).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ruthenium-catalyzed cyclization / Spiroketalization",
+            "reagents": "P(o-tol)3, Ru3(CO)12, NaOH",
+            "reagent_smiles": "COC(=O)c1c(C)c(O)cc(Cl)c1O",
+            "conditions": "PhMe, MeOH, DME",
+            "yield": "90%",
+            "reactant_smiles": "C#C[C@@H]1CC[C@H](CC1)N[Boc]",
+            "product_smiles": "CC1=C2C(=C(C=C1C(=O)OC)Cl)O[C@@H](C3CC[C@H](CC3)N[Boc])O2",
+            "notes": "Ruthenium-catalyzed cyclization of an alkyne with a dihydroxylated benzene derivative to form a spiroketal fused to the aromatic ring.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Chlorination (Electrophilic Aromatic Substitution)",
+                    "reagents": "SO2Cl2, PhMe, MeCN, H2O",
+                    "reagent_smiles": "ClS(=O)(=O)Cl.O",
+                    "conditions": "PhMe, MeCN, H2O",
+                    "yield": "68%",
+                    "reactant_smiles": "COC(=O)C1=C(C)C=CC(O)=C1O",
+                    "product_smiles": "COC(=O)C1=C(C)C(Cl)=CC(O)=C1O",
+                    "notes": "Electrophilic chlorination of methyl 2-methyl-4,5-dihydroxybenzoate. The chlorine atom is introduced at the position ortho to the methyl group and para to the adjacent hydroxyl group, which is highly activated for electrophilic substitution.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "(S)-1-phenylethylamine, HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "35%",
+            "reactant_smiles": "CC1=C2C(=C(C=C1C(=O)OC)Cl)OC(C)([C@@H]3CC[C@@H](CC3)NC(=O)OC(C)(C)C)O2",
+            "product_smiles": "CC1=C2C(=C(C=C1C(=O)O)Cl)OC(C)([C@@H]3CC[C@@H](CC3)NC(=O)OC(C)(C)C)O2",
+            "notes": "Ester hydrolysis of methyl ester to carboxylic acid, likely involving chiral resolution with (S)-1-phenylethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "DME",
+            "yield": "",
+            "reactant_smiles": "CC1=C2C(=C(C=C1C(=O)O)Cl)O[C@](C)(C3CC[C@H](CC3)N[Boc])O2",
+            "product_smiles": "CC1=C2C(=C(C=C1C(=O)O)Cl)O[C@](C)(C3CC[C@H](CC3)N)O2",
+            "notes": "Deprotection of a Boc-protected amine using HCl in DME to yield a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Amination (Eschweiler-Clarke)",
+            "reagents": "formaldehyde, formic acid",
+            "reagent_smiles": "",
+            "conditions": "H2O, DME",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "CC1=C2C(=C(C=C1C(=O)O)Cl)O[C@](C)(C3CC[C@H](CC3)N)O2",
+            "product_smiles": "CC1=C2C(=C(C=C1C(=O)O)Cl)O[C@](C)(C3CC[C@H](CC3)N(C)C)O2",
+            "notes": "Conversion of a primary amine to a tertiary dimethylamine using formaldehyde and formic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amide bond formation",
+            "reagents": "EDCI, HOBt, TEA",
+            "reagent_smiles": "Cc1cc(CN)c(=O)[nH]c1C",
+            "conditions": "acetone, H2O",
+            "yield": "91%",
+            "reactant_smiles": "CN(C)C1CC[C@@H]2OC(C)([C@@]3OC4=C(C)C(C(=O)O)=C(Cl)C3=C4)O2",
+            "product_smiles": "CN(C)C1CC[C@@H]2OC(C)([C@@]3OC4=C(C)C(C(=O)NCC5=C(C)C(=O)[nH]C(=C5)C)=C(Cl)C3=C4)O2",
+            "notes": "Amide coupling between a carboxylic acid and an aminomethyl-pyridinone derivative to form Valemetostat. Stereochemistry preserved from reactant.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Cyclocondensation / Hantzsch-type Pyridine Synthesis",
+                    "reagents": "acetylacetone, K2CO3, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "97%",
+                    "reactant_smiles": "C(C#N)C(=O)N",
+                    "product_smiles": "CC1=CNC(=O)C(C#N)=C1C",
+                    "notes": "Formation of 3-cyano-4,6-dimethyl-1H-pyridin-2-one from 2-cyanoacetamide and acetylacetone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Nitrile Reduction (Hydrogenation)",
+                    "reagents": "HCl, Pd/C, H2",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, H2O",
+                    "yield": "90%",
+                    "reactant_smiles": "Cc1cc(C)c(C#N)c(=O)[nH]1",
+                    "product_smiles": "Cc1cc(C)c(CN)c(=O)[nH]1",
+                    "notes": "The cyano group is reduced to a primary aminomethyl group.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

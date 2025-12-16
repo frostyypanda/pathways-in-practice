@@ -1,0 +1,85 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "voxelotor-oxbryta-gbt-unknown-2024",
+        "molecule_name": "Voxelotor (Oxbryta GBT)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Etherification / Acetalization",
+            "reagents": "PPTS",
+            "reagent_smiles": "C=COCC",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CC(=C1)O)O",
+            "product_smiles": "CCOCCOC1=CC=CC(=C1)OCCOCC",
+            "notes": "Double etherification of resorcinol with ethyl vinyl ether under acidic conditions (PPTS).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed ortho-metalation, Formylation",
+            "reagents": "nBuLi, DMF",
+            "reagent_smiles": "",
+            "conditions": "THF, -5 °C",
+            "yield": "",
+            "reactant_smiles": "CCOCCOC1=CC=CC(=C1)OCCOCC",
+            "product_smiles": "CCOCCOC1=C(C=O)C(OCCOCC)=CC=C1",
+            "notes": "Benzene ring activated by two ether groups undergoes ortho-lithiation with nBuLi, followed by formylation with DMF to introduce an aldehyde group ortho to one of the ether groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ether Deprotection / Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "65%",
+            "reactant_smiles": "O=Cc1c(OCCOCC)ccc(OCCOCC)c1",
+            "product_smiles": "O=Cc1c(O)ccc(O)c1",
+            "notes": "Hydrolysis of aryl dialkyl ethers to form a 2,6-dihydroxybenzaldehyde. The 65% yield is reported for 3 steps, implying this is an overall yield.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "NaI, NaHCO3",
+            "reagent_smiles": "CC(C)N1C=NC=C1c2ncccc2CCl",
+            "conditions": "NMP, 40 to 50 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C(C=O)C(=C1)O)O",
+            "product_smiles": "CC(C)N1C=NC=C1C2=C(COC3=C(C=O)C(O)=CC=C3)C=CC=N2",
+            "notes": "A nucleophilic aromatic substitution reaction followed by Williamson ether synthesis, where the dihydroxybenzaldehyde acts as a nucleophile with the chloromethyl pyridine derivative.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Suzuki-Miyaura coupling",
+                    "reagents": "Pd(dppf)Cl2, NaHCO3",
+                    "reagent_smiles": "CC(C)N1C(=CC=N1)B2OC(C)(C)C(C)(C)O2",
+                    "conditions": "2-MeTHF, H2O, 70 to 75 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=C(Cl)N=C1)CO",
+                    "product_smiles": "CC(C)N1C(=CC=N1)C2=C(C=CC=N2)CO",
+                    "notes": "Suzuki coupling of a chloropyridine with a pyrazole boronic ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Chlorination (Alcohol to Alkyl Chloride)",
+                    "reagents": "SOCl2",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)N1N=CC(=C1)c2ncccc2CO",
+                    "product_smiles": "CC(C)N1N=CC(=C1)c2ncccc2CCl",
+                    "notes": "Conversion of a primary alcohol to a primary alkyl chloride using thionyl chloride.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

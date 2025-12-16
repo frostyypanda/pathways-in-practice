@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "neratinib-nerlynx-puma-unknown-2024",
+        "molecule_name": "Neratinib (Nerlynx Puma)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Quinoline synthesis",
+            "reagents": "",
+            "reagent_smiles": "CCO/C=C(/C#N)\\C(=O)OCC",
+            "conditions": "toluene, 90 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=O)Nc1c(OCC)ccc(N)c1",
+            "product_smiles": "CC(=O)Nc1c(OCC)c2[nH]c(C#N)c(C(=O)OCC)C=C21",
+            "notes": "Condensation and cyclization reaction to form a substituted 1,4-dihydroquinoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Cyclization / Aromatization",
+            "reagents": "Dowtherm",
+            "reagent_smiles": "",
+            "conditions": "250 °C",
+            "yield": "42%",
+            "reactant_smiles": "CC(=O)NC1=C(OCC)C=C2NC=C(C#N)C(C(=O)OCC)=C2C1",
+            "product_smiles": "CC(=O)NC1=C(OCC)C=C2C(=C1)N=CC(C#N)=C2O",
+            "notes": "Intramolecular cyclization and aromatization of a 1,4-dihydropyridine derivative to a quinoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chlorination",
+            "reagents": "POCl3",
+            "reagent_smiles": "",
+            "conditions": "diglyme, 100 °C",
+            "yield": "65%",
+            "reactant_smiles": "CCOC1=C(NC(=O)C)C=C2C(C#N)=CN=C(O)C2=C1",
+            "product_smiles": "CCOC1=C(NC(=O)C)C=C2C(C#N)=CN=C(Cl)C2=C1",
+            "notes": "Chlorination of a quinolinone hydroxyl group to a chloro group using POCl3.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "MsOH, EtOH",
+            "reagent_smiles": "NC1=CC(Cl)=C(OCC2=NC=CC=C2)C=C1",
+            "conditions": "70 to 75 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)Nc1ccc2ncc(C#N)c(Cl)c2c1OCC",
+            "product_smiles": "CC(=O)Nc1ccc2ncc(C#N)c(c1OCC)c2Nc3ccc(OCC4=NC=CC=C4)c(Cl)c3",
+            "notes": "Amination of a 4-chloroquinoline derivative with a substituted aniline.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+                    "reagents": "KOH",
+                    "reagent_smiles": "OCC1=NC=CC=C1",
+                    "conditions": "MeCN, 35 to 45 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "O=[N+]([O-])c1ccc(F)c(Cl)c1",
+                    "product_smiles": "O=[N+]([O-])c1ccc(OCC2=NC=CC=C2)c(Cl)c1",
+                    "notes": "Nucleophilic aromatic substitution of fluorine with pyridin-2-ylmethanol, activated by the nitro group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Reduction (Nitro to Amine)",
+                    "reagents": "Pt/C, H₂",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 25 to 30 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=NC=C1)COC2=C(C=C(C=C2)[N+](=O)[O-])Cl",
+                    "product_smiles": "C1=CC(=NC=C1)COC2=C(C=C(C=C2)N)Cl",
+                    "notes": "Reduction of a nitro group to an amine group using platinum on carbon and hydrogen gas.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide hydrolysis",
+            "reagents": "HCl, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "H2O, MeOH",
+            "yield": "86% (3 steps)",
+            "reactant_smiles": "CCOC1=C(C=C2C(=C1)N=CC(=C2NC3=CC(=C(C=C3)OCC4=NC=CC=C4)Cl)C#N)NC(=O)C",
+            "product_smiles": "CCOC1=C(C=C2C(=C1)N=CC(=C2NC3=CC(=C(C=C3)OCC4=NC=CC=C4)Cl)C#N)N",
+            "notes": "Hydrolysis of an acetamide group to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Formation / Acylation",
+            "reagents": "NMP",
+            "reagent_smiles": "CN(C)CCC(=O)Cl",
+            "conditions": "0 °C",
+            "yield": "85%",
+            "reactant_smiles": "CCOC1=C(N)C=C2C(=C1)N=CC(=C2NC3=CC(=C(C=C3)OCC4=NC=CC=C4)Cl)C#N",
+            "product_smiles": "CCOC1=C(NC(=O)CCC(C)N(C)C)C=C2C(=C1)N=CC(=C2NC3=CC(=C(C=C3)OCC4=NC=CC=C4)Cl)C#N",
+            "notes": "Acylation of a primary amine on the quinoline core with an alpha,beta-unsaturated acid chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Salt formation",
+            "reagents": "malic acid, n-PrOH/H2O",
+            "reagent_smiles": "",
+            "conditions": "40 to 50 °C",
+            "yield": "88%",
+            "reactant_smiles": "CCOC1=C(C=C2C(=C1)N=CC(=C2NC3=CC(Cl)=C(OCC4=NC=CC=C4)C=C3)C#N)NC(=O)/C=C/CN(C)C",
+            "product_smiles": "CCOC1=C(C=C2C(=C1)N=CC(=C2NC3=CC(Cl)=C(OCC4=NC=CC=C4)C=C3)C#N)NC(=O)/C=C/CN(C)C.O=C(O)/C=C/C(=O)O",
+            "notes": "Formation of Neratinib salt. There is a discrepancy regarding the acid used/formed: the text reagent states 'malic acid', the drawn structure for the counterion is 'fumaric acid' (trans-but-2-enedioic acid), and the product is named 'Neratinib maleate' (implying cis-but-2-enedioic acid). The SMILES for the product counterion is generated based on the *drawn structure* (fumaric acid). The main organic component remains unchanged.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sparsentan-filspari-bms-unknown-2024",
+        "molecule_name": "Sparsentan (Filspari BMS)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Benzylic Bromination (Radical)",
+            "reagents": "NBS, (PhCOO)2",
+            "reagent_smiles": "",
+            "conditions": "CCl4, reflux",
+            "yield": "",
+            "reactant_smiles": "N#Cc1c(C)c(Br)ccc1",
+            "product_smiles": "N#Cc1c(CBr)c(Br)ccc1",
+            "notes": "Radical bromination of the benzylic methyl group to form a bromomethyl group, using NBS and benzoyl peroxide as an initiator.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "NaOEt, DMF",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "N#CC1=CC(CBr)=C(Br)C=C1",
+            "product_smiles": "N#CC1=CC(COCC)=C(Br)C=C1",
+            "notes": "Benzylic bromide reacts with sodium ethoxide to form a benzyl ethyl ether via Williamson ether synthesis. The aryl bromide remains unreacted.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction (Nitrile to Aldehyde)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "CCOCC1=CC(=CC=C1Br)C#N",
+            "product_smiles": "CCOCC1=CC(=CC=C1Br)C=O",
+            "notes": "Partial reduction of a nitrile group to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(PPh3)4, Na2CO3",
+            "reagent_smiles": "B(O)Oc1ccccc1S(=O)(=O)N(COC)c2cc(C)on2",
+            "conditions": "Toluene, EtOH, 85 °C",
+            "yield": "82%",
+            "reactant_smiles": "O=Cc1cc(Br)c(COCC)cc1",
+            "product_smiles": "O=Cc1cc(COCC)c(C2=CC=CC=C2S(=O)(=O)N(COC)c3con=c3C)cc1",
+            "notes": "Suzuki-Miyaura coupling of a bromobenzaldehyde derivative with an arylboronic acid derivative, forming a biphenyl.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Sulfonamide formation",
+                    "reagents": "pyridine",
+                    "reagent_smiles": "CC1=C(N)ON=C1C",
+                    "conditions": "rt",
+                    "yield": "",
+                    "reactant_smiles": "BrC1=CC=CC=C1S(=O)(=O)Cl",
+                    "product_smiles": "CC1=C(NS(=O)(=O)C2=CC=CC=C2Br)ON=C1C",
+                    "notes": "Nucleophilic attack of the amine on the sulfonyl chloride to form a sulfonamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "N-alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "COCCl",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC1=C(NS(=O)(=O)C2=C(C=CC=C2)Br)ON=C1C",
+                    "product_smiles": "CC1=C(N(COC)S(=O)(=O)C2=C(C=CC=C2)Br)ON=C1C",
+                    "notes": "N-alkylation of a sulfonamide with chloromethyl methyl ether using sodium hydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Metal-halogen exchange, Borylation",
+                    "reagents": "n-BuLi, triisopropyl borate",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CC(=NO1)N(COC)S(=O)(=O)C2=C(C=CC=C2)Br",
+                    "product_smiles": "CC1=CC(=NO1)N(COC)S(=O)(=O)C2=C(C=CC=C2)B(O)O",
+                    "notes": "Aryl bromide is converted to an arylboronic acid. The bromine atom is exchanged for lithium using n-BuLi, followed by reaction with triisopropyl borate and hydrolysis to form the boronic acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "CCOCC1=CC(=CC=C1C2=C(C=CC=C2)S(=O)(=O)N(COC)C3=NOC(=C3)C)C=O",
+            "product_smiles": "CCOCC1=CC(=CC=C1C2=C(C=CC=C2)S(=O)(=O)N(COC)C3=NOC(=C3)C)CO",
+            "notes": "Reduction of an aldehyde to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Appel Reaction",
+            "reagents": "DMF",
+            "reagent_smiles": "CBr4.P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "0 °C",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "CCOCC1=CC(=CC=C1C2=C(C=CC=C2)S(=O)(=O)N(COC)C3=NOC(=C3)C)CO",
+            "product_smiles": "CCOCC1=CC(=CC=C1C2=C(C=CC=C2)S(=O)(=O)N(COC)C3=NOC(=C3)C)CBr",
+            "notes": "Conversion of a primary alcohol to a primary bromide using CBr4 and PPh3 (Appel reaction).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, DMF",
+            "reagent_smiles": "O=C1NC(C2CCCC2)C(=NCCCCC)N1",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCOCC1=CC(=CC=C1C2=C(C=CC=C2)S(=O)(=O)N(COC)c1nc(C)on1)CBr",
+            "product_smiles": "O=C1NC(C2CCCC2)C(=NCCCCC)N1CC3=CC=C(C(=C3)COCC)C4=C(C=CC=C4)S(=O)(=O)N(COC)c1nc(C)on1",
+            "notes": "Alkylation of an imidazolidinone N-H with a benzyl bromide derivative using NaH as base.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, EtOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "79% (2 steps)",
+            "reactant_smiles": "CCCC1=NC2(CCCC2)C(=O)N1CC3=CC=C(C(=C3)COCC)C4=C(C=CC=C4)S(=O)(=O)N(COC)C5=NOC(=C5)C",
+            "product_smiles": "CCCC1=NC2(CCCC2)C(=O)N1CC3=CC=C(C(=C3)COCC)C4=C(C=CC=C4)S(=O)(=O)NC5=NOC(=C5)C",
+            "notes": "Hydrolysis/deprotection of the N-methoxymethylsulfonamide to the free sulfonamide.",
+            "substeps": []
+        }
+    ]
+}

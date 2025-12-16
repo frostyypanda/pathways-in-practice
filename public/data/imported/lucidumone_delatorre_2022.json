@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lucidumone-delatorre-2022",
+        "molecule_name": "Lucidumone",
+        "class": "Natural Product",
+        "author": "DeLaTorre",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Addition",
+            "reagents": "DABCO",
+            "reagent_smiles": "C1=CC=C(C=C1)CO",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C#CC(=O)OC",
+            "product_smiles": "COC(=O)/C=C/OCC1=CC=CC=C1",
+            "notes": "Addition of benzyl alcohol to methyl propiolate to form an E-vinyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)/C=C/OCC1=CC=CC=C1",
+            "product_smiles": "C1=CC=C(C=C1)CO/C=C/CO",
+            "notes": "Ester reduced to primary alcohol using DIBAL-H, retaining E-alkene and benzyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)Cl.CN1C=NC=C1",
+            "conditions": "DCM, rt",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC=C(C=C1)CO/C=C/CO",
+            "product_smiles": "C1=CC=C(C=C1)CO/C=C/C[OTBS]",
+            "notes": "Protection of a primary allylic alcohol as a TBS ether. The reported yield of 94% is for 3 steps, not just this single step.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Formal [4+3] Cycloaddition",
+            "reagents": "CuCl2, AgSbF6",
+            "reagent_smiles": "CC(C)(C)[C@H]1COC(=N1)C2(CCC2)C3=N[C@H](CO3)C(C)(C)C.COC(=O)C1=CC=COC1=O",
+            "conditions": "toluene/DCM, -40 °C, 4Å MS",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS]C/C=C/OCC1=CC=CC=C1",
+            "product_smiles": "COC(=O)[C@H]1([OBn])C(=O)O[C@H]1[C@H]2C3=CC4[C@H]2C3[C@H](C[OTBS])O4",
+            "notes": "Complex polycyclic lactone formation involving a chiral copper-catalyzed formal [4+3] cycloaddition.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "97%",
+            "reactant_smiles": "[OTBS]C[C@H]1CC2C3CC3([C@@H](C(=O)OC)C(=O)O2)[C@@H]1OCC4=CC=CC=C4",
+            "product_smiles": "OC[C@H]1CC2C3CC3([C@@H](C(=O)OC)C(=O)O2)[C@@H]1OCC4=CC=CC=C4",
+            "notes": "Deprotection of TBS ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu Reaction / Ether Formation / Benzofuranone Formation",
+            "reagents": "PPh3, DIAD",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)OC1=CC(O[Si](C)(C)C(C)(C)C)=CC2=C1C(=O)CC2=O",
+            "conditions": "THF, -20 °C to rt",
+            "yield": "68%",
+            "reactant_smiles": "COC(=O)C12C=C([C@@H](CO)C1)[C@H](OCC3=CC=CC=C3)OC2=O",
+            "product_smiles": "[OTBS]C1=CC([OTBS])=C(C2=C1C(=O)C=C2OC[C@@H]3[C@H]4C=CC([C@H]3OCC5=CC=CC=C5)(C(=O)OC)C(=O)O4)",
+            "notes": "Mitsunobu reaction converting a primary alcohol into an ether, which simultaneously attacks a 1,3-indandione derivative to form a fused benzofuranone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Diels-Alder",
+            "reagents": "PhCl",
+            "reagent_smiles": "",
+            "conditions": "140 °C",
+            "yield": "77%",
+            "reactant_smiles": "[OTBS]C1=C([OTBS])C=CC2=C1C(=O)C=C2OC[C@H]3C4C=CC(C(O[C@H]43)([OBn])C(=O)OC)C5C(=O)O5",
+            "product_smiles": "[OTBS]C1=C([OTBS])C=CC2=C1C(=O)[C@@H]3C4C5([C@H](C(=O)OC))[C@@H](O[Bn])C6C3C4(O)C2O6",
+            "notes": "An intramolecular Diels-Alder reaction forming a complex polycyclic cage structure with specified stereochemistry, using chlorobenzene as a solvent at elevated temperature.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "Et2O, -20 °C",
+            "yield": "82%",
+            "reactant_smiles": "[OTBS]c1c([OTBS])ccc2c1C(=O)[C@H]3C4(C=CC5C(COC523)[C@H]4[OBn])C(=O)OC",
+            "product_smiles": "[OTBS]c1c([OTBS])ccc2c1[C@H](O)[C@@H]3C4(C=CC5C(COC523)[C@H]4[OBn])CO",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol and reduction of a methyl ester to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C1=C([OTBS])C=CC2=C1[C@H]([C@H]3C4(C=CC5C(COC523)[C@@H]4[OBn])CO)O",
+            "product_smiles": "[OTBS]C1=C([OTBS])C=CC2=C1C(=O)[C@H]3C4(C=CC5C(COC523)[C@@H]4[OBn])C=O",
+            "notes": "Double oxidation of a secondary alcohol to a ketone and a primary alcohol to an aldehyde using Dess-Martin Periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Grignard Addition",
+            "reagents": "CH3MgBr",
+            "reagent_smiles": "C[Mg]Br",
+            "conditions": "Et2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=CC1([C@H]([OBn])C=C2C3C4C(=O)C5=C([OTBS])C=C([OTBS])C5=C4[C@H](C23)O1)",
+            "product_smiles": "CC(O)C1([C@H]([OBn])C=C2C3C4C(=O)C5=C([OTBS])C=C([OTBS])C5=C4[C@H](C23)O1)",
+            "notes": "Grignard addition of methylmagnesium bromide to an aldehyde, forming a secondary alcohol. Stereochemistry of the newly formed alcohol is not specified in the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO₃",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "79%",
+            "reactant_smiles": "O[TBS]c1ccc(O[TBS])c2c1C(=O)[C@H]3C45C=C(C(C)O)[C@@](O[Bn])(C4)COC23",
+            "product_smiles": "O[TBS]c1ccc(O[TBS])c2c1C(=O)[C@H]3C45C=C(C(=O)C)[C@@](O[Bn])(C4)COC23",
+            "notes": "Oxidation of a secondary alcohol to a methyl ketone using Dess-Martin Periodinane (DMP). The reaction is described as proceeding in 3 steps overall.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrogenation / Benzyl Ether Deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "86%",
+            "reactant_smiles": "CC(=O)C12C=CC3C4COC3(C5=C4C(=CC=C5[OTBS])[OTBS])[C@@H](C1=O)C6(C=CC2[C@@H]6[OBn])",
+            "product_smiles": "CC(=O)C12C=CC3C4COC3(C5=C4C(=CC=C5[OTBS])[OTBS])[C@@H](C1=O)C6(C=CC2[C@@H]6O)",
+            "notes": "Benzyl ether is selectively deprotected to a hydroxyl group via catalytic hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "97%",
+            "reactant_smiles": "CC(=O)C12C=CC3[C@H](COC34C5=C([OTBS])C(=CC([OTBS])=C5C(=O)[C@H]14))[C@@H]2O",
+            "product_smiles": "CC(=O)C12C=CC3[C@H](COC34C5=C(O)C(=CC(O)=C5C(=O)[C@H]14))[C@@H]2O",
+            "notes": "Deprotection of two tert-butyldimethylsilyl (TBS) ethers to hydroxyls using TBAF.",
+            "substeps": []
+        }
+    ]
+}

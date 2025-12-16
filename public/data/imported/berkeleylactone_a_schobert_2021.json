@@ -1,0 +1,241 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "berkeleylactone-a-schobert-2021",
+        "molecule_name": "Berkeleylactone A",
+        "class": "Natural Product",
+        "author": "Schobert",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxide opening / Organocuprate addition",
+            "reagents": "Mg, CuCN",
+            "reagent_smiles": "C[C@H]1CO1",
+            "conditions": "THF, reflux, -40 °C to 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "C=CCCCCCCCCBr",
+            "product_smiles": "C=CCCCCCCCCC[C@H](C)O",
+            "notes": "Formation of a Grignard reagent from alkyl bromide, followed by transmetalation to an organocuprate (Gilman reagent) via CuCN. The organocuprate then adds to the terminal epoxide, opening the ring to form a secondary alcohol with inversion of stereochemistry at the electrophilic carbon (not the chiral center in the starting epoxide, but the newly formed chiral center in the product). The newly formed chiral center is (S) configured.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "98%",
+            "reactant_smiles": "C=CCCCCCCCCC[C@@H](C)O",
+            "product_smiles": "C=CCCCCCCCCC[C@@H](C)[OAc]",
+            "notes": "O-acetylation of a secondary alcohol using acetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "K2OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "acetone, H2O, 0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "C=CCCCCCCCCC[C@@H](C)[OAc]",
+            "product_smiles": "C[C@@H](CCCCCCCCCC(CO)O)[OAc]",
+            "notes": "Sharpless dihydroxylation of a terminal alkene to form a vicinal diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Periodate Oxidation / Vicinal Diol Cleavage",
+            "reagents": "NaIO4/SiO2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H](CCCCCCCCCC(CO)O)[OAc]",
+            "product_smiles": "C[C@H](CCCCCCCCCC=O)[OAc]",
+            "notes": "Oxidative cleavage of a 1,2-diol (primary and secondary alcohol) to an aldehyde using sodium periodate. The stereocenter bearing the acetate group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Beta-keto ester formation / Aldehyde Homologation",
+            "reagents": "SnCl2",
+            "reagent_smiles": "CCOC(=O)C=N#N",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H](CCCCCCCCCC=O)OC(=O)C",
+            "product_smiles": "CCOC(=O)CC(=O)CCCCCCC[C@H](C)OC(=O)C",
+            "notes": "Aldehyde reacts with ethyl diazoacetate in the presence of SnCl2 to form a beta-keto ester. The stereochemistry at the OAc-bearing carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "[RuCl2(C6H6)2], (S)-BINAP, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 60 °C",
+            "yield": "87%",
+            "reactant_smiles": "CCOC(=O)CC(=O)CCCCCCCCC[C@@H](C)[OAc]",
+            "product_smiles": "CCOC(=O)C[C@H](O)CCCCCCCCC[C@@H](C)[OAc]",
+            "notes": "Asymmetric hydrogenation of a beta-keto ester to a beta-hydroxy ester using a ruthenium-BINAP catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Alcohol Protection (MOM ether formation)",
+            "reagents": "P2O5",
+            "reagent_smiles": "COC(OC)",
+            "conditions": "rt",
+            "yield": "95%",
+            "reactant_smiles": "CCOC(=O)C[C@H](O)CCCCCCCC[C@@H](C)OC(=O)C",
+            "product_smiles": "CCOC(=O)C[C@H](OCOC)CCCCCCCC[C@@H](C)OC(=O)C",
+            "notes": "The secondary alcohol of the reactant is protected as a methoxymethyl (MOM) ether in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "DIBALH",
+            "reagent_smiles": "",
+            "conditions": "toluene, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "CCOC(=O)C[C@H](OCH2OCH3)CCCCCCCCC[C@@H](C)OC(=O)C",
+            "product_smiles": "O=CC[C@H](OCH2OCH3)CCCCCCCCC[C@@H](O)C",
+            "notes": "Ethyl ester reduced to an aldehyde and acetate group reduced to a hydroxyl group using DIBALH.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wittig-type Olefination / Macrolactonization",
+            "reagents": "toluene",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3=C=C=O",
+            "conditions": "55 °C",
+            "yield": "62%",
+            "reactant_smiles": "C[C@@H](O)CCCCCCCCC[C@H](OCOC)CC=O",
+            "product_smiles": "C[C@H]1CCCCCCCCC[C@H](C\\C=C/C(=O)O1)OCOC",
+            "notes": "Intramolecular Wittig-type olefination forming an E-alpha,beta-unsaturated macrolactone from an aldehyde and an alcohol using a ketene-ylide reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "SeO2",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, 155 °C",
+            "yield": "77%",
+            "reactant_smiles": "C[C@@H]1CCCCCCC[C@@H](C/C=C/C(=O)O1)OCOC",
+            "product_smiles": "C[C@@H]1CCCCCCC[C@@H](C(=O)/C=C/C(=O)O1)OCOC",
+            "notes": "Allylic oxidation of a macrolactone using selenium dioxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -10 °C",
+            "yield": "88%",
+            "reactant_smiles": "C[C@@H]1CCCCCCCCC[C@@H](C(=O)/C=C/C(=O)O1)OCOC",
+            "product_smiles": "C[C@@H]1CCCCCCCCC[C@@H](C(=O)/C=C/C(=O)O1)O",
+            "notes": "Deprotection of a methoxymethyl (MOM) ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Michael Addition",
+            "reagents": "Et3N",
+            "reagent_smiles": "C1=CC=C(C=C1)COC(=O)[C@@H](CS)O",
+            "conditions": "CH2Cl2, rt",
+            "yield": "98%",
+            "reactant_smiles": "C[C@@H]1CCCCCCCCC[C@@H](C(=O)/C=C/C(=O)O1)O",
+            "product_smiles": "C[C@@H]1CCCCCCCCC[C@@H](C(=O)C[C@@H](C(=O)O1)SC[C@@H](C(=O)OCC2=CC=CC=C2)O)O",
+            "notes": "Michael addition of benzyl 3-mercapto-2-hydroxypropanoate to the α,β-unsaturated macrolactone, forming a C-S bond and a new chiral center on the macrolactone ring.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Epoxidation",
+                    "reagents": "NaClO",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "32%",
+                    "reactant_smiles": "C=CC(=O)OC",
+                    "product_smiles": "COC(=O)C1CO1",
+                    "notes": "Epoxidation of methyl acrylate to methyl epoxypropanoate using sodium hypochlorite.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Kinetic Resolution / Enantioselective Synthesis",
+                    "reagents": "TsOH, H2O",
+                    "reagent_smiles": "[tBu]c1cc([tBu])c(O[Co]2N=C[C@H]3CC[C@@H](C=N2)CC3)c1",
+                    "conditions": "rt to 85 °C",
+                    "yield": "33%",
+                    "reactant_smiles": "COC(=O)C1CO1",
+                    "product_smiles": "COC(=O)[C@H]1CO1",
+                    "notes": "Enantioselective synthesis of methyl (R)-glycidate from racemic or achiral precursor using a chiral Co-Salen catalyst.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "KOH",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, 0 °C to rt",
+                    "yield": "79%",
+                    "reactant_smiles": "COC(=O)[C@H]1CO1",
+                    "product_smiles": "[K+].O=C([O-])[C@H]1CO1",
+                    "notes": "Methyl ester of 2,3-epoxypropanoic acid undergoes hydrolysis with KOH in methanol to form the potassium carboxylate salt.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Epoxide opening / Nucleophilic substitution",
+                    "reagents": "TrtSH, NaH",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "C1[C@H](C(=O)[O-])O1.[K+]",
+                    "product_smiles": "OC(=O)[C@@H](O)CS[Trt]",
+                    "notes": "Nucleophilic ring opening of an epoxide with trityl thiolate, retaining the stereochemistry at the chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.5",
+                    "reaction_type": "Esterification",
+                    "reagents": "Cs2CO3",
+                    "reagent_smiles": "BrCC1=CC=CC=C1",
+                    "conditions": "DMF, rt",
+                    "yield": "61%",
+                    "reactant_smiles": "O=C(O)[C@@H](O)CS[Tr]",
+                    "product_smiles": "[Bn]OC(=O)[C@@H](O)CS[Tr]",
+                    "notes": "Benzyl esterification of a carboxylic acid using Cs2CO3 and benzyl bromide. The triphenylmethylthio (TrtS) and hydroxyl groups are retained, with the stereochemistry at the chiral center remaining (S).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.6",
+                    "reaction_type": "Deprotection",
+                    "reagents": "CH2Cl2, TFA",
+                    "reagent_smiles": "[SiH](C(C)C)(C(C)C)C(C)C",
+                    "conditions": "0 °C to rt",
+                    "yield": "91%",
+                    "reactant_smiles": "C1=CC=C(C=C1)COC(=O)[C@@H](CS[Trt])O",
+                    "product_smiles": "C1=CC=C(C=C1)COC(=O)[C@@H](CS)O",
+                    "notes": "Trityl (Trt) group deprotection from a thiol using triisopropylsilane and trifluoroacetic acid to yield a free thiol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Debenzylation / Hydrogenolysis",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "89%",
+            "reactant_smiles": "C[C@H]1O[C](=O)[C@H](SCCC[C@H](O)C(=O)OCc2ccccc2)C[C](=O)[C@@H](O)CCCCCCCCC1",
+            "product_smiles": "C[C@H]1O[C](=O)[C@H](SCCC[C@H](O)C(=O)OH)C[C](=O)[C@@H](O)CCCCCCCCC1",
+            "notes": "Catalytic hydrogenation of a benzyl ester to a carboxylic acid.",
+            "substeps": []
+        }
+    ]
+}

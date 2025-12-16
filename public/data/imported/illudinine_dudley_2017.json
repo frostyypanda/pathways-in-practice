@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "illudinine-dudley-2017",
+        "molecule_name": "Illudinine",
+        "class": "Natural Product",
+        "author": "Dudley",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enol Triflation",
+            "reagents": "Tf2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "CC1(C)CC(=O)CC(=O)C1",
+            "product_smiles": "CC1(C)CC(=O)C=C([OTf])C1",
+            "notes": "Formation of an enol triflate from dimedone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "C[C@]1(C)CC(=O)C=C(C1)OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "C[C@]1(C)C[C@H](O)C=C(C1)OS(=O)(=O)C(F)(F)F",
+            "notes": "1,2-reduction of an enone (cyclohexenone) to an allylic alcohol using DIBAL, forming a new chiral center with a specific configuration (wedge-OH) and retaining the stereochemistry of the gem-dimethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Allylic Substitution",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CCOC(=O)CC1=CC=NC=C1",
+            "conditions": "THF, -78 °C to reflux",
+            "yield": "75%",
+            "reactant_smiles": "C[C@]1(C)CC(O)CC=C(C1)OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "C#CC[C@](C)(C)CC=C(C1=CC=NC=C1)C(=O)OCC",
+            "notes": "Allylic substitution of a cyclohexenyl triflate with an enolate derived from ethyl 4-pyridylacetate, resulting in ring-opening and the formation of a new carbon-carbon bond and an alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Bromination of terminal alkyne",
+            "reagents": "AgNO3, NBS",
+            "reagent_smiles": "[Ag+].[O-][N+]([O-])=O.O=C1CCC(=O)N1Br",
+            "conditions": "acetone",
+            "yield": "99%",
+            "reactant_smiles": "C#CCC(C)(C)CC=C(C1=CC=NC=C1)C(=O)OCC",
+            "product_smiles": "CCOC(=O)C(=CC(C)(C)CC#CBr)C1=CC=NC=C1",
+            "notes": "Terminal alkyne undergoes bromination to form a bromoalkyne. The wavy bond on the alkene indicates unspecified stereochemistry (E/Z mixture or not determined). The quaternary carbon with two methyl groups is achiral, so stereochemical descriptors are removed.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels Alder cycloaddition",
+            "reagents": "o-DCB",
+            "reagent_smiles": "",
+            "conditions": "200 °C, µW, air",
+            "yield": "40%",
+            "reactant_smiles": "CCOC(=O)C(=CCC(C)(C)CC#CBr)C1=CC=NC=C1",
+            "product_smiles": "CCOC(=O)c1c(Br)c2c3CC(C)(C)C3c2c4nccc14",
+            "notes": "Intramolecular Diels-Alder cycloaddition of a bromoalkyne and a diene, followed by aromatization to form an indenoquinoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Lossen rearrangement",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(=O)NO",
+            "conditions": "DMSO, 80 °C",
+            "yield": "89%",
+            "reactant_smiles": "CCOC(=O)C1=C2C=CN=CC2=C(C3=C1CC(C)(C)C3)Br",
+            "product_smiles": "CCOC(=O)C1=C2C=CN=CC2=C(C3=C1CC(C)(C)C3)O",
+            "notes": "Bromine is substituted with a hydroxyl group through a Lossen rearrangement mechanism, starting from a bromine-substituted quinoline derivative with an ethyl ester and a gem-dimethyl group. The N-hydroxyacetamide is the drawn reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "O-methylation",
+            "reagents": "Benzene, i-BuOH",
+            "reagent_smiles": "C[Si](C)(C)C=[N+]=[N-]",
+            "conditions": "rt",
+            "yield": "63%",
+            "reactant_smiles": "CCOC(=O)C1=C(O)C2=C3[C@@](C)(C)CCC3=CC4=C2C=NC=C41",
+            "product_smiles": "CCOC(=O)C1=C(OC)C2=C3[C@@](C)(C)CCC3=CC4=C2C=NC=C41",
+            "notes": "Phenol O-methylation using trimethylsilyldiazomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=C2C=CN=CC2=C(C3=C1C[C@@](C)(C)C3)OC",
+            "product_smiles": "C[C@@]1(C)CC2=C(C1)C(=C3C=NC=CC3=C2C(=O)O)OC",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using potassium hydroxide in ethanol.",
+            "substeps": []
+        }
+    ]
+}

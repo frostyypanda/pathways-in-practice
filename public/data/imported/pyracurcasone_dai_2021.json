@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pyracurcasone-dai-2021",
+        "molecule_name": "Pyracurcasone",
+        "class": "Natural Product",
+        "author": "Dai",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Mukiyama Aldol",
+            "reagents": "TBSOTf, NEt3, HC(OEt)3, BF3•OEt2",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0°C to rt",
+            "yield": "",
+            "reactant_smiles": "O=CC1=CC[C@H](C(C)=C)CC1",
+            "product_smiles": "O=CC1=C[C@@H](C(OCC)OCC)[C@H](C(C)=C)CC1",
+            "notes": "A Mukiyama Aldol reaction between perillyl aldehyde and triethyl orthoformate, followed by acetal formation. The new acetal stereocenter is formed trans to the existing isopropenyl group, with the aldehyde group remaining unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction (aldehyde to alcohol)",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "EtOH/DCM, 0°C to rt",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "CCOC([C@H]1C=C(CC[C@@H]1C(=C)C)C=O)OCC",
+            "product_smiles": "CCOC([C@H]1C=C(CC[C@@H]1C(=C)C)CO)OCC",
+            "notes": "Aldehyde group of the reactant is reduced to a primary alcohol group in the product. The diethyl acetal and isopropenyl groups, as well as the stereocenters, remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "PPh3, DEAD",
+            "reagent_smiles": "O=C1CC=C(O)C1",
+            "conditions": "THF, 0° to 50°C",
+            "yield": "",
+            "reactant_smiles": "CCOC([C@@H]1C=C(CC[C@H]1C(=C)C)CO)OCC",
+            "product_smiles": "CCOC([C@@H]1C=C(CC[C@H]1C(=C)C)COC2=CC(=O)CC2)OCC",
+            "notes": "Mitsunobu reaction forming an ether by coupling a primary alcohol and 4-hydroxycyclopent-2-en-1-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Claisen Rearrangement",
+            "reagents": "DMF",
+            "reagent_smiles": "",
+            "conditions": "140° to 150°C",
+            "yield": "48% (2 steps)",
+            "reactant_smiles": "CCOC(OCCC1=CC(=O)CC1)[C@H]2C=C(C[C@@H](C(=C)C)C2)OCC",
+            "product_smiles": "CCO[C@H]1[C@H]2[C@@H](CCC(=C)[C@H]2C3=C(CCC3=O)O1)C(=C)C",
+            "notes": "Claisen Rearrangement",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "TMEDA",
+            "reagent_smiles": "[Li]C(OCC)=C",
+            "conditions": "THF, -78°C",
+            "yield": "",
+            "reactant_smiles": "CCO[C@H]1C[C@@]2(C=C)CC[C@H](C=C)[C@@H]2[C@H]1C3=CCC(=O)C3",
+            "product_smiles": "CCO[C@H]1C[C@@]2(C=C)CC[C@H](C=C)[C@@H]2[C@H]1C3=CCC([C@@](O)(C(=C)OCC))C3",
+            "notes": "Nucleophilic addition of lithium 1-ethoxyvinylide to a ketone, forming a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation / Rearrangement Cascade",
+            "reagents": "FeCl3, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "PhMe, rt",
+            "yield": "53%",
+            "reactant_smiles": "CCOC(=C)C1(O)CCC2=C1[C@@H]3[C@H](C(=C)C)CCC(=C)[C@H]3[C@@H](OCC)O2",
+            "product_smiles": "CCO[C@@H]1CCC(=O)C2=C1C[C@@H]3C[C@H](C(=C)C)CCC(=C)[C@H]3[C@@H]2.O=C1CC(=O)C2=C1[C@@H]3[C@H](C=C2)C=C(C)[C@H]4[C@H]3CCC(=C)[C@H]4",
+            "notes": "Lewis acid (FeCl3) catalyzed cascade reaction. The reactant undergoes oxidation of the hydroxyl group to a ketone, cyclization/rearrangement of the ether ring, and carbon skeleton rearrangement to yield two products. The major product (left) retains an ethoxy group, while the minor product (right) loses an ethoxy group (likely via hydrolysis/elimination) and features a different double bond pattern and ketone positions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Johnson iodination",
+            "reagents": "I2, DMAP, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CCO[C@H]1CC(=O)C2=C(C(=O)CC2)[C@@H]3C(=C)CC[C@H](C(=C)C)[C@@]13C.C=C(C)[C@H]1CCC(=C)[C@@H]2[C@@H]1C=CC(=O)C3=C2C(=O)CC3",
+            "product_smiles": "C=C(C)[C@H]1CCC(=C)[C@@H]2[C@@]3(C)[C@H]1C(=O)C=C(I)C4=C3C(=O)CC4",
+            "notes": "Iodination of an enone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille cross coupling",
+            "reagents": "Pd(dppf)Cl2, CuI",
+            "reagent_smiles": "C[Sn](C)(C)C",
+            "conditions": "",
+            "yield": "57% (over 2 steps)",
+            "reactant_smiles": "C=C(C)[C@H]1CCC(=C)[C@@H]2C3=C(CCC3=O)C(=O)C(=C[C@]12)I",
+            "product_smiles": "C=C(C)[C@H]1CCC(=C)[C@@H]2C3=C(CCC3=O)C(=O)C(=C[C@]12)C",
+            "notes": "Stille coupling of an aryl iodide with tetramethyltin to form a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "KHMDS, MeI, HMPA/THF",
+            "reagent_smiles": "N(Si(C)(C)C)(Si(C)(C)C)[K].CI.O=P(N(C)C)(N(C)C)N(C)C.C1CCOC1",
+            "conditions": "-78°C",
+            "yield": "32%",
+            "reactant_smiles": "CC1=CC(=O)C2=C(CCC2=O)[C@@H]3[C@@H]1[C@@H]4CC(=C)CC[C@@H]4[C@@H]3C(C)=C",
+            "product_smiles": "CC1=C[C@H](C)C(=O)C2=C(C=C(C)[C@@H]3[C@@H]1[C@@H]4CC(=C)CC[C@H]4[C@@H]3C(C)=C)C2=O",
+            "notes": "Methylation at the alpha-position of the cyclopentanone ring, forming a cyclopentenone with a methyl group. Stereochemistry is preserved for existing chiral centers, and a new chiral center is formed with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Cyclization / Dearomatization",
+            "reagents": "TMEDA",
+            "reagent_smiles": "CO.O=O",
+            "conditions": "50°C",
+            "yield": "21%",
+            "reactant_smiles": "C=C(C)[C@H]1CCC(=C)[C@@H]2C3=C(C[C@@H](C)C3=O)C(=O)C(=C[C@]12C)C",
+            "product_smiles": "C=C(C)[C@H]1CCC(=C)[C@@H]2C3=C(C(=O)C(=C[C@]12C)C)OC[C@@H](C)C3=O",
+            "notes": "Oxidative dearomatization and cyclization of an indanone derivative to form a fused pyrone (lactone).",
+            "substeps": []
+        }
+    ]
+}

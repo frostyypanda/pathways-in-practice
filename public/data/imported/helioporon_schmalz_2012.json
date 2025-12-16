@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "helioporon-schmalz-2012",
+        "molecule_name": "Helioporon",
+        "class": "Natural Product",
+        "author": "Schmalz",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Directed ortho-metalation / Electrophilic bromination",
+            "reagents": "tBuLi, TMEDA, (CCl2Br)2",
+            "reagent_smiles": "",
+            "conditions": "pentane/Et2O",
+            "yield": "68%",
+            "reactant_smiles": "Cc1c(OC)c(OC)ccc1",
+            "product_smiles": "Cc1c(OC)c(OC)c(Br)cc1",
+            "notes": "Ortho-lithiation directed by methoxy groups, followed by bromination at the activated position.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "Cc1ccc(Br)c(OC)c1OC",
+            "product_smiles": "Cc1ccc(Br)c(O)c1O",
+            "notes": "Demethylation of dimethoxybenzene to dihydroxybenzene using boron tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclic 1,3-Dioxole Formation",
+            "reagents": "DCM, CsF",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "CC1=C(C(=C(C=C1)Br)O)O",
+            "product_smiles": "CC1=C2C(=C(C=C1)Br)OCO2",
+            "notes": "Intramolecular Williamson ether synthesis to form a 1,3-benzodioxole from a catechol derivative, likely using dichloromethane (DCM) as the methylene bridge source and CsF as a base/activating agent in DMF solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lithium-Halogen Exchange, Nucleophilic Addition",
+            "reagents": "nBuLi, acrolein",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "74%",
+            "reactant_smiles": "CC1=C2C(=C(C=C1)Br)OCO2",
+            "product_smiles": "C=CC(C1=C2C(=C(C)C=C1)OCO2)O",
+            "notes": "Aryl bromide undergoes lithium-halogen exchange with n-butyllithium to form an aryl lithium intermediate, which then adds to acrolein (prop-2-enal) to form a secondary allyl alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Allylic Chlorination with Rearrangement",
+            "reagents": "Et₃N, (COCl)₂",
+            "reagent_smiles": "",
+            "conditions": "DMSO",
+            "yield": "100%",
+            "reactant_smiles": "C=C[CH](C1=C2C(=C(C)C=C1)OCO2)O",
+            "product_smiles": "CC1=C2C(=C(/C=C/CCl)C=C1)OCO2",
+            "notes": "An allylic alcohol undergoes chlorination with rearrangement to form an allylic chloride. The hydroxyl group is replaced by chlorine with migration of the double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric allylic alkylation",
+            "reagents": "MeMgBr, CuBr-Me₂S",
+            "reagent_smiles": "C[C@]1(C)O[C@@H]([C@@H](O[P](Oc2c(P(c3ccccc3)c4ccccc4)cccc2)O[C@H]1C(C)(C)C)c5ccccc5)c6ccccc6",
+            "conditions": "-78 °C",
+            "yield": "97%",
+            "reactant_smiles": "ClC/C=C/c1cc(C)c2c(c1)OCO2",
+            "product_smiles": "C=C[C@@H](C)c1cc(C)c2c(c1)OCO2",
+            "notes": "Copper-catalyzed asymmetric allylic alkylation of a vinyl chloride, forming a new chiral center with high enantioselectivity.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "B-alkyl Suzuki coupling",
+            "reagents": "9-BBN, Pd(PPh3)4, AsPh3, Cs2CO3",
+            "reagent_smiles": "CC(=O)OCC/C=C(\\I)C",
+            "conditions": "THF, DMF/H2O, 40 °C",
+            "yield": "70%",
+            "reactant_smiles": "C=C[C@H](C)C1=C2C(=C(C)C=C1)OCO2",
+            "product_smiles": "C/C(=C\\CC[C@H](C)C1=C2C(=C(C)C=C1)OCO2)/COC(=O)C",
+            "notes": "A Suzuki coupling reaction involving an iodo-alkene and an alkyl borane intermediate (from 9-BBN) to form a new carbon-carbon bond, extending the side chain of the reactant, with preservation of the chiral center and the formation of a Z-alkene.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Carbometallation-Iodination",
+                    "reagents": "Cp₂ZrCl₂, AlMe₃, then I₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C#CCO",
+                    "product_smiles": "I/C=C(\\CO)C",
+                    "notes": "Stereoselective syn-carbometallation of an alkyne with iodination to form a Z-vinyl iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Esterification (Acetylation)",
+                    "reagents": "Et3N, DMAP, Ac2O",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "69%",
+                    "reactant_smiles": "C/C(=C\\I)/CO",
+                    "product_smiles": "C/C(=C\\I)/C[OAc]",
+                    "notes": "Acetylation of a primary alcohol to form an acetate ester, retaining alkene stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Friedel-Crafts Alkylation",
+            "reagents": "",
+            "reagent_smiles": "Cl[Al](C)C",
+            "conditions": "CCl4, -15 °C",
+            "yield": "85%",
+            "reactant_smiles": "C/C(=C/CC[C@@H](C)C1=C2C(=C(C)C=C1)OCO2)/COC(=O)C",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@@H](C)c2c1ccc(C)c3c2OCO3",
+            "notes": "Intramolecular cyclization of an allylic acetate to form a new six-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ene reaction",
+            "reagents": "Me2AlCl",
+            "reagent_smiles": "O=CCH2[OTBS]",
+            "conditions": "",
+            "yield": "68%",
+            "reactant_smiles": "C[C@@H]1CC[C@H](C=C)c2c3c(ccc21C)OCO3",
+            "product_smiles": "C[C@@H]1CC[C@H](C(=C)CC(O)C[OTBS])c2c3c(ccc21C)OCO3",
+            "notes": "Lewis acid-catalyzed ene reaction of an alkene with an aldehyde. The isopropenyl group is transformed into an exocyclic methylene and an elongated chain containing a new secondary alcohol and a protected silyl ether. The stereochemistry of the newly formed alcohol is shown as a wavy bond in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Ir, H2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[TBS]OC(O)CC=CC1(C)CC[C@H](C)C2=C3C(=C(C)C=C21)OCO3",
+            "product_smiles": "[TBS]OC(O)CC[C@H](C)CC1(C)CC[C@H](C)C2=C3C(=C(C)C=C21)OCO3",
+            "notes": "Stereoselective hydrogenation of a terminal alkene to form a new chiral center, using an Ir catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C[C](O)C[C@H](C)[C@@]1(C)CC[C@H](C)C2=C3C(=C(C)C=C21)OCO3",
+            "product_smiles": "C[C@H]1CC[C@@](C)([C@@H](C)C[C](CO)O)C2=CC(=C3C(=C12)OCO3)C",
+            "notes": "TBS deprotection of a primary alcohol to form a diol. The wavy bond on the secondary alcohol indicates undefined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative cleavage (Malaprade reaction)",
+            "reagents": "H5IO6",
+            "reagent_smiles": "O=I(O)(O)(O)(O)O",
+            "conditions": "",
+            "yield": "78%",
+            "reactant_smiles": "CC1=C2C(=C3[C@H](C)CC[C@H]([C@H](C)CC(O)CO)C3=C1)OCO2",
+            "product_smiles": "C[C@H]1CC[C@H]([C@H](C)CC=O)C2=CC(C)=C3C(C=C2)=OCO3",
+            "notes": "Periodic acid cleavage of a 1,2-diol to an aldehyde. The 78% yield is reported over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Grignard Addition",
+            "reagents": "THF",
+            "reagent_smiles": "[Mg]C=C(C)C",
+            "conditions": "rt",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1CC[C@](C)([C@H](C)CC=O)C2=CC(=C3C(=C12)OCO3)C",
+            "product_smiles": "C[C@H]1CC[C@](C)([C@H](C)CC(O)C=C(C)C)C2=CC(=C3C(=C12)OCO3)C",
+            "notes": "Grignard addition to an aldehyde to form a secondary alcohol. The new alcohol carbon has a wavy bond, indicating a mixture of stereoisomers.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Electrophilic Cyclization",
+            "reagents": "MeSO3H",
+            "reagent_smiles": "",
+            "conditions": "pentane, CH2Cl2, -108 °C",
+            "yield": "98%",
+            "reactant_smiles": "CC(=C[C@@H](C[C@H](C)[C@@]1(C)CC[C@@H](C)C2=C3C(=C(C)C=C21)OCO3)O)C",
+            "product_smiles": "CC(=C[C@H]1C[C@H](C)[C@@]2(C)CC[C@@H](C)C3=C4C(=C(C)C1=C32)OCO4)C",
+            "notes": "Acid-catalyzed cyclization of a farnesyl-like side chain onto an aromatic ring, forming a new six-membered ring and a fused tetracyclic system.",
+            "substeps": []
+        }
+    ]
+}

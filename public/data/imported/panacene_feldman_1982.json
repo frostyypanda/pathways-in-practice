@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "panacene-feldman-1982",
+        "molecule_name": "Panacene",
+        "class": "Natural Product",
+        "author": "Feldman",
+        "year": 1982
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Protection (THP ether formation)",
+            "reagents": "PPTS",
+            "reagent_smiles": "C1=COCCC1",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCC1=CC(=CC=C1)O",
+            "product_smiles": "CCC1=CC(=CC=C1)[OTHP]",
+            "notes": "Protection of a phenol with 3,4-dihydro-2H-pyran (DHP) to form a tetrahydropyranyl (THP) ether, catalyzed by PPTS.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed Ortho-Metalation / Silylation",
+            "reagents": "TMSCl, nBuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "CCCc1cc([OTHP])ccc1",
+            "product_smiles": "CCCc1c([TMS])c([OTHP])ccc1",
+            "notes": "Directed ortho-lithiation of 1-ethyl-3-(tetrahydropyran-2-yloxy)benzene using nBuLi, followed by silylation with TMSCl to introduce a trimethylsilyl group ortho to the OTHP group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "THP ether deprotection",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O, 0 °C",
+            "yield": "76%",
+            "reactant_smiles": "CCC1=C([OTHP])C=CC([TMS])=C1",
+            "product_smiles": "CCC1=C(O)C=CC([TMS])=C1",
+            "notes": "Oxidative deprotection of a THP ether to a hydroxyl group using Cerium Ammonium Nitrate (CAN).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Furan Cyclization",
+            "reagents": "PIDA",
+            "reagent_smiles": "C1=COC=C1",
+            "conditions": "TFE, -25 °C",
+            "yield": "",
+            "reactant_smiles": "CC c1ccc(O)c([TMS])c1",
+            "product_smiles": "CCc1c2c(c([TMS])cc1)O[C@@H]3C=CO[C@H]32",
+            "notes": "Oxidative dearomatization and cyclization of phenol with furan to form a complex fused polycyclic ether, involving stereoselective bond formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF, CsF",
+            "reagent_smiles": "",
+            "conditions": "DMF, 100 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCC1=C2C(=C(C=C1)[TMS])O[C@H]3C=CO[C@H]32",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C=CO[C@H]32",
+            "notes": "Desilylation of a trimethylsilyl group (TMS) from the benzene ring, mediated by TBAF and CsF.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxymercuration-Demercuration / Hydration",
+            "reagents": "NaBH4, NaOH",
+            "reagent_smiles": "CC(=O)O[Hg]OC(=O)C",
+            "conditions": "H2O, Et2O, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C=CO[C@H]32",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H]3CC(O)O[C@H]32",
+            "notes": "Hydration of the internal alkene. The double bond is reduced to a single bond, and a hydroxyl group is added. The two existing stereocenters are retained, and the new hydroxyl group is formed as a mixture of stereoisomers (indicated by a wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig olefination",
+            "reagents": "",
+            "reagent_smiles": "C[Si](C)(C)C#CC=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "THF",
+            "yield": "75%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@H]3CC(O)O[C@@H]32",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H](C/C=C/C#C[Si](C)(C)C)[C@@H]2O",
+            "notes": "Wittig reaction of a cyclic hemiacetal, opening the 5-membered dihydrofuran ring and forming a cis alkene with a TMS-protected alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Bromo-desilylation",
+            "reagents": "NBS, AgNO₃",
+            "reagent_smiles": "",
+            "conditions": "acetone, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@H](C/C=C/C#C[TMS])[C@H]2O",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H](C/C=C/C#CBr)[C@H]2O",
+            "notes": "Replacement of a TMS protecting group with a bromine atom on a terminal alkyne via bromo-desilylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization / Enyne-Allene Rearrangement",
+            "reagents": "Hg(OAc)2",
+            "reagent_smiles": "HSCCS",
+            "conditions": "benzene",
+            "yield": "75%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C[C@](O)(CC=C/C#CBr)C23",
+            "product_smiles": "CCC1=CC=CC2=C1O[C@H]3[C@H](C[C@H](C=C=CBr)O4)C34",
+            "notes": "Intramolecular cyclization of an enyne-alcohol to form a polycyclic ether with an alkyne to allene rearrangement.",
+            "substeps": []
+        }
+    ]
+}

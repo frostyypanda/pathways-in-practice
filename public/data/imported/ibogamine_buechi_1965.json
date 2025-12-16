@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ibogamine-buechi-1965",
+        "molecule_name": "Ibogamine",
+        "class": "Natural Product",
+        "author": "Buechi",
+        "year": 1965
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation / Transacetalization",
+            "reagents": "TsOH",
+            "reagent_smiles": "CC(C)(C)S(=O)N",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCC(OC)(OC)OC",
+            "product_smiles": "CCC/C(=N\\[S@@](=O)C(C)(C)C)/OC",
+            "notes": "Formation of an N-tert-butylsulfinyl ketimine from a ketal and tert-butylsulfinamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylic Silylation / Imine Addition",
+            "reagents": "PhMe2SiLi",
+            "reagent_smiles": "[Li][Si](C)(C)c1ccccc1",
+            "conditions": "THF, -78 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCC/C(=N\\[S@@](=O)C(C)(C)C)/OC",
+            "product_smiles": "CCC/C=C(\\[Si](C)(C)c1ccccc1)/N[S@](=O)C(C)(C)C",
+            "notes": "Addition of lithium dimethylphenylsilanide to a chiral sulfinyl imine, forming a Z-allylic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "",
+            "reagents": "LHMDS",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "CCC/C=C(\\[Si](C)(C)[Ph])/N[S@](=O)[tBu]",
+            "product_smiles": "C[C@H]1CC([C@@H](C(=O)OC))C[C@@H](C(=O)OC)C1([C@]([Si](C)(C)[Ph])(N[S@@](=O)[tBu]))",
+            "notes": "Tandem Michael addition and cyclization reaction, forming a highly functionalized cyclohexane.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactam formation, Desulfinylation, Cyclization",
+            "reagents": "HCl, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, EtOAc, reflux",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1C[C@@H](C[C@H](C(=O)OC)[C@@]1(N[S@](=O)C(C)(C)C)[Si](C)(C)c2ccccc2)C(=O)OC",
+            "product_smiles": "CCC[C@H]1CC(=O)N2[C@H]1[C@@]([Si](C)(C)c3ccccc3)([C@H]2C(=O)OC)CC",
+            "notes": "Intramolecular cyclization of an amine with a methyl ester to form a bicyclic lactam, accompanied by the removal of the chiral sulfoxide auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lactam activation / Iminium formation",
+            "reagents": "Tf2O",
+            "reagent_smiles": "O=S(=O)(C(F)(F)F)OS(=O)(=O)C(F)(F)F.ClCCl",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1([Si](C)(C)c2ccccc2)C2CC(C(=O)OC)N(C2=O)C1",
+            "product_smiles": "CCC1([Si](C)(C)c2ccccc2)C2CC(C(=O)OC)N=C(OS(=O)(=O)C(F)(F)F)C1",
+            "notes": "Conversion of a lactam to an activated iminium triflate derivative using triflic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Imine Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "CCC1CC2CC(C(=O)OC)C1(N=C2OS(=O)(=O)C(F)(F)F)[Si](C)(C)c3ccccc3",
+            "product_smiles": "CCC1CC2CC(C(=O)OC)C1([NH]C2)[Si](C)(C)c3ccccc3",
+            "notes": "Reduction of an imino triflate to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "NH4F",
+            "reagent_smiles": "[NH4+]F-",
+            "conditions": "MeCN, 75 °C",
+            "yield": "",
+            "reactant_smiles": "[N@H]1[C@@H](CCC)C[C@@H]2C(CC(=O)OC)([Si](C)(C)[Ph])C[C@H]1CC2",
+            "product_smiles": "[N@H]1[C@@H](CCC)C[C@@H]2[C@H](CC(=O)OC)C[C@H]1CC2",
+            "notes": "Removal of PhMe2Si group to yield a C-H bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaI, K2CO3",
+            "reagent_smiles": "COC(=O)CCCCl",
+            "conditions": "80 °C",
+            "yield": "81%",
+            "reactant_smiles": "O=C(OC)CC1CC2NC(CC)C1CC2",
+            "product_smiles": "O=C(OC)CCCCN1C2CCC(CC)C(CC(=O)OC)C12",
+            "notes": "N-alkylation of a secondary amine in an 8-azabicyclo[3.2.1]octane core with methyl 4-chlorobutanoate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Dieckmann Condensation",
+            "reagents": "LHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1C2CC3C(C2C(N(C1)CCC(=O)OC)C3)C(=O)OC",
+            "product_smiles": "CCC1C2CC3C(C1N4CCC(=O)C(C(=O)OC)C4C2C3)",
+            "notes": "Intramolecular Dieckmann condensation of a diester to form a cyclic beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Fischer Indole Cyclization",
+            "reagents": "H2SO4, PhNHNH2",
+            "reagent_smiles": "",
+            "conditions": "65 °C",
+            "yield": "42% (2 steps)",
+            "reactant_smiles": "CCC1CC2CC3C1N(CCC(C3=O)C(=O)OC)C2",
+            "product_smiles": "CCC1CC2CC3C1N(CCC4C5=C(C=CC=C5)NC43)C2",
+            "notes": "Fischer indole synthesis from a keto-ester to form a complex polycyclic indole derivative.",
+            "substeps": []
+        }
+    ]
+}

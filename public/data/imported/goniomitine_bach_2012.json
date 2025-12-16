@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "goniomitine-bach-2012",
+        "molecule_name": "Goniomitine",
+        "class": "Natural Product",
+        "author": "Bach",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Silylation (Protection)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "100%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)CCO",
+            "product_smiles": "[OTBS]CCC1=CNC2=CC=CC=C12",
+            "notes": "Protection of a primary alcohol as its tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Catellani reaction",
+            "reagents": "PdCl2, norbornene, K2CO3",
+            "reagent_smiles": "CCC(CCI)C(=O)OCC",
+            "conditions": "DMF/DMSO, air",
+            "yield": "73%",
+            "reactant_smiles": "c1ccc2[nH]c(CC[OTBS])cc2c1",
+            "product_smiles": "c1ccc2[nH]c(CC(C(=O)OCC)CC)c(CC[OTBS])c2c1",
+            "notes": "Palladium-catalyzed intermolecular C2 alkylation of indole with an alkyl iodide (derived from an ethyl ester) via a Catellani reaction, using norbornene as a transient directing group. The TBS-protected alcohol at C3 is unaffected.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Lactone Ring-Opening / Esterification",
+                    "reagents": "EtOH, dry HCl, H₂O",
+                    "reagent_smiles": "CCO.Cl.O",
+                    "conditions": "",
+                    "yield": "84%",
+                    "reactant_smiles": "CCC1CC(=O)OC1",
+                    "product_smiles": "CCC(CCO)C(=O)OCC",
+                    "notes": "Acid-catalyzed ethanolysis of a gamma-lactone to form a hydroxy ethyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Bromination of primary alcohol",
+                    "reagents": "PBr3",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "78%",
+                    "reactant_smiles": "CCC(CCO)C(=O)OCC",
+                    "product_smiles": "CCC(CCBr)C(=O)OCC",
+                    "notes": "Conversion of a primary alcohol to a primary bromide using PBr3. The ethyl ester functionality remains unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Halide Exchange (Finkelstein Reaction)",
+                    "reagents": "NaI",
+                    "reagent_smiles": "",
+                    "conditions": "acetone",
+                    "yield": "",
+                    "reactant_smiles": "BrCCC([Et])C(=O)[OEt]",
+                    "product_smiles": "ICCC([Et])C(=O)[OEt]",
+                    "notes": "Bromine is exchanged for iodine on the alkyl chain via a Finkelstein reaction. The ethyl groups on the chiral center and the ester are retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular cyclization, Lactam formation, Allylation",
+            "reagents": "LiHMDS, allyl bromide",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "85%",
+            "reactant_smiles": "CCC(CC1=C(CC[OTBS])C2=C(C=CC=C2)N1)C(=O)OCC",
+            "product_smiles": "C=CCC1(CC)CC2=C(CC[OTBS])C3=C(C=CC=C3)N2C1=O",
+            "notes": "Intramolecular cyclization of an indole ester to form a lactam, followed by allylation at the alpha-carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "9-BBN, H₂O₂, NaOH",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "98%",
+            "reactant_smiles": "C=CCC1(CC)CCC2=C(CCO[OTBS])C3=C(C=CC=C3)N2C1=O",
+            "product_smiles": "CCC1(CCCO)CCC2=C(CCO[OTBS])C3=C(C=CC=C3)N2C1=O",
+            "notes": "Hydroboration-oxidation of a terminal alkene to a primary alcohol. The OTBS protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DPPA, DIAD, PPh3",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "77%",
+            "reactant_smiles": "CCC1(CCCO)CCC2=C(CC[OTBS])C3=C(C=CC=C3)N2C1=O",
+            "product_smiles": "CCC1(CCC[N-]=[N+]#N)CCC2=C(CC[OTBS])C3=C(C=CC=C3)N2C1=O",
+            "notes": "Mitsunobu reaction converting a primary alcohol to an azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(CCCN=[N+]=[N-])C1CCC2=C(CCO[TBS])C3=C(C=CC=C3)N2C1=O",
+            "product_smiles": "CC[C@H](CCC[NH2])[C@H]1CCC[C@H]2[N@H]3C4=CC=CC=C4C(=C3C2)C1CCO[TBS]",
+            "notes": "Reduction of a lactam to a secondary amine and an azide to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "HOAc",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 40 °C",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "CC[C@@H]1C[C@H]2N[C@@H]3N4C5=C(C=CC=C5)C(=C4CC1)CC23CCO[OTBS]",
+            "product_smiles": "CC[C@@H]1C[C@H]2N[C@@H]3N4C5=C(C=CC=C5)C(=C4CC1)CC23CCO",
+            "notes": "TBS deprotection of a silyl ether to yield Goniomitine.",
+            "substeps": []
+        }
+    ]
+}

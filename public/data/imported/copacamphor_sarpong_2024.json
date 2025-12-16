@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "copacamphor-sarpong-2024",
+        "molecule_name": "Copacamphor",
+        "class": "Natural Product",
+        "author": "Sarpong",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imination",
+            "reagents": "Sc(OTf)3, HMDS",
+            "reagent_smiles": "[Sc+3].O=S(C(F)(F)F)([O-])(=O).O=S(C(F)(F)F)([O-])(=O).O=S(C(F)(F)F)([O-])(=O).C[Si](C)(C)N[Si](C)(C)C",
+            "conditions": "PhMe, 90 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C2CCC1(C)C(=O)C2",
+            "product_smiles": "CC1(C)C2CCC1(C)C(=N)C2",
+            "notes": "Formation of an imine from a ketone using a scandium triflate catalyst and hexamethyldisilazane (HMDS).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Strecker reaction (imine to alpha-aminonitrile)",
+            "reagents": "LiOMe, TMSCN",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C2CCC(C)(C1)C2=N",
+            "product_smiles": "CC1(C)C2CCC(C)(C1)C(C2)(N)C#N",
+            "notes": "Imine is converted to an alpha-aminonitrile via addition of a cyanide and reduction to an amine. No stereochemistry is indicated in the drawing.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acylation",
+            "reagents": "TFAA, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC1CC(C2C1C(C)(C)C2)(N)C#N",
+            "product_smiles": "CC1CC(C2C1C(C)(C)C2)(C#N)NC(=O)C(F)(F)F",
+            "notes": "Acylation of primary amine to trifluoroacetamide. Reported yield is for 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Photocatalytic C-H Functionalization / Radical Addition",
+            "reagents": "K3PO4, light, Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+            "reagent_smiles": "C=CC(=O)C",
+            "conditions": "MeCN, 60 °C",
+            "yield": "41%",
+            "reactant_smiles": "CC12CCC(C(C#N)NC(=O)C(F)(F)F C1)C2(C)C",
+            "product_smiles": "CC12CCC(C(C#N)NC(=O)C(F)(F)F C1)C2(C)(CCC(=O)C)",
+            "notes": "Photocatalytic C-H functionalization of a bridged bicyclic amine with methyl vinyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrolysis / Intramolecular Ketone Formation",
+            "reagents": "H2SO4, H2O, dioxane",
+            "reagent_smiles": "O.OS(=O)(=O)O",
+            "conditions": "microwave, 80 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)CCCC1(C)C2CCC(C1)C(C)(C#N)NC(=O)C(F)(F)F2",
+            "product_smiles": "CC(=O)CCCC1(C)C2CCC(C1)C(C)(=O)C(C)2",
+            "notes": "Hydrolysis of a trifluoroacetamide and nitrile group, followed by intramolecular cyclization to form a cyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "MeLi",
+            "reagent_smiles": "[Li]C.C1CCOC1",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)CCCC1(C)C2CC3C(C)CCC4C(=O)C(C2)C1C34",
+            "product_smiles": "CC(C)(O)CCCC1(C)C2CC3C(C)CCC4C(=O)C(C2)C1C34",
+            "notes": "Nucleophilic addition of methyllithium to the methyl ketone group of the reactant, forming a tertiary alcohol. The ketone in the tricyclic core remains unchanged. Corrected invalid ring numbering in original SMILES and verified atom counts against the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dehydration / Rearrangement",
+            "reagents": "TsOH",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 60 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC(C)(CCCC1(C)(C)C2CCC(C)C1(C(=O)C2))O",
+            "product_smiles": "CC(=CCCC1(C)(C)C2CCC(C)C1(C(=O)C2))C",
+            "notes": "Dehydration of a tertiary alcohol to an alkene, accompanied by double bond migration. The yield reported is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Enolization / Silylation (TIPS enol ether formation)",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "Cl[Si](C(C)C)(C(C)C)C(C)C",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC(=CCCC1(C)C2CCC3C(C(=O)C2)C(C)C1C3)C",
+            "product_smiles": "CC(=CCCC1(C)C2CCC3C(C(=C2)O[TIPS])C(C)C1C3)C",
+            "notes": "Conversion of a bicyclic ketone to its corresponding TIPS enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Photoinduced radical cyclization / Rearrangement",
+            "reagents": "4CzIPN, TripSH",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH, H2O, LEDs (420 nm)",
+            "yield": "73%",
+            "reactant_smiles": "CC(C)=CCC[C@@]1(C)[C@H]2CC[C@@]3(C)[C@H]1C=C([OTIPS])C3C2",
+            "product_smiles": "CC(C)[C@@H]1CC(=O)C2(C)C3CC[C@@]13C2(C)",
+            "notes": "Intramolecular cyclization of an isoprenyl-TIPS enol ether to form a tricyclic ketone (Copacampor). The reaction is stated as 2 steps.",
+            "substeps": []
+        }
+    ]
+}

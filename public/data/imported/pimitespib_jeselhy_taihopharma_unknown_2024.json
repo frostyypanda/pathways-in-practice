@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pimitespib-jeselhy-taihopharma-unknown-2024",
+        "molecule_name": "Pimitespib (Jeselhy TaihoPharma)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(PPh3)4, Na2CO3",
+            "reagent_smiles": "BrC1=CN([Tr])N=C1",
+            "conditions": "H2O, dioxane",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C(C)(C)OB(C2=CN(C)N=C2)O1",
+            "product_smiles": "CN1C=C(C=N1)C2=CN([Tr])N=C2",
+            "notes": "Suzuki-Miyaura coupling between a pyrazole boronic ester and a bromo-pyrazole, forming a bi-pyrazole system.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection (Trityl)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "74%",
+            "reactant_smiles": "CN1C=C(C=N1)C2=CN(C=N2)[Tr]",
+            "product_smiles": "CN1C=C(C=N1)C2=CNC=N2",
+            "notes": "Deprotection of the N-trityl protecting group on the pyrazole ring. The reported yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ullmann-type C-N Coupling",
+            "reagents": "Cu2O, Cs2CO3, 4,7-dimethoxy-1,10-phenanthroline, PEG",
+            "reagent_smiles": "CC(C)c1cn([PMB])c2n1cccc2I",
+            "conditions": "DMSO",
+            "yield": "62%",
+            "reactant_smiles": "CN1C=C(C=N1)C2=CNC=N2",
+            "product_smiles": "CC(C)C1=NN([PMB])C2=C1C(=CC=N2)N3C=C(C4=CN(C)N=C4)N=C3",
+            "notes": "Copper-catalyzed C-N coupling of an imidazole with an aryl iodide to form a new aryl-nitrogen bond.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "C-H functionalization / Acylation",
+                    "reagents": "(i-PrCO)₂O, LDA",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "Fc1c(I)cncc1",
+                    "product_smiles": "CC(C)OC(=O)c1c(I)cncc1F",
+                    "notes": "Directed ortho metalation (deprotonation) of 2-fluoro-3-iodopyridine using LDA, followed by acylation with diisopropylacetic anhydride to form the isopropyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Intramolecular Cyclization / Condensation",
+                    "reagents": "N2H4",
+                    "reagent_smiles": "NN",
+                    "conditions": "(2 steps)",
+                    "yield": "24%",
+                    "reactant_smiles": "CC(C)OC(=O)C1=C(C=CN=C1F)I",
+                    "product_smiles": "CC(C)C1=NNC2=NC=CC(=C12)I",
+                    "notes": "Intramolecular cyclization of a fluoro-iodo-isonicotinate ester with hydrazine to form a fused pyrazolo[3,4-b]pyridine system.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "N-Alkylation / Protection",
+                    "reagents": "NaH, PMBCI",
+                    "reagent_smiles": "",
+                    "conditions": "DMF",
+                    "yield": "91%",
+                    "reactant_smiles": "CC(C)C1=NNC2=NC=CC(=C12)I",
+                    "product_smiles": "CC(C)C1=NN([PMB])C3=NC=CC(=C13)I",
+                    "notes": "N-alkylation of the pyrazole N-H with p-methoxybenzyl chloride (PMBCI) in the presence of sodium hydride (NaH).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, anisole",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "CC(C)C1=NN([PMB])C2=C1C(=CC=N2)N3C=C(C4=CN(C)N=C4)N=C3",
+            "product_smiles": "CC(C)C1=NNC2=C1C(=CC=N2)N3C=C(C4=CN(C)N=C4)N=C3",
+            "notes": "Deprotection of p-methoxybenzyl (PMB) group from the pyrazole nitrogen using trifluoroacetic acid (TFA) and anisole.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-arylation",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "CCc1c(F)ccc(C#N)c1",
+            "conditions": "DMF",
+            "yield": "91%",
+            "reactant_smiles": "CN1N=CC(=C1)C2=CN=C(N=C2)N3C=C4C=CC5=C(C(=N3)[nH]C4)C(C)C=N5",
+            "product_smiles": "CN1N=CC(=C1)C2=CN=C(N=C2)N3C=C4C=CC5=C(C(=N3)N(c6c(CC)ccc(C#N)c6)C4)C(C)C=N5",
+            "notes": "N-arylation of a secondary amine (N-H) with an aryl fluoride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nitrile Hydration",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC1=CC(=CC=C1N2C3=C(C(=CC=C3)N4C=C(C5=CN(C)N=C5)N=C4)C(=N2)C(C)C)C#N",
+            "product_smiles": "CCC1=CC(=CC=C1N2C3=C(C(=CC=C3)N4C=C(C5=CN(C)N=C5)N=C4)C(=N2)C(C)C)C(=O)N",
+            "notes": "The nitrile group on the phenyl ring of the reactant is hydrolyzed to a primary amide group in the product.",
+            "substeps": []
+        }
+    ]
+}

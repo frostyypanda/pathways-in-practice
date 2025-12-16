@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "melotenine-a-tang-2022",
+        "molecule_name": "Melotenine A",
+        "class": "Natural Product",
+        "author": "Tang",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Tosylation",
+            "reagents": "TsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC=C2CCN",
+            "product_smiles": "C1=CC2=C(C=C1)NC=C2CCN[Ts]",
+            "notes": "Amine is protected as a tosylamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, DMF",
+            "reagent_smiles": "ClCc1ccc(OC)cc1",
+            "conditions": "-20 °C to rt",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC=C2CCN[Ts]",
+            "product_smiles": "C1=CC2=C(C=C1)N([PMB])C=C2CCN[Ts]",
+            "notes": "Indole nitrogen is alkylated with PMBCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-allenylation",
+            "reagents": "CuTC, DMEDA, Cs2CO3",
+            "reagent_smiles": "CC(=C=CI)CCO[OTBDPS]",
+            "conditions": "toluene, 80 °C",
+            "yield": "84%",
+            "reactant_smiles": "[Ts]NCCC1=CN([PMB])C2=CC=CC=C12",
+            "product_smiles": "[Ts]N(C=C=C(C)CCO[OTBDPS])CCC1=CN([PMB])C2=CC=CC=C12",
+            "notes": "Copper-catalyzed N-allenylation of an N-tosyl sulfonamide with an iodoallene, forming a new N-C bond on the terminal carbon of the allene.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Silyl Ether Formation / Alcohol Protection",
+                    "reagents": "TBDPSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC(=O)CCO",
+                    "product_smiles": "CC(=O)CC[OTBDPS]",
+                    "notes": "The primary alcohol is protected as a tert-butyldiphenylsilyl (TBDPS) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Nucleophilic Addition (Alkyne to Ketone)",
+                    "reagents": "nBuLi",
+                    "reagent_smiles": "C#[TMS]",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(=O)CC[OTBDPS]",
+                    "product_smiles": "OC(C)(C#[TMS])CC[OTBDPS]",
+                    "notes": "Trimethylsilylacetylene is deprotonated by nBuLi to form a lithium acetylide, which then adds to the ketone, yielding a tertiary propargylic alcohol. The TBDPS group remains intact.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Desilylation",
+                    "reagents": "K2CO3, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[TMS]C#CC(C)(O)CCO[OTBDPS]",
+                    "product_smiles": "C#CC(C)(O)CCO[OTBDPS]",
+                    "notes": "Removal of the TMS protecting group from the terminal alkyne using a base (K2CO3) in methanol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.4",
+                    "reaction_type": "Mesylation",
+                    "reagents": "MsCl, nBuLi",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "C#CC(C)(CCO[OTBDPS])O",
+                    "product_smiles": "C#CC(C)(CCO[OTBDPS])OS(=O)(=O)C",
+                    "notes": "Tertiary alcohol is converted to its mesylate ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.5",
+                    "reaction_type": "Iodoallene synthesis",
+                    "reagents": "CuI, LiI",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "C#CC(C)(CC[OTBDPS])[MsO]",
+                    "product_smiles": "CC(=C=CI)CC[OTBDPS]",
+                    "notes": "Conversion of a propargyl mesylate to an iodoallene with methyl migration (5 steps, 53% cumulative yield).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "In(NTf2)3, 3Å MS",
+            "reagent_smiles": "C=C(C(=O)OC)C(=O)OC",
+            "conditions": "DCM",
+            "yield": "59%",
+            "reactant_smiles": "COc1ccc(cc1)CN2C=C(CCN(S(=O)(=O)c3ccc(C)cc3)C=C=C(C)CCO[Si](C(C)(C)C)(c4ccccc4)c5ccccc5)c6ccccc26",
+            "product_smiles": "COc1ccc(cc1)CN2C3=C(C=CC=C3)C4(C2)C[C@H](N(S(=O)(=O)c5ccc(C)cc5)CC4)[C@@H]6[C@H](C(=O)OC)(C(=O)OC)[C@H]7C(=C(C)CCO[Si](C(C)(C)C)(c8ccccc8)c9ccccc9)CC67",
+            "notes": "Intramolecular cascade reaction of an indole-allene with dimethyl methylenemalonate to form a complex polycyclic spiroindoline system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Decarboxylation",
+            "reagents": "LiCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "DMSO, 130 °C",
+            "yield": "91%",
+            "reactant_smiles": "C/C(=C\\1/CC([C@H]2[C@@]3(CCN([C@@H]13)[Ts])C4=C(C=CC=C4)N2[PMB])(C(=O)OC)C(=O)OC)/CCO[TBDPS]",
+            "product_smiles": "C/C(=C\\1/CC([C@H]2[C@@]3(CCN([C@@H]13)[Ts])C4=CC=CC=C4N2[PMB])C(=O)OC)/CCO[TBDPS]",
+            "notes": "Decarboxylation of a geminal diester to a monoester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, EtOAc",
+            "yield": "",
+            "reactant_smiles": "C/C(=C/1\\CC([C@H]2[C@@]3(CCN([C@H]13)[Ts])C4=CC=CC=C4N2[PMB])C(=O)OC)/CC[OTBDPS]",
+            "product_smiles": "C/C(=C\\1/CC([C@H]2[C@@]3(CCN([C@H]13)[Ts])C4=CC=CC=C4N2)C(=O)OC)/CC[OTBDPS]",
+            "notes": "PMB group deprotected via hydrogenolysis, removing p-methoxybenzyl protecting group from indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "DDQ, toluene",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "58% (2 steps)",
+            "reactant_smiles": "C/C(=C/1\\CC([C@H]2[C@@]3(CCN([C@@H]13)[Ts])C4=CC=CC=C4N2)C(=O)OC)/CCO[OTBDPS]",
+            "product_smiles": "C/C(=C\\1/CC(=C2[C@@]3(CCN([C@@H]13)[Ts])C4=CC=CC=C4N2)C(=O)OC)/CCO[OTBDPS]",
+            "notes": "Oxidation of the indole C3 position (adjacent to the ester), forming a double bond with the indole nitrogen and losing the stereocenter at C3.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Detosylation",
+            "reagents": "Na, naphthalene",
+            "reagent_smiles": "[Na].C1=CC=CC2=CC=CC=C12",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C/C(=C/1\\CC(=C2[C@]3(CCN([C@@H]13)[Ts])C4=CC=CC=C4N2)C(=O)OC)/CCO[OTBDPS]",
+            "product_smiles": "C/C(=C/1\\CC(=C2[C@]3(CCN[C@@H]13)C4=CC=CC=C4N2)C(=O)OC)/CCO[OTBDPS]",
+            "notes": "Reductive cleavage of the tosyl protecting group from the nitrogen of the pyrrolidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "N-alkylation",
+            "reagents": "K2CO3, LiI, DMF",
+            "reagent_smiles": "C=CCBr",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\1/CC(=C2[C@]3(CCN[C@H]13)C4=CC=CC=C4N2)C(=O)OC)\\CC[OTBDPS]",
+            "product_smiles": "C=CCN1CC[C@@]23C4=C(C=CC=C4)NC3=C(C/C(=C(\\C)\\CC[OTBDPS])/[C@H]21)C(=O)OC",
+            "notes": "N-alkylation of a secondary amine with allyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "57% (over 3 steps)",
+            "reactant_smiles": "C=CCN1CC[C@@]23C4=C(C=CC=C4)NC3=C(C/C(=C(\\C)/CC[OTBDPS])/[C@@H]21)C(=O)OC",
+            "product_smiles": "C=CCN1CC[C@@]23C4=C(C=CC=C4)NC3=C(C/C(=C(\\C)/CCO)/[C@@H]21)C(=O)OC",
+            "notes": "Deprotection of a TBDPS silyl ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Appel reaction",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "68%",
+            "reactant_smiles": "C=CCN1CC[C@@H]2[C@@]3(CC=C(C(=C)CCO)C(C(=O)OC)=C3N4C2C=CC=C4)C1",
+            "product_smiles": "C=CCN1CC[C@@H]2[C@@]3(CC=C(C(=C)CCBr)C(C(=O)OC)=C3N4C2C=CC=C4)C1",
+            "notes": "Appel reaction: primary alcohol converted to primary bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Dehydrobromination (E2 elimination)",
+            "reagents": "DBU, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CCN1CC[C@@]23C4=C(C=CC=C4)NC3=C(C/C(=C(\\C)/CCBr)/[C@@H]21)C(=O)OC",
+            "product_smiles": "C=CCN1CC[C@@]23C4=C(C=CC=C4)NC3=C(C/C(=C(\\C)/C=C)/[C@@H]21)C(=O)OC",
+            "notes": "Elimination of HBr from an alkyl bromide to form a terminal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "HG II",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 50 °C",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "C=CCN1CC[C@@]23C4=CC=CC=C4NC3=C(C(=O)OC)C(=C(C)C)C[C@@H]21",
+            "product_smiles": "CC1=C2CC(=C3[C@@]4(CCN(CC=C1)[C@@H]24)C5=C(C=CC=C5)N3)C(=O)OC",
+            "notes": "Intramolecular polycyclization of an indole-fused precursor to form Melotenenine A, involving the N-allyl and exocyclic isopropenyl groups.",
+            "substeps": []
+        }
+    ]
+}

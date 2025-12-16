@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lepistine-fukuyama-2014",
+        "molecule_name": "Lepistine",
+        "class": "Natural Product",
+        "author": "Fukuyama",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nosylation",
+            "reagents": "NsCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "C([C@H]1CO1)O",
+            "product_smiles": "C([C@H]1CO1)[ONs]",
+            "notes": "Conversion of a primary alcohol to a nosylate ester, retaining epoxide stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "SN2 Alkylation / Epoxide opening (via leaving group displacement)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "[Ns]N[Alloc]",
+            "conditions": "DMF, rt",
+            "yield": "54%",
+            "reactant_smiles": "[Ns]OC[C@@H]1CO1",
+            "product_smiles": "[Alloc]N([Ns])C[C@@H]1CO1",
+            "notes": "Nucleophilic displacement of an alkyl nosylate by a nosyl-protected allyloxycarbonyl amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection (Deallylation)",
+            "reagents": "Pd(PPh3)4, Ph3SiH, AcOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "74%",
+            "reactant_smiles": "[Alloc]N([Ns])C[C@H]1CO1",
+            "product_smiles": "N([Ns])C[C@H]1CO1",
+            "notes": "Palladium-catalyzed deprotection of Allyloxycarbonyl (Alloc) group on a nosylated amine, leaving a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DEAD, Ph3P",
+            "reagent_smiles": "[OTBS]CCC(=C)CO",
+            "conditions": "THF",
+            "yield": "86%",
+            "reactant_smiles": "C([C@H]1CO1)N[Ns]",
+            "product_smiles": "[Ns]N(C[C@H]1CO1)C[C](=C)CCC[OTBS]",
+            "notes": "Mitsunobu reaction for N-alkylation of a secondary amine with a primary allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (TBS ether)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "89%",
+            "reactant_smiles": "C=C(CC[CH2][OTBS])CN(C[C@H]1CO1)S(=O)(=O)c1ccc([N+](=O)[O-])cc1",
+            "product_smiles": "C=C(CCCO)CN(C[C@H]1CO1)S(=O)(=O)c1ccc([N+](=O)[O-])cc1",
+            "notes": "Deprotection of a primary alcohol protected as a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DMEAD, PPh3",
+            "reagent_smiles": "C=CCOC(=O)N[Ns]",
+            "conditions": "THF",
+            "yield": "67%",
+            "reactant_smiles": "C=C(CCCO)CN([Ns])C[C@H]1CO1",
+            "product_smiles": "C=C(CN([Ns])C[C@H]1CO1)CCCN(C=CCOC(=O))[Ns]",
+            "notes": "Mitsunobu reaction converting a primary alcohol to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Alloc)",
+            "reagents": "Pd(PPh3)4, Ph3SiH, AcOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "96%",
+            "reactant_smiles": "[Alloc]N([Ns])CCCC(=C)CN([Ns])C[C@H]1CO1",
+            "product_smiles": "[Ns]NCCCC(=C)CN([Ns])C[C@H]1CO1",
+            "notes": "Palladium(0)-catalyzed deprotection of Allyloxycarbonyl (Alloc) group in the presence of Ns (Nosyl) groups, using triphenylsilane as a hydride source.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Epoxide Opening / Cyclization",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN-H2O, 80 °C",
+            "yield": "70%",
+            "reactant_smiles": "C=C(CCCN[Ns])CN([Ns])C[C@H]1CO1",
+            "product_smiles": "C=C1C[C@H](O)[C@H]2N([Ns])CCC12N([Ns])",
+            "notes": "An intramolecular cyclization reaction where a primary N-nosyl amine attacks an epoxide, leading to the formation of a fused bicyclic ring system containing two N-nosyl groups and a tertiary alcohol. The stereochemistry of the epoxide is retained in the product alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ozonolysis / Intramolecular Cyclization",
+            "reagents": "O3, MeOH, Me2S",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "85%",
+            "reactant_smiles": "C=C[C@@]1(O)C[C@H]2CN([Ns])CC[C@]12CN([Ns])C",
+            "product_smiles": "O1[C@](O)2C[C@@H]3CN([Ns])CC[C@@]23CN([Ns])CCC1",
+            "notes": "Ozonolysis of the exocyclic alkene, followed by intramolecular cyclization of the resulting ketone with the existing hydroxyl group to form a cyclic hemi-ketal.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dehydration",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "m-xylene, reflux",
+            "yield": "83%",
+            "reactant_smiles": "O1[C@@H](O)[C@H]2CN([Ns])C[C@@H]1C[C@H](CCC2)N([Ns])",
+            "product_smiles": "O1[C@H]2C=CN([Ns])C[C@@H]1C[C@H](CCC2)N([Ns])",
+            "notes": "Dehydration of a tertiary alcohol to form an alkene in a complex polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection, Intramolecular Cyclization, N-Acetylation",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "Sc1ccccc1.CC(=O)OC(=O)C",
+            "conditions": "MeCN",
+            "yield": "71%",
+            "reactant_smiles": "[Ns]N1C=C2CN(CCC[C@@H]3C2[C@H]1CO3)[Ns]",
+            "product_smiles": "CC(=O)N1C[C@H]2C[C@H]3CN4CCC(O[C@@H]23)[C@H]4C1",
+            "notes": "Deprotection of two Nosyl groups, followed by intramolecular cyclization/rearrangement and N-acetylation to form (-)-Lepistine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cinobufagin-nagorny-2024",
+        "molecule_name": "Cinobufagin",
+        "class": "Natural Product",
+        "author": "Nagorny",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oppenauer Oxidation",
+            "reagents": "Al(OiPr)3",
+            "reagent_smiles": "C1CCC(=O)CC1",
+            "conditions": "toluene, Δ",
+            "yield": "95%",
+            "reactant_smiles": "C[C@@]12CC[C@@H](CC2=CC[C@H]3[C@@H]4CCC(=O)[C@@]4(C)CC[C@@H]31)O",
+            "product_smiles": "C[C@@]12CCC(=O)C=C2CC[C@H]3[C@@H]4CCC(=O)[C@@]4(C)CC[C@@H]31",
+            "notes": "Oxidation of a secondary alcohol at C3 to a ketone, accompanied by a double bond migration from C5=C6 to C4=C5 to form an alpha,beta-unsaturated ketone system in ring A.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "H2, Pd/C, pyridine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "80%",
+            "reactant_smiles": "C[C@]12CCC(=O)C=C1CC[C@H]3[C@@H]2CCC4(C)C(=O)CC[C@@H]34",
+            "product_smiles": "C[C@]12CCC(=O)C[C@H]1CC[C@H]3[C@@H]2CCC4(C)C(=O)CC[C@@H]34",
+            "notes": "Hydrogenation of an alpha,beta-unsaturated ketone (C4-C5 double bond) to form a saturated ketone with 5alpha-H stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "K-Selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CCC(=O)C[C@@H]2CC[C@H]3[C@@H]4CCC(=O)[C@@]4(C)CC[C@@H]31",
+            "product_smiles": "C[C@@]12CC[C@H](O)C[C@@H]2CC[C@H]3[C@@H]4CCC(=O)[C@@]4(C)CC[C@@H]31",
+            "notes": "Selective reduction of the C-3 ketone to an axial (alpha) alcohol using K-Selectride. The C-17 ketone remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Silyl ether formation",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CC[C@@H](C[C@H]2CC[C@H]3[C@@H]4CCC(=O)[C@@]4(C)CC[C@@H]31)O",
+            "product_smiles": "C[C@@]12CC[C@@H]([OTBS])C[C@H]2CC[C@H]3[C@@H]4CCC(=O)[C@@]4(C)CC[C@@H]31",
+            "notes": "Protection of the C3-hydroxyl group to form a tert-butyldimethylsilyl (TBS) ether. The reaction yield of 88% is reported for two steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enol silyl ether formation",
+            "reagents": "LDA, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@@]2(C)[C@H](CC[C@H]3[C@@H]4CCC(=O)[C@@]4(C)CC[C@@H]32)C1",
+            "product_smiles": "[TBS]O[C@H]1CC[C@@]2(C)[C@H](CC[C@H]3[C@@H]4CC=C([C@@]4(C)CC[C@@H]32)[OTMS])C1",
+            "notes": "Formation of an enol silyl ether from a C17 ketone using LDA and TMSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "MeCN, DCM",
+            "reagent_smiles": "CC(=O)O[Pd]OC(=O)C",
+            "conditions": "rt",
+            "yield": "62%",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@@]2(C)[C@H](CC[C@H]3[C@@H]4C=C([C@@]4(C)CC[C@@H]32)[TMS]O)C1",
+            "product_smiles": "[TBS]O[C@H]1CC[C@@]2(C)[C@H](CC[C@H]3[C@@H]4C=CC(=O)[C@@]4(C)CC[C@@H]32)C1",
+            "notes": "Palladium-catalyzed oxidation of enol silyl ether to alpha,beta-unsaturated ketone (2 steps)",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Enol Triflation",
+            "reagents": "Tf2O",
+            "reagent_smiles": "CC1=CC(=NC(=C1)C(C)(C)C)C(C)(C)C",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@@]2(C)[C@@H]3CC[C@@]4(C)C(C=C(C4=O)[C@H]3)CC[C@@H]21",
+            "product_smiles": "C[C@@]12CC[C@@H]3[C@@H](C4=C(OS(=O)(=O)C(F)(F)F)C=C([C@@]34C))[C@H]1CC[C@H]([TBS]O)C2",
+            "notes": "Triflation of an alpha,beta-unsaturated ketone to form an enol triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd(PPh3)4, CuCl, LiCl",
+            "reagent_smiles": "C[Sn](C)(C)C1=COC(=O)C=C1",
+            "conditions": "DMSO, 60 °C",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "[OTBS]O[C@H]1CC[C@@]2(C)[C@H](CC[C@H]3[C@@]4(C)C=C(OS(=O)(=O)C(F)(F)F)CC[C@@H]32)C1",
+            "product_smiles": "[OTBS]O[C@H]1CC[C@@]2(C)[C@H](CC[C@H]3[C@@]4(C)C=C(C5=COC(=O)C=C5)CC[C@@H]32)C1",
+            "notes": "A Stille coupling reaction where the triflate on the steroid is replaced by a 4-(trimethylstannyl)-2H-pyran-2-one moiety.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Decarboxylative Bromination",
+                    "reagents": "NBS, TBAI, LiOAc",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, H2O, rt",
+                    "yield": "15%",
+                    "reactant_smiles": "O=C1OC=CC=C1C(=O)O",
+                    "product_smiles": "O=C1OC=C(Br)C=C1",
+                    "notes": "Decarboxylation of coumalic acid and subsequent bromination at the C2 position to form 6-bromo-2H-pyran-2-one.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Stille coupling",
+                    "reagents": "Pd(PPh3)4",
+                    "reagent_smiles": "C[Sn](C)(C)[Sn](C)(C)C",
+                    "conditions": "dioxane, 95 °C",
+                    "yield": "85%",
+                    "reactant_smiles": "O=C1OC=C(Br)C=C1",
+                    "product_smiles": "O=C1OC=C([Sn](C)(C)C)C=C1",
+                    "notes": "Stille coupling reaction replaces a bromo group on a pyranone with a trimethylstannyl group using hexamethylditin and a palladium catalyst.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Singlet Oxygen Oxidation / Endoperoxide Formation",
+            "reagents": "O₂, methylene blue, NaHCO₃, CoTPP",
+            "reagent_smiles": "",
+            "conditions": "hv, -78 °C",
+            "yield": "64%",
+            "reactant_smiles": "C[C@@]12CC[C@@H]3[C@H](CC[C@@H]4[C@H]3CC[C@]5(C)[C@@H]4C(=C(C6=COC(=O)C=C6)C=C5)C)C1[C@H]([OTBS])CC2",
+            "product_smiles": "C[C@@]12CC[C@@H]3[C@H](CC[C@@H]4[C@H]3CC[C@]5(C)[C@@H]4[C@]6(O[C@H]7[C@@]([C@]5(C)O7)C6)C(C8=COC(=O)C=C8)C)C1[C@H]([OTBS])CC2",
+            "notes": "Singlet oxygen [2+4] cycloaddition to the cyclopenta-1,3-diene, followed by rearrangement to a complex bicyclic peroxide (1,2-dioxolane derivative) and an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Rearrangement",
+            "reagents": "Sc(OTf)3, 4Å MS",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@@]2(C)[C@H](CC[C@@H]3[C@@H]2CC[C@@]4(C)[C@H]5[C@H](C6=COC(=O)C=C6)O[C@@H]4[C@@H]5[C@H]7O7)C1",
+            "product_smiles": "[TBS]O[C@H]1CC[C@@]2(C)[C@H](CC[C@@H]3[C@@H]2CC[C@@]4(C)[C@H]([C@@H]5O[C@@H]4[C@H]6[C@@H]7[C@H]5[C@H]6C(=O)O7C(C8=COC(=O)C=C8))C1",
+            "notes": "Lewis acid-catalyzed rearrangement of the C17 appendage. A 5-membered lactone is formed, with C17 becoming a carbonyl and the pyrone ring remaining spiro-fused. The 14,15-epoxide is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "CO.[Na+].[BH4-]",
+            "conditions": "MeOH, THF, rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H]1CC[C@]2(C)[C@@H](CC[C@H]3[C@@H]2CC[C@]4(C)[C@H](C5=CC=COC5=O)C(=O)[C@@H]6O[C@H]346)C1",
+            "product_smiles": "[OTBS][C@@H]1CC[C@]2(C)[C@@H](CC[C@H]3[C@@H]2CC[C@]4(C)[C@H](C5=CC=COC5=O)[C@H](O)[C@@H]6O[C@H]346)C1",
+            "notes": "Stereoselective reduction of a ketone to a beta-hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, DMAP, pyridine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "61% (3 steps)",
+            "reactant_smiles": "[OTBS][C@H]1CC[C@@]2(C)[C@H](CC[C@@H]3[C@@H]2CC[C@]4(C)[C@@H](C5=COC(=O)C=C5)[C@H]([C@@H]6[C@]34O6)O)C1",
+            "product_smiles": "[OTBS][C@H]1CC[C@@]2(C)[C@H](CC[C@@H]3[C@@H]2CC[C@]4(C)[C@@H](C5=COC(=O)C=C5)[C@H]([C@@H]6[C@]34O6)OC(=O)C)C1",
+            "notes": "Acetylation of a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "HF·pyridine, pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "94%",
+            "reactant_smiles": "CC(=O)O[C@H]1C[C@@H]2C3(C)CC[C@@H]4[C@@H]5CC[C@H]([OTBS])CC5C4(C)[C@@]2(OC31)C6=COC(=O)C=C6",
+            "product_smiles": "CC(=O)O[C@H]1C[C@@H]2C3(C)CC[C@@H]4[C@@H]5CC[C@H](O)CC5C4(C)[C@@]2(OC31)C6=COC(=O)C=C6",
+            "notes": "Debsilylation of a tert-butyldimethylsilyl (TBS) ether to yield the corresponding alcohol (Cinobufagin).",
+            "substeps": []
+        }
+    ]
+}

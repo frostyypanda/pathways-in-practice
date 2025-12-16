@@ -1,0 +1,194 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strychnopivotine-zhang-2023",
+        "molecule_name": "Strychnopivotine",
+        "class": "Natural Product",
+        "author": "Zhang",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sulfonylation",
+            "reagents": "Et3N, (o-Ns)Cl",
+            "reagent_smiles": "CCN(CC)CC.ClS(=O)(=O)c1c([N+](=O)[O-])cccc1",
+            "conditions": "iPrOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@H]1CCC[C@H]([NH3+])C1.Cl-",
+            "product_smiles": "O[C@H]1CCC[C@H](NS(=O)(=O)c2c([N+](=O)[O-])cccc2)C1",
+            "notes": "Amine converted to sulfonamide using 2-nitrobenzenesulfonyl chloride (o-NsCl) with triethylamine base. Stereochemistry at C1 and C4 is retained (cis).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "64%",
+            "reactant_smiles": "O[C@H]1CCC[C@@H](NS(=O)(=O)c2c([N+]([O-])=O)cccc2)C1",
+            "product_smiles": "O=C1CCC[C@@H](NS(=O)(=O)c2c([N+]([O-])=O)cccc2)C1",
+            "notes": "Oxidation of a secondary alcohol to a ketone using pyridinium chlorochromate (PCC). The 2-nitrobenzenesulfonyl (o-Ns) group acts as a nitrogen protecting group and is retained. The stereochemistry of the carbon bearing the o-Ns group is retained, while the carbon bearing the hydroxyl group loses its chirality upon oxidation to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular N-alkylation / Cyclization",
+            "reagents": "KI, Cs2CO3",
+            "reagent_smiles": "COC(=O)OCC#CCOS(=O)(=O)C",
+            "conditions": "CH3CN, 80 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=C1CCCC(C1)NS(=O)(=O)c2c(N(=O)=O)cccc2",
+            "product_smiles": "O=C1CC2CCC(N(CC#CCOC(=O)OC)S(=O)(=O)c3c(N(=O)=O)cccc3)C12",
+            "notes": "Intramolecular N-alkylation of a nosylamide with methyl 4-(mesyloxy)but-2-ynoate, followed by cyclization to form a 2-azabicyclo[3.3.1]nonan-9-one system.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Carbonate Esterification",
+                    "reagents": "Pyridine, DMAP",
+                    "reagent_smiles": "COC(=O)Cl",
+                    "conditions": "DCM",
+                    "yield": "83%",
+                    "reactant_smiles": "C(#CCO)CO",
+                    "product_smiles": "COC(=O)OCC#CCO",
+                    "notes": "Selective formation of a methyl carbonate from one of the primary alcohol groups of but-2-yne-1,4-diol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Mesylation",
+                    "reagents": "MsCl, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "99%",
+                    "reactant_smiles": "COC(=O)OCC#CCO",
+                    "product_smiles": "COC(=O)OCC#C[OMs]",
+                    "notes": "Mesylation of a primary alcohol to form a mesylate ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cycloisomerization / Allene formation",
+            "reagents": "[Rh(cod)Cl]2, BHT",
+            "reagent_smiles": "C1=CC=C(C=C1)NC2=C(C(=O)C2=O)N[C@@H]3CCCC[C@H]3N",
+            "conditions": "toluene, 90 °C",
+            "yield": "67%",
+            "reactant_smiles": "COC(=O)OCC#CCN1C2CCC(=O)C(C2)CC1[Ns]",
+            "product_smiles": "C=C=C1C2CC(=O)C(C2)CN1[Ns]",
+            "notes": "Intramolecular cyclization of an N-alkyne-N-sulfonylamine to form an allene-containing bicyclic structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alpha-acylation",
+            "reagents": "NaH",
+            "reagent_smiles": "FC(F)(F)C(=O)OCC(F)(F)F",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C=C=C1CN([o-Ns])C2CCC(=O)C1C2",
+            "product_smiles": "C=C=C1CN([o-Ns])C2CC(C(=O)C(F)(F)F)C(=O)C1C2",
+            "notes": "Alpha-acylation of a bicyclic ketone with trifluoroacetic acid 2,2,2-trifluoroethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrazone formation",
+            "reagents": "PhN₂•BF₄, NaOAc, THF, H₂O",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "FC(F)(F)C(=O)C1C(=O)C2CN([o-Ns])C3CC(C=C=C)C123",
+            "product_smiles": "O=C1C(=NNC2C=CC=CC=2)C3CN([o-Ns])C4CC(C=C=C)C134",
+            "notes": "Selective formation of a phenyl hydrazone from an α-keto trifluoroacetyl derivative, with the trifluoroacetyl group being replaced by the hydrazone and the adjacent ketone remaining unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular cyclization / Indole formation",
+            "reagents": "ZnCl2, TCA, BHT",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "56% (3 steps)",
+            "reactant_smiles": "C=C=C1CC2C(C(=O)C(=NNC3=CC=CC=C3)C1)CN2S(=O)(=O)c4c([N+](=O)[O-])cccc4",
+            "product_smiles": "C=C=C1CC2C(C(=O)C3=C2C4=CC=CC=C4N3)CN1S(=O)(=O)c5c([N+](=O)[O-])cccc5",
+            "notes": "Intramolecular cyclization of a hydrazone leading to the formation of a fused indole ring system. The N-phenylhydrazone group is transformed into an indole, losing one nitrogen atom in the process. The allene, ketone, and o-Nosyl (o-Ns) groups remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Protection",
+            "reagents": "DMAP",
+            "reagent_smiles": "O=C(OC(C)(C)C)OC(=O)OC(C)(C)C",
+            "conditions": "DCM, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "C=C=C1CN([Ns])C2CC1C(=O)C3=C2C4=C(C=CC=C4)[nH]3",
+            "product_smiles": "C=C=C1CN([Ns])C2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc]",
+            "notes": "Boc protection of the indole nitrogen using Boc₂O and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (Nosyl)",
+            "reagents": "K2CO3, PhSH, CH3CN, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C=C1CN([o-Ns])C2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc]",
+            "product_smiles": "C=C=C1CNC2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc]",
+            "notes": "Deprotection of an N-o-Nosyl (2-nitrobenzenesulfonyl) group to a secondary amine using potassium carbonate and thiophenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH(OAc)3, AcOH, DCM",
+            "reagent_smiles": "BrCC=O",
+            "conditions": "0 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=C=C1CNC2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc]",
+            "product_smiles": "C=C=C1CN(CCBr)C2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc]",
+            "notes": "Amine alkylation via reductive amination, (2 steps)",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Ozonolysis (reductive workup)",
+                    "reagents": "O3, PPh3",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "75%",
+                    "reactant_smiles": "C=CCBr",
+                    "product_smiles": "C(C=O)Br",
+                    "notes": "Terminal alkene is cleaved to an aldehyde.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Reductive Cyclization",
+            "reagents": "SmI2, DMPU",
+            "reagent_smiles": "",
+            "conditions": "THF, 40 °C",
+            "yield": "63%",
+            "reactant_smiles": "BrCCN1CC2C(C(=C=C)C(=O)C3=C2C4=C(N3[Boc])C=CC=C4)C1",
+            "product_smiles": "C=C=C1CN2CC[C@@]3([C@H]4C(=O)[C@@H]1C[C@@H]32)C5=C(C=CC=C5)N4[Boc]",
+            "notes": "Intramolecular reductive cyclization of a bromoethyl allene with a ketone, mediated by SmI2, to form a complex polycyclic system with a new spiro center.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "THF, -20 °C",
+            "yield": "90%",
+            "reactant_smiles": "C=C=C1CN2CC[C@@]34C5=C(C=CC=C5)N([C@H]4C(=O)[C@H]1C[C@@H]32)C(=O)OC(C)(C)C",
+            "product_smiles": "C/C=C\\1/CN2CC[C@@]34C5=C(C=CC=C5)N(C(=O)C)[C@H]4C(=O)[C@H]1C[C@@H]32",
+            "notes": "Allene is reduced to a Z-alkene, and the N-Boc protecting group is deprotected and re-acetylated to N-Ac.",
+            "substeps": []
+        }
+    ]
+}

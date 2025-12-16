@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "coraxeniolide-a-corey-2008",
+        "molecule_name": "Coraxeniolide A",
+        "class": "Natural Product",
+        "author": "Corey",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Michael addition, Intramolecular cyclization",
+            "reagents": "MVK, aq. AcOH",
+            "reagent_smiles": "COC(=O)C=C",
+            "conditions": "70 °C",
+            "yield": "100%",
+            "reactant_smiles": "CC1C(=O)CCC1=O",
+            "product_smiles": "O=C1CCC(=O)C1(C)CCC(=O)OC",
+            "notes": "The text label 'MVK' (Methyl Vinyl Ketone) is inconsistent with the product's ester group (-COOMe); the product's structure clearly implies methyl acrylate (COC(=O)C=C) as the Michael acceptor. The `reagent_smiles` provided corresponds to methyl acrylate to match the product structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH₄, AcOH",
+            "reagent_smiles": "[BH4-].[Na+].CC(=O)O",
+            "conditions": "-10 °C",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@]12CCC(=O)C[C@]2(CCC1=O)O",
+            "product_smiles": "C[C@@]12CC[C@@H](C[C@]2(CCC1=O)O)O",
+            "notes": "Selective reduction of the ketone in the six-membered ring to a secondary alcohol, while the ketone in the five-membered ring and the tertiary alcohol remain untouched. Stereochemistry of newly formed alcohol is matched to the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mitsunobu reaction (intramolecular) and TMS protection",
+            "reagents": "DEAD, Ph3P, TMSImd, TBAF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "61%",
+            "reactant_smiles": "C[C@@]12CC[C@@H](C[C@]2(CCC1=O)O)O",
+            "product_smiles": "C[C@@]12CCC=C[C@]2(CCC1=O)[OTMS]",
+            "notes": "Intramolecular Mitsunobu reaction to form a cyclic ether, followed by TMS protection of the remaining hydroxyl. However, the product shows an alkene and TMS ether, suggesting a dehydration rather than cyclization with the primary alcohol. The reaction appears to be a Mitsunobu-mediated elimination to form the double bond and then protection of the remaining hydroxyl (the one originally at the bridgehead) as a TMS ether. The initial Mitsunobu step would likely involve the primary alcohol and the tertiary alcohol to form a cyclic ether. However, the product shows an alkene and a TMS-protected alcohol. This suggests either a complex sequence or a different mechanism. Given DEAD, PPh3, it's typically a Mitsunobu reaction. If the intent was intramolecular ether formation, the product would be a fused ring system with an ether bridge, which is not what's shown. The product shows a dehydration and TMS protection. This is an unusual outcome for a direct Mitsunobu on this substrate for that product. It's more likely an elimination to form the double bond, and the remaining hydroxyl is protected. The original primary alcohol must be involved in the elimination.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Asymmetric Reduction",
+            "reagents": "Corey-Bakshi-Shibata asymmetric reduction",
+            "reagent_smiles": "[nBu]B1OC([C@@]([Ph])([Ph]))N(C1)C2CCCC2.B.CS(C)",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CCC=C[C@]2(CCC1=O)[OTMS]",
+            "product_smiles": "C[C@@]12CCC=C[C@]2(CC[C@H]1O)[OTMS]",
+            "notes": "Corey-Bakshi-Shibata asymmetric reduction of a ketone to a secondary alcohol, with new alcohol stereocenter formed as (R). Existing chiral centers (methyl, OTMS) maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "Et3N.3HF",
+            "reagent_smiles": "CCN(CC)CC.F.F.F",
+            "conditions": "THF",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "C[C@@]12CCC=C[C@]2(CC[C@@H]1O)[OTMS]",
+            "product_smiles": "C[C@@]12CCC=C[C@]2(CC[C@@H]1O)O",
+            "notes": "Deprotection of a TMS ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, pyr",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "C[C@@]12CCC=C[C@@H]1CC[C@@H](O)[C@H]2O",
+            "product_smiles": "C[C@H]1CCC=C2[C@H]1CC[C@H](O)[C@@H]2O[Ts]",
+            "notes": "Tosylation of a secondary alcohol (the bridgehead hydroxyl). The hydroxyl on the five-membered ring is retained. The stereochemistry at all three chiral centers (methyl, OTs, and the remaining OH) is inverted compared to the reactant in the drawn product.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Grob fragmentation",
+            "reagents": "NaH",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "93%",
+            "reactant_smiles": "C[C@]12CCC=C[C@@]2(CC[C@H]1[OTs])O",
+            "product_smiles": "C/C/1=C\\CCC(=O)/C=C\\CC1",
+            "notes": "Grob fragmentation of a bicyclic alcohol/tosylate to a macrocyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Michael addition",
+            "reagents": "Ph3CCl4",
+            "reagent_smiles": "C=C(O[TBS])OC",
+            "conditions": "",
+            "yield": "64%",
+            "reactant_smiles": "C[C@@H]1/C=C\\CC(=O)/C=C\\C1",
+            "product_smiles": "CC1=CCC(=O)[C@]2([C@H](C1)C3CC23)CC(=O)OC",
+            "notes": "Intramolecular Michael addition to form a complex polycyclic structure with ketone, methyl, and methyl ester groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Cyclization / Lactonization",
+            "reagents": "NaOt-C5H11, CH2O",
+            "reagent_smiles": "[Na]OC(C)(C)CC.C=O",
+            "conditions": "",
+            "yield": "59%",
+            "reactant_smiles": "COC(=O)C[C@@H]1[C@H]2C=C(C)C(=O)C[C@@H]12",
+            "product_smiles": "CC1=CCC(=O)C[C@@H]2[C@H]1CC(=O)O2",
+            "notes": "Base-catalyzed cyclopropane ring opening and intramolecular lactone formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Wittig olefination",
+            "reagents": "",
+            "reagent_smiles": "C=[P](c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "",
+            "yield": "61%",
+            "reactant_smiles": "C[C@@]12CCC(=O)[C@@H]3COC(=O)[C@H]3[C@H]2C=C1",
+            "product_smiles": "C[C@@]12CCC(=C)[C@@H]3COC(=O)[C@H]3[C@H]2C=C1",
+            "notes": "Wittig olefination of a ketone to an exocyclic alkene in a tricyclic lactone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Lactone Alpha-Alkylation",
+            "reagents": "LHMDS",
+            "reagent_smiles": "CC(C)/C=C/CI.[Li]N(Si(C)(C)C)Si(C)(C)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C(=C)CCC2=CC[C@H](C1)[C@@H]3CC(=O)OC32",
+            "product_smiles": "C[C@H]1C(=C)CCC2=CC[C@H](C1)[C@@H]3C(C/C=C/C(C)C)C(=O)OC32",
+            "notes": "Alkylation of a lactone alpha-carbon with an allylic iodide using LHMDS as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydrogenation",
+            "reagents": "P₂-Et",
+            "reagent_smiles": "",
+            "conditions": "PhMe",
+            "yield": "62%",
+            "reactant_smiles": "C[C@]12OC(=O)[C@H](C/C=C/C(C)C)[C@H]1[C@@H]3/C=C(C)\\[C@H](C(=C))[C@H]3C2",
+            "product_smiles": "C[C@]12OC(=O)[C@H](C/C=C/C(C)C)[C@H]1[C@@H]3C[C@H](C)[C@H](C)[C@H](C)C[C@H]3C2",
+            "notes": "Intramolecular hydrogenation of two alkenes (exocyclic methylene and internal cyclohexene) of a complex polycyclic lactone.",
+            "substeps": []
+        }
+    ]
+}

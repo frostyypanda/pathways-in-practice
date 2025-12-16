@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vittatine-tang-2024",
+        "molecule_name": "Vittatine",
+        "class": "Natural Product",
+        "author": "Tang",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Triflation / Alcohol Activation",
+            "reagents": "Tf2O, pyridine, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C(CO)Br",
+            "product_smiles": "BrCCO[OTf]",
+            "notes": "Conversion of a primary alcohol to a triflate (leaving group) using triflic anhydride and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Sulfonium salt formation / Nucleophilic substitution",
+            "reagents": "Ph₂S, PhMe",
+            "reagent_smiles": "S([Ph])[Ph].Cc1ccccc1",
+            "conditions": "110 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "BrCCOS(=O)(=O)C(F)(F)F",
+            "product_smiles": "BrCC[S+]([Ph])[Ph].[O-]S(=O)(=O)C(F)(F)F",
+            "notes": "Formation of a sulfonium triflate salt from an alkyl triflate and diphenyl sulfide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Corey-Chaykovsky cyclopropanation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "C1CC(=O)CC(=O)C1",
+            "conditions": "EtOAc",
+            "yield": "87%",
+            "reactant_smiles": "BrCC[S+]([Ph])[Ph].O=S(=O)(C(F)(F)F)O",
+            "product_smiles": "C1CC(=O)C2(CC2)C(=O)C1",
+            "notes": "Sulfur ylide precursor reacts with 1,3-cyclohexanedione in the presence of base to form a spiro-cyclopropane diketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ring-opening / Azide Addition",
+            "reagents": "TMSN₃, Et₃N, AcOH",
+            "reagent_smiles": "C[Si](C)(C)[N-]=[N+]=N.CCN(CC)CC.CC(=O)O",
+            "conditions": "CH₂Cl₂",
+            "yield": "85%",
+            "reactant_smiles": "C1CC(=O)C2(CC2)C(=O)C1",
+            "product_smiles": "O=C1C(CCN=[N+]=[N-])=C(O)CCC1",
+            "notes": "Spiro-cyclopropyl dione undergoes ring opening and functionalization with TMS azide to yield an azido-enone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Arylation / C-C Bond Formation",
+            "reagents": "Pyridine, CHCl3",
+            "reagent_smiles": "CC(=O)O[Pb](OC(=O)C)(OC(=O)C)C1=CC2=C(C=C1)OCO2",
+            "conditions": "40 °C",
+            "yield": "73%",
+            "reactant_smiles": "O=C1CCC(=C(O)C1)CCN=[N+]=[N-]",
+            "product_smiles": "O=C1CCC(=O)C1(CCN=[N+]=[N-])C2=CC=C3C(=C2)OCO3",
+            "notes": "Electrophilic arylation of a 1,3-dicarbonyl compound (via its enol tautomer) with an aryllead(IV) triacetate.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Plumbylation",
+                    "reagents": "Pb(OAc)4, Hg(OAc)2",
+                    "reagent_smiles": "[Pb](OC(=O)C)(OC(=O)C)(OC(=O)C)OC(=O)C.CC(=O)O[Hg]OC(=O)C",
+                    "conditions": "40 °C, CHCl3",
+                    "yield": "78%",
+                    "reactant_smiles": "C1=C(C=C2C(=C1)OCO2)B(O)O",
+                    "product_smiles": "[OAc][Pb](C1=CC=C2C(=C1)OCO2)([OAc])[OAc]",
+                    "notes": "Arylboronic acid converted to aryl lead triacetate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Reductive Cyclization",
+            "reagents": "DuanPhos, (4-NO2C6H4O)2PO2H, DIPEA, PhSiH3",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 85 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1CCCC(=O)C1(CCN=[N+]=[N-])C2=CC3=C(OCO3)C=C2",
+            "product_smiles": "C1CC2=NCC[C@]2(C3=CC4=C(C=C3)OCO4)C(=O)C1",
+            "notes": "Intramolecular reductive cyclization of a diketone with an azide to form a spirocyclic imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Amination / Imine Reduction",
+            "reagents": "AcOH, NaBH₃CN",
+            "reagent_smiles": "CC(=O)O.[Na+].[BH3-]C#N",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C1CC2=NCC[C@]2(C3=CC4=C(C=C3)OCO4)C(=O)C1",
+            "product_smiles": "O=C1CC[C@]2(c3ccc4c(c3)OCO4)[C@@H]3NCCC2C1",
+            "notes": "Reduction of an imine to a secondary amine, generating a new chiral center while retaining the existing one.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Mannich Reaction",
+            "reagents": "Paraformaldehyde, Formic acid",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "67% (3 steps)",
+            "reactant_smiles": "O1COC2=CC=C(C=C2)[C@]3C4C[C@H]5[NH]CC45C(=O)CCC3",
+            "product_smiles": "O1COC2=CC=C3C(=C2)[C@]4(C(=O)CCC[C@@]5(C3)C6CCN(CC6)C4)O1",
+            "notes": "Intramolecular Mannich reaction of a secondary amine and ketone with formaldehyde and formic acid to form a bridged polycyclic Amaryllidaceae alkaloid (Vittatine).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Tosylhydrazone Formation (Condensation)",
+            "reagents": "TsNHNH2, PPTS",
+            "reagent_smiles": "",
+            "conditions": "65 °C, THF",
+            "yield": "",
+            "reactant_smiles": "C1C[C@H]2[C@@]3(CCN2CC4=CC5=C(C=C43)OCO5)C(=O)C1",
+            "product_smiles": "C1C[C@H]2[C@@]3(CCN2CC4=CC5=C(C=C43)OCO5)/C(=N/N[Ts])/C1",
+            "notes": "Formation of a tosylhydrazone from a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Elimination / De-nitrogenation",
+            "reagents": "NaH, PhMe",
+            "reagent_smiles": "",
+            "conditions": "110 °C",
+            "yield": "84% (2 steps)",
+            "reactant_smiles": "C1C[C@@H]2[C@@]3(CCN2CC4=CC5=C(C=C43)OCO5)/C(=N/NS(=O)(=O)c6ccc(C)cc6)/C1",
+            "product_smiles": "C1C=C[C@@H]23CCN(CC4=CC5=C(C=C42)OCO5)[C@@]3C1",
+            "notes": "Elimination of an N-tosylhydrazone to form an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "SeO₂, NaHCO₃",
+            "reagent_smiles": "",
+            "conditions": "105 °C, dioxane",
+            "yield": "70%",
+            "reactant_smiles": "C1C=C[C@@]23CCN(CC4=CC5=C(C=C42)OCO5)[C@H]3C1",
+            "product_smiles": "C1=C[C@H](O)C[C@@]23CCN(CC4=CC5=C(C=C42)OCO5)[C@H]3C1",
+            "notes": "Allylic oxidation of vittatine precursor to (+)-vittatine with selenium dioxide.",
+            "substeps": []
+        }
+    ]
+}

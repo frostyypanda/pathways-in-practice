@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "securingine-c-han-2022",
+        "molecule_name": "Securingine C",
+        "class": "Natural Product",
+        "author": "Han",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective hydroxyl group protection (silylation)",
+            "reagents": "TBSCl, iPr2EtN",
+            "reagent_smiles": "C[C@@H](C(C)(C)C)NC(=O)[C@@H](C(C)(C)C)NCC1=NC=CN1C.CCSC1=NN=NN1",
+            "conditions": "THF, -40 °C",
+            "yield": "99%",
+            "reactant_smiles": "O[C@H]1C=CCC[C@@H]1O",
+            "product_smiles": "O[C@H]1C=CCC[C@@H](O[TBS])1",
+            "notes": "Selective silylation of the primary/secondary hydroxyl group of a trans-1,2-diol on a cyclohexene ring using TBSCl, a chiral auxiliary, and Hünig's base, yielding a protected product with preserved trans stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxidation",
+            "reagents": "VO(OEt)3, TBHP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "[OTBS][C@H]1CC=CC[C@@H]1O",
+            "product_smiles": "[OTBS][C@H]1C[C@@H]2[C@@H](O2)C[C@@H]1O",
+            "notes": "Vanadium-catalyzed directed epoxidation of a secondary allylic alcohol (masked as TBS ether). The epoxide forms on the same face as the free hydroxyl group and trans to the TBSO group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidative rearrangement",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "94%",
+            "reactant_smiles": "[OTBS][C@H]1C[C@@H]2[C@@H](C[C@H]1O)O2",
+            "product_smiles": "O=C1C=CC[C@@H]([OTBS])[C@@H]1O",
+            "notes": "Oxidation of a secondary alcohol and concomitant epoxide opening/rearrangement to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Protection (Silylation)",
+            "reagents": "TBDPSCl, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "O=C1C=CC[C@@H](O)[C@H]([OTBS])1",
+            "product_smiles": "O=C1C=CC[C@@H]([OTBDPS])[C@H]([OTBS])1",
+            "notes": "Selective protection of a secondary alcohol as a tert-butyldiphenylsilyl (TBDPS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Selective Deprotection",
+            "reagents": "ZnBr2, H2O, DCM",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "83%",
+            "reactant_smiles": "O=C1[C@H](O[TBS])C=C[C@@H](O[TBDPS])CC1",
+            "product_smiles": "O=C1[C@H](O)C=C[C@@H](O[TBDPS])CC1",
+            "notes": "Selective deprotection of the TBS ether to a hydroxyl group, leaving the TBDPS ether intact. The stereochemistry at both chiral centers is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Esterification",
+            "reagents": "EDCI",
+            "reagent_smiles": "CCOP(=O)(CC(=O)O)OCC",
+            "conditions": "DCM",
+            "yield": "96%",
+            "reactant_smiles": "O=C1C=C[C@H](O[TBDPS])[C@@H](O)C1",
+            "product_smiles": "O=C1C=C[C@H](O[TBDPS])[C@@H](OC(=O)CP(=O)(OCC)OCC)C1",
+            "notes": "Esterification of a secondary alcohol with diethyl 2-phosphonoacetic acid using EDCI coupling.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Horner-Wadsworth-Emmons Cyclization",
+            "reagents": "K2CO3, 18-crown-6",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "61%",
+            "reactant_smiles": "CCOP(=O)(CC(=O)O[C@H]1C[C@H](C=CC1=O)[OTBDPS])OCC",
+            "product_smiles": "[OTBDPS][C@H]3C=CC4=CC(=O)O[C@H]4C3",
+            "notes": "Intramolecular cyclization of a phosphonoacetate-ketoester to form a bicyclic alpha,beta-unsaturated lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cascade Cycloaddition / Epoxide opening",
+            "reagents": "TIPSOTf, Et3N, Bu2BOTf",
+            "reagent_smiles": "[Boc]N1CC[C@@H]2[C@H](C1O)O2",
+            "conditions": "Et2O, 0 °C to 23 °C to -78 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS][C@H]1CC=C[C@@H]2[C@H]1C3=CC(=O)O[C@H]3C2",
+            "product_smiles": "[OTBDPS][C@H]1CC=C[C@H]2[C@@H]1[C@@H]3C4=CC(=O)O[C@H]4[C@H]3[C@H]5[N]([Boc])C[C@@H]6[C@@H]5O[C@H]6C2",
+            "notes": "Cascade reaction involving dienone, N-Boc protected epoxy alcohol, leading to a complex polycyclic system with multiple new stereocenters formed.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Epoxidation",
+                    "reagents": "Oxone, NaHCO3, Na2EDTA, Bu4NHSO4",
+                    "reagent_smiles": "CC(=O)O[C@@H]1CO[C@]2(COC(C)(C)O2)C(=O)[C@@H]1OC(=O)C",
+                    "conditions": "MeCN, 0 °C to rt",
+                    "yield": "71%",
+                    "reactant_smiles": "[Boc]N1C(=O)C=CCC1",
+                    "product_smiles": "[Boc]N1CC[C@@H]2[C@@H](C1=O)O2",
+                    "notes": "Epoxidation of an N-Boc-3,4-dihydropyridin-2-one using a chiral reagent (Davis reagent type) and Oxone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiEt3BH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N1CC[C@H]2[C@H](C1=O)O2",
+                    "product_smiles": "[Boc]N1CC[C@H]2[C@H]([C@H]1O)O2",
+                    "notes": "Reduction of a lactam carbonyl to a secondary alcohol using lithium triethylborohydride (Super-Hydride), while retaining the stereochemistry of the fused epoxide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "46% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CC[C@@H]2[C@H]([C@H]1[C@@]34C[C@@H](C=CC4=CC(=O)O3)[OTBDPS])O2",
+            "product_smiles": "CC(C)(C)OC(=O)N1CC[C@@H]2[C@H]([C@H]1[C@@]34C[C@@H](C=CC4=CC(=O)O3)O)O2",
+            "notes": "Desilylation of a TBDPS ether using TBAF to reveal a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@@H]2[C@H]([C@H]1[C@@]34C[C@@H](C=CC4=CC(=O)O3)O)O2",
+            "product_smiles": "[Boc]N1CC[C@@H]2[C@H]([C@H]1[C@@]34C[C@@H](C=CC4=CC(=O)O3)[OMs])O2",
+            "notes": "Mesylation of a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection, Elimination",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "[Ms]O[C@H]1C=C[C@@]23C[C@@H]4O[C@@H]5[C@@H](N([Boc])CC[C@@H]5O4)[C@@]2(C=CC(=O)O3)C1",
+            "product_smiles": "O=C1OC=C[C@@]23C=C[C@@H]4O[C@@H]5[C@@H](NCCC[C@@H]5O4)[C@@]23C1",
+            "notes": "Deprotection of Boc group and elimination of mesylate to form an alkene (Securingine C).",
+            "substeps": []
+        }
+    ]
+}

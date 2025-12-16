@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "epibatidine-ley-1999",
+        "molecule_name": "Epibatidine",
+        "class": "Natural Product",
+        "author": "Ley",
+        "year": 1999
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-Alkylation / Aggarwal Pyridine Synthesis",
+            "reagents": "then",
+            "reagent_smiles": "[Li][N@@]([C@@H](C)c1ccccc1)[C@@H](C)c1ccccc1.Clc1ccc([I+]c2ccc(Cl)cc2)cc1.[Cl-]",
+            "conditions": "DMF",
+            "yield": "70%",
+            "reactant_smiles": "O=C1CCC([OTBDMS])CC1",
+            "product_smiles": "O=C1C(C2=CN=C(C=C2)Cl)CC([C@H]([OTBDMS]))CC1",
+            "notes": "Alpha-alkylation of a cyclohexanone derivative with a 5-chloropyridyl group, using a chiral lithium amide base and a diaryliodonium salt. The reaction is regioselective for the more hindered alpha-carbon and stereoselective for the OTBDMS group, while creating a racemic/diastereomeric mixture at the new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epimerization",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "O=C1[CH](C2=CN=C(C=C2)Cl)CC[C@@H]([OTBDMS])CC1",
+            "product_smiles": "O=C1[C@@H](C2=CN=C(C=C2)Cl)CC[C@@H]([OTBDMS])CC1",
+            "notes": "Base-catalyzed epimerization at the alpha-carbon of the ketone to a specific diastereomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "-98 °C",
+            "yield": "84%",
+            "reactant_smiles": "[OTBDMS][C@H]1CCC(=O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "product_smiles": "[OTBDMS][C@H]1CC[C@H](O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylate Formation / Alcohol Activation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[OTBDMS][C@H]1CC[C@H](O)[C@@H](C2=CN=C(C=C2)Cl)C1",
+            "product_smiles": "[OTBDMS][C@H]1CC[C@H](OS(=O)(=O)C)[C@@H](C2=CN=C(C=C2)Cl)C1",
+            "notes": "Conversion of a secondary alcohol to a mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "Bu4NF",
+            "reagent_smiles": "",
+            "conditions": "THF, RT",
+            "yield": "88%",
+            "reactant_smiles": "[C@H]1([OMs])[C@@H](c2nc(Cl)ccc2)CC[C@H]([OTBDMS])C1",
+            "product_smiles": "[C@H]1([OMs])[C@@H](c2nc(Cl)ccc2)CC[C@H](O)C1",
+            "notes": "Deprotection of TBDMS ether to a hydroxyl group using tetrabutylammonium fluoride (TBAF).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P, HN3, DEAD, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C to RT",
+            "yield": "94%",
+            "reactant_smiles": "CS(=O)(=O)O[C@H]1CC[C@H](O)[C@@H](C2=CN=C(Cl)C=C2)C1",
+            "product_smiles": "CS(=O)(=O)O[C@H]1CC[C@@H](N=[N+]=[N-])[C@@H](C2=CN=C(Cl)C=C2)C1",
+            "notes": "Mitsunobu reaction converting a secondary alcohol to an azide with inversion of configuration. The mesylate (OMs) and pyridine chloride groups are unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Multi-step cyclization (Epibatidine synthesis)",
+            "reagents": "CHCl3",
+            "reagent_smiles": "",
+            "conditions": "heat, 60 h",
+            "yield": "90% (3 steps)",
+            "reactant_smiles": "CS(=O)(=O)O[C@H]1[C@@H](C2=CN=C(Cl)C=C2)CC[C@@H]([N-]=[N+]=N)CC1",
+            "product_smiles": "ClC1=CN=CC=C1[C@@H]2C[C@H]3N[C@H]2CCC3",
+            "notes": "Intramolecular cyclization and rearrangements forming the 3-azabicyclo[3.2.1]octane core from a mesylate and an azide, leading to (+)-Epibatidine.",
+            "substeps": []
+        }
+    ]
+}

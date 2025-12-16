@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "opicapone-ongentys-bial-unknown-2024",
+        "molecule_name": "Opicapone (Ongentys Bial)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hantzsch-type pyridine synthesis",
+            "reagents": "morpholine",
+            "reagent_smiles": "NC(=O)CC#N",
+            "conditions": "MeOH, 65 °C",
+            "yield": "97%",
+            "reactant_smiles": "CC(=O)CC(=O)C",
+            "product_smiles": "CC1=C(C#N)C(=O)NC(=C1)C",
+            "notes": "Formation of a 2-pyridone from a 1,3-diketone and 2-cyanoacetamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Chlorination",
+            "reagents": "SO₂Cl₂",
+            "reagent_smiles": "ClS(=O)(=O)Cl",
+            "conditions": "MeCN, 5 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=C(C#N)C(=O)NC(=C1)C",
+            "product_smiles": "CC1=C(C#N)C(=O)NC(=C1Cl)C",
+            "notes": "Chlorination of the electron-rich pyridone ring at position 5.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chlorination / Deoxyhalogenation",
+            "reagents": "Me4NCl, POCl3",
+            "reagent_smiles": "[N+](C)(C)(C)C.O=P(Cl)(Cl)Cl",
+            "conditions": "DCM, 85 °C",
+            "yield": "88%",
+            "reactant_smiles": "CC1=C(C#N)C(=O)NC(=C1Cl)C",
+            "product_smiles": "CC1=NC(Cl)=C(C)C(Cl)=C1C#N",
+            "notes": "Chlorination of a pyridone to a pyridine using phosphorus oxychloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amidoxime formation",
+            "reagents": "1,10-phenanthroline, H2NOH",
+            "reagent_smiles": "",
+            "conditions": "aq. MeOH, rt",
+            "yield": "88%",
+            "reactant_smiles": "CC1=C(C#N)C(=NC(=C1Cl)C)Cl",
+            "product_smiles": "CC1=C(C(=NC(=C1Cl)C)Cl)/C(=N/O)/N",
+            "notes": "Nitrile group is converted to an amidoxime using hydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "1,3,4-Oxadiazole formation",
+            "reagents": "pyridine",
+            "reagent_smiles": "COC1=CC(=CC(=C1O)[N+](=O)[O-])C(=O)Cl",
+            "conditions": "p-dioxane, 115 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC1=C(C)C(Cl)=NC(Cl)=C1C(=NOH)N",
+            "product_smiles": "CC1=C(C)C(Cl)=NC(Cl)=C1C2=NOC(=N2)C3=CC(=C(C(=C3)OC)O)[N+](=O)[O-]",
+            "notes": "Condensation of an N-hydroxyamidine with an acid chloride to form a 1,3,4-oxadiazole.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Nitration",
+                    "reagents": "HNO3, HOAc",
+                    "reagent_smiles": "",
+                    "conditions": "aq., 20 °C",
+                    "yield": "40%",
+                    "reactant_smiles": "COC1=CC(=CC=C1O)C(=O)O",
+                    "product_smiles": "COC1=CC(=CC(=C1O)[N+](=O)[O-])C(=O)O",
+                    "notes": "Nitration of vanillic acid with nitric acid in aqueous acetic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Acid Chloride Formation",
+                    "reagents": "cat. DMF, DCM",
+                    "reagent_smiles": "ClSCl",
+                    "conditions": "20 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=C(O)c1c(O)c([N+](=O)[O-])cc(OC)c1",
+                    "product_smiles": "O=C(Cl)c1c(O)c([N+](=O)[O-])cc(OC)c1",
+                    "notes": "Conversion of a benzoic acid to its corresponding benzoyl chloride using thionyl chloride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Oxidation",
+            "reagents": "UHP, TFAA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "Clc1nc(Cl)c(C)c(C)c1C2=NOC(=N2)c3cc([N+](=O)[O-])c(O)c(OC)c3",
+            "product_smiles": "Clc1[n+]([O-])c(Cl)c(C)c(C)c1C2=NOC(=N2)c3cc([N+](=O)[O-])c(O)c(OC)c3",
+            "notes": "Oxidation of the pyridine nitrogen to form an N-oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Demethylation",
+            "reagents": "AlCl₃, pyridine, NMP",
+            "reagent_smiles": "",
+            "conditions": "58-62 °C",
+            "yield": "53% (2 steps)",
+            "reactant_smiles": "C[N+]1([O-])C(C)=C(Cl)C(c2noc(c3cc([N+](=O)[O-])c(O)c(OC)c3)n2)=C(Cl)C1",
+            "product_smiles": "C[N+]1([O-])C(C)=C(Cl)C(c2noc(c3cc([N+](=O)[O-])c(O)c(O)c3)n2)=C(Cl)C1",
+            "notes": "Demethylation of an aryl methyl ether (methoxy group converted to hydroxyl group). The reaction transforms a methoxy group to a hydroxyl group on the benzene ring.",
+            "substeps": []
+        }
+    ]
+}

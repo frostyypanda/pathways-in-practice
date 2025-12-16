@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "malyngolide-enders-1996",
+        "molecule_name": "Malyngolide",
+        "class": "Natural Product",
+        "author": "Enders",
+        "year": 1996
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Chiral Hydrazone Formation (Enders Alkylation Auxiliary)",
+            "reagents": "TsOH, RAMP, 4 Å MS",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "97%",
+            "reactant_smiles": "C=CCOC(=O)C1CCCC1=O",
+            "product_smiles": "C=CCOC(=O)C1CCCC1=NN2CCC[C@@H]2COC",
+            "notes": "Formation of a chiral hydrazone from a cyclic ketone and a RAMP-derived hydrazone auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Anionic Carroll rearrangement",
+            "reagents": "LiTMP",
+            "reagent_smiles": "[Li+].[N-]1C(C)(C)CCCC1(C)C",
+            "conditions": "toluene, -100 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCOC(=O)C/1CCC\\C1=N/N2CCC[C@@H]2COC",
+            "product_smiles": "C=CC[C@]/1(CCC\\C1=N/N2CCC[C@@H]2COC)[CO2Allyl]",
+            "notes": "Anionic Carroll rearrangement of an allyl ester, forming a new quaternary chiral center on the cyclopentane ring, with an allyl group and an allyl ester group. The imine double bond retains its Z-configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "57% (2 steps)",
+            "reactant_smiles": "COC[C@@H]1CCCN1N=C2CCC[C@](C=C)(C(=O)OCC=C)2",
+            "product_smiles": "COC[C@@H]1CCCN1N=C2CCC[C@](C=C)(CO)2",
+            "notes": "Reduction of an allyl ester to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Imine Hydrolysis",
+            "reagents": "O3",
+            "reagent_smiles": "",
+            "conditions": "pentane, -78 °C",
+            "yield": "78%",
+            "reactant_smiles": "C=CC[C@]/1(CCC\\C1=N/N2CCC[C@@H]2COC)CO",
+            "product_smiles": "C=CC[C@]1(CCCC1=O)CO",
+            "notes": "Oxidative cleavage/hydrolysis of a cyclic imine to a ketone, with the chiral auxiliary removed and the terminal alkene group remaining intact. Stereochemistry at the adjacent chiral center is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, DIPEA",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.CCN(CC(C)C)CC(C)C",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@]1(CO)CCCC1=O",
+            "product_smiles": "C=CC[C@@]1([OTBS])CCCC1=O",
+            "notes": "Protection of a primary alcohol with a tert-butyldimethylsilyl (TBS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Lemieux-Johnson reaction",
+            "reagents": "OsO4, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "dioxane, rt",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "O=C1CCC[C@@]1(CC=C)C[OTBS]",
+            "product_smiles": "O=C1CCC[C@@]1(CC=O)C[OTBS]",
+            "notes": "Oxidative cleavage of an alkene to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig olefination",
+            "reagents": "C7H15PPh3Br, KOtBu",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "74%",
+            "reactant_smiles": "[OTBS]C[C@]1(CCCC1=O)CC=O",
+            "product_smiles": "CCCCCC/C=C/C[C@]1(CCCC1=O)C[OTBS]",
+            "notes": "Wittig olefination converts an aldehyde to a trans (E) alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation and Deprotection",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "O=C1CCC[C@](C1)(CC/C=C/CCCCCC)C[OTBS]",
+            "product_smiles": "O=C1CCC[C@](C1)(CCCCCCCCC)CO",
+            "notes": "Hydrogenation of the alkene and deprotection of the TBS ether to a primary alcohol. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alpha-alkylation (Methylation)",
+            "reagents": "LDA, then MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "81%",
+            "reactant_smiles": "O=C1CC[C@@](CO)(CCCCCCCC)C1",
+            "product_smiles": "O=C1C[C@@H](C)[C@@](CO)(CCCCCCCC)C1",
+            "notes": "Methylation of a cyclopentanone enolate, generated with LDA, at the alpha-position to the ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Baeyer-Villiger oxidation",
+            "reagents": "m-CPBA, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, rt",
+            "yield": "58%",
+            "reactant_smiles": "O=C1C[C@H](C)CC[C@@]1(CCCCCCCC)CO",
+            "product_smiles": "O=C1OC[C@@](CCCCCCCC)(CO)CC[C@H](C)C1",
+            "notes": "Baeyer-Villiger oxidation of a cyclopentanone to a δ-lactone (caprolactone derivative).",
+            "substeps": []
+        }
+    ]
+}

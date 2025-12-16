@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ibogamine-white-2000",
+        "molecule_name": "Ibogamine",
+        "class": "Natural Product",
+        "author": "White",
+        "year": 2000
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Sulfinylimine Formation (from Acetal)",
+            "reagents": "TsOH",
+            "reagent_smiles": "[tBu]S(=O)N",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCCC(OC)(OC)OC",
+            "product_smiles": "CCC/C(=N\\[S@@](=O)[tBu])/OC",
+            "notes": "Condensation of an alkyl trimethyl orthoester (acetal) with a tert-butylsulfinylamine to form an N-sulfinylimine, under acidic conditions (TsOH) and heat.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Addition / Enamine Formation",
+            "reagents": "PhMe₂SiLi",
+            "reagent_smiles": "[Li][Si](C)(C)c1ccccc1",
+            "conditions": "THF, -78 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCC/C(=N\\[S@@](=O)C(C)(C)C)/OC",
+            "product_smiles": "CC/C=C(\\[Si](C)(C)c1ccccc1)/N[S@](=O)C(C)(C)C",
+            "notes": "Asymmetric nucleophilic addition of phenyldimethylsilyllithium to a chiral sulfinimine, leading to the formation of a chiral silyl enamine with E-geometry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cycloaddition / Michael Addition",
+            "reagents": "LHMDS",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "CCC/C=C(\\N[S@](=O)C(C)(C)C)/[Si](C)(C)c1ccccc1",
+            "product_smiles": "C[C@@H]1CCC([C@@H](C(=O)OC))C([C@@H](C(=O)OC))[C@]([Si](C)(C)c2ccccc2)(N[S@](=O)C(C)(C)C)1",
+            "notes": "A [4+2] cycloaddition or sequence of Michael addition and cyclization reaction, mediated by LHMDS, forms a substituted cyclohexyl derivative with multiple chiral centers, with the sulfinamide acting as a chiral auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Amidation / Cyclization",
+            "reagents": "HCl, MeOH, NaHCO3, EtOAc",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1C[C@H](C[C@H](C(=O)OC)[C@@]1(N[S@](=O)C(C)(C)C)[Si](C)(C)c2ccccc2)C(=O)OC",
+            "product_smiles": "CC[C@H]1C[C@@H]2C[C@@H](C(=O)OC)[C@](N(C2=O)C1)([Si](C)(C)c3ccccc3)",
+            "notes": "Intramolecular cyclization involving deprotection of sulfinamide and formation of a lactam, resulting in a bicyclic azabicyclo[3.3.1]nonan-2-one derivative. One methyl ester remains. The methyl group on the reactant is depicted as an ethyl group in the product. The reactant has 23 carbons, and the product shown in the image has 20 carbons. The corrected reactant SMILES has 23 carbons. The corrected product SMILES derived from the input's connectivity (with fixed stereochemistry and Si-Ph group) has 19 carbons. This implies a 1-carbon discrepancy between the image's depiction and the derived SMILES for the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Iminium Formation / Lactam Activation",
+            "reagents": "Tf2O, DCM",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1CC2CC(CC(=O)OC)C1(NC2=O)[Si](C)(C)c3ccccc3",
+            "product_smiles": "CCC1CC2CC(CC(=O)OC)C1(N=C2[OTf])[Si](C)(C)c3ccccc3",
+            "notes": "Lactam oxygen activated by triflic anhydride to form an iminium triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "O=C(OC)C1(CC)CC2CC3N=C(OS(=O)(=O)C(F)(F)F)C3([Si](C)(C)c4ccccc4)CC21",
+            "product_smiles": "O=C(OC)C1(CC)CC2CC3NC3([Si](C)(C)c4ccccc4)CC21",
+            "notes": "Reduction of an imino triflate to a cyclic amine using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "NH4F, MeCN",
+            "reagent_smiles": "",
+            "conditions": "75 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1CC2CC(C(=O)OC)C1(NC2)[Si](C)(C)CC3=CC=CC=C3",
+            "product_smiles": "CCC1CC2CC(C1NC2)CC(=O)OC",
+            "notes": "Desilylation of the PhMe2Si protecting group using ammonium fluoride, converting a C-Si bond to a C-H bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaI, K2CO3",
+            "reagent_smiles": "COC(=O)CCCCl",
+            "conditions": "80 °C",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "COC(=O)CC1CN2CCC(CC)C1C2",
+            "product_smiles": "COC(=O)CC1CN(CCCC(=O)OC)C2CCC(CC)C1C2",
+            "notes": "N-alkylation of a secondary bicyclic amine with methyl 4-chlorobutanoate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "LHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCC[C@H]1C[C@@H]2C[C@@H]([C@H]1N(C2)CC(=O)OC)C(=O)OC",
+            "product_smiles": "CCC[C@H]1C[C@@H]2C[C@@H]3C(C(=O)OC)CC(=O)C[C@H]1N3C2",
+            "notes": "Intramolecular Dieckmann-like condensation of a diester, forming a new 7-membered ring containing a beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Fischer Indole Synthesis",
+            "reagents": "H₂SO₄, PhNHNH₂",
+            "reagent_smiles": "OS(=O)(=O)O.NNc1ccccc1",
+            "conditions": "65 °C",
+            "yield": "42% (2 steps)",
+            "reactant_smiles": "CCC[C@@H]1CC2N3CCC(=O)C(C(=O)OC)CC(C1)C23",
+            "product_smiles": "CCC1[C@@H]2CC3[C@H]1N(CC[C@@H]4C5=C(NC=C5)C43)[C@@H]2",
+            "notes": "Intramolecular Fischer Indole Synthesis. The methyl ester group on the reactant has an undefined stereochemistry (wavy bond). The product is (+)-Epiibogamine, and its stereochemistry has been assigned based on PubChem's isomeric SMILES for this compound.",
+            "substeps": []
+        }
+    ]
+}

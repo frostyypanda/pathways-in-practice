@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tamiflu-trost-2008",
+        "molecule_name": "Tamiflu",
+        "class": "Natural Product",
+        "author": "Trost",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "10 mol% cat.",
+            "reagent_smiles": "C=CC(=O)OCC(F)(F)F.C[c]1ccccc1N([B-]([H])O[C@@H]([c]2ccccc2)[C@H]3[N+]4CCCC4C3)C.[N-](S(=O)(=O)C(F)(F)F)S(=O)(=O)C(F)(F)F",
+            "conditions": "neat, rt, 30 h",
+            "yield": "97%",
+            "reactant_smiles": "C=CC=C",
+            "product_smiles": "O=C(OCC(F)(F)F)[C@@H]1CC=CCC1",
+            "notes": "Corey's asymmetric Diels-Alder cycloaddition",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amidation",
+            "reagents": "",
+            "reagent_smiles": "N.OCC(F)(F)F",
+            "conditions": "40 °C, 5 h",
+            "yield": "100%",
+            "reactant_smiles": "C1=CC[C@H](CC1)C(=O)OCC(F)(F)F",
+            "product_smiles": "C1=CC[C@H](CC1)C(=O)N",
+            "notes": "Amidation of an ester with ammonia, using 2,2,2-trifluoroethanol as solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Iodo-lactamization",
+            "reagents": "",
+            "reagent_smiles": "ClC(=O)C(=O)Cl CC(C)(C)O",
+            "conditions": "(CH2Cl)2, 70 °C, 2h, then 40 °C",
+            "yield": "83%",
+            "reactant_smiles": "C1=CC[C@@H](CC1)C(=O)N",
+            "product_smiles": "O=C1N2C[C@H](I)C[C@@H]1CC[C@@H]2",
+            "notes": "Intramolecular iodo-lactamization of cyclohexene-carboxamide derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Boc Protection",
+            "reagents": "(Boc)₂O, Et₃N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "99%",
+            "reactant_smiles": "O=C1N[C@@H]2C[C@H](I)C[C@@H]1C2",
+            "product_smiles": "[Boc]N1[C@@H]2C[C@H](I)C[C@@H]1C2",
+            "notes": "N-Boc protection of a secondary lactam using di-tert-butyl dicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "E2 Elimination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "THF reflux, 12 h",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N1[C@H]2C[C@H](CC[C@@H]2I)C1=O",
+            "product_smiles": "[Boc]N1[C@@H]2C=CC[C@@H](C2)C1=O",
+            "notes": "Dehydrohalogenation of a bicyclic iodoalkane to form a bicyclic alkene using DBU as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic Bromination",
+            "reagents": "AIBN, NBS",
+            "reagent_smiles": "",
+            "conditions": "CCl4, reflux",
+            "yield": "95%",
+            "reactant_smiles": "[Boc]N1[C@@H]2C=CC[C@@H]2C1=O",
+            "product_smiles": "[Boc]N1[C@@H]2C(=C[C@H](Br)[C@@H]2)C1=O",
+            "notes": "Radical allylic bromination using NBS, resulting in a shifted double bond and new chiral center with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement / Ring Opening",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "100%",
+            "reactant_smiles": "[Boc]N1[C@@H]2C=C[C@H](Br)[C@H]2C1=O",
+            "product_smiles": "CCOC(=O)C1=CC[C@H](N[Boc])CC1",
+            "notes": "This reaction involves the intramolecular rearrangement and ring opening of a bicyclic lactam. Bromine is eliminated, and an ethyl ester group is formed, while the Boc-protected amine becomes part of a cyclohexene ring. An atom balance discrepancy is observed between the reactant (C13H16NO3Br) and product (C14H23NO4), suggesting a net gain of one carbon, one oxygen, and seven hydrogens, which is unusual without another explicit carbon-containing reagent beyond the solvent (EtOH). However, the SMILES accurately represent the structures shown in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Functionalization of a cyclohexadiene",
+            "reagents": "5 mol% SnBr4, NBA",
+            "reagent_smiles": "Br[Sn](Br)(Br)Br.O=C1CCC(=O)N1Br",
+            "conditions": "MeCN, -40 °C, 4 h",
+            "yield": "75%",
+            "reactant_smiles": "CCOC(=O)C1=CC[C@H](NC(=O)OC(C)(C)C)C=C1",
+            "product_smiles": "CCOC(=O)C1=C[C@@H](Br)[C@H](NC(=O)OC(C)(C)C)[C@H](NC(=O)C)CC1",
+            "notes": "Transformation involves bromination and the introduction of an acetamido (NHAc) group onto a cyclohexadiene ring. The product contains an NHAc group which is not present in the reactant and no obvious acylating reagent (e.g., acetic anhydride) is listed, suggesting a potential discrepancy in the diagram's depiction of the reaction pathway or an implicit reagent. Stereochemistry for NHBoc is represented as '[C@H]' for a dashed bond in both reactant and product, and other chiral centers in the product follow: Br is '[C@@H]' (dashed), NHAc is '[C@H]' (solid).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Aziridine Formation",
+            "reagents": "n-Bu₄NBr, KHMDS",
+            "reagent_smiles": "",
+            "conditions": "DME, -20 °C, 10 min",
+            "yield": "82%",
+            "reactant_smiles": "CCOC(=O)C1=CC[C@@H]([C@@H](Br)[C@H](C1)N[Ac])[Boc]HN",
+            "product_smiles": "CCOC(=O)C1=C[C@H]2[C@@H]([C@H](C1)[Boc]HN)N2[Ac]",
+            "notes": "Intramolecular nucleophilic substitution where the acetamide nitrogen is deprotonated by KHMDS and attacks the carbon bearing the bromine, forming a three-membered aziridine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Aziridine Ring Opening",
+            "reagents": "cat. Cu²⁺, 3-pentanol",
+            "reagent_smiles": "CC(CC)O.[Cu+2]",
+            "conditions": "0 °C, 12 h",
+            "yield": "61%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H]1CC=C(C(=O)OCC)[C@H]2N(C(=O)C)[C@H]12",
+            "product_smiles": "CCOC(=O)C1=CC[C@@H](NC(=O)OC(C)(C)C)[C@H](NC(=O)C)[C@H]1OC(CC)CC",
+            "notes": "Copper(II)-catalyzed aziridine ring opening with 3-pentanol to form an ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "H3PO4",
+            "reagent_smiles": "O=P(O)(O)O",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C[C@@H](O[CH](CC)CC)[C@H](NC(=O)C)C[C@@H](NC(=O)OC(C)(C)C)C1",
+            "product_smiles": "CCOC(=O)C1=C[C@@H](O[CH](CC)CC)[C@H](NC(=O)C)C[C@@H]([NH3+])C1.O=P([O-])(O)O",
+            "notes": "Deprotection of Boc group to form ammonium phosphate salt.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pactamycin-johnson-2013",
+        "molecule_name": "Pactamycin",
+        "class": "Natural Product",
+        "author": "Johnson",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Regitz diazo transfer",
+            "reagents": "p-ABSA, Et3N",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)CC(=O)C",
+            "product_smiles": "CC(=O)C(=N#N)C(=O)C",
+            "notes": "Formation of a diazo compound from a beta-diketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Rh-catalyzed amination / carbene addition",
+            "reagents": "Rh₂(OAc)₄",
+            "reagent_smiles": "CN(C)C(=O)N",
+            "conditions": "DCE, toluene",
+            "yield": "67%",
+            "reactant_smiles": "CC(=O)C(=[N+]=[N-])C(=O)C",
+            "product_smiles": "CC(=O)C(C(=O)C)NC(=O)N(C)C",
+            "notes": "Rhodium-catalyzed reaction of a diazo compound with N,N-dimethylurea to form an alpha-amino ketone derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Mannich Reaction",
+            "reagents": "",
+            "reagent_smiles": "C=CC1CN2CCC1CC2[C@@H](C3=CC=NC4=C3C=CC=C4)O.C1=CC=CC=C1/C=C/N=C(=O)OCC2=CC=CC=C2",
+            "conditions": "DCM, -65 °C",
+            "yield": "70%",
+            "reactant_smiles": "CC(=O)C(C(=O)C)NC(=O)N(C)C",
+            "product_smiles": "CC(=O)C(C(=O)C)([C@@H](/C=C/C1=CC=CC=C1)NC(=O)OCC2=CC=CC=C2)NC(=O)N(C)C",
+            "notes": "Asymmetric addition of a diketone to a protected cinnamyl imine, catalyzed by a Cinchona alkaloid derivative.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Imine formation",
+                    "reagents": "LHMDS neat",
+                    "reagent_smiles": "",
+                    "conditions": "-78 °C",
+                    "yield": "",
+                    "reactant_smiles": "c1ccccc1/C=C/C=O",
+                    "product_smiles": "c1ccccc1/C=C/C=N/[TMS]",
+                    "notes": "Formation of an N-trimethylsilyl imine from an α,β-unsaturated aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Protecting Group Exchange",
+                    "reagents": "CbzCl",
+                    "reagent_smiles": "",
+                    "conditions": "CHCl₃",
+                    "yield": "85%",
+                    "reactant_smiles": "[Ph]/C=C/C=N[TMS]",
+                    "product_smiles": "[Ph]/C=C/C=N[Cbz]",
+                    "notes": "Replacement of the TMS protecting group on the imine with a Cbz group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Stereoselective Ketone Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Li+]H[Al-](OC(C)(C)C)(OC(C)(C)C)OC(C)(C)C",
+            "conditions": "THF, -40° C",
+            "yield": "72%",
+            "reactant_smiles": "CC(=O)C(C(=O)C)([C@@H](N[Cbz])/C=C/c1ccccc1)NC(=O)N(C)C",
+            "product_smiles": "CC(=O)[C@]([C@H](O)C)([C@@H](N[Cbz])/C=C/c1ccccc1)NC(=O)N(C)C",
+            "notes": "One methyl ketone group is selectively reduced to a secondary alcohol with retention of existing stereochemistry and formation of two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Silylation",
+            "reagents": "TBSOTf, lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "88%",
+            "reactant_smiles": "CC(=O)[C@]([C@H](C)O)([C@@H](NH[Cbz])/C=C/[Ph])NC(=O)N(C)C",
+            "product_smiles": "CC(=O)[C@]([C@H](C)[OTBS])([C@@H](NH[Cbz])/C=C/[Ph])NC(=O)N(C)C",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Aldol reaction",
+            "reagents": "LDA, CH2O(g)",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to -45 °C",
+            "yield": "70%",
+            "reactant_smiles": "O=C(C)[C@]([C@H](C)O[Si](C)(C)C(C)(C)C)([C@@H](/C=C/C1=CC=CC=C1)NC(=O)OCC2=CC=CC=C2)NC(=O)N(C)C",
+            "product_smiles": "O=C(CCO)[C@]([C@H](C)O[Si](C)(C)C(C)(C)C)([C@@H](/C=C/C1=CC=CC=C1)NC(=O)OCC2=CC=CC=C2)NC(=O)N(C)C",
+            "notes": "Hydroxymethylation of the ketone alpha-carbon via enolate formation with LDA and subsequent reaction with formaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, Me2S",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]([C@]([C@H](/C=C/[Ph])N[Cbz])(C(=O)CCO)NC(=O)N(C)C)[OTBS]",
+            "product_smiles": "C[C@@H]([C@]([C@H](CC=O)N[Cbz])(C(=O)CCO)NC(=O)N(C)C)[OTBS]",
+            "notes": "Ozonolysis of an alkene followed by reductive workup to form an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Aldol Condensation / Cyclization",
+            "reagents": "NaOMe",
+            "reagent_smiles": "[Na+].CO[O-]",
+            "conditions": "THF, 0 °C",
+            "yield": "50% (2 steps)",
+            "reactant_smiles": "C[C@@H]([C@]([C@@H](C=O)NC(=O)OCC1=CC=CC=C1)(C(=O)CCO)NC(=O)N(C)C)O[Si](C)(C)C(C)(C)C",
+            "product_smiles": "O=C1C=C(CO)C=[C@@]1(NC(=O)N(C)C)(NC(=O)OCC2=CC=CC=C2)[C@@H](C)O[Si](C)(C)C(C)(C)C",
+            "notes": "Intramolecular cyclization involving an aldehyde and a ketone to form a cyclopentenone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Epoxidation",
+            "reagents": "NaOH, H2O2",
+            "reagent_smiles": "[Na+].[OH-].OO",
+            "conditions": "DCM/MeOH, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "[OTBS][C@@H](C)[C@@]2(N(C(=O)N(C)C)C(=O)[C@@H]1[NHCbz])C(=O)C(CO)=C12",
+            "product_smiles": "[OTBS][C@@H](C)[C@@]2(N(C(=O)N(C)C)C(=O)[C@@H]1[NHCbz])C(=O)[C@H]3O[C@@H](CO)C123",
+            "notes": "Formation of an epoxide on the cyclopentenone ring via Michael-initiated epoxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Protection",
+            "reagents": "TBDPSCl, Et3N, DMAP",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(C1=CC=CC=C1)C2=CC=CC=C2.CCN(CC)CC",
+            "conditions": "DCM, 0 °C",
+            "yield": "76%",
+            "reactant_smiles": "O=C1[C@@](C(=O)N(C)C)([OTBS])[C@H](NC(=O)OCC2=CC=CC=C2)[C@H]3[C@H](CO)O3C1",
+            "product_smiles": "O=C1[C@@](C(=O)N(C)C)([OTBS])[C@H](NC(=O)OCC2=CC=CC=C2)[C@H]3[C@H](CO[TBDPS])O3C1",
+            "notes": "Protection of a primary alcohol as a TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Grignard Addition",
+            "reagents": "MeMgBr",
+            "reagent_smiles": "C[Mg]Br",
+            "conditions": "THF, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "C[C@@H]([C@@]1([C@H]([C@@H]2[C@](C[OTBDPS])(C1=O)O2)[NHCbz])N(C)C)[OTBS]",
+            "product_smiles": "C[C@@H]([C@@]1([C@H]([C@@H]2[C@](C[OTBDPS])([C@]1(C)(O))O2)[NHCbz])N(C)C)[OTBS]",
+            "notes": "Grignard addition of methylmagnesium bromide to a ketone, forming a tertiary alcohol with a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxirane Opening / Amination",
+            "reagents": "Sc(OTf)3",
+            "reagent_smiles": "CC(=O)C1=CC=CC(=C1)N",
+            "conditions": "PhMe, 60 °C",
+            "yield": "66%",
+            "reactant_smiles": "C[C@]1(O)[C@@H]([OTBS])[C@@H](C(=O)N(C)C)[C@H]([NHCbz])[C@]2(C1)O[C@H](C[OTBDPS])2",
+            "product_smiles": "C[C@]1(O)[C@@H]([OTBS])[C@@H](C(=O)N(C)C)[C@H]([NHCbz])[C@@H](NC2=CC=CC(=C2)C(=O)C)[C@H](O)(C[OTBDPS])[C@H]1",
+            "notes": "Lewis acid catalyzed oxirane opening of a bicyclic compound with meta-aminoacetophenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=O)C1=CC(=CC=C1)N[C@H]2[C@@H](NCbz)[C@](C)(O)[N]([C@H](C)OTBS)(C(=O)N(C)C)[C@H]4(O)C[C@H](CO[TBDPS])2",
+            "product_smiles": "CC(=O)C1=CC(=CC=C1)N[C@H]2[C@@H](NCbz)[C@](C)(O)[N]([C@H](C)O)(C(=O)N(C)C)[C@H]4(O)C[C@H](CO)2",
+            "notes": "Deprotection of TBS and TBDPS silyl ethers to hydroxyls.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Esterification",
+            "reagents": "K2CO3",
+            "reagent_smiles": "Cc1c(O)c(C(=O)OCC#N)ccc1",
+            "conditions": "MeOH",
+            "yield": "80%",
+            "reactant_smiles": "CC(=O)c1cccc(N[C@@H]1[C@@H]([NHCbz])[C@H](C)(O)[C@H](C)(O)[C@@H](CO)(O)(NC(=O)N(C)C)1)c1",
+            "product_smiles": "CC(=O)c1cccc(N[C@@H]1[C@@H]([NHCbz])[C@H](C)(O)[C@H](C)(O)[C@@H](C(OC(=O)c3c(C)c(O)ccc3))(O)(NC(=O)N(C)C)1)c1",
+            "notes": "Esterification of a primary alcohol on the cyclopentane core with cyanomethyl 2-hydroxy-3-methylbenzoate, mediated by K2CO3.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection (Hydrogenolysis)",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "82%",
+            "reactant_smiles": "Cc1c(O)cccc1C(=O)OC[C@@]2(C)[C@H](O)[C@@H](NC3=CC=CC(=C3)C(=O)C)[C@@H](NC(=O)OCC4=CC=CC=C4)[C@@](C)(O)C2NC(=O)N(C)C",
+            "product_smiles": "Cc1c(O)cccc1C(=O)OC[C@@]2(C)[C@H](O)[C@@H](NC3=CC=CC(=C3)C(=O)C)[C@@H](N)[C@@](C)(O)C2NC(=O)N(C)C",
+            "notes": "Deprotection of the Cbz protecting group to yield a primary amine via catalytic hydrogenation.",
+            "substeps": []
+        }
+    ]
+}

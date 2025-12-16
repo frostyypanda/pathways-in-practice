@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "raputindole-a-lindel-2017",
+        "molecule_name": "Raputindole A",
+        "class": "Natural Product",
+        "author": "Lindel",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sandmeyer Iodination",
+            "reagents": "NaNO₂, HCl, KI",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1=CC=C(C=C1[N+](=O)[O-])N",
+            "product_smiles": "CC1=CC=C(C=C1[N+](=O)[O-])I",
+            "notes": "Diazotization of aromatic amine followed by reaction with iodide to form aryl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Enamine Formation / Vilsmeier-Haack type reaction",
+            "reagents": "DMF",
+            "reagent_smiles": "CN(C)C(OC)OC.C1CCCN1",
+            "conditions": "110 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1ccc(I)c([N+](=O)[O-])c1",
+            "product_smiles": "C1CCN(C1)/C=C/c2ccc(I)c([N+](=O)[O-])c2",
+            "notes": "Methyl group on iodonitrobenzene is converted to a conjugated enamine via reaction with N,N-dimethylformamide dimethyl acetal and pyrrolidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Indole Synthesis / Reductive Cyclization",
+            "reagents": "TiCl3, NH4OAc, H2O",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1CCN(C1)/C=C/C2=CC=C(C=C2[N+](=O)[O-])I",
+            "product_smiles": "C1=C2C=CNC2=CC(=C1)I",
+            "notes": "Reductive cyclization of the o-nitro-styrene derivative to form a 5-iodo-1H-indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Silylation",
+            "reagents": "LiHMDS, TIPSCl",
+            "reagent_smiles": "[Li]N(Si(C)(C)C)Si(C)(C)C.Cl[Si](C(C)C)(C(C)C)C(C)C",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C2C=CNC2=CC(=C1)I",
+            "product_smiles": "[TIPS]N1C=CC2=CC=C(C=C21)I",
+            "notes": "N-silylation of 5-iodo-1H-indole with chlorotriisopropylsilane (TIPSCl) using lithium bis(trimethylsilyl)amide (LiHMDS) as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Sonogashira Coupling",
+            "reagents": "Pd(PPh3)2Cl2, CuI, NEt3",
+            "reagent_smiles": "C=CC(C)(O)C#C",
+            "conditions": "40 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]N1C=CC2=CC=C(I)C=C21",
+            "product_smiles": "[TIPS]N1C=CC2=CC=C(C#CC(C)(O)C=C)C=C21",
+            "notes": "Sonogashira coupling of an iodo-indole with a functionalized alkyne, forming a new C-C bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, DMAP, pyridine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "C=CC(C)(O)C#CC1=CC=C2C=CN([TIPS])C2=C1",
+            "product_smiles": "C=CC(C)(OC(=O)C)C#CC1=CC=C2C=CN([TIPS])C2=C1",
+            "notes": "Acetylation of a tertiary allylic alcohol using acetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Gold-catalyzed cyclization",
+            "reagents": "",
+            "reagent_smiles": "Cl[Au]P(c1ccccc1)(c1ccccc1)c1ccccc1.[Ag+].[O-]Cl(=O)(=O)=O.[Na+].[O-]C",
+            "conditions": "DCM, sonication, rt",
+            "yield": "85%",
+            "reactant_smiles": "C=CC(C)(C#CC1=CC=C2C=CN(C2=C1)[TIPS])OC(=O)C",
+            "product_smiles": "C=CC1(C)CC(=O)c2c1ccc3c2[N]([TIPS])C=C3",
+            "notes": "Gold-catalyzed intramolecular cyclization of an enyne-indole derivative to form a tricyclic ketone. Acetate group remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Enol Triflate Formation",
+            "reagents": "LiHMDS, PhNTf₂",
+            "reagent_smiles": "",
+            "conditions": "THF, -20 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CC1(C)CC(=O)C2=C1C=C3C=CN(C3=C2)[TIPS]",
+            "product_smiles": "C=CC1(C)C=C(C2=C1C=C3C=CN(C3=C2)[TIPS])[OTf]",
+            "notes": "Enolization of ketone followed by triflation to form an enol triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "C=CC1(C)C=C(C2=C1C=C3C=CN([TIPS])C3=C2)[OTf]",
+            "product_smiles": "C=CC1(C)C=C(C2=C1C=C3C=CNC3=C2)[OTf]",
+            "notes": "Deprotection of TIPS group from indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd2(dba)3, Cs2CO3, P(o-Tol)3",
+            "reagent_smiles": "[K+].C=C([B-](F)(F)F)C",
+            "conditions": "THF, H2O, 70 °C",
+            "yield": "69%",
+            "reactant_smiles": "C=CC1(C)C=C([OTf])C2=C1C=C3C=CNC3=C2",
+            "product_smiles": "C=CC1(C)C=C(C=C(C)C)C2=C1C=C3C=CNC3=C2",
+            "notes": "Suzuki-Miyaura coupling reaction replacing a triflate with an isopropenyl group on an indole-fused polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "Li^0, DBB, 2,6-di-t-Bu-phenol",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "37%",
+            "reactant_smiles": "C=CC1(C)C=C(C=C(C)C)C2=C1C=C3C=CNC3=C2",
+            "product_smiles": "C=C[C@@]1(C)C[C@H](C=C(C)C)C2=C1C=C3C=CNC3=C2",
+            "notes": "Reductive cyclization/hydrogenation of the cyclopentadiene ring, creating two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Heck reaction",
+            "reagents": "NaOAc, Pd(OAc)2, nBu4NBr, H2O, DMAA",
+            "reagent_smiles": "C1=CC2=C(C=C1I)NC=C2",
+            "conditions": "100 °C",
+            "yield": "20%",
+            "reactant_smiles": "C=C[C@@]1(C)C[C@H](C=C(C)C)c2ccc[nH]c12",
+            "product_smiles": "C[C@@]1(C)(/C=C/c3ccc[nH]c43)C[C@H](C=C(C)C)c5ccc[nH]c15",
+            "notes": "Heck coupling of a vinyl group with 5-iodo-1H-indole.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "erchinine-a-wood-2025",
+        "molecule_name": "Erchinine A",
+        "class": "Natural Product",
+        "author": "Wood",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-protection (Boc-protection)",
+            "reagents": "Boc₂O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C2C(=C1)C=C(C(=O)OC)N2",
+            "product_smiles": "[Boc]N1C2=CC=C(C=C2C=C1C(=O)OC)OC",
+            "notes": "N-Boc protection of indole using di-tert-butyl dicarbonate (Boc₂O) and DMAP catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "Mg",
+            "reagent_smiles": "CO",
+            "conditions": "",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "COc1ccc2c(c1)c(C(=O)OC)c[n]2[Boc]",
+            "product_smiles": "COc1ccc2c(c1)C[C@H](C(=O)OC)[n]2[Boc]",
+            "notes": "Reduction of the C=C double bond in the indole ring to form an indoline, generating a new stereocenter. The Boc protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction to Aldehyde",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "COc1ccc2c(c1)C[C@H](C(=O)OC)N2[Boc]",
+            "product_smiles": "[Boc]N1[C@H](CC2=CC(=CC=C21)OC)C=O",
+            "notes": "Reduction of a methyl ester to an aldehyde using DIBAL.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Horner-Wadsworth-Emmons Olefination",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "CCOP(=O)(OCC)CS(=O)(=O)c1ccccc1.CCCC[Li]",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "88%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@@H](C=O)CC2=CC(=CC=C21)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@@H](\\C=C/S(=O)(=O)c1ccccc1)CC2=CC(=CC=C21)OC",
+            "notes": "Aldehyde converted to alpha,beta-unsaturated sulfone (2 steps)",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (Boc)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COc1ccc2c1N([Boc])[C@H](/C=C/S(=O)(=O)c3ccccc3)CC2",
+            "product_smiles": "COc1ccc2c1N[C@H](/C=C/S(=O)(=O)c3ccccc3)CC2",
+            "notes": "Boc deprotection of an indoline derivative using trifluoroacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide bond formation / Acylation",
+            "reagents": "DCC",
+            "reagent_smiles": "CCC1=CN(CC(=O)O)C(=O)C=C1",
+            "conditions": "CH2Cl2",
+            "yield": "90%",
+            "reactant_smiles": "COC1=CC=C2C(=C1)C[C@H](/C=C/S(=O)(=O)c3ccccc3)N2",
+            "product_smiles": "CCC1=CN(CC(=O)N2[C@H](/C=C/S(=O)(=O)c3ccccc3)CC4=CC(=CC=C42)OC)C(=O)C=C1",
+            "notes": "N-acylation of indole via amide bond formation using DCC coupling. The yield is for 2 steps.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+                    "reagents": "NaOMe",
+                    "reagent_smiles": "[Na+].[O-]C",
+                    "conditions": "MeOH, reflux",
+                    "yield": "",
+                    "reactant_smiles": "BrC1=NC=C(Br)C=C1",
+                    "product_smiles": "COC1=NC=C(Br)C=C1",
+                    "notes": "Nucleophilic aromatic substitution of one bromine with a methoxy group on 2,5-dibromopyridine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Alkylation (via lithiation)",
+                    "reagents": "n-BuLi, EtI",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "COC1=NC=C(C=C1)Br",
+                    "product_smiles": "COC1=NC=C(C=C1)CC",
+                    "notes": "A bromopyridine derivative undergoes halogen-metal exchange (lithiation) followed by alkylation with iodoethane to introduce an ethyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Ether Cleavage / Demethylation",
+                    "reagents": "KI, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, reflux",
+                    "yield": "",
+                    "reactant_smiles": "COc1nccc(CC)c1",
+                    "product_smiles": "CCC1=CNC(=O)C=C1",
+                    "notes": "Hydrolysis of 2-methoxy-5-ethylpyridine to 5-ethyl-1H-pyridin-2-one via acid-catalyzed ether cleavage.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "N-alkylation",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "CCOC(=O)CBr",
+                    "conditions": "MeCN, 50 °C",
+                    "yield": "79% (4 steps)",
+                    "reactant_smiles": "CCC1=CNC(=O)C=C1",
+                    "product_smiles": "CCC1=CN(CC(=O)OCC)C(=O)C=C1",
+                    "notes": "The nitrogen atom of the pyridone ring is alkylated with ethyl bromoacetate in the presence of potassium carbonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Ester hydrolysis (Saponification)",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, THF",
+                    "yield": "99%",
+                    "reactant_smiles": "O=C1C=C(CC)C=CN1CC(=O)OCC",
+                    "product_smiles": "O=C1C=C(CC)C=CN1CC(=O)O",
+                    "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using sodium hydroxide in a mixture of water and THF.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Diels-Alder Reaction",
+            "reagents": "BHT, chlorobenzene",
+            "reagent_smiles": "",
+            "conditions": "150 °C",
+            "yield": "74%",
+            "reactant_smiles": "CCC1=CC(=O)N(C=C1)CC(=O)N2[C@@H](/C=C/S(=O)(=O)c3ccccc3)CC4=CC(OC)=CC=C42",
+            "product_smiles": "COC1=CC=C2C[C@@H](N(CC(=O)N3CC(=O)[C@@]4([C@H](C=C(CC)C=C4)[C@@H](S(=O)(=O)C5=CC=CC=C5)C3)N2)C=C1",
+            "notes": "Intramolecular [4+2] cycloaddition of an N-acyl indoline-pyridone system (dienophile) with an alkenyl sulfone (diene) to form Erchinine A.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Desulfonylation",
+            "reagents": "Na(Hg), Na2HPO4",
+            "reagent_smiles": "",
+            "conditions": "HFIP, THF",
+            "yield": "79%",
+            "reactant_smiles": "CCC1=C[C@H]2[C@@H]([C@]3[C@H]4CC5=CC(=CC=C5N4C(=O)CN13)OC)S(=O)(=O)c1ccccc1",
+            "product_smiles": "CCC1=C[C@H]2[C@H][C@H]3[C@H]4CC5=CC(=CC=C5N4C(=O)CN(C13))OC",
+            "notes": "Reductive cleavage of the benzenesulfonyl group. The sulfonyl group, depicted with a down wedge in the reactant, is replaced by a hydrogen atom which is also depicted with a down wedge in the product, indicating an inversion of the relative stereochemistry at this carbon center (from implicit H-up to explicit H-down).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Catalytic Hydrogenation / Reduction",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "83%",
+            "reactant_smiles": "CCC1=C2C[C@H]3N(C(=O)CN4C3)C5=CC=C(OC)C=C5[C@@]24[C@@H]1O",
+            "product_smiles": "CC[C@H]1[C@@H]2C[C@H]3N(C(=O)CN4C3)C5=CC=C(OC)C=C5[C@@]24[C@@H]1O",
+            "notes": "Catalytic hydrogenation of a tetrasubstituted alkene to a saturated alkane within a complex polycyclic erchininine core. The stereochemistry of the two newly formed chiral centers is indicated in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive cyclization",
+            "reagents": "Cp2ZrHCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "71%",
+            "reactant_smiles": "COC1=CC=C2C[C@@H]3N(C(=O)CN([C@H]4C[C@@H]5O[C@@H](CC)[C@H]4[C@@H]3C25)C1)",
+            "product_smiles": "COC1=CC=C2C[C@@H]3N4[C@H]5CN([C@H]6C[C@@H]7O[C@@H](CC)[C@H]6[C@@H]3C27)C4O5C1",
+            "notes": "Reductive cyclization of a lactam to form a complex polycyclic ether/amine structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation (dehydrogenation)",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "81%",
+            "reactant_smiles": "CC[C@H]1C[C@H]2CC3[C@H]4CC5=CC(=CC=C5N4[C@@H]6CN([C@@H]13)[C@@H]2O6)OC",
+            "product_smiles": "CC[C@H]1C[C@H]2CC3C4=CC5=C(C=CC(=C5)OC)N4C6CN([C@@H]13)[C@@H]2O6",
+            "notes": "Dehydrogenation of the dihydroindole moiety to an indole system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Spirocyclization / Dearomatization",
+            "reagents": "TFA, mCPBA",
+            "reagent_smiles": "",
+            "conditions": "THF, - 20 °C",
+            "yield": "63%",
+            "reactant_smiles": "COc1ccc2c(c1)C3=C(C4)[C@@H]5N(CC[C@H]6C[C@@H]7O[C@@H]6[C@H]3C2)[C@H]7C[C@H](CC)N54",
+            "product_smiles": "CC[C@H]1C[C@@H]2C[C@H]3C(=O)[C@](O)([C@H]4N(CC[C@@H]5C[C@@H]6O[C@@H]5[C@H]3C7=C(N4C7)C8=CC=C(OC)C=C8)[C@H]6C[C@H]1N2)C",
+            "notes": "Oxidative dearomatization of the indole C=C bond to a keto-alcohol, followed by spirocyclization onto the indole nitrogen to form Erchinine A.",
+            "substeps": []
+        }
+    ]
+}

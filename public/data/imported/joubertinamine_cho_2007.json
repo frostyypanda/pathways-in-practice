@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "joubertinamine-cho-2007",
+        "molecule_name": "Joubertinamine",
+        "class": "Natural Product",
+        "author": "Cho",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Lithiation / Stannylation",
+            "reagents": "nBuLi",
+            "reagent_smiles": "Cl[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "THF",
+            "yield": "94%",
+            "reactant_smiles": "COC1=C(OC)C=C(Br)C=C1",
+            "product_smiles": "COC1=C(OC)C=C([Sn](CCCC)(CCCC)CCCC)C=C1",
+            "notes": "Aryl bromide undergoes lithiation with n-BuLi, followed by transmetalation with tributyltin chloride to form an arylstannane.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "C1=C(C(=O)OC=C1Br)Br",
+            "conditions": "PhMe, 110 °C",
+            "yield": "72%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)C1=CC(=C(C=C1)OC)OC",
+            "product_smiles": "COC1=C(C=C(C=C1)C2=CC(=COC2=O)Br)OC",
+            "notes": "Stille coupling of 4-(tributylstannyl)-1,2-dimethoxybenzene with 3,5-dibromo-2H-pyran-2-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "PhMe",
+            "reagent_smiles": "C=CSC1=CC=CC=C1",
+            "conditions": "110 °C",
+            "yield": "82%",
+            "reactant_smiles": "COc1ccc(OC)c(C2=CC(=O)OC(Br)=C2)c1",
+            "product_smiles": "COc1ccc(OC)c(C23C(=O)OC(C(Sc4ccccc4)CC2)C(Br)=C3)c1",
+            "notes": "Diels-Alder cycloaddition between a 2-pyrone and vinyl phenyl sulfide to form a bicyclic lactone adduct.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactone Methanolysis & Intramolecular Cyclization / Rearrangement",
+            "reagents": "NaOMe, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "COc1ccc(C2(OC(=O)C3C2C(SC4=CC=CC=C4)CC=C3Br))c(OC)c1",
+            "product_smiles": "COc1ccc([C@H](C(=O)OC)(c1OC)C2CC=C(Br)[C@H](SC3=CC=CC=C3)[C@@H](O)C2)cc1",
+            "notes": "Base-catalyzed ring-opening of bicyclic lactone, followed by methanolysis to form a methyl ester and subsequent intramolecular cyclization to yield a cyclohexenol derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "92%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)[C@@]2(C=C(Br)[C@H](O)[C@@H]([SPh])CC2)C(=O)OC)OC",
+            "product_smiles": "COC1=C(C=C(C=C1)[C@@]2(C=C(Br)[C@H]([OTBS])[C@@H]([SPh])CC2)C(=O)OC)OC",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "75%",
+            "reactant_smiles": "c1cc(OC)c(OC)cc1[C@@]2(C(=O)OC)[C@H](S[Ph])C[C@@H]([OTBS])C=C(Br)C2",
+            "product_smiles": "c1cc(OC)c(OC)cc1[C@@]2(CO)[C@H](S[Ph])C[C@@H]([OTBS])C=CC2",
+            "notes": "Ester group reduced to a primary alcohol. Vinyl bromide group reductively dehalogenated to an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desulfurization",
+            "reagents": "Raney-Ni",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "74%",
+            "reactant_smiles": "[OTBS][C@@H]1C=C[C@@](CO)(C2=CC(=C(C=C2)OC)OC)[C@H]([SPh])C1",
+            "product_smiles": "[OTBS][C@@H]1C=C[C@@](CO)(C2=CC(=C(C=C2)OC)OC)CC1",
+            "notes": "Reductive removal of the phenylthio group using Raney nickel, converting a chiral center to a methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "76%",
+            "reactant_smiles": "[OTBS]O[C@@H]1C=C[C@@](CC1)(CO)C2=CC(=C(C=C2)OC)OC",
+            "product_smiles": "[OTBS]O[C@@H]1C=C[C@@](CC1)(C=O)C2=CC(=C(C=C2)OC)OC",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using PCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wittig olefination",
+            "reagents": "Ph3PCH2OMe, NaHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "82%",
+            "reactant_smiles": "[OTBS][C@@H]1C=C[C@@](CC1)(C=O)C2=CC(=C(C=C2)OC)OC",
+            "product_smiles": "[OTBS][C@@H]1C=C[C@@](CC1)(C=COC)C2=CC(=C(C=C2)OC)OC",
+            "notes": "Wittig olefination of a ketone to form a vinyl methyl ether, retaining stereochemistry at existing chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Vinyl ether hydrolysis, TBS deprotection",
+            "reagents": "pTsOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "92%",
+            "reactant_smiles": "C=C[C@H]([OTBS])CC[C@](C=COC)(c1c(OC)c(OC)ccc1)C1",
+            "product_smiles": "C=C[C@H](O)CC[C@](CC=O)(c1c(OC)c(OC)ccc1)C1",
+            "notes": "Acid-catalyzed hydrolysis of vinyl ether to an aldehyde and deprotection of TBS ether to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive Amination",
+            "reagents": "MeNH2, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "60%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)[C@@]2(C=C[C@H](CC2)O)CC=O)OC",
+            "product_smiles": "CNCC[C@]1(C=C[C@H](CC1)O)C2=CC(=C(C=C2)OC)OC",
+            "notes": "Reductive amination of an aldehyde with methylamine to form a secondary amine, using sodium borohydride as a reducing agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "PhH",
+            "yield": "88%",
+            "reactant_smiles": "CNCC[C@]1(C=C[C@@H](CC1)O)C2=CC(=C(C=C2)OC)OC",
+            "product_smiles": "CN1CC[C@@]2(CCC(=O)C[C@H]21)C3=CC(=C(C=C3)OC)OC",
+            "notes": "Intramolecular cyclization of secondary amine onto alkene, followed by oxidation of secondary alcohol to ketone and formation of an azepine ring.",
+            "substeps": []
+        }
+    ]
+}

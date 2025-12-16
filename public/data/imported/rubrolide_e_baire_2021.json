@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rubrolide-e-baire-2021",
+        "molecule_name": "Rubrolide E",
+        "class": "Natural Product",
+        "author": "Baire",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sonogashira reaction",
+            "reagents": "PdCl₂(PPh₃)₂, CuI, K₂CO₃",
+            "reagent_smiles": "CCOC(=O)C#C",
+            "conditions": "THF, reflux",
+            "yield": "72%",
+            "reactant_smiles": "COC1=CC=C(C=C1)I",
+            "product_smiles": "CCOC(=O)C#CC1=CC=C(C=C1)OC",
+            "notes": "Sonogashira coupling of 1-iodo-4-methoxybenzene with ethyl propiolate to form ethyl 3-(4-methoxyphenyl)propiolate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydroiodination (alkyne addition)",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "AcOH, 110 °C",
+            "yield": "96%",
+            "reactant_smiles": "CCOC(=O)C#CC1=CC=C(C=C1)OC",
+            "product_smiles": "CCOC(=O)/C=C(\\I)C1=CC=C(C=C1)OC",
+            "notes": "Addition of HI across the alkyne, forming a Z-iodoalkene with the iodine and ester groups cis to each other.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sonogashira reaction",
+            "reagents": "PdCl2(PPh3)2, CuI, Et3N",
+            "reagent_smiles": "C#CC(O)(C1CCC(CC1)OC)",
+            "conditions": "THF, rt",
+            "yield": "94%",
+            "reactant_smiles": "CCOC(=O)/C=C(/C1=CC=C(C=C1)OC)\\I",
+            "product_smiles": "CCOC(=O)/C=C(\\C#CC(O)(C1CCC(CC1)OC))/C2=CC=C(C=C2)OC",
+            "notes": "Sonogashira coupling of a vinyl iodide with a terminal alkyne to form an enyne derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acid-catalyzed Cyclization / Lactonization / Rearrangement",
+            "reagents": "MsOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C=C(\\C#CC1(CCC(CC1)OC)O)/C2=CC=C(C=C2)OC",
+            "product_smiles": "COC1=CC=C(C=C1)C/2=CC(=O)O\\C2=C/C3=CCC(CC3)OC",
+            "notes": "An acid-catalyzed cyclization and lactonization of an enyne-alcohol to form a furanone. The alkyne reacts, the hydroxyl group is eliminated, and the ester forms part of the furanone ring structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Aromatization",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "Toluene, 90 °C",
+            "yield": "69% (3 steps)",
+            "reactant_smiles": "COC1CC=C(CC1)/C=C\\2/C(=CC(=O)O2)C3=CC=C(C=C3)OC",
+            "product_smiles": "COC1=CC=C(C=C1)/C=C\\2/C(=CC(=O)O2)C3=CC=C(C=C3)OC",
+            "notes": "Aromatization of the cyclohexene ring to a phenyl ring via DDQ oxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "96%",
+            "reactant_smiles": "[OMe]C1=CC=C(C=C1)/C=C\\2/C(=CC(=O)O2)C3=CC=C(C=C3)[OMe]",
+            "product_smiles": "OC1=CC=C(C=C1)/C=C\\2/C(=CC(=O)O2)C3=CC=C(C=C3)O",
+            "notes": "Demethylation of two aryl methyl ethers to phenols using BBr3.",
+            "substeps": []
+        }
+    ]
+}

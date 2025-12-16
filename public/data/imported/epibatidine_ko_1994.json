@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "epibatidine-ko-1994",
+        "molecule_name": "Epibatidine",
+        "class": "Natural Product",
+        "author": "Ko",
+        "year": 1994
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enantioselective Alpha-Arylation",
+            "reagents": "DMF",
+            "reagent_smiles": "[Li]N([C@@H](C)c1ccccc1)[C@@H](C)c1ccccc1.Clc1ccc([I+]c2ccc(Cl)cc2)cc1.[Cl-]",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "O=C1CCC([OTBDMS])CC1",
+            "product_smiles": "O=C1C(c2cn=c(Cl)cc2)CC[C@H]([OTBDMS])CC1",
+            "notes": "Enantioselective alpha-arylation of a cyclohexanone derivative using a chiral lithium amide and a hypervalent iodine reagent. The new chiral center at the alpha-position is shown with a wavy bond, indicating unspecified stereochemistry. The existing chiral center (from the OTBDMS group) is shown with a bold bond, indicating specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epimerization",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "[OTBDMS][C@H]1CCC(=O)C(C1)C2=CN=C(C=C2)Cl",
+            "product_smiles": "[OTBDMS][C@H]1CCC(=O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "notes": "Epimerization at the carbon alpha to the ketone (C2) to achieve a trans relationship with the C4-OTBDMS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH₄",
+            "reagent_smiles": "",
+            "conditions": "-98 °C",
+            "yield": "84%",
+            "reactant_smiles": "[OTBDMS][C@H]1CCC(=O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "product_smiles": "[OTBDMS][C@H]1CC[C@@H](O)[C@@H](C1)C2=CN=C(C=C2)Cl",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[OTBDMS][C@H]1CCC[C@@H](O)[C@H](C2=CN=C(C=C2)Cl)C1",
+            "product_smiles": "[OTBDMS][C@H]1CCC[C@@H]([OMs])[C@H](C2=CN=C(C=C2)Cl)C1",
+            "notes": "The hydroxyl group is converted to a mesylate. Stereochemistry and the TBDMS protecting group are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "Bu4NF",
+            "reagent_smiles": "[N+](CCCC)(CCCC)(CCCC)CCCC.[F-].C1CCOC1",
+            "conditions": "THF, RT",
+            "yield": "88%",
+            "reactant_smiles": "[OTBDMS][C@H]1[C@H](C2=CN=C(C=C2)Cl)CC[C@@H]([OMs])C1",
+            "product_smiles": "O[C@H]1[C@H](C2=CN=C(C=C2)Cl)CC[C@@H]([OMs])C1",
+            "notes": "Selective deprotection of TBDMS ether to alcohol using fluoride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P, HN3, DEAD",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to RT",
+            "yield": "94%",
+            "reactant_smiles": "[OMs][C@@H]1CC[C@@H](C[C@H]1C2=CN=C(C=C2)Cl)O",
+            "product_smiles": "[OMs][C@@H]1CC[C@H](C[C@H]1C2=CN=C(C=C2)Cl)[N-]=[N+]=N",
+            "notes": "Mitsunobu reaction converting a secondary alcohol to an azide with inversion of configuration at the stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "CHCl3",
+            "reagent_smiles": "",
+            "conditions": "heat, 60 h",
+            "yield": "90% (3 steps)",
+            "reactant_smiles": "CS(=O)(=O)O[C@@H]1CC[C@H](C[C@H]1C2=CN=C(C=C2)Cl)[N-]=[N+]=N",
+            "product_smiles": "C1=C(C=NC(=C1)Cl)C2CC3CCC2N3",
+            "notes": "Intramolecular cyclization of an azide-substituted cyclohexanol mesylate to form the bridged amine core of Epibatidine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rishirilide-b-pettus-2006",
+        "molecule_name": "Rishirilide B",
+        "class": "Natural Product",
+        "author": "Pettus",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Directed ortho-metallation (DOM) / Electrophilic Quench",
+            "reagents": "PhLi (3 equiv), MeI",
+            "reagent_smiles": "CN([Li])CCN(C)C.[Li]c1ccccc1.CI",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=Cc1cc([OBn])ccc1",
+            "product_smiles": "O=Cc1c(C)cc([OBn])cc1",
+            "notes": "Ortho-lithiation of 3-benzyloxybenzaldehyde followed by methylation with MeI.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Photochemical Sulfone Cyclization",
+            "reagents": "SO2",
+            "reagent_smiles": "S(=O)=O",
+            "conditions": "450W Hg-hv, benzene",
+            "yield": "",
+            "reactant_smiles": "O=Cc1c(C)cc(OCC2=CC=CC=C2)cc1",
+            "product_smiles": "C1=CC=C(C=C1)COC2=C3CS(=O)(=O)C(O)C3C=CC=2",
+            "notes": "Intramolecular photochemical cycloaddition of sulfur dioxide with an activated methyl group, followed by reduction of the aldehyde to an alcohol, forming a fused sulfone ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Etherification / Methylation",
+            "reagents": "MeOH, pTsOH",
+            "reagent_smiles": "",
+            "conditions": "solvent: MeOH",
+            "yield": "75% (3 steps)",
+            "reactant_smiles": "O=S1(=O)C(O)CC2=C1C=CC(=C2)[OBn]",
+            "product_smiles": "COC1S(=O)(=O)CC2=C1C=CC(=C2)[OBn]",
+            "notes": "Methylation of a cyclic alcohol to a methyl ether. The yield provided is for a sequence of 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "ZnO",
+            "reagent_smiles": "CC(C)CC[C@]12C=CC(=O)C(=C1O[C@@H](C)C(=O)O2)C",
+            "conditions": "155°C",
+            "yield": "",
+            "reactant_smiles": "COc1[C@H]S(=O)(=O)CC2c1cc(OCC3=CC=CC=C3)ccc2",
+            "product_smiles": "CC(C)CC[C@]12C3CC4=C(C=CC=C4C=C3C(=O)C(=C1O[C@@H](C)C(=O)O2)C)OCC5=CC=CC=C5",
+            "notes": "Diels-Alder cycloaddition involving SO2 extrusion from a sultone as the diene precursor and a quinone derivative as the dienophile.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Protection",
+                    "reagents": "Boc₂O, DMAP, i-PrNEt₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "96%",
+                    "reactant_smiles": "O=Cc1c(O)c(C)cc(O)c1",
+                    "product_smiles": "O=Cc1c([OBoc])c(C)cc([OBoc])c1",
+                    "notes": "Protection of two phenolic hydroxyl groups as tert-butyl carbonates.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "84%",
+                    "reactant_smiles": "O=Cc1c([OBoc])c(C)c([OBoc])cc1",
+                    "product_smiles": "HOCC1=C([OBoc])C(C)=C([OBoc])C=C1",
+                    "notes": "Aldehyde reduced to primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Grignard reaction",
+                    "reagents": "i-BuMgBr",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]OC1=CC(CO)=C(O[Boc])C=C1",
+                    "product_smiles": "CC(C)CC1=C(O)C=C(O[Boc])C=C1",
+                    "notes": "Grignard reaction involving deprotection of one Boc group to OH, replacement of a benzylic alcohol (CH2OH) with an isobutyl group at an adjacent position.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "Mitsunobu reaction",
+                    "reagents": "PPh3, DEAD",
+                    "reagent_smiles": "C[C@H](O)C(=O)N(C)OC",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)CCC1=C(O)C=C([OBoc])C=C1",
+                    "product_smiles": "CC(C)CCC1=C(O[C@@H](C)C(=O)C(C)OC)C=C([OBoc])C=C1",
+                    "notes": "Mitsunobu reaction of a phenol and a secondary alcohol with inversion of stereochemistry at the alcohol carbon.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.5",
+                    "reaction_type": "Deprotection (Boc to OH)",
+                    "reagents": "ZnBr2",
+                    "reagent_smiles": "",
+                    "conditions": "MeNO2",
+                    "yield": "84% (2 steps)",
+                    "reactant_smiles": "[OBoc]c1cc(CCC(C)C)c(O[C@@H](C)C(=O)C(C)OC)cc1",
+                    "product_smiles": "Oc1cc(CCC(C)C)c(O[C@@H](C)C(=O)C(C)OC)cc1",
+                    "notes": "Deprotection of a phenolic Boc protecting group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.6",
+                    "reaction_type": "Oxidative dearomatization / Lactonization",
+                    "reagents": "PhIO, TMSOTf",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "73%",
+                    "reactant_smiles": "CC(C)CCC1=C(C=C(C=C1)O)O[C@H](C)C(=O)C(C)OC",
+                    "product_smiles": "CC(C)CC[C@@]12C=CC(=O)C(=C1O[C@H](C)C(=O)O2)C",
+                    "notes": "Intramolecular oxidative dearomatization of a phenol to a spiro-cyclohexadienone, followed by lactonization to form a spiro-lactone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dehydrogenation / Aromatization",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "68%",
+            "reactant_smiles": "CC(C)CC[C@]12C3CC4=C(C=CC(=C4C=C3C(=O)C(=C1O[C@@H](C)C(=O)O2)C)[OBn])",
+            "product_smiles": "CC(C)CC[C@]12C3=CC4=C(C=CC(=C4C=C3C(=O)C(=C1O[C@@H](C)C(=O)O2)C)[OBn])",
+            "notes": "Dehydrogenation of the dihydronaphthalene ring to form a naphthalene system, leading to aromatization of the left fused rings. The yield is reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Lactone cleavage and rearrangement",
+            "reagents": "",
+            "reagent_smiles": "C[Al](C)N(N(C)C)H",
+            "conditions": "CH2Cl2",
+            "yield": "69%",
+            "reactant_smiles": "CC(C)CC[C@]12C3=CC4=C(C=CC=C4C=C3C(=O)C(=C1O[C@@H](C)C(=O)O2)C)[Bn]O",
+            "product_smiles": "CC(C)CC[C@]1(O)C2=CC3=C(C=CC=C3C=C2C(=O)[C@H](C)C1=O)[Bn]O",
+            "notes": "Aluminum-mediated lactone ring opening and rearrangement to an alpha-hydroxy diketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Carbamoylation / Enolization",
+            "reagents": "Et2NC(O)Cl, i-Pr2NEt",
+            "reagent_smiles": "CCN(CC)C(=O)Cl.CCN(CC(C)C)CC(C)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)CC[C@@]1(C2=CC3=C(C=CC=C3C=C2C(=O)[C@@H](C)C1=O)[OBn])O",
+            "product_smiles": "CCN(CC)C(=O)OC1=C(C)C(=O)[C@@](CCC(C)C)(C2=CC3=C(C=CC=C3C=C21)[OBn])O",
+            "notes": "Formation of an enol carbamate from a cyclic diketone, with stereochemistry inversion at the methyl-substituted carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Addition / Conjugate Addition with Hydrolysis/Transetherification",
+            "reagents": "",
+            "reagent_smiles": "[Li]C(=C)OCC",
+            "conditions": "THF, -78°C",
+            "yield": "",
+            "reactant_smiles": "O[Bn]c1cccc2c1c3c(cc2)C(=O)C(C)=C(OC(=O)N(CC)CC)C[C@](CCC(C)C)(O)C3",
+            "product_smiles": "O[Bn]c1cccc2c1c3c(cc2)C[C@](CCC(C)C)(O)[C@@](O)(C(=C)OCC)[C@H](O)(C)C(OCC)C3",
+            "notes": "A complex transformation involving nucleophilic addition of an alpha-lithio ethyl vinyl ether to an alpha,beta-unsaturated ketone, followed by hydrolysis of the enol carbamate to form a new hydroxyl and ether. The reaction results in two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Epoxidation",
+            "reagents": "DMDO",
+            "reagent_smiles": "CC1(C)OO1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=C)[C@H](O)[C@]1(CCC(C)C)(O)O[C@@H](C)C(=O)C2=CC3=CC=CC(=C3C=C21)OCC4=CC=CC=C4",
+            "product_smiles": "O[C@H]([C@H](OCC)5OC5)[C@]1(CCC(C)C)(O)O[C@@H](C)C(=O)C2=CC3=CC=CC(=C3C=C21)OCC4=CC=CC=C4",
+            "notes": "Epoxidation of a vinyl ether to form an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Epoxide hydrolysis",
+            "reagents": "1M HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "CCO[C@@H]1O[C@H](C[C@]2(O)(O)[C@](CCC(C)C)([C@H]3C4=CC5=C(C=C4C=C3C(=O)[C@H](C)[C@@]25)O[Bn])O1)",
+            "product_smiles": "O=C(CO)[C@]1(O)[C@](CCC(C)C)([C@H]2C3=CC4=C(C=C3C=C2C(=O)[C@H](C)[C@@]14)O[Bn])",
+            "notes": "Acid-catalyzed hydrolysis of the epoxide ring and concomitant cleavage of the ethyl ether to form an alpha-hydroxy-ketone side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "Na(OAc)3BH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)CC[C@H]1[C@@](O)([C@H](C)C(=O)C2=CC3=C(C=CC=C3C=C2[C@H]1O)[OBn])[C@@](O)(C(=O)CO)",
+            "product_smiles": "CC(C)CC[C@H]1[C@@](O)([C@H](C)C(=O)C2=CC3=C(C=CC=C3C=C2[C@H]1O)[OBn])[C@@](O)([C@H](O)CO)",
+            "notes": "Reduction of an alpha-ketol side chain to a 1,2-diol using sodium triacetoxyborohydride. A new chiral center is formed with a dashed (down) hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Vicinal Diol Cleavage / Periodate Oxidation",
+            "reagents": "silica",
+            "reagent_smiles": "[Na+].[O-]I(=O)(=O)=O",
+            "conditions": "",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "CC(C)CC[C@@]1(O)[C@H](C)C(=O)C2=CC3=C(C=C(O[Bn])C=C3)C1([C@H](O)CO)C2",
+            "product_smiles": "CC(C)CC[C@@]1(O)[C@H](C)C(=O)C2=CC3=C(C=C(O[Bn])C=C3)C1(C=O)C2",
+            "notes": "Oxidative cleavage of a 1,2-diol to an aldehyde using sodium periodate. The primary alcohol is cleaved off as formaldehyde, and the secondary alcohol is converted to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Lindgren-Kraus oxidation",
+            "reagents": "NaOCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)CC[C@@]1(O)C2=CC3=C(C=CC=C3O[Bn])C=C2C(=O)[C@H](C)[C@](O)(C=O)C1",
+            "product_smiles": "CC(C)CC[C@@]1(O)C2=CC3=C(C=CC=C3O[Bn])C=C2C(=O)[C@H](C)[C@](O)(C(=O)O)C1",
+            "notes": "Oxidation of an aldehyde to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Hydrogenolysis (Debenzylation)",
+            "reagents": "H2/Pd",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)CC[C@H]1C(O)(O)(C(=O)O)[C@@H](C)C(=O)c2c(C1)ccc3c2ccc([BnO])c3",
+            "product_smiles": "CC(C)CC[C@H]1C(O)(O)(C(=O)O)[C@@H](C)C(=O)c2c(C1)ccc3c2ccc(O)c3",
+            "notes": "Debenzylation of a benzyl ether to a phenol.",
+            "substeps": []
+        }
+    ]
+}

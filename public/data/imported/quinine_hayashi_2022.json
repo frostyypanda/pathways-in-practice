@@ -1,0 +1,291 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "quinine-hayashi-2022",
+        "molecule_name": "Quinine",
+        "class": "Natural Product",
+        "author": "Hayashi",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective Silylation / Alcohol Protection",
+            "reagents": "TBDPSCl, NEt3",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "C(CO)CO",
+            "product_smiles": "[OTBDPS]CCCCO",
+            "notes": "Selective protection of one primary alcohol of propane-1,3-diol with a TBDPS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation (TEMPO)",
+            "reagents": "TEMPO, NaHCO₃, KBr, NaOCl",
+            "reagent_smiles": "",
+            "conditions": "CHCl₃, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]CCCCO",
+            "product_smiles": "[OTBDPS]CCC=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using TEMPO/NaOCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitro-Aldol (Henry) Reaction",
+            "reagents": "MeNO2, NEt3",
+            "reagent_smiles": "CN(=O)=O.CCN(CC)CC",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]CCC=O",
+            "product_smiles": "[OTBDPS]CCC(O)C[N+](=O)[O-]",
+            "notes": "Aldehyde undergoes a nitro-aldol (Henry) reaction with nitromethane, catalyzed by triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Dehydration, Elimination",
+            "reagents": "MsCl, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "54% (4 steps)",
+            "reactant_smiles": "[OTBDPS]CCC(O)C[N+](=O)[O-]",
+            "product_smiles": "[OTBDPS]CC/C=C\\[N+](=O)[O-]",
+            "notes": "Dehydration of a secondary alcohol to form an α,β-unsaturated nitro compound (possible mesylate formation followed by elimination).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Asymmetric Michael Addition",
+            "reagents": "AcOH",
+            "reagent_smiles": "CC(C)(C)C1=CC=C(C=C1)SCCCC=O.N1[C@@H](C(c2ccccc2)(c3ccccc3)O[Si](C)(C)C)CCC1",
+            "conditions": "toluene, rt",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]CC/C=C\\[N+](=O)[O-]",
+            "product_smiles": "CC(C)(C)C1=CC=C(C=C1)SCC[C@@H](C=O)[C@@H](CC[OTBDPS])C[N+](=O)[O-]",
+            "notes": "Asymmetric Michael addition of 4-(tert-butylphenylthio)butanal to a nitroalkene, catalyzed by a chiral pyrrolidine derivative.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Nucleophilic Substitution (SN2) / Ester Hydrolysis",
+                    "reagents": "NaOEt, NaOH",
+                    "reagent_smiles": "CC(C)(C)C1=CC=C(S)C=C1",
+                    "conditions": "EtOH, 0 °C to reflux",
+                    "yield": "71%",
+                    "reactant_smiles": "CC(=O)OCCCCCl",
+                    "product_smiles": "CC(C)(C)C1=CC=C(SCCCCO)C=C1",
+                    "notes": "An alkyl chloride undergoes SN2 reaction with a thiolate (formed from 4-tert-butylbenzenethiol) to form a thioether, followed by hydrolysis of the acetate ester to a primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Swern Oxidation",
+                    "reagents": "NCS, Me₂S, NEt₃",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, -25 °C",
+                    "yield": "74%",
+                    "reactant_smiles": "CC(C)(C)C1=CC=C(C=C1)SCCCCO",
+                    "product_smiles": "CC(C)(C)C1=CC=C(C=C1)SCCC=O",
+                    "notes": "Primary alcohol oxidized to an aldehyde.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Cascade Cyclization / Nitro-Aldol / Michael Addition",
+            "reagents": "DBU",
+            "reagent_smiles": "CCOC(=O)C(NC(=O)OC(C)(C)C)S(=O)(=O)C1=CC=CC=C1",
+            "conditions": "toluene, -40 °C to rt",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "CC(C)(C)C1=CC=C(C=C1)SCC[C@H](C=O)[C@@H](CCO[OTBDPS])C[N+](=O)[O-]",
+            "product_smiles": "CCOC(=O)C1=C[C@H](CCO[OTBDPS])[C@@H](CCSC4=CC=C(C=C4)C(C)(C)C)[C@H](O)N1[Boc]",
+            "notes": "Intramolecular aza-Michael addition followed by Henry-type reaction (nitro-aldol) and cyclization to form a dihydropyridine derivative.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Strecker-type reaction (iminium formation and nucleophilic addition)",
+                    "reagents": "ethyl glyoxylate, BocNH2",
+                    "reagent_smiles": "",
+                    "conditions": "toluene/HCO2H/H2O, rt",
+                    "yield": "26%",
+                    "reactant_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "product_smiles": "CCOC(=O)C([NHBoc])S(=O)(=O)C1=CC=CC=C1",
+                    "notes": "Addition of N-Boc-amino fragment and an ethyl ester to phenylsulfonyl chloride derivative, likely involving an in situ generated imine from ethyl glyoxylate and BocNH2.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Deoxygenation / Enamine Reduction",
+            "reagents": "TFA",
+            "reagent_smiles": "CC[SiH](CC)CC",
+            "conditions": "DCM, -20 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C[C@@H](CC[OTBDPS])[C@H](CCSC2=CC=C(C=C2)C(C)(C)C)[C@H](O)N(C1)[Boc]",
+            "product_smiles": "CCOC(=O)C1C[C@@H](CC[OTBDPS])[C@H](CCSC2=CC=C(C=C2)C(C)(C)C)CN(C1)[Boc]",
+            "notes": "Reductive deoxygenation of the allylic alcohol and concomitant reduction of the enamine-like double bond to a saturated C-C single bond, forming a piperidine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Boc)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C[C@H](CC[OTBDPS])[C@@H](CCSC4=CC=C(C=C4)C(C)(C)C)CN1[Boc]",
+            "product_smiles": "CCOC(=O)C1=C[C@H](CC[OTBDPS])[C@@H](CCSC4=CC=C(C=C4)C(C)(C)C)C[NH2+]1.C(=O)(C(F)(F)F)[O-]",
+            "notes": "Boc protecting group on nitrogen is removed using TFA to yield the corresponding primary amine, which is protonated to an ammonium salt with trifluoroacetate as counterion.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Imine Reduction",
+            "reagents": "NaBH(OAc)3",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C[C@H](CC[OTBDPS])[C@@H](CCSC2=CC=C(C=C2)C(C)(C)C)C[NH2+]1.C(=O)(C(F)(F)F)[O-]",
+            "product_smiles": "CCOC(=O)[C@H]1C[C@H](CC[OTBDPS])[C@@H](CCSC2=CC=C(C=C2)C(C)(C)C)C[NH2+]1.C(=O)(C(F)(F)F)[O-]",
+            "notes": "Reduction of an iminium to an amine using sodium triacetoxyborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amine protection",
+            "reagents": "Boc2O, NEt3",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, H2O",
+            "yield": "78% (4 steps)",
+            "reactant_smiles": "CCOC(=O)[C@@H]1C[C@H](CC[OTBDPS])[C@@H](CCSC4=CC=C(C=C4)C(C)(C)C)C[NH2+]1.C(=O)(C(F)(F)F)[O-]",
+            "product_smiles": "CCOC(=O)[C@@H]1C[C@H](CC[OTBDPS])[C@@H](CCSC4=CC=C(C=C4)C(C)(C)C)CN1[Boc]",
+            "notes": "Boc protection of a protonated piperidine amine using Boc anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Elimination",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)N)C",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@H]1C[C@H](CCO[OTBDPS])[C@@H](CCSC2=CC=C(C=C2)C(C)(C)C)CN1[Boc]",
+            "product_smiles": "C=C[C@@H]1CN([Boc])[C@H](C[C@H]1CCO[OTBDPS])C(=O)OCC",
+            "notes": "Elimination of aryl sulfide to form a terminal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ester Reduction to Aldehyde",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM/toluene, -95 °C",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "C=C[C@H]1CN([C@H](C[C@@H]1CC[OTBDPS])C(=O)OCC)C(=O)OC(C)(C)C",
+            "product_smiles": "C=C[C@H]1CN([C@H](C[C@@H]1CC[OTBDPS])C=O)C(=O)OC(C)(C)C",
+            "notes": "Partial reduction of an ethyl ester to an aldehyde using DIBAL-H. Stereochemistry and protecting groups are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Grignard Addition",
+            "reagents": "i-PrMgCl•LiCl, LaCl₃•2LiCl",
+            "reagent_smiles": "COC1=CC2=C(C=C(Br)N=C2C=C1)Br",
+            "conditions": "THF, -20 °C",
+            "yield": "38%",
+            "reactant_smiles": "O=C[C@@H]1N(C(=O)OC(C)(C)C)C[C@H](C=C)[C@@H](CCO[TBDPS])C1",
+            "product_smiles": "O[C@H](C1=NC(Br)=C2C=C(OC)C=CC2=C1C(Br))[C@@H]3N(C(=O)OC(C)(C)C)C[C@H](C=C)[C@@H](CCO[TBDPS])C3",
+            "notes": "Grignard addition of 3,7-dibromo-6-methoxyquinoline to an aldehyde, forming a new chiral secondary alcohol.",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Triflation",
+                    "reagents": "Tf2O, NEt3",
+                    "reagent_smiles": "CCN(CC)CC",
+                    "conditions": "DCM, -20 °C",
+                    "yield": "68%",
+                    "reactant_smiles": "COC1=CC2=C(C=C1)NC(=O)C=C2O",
+                    "product_smiles": "COC1=CC2=C(C=C1)N=C(C=C2[OTf])[OTf]",
+                    "notes": "Conversion of a 4-hydroxyquinolin-2-one (lactam/enol tautomer) to a 2,4-bis(trifluoromethanesulfonyloxy)quinoline.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+                    "reagents": "TFA, LiBr",
+                    "reagent_smiles": "",
+                    "conditions": "MTBE, TfOH, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "COC1=CC2=C(C=C1)N=C([OTf])C([OTf])=C2",
+                    "product_smiles": "COC1=CC2=C(C=C1)N=C(Br)C(Br)=C2",
+                    "notes": "Substitution of two triflate groups (OTf) with bromine atoms on a quinoline derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reductive Debromination",
+            "reagents": "Zn, AcOH, MeOH",
+            "reagent_smiles": "[Zn].CC(=O)O.CO",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1CN([Boc])[C@@H](C[C@@H]1CC[OTBDPS])[C@@H](O)C2=CC(=NC3=C2C=C(C=C3)OC)Br",
+            "product_smiles": "C=C[C@H]1CN([Boc])[C@@H](C[C@@H]1CC[OTBDPS])[C@@H](O)C2=CC=NC3=C2C=C(C=C3)OC",
+            "notes": "Reductive removal of a bromine atom from the quinoline ring using zinc under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection (Boc, TBDPS) / Amine protonation",
+            "reagents": "AcCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1CN([Boc])[C@H](C[C@@H]1CCO[TBDPS])[C@@H](C2=CC=NC3=C2C=C(C=C3)OC)O",
+            "product_smiles": "C=C[C@H]1C[NH2+][C@H](C[C@@H]1CCO)[C@@H](C2=CC=NC3=C2C=C(C=C3)OC)O.[Cl-]",
+            "notes": "Deprotection of N-Boc and TBDPS-ether protecting groups, leading to a protonated amine and primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM/THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1CC[C@@H](CCO)[C@]2(C1)[NH2+]C[C@H]([C@H](O)C3=CC=NC4=C3C=C(OC)C=C4)C2.[Cl-]",
+            "product_smiles": "C=C[C@H]1CC[C@@H](CCOS(=O)(=O)C)[C@]2(C1)[NH2+]C[C@H]([C@H](O)C3=CC=NC4=C3C=C(OC)C=C4)C2.[Cl-]",
+            "notes": "Selective mesylation of the primary alcohol in the presence of a secondary alcohol and a protonated amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Deprotonation (Amine salt to free amine)",
+            "reagents": "NH3",
+            "reagent_smiles": "",
+            "conditions": "MeOH/DCM, THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@H](C1=CC=NC2=C1C=C(C=C2)OC)[C@H]3[NH2+][C@@H](C=C)C[C@@H](CC[OMs])CC3.[Cl-]",
+            "product_smiles": "O[C@H](C1=CC=NC2=C1C=C(C=C2)OC)[C@H]3N[C@@H](C=C)C[C@@H](CC[OMs])CC3",
+            "notes": "Deprotonation of the ammonium chloride salt to yield the free amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Intramolecular Cyclization / SN2",
+            "reagents": "NaI, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 60 °C",
+            "yield": "55% (5 steps)",
+            "reactant_smiles": "C=C[C@H]1CC[C@@H](CC[OMs])[C@H]2NC[C@H]1C[C@@H]2[C@H](O)c3ccnc4ccc(OC)cc34",
+            "product_smiles": "C=C[C@@H]1CN2CCC1C[C@@H]2[C@H](O)c3ccnc4ccc(OC)cc34",
+            "notes": "Intramolecular cyclization to form the quinuclidine core, displacing the mesylate group. The reaction leads to (-)-Quinine.",
+            "substeps": []
+        }
+    ]
+}

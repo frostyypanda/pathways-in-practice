@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lysergic-acid-hendrickson-2004",
+        "molecule_name": "Lysergic Acid",
+        "class": "Natural Product",
+        "author": "Hendrickson",
+        "year": 2004
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Borylation (via directed ortho-metalation/halogen-lithium exchange)",
+            "reagents": "KH, nBuLi, B(OBu)3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "Brc1cccc2[nH]ccc12",
+            "product_smiles": "B(O)(O)c1cccc2[nH]ccc12",
+            "notes": "Synthesis of 1H-indole-7-boronic acid from 7-bromo-1H-indole by directed lithiation followed by reaction with tri-n-butyl borate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(PPh3)4, Na2CO3(aq)",
+            "reagent_smiles": "COC(=O)C1=CN=C(C(=C1)Cl)C(=O)OC",
+            "conditions": "EtOH",
+            "yield": "91%",
+            "reactant_smiles": "C1=CC2=C(C=CN2)C(=C1)B(O)O",
+            "product_smiles": "COC(=O)C1=CC(=C(C(=O)OC)N=C1)C2=CC=CC3=C2C=CN3",
+            "notes": "Suzuki-Miyaura coupling of a 1H-pyrrolo[2,3-g]quinoline-4-boronic acid with a chloropyridine derivative.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "N-Oxidation",
+                    "reagents": "Na₂WO₄, H₂O₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "O=C(O)c1cnccc1C(=O)O",
+                    "product_smiles": "O=C(O)c1ccc(C(=O)O)c[n+]1[O-]",
+                    "notes": "Oxidation of the pyridine nitrogen to form a pyridine N-oxide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Chlorination, N-oxide deoxygenation, Diesterification",
+                    "reagents": "SOCl₂, DMF, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "O=C(O)c1cc[n+]([O-])c(C(=O)O)c1",
+                    "product_smiles": "COC(=O)c1cncc(C(=O)OC)c1Cl",
+                    "notes": "The pyridine N-oxide is deoxygenated, the ring is chlorinated at position 3, and both carboxylic acid groups are esterified with methanol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction",
+            "reagents": "NaBH4, CaCl2",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "85%",
+            "reactant_smiles": "COC(=O)C1=CC(=C(C(=O)OC)N=C1)C2=CC=CC3=C2C=CN3",
+            "product_smiles": "COC(=O)C1=CC(=C(CO)N=C1)C2=CC=CC3=C2C=CN3",
+            "notes": "Selective reduction of one methyl ester to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO₂, CHCl₃",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "92%",
+            "reactant_smiles": "COC(=O)C1=CC(=C(CO)N=C1)C2=CC=CC3=C2C=CN3",
+            "product_smiles": "COC(=O)C1=CC(=C(C=O)N=C1)C2=CC=CC3=C2C=CN3",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Aldol Cyclization",
+            "reagents": "NaOH, MeOH",
+            "reagent_smiles": "CO.[Na+].[OH-]",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "[CO2Me]c1cc(c(C=O)nc1)c2cccc3c2c[nH]c3",
+            "product_smiles": "[CO2Me]c1cc2c(nc1)C3C(O)c4c[nH]c5c4c3ccc52",
+            "notes": "Intramolecular cyclization of an aldehyde with an indole, forming a new six-membered ring and a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "41%",
+            "reactant_smiles": "COC(=O)C1=CC2=C(C(C3=CNC4=C3C2=CC=C4)O)N=C1",
+            "product_smiles": "COC(=O)C1=CC2=C(CC3=CNC4=C3C2=CC=C4)N=C1",
+            "notes": "Reduction of an allylic alcohol to a methylene group using sodium borohydride under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-methylation / Quaternization",
+            "reagents": "DCM",
+            "reagent_smiles": "CI",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=CC2=C(CC3=CNC4=C3C2=CC=C4)N=C1",
+            "product_smiles": "C[N+]1=CC(=CC2=C1CC3=CNC4=C3C2=CC=C4)C(=O)OC",
+            "notes": "The pyridine nitrogen of the lysergic acid derivative is quaternized by methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-].CO",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C[N+]1=CC(=CC2=C1CC3=CNC4=C3C2=CC=C4)C(=O)OC",
+            "product_smiles": "CN1C[C@@H](C=C2C3=CC=CC4=C3C(=CN4)C[C@H]21)C(=O)OC",
+            "notes": "Quaternary ammonium reduction to tertiary amine with formation of two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "62% (3 steps)",
+            "reactant_smiles": "COC(=O)[C@@H]1CC2C=C3CN(C)[C@H]2C4=CC=CC5=C4C(=C[nH]5)C31",
+            "product_smiles": "OC(=O)[C@@H]1CC2C=C3CN(C)[C@H]2C4=CC=CC5=C4C(=C[nH]5)C31",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid. Specifically, lysergic acid methyl ester is hydrolyzed to lysergic acid.",
+            "substeps": []
+        }
+    ]
+}

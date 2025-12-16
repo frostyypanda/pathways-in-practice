@@ -1,0 +1,241 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "meroapplanin-b-magauer-2024",
+        "molecule_name": "Meroapplanin B",
+        "class": "Natural Product",
+        "author": "Magauer",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation (via enolate formation)",
+            "reagents": "NaH",
+            "reagent_smiles": "C=CCCBr",
+            "conditions": "DMF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CC(=O)OC",
+            "product_smiles": "C=CCCC(C(=O)OC)C(=O)OC",
+            "notes": "Alkylation of dimethyl malonate with 4-bromo-1-butene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive Ozonolysis",
+            "reagents": "O₃, MeOH",
+            "reagent_smiles": "CSC",
+            "conditions": "-78 °C",
+            "yield": "62% (2 steps)",
+            "reactant_smiles": "[OMe]C(=O)C(CCC=C)C(=O)[OMe]",
+            "product_smiles": "[OMe]C(=O)C(CCC=O)C(=O)[OMe]",
+            "notes": "Reductive ozonolysis of a terminal alkene to form an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nozaki-Hiyama-Kishi (NHK) Coupling",
+            "reagents": "NiCl2, CrCl2, DMF",
+            "reagent_smiles": "I/C=C/COCc1ccccc1",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C(CCC=O)C(=O)OC",
+            "product_smiles": "C=C(COCc1ccccc1)C(CCC(C(=O)OC)C(=O)OC)O",
+            "notes": "Nozaki-Hiyama-Kishi reaction of an aldehyde with a vinyl iodide, forming an allylic alcohol with an apparent allylic rearrangement of the double bond.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Hydroiodination",
+                    "reagents": "TMSCl, NaI",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, MeCN, 0 °C to rt",
+                    "yield": "35%",
+                    "reactant_smiles": "C#CCO",
+                    "product_smiles": "C=C(CO)I",
+                    "notes": "Hydroiodination of a terminal alkyne to a vinyl iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Etherification",
+                    "reagents": "TfOH, CH2Cl2",
+                    "reagent_smiles": "C(Cl)(Cl)(Cl)C(=N)OCC1=CC=CC=C1",
+                    "conditions": "0 °C to rt",
+                    "yield": "51%",
+                    "reactant_smiles": "C=C(CO)I",
+                    "product_smiles": "C=C(CO[Bn])I",
+                    "notes": "Hydroxyl group converted to a benzyl ether using a trichloroacetimidate reagent.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "57%",
+            "reactant_smiles": "COC(=O)C(C(=O)OC)CCC(O)C(=C)COCC1=CC=CC=C1",
+            "product_smiles": "COC(=O)C(C(=O)OC)CCC([OTBS])C(=C)COCC1=CC=CC=C1",
+            "notes": "Protection of a secondary alcohol with a t-butyldimethylsilyl (TBS) group. The reported yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "Ti(OtBu)4, CuO, I2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "61%",
+            "reactant_smiles": "COC(=O)C(C(=O)OC)CCC([OTBS])C(=C)[CH2][OBn]",
+            "product_smiles": "[OTBS][C@H]1CC[C@]2(C(=O)OC)C(=O)OC[C@@]12[CH2][OBn]",
+            "notes": "Titanium-catalyzed cyclization of a vinyl malonate to form a bicyclic lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Decarboxylation",
+            "reagents": "LiCl",
+            "reagent_smiles": "",
+            "conditions": "H2O, DMSO, 140 °C",
+            "yield": "87%",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@]2(C(=O)OC)(CH2O[Bn])C1C(=O)OCC2",
+            "product_smiles": "[TBS]O[C@H]1CC[C@@H]2(CH2O[Bn])C1C(=O)OCC2",
+            "notes": "Decarboxylation of a methyl ester at a spiro center to form a tertiary carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenolysis, Deprotection",
+            "reagents": "H2, Pd(OH)2/C",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)O[C@H]1CC[C@H]2C(=O)OC[C@]21COCC3=CC=CC=C3",
+            "product_smiles": "CC(C)(C)[Si](C)(C)O[C@H]1CC[C@H]2C(=O)OC[C@]21CO",
+            "notes": "Benzyl ether deprotection to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "O[TBS][C@H]1CC[C@H]2C(=O)OC[C@]21CO",
+            "product_smiles": "O[TBS][C@H]1CC[C@H]2C(=O)OC[C@]21C=O",
+            "notes": "Swern oxidation of a primary alcohol to an aldehyde. The TBS protecting group and the lactone remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetal Formation (Aldehyde Protection)",
+            "reagents": "DOWEX 50WX4",
+            "reagent_smiles": "C(OC)(OC)OC",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@@H]2C(=O)OC[C@@]21C=O",
+            "product_smiles": "[TBS]O[C@H]1CC[C@@H]2C(=O)OC[C@@]21C(OC)OC",
+            "notes": "Protection of an aldehyde as a dimethyl acetal using trimethyl orthoformate and DOWEX ion-exchange resin.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "KHMDS",
+            "reagent_smiles": "C=CCI",
+            "conditions": "THF",
+            "yield": "64%",
+            "reactant_smiles": "[OTBS][C@H]1CC[C@H]2C(=O)OC[C@]21(OC)(OC)",
+            "product_smiles": "[OTBS][C@H]1CC[C@H]2C(=O)O[C@H](CC=C)[C@]21(OC)(OC)",
+            "notes": "Alpha-alkylation of a gamma-lactone with allyl iodide and KHMDS, forming a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ozonolysis (Reductive Workup)",
+            "reagents": "O3, PPh3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=CC[C@]12CC[C@@H]([C@@]2(COC1=O)C(OC)OC)O[TBS]",
+            "product_smiles": "[TBS]O[C@@H]1CC[C@@]2(CC=O)C(=O)OC[C@@]12C(OC)OC",
+            "notes": "Ozonolysis of a terminal alkene (vinyl group) to an aldehyde using ozone followed by triphenylphosphine (reductive workup). All other functional groups and stereocenters are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Pinnick oxidation (aldehyde to carboxylic acid)",
+            "reagents": "KH2PO4, NaClO2, 2-methyl-2-butene",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH, H2O, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@H]1(C(OC)OC)CC[C@@]2(CC=O)C(=O)OC[C@@]12",
+            "product_smiles": "[OTBS][C@H]1(C(OC)OC)CC[C@@]2(CC(=O)O)C(=O)OC[C@@]12",
+            "notes": "Oxidation of an aldehyde to a carboxylic acid using sodium chlorite. The acetal group and TBS ether are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Yamaguchi esterification",
+            "reagents": "2,4,6-Trichlorobenzoyl chloride, Et3N, DMAP",
+            "reagent_smiles": "Oc1ccc([OTBS])cc1",
+            "conditions": "THF",
+            "yield": "97%",
+            "reactant_smiles": "[CH](OC)OC[C@H]1CC[C@H]([OTBS])C[C@@]2(CC(=O)O)C(=O)OC[C@H]12",
+            "product_smiles": "[CH](OC)OC[C@H]1CC[C@H]([OTBS])C[C@@]2(CC(=O)Oc1ccc([OTBS])cc1)C(=O)OC[C@H]12",
+            "notes": "Yamaguchi esterification of carboxylic acid with 4-(t-butyldimethylsilyloxy)phenol. Reaction performed in 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Photolytic Deprotection",
+            "reagents": "n-hexane",
+            "reagent_smiles": "",
+            "conditions": "254nm",
+            "yield": "50%",
+            "reactant_smiles": "[OTBS]c1ccc(OC(=O)C[C@]23CC[C@@H]([C@@]3(COC2=O)C(OC)OC)[OTBS])cc1",
+            "product_smiles": "HOc1ccc(OC(=O)C[C@]23CC[C@@H]([C@@]3(COC2=O)C(OC)OC)[OTBS])cc1",
+            "notes": "Photolytic cleavage of a phenolic TBS silyl ether to yield the corresponding phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "HF•Et₃N",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "95%",
+            "reactant_smiles": "O=C(C[C@]1(C(=O)OC2)[C@@H]([OTBS])CCC1([C@H](OC)OC))c3c(O)ccc([OTBS])c3",
+            "product_smiles": "O=C(C[C@]1(C(=O)OC2)[C@@H](O)CCC1([C@H](OC)OC))c3c(O)ccc(O)c3",
+            "notes": "Deprotection of two TBS silyl ethers to hydroxyls.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "pTsOH, acetone, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "55%",
+            "reactant_smiles": "COC([C@]12COC(=O)[C@@]2(CC[C@@H]1O)CC(=O)C4=CC(O)=CC(O)=C4)OC",
+            "product_smiles": "C1=C(C=C(C(=C1)O)C(=O)C[C@@]23CC[C@@H]([C@]3(C=O)COC2=O)O)O",
+            "notes": "Acetal group is hydrolyzed to an aldehyde, while the rest of the molecule remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "NH4OAc, MeOH",
+            "reagent_smiles": "CC(=O)O.[NH4+].CO",
+            "conditions": "50 °C",
+            "yield": "85%",
+            "reactant_smiles": "Oc1cc(O)ccc1C(=O)C[C@]23CCC([C@H](O)C2)[C@H]3C=O",
+            "product_smiles": "COc1cc(O)ccc1C2=NC3C[C@@]45C[C@H](O)C[C@@]4(OC(=O)C3)C5[C@@H](OC)O2",
+            "notes": "Formation of a complex polycyclic system via imine formation and subsequent cyclization.",
+            "substeps": []
+        }
+    ]
+}

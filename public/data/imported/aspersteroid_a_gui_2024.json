@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspersteroid-a-gui-2024",
+        "molecule_name": "Aspersteroid A",
+        "class": "Natural Product",
+        "author": "Gui",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Mesylation / Esterification",
+            "reagents": "MsCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "10 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CC[C@H]2[C@@H]3CCC4C[C@@H](O)CCC4(C)[C@H]3CC=C12/C=C/[C@H](C)[C@@H](C)C",
+            "product_smiles": "C[C@@H]1CC[C@H]2[C@@H]3CCC4C[C@@H]([OMs])CCC4(C)[C@H]3CC=C12/C=C/[C@H](C)[C@@H](C)C",
+            "notes": "The C3-hydroxyl group of ergosterol is converted to a mesylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Cyclization / Epoxide Formation",
+            "reagents": "KOAc",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "83%",
+            "reactant_smiles": "CC(C)[C@@H](C)/C=C/[C@@H](C)[C@H]1CC[C@H]2[C@@]3(C)[C@H](CC[C@@H]12)[C@@H]4CC=CC=C4[C@H]3[MsO]",
+            "product_smiles": "CC(C)[C@@H](C)/C=C/[C@@H](C)[C@@H]1CC[C@H]2[C@@]3(C)[C@H](CC[C@@H]12)[C@]4([OMe])[C@H]5OC[C@@H]3[C@]45C",
+            "notes": "Mesylate at C3 is eliminated, followed by intramolecular epoxide formation between C3 (alpha-O) and C5 (beta-O) and methoxylation at C4 (alpha-OMe). The B-ring diene is replaced by these new functionalities.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Allylic Oxidation / Stereoselective Hydroxylation",
+            "reagents": "O2, PhSiH3, Mn(dpm)3",
+            "reagent_smiles": "",
+            "conditions": "iPrOH, DCM",
+            "yield": "35%",
+            "reactant_smiles": "CC(C)[C@@H](C)/C=C/[C@@H](C)[C@@]1(C)CC[C@H]2C3=C[C@H]([C@@]45C[C@@H](CC[C@]4(C)[C@H]3CC[C@@]21C)C5)OC",
+            "product_smiles": "C[C@@H](C(C)C)/C=C/[C@@H](C)[C@]1(C)CC[C@H]2[C@](C)(CC[C@@H]3[C@H]4[C@@]5(C)C[C@@H](C5)C[C@@]4(C)[C@H]3[C@H](O)[C@@H]2OC)CC1",
+            "notes": "Stereoselective allylic hydroxylation of the cyclic alkene to a secondary alcohol. The double bond at C5=C6 is converted to C5-OH (wedge) and C6-H (wedge).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Iodocyclization / Halocyclization",
+            "reagents": "iron(II) lactate, C4F9I",
+            "reagent_smiles": "",
+            "conditions": "EtOH, DCM",
+            "yield": "98%",
+            "reactant_smiles": "C[C@@H](C)[C@@H](C)/C=C/[C@@H](C)[C@H]1CC[C@@H]2[C@]3(C)[C@@H](OC)[C@@H]4C[C@@]5(C)[C@@H](C)[C@@H](C[C@H]1[C@@H]2[C@H]3C45)O",
+            "product_smiles": "C[C@H](C)C[C@H](I)[C@H]1CC[C@@H]2[C@@]3(C)[C@@H](OC)[C@@H]4C[C@@]5(C)[C@@H](C)[C@H](C[C@H]6[C@]5(C)[C@H](O)[C@@H]2[C@H]3[C@H]46C1)C",
+            "notes": "Intramolecular cyclization of an alkene with C4F9I, likely catalyzed by iron(II) lactate, leading to a new fused ring system and incorporation of an iodine atom on the side chain. The hydroxyl and methoxy groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dehydrohalogenation",
+            "reagents": "LiBr, Li2CO3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 105 °C",
+            "yield": "44%",
+            "reactant_smiles": "CC(C)[C@@H](C)[C@@H]([C@H]1C[C@@]23CC[C@@H]4[C@@]5(C)CC[C@@H]6C[C@@]5(C6)[C@@H](C[C@]4([C@@H]3CC[C@@H]2[C@@H]1C)O)OC)I",
+            "product_smiles": "CC(C)[C@@H](C)/C=C/1\\C[C@]23CC[C@@H]4[C@@]5(C)CC[C@@H]6C[C@]5(C6)[C@@H](C[C@]4([C@@H]3CC[C@@H]2[C@@H]1C)O)OC",
+            "notes": "E2 elimination of hydroiodic acid from the side chain to form an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Epoxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)[C@@H](C)/C=C/1\\C[C@@]23CC[C@@H]4[C@@]5(C)CC[C@@H]6C[C@@]5(C6)[C@@H](C[C@]4([C@@H]3CC[C@@H]2[C@@H]1C)O)OC",
+            "product_smiles": "CC(C)[C@@H](C)[C@H]1[C@@]2(C[C@@]34CC[C@@H]5[C@@]6(C)CC[C@@H]7C[C@@]6(C7)[C@@H](C[C@]5([C@@H]4CC[C@@H]3[C@@H]2C)O)OC)O1",
+            "notes": "Epoxidation of the exocyclic double bond to form an alpha-epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Epoxide Opening / Rearrangement / Pinacol Coupling",
+            "reagents": "Cp2TiCl2, iPrMgCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "43%",
+            "reactant_smiles": "C[C@H]1C[C@@H]2[C@@]3(CC[C@@H]4[C@@]5(C)CC[C@H](C[C@@H]5([C@@H](C[C@@H]4([C@H]3CC[C@@H]2[C@@H]1C)O)OC))[C@]6(O[C@H]6[C@H](C)C(C)C))",
+            "product_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CC[C@@H]4[C@@]5(C)CC[C@@H](C[C@]5(C)[C@@H](C[C@]4([C@@H]3CC[C@@H]2[C@@H]1C)O)OC)O)O",
+            "notes": "Titanium-mediated epoxide opening and rearrangement to form a tetrahydrofuran ring and a new secondary alcohol. The original epoxide oxygen is incorporated into the new cyclic ether and a new hydroxyl group is formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetylation",
+            "reagents": "pyridine",
+            "reagent_smiles": "CC(=O)OC(=O)C.C1CCN(CC1)C2=CC=NC=C2",
+            "conditions": "DCM, reflux",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@H](O)[C@H](C)[C@H]1CC[C@@H]2[C@@](C)(CC[C@H]3C[C@@]4(C)C[C@@H]5C[C@@]4(C5)[C@H](C[C@@]3([C@@H]2CC[C@H]1C)O)[OMe])",
+            "product_smiles": "CC(C)[C@H]([OAc])[C@H](C)[C@H]1CC[C@@H]2[C@@](C)(CC[C@H]3C[C@@]4(C)C[C@@H]5C[C@@]4(C5)[C@H](C[C@@]3([C@@H]2CC[C@H]1C)O)[OMe])",
+            "notes": "Acetylation of the secondary alcohol at C23 using acetic anhydride and 4-pyrrolidinopyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Rearrangement",
+            "reagents": "BF3, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CCC2C3CC[C@@]4(C)[C@@H]([C@@H](C(C)C)[OAc])CC[C@]4(C)[C@H]3(O)CC[C@@H]2C15CC5C[C@H]([OMe])C",
+            "product_smiles": "C[C@@H]1CCC2C3CC[C@@]4(C)[C@@H]([C@@H](C(C)C)[OAc])CC[C@]4(C)[C@H]3(O)CC[C@@H]2C1=CC[C@H]([OAc])C",
+            "notes": "Boron trifluoride-mediated rearrangement involving cyclopropane ring opening, elimination of the methoxy group, and substitution with an acetate group on the newly formed double bond. The OAc group on the side chain remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dehydration",
+            "reagents": "Burgess reagent, mesitylene",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@H](C)[C@@H](OC(C)=O)[C@@]1(O)CC[C@H]2[C@@H]3C[C@H]4[C@@](C)(CC[C@H]5CC=C(C[C@H](OC(C)=O)CC[C@@]35C)[C@@H]42)[C@@H]1C",
+            "product_smiles": "CC(C)[C@H](C)[C@@H](OC(C)=O)[C@@H]1C=C[C@H]2[C@@H]3C[C@H]4[C@@](C)(CC[C@H]5CC=C(C[C@H](OC(C)=O)CC[C@@]35C)[C@@H]42)[C@@H]1C",
+            "notes": "Dehydration of a tertiary alcohol at C17 to form an alkene (C16=C17 double bond) using Burgess reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "PTAD Addition and Rearrangement",
+            "reagents": "",
+            "reagent_smiles": "O=C1N=NC(=O)N1[Ph]",
+            "conditions": "acetone, DCM",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CC[C@H]4C(=CC=C5C[C@H](CC[C@@]54C)[OAc])[C@@H]3CC[C@@H]2[C@@H]1C)[OAc]",
+            "product_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CC[C@H]4[C@@]5(C)CC[C@H]6[C@@H]7C[C@H](C)[C@@]8([C@@H]4[C@@H]3CC[C@@H]2[C@@H]1C)N9[C@H]7N([C@H]59)C(=O)N([C@H]6)[Ph])[OAc])[OAc]",
+            "notes": "PTAD adds to the 1,4-cyclohexadiene system of the A-ring, forming a new fused heterocyclic system with concomitant loss of the C10 methyl group and formation of a new N-C10 bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Retro Diels-Alder / Aromatization",
+            "reagents": "BF3",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CC[C@@H]4[C@@]5(C)CC[C@H](C[C@@H]6[C@H](N7C(=O)N(C(=O)N67)c8ccccc8)[C@@]4(C)CC[C@@H]2[C@@H]1C)OC(=O)C)OC(=O)C",
+            "product_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CCC4=C(C=C5CC[C@@H]([C@@H]C5=C4C)OC(=O)C)[C@@H]3CC[C@@H]2[C@@H]1C)OC(=O)C",
+            "notes": "Lewis acid-catalyzed retro Diels-Alder reaction of a PTAD adduct followed by aromatization of ring B.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "benzene, 80 °C",
+            "yield": "31%",
+            "reactant_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CCC4=C(C=C5CC[C@@H](CC5=C4C)[OAc])[C@@H]3CC[C@@H]2[C@@H]1C)[OAc]",
+            "product_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CC(=O)C4=C(C=C5CC[C@@H](CC5=C4C)[OAc])[C@@H]3CC[C@@H]2[C@@H]1C)[OAc]",
+            "notes": "Oxidation of a benzylic methylene to a ketone using PCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Dehydrogenation",
+            "reagents": "",
+            "reagent_smiles": "C1(=C(C(=O)C(=C(C1=O)Cl)Cl)Cl)Cl",
+            "conditions": "o-dichlorobenzene, 200 °C",
+            "yield": "42%",
+            "reactant_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CC(=O)C4=C(C=C5CC[C@@H](CC5=C4C)[OAc])[C@@H]3CC[C@@H]2[C@@H]1C)[OAc]",
+            "product_smiles": "CC(C)[C@@H](C)[C@@H]([C@@H]1C[C@@]23CC(=O)C4=C(C=C5CC[C@@H](CC5=C4C)[OAc])C3=CC[C@@H]2[C@@H]1C)[OAc]",
+            "notes": "Dehydrogenation of a five-membered carbocyclic ring using p-chloranil.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 40 °C",
+            "yield": "45%",
+            "reactant_smiles": "CC(C)[C@H](C)[C@@H](OC(C)=O)[C@H]1C[C@]23C(=O)C=C4C(C)=C5CCC(OC(C)=O)[C@@H](C)C5=C4[C@H]3C=C[C@@H]12",
+            "product_smiles": "CC(C)[C@H](C)[C@@H](O)[C@H]1C[C@]23[C@H](O)C=C4C(C)=C5CCC(O)[C@@H](C)C5=C4[C@H]3C=C[C@@H]12",
+            "notes": "Reduction of ketone and ester groups to hydroxyls using lithium aluminum hydride.",
+            "substeps": []
+        }
+    ]
+}

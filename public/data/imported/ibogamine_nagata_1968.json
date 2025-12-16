@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ibogamine-nagata-1968",
+        "molecule_name": "Ibogamine",
+        "class": "Natural Product",
+        "author": "Nagata",
+        "year": 1968
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Sulfinylimine formation / Acetal condensation",
+            "reagents": "TsOH",
+            "reagent_smiles": "[S@@](=O)([tBu])N",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCC(OC)(OC)OC",
+            "product_smiles": "CCC/C(=N\\[S@@](=O)[tBu])/OC",
+            "notes": "Formation of an N-sulfinylimine from an orthoester and a chiral t-butylsulfinamide, catalyzed by TsOH.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Addition / Alkene Formation",
+            "reagents": "THF",
+            "reagent_smiles": "[Li][Si](C)(C)c1ccccc1",
+            "conditions": "-78 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCC/C(=N\\[S@](=O)[tBu])/OC",
+            "product_smiles": "[Si](C)(C)c1ccccc1/C=C(\\N[S@](=O)[tBu])CCC",
+            "notes": "Addition of PhMe2SiLi to an N-sulfinyl imine, followed by elimination to form a Z-alkene. The chiral auxiliary at sulfur maintains configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diastereoselective Cycloaddition / Cyclization",
+            "reagents": "LHMDS",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "CCC/C=C/C(=N[S@](=O)[tBu])[Si](C)(C)[Ph]",
+            "product_smiles": "C[C@]1([Si](C)(C)[Ph])([N@H][S@](=O)[tBu])[C@H]2C[C@@H](C(=O)OC)[C@H]3C[C@H](C(=O)OC)C13",
+            "notes": "A chiral N-sulfinyl imine undergoes a [4+2] cycloaddition type reaction with methyl acrylate, followed by cyclization, to form a complex substituted cyclohexane derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization / Lactam Formation",
+            "reagents": "HCl, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, EtOAc, reflux",
+            "yield": "85%",
+            "reactant_smiles": "CC[C@H]1C[C@H](C[C@@H](C(=O)OC)[C@@]1(N[S@](=O)C(C)(C)C)[Si](C)(C)c2ccccc2)C(=O)OC",
+            "product_smiles": "CC[C@@H]1C[C@@H]2C[C@H](CC(=O)OC)[C@@H]1(N2C(=O))[Si](C)(C)c3ccccc3",
+            "notes": "Intramolecular cyclization of an N-sulfinyl amide containing a dimethylphenylsilyl group and two methyl ester groups, forming a bicyclo[3.2.1]octane lactam system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lactam Activation / Enol Triflate Formation",
+            "reagents": "Tf2O",
+            "reagent_smiles": "O=S(C(F)(F)F)(OS(=O)(C(F)(F)F)=O)=O",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC[CH]1C[CH]2C[CH]3C[CH](C[CH](C3)C(=O)OC)C1([Si](C)(C)c4ccccc4)C2NC(=O)",
+            "product_smiles": "CC[CH]1C[CH]2C[CH]3C[CH](C[CH](C3)C(=O)OC)C1([Si](C)(C)c4ccccc4)C2N=C(OS(=O)(=O)C(F)(F)F)",
+            "notes": "The bicyclic lactam is converted to its corresponding enol triflate by reaction with triflic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78%",
+            "reactant_smiles": "C[Si](C)(c1ccccc1)C2(CC(C(=O)OC)CN2)C1=C([OTf])N(C2)C(CCC)CC1",
+            "product_smiles": "C[Si](C)(c1ccccc1)C2(CC(C(=O)OC)CN2)C1N(C2)C(CCC)CC1",
+            "notes": "Reduction of a cyclic imine triflate to a cyclic amine using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "NH4F",
+            "reagent_smiles": "[NH4+]F",
+            "conditions": "MeCN, 75 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1CC2C[C@@H](C[C@H]3([Si](C)(C)C5=CC=CC=C5)N[C@@]4(CC(=O)OC)C2C3)[C@@H]41",
+            "product_smiles": "CC[C@@H]1CC2C[C@@H](C[C@@H]3N[C@@]4(CC(=O)OC)C2C3)[C@@H]41",
+            "notes": "A phenyldimethylsilyl group is cleaved from a complex aza-tricyclic structure via desilylation using ammonium fluoride, resulting in a hydrogen at that position. The reaction is carried out in acetonitrile at 75 °C.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaI, K2CO3",
+            "reagent_smiles": "COC(=O)CCCCl",
+            "conditions": "80 °C",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "COC(=O)C[C@H]1CC[C@@H]2N[C@@H]1C[C@@H]2CC",
+            "product_smiles": "COC(=O)C[C@H]1CC[C@@H]2N(CCCC(=O)OC)[C@@H]1C[C@@H]2CC",
+            "notes": "Alkylation of a secondary amine with methyl 4-chlorobutanoate to form a tertiary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Dieckmann Condensation",
+            "reagents": "LHMDS, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1CC2CC(C1N(CCCC(=O)OC)C2)C(=O)OC",
+            "product_smiles": "CCC1CC2CC3C1N(CCC(C3=O)C(=O)OC)C2",
+            "notes": "An intramolecular Dieckmann condensation involving two methyl ester groups to form a new 7-membered ring containing a beta-keto ester functionality.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Fischer Indole Synthesis",
+            "reagents": "H2SO4",
+            "reagent_smiles": "NNC1=CC=CC=C1",
+            "conditions": "65 °C",
+            "yield": "42%",
+            "reactant_smiles": "CCC1CC2CC3C1N(CCC(C3=O)C(=O)OC)C2",
+            "product_smiles": "CCC1CC2CC3C1N(C[C@H]4CC5=C(NC43)C=CC=C5)C2",
+            "notes": "Fischer indole synthesis from a ketone/ester precursor to form Epiibogamine. The reaction yield is for '2 steps'.",
+            "substeps": []
+        }
+    ]
+}

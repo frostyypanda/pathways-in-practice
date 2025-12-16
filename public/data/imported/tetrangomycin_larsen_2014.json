@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tetrangomycin-larsen-2014",
+        "molecule_name": "Tetrangomycin",
+        "class": "Natural Product",
+        "author": "Larsen",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Mitsunobu etherification",
+            "reagents": "p-methoxyphenol, DIAD, PPh3",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "C=C(C)CCO",
+            "product_smiles": "C=C(C)CCOCC1=CC=C(OC)C=C1",
+            "notes": "Mitsunobu reaction to form an aryl ether from an alcohol and p-methoxyphenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Sharpless asymmetric dihydroxylation",
+            "reagents": "AD-mix-α, CH3SO2NH2",
+            "reagent_smiles": "",
+            "conditions": "tBuOH, H2O, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C=C(C)CCOC[PMPO]",
+            "product_smiles": "C[C@@](CCOC[PMPO])(CO)O",
+            "notes": "Asymmetric dihydroxylation of an alkene to form a 1,2-diol with high enantioselectivity.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Tosylation",
+            "reagents": "pyridine",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)Cl)cc1",
+            "conditions": "0 °C",
+            "yield": "95%",
+            "reactant_smiles": "COC1=CC=C(C=C1)OCC[C@](C)(O)CO",
+            "product_smiles": "COC1=CC=C(C=C1)OCC[C@](C)(O)COS(=O)(=O)c2ccc(C)cc2",
+            "notes": "Selective tosylation of a primary alcohol in the presence of a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "ethylenediamine complex",
+            "reagent_smiles": "[Li]C#C",
+            "conditions": "DMSO",
+            "yield": "95%",
+            "reactant_smiles": "COC1=CC=C(C=C1)OCC[C@@](C)(O)CH2OS(=O)(=O)C2=CC=C(C)C=C2",
+            "product_smiles": "COC1=CC=C(C=C1)OCC[C@@](C)(O)CC#C",
+            "notes": "The tosyloxy (TsO) group is replaced by an acetylide group. The stereochemistry at the adjacent chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Silylation",
+            "reagents": "TBSOTf, collidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "[PMPO]CC[C@](O)(C)CC#C",
+            "product_smiles": "[PMPO]CC[C@]([OTBS])(C)CC#C",
+            "notes": "Protection of a secondary alcohol to form a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O, 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "C#CC[C@](C)(CCOCC1=CC=C(C=C1)OC)O[Si](C)(C)C(C)(C)C",
+            "product_smiles": "C#CC[C@](C)(CCO)O[Si](C)(C)C(C)(C)C",
+            "notes": "Oxidative deprotection of a p-methoxyphenylethoxy ether (PMPO) to a primary alcohol using Ceric Ammonium Nitrate (CAN). The TBS protecting group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "C#CCC[C@@](C)(CCO)[OTBS]",
+            "product_smiles": "C#CCC[C@@](C)(CC=O)[OTBS]",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Grignard Addition / Nucleophilic Addition",
+            "reagents": "PhMe",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "-78 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "C#CC[C@](C)(CC=O)[OTBS]",
+            "product_smiles": "C#CC[C@](C)(C[CH](O)C=C)[OTBS]",
+            "notes": "Nucleophilic addition of vinylmagnesium bromide to an aldehyde, forming a secondary alcohol with unspecified stereochemistry at the new chiral center. The existing TBS protecting group and chiral center are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Enyne Ring-Closing Metathesis",
+            "reagents": "Grubbs-I",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "58%",
+            "reactant_smiles": "C#CC[C@](C)(CC(C=C)O)[OTBS]",
+            "product_smiles": "C=CC1=C[C@@H](C[C@@](C)(C1)[OTBS])O",
+            "notes": "Intramolecular enyne metathesis using Grubbs-I catalyst to form a cyclohexene ring with a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "77%",
+            "reactant_smiles": "C=CC1=C[C@H](C[C@](C)(C1)[OTBS])O",
+            "product_smiles": "C=CC1=C[C@H](C[C@](C)(C1)O)O",
+            "notes": "Deprotection of a tert-butyldimethylsilyl (TBS) ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Diels Alder cycloaddition",
+            "reagents": "PhMe",
+            "reagent_smiles": "CC(=O)OC1=CC=CC2=C1C(=O)C=C(C2=O)Br",
+            "conditions": "80 °C",
+            "yield": "87%",
+            "reactant_smiles": "C=CC1=C[C@H](C[C@@](C)(C1)O)O",
+            "product_smiles": "CC(=O)OC1=C2C(=CC=C1)C(=O)[C@@]3([C@@H](CC=C4C[C@@](C)(C[C@@H]([C@@H]43)O)O)C2=O)Br",
+            "notes": "Diels Alder cycloaddition between 1-bromo-5-acetoxy-1,4-naphthoquinone and 1-vinylcyclohex-1-en-3,5-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "PDC, MS 4Å",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "72%",
+            "reactant_smiles": "CC(=O)OC1=C2C(=CC=C1)C(=O)[C@@]3([C@@H](CC=C4C[C@](C)(C[C@@H]([C@@H]43)O)O)C2=O)Br",
+            "product_smiles": "CC(=O)OC1=CC=CC2=C1C(=O)C3=C(C4=C(C=C3)C[C@](C)(CC4=O)O)C2=O",
+            "notes": "Oxidation of a secondary alcohol to a ketone, elimination of bromine and a hydroxyl group, and aromatization of a six-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, H2O, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "54%",
+            "reactant_smiles": "[OAc]c1cccc2c1C(=O)c3c(c4c(cc3)C[C@](C)(O)CC4=O)C2=O",
+            "product_smiles": "C[C@]1(CC2=C(C(=O)C1)C3=C(C=C2)C(=O)C4=C(C=CC=C4O)C3=O)O",
+            "notes": "Hydrolysis of an acetate ester to a hydroxyl group using lithium hydroxide.",
+            "substeps": []
+        }
+    ]
+}

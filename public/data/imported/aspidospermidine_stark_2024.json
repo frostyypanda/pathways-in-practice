@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspidospermidine-stark-2024",
+        "molecule_name": "Aspidospermidine",
+        "class": "Natural Product",
+        "author": "Stark",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation / Nucleophilic Substitution",
+            "reagents": "",
+            "reagent_smiles": "BrCCCCl",
+            "conditions": "THF, 35 to 45 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)CCN",
+            "product_smiles": "C1=CC2=C(C=C1)NC=C2CCNCCCCl",
+            "notes": "N-alkylation of the primary amine on the side chain of 3-(2-aminoethyl)indole with 1-bromo-3-chloropropane via nucleophilic substitution of the bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Boc protection",
+            "reagents": "Boc₂O, THF",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "72%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)CCNCCCCl",
+            "product_smiles": "CC(C)(C)OC(=O)N(CCCCl)CCC1=CNC2=C1C=CC=C2",
+            "notes": "Protection of a secondary amine with di-tert-butyl dicarbonate (Boc₂O).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Palladium-catalyzed intramolecular spirocyclization",
+            "reagents": "Pd2dba3, 9-BBN-octyl",
+            "reagent_smiles": "O=C(C1=CC=CC=C1P(C2=CC=CC=C2)C3=CC=CC=C3)N[C@@H]4CCCC[C@H]4NC(=O)C5=CC=CC=C5P(C6=CC=CC=C6)C7=CC=CC=C7.CC(=O)C(=C)C(C)(O)",
+            "conditions": "THF",
+            "yield": "42%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N(CCCCl)CCC1=CNC2=C1C=CC=C2",
+            "product_smiles": "C/C=C(\\C[C@]1(CCN(CCCCl)C(=O)OC(C)(C)C)C=NC2=C1C=CC=C2)/C(=O)C",
+            "notes": "Intramolecular cyclization of an N-Boc-aminoalkyl-indole with a chloroalkyl side chain onto an enone, forming a spiro-indolenine derivative. The enone shown as a reagent is incorporated into the product.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Baylis-Hillman reaction",
+                    "reagents": "DABCO",
+                    "reagent_smiles": "CC=O",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=CC(=O)C",
+                    "product_smiles": "C=C(C(C)O)C(=O)C",
+                    "notes": "Baylis-Hillman reaction between methyl vinyl ketone and acetaldehyde, catalyzed by DABCO.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "tBuOK",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "83%",
+            "reactant_smiles": "C/C=C(\\C[C@]1(CCN(CCCCl)C(=O)OC(C)(C)C)C=NC2=C1C=CC=C2)/C(=O)C",
+            "product_smiles": "C/C=C\\1C[C@@]2(CCN(CCCCl)C(=O)OC(C)(C)C)C3=C(C=CC=C3)N[C@H]2CC1=O",
+            "notes": "Intramolecular cyclization involving an indolenine and a keto-ene side chain, leading to a fused indoline-cyclohexenone system. The spiro carbon stereochemistry is inverted, and a new double bond (E-configuration) and a new stereocenter are formed in the indoline ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-Boc protection",
+            "reagents": "Boc2O",
+            "reagent_smiles": "",
+            "conditions": "THF, 60 °C",
+            "yield": "98%",
+            "reactant_smiles": "C/C=C/1\\C[C@@]2(CCN(CCCCl)C(=O)OC(C)(C)C)C3=C(C=CC=C3)N[C@H]2CC1=O",
+            "product_smiles": "C/C=C/1\\C[C@@]2(CCN(CCCCl)C(=O)OC(C)(C)C)C3=C(C=CC=C3)N([C@H]2CC1=O)C(=O)OC(C)(C)C",
+            "notes": "Protection of an indole N-H with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive silylation",
+            "reagents": "[Rh2(OAc)4], Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "DCE, reflux",
+            "yield": "83%",
+            "reactant_smiles": "O=C1CC(=C(CC))[C@@]2(C1CCN(CCCCl)C(=O)OC(C)(C)C)C3=C(C=CC=C3)N(C(=O)OC(C)(C)C)[C@@H]4C[C@@]24",
+            "product_smiles": "CCC1=C([OTES])C[C@@]2(C1CCN(CCCCl)C(=O)OC(C)(C)C)C3=C(C=CC=C3)N(C(=O)OC(C)(C)C)[C@@H]4C[C@@]24",
+            "notes": "Rhodium-catalyzed reductive silylation of an enone to an enol silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX, DMSO",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "41%",
+            "reactant_smiles": "CCC1=C(C[C@H]2[C@@](CCN(CCCCl)C(=O)OC(C)(C)C)(C1)C3=C(C=CC=C3)N2C(=O)OC(C)(C)C)[OTES]",
+            "product_smiles": "CCC1=C[C@@]2(CCN(CCCCl)C(=O)OC(C)(C)C)C3=C(C=CC=C3)N([C@H]2CC1=O)C(=O)OC(C)(C)C",
+            "notes": "Oxidation of silyl enol ether (OTES) to alpha,beta-unsaturated ketone (enone).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection, Intramolecular cyclization",
+            "reagents": "TFA, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "75%",
+            "reactant_smiles": "CCC=C1C(=O)C[C@H]2N(C(=O)OC(C)(C)C)C3=CC=CC=C3[C@@]2(CCN(CCCCl)C(=O)OC(C)(C)C)C1",
+            "product_smiles": "CCC[C@@H]1C(=O)C[C@H]2N3C4=CC=CC=C4[C@@]2(CCN(CCCCl)[C@@H]13)",
+            "notes": "Deprotection of two Boc groups followed by intramolecular cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Alkylation / Cyclization",
+            "reagents": "tBuOK",
+            "reagent_smiles": "CC(C)(C)[O-].[K+]",
+            "conditions": "THF",
+            "yield": "76%",
+            "reactant_smiles": "CC[C@H]1C(=O)C[C@H]2[C@]3(CCN(CCCCl)[C@H]13)C4=CC=CC=C4N2",
+            "product_smiles": "CC[C@H]12CCCN3CC[C@@]4(C5=CC=CC=C5N[C@@H]4CC1=O)[C@H]23",
+            "notes": "Intramolecular cyclization of an N-(4-chlorobutyl) tertiary amine, forming a new bridged 6-membered ring and a new tertiary amine bridgehead.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Wolff-Kishner Reduction",
+            "reagents": "NH2NH2, Na, DEG",
+            "reagent_smiles": "NN.[Na]",
+            "conditions": "160 to 210 °C",
+            "yield": "54%",
+            "reactant_smiles": "CC[C@]12CCCN3CC[C@@]4(C5=CC=CC=C5N[C@@]4CC1=O)[C@H]23",
+            "product_smiles": "CC[C@]12CCCN3CC[C@@]4(C5=CC=CC=C5N[C@@]4CC1)[C@H]23",
+            "notes": "Wolff-Kishner reduction of a ketone to an alkane.",
+            "substeps": []
+        }
+    ]
+}

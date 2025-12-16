@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "risdiplam-evrysdi-hoffmanlaroche-unknown-2024",
+        "molecule_name": "Risdiplam (Evrysdi HoffmanLaRoche)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "LiCl, tetramethylguanidine",
+            "reagent_smiles": "C1=C(C=NC(=C1)[N+](=O)[O-])Br",
+            "conditions": "DMSO, 79 °C",
+            "yield": "76%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCNCC21CC2",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCN(CC21CC2)C3=CN=C(C=C3)[N+](=O)[O-]",
+            "notes": "The secondary amine of the Boc-protected spiro-fused piperazine reacts with 2-bromo-5-nitropyridine via SNAr, displacing the bromine atom and forming a new C-N bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitro Reduction / Hydrogenation",
+            "reagents": "Pt/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCN(CC21CC2)C3=CN=C(C=C3)[N+](=O)[O-]",
+            "product_smiles": "[Boc]N1CCN(CC21CC2)C3=CN=C(C=C3)N",
+            "notes": "Reduction of a nitro group to an amine on a pyridine derivative using platinum on carbon and hydrogen in ethyl acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Heterocyclic Ring Formation, Cyclization",
+            "reagents": "",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "anisole, 135 °C",
+            "yield": "81% (2 Steps)",
+            "reactant_smiles": "[Boc]N1CCN(CC21CC2)C3=CN=C(C=C3)N",
+            "product_smiles": "[Boc]N1CCN(CC21CC2)C3=CN4C(=NC(O)=C(C=C4)C=C3)",
+            "notes": "Cyclization of a 2-aminopyridine derivative with di-tert-butyl dicarbonate to form a 4-hydroxy-1H-quinazolin-2-one derivative. This is a key step in the synthesis of Risdiplam.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, Et3N",
+            "reagent_smiles": "CS(=O)(=O)Clc1ccccc1.CCN(CC)CC",
+            "conditions": "DCM",
+            "yield": "86%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCN(CC21CC2)C3=CN4C(=NC(=CC4=O)O)C=C3",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCN(CC21CC2)C3=CN4C(=NC(=CC4=O)[OTs])C=C3",
+            "notes": "Tosylation of the 2-hydroxy group of the quinoxaline core.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "PdCl2(dppf), K2CO3",
+            "reagent_smiles": "Cc1nc(C)c2c(n1)ncn2B3OC(C)(C)C(C)(C)O3",
+            "conditions": "MeCN, H2O",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CC2(CC2)N(C3=CN4C(=NC(=CC4=O)OS(=O)(=O)c5ccc(C)cc5)C=C3)CCC1",
+            "product_smiles": "CC(C)(C)OC(=O)N1CC2(CC2)N(C3=CN4C(=NC(=CC4=O)c5nc(C)c6c(n5)ncn6)C=C3)CCC1",
+            "notes": "Suzuki coupling of a quinazolinone tosylate with a pyrazolo[3,4-d]pyrimidine boronic ester.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Cyclization / Pyrazole annulation",
+                    "reagents": "EtOH, (Et)3N, chloroacetone",
+                    "reagent_smiles": "CC(=O)CCl",
+                    "conditions": "150 °C",
+                    "yield": "49%",
+                    "reactant_smiles": "CC1=C(N)N=NC(=C1)Cl",
+                    "product_smiles": "CC1=CC(=NN2C=C(C)N=C12)Cl",
+                    "notes": "A 1,2,4-triazin-3-amine reacts with chloroacetone in the presence of triethylamine and ethanol to form a fused pyrazolo[3,4-d]pyridazine system.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Borylation",
+                    "reagents": "PdCl2(dppf), bis(pinacolato)diboron, KOAc",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, 100 °C",
+                    "yield": "86%",
+                    "reactant_smiles": "Cc1nnc2c(C)nc(Cl)cc2n1",
+                    "product_smiles": "Cc1nnc2c(C)nc([Bpin])cc2n1",
+                    "notes": "Chloride at position 5 replaced with a Bpin group via palladium-catalyzed borylation.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, nPrO, nPrOAc, NaOH",
+            "reagent_smiles": "",
+            "conditions": "75 °C",
+            "yield": "98%",
+            "reactant_smiles": "CC1=CC(=NN2C=C(C)N=C12)C3=CC(=O)N4C=C(C=CC4=N3)N5CCN([Boc])C6(CC6)C5",
+            "product_smiles": "CC1=CC(=NN2C=C(C)N=C12)C3=CC(=O)N4C=C(C=CC4=N3)N5CCNC6(CC6)C5",
+            "notes": "Boc deprotection of a piperazine derivative to yield Risdiplam.",
+            "substeps": []
+        }
+    ]
+}

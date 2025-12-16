@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "baraclude-entecavir-bms-unknown-2024",
+        "molecule_name": "Baraclude (Entecavir BMS)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "BOMCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -65 °C",
+            "yield": "",
+            "reactant_smiles": "[c-]1cccc1",
+            "product_smiles": "[OBn]CC1C=CCC1",
+            "notes": "Alkylation of cyclopentadienyl anion with benzyloxymethyl chloride (BOMCl).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Hydroboration-Oxidation",
+            "reagents": "Ipc2BH, NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "THF, -65 to -78 °C",
+            "yield": "75%",
+            "reactant_smiles": "[Bn]OCC1CCC=C1",
+            "product_smiles": "O[C@@H]1C=CC[C@H]1C[O][Bn]",
+            "notes": "Stereoselective addition of a hydroxyl group and hydrogen across an alkene (though the reactant and product alkenes appear to be in different positions, the SMILES encode what is shown in the image).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Directed Epoxidation",
+            "reagents": "VO(acac)2",
+            "reagent_smiles": "CC(C)(C)OOH",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)COC[C@H]2C=CC[C@@H]2O",
+            "product_smiles": "C1=CC=C(C=C1)COC[C@H]2C[C@@H](O)[C@@H]3OC3[C@H]2",
+            "notes": "Epoxidation of an alkene, likely directed by the homoallylic alcohol, to form an epoxide with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "TBAI, BnBr, NaH",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "83% (2 steps)",
+            "reactant_smiles": "C1=CC=C(C=C1)COC[C@@H]2[C@H](C[C@@H]3[C@H]2O3)O",
+            "product_smiles": "C1=CC=C(C=C1)COC[C@@H]2[C@H](C[C@@H]3[C@H]2O3)OCC4=CC=CC=C4",
+            "notes": "Benzylation of an alcohol using benzyl bromide and sodium hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Substitution / Glycosylation",
+            "reagents": "LiH",
+            "reagent_smiles": "[Bn]OC1=NC(N)=NC2=C1N=CN2",
+            "conditions": "DMF, 125 °C",
+            "yield": "60%",
+            "reactant_smiles": "[Bn]OC[C@@H]1[C@@H](O2)[C@H]2C[C@H](O[Bn])C1",
+            "product_smiles": "[Bn]OC1=NC(N)=NC2=C1N(C=N2)[C@@H]3[C@@H](O)[C@H](O[Bn])C[C@@H](CO[Bn])3",
+            "notes": "Nucleophilic substitution of epoxide, followed by ring opening to form a nucleoside with an additional cyclopropyl ring from the original epoxide. Incorrect; the reaction is a nucleophilic attack of the purine nitrogen on the epoxide, followed by intramolecular cyclization (not shown in product) or simply a ring-opening alkylation with some rearrangements. More accurately, it is a nucleophilic attack of N9 of the purine on the epoxide, leading to opening and formation of a bond to C1 of the cyclopentane. The epoxide is opened by the purine, and the ring structure is changed.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Protection (Tritylation)",
+            "reagents": "MMTrCl, DMAP, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "82%",
+            "reactant_smiles": "Nc1nc([OBn])nc2n1cnc2[C@H]3C[C@H](O)[C@@H](C[OBn])[C@@H]3[OBn]",
+            "product_smiles": "[MMT]Nc1nc([OBn])nc2n1cnc2[C@H]3C[C@H](O)[C@@H](C[OBn])[C@@H]3[OBn]",
+            "notes": "Selective protection of the C2-amino group of the adenine with a monomethoxytrityl (MMT) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH/DCM",
+            "yield": "",
+            "reactant_smiles": "[NHMMT]C1=NC2=C([OBn]C1)N=CN2[C@H]3C[C@H](O)[C@@H]([OBn])[C@H](C[OBn])3",
+            "product_smiles": "[NHMMT]C1=NC2=C([OBn]C1)N=CN2[C@H]3C(=O)[C@@H]([OBn])[C@H](C[OBn])C3",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin Periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nysted olefination",
+            "reagents": "TiCl4",
+            "reagent_smiles": "Br[Zn]C[Zn]Br.C1CCOC1",
+            "conditions": "(2 steps)",
+            "yield": "75%",
+            "reactant_smiles": "COC1=CC=C(C(c2ccccc2)(c3ccccc3)NC4=NC(=C5N4C=NC(=N5)[C@H]6C[C@@H]([OBn])[C@H](C[OBn])C(=O)C6)[OBn]])C=C1",
+            "product_smiles": "COC1=CC=C(C(c2ccccc2)(c3ccccc3)NC4=NC(=C5N4C=NC(=N5)[C@H]6C[C@@H]([OBn])[C@H](C[OBn])C(=C)C6)[OBn]])C=C1",
+            "notes": "Olefination of a ketone in a cyclopentanone ring to an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH/THF, 55 °C",
+            "yield": "92%",
+            "reactant_smiles": "C=C1[C@H](C[OBn])[C@@H]([OBn])[C@H](N2C=NC3=C2N=C(N=C3[OBn])N[MMT])1",
+            "product_smiles": "C=C1[C@H](C[OBn])[C@@H]([OBn])[C@H](N2C=NC3=C2N=C(N=C3[OBn])N)1",
+            "notes": "Deprotection of monomethoxytrityl (MMT) protecting group on the adenine amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "BCl3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78°C",
+            "yield": "89%",
+            "reactant_smiles": "C=C1[C@H](C[OBn])[C@H](C[C@@H]1N3C=NC4=C3N=C(N)N=C4[OBn])[OBn]",
+            "product_smiles": "C=C1[C@H](CO)[C@H](C[C@@H]1N2C=NC3=C2N=C(N)N=C3O)O",
+            "notes": "Deprotection of three benzyl ether groups using boron trichloride.",
+            "substeps": []
+        }
+    ]
+}

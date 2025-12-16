@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "inotuzumab-ozogamicin-besponsa-pfizer-unknown-2024",
+        "molecule_name": "Inotuzumab Ozogamicin (Besponsa Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Michael Addition",
+            "reagents": "Bu4NF",
+            "reagent_smiles": "COC(=O)C=C(C)C",
+            "conditions": "2-MeTHF",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)CS",
+            "product_smiles": "CC(C)(CC(=O)OC)SCC1=CC=C(C=C1)OC",
+            "notes": "Thiol reacts with an alpha,beta-unsaturated ester via Michael addition.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "aq. NaOH, HCl",
+            "reagent_smiles": "",
+            "conditions": "aqueous",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "COc1ccc(CSCC(C)(C)C(=O)OC)cc1",
+            "product_smiles": "COc1ccc(CSCC(C)(C)C(=O)O)cc1",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidification (Hydrazide formation)",
+            "reagents": "CDI, H2NNH2·H2O",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "97%",
+            "reactant_smiles": "CC(C)(CC(=O)O)SCC1=CC=C(C=C1)OC",
+            "product_smiles": "CC(C)(CC(=O)NN)SCC1=CC=C(C=C1)OC",
+            "notes": "Carboxylic acid is converted to a hydrazide using 1,1'-carbonyldiimidazole (CDI) as an activating agent, followed by reaction with hydrazine hydrate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrazone Formation (Condensation)",
+            "reagents": "HOAc, MeOH",
+            "reagent_smiles": "CC(=O)C1=CC=C(C=C1)OCCCC(=O)O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)(CC(=O)NN)SCC1=CC=C(C=C1)OC",
+            "product_smiles": "CC(=NNC(=O)CC(C)(C)SCC1=CC=C(C=C1)OC)C2=CC=C(C=C2)OCCCC(=O)O",
+            "notes": "A hydrazide reacts with a ketone under acidic conditions to form a hydrazone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, anisole",
+            "reagent_smiles": "",
+            "conditions": "65 to 70 °C",
+            "yield": "94%",
+            "reactant_smiles": "C/C(=N\\NC(=O)CC(C)(C)SCC1=CC=C(C=C1)OC)/C2=CC=C(C=C2)OCCCC(=O)O",
+            "product_smiles": "C/C(=N\\NC(=O)CC(C)(C)S)/C1=CC=C(C=C1)OCCCC(=O)O",
+            "notes": "Deprotection of a p-methoxybenzyl (PMB) thioether to a thiol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carboxylic Acid Activation (Mixed Anhydride Formation)",
+            "reagents": "Piv-Cl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C/C(=N\\NC(=O)CC(C)(C)S)/C1=CC=C(C=C1)OCCCC(=O)O",
+            "product_smiles": "C/C(=N\\NC(=O)CC(C)(C)S)/C1=CC=C(C=C1)OCCCC(=O)OC(=O)C(C)(C)C",
+            "notes": "A carboxylic acid is activated to a mixed anhydride using pivaloyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Carboxylic acid activation / NHS ester formation",
+            "reagents": "N-hydroxysuccinimide",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "CC(C)(S)CC(=O)NNC(=C/C1=CC=C(C=C1)OCCCC(=O)OC(=O)C(C)(C)C)/C",
+            "product_smiles": "CC(C)(S)CC(=O)NNC(=C/C1=CC=C(C=C1)OCCCC(=O)ON2C(=O)CCC2=O)/C",
+            "notes": "Conversion of a mixed pivalic anhydride to an N-hydroxysuccinimide (NHS) ester. The reaction likely proceeds via displacement of pivalic acid from the mixed anhydride by N-hydroxysuccinimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Disulfide Exchange / Bioconjugation",
+            "reagents": "EDCI, Hünig's base",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "80%",
+            "reactant_smiles": "C/C(=N\\NC(=O)CC(C)(C)S)/C1=CC=C(C=C1)OCCCC(=O)ON2C(=O)CCC2=O",
+            "product_smiles": "",
+            "notes": "This step describes the conjugation of a thiol-containing linker-NHS ester (reactant) to a complex calicheamicin derivative (Ozogamicin warhead shown in the center) via a disulfide exchange reaction. The thiol attacks one of the sulfur atoms in the existing disulfide bond of the calicheamicin derivative, forming a new disulfide linkage and releasing a thiol byproduct (the aryl iodide sugar fragment, not explicitly shown as a product). The final product is a highly complex drug conjugate (Inotuzumab Ozogamicin).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Antibody-Drug Conjugation (ADC) / Carbamate formation",
+            "reagents": "G-544 (anti-CD22 mAb), PBS, propylene glycol, NaOH, caprylic acid",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "O=C1CC(=O)N1OC(=O)OCCCCCOc2ccc(C(C)=NNC(=O)C(C)(C)SSSC[C@@H]3O[C@H]([C@@H](O)[C@H](O)[C@H]3OC)c4c(C)c(I)c(OC)c(C(=O)S[C@H]5C[C@@H](O)[C@@H](O[C@H]6C[C@H](O)[C@H](O[C@@H]7C[C@@H](O)[C@@H](O)[C@H](CO)O7)[C@@H](N(CC)C(=O)C)O6)O5)c4C)C#CC#C[C@@H]8[C@@]9(C(=O)[C@H]8O)[C@H](O)[C@H](NC(=O)OC)[C@H]9O)cc2",
+            "product_smiles": "*NC(=O)OCCCCCOc1ccc(C(C)=NNC(=O)C(C)(C)SSSC[C@@H]2O[C@H]([C@@H](O)[C@H](O)[C@H]2OC)c3c(C)c(I)c(OC)c(C(=O)S[C@H]4C[C@@H](O)[C@@H](O[C@H]5C[C@H](O)[C@H](O[C@@H]6C[C@@H](O)[C@@H](O)[C@H](CO)O6)[C@@H](N(CC)C(=O)C)O5)o4)c3C)C#CC#C[C@@H]7[C@@]8(C(=O)[C@H]7O)[C@H](O)[C@H](NC(=O)OC)[C@H]8O)cc1",
+            "notes": "Conjugation of Inotuzumab Ozogamicin (Calicheamicin drug payload) to an anti-CD22 monoclonal antibody (G-544 mAb) via a carbamate linkage. The NHS-ester on the drug precursor reacts with primary amines on the antibody.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lumacaftor-orkambi-vertex-unknown-2024",
+        "molecule_name": "Lumacaftor (Orkambi Vertex)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "Red-Al, NaOH aq.",
+            "reagent_smiles": "",
+            "conditions": "PhMe",
+            "yield": "86-92%",
+            "reactant_smiles": "O=C(O)c1ccc2c(c1)OC(F)(F)O2",
+            "product_smiles": "OCCC1=CC=C2OC(F)(F)OC2=C1",
+            "notes": "Reduction of a carboxylic acid to a primary alcohol using Red-Al.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Chlorination (Alcohol to Alkyl Chloride)",
+            "reagents": "SOCl2, DMAP",
+            "reagent_smiles": "",
+            "conditions": "MTBE, 30 °C",
+            "yield": "82-100%",
+            "reactant_smiles": "C1=CC2=C(C=C1CO)OC(F)(F)O2",
+            "product_smiles": "C1=CC2=C(C=C1CCl)OC(F)(F)O2",
+            "notes": "Primary benzyl alcohol is converted to the corresponding benzyl chloride using thionyl chloride and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaCN, DMSO",
+            "reagent_smiles": "",
+            "conditions": "30 to 40 °C",
+            "yield": "95-100%",
+            "reactant_smiles": "C1=CC2=C(C=C1CCl)OC(F)(F)O2",
+            "product_smiles": "C1=C(CC#N)C=C2C(=C1)OC(F)(F)O2",
+            "notes": "A chloromethyl group is converted to a cyanomethyl group via nucleophilic substitution with sodium cyanide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclopropanation / Alkylation",
+            "reagents": "KOH, Oct4NBr, H2O",
+            "reagent_smiles": "C(CCl)Br",
+            "conditions": "70 °C",
+            "yield": "88-100%",
+            "reactant_smiles": "C1=C(CC#N)C=C2C(=C1)OC(F)(F)O2",
+            "product_smiles": "C1=CC2=C(C=C1C3(CC3)C#N)OC(F)(F)O2",
+            "notes": "Cyclopropanation of a benzylic nitrile using 1-bromo-2-chloroethane under basic conditions (KOH) with a phase transfer catalyst (Oct4NBr).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nitrile hydrolysis",
+            "reagents": "NaOH, EtOH",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1C3(CC3)C#N)OC(F)(F)O2",
+            "product_smiles": "C1=CC2=C(C=C1C3(CC3)C(=O)ONa)OC(F)(F)O2",
+            "notes": "Hydrolysis of a nitrile group to a sodium carboxylate salt using NaOH in ethanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carboxylate Protonation",
+            "reagents": "citric acid, MTBE",
+            "reagent_smiles": "",
+            "conditions": "MTBE",
+            "yield": "69% (2 steps)",
+            "reactant_smiles": "[Na]OC(=O)C1(CC1)C2=CC=C3C(=C2)OC(F)(F)O3",
+            "product_smiles": "C1=C(C=C2C(=C1)OC(F)(F)O2)C3(CC3)C(=O)O",
+            "notes": "Protonation of a sodium carboxylate salt using citric acid in MTBE to form the corresponding carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acid Halide Formation",
+            "reagents": "SOCl2",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 60 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)OC(F)(F)O2)C3(CC3)C(=O)O",
+            "product_smiles": "C1=CC2=C(C=C1C3(CC3)C(=O)Cl)OC(F)(F)O2",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Formation",
+            "reagents": "Et3N, DMAP",
+            "reagent_smiles": "Nc1ccc(C)n(c1C2=CC=CC(=C2)C(=O)OC(C)(C)C)",
+            "conditions": "PhMe",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)OC(F)(F)O2)C3(CC3)C(=O)Cl",
+            "product_smiles": "O=C(NC1=CC=C(C)N=C1C2=CC=CC(=C2)C(=O)OC(C)(C)C)C3(CC3)C4=CC=C5C(=C4)OC(F)(F)O5",
+            "notes": "Amide bond formation via acylation of a primary amine with an acyl chloride.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Suzuki cross coupling",
+                    "reagents": "PdCl2(dppf), K2CO3, MsOH, NaOH",
+                    "reagent_smiles": "Cc1cnccc1Br",
+                    "conditions": "PhMe, 80 °C",
+                    "yield": "82%",
+                    "reactant_smiles": "[Boc]c1cccc(B(O)O)c1",
+                    "product_smiles": "[Boc]c1cccc(C2=NC=CC=C2C)c1",
+                    "notes": "Suzuki cross-coupling of a tert-butyl 3-(dihydroxyboryl)benzoate with 2-bromo-3-methylpyridine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "N-oxidation",
+                    "reagents": "urea-H₂O₂, phthalic anhydride",
+                    "reagent_smiles": "",
+                    "conditions": "H₂O, EtOAc, 45 °C",
+                    "yield": "95%",
+                    "reactant_smiles": "CC1=C(C=CC=N1)C2=CC(C(=O)OC(C)(C)C)=CC=C2",
+                    "product_smiles": "CC(C)(C)OC(=O)C1=CC(C2=C(C)C=CC=[N+]2[O-])=CC=C1",
+                    "notes": "Oxidation of a pyridine nitrogen to an N-oxide using urea-hydrogen peroxide and phthalic anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "N-Oxide Activation / Mesylation",
+                    "reagents": "Pyridine, MeCN",
+                    "reagent_smiles": "CS(=O)(=O)OS(=O)(=O)C",
+                    "conditions": "70 to 75 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]c1cccc(c1)-c2c(C)cc[n+]([O-])c2",
+                    "product_smiles": "[Boc]c1cccc(c1)-c2c(C)cc[n+](OS(=O)(=O)C)c2",
+                    "notes": "Pyridine N-oxide is activated with methanesulfonic anhydride to form an N-mesyloxypyridinium ion.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Amination of pyridine N-oxide",
+                    "reagents": "ethanolamine, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "53% (2 steps)",
+                    "reactant_smiles": "O=[N+]1C(c2cc([COOtBu])ccc2)=C(C)C=CC=1.[O-]S(=O)(=O)C",
+                    "product_smiles": "n1c(c2cc([COOtBu])ccc2)c(C)cc(N)c1",
+                    "notes": "Conversion of a pyridine N-oxide to a 6-aminopyridine derivative, with loss of the N-oxide oxygen.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "conc. HCl",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O, 40 to 50 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1c(c2ccc([Boc])cc2)nccc(NC(=O)C3(CC3)C4=CC=C5C(=C4)OC(F)(F)O5)c1",
+            "product_smiles": "Cc1c(c2ccc(C(=O)O)cc2)nccc(NC(=O)C3(CC3)C4=CC=C5C(=C4)OC(F)(F)O5)c1.[ClH]",
+            "notes": "Hydrolysis of a tert-butyl ester to a carboxylic acid, forming a hydrochloride salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acid-Base Reaction (Freebasing)",
+            "reagents": "slurry in H2O",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "98%",
+            "reactant_smiles": "CC1=C(c2cccc(C(=O)O)c2)[N+]=C(NC(=O)C3(CC3)c4ccc5c(c4)OC(F)(F)O5)C=C1.[Cl-]",
+            "product_smiles": "CC1=C(c2cccc(C(=O)O)c2)N=C(NC(=O)C3(CC3)c4ccc5c(c4)OC(F)(F)O5)C=C1",
+            "notes": "Conversion of Lumacaftor hydrochloride salt to its neutral form (free acid).",
+            "substeps": []
+        }
+    ]
+}

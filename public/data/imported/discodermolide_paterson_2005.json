@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "discodermolide-paterson-2005",
+        "molecule_name": "Discodermolide",
+        "class": "Natural Product",
+        "author": "Paterson",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Protection (Silyl Ether Formation)",
+            "reagents": "DMF",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(C)C.c1cnc[nH]1",
+            "conditions": "0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "C[C@H](CO)C(=O)OC",
+            "product_smiles": "[OTBS]C[C@H](C)C(=O)OC",
+            "notes": "Protection of the primary alcohol with tert-butyldimethylsilyl chloride (TBSCl).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction (Ester to Alcohol)",
+            "reagents": "DIBALH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "92%",
+            "reactant_smiles": "[OTBS]C[C@@H](C)C(=O)OC",
+            "product_smiles": "[OTBS]C[C@@H](C)CO",
+            "notes": "Methyl ester is reduced to a primary alcohol using DIBALH, with the TBS protecting group and stereochemistry at the chiral center preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -55 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CC[C@@H](C)CO",
+            "product_smiles": "[OTBS]CC[C@@H](C)C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Aldol-type reaction",
+            "reagents": "nBuLi, (-)-sparteine, Ti(OiPr)4",
+            "reagent_smiles": "C/C=C/COC(=O)N(C(C)C)C(C)C",
+            "conditions": "pentane, cyclohexane, -78 °C",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "[TBS]OC[C@H](C)C=O",
+            "product_smiles": "[TBS]OC[C@H](C)[C@@H](O)[C@@H](C)/C=C\\O[Cbz]",
+            "notes": "Aldol-type addition of an O-crotyl carbamate to an aldehyde, forming a beta-hydroxy-delta-methyl-alpha,beta-unsaturated carbamate. The reaction is diastereoselective, introducing three new chiral centers and a Z-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, sudan III, CH2Cl2, then PPh3",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "[TBS]OC[C@H](C)[C@@H](O)[C@H](C)/C=C/OC=O",
+            "product_smiles": "[TBS]OC[C@H](C)[C@@H](O)[C@H](C)C=O",
+            "notes": "Reductive ozonolysis of an internal Z-alkene to yield an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Horner Wadsworth Emmons olefination",
+            "reagents": "NaH, THF",
+            "reagent_smiles": "CCOP(=O)(CC(=O)N(C)OC)OCC",
+            "conditions": "0 °C to rt",
+            "yield": "86%",
+            "reactant_smiles": "[TBS]OC[C@H](C)[C@H](O)[C@@H](C)C=O",
+            "product_smiles": "[TBS]OC[C@H](C)[C@H](O)[C@@H](C)/C=C\\C(=O)N(C)OC",
+            "notes": "Horner Wadsworth Emmons olefination of an aldehyde to form an alpha,beta-unsaturated Weinreb amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Benzylidene Acetal Formation with Alkene Reduction",
+            "reagents": "KHMDS",
+            "reagent_smiles": "O=Cc1ccccc1",
+            "conditions": "THF, -20 °C",
+            "yield": "86%",
+            "reactant_smiles": "[TBS]OC[C@H](C)[C@@H](O)[C@@H](C)/C=C/C(=O)N(C)OC",
+            "product_smiles": "[TBS]OC[C@H](C)[C@@H]1O[C@H]([Ph])O[C@@H](C(CC(=O)N(C)OC))1",
+            "notes": "The reaction involves the formation of a 1,3-dioxane (benzylidene acetal) from the hydroxyl group at C3 and what appears to be a new hydroxyl group at C4 (from the reactant's double bond). This implies a concomitant reduction of the alpha,beta-unsaturated alkene (C=C to CH2-CH) in the Weinreb amide portion of the molecule, which is not typically achieved with KHMDS/PhCHO reagents alone. The reactant as drawn does not possess a 1,3-diol, which is usually required for this type of acetal formation, thus indicating an underlying mechanistic complexity or potential drawing inconsistency.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Organometallic Addition / Ketone Formation",
+            "reagents": "tBuLi",
+            "reagent_smiles": "C#C[C@H](C)[C@@H](OCOC)[C@@H](C)/C=C(/C)\\[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "Et2O",
+            "yield": "80%",
+            "reactant_smiles": "[TBS]OC[C@H](C)[C@@H]1O[C@@H]([Ph])O[C@@H]([C@H](C)[C@H]1CC(=O)N(C)OC)",
+            "product_smiles": "[TBS]OC[C@H](C)[C@@H]1O[C@@H]([Ph])O[C@@H]([C@H](C)[C@H]1CC(=O)C#C[C@H](C)[C@@H](OCOC)[C@@H](C)/C=C(/C)\\[Sn](CCCC)(CCCC)CCCC",
+            "notes": "Addition of a complex organostannane (derived from the alkyne via lithiation) to a Weinreb amide to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Corey Bakshi Shibata asymmetric reduction",
+            "reagents": "BH3.Me2S",
+            "reagent_smiles": "CB1N2CCC[C@@H]2C(O1)([Ph])[Ph]",
+            "conditions": "THF",
+            "yield": "95%",
+            "reactant_smiles": "[SnBu3]/C=C(\\C)[C@H](C)[C@H]([OMOM])[C@@H](C)C#CC(=O)CH2[C@@H]2(C)O[C@H]1([Ph])O[C@H]3(C)[C@H](C)[C@H](C)CH2O[OTBS]C1",
+            "product_smiles": "[SnBu3]/C=C(\\C)[C@H](C)[C@H]([OMOM])[C@@H](C)C#C[C@@H](O)CH2[C@@H]2(C)O[C@H]1([Ph])O[C@H]3(C)[C@H](C)[C@H](C)CH2O[OTBS]C1",
+            "notes": "Asymmetric reduction of an alpha,beta-alkynyl ketone to a propargylic alcohol using CBS catalyst. The reaction selectively reduces the ketone to a secondary alcohol with the 'OH' group oriented downwards (R-configuration at the newly formed stereocenter).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "HF•py, pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "96%",
+            "reactant_smiles": "[Sn](CCCC)(CCCC)CCCC\\C=C(/C)[C@H](C)[C@H]([MOM])[C@@H](C)C#C[C@H](C[C@H]1[C@H](C)[C@@H]([C@@H](C)C[OTBS])O[C@H](O1)[Ph])[MOM]",
+            "product_smiles": "[Sn](CCCC)(CCCC)CCCC\\C=C(/C)[C@H](C)[C@H]([MOM])[C@@H](C)C#C[C@H](C[C@H]1[C@H](C)[C@@H]([C@@H](C)CO)O[C@H](O1)[Ph])[MOM]",
+            "notes": "Deprotection of TBS ether to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "TEMPO, PhI(OAc)2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C(=C\\[C@H](C)[C@H]([C@@H](C)C#C[C@H](C[C@H]1[C@H](C)[C@@H]([C@@H](C)CO)O[C@H](O1)c1ccccc1)[OMOM])[OMOM])/C",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C(=C\\[C@H](C)[C@H]([C@@H](C)C#C[C@H](C[C@H]1[C@H](C)[C@@H]([C@@H](C)C=O)O[C@H](O1)c1ccccc1)[OMOM])[OMOM])/C",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using TEMPO and hypervalent iodine (PhI(OAc)2).",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Pinnick oxidation",
+            "reagents": "NaClO2, NaH2PO4, 2-methylbut-2-ene",
+            "reagent_smiles": "",
+            "conditions": "tBuOH/H2O, rt",
+            "yield": "",
+            "reactant_smiles": "[SnBu3]/C(C)=C/[C@H](C)[C@H]([OMOM])[C@@H](C)C#C[C@H]([OMOM])C[C@H]1O[C@H]([Ph])O[C@@H]([C@H](C)[C@@H](C)[C@@H](C)C=O)1",
+            "product_smiles": "[SnBu3]/C(C)=C/[C@H](C)[C@H]([OMOM])[C@@H](C)C#C[C@H]([OMOM])C[C@H]1O[C@H]([Ph])O[C@@H]([C@H](C)[C@@H](C)[C@@H](C)C(=O)O)1",
+            "notes": "Aldehyde oxidation to carboxylic acid using Pinnick oxidation conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Esterification",
+            "reagents": "benzene, MeOH",
+            "reagent_smiles": "C[Si](C)(C)C=[N+]=[N-]",
+            "conditions": "rt",
+            "yield": "66% (3 steps)",
+            "reactant_smiles": "[SnBu3]/C(=C/C)[C@H](C)[C@H](O[MOM])[C@@H](C)C#C[C@H](O[MOM])C[C@H](C)O[C@H]1O[C@H]([Ph])O[C@@H]1[C@H](C)[C@@H](C)C(=O)O",
+            "product_smiles": "[SnBu3]/C(=C/C)[C@H](C)[C@H](O[MOM])[C@@H](C)C#C[C@H](O[MOM])C[C@H](C)O[C@H]1O[C@H]([Ph])O[C@@H]1[C@H](C)[C@@H](C)C(=O)OC",
+            "notes": "Methyl esterification of a carboxylic acid using trimethylsilyldiazomethane (TMSCHN2) and methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Stille coupling",
+            "reagents": "tBuLi, Et2O, B-methoxy-9-BBN, then Cs2CO3, [Pd(dppf)Cl2], AsPh3, DMF, H2O",
+            "reagent_smiles": "C=C[C@@H](C)[C@H](C)[C@@H]([OTES])[C@H]([OTBS])I",
+            "conditions": "Et2O; DMF, H2O",
+            "yield": "60%",
+            "reactant_smiles": "C[C@H](C(=O)OC)[C@@H]1O[C@H](Ph)O[C@H]([C@H](C)C[C@H]([OMOM])C#C[C@H](C)[C@@H]([OMOM])[C@@H](C)/C=C(\\C)[SnBu3])C1",
+            "product_smiles": "C[C@H](C(=O)OC)[C@@H]1O[C@H](Ph)O[C@H]([C@H](C)C[C@H]([OMOM])/C=C/[C@H](C)[C@H]([OMOM])[C@H](C)/C=C(C)/[C@H]([OTBS])[C@@H]([OTES])[C@H](C)[C@@H](C)C=C)C1",
+            "notes": "Cross-coupling of a vinyl stannane (reactant) with an alkyl iodide (reagent) to form an E,E-diene containing a complex polyketide-like chain with multiple chiral centers, MOM, TBS, and TES protecting groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection",
+            "reagents": "p-TSA, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "77%",
+            "reactant_smiles": "C=C/C=C\\[C@H](C)[C@@H]([C@@H](C)[C@@H]([C@@H](C)C/C(=C\\[C@H]([MOMO])[C@H](C)[C@@H](C)/C=C\\[C@H](C[C@H]1[C@H](C)[C@@H]([C@@H](C)C(=O)OC)O[C@H]([Ph])O1)[MOMO])/C)[OTBS])[OTES]",
+            "product_smiles": "C=C/C=C\\[C@H](C)[C@@H]([C@@H](C)[C@@H]([C@@H](C)C/C(=C\\[C@H]([MOMO])[C@H](C)[C@@H](C)/C=C\\[C@H](C[C@H]1[C@H](C)[C@@H]([C@@H](C)C(=O)OC)O[C@H]([Ph])O1)[MOMO])/C)[OTBS])O",
+            "notes": "Acid-catalyzed hydrolysis of TES ether to alcohol.",
+            "substeps": []
+        }
+    ]
+}

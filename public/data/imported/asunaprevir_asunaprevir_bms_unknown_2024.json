@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "asunaprevir-asunaprevir-bms-unknown-2024",
+        "molecule_name": "Asunaprevir (Asunaprevir BMS)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Functional Group Transformation (Acyl Azide Formation)",
+            "reagents": "DPPA, Et3N",
+            "reagent_smiles": "",
+            "conditions": "benzene, rt",
+            "yield": "",
+            "reactant_smiles": "ClC1=CC=C(/C=C/C(=O)O)C=C1",
+            "product_smiles": "ClC1=CC=C(/C=C/C(=O)[N-]=[N+]=[N])C=C1",
+            "notes": "Conversion of a carboxylic acid to an acyl azide with retention of alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Curtius Rearrangement",
+            "reagents": "PH2CH2",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "53% (2 steps)",
+            "reactant_smiles": "ClC1=CC=C(C=C1)/C=C/C(=O)N=[N+]=[N-]",
+            "product_smiles": "Oc1nc2ccc(Cl)cc2cc1",
+            "notes": "Acyl azide undergoes Curtius rearrangement followed by intramolecular cyclization to form 6-chloroquinolin-2-ol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bromination",
+            "reagents": "",
+            "reagent_smiles": "O=C1CCC(=O)N1Br",
+            "conditions": "MeCN, reflux",
+            "yield": "90%",
+            "reactant_smiles": "Oc1cnc2ccc(Cl)cc2c1",
+            "product_smiles": "C1=C(C=C2C(=C1)C(=CN=C2O)Br)Cl",
+            "notes": "Electrophilic bromination of 7-chloro-4-hydroxyquinoline using NBS.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Chlorination",
+            "reagents": "POCl3",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "73%",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C(=CN=C2O)Br)Cl",
+            "product_smiles": "C1=C(C=C2C(=C1)C(=CN=C2Cl)Br)Cl",
+            "notes": "Replacement of a hydroxyl group at position 2 of the quinoline core with a chlorine atom using phosphorus oxychloride (POCl3).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lithium-halogen exchange / Borylation",
+            "reagents": "n-BuLi, (i-PrO)₃B",
+            "reagent_smiles": "CCCC[Li].B(OC(C)C)(OC(C)C)OC(C)C",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C(=CN=C2Cl)Br)Cl",
+            "product_smiles": "B(OC(C)C)(OC(C)C)C1=C(C=C2C(=C1)C(=CN=C2Cl))Cl",
+            "notes": "Lithium-halogen exchange of 4-bromo-2,7-dichloroquinoline with n-BuLi, followed by trapping with triisopropyl borate to form the diisopropoxyboryl derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation (Boronic Ester to Alcohol)",
+            "reagents": "50% H₂O₂, Na₂SO₃",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "ClC1=CN=C(B(OC(C)C)OC(C)C)C2=CC=C(Cl)C=C12",
+            "product_smiles": "C1=C(C=C2C(=C1)C(=CN=C2Cl)O)Cl",
+            "notes": "Conversion of a quinoline-substituted diisopropoxyboryl group to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "O-Methylation",
+            "reagents": "MeI, NaH",
+            "reagent_smiles": "",
+            "conditions": "DMF, 4 °C",
+            "yield": "96%",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C(=CN=C2Cl)O)Cl",
+            "product_smiles": "COC1=CN=C(C2=CC(=CC=C21)Cl)Cl",
+            "notes": "Methylation of 6,8-dichloroquinolin-4-ol to form 6,8-dichloro-4-methoxyquinoline using methyl iodide and sodium hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "t-BuOK",
+            "reagent_smiles": "[Boc]N1C[C@@H](O)C[C@H]1C(=O)O",
+            "conditions": "DMSO, 10 °C",
+            "yield": ">99%",
+            "reactant_smiles": "COC1=CN=C(C2=CC(=CC=C21)Cl)Cl",
+            "product_smiles": "[Boc]N1C[C@@H](OC2=NC=C(C3=CC=C(C=C32)Cl)OC)C[C@H]1C(=O)O",
+            "notes": "Nucleophilic aromatic substitution of 2,6-dichloro-4-methoxyquinoline with (2R,4S)-N-Boc-4-hydroxypyrrolidine-2-carboxylic acid, replacing the chlorine at position 2 of the quinoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Amide coupling",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "C=C[C@@H]1C[C@@]1(C(=O)NS(=O)(=O)C2CC2)N",
+            "conditions": "rt",
+            "yield": "88%",
+            "reactant_smiles": "[Boc]N1C[C@@H](C[C@H]1C(=O)O)OC2=NC=C(C3=CC=C(C=C32)Cl)OC",
+            "product_smiles": "C=C[C@@H]1C[C@@]1(C(=O)NS(=O)(=O)C2CC2)NC(=O)[C@H]3C[C@@H](CN3[Boc])OC4=NC=C(C5=CC=C(C=C54)Cl)OC",
+            "notes": "Amide bond formation between a carboxylic acid and an amine using HATU as coupling agent.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Imine formation",
+                    "reagents": "Benzaldehyde, Na2SO4, Et3N, TBME",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CN",
+                    "product_smiles": "CCOC(=O)CN=Cc1ccccc1",
+                    "notes": "Formation of an imine (Schiff base) via condensation of ethyl 2-aminoacetate with benzaldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Cyclopropanation, Imine hydrolysis",
+                    "reagents": "tBuOLi",
+                    "reagent_smiles": "BrCC=CCBr.[Li]OC(C)(C)C",
+                    "conditions": "toluene, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CN=CC1=CC=CC=C1",
+                    "product_smiles": "C=CC1CC1(C(=O)OCC)N",
+                    "notes": "Cyclopropanation of the imine using 1,4-dibromobut-2-ene and lithium tert-butoxide, followed by hydrolysis of the resulting imine to a primary amine, forming a vinyl cyclopropylamine ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Amine Protection",
+                    "reagents": "di-t-butyldicarbonate, 10 N NaOH, TBME",
+                    "reagent_smiles": "",
+                    "conditions": "4 days rt to 3 h reflux",
+                    "yield": "",
+                    "reactant_smiles": "C=CC1CC1(C(=O)OCC)N",
+                    "product_smiles": "C=CC1CC1(C(=O)OCC)N[Boc]",
+                    "notes": "Amine protection with a Boc group via di-t-butyldicarbonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Amidation",
+                    "reagents": "CDI, DBU",
+                    "reagent_smiles": "C1CC1S(=O)(=O)N",
+                    "conditions": "reflux",
+                    "yield": "",
+                    "reactant_smiles": "C=CC1CC1(C(=O)OCC)N[Boc]",
+                    "product_smiles": "C=CC1CC1(C(=O)NS(=O)(=O)C2CC2)N[Boc]",
+                    "notes": "Ethyl ester converted to N-sulfonylamide via initial activation with CDI, followed by reaction with cyclopropylsulfonamide and DBU.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection (Boc)",
+            "reagents": "HCl (conc)",
+            "reagent_smiles": "",
+            "conditions": "MeOH, reflux",
+            "yield": ">99%",
+            "reactant_smiles": "C=C[C@@H]1C[C@@]1(C(=O)NS(=O)(=O)C2CC2)NC(=O)[C@@H]3C[C@H](CN3[Boc])OC4=NC=C(C5=CC=C(C=C54)Cl)OC",
+            "product_smiles": "C=C[C@@H]1C[C@@]1(C(=O)NS(=O)(=O)C2CC2)NC(=O)[C@@H]3C[C@H](CN3)OC4=NC=C(C5=CC=C(C=C54)Cl)OC",
+            "notes": "Deprotection of the Boc group on the pyrrolidine nitrogen using concentrated HCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amide bond formation (peptide coupling)",
+            "reagents": "N-Boc-t-butyl-L-glycine, HATU, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "COc1cc(Cl)ccc1c2ncc(O[C@@H]3C[C@H](CN3)C(=O)N[C@]4(C=C)C[C@H]4C(=O)NS(=O)(=O)C5CC5)o2",
+            "product_smiles": "COc1cc(Cl)ccc1c2ncc(O[C@@H]3C[C@H](N(C3)C(=O)[C@H](C(C)(C)C)NC(=O)OC(C)(C)C)C(=O)N[C@]4(C=C)C[C@H]4C(=O)NS(=O)(=O)C5CC5)o2",
+            "notes": "Amide coupling of an N-Boc protected t-butyl glycine derivative to the pyrrolidine nitrogen of the reactant.",
+            "substeps": []
+        }
+    ]
+}

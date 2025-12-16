@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "luseogliflozin-lusefil-novartis-unknown-2024",
+        "molecule_name": "Luseogliflozin (Lusefil Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "Br2, Fe, CHCl3",
+            "reagent_smiles": "",
+            "conditions": "5 °C to rt",
+            "yield": "34%",
+            "reactant_smiles": "CC1=CC(=CC=C1C(=O)O)OC",
+            "product_smiles": "Cc1c(Br)cc(OC)cc1C(=O)O",
+            "notes": "Electrophilic aromatic bromination of 2-methyl-4-methoxybenzoic acid. Bromine is introduced at the C6 position (ortho to the carboxylic acid group, meta to the methyl and methoxy groups).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "(COC)2, DMF",
+            "reagent_smiles": "O=C(Cl)C(=O)Cl.CN(C)C=O",
+            "conditions": "CHCl3",
+            "yield": "",
+            "reactant_smiles": "COc1c(Br)ccc(C)c1C(=O)O",
+            "product_smiles": "COc1c(Br)ccc(C)c1C(=O)Cl",
+            "notes": "Carboxylic acid is converted to an acyl chloride using oxalyl chloride and DMF in chloroform.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Friedel-Crafts Acylation",
+            "reagents": "AlCl3, CHCl3",
+            "reagent_smiles": "CCOC1=CC=CC=C1",
+            "conditions": "-4 to 5 °C",
+            "yield": "",
+            "reactant_smiles": "COc1c(Br)cc(C)c(C(=O)Cl)c1",
+            "product_smiles": "CCOC1=CC=C(C=C1)C(=O)c2c(Br)c(OC)cc(C)c2",
+            "notes": "Friedel-Crafts acylation of ethoxybenzene with a substituted aryl acyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Deoxygenation (Ketone Reduction)",
+            "reagents": "Et3SiH, BF3 Et2O",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, MeCN, 4 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CCOC1=CC=C(C=C1)C(=O)C2=C(C)C=C(OC)C(Br)=C2",
+            "product_smiles": "CCOC1=CC=C(C=C1)CC2=C(C)C=C(OC)C(Br)=C2",
+            "notes": "The ketone carbonyl group is reduced to a methylene (CH2) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard reaction / C-glycosidation",
+            "reagents": "Mg, BrCH2CH2Br",
+            "reagent_smiles": "O=C1S[C@@H]([OBn])[C@H]([OBn])[C@@H]([OBn])[C@H]1[OBn]",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "75%",
+            "reactant_smiles": "CCOC1=CC=C(C=C1)CC2=CC(=C(C=C2C)OC)Br",
+            "product_smiles": "CCOC1=CC=C(C=C1)CC2=CC(=C(C=C2C)OC)[C@@H](O)C3S[C@@H]([OBn])[C@H]([OBn])[C@@H]([OBn])[C@H]3[OBn]",
+            "notes": "Grignard reagent formation from aryl bromide followed by addition to a thioglycoside lactone to form a C-aryl thioglycoside.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Deoxygenation / C-Glycosidation",
+            "reagents": "BF3 Et2O",
+            "reagent_smiles": "[SiH](CC)(CC)CC",
+            "conditions": "MeCN, -15 °C",
+            "yield": "77%",
+            "reactant_smiles": "CCOC1=CC=C(C=C1)CC2=CC(=C(C=C2C)OC)C3(O)[C@@H]([C@H]([C@@H]([C@H](COCC4=CC=CC=C4)S3)OCC5=CC=CC=C5)OCC6=CC=CC=C6)OCC7=CC=CC=C7",
+            "product_smiles": "CCOC1=CC=C(C=C1)CC2=CC(=C(C=C2C)OC)[C@@H]3[C@@H]([C@H]([C@@H]([C@H](COCC4=CC=CC=C4)S3)OCC5=CC=CC=C5)OCC6=CC=CC=C6)OCC7=CC=CC=C7",
+            "notes": "Reductive deoxygenation of the tertiary anomeric alcohol to form a C-glycoside. The aryl group becomes directly bonded to the thiopyranose ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Catalytic Hydrogenation / Deprotection",
+            "reagents": "H2, Pd(OH)2/C",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, EtOH, rt",
+            "yield": "81%",
+            "reactant_smiles": "COC1=C(S[C@H]2[C@@H](O[Bn])[C@H](O[Bn])[C@@H](O[Bn])[C@@H](CO[Bn])S2)C=C(C)C=C1CC3=CC=C(OCC)C=C3",
+            "product_smiles": "COC1=C(S[C@H]2[C@@H](O)[C@H](O)[C@@H](O)[C@@H](CO)S2)C=C(C)C=C1CC3=CC=C(OCC)C=C3",
+            "notes": "Hydrogenation of benzyl-protected Luseogliflozin precursor to yield Luseogliflozin by deprotection of four benzyl ether groups.",
+            "substeps": []
+        }
+    ]
+}

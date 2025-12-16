@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "secohyperforin-shair-2015",
+        "molecule_name": "Secohyperforin",
+        "class": "Natural Product",
+        "author": "Shair",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Birch Reduction",
+            "reagents": "Na, NH3, Et2O, EtOH",
+            "reagent_smiles": "[Na].N.CCOCC.CCO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=CC(=C1)OC",
+            "product_smiles": "COC1=CCC=C(C1)OC",
+            "notes": "Birch reduction of 1,3-dimethoxybenzene to 1,5-dimethoxy-1,4-cyclohexadiene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylic Alkylation / Nucleophilic Addition",
+            "reagents": "t-BuLi, BaI2",
+            "reagent_smiles": "CC(=CCBr)C.CC(C)(C)[Li].[Ba+2].[I-].[I-]",
+            "conditions": "THF, -78 °C",
+            "yield": "85%",
+            "reactant_smiles": "COC1=CCC=C(OC)C1",
+            "product_smiles": "COC1=C(CC=C(C)C)CCC(OC)=C1",
+            "notes": "Nucleophilic addition of a 3-methylbut-2-enyl group to 1,4-dimethoxycyclohexa-1,4-diene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alkylation / Epoxide Opening",
+            "reagents": "s-BuLi, c-Hex, THF",
+            "reagent_smiles": "BrC[C@@H]1OC(C)(C)1",
+            "conditions": "-78 to -30 °C then -78 to -20 °C",
+            "yield": "86%",
+            "reactant_smiles": "CC(C)=CCC1CC=C(OC)C=C(OC)C1",
+            "product_smiles": "CC(C)=CCC1(C[C@@H](O)C(C)(C))CC=C(OC)C=C(OC)C1",
+            "notes": "Allylic deprotonation followed by alkylation of a brominated epoxide, which subsequently opens to an alcohol. This forms a new quaternary carbon center and introduces a chiral alcohol.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Sharpless Asymmetric Epoxidation",
+                    "reagents": "Ti(Oi-Pr)4, L-(+)-DET, TBHP, 4Å MS, P(OMe)3, MsCl, DMAP, NEt3",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -25 °C; then -30 to -10 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(=CCO)C",
+                    "product_smiles": "CC1(C)[C@H](COS(=O)(=O)C)O1",
+                    "notes": "Sharpless asymmetric epoxidation of a primary allylic alcohol, followed by mesylation of the resulting primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Nucleophilic Substitution",
+                    "reagents": "LiBr",
+                    "reagent_smiles": "",
+                    "conditions": "Acetone, reflux",
+                    "yield": "51%",
+                    "reactant_smiles": "CC1(C)[C@H](COS(=O)(=O)C)O1",
+                    "product_smiles": "CC1(C)[C@H](CBr)O1",
+                    "notes": "Nucleophilic substitution of mesylate leaving group by bromide. The chiral center in the epoxide ring is not directly involved in the substitution, hence its stereochemistry is retained. The reaction is stated as occurring in 2 steps.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Rearrangement, Cyclization, Silylation",
+            "reagents": "TIPSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C to RT",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)=CCC1(C[C@H]2OC2(C)C)C=C(OC)CC=C(OC)C1",
+            "product_smiles": "CC(C)=CCC1(C=C(OC)C2C3C1C(=O)[C@@H](O[TIPS])[C@@H]4[C@H]2OC4(C)C)C3",
+            "notes": "Intramolecular cyclization and rearrangement of a cyclohexadiene with an epoxide, forming a complex polycyclic system with a ketone and a silyloxy group. One methoxy group is retained, another is lost during the rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "Pd(OH)2/C, TBHP, KOH",
+            "reagent_smiles": "",
+            "conditions": "nonane, EtOAc, -40 to 5 °C",
+            "yield": "25%",
+            "reactant_smiles": "CC(=CCC[C@@H]1C[C@@H]2C=C(OC)C=C(C2)[C@@]3(C)[C@@]1(C)[C@]4(O[Si](C(C)C)(C(C)C)C(C)C)[C@H]5O[C@H]5[C@@H]4[C@H]3",
+            "product_smiles": "CC(=CCC[C@@H]1C[C@@H]2C=C(OC)C(=O)C(C2)[C@@]3(C)[C@@]1(C)[C@]4(O[Si](C(C)C)(C(C)C)C(C)C)[C@H]5O[C@H]5[C@@H]4[C@H]3",
+            "notes": "Oxidation of a bicyclic alkene to a conjugated enone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78%",
+            "reactant_smiles": "CC(=CCC1(C(=CC(=O)C2=C1OC)[C@H]3C4(C)C(=O)[C@@]5(O[TIPS])O[C@]4[C@H]25))C",
+            "product_smiles": "CC(=CCC1(C(=CC(=O)C2=C1OC)[C@H]3C4(C)C(=O)[C@@]5(O)O[C@]4[C@H]25))C",
+            "notes": "Deprotection of a triisopropylsilyl (TIPS) ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Thiocarbonate formation",
+            "reagents": "NHS, pyridine",
+            "reagent_smiles": "C1(=C(C(=C(C(=C1F)F)OC(=S)Cl)F)F)F",
+            "conditions": "Toluene, 80 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC(=CCC1C2C(C(C)(C)C(O)C13C(=O)OC3(C)CC2C(=O)C=C(OC))C)C",
+            "product_smiles": "CC(=CCC1C2C(C(C)(C)C(OC(=S)OC3=C(F)C(F)=C(F)C(F)=C3F)C13C(=O)OC3(C)CC2C(=O)C=C(OC))C)C",
+            "notes": "Tertiary alcohol is converted to a pentafluorophenyl thiocarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Keck Allylation",
+            "reagents": "air",
+            "reagent_smiles": "C=CC[Sn](CCCC)(CCCC)CCCC.B(CC)3",
+            "conditions": "Benzene, RT",
+            "yield": "56%",
+            "reactant_smiles": "COC1=CC(=O)[C@@]2(CC=C(C)C)[C@H]3C4(C)C[C@@](O4)(C2)[C@@H](OC(=S)OC5=C(F)C(F)=C(F)C(F)=C5F)C3=O",
+            "product_smiles": "COC1=CC(=O)[C@@]2(CC=C(C)C)[C@H]3C4(C)C[C@@](O4)(C2)[C@@H](CC=C)C3=O",
+            "notes": "Keck allylation of an allylic pentafluorophenyl thiocarbonate to install an allyl group. The reaction proceeds with the complex polycyclic core, including the epoxide and two ketone functionalities, remaining intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alpha-silylation of an enone (enolate formation and trapping)",
+            "reagents": "LiTMP, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 to -25 °C",
+            "yield": "91%",
+            "reactant_smiles": "COC1=C(C(C(=O)C23C(C=C)C(C)(C)C(=O)CC2(CC=C(C)C)C3)C=C1)",
+            "product_smiles": "COC1=C(C(C(=O)C23C(C=C)C(C)(C)C(=O)CC2(CC=C(C)C)C3)C([TMS])=C1)",
+            "notes": "Alpha-silylation of an enone with double bond migration.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Metathesis / Rearrangement",
+            "reagents": "HG II cat",
+            "reagent_smiles": "",
+            "conditions": "DCM, 40 °C",
+            "yield": "96%",
+            "reactant_smiles": "CC1(C)(CCC=C)C2CC3C(=O)C([TMS])=C([OMe])C(=O)C3C2(CC=C(C)C)C1",
+            "product_smiles": "CC1(C)(CCC=C(C)C)C2CC3C(=O)C(=C(OC)C([TMS]))C(C(=O)C2)C3C1",
+            "notes": "Intramolecular rearrangement and cyclization catalyzed by Hoveyda-Grubbs II catalyst. The allyl group cyclizes to form a new 6-membered ring and a new isopentenyl group, while the existing bicyclic core undergoes structural changes involving the carbonyls, TMS, and OMe groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Alpha-acylation",
+            "reagents": "LiTMP, i-PrC(O)Cl",
+            "reagent_smiles": "ClC(=O)C(C)C",
+            "conditions": "THF, -78 to -20 °C (for LiTMP), -78 to -5 °C (for i-PrC(O)Cl)",
+            "yield": "62%",
+            "reactant_smiles": "CC(=CCC1(C)C)[C@@H]2C[C@@H]3C(=O)C4[C@H](C2)[C@@H]1C(=O)C(=C4OC)C([TMS])C3",
+            "product_smiles": "CC(=CCC1(C)C)[C@@H]2C[C@@]3(C(=O)C(C)C)C(=O)C4[C@H](C2)[C@@H]1C(=O)C(=C4OC)C([TMS])C3",
+            "notes": "Acylation of a ketone at the alpha-position with isobutyryl chloride using LiTMP as base.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection / Desilylation",
+            "reagents": "TBAF, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "CC(=CC[C@@H]1C[C@@]2(CC=C(C)C)C([OMe])=C([TMS])C(=O)[C@@](C(=O)C(C)C)(C2=O)C1(C)C)C",
+            "product_smiles": "CC(=CCC1CC2(CC=C(C)C)C(=CC(=O)C(C(=O)C(C)C)(C2=O)C1(C)C)[OMe])C",
+            "notes": "Deprotection of a trimethylsilyl (TMS) enol ether using TBAF, resulting in the formation of a conjugated enone system by removing the TMS group and shifting a double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Conjugate Addition / Alkylation",
+            "reagents": "LDA, Li(2-Th)CuCN",
+            "reagent_smiles": "CC(=CCBr)C",
+            "conditions": "THF, -78 to -40 °C, then -78 to -30 °C, then -78 to -35 °C",
+            "yield": "92%",
+            "reactant_smiles": "CC(C)C(=O)C1(C)C2C3C(=O)C=C(OC)C(CC=C(C)C)(C4C3(C)C(=O)C2(O4)C=C(C)C)O1",
+            "product_smiles": "CC(C)C(=O)C1(C)C2C3C(=O)C(OC)(CC=C(C)C)C(CC=C(C)C)(C4C3(C)C(=O)C2(O4)C=C(C)C)O1",
+            "notes": "Cuprate-mediated conjugate addition of a prenyl group to an alpha,beta-unsaturated ketone in a complex polycyclic system, leading to a new prenyl group and shifting of double bond / rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Krapcho Demethylation",
+            "reagents": "LiCl",
+            "reagent_smiles": "",
+            "conditions": "DMSO-d6, 120 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC(C)C(=O)C1(CC=C(C)C)C(=C(C(=O)C2(CC=C(C)C)C(C)(C)OC2C1=O)C(OC)=C(CC=C(C)C))C",
+            "product_smiles": "CC(C)C(=O)C1(CC=C(C)C)C(=C(C(=O)C2(CC=C(C)C)C(C)(C)OC2C1=O)C(O)=C(CC=C(C)C))C",
+            "notes": "Demethylation of enol methyl ether to enol/phenol.",
+            "substeps": []
+        }
+    ]
+}

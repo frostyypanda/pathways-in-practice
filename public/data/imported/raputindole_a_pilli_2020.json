@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "raputindole-a-pilli-2020",
+        "molecule_name": "Raputindole A",
+        "class": "Natural Product",
+        "author": "Pilli",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sandmeyer Iodination",
+            "reagents": "NaNO2, HCl, KI",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "Cc1c([N+](=O)[O-])ccc(N)c1",
+            "product_smiles": "Cc1c([N+](=O)[O-])ccc(I)c1",
+            "notes": "Diazotization of the amine with NaNO2/HCl, followed by reaction with KI to install iodine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Vilsmeier-Haack-like reaction (enamine formation)",
+            "reagents": "DMF",
+            "reagent_smiles": "CN(C)C(OC)OC.C1CCCN1",
+            "conditions": "110 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1c([N+](=O)[O-])cc(I)cc1",
+            "product_smiles": "N1CCCC1/C=C/c2c([N+](=O)[O-])cc(I)cc2",
+            "notes": "Methyl group converted to an enamine via reaction with N,N-dimethylformamide dimethyl acetal (DMFDMA) and pyrrolidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Indole Synthesis (Reductive Cyclization)",
+            "reagents": "TiCl₃, NH₄OAc, H₂O",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1CCN(C1)/C=C/C2=CC=C(C=C2[N+](=O)[O-])I",
+            "product_smiles": "C1=C2C=CNC2=CC(=C1)I",
+            "notes": "Reductive cyclization of an o-nitro-aryl-enamine to form a 5-iodoindole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Protection / N-Silylation",
+            "reagents": "LiHMDS, TIPSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C2C=CNC2=CC(=C1)I",
+            "product_smiles": "[TIPS]N1C=CC2=CC=C(C=C21)I",
+            "notes": "N-protection of 6-iodo-1H-indole with triisopropylsilyl chloride (TIPSCl) using lithium bis(trimethylsilyl)amide (LiHMDS) as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Sonogashira Coupling",
+            "reagents": "Pd(PPh3)2Cl2, CuI, NEt3",
+            "reagent_smiles": "C=CC(C)(O)C#C",
+            "conditions": "40 °C",
+            "yield": "",
+            "reactant_smiles": "IC1=CC=C2C=CN(C2=C1)[TIPS]",
+            "product_smiles": "C=CC(C)(O)C#CC1=CC=C2C=CN(C2=C1)[TIPS]",
+            "notes": "Sonogashira coupling of a 5-iodo-N-TIPS-indole with a 3-methyl-1-penten-4-yn-3-ol to form the corresponding alkyne-substituted indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac₂O, DMAP, pyridine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "C=CC(C)(OH)C#CC1=CC=C2C=CN(C2=C1)[TIPS]",
+            "product_smiles": "C=CC(C)([OAc])C#CC1=CC=C2C=CN(C2=C1)[TIPS]",
+            "notes": "Acetylation of a tertiary alcohol to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Gold-catalyzed cyclization",
+            "reagents": "AuCl(PPh3), AgClO4, NaOMe",
+            "reagent_smiles": "",
+            "conditions": "DCM, sonication, rt",
+            "yield": "85%",
+            "reactant_smiles": "C=CC(C)(C#CC1=CC=C2C=CN([TIPS])C2=C1)OC(C)=O",
+            "product_smiles": "C=CC1(C)CC(=O)C2=C1C=C3C=CN([TIPS])C3=C2",
+            "notes": "Intramolecular cyclization of an enyne with an indole derivative, facilitated by a gold catalyst, leading to the formation of a fused ring system with a ketone and a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Enol Triflate Formation",
+            "reagents": "LiHMDS, PhNTf2",
+            "reagent_smiles": "",
+            "conditions": "THF, -20 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CC1(C)CC(=O)C2=C1C=C3C=CN([TIPS])C3=C2",
+            "product_smiles": "C=CC1(C)C=C(OS(=O)(=O)C(F)(F)F)C2=C1C=C3C=CN([TIPS])C3=C2",
+            "notes": "Ketone undergoes enolization followed by triflation to form an enol triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "85%",
+            "reactant_smiles": "C=CC1(C)C=C(C2=C1C=C3C=CN([TIPS])C3=C2)[TfO]",
+            "product_smiles": "C=CC1(C)C=C(C2=C1C=C3C=CNC3=C2)[TfO]",
+            "notes": "Deprotection of N-TIPS group; reaction occurs in 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd2(dba)3, Cs2CO3, P(o-Tol)3",
+            "reagent_smiles": "[K+].[F-][B-]([F-])([F-])C=C(C)C",
+            "conditions": "THF, H2O, 70 °C",
+            "yield": "69%",
+            "reactant_smiles": "C=CC1(C)C=C(C2=C1C=C3C=CNC3=C2)[OTf]",
+            "product_smiles": "C=CC1(C)C=C(C=C(C)C)C2=C1C=C3C=CNC3=C2",
+            "notes": "Suzuki-Miyaura coupling of an indene triflate with an organoboron reagent to form an alkylated indene derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "Li0, DBB, 2,6-di-t-Bu-phenol",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "37%",
+            "reactant_smiles": "C=CC1(C)C=C(C=C(C)C)C2=C1C=C3C=CNC3=C2",
+            "product_smiles": "C=C[C@@]1(C)C[C@H](C=C(C)C)C2=C1C=C3C=CNC3=C2",
+            "notes": "Reduction of the cyclopentene double bond, generating two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "NaOAc, Pd(OAc)2, nBu4NBr, H2O",
+            "reagent_smiles": "C1=CC2=C(C=C1I)NC=C2",
+            "conditions": "DMAA, 100 °C",
+            "yield": "20%",
+            "reactant_smiles": "C=C[C@]1(C)C[C@H](C=C(C)C)C2=C1C=C3C=CNC3=C2",
+            "product_smiles": "C[C@]1(/C=C/C2=CC(C)=C(C)C=C2)C[C@H](C=C(C)C)C3=C1C=C4C=CNC4=C3",
+            "notes": "Suzuki-Miyaura coupling where a vinyl group reacts with an aryl iodide. A significant inconsistency is present: the drawn reagent is 4-iodoindole, but the drawn product, labeled (+)-Raptindole A, shows a 3,4-dimethylphenyl group coupled to the core via a trans-vinylene bridge. The product SMILES is generated based on the drawn product structure, which contains a 3,4-dimethylphenyl group, not an indole from the reagent. The reactant and reagent SMILES are based on their respective drawn structures.",
+            "substeps": []
+        }
+    ]
+}

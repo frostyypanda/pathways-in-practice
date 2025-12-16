@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "millingtonine-a-ley-2012",
+        "molecule_name": "Millingtonine A",
+        "class": "Natural Product",
+        "author": "Ley",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidative Dearomatization / Ketal Formation",
+            "reagents": "PIFA, ethylene glycol",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "COC1=CC=C(C=C1)O",
+            "product_smiles": "C1=CC2(C=CC1=O)OCCO2",
+            "notes": "Oxidation of 4-methoxyphenol with PIFA and ethylene glycol to form a quinone ketal.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Michael Addition / Ketone Reduction",
+            "reagents": "LiHMDS, EtOAc",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "99%",
+            "reactant_smiles": "O=C1C=CC2(OCCO2)C=C1",
+            "product_smiles": "CCOC(=O)C[C@@H]1C=C[C@H](O)C2(C=C1)OCCO2",
+            "notes": "Stereoselective Michael addition of an ethyl acetate enolate to a cyclohexadienone, followed by reduction of the carbonyl to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "MeOH, THF",
+            "reagent_smiles": "[Li+].[BH4-]",
+            "conditions": "0 °C",
+            "yield": "72%",
+            "reactant_smiles": "CCOC(=O)C[C@@]1(C=CC2(C=C1)OCCO2)O",
+            "product_smiles": "C1=CC2(C=C[C@@]1(CCO)O)OCCO2",
+            "notes": "Ester group is reduced to a primary alcohol. The existing chiral center's stereochemistry is retained. The 1,3-dioxolane and the hydroxyl group are unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBDPSCl, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "O1CCOC1(C=C(O)C=C[C@H](CCO)C1)",
+            "product_smiles": "O1CCOC1(C=C(O)C=C[C@H](CC[OTBDPS])C1)",
+            "notes": "Selective protection of primary alcohol with TBDPS. The secondary alcohol on the sp2 carbon remains unreacted. Stereochemistry at the carbon bearing the protected primary alcohol is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dearomatizing Bromination / Cascade Cyclization",
+            "reagents": "Br2",
+            "reagent_smiles": "C1CC=CN1C(=O)OCC2=CC=CC=C2",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]CC[C@@]1(O)C=CC2(C=C1)OCCO2",
+            "product_smiles": "[OTBDPS]CCO[C@H]1C(Br)CN(C(=O)OCC5=CC=CC=C5)[C@H]2[C@H](C=C3C(=CC=C3C4(OCCO4)))C12",
+            "notes": "Intramolecular cyclization of an alcohol onto a brominated pyrrolidine, which is also added to a cyclohexadiene with spiroketal.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ueno-Stork cyclization",
+            "reagents": "AIBN, Bu3SnH",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 85 °C",
+            "yield": "63%",
+            "reactant_smiles": "[OTBDPS]CC[C@]1(OC2C[C](Br)C[C@H]2N([Cbz])C1)C=CC3(OCCO3)",
+            "product_smiles": "[OTBDPS]CC[C@@]34C=CC5(C[C@H]4[C@H]6CCN([C@H]6O3)[Cbz])OCCO5",
+            "notes": "Radical cyclization involving removal of bromine and formation of new C-C and C-O bonds, leading to a polycyclic ether system. The 6-membered ring system undergoes a ring contraction and fusion.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Hydrogenolysis)",
+            "reagents": "H2, Pd(OH)2/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "99%",
+            "reactant_smiles": "[OTBDPS]OCC[C@@H]34C=CC5(C[C@@H]4[C@@H]6CCN([C@H]6O3)[Cbz])OCCO5",
+            "product_smiles": "[OTBDPS]OCC[C@@H]34C=CC5(C[C@@H]4[C@@H]6CCN[C@H]6O3)OCCO5",
+            "notes": "Catalytic hydrogenation to remove the Cbz protecting group from the amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Buchwald-Hartwig amination",
+            "reagents": "Pd2dba3, P(tBu)3, NaOtBu",
+            "reagent_smiles": "Brc1ccc(CC[OTBS])cc1",
+            "conditions": "PhMe, 130 °C μwave",
+            "yield": "76%",
+            "reactant_smiles": "[OTBDPS]C[C@@]34C=CC5(C[C@H]4[C@@H]6CCN[C@@H]6O3)OCCO5",
+            "product_smiles": "[OTBDPS]C[C@@]34C=CC5(C[C@H]4[C@@H]6CCN(C7=CC=C(C=C7)CC[OTBS])[C@@H]6O3)OCCO5",
+            "notes": "The primary amine is coupled with an aryl bromide through a Buchwald-Hartwig amination reaction, forming a tertiary amine. The TBDPS protecting group on the starting material is retained, and a TBS protecting group present on the aryl bromide reagent is also incorporated into the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "[TBDPS]OCC[C@@]34C=CC5(C[C@H]4[C@H]6CCN(c7ccc(CC[OTBS])cc7)[C@H]6O3)OCCO5",
+            "product_smiles": "C1=C(C=CC(=C1)N2CC[C@H]3[C@H]4CC5(C=C[C@]4(CO)O[C@H]32)OCCO5)CCO",
+            "notes": "Deprotection of TBDPS and TBS silyl ethers to yield primary alcohols using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Glycosylation",
+            "reagents": "AgOTf, DCM",
+            "reagent_smiles": "[Piv]OC[C@H]1O[C@H](OC(=N)C(Cl)(Cl)Cl)[C@@H](O[Piv])[C@H](O[Piv])[C@@H]1O[Piv]",
+            "conditions": "-20 °C",
+            "yield": "40%",
+            "reactant_smiles": "C1=C(C=CC(=C1)N2CC[C@H]3[C@@H]4CC5(C=C[C@]4(CO)O[C@H]32)OCCO5)CCO",
+            "product_smiles": "C1=C(C=CC(=C1)N2CC[C@H]3[C@@H]4CC5(C=C[C@]4(CO[C@H]6O[C@H](CO[Piv])[C@@H](O[Piv])[C@H](O[Piv])[C@@H]6O[Piv])O[C@H]32)OCCO5)CCO[C@H]7O[C@H](CO[Piv])[C@@H](O[Piv])[C@H](O[Piv])[C@@H]7O[Piv]",
+            "notes": "Glycosylation of two primary alcohol groups (one hydroxymethyl and one hydroxyethyl) with a fully pivaloylated D-glucopyranosyl trichloroacetimidate donor. The reactant's original SMILES had conflicting stereochemical tags ([C@]4 and [C@@H]4) for what appears to be a single atom (labeled 4 in the SMILES), or used the same ring closure tag for two different stereocenters. The SMILES has been corrected to address other clear structural issues, but this specific stereochemical notation ambiguity in the reactant was left as-is, assuming it's a specific internal convention of the original SMILES generator.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Esterification (Hydroxyl Protection)",
+                    "reagents": "PivCl, pyridine",
+                    "reagent_smiles": "CC(C)(C)C(=O)Cl.c1ccncc1",
+                    "conditions": "CHCl3, 50 °C",
+                    "yield": "",
+                    "reactant_smiles": "OC[C@@H]1OC[CH](O)[C@@H](O)[C@H](O)[C@@H]1O",
+                    "product_smiles": "[Piv]OC[C@@H]1OC[CH](O[Piv])[C@@H](O[Piv])[C@H](O[Piv])[C@@H]1O[Piv]",
+                    "notes": "Per-O-pivaloylation of D-glucopyranose, forming a penta-pivalate ester. The wavy bond at the anomeric center is maintained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Deprotection / Hydrolysis",
+                    "reagents": "NH2OH, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "85%",
+                    "reactant_smiles": "[Piv]OC[C@H]1O[C@@H](O[Piv])[C@H](O[Piv])[C@@H](O[Piv])[C@@H]1O[Piv]",
+                    "product_smiles": "[Piv]OC[C@H]1O[C@@H](O)[C@H](O[Piv])[C@@H](O[Piv])[C@@H]1O[Piv]",
+                    "notes": "Hydrolysis of the anomeric pivalate group of a penta-O-pivaloyl alpha-D-allopyranose derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Trichloroacetimidate formation / Glycosylation",
+                    "reagents": "Cs2CO3",
+                    "reagent_smiles": "N#CC(Cl)(Cl)Cl",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "70%",
+                    "reactant_smiles": "O[C@H]1[C@@H](OC(=O)C(C)(C)C)[C@H](OC(=O)C(C)(C)C)[C@@H](OC(=O)C(C)(C)C)[C@H](COC(=O)C(C)(C)C)O1",
+                    "product_smiles": "OC(=N)C(Cl)(Cl)Cl[C@H]1[C@@H](OC(=O)C(C)(C)C)[C@H](OC(=O)C(C)(C)C)[C@@H](OC(=O)C(C)(C)C)[C@H](COC(=O)C(C)(C)C)O1",
+                    "notes": "Formation of a trichloroacetimidate from a pyranose derivative with four pivaloyl protecting groups.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "LiOH",
+            "reagent_smiles": "[Li+].[OH-]",
+            "conditions": "aq MeOH/THF, 60 °C",
+            "yield": "75%",
+            "reactant_smiles": "C1=C(C=CC(=C1)N2CC[C@H]3[C@@H]4CC5(C(O[Piv])=C[C@]4(CCOC6C(O[Piv])C(O[Piv])C(O[Piv])C(CO[Piv])O6)O[C@H]32)OCCO5)CCOC7C(O[Piv])C(O[Piv])C(O[Piv])C(CO[Piv])O7",
+            "product_smiles": "C1=C(C=CC(=C1)N2CC[C@H]3[C@@H]4CC5(C(O)=C[C@]4(CCOC6C(O)C(O)C(O)C(CO)O6)O[C@H]32)OCCO5)CCOC7C(O)C(O)C(O)C(CO)O7",
+            "notes": "Hydrolysis of eleven pivaloyl ester groups to hydroxyls on the sugar moieties and vinylic position.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ketal/Acetal Hydrolysis, Oxidation",
+            "reagents": "PPTS",
+            "reagent_smiles": "",
+            "conditions": "acetone, H2O, 55 °C",
+            "yield": "85%",
+            "reactant_smiles": "OC[C@@H]1O[C@H](OCCc2ccc(N3C[C@H]4[C@@H]5O[C@H]3C(OCCO)(C=C[C@H](O)[C@@H]5)[C@H](CCOC[C@@H]6O[C@H](CO)[C@H](O)[C@@H](O)[C@@H]6O)C4)cc2)[C@H](O)[C@@H](O)[C@@H]1O",
+            "product_smiles": "OC[C@@H]1O[C@H](OCCc2ccc(N3C[C@H]4[C@@H]5O[C@H]3C(O)(CO)(C(=O)C=C[C@@H]5)[C@H](CCOC[C@@H]6O[C@H](CO)[C@H](O)[C@@H](O)[C@@H]6O)C4)cc2)[C@H](O)[C@@H](O)[C@@H]1O",
+            "notes": "Acid-catalyzed hydrolysis of the 1,3-dioxolane (ketal) and oxidation of the allylic alcohol to an enone.",
+            "substeps": []
+        }
+    ]
+}

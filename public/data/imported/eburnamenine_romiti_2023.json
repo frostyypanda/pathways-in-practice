@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "eburnamenine-romiti-2023",
+        "molecule_name": "Eburnamenine",
+        "class": "Natural Product",
+        "author": "Romiti",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "LDA, HMPA",
+            "reagent_smiles": "ICCCCl",
+            "conditions": "THF, -78 °C",
+            "yield": "71%",
+            "reactant_smiles": "C1CC(=O)OC1",
+            "product_smiles": "O=C1OC(CCCCl)CC1",
+            "notes": "Alpha-alkylation of gamma-butyrolactone with 1-chloro-3-iodopropane.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "TMSCI, LDA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1C(CCCCl)CCOC1",
+            "product_smiles": "[OTMS]C1=C(CCCCl)CCO1",
+            "notes": "Deprotonation of a γ-lactone at the α-position with LDA, followed by trapping with TMSCl to form a silyl enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bromolactonization / Oxidative Cyclization",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "[OTMS]C1=C(CCCCl)CCO1",
+            "product_smiles": "O=C1C(Br)(CCCCl)CC1O",
+            "notes": "Transformation of an enol silyl ether to a brominated gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nickel-catalyzed C-C bond formation",
+            "reagents": "NiCl2·glyme",
+            "reagent_smiles": "CC(C)(C)[C@H]1COC(=N1)C2=NC=C(C=C2)C(F)(F)F.[Zr](Cl)(c1cccc1)(c2cccc2)C/C=C/CCC",
+            "conditions": "dioxane",
+            "yield": "25%",
+            "reactant_smiles": "BrC1(CCOC1=O)CCCCl",
+            "product_smiles": "CCCC/C=C/[C@]1(CCCCl)CCOC1=O",
+            "notes": "Alkylation of an alpha-bromo-gamma-lactone with an organozirconium reagent, forming a new quaternary chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "HG II, ethylene",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "78%",
+            "reactant_smiles": "CCCC/C=C/[C@]1(CCCCl)CCOC1=O",
+            "product_smiles": "C=C[C@]1(CCCCl)CCOC1=O",
+            "notes": "Cross-metathesis with ethylene, replacing the but-1-enyl group with a vinyl group. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Cyclization / Lactamization",
+            "reagents": "NaI, Et3N",
+            "reagent_smiles": "C1=CC2=C(C=C1)NC=C2CCN",
+            "conditions": "toluene, 110 °C",
+            "yield": "87%",
+            "reactant_smiles": "C=C[C@]1(CCCCl)C(=O)OCC1",
+            "product_smiles": "O=C1N(CC2=CNC3=C2C=CC=C3)CC[C@@]1(C=C)CCO",
+            "notes": "Complex intramolecular cyclization involving tryptamine and a chloropropyl-substituted spiro-lactone. The amine attacks the chloropropyl chain, forming a new 6-membered ring, and then the intermediate attacks the lactone carbonyl. The lactone opens, and its oxygen is converted to a hydroxyl group, while the lactone carbonyl becomes part of a new lactam ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "CC(=O)OC(=O)C.c1ccncc1",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "C=C[C@]1(CCCN(CC2=CNC3=CC=CC=C23)C1=O)CCO",
+            "product_smiles": "C=C[C@]1(CCCN(CC2=CNC3=C2C=CC=C3)C1=O)CCOC(=O)C",
+            "notes": "Acetylation of the primary alcohol group with acetic anhydride in the presence of pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Lactam reduction, Intramolecular cyclization",
+            "reagents": "Tf2O, 2-chloropyridine, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 to 0 °C then MeOH, 0 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "O=C1N(CC2=CNC3=C2C=CC=C3)C[C@@](C=C)(CCOC(=O)C)CC1",
+            "product_smiles": "C=C[C@@]1(CCN2CC3=C([C@H]12)NC4=C3C=CC=C4)CCOC(=O)C",
+            "notes": "Reduction of a lactam to an amine followed by intramolecular cyclization of the indole moiety to form an Eburnamenine skeleton.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[LiH4Al]",
+            "conditions": "THF, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "CC(=O)OCC[C@@]1(C=C)[C@H]2CCCN3CCC4=C(C3[C@@H]2)NC5=CC=CC=C54",
+            "product_smiles": "OCC[C@@]1(C=C)[C@H]2CCCN3CCC4=C(C3[C@@H]2)NC5=CC=CC=C54",
+            "notes": "Reduction of an acetate ester to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation, Lactamization",
+            "reagents": "TPAP, NMO, 4Å MS",
+            "reagent_smiles": "",
+            "conditions": "MeCN, CH₂Cl₂",
+            "yield": "74%",
+            "reactant_smiles": "C=C[C@]1(CCO)CCCN2CCC3=C([C@H]12)NC4=C3C=CC=C4",
+            "product_smiles": "C=C[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2",
+            "notes": "Oxidation of a primary alcohol to an amide/lactam via intramolecular cyclization onto the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "98%",
+            "reactant_smiles": "C=C[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2",
+            "product_smiles": "CC[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2",
+            "notes": "Hydrogenation of the terminal vinyl group to an ethyl group. Stereochemistry at existing chiral centers is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "CC(C)C[AlH]CC(C)C",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "76%",
+            "reactant_smiles": "CC[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2",
+            "product_smiles": "CC[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)[C@H](C2)O",
+            "notes": "DIBAL reduction of a lactam to a hemiaminal/alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "CC[C@@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)[C@H](C2)O",
+            "product_smiles": "CC[C@@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C=C2",
+            "notes": "Dehydration of a secondary alcohol to form an alkene, likely via mesylate formation and subsequent elimination.",
+            "substeps": []
+        }
+    ]
+}

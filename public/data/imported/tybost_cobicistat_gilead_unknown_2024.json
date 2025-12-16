@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tybost-cobicistat-gilead-unknown-2024",
+        "molecule_name": "Tybost (Cobicistat Gilead)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Lactonization / Cyclization",
+            "reagents": "",
+            "reagent_smiles": "C(C(=O)O)Br",
+            "conditions": "H2O, i-PrOH, AcOH",
+            "yield": "",
+            "reactant_smiles": "CSCC[C@@H](C(=O)O)N",
+            "product_smiles": "C1COC(=O)[C@H]1N",
+            "notes": "Intramolecular lactonization of L-methionine, forming a gamma-lactone. The methylthio group is eliminated, and the carboxylic acid oxygen cyclizes onto the gamma-carbon. The stereochemistry at the alpha-carbon is inverted from (S) in the reactant to (R) in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Salt Formation",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 60 °C",
+            "yield": "70%",
+            "reactant_smiles": "C1COC(=O)[C@H]1N",
+            "product_smiles": "C1COC(=O)[C@H]1N.Cl",
+            "notes": "Formation of the amine hydrochloride salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide Coupling",
+            "reagents": "DIPEA, CH2Cl2, CDI",
+            "reagent_smiles": "CC(C)c1ncc(C[NH]C)s1",
+            "conditions": "10 °C to 25 °C",
+            "yield": "91%",
+            "reactant_smiles": "C1COC(=O)[C@H]1N.Cl",
+            "product_smiles": "CC(C)c1ncc(CN(C)CC(=O)N[C@H]2CCOC2=O)s1",
+            "notes": "Amide bond formation between a secondary amine and an amino-lactone, forming the tertiary amine linker and an amide bond, yielding Cobisistat.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactone Ring Opening / Iodination / Esterification",
+            "reagents": "TMSI",
+            "reagent_smiles": "I[Si](C)(C)C",
+            "conditions": "EtOH, CH2Cl2, 10 °C to 22 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)C1=NC(=CS1)CN(C)CC(=O)N[C@@H]2CCOC2=O",
+            "product_smiles": "CCOC(=O)[C@@H](CCI)NC(=O)CN(C)CC1=CSC(=N1)C(C)C",
+            "notes": "The lactone ring is opened, forming an ethyl ester at the carbonyl carbon and replacing the ring oxygen with an iodide on the alkyl chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "",
+            "reagent_smiles": "C1COCCN1",
+            "conditions": "10 °C to 22 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H](CCI)NC(=O)CN(C)CC1=CSC(=N1)C(C)C",
+            "product_smiles": "CCOC(=O)[C@@H](CCN1CCOCC1)NC(=O)CN(C)CC2=CSC(=N2)C(C)C",
+            "notes": "Nucleophilic substitution of the iodide on the reactant by morpholine to form the corresponding amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Salt formation",
+            "reagents": "oxalic acid, acetone",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "71%",
+            "reactant_smiles": "CCOC(=O)[C@H](CCN1CCOCC1)NC(=O)CN(C)Cc1csc(C(C)C)n1",
+            "product_smiles": "CCOC(=O)[C@H](CCN1CCOCC1)NC(=O)CN(C)Cc1csc(C(C)C)n1.O=C(O)C(=O)O",
+            "notes": "Formation of the oxalic acid salt of the starting material.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "KHCO3 (aq), CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H](CCN1CCOCC1)NC(=O)CN(C)CC2=CSC(=N2)C(C)C.O=C(O)C(=O)O",
+            "product_smiles": "CC(C)C1=NC(=CS1)CN(C)CC(=O)N[C@@H](CCN2CCOCC2)C(=O)O",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using potassium bicarbonate. Oxalic acid (impurity/byproduct) is removed.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EDC·HCl, HOBT",
+            "reagent_smiles": "C1=CC=C(C=C1)C[C@H](CC[C@H](CC2=CC=CC=C2)NC(=O)OC3=CN=CS3)N",
+            "conditions": "CH2Cl2, -18 °C to -20 °C",
+            "yield": "76%",
+            "reactant_smiles": "CC(C)C1=NC(=CS1)CN(C)CC(=O)N[C@H](CCN2CCOCC2)C(=O)O",
+            "product_smiles": "CC(C)C1=NC(=CS1)CN(C)CC(=O)N[C@H](CCN2CCOCC2)C(=O)N[C@H](CC[C@H](CC3=CC=CC=C3)NC(=O)OC4=CN=CS4)CC5=CC=CC=C5",
+            "notes": "Amide coupling between a carboxylic acid and an amine using EDC·HCl and HOBT to form Cobicistat.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Sulfonamide Formation",
+                    "reagents": "DIPEA",
+                    "reagent_smiles": "CN(C)S(=O)(=O)Cl",
+                    "conditions": "CH2Cl2, -10 °C",
+                    "yield": "77%",
+                    "reactant_smiles": "C1=CC=C(C=C1)C[C@H]2CN2",
+                    "product_smiles": "CN(C)S(=O)(=O)N1C[C@H]1CC2=CC=CC=C2",
+                    "notes": "Nucleophilic attack of aziridine nitrogen on sulfonyl chloride, followed by deprotonation by DIPEA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Dimerization / Ring-opening",
+                    "reagents": "TMP, n-BuLi",
+                    "reagent_smiles": "",
+                    "conditions": "THF/heptane, -10 °C",
+                    "yield": "72%",
+                    "reactant_smiles": "CN(C)S(=O)(=O)N1C[C@@H](CC2=CC=CC=C2)C1",
+                    "product_smiles": "CN(C)S(=O)(=O)N[C@@H](CC1=CC=CC=C1)/C=C/[C@H](NS(=O)(=O)N(C)C)CC2=CC=CC=C2",
+                    "notes": "Dimerization of N-dimethylsulfonyl aziridine, involving ring opening and formation of a trans alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Deprotection",
+                    "reagents": "",
+                    "reagent_smiles": "C(CN)CN",
+                    "conditions": "110 °C",
+                    "yield": "100%",
+                    "reactant_smiles": "CN(C)S(=O)(=O)N[C@@H](/C=C/[C@H](CC1=CC=CC=C1)NS(=O)(=O)N(C)C)CC2=CC=CC=C2",
+                    "product_smiles": "C1=CC=C(C=C1)C[C@H](/C=C/[C@H](CC2=CC=CC=C2)N)N",
+                    "notes": "Deprotection of two N,N-dimethylsulfonamide protecting groups to primary amines, using 1,3-diaminopropane.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Catalytic Hydrogenation",
+                    "reagents": "H2, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, 22 °C",
+                    "yield": "100%",
+                    "reactant_smiles": "C1=CC=C(C=C1)C[C@H](N)/C=C\\[C@H](N)CC2=CC=CC=C2",
+                    "product_smiles": "C1=CC=C(C=C1)C[C@H](CC[C@H](CC2=CC=CC=C2)N)N",
+                    "notes": "Reduction of an internal trans-alkene to an alkane with retention of stereochemistry at the chiral centers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Selective Carbamoylation",
+                    "reagents": "DIPEA",
+                    "reagent_smiles": "C1=CC(=CC=C1[N+](=O)[O-])OC(=O)OCC2=CN=CS2",
+                    "conditions": "CH2Cl2",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C=C1)C[C@H](N)CC[C@H](N)CC2=CC=CC=C2",
+                    "product_smiles": "C1=CC=C(C=C1)C[C@H](NC(=O)OC2=CN=CS2)CC[C@H](N)CC3=CC=CC=C3",
+                    "notes": "One of the two primary amines is selectively protected/carbamoylated using an activated carbonate. The (S) stereochemistry is retained at both chiral centers.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

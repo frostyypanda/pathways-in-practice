@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rhazinilam-blanc-2019",
+        "molecule_name": "Rhazinilam",
+        "class": "Natural Product",
+        "author": "Blanc",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "ICCC/C=C(\\C)CCC(=O)OC(C)(C)C",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CN[Ts]",
+            "product_smiles": "COC(=O)CN([Ts])CCC/C=C(\\C)CCC(=O)OC(C)(C)C",
+            "notes": "N-alkylation of methyl N-tosylglycinate with an iodo-alkene under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Weinreb Amide Formation, Grignard Reaction",
+            "reagents": "",
+            "reagent_smiles": "[Cl-].[N+H2](C)OC.CC(C)[Mg]Cl",
+            "conditions": "THF, -20 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)CCC(CC)=C(C)CCN([Ts])CC(=O)OC",
+            "product_smiles": "CC(C)(C)C(=O)CCC(CC)=C(C)CCN([Ts])CC(=O)N(C)OC",
+            "notes": "The methyl ester is converted to a Weinreb amide. The tert-butyl ester is converted to a ketone. There is a discrepancy between the reagent `iPrMgCl` (isopropylmagnesium chloride) and the product structure, which shows a `tert-butyl ketone` (suggesting `tBuMgCl` or similar). The SMILES for the product are generated based on the drawn structure in the screenshot, including the tert-butyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Addition / Ketone to Ester Conversion",
+            "reagents": "THF",
+            "reagent_smiles": "C#CMgBr",
+            "conditions": "-20 °C to 0 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C(\\CCCN(CC(=O)N(C)OC)[Ts])/CCC(=O)C(C)(C)C",
+            "product_smiles": "C/C=C(\\CCCN(CC(=O)C#C)[Ts])/CCC(=O)OC(C)(C)C",
+            "notes": "Ethynyl Grignard reagent adds to the Weinreb amide to form an ethynyl ketone. Simultaneously, the tert-butyl ketone is converted to a tert-butyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Gold-catalyzed cyclization / Intramolecular hydroamination",
+            "reagents": "JohnPhosAuNTf₂",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "89%",
+            "reactant_smiles": "CC(C)(C)OC(=O)CCC/C=C(C)/CCCN([Ts])CC#C",
+            "product_smiles": "CC(C)(C)OC(=O)CCC/C=C(C)/CCCN1C(OTs)=CC=C1",
+            "notes": "Intramolecular Gold(I)-catalyzed reaction of a N-propargyl-N-tosyl-alkene leading to the formation of a 2-tosyloxypyrrole.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "PdCl2(XPhos)2",
+            "reagent_smiles": "Nc1ccccc1B(O)O",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "CC(=C/CCCN1C=CC(=C1)[OTs])CCC(=O)OC(C)(C)C",
+            "product_smiles": "CC(=C/CCCN1C=CC(=C1)c2ccccc2N)CCC(=O)OC(C)(C)C",
+            "notes": "Palladium-catalyzed coupling of a pyrrole tosylate with 2-aminophenylboronic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrolysis of tert-butyl ester",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O/MeOH/THF",
+            "yield": "",
+            "reactant_smiles": "C/C=C(\\\\CCCN1C=CC(=C1)C2=CC=CC=C2N)/CCC(=O)OC(C)(C)C",
+            "product_smiles": "C/C=C(\\\\CCCN1C=CC(=C1)C2=CC=CC=C2N)/CCC(=O)O",
+            "notes": "Hydrolysis of a tert-butyl ester to a carboxylic acid using sodium hydroxide in a mixture of water, methanol, and THF. The stereochemistry of the double bond is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Formation, Macrocyclization",
+            "reagents": "Mukaiyama's reagent, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "toluene, rt",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "CC/C(=C/CCC(=O)O)/CCCN1C=CC(=C1)C2=CC=CC=C2[NH2]",
+            "product_smiles": "C/C=C\\1/CCCN2C=CC(=C2)C3=C(C=CC=C3)NC(=O)CC1",
+            "notes": "Intramolecular amide formation (macrocyclization) between a carboxylic acid and an aniline. The reaction proceeds with a change in alkene stereochemistry from E (reactant) to Z (product) as depicted in the structures.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "Pd(OAc)2, O2",
+            "reagent_smiles": "",
+            "conditions": "dioxane/AcOH/DMSO, 100 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C\\1/CCCN2C=CC(=C2)C3=C(C=CC=C3)NC(=O)CC1",
+            "product_smiles": "C=CC12CCCC(=O)NC3=C(C=CC=C3)C4=C1N(CCC2)C=C4",
+            "notes": "Intramolecular oxidative cyclization involving an alkene, a pyrrole, and an amide, catalyzed by palladium acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "33%",
+            "reactant_smiles": "C=CC1(CCCC(=O)NC2=CC=CC=C2C1)C3=CN=C4CCC1N3C4",
+            "product_smiles": "CCC1(CCCC(=O)NC2=CC=CC=C2C1)C3=CN=C4CCC1N3C4",
+            "notes": "Hydrogenation of alkene; 33% over 2 steps.",
+            "substeps": []
+        }
+    ]
+}

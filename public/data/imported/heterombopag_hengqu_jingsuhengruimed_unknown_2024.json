@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "heterombopag-hengqu-jingsuhengruimed-unknown-2024",
+        "molecule_name": "Heterombopag (Hengqu JingsuHengruiMed)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Diazotization",
+            "reagents": "HCl, NaNO2",
+            "reagent_smiles": "",
+            "conditions": "H2O",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2C(=C1)NC(=O)O2)N",
+            "product_smiles": "C1=CC(=C2C(=C1)NC(=O)O2)[N+]#N.[Cl-]",
+            "notes": "Conversion of an aromatic amine to a diazonium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Diazonium Coupling",
+            "reagents": "CuCl2",
+            "reagent_smiles": "C1=COC(=C1)C(=O)O",
+            "conditions": "acetone",
+            "yield": "55% (2 steps)",
+            "reactant_smiles": "C1=CC(=C2C(=C1)NC(=O)O2)[N+]#N.[Cl-]",
+            "product_smiles": "C1=CC(=C2C(=C1)NC(=O)O2)C3=CC=C(C(=O)O)O3",
+            "notes": "Diazonium salt reacts with furan-2-carboxylic acid to form a coupled product, likely a Sandmeyer-type arylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis, Decarboxylation",
+            "reagents": "NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "C1=CC(=C2C(=C1)NC(=O)O2)C3=CC=C(C(=O)O)O3",
+            "product_smiles": "C1=CC(=C(C(=C1)N)O)C2=CC=C(C(=O)O)O2",
+            "notes": "Hydrolysis of the benzoxazolone ring to form an aminophenol, followed by decarboxylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Diazotization",
+            "reagents": "HCl, NaNO2",
+            "reagent_smiles": "",
+            "conditions": "H2O",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1ccc(o1)c2c(N)c(O)ccc2",
+            "product_smiles": "O=C(O)c1ccc(o1)c2c([N+]#N)c(O)ccc2.[Cl-]",
+            "notes": "Diazotization of the amino group to form a diazonium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Azo Coupling",
+            "reagents": "NaOH",
+            "reagent_smiles": "CC1=NN(C2=CC3=C(CCCC3)C=C2)C(=C1)O",
+            "conditions": "H2O",
+            "yield": "",
+            "reactant_smiles": "[N+]#Nc1c(O)c(c2oc(C(=O)O)cc2)ccc1.[Cl-]",
+            "product_smiles": "CC1=NN(C2=CC3=C(CCCC3)C=C2)C(=O)C1N=Nc4c(O)c(c5oc(C(=O)O)cc5)ccc4",
+            "notes": "Diazonium salt undergoes azo coupling with a 5-hydroxypyrazole derivative.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Diazotization",
+                    "reagents": "HCl, NaNO2",
+                    "reagent_smiles": "",
+                    "conditions": "H2O",
+                    "yield": "",
+                    "reactant_smiles": "C1CCC2=CC(=CC=C2C1)N",
+                    "product_smiles": "C1CCC2=CC(=CC=C2C1)[N+]#N.[Cl-]",
+                    "notes": "Aromatic primary amine reacts with sodium nitrite and HCl to form an aromatic diazonium chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Reduction (Diazonium to Hydrazine)",
+                    "reagents": "SnCl₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "54%",
+                    "reactant_smiles": "C1CCC2=CC(=[N+]#N)C=C2C1.[Cl-]",
+                    "product_smiles": "C1CCC2=CC(=CC=C2C1)NN",
+                    "notes": "Reduction of an aromatic diazonium salt to an arylhydrazine using tin(II) chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Knorr Pyrazole Synthesis (or condensation to pyrazole)",
+                    "reagents": "ethyl acetoacetate",
+                    "reagent_smiles": "",
+                    "conditions": "EtOAc",
+                    "yield": "81%",
+                    "reactant_smiles": "C1CCC2=CC(=CC=C2C1)NN",
+                    "product_smiles": "CC1=C(O)C=NN1C2=CC(=CC=C2C1)",
+                    "notes": "Condensation of 5,6,7,8-tetrahydronaphthalen-2-ylhydrazine with ethyl acetoacetate to form a 1-substituted-5-methyl-1H-pyrazol-3-ol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Salt Formation",
+            "reagents": "ethanolamine",
+            "reagent_smiles": "",
+            "conditions": "THF, EtOH",
+            "yield": "74% (3 steps)",
+            "reactant_smiles": "CC1=NN(C2=CC3=C(CCCC3)C=C2)C(=O)C1N=NC4=C(O)C(=CC=C4)C5=CC=C(C(=O)O)O5",
+            "product_smiles": "CC1=NN(C2=CC3=C(CCCC3)C=C2)C(=O)C1N=NC4=C([O-])C(=CC=C4)C5=CC=C(C(=O)[O-])O5.[NH3+]CC(O).[NH3+]CC(O)",
+            "notes": "The carboxylic acid and phenolic hydroxyl groups of the reactant form a di-salt with two equivalents of ethanolamine.",
+            "substeps": []
+        }
+    ]
+}

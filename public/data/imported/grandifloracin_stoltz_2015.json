@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "grandifloracin-stoltz-2015",
+        "molecule_name": "Grandifloracin",
+        "class": "Natural Product",
+        "author": "Stoltz",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic Biotransformation / Hydroxylation / Dearomatization",
+            "reagents": "R. eutrophus B9",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)C(=O)[O-].[Na+]",
+            "product_smiles": "O=C(O)[C@@]1(O)C=C[C@@H](O)C=C1",
+            "notes": "Sodium benzoate is converted to a 1,4-cyclohexadiene carboxylic acid with two hydroxyl groups, involving dearomatization and stereoselective hydroxylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "TMSCHN₂",
+            "reagent_smiles": "C[Si](C)(C)C=[N+]=[N-]",
+            "conditions": "MeOH, benzene",
+            "yield": "90%",
+            "reactant_smiles": "O=C(O)[C@@]1(O)C=CC([C@H](O))C=C1",
+            "product_smiles": "COC(=O)[C@@]1(C=CC=C[C@H]1O)O",
+            "notes": "Methylation of a carboxylic acid to a methyl ester using trimethylsilyldiazomethane (TMSCHN₂).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Organometallic Complexation",
+            "reagents": "Fe2(CO)9",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "77%",
+            "reactant_smiles": "COC(=O)[C@@]1(C=CC=C[C@H]1O)O",
+            "product_smiles": "COC(=O)[C@@]1(C=CC=C[C@H]1O)O.[Fe](C#O)(C#O)(C#O)",
+            "notes": "Formation of an η4-diene iron tricarbonyl complex. The haptic bonding of the Fe(CO)3 moiety to the diene is represented by a dot-separated fragment due to limitations of standard linear SMILES for such complexes.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBALH",
+            "reagent_smiles": "",
+            "conditions": "THF, CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[Fe](CO)(CO)(CO).C1=CC=C[C@@H](O)[C@@](O)(C(=O)OC)C1",
+            "product_smiles": "[Fe](CO)(CO)(CO).C1=CC=C[C@@H](O)[C@@](O)(CO)C1",
+            "notes": "Reduction of a methyl ester to a primary alcohol using DIBALH, while preserving the η4-iron tricarbonyl complex and the stereochemistry of the chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Esterification (Benzoylation)",
+            "reagents": "BzCl, collidine",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "57%",
+            "reactant_smiles": "[Fe]1(C#O)(C#O)(C#O)C2=C[C@@H](O)[C@](CO)(O)C=C21",
+            "product_smiles": "[Fe]1(C#O)(C#O)(C#O)C2=C[C@@H](O)[C@](C[OBz])(O)C=C21",
+            "notes": "Selective benzoylation of the primary alcohol group in an iron tricarbonyl-cyclohexadiene complex.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2, 4A MS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "78%",
+            "reactant_smiles": "[Fe](C#O)(C#O)(C#O).C1=C[C@H](O)[C@@H](O)[C@H]([CH2]O[Bz])C=C1",
+            "product_smiles": "[Fe](C#O)(C#O)(C#O).O=C1[C@@H](O)[C@H]([CH2]O[Bz])C=CC=C1",
+            "notes": "Oxidation of a secondary alcohol (as part of an Fe(CO)3 complex of a 1,4-cyclohexadiene) to a ketone, resulting in an Fe(CO)3 complex of a 1,3-dienone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Demetallation / Rearrangement",
+            "reagents": "CAN",
+            "reagent_smiles": "[NH4+].[NH4+].[Ce+4].[O-][N+]([O-])=O.[O-][N+]([O-])=O.[O-][N+]([O-])=O.[O-][N+]([O-])=O.[O-][N+]([O-])=O.[O-][N+]([O-])=O.CC(=O)C",
+            "conditions": "acetone, 0 °C",
+            "yield": "34%",
+            "reactant_smiles": "O=C1C=C[C@](O)(CO[OBz])C=C1",
+            "product_smiles": "C1CC2(C3C(=O)C=CC4(C(O)C(C[OBz])C3C(O)C42)C=C1)O[Bz]",
+            "notes": "Oxidative demetallation of the Fe(CO)3-diene complex leading to the polycyclic structure of (+)-Grandifloracin via rearrangement. Stereochemistry is preserved/established at multiple centers.",
+            "substeps": []
+        }
+    ]
+}

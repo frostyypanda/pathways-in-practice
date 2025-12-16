@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hamacanthin-a-jiang-2002",
+        "molecule_name": "Hamacanthin A",
+        "class": "Natural Product",
+        "author": "Jiang",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Vilsmeier Haack formylation",
+            "reagents": "POCl3, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC(=CC2=C1C=CN2)Br",
+            "product_smiles": "C1=CC2=C(C=C1Br)NC=C2C=O",
+            "notes": "Formylation of 5-bromo-1H-indole to 5-bromo-1H-indole-3-carbaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Tosylation",
+            "reagents": "TsCl, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "C1=CC2=C(C=C1Br)NC=C2C=O",
+            "product_smiles": "C1=CC2=C(C=C1Br)N(C=C2C=O)[Ts]",
+            "notes": "N-tosylation of 5-bromoindole-3-carbaldehyde to form N-tosyl-5-bromoindole-3-carbaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Wittig olefination",
+            "reagents": "PPh3CH2",
+            "reagent_smiles": "C=[P+](c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "THF, -78°C",
+            "yield": "90%",
+            "reactant_smiles": "O=CC1=CN([Ts])C2=C1C=CC(Br)=C2",
+            "product_smiles": "C=CC1=CN([Ts])C2=C1C=CC(Br)=C2",
+            "notes": "Wittig reaction of an indole-3-carbaldehyde to form a vinyl indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sharpless asymmetric aminohydroxylation",
+            "reagents": "Boc-N-Cl, K2OsO2(OH)2, (DHQ)2PHAL",
+            "reagent_smiles": "",
+            "conditions": "PrOH/H2O",
+            "yield": "65%",
+            "reactant_smiles": "C=Cc1cn([Ts])c2ccc(Br)cc12",
+            "product_smiles": "[Boc]N[C@@H](CO)c1cn([Ts])c2ccc(Br)cc12",
+            "notes": "Conversion of an olefin (vinyl group) to a chiral aminohydroxyl group at C3 of a 5-bromo-N-tosylindole. The reaction introduces an N-Boc protected amine and a hydroxyl group, with (S) stereochemistry at the new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, DMAP",
+            "reagent_smiles": "ClS(=O)(=O)C1=CC=C(C)C=C1.CN(C)C1=CC=NC=C1",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "N1(S(=O)(=O)C2=CC=C(C)C=C2)C=C(C[C@H](NC(=O)OC(C)(C)C)CO)C3=C1C=CC(Br)=C3",
+            "product_smiles": "N1(S(=O)(=O)C2=CC=C(C)C=C2)C=C(C[C@H](NC(=O)OC(C)(C)C)COS(=O)(=O)C4=CC=C(C)C=C4)C3=C1C=CC(Br)=C3",
+            "notes": "Tosylation of a primary alcohol to form a primary tosylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaN₃",
+            "reagent_smiles": "[Na+].[N-]=[N+]=N",
+            "conditions": "DMF",
+            "yield": "88%",
+            "reactant_smiles": "Brc1ccc2c(c1)c([C@H](N[Boc])C[OTs])cn2[Ts]",
+            "product_smiles": "Brc1ccc2c(c1)c([C@H](N[Boc])C[N-]=[N+]=N)cn2[Ts]",
+            "notes": "Azide substitution of tosylate. Stereochemistry at the chiral center is retained as the substitution occurs at the primary carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "BrC1=CC2=C(C=C1)N([Ts])C=C2[C@@H](N[Boc])C[N-]=[N+]=N",
+            "product_smiles": "BrC1=CC2=C(C=C1)N([Ts])C=C2[C@@H](N)C[N-]=[N+]=N",
+            "notes": "Deprotection of Boc-protected amine to free amine, catalyzed by trifluoroacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Formation / Acylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "Brc1ccc2[nH]c(C(=O)C(=O)Cl)c2c1",
+            "conditions": "DMF, rt",
+            "yield": "85%",
+            "reactant_smiles": "Brc1ccc2c(c1)cn(c2[C@H](N)CN=[N+]=[N-])[Ts]",
+            "product_smiles": "Brc1ccc2[nH]c(C(=O)C(=O)N[C@H](CN=[N+]=[N-])c3cn([Ts])c4c3ccc(Br)c4)c2c1",
+            "notes": "Acylation of a primary amine with an activated oxalate (acid chloride) to form a diamide product.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Staudinger-Aza-Wittig Cyclization",
+            "reagents": "Bu3P",
+            "reagent_smiles": "",
+            "conditions": "toluene, 100 °C",
+            "yield": "94%",
+            "reactant_smiles": "BrC1=CC=C2NC=C2C(=O)C(=O)N[C@H](CC[N-]=[N+]=[N])C3=C[N]([Ts])C4=CC=C(Br)C=C43",
+            "product_smiles": "BrC1=CC=C2NC=C2C3=NC[C@H](C4=C[N]([Ts])C5=CC=C(Br)C=C54)NC3=O",
+            "notes": "Intramolecular cyclization involving the reduction of an azide and subsequent cyclization with an adjacent carbonyl group to form a dihydropyrimidinone derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Detosylation",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 70 °C",
+            "yield": "78%",
+            "reactant_smiles": "O=C1NC(=C(C2=CNC3=C2C=CC(=C3)Br))N[C@@H](C4=CN([Ts])C5=C4C=CC(=C5)Br)C1",
+            "product_smiles": "O=C1NC(=C(C2=CNC3=C2C=CC(=C3)Br))N[C@@H](C4=CNC5=C4C=CC(=C5)Br)C1",
+            "notes": "N-detosylation of a tosyl-protected indole in a diketopiperazine derivative using sodium methoxide.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pemigatinib-pemazyre-incyte-unknown-2024",
+        "molecule_name": "Pemigatinib (Pemazyre Incyte)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-oxidation",
+            "reagents": "mCPBA, DCM",
+            "reagent_smiles": "",
+            "conditions": "0 to 10 °C",
+            "yield": "",
+            "reactant_smiles": "c1cnc2[nH]ccc2c1",
+            "product_smiles": "O=[N+]1c2nccc[nH]2c1",
+            "notes": "Oxidation of the pyridine nitrogen of 7-azaindole to form its N-oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Chlorination / N-oxide deoxygenation",
+            "reagents": "MsCl, DMF",
+            "reagent_smiles": "",
+            "conditions": "50 to 90 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C[N+](=C2C(=C1)C=CN2)[O-]",
+            "product_smiles": "C1=CNC2=NC=CC(=C12)Cl",
+            "notes": "The N-oxide of 1H-pyrrolo[2,3-c]pyridine is chlorinated at position 4 using methanesulfonyl chloride (MsCl) in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Silylation",
+            "reagents": "NaH, TIPSCl",
+            "reagent_smiles": "",
+            "conditions": "DMF, reflux",
+            "yield": "",
+            "reactant_smiles": "C1=CNC2=NC=CC(=C12)Cl",
+            "product_smiles": "[TIPS]N1C=CC2=C(C=CN=C21)Cl",
+            "notes": "The nitrogen of the pyrrole ring is protected by a triisopropylsilyl (TIPS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Aromatic C-H functionalization (Formylation), Deprotection",
+            "reagents": "sBuLi, DMF",
+            "reagent_smiles": "",
+            "conditions": "THF, -75 °C",
+            "yield": "58% (4 Steps)",
+            "reactant_smiles": "[TIPS]N1C=CC2=C(C=CN=C21)Cl",
+            "product_smiles": "O=Cc1[nH]c2ncc(Cl)c2c1",
+            "notes": "Deprotonation with sBuLi followed by formylation with DMF at the C3 position of the pyrrole ring, accompanied by the removal of the TIPS protecting group from the pyrrole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-Sulfonylation",
+            "reagents": "CsCO3, DMF",
+            "reagent_smiles": "O=S(Cl)(=O)c1ccccc1",
+            "conditions": "10 °C",
+            "yield": "93%",
+            "reactant_smiles": "O=Cc1cnc2[nH]ccc2c1Cl",
+            "product_smiles": "O=Cc1cnc2N(S(=O)(=O)c3ccccc3)ccc2c1Cl",
+            "notes": "The indole N-H is sulfonated with benzenesulfonyl chloride (PhSO2Cl).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetal formation",
+            "reagents": "TsOH.H2O",
+            "reagent_smiles": "OCCO",
+            "conditions": "toluene, reflux",
+            "yield": "70%",
+            "reactant_smiles": "C1=CN(C2=NC=C(C=O)C(=C12)Cl)S(=O)(=O)[Ph]",
+            "product_smiles": "C1=CN(C2=NC=C(C(=C12)Cl)C3OCCO3)S(=O)(=O)[Ph]",
+            "notes": "Formation of a 1,3-dioxolane from an aldehyde and ethylene glycol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Formylation",
+            "reagents": "LDA, THF, morpholine, HOAc",
+            "reagent_smiles": "O=CN1CCOCC1",
+            "conditions": "-70 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "O1CCO1C(c2c(Cl)cnc3n(S(=O)(=O)c4ccccc4)cc23)",
+            "product_smiles": "O1CCO1C(c2c(Cl)cnc3n(S(=O)(=O)c4ccccc4)c(C=O)cc23)",
+            "notes": "Directed formylation of the indole C-H bond at the 3-position using LDA and N-formylmorpholine.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Formylation",
+                    "reagents": "Fe(NO3)3",
+                    "reagent_smiles": "O=CN",
+                    "conditions": "toluene, reflux",
+                    "yield": "99%",
+                    "reactant_smiles": "C1COCCN1",
+                    "product_smiles": "O=CN1CCOCC1",
+                    "notes": "N-formylation of morpholine with formamide",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Amination",
+            "reagents": "Na(OAc)3BH",
+            "reagent_smiles": "C1COCCN1",
+            "conditions": "",
+            "yield": "82%",
+            "reactant_smiles": "C1COC(C2=CN=C3C(=C2Cl)C=C(C=O)N3S(=O)(=O)c4ccccc4)O1",
+            "product_smiles": "C1COC(C2=CN=C3C(=C2Cl)C=C(CN4CCOCC4)N3S(=O)(=O)c5ccccc5)O1",
+            "notes": "Aldehyde undergoes reductive amination with morpholine in the presence of sodium triacetoxyborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "H2O, DCM",
+            "yield": "93%",
+            "reactant_smiles": "O=S(=O)(c1ccccc1)N1C=C(CN2CCOCC2)C3=C1C(=CC(=N3)Cl)C4OCCO4",
+            "product_smiles": "O=S(=O)(c1ccccc1)N1C=C(CN2CCOCC2)C3=C1C(=CC(=N3)Cl)C=O",
+            "notes": "Hydrolysis of 1,3-dioxolane acetal to an aldehyde group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Amination",
+            "reagents": "TMSCl, BH3•THF",
+            "reagent_smiles": "COc1c(F)c(N)c(F)c(OC)c1",
+            "conditions": "DMF, 0 to 5 °C",
+            "yield": "96%",
+            "reactant_smiles": "O=CC1=C(Cl)C2=CN(S(=O)(=O)c3ccccc3)C3=C2C(=N1)C=C3CN4CCOCC4",
+            "product_smiles": "COc1c(F)c(NCc2c(Cl)c3c(n(S(=O)(=O)c4ccccc4)c2=N)cc(CN5CCOCC5)c3)c(F)c(OC)c1",
+            "notes": "The aldehyde group on the reactant undergoes reductive amination with 2,4-dimethoxy-3,5-difluoroaniline to form a secondary amine linkage.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Electrophilic Aromatic Fluorination",
+                    "reagents": "Selectfluor",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, 20 °C",
+                    "yield": "37%",
+                    "reactant_smiles": "COC(=O)C1=CC(OC)=CC(OC)=C1",
+                    "product_smiles": "COC(=O)C1=C(F)C(OC)=CC(OC)=C1F",
+                    "notes": "Electrophilic fluorination of methyl 3,5-dimethoxybenzoate to yield methyl 2,6-difluoro-3,5-dimethoxybenzoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "NaOH, EtOH",
+                    "reagent_smiles": "CCO.[Na]",
+                    "conditions": "",
+                    "yield": "95%",
+                    "reactant_smiles": "COC(=O)c1c(F)c(OC)cc(OC)c1F",
+                    "product_smiles": "OC(=O)c1c(F)c(OC)cc(OC)c1F",
+                    "notes": "Methyl ester is hydrolyzed to a carboxylic acid under basic conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Curtius Rearrangement",
+                    "reagents": "Et3N, DPPA",
+                    "reagent_smiles": "CCN(CC)CC.CC(C)(C)O.N=[N+]=[N-]P(=O)(Oc1ccccc1)Oc1ccccc1",
+                    "conditions": "tBuOH, 82 °C",
+                    "yield": "51%",
+                    "reactant_smiles": "O=C(O)c1c(F)c(OC)cc(OC)c1F",
+                    "product_smiles": "Nc1c(F)c(OC)cc(OC)c1F",
+                    "notes": "Conversion of 2,6-difluoro-3,5-dimethoxybenzoic acid to 2,6-difluoro-3,5-dimethoxyaniline via Curtius rearrangement.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Urea formation",
+            "reagents": "MsOH",
+            "reagent_smiles": "CCN=C=O",
+            "conditions": "MeCN, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "COC1=C(F)C(=C(F)C(=C1OC)NCC2=CN=C3C(=C2Cl)C=C(CN4CCOCC4)N3S(=O)(=O)c5ccccc5)",
+            "product_smiles": "CCNC(=O)N(CC1=CN=C2C(=C1Cl)C=C(CN3CCOCC3)N2S(=O)(=O)c5ccccc5)C4=C(C(=CC(=C4F)OC)OC)F",
+            "notes": "Formation of a urea by reaction of a secondary amine with ethyl isocyanate.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Intramolecular cyclization",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "94%",
+            "reactant_smiles": "CCNC(=O)N(CC1=NC=C(Cl)C2=C1C=C(CN3CCOCC3)N2S(=O)(=O)c4ccccc4)c5c(F)c(OC)cc(OC)c5F",
+            "product_smiles": "CCN1C2=C(C=NC3=C2C=C(CN4CCCCC4)N3S(=O)(=O)c6ccccc6)CN(c5c(F)c(OC)cc(OC)c5F)C1=O",
+            "notes": "Intramolecular cyclization via nucleophilic aromatic substitution to form a new fused ring system. The morpholine group on the reactant is transformed into a piperidine group in the product. The chlorine atom is eliminated.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "N-deprotection",
+            "reagents": "NaOH, dioxane",
+            "reagent_smiles": "",
+            "conditions": "75 °C",
+            "yield": "88%",
+            "reactant_smiles": "CCN1C(=O)N(C2=C1CN3C=C(CN4CCCCC4)N(S(=O)(=O)c5ccccc5)C3=NC=C2)c6c(F)c(OC)cc(OC)c6F",
+            "product_smiles": "CCN1C(=O)N(C2=C1CN3C=C(CN4CCCCC4)NC3=NC=C2)c5c(F)c(OC)cc(OC)c5F",
+            "notes": "Hydrolytic deprotection of N-phenylsulfonyl protecting group from the pyrrole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

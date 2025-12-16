@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "syn-mefloquine-coltart-2015",
+        "molecule_name": "Syn-Mefloquine",
+        "class": "Natural Product",
+        "author": "Coltart",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "POBr₃",
+            "reagent_smiles": "",
+            "conditions": "140 °C",
+            "yield": "98%",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C(=CC(=N2)C(F)(F)F)O)C(F)(F)F",
+            "product_smiles": "C1=C(C=C2C(=C1)C(=CC(=N2)C(F)(F)F)Br)C(F)(F)F",
+            "notes": "Nucleophilic substitution of hydroxyl group with bromine on a quinoline derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Heck reaction",
+            "reagents": "Pd(OAc)2, Et3N",
+            "reagent_smiles": "CC(C)C1=CC=CC(=C1N2C=CN([CH-]2)C3=C(C=CC=C3C(C)C)C(C)C)C(C)C.C=CCCCCN1C(=O)C2=C(C=CC=C2)C1=O",
+            "conditions": "DMF, 110 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=C1)C(=CC(=N2)C(F)(F)F)Br)C(F)(F)F",
+            "product_smiles": "FC(F)(F)c1cc2c(cc1C(F)(F)F)nc(\\C=C\\CCCCN3C(=O)c4ccccc4C3=O)c2",
+            "notes": "Heck coupling of a bromoquinoline with an N-hex-5-en-1-ylphthalimide, producing an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sharpless asymmetric dihydroxylation",
+            "reagents": "ADmix α, MeSO₂NH₂",
+            "reagent_smiles": "",
+            "conditions": "THF, H₂O, 0 °C",
+            "yield": "47% (2 steps)",
+            "reactant_smiles": "FC(F)(F)c1cccc2c1nc(C(F)(F)F)cc(/C=C/CCCC[N]3C(=O)c4ccccc4C3=O)2",
+            "product_smiles": "FC(F)(F)c1cccc2c1nc(C(F)(F)F)cc([C@H](O)[C@H](O)CCCC[N]3C(=O)c4ccccc4C3=O)2",
+            "notes": "Asymmetric dihydroxylation of a trans-alkene to form a syn-(S,S)-diol. The NPhth group is a phthalimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Selective Tosylation",
+            "reagents": "TsCl, tBuOK",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to RT",
+            "yield": "",
+            "reactant_smiles": "FC(F)(F)c1cccc2c1nc(C(F)(F)F)cc2[C@@H](O)[C@H](O)CCC[NPhth]",
+            "product_smiles": "FC(F)(F)c1cccc2c1nc(C(F)(F)F)cc2[C@@H]([OTs])[C@H](O)CCC[NPhth]",
+            "notes": "Selective tosylation of the secondary alcohol adjacent to the quinoline ring, while retaining the other secondary alcohol. The tosyl group (OTs) and phthalimide group (NPhth) are represented with abbreviations as shown in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Epoxidation / Cyclization",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH",
+            "yield": "78%",
+            "reactant_smiles": "FC(F)(F)c1cccc2c1ncc(C(F)(F)F)c2C[C@@H]([OTs])[C@H](O)CCC[NPhth]",
+            "product_smiles": "FC(F)(F)c1cccc2c1ncc(C(F)(F)F)c2[C@@H]3O[C@H]3CCC[NPhth]",
+            "notes": "Formation of an epoxide from a vicinal tosylate and alcohol under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection, Intramolecular Cyclization, Epoxide Ring Opening",
+            "reagents": "H2NNH2. H2O, HCl",
+            "reagent_smiles": "NN.O.Cl",
+            "conditions": "EtOH, reflux",
+            "yield": "91%",
+            "reactant_smiles": "O=C1c2ccccc2C(=O)N1CCC[C@H]3[C@@H](C4=CC(=NC5=C4C=CC=C5C(F)(F)F)C(F)(F)F)O3",
+            "product_smiles": "C1CC[NH2+][C@H](C1)[C@H](O)C2=CC(=NC3=C2C=CC=C3C(F)(F)F)C(F)(F)F.[Cl-]",
+            "notes": "Phthalimide deprotection using hydrazine hydrate generates a primary amine. This amine then undergoes intramolecular nucleophilic attack on the epoxide, leading to ring opening and cyclization to form a piperidine ring. Subsequent treatment with HCl protonates the amine to form the HCl salt.",
+            "substeps": []
+        }
+    ]
+}

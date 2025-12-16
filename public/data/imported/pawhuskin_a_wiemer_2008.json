@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pawhuskin-a-wiemer-2008",
+        "molecule_name": "Pawhuskin A",
+        "class": "Natural Product",
+        "author": "Wiemer",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Friedel-Crafts Alkylation",
+            "reagents": "BF3.Et2O",
+            "reagent_smiles": "OCC/C=C(\\C)CC/C=C(\\C)C",
+            "conditions": "",
+            "yield": "35%",
+            "reactant_smiles": "COC(=O)C1=CC(=CC(=C1)O)O",
+            "product_smiles": "COC(=O)C1=C(C/C=C(\\C)CC/C=C(\\C)C)C=C(O)C=C1O",
+            "notes": "Friedel-Crafts alkylation of methyl 3,5-dihydroxybenzoate with 3,7-dimethylocta-2,6-dien-1-ol (geraniol-like alcohol) catalyzed by boron trifluoride diethyl etherate. The alkylation occurs at an ortho position to both the ester and one hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Etherification (MOM protection)",
+            "reagents": "MOMCl, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)c1c(CC/C=C(\\C)/CC/C=C(/C)C)c(O)cc(O)c1",
+            "product_smiles": "COC(=O)c1c(CC/C=C(\\C)/CC/C=C(/C)C)c(OCOC)cc(OCOC)c1",
+            "notes": "Protection of phenolic hydroxyl groups with MOMCl to form methoxymethyl ethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "H+",
+            "yield": "94%",
+            "reactant_smiles": "COC(=O)C1=CC(=CC(=C1C/C=C(\\C)/CCC=C(C)C)[MOM])[MOM]",
+            "product_smiles": "OCC1=CC(=CC(=C1C/C=C(\\C)/CCC=C(C)C)[MOM])[MOM]",
+            "notes": "Reduction of a methyl ester to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl",
+            "reagent_smiles": "CS(=O)(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC/C(=C/CC1=C(C=C(C=C1CO)[MOM])[MOM])/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC1=C(C=C(C=C1COS(=O)(=O)C)[MOM])[MOM])/C)C",
+            "notes": "Primary alcohol is converted to a mesylate using methanesulfonyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Substitution",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC/C(=C/CC1=C([OMOM])C=C([OMOM])C=C1C[MsO])/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC1=C([OMOM])C=C([OMOM])C=C1CI)/C)C",
+            "notes": "Nucleophilic substitution of mesylate with iodide (Finkelstein reaction).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Arbuzov reaction",
+            "reagents": "P(OEt)3",
+            "reagent_smiles": "CCOP(OCC)OCC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC/C(=C/CC1=C([OMOM])C=C([OMOM])C=C1CI)/C)C",
+            "product_smiles": "CCOP(=O)(CC1=CC(=CC(=C1C/C=C(\\C)CCC=C(C)C)[OMOM])[OMOM])OCC",
+            "notes": "Conversion of an iodomethyl group to a diethyl phosphonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH, 15-Crown-5",
+            "reagent_smiles": "O=Cc1c([MOM])c([MOM])c(CC/C=C(C)/C)cc1",
+            "conditions": "",
+            "yield": "63%",
+            "reactant_smiles": "CCOP(=O)(OCC)Cc1c(CC/C=C(\\C)/CCC=C(C)C)c([MOM])cc([MOM])c1",
+            "product_smiles": "CC/C=C(C)/Cc1c([MOM])c([MOM])c(/C=C/c2c(CC/C=C(\\C)/CCC=C(C)C)c([MOM])cc([MOM])c2)cc1",
+            "notes": "Double bond formation between a phosphonate and an aldehyde to form a stilbene derivative.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Phenol Protection (MOM)",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "ClCOC",
+                    "conditions": "acetone",
+                    "yield": "93%",
+                    "reactant_smiles": "O=Cc1ccc(O)c(O)c1",
+                    "product_smiles": "O=Cc1ccc(O[MOM])c(O[MOM])c1",
+                    "notes": "Protection of the two phenolic hydroxyl groups of 3,4-dihydroxybenzaldehyde with methoxymethyl (MOM) groups.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH",
+                    "yield": "94%",
+                    "reactant_smiles": "[MOM]C1=C([MOM])C=C(C=C1)C=O",
+                    "product_smiles": "[MOM]C1=C([MOM])C=C(C=C1)CO",
+                    "notes": "Aldehyde reduced to primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Substitution",
+                    "reagents": "n-BuLi, CuBr·DMS",
+                    "reagent_smiles": "BrCC=C(C)C",
+                    "conditions": "",
+                    "yield": "35%",
+                    "reactant_smiles": "[MOMO]Oc1c([MOMO]O)ccc(CO)c1",
+                    "product_smiles": "[MOMO]Oc1c([MOMO]O)c(CCC=C(C)C)cc(CO)c1",
+                    "notes": "Friedel-Crafts-like alkylation (or similar) with prenyl bromide. A new prenyl group is added to the benzene ring. The MOMO groups are retained, as is the hydroxymethyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Oxidation",
+                    "reagents": "MnO2, CH2Cl2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "79%",
+                    "reactant_smiles": "[MOMO]c1c([MOMO])c(CO)cc(CCC=C(C)C)c1",
+                    "product_smiles": "[MOMO]c1c([MOMO])c(C(=O)H)cc(CCC=C(C)C)c1",
+                    "notes": "Oxidation of a primary benzylic alcohol to an aldehyde using manganese dioxide. The MOMO protecting groups and the alkene remain unaffected.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "CSA, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "36%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC1=C(C=C(C=C1/C=C/C2=CC=C(C(=C2CC=C(C)C)[MOMO])[MOMO])[MOMO])[MOMO])/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC1=C(C=C(C=C1O)O)/C=C/C2=CC=C(C(=C2CC=C(C)C)O)O)/C)C",
+            "notes": "Deprotection of four methoxymethyl (MOMO) ethers to form phenols.",
+            "substeps": []
+        }
+    ]
+}

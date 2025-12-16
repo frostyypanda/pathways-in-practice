@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cephalotaxine-tietze-1999",
+        "molecule_name": "Cephalotaxine",
+        "class": "Natural Product",
+        "author": "Tietze",
+        "year": 1999
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-bromination",
+            "reagents": "HBr, KBrO3",
+            "reagent_smiles": "",
+            "conditions": "H2O",
+            "yield": "83%",
+            "reactant_smiles": "C1CC(=O)CC1=O",
+            "product_smiles": "C1CC(=O)C(Br)C1=O",
+            "notes": "Bromination of cyclopentane-1,3-dione.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "BrMgCCC[O]MgBr",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1CC(=O)C(C1=O)Br",
+            "product_smiles": "O=C1CCC(O)(CCC(O))C(Br)C1",
+            "notes": "A bis-Grignard reagent adds to one carbonyl of 2-bromocyclopentane-1,3-dione, forming a tertiary alcohol and a 3-hydroxypropyl chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dehydration, Tosylation",
+            "reagents": "TsCl, TEA, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "48% (2 steps)",
+            "reactant_smiles": "O=C1CC(Br)C(O)(CCCCO)C1",
+            "product_smiles": "O=C1C(Br)=C(CCC[OTs])CC1",
+            "notes": "Dehydration of a tertiary alcohol to form an alpha,beta-unsaturated ketone, and tosylation of a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Corey asymmetric reduction",
+            "reagents": "BH3·THF",
+            "reagent_smiles": "CN1CCC[C@H]1C2([Ph])([Ph])OB(N1)O2",
+            "conditions": "THF, -15 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1CCC(=C(Br)C1)CCC[OTs]",
+            "product_smiles": "[C@H](O)1CCC(=C(Br)C1)CCC[OTs]",
+            "notes": "Asymmetric reduction of an α,β-unsaturated ketone to a chiral allylic alcohol using a Corey-Bakshi-Shibata (CBS) catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, TEA, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "96% (2 steps)",
+            "reactant_smiles": "BrC1=C(CCC[OTs])CC[C@@H](O)C1",
+            "product_smiles": "BrC1=C(CCC[OTs])CC[C@@H]([OAc])C1",
+            "notes": "Acetylation of a secondary alcohol using acetic anhydride, triethylamine, and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive dehalogenation",
+            "reagents": "Bu3SnH, AIBN",
+            "reagent_smiles": "",
+            "conditions": "PhH, 80 °C",
+            "yield": "92%",
+            "reactant_smiles": "[OAc][C@@H]1CCC(=C1Br)CCC[OTs]",
+            "product_smiles": "[OAc][C@@H]1CCC(=C1)CCC[OTs]",
+            "notes": "Radical-mediated reduction of a vinyl bromide to an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "TBAI",
+            "reagent_smiles": "NCCc1cc(Br)c2c(c1)OCO2",
+            "conditions": "THF, 70 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC(=O)O[C@@H]1CC=C(CCC-OS(=O)(=O)c2ccc(C)cc2)C1",
+            "product_smiles": "CC(=O)O[C@@H]1CC=C(CCCNCC2=CC(Br)=C3OCO3C=C2)C1",
+            "notes": "Primary amine displaces a tosylate leaving group to form a secondary amine.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Henry reaction",
+                    "reagents": "KOH, MeNO2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1C=O)OCO2",
+                    "product_smiles": "C1=CC2=C(C=C1/C=C/[N+](=O)[O-])OCO2",
+                    "notes": "Henry reaction (nitroaldol reaction) of 3,4-methylenedioxybenzaldehyde with nitromethane to form (E)-1-(2-nitrovinyl)-1,3-benzodioxole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Reduction (of alkene and nitro group)",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1/C=C/[N+](=O)[O-])OCO2",
+                    "product_smiles": "C1=CC2=C(C=C1CCN)OCO2",
+                    "notes": "Reduction of an α,β-unsaturated nitroalkene to an amine using Lithium Aluminum Hydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Amine protonation / Salt formation",
+                    "reagents": "HCl, Et2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1CCN)OCO2",
+                    "product_smiles": "C1=C(CC[NH3+])C=C2C(=C1)OCO2.[Cl-]",
+                    "notes": "The primary amine is protonated by HCl in diethyl ether to form the ammonium chloride salt.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Aromatic Bromination",
+                    "reagents": "AcOH",
+                    "reagent_smiles": "BrBr",
+                    "conditions": "",
+                    "yield": "97% (2 steps)",
+                    "reactant_smiles": "[NH3+]CCC1=CC2=C(OCO2)C=C1.[Cl-]",
+                    "product_smiles": "NCCC1=CC(Br)C2=C(OCO2)C=C1",
+                    "notes": "Aromatic bromination of 2-(1,3-benzodioxol-5-yl)ethan-1-aminium chloride to 2-(6-bromo-1,3-benzodioxol-5-yl)ethan-1-amine. The amine is deprotonated during the reaction.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Allylic Amination (Tsuji-Trost reaction)",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "CN(C)C(=N)N(C)C",
+            "conditions": "MeCN, 45 °C",
+            "yield": "88%",
+            "reactant_smiles": "CC(=O)O[C@@H]1CCC=C(C1)CCCNCCC2=CC(Br)=C3OCO3C=C2",
+            "product_smiles": "BrC1=CC2=C(OCO2)C=C1CCN3[C@H]4CCC=C[C@]43CC",
+            "notes": "An intramolecular palladium-catalyzed allylic amination where the secondary amine attacks the cyclopentene derivative, expelling acetate, and forming a fused pyrrolidine-cyclopentene bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Heck reaction / C-C coupling / Cyclization",
+            "reagents": "Bu4NOAc",
+            "reagent_smiles": "",
+            "conditions": "MeCN/DMF/H2O, 110 °C",
+            "yield": "81%",
+            "reactant_smiles": "C1=C[C@@]2(CC1)CCCN2CC3=CC4=C(C=C3Br)OCO4",
+            "product_smiles": "C1=C[C@H]2C3=CC4=C(C=C3CCN5CCC[C@]25C1)OCO4",
+            "notes": "Intramolecular Heck cyclization of an aryl bromide with an alkene to form a tetracyclic cephalotaxine derivative. The reaction uses a phosphine-ligated palladium catalyst (drawn structure) and tetrabutylammonium acetate (Bu4NOAc).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "NMO, OsO4",
+            "reagent_smiles": "",
+            "conditions": "THF/AcOH/H2O",
+            "yield": "73%",
+            "reactant_smiles": "O1COC2=CC3=C(C=C21)CCN4CCC[C@@]5(C=C[C@H]35)N4",
+            "product_smiles": "O1COC2=CC3=C(C=C21)CCN4CCC[C@@]5(N4)[C@H]3[C@H](O)[C@H](O)C5",
+            "notes": "Syn-dihydroxylation of an alkene using osmium tetroxide (OsO4) as catalyst and N-methylmorpholine N-oxide (NMO) as a stoichiometric oxidant.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Swern oxidation",
+            "reagents": "DMSO, TFAA, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, -40 °C",
+            "yield": "51%",
+            "reactant_smiles": "[C@H]12C3=C(CCN4CCC[C@]24C[C@H]([C@@H]1O)O)C=C5C(=C3)OCO5",
+            "product_smiles": "C1C[C@@]23CC(=O)C(=C3C4=CC5=C(C=C4CCN2C1)OCO5)O",
+            "notes": "Oxidation of a vicinal diol to an alpha-hydroxy-alpha,beta-unsaturated ketone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Enol Ether Formation",
+            "reagents": "p-TsOH, CH(OMe)₃",
+            "reagent_smiles": "C(OC)(OC)OC.Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "DCM",
+            "yield": "48%",
+            "reactant_smiles": "O1COC1c2ccc3c(c2)C[C@H]4CCN5CC[C@]6([C@H]4)C(=O)C(O)=C6C5",
+            "product_smiles": "COc1cc2c3c(c1)C[C@H]4CCN5CC[C@]6([C@H]4)C(=O)C(OC)=C6C5",
+            "notes": "Methylation of an enol to form an enol methyl ether using trimethyl orthoformate and p-TsOH as a catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "[Na+].[BH4-].CO",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "COC1=C[C@]23CCCN3CCC4=CC5=C(C=C4[C@H]2C1=O)OCO5",
+            "product_smiles": "COC1=C[C@]23CCCN3CCC4=CC5=C(C=C4[C@H]2[C@]1O)OCO5",
+            "notes": "Reduction of a cyclic ketone to a secondary alcohol using sodium borohydride.",
+            "substeps": []
+        }
+    ]
+}

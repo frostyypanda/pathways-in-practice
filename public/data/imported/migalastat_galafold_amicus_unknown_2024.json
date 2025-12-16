@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "migalastat-galafold-amicus-unknown-2024",
+        "molecule_name": "Migalastat (Galafold Amicus)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Pivaloylation / Ring Contraction",
+            "reagents": "n-heptane, DMF",
+            "reagent_smiles": "CC(C)(C)C(=O)N1C=CN=C1",
+            "conditions": "60-100 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@@H]1[C@H](O)[C@@H](O)[C@@H](O)[C@H](CO)O1",
+            "product_smiles": "O[C@H]1[C@@H](O[Piv])[C@H](O[Piv])[C@H]([C@@H](O)CO[Piv])O1",
+            "notes": "Pivaloylation of D-galactose (pyranose) with concomitant ring contraction to a furanose derivative, resulting in a protected furanose with a modified side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Triflation",
+            "reagents": "Tf2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O1[C@H](O[Piv])[C@H](O[Piv])[C@@H](O[Piv])[C@H]1[C@H](O)CO[Piv]",
+            "product_smiles": "O1[C@H](O[Piv])[C@H](O[Piv])[C@@H](O[Piv])[C@H]1[C@H](O[Tf])CO[Piv]",
+            "notes": "Conversion of a secondary alcohol to a triflate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Substitution/Hydrolysis",
+            "reagents": "NaNO₂",
+            "reagent_smiles": "",
+            "conditions": "DMF, 20 °C",
+            "yield": "",
+            "reactant_smiles": "[Piv]OC[C@H](O[Tf])[C@@H]1O[C@H](O[Piv])[C@H](O[Piv])[C@H](O[Piv])O1",
+            "product_smiles": "[Piv]OC[C@H](O)[C@@H]1O[C@H](O[Piv])[C@H](O[Piv])[C@H](O[Piv])O1",
+            "notes": "Conversion of a trifluoromethanesulfonate (triflate) to a hydroxyl group, retaining the stereochemistry at the substituted carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "12%",
+            "reactant_smiles": "C([C@@H]([C@H]1[C@@H]([C@@H]([C@@H](O1)O[Piv])O[Piv])O[Piv])O)O[Piv]",
+            "product_smiles": "C([C@@H]([C@H]1[C@@H]([C@@H]([C@@H](O1)O[Piv])O[Piv])O[Piv])O[Tf])O[Piv]",
+            "notes": "Conversion of a secondary hydroxyl group to a triflate group. Reaction sequence involved 4 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "DMF, 20 °C",
+            "yield": "65-70%",
+            "reactant_smiles": "CC(C)(C)C(=O)O[C@@H]1O[C@H]([C@H](OS(=O)(=O)C(F)(F)F)C[O]C(=O)C(C)(C)C)[C@@H](OC(=O)C(C)(C)C)[C@H]1OC(=O)C(C)(C)C",
+            "product_smiles": "CC(C)(C)C(=O)O[C@@H]1O[C@H]([C@@H]([N-]=[N+]=N)C[O]C(=O)C(C)(C)C)[C@@H](OC(=O)C(C)(C)C)[C@H]1OC(=O)C(C)(C)C",
+            "notes": "SN2 displacement of a triflate leaving group by azide ion, proceeding with inversion of stereochemistry at the substituted carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Azide Reduction",
+            "reagents": "H₂, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Piv]O[C@H]1[C@@H](O[Piv])[C@@H](O[Piv])[C@H](C[C@@H]([N+]#N)CO[Piv])O1",
+            "product_smiles": "[Piv]O[C@H]1[C@@H](O[Piv])[C@@H](O[Piv])[C@H](C[C@@H](N)CO[Piv])O1",
+            "notes": "Reduction of an azide group to an amine group using hydrogen gas and palladium on carbon catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection, Cyclization/Rearrangement",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 20 °C",
+            "yield": "",
+            "reactant_smiles": "O1[C@H](O[Piv])[C@@H](O[Piv])[C@H](O[Piv])[C@H]1C[C@@H](N)CO[Piv]",
+            "product_smiles": "N1[C@@H](CO)[C@H](O)[C@@H](O)[C@@H](O)C1",
+            "notes": "Base-catalyzed deprotection of pivaloyl esters and ring expansion/rearrangement from a furanose derivative to a piperidine azasugar (Migalastat).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Salt Formation",
+            "reagents": "HCl, MeOH, THF, Et2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1[C@@H]([C@@H]([C@H]([C@@H](CO)N1)O)O)O",
+            "product_smiles": "C1[C@@H]([C@@H]([C@H]([C@@H](CO)[NH2+]1)O)O)O.[Cl-]",
+            "notes": "Formation of the hydrochloride salt of Migalastat (Galafold).",
+            "substeps": []
+        }
+    ]
+}

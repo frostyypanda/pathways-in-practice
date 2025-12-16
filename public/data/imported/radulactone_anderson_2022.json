@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "radulactone-anderson-2022",
+        "molecule_name": "Radulactone",
+        "class": "Natural Product",
+        "author": "Anderson",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Conjugate Addition (Michael type)",
+            "reagents": "Me₂CuLi",
+            "reagent_smiles": "[Li][Cu](C)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1=CCC(=O)C1",
+            "product_smiles": "CC1(C)CCC(=O)C1",
+            "notes": "1,4-conjugate addition of methyl groups to an alpha,beta-unsaturated ketone, resulting in saturation of the double bond and addition of two geminal methyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Vilsmeier-Haack reaction",
+            "reagents": "POCl3, DMF",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, reflux",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CCC(=O)C1",
+            "product_smiles": "CC1(C)CC(=C(C1)Cl)C=O",
+            "notes": "Vilsmeier-Haack reaction to convert a ketone to an α-chloro-α,β-unsaturated aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Thiophene Synthesis",
+            "reagents": "Et3N",
+            "reagent_smiles": "COC(=O)CS",
+            "conditions": "MeOH, reflux",
+            "yield": "55%",
+            "reactant_smiles": "CC1(C)CCC(=C(Cl)C=O)C1",
+            "product_smiles": "[CO2Me]c1cc2CCC(C)(C)c2s1",
+            "notes": "Intramolecular thiophene formation via reaction of an α-chloro-α,β-unsaturated aldehyde with methyl mercaptoacetate, involving the elimination of chlorine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation (Sulfone Formation)",
+            "reagents": "H₂O₂, H₂O, TFAA",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "CC1(C)CC2=C(C1)SC(=C2)C(=O)OC",
+            "product_smiles": "CC1(C)CC2=C(C1)S(=O)(=O)C(=C2)C(=O)OC",
+            "notes": "Oxidation of a thiophene sulfur to a sulfone using hydrogen peroxide and trifluoroacetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels-Alder / Extrusion / Aromatization",
+            "reagents": "toluene",
+            "reagent_smiles": "CC1=CC=C(O1)SC",
+            "conditions": "100 °C",
+            "yield": "63%",
+            "reactant_smiles": "COC(=O)c1csc(S(=O)(=O))c2c1CCC(C)(C)C2",
+            "product_smiles": "COC(=O)c1c(C)c(CC(=O)SC)c2c1CCC(C)(C)C2",
+            "notes": "Inverse electron-demand Diels-Alder reaction where thiophene-1,1-dioxide acts as a diene and furan acts as a dienophile, followed by SO2 extrusion and aromatization to form a substituted indane.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-].C1CCOC1",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "84%",
+            "reactant_smiles": "CC1=C(CC(=O)SC)C(=CC2=C1CC(C)(C)C2)C(=O)OC",
+            "product_smiles": "CC1=C(CCO)C(=CC2=C1CC(C)(C)C2)CO",
+            "notes": "Reduction of a methyl ester and a thioester to primary alcohols using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Lactonization",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "92%",
+            "reactant_smiles": "CC1=C(CCO)C(CO)=C2CCC(C)(C)C2=C1",
+            "product_smiles": "CC1=C2CCOC(=O)C2=CC3=C1CC(C)(C)C3",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid, followed by intramolecular esterification (lactone formation) with another alcohol group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2, KMnO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "59%",
+            "reactant_smiles": "Cc1c2CCOC(=O)c2cc3CCC(C)(C)C3c1",
+            "product_smiles": "Cc1c2CCOC(=O)c2cc3C(=O)CC(C)(C)C3c1",
+            "notes": "Oxidation of a benzylic methylene group to a ketone using manganese reagents.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "CC1=C2CCOC(=O)C2=CC3=C1CC(C)(C)C3=O",
+            "product_smiles": "CC1=C2CCOC(=O)C2=CC3=C1CC(C)(C)C3O",
+            "notes": "The ketone group in the five-membered ring is selectively reduced to a secondary alcohol using sodium borohydride. The lactone (ester) carbonyl remains untouched.",
+            "substeps": []
+        }
+    ]
+}

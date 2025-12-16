@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "olutasidenib-rezlidhia-rigel-unknown-2024",
+        "molecule_name": "Olutasidenib (Rezlidhia Rigel)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation / Condensation",
+            "reagents": "CuSO4",
+            "reagent_smiles": "CC(C)(C)[S@@](=O)N",
+            "conditions": "DCE",
+            "yield": "81%",
+            "reactant_smiles": "C1=C(C=C2C=C(C=O)C(=NC2=C1)Cl)Cl",
+            "product_smiles": "CC(C)(C)[S@@](=O)N=CC1=CC2=CC(=CC=C2N=C1Cl)Cl",
+            "notes": "An aldehyde undergoes condensation with chiral tert-butylsulfinamide to form a chiral N-sulfinyl imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Addition / Grignard Reaction",
+            "reagents": "MeMgBr",
+            "reagent_smiles": "C[Mg]Br",
+            "conditions": "DCM",
+            "yield": "63%",
+            "reactant_smiles": "CC(C)(C)[S@@](=O)/N=C/C1=CC2=CC(=CC=C2N=C1Cl)Cl",
+            "product_smiles": "C[C@@H](C1=CC2=CC(=CC=C2N=C1Cl)Cl)N[S@@](=O)C(C)(C)C",
+            "notes": "Asymmetric addition of methylmagnesium bromide to a chiral sulfinyl imine to form a chiral amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection / Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "96%",
+            "reactant_smiles": "C[C@@H](C1=CC2=CC(=CC=C2N=C1Cl)Cl)N[S@@](=O)C(C)(C)C",
+            "product_smiles": "C[C@@H](C1=CC2=CC(=CC=C2NC1=O)Cl)N",
+            "notes": "Deprotection of a tert-butylsulfinamide to a primary amine, concurrent with hydrolysis of a 2-chloroquinoline to a 2-quinolinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "SNAr (Aromatic Nucleophilic Substitution)",
+            "reagents": "DIPEA, DMSO",
+            "reagent_smiles": "CN1C(=O)C=C(F)C=C1C#N",
+            "conditions": "",
+            "yield": "67%",
+            "reactant_smiles": "C[C@H](C1=CC2=CC(=CC=C2NC1=O)Cl)N",
+            "product_smiles": "C[C@H](C1=CC2=CC(=CC=C2NC1=O)Cl)NC3=CC=C(C#N)N(C)C3=O",
+            "notes": "Amidation via SNAr reaction, displacing fluorine on a pyridinone ring.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "N-oxidation",
+                    "reagents": "m-CPBA",
+                    "reagent_smiles": "",
+                    "conditions": "CHCl₃",
+                    "yield": "52%",
+                    "reactant_smiles": "C1=C(C=NC(=C1)C#N)F",
+                    "product_smiles": "C1=C(C=[N+](C(=C1)C#N)[O-])F",
+                    "notes": "Pyridine N-oxidation to form the N-oxide using m-CPBA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "N-oxide acetylation / rearrangement",
+                    "reagents": "Ac2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "60%",
+                    "reactant_smiles": "N#Cc1c[n+]([O-])cc(F)c1",
+                    "product_smiles": "CC(=O)Oc1ncc(F)c(C#N)c1",
+                    "notes": "Acetylation of 2-cyano-5-fluoropyridine N-oxide with acetic anhydride to form the 2-acetoxy-5-fluoro-6-cyanopyridine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Ester Hydrolysis / Tautomerization",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "92%",
+                    "reactant_smiles": "CC(=O)Oc1c(F)ccc(C#N)n1",
+                    "product_smiles": "FC1=CC(=O)NC(C#N)=C1",
+                    "notes": "Hydrolysis of an acetoxy group on pyridine followed by tautomerization to the pyridinone form.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "CI",
+                    "conditions": "DMF",
+                    "yield": "67%",
+                    "reactant_smiles": "C1=C(C#N)NC(=O)C(=C1)F",
+                    "product_smiles": "CN1C(=CC=C(C1=O)F)C#N",
+                    "notes": "N-methylation of a pyridone derivative using methyl iodide and potassium carbonate in DMF.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

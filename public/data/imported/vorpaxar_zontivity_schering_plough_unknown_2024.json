@@ -1,0 +1,230 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vorpaxar-zontivity-schering-plough-unknown-2024",
+        "molecule_name": "Vorpaxar (Zontivity Schering-Plough)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (THP Ether Formation)",
+            "reagents": "TsOH",
+            "reagent_smiles": "C1C=COCC1",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "C#C[C@@H](C)O",
+            "product_smiles": "C#C[C@@H](C)[OTHP]",
+            "notes": "Protection of a secondary propargylic alcohol as its tetrahydropyranyl (THP) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification / Acylation of terminal alkyne",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "C1=CC=C(C=C1)COC(=O)Cl",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C#C[C@H](C)[OTHP]",
+            "product_smiles": "C[C@H](C#CC(=O)OCC1=CC=CC=C1)[OTHP]",
+            "notes": "Deprotonation of terminal alkyne by n-BuLi followed by acylation with benzyl chloroformate to form a propargyl ester. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "Dowex",
+            "reagent_smiles": "",
+            "conditions": "r.t.",
+            "yield": "71% (3 steps)",
+            "reactant_smiles": "C[C@H](C#CC(=O)OCC1=CC=CC=C1)OC2CCCCO2",
+            "product_smiles": "C[C@H](C#CC(=O)OCC1=CC=CC=C1)O",
+            "notes": "Deprotection of a Tetrahydropyranyl (THP) ether to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alkyne Reduction (Partial, Stereoselective)",
+            "reagents": "Lindlar Catalyst, H2",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "93%",
+            "reactant_smiles": "C[C@H](C#CC(=O)OCC1=CC=CC=C1)O",
+            "product_smiles": "C[C@H](/C=C\\C(=O)OCC1=CC=CC=C1)O",
+            "notes": "Partial and stereoselective reduction of an alkyne to a Z-alkene using Lindlar catalyst and hydrogen gas, preserving the stereochemistry of the adjacent chiral alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Esterification",
+            "reagents": "DCC",
+            "reagent_smiles": "O=C(O)/C=C/C1=CC(C2(OCCO2))CCC1",
+            "conditions": "DCM, 0 °C to r.t.",
+            "yield": "",
+            "reactant_smiles": "C[C@H](/C=C\\C(=O)OCC1=CC=CC=C1)O",
+            "product_smiles": "C[C@H](/C=C\\C(=O)OCC1=CC=CC=C1)OC(=O)/C=C/C1=CC(C2(OCCO2))CCC1",
+            "notes": "DCC-mediated esterification of an alcohol with a carboxylic acid.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Heck reaction",
+                    "reagents": "PdCl2(PPh3)2",
+                    "reagent_smiles": "C=CC(=O)OC",
+                    "conditions": "DMF, 75 °C",
+                    "yield": "71%",
+                    "reactant_smiles": "BrC1=CCCC2(C1)OCCO2",
+                    "product_smiles": "COC(=O)/C=C/C1=CCCC2(C1)OCCO2",
+                    "notes": "Heck coupling of a vinyl bromide with methyl acrylate to form an alpha,beta-unsaturated ester. The ketal and internal alkene are preserved, and the new alkene bond has a trans configuration.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, MeOH, 1M",
+                    "yield": "98%",
+                    "reactant_smiles": "COC(=O)/C=C/C1=CCC2(CC1)OCCO2",
+                    "product_smiles": "O=C(O)/C=C/C1=CCC2(CC1)OCCO2",
+                    "notes": "Base-catalyzed hydrolysis of a methyl ester to a carboxylic acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Diels-Alder reaction",
+            "reagents": "xylenes",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@H](/C=C\\C(=O)OCC1=CC=CC=C1)OC(=O)/C=C/C2=CCCC3(C2)OCCO3",
+            "product_smiles": "C[C@H]1[C@@H]2C(=O)O[C@H]1[C@H]3C=C4CC5(CC[C@H]4[C@H]3C(=O)OCC6=CC=CC=C6)OCCO5.C[C@H]1[C@@H]2C(=O)O[C@H]1[C@@H]3C=C4CC5(CC[C@@H]4[C@@H]3C(=O)OCC6=CC=CC=C6)OCCO5",
+            "notes": "Intramolecular Diels-Alder reaction forming two diastereomeric products.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Epimerization",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "38%",
+            "reactant_smiles": "C[C@@H]1[C@H]2[C@@H](C=C3CC4(CCC3[C@@H]2C(=O)OCC5=CC=CC=C5)OCCO4)C(=O)O1.C[C@@H]1[C@H]2[C@@H](C=C3CC4(CCC3[C@@H]2C(=O)OCC5=CC=CC=C5)OCCO4)C(=O)O1",
+            "product_smiles": "C[C@@H]1[C@@H]2[C@@H](C=C3CC4(CCC3[C@@H]2C(=O)OCC5=CC=CC=C5)OCCO4)C(=O)O1",
+            "notes": "Base-catalyzed epimerization at the C2 bridgehead chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation / Hydrogenolysis",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "98%",
+            "reactant_smiles": "O=C1O[C@H](C)[C@H]2[C@H]1[C@H]3C=C4CCC5(OCCO5)CC[C@@H]4[C@@H]3[C@H]2C(=O)OCC6=CC=CC=C6",
+            "product_smiles": "O=C1O[C@H](C)[C@H]2[C@H]1[C@H]3C[C@H]4CC5(OCCO5)CC[C@@H]4[C@@H]3[C@H]2C(=O)O",
+            "notes": "Selective hydrogenation of the alkene and hydrogenolysis of the benzyl ester to a carboxylic acid, leaving the lactone and acetal intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ketal Hydrolysis",
+            "reagents": "1M HCl",
+            "reagent_smiles": "",
+            "conditions": "acetone, 50-60 °C",
+            "yield": "76%",
+            "reactant_smiles": "C[C@@H]1C(=O)O[C@@H]([C@H]1[C@@H]2CC[C@@H]3C4(OCCO4)CCC3([C@H]2C(=O)O))",
+            "product_smiles": "C[C@@H]1C(=O)O[C@@H]([C@H]1[C@@H]2CC[C@@H]3C(=O)CCC3([C@H]2C(=O)O))",
+            "notes": "Acid-catalyzed hydrolysis of a 1,3-dioxolane ketal to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Amination",
+            "reagents": "Pd/C, HCO2NH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH:H2O, 0°C to r.t.",
+            "yield": "",
+            "reactant_smiles": "OC(=O)[C@@H]1CC(=O)CC[C@H]2[C@@H]1C[C@@H]3[C@@H]2O=C4O[C@@H](C)C[C@@H]34",
+            "product_smiles": "OC(=O)[C@@H]1CC(N)CC[C@H]2[C@@H]1C[C@@H]3[C@@H]2O=C4O[C@@H](C)C[C@@H]34",
+            "notes": "Reductive amination of a ketone to a secondary amine with unspecified stereochemistry at the amine-bearing carbon (indicated by wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Carbamate Formation (Amine Acylation)",
+            "reagents": "aq. NaOH",
+            "reagent_smiles": "CCOC(=O)Cl",
+            "conditions": "EtOH, 40 °C to 20 °C, recrystallization",
+            "yield": "50%",
+            "reactant_smiles": "CC1OC(=O)[C@@H]2[C@H]1CC[C@@H]3[C@@H](C(=O)O)[C@@H]4CC[C](N)CC4[C@@H]32",
+            "product_smiles": "CC1OC(=O)[C@@H]2[C@H]1CC[C@@H]3[C@@H](C(=O)O)[C@@H]4CC[C@@H](NC(=O)OCC)CC4[C@@H]32",
+            "notes": "The amine group is acylated with ethyl chloroformate to form an ethyl carbamate. The wavy bond on the amine carbon in the reactant is converted to a defined stereocenter (S) in the product, matching the dash bond shown in the product structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acyl Chloride Formation (Carboxylic Acid Activation)",
+            "reagents": "",
+            "reagent_smiles": "ClC(=O)C(=O)Cl",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)N[C@H]1CCC2([C@@H]1)CCC3([C@@H]2)C(=O)O[C@H](C)[C@@H]([C@@H]3)C(=O)O",
+            "product_smiles": "CCOC(=O)N[C@H]1CCC2([C@@H]1)CCC3([C@@H]2)C(=O)O[C@H](C)[C@@H]([C@@H]3)C(=O)Cl",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Rosenmund Reduction",
+            "reagents": "H2, Pd/C, lutidine",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "66%",
+            "reactant_smiles": "CCOC(=O)N[C@@H]1CC[C@H]2[C@H](C1)C[C@H]3[C@H](C(=O)Cl)[C@H]2[C@H]4[C@H](C)OC(=O)C43",
+            "product_smiles": "CCOC(=O)N[C@@H]1CC[C@H]2[C@H](C1)C[C@H]3[C@H](C=O)[C@H]2[C@H]4[C@H](C)OC(=O)C43",
+            "notes": "Acyl chloride reduced to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Homer-Wadsworth-Emmons olefination",
+            "reagents": "LDA",
+            "reagent_smiles": "CCOP(=O)(OCC)CC1=CC=C(C=C1)C2=CC(=CC=C2)F",
+            "conditions": "THF, -20 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)N[C@@H]1CC[C@@H]2[C@@H](C1)C[C@@H]3[C@@H]([C@@H](C)OC3=O)[C@H]2C=O",
+            "product_smiles": "CCOC(=O)N[C@@H]1CC[C@@H]2[C@@H](C1)C[C@@H]3[C@@H]([C@@H](C)OC3=O)[C@H]2/C=C/C4=NC=C(C=C4)C5=CC=CC(=C5)F",
+            "notes": "Homer-Wadsworth-Emmons olefination of an aldehyde with a phosphonate reagent to form a trans-alkene.",
+            "substeps": [
+                {
+                    "step_id": "14.1",
+                    "reaction_type": "Lithiation-Phosphorylation",
+                    "reagents": "LDA",
+                    "reagent_smiles": "ClP(=O)(OCC)OCC",
+                    "conditions": "-80 °C to -50 °C",
+                    "yield": "85% (2 steps)",
+                    "reactant_smiles": "CC1=NC=C(C=C1)C2=CC=CC(=C2)F",
+                    "product_smiles": "CCOP(=O)(CC1=CC=C(C=C1)C2=CC=CC(=C2)F)OCC",
+                    "notes": "The reactant structure (3-(3-fluorophenyl)-4-methylpyridine) and product structure (diethyl ((4'-(3-fluorophenyl)-[1,1'-biphenyl]-4-yl)methyl)phosphonate) depict a significant skeletal transformation from a pyridine ring to a biphenyl system. This is an unusual transformation for the given reagents and conditions. However, the provided SMILES accurately represent their respective drawn structures in the screenshot.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Salt Formation",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "CCOC(=O)N[C@@H]1CC[C@@]2(C)C(C1)C[C@@H]3[C@@H]([C@H](C)OC3=O)[C@H]2/C=C/C4=NC=C(C=C4)C5=CC=CC(=C5)F",
+            "product_smiles": "CCOC(=O)N[C@@H]1CC[C@@]2(C)C(C1)C[C@@H]3[C@@H]([C@H](C)OC3=O)[C@H]2/C=C/C4=NC=C(C=C4)C5=CC=CC(=C5)F.OS(=O)(O)O",
+            "notes": "Protonation of pyridine by sulfuric acid to form Vorapaxar Sulfate.",
+            "substeps": []
+        }
+    ]
+}

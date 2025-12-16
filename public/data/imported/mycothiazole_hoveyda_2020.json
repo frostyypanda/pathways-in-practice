@@ -1,0 +1,170 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "mycothiazole-hoveyda-2020",
+        "molecule_name": "Mycothiazole",
+        "class": "Natural Product",
+        "author": "Hoveyda",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard coupling / Nucleophilic aromatic substitution (with organometallic)",
+            "reagents": "THF",
+            "reagent_smiles": "CC(C)=C[Mg]Cl",
+            "conditions": "10 °C",
+            "yield": "87%",
+            "reactant_smiles": "BrC1=NC(Br)=CS1",
+            "product_smiles": "C=CC(C)(C)C1=NC(=CS1)Br",
+            "notes": "Grignard reaction where 2-bromo position of 2,5-dibromothiazole is selectively replaced by a 1,1-dimethylallyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "CC(C)(C)O.O",
+            "conditions": "tBuOH, H2O, 22 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC(C)(C)C1=NC(=CS1)Br",
+            "product_smiles": "CC(C)(C(CO)O)C1=NC(=CS1)Br",
+            "notes": "Dihydroxylation of an alkene using osmium tetroxide (OsO4) and N-methylmorpholine N-oxide (NMO) as a co-oxidant.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Periodate oxidation / Vicinal diol cleavage",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "CC(C)(C(CO)O)C1=NC(=CS1)Br",
+            "product_smiles": "CC(C)(C=O)C1=NC(=CS1)Br",
+            "notes": "Vicinal diol is cleaved to an aldehyde using sodium periodate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Chiral Allylation",
+            "reagents": "Hoveyda chiral catalyst, Zn(OMe)₂",
+            "reagent_smiles": "Cl/C=C/CB1OC(C)(C)C(C)(C)O1",
+            "conditions": "MeOH, PhMe",
+            "yield": "86%",
+            "reactant_smiles": "CC(C)(C=O)C1=NC(=CS1)Br",
+            "product_smiles": "CC(C)([C@H](O)C/C=C/Cl)C1=NC(=CS1)Br",
+            "notes": "Stereoselective allylation of an aldehyde using a chiral borane reagent and catalyst to form a chiral alcohol with an E-alkene.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Halogenation (chloro-substitution of alkene)",
+                    "reagents": "Molybdenum catalyst (structure shown with Ar = 2,4,6-(iPr)3C6H2)",
+                    "reagent_smiles": "ClCl.[H]B1OC(C)(C)C(C)(C)O1",
+                    "conditions": "benzene",
+                    "yield": "96%",
+                    "reactant_smiles": "CC1(C)OB(CCC/C=C/C)OC1(C)C",
+                    "product_smiles": "CC1(C)OB(CCC/C=C/Cl)OC1(C)C",
+                    "notes": "Terminal chloro-substitution of the alkene group with retention of trans geometry. The `(pin)B` group refers to a pinacol boronate ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "Pd(dppf)Cl2•CH2Cl2, CsF",
+            "reagent_smiles": "C=CCB1OC(C)(C)C(C)(C)O1",
+            "conditions": "THF, H2O, 60 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC(C)([C@H](C/C=C\\Cl)O)C1=NC(=CS1)Br",
+            "product_smiles": "C=CCC1=CSC(=N1)C(C)(C)[C@H](C/C=C\\Cl)O",
+            "notes": "Suzuki cross coupling of an aryl bromide with allylboronic acid pinacol ester, replacing bromine with an allyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "K3PO4, Chiral palladium-phosphine complex catalyst",
+            "reagent_smiles": "C=C(B1OC(C)(C)C(C)(C)O1)CCNC(=O)OC",
+            "conditions": "THF/H2O, 55 °C",
+            "yield": "71%",
+            "reactant_smiles": "C=CCC1=CSC(=N1)C(C)(C)[C@@H](C/C=C\\Cl)O",
+            "product_smiles": "C=CCC1=CSC(=N1)C(C)(C)[C@@H](C/C=C\\C(=C)CCNC(=O)OC)O",
+            "notes": "A Suzuki cross coupling reaction replaces the terminal chloride of the reactant's alkene chain with a substituted vinyl group from the boronic ester. The stereochemistry at the alcohol chiral center and the Z-geometry of the alkene within the chain are both retained.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Carbamate Formation / Acylation",
+                    "reagents": "NaHCO3",
+                    "reagent_smiles": "COC(=O)Cl",
+                    "conditions": "EtOH/H2O, 0 °C",
+                    "yield": "98%",
+                    "reactant_smiles": "C#CCN",
+                    "product_smiles": "C#CCNC(=O)OC",
+                    "notes": "Acylation of propargylamine with methyl chloroformate to form a carbamate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Propargyl-Allene Rearrangement",
+                    "reagents": "CuI, NHCy2, PFA",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, reflux",
+                    "yield": "79%",
+                    "reactant_smiles": "C#CCNC(=O)OC",
+                    "product_smiles": "C=C=CCNC(=O)OC",
+                    "notes": "Copper-catalyzed propargyl-allene isomerization of a carbamate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Copper-catalyzed hydroboration",
+                    "reagents": "CuCl",
+                    "reagent_smiles": "[Cl-].CC(C)c1c(C(C)C)cccc1[N+]2=CN(C=C2)c3c(C(C)C)cccc3C(C)C.O1C(C)(C)C(O1)B-B2OC(C)(C)C(O2)C",
+                    "conditions": "THF, iPrOH, 0 °C to rt",
+                    "yield": "76%",
+                    "reactant_smiles": "C=C=CCNC(=O)OC",
+                    "product_smiles": "C=C(B1OC(C)(C)C(C)(C)O1)CCNC(=O)OC",
+                    "notes": "Copper-catalyzed hydroboration of an allene to form a vinyl boronate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cross-metathesis",
+            "reagents": "Hoveyda-Grubbs catalyst",
+            "reagent_smiles": "HOCC=CCO",
+            "conditions": "THF",
+            "yield": "77%",
+            "reactant_smiles": "C=CCC1=CSC(=N1)C(C)(C)[C@H](C/C=C\\C(=C)CCNC(=O)OC)O",
+            "product_smiles": "C=C(/C=C\\C[C@H](C(C)(C)C1=NC(=CS1)C/C=C\\CCCO)O)CCNC(=O)OC",
+            "notes": "A cross-metathesis reaction, catalyzed by a Hoveyda-Grubbs catalyst, reacts the terminal alkene of the allyl group on the thiazole with an external alcohol. The other terminal alkene (vinylidene) remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Appel reaction",
+            "reagents": "CBr₄, PPh₃",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, -40 °C",
+            "yield": "68%",
+            "reactant_smiles": "C=C(/C=C\\C[C@H](C(C)(C)C1=NC(=CS1)C/C=C\\CCCO)O)CCNC(=O)OC",
+            "product_smiles": "C=C(/C=C\\C[C@H](C(C)(C)C1=NC(=CS1)C/C=C\\CCCBr)O)CCNC(=O)OC",
+            "notes": "An Appel reaction converts the primary alcohol of the reactant to a primary alkyl bromide in the product. The secondary alcohol and the other double bonds remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular alkene formation / rearrangement",
+            "reagents": "Pd2(dba)3, P(t-Bu)2Me, KOt-Bu, Cy2NH",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "82%",
+            "reactant_smiles": "BrCC/C=C/C1=NC(=CS1)C(C)(C)[C@@H](O)C/C=C\\C(=C)CCNC(=O)OC",
+            "product_smiles": "C=CCC1=NC(=CS1)C(C)(C)[C@@H](O)C/C=C\\C(=C)CCNC(=O)OC",
+            "notes": "Intramolecular reaction involving the bromoalkene group, resulting in a terminal alkene and the loss of a carbon atom and bromine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "subutex-buprenorphine-purdue-unknown-2024",
+        "molecule_name": "Subutex (Buprenorphine Purdue)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation (Quaternization)",
+            "reagents": "DMF",
+            "reagent_smiles": "C1CC1CBr",
+            "conditions": "80 °C",
+            "yield": "94%",
+            "reactant_smiles": "CN1CC[C@@]23C4=CC=C([C@@H]2OC5=C3C(=CC=C5O)C[C@H]41)OC",
+            "product_smiles": "C[N+]1(CC[C@@]23C4=CC=C([C@@H]2OC5=C3C(=CC=C5O)C[C@H]41)OC)CC6CC6",
+            "notes": "N-alkylation of oripavine with cyclopropylmethyl bromide to form a quaternary ammonium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-demethylation",
+            "reagents": "",
+            "reagent_smiles": "CCCCCCCCCC(C)(C)S.CC(C)([O-])[Na+]",
+            "conditions": "DMSO, 80 °C",
+            "yield": "65-67%",
+            "reactant_smiles": "C[N+]1(CC[C@]23C4=CC=C([C@H]2OC5=C3C(=CC=C5O)C[C@@H]41)OC)CC6CC6",
+            "product_smiles": "COC1=CC=C2[C@@H]3CC4=CC=C(C5=C4[C@]2(CCN3CC6CC6)[C@H]1O5)O",
+            "notes": "N-demethylation of a quaternary ammonium salt to a tertiary amine using a long-chain branched thiol and sodium tert-butoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "PhMe",
+            "reagent_smiles": "C=CC(=O)C",
+            "conditions": "80 °C",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1C[C@@H]2[C@H]3[C@H](C=C(OC)C4=C3[C@H]1O[C@H]2C5=C4C=C(O)C=C5)CCN(CC6CC6)C",
+            "product_smiles": "CC(=O)[C@@H]1C[C@@H]2[C@H]3[C@H](C4=C5[C@H]1C[C@H]2[C@@H](O[C@H]3C6=C4C=C(O)C=C6)OC)CCN(CC7CC7)C",
+            "notes": "Diels-Alder cycloaddition of a morphinan derivative with methyl vinyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, H2, tartaric acid",
+            "reagent_smiles": "",
+            "conditions": "H2O",
+            "yield": "83-91%",
+            "reactant_smiles": "CC(=O)[C@H]1C[C@]23C=C[C@]1([C@H]4[C@]53CCN(CC6CC6)[C@@H]2CC7=CC=C(C(=C75)O4)O)OC",
+            "product_smiles": "CC(=O)[C@H]1C[C@]23CC[C@]1([C@H]4[C@]53CCN(CC6CC6)[C@@H]2CC7=CC=C(C(=C75)O4)O)OC",
+            "notes": "Reduction of an internal alkene to an alkane.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Phenol Esterification (Carbonate formation)",
+            "reagents": "Et3N",
+            "reagent_smiles": "CCOC(=O)Cl",
+            "conditions": "EtOAc",
+            "yield": ">95%",
+            "reactant_smiles": "CC(=O)[C@H]1C[C@]23CC[C@]1([C@H]4[C@]53CCN(CC6CC6)[C@@H]2CC7=CC=C(C(=C75)O4)O)OC",
+            "product_smiles": "CCOC(=O)OC1=CC=C2C[C@@H]3[C@@]45CC[C@@]([C@H](C4)C(=O)C)([C@H]6[C@]5(CCN3CC7CC7)C2=C1O6)OC",
+            "notes": "Phenolic hydroxyl group is reacted with ethyl chloroformate in the presence of triethylamine to form an ethyl carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Grignard Addition / Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "CC(C)(C)MgCl",
+            "conditions": "cyclohexane, PhMe then MeOH, DCM",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)OC1=CC=C2C[C@@H]3[C@@]45CC[C@@]([C@H](C4)C(=O)C)([C@H]6[C@]5(CCN3CC7CC7)C2=C1O6)OC",
+            "product_smiles": "CC(C)(C)[C@@](C1CC23CC[C@@]([C@H]4[C@]53CCN(CC6CC6)[C@@H]2CC7=CC=C(C(=C75)O4)O)(O)C)(O)C",
+            "notes": "Grignard reaction of the acetyl ketone with t-BuMgCl to form a tertiary alcohol, followed by hydrolysis of the ethyl carbonate and possibly some deacetylation (if acetyl was on a phenol). The acetyl on C-7 is converted to the tertiary alcohol with t-Bu group. The ethyl carbonate at C-3 is hydrolyzed to a phenol. The methoxy is retained. Stereochemistry at the newly formed tertiary alcohol center is indicated with a dashed bond to the t-Bu group.",
+            "substeps": []
+        }
+    ]
+}

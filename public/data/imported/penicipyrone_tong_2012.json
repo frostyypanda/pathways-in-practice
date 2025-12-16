@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "penicipyrone-tong-2012",
+        "molecule_name": "Penicipyrone",
+        "class": "Natural Product",
+        "author": "Tong",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Protection (Alcohol to Silyl Ether)",
+            "reagents": "TBSCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H](C(=O)OC)O",
+            "product_smiles": "C[C@@H](C(=O)OC)[OTBS]",
+            "notes": "Protection of a secondary alcohol (methyl 2-hydroxypropanoate) as its tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Reduction (to Aldehyde)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "hexane, -78 °C",
+            "yield": "93%",
+            "reactant_smiles": "[OTBS][C@@H](C)C(=O)OC",
+            "product_smiles": "[OTBS][C@@H](C)C=O",
+            "notes": "Methyl ester is reduced to an aldehyde using DIBAL-H, maintaining the stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "CCOC(=O)CP(=O)(OCC)OCC",
+            "conditions": "THF, -78 °C",
+            "yield": "90%",
+            "reactant_smiles": "C[C@@H]([OTBS])C=O",
+            "product_smiles": "C[C@@H]([OTBS])\\C=C\\C(=O)OCC",
+            "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde to form an alpha,beta-unsaturated ester with E-stereochemistry, preserving the adjacent chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCOC(=O)/C=C/[C@H](C)[OTBS]",
+            "product_smiles": "OCCC=C[C@H](C)[OTBS]",
+            "notes": "Ester reduction to a primary alcohol using DIBAL-H, while preserving the E-alkene and TBS protecting group and stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "TBS Deprotection",
+            "reagents": "Amberlyst-15, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]([OTBS])/C=C/CO",
+            "product_smiles": "C[C@@H](O)/C=C/CO",
+            "notes": "Deprotection of a TBS silyl ether to a secondary alcohol using acidic resin (Amberlyst-15) in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Selective Silylation",
+            "reagents": "TBSCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "56% (2 steps)",
+            "reactant_smiles": "C[C@@H](O)/C=C/CO",
+            "product_smiles": "C[C@@H](O)/C=C/C[OTBS]",
+            "notes": "Selective protection of the primary alcohol as a TBS ether, retaining the secondary alcohol and alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Johnson-Claisen rearrangement",
+            "reagents": "MeC(OEt)3, EtCO2H",
+            "reagent_smiles": "",
+            "conditions": "140 °C",
+            "yield": "79%",
+            "reactant_smiles": "C[C@H](O)/C=C/CO[TBS]",
+            "product_smiles": "C/C=C/[C@@H](CC(=O)OCC)CO[TBS]",
+            "notes": "Johnson-Claisen rearrangement of an allylic alcohol into an alpha-chiral ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection / Lactonization",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "82%",
+            "reactant_smiles": "CC/C=C\\[C@@H](C[O][TBS])CC(=O)O[Et]",
+            "product_smiles": "O=C1OC[C@@H](C/C=C\\C)C1",
+            "notes": "Hydrolysis of TBS ether and ethyl ester, followed by intramolecular esterification to form a gamma-lactone. Stereochemistry retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Claisen Condensation / Formylation",
+            "reagents": "Et2O/EtOH",
+            "reagent_smiles": "[NaH].CCOC=O",
+            "conditions": "60 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1OC[C@@H](C/C=C/C)C1",
+            "product_smiles": "O=C1OC[C@@H](C/C=C/C)[C@H](C=O)C1",
+            "notes": "Alpha-formylation of a lactone using sodium hydride and ethyl formate.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Knoevenagel Condensation (Formaldehyde)",
+            "reagents": "(CH2O)n",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C/[C@H]1[C@@H](C=O)C(=O)OC1",
+            "product_smiles": "C/C=C/[C@H]1C(=C)C(=O)OC1",
+            "notes": "Formation of an exocyclic methylene from an aldehyde adjacent to a lactone carbonyl, via reaction with paraformaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Organolithium Addition",
+            "reagents": "MeLi",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -40 °C",
+            "yield": "43% (3 steps)",
+            "reactant_smiles": "C/C=C/[C@H]1COC(=O)C1=C",
+            "product_smiles": "C/C=C/[C@H]1COC(C)(O)C1=C",
+            "notes": "Addition of methyl lithium to a lactone, forming a tertiary alcohol and opening the lactone to a cyclic ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "Amberlyst-15",
+            "reagent_smiles": "CC1=CC(=CC(=O)O1)O",
+            "conditions": "DCM, rt",
+            "yield": "84%",
+            "reactant_smiles": "O=C1OC(C)(O)C(=C)C[C@H]1C/C=C/C",
+            "product_smiles": "C/C=C/[C@H]1CO[C@@]2(C)[C@H]1CC3=C(C=C(C)OC3=O)O2",
+            "notes": "Cascade cyclization to form penicipyrone from a lactone and a pyrone.",
+            "substeps": []
+        }
+    ]
+}

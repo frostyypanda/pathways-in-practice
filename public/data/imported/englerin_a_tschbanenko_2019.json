@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "englerin-a-tschbanenko-2019",
+        "molecule_name": "Englerin A",
+        "class": "Natural Product",
+        "author": "Tschbanenko",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aldol-type condensation / C-C bond formation",
+            "reagents": "LDA, THF",
+            "reagent_smiles": "CCOC(=O)C(Cl)C",
+            "conditions": "-78 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC(C)C(=O)C",
+            "product_smiles": "CC(C)C(O)=C/C(=O)C(C)Cl",
+            "notes": "Formation of an alpha,beta-unsaturated enol from a ketone and an alpha-chloroester via LDA mediated C-C bond formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Cyclization / Furanone Formation",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "72%",
+            "reactant_smiles": "CC(C)C(O)=CC(=O)C(C)Cl",
+            "product_smiles": "CC(C)C1=CC(=O)OC1C",
+            "notes": "An intramolecular cyclization, likely involving deprotonation by DBU, to form a furanone ring system from an enone containing an adjacent enol and a terminal chloromethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Aldol-type Cyclization / Cascade reaction",
+            "reagents": "LDA",
+            "reagent_smiles": "C[C@@H]1CCC[C@H]1C=O",
+            "conditions": "THF",
+            "yield": "75%",
+            "reactant_smiles": "CC(C)C1=CC(=O)C(C)O1",
+            "product_smiles": "CC(C)[C@H]1OC(=O)C=C1[C@H]2C3(C)C(=O)C4(O3)CC[C@@H](C)[C@H]24",
+            "notes": "Cascade reaction involving furanone and cyclopentenecarbaldehyde enolate leading to a complex polycyclic structure, an intermediate towards Englerin A.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "SmI2 Reduction",
+            "reagents": "SmI2, HMPA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "43%",
+            "reactant_smiles": "CC(C)[C@@H]1C=C(C(=O)[C@H](OC)O1)[C@@H]2[C@H]3C[C@H](C)C[C@@H]2C3=O",
+            "product_smiles": "CC(C)[C@@H]1[C@@H]2[C@@H]([C@H](OC)[C@@H](OH)O1)[C@@H]3C[C@H](C)C[C@@H]2C3=O",
+            "notes": "Reductive dearomatization of an alpha,beta-unsaturated ketone to a saturated alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Yamaguchi esterification",
+            "reagents": "cinnamic acid, DMAP, Et3N",
+            "reagent_smiles": "C1=C(C(=C(C=C1Cl)Cl)C(=O)Cl)Cl",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "CC(C)[C@@]1(C)O[C@H]2[C@@H](C[C@H]3[C@H](C)[C@@H](C)[C@H]3C[C@@H]2C1)C(=O)O",
+            "product_smiles": "CC(C)[C@@]1(C)O[C@H]2[C@@H](C[C@H]3[C@H](C)[C@@H](C)[C@H]3C[C@@H]2C1)C(=O)OC(=O)/C=C/c1ccccc1",
+            "notes": "The reactant carboxylic acid is activated and forms a mixed anhydride with cinnamic acid. The reaction type is labeled 'Yamaguchi esterification', but the product shown is a mixed anhydride, not a typical ester from an alcohol. The drawn reagent is 2,4,6-trichlorobenzoyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction (Lactone to Lactol)",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)[C@H]1C[C@@H]2C[C@H]3[C@H](C)C[C@@H]4C(=O)O[C@]25[C@@H]1C[C@@H](C)[C@]4(O[C@H]35)OC(=O)/C=C/c6ccccc6",
+            "product_smiles": "CC(C)[C@H]1C[C@@H]2C[C@H]3[C@H](C)C[C@@H]4[C@@H](O)O[C@]25[C@@H]1C[C@@H](C)[C@]4(O[C@H]35)OC(=O)/C=C/c6ccccc6",
+            "notes": "Selective reduction of a lactone to a lactol (hemiacetal) using sodium borohydride. The external alpha,beta-unsaturated cinnamate ester group remains unreacted.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Sulfonylation / Alcohol Activation",
+            "reagents": "LiHMDS, imidazole",
+            "reagent_smiles": "C1=CN(C=N1)S(=O)(=O)N2C=CN=C2",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)[C@H]1C[C@@H](C)[C@@]23C[C@H]4C[C@@H]2[C@@]1(C)O[C@@H]([C@@](O)(OC(=O)/C=C/c1ccccc1)C(C)O4)O3",
+            "product_smiles": "CC(C)[C@H]1C[C@@H](C)[C@@]23C[C@H]4C[C@@H]2[C@@]1(C)O[C@@H]([C@@](OS(=O)(=O)N1C=CN=C1)(OC(=O)/C=C/c1ccccc1)C(C)O4)O3",
+            "notes": "Activation of tertiary alcohol by conversion to an imidazole-sulfonate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Substitution (Sulfate Displacement)",
+            "reagents": "cesium hydroxyacetate, 18-crown-6",
+            "reagent_smiles": "",
+            "conditions": "toluene, 110 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC(C)[C@H]1CC[C@@H]2[C@@H]3C[C@H]4O[C@@]([Me])(OS(=O)(=O)N5C=CN=C5)[C@@H](O[C@H]1C4)[C@@]([Me])(OC(=O)/C=C/[Ph])[C@@H]23",
+            "product_smiles": "CC(C)[C@H]1CC[C@@H]2[C@@H]3C[C@H]4O[C@@]([Me])(OC(=O)CO)[C@@H](O[C@H]1C4)[C@@]([Me])(OC(=O)/C=C/[Ph])[C@@H]23",
+            "notes": "The imidazole-1-sulfonyl group is substituted by a hydroxyacetate group. The complex polycyclic core structure and existing cinnamoyl ester remain unchanged.",
+            "substeps": []
+        }
+    ]
+}

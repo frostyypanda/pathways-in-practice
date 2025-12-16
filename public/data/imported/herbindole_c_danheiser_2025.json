@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "herbindole-c-danheiser-2025",
+        "molecule_name": "Herbindole C",
+        "class": "Natural Product",
+        "author": "Danheiser",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Nitration",
+            "reagents": "NaOH",
+            "reagent_smiles": "CC(=O)OC(=O)C.O=N(=O)O.ClCCCl.O",
+            "conditions": "50 to 80 °C",
+            "yield": "70%",
+            "reactant_smiles": "CC1=CC=C(C=C1C)N",
+            "product_smiles": "CC1=CC(=C(C=C1C)[N+](=O)[O-])N",
+            "notes": "Aromatic nitration of 2,3-dimethylaniline to form 4,5-dimethyl-2-nitroaniline using acetic anhydride and nitric acid, likely forming acetyl nitrate as the active nitrating species. 1,2-dichloroethane and water are used as solvents, and NaOH for workup.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aromatic Bromination / Sandmeyer-type reaction",
+            "reagents": "CuBr2, Br2",
+            "reagent_smiles": "CC(C)CON=O",
+            "conditions": "MeCN, 50 °C",
+            "yield": "79%",
+            "reactant_smiles": "Cc1c(C)c(N)c([N+](=O)[O-])cc1",
+            "product_smiles": "Brc1c(C)c(C)c([N+](=O)[O-])cc1Br",
+            "notes": "Aniline amino group replaced by bromine, and an additional bromination occurs at the ortho position relative to the nitro group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bartoli Indole Synthesis",
+            "reagents": "",
+            "reagent_smiles": "C=CMgBr",
+            "conditions": "THF, -40 °C",
+            "yield": "36%",
+            "reactant_smiles": "Cc1c(C)c(Br)c(Br)c([N+](=O)[O-])c1",
+            "product_smiles": "Cc1c(C)c2[nH]ccc2c(Br)c1Br",
+            "notes": "Bartoli Indole Synthesis converting a nitrobenzene to an indole using vinylmagnesium bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Silylation",
+            "reagents": "KHMDS, TBSOTf",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1=C(Br)C(Br)=C2NC=CC2=C1C",
+            "product_smiles": "CC1=C(Br)C(Br)=C2[NTBS]C=CC2=C1C",
+            "notes": "Indole nitrogen is protected with a tert-butyldimethylsilyl (TBS) group using KHMDS as base and TBSOTf as the silylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "n-BuLi, toluene",
+            "reagent_smiles": "C1=CC=CC1",
+            "conditions": "-78 °C to RT",
+            "yield": "88%",
+            "reactant_smiles": "Cc1c(C)c(Br)c(Br)c2c1N([TBS])C=C2",
+            "product_smiles": "Cc1c(C)c2c(N([TBS])C=C2)c1C3CC4C=CC3C4",
+            "notes": "A dibrominated indole derivative undergoes deprotonation/lithiation (possibly forming an aryne or equivalent) with n-BuLi, followed by a Diels-Alder cycloaddition with cyclopentadiene to form a fused norbornene system. The two bromine atoms are eliminated in the process.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "53%",
+            "reactant_smiles": "CC1=C(C)C2=C(N([TBS])C=C3)C3=C2C4C1[C@@H](C)C=C4",
+            "product_smiles": "CC1=C(C)C2=C(N([TBS])C=C3)C3=C2C4C1[C@@H](C)[C@H](O)[C@H]4O",
+            "notes": "Syn-dihydroxylation of an alkene in a complex polycyclic system using OsO4/NMO.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Periodate oxidation (Vicinal diol cleavage)",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "81%",
+            "reactant_smiles": "C[C@@]1C[C@@H](O)[C@H](O)C2=C3C4=C(C)C(C)=C(N([Si](C)(C)C(C)(C)C)C=C4)C3C12",
+            "product_smiles": "C[C@@]1C[C@@H](C=O)[C@H](C=O)C2=C3C4=C(C)C(C)=C(N([Si](C)(C)C(C)(C)C)C=C4)C3C12",
+            "notes": "Cleavage of vicinal trans-diol to trans-dialdehyde, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dithioacetal formation, N-TBS deprotection",
+            "reagents": "EtSH, BF3•OEt2",
+            "reagent_smiles": "CCS.F[B](F)F.CCOCC",
+            "conditions": "-78 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "[TBS]N1C=CC2=C(C)C(=C3[C@@H](C[C@H](C=O)C3=C21)C=O)C",
+            "product_smiles": "[nH]1C=CC2=C(C)C(=C3[C@@H](C(SCCS)(SCCS)C[C@H](C(SCCS)(SCCS))C3=C21))C",
+            "notes": "Formation of bis(ethylthio)acetals from dialdehyde groups and deprotection of the N-TBS group on the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Desulfurization",
+            "reagents": "Raney Nickel",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "96%",
+            "reactant_smiles": "C(SCC)SCC[C@H]1C[C@H](C(SCC)SCC)C2=C3C(=C(C)C(=C12)C)C=CN3",
+            "product_smiles": "C[C@H]1C[C@H](C)C2=C3C(=C(C)C(=C12)C)C=CN3",
+            "notes": "Desulfurization of dithioacetals to methyl groups using Raney Nickel.",
+            "substeps": []
+        }
+    ]
+}

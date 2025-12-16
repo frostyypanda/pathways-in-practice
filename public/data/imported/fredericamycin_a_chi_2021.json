@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fredericamycin-a-chi-2021",
+        "molecule_name": "Fredericamycin A",
+        "class": "Natural Product",
+        "author": "Chi",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imination / Enamine Formation",
+            "reagents": "NH4OAc",
+            "reagent_smiles": "CO",
+            "conditions": "reflux",
+            "yield": "95%",
+            "reactant_smiles": "CC(=O)CC(=O)C",
+            "product_smiles": "CC(=O)/C=C(/N)C",
+            "notes": "Formation of 4-amino-3-penten-2-one (an enamine) from acetylacetone and ammonia (from ammonium acetate).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hantzsch-type Cyclocondensation / Pyridinone Formation",
+            "reagents": "",
+            "reagent_smiles": "N#CCC(=O)OCC.CCN(CC)CC",
+            "conditions": "THF, reflux",
+            "yield": "82%",
+            "reactant_smiles": "C/C(=C/C(=O)C)\\N",
+            "product_smiles": "CCOC(=O)C1=C(C)C=C(C)NC1=O",
+            "notes": "Formation of a 2-pyridone derivative via cyclocondensation between an enamine and ethyl cyanoacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Methylation",
+            "reagents": "Me3OBF4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=C(C)C=C(C)NC1=O",
+            "product_smiles": "CCOC(=O)C1=C(C)C=C(C)N(C)C(=C1)OC",
+            "notes": "N,O-methylation of a pyridone to form a 1-methyl-2-methoxypyridine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Annulation / Cyclocondensation",
+            "reagents": "EtO, LDA, THF",
+            "reagent_smiles": "CCOC1=CC(=O)CC1",
+            "conditions": "-78 °C - rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C(C)C=C(C)N=C1OC",
+            "product_smiles": "CC1=CC2=C(C(=C3C(=C2)CCC3=O)O)C(=N1)OC",
+            "notes": "Base-mediated annulation of a pyridine ester with an ethoxycyclopentenone to form a fused quinoline-indanone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "O-methylation",
+            "reagents": "NaOH, Me2SO4, TBAB",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, H2O, rt",
+            "yield": "71% (2 steps)",
+            "reactant_smiles": "CC1=CC2=C(C(=C3C(=C2)CCC3=O)O)C(=N1)OC",
+            "product_smiles": "CC1=CC2=C(C(=C3C(=C2)CCC3=O)OC)C(=N1)OC",
+            "notes": "Methylation of the phenolic hydroxyl group to a methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Formal [4+2] cycloaddition / cascade rearrangement",
+            "reagents": "BF3OEt2",
+            "reagent_smiles": "C[Si](C)(C)OC1=C(CC1)O[Si](C)(C)C",
+            "conditions": "-78 °C - rt",
+            "yield": "42%",
+            "reactant_smiles": "Cc1cc(OC)c2c(OC)c3C(=O)CCC3c2nc1",
+            "product_smiles": "Cc1cc(OC)c2c(OC)c3c4C(=O)CCC4(CC3)C(=O)Oc2nc1",
+            "notes": "Cascade reaction involving 1,2-bis(trimethylsilyloxy)cyclobut-1-ene with a quinoline-fused indanone derivative, forming a complex spiro-fused polycyclic structure with a lactone and a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Dehydrogenation",
+            "reagents": "DDQ, p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "toluene, 90 °C",
+            "yield": "62%",
+            "reactant_smiles": "CC1=CC2=CC3=C(C(=C2C(=N1)OC)OC)C4(CC3)O-C(=O)-CC(=O)-C4",
+            "product_smiles": "CC1=CC2=CC3=C(C(=C2C(=N1)OC)OC)C4(CC3)O-C(=O)-C=C-C4",
+            "notes": "Oxidative dehydrogenation of a spiro-fused furan-2,4-dione derivative to a furan-2-one (butenolide) derivative using DDQ and p-TsOH.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Friedel-Crafts alkylation / annulation (intramolecular, with base deprotonation)",
+            "reagents": "LiOtBu, THF",
+            "reagent_smiles": "COC1=C2C(=C(C(=C1)OC)OC)C(Cl)OC2=O.[Li+].[O-]C(C)(C)C",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CC1=CC2=CC3=C(C(=C2C(=N1)OC)OC)C4(CC3)C(=O)OC=C4",
+            "product_smiles": "CC1=CC2=CC3=C(C(=C2C(=N1)OC)OC)C4(CC3)C(=O)C5=C(C6=C(O)C(O)=C(OC)C(OC)=C(OC)C6)C5",
+            "notes": "Intramolecular cyclization of an activated quinoline with a chlorinated isobenzofuranone, forming a complex fused polycyclic system, likely via base-promoted ring opening and subsequent annulation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Permethylation",
+            "reagents": "K2CO3, MeI",
+            "reagent_smiles": "",
+            "conditions": "acetone, reflux",
+            "yield": "51% (2 steps)",
+            "reactant_smiles": "COc1c(OC)c2cc(C)nc3c2c(C12CCC3)C(=O)C(C(=O)c4c(O)c(OC)c(OC)c(O)c42)=O",
+            "product_smiles": "COc1c(OC)c2cc(C)nc3c2c(C12CCC3)C(=O)C(C(=O)c4c(OC)c(OC)c(OC)c(OC)c42)=O",
+            "notes": "Permethylation of two phenolic hydroxyl groups to methoxy groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-demethylation, Oxidation",
+            "reagents": "NaBr, p-TsOH",
+            "reagent_smiles": "[Na+].[Br-].Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(=C(N=C1C)OC)C2=CC3=C(C2)C4(CC3)C(=O)C5=C(C6=C(OC)C(OC)=C(OC)C(OC)=C6C(=C5C4=O)OC)OC",
+            "product_smiles": "COC1=CC(=C(N1C(=O)C))C2=CC3=C(C2)C4(CC3)C(=O)C5=C(C6=C(OC)C(OC)=C(OC)C(OC)=C6C(=C5C4=O)OC)OC",
+            "notes": "Conversion of an enamine-ether (part of quinoline-like ring) to an amide/quinolone. Specifically, the -N=C(OMe)- group is transformed to -NH-C(=O)-. The methyl group on the nitrogen-containing ring remains unchanged. All methoxy groups on the right-hand part of the molecule remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Benzylic Oxidation",
+            "reagents": "SeO2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "72% (2 steps)",
+            "reactant_smiles": "CC1=CC2=CC3=C(C(=C2C(=O)N1)OC)C4(CC3)C(=O)C5=C(C6=C(C(=C(C=C6OC)OC)OC)C(=C5C4=O)OC)OC",
+            "product_smiles": "O=CC1=CC2=CC3=C(C(=C2C(=O)N1)OC)C4(CC3)C(=O)C5=C(C6=C(C(=C(C=C6OC)OC)OC)C(=C5C4=O)OC)OC",
+            "notes": "Oxidation of a benzylic methyl group to an aldehyde using SeO2.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Wittig reaction",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "CC=CCP(c1ccccc1)(c1ccccc1)c1ccccc1.[Br-]",
+            "conditions": "",
+            "yield": "46%",
+            "reactant_smiles": "COC1=CC(=C(C2=C1C(=C3C(=C2OC)C(=O)C4(CCC5=C4C(=C6C(=C5)C=C(C=O)NC6=O)OC)C3=O)OC)OC)OC",
+            "product_smiles": "C/C=C/C=C/C1=CC2=CC3=C(C(=C2C(=O)N1)OC)C4(CC3)C(=O)C5=C(C6=C(C(=C(C=C6OC)OC)OC)C(=C5C4=O)OC)OC",
+            "notes": "Wittig reaction converting an aldehyde to a conjugated diene.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,302 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lactodehydrothyrsiferol-floreancig-2011",
+        "molecule_name": "Lactodehydrothyrsiferol",
+        "class": "Natural Product",
+        "author": "Floreancig",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydrozirconation/Carboalumination-Iodination",
+            "reagents": "Me3Al, Cp2ZrCl2, H2O, I2",
+            "reagent_smiles": "",
+            "conditions": "DCE",
+            "yield": "94%",
+            "reactant_smiles": "C#CCCCO",
+            "product_smiles": "C/C(=C\\I)/CCCO",
+            "notes": "Hydrozirconation of a terminal alkyne using Schwartz's reagent followed by methyl incorporation (via AlMe3) and electrophilic iodination, forming an E-vinyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "toluene",
+            "yield": "91%",
+            "reactant_smiles": "C/C(=C\\I)/CCCO",
+            "product_smiles": "C=C/C=C(\\C)/CCCO",
+            "notes": "Palladium-catalyzed cross-coupling of vinyl iodide with vinylmagnesium bromide to form a diene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation (Swern oxidation)",
+            "reagents": "DMSO, (COCl)2, Et3N, DCM",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "C=C/C=C(\\C)/CCCO",
+            "product_smiles": "C=C/C=C(\\C)/CCC=O",
+            "notes": "A primary allylic alcohol is oxidized to a primary allylic aldehyde using Swern oxidation conditions. The diene system and its stereochemistry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Addition (Organolithium)",
+            "reagents": "n-BuLi, THF",
+            "reagent_smiles": "C([Ph])[Ph]",
+            "conditions": "THF",
+            "yield": "82%",
+            "reactant_smiles": "C=C/C=C(\\C)/CCC=O",
+            "product_smiles": "C=C/C=C(\\C)/CCC(O)C([Ph])[Ph]",
+            "notes": "Nucleophilic addition of diphenylmethane (deprotonated by n-BuLi) to an aldehyde, forming a secondary alcohol. The reaction occurs over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Williamson Ether Synthesis / O-Methylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "96%",
+            "reactant_smiles": "C=C/C=C(\\C)CCC[CH](O)[CH]([Ph])[Ph]",
+            "product_smiles": "C=C/C=C(\\C)CCC[CH](OC)[CH]([Ph])[Ph]",
+            "notes": "Methylation of a secondary alcohol using NaH as base and MeI as alkylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd(PtBu)2, K3PO4, H2O",
+            "reagent_smiles": "I/C=C(\\C[OBoc])/CCC[OTBDPS].[BH](C(C)C)C(C)C",
+            "conditions": "THF, toluene",
+            "yield": "74%",
+            "reactant_smiles": "[Ph][C@H]([Ph])[C@H](OC)CC/C=C(\\C)/C=C",
+            "product_smiles": "[Ph][C@H]([Ph])[C@H](OC)CC/C=C(\\C)CH2CH2/C=C(\\C[OBoc])CCC[OTBDPS]",
+            "notes": "Terminal alkene of the reactant is hydroborated by diisopropylborane, then coupled with the iodo-alkene via a Suzuki-Miyaura reaction.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBDPSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF",
+                    "yield": "100%",
+                    "reactant_smiles": "C#CCCCO",
+                    "product_smiles": "C#CCCCO[OTBDPS]",
+                    "notes": "Protection of a primary alcohol with TBDPSCl to form a TBDPS ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Alkyne Hydroxymethylation",
+                    "reagents": "n-BuLi, (CH2O)n",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "94%",
+                    "reactant_smiles": "C#CCCCO[OTBDPS]",
+                    "product_smiles": "HOCC#CCCCO[OTBDPS]",
+                    "notes": "Terminal alkyne deprotonation followed by addition to formaldehyde (from paraformaldehyde) to form a primary propargyl alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Hydroiodination / Iododestannylation",
+                    "reagents": "Bu3SnH, Pd(PPh3)4, I2",
+                    "reagent_smiles": "",
+                    "conditions": "benzene, DCM",
+                    "yield": "83%",
+                    "reactant_smiles": "[OTBDPS]CCCC#CCO",
+                    "product_smiles": "[OTBDPS]CCCC/C=C(I)/CO",
+                    "notes": "Stereoselective conversion of a terminal alkyne to an (E)-vinyl iodide via hydrostannylation-iodination sequence.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Alcohol Protection",
+                    "reagents": "Boc₂O",
+                    "reagent_smiles": "C1=NC=NN1",
+                    "conditions": "toluene",
+                    "yield": "94%",
+                    "reactant_smiles": "[OTBDPS]CCC=C(I)CO",
+                    "product_smiles": "[OTBDPS]CCC=C(I)CO[Boc]",
+                    "notes": "Protection of a primary alcohol as a tert-butyl carbonate using di-tert-butyl dicarbonate (Boc₂O) and 1H-1,2,4-triazole.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Epoxidation",
+            "reagents": "oxone, K2CO3, Bu4NHSO4",
+            "reagent_smiles": "CC(=O)O[C@@H]1CO[C@@]2(COC(C)(C)O2)C(=O)[C@@H]1OC(=O)C",
+            "conditions": "MeCN, H2O",
+            "yield": "82%",
+            "reactant_smiles": "[Ph]C([Ph])C([OMe])CCC/C(C)=C/CC/C=C(\\[OBoc])CCC[OTBDPS]",
+            "product_smiles": "[Ph]C([Ph])C([OMe])CCC[C@H]1O[C@@](C)1CC[C@@H]2O[C@](C[OBoc])2CCC[OTBDPS]",
+            "notes": "Double epoxidation of two E-alkenes using a chiral ketone oxidant, oxone, and potassium carbonate, likely for asymmetric epoxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Photooxygenation / Cyclization",
+            "reagents": "hv, O2, Na2S2O3, NaOAc",
+            "reagent_smiles": "C[N+]1=C2C=CC=CC2=CC=C1.[PF6-]",
+            "conditions": "DCE, toluene",
+            "yield": "45%",
+            "reactant_smiles": "[Ph][CH]([Ph])[CH]([OMe])CCC[C@H](C)[C@]1(O1)CCC[C@H]([CH2][OBoc])[C@@]2(O2)CCCCO[OTBDPS]",
+            "product_smiles": "O[OTBDPS]CCC[C@]12[C@H](O[C@](C)3OCC[C@H]([OMe])O3)CC[C@]1([CH2]C(=O)O[C@H]2)",
+            "notes": "Oxidative cyclization of an acyclic polyether with two epoxide rings and various protecting groups, forming a complex fused tetrahydrofuran, pyran, and lactone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation, Deprotection",
+            "reagents": "mCPBA, Sc(OTf)3",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "68%",
+            "reactant_smiles": "[TBDPS]OCCC[C@@H]1C[C@@H](O[C@@]2(C)OC[C@@H](OC)CC2)C13COC(=O)O3",
+            "product_smiles": "HOCCC[C@@H]1C[C@@H](O[C@@]2(C)OC(=O)C=CC2)C13COC(=O)O3",
+            "notes": "Oxidation of a furan derivative to a furanone (butenolide) and deprotection of a TBDPS ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX, DMSO",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "C[C@]1(CCC(=O)O1)[C@H]2CC[C@H]3(COC(=O)O3)[C@@H](CCCO)O2",
+            "product_smiles": "C[C@]1(CCC(=O)O1)[C@H]2CC[C@H]3(COC(=O)O3)[C@@H](CCC=O)O2",
+            "notes": "Primary alcohol oxidation to aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Nozaki-Hiyama-Kishi Reaction",
+            "reagents": "CrCl2, NiCl2, DMP, proton sponge, Mn, Cp2ZrCl2, LiCl",
+            "reagent_smiles": "CC(C)[C@@H]1OC[C@H](N1c2ccc(cc2OC)NS(=O)(=O)c3cc(Cl)cc(Cl)c3).[OTES]C(C)(C)[C@@H]1CC[C@@H](O1)[C@H]([OTES])CC=C(C)CI",
+            "conditions": "MeCN",
+            "yield": "84%",
+            "reactant_smiles": "C[C@@]1(CCC(=O)O1)[C@@]2(C)[C@@H](CCC=O)O[C@@]3(C)[C@H](O2)C[C@@H](OC(=O)O3)CC",
+            "product_smiles": "[OTES]C(C)(C)[C@@H]1CC[C@@H](O1)[C@H]([OTES])C(=C)C[C@@H](O)CC[C@H]2O[C@@]3(C)[C@H](O2)C[C@@H](OC(=O)O3)CC",
+            "notes": "Nozaki-Hiyama-Kishi reaction of an aldehyde with an alkenyl iodide, resulting in an allylic alcohol product after likely rearrangement/elimination.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Allylic Substitution / TMS Deprotection",
+                    "reagents": "nBuLi, Bu4NF",
+                    "reagent_smiles": "C#C[Si](C)(C)C",
+                    "conditions": "THF, -78 °C",
+                    "yield": "88%",
+                    "reactant_smiles": "ClC/C=C(\\C)CCC=C(C)C",
+                    "product_smiles": "C#CCC/C=C(\\C)CCC=C(C)C",
+                    "notes": "Allylic chloride reacts with TMS-acetylide (formed in situ with nBuLi), followed by TMS deprotection using Bu4NF.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Asymmetric Dihydroxylation",
+                    "reagents": "AD-mix β",
+                    "reagent_smiles": "O=S(C)(=O)N",
+                    "conditions": "tBuOH, H₂O",
+                    "yield": "53%",
+                    "reactant_smiles": "C#CCC/C=C(/C)CC/C=C(/C)C",
+                    "product_smiles": "C#CCC/C=C(/C)CC[C@H](O)C(C)(C)O",
+                    "notes": "Sharpless asymmetric dihydroxylation of the terminal alkene with (R) stereoselectivity.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Oxidative Cyclization (asymmetric epoxidation/dihydroxylation followed by intramolecular etherification)",
+                    "reagents": "oxone, Bu₄NHSO₄, py·CSA",
+                    "reagent_smiles": "CC1(C)OC[C@]2(C(=O)[C@@H]3[C@H](CO2)OC(C)(C)O3)O1",
+                    "conditions": "MeCN, H₂O",
+                    "yield": "83%",
+                    "reactant_smiles": "C#CCC/C=C(/C)CCC[C@H](O)C(C)(C)O",
+                    "product_smiles": "C#CCC[C@@H](O)[C@H]1O[C@@](C)(C(C)(C)O)CC1",
+                    "notes": "E-alkene undergoes asymmetric oxidation and intramolecular cyclization to form a tetrahydrofuran ring, with concomitant formation of a new stereocenter and hydroxyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Silylation / Alcohol protection",
+                    "reagents": "TESCl, imidazole, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "DMF",
+                    "yield": "89%",
+                    "reactant_smiles": "C#CCC[C@H](O)[C@@H]1OC[C@H](C(C)(C)O)CC1",
+                    "product_smiles": "C#CCC[C@H]([OTES])[C@@H]1OC[C@H](C(C)(C)[OTES])CC1",
+                    "notes": "Bis-silylation of the secondary alcohol in the side chain and the tertiary alcohol group on the furan ring with triethylsilyl chloride (TESCl). Stereochemistry is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.5",
+                    "reaction_type": "Ruthenium-catalyzed Hydroiodination / Alkyne Functionalization",
+                    "reagents": "2,6-lutadine",
+                    "reagent_smiles": "[Ru+]([c-]1cccc1)(N#CC)(N#CC)(N#CC).F[P-](F)(F)(F)(F)F.C[Si](C)(C)H.II.Cc1ncccc1C",
+                    "conditions": "DCM",
+                    "yield": "82%",
+                    "reactant_smiles": "C#CCC[C@@H]1O[C@@H](C(C)(C)[OTES])CC[C@@H]1[OTES]",
+                    "product_smiles": "IC(=C)CCC[C@@H]1O[C@@H](C(C)(C)[OTES])CC[C@@H]1[OTES]",
+                    "notes": "Terminal alkyne is converted to an iodovinyl group via a ruthenium-catalyzed reaction in the presence of Me3SiH and I2.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Cyclic Carbonate Hydrolysis",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "CC[Si](CC)(CC)O[C@@H](C[C@H]1CC[C@@H](O1)C[C@@H]([C@H](C)O[Si](CC)(CC)CC))CCC(=C)[C@H](O)C[C@H]2O[C@@]3(C)[C@H](C[C@H]4O[C@]3(C)[C@@H](OC(=O)O4)C[C@H]2C(=O)O)",
+            "product_smiles": "CC[Si](CC)(CC)O[C@@H](C[C@H]1CC[C@@H](O1)C[C@@H]([C@H](C)O[Si](CC)(CC)CC))CCC(=C)[C@H](O)C[C@H]2O[C@@]3(C)[C@H](C[C@H]4O[C@]3(C)[C@H](O)(CO)[C@H]4)[C@H]2C(=O)O",
+            "notes": "Base-catalyzed hydrolysis of a cyclic carbonate to yield a diol and a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Selective Tosylation",
+            "reagents": "TsCl, Et3N, Bu2SnO",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "92%",
+            "reactant_smiles": "C[C@@H]1O[C@H](C)[C@H](C)[C@@H]1[C@H]([OTES])CC[C@H](O)C(=C)CC[C@@H]2O[C@H](C)[C@H](O)[C@H](CO)[C@@H]2[C@@]3(C)CCC(=O)O3",
+            "product_smiles": "C[C@@H]1O[C@H](C)[C@H](C)[C@@H]1[C@H]([OTES])CC[C@H](O)C(=C)CC[C@@H]2O[C@H](C)[C@H](O)[C@H](C[OTs])[C@@H]2[C@@]3(C)CCC(=O)O3",
+            "notes": "Selective tosylation of the primary alcohol on the tetrahydropyran ring in the presence of two secondary alcohols and two triethylsilyl ethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reduction",
+            "reagents": "HMPA",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "50 °C",
+            "yield": "76%",
+            "reactant_smiles": "C[C@H]1C[C@@H]2OC(=O)C[C@@H]2[C@H]1O[C@H]3C[C@H](C)C[C@H](C[C@H]4CC(=C)[C@@H]([OTES])C[C@@H]4O[C@H]5C[C@@H]([OTES])C(C)(C)O5)[C@H](O)[C@@H]3C[OTs]",
+            "product_smiles": "C[C@H]1C[C@@H]2OC(=O)C[C@@H]2[C@H]1O[C@H]3C[C@H](C)C[C@H](C[C@H]4CC(=C)[C@@H]([OTES])C[C@@H]4O[C@H]5C[C@@H]([OTES])C(C)(C)O5)[C@H](O)[C@@H]3CO",
+            "notes": "Reduction of a primary tosylate to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "77%",
+            "reactant_smiles": "[OTES]C(C)(C)[C@]1(C)CC[C@H]([C@H](CCC(=C)[C@@]2CC[C@]3(C)[C@H](CC[C@H]([C@]4(C)CCC(=O)O4)O3)O2)[OTES])O1",
+            "product_smiles": "OC(C)(C)[C@]1(C)CC[C@H]([C@H](CCC(=C)[C@@]2CC[C@]3(C)[C@H](CC[C@H]([C@]4(C)CCC(=O)O4)O3)O2)O)O1",
+            "notes": "Desilylation of two triethylsilyl (TES) ethers to form hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

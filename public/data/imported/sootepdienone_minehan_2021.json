@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sootepdienone-minehan-2021",
+        "molecule_name": "Sootepdienone",
+        "class": "Natural Product",
+        "author": "Minehan",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Horner-Wadsworth-Emmons addition / Ketone addition",
+            "reagents": "",
+            "reagent_smiles": "[Li]CP(=O)(OC)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=C1CCC(=O)C[C@H]1C)C",
+            "product_smiles": "CC(=C1CCC(O)(CP(=O)(OC)OC)C[C@H]1C)C",
+            "notes": "Addition of dimethyl lithiomethylphosphonate to the ketone of (+)-Pulegone, forming a tertiary alcohol and an alpha-phosphonate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dehydration",
+            "reagents": "Ce(OTf)3, iPrOH",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "O=P(OC)(OC)CC(O)C1C(=C(C)C)C=CC[C@@H](C)C1",
+            "product_smiles": "C[C@H]1CCC(CP(=O)(OC)OC)=C(C(C)=C)C1",
+            "notes": "Dehydration of a tertiary alcohol forming an internal alkene, with double bond rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, DMS",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "70% (3 steps)",
+            "reactant_smiles": "C=C(C)C1=C(C[C@H](C)CC1)CP(=O)(OC)OC",
+            "product_smiles": "C[C@H](CCC(=O)C(=O)C)CC(=O)CP(=O)(OC)OC",
+            "notes": "Ozonolysis of an alkene, followed by reductive workup (DMS), leading to cleavage of both double bonds in the starting material to form an acyclic diketo phosphonate product.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Homer Wadsworth Emmons Olefination",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "60%",
+            "reactant_smiles": "C[C@H](CCC(=O)C(=O)C)CC(=O)CP(=O)(OC)OC",
+            "product_smiles": "C[C@H]1CCC(=CC(=O)C1)C(=O)C",
+            "notes": "Intramolecular Horner-Wadsworth-Emmons olefination to form a cyclic enone from a phosphonate and a diketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Reaction (1,2-addition)",
+            "reagents": "MeMgBr, Et2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1CCC(=CC(=O)C1)C(=O)C",
+            "product_smiles": "C[C@@H]1CCC(=CC(=O)C1)C(C)(C)O",
+            "notes": "Grignard addition of methylmagnesium bromide to the exocyclic ketone, forming a tertiary alcohol. The ketone within the ring remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Silylation",
+            "reagents": "TESCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "O=C1CC[C@@H](C)CC=C(C(C)(C)O)C1",
+            "product_smiles": "[OTES]C(C)(C)C1=CC(=O)C[C@@H](C)CC1",
+            "notes": "Protection of tertiary alcohol as TES ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Michael/Nef Reaction",
+            "reagents": "LDA, THF, HCl",
+            "reagent_smiles": "CC(=C)N(=O)=O",
+            "conditions": "-78 to -20 °C",
+            "yield": "24%",
+            "reactant_smiles": "[OTES]C(C)(C)C1=CC(=O)C[C@H](C)CC1",
+            "product_smiles": "CCC(=O)C[C@H]1[C@H](C)CCC(=CC1=O)C(C)(C)[OTES]",
+            "notes": "Michael addition of 2-nitropropene to an enone, followed by Nef reaction to form an ethyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Aldol Condensation / Dehydration",
+            "reagents": "KOtBu, THF, tBuOH",
+            "reagent_smiles": "[K+].CC(C)([O-])C.C1CCOC1.CC(C)(C)O",
+            "conditions": "40 °C",
+            "yield": "",
+            "reactant_smiles": "[OTES]C(C)(C)C=C1C(=O)C2[C@H](C)[C@H](CC(=O)CC)CC2C1",
+            "product_smiles": "[OTES]C(C)(C)C=C1CC[C@@H](C)[C@H]2C(=O)C(C)=C3C[C@H]2C13",
+            "notes": "Intramolecular aldol condensation of a bicyclic ketone with an adjacent 2-oxobutyl side chain, followed by dehydration, to form a tricyclic enone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "58%",
+            "reactant_smiles": "[OTES]C(C)(C)C1=CC2=C(C)C(=O)C[C@H]2[C@H](C)CC1",
+            "product_smiles": "OC(C)(C)C1=CC2=C(C)C(=O)C[C@H]2[C@H](C)CC1",
+            "notes": "Desilylation of TES ether to alcohol. Reaction yield stated for 2 steps.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "baloxavir-marboxil-xofluza-hoffmanlaroche-unknown-2024",
+        "molecule_name": "Baloxavir Marboxil (Xofluza HoffmanLaRoche)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "NaHCO3, DMA",
+            "reagent_smiles": "COS(=O)(=O)OC",
+            "conditions": "25 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1C=COC(=C1O[Bn])C(=O)O",
+            "product_smiles": "COC(=O)C1=C(O[Bn])C(=O)C=CO1",
+            "notes": "Methylation of a carboxylic acid with dimethyl sulfate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Heterocycle Ring Transformation",
+            "reagents": "PPTS, DMA",
+            "reagent_smiles": "[Boc]NN",
+            "conditions": "60 °C",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "COC(=O)c1c(OCC2=CC=CC=C2)ccc(=O)o1",
+            "product_smiles": "COC(=O)c1c(OCC2=CC=CC=C2)c=c[N]1[nH][Boc]C(=O)1",
+            "notes": "Condensation of a 2-pyrone with Boc-hydrazine leading to a pyridazinone ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization / Condensation / Deprotection",
+            "reagents": "DBU, THF",
+            "reagent_smiles": "COC(COCCN)OC",
+            "conditions": "60 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1N(CC(=O)O1)C(=O)C2=C(OCC3=CC=CC=C3)C=CC(=O)N2",
+            "product_smiles": "O=C1N(NC2C(=O)N3CCOCC3C2)C(=O)C4=C(OCC5=CC=CC=C5)C=CC(=O)N41",
+            "notes": "Boc deprotection, followed by cyclization of the aminoacetal reagent with the pyridone derivative to form a new fused heterocyclic ring system incorporating a morpholine moiety.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "t-BuONa, DMA",
+                    "reagent_smiles": "BrCC(OC)OC",
+                    "conditions": "40 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)C(=O)N(CCO)C2=O",
+                    "product_smiles": "C1=CC2=C(C=C1)C(=O)N(CCOCC(OC)OC)C2=O",
+                    "notes": "Alkylation of a primary alcohol with a bromoacetal.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Gabriel synthesis deprotection",
+                    "reagents": "N2H4",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, H2O, 60 °C",
+                    "yield": "78% (2 steps)",
+                    "reactant_smiles": "COC(COCCN1C(=O)C2=CC=CC=C2C1=O)OC",
+                    "product_smiles": "COC(COCCN)OC",
+                    "notes": "Hydrazinolysis of the phthalimide protecting group to yield a primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Cyclization / Aminal Formation",
+            "reagents": "Et3N, DBU",
+            "reagent_smiles": "C1C[C@H](C(=O)O)OC1",
+            "conditions": "EtOAc, 60 °C then MeOH, 30 °C",
+            "yield": "45%",
+            "reactant_smiles": "O=C1NC(=O)C2=C(COCc3ccccc3)C=NNC(N4CCOCC4)C2=N1",
+            "product_smiles": "O=C1NC(=O)C2C(COCc3ccccc3)NC(N4CCOCC4)[C@H](NN2)N1",
+            "notes": "Formation of a chiral aminal center and reduction of the pyrimidine ring through cyclization and addition.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Transetherification / Nucleophilic Aromatic Substitution",
+            "reagents": "n-hexan-1-ol, i-PrMgCl",
+            "reagent_smiles": "CCCCCCCO.CC(C)[Mg]Cl",
+            "conditions": "THF, 0 to 20 °C",
+            "yield": "",
+            "reactant_smiles": "[OBn]C1=C2C(=O)N3CCOC[C@H]3NN2C=CC1=O",
+            "product_smiles": "CCCCCCOC1=C2C(=O)N3CCOC[C@H]3NN2C=CC1=O",
+            "notes": "Replacement of a benzyloxy group with an n-hexyloxy group via reaction with n-hexan-1-ol and isopropylmagnesium chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Salt Formation / Crystallization",
+            "reagents": "THF, H2O, then MTBE",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCCCOC1=CC(=O)N2[C@@H]3C(=O)N(C=C1)CCN3O2",
+            "product_smiles": "CCCCCCOC1=CC(=O)N2[C@@H]3C(=O)N(C=C1)CCN3O2.Cc1ccc(S(=O)(=O)O)cc1",
+            "notes": "The reactant forms a salt with p-TsOH. The main organic structure remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaOH, MsOH",
+            "reagent_smiles": "Oc1ccc2c(c1)SCc3c(F)c(F)ccc32",
+            "conditions": "THF, H2O, cyclohexane, EtOAc, 25 °C",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "CCCCCCOC1=C2C(=O)N3CCOC[C@@H]3NN2C=CC1=O.Cc1ccc(S(=O)(=O)O)cc1",
+            "product_smiles": "CCCCCCOC1=C2C(=O)N3CCOC[C@@H]3N([N@]c4ccc5c(c4)SCc6c(F)c(F)ccc65)N2C=CC1=O.CS(=O)(=O)O",
+            "notes": "Nucleophilic substitution of a benzylic hydroxyl group by a pyrimidinone nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiCl",
+            "reagent_smiles": "",
+            "conditions": "NMP, MeCN, H2O, 75 °C, then 30 °C",
+            "yield": "91%",
+            "reactant_smiles": "C1=CC2=C(C=C1)SCC3=C(C=CC(=C3F)F)[C@@H]2N4[C@@H]5COCCN5C(=O)C6=C(C(=O)C=CN64)OCCCCCC.CS(=O)(=O)O",
+            "product_smiles": "C1=CC2=C(C=C1)SCC3=C(C=CC(=C3F)F)[C@@H]2N4[C@@H]5COCCN5C(=O)C6=C(C(=O)C=CN64)O",
+            "notes": "Hydrolysis of a hexyloxy group to a hydroxyl group, forming Baloxavir. The product structure shown is Baloxavir (free phenol), not Baloxavir Marboxil (which is a prodrug). The stereochemistry shown in the image (both bridgehead hydrogens wedged, implying cis) is maintained in the SMILES, though the known absolute stereochemistry of Baloxavir is (3aR,12bS) (trans).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alkylation / Etherification",
+            "reagents": "K2CO3, KI, DMA",
+            "reagent_smiles": "COC(=O)OCCl",
+            "conditions": "50 °C, then 1 N HCl, H2O, 20 °C",
+            "yield": "93%",
+            "reactant_smiles": "O=C1C=C(O)C=CN1C(=O)N2C[C@@H]3OCC[C@H]3N2[C@@H]4C5=C(C=CC=C5)SC6=CC=C(F)C(F)=C6[C@@H]4",
+            "product_smiles": "O=C1C=C(OCOC(=O)OC)C=CN1C(=O)N2C[C@@H]3OCC[C@H]3N2[C@@H]4C5=C(C=CC=C5)SC6=CC=C(F)C(F)=C6[C@@H]4",
+            "notes": "Alkylation of the pyridone hydroxyl group with chloromethyl methyl carbonate to form Baloxavir Marboxil.",
+            "substeps": []
+        }
+    ]
+}

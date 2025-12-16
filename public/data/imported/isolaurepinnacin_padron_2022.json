@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "isolaurepinnacin-padron-2022",
+        "molecule_name": "Isolaurepinnacin",
+        "class": "Natural Product",
+        "author": "Padron",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC=O",
+            "product_smiles": "C=CC(O)CC=C",
+            "notes": "Allylmagnesium bromide adds to acrolein (propenal) via 1,2-addition to the aldehyde, forming 1,5-hexadien-3-ol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Epoxidation",
+            "reagents": "(+)-DCHT, Ti(i-OPr)4, TBHP",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 °C",
+            "yield": "42%",
+            "reactant_smiles": "C=CCC(O)C=C",
+            "product_smiles": "C=CCC(O)[C@@H]1CO1",
+            "notes": "Sharpless-type epoxidation of a terminal alkene in a homoallylic alcohol using chiral titanium catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection (Silyl ether formation)",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "88%",
+            "reactant_smiles": "C=CCC[C@@H](O)[C@H]1CO1",
+            "product_smiles": "C=CCC[C@@H](O[TBDPS])[C@H]1CO1",
+            "notes": "Protection of a secondary alcohol with tert-butyldiphenylsilyl chloride (TBDPSCl) to form a TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxide opening via Grignard reaction",
+            "reagents": "Et2O",
+            "reagent_smiles": "BrCC=C[Si](c1ccccc1)(c2ccccc2)c3ccccc3.[Mg]",
+            "conditions": "reflux",
+            "yield": "57%",
+            "reactant_smiles": "C=CC[C@@H]([C@H]1CO1)[OTBDPS]",
+            "product_smiles": "C=CC[C@@H]([OTBDPS])[C@@H](O)CC=C[Si](c1ccccc1)(c2ccccc2)c3ccccc3",
+            "notes": "Allylic Grignard reagent, generated in situ from the bromo-silane and Mg0, reacts with the epoxide at the less substituted carbon, leading to opening of the epoxide ring and formation of a homoallylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cyclization",
+            "reagents": "FeBr3",
+            "reagent_smiles": "CCC[C@H](C=O)[OBz]",
+            "conditions": "DCM, -20 °C",
+            "yield": "58%",
+            "reactant_smiles": "C=CC[C@]1(O[TBDPS])C[C@H](O)C[C@@H]([SiPh3])C=C1",
+            "product_smiles": "C=CC[C@@]2(O[TBDPS])O1CC/C=C\\C[C@H](CC)[OBz]C1",
+            "notes": "Intramolecular cyclization of an allyl alcohol with an alpha-benzoyloxy aldehyde, forming an 8-membered oxacyclic ring with a Z-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "Na, MeOH",
+            "reagent_smiles": "CO.[Na]",
+            "conditions": "rt",
+            "yield": "70%",
+            "reactant_smiles": "O[C@H]1(C=CCC)[OTBDPS]CCC=CC[C@@H](CC)[OBz]1",
+            "product_smiles": "O[C@H]1(C=CCC)[OTBDPS]CCC=CC[C@@H](CC)O1",
+            "notes": "Hydrolysis of benzoyl ester to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Appel reaction (Bromination)",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "BrC(Br)(Br)Br.P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "C[C@@H](O)[C@H]1O[C@H]([C@@H](CC=C)[OTBDPS])C=CCCC1",
+            "product_smiles": "C[C@H](Br)[C@H]1O[C@H]([C@@H](CC=C)[OTBDPS])C=CCCC1",
+            "notes": "A secondary alcohol is converted to an alkyl bromide with inversion of stereochemistry using Appel conditions (CBr4, PPh3). The TBDPS protecting group and the alkene remain unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "94%",
+            "reactant_smiles": "C=CC[C@@H]([OTBDPS])[C@@H]1CC=CCCC[C@@H]([C@H](CC)Br)O1",
+            "product_smiles": "C=CC[C@@H](O)[C@@H]1CC=CCCC[C@@H]([C@H](CC)Br)O1",
+            "notes": "Deprotection of TBDPS silyl ether to alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Chlorination / Appel-type reaction",
+            "reagents": "CCl4, Oct3P, 1-methylcyclohexene",
+            "reagent_smiles": "",
+            "conditions": "toluene, 70 °C",
+            "yield": "77%",
+            "reactant_smiles": "C=CC[C@@H](O)[C@H]1OCC=CCC[C@@H](O1)[C@H](CC)Br",
+            "product_smiles": "C=CC[C@@H](Cl)[C@H]1OCC=CCC[C@@H](O1)[C@H](CC)Br",
+            "notes": "Secondary alcohol is converted to a chloride with retention of stereochemistry at the reacting carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "O=CC=C",
+            "conditions": "DCM, 40 °C",
+            "yield": "64%",
+            "reactant_smiles": "O1[C@@H]([C@@H](CC)Br)CCC=CCC[C@@H]([C@@H](CCC=C)Cl)1",
+            "product_smiles": "O1[C@@H]([C@@H](CC)Br)CCC=CCC[C@@H]([C@@H](CCC/C=C/C=O)Cl)1",
+            "notes": "A terminal alkene undergoes cross-metathesis with acrolein to form an E-alkene with an aldehyde group.",
+            "substeps": []
+        }
+    ]
+}

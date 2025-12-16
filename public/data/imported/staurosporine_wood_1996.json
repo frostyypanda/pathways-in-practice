@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "staurosporine-wood-1996",
+        "molecule_name": "Staurosporine",
+        "class": "Natural Product",
+        "author": "Wood",
+        "year": 1996
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Rhodium-catalyzed carbene reaction / rearrangement",
+            "reagents": "Rh2(OAc)4",
+            "reagent_smiles": "CCCCCC[C@H](C=C)O",
+            "conditions": "Benzene, reflux",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C(=N#N)C(=O)OC",
+            "product_smiles": "O=C(C)[C@@](C)(O)(C(=O)OC)C/C=C/CCCCCC",
+            "notes": "Rhodium-catalyzed reaction of a diazo ketone with an allylic alcohol, forming a new C-C bond at the diazo carbon and rearranging the alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Claisen rearrangement (or similar sigmatropic rearrangement)",
+            "reagents": "BF3OEt2",
+            "reagent_smiles": "FB(F)F.CCOCC",
+            "conditions": "benzene",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "CCCCCC/C=C/C[C@@](C)(C(=O)C(=O)OC)O",
+            "product_smiles": "CCCCCC/C=C/C[C@@](C(=O)C)(C(=O)OC)O",
+            "notes": "Intramolecular [3,3]-sigmatropic rearrangement of an alpha-hydroxy-beta-keto ester with an allyl group, catalyzed by Lewis acid BF3OEt2. The allyl group migrates to the alpha carbon, and the alpha-keto functionality is converted to an acetyl group. Stereochemistry at the chiral center is retained (or formed with specific relative configuration).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃",
+            "reagent_smiles": "CSC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCCCCC/C=C/C[C@](C(=O)C)(C(=O)OC)O",
+            "product_smiles": "CC(=O)[C@](CC=O)(C(=O)OC)O",
+            "notes": "Ozonolysis of an alkene followed by reductive workup with DMS yields an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Acetalization / Furanose Formation",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "80%",
+            "reactant_smiles": "CC(=O)[C@](O)(C(=O)OC)CC=O",
+            "product_smiles": "COC1CC([C@@H](OC)C)([C@H](O)C(=O)OC)OC1",
+            "notes": "Intramolecular cyclization of an aldehyde and hydroxyl group to form a furanose ring and an acetal. Reaction proceeds in 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Double Alkylation / Intramolecular Cyclization",
+            "reagents": "CSA",
+            "reagent_smiles": "[PMB]N1CC2=C3NC4=CC=CC=C4C3=C5NC6=CC=CC=C6C5=C1C(=O)2",
+            "conditions": "1,2-dichloroethane",
+            "yield": "53%",
+            "reactant_smiles": "COC(=O)[C@]1(O)[C@@H](OC)[C@@H]2O[C@H](OC)[C@](C)(OC)1",
+            "product_smiles": "COC(=O)[C@]1(O)[C@@H](OC)[C@@H]2O[C@](N3C4=CC=CC=C4C5=C3C6=C(C7=CC=CC=C7N62)C8=C5C(=O)N(CC9=CC=C(OC)C=C9)C8)[C@](C)(N1)C",
+            "notes": "A complex intramolecular double alkylation/condensation reaction where two secondary amines of the indole-carbazole reagent react with the furanose derivative. The anomeric methoxy and the C2 methoxy groups of the furanose are lost during the reaction, forming two new C-N bonds and a highly fused product structure (related to staurosporine core). The 'DMB' abbreviation in the reagent is interpreted as p-methoxybenzyl (PMB). The wavy bond on the anomeric carbon of the reactant indicates either a mixture of anomers or an unspecified stereocenter, which is then fixed in the product.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amide Formation",
+                    "reagents": "DCC, DMAP",
+                    "reagent_smiles": "CCOC(=O)CC(=O)O",
+                    "conditions": "CH2Cl2",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CNCc1ccc(OC)cc1OC",
+                    "product_smiles": "CCOC(=O)CC(=O)N(Cc1ccc(OC)cc1OC)CC(=O)OCC",
+                    "notes": "Amide coupling of an amino ester (N-2,4-dimethoxybenzylglycine ethyl ester) with ethyl hydrogen malonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Intramolecular Cyclization / Dieckmann-type Condensation",
+                    "reagents": "NaOEt",
+                    "reagent_smiles": "",
+                    "conditions": "HOEt",
+                    "yield": "83% (2 steps)",
+                    "reactant_smiles": "CCOC(=O)CC(=O)N([DMB])CC(=O)OCC",
+                    "product_smiles": "COC(=O)C1=C(O)CN([DMB])C1=O",
+                    "notes": "Intramolecular cyclization of an N-DMB protected diethyl 3,3'-azanediyldipropanoate to form a pyrrolone derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Diazo Transfer",
+                    "reagents": "Et3N",
+                    "reagent_smiles": "CS(=O)(=O)N=[N+]=[N-]",
+                    "conditions": "MeCN/H2O, reflux",
+                    "yield": "90%",
+                    "reactant_smiles": "COC(=O)C1=C(O)N([DMB])CC(=O)C1",
+                    "product_smiles": "O=C1N([DMB])CC(=O)C1(=[N+]=[N-])",
+                    "notes": "Conversion of a 3-hydroxy-4-(methoxycarbonyl)-2,5-dihydropyrrol-2-one to a 3-diazo-2,4-pyrrolidinedione.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Rh-catalyzed cyclization/carbene insertion",
+                    "reagents": "Rh₂(OAc)₄, pinacolone",
+                    "reagent_smiles": "C1=CC2=C(C=C1)NC(=C2)C3=CC4=C(C=CC=C4)N3",
+                    "conditions": "120 °C",
+                    "yield": "62%",
+                    "reactant_smiles": "[DMB]N1CC(=O)C(=[N+]=[N-])C1=O",
+                    "product_smiles": "[DMB]N1CC(=O)C2=C3C4=C(C=CC=C4)NC3=C5C(=C2)C6=C(C=CC=C6)N51",
+                    "notes": "Intramolecular cyclization of an N-diazo lactam with a bis-indole.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Reduction",
+            "reagents": "THF",
+            "reagent_smiles": "[Li+].[BH4-]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@]12[C@](C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)(C(=O)OC)O",
+            "product_smiles": "C[C@]12[C@](C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)(CO)O",
+            "notes": "Reduction of a methyl ester to a primary alcohol using lithium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Moffatt oxidation",
+            "reagents": "DMSO, DCC",
+            "reagent_smiles": "",
+            "conditions": "63% (2 steps)",
+            "yield": "63%",
+            "reactant_smiles": "C[C@]12[C@](CO)(O)C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2",
+            "product_smiles": "C[C@]12[C@](C=O)(O)C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Moffatt conditions. The DMB protecting group is unaffected. The other hydroxyl group and the methyl group are also retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Rearrangement",
+            "reagents": "BF3",
+            "reagent_smiles": "CCOCC.F[B](F)F",
+            "conditions": "Et2O",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@]1(C)O[C@@H]([C@H](O)C=O)CN2C3=C(C=CC=C3)C4=C2C(=O)N([DMB])C5=C4C6=C(N7C8=C(C=CC=C8)C9=C7C=CC=C9N1)C=CC=C6",
+            "product_smiles": "C[C@@]1(C)O[C@@H](O)C(=O)CN2C3=C(C=CC=C3)C4=C2C(=O)N([DMB])C5=C4C6=C(N7C8=C(C=CC=C8)C9=C7C=CC=C9N1)C=CC=C6",
+            "notes": "Acid-catalyzed rearrangement of a spiro-fused hemiacetal-aldehyde to a six-membered ring ketone-alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxime formation",
+            "reagents": "HONH2, NaOAc",
+            "reagent_smiles": "NO.CC(=O)O[Na]",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "C[C@]12[C@@H](C(=O)C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)O",
+            "product_smiles": "C[C@]12[C@@H](/C(=N\\O)/C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)O",
+            "notes": "Conversion of a ketone to an oxime using hydroxylamine and sodium acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "O-Alkylation",
+            "reagents": "KOH, MeI, Bu4NBr",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "C[C@]12[C@H](/C(=N\\O)/C[C@@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)O",
+            "product_smiles": "C[C@]12[C@H](/C(=N\\OC)/C[C@@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)OC",
+            "notes": "O-methylation of an alcohol and an oxime.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "H2, PtO2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "C[C@]12[C@H](/C(=N\\OC)/C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)OC",
+            "product_smiles": "C[C@]12[C@H]([C@@H](C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)N)OC",
+            "notes": "Reduction of an oxime ether to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "N-methylation",
+            "reagents": "BH3-DMS",
+            "reagent_smiles": "O=CO.CC(=O)OC(=O)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@]12[C@@H]([C@@H](C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N(Cc1ccc(OC)cc1)C8)O2)N)OC",
+            "product_smiles": "C[C@]12[C@@H]([C@@H](C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N(Cc1ccc(OC)cc1)C8)O2)NC)OC",
+            "notes": "Reductive N-methylation of a primary amine to a secondary amine using formic acid, acetic anhydride, and borane-dimethyl sulfide complex.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, anisole",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "C[C@]12[C@@H]([C@@H](C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)N([DMB])C8)O2)NC)OC",
+            "product_smiles": "C[C@]12[C@@H]([C@@H](C[C@H](N3C4=C(C=CC=C4)C5=C3C6=C(C7=C(C=CC=C7)N61)C8=C5C(=O)NC8)O2)NC)OC",
+            "notes": "Deprotection of N-DMB protecting group from the lactam nitrogen to yield Staurosporine.",
+            "substeps": []
+        }
+    ]
+}

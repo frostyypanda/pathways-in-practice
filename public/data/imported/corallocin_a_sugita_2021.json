@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "corallocin-a-sugita-2021",
+        "molecule_name": "Corallocin A",
+        "class": "Natural Product",
+        "author": "Sugita",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (MOM ether formation)",
+            "reagents": "MOMCl, DIPEA, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(=CCC/C(=C/CO)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/COCOC)/C)C",
+            "notes": "Geraniol is protected as its methoxymethyl (MOM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC(=CCC/C(=C/COCOC)/C)C",
+            "product_smiles": "C/C(=C\\COCOC)/CCC1C(C)(C)O1",
+            "notes": "Regioselective epoxidation of the trisubstituted alkene with mCPBA.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "HIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C/C(=C\\C[OMOM])/CCC1C(C)(C)O1",
+            "product_smiles": "C/C(=C\\C[OMOM])/CCC=O",
+            "notes": "Oxidative cleavage of a terminal epoxide (after implicit hydrolysis to a diol) to an aldehyde using periodic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Wittig Olefination",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "CCOC(=O)C(C)=P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "reflux",
+            "yield": "92%",
+            "reactant_smiles": "C/C(=C\\COCOC)/CCC=O",
+            "product_smiles": "CCOC(=O)/C(C)=C/CCC/C(C)=C/COCOC",
+            "notes": "Wittig reaction of an aldehyde with an ester-stabilized phosphonium ylide to form an alpha,beta-unsaturated ethyl ester, extending the carbon chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "pTsOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "86%",
+            "reactant_smiles": "CCOC(=O)/C(=C/CC/C(=C/COCOC)/C)/C",
+            "product_smiles": "CCOC(=O)/C(=C/CC/C(=C/CO)/C)/C",
+            "notes": "Cleavage of methoxymethyl (MOM) ether to primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic Borylation",
+            "reagents": "[Pd(BF4)2(MeCN)4]",
+            "reagent_smiles": "B1(OC(C)(C)C(C)(C)O1)B1OC(C)(C)C(C)(C)O1.[Pd+2].[BF4-].[BF4-].CC#N.CC#N.CC#N.CC#N.CS(C)=O",
+            "conditions": "MeOH, 50 °C",
+            "yield": "93%",
+            "reactant_smiles": "CCOC(=O)/C(=C/CC/C(=C/CO)/C)/C",
+            "product_smiles": "CCOC(=O)/C(=C/CC/C(=C/CB1OC(C)(C)C(C)(C)O1)/C)/C",
+            "notes": "Palladium-catalyzed borylation of an allylic alcohol to form an allylic boronate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "[PdCl2(dppf)•CH2Cl2], CsF",
+            "reagent_smiles": "COCOC1=C2COC(=O)C2=CC(=C1I)OC",
+            "conditions": "DMF, 50 °C",
+            "yield": "74%",
+            "reactant_smiles": "CCOC(=O)/C(=C/CC/C(=C/CB1OC(C)(C)C(C)(C)O1)/C)/C",
+            "product_smiles": "CCOC(=O)/C(=C/CC/C(=C/CC1=C(C=C2C(=C1OCOC)COC2=O)OC)/C)/C",
+            "notes": "Suzuki cross coupling between a pinacol boronic ester and an aryl iodide, forming a C-C bond.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Vilsmeier-Haack Formylation",
+                    "reagents": "POCl3, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "80 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "COC1=CC(=CC(=C1)OC)C(=O)OC",
+                    "product_smiles": "COC1=CC(=C(C=O)C(=C1)C(=O)OC)OC",
+                    "notes": "Vilsmeier-Haack formylation introduces an aldehyde group onto the aromatic ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Demethylation",
+                    "reagents": "AlCl3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "87%",
+                    "reactant_smiles": "COC(=O)C1=C(C=O)C(OC)=CC(OC)=C1",
+                    "product_smiles": "COC(=O)C1=C(C=O)C(O)=CC(OC)=C1",
+                    "notes": "Lewis acid-mediated selective demethylation of an aryl methyl ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Electrophilic Aromatic Iodination",
+                    "reagents": "NIS, AlCl3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, -20 °C to rt",
+                    "yield": "91%",
+                    "reactant_smiles": "COC1=CC(O)=C(C=O)C(C(=O)OC)=C1",
+                    "product_smiles": "COC1=C(I)C(O)=C(C=O)C(C(=O)OC)=C1",
+                    "notes": "Electrophilic iodination of a substituted phenol and methyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Reductive Lactonization",
+                    "reagents": "NaBH4, MeOH, CH2Cl2, HCl, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C then rt",
+                    "yield": "88%",
+                    "reactant_smiles": "COc1cc(C(=O)OC)c(C=O)c(O)c1I",
+                    "product_smiles": "COc1cc2c(I)c(O)c1OC(=O)C2",
+                    "notes": "Aldehyde reduced to alcohol, followed by intramolecular cyclization with the methyl ester to form a 5-membered lactone (isobenzofuranone).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Protection (intended)",
+                    "reagents": "MOMCl, DIPEA",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "COC1=C(C(=C2COC(=O)C2=C1)O)I",
+                    "product_smiles": "COC1=C(C(=C2COC(=O)C2=C1)O)I",
+                    "notes": "The reactant and product structures shown in the screenshot are identical. The reagents (MOMCl, DIPEA) typically indicate a methoxymethyl (MOM) protection of the hydroxyl group. However, the product drawn clearly shows the hydroxyl group unreacted. The SMILES provided reflect the visual information from the screenshot, thus showing no chemical change.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Saponification / Ester Hydrolysis",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, EtOH, 60 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C(=C/CC/C(=C/CC1=C(C=C2C(=C1[OMOM])COC2=O)OC)/C)/C",
+            "product_smiles": "O=C(O)/C(=C/CC/C(=C/CC1=C(C=C2C(=C1[OMOM])COC2=O)OC)/C)/C",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using potassium hydroxide.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bulgarein-spiteller-2022",
+        "molecule_name": "Bulgarein",
+        "class": "Natural Product",
+        "author": "Spiteller",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetylation",
+            "reagents": "TEA, DMAP",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "DCM, rt",
+            "yield": "82%",
+            "reactant_smiles": "Oc1cccc2c1ccc(O)c2",
+            "product_smiles": "CC(=O)Oc1cccc2c1ccc(OC(=O)C)c2",
+            "notes": "Acetylation of 1,4-dihydroxynaphthalene to 1,4-diacetoxynaphthalene using acetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidative Bromination",
+            "reagents": "NBS, H2O, AcOH",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "73%",
+            "reactant_smiles": "CC(=O)OC1=C2C=CC=C(C2=CC=C1)OC(=O)C",
+            "product_smiles": "CC(=O)OC1=C2C(=CC=C1)C(=O)C(=CC2=O)Br",
+            "notes": "Oxidative bromination of 1,4-diacetoxynaphthalene to 5-acetoxy-2-bromo-1,4-naphthoquinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction and O-Methylation",
+            "reagents": "Na2S2O4, H2O, TBAB, KOH",
+            "reagent_smiles": "COS(=O)(=O)OC",
+            "conditions": "THF, 25 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "CC(=O)OC1=C2C(=CC=C1)C(=O)C(=CC2=O)Br",
+            "product_smiles": "COC1=C2C(=CC=C1)C(=C(C=C2OC)Br)OC",
+            "notes": "Reduction of naphthoquinone to naphthalene, deacetylation, and O-methylation of all three oxygens using sodium dithionite, base, and dimethyl sulfate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Boronation (via halogen-metal exchange)",
+            "reagents": "n-BuLi, B(OiPr)3, HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C, then 25 °C",
+            "yield": "76%",
+            "reactant_smiles": "COC1=C2C(=CC=C1)C(=C(C=C2OC)Br)OC",
+            "product_smiles": "COC1=C2C(=CC=C1)C(=C(C=C2OC)B(O)O)OC",
+            "notes": "Aryl bromide undergoes lithium-halogen exchange with n-BuLi, followed by reaction with triisopropyl borate and acidic workup to form the corresponding aryl boronic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(PPh3)4, NaOH",
+            "reagent_smiles": "BrC1=CC(OC)=C2C(=CC=CC2=C1OC)C=C1",
+            "conditions": "dioxane, H2O, 80 °C",
+            "yield": "89%",
+            "reactant_smiles": "B(O)OC1=C(OC)C=C2C(OC)=CC=CC2=C1",
+            "product_smiles": "COC1=C(OC)C=C2C(OC)=CC=CC2=C1C3=CC(OC)=CC4=C3C=C(OC)C=C4",
+            "notes": "Suzuki-Miyaura coupling of 1,4,5-trimethoxy-2-naphthaleneboronic acid with 1-bromo-4,5-dimethoxynaphthalene to form 2-(4,5-dimethoxy-1-naphthyl)-1,4,5-trimethoxynaphthalene.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Cyclization (via diazotization)",
+                    "reagents": "HCl, NaNO2",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, 90 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "C1=CC2=CC=CC(=C2C(=C1)N)S(=O)(=O)O",
+                    "product_smiles": "C1=CC2=C3C(=C1)C=CC=C3OS(=O)(=O)C2",
+                    "notes": "Diazotization of an amino sulfonic acid followed by intramolecular cyclization to form a naphthosultone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Hydrolysis",
+                    "reagents": "KOH, HCl, H₂O",
+                    "reagent_smiles": "",
+                    "conditions": "300 °C, rt",
+                    "yield": "51%",
+                    "reactant_smiles": "O=S1(=O)Oc2c(cccc2)c3cccc(O1)c3",
+                    "product_smiles": "Oc1cccc2c1cccc2O",
+                    "notes": "Hydrolysis of 1,8-naphthalenediol cyclic sulfate to 1,8-dihydroxynaphthalene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "O-methylation",
+                    "reagents": "KOH, TBAB",
+                    "reagent_smiles": "COS(=O)(=O)OC",
+                    "conditions": "H2O, THF, rt",
+                    "yield": "98%",
+                    "reactant_smiles": "C1=CC(=C2C(=C1)C=CC=C2O)O",
+                    "product_smiles": "COC1=C2C(=CC=C1)C=CC=C2OC",
+                    "notes": "1,8-dihydroxynaphthalene is methylated to 1,8-dimethoxynaphthalene using dimethyl sulfate under basic conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "Br2",
+                    "reagent_smiles": "",
+                    "conditions": "CCl4, 70 °C",
+                    "yield": "88%",
+                    "reactant_smiles": "COC1=C2C(=CC=C1)C=CC=C2OC",
+                    "product_smiles": "COC1=CC=C(Br)C2=C1C=CC=C2OC",
+                    "notes": "Bromination of 1,8-dimethoxynaphthalene, leading to substitution at position 4.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Cyclization (Friedel-Crafts type)",
+            "reagents": "PPA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 45 °C",
+            "yield": "78%",
+            "reactant_smiles": "COC1=CC=CC2=C1C(=CC=C2C3=C(C4=C(C(=CC=C4)OC)C(=C3)OC)OC)OC",
+            "product_smiles": "COC1=CC=CC2=C1C(=CC3=C2C4=CC=C(C5=C4C3=CC=C5OC)OC)OC",
+            "notes": "Intramolecular cyclization of 2,2'-bis(1,8-dimethoxynaphthalene) to form a highly fused polycyclic aromatic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O, 0 °C",
+            "yield": "46%",
+            "reactant_smiles": "COC1=CC=CC2=C1C(=CC3=C2C4=CC=C(C5=C4C3=CC=C5OC)OC)OC",
+            "product_smiles": "COC1=CC=CC2=C1C(=O)C(=O)C3=C2C4=CC=C(C5=C4C3=CC=C5OC)OC",
+            "notes": "Oxidation of a polycyclic aromatic hydrocarbon to a quinone using Cerium Ammonium Nitrate (CAN).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Demethylation",
+            "reagents": "AlCl3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 45 °C",
+            "yield": "76%",
+            "reactant_smiles": "COC1=CC=C2C(=O)C(=O)C3=C(C=CC(OC)=C3)C4=C(C=CC(OC)=C4)C1=C2",
+            "product_smiles": "Oc1ccc2c(c1)C(=O)C(O)=c3c2c4ccc(O)c5c4c3ccc5O",
+            "notes": "Lewis acid-mediated demethylation of methoxy ethers to hydroxyl groups, accompanied by structural changes in the quinone system.",
+            "substeps": []
+        }
+    ]
+}

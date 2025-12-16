@@ -1,0 +1,146 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "brevianamide-a-lawrence-2020",
+        "molecule_name": "Brevianamide A",
+        "class": "Natural Product",
+        "author": "Lawrence",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection (Phthalimide Formation)",
+            "reagents": "Et3N",
+            "reagent_smiles": "C1=CC2=C(C=C1)C(=O)OC2=O",
+            "conditions": "toluene",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@H](CC1=CNC2=CC=CC=C12)N",
+            "product_smiles": "COC(=O)[C@H](CC1=CNC2=C1C=CC=C2)N3C(=O)C4=C(C=CC=C4)C3=O",
+            "notes": "Protection of the primary amine of L-tryptophan methyl ester with phthalic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Danishfsky reverse prenylation",
+            "reagents": "t-BuOCl, Et3N, K2CO3",
+            "reagent_smiles": "C=C(C)CCB1C2CCCCC1CCCCC2",
+            "conditions": "THF, -78 °C",
+            "yield": "69% (2 steps)",
+            "reactant_smiles": "COC(=O)[C@H](CC1=CNC2=C1C=CC=C2)N3C(=O)C4=C(C=CC=C4)C3=O",
+            "product_smiles": "COC(=O)[C@H](CC1=C(C(C)(C)C=C)NC2=C1C=CC=C2)[NPhth]",
+            "notes": "C2 prenylation of indole derivative via C-H functionalization",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Substitution (SN1-like, conversion of alcohol to alkyl chloride)",
+                    "reagents": "CaCl2, hydroquinone, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "49%",
+                    "reactant_smiles": "C#CC(C)(C)O",
+                    "product_smiles": "C#CC(C)(C)Cl",
+                    "notes": "Tertiary propargylic alcohol converted to tertiary propargylic chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Reductive Elimination / Rearrangement (to Allene)",
+                    "reagents": "",
+                    "reagent_smiles": "BrCCBr.II.CCCCO.[Zn]",
+                    "conditions": "n-BuOH",
+                    "yield": "66%",
+                    "reactant_smiles": "C#CC(C)(C)Cl",
+                    "product_smiles": "C=C=C(C)C",
+                    "notes": "Zinc-mediated elimination of alkyl chloride to form an allene from a propargyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Hydroboration",
+                    "reagents": "9-BBN, THF",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=C=C(C)C",
+                    "product_smiles": "CC(C)=CC[B][9BBN]",
+                    "notes": "Hydroboration of 2,3-dimethyl-1,2-butadiene (an allene) with 9-BBN to form (3-methyl-2-buten-1-yl)-9-borabicyclo[3.3.1]nonane.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiCl, DMF",
+            "reagent_smiles": "LiCl",
+            "conditions": "160 °C",
+            "yield": "",
+            "reactant_smiles": "c1ccc2c1[nH]c(C(C)(C)C=C)c2C[C@@H](N1C(=O)c3ccccc3C1=O)C(=O)OC",
+            "product_smiles": "c1ccc2c1[nH]c(C(C)(C)C=C)c2C[C@@H](N1C(=O)c3ccccc3C1=O)C(=O)O[Li]",
+            "notes": "Hydrolysis of a methyl ester to its lithium carboxylate salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Formation / N-Acylation",
+            "reagents": "DMF, DCM",
+            "reagent_smiles": "COC(=O)C1=NCCC1.CCN(CC)CC.ClC(=O)C(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC(C)(C)c1c([nH]c2ccccc12)C[C@@H](N3C(=O)c4ccccc4C3=O)C(=O)O[Li]",
+            "product_smiles": "C=CC(C)(C)c1c([nH]c2ccccc12)C[C@@H](N3C(=O)c4ccccc4C3=O)C(=O)N1C(=C(C(=O)OC))CCC1",
+            "notes": "The lithium carboxylate is activated (likely to an acid chloride using (COCl)2/DMF) and then undergoes N-acylation with methyl 1-pyrroline-2-carboxylate to form a new lactam. The indole N-H and the Phthalimide group are retained. Stereochemistry at the chiral center is retained.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Oxidation",
+                    "reagents": "NCS, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "79%",
+                    "reactant_smiles": "COC(=O)[C@H]1CCCN1",
+                    "product_smiles": "COC(=O)C1=NCCC1",
+                    "notes": "Oxidation of methyl (S)-pyrrolidine-2-carboxylate to methyl 3,4-dihydro-2H-pyrrole-2-carboxylate (1-pyrroline-2-carboxylate) using N-chlorosuccinimide and triethylamine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection, Ester Hydrolysis, and Cyclization",
+            "reagents": "NH3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "49% (3 steps)",
+            "reactant_smiles": "C=CC(C)(C)C1=C(C[C@H]([NPhth])C(=O)N2CCC=C2C(=O)OC)C6=C(C=CC=C6)N1",
+            "product_smiles": "C=CC(C)(C)C1=C(C[C@H]2C(=O)N3CCC=C3C(=O)N2)C4=C(C=CC=C4)N1",
+            "notes": "Ammonolysis of N-phthalimide and methyl ester, followed by cyclization to form a diketopiperazine-like ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative Dearomatization / Spirocyclization",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "Clc1cccc(C(=O)OOH)c1.ClC(Cl)Cl",
+            "conditions": "CHCl3",
+            "yield": "57%",
+            "reactant_smiles": "C=CC(C)(C)c1c([nH]c2ccc(cc21))C[C@H]3C(=O)N4C(=O)N(CCC=C5)C43",
+            "product_smiles": "C=CC(C)(C)[C@]1(O)[C@@H]2c3c([nH]1)ccc(c3)[C@@H](C[C@H]4C(=O)N5C(=O)N(CCC=C6)C54)2",
+            "notes": "Oxidative dearomatization of indole with m-CPBA to form a spiroindoline with a new hydroxyl group. The original diketopiperazine-like and pyrroline rings remain, as do their stereocenters. Two new chiral centers are formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular rearrangement / Cyclization",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "H2O",
+            "yield": "63%",
+            "reactant_smiles": "C=CC(C)(C)[C@]12[C@](C[C@H]3C(=O)N4CCC=C4C(=O)N31)(C5=C(C=CC=C5)N2)O",
+            "product_smiles": "CC1(C)[C@H]2CC34CCCN4C(=O)C2(CC51C(=O)C6=CC=C(C=C6[NH]5))NC3=O",
+            "notes": "Complex intramolecular rearrangement involving oxidation of a secondary alcohol to a ketone, reduction of a pyrroline double bond, and formation of a new fused ring system from the isopropenyl group.",
+            "substeps": []
+        }
+    ]
+}

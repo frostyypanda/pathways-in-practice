@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cryptoacetlide-deiters-2010",
+        "molecule_name": "Cryptoacetlide",
+        "class": "Natural Product",
+        "author": "Deiters",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "94%",
+            "reactant_smiles": "ClCCC#CCO",
+            "product_smiles": "ClCCC#C[OTBS]",
+            "notes": "Protection of a primary alcohol with tert-butyldimethylsilyl chloride (TBSCl) to form a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Finkelstein reaction",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "acetone, reflux",
+            "yield": "98%",
+            "reactant_smiles": "ClCCCC#CCO[TBS]",
+            "product_smiles": "ICCCC#CCO[TBS]",
+            "notes": "Finkelstein reaction converting a primary alkyl chloride to a primary alkyl iodide, with an alkyne and a TBS protected alcohol group remaining untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alkylation of nitrile",
+            "reagents": "LDA, THF",
+            "reagent_smiles": "CC(C)C#N",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "ICCCC#CCO[TBS]",
+            "product_smiles": "NC(C)(C)CCC#CCO[TBS]",
+            "notes": "Alkylation of isobutyronitrile with an alkyl iodide to form a new C-C bond, substituting iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nitrile Reduction",
+            "reagents": "DIBALH",
+            "reagent_smiles": "CC(C)CC[AlH]CC(C)C",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "[OTBS]OCC#CCC(C)(C)C#N",
+            "product_smiles": "[OTBS]OCC#CCC(C)(C)C=O",
+            "notes": "Reduction of a nitrile to an aldehyde using DIBALH, while retaining the alkyne and TBS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Corey-Fuchs Reaction",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CC#CCCC[C@](C)(C)C=O",
+            "product_smiles": "[OTBS]CC#CCCC[C@](C)(C)C=C(Br)Br",
+            "notes": "Conversion of an aldehyde to a gem-dibromoalkene with retention of configuration at the adjacent chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Corey-Fuchs reaction",
+            "reagents": "BuLi, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)OCC#CCCC(C)(C)C=C(Br)Br",
+            "product_smiles": "C#CC(C)(C)CCC#CCO[Si](C)(C)C(C)(C)C",
+            "notes": "Conversion of a gem-dibromoalkene to a terminal alkyne via Corey-Fuchs reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Silyl ether deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "79%",
+            "reactant_smiles": "C#CC(C)(C)CCCC#CCO[OTBS]",
+            "product_smiles": "C#CC(C)(C)CCCC#CCO",
+            "notes": "Deprotection of a primary TBS ether to a primary alcohol. The reaction yield of 79% is stated to be over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation (Jones oxidation)",
+            "reagents": "CrO₃, H₂SO₄, acetone",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "",
+            "reactant_smiles": "C#CC(C)(C)CCC#CCO",
+            "product_smiles": "C#CC(C)(C)CCC#CC(=O)O",
+            "notes": "Primary alcohol is oxidized to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification",
+            "reagents": "DCC, DMAP",
+            "reagent_smiles": "O[CH](C#C)C[C@@H](C)COPMB",
+            "conditions": "DCM",
+            "yield": "79%",
+            "reactant_smiles": "C#CCC(C)(C)CCCC#CC(=O)O",
+            "product_smiles": "C#CCC(C)(C)CCCC#CC(=O)O[CH](C#C)C[C@@H](C)COPMB",
+            "notes": "Steglich esterification of a carboxylic acid with an alcohol to form an ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular [2+2+2] Cycloaddition",
+            "reagents": "Cp*Ru(COD)Cl",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "90%",
+            "reactant_smiles": "C#CC(C)(C)CCC#CC(=O)OC(C#C)CC(C)COCC1=CC=C(C=C1)OC",
+            "product_smiles": "C[C@H](CC1C2=C(C3=C(C=C2)C(C)(C)CCC3)C(=O)O1)COCC4=CC=C(C=C4)OC",
+            "notes": "Intramolecular ruthenium-catalyzed alkyne-alkyne-carbonyl cycloaddition to form a tricyclic lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidative Deprotection",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H](CC1C2=C(C3=C(C=C2)[C@@](C)(C)CCC3)C(=O)O1)C[OPMB]",
+            "product_smiles": "C[C@H](CC1C2=C(C3=C(C=C2)[C@@](C)(C)CCC3)C(=O)O1)CO",
+            "notes": "Deprotection of p-methoxybenzyl (PMB) ether to a primary alcohol using DDQ.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Intramolecular Radical Cyclization",
+            "reagents": "I₂, PhI(OAc)₂",
+            "reagent_smiles": "",
+            "conditions": "benzene, hv 200 W",
+            "yield": "84%",
+            "reactant_smiles": "C[C@@H](CO)C[C@H]1OC(=O)c2ccc3C(C)(C)CCCC3c12",
+            "product_smiles": "C[C@@H]1C[C@@]23OC(=O)c4ccc5C(C)(C)CCCC5c4c2OC31",
+            "notes": "Intramolecular radical cyclization of the primary alcohol, forming a new cyclic ether ring and a spirocyclic system with the lactone.",
+            "substeps": []
+        }
+    ]
+}

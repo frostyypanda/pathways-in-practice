@@ -1,0 +1,243 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "equisetin-dixon-2000",
+        "molecule_name": "Equisetin",
+        "class": "Natural Product",
+        "author": "Dixon",
+        "year": 2000
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC[C@H](C)CCO)C",
+            "product_smiles": "CC(=CCC[C@H](C)C[OAc])C",
+            "notes": "Acetylation of primary alcohol (Citronellol) to an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ozonolysis, Reductive workup",
+            "reagents": "O3, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C then MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC[C@H](C)CCOC(=O)C)C",
+            "product_smiles": "C[C@H](CCCCO)CCOC(=O)C",
+            "notes": "Alkene cleavage via ozonolysis followed by reductive workup with sodium borohydride to yield a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "79% (over 3 steps)",
+            "reactant_smiles": "C[C@H](CCCO)CCOC(=O)C",
+            "product_smiles": "[OTBS]CCC[C@H](C)CCOC(=O)C",
+            "notes": "Protection of the primary alcohol with TBSCl to form a TBS silyl ether. The acetate group and the chiral center's stereochemistry are unchanged. The provided yield is for a sequence of 3 steps, not just this single step.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetate Hydrolysis / Saponification",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CCC[C@@H](C)CCOC(=O)C",
+            "product_smiles": "[OTBS]CCC[C@@H](C)CCO",
+            "notes": "Hydrolysis of an acetate ester to a primary alcohol, leaving the TBS ether intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "83%",
+            "reactant_smiles": "[OTBS]CCC[C@H](C)CCO",
+            "product_smiles": "[OTBS]CCC[C@H](C)CC=O",
+            "notes": "Primary alcohol oxidized to aldehyde. Stereochemistry at the methyl-bearing carbon is preserved. The yield given is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Horner-Wadsworth-Emmons Olefination",
+            "reagents": "nBuLi",
+            "reagent_smiles": "CCOP(=O)(OCC)C/C=C/C=C/C",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "57%",
+            "reactant_smiles": "[OTBS]CCC[C@H](C)CC=O",
+            "product_smiles": "[OTBS]CCC[C@H](C)C/C=C/C=C/C=C/C",
+            "notes": "Horner-Wadsworth-Emmons reaction of an aldehyde with a phosphonate ester to form a polyene. The stereochemistry of the chiral center is retained, and new double bonds are formed with a trans configuration.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Substitution (Alcohol to Alkyl Bromide)",
+                    "reagents": "PBr3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C/C=C/C=C/CO",
+                    "product_smiles": "BrC/C=C/C=C/C",
+                    "notes": "Conversion of a primary allylic alcohol to a primary allylic bromide using phosphorus tribromide, retaining the (E,E) stereochemistry of the diene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Michaelis-Arbuzov reaction",
+                    "reagents": "P(OEt)3",
+                    "reagent_smiles": "CCOP(OCC)OCC",
+                    "conditions": "160 °C",
+                    "yield": "73% (2 steps)",
+                    "reactant_smiles": "BrC/C=C/C=C/C",
+                    "product_smiles": "C/C=C/C=C/CP(=O)(OCC)OCC",
+                    "notes": "Synthesis of a diethyl phosphonate from an allyl bromide derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Silyl Ether)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "C/C=C/C=C/C=C/C[C@H](C)CCC[OTBS]",
+            "product_smiles": "C/C=C/C=C/C=C/C[C@H](C)CCCO",
+            "notes": "Deprotection of a TBS silyl ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)2, DMSO, CH2Cl2",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "-78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C/C=C/C=C/C=C/C[C@H](C)CCCO",
+            "product_smiles": "C/C=C/C=C/C=C/C[C@H](C)CCC=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Horner-Wadsworth-Emmons Olefination",
+            "reagents": "nBuLi, HMPA",
+            "reagent_smiles": "CCOP(=O)(C(C)C(=O)CC(=O)SC(C)(C)C)OCC",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "56% (2 steps)",
+            "reactant_smiles": "C/C=C/C=C/C=C/C[C@@H](C)CCC=O",
+            "product_smiles": "C/C=C/C=C/C=C/C[C@@H](C)CC/C=C(\\C)/C(=O)CC(=O)SC(C)(C)C",
+            "notes": "Horner-Wadsworth-Emmons reaction of an aldehyde with a modified phosphonate reagent to form an alpha,beta-unsaturated ketone and extend the carbon chain, including a tert-butyl thioester.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Acylation / Thioesterification",
+                    "reagents": "pyridine",
+                    "reagent_smiles": "CC1(C)OC(=O)CC(=O)O1.SC(C)(C)C",
+                    "conditions": "toluene, reflux, 0 °C",
+                    "yield": "81%",
+                    "reactant_smiles": "CC(C(=O)Br)Br",
+                    "product_smiles": "CC(C(=O)CC(=O)[StBu])Br",
+                    "notes": "Formation of a beta-keto thioester via a Meldrum's acid derivative and a thiol. The acyl bromide acts as an electrophile, and the Meldrum's acid derivative is a C2 synthon, followed by reaction with tert-butyl mercaptan and likely decarboxylation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Arbuzov Reaction / Nucleophilic Phosphorylation",
+                    "reagents": "NaH, Na",
+                    "reagent_smiles": "CCOP(=O)OCC",
+                    "conditions": "THF, -20 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "CC(C(=O)CC(=O)SC(C)(C)C)Br",
+                    "product_smiles": "CCOP(=O)(OCC)C(C)C(=O)CC(=O)SC(C)(C)C",
+                    "notes": "Nucleophilic displacement of alpha-bromide by in-situ generated diethyl phosphite anion to form an alpha-phosphonate ketone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Diels-Alder",
+            "reagents": "LiClO4",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "70%",
+            "reactant_smiles": "C/C=C/C=C/C=C/C[C@H](C)CC/C=C(\\C)/C(=O)CC(=O)SC(C)(C)C",
+            "product_smiles": "C/C=C/[C@@H]1C=C[C@@H]2C[C@H](C)CC[C@H]2[C@]1(C)C(=O)CC(=O)SC(C)(C)C",
+            "notes": "Intramolecular Diels-Alder cyclization of a polyene-thioester system to form a decalin derivative. Stereochemistry is well-defined in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amide Coupling / Acylation",
+            "reagents": "CF3CO2Ag, Et3N",
+            "reagent_smiles": "CN[C@@H](C[OTBS])C(=O)OC",
+            "conditions": "THF, 0 °C",
+            "yield": "80%",
+            "reactant_smiles": "C/C=C/[C@@H]1C=C[C@@H]2C[C@H](C)CC[C@H]2[C@]1(C)C(=O)CC(=O)[StBu]",
+            "product_smiles": "C/C=C/[C@@H]1C=C[C@@H]2C[C@H](C)CC[C@H]2[C@]1(C)C(=O)CC(=O)N(C)[C@@H](C[OTBS])C(=O)OC",
+            "notes": "Amide bond formation by coupling a thioester with a secondary amine (N-methylated amino ester with a TBS protecting group).",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Esterification",
+                    "reagents": "MeOH",
+                    "reagent_smiles": "CC(=O)Cl",
+                    "conditions": "reflux",
+                    "yield": "83%",
+                    "reactant_smiles": "CN[C@@H](CO)C(=O)O",
+                    "product_smiles": "CN[C@@H](CO)C(=O)OC",
+                    "notes": "Esterification of a carboxylic acid with methanol to form a methyl ester, likely via activation with acetyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Protection",
+                    "reagents": "TBSCl, DMF, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "85%",
+                    "reactant_smiles": "CN[C@@H](CO)C(=O)OC",
+                    "product_smiles": "[OTBS]C[C@@H](NC)C(=O)OC",
+                    "notes": "Primary alcohol is protected as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Silyl ether deprotection",
+            "reagents": "HF, CH3CN",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C=C/[C@@H]1C=C[C@@H]2C[C@H](C)CC[C@H]2[C@]1(C)C(=O)CC(=O)N(C)[C@@H](C[OTBS])C(=O)OC",
+            "product_smiles": "C/C=C/[C@@H]1C=C[C@@H]2C[C@H](C)CC[C@H]2[C@]1(C)C(=O)CC(=O)N(C)[C@@H](CO)C(=O)OC",
+            "notes": "Deprotection of a TBS ether to a primary alcohol using hydrofluoric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Cyclization / Lactam Formation / Enolization",
+            "reagents": "NaH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "C/C=C/[C@@H]1C=C[C@@H]2C[C@H](C)CC[C@H]2[C@]1(C)C(=O)CC(=O)N(C)[C@@H](CO)C(=O)OC",
+            "product_smiles": "C/C=C/[C@@H]1C=C[C@@H]2C[C@H](C)CC[C@H]2[C@]1(C)C(=O)C(=C(O))N(C)[C@@H](CO)C1",
+            "notes": "Intramolecular cyclization of an N-methyl amide-ester to form a fused 5-membered lactam ring with an exocyclic enol. Stereochemistry of the secondary alcohol carbon (CH2OH) is retained.",
+            "substeps": []
+        }
+    ]
+}

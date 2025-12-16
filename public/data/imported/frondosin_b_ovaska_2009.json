@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "frondosin-b-ovaska-2009",
+        "molecule_name": "Frondosin B",
+        "class": "Natural Product",
+        "author": "Ovaska",
+        "year": 2009
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-alkylation of ketone",
+            "reagents": "KH, BEt3, MeI",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1CCCCC1=O",
+            "product_smiles": "CC1(C)CCCCC1=O",
+            "notes": "Alpha-alkylation of 2-methylcyclohexanone to form 2,2-dimethylcyclohexanone using KH as a base, BEt3 as an additive, and MeI as an alkylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrazone formation / Condensation",
+            "reagents": "Hydrazine hydrate",
+            "reagent_smiles": "",
+            "conditions": "DCM, reflux",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CCCCC1=O",
+            "product_smiles": "CC1(C)CCCCC1=NNC",
+            "notes": "Formation of 2,2-dimethylcyclohexan-1-one hydrazone from 2,2-dimethylcyclohexan-1-one and hydrazine hydrate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Halogenation / Olefination",
+            "reagents": "Trimethylguanidine, I2",
+            "reagent_smiles": "",
+            "conditions": "Et2O, rt to reflux",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CCCCC1=NN",
+            "product_smiles": "CC1(C)CCC=C(I)C1",
+            "notes": "Transformation of a hydrazone to an iodoalkene (possibly a variant of the Shapiro reaction or similar olefination leading to vinyl iodide).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Addition / C-C Bond Formation (via Organolithium)",
+            "reagents": "t-BuLi",
+            "reagent_smiles": "COC1=CC(=C(C=C1)OC)C#CCCC=O",
+            "conditions": "Et2O, -78 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC1(C)C=C(I)CCCC1",
+            "product_smiles": "CC1(C)CC(C(O)CCC#CC2=CC(=C(C=C2)OC)OC)C=CCC1",
+            "notes": "Reductive lithiation of the vinyl iodide (reactant) forms an organolithium species. This allylic lithium reagent then undergoes nucleophilic addition to the aldehyde (reagent), forming a secondary alcohol. An allylic rearrangement of the cyclohexene double bond occurs during the process, shifting it to a new position relative to the gem-dimethyl group and the newly formed C-C bond.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Sonogashira coupling",
+                    "reagents": "Pd(PPh3)4, CuI",
+                    "reagent_smiles": "COC1=CC(=C(C=C1)OC)Br",
+                    "conditions": "DMF, 80 °C",
+                    "yield": "",
+                    "reactant_smiles": "C#CCCCO",
+                    "product_smiles": "COc1c(C#CCCCO)ccc(OC)c1",
+                    "notes": "Sonogashira coupling of 4-pentyn-1-ol with 1-bromo-2,5-dimethoxybenzene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Swern oxidation",
+                    "reagents": "(COCl)2, Et3N, DMSO",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "74%",
+                    "reactant_smiles": "OCCC#Cc1c(OC)ccc(OC)c1",
+                    "product_smiles": "O=CCC#Cc1c(OC)ccc(OC)c1",
+                    "notes": "Primary alcohol oxidized to aldehyde.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CCC=CC1C(O)CCC#CC2=CC(OC)=CC(OC)=C2",
+            "product_smiles": "CC1(C)CCC=CC1C(=O)CCC#CC2=CC(OC)=CC(OC)=C2",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin Periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Corey-Bakshi-Shibata asymmetric reduction",
+            "reagents": "catecholborane",
+            "reagent_smiles": "B1(OC(c2ccccc2)(c3ccccc3)N1[C@H]4CCCC4)",
+            "conditions": "toluene, -78 °C",
+            "yield": "68%",
+            "reactant_smiles": "CC1(C)CCCC=C1C(=O)CCC#Cc2cc(OC)cc(OC)c2",
+            "product_smiles": "CC1(C)CCCC=C1[C@H](O)CCC#Cc2cc(OC)cc(OC)c2",
+            "notes": "Asymmetric reduction of an alpha,beta-unsaturated ketone to a chiral secondary alcohol using a Corey-Bakshi-Shibata catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Claisen rearrangement",
+            "reagents": "MeLi, phenetole",
+            "reagent_smiles": "",
+            "conditions": "MW 210 °C",
+            "yield": "79%",
+            "reactant_smiles": "O[C@H](CCC#CC1=CC(OC)=CC(OC)=C1)C2=C(C)C(C)(C)CCC2",
+            "product_smiles": "CC1(C)C[C@H]2C3=C(CCC(=O)[C@H]4C5=CC(OC)=CC(OC)=C5)C=CC(C1)C342",
+            "notes": "A Claisen rearrangement involving an alkyne-substituted cyclohexenol, forming a fused bicyclic ketone system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alpha-Alkylation",
+            "reagents": "LHMDS, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C then -60 °C",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@]1(C)CC[C@@H]2[C@H]1C(=O)CC=CCCC2[C@@H](c3c(OC)ccc(OC)c3)",
+            "product_smiles": "C[C@@]1(C)CC[C@@H]2[C@H]1C(=O)[C@@H](C)C=CCCC2[C@@H](c3c(OC)ccc(OC)c3)",
+            "notes": "Alpha-alkylation of a ketone via enolate formation, adding a methyl group stereoselectively.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Dearomatization",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O, rt",
+            "yield": "93%",
+            "reactant_smiles": "C[C@H]1CC=C2[C@@H](CC[C@@]2(C)C)[C@H](C3=CC(=CC=C3OC)OC)C1=O",
+            "product_smiles": "C[C@H]1CC=C2[C@@H](CC[C@@]2(C)C)[C@H](C3=CC(=O)C=CC3=O)C1=O",
+            "notes": "Oxidation of a 2,4-dimethoxyphenyl group to a p-quinone using Cerium Ammonium Nitrate (CAN). The core bicyclic system's stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC=C2[C@@H](CC[C@@]2(C)C)[C@@H](C3=CC(=O)C=CC3=O)C1=O",
+            "product_smiles": "C[C@H]1CC=C2[C@@H](CC[C@@]2(C)C)[C@@H](C3=CC(=CC=C3O)O)C1=O",
+            "notes": "Reduction of a para-benzoquinone to a hydroquinone using hydrogen gas and palladium on carbon catalyst. Stereochemistry of the tricyclic core and the attachment point is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Furan Formation / Cyclization",
+            "reagents": "BF₃·OEt₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "72% (2 steps)",
+            "reactant_smiles": "OC1=CC(O)=C(C=C1)[C@H]2C(=O)C[C@@H](C)[C@@H]3C=C[C@H]4[C@@H](C)CC[C@@H]4[C@@H]32",
+            "product_smiles": "OC1=CC2=C3C(=C1)OC[C@@H](C)[C@@H]4C=C[C@H]5[C@@H](C)CC[C@@H]5[C@@H]43",
+            "notes": "Lewis acid-catalyzed intramolecular cyclization of a dihydroxyphenyl ketone to form a fused benzofuran system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acid-catalyzed rearrangement / Isomerization",
+            "reagents": "cat. p-TsOH, benzene",
+            "reagent_smiles": "",
+            "conditions": "heat",
+            "yield": "68%",
+            "reactant_smiles": "C[C@H]1CCC2C(C)(C)C=C[C@@H]2[C@H]3C4=C(C=C(O)C=C4)OC13",
+            "product_smiles": "C[C@H]1CCC=C2C(C)(C)C=C2[C@H]3C4=C(C=C(O)C=C4)OC31",
+            "notes": "Acid-catalyzed double bond migration and formal elimination of hydrogen to form additional unsaturation.",
+            "substeps": []
+        }
+    ]
+}

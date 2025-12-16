@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "camptothecin-boger-2002",
+        "molecule_name": "Camptothecin",
+        "class": "Natural Product",
+        "author": "Boger",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Friedlander condensation",
+            "reagents": "NaOMe",
+            "reagent_smiles": "CC(=O)CC(=O)O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C(=C1)C=O)N",
+            "product_smiles": "CC1=CC2=CC=CC=C2N=C1C(=O)O",
+            "notes": "Formation of 4-methylquinoline-2-carboxylic acid from 2-aminobenzaldehyde and 3-oxobutanoic acid via Friedlander condensation.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "74%",
+            "reactant_smiles": "CC1=CC2=CC=CC=C2N=C1C(=O)O",
+            "product_smiles": "CC1=CC2=CC=CC=C2N=C1C(=O)OC",
+            "notes": "Carboxylic acid converted to methyl ester. Overall yield reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Benzylic Bromination",
+            "reagents": "DBH, (PhCO)2O2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "78%",
+            "reactant_smiles": "CC1=CC2=CC=CC=C2N=C1C(=O)OC",
+            "product_smiles": "COC(=O)C1=NC2=CC=CC=C2C=C1CBr",
+            "notes": "Radical bromination of the methyl group on the quinoline core to a bromomethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Etherification / SN2 substitution",
+            "reagents": "H2SO4",
+            "reagent_smiles": "OS(=O)(=O)O.CO",
+            "conditions": "MeOH",
+            "yield": "89%",
+            "reactant_smiles": "COC(=O)C1=NC2=CC=CC=C2C=C1CBr",
+            "product_smiles": "COCC1=CC2=CC=CC=C2N=C1C(=O)OC",
+            "notes": "Nucleophilic substitution of bromomethyl group with methanol, forming a methoxymethyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Beta-Ketophosphonate Formation",
+            "reagents": "H2C=PO(OMe)2",
+            "reagent_smiles": "[CH2-]P(=O)(OC)OC",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "COCC1=CC2=CC=CC=C2N=C1C(=O)OC",
+            "product_smiles": "COCC1=CC2=CC=CC=C2N=C1C(=O)CP(=O)(OC)OC",
+            "notes": "Methyl ester reacted with a phosphonate carbanion to form a beta-ketophosphonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "HCOCO₂Et, t-BuOK",
+            "reagent_smiles": "CCOC(=O)C=O.CC(C)(C)[O-].[K+].COCCOC",
+            "conditions": "DME",
+            "yield": "78%",
+            "reactant_smiles": "COCC1=CC2=CC=CC=C2N=C1C(=O)CP(=O)(OC)OC",
+            "product_smiles": "CCOC(=O)/C=C/C(=O)C1=NC2=C(C=CC=C2)C=C1COC",
+            "notes": "Horner-Wadsworth-Emmons olefination to form an alpha,beta-unsaturated ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Imine formation / Sulfonylation",
+            "reagents": "TiCl4",
+            "reagent_smiles": "CS(=O)(=O)N.CCN(CC)CC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C=C/C(=O)C1=NC2=C(C=CC=C2)C=C1COC",
+            "product_smiles": "CCOC(=O)/C=C/C(=NS(=O)(=O)C)C1=NC2=CC=CC=C2C=C1COC",
+            "notes": "Formation of N-sulfonyl imine from a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "",
+            "reagent_smiles": "CCOC=C(OCC)OCC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C=C/C(=NS(=O)(=O)C)C1=NC2=CC=CC=C2C=C1COC",
+            "product_smiles": "CCOC(=O)[C@H]1C=C(C2=NC3=CC=CC=C3C=C2COC)N(S(=O)(=O)C)[C@H](OCC)C(OCC)(OCC)C1",
+            "notes": "Formation of a dihydropyridine ring via inverse electron demand Diels-Alder reaction between a 1-aza-1,3-diene (derived from quinoline) and 1,1,2-triethoxyethene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Elimination/Rearrangement (based on loss of SO2Me and aromatization of one ring)",
+            "reagents": "NaOEt",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70% (3 steps)",
+            "reactant_smiles": "CCOC(=O)C1CC(C(OCC)OCC)=C(C2=NC3=CC=CC=C3C=C2COC)C(OCC)(OCC)N1S(=O)(=O)C",
+            "product_smiles": "CCOC(=O)c1c(C(OCC)OCC)c(OCC)cn1C2=NC3=CC=CC=C3C=C2COC",
+            "notes": "Transformation involves the deprotection of the N-sulfonyl group and aromatization of the dihydropyridine ring to a pyridine, accompanied by a shift of substituents or rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "ZnI2, Et3SiH",
+            "reagent_smiles": "[Zn](I)I.CC[SiH](CC)CC",
+            "conditions": "",
+            "yield": "92%",
+            "reactant_smiles": "COcC1=C2C=CC=CC2N=C1c3nc(OCC)c(C(=O)OCC)c(C(OCC)OCC)c3OCC",
+            "product_smiles": "COcC1=C2C=CC=CC2N=C1c3nc(OCC)c(C(=O)OCC)c(CCOCC)c3OCC",
+            "notes": "Acetal reduction to ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Grignard reaction (ester to ketone)",
+            "reagents": "EtMgBr, Et3N",
+            "reagent_smiles": "CC[Mg]Br.CCN(CC)CC",
+            "conditions": "",
+            "yield": "65%",
+            "reactant_smiles": "CCOC(=O)c1cc(COCC)c(COCC)nc1-c2cc(COC)c3ccccc3n2",
+            "product_smiles": "CCC(=O)c1cc(COCC)c(COCC)nc1-c2cc(COC)c3ccccc3n2",
+            "notes": "Grignard addition of ethylmagnesium bromide to an ester, forming an ethyl ketone. This is an unusual transformation for a simple ester which typically yields a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Wittig olefination",
+            "reagents": "MeOCH2PPh3Cl, KHMDS",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "74%",
+            "reactant_smiles": "CCC(=O)C1=CC(=NC(=C1COCC)OCC)C2=NC3=CC=CC=C3C=C2COC",
+            "product_smiles": "CC/C(=C\\OC)/C1=CC(=NC(=C1COCC)OCC)C2=NC3=CC=CC=C3C=C2COC",
+            "notes": "Ketone is converted to an E-enol ether using a methoxymethylide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Sharpless asymmetric dihydroxylation",
+            "reagents": "AD Mix-β",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "84%",
+            "reactant_smiles": "CC/C(=C\\OC)/C1=CC(=NC(=C1COCC)OCC)C2=NC3=CC=CC=C3C=C2COC",
+            "product_smiles": "CC[C@@](O)[C@H](OC)C1=CC(=NC(=C1COCC)OCC)C2=NC3=CC=CC=C3C=C2COC",
+            "notes": "Sharpless asymmetric dihydroxylation of an E-alkene to a 1,2-diol with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidation",
+            "reagents": "NaClO2, NaH2PO4",
+            "reagent_smiles": "c1cc(O)cc(O)c1",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "CC[C@](O)(C=O)c1cc(c(COCC)c(OCC)n1)c2cnc3ccccc3c2COC",
+            "product_smiles": "CC[C@](O)(C(=O)O)c1cc(c(COCC)c(OCC)n1)c2cnc3ccccc3c2COC",
+            "notes": "Aldehyde group is oxidized to a carboxylic acid group.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Bromination / Pyridine Hydrolysis",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC[C@](O)(C(=O)O)c1c(COCC)cnc(c1COCC)c2nc3c(cccc3)c(COMe)c2",
+            "product_smiles": "CC[C@](O)(C(=O)O)c1c(CBr)c(=O)[nH]c(c1CBr)c2nc3c(cccc3)c(CBr)c2",
+            "notes": "The methoxymethyl group on the quinoline is converted to bromomethyl. The two ethoxymethyl groups on the pyridine ring are converted to bromomethyl groups, and the pyridine ring is hydrolyzed to a 2-pyridone (lactam).",
+            "substeps": []
+        }
+    ]
+}

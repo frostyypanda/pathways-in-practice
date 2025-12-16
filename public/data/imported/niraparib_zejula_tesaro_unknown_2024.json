@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "niraparib-zejula-tesaro-unknown-2024",
+        "molecule_name": "Niraparib (Zejula Tesaro)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Friedel-Crafts Acylation",
+            "reagents": "AlCl3",
+            "reagent_smiles": "C1CC(=O)OC1=O",
+            "conditions": "5 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)Br",
+            "product_smiles": "O=C(O)CCC(=O)C1=CC=C(Br)C=C1",
+            "notes": "Friedel-Crafts acylation of bromobenzene with succinic anhydride to form 4-bromophenyl-4-oxobutanoic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Fisher Esterification",
+            "reagents": "HCl",
+            "reagent_smiles": "CC(C)O",
+            "conditions": "reflux",
+            "yield": "86%",
+            "reactant_smiles": "C1=C(C=CC(=C1)Br)C(=O)CCC(=O)O",
+            "product_smiles": "CC(C)OC(=O)CCC(=O)C1=CC=C(C=C1)Br",
+            "notes": "(2 steps)",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Corey-Chaykovski reaction",
+            "reagents": "Me3SOI, KOt-Bu",
+            "reagent_smiles": "",
+            "conditions": "DMSO, THF, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC(=O)CCC(=O)C1=CC=C(C=C1)Br",
+            "product_smiles": "CC(C)OC(=O)CCC1(CO1)C2=CC=C(C=C2)Br",
+            "notes": "Corey-Chaykovski reaction converting a ketone to a spiro epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxide rearrangement / ring opening",
+            "reagents": "ZnBr2",
+            "reagent_smiles": "",
+            "conditions": "toluene, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC(=O)CCC1(CO1)C2=CC=C(C=C2)Br",
+            "product_smiles": "CC(C)OC(=O)CCC(C=O)C1=CC=C(C=C1)Br",
+            "notes": "Lewis acid-catalyzed epoxide ring opening to form an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Bisulfite Addition",
+            "reagents": "NaHSO3, H2O",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "68%",
+            "reactant_smiles": "CC(C)OC(=O)CCC(C=O)C1=CC=C(C=C1)Br",
+            "product_smiles": "CC(C)OC(=O)CCC(C1=CC=C(C=C1)Br)C(O)OS(=O)(=O)O[Na]",
+            "notes": "Aldehyde group undergoes bisulfite addition to form an alpha-hydroxysulfonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Enzymatic Lactamization",
+            "reagents": "ATA-30 2 enzyme",
+            "reagent_smiles": "CC1=NC=C(COP(=O)(O)O)C(O)=C1C=O.CC(C)N",
+            "conditions": "pH 10.5 buffer, DMSO, 45 °C",
+            "yield": "84%",
+            "reactant_smiles": "CC(C)OC(=O)CCC(C1=CC=C(C=C1)Br)C(O)OS(=O)(=O)O[Na]",
+            "product_smiles": "O=C1NC[C@@H](c2ccc(Br)cc2)CC1",
+            "notes": "Enzymatic conversion involving a pyridoxal phosphate derivative and isopropylamine, transforming an acyclic sulfate-activated alcohol and an isopropyl ester into a 6-membered lactam (2-piperidone). The reaction involves formation of a new N-C bond and cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "NaBH4, BF3•THF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=CC(=C1)Br)[C@@H]2CCC(=O)NC2",
+            "product_smiles": "C1=C(C=CC(=C1)Br)[C@@H]2CCC(NC2)O",
+            "notes": "Lactam carbonyl group reduced to a secondary alcohol. The stereocenter at the phenyl-substituted carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deoxygenation",
+            "reagents": "TsOH•H₂O",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)O)cc1.O.CC(C)O",
+            "conditions": "i-PrOH, 50 °C to rt",
+            "yield": "",
+            "reactant_smiles": "N1CCC[C@@H](C2=CC=C(Br)C=C2)[C@H](O)C1",
+            "product_smiles": "N1CCC[C@@H](C2=CC=C(Br)C=C2)CC1",
+            "notes": "Deoxygenation of a secondary alcohol (piperidin-3-ol) to a piperidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Amine Protection (Boc)",
+            "reagents": "aq. NaOH",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "MTBE, 100 °C",
+            "yield": "92%",
+            "reactant_smiles": "C1C[C@H](CNC1)C2=CC=C(C=C2)Br",
+            "product_smiles": "[Boc]N1CCC[C@H](C1)C2=CC=C(C=C2)Br",
+            "notes": "Protection of a secondary amine with a Boc group using di-tert-butyl dicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "C-N Cross-Coupling (Ullmann/Buchwald-Hartwig type)",
+            "reagents": "K2CO3, DMA, CuBr, 8-hydroxyquinoline",
+            "reagent_smiles": "CC(C)(C)NC(=O)c1c2[nH]nc3c2ccc(n3)C1",
+            "conditions": "110 °C",
+            "yield": "94%",
+            "reactant_smiles": "[Boc]N1CCC[C@H](C1)C2=CC=C(C=C2)Br",
+            "product_smiles": "CC(C)(C)NC(=O)c1c2c(nn(c2)c3ccc(cc3)[C@H]4CCCN([Boc])C4)n5cccc15",
+            "notes": "Copper-catalyzed C-N coupling of an aryl bromide with the pyrazole N-H of N-(tert-butyl)-1H-pyrazolo[4,3-c]quinoline-4-carboxamide to form Niraparib.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Acyl activation",
+                    "reagents": "CDI, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=CNN=C2C(=C1)C(=O)O",
+                    "product_smiles": "C1=CC2=CNN=C2C(=C1)C(=O)OC(=O)N3C=CN=C3",
+                    "notes": "Carboxylic acid is activated by carbonyldiimidazole (CDI) to form an acyl imidazole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Amide Formation",
+                    "reagents": "t-BuNH₂",
+                    "reagent_smiles": "CC(C)(C)N",
+                    "conditions": "40 °C",
+                    "yield": "86%",
+                    "reactant_smiles": "C1=CC2=CNN=C2C(=C1)C(=O)OC(=O)N3C=CN=C3",
+                    "product_smiles": "CC(C)(C)NC(=O)C1=CC=CC2=CNN=C21",
+                    "notes": "Amide formation from a mixed anhydride (formed from indazole-7-carboxylic acid and N,N'-carbonyldiimidazole). The reported yield is for 2 steps.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "MeSO₃H",
+            "reagent_smiles": "CS(=O)(=O)O",
+            "conditions": "o-xylene, 40 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(NC(C)(C)C)c1cccc2c1n(c3ccc(cc3)[C@@H]4CCCN4[Boc])nc2",
+            "product_smiles": "O=C(N)c1cccc2c1n(c3ccc(cc3)[C@@H]4CCCN4)nc2",
+            "notes": "Acid-catalyzed deprotection of Boc group on piperidine and N-tert-butyl amide to primary amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Salt formation",
+            "reagents": "p-TsOH•H₂O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "C1=CC2=CN(C3=CC=C(C=C3)[C@@H]4CCCNC4)N=C2C(=C1)C(=O)N",
+            "product_smiles": "C1=CC2=CN(C3=CC=C(C=C3)[C@@H]4CCCNC4)N=C2C(=C1)C(=O)N.CC1=CC=C(C=C1)S(=O)(=O)O.O",
+            "notes": "Formation of Niraparib p-toluenesulfonate monohydrate salt.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,290 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "curindolizine-maimone-2021",
+        "molecule_name": "Curindolizine",
+        "class": "Natural Product",
+        "author": "Maimone",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, DMF",
+            "reagent_smiles": "CC1=CC=CN1",
+            "conditions": "0°C to 25°C",
+            "yield": "80%",
+            "reactant_smiles": "CC(C(=O)OC)Br",
+            "product_smiles": "CC1=CC=CN1C(C)C(=O)OC",
+            "notes": "N-alkylation of 2-methylpyrrole with methyl 2-bromo-propanoate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Partial Reduction (Ester to Aldehyde)",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "PhMe, -78°C",
+            "yield": "95%",
+            "reactant_smiles": "CC1=CC=CN1C(C)C(=O)OC",
+            "product_smiles": "CC1=CC=CN1C(C)C=O",
+            "notes": "Reduction of a methyl ester to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyanosilylation",
+            "reagents": "TMSCN, LiClO4",
+            "reagent_smiles": "",
+            "conditions": "DCM, 25°C",
+            "yield": "",
+            "reactant_smiles": "CC1=CC=CN1C(C)C=O",
+            "product_smiles": "CC1=CC=CN1C(C)C(C#N)[OTMS]",
+            "notes": "Aldehyde reacts with TMSCN in the presence of LiClO4 to form a cyanohydrin TMS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cycloaddition (intramolecular, likely related to vinylogous iminium/enamine chemistry and Michael addition/cyclization)",
+            "reagents": "NaHMDS, LiCl, NIS",
+            "reagent_smiles": "CC1=CC=C2C=CC(=O)C=CN12",
+            "conditions": "THF, -78°C",
+            "yield": "64%",
+            "reactant_smiles": "CC1=CC=CN1C(C)C(C#N)[OTMS]",
+            "product_smiles": "CC1=CC=CN1[C@H](C)[C@](C#N)([C@H]2CC(=O)C=CC3=CC=C(C)N32)[OTMS]",
+            "notes": "Intramolecular cycloaddition reaction of an N-substituted pyrrole-acetonitrile with a pyrroloazepinone core, forming a complex tricyclic product with multiple new stereocenters. The silyl enol ether (from OTMS) acts as a nucleophile/dienophile equivalent.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Vilsmeier-Haack formylation",
+                    "reagents": "POCl3, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CC=CN1",
+                    "product_smiles": "CC1=C(C=O)C=CN1",
+                    "notes": "Vilsmeier-Haack formylation of 2-methylpyrrole to 2-methylpyrrole-3-carbaldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "N-Protection",
+                    "reagents": "Boc₂O, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 25°C",
+                    "yield": "91%",
+                    "reactant_smiles": "CC1=CC=C(C=O)N1",
+                    "product_smiles": "CC1=CC=C(C=O)N1[Boc]",
+                    "notes": "N-protection of a pyrrole aldehyde with a Boc group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Condensation / Wittig-type reaction",
+                    "reagents": "NaHMDS",
+                    "reagent_smiles": "CC(=O)/C=C/OC",
+                    "conditions": "-78°C",
+                    "yield": "71%",
+                    "reactant_smiles": "CC1=CC=C(C=O)N1[Boc]",
+                    "product_smiles": "CC1=CC=C(/C=C/C(=O)/C=C/OC)N1",
+                    "notes": "Boc-protected pyrrole-3-carbaldehyde reacts with 4-methoxy-3-buten-2-one, resulting in an extended conjugated product and concomitant Boc deprotection.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "Intramolecular cyclization / Annulation",
+                    "reagents": "DBU",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe, uw, 160°C",
+                    "yield": "66%",
+                    "reactant_smiles": "CC1=CC=C(/C=C/C(=O)/C=C/OC)N1",
+                    "product_smiles": "Cc1ccc2n1ccc(=O)c2",
+                    "notes": "Intramolecular cyclization with elimination of methanol to form an indolizinone derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Photocyclization / Electrocyclization",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "hv (390 nm), MeCN/t-BuOH, r.t.",
+            "yield": "55%",
+            "reactant_smiles": "CC1=CC=CN1[C@@H](C)[C@@](C#N)([C@@H]2CC(=O)C=CC3=CC=C(C)N32)[OTMS]",
+            "product_smiles": "CC1=CC=C2[C@@H]3C(=O)C=CC4=CC=C(C)N4[C@@](C)3[C@@](C#N)([C@@H](C)N12)[OTMS]",
+            "notes": "Intramolecular photochemical electrocyclization reaction forms a more condensed polycyclic ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Electrophilic Iodination",
+            "reagents": "NIS",
+            "reagent_smiles": "O=C1CC(=O)N1I",
+            "conditions": "acetone, 0°C",
+            "yield": "88%",
+            "reactant_smiles": "C[C@@H]1N2C=CC=C3C(=O)[C@H]4C=CC=C(C)N4[C@H]3[C@@](C#N)([C@@H]1[OTMS])N2",
+            "product_smiles": "C[C@@H]1N2C=CC=C3C(=O)[C@H]4C=C(I)C=C(C)N4[C@H]3[C@@](C#N)([C@@H]1[OTMS])N2",
+            "notes": "Electrophilic iodination of the electron-rich pyrrole ring, proceeding with preservation of existing stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cycloaddition / Epoxidation",
+            "reagents": "",
+            "reagent_smiles": "O=CC1[C@H]2N3C=C(C)C(I)=C3N2[C@H](C)[C@H]1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1=CC=C2C=CC(=O)[C@H]3C4=CC(=C(C)N4[C@H](C)[C@@H](C#N)([C@H]3N12)O[Si](C)(C)C)I",
+            "product_smiles": "CCOC(=C)[C@H]1[C@@H]2OC1[C@H]3[C@H]4N5C=C(C)C(I)=C5N(C2)[C@H](C)[C@@H](O[Si](C)(C)C)[C@H]43",
+            "notes": "Complex intramolecular reaction converting a ketone, nitrile, and TMS ether to an epoxide and vinyl ether with multiple new stereocenters formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "t-BuLi, ZnCl2, Pd(PPh3)4",
+            "reagent_smiles": "CC1=CC=CN1[C@H](C)\\C=C(/C(=O)OC(C)(C)C)OS(=O)(=O)C(F)(F)F",
+            "conditions": "THF, r.t.",
+            "yield": "40%",
+            "reactant_smiles": "CCOC(=C)[C@]12C=CC3=CC=C(C)N3[C@H]4[C@@H]2C5=CC(=C(C)N5[C@@H](C)[C@@]4(O[Si](C)(C)C)O1)I",
+            "product_smiles": "CCOC(=C)[C@]12C=CC3=CC=C(C)N3[C@H]4[C@@H]2C5=CC(=C(C)N5[C@@H](C)[C@@]4(O[Si](C)(C)C)O1)/C(=C/C(=O)OC(C)(C)C)\\[C@@H](C)N6C=CC=C6C",
+            "notes": "Palladium-catalyzed cross-coupling of an aryl iodide with an alkenyl organozinc reagent.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "N-Alkylation (SN2)",
+                    "reagents": "NaH, DMF",
+                    "reagent_smiles": "CC1=CC=CN1",
+                    "conditions": "0°C to 25°C",
+                    "yield": "80%",
+                    "reactant_smiles": "CC(C(=O)OC)Br",
+                    "product_smiles": "CC1=CC=CN1C(C)C(=O)OC",
+                    "notes": "N-alkylation of 2-methylpyrrole with methyl 2-bromopropanoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Acylation / Claisen Condensation type",
+                    "reagents": "LiHMDS",
+                    "reagent_smiles": "CC(=O)OC(C)(C)C",
+                    "conditions": "THF, -78°C to r.t.",
+                    "yield": "90%",
+                    "reactant_smiles": "CC1=CC=CN1C(C)C(=O)OC",
+                    "product_smiles": "CC1=CC=CN1C(C)C(=O)CC(=O)OC(C)(C)C",
+                    "notes": "Acylation of the alpha-carbon of the N-substituted methyl ester with tert-butyl acetate, forming a beta-keto ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Enol triflate formation",
+                    "reagents": "Tf2O, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 - 0°C",
+                    "yield": "88%",
+                    "reactant_smiles": "CC(C)(C)OC(=O)CC(=O)C(C)N1C=CC=C1C",
+                    "product_smiles": "CC(C)(C)OC(=O)/C=C(\\[OTf])/C(C)N1C=CC=C1C",
+                    "notes": "Formation of an E-stereoselective enol triflate from a beta-keto ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "SmI2, MeOH, THF",
+            "reagent_smiles": "",
+            "conditions": "solvent: MeOH, THF",
+            "yield": "",
+            "reactant_smiles": "CCOC(=C)[C@]12C=CC3=CC=C(C)N3[C@H]4[C@]2(C)[C@H]5([C@H](C)N6C(=C(C=C6[C@@]41O5)/C(=C\\C(=O)OC(C)(C)C)/[C@@H](C)N7C=CC=C7C)C)O[Si](C)(C)C",
+            "product_smiles": "CCOC(=C)[C@]12C=CC3=CC=C(C)N3[C@H]4[C@]2(C)[C@H]5([C@H](C)N6C(=C(C=C6[C@@]41O5)[C@H](C)(CC(=O)OC(C)(C)C)[C@@H](C)N7C=CC=C7C)C)O[Si](C)(C)C",
+            "notes": "Samarium diiodide-mediated reduction of an α,β-unsaturated tert-butyl ester, forming a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection (TMS ether hydrolysis)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "r.t. (2 steps)",
+            "yield": "",
+            "reactant_smiles": "CCOC(=C)[C@@]12C=CC3=CC=C(C)N3[C@H]4[C@H]2(C)C5=CC(=C(C)N5[C@@H](C)[C@H]4([OTMS])O1)[C@@H](CC(=O)OC(C)(C)C)[C@@H](C)N6C=CC=C6C",
+            "product_smiles": "CCOC(=C)[C@@]12C=CC3=CC=C(C)N3[C@H]4[C@H]2(C)C5=CC(=C(C)N5[C@@H](C)[C@H]4(O)O1)[C@@H](CC(=O)OC(C)(C)C)[C@@H](C)N6C=CC=C6C",
+            "notes": "TMS ether is deprotected to a hydroxyl group using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Epimerization",
+            "reagents": "NaOMe",
+            "reagent_smiles": "[Na+].CO[O-]",
+            "conditions": "MeOH, 90°C",
+            "yield": "57%",
+            "reactant_smiles": "CCOC(=C)[C@@]12C=CC3=CC=C(C)N3[C@@H]4[C@@]2(C)C5=CC(=C(C)N5[C@@H](C)[C@]4(O)O1)[C@](C)(CC(=O)OC(C)(C)C)[C@@H](C)N6C=CC=C6C",
+            "product_smiles": "CCOC(=C)[C@]12C=CC3=CC=C(C)N3[C@@H]4[C@@]2(C)C5=CC(=C(C)N5[C@@H](C)[C@]4(O)O1)[C@](C)(CC(=O)OC(C)(C)C)[C@@H](C)N6C=CC=C6C",
+            "notes": "Base-mediated epimerization at the vinyl ether-bearing carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Thionocarbonate formation",
+            "reagents": "KHMDS, ClCSOPh, DMAP",
+            "reagent_smiles": "",
+            "conditions": "THF, -78°C",
+            "yield": "83%",
+            "reactant_smiles": "CCOC(=C)[C@@]12C=CC3=CC=C(C)N3[C@H]4[C@@]2(C)C5=CC(=C(C)N5[C@H](C)[C@@]4(O)O1)[C@](C)(CC(=O)OCC(C)C)[C@@H](C)N6C=CC=C6C",
+            "product_smiles": "CCOC(=C)[C@@]12C=CC3=CC=C(C)N3[C@H]4[C@@]2(C)C5=CC(=C(C)N5[C@H](C)[C@@]4(OC(=S)OC1=CC=CC=C1)O1)[C@](C)(CC(=O)OCC(C)C)[C@@H](C)N6C=CC=C6C",
+            "notes": "Conversion of a tertiary alcohol to a phenyl thionocarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Barton-McCombie deoxygenation",
+            "reagents": "HSnBu₃, BEt₃/O₂",
+            "reagent_smiles": "",
+            "conditions": "THF, 45°C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=C)[C@@]12C=CC3=CC=C(C)N3[C@H]4[C@@H]1O[C@@]([C@@H](C)N5C(=C(C=C25)[C@](C)(CC(=O)O[tBu])[C@@H](C)N6C=CC=C6C)C)([C@@]4(C)OC(=S)Oc1ccccc1)",
+            "product_smiles": "CCOC(=C)[C@@]12C=CC3=CC=C(C)N3[C@@H]4[C@@H]2[C@@H]5C6=CC(=C(C)N6[C@H](C)[C@H]4O1)[C@@](CC(=O)O[tBu])([C@@H](C)N7C=CC=C7C)",
+            "notes": "Deoxygenation of a phenyl thionocarbonate to a C-H bond, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Enol ether hydrolysis / Cyclization",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "41% (2 steps)",
+            "reactant_smiles": "CCOC(=C)[C@]12C=CC3=CC=C(C)N3[C@H]4[C@H]2[C@H]5[C@H](C)N6C(=C(C=C6[C@@]41O5)[C@H](CC(=O)OC(C)(C)C)[C@H](C)N7C=CC=C7C)C",
+            "product_smiles": "O=C(OC(C)(C)C)C[C@](C)([C@H](C)N1C=CC=C1C)C2=C(C)N3[C@H](C)[C@H]4[C@H]5[C@H]([C@](C=CC6=CC=C(C)N65)(C(=O)C)O4)[C@H]3C2",
+            "notes": "Hydrolysis of a vinyl ether to a ketone, concurrent with an intramolecular cyclization that retains the ether bridge.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Corey-Bakshi-Shibata Reduction",
+            "reagents": "BH3DMS, CH2Cl2, r.t.",
+            "reagent_smiles": "CB1N2CCC[C@@H]2[C@@](O1)(c3ccccc3)(c4ccccc4)",
+            "conditions": "CH2Cl2, r.t.",
+            "yield": "84%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@@H](C)([C@H](C)N1C=CC=C1C)C2=C(C)N3[C@@H](C)[C@@H]4[C@@H]5[C@@](C)(C3=C2)C(C)=O)O[C@H]4C=CC6=CC=C(C)N65",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@@H](C)([C@H](C)N1C=CC=C1C)C2=C(C)N3[C@@H](C)[C@@H]4[C@@H]5[C@@](C)(C3=C2)[C@H](C)(O)O[C@H]4C=CC6=CC=C(C)N65",
+            "notes": "Enantioselective reduction of a methyl ketone to a secondary alcohol using Corey-Bakshi-Shibata catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78°C, then silica gel",
+            "yield": "70%",
+            "reactant_smiles": "CC1=CC=CN1[C@H](C)[C@@](C)(CC(=O)OC(C)(C)C)C2=C(C)N3[C@@H](C)[C@@H]4[C@@H]5[C@@H]([C@]4(C=CC6=CC=C(C)N65)O[C@H]3C2)O",
+            "product_smiles": "CC1=CC=CN1[C@H](C)[C@@](C)(CCO)C2=C(C)N3[C@@H](C)[C@@H]4[C@@H]5[C@@H]([C@]4(C=CC6=CC=C(C)N65)O[C@H]3C2)O",
+            "notes": "Reduction of a tert-butyl ester to a primary alcohol using DIBAL.",
+            "substeps": []
+        }
+    ]
+}

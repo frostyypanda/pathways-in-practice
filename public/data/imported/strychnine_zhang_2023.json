@@ -1,0 +1,254 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strychnine-zhang-2023",
+        "molecule_name": "Strychnine",
+        "class": "Natural Product",
+        "author": "Zhang",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Sulfonylation",
+            "reagents": "",
+            "reagent_smiles": "CCN(CC)CC.O=S(Cl)(=O)c1c([N+](=O)[O-])ccccc1",
+            "conditions": "iPrOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@@H]1CCCC[C@H]1N.Cl",
+            "product_smiles": "O[C@@H]1CCCC[C@H]1NS(=O)(=O)c2c([N+](=O)[O-])ccccc2",
+            "notes": "Formation of a sulfonamide from a primary amine hydrochloride and o-nitrobenzenesulfonyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "64%",
+            "reactant_smiles": "O[C@H]1CC[C@@H](N[o-Ns])CC1",
+            "product_smiles": "O=C1CCC(N[o-Ns])CC1",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular N-alkylation / Cyclization",
+            "reagents": "KI, Cs2CO3",
+            "reagent_smiles": "COC(=O)OCC#CCOS(=O)(=O)C",
+            "conditions": "CH3CN, 80 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=C1CCC(N([o-Ns])H)CC1",
+            "product_smiles": "O=C1CC2CN(C1CC2)([o-Ns])CC#CCOC(=O)OC",
+            "notes": "Intramolecular N-alkylation of a nosylamide with a mesylate-activated alkyne, followed by intramolecular cyclization (likely conjugate addition of ketone enolate to alkyne) to form a bicyclic amino ketone.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Carbonate Esterification",
+                    "reagents": "Pyridine, DMAP",
+                    "reagent_smiles": "COC(=O)Cl",
+                    "conditions": "DCM",
+                    "yield": "83%",
+                    "reactant_smiles": "C(#CCO)CO",
+                    "product_smiles": "COC(=O)OCC#CCO",
+                    "notes": "One of the primary alcohol groups of but-2-yne-1,4-diol is selectively converted to a methyl carbonate ester using methyl chloroformate, DMAP, and pyridine in DCM.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Mesylation",
+                    "reagents": "MsCl, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "99%",
+                    "reactant_smiles": "COC(=O)OCC#CCO",
+                    "product_smiles": "COC(=O)OCC#CC[OMs]",
+                    "notes": "Conversion of a primary alcohol to a mesylate using mesyl chloride and triethylamine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Rhodium-catalyzed intramolecular cyclization-rearrangement",
+            "reagents": "toluene",
+            "reagent_smiles": "C1=CC=C(C=C1)NC2=C(C(=O)C2=O)N[C@@H]3CCCC[C@H]3N.Cl[Rh]1(C2=CCC=C2)Cl[Rh]1(C3=CCC=C3).Cc1cc(C(C)(C)C)c(O)c(C)c1C(C)(C)C",
+            "conditions": "90 °C",
+            "yield": "67%",
+            "reactant_smiles": "COC(=O)OCC#CCC1C2N(S(=O)(=O)c3ccc([N+](=O)[O-])cc3)CCC2C(=O)CC1",
+            "product_smiles": "C=C=C1C(CC(=O)C2)N(S(=O)(=O)c3ccc([N+](=O)[O-])cc3)CCC21",
+            "notes": "Rhodium-catalyzed intramolecular cyclization and rearrangement of an alkyne-tethered bicyclic ketone derivative, leading to the formation of an exocyclic allene and a new fused 5-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alpha-acylation of ketone",
+            "reagents": "NaH",
+            "reagent_smiles": "C(C(F)(F)F)OC(=O)C(F)(F)F",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "O=C1CC2CC(C=C=C)C1N2[o-Ns]",
+            "product_smiles": "O=C1C(C(=O)C(F)(F)F)C2CC(C=C=C)C1N2[o-Ns]",
+            "notes": "Acylation of the ketone's alpha-carbon with a trifluoroacetyl group, using sodium hydride as base and 2,2,2-trifluoroethyl 2,2,2-trifluoroacetate as the acylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Japp-Klingemann Reaction / Hydrazone formation",
+            "reagents": "PhN2·BF4, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "FC(F)(F)C(=O)C1C(=O)C(=C=C)C2CN([Ns])C1C2",
+            "product_smiles": "C=C=CC1C(=NNC2=CC=CC=C2)C3CN([Ns])C1CC3",
+            "notes": "Japp-Klingemann reaction of a bicyclic beta-keto ester derivative with phenyldiazonium tetrafluoroborate to form a phenylhydrazone, with concomitant removal of the trifluoroacetyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "ZnCl2, TCA, BHT",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "",
+            "reactant_smiles": "S(=O)(=O)c1c([N+](=O)[O-])cccc1N1CC(C=C=C)C2C1CC(=NNC3=CC=CC=C3)C2",
+            "product_smiles": "S(=O)(=O)c1c([N+](=O)[O-])cccc1N1CC(C=C=C)C2C1C(=O)C3=C2C4=CC=CC=C4N3",
+            "notes": "Acid-catalyzed intramolecular cyclization of an allene-containing bicyclic hydrazone, forming an indole fused ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Protection (Boc)",
+            "reagents": "DMAP, DCM",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "0 °C",
+            "yield": "90%",
+            "reactant_smiles": "C=C=C1CN(C2CC1C(=O)C3=C2C4=C(C=CC=C4)N3)[o-Ns]",
+            "product_smiles": "C=C=C1CN(C2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc])[o-Ns]",
+            "notes": "N-Boc protection of the indole nitrogen, using di-tert-butyl dicarbonate (Boc₂O).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "N-deprotection",
+            "reagents": "K2CO3, PhSH",
+            "reagent_smiles": "",
+            "conditions": "CH3CN, DMF",
+            "yield": "",
+            "reactant_smiles": "C=C=C1CN(S(=O)(=O)c2ccccc2N(=O)=O)C2CC1C(=O)C3=C2C4=C(C=CC=C4)N3C(=O)OC(C)(C)C",
+            "product_smiles": "C=C=C1CNC2CC1C(=O)C3=C2C4=C(C=CC=C4)N3C(=O)OC(C)(C)C",
+            "notes": "Deprotection of o-Ns group from the tertiary amine using potassium carbonate and thiophenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH(OAc)3, AcOH, DCM",
+            "reagent_smiles": "BrCC=O",
+            "conditions": "0 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=C=C1CNC2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc]",
+            "product_smiles": "C=C=C1CN(CCBr)C2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc]",
+            "notes": "Reductive amination of a secondary amine with 2-bromoacetaldehyde. The reaction proceeds in 2 steps, indicated in the conditions.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Ozonolysis",
+                    "reagents": "O3, PPh3",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "75%",
+                    "reactant_smiles": "C=CCBr",
+                    "product_smiles": "O=CCBr",
+                    "notes": "Ozonolysis of 3-bromoprop-1-ene to 2-bromoacetaldehyde with triphenylphosphine reductive workup.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Radical Cyclization",
+            "reagents": "SmI₂, DMPU",
+            "reagent_smiles": "",
+            "conditions": "THF, 40 °C",
+            "yield": "63%",
+            "reactant_smiles": "C=C=C1CN(CCBr)C2CC1C(=O)C3=C2C4=C(C=CC=C4)N3[Boc]",
+            "product_smiles": "C=C=C1CN2CC[C@@]3(C(=O)C1C[C@H]2C4=C(C=CC=C4)N3[Boc])",
+            "notes": "Intramolecular radical cyclization of bromoethyl allene to form a new 5-membered ring and two new stereocenters. Samarium diiodide mediated reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Epoxidation",
+            "reagents": "NaH, Me3SOI",
+            "reagent_smiles": "",
+            "conditions": "DMSO, THF",
+            "yield": "",
+            "reactant_smiles": "C=C=C1CN2CC[C@@]34C5=C(C=CC=C5)N([C@H]4C(=O)[C@H]1C[C@@H]32)[Boc]",
+            "product_smiles": "C=C=C1CN2CC[C@@]34C5=C(C=CC=C5)N([C@H]3[C@]6(CO6)[C@H]1C[C@@H]42)[Boc]",
+            "notes": "Johnson-Corey-Chaykovsky epoxidation of ketone to form an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Borane-Amine Complex Formation",
+            "reagents": "BH3·THF",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "86%",
+            "reactant_smiles": "C=C=C1CN2CC[C@@]34C5=C(C=CC=C5)N([C@H]3[C@]6(CO6)[C@H]1C[C@@H]42)C(=O)OC(C)(C)C",
+            "product_smiles": "C=C=C1C[N+]2([BH3])CC[C@@]34C5=C(C=CC=C5)N([C@H]3[C@@]6(CO6)[C@H]1C[C@@H]42)C(=O)OC(C)(C)C",
+            "notes": "Formation of a borane complex with the tertiary amine",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reductive epoxide opening",
+            "reagents": "Mn, Cp₂TiCl₂, 1,4-cyclohexadiene",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "55%",
+            "reactant_smiles": "C=C=C1C[N+]2(CC[C@@]34C5=C(C=CC=C5)[N]([Boc])([C@@H]3[C@]6(CO6)[C@@H]1C[C@@H]42))[B]",
+            "product_smiles": "C=C=C1C[N+]2(CC[C@@]34C5=C(C=CC=C5)[N]([Boc])([C@@H]4[C@H](C(O))[C@@H]1C[C@@H]32))[B]",
+            "notes": "Epoxide ring is opened and reduced to a primary alcohol (CH2OH) with retention of allene and N-BH3 adduct.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "DMSO, (COCl)2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "87%",
+            "reactant_smiles": "C=C=C1C[N+]2(CC[C@@]34C5=C(C=CC=C5)N([C@H]4[C@H](CO)[C@H]1C[C@@H]32)C(=O)OC(C)(C)C)[B]",
+            "product_smiles": "C=C=C1C[N+]2(CC[C@@]34C5=C(C=CC=C5)N([C@H]4[C@H](C=O)[C@H]1C[C@@H]32)C(=O)OC(C)(C)C)[B]",
+            "notes": "Primary alcohol is oxidized to an aldehyde using Swern oxidation conditions. The allene, N-Boc group, and N-BH3 adduct remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Gold-catalyzed cyclization",
+            "reagents": "IprAuCl, AgOTf, H2O",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 50 °C",
+            "yield": "60%",
+            "reactant_smiles": "C=C=C1C[N]2([BH3])CC[C@@]34C5=C(C=CC=C5)N([C@H]4[C@H]2C[C@H]1[C@H]3C=O)[Boc]",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)[C@]34CCN5CC6=CCOC([C@H]([C@@H]6C[C@@H]35)[C@@H]41)O",
+            "notes": "Gold-catalyzed intramolecular cyclization of an allene-aldehyde precursor forming a complex polycyclic structure with a cyclic ether and alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Deprotection / Intramolecular Lactamization (Cyclization)",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "O=C=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "0 °C",
+            "yield": "60%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)[C@@]34CCN5CC6=CCOC([C@H]([C@@H]6C[C@@H]35)[C@@H]41)O",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)C[C@H]4[C@@H]5C6CC7[C@]2(CCN7CC6=CCO4)C53",
+            "notes": "Deprotection of Boc group and intramolecular cyclization via alcohol to form the lactam, completing the synthesis of (-)-Strychnine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "frondosin-b-xue-2012",
+        "molecule_name": "Frondosin B",
+        "class": "Natural Product",
+        "author": "Xue",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Benzofuran Synthesis (via O-Alkylation and Cyclization)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(=O)CCl",
+            "conditions": "Acetone, reflux",
+            "yield": "83%",
+            "reactant_smiles": "O=Cc1c(O)ccc(OC)c1",
+            "product_smiles": "CC(=O)C1=CC2=CC(=CC=C2O1)OC",
+            "notes": "Phenolic hydroxyl group is alkylated with chloroacetone, followed by intramolecular cyclization (likely involving aldol-type condensation) to form the benzofuran ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH/H2O, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)C1=CC2=CC(=CC=C2O1)OC",
+            "product_smiles": "CC(O)C1=CC2=CC(=CC=C2O1)OC",
+            "notes": "Reduction of a methyl ketone to a secondary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Complex Cyclization",
+            "reagents": "CSA, CH3NO2, 4 Å MS",
+            "reagent_smiles": "C=CC1=CCCC[C@]1(C)C",
+            "conditions": "35-40 °C",
+            "yield": "52%",
+            "reactant_smiles": "CC(C1=CC2=CC(=CC=C2O1)OC)O",
+            "product_smiles": "C[C@@H]1CC=C2[C@H](CCC[C@@]2(C)C)C3=C1OC4=CC=C(C=C43)OC",
+            "notes": "Complex polycyclization of a benzofuran derivative with 1-methyl-1-vinylcyclohexane, forming a new tricyclic core structure.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Grignard Addition",
+                    "reagents": "THF",
+                    "reagent_smiles": "C=C[Mg]Br",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "O=C1CC[C@@H](C)CCC1",
+                    "product_smiles": "C=C[C@]1(O)CCCC[C@@H](C)C1",
+                    "notes": "Addition of vinylmagnesium bromide to 2-methylcyclohexanone, forming a tertiary alcohol with diastereoselectivity.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Dehydration with skeletal rearrangement",
+                    "reagents": "CuSO4",
+                    "reagent_smiles": "",
+                    "conditions": "benzene, reflux",
+                    "yield": "72%",
+                    "reactant_smiles": "C[C@H]1CCC[C@@](O)(C=C)C1",
+                    "product_smiles": "C=CC1=CC[C@H](C)CC1",
+                    "notes": "Dehydration of tertiary alcohol to form an alkene. Involves a skeletal rearrangement of the methyl group from position 2 to position 5. Yield over 2 steps.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Isomerization / Prototropic Rearrangement",
+            "reagents": "TsOH",
+            "reagent_smiles": "",
+            "conditions": "benzene, reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC=C2[C@@H](C=CC2(C)C)C3=C1OC4=CC=C(C=C43)OC",
+            "product_smiles": "C[C@H]1CCC2=C(CCC2(C)C)C3=C1OC4=CC=C(C=C43)OC",
+            "notes": "Acid-catalyzed rearrangement involving double bond migration in the alicyclic system and loss of a stereocenter (the H-wedge). The 6-membered ring becomes saturated, and a new double bond forms at the fusion between the 7-membered and 6-membered rings. The wavy bond is interpreted as a methyl group, consistent with the input SMILES.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "O-Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to 0 °C",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "CC1CCC2=C(CCC[C@@]2(C)C)C3=C1OC4=CC=C(OC)C=C43",
+            "product_smiles": "CC1CCC2=C(CCC[C@@]2(C)C)C3=C1OC4=CC=C(O)C=C43",
+            "notes": "O-demethylation of an aryl methyl ether to a phenol (Frondosin B). The wavy bond in the reactant is interpreted as an unspecified stereochemistry for the methyl group, which is drawn as a plain methyl in the product.",
+            "substeps": []
+        }
+    ]
+}

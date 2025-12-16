@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "calphostin-b-merlic-2000",
+        "molecule_name": "Calphostin B",
+        "class": "Natural Product",
+        "author": "Merlic",
+        "year": 2000
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "79%",
+            "reactant_smiles": "COC1=CC(=CC(=C1)OC)CO",
+            "product_smiles": "COc1cc(OC)c(CO)c(Br)c1",
+            "notes": "Bromination of a dimethoxybenzyl alcohol with N-bromosuccinimide (NBS) in DMF. The bromine substitutes at the position ortho to the hydroxymethyl group and ortho to one of the methoxy groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Appel reaction",
+            "reagents": "I2, PPh3, imidazole",
+            "reagent_smiles": "I[I].P(c1ccccc1)(c2ccccc2)c3ccccc3.c1cnc[nH]1",
+            "conditions": "DCM",
+            "yield": "81%",
+            "reactant_smiles": "COC1=CC(=C(C(=C1)CO)Br)OC",
+            "product_smiles": "COC1=CC(=C(C(=C1)CI)Br)OC",
+            "notes": "Conversion of a benzylic alcohol to a benzylic iodide via Appel reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Arbusov reaction",
+            "reagents": "P(OEt)3",
+            "reagent_smiles": "CCOP(OCC)OCC",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "COC1=CC(=C(C(=C1)CI)Br)OC",
+            "product_smiles": "CCOP(=O)(CC1=CC(=CC(=C1Br)OC)OC)OCC",
+            "notes": "Conversion of a benzylic iodide to a diethyl phosphonate via Arbusov reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Horner Wadsworth Emmons olefination",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "[OTIPS][C@@H](C)CC=O",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "CCOP(=O)(CC1=C(Br)C(OC)=CC(OC)=C1)OCC",
+            "product_smiles": "[OTIPS][C@@H](C)C/C=C/C1=C(Br)C(OC)=CC(OC)=C1",
+            "notes": "Horner Wadsworth Emmons olefination for alkene formation.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Protection of Alcohol (Silyl Ether Formation)",
+                    "reagents": "TIPSOTf, iPr₂NEt",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "100%",
+                    "reactant_smiles": "C[C@H](CC(=O)OC)O",
+                    "product_smiles": "[OTIPS][C@H](C)CC(=O)OC",
+                    "notes": "An alcohol is protected as a triisopropylsilyl (TIPS) ether using TIPSOTf and a base (DIPEA). The stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "[OTIPS][C@H](C)CC(=O)OC",
+                    "product_smiles": "[OTIPS][C@H](C)CC(=O)H",
+                    "notes": "Methyl ester reduced to an aldehyde using DIBAL-H, retaining the stereochemistry at the chiral center.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Fischer Carbene Complex Formation / Arene Lithiation",
+            "reagents": "n-BuLi, Cr(CO)6, MeOTf",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "[OTIPS][C@@H](C)C/C=C/c1c(Br)c(OC)cc(OC)c1",
+            "product_smiles": "[OTIPS][C@@H](C)C/C=C/c1c(C([Cr](C#O)(C#O)(C#O)(C#O)(C#O))OC)c(OC)cc(OC)c1",
+            "notes": "Formation of a chromium carbene complex from an aryl bromide via lithiation and reaction with Cr(CO)6 and methyl triflate. Stereochemistry of the secondary alcohol preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Chromium Carbene Annulation",
+            "reagents": "t-BuNC",
+            "reagent_smiles": "[tBu]N#C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(OC)=C(C(OC)=[Cr](C#O)5)C(C/C=C/[C@H](C)O[OTIPS])=C1",
+            "product_smiles": "COC1=CC(OC)=C2C(NC(C)(C)C)=C(C[C@H](C)O[OTIPS])C=C2C=C1",
+            "notes": "Intramolecular cyclization of a chromium carbene complex with incorporation of tert-butyl isocyanide to form a naphthalene derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "CC(C)CNC1=C(C2=C(C=C(C=C2C=C1C[C@@H](C)O[TIPS])OC)OC)OC",
+            "product_smiles": "CC(C)CNC1=C(C2=C(C=C(C=C2C=C1C[C@@H](C)O)OC)OC)OC",
+            "notes": "Deprotection of a TIPS silyl ether to a free alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Esterification (Benzoylation)",
+            "reagents": "BzCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)CNC1=C(C2=C(C=C(C=C2C=C1C[C@@H](C)O)OC)OC)OC",
+            "product_smiles": "CC(C)CNC1=C(C2=C(C=C(C=C2C=C1C[C@@H](C)[OBz])OC)OC)OC",
+            "notes": "The hydroxyl group on the side chain is selectively esterified with benzoyl chloride to form a benzoate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "COC1=CC2=C(C=C1OC)C(OC)=C(NC(C)(C)C)C2C[C@H](C)OC(=O)c3ccccc3",
+            "product_smiles": "C[C@H](CC1=CC2=CC(=CC(=C2C(=O)C1=O)OC)OC)OC(=O)C3=CC=CC=C3",
+            "notes": "DDQ mediated oxidation of naphthalene derivative to naphthoquinone. Removes one methoxy group and the t-butylamino group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Dimerization",
+            "reagents": "TFA, O2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "56%",
+            "reactant_smiles": "COc1cc(OC)c2c(c1)C(=O)C(=C[C@@H](CC)OC(=O)c3ccccc3)C2=O",
+            "product_smiles": "COc1c(O)c(C[C@@H](CC)OC(=O)c7ccccc7)c2c(c1)C(=O)c3c(C(=O)c4c(O)c(OC)cc5c4C(=O)c(O)c(C[C@@H](CC)OC(=O)c6ccccc6)c5)C(=O)c3c2OC",
+            "notes": "Oxidative dimerization of a dimethoxy-naphthoquinone with a benzoyloxy-propyl side chain to form a perylenequinone derivative (Calphostin B). The reaction involves the formation of new C-C bonds and oxidation of the quinone rings, introducing two hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "O-methylation",
+            "reagents": "TBAF, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "C[C@H](CC1=C(C(=O)C2=C(C=C(C3=C2C1=C4C(=C(C(=O)C5=C(C=C(C3=C45)OC)OC)O)C[C@@H](C)[OBz])OC)OC)O)[OBz]",
+            "product_smiles": "C[C@H](CC1=C(C(=O)C2=C(C=C(C3=C2C1=C4C(=C(C(=O)C5=C(C=C(C3=C45)OC)OC)OC)C[C@@H](C)[OBz])OC)OC)OC)[OBz]",
+            "notes": "Methylation of two phenolic hydroxyl groups on a complex binaphthalene backbone using iodomethane, promoted by TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "NaOMe, MeOH",
+            "reagent_smiles": "[Na+].[O-]C.CO",
+            "conditions": "MeOH",
+            "yield": "84%",
+            "reactant_smiles": "C[C@H](CC1=C(C(=O)C2=C(C=C(C3=C2C1=C4C(=C(C(=O)C5=C(C=C(C3=C54)OC)OC)OC)C[C@@H](C)[OBz])OC)OC)OC)[OBz]",
+            "product_smiles": "C[C@H](CC1=C(C(=O)C2=C(C=C(C3=C2C1=C4C(=C(C(=O)C5=C(C=C(C3=C54)OC)OC)OC)C[C@@H](C)[OBz])OC)OC)OC)O",
+            "notes": "Selective hydrolysis of one benzoate ester with retention of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Demethylation",
+            "reagents": "THF",
+            "reagent_smiles": "I[Mg]I",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "CC[C@H](O)CC1=C([OMe])C(=O)C2=C([OMe])C=C(C3=C2C1=C4C([OMe])=C(C5=C4C3=C(C[C@@H](C(C)C)[OBz])[OMe])C(=O)C=C5[OMe])[OMe]",
+            "product_smiles": "CC[C@H](O)CC1=C([OMe])C(=O)C2=C([OMe])C=C(C3=C2C1=C4C([OMe])=C(C5=C4C3=C(C[C@@H](C(C)C)[OBz])[OMe])C(=O)C=C5O)O",
+            "notes": "Demethylation of two aryl methoxy groups to hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

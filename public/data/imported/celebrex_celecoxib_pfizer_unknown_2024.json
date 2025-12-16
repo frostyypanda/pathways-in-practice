@@ -1,0 +1,61 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "celebrex-celecoxib-pfizer-unknown-2024",
+        "molecule_name": "Celebrex (Celecoxib Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Diazotization",
+            "reagents": "HCl, NaNO2",
+            "reagent_smiles": "",
+            "conditions": "H2O, -5 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=CC(=C1)S(=O)(=O)N)N",
+            "product_smiles": "C1=C(C=CC(=C1)S(=O)(=O)N)[N+]#[N].[Cl-]",
+            "notes": "Diazotization of 4-aminobenzenesulfonamide to form the corresponding benzenediazonium chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "SnCl2, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "NS(=O)(=O)c1ccc([N+]#N)cc1.[Cl-]",
+            "product_smiles": "NS(=O)(=O)c1ccc(NN)cc1",
+            "notes": "Reduction of a diazonium salt to a hydrazine using tin(II) chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Pyrazole Synthesis / Condensation",
+            "reagents": "",
+            "reagent_smiles": "CC1=CC=C(C=C1)C(=O)CC(=O)C(F)(F)F",
+            "conditions": "EtOH, 75 °C",
+            "yield": "46%",
+            "reactant_smiles": "NNC1=CC=C(C=C1)S(=O)(=O)N",
+            "product_smiles": "CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F",
+            "notes": "Formation of Celecoxib via condensation of a hydrazine with a 1,3-diketone.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Claisen condensation",
+                    "reagents": "NaOMe",
+                    "reagent_smiles": "CCOC(=O)C(F)(F)F",
+                    "conditions": "MeOH, 60 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "CC1=CC=C(C=C1)C(=O)C",
+                    "product_smiles": "CC1=CC=C(C=C1)C(=O)CC(=O)C(F)(F)F",
+                    "notes": "Claisen condensation of 4-methylacetophenone with ethyl trifluoroacetate.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

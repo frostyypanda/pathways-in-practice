@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "polyavolensin-magauer-2023",
+        "molecule_name": "Polyavolensin",
+        "class": "Natural Product",
+        "author": "Magauer",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "PBr3, Et2O",
+            "reagent_smiles": "",
+            "conditions": "-41 °C to -9 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC/C(=C/CO)/C)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC/C(=C/CBr)/C)/C)C",
+            "notes": "Conversion of a primary allylic alcohol to a primary allylic bromide using phosphorus tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkylation",
+            "reagents": "nBuLi, THF",
+            "reagent_smiles": "O=S(=O)(c1ccccc1)N1C=CC2=CC=CC=C21",
+            "conditions": "-78 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC/C(=C/CBr)/C)/C)C",
+            "product_smiles": "O=S(=O)(c1ccccc1)N1C=C(CC/C=C(\\C)CCC/C=C(\\C)CCC=C(C)C)C2=CC=CC=C21",
+            "notes": "Alkylation of the N-sulfonylindole with a polyisoprenoid bromide.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Oxidation/Chlorination",
+                    "reagents": "SOCl₂, H₂O₂",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC=C(C=C1)S",
+                    "product_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "notes": "Oxidation of a thiol (benzenethiol) to a sulfonyl chloride (benzenesulfonyl chloride).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "N-Sulfonylation",
+                    "reagents": "NaOH, THF",
+                    "reagent_smiles": "C1=CC2=C(C=C1)NC=C2",
+                    "conditions": "0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "product_smiles": "C1=CC2=C(C=C1)N(C=C2)S(=O)(=O)[Ph]",
+                    "notes": "N-Sulfonylation of indole using benzenesulfonyl chloride and base.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Dihydroxylation",
+            "reagents": "K₂OsO₄, K₂CO₃, K₃[Fe(CN)₆], CH₃SO₂NH₂",
+            "reagent_smiles": "",
+            "conditions": "tBuOH, H₂O, THF, rt to 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "O=S(=O)(c1ccccc1)N1C=C(CC/C=C(\\C)/CCC/C=C(\\C)/CC2(C)CCC/C=C(\\C)/CC2)C3=CC=CC=C31",
+            "product_smiles": "O=S(=O)(c1ccccc1)N1C=C(CC/C=C(\\C)/CCC/C=C(\\C)/CC2(C)CCC[C@@H](O)[C@@](C)(O)CC2)C3=CC=CC=C31",
+            "notes": "Sharpless asymmetric dihydroxylation of the terminal alkene within the cyclohexene ring, forming a syn-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, pyridine",
+            "reagent_smiles": "CS(=O)(=O)Cl.c1ccncc1",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@H](O)[C@](C)(O)C(C)(C)C1C/C=C(/C)CC[C@H](C)C/C=C(/C)CC2=CN(S(=O)(=O)c3ccccc3)C4=CC=CC=C42",
+            "product_smiles": "C[C@H]1C[C@H](OS(=O)(=O)C)[C@](C)(O)C(C)(C)C1C/C=C(/C)CC[C@H](C)C/C=C(/C)CC2=CN(S(=O)(=O)c3ccccc3)C4=CC=CC=C42",
+            "notes": "Mesylation of a secondary alcohol. The tertiary alcohol remains unaffected. The molecule is a 14-membered macrocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxidation (Intramolecular SN2)",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "c1ccccc1S(=O)(=O)N2C=C(C3=CC=CC=C32)C/C=C(\\C)/CC/C(C)=C1/C[C@H](OS(C)(=O)=O)C(C)(C)O1",
+            "product_smiles": "c1ccccc1S(=O)(=O)N2C=C(C3=CC=CC=C32)C/C=C(\\C)/CC/C(C)=C1/C[C@@H]2OC(C)(C)C12",
+            "notes": "Intramolecular SN2 reaction to form an epoxide from a mesylate and a tertiary alcohol. Stereochemistry inverted at the reaction center.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-deprotection",
+            "reagents": "KOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "88%",
+            "reactant_smiles": "CC1(C)O[C@H]2CCC/C(C)=C/CC[C@H](C)/C=C(/C)CC3=CN(S(=O)(=O)c4ccccc4)C5=CC=CC=C35C21",
+            "product_smiles": "CC1(C)O[C@H]2CCC/C(C)=C/CC[C@H](C)/C=C(/C)CC3=CNC5=CC=CC=C35C21",
+            "notes": "Cleavage of N-benzenesulfonyl protecting group from indole",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Electrophilic Bromination",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "O=C1CCC(=O)N1Br.CCN(CC)CC",
+            "conditions": "-35 °C to -20 °C",
+            "yield": "91%",
+            "reactant_smiles": "C/C(=C\\CC1=CNC2=CC=CC=C21)/CC/C=C(\\C)/CC[C@H]3C(C)(C)O3",
+            "product_smiles": "C/C(=C\\CC1=C(Br)NC2=CC=CC=C21)/CC/C=C(\\C)/CC[C@H]3C(C)(C)O3",
+            "notes": "Bromination of the indole C2 position using NBS.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Friedel-Crafts type cyclization / Intramolecular Epoxide Opening",
+            "reagents": "BF3•OEt2",
+            "reagent_smiles": "FB(F)F.CCOCC",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC=C(C)CC[C@H]2[C@H](O[C@@]2(C)C)CCC=C(C3=C(Br)C4=C(C=CC=C4)[NH]3)C1",
+            "product_smiles": "CC1(C)C[C@@H]2CC[C@H]3[C@](C)(CC4=C(Br)C5=C(C=CC=C5)[N@@]43)[C@H]2[C@H](C)CC1O",
+            "notes": "Intramolecular epoxide opening followed by cyclization to form a complex tetracyclic indole system from a macrocyclic precursor.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Debromination / Catalytic Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "22% (2 steps)",
+            "reactant_smiles": "O[CH2][C@H]1C[C@@H](C)[C@H]2[C@H]3[C@@](C)(CC[C@H]1C[C@H]2[C@@H]4[C@H]3C5=C(Br)C6=CC=CC=C6N45)",
+            "product_smiles": "O[CH2][C@H]1C[C@@H](C)[C@H]2[C@H]3[C@@](C)(CC[C@H]1C[C@H]2[C@@H]4[C@H]3C5=CC6=CC=CC=C6N45)",
+            "notes": "Catalytic hydrogenation of a brominated indole derivative to remove the bromine atom, yielding an unbrominated indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification",
+            "reagents": "DMAP",
+            "reagent_smiles": "CC(=O)OOC(=O)C",
+            "conditions": "CH2Cl2, rt",
+            "yield": "78%",
+            "reactant_smiles": "CC12CCC3C(C)(CCC(C3(C)C)O)C2CC4=CC5=C(C=CC=C5)N41",
+            "product_smiles": "CC(=O)OC1CCC2(C)C(CCC3(C)C2CC4=CC5=C(C=CC=C5)N43)C1(C)C",
+            "notes": "Esterification of a secondary alcohol with acetic anhydride to form an acetate ester.",
+            "substeps": []
+        }
+    ]
+}

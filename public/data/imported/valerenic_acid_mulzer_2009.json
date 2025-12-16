@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "valerenic-acid-mulzer-2009",
+        "molecule_name": "Valerenic Acid",
+        "class": "Natural Product",
+        "author": "Mulzer",
+        "year": 2009
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxide opening / Grignard addition",
+            "reagents": "HgCl2",
+            "reagent_smiles": "C#CC[Mg]Br",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "C([C@H]1CO1)O",
+            "product_smiles": "C#CCC[C@H](CO)O",
+            "notes": "Nucleophilic ring opening of (R)-glycidol with propargylmagnesium bromide, catalyzed by mercury(II) chloride, yielding a chiral diol with an alkyne group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "C#CCC[C@@H](CO)O",
+            "product_smiles": "C#CCC[C@@H](CO[Ts])O",
+            "notes": "Primary alcohol is selectively converted to a tosylate, leaving the secondary alcohol and alkyne intact. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Elimination / Peterson Olefination variant",
+            "reagents": "Me3Si, BuLi",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C#CCC[C@@H](CO[OTs])O",
+            "product_smiles": "C#CCC[C@@H](C=C)O",
+            "notes": "Conversion of tosylate to terminal alkene via elimination.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBSCl, Et3N",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.CCN(CC)CC",
+            "conditions": "",
+            "yield": "58% (2 steps)",
+            "reactant_smiles": "C#CCC[C@@H](C=C)O",
+            "product_smiles": "C#CCC[C@@H](C=C)[OTBS]",
+            "notes": "Protection of secondary alcohol as a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkyne alkylation",
+            "reagents": "BuLi, MeI",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "C#CCC[C@@H](C=C)[OTBS]",
+            "product_smiles": "C=C[C@@H](CCC#CC)[OTBS]",
+            "notes": "Terminal alkyne deprotonation with BuLi followed by alkylation with methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ring-closing metathesis (RCM)",
+            "reagents": "Grubbs I",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "86%",
+            "reactant_smiles": "C=C[C@@H](CCC#CC)[OTBS]",
+            "product_smiles": "C=C(C)C1=CC[C@@H](C1)[OTBS]",
+            "notes": "Intramolecular alkene-alkyne metathesis forming a five-membered cyclopentene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "C=C(C)C1=C[C@H](CC1)[OTBS]",
+            "product_smiles": "C=C(C)C1=C[C@H](CC1)O",
+            "notes": "Deprotection of a TBS (tert-butyldimethylsilyl) ether to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cascade Cyclization / Annulation",
+            "reagents": "MgBr2.OEt2, iPr2NEt, methyl acrylate",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "74%",
+            "reactant_smiles": "C=C(C)C1=C[C@H](CC1)O",
+            "product_smiles": "CC1=CCC[C@H]2[C@H]3C=C1CC[C@@H]3OC(=O)[C@H]2",
+            "notes": "Formation of a bicyclic lactone via Lewis acid-catalyzed cascade cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Lactone Reduction",
+            "reagents": "DibalH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1=C[C@@H]2[C@H]3CCC(=C1)CC[C@H]3OC2=O",
+            "product_smiles": "CC1=C[C@@H]2[C@H]3CCC(=C1)CC[C@@H]3O[C@H](O)C2",
+            "notes": "Reduction of a gamma-lactone to a cyclic hemiacetal using DibalH.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Wittig Olefination",
+            "reagents": "Ph3P=CMeCO2Et, Wittig olefination",
+            "reagent_smiles": "CCOC(=O)C(C)=P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "",
+            "yield": "83% (2 steps)",
+            "reactant_smiles": "O[C@H]1OC2[C@@H](C[C@@H]3[C@H]4CC=C(C)[C@H]3C42)",
+            "product_smiles": "CCOC(=O)/C(C)=C/[C@@H]1[C@@H]2[C@H](O)C[C@H]3C4=C(C)CC[C@H]2[C@@H]134",
+            "notes": "Ring opening of a cyclic hemiacetal followed by Wittig olefination to form an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Crabtree's cat., H2",
+            "reagent_smiles": "",
+            "conditions": "1 bar H2",
+            "yield": "72%",
+            "reactant_smiles": "CCOC(=O)/C(=C/[C@H]1[C@@H]2C=C(C)CC[C@@H]1C[C@@H](O)CC2)",
+            "product_smiles": "CCOC(=O)/C(=C/[C@H]1[C@@H]2C[C@H](C)[C@H]C[C@@H]1C[C@@H](O)CC2)",
+            "notes": "Selective hydrogenation of the endocyclic alkene in the 6-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "CCOC(=O)/C(C)=C/[C@H]1CC[C@@H](C)[C@H]2[C@H](C1)CC[C@@H](O)C2",
+            "product_smiles": "CCOC(=O)/C(C)=C/[C@H]1CC[C@@H](C)[C@H]2[C@H](C1)CC(=O)C2",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Enol triflation",
+            "reagents": "Tf2O, pyridine",
+            "reagent_smiles": "F[C](F)(F)S(=O)(=O)OS(=O)(=O)C(F)(F)F.c1ccncc1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Et]OC(=O)/C(=C/[C@H]1CC[C@@H]([Me])[C@H]2CCC(=O)[C@@H]12)",
+            "product_smiles": "[Et]OC(=O)/C(=C/[C@H]1CC[C@@H]([Me])[C@H]2CCC(=C12)[OTf])",
+            "notes": "Ketone is converted to an enol triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Negishi coupling",
+            "reagents": "Pd(Ph3P)4, Me2Zn",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C(C)=C/[C@H]1C[C@H]2CC[C@@H](C)[C@H]1CCC(=C2)OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "CCOC(=O)C(C)=C/[C@H]1C[C@H]2CC[C@@H](C)[C@H]1CCC(=C2)C",
+            "notes": "Negishi coupling replacing a vinyl triflate with a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)/C(C)=C/[C@H]1C[C@@H]2CCC(C)=C2[C@H](C)CC1",
+            "product_smiles": "OC(=O)/C(C)=C/[C@H]1C[C@@H]2CCC(C)=C2[C@H](C)CC1",
+            "notes": "Hydrolysis of ethyl ester to carboxylic acid (Valerenic Acid).",
+            "substeps": []
+        }
+    ]
+}

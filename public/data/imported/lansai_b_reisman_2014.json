@@ -1,0 +1,194 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lansai-b-reisman-2014",
+        "molecule_name": "Lansai B",
+        "class": "Natural Product",
+        "author": "Reisman",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Indole Synthesis (Larock-type cyclization)",
+            "reagents": "[Pd2dba3], dppf, NaO'Bu",
+            "reagent_smiles": "NCC=C",
+            "conditions": "toluene",
+            "yield": "",
+            "reactant_smiles": "Brc1ccc(Br)c(I)c1",
+            "product_smiles": "Cc1c[nH]c2ccc(Br)cc12",
+            "notes": "Palladium-catalyzed cyclization of a dibromoiodo-arene with allylamine to form a bromo-methylindole.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Alkylation (N-Methylation)",
+            "reagents": "NaH",
+            "reagent_smiles": "CI",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CC1=CNC2=C1C=C(C=C2)Br",
+            "product_smiles": "CC1=CN(C)C2=C1C=C(C=C2)Br",
+            "notes": "Deprotonation of indole nitrogen with NaH, followed by N-methylation with methyl iodide (MeI).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "[(allyl)PdCl]2, K3PO4",
+            "reagent_smiles": "COC1=C(P(C2CCCCC2)C3CCCCC3)C(C4=CC=CC5=C4C=CC=C5)=CC=C1.CC(C)=C(C)B1OC(C)(C)C(C)(C)O1",
+            "conditions": "THF, 40 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC1=CN(C)C2=C1C=C(C=C2)Br",
+            "product_smiles": "C=CC(C)(C)C1=CC2=C(C=C1)N(C)C=C2C",
+            "notes": "Suzuki-Miyaura coupling of an aryl bromide with an alkenyl boronic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Cycloaddition / Cascade Reaction",
+            "reagents": "(R)-3,3'-Cl2-BINOL, SnCl4, 2,6-Br2-phenol",
+            "reagent_smiles": "[TFA]NC=C(OC)C(=O)OC",
+            "conditions": "DCM, 23 °C",
+            "yield": "85%",
+            "reactant_smiles": "C=CC(C)(C)C1=CC2=C(C=C1)N(C)C=C2C",
+            "product_smiles": "C=CC(C)(C)c1ccc2c(c1)[C@](C)3C[C@@H](C(=O)OC)[N@H]([TFA])N(C)[C@H]23",
+            "notes": "Asymmetric formal [3+2] cycloaddition of an indole derivative with a methyl 2-(trifluoroacetamido)-3-methoxyacrylate, forming a complex tricyclic pyrrolo[2,3-b]carbazole system. The reaction is catalyzed by an (R)-3,3'-Cl2-BINOL/SnCl4/2,6-Br2-phenol Lewis acid complex.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Esterification, Salt formation",
+                    "reagents": "",
+                    "reagent_smiles": "CC(=O)Cl",
+                    "conditions": "MeOH",
+                    "yield": "",
+                    "reactant_smiles": "N[C@@H](CO)C(=O)O",
+                    "product_smiles": "COC(=O)[C@@H](CO)[NH3+].Cl",
+                    "notes": "Esterification of the carboxylic acid group of L-Serine with methanol, facilitated by acetyl chloride, forming a methyl ester. The amine group is protonated to form the hydrochloride salt.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Acylation / Amide Formation",
+                    "reagents": "Tf2O, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)[C@H](CO)[NH3+].[Cl-]",
+                    "product_smiles": "COC(=O)[C@H](CO)N[TFA]",
+                    "notes": "Amine converted to trifluoroacetamide via reaction with triflic anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Dehydration / Elimination",
+                    "reagents": "MsCl, Et₃N, DCM",
+                    "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC.ClCCl",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)[C@H](CO)N[TFA]",
+                    "product_smiles": "C=C(C(=O)OC)N[TFA]",
+                    "notes": "Dehydration of a beta-hydroxy amino acid derivative to form an alpha,beta-unsaturated ester (dehydroalanine derivative). The trifluoroacetyl group (TFA) on nitrogen is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "AcCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN1C2=C(C=C(C(C)(C)C=C)C=C2)[C@H]3N(C(=O)C(F)(F)F)[C@@H](C(=O)OC)C[C@@]13C",
+            "product_smiles": "CN1C2=C(C=C(C(C)(C)C=C)C=C2)[C@H]3N[C@@H](C(=O)OC)C[C@@]13C",
+            "notes": "Hydrolysis of N-trifluoroacetyl (N-TFA) protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "76%",
+            "reactant_smiles": "C=CC(C)(C)c1ccc2c(c1[C@](C)3)[C@H](C(=O)OC)CN(C)[C@H]3N2",
+            "product_smiles": "C=CC(C)(C)c1ccc2c(c1[C@](C)3)[C@H](C(=O)O)CN(C)[C@H]3N2",
+            "notes": "Methyl ester hydrolyzed to carboxylic acid. Reaction yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling / Dimerization",
+            "reagents": "BOP-Cl, DIPEA",
+            "reagent_smiles": "CN1C2=C(C=CC=C2)[C@H]3[C@H]1N[C@@H](C(=O)O)C[C@H]3",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "38%",
+            "reactant_smiles": "C=CC(C)(C)C1=CC2=C(C=C1)N(C)[C@H]3[C@](C)2(C[C@@H](C(=O)O)N3)",
+            "product_smiles": "C=CC(C)(C)C1=CC=C2C(=C1)[C@]3(C)C[C@@H]4C(=O)N5[C@@H](C[C@]6(C)C7=C(C=CC=C7)N(C)[C@H]65)C(=O)N4[C@H]3N2C",
+            "notes": "Dimerization of two tricyclic indole carboxylic acid units via amide bond formation, with one unit being a simpler, non-substituted version of the other for the linking reagent.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Larock Indole Synthesis / Palladium-catalyzed Indole Synthesis",
+                    "reagents": "[Pd2dba3], dppf, NaO'Bu",
+                    "reagent_smiles": "NCC=C",
+                    "conditions": "toluene",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C(=C1)Br)I",
+                    "product_smiles": "CC1=CNC2=C1C=CC=C2",
+                    "notes": "Palladium-catalyzed synthesis of 3-methylindole from 1-bromo-2-iodobenzene and prop-2-en-1-amine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "CI",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "Cc1c[nH]c2ccccc21",
+                    "product_smiles": "CN1C=C(C)c2ccccc12",
+                    "notes": "N-alkylation of 3-methyl-1H-indole with methyl iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Asymmetric Mannich Reaction / Cyclization",
+                    "reagents": "(R)-3,3'-Cl2-BINOL, SnCl4, 2,6-Br2-phenol",
+                    "reagent_smiles": "C=C(C(=O)OC)N[TFA]",
+                    "conditions": "DCM, 23 °C",
+                    "yield": "79%",
+                    "reactant_smiles": "CC1=CN(C)C2=C1C=CC=C2",
+                    "product_smiles": "COC(=O)[C@@H]1CN([TFA])[C@H]2[C@@H]3C[C@@]2(C)C4=CC=CC=C4N(C)[C@H]13",
+                    "notes": "Intramolecular asymmetric Mannich reaction between 1,2-dimethyl-1H-indole and a methyl 2-(trifluoroacetamido)acrylate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Deprotection (N-TFA)",
+                    "reagents": "AcCl, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)[C@H]1C[C@]2(C)c3cccc4c3N(C)[C@@H]2[C@@H](N1C(=O)C(F)(F)F)4",
+                    "product_smiles": "COC(=O)[C@H]1C[C@]2(C)c3cccc4c3N(C)[C@@H]2[C@@H](N1)4",
+                    "notes": "Deprotection of N-trifluoroacetyl (N-TFA) group to a secondary amine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "LiOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF/H2O",
+                    "yield": "87% (2 steps)",
+                    "reactant_smiles": "C[C@@]12C[C@@H](C(=O)OC)[N@H]1N(C)C3=C2C=CC=C3",
+                    "product_smiles": "C[C@@]12C[C@@H](C(=O)O)[N@H]1N(C)C3=C2C=CC=C3",
+                    "notes": "Hydrolysis of a methyl ester to a carboxylic acid in a complex polycyclic system, retaining stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

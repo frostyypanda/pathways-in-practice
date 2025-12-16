@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "saxitoxin-looper-2011",
+        "molecule_name": "Saxitoxin",
+        "class": "Natural Product",
+        "author": "Looper",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic Hydroxylation",
+            "reagents": "FrbA-Rd10bb, α-ketoglutaric acid, L-ascorbic acid, antifoam 204, ammonium iron (II) sulfate, sodium phosphate",
+            "reagent_smiles": "",
+            "conditions": "pH 7, air",
+            "yield": "",
+            "reactant_smiles": "O=C(O)[C@@H]1CCCN1",
+            "product_smiles": "O=C(O)[C@@H]1C[C@H](O)CN1",
+            "notes": "Enzymatic hydroxylation of L-proline to (2S,4S)-4-hydroxy-L-proline. Both the carboxylic acid and hydroxyl groups are depicted with dashed wedges, indicating a cis relationship (both pointing away from the viewer).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc2O, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "61% (2 steps)",
+            "reactant_smiles": "O=C(O)[C@@H]1NCCC[C@H]1O",
+            "product_smiles": "O=C(O)[C@@H]1N([Boc])CCC[C@H]1O",
+            "notes": "N-Boc protection of the pyrrolidine nitrogen, preserving existing stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Silylation (Protecting Group Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@H](O)[C@@H]1C(=O)O",
+            "product_smiles": "[OTBS][C@H]1CCN([C@@H]1C(=O)O)[Boc]",
+            "notes": "Protection of the secondary hydroxyl group on N-Boc-4-hydroxyproline with tert-butyldimethylsilyl chloride (TBSCl).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Carboxylic Acid Activation / Active Ester Formation",
+            "reagents": "DIC, DMAP",
+            "reagent_smiles": "O=C1C2=CC=CC=C2C(=O)N1O",
+            "conditions": "CH2Cl2",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "[Boc]N1CC[C@@H]([OTBS])[C@H]1C(=O)O",
+            "product_smiles": "[Boc]N1CC[C@@H]([OTBS])[C@H]1C(=O)ON2C(=O)C3=CC=CC=C3C2=O",
+            "notes": "Carboxylic acid is activated by conversion to an O-acyl N-hydroxyphthalimide ester using DIC and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ni-catalyzed reductive coupling",
+            "reagents": "Zn powder, NiCl2.glyme",
+            "reagent_smiles": "Cc1cc(C)cc(C)c1[S@](=O)/N=C/[C@H](N[C@@H]2c3ccccc3-c4ccccc42)COCc5ccccc5",
+            "conditions": "DMF",
+            "yield": "80%",
+            "reactant_smiles": "[Boc]N1CC[C@H]([C@H]1C(=O)ON2C(=O)C3=CC=CC=C3C2=O)[OTBS]",
+            "product_smiles": "[Boc]N1CC[C@H]([C@H]1[C@H](N[S@](=O)c2c(C)cc(C)cc2C)[C@@H](N[C@@H]3c4ccccc4-c5ccccc53)COCc6ccccc6)[OTBS]",
+            "notes": "Reductive coupling of a pyrrolidine N-hydroxyphthalimide ester with a chiral sulfonyl imine, forming a new C-C bond and two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N[C@@H](CO[Bn])[C@@H]([C@@H]1[C@H](CCN1[Boc])O[TBS])N[S@](=O)C2=C(C)C=C(C)C=C2C",
+            "product_smiles": "[Fmoc]N[C@@H](CO[Bn])[C@@H]([C@@H]1[C@H](CCN1)O)N",
+            "notes": "Acid-catalyzed deprotection of Boc and TBS groups, and removal of the mesityl sulfoxide (N-S bond cleavage) to yield a primary amine and a free alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Guanidine formation / Intramolecular cyclization",
+            "reagents": "HgO, Et3N",
+            "reagent_smiles": "CS/C(=N[Boc])/N[Boc]",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N[C@H](CO[Bn])[C@@H](N)[C@H]1NCCC[C@@H](O)1",
+            "product_smiles": "[Fmoc]N[C@H](CO[Bn])[C@@H]1N2C(=N[Boc])(N[Boc])N3([Boc])[C@H]4([C@@H](O)CCC43)C1",
+            "notes": "Formation of a complex bicyclic guanidine system involving the amine and pyrrolidine nitrogen atoms.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Fmoc Deprotection, Intramolecular Cyclization",
+            "reagents": "piperidine, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "O=C(OCC1C2=CC=CC=C2C3=CC=CC=C31)N[C@@H]4[C@H](COCC5=CC=CC=C5)[C@@]6([C@H](O)CC[C@@H]6N(C(=O)OC(C)(C)C)C(=NC(=O)OC(C)(C)C)NC(=O)OC(C)(C)C)N(C(=O)OC(C)(C)C)C(=NC(=O)OC(C)(C)C)N4",
+            "product_smiles": "CC(C)(C)OC(=O)N1C(=NC(=O)OC(C)(C)C)N([C@H]2[C@H](COCC3=CC=CC=C3)[C@@]4([C@H](O)CC[C@@H]4N(C(=O)OC(C)(C)C))N[C@H]2)C1",
+            "notes": "Fmoc protecting group is removed, followed by intramolecular cyclization to form a new 6-membered ring and a bicyclic guanidine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "TEMPO, NaOCl, NaHCO3, H2O",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]NC(=N[Boc])N[C@H]1[C@H](COCC2=CC=CC=C2)N/C(=N/[Boc])/N3CC[C@@H]([C@@H]13)O",
+            "product_smiles": "[Boc]NC(=N[Boc])N[C@H]1[C@H](COCC2=CC=CC=C2)N/C(=N/[Boc])/N3CCC(=O)[C@@H]13",
+            "notes": "TEMPO/NaOCl mediated oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Cyclization / Rearrangement",
+            "reagents": "PIFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)NC(=NC(=O)OC(C)(C)C)N[C@@H]1[C@H](COCC2=CC=CC=C2)N/C(=N/C(=O)OC(C)(C)C)/N3CCC(=O)[C@H]13",
+            "product_smiles": "CC(C)(C)OC(=O)N=C1NC2[C@H](COCC3=CC=CC=C3)N/C(=N/C(=O)OC(C)(C)C)/N4CCC(=O)[C@H]24N1",
+            "notes": "The provided reactant SMILES has a structural discrepancy in the guanidine group compared to the image. The SMILES represents a N,N'-bis-Boc protected guanidine attached via a tertiary nitrogen (N-R), while the image clearly shows a N,N'-bis-Boc protected guanidine attached via a secondary amine (NH-R). This validation corrects the stereochemistry of the provided SMILES but acknowledges this underlying structural difference in the guanidine group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection, Hydrolysis, Guanidinium Formation",
+            "reagents": "BCl3, HCl",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "[Boc]N=C1N[C@@H](C[OBn])[C@H]3[C@@]4(C(=O)CCN14)NC(=N[Boc])N3",
+            "product_smiles": "C1CN2C(C(O)(O)[C@@]3([C@@H](CO)[C@H](N=C([NH2+])N2)NC3=[NH2+])N1",
+            "notes": "Deprotection of two Boc groups and one Bn ether, followed by hydrolysis of two imine/amidine groups and a lactam to form two guanidinium groups and a gem-diol. This complex transformation yields a dicationic product, a precursor to Saxitoxin.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Carbamoylation",
+            "reagents": "formic acid",
+            "reagent_smiles": "ClS(=O)(=O)N=C=O",
+            "conditions": "5 °C to rt",
+            "yield": "76%",
+            "reactant_smiles": "C1C[N+]2=C(N)[C@H]3[C@]([C@H]4(C(C[NH2+]4)=N2)O)(O)N[C@H](CO)[C@H]13",
+            "product_smiles": "C1C[N+]2=C(N)[C@H]3[C@]([C@H]4(C(C[NH2+]4)=N2)O)(O)N[C@H](COC(=O)N)[C@H]13",
+            "notes": "Formation of a carbamate from a primary alcohol using chlorosulfonyl isocyanate (CSI).",
+            "substeps": []
+        }
+    ]
+}

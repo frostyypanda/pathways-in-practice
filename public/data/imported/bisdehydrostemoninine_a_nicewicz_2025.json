@@ -1,0 +1,194 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bisdehydrostemoninine-a-nicewicz-2025",
+        "molecule_name": "Bisdehydrostemoninine A",
+        "class": "Natural Product",
+        "author": "Nicewicz",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "C#CCCCO",
+            "product_smiles": "C#CCCCO[TBS]",
+            "notes": "Protection of a primary alcohol with TBSCl to form a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Photoredox cyclization",
+            "reagents": "[Ir(ppy)₂dtbbpy]PF₆",
+            "reagent_smiles": "CCOC(=O)C1=C(C)NC(=C(C1)C(=O)OCC)C.C1CCC(CC1)S.C1=CC(=NC=C1)Br",
+            "conditions": "450 nm LED, TFE, rt",
+            "yield": "62%",
+            "reactant_smiles": "C#CCCCO[OTBS]",
+            "product_smiles": "C[Si](C)(C)C(C)(C)OCC=C1C=C2N=CC=CC2C1",
+            "notes": "Photoredox cyclization of terminal alkyne with 2-bromopyridine to form a pyrido[1,2-a]azocine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Photocatalytic Radical Cyclization / Asymmetric Lactonization",
+            "reagents": "2,6-lutidine, DIPEA",
+            "reagent_smiles": "ClCC(=O)OC(C)C.[N+]1(c2c(C(C)(C)C)cc(C(C)(C)C)cc2C(C)(C)C)C(c3c(C(C)(C)C)cc(C(C)(C)C)cc3C(C)(C)C)=CC(c4c(C(C)(C)C)cc(C(C)(C)C)cc4C(C)(C)C)=C1c5c(C(C)(C)C)cc(C(C)(C)C)cc5C(C)(C)C.[BF4-].HO[C@@H](C(C)(C)C)S[C@H](C)c1cc(C(C)(C)C)cc(C(C)(C)C)c1",
+            "conditions": "450 nm LED, MeCN, rt, then 390 nm LED, MeCN, rt",
+            "yield": "60%",
+            "reactant_smiles": "[OTBS]CCCC=CC1=NC=CC=C1",
+            "product_smiles": "CC[C@H]1[C@H](C2=NC=CC=C2)[C@H](CCCO[OTBS])OC1=O",
+            "notes": "Asymmetric synthesis of a lactone from a pyridine-substituted alkene and isopropyl 2-chloroacetate, mediated by a Nicewicz-type pyridinium photocatalyst and a chiral thiol auxiliary.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Hydrochlorination of Alkyne",
+                    "reagents": "(COCl)2, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, 0 °C",
+                    "yield": "82%",
+                    "reactant_smiles": "CC#CC(=O)O",
+                    "product_smiles": "CC(=CC(=O)O)Cl",
+                    "notes": "Addition of HCl to a propynoic acid derivative to form an alpha-chloro-alpha,beta-unsaturated carboxylic acid. Stereochemistry of the double bond is not defined (wavy bond).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Petasis methylenation",
+            "reagents": "toluene",
+            "reagent_smiles": "[Ti](C)(C)(c1cccc1)(c1cccc1)",
+            "conditions": "80 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@H]1[C@H](C2=NC=CC=C2)[C@@H](CCCO[Si](C)(C)C(C)(C)C)OC1=O",
+            "product_smiles": "CC[C@H]1C(=C)O[C@@H](CCCO[Si](C)(C)C(C)(C)C)[C@H]1C2=NC=CC=C2",
+            "notes": "Methylenation of a lactone carbonyl to an exocyclic alkene using Petasis reagent (Cp2TiMe2).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Photoredox Catalyzed Spiro-Lactonization",
+            "reagents": "DIPEA, Ru(bpy)3Cl2",
+            "reagent_smiles": "COCC(C(=O)O)Br",
+            "conditions": "450 nm LED, DMF, rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1C(=C)O[C@H](CCC[OTBS])[C@H]1C2=NC=CC=C2",
+            "product_smiles": "CC[C@H]1[C@@H](c2cnccc2)[C@H](CCC[OTBS])O[C@@]13OC(=O)[C@@H](OCH3)CC3",
+            "notes": "Intramolecular cyclization of an exocyclic alkene with a bromo-carboxylic acid to form a spiro-lactone.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Electrophilic Addition / Bromination",
+                    "reagents": "Br2",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "C=CC(=O)OC",
+                    "product_smiles": "COC(=O)C(Br)CBr",
+                    "notes": "Dibromination of methyl acrylate to form methyl 2,3-dibromopropanoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Nucleophilic Substitution, Ester Hydrolysis",
+                    "reagents": "NaOMe, MeOH, NaOH, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "-10 °C to rt",
+                    "yield": "80%",
+                    "reactant_smiles": "COC(=O)C(Br)CBr",
+                    "product_smiles": "COCC(Br)C(=O)O",
+                    "notes": "Nucleophilic substitution of a bromine atom by a methoxy group, followed by or concurrent with ester hydrolysis to a carboxylic acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "c1ncccc1[C@H]2[C@H](CC)[C@@H]([H])[C@H](CCC[OTBS])O[C@@]23OC(=O)[C@@H](COC)CC3",
+            "product_smiles": "c1ncccc1[C@H]2[C@H](CC)[C@@H]([H])[C@H](CCCO)O[C@@]23OC(=O)[C@@H](COC)CC3",
+            "notes": "TBS protecting group on alcohol is deprotected to yield a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Elimination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "toluene, 120 °C",
+            "yield": "39% (4 steps)",
+            "reactant_smiles": "CC[C@H]1[C@H](C2=NC=CC=C2)[C@H](CCCO)O[C@@]31CC(COC)C(=O)O3",
+            "product_smiles": "CC[C@H]1[C@H](C2=NC=CC=C2)[C@H](CCCO)O[C@@]31CC(=C)C(=O)O3",
+            "notes": "Elimination of methoxymethyl ether to form a terminal alkene, with overall 4 steps reported.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Photocatalyzed Isomerization",
+            "reagents": "TBADT",
+            "reagent_smiles": "",
+            "conditions": "390 nm LED, MeCN, 50 °C",
+            "yield": "45%",
+            "reactant_smiles": "CC[C@H]1[C@H](C2=NC=CC=C2)[C@H](CCCO)O[C@@]31CC(=C)C(=O)O3",
+            "product_smiles": "CC[C@H]1[C@H](C2=NC=CC=C2)[C@H](CCCO)O[C@@]31C=C(C)C(=O)O3",
+            "notes": "Photocatalyzed isomerization of an exocyclic double bond to an endocyclic double bond with concurrent methyl group formation in a furanone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Mitsunobu Reaction / Quaternization",
+            "reagents": "TfOH, PPh3, DIAD",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@H]1[C@H](C2=NC=CC=C2)[C@H](CCCOH)O[C@@]31C=C(C)C(=O)O3",
+            "product_smiles": "CC[C@H]1[C@@H]([C@H]2CC[N+]3=CC=CC=C3C2)O[C@@]41C=C(C)C(=O)O4.[O-]S(=O)(=O)C(F)(F)F",
+            "notes": "Intramolecular cyclization of a primary alcohol onto a pyridine nitrogen to form a pyridinium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Pyridinium oxidative rearrangement and formylation to pyrrole-aldehyde",
+            "reagents": "I2, K2CO3, H2O",
+            "reagent_smiles": "C=C(C)C(=O)OC",
+            "conditions": "DCE, 80 °C",
+            "yield": "55%",
+            "reactant_smiles": "CC[C@H]1[C@@H]2C[C@@H]3CCC[N+]4=CC=CC=C4[C@@]23[C@@]1(O5)C(=O)C(=C(C)O5).[O-]S(=O)(=O)C(F)(F)F",
+            "product_smiles": "CC[C@H]1[C@@H]2C[C@@H]3CCC[N]4C(=O)C=C(C=C4)[C@@]23[C@@]1(O5)C(=O)C(=C(C)O5)",
+            "notes": "Transformation involves 2 steps as indicated in the yield. The complex spiro/bridged ring system with multiple stereocenters was re-encoded for accuracy.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Photoredox-catalyzed C-C coupling / Acylation",
+            "reagents": "TBADT",
+            "reagent_smiles": "O=P1(O[C@]23C=CC=C(C=C2C4=CC=CC=C4C=C3C5=CC(=CC(=C5)C(F)(F)F)C(F)(F)F)O[C@](C=C(C=C6C7=CC=CC=C6C=C7C8=CC(=CC(=C8)C(F)(F)F)C(F)(F)F)C=C6)O1).C=C(C)C(=O)OCC1=CC=CC=C1",
+            "conditions": "390 nm LED, MeCN, -10 °C",
+            "yield": "30%",
+            "reactant_smiles": "O=Cc1cnc2c(c1)C[C@@H]3CCC[N]2[C@H]4[C@@H](CC)[C@]5(O4)OC(=O)C(C)=C5O3",
+            "product_smiles": "O=C(C[C@H](C)C(=O)OCC1=CC=CC=C1)c2cnc3c(c2)C[C@@H]4CCC[N]3[C@H]5[C@@H](CC)[C@]6(O5)OC(=O)C(C)=C6O4",
+            "notes": "Photoredox-catalyzed C-C coupling of a pyrrole-aldehyde with benzyl methacrylate, forming a ketone and a new chiral center. The aldehyde group is replaced by the product chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "",
+            "reagent_smiles": "C[Sn](C)(C)O",
+            "conditions": "DCE, 90 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC[C@H]1[C@H]2N3CCC[C@H]2C4=CC=C(C(=O)C[C@@H](C)C(=O)OCH2c1ccccc1)N3[C@H]1O[C@H]5C=C(C)C(=O)O5",
+            "product_smiles": "CC[C@H]1[C@H]2N3CCC[C@H]2C4=CC=C(C(=O)C[C@@H](C)C(=O)O)N3[C@H]1O[C@H]5C=C(C)C(=O)O5",
+            "notes": "Benzyl ester hydrolysis to carboxylic acid using trimethyltin hydroxide.",
+            "substeps": []
+        }
+    ]
+}

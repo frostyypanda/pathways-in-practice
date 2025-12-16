@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ximency-beclabuvir-bms-unknown-2024",
+        "molecule_name": "Ximency (Beclabuvir BMS)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Indole C-3 Alkylation/Alkenylation",
+            "reagents": "NaOMe",
+            "reagent_smiles": "O=C1CCCCC1",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C1=C2C=CNC2=CC(=C1)C(=O)O",
+            "product_smiles": "O=C(O)c1ccc2[nH]c(C3=CCCC3)cc2c1",
+            "notes": "Formation of a cyclohexenyl group at the C3 position of indole via condensation with cyclohexanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd(OH)2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1ccc2c(c1)c(C1CCC=C1)cn2",
+            "product_smiles": "O=C(O)c1ccc2c(c1)c(C1CCCCC1)cn2",
+            "notes": "Hydrogenation of the cyclohexene ring to a cyclohexane ring. The double bond in the cyclohexene ring is reduced to a single bond using hydrogen gas and palladium hydroxide catalyst in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "69%",
+            "reactant_smiles": "O=C(O)c1ccc2[nH]cc(C3CCCCC3)c2c1",
+            "product_smiles": "COC(=O)c1ccc2[nH]cc(C3CCCCC3)c2c1",
+            "notes": "Carboxylic acid is converted to its methyl ester via reaction with thionyl chloride and methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Electrophilic Bromination",
+            "reagents": "py·Br₃, CHCl₃",
+            "reagent_smiles": "",
+            "conditions": "THF, 2 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)c1ccc2c1[nH]cc(C3CCCCC3)c2",
+            "product_smiles": "COC(=O)c1ccc2c1[nH]c(Br)c(C3CCCCC3)c2",
+            "notes": "Bromination of the indole 2-position of methyl 3-cyclohexyl-1H-indole-6-carboxylate using pyridinium tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis (Saponification)",
+            "reagents": "LiOH•H₂O",
+            "reagent_smiles": "",
+            "conditions": "MeOH, THF, H₂O",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "COC(=O)C1=CC=C2C(=C1)NC(=C2C3CCCCC3)Br",
+            "product_smiles": "C1CCC(CC1)C2=C(Br)NC3=CC(=CC=C32)C(=O)O",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid using lithium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Formation",
+            "reagents": "DBU",
+            "reagent_smiles": "C1=CN(C=N1)C(=O)N2C=CN=C2.CN(C)S(=O)(=O)N",
+            "conditions": "THF, 22-50 °C",
+            "yield": "74%",
+            "reactant_smiles": "C1CCC(CC1)C2=C(Br)NC3=CC(=CC=C32)C(=O)O",
+            "product_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)NC(=C2C3CCCCC3)Br",
+            "notes": "Carboxylic acid is converted to an amide using N,N'-carbonyldiimidazole (CDI) and N,N-dimethylsulfamide, followed by DBU.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "Pd(PPh3)4, LiCl, Na2CO3",
+            "reagent_smiles": "COC1=CC=C(C(=C1)C=O)B(O)O",
+            "conditions": "EtOH, toluene, H2O, 70 °C",
+            "yield": "61%",
+            "reactant_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)NC(=C2C3CCCCC3)Br",
+            "product_smiles": "CCOC1C2=CC(=CC=C2C3=C(C4CCCCC4)C5=C(C=C(C=C5)C(=O)NS(=O)(=O)N(C)C)N31)OC",
+            "notes": "The reaction proceeds via an initial Suzuki coupling of the aryl bromide with the boronic acid, followed by an intramolecular cyclization between the indole nitrogen and the newly formed aldehyde. Further reaction with ethanol (solvent) leads to the formation of an ethyl ether functionality within the fused polycyclic product. The label \"Suzuki coupling\" describes only the first step of this cascade reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Horner-Wadsworth-Emmons Cyclization/Ring Expansion",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "C=C(C(=O)OC)P(=O)(OC)OC",
+            "conditions": "DMF, 60 °C",
+            "yield": "98%",
+            "reactant_smiles": "CCOC1C2=CC(=CC=C2C3=C(C4CCCCC4)C5=C(C=C(C=C5)C(=O)NS(=O)(=O)N(C)C)N31)OC",
+            "product_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)N3CC(=CC4=CC(=CC=C4C3=C2C5CCCCC5)OC)C(=O)OC",
+            "notes": "Intramolecular Horner-Wadsworth-Emmons reaction to form an 8-membered ring with an alpha,beta-unsaturated ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cyclopropanation",
+            "reagents": "NaH, SO(CH3)3I",
+            "reagent_smiles": "[NaH].[I-][S+](C)(C)C",
+            "conditions": "DMF, 30 °C",
+            "yield": "48%",
+            "reactant_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)N3CC(=CC4=CC(=CC=C4C3=C2C5CCCCC5)[OMe])C(=O)[OMe]",
+            "product_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)N3C[C@]4(C[C@H]4C5=CC(=CC=C5C3=C2C6CCCCC6)[OMe])C(=O)[OMe]",
+            "notes": "Cyclopropanation of an exocyclic alkene using trimethylsulfoxonium iodide and sodium hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH, MeOH",
+            "reagent_smiles": "[Na]O.CO",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)N3C[C@]4(C[C@H]4C5=CC(=CC=C5C3=C2C6CCCCC6)OC)C(=O)OC",
+            "product_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)N3C[C@]4(C[C@H]4C5=CC(=CC=C5C3=C2C6CCCCC6)OC)C(=O)O",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid using sodium hydroxide in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amide Coupling",
+            "reagents": "TBTU, DIPEA",
+            "reagent_smiles": "CN1CC2CCC(C1)N2",
+            "conditions": "DMSO, rt",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)N3C[C@]4(C[C@@]4C5=CC(=CC=C5C3=C2C6CCCCC6)OC)C(=O)O",
+            "product_smiles": "CN(C)S(=O)(=O)NC(=O)C1=CC=C2C(=C1)N3C[C@]4(C[C@@]4C5=CC(=CC=C5C3=C2C6CCCCC6)OC)C(=O)N7C8CCC7CN(C)C8",
+            "notes": "Amide bond formation via coupling of a carboxylic acid with a secondary amine using TBTU and DIPEA.",
+            "substeps": []
+        }
+    ]
+}

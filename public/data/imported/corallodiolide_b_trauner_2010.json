@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "corallodiolide-b-trauner-2010",
+        "molecule_name": "Corallodiolide B",
+        "class": "Natural Product",
+        "author": "Trauner",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Negishi carboalumination",
+            "reagents": "Me₃Al, Cp₂ZrCl₂, then I₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C#CCCO",
+            "product_smiles": "C/C(=C\\I)CCO",
+            "notes": "Alkyne carboalumination followed by iodination to form a Z-vinyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C/C(=C/I)/CCO",
+            "product_smiles": "C/C(=C/I)/CC=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde, preserving the alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alkynylation / Addition to Aldehyde",
+            "reagents": "LDA, THF",
+            "reagent_smiles": "CCOC(=O)C#C",
+            "conditions": "",
+            "yield": "66%",
+            "reactant_smiles": "C/C(=C\\I)CC=O",
+            "product_smiles": "CCOC(=O)C#CC(O)C/C(=C\\I)/C",
+            "notes": "Alkyne addition to an α,β-unsaturated iodo-aldehyde, forming a propargylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Trost Alder-ene reaction",
+            "reagents": "Ru(cp)(MeCN)3PF6, CSA",
+            "reagent_smiles": "C=CCO",
+            "conditions": "MeOH/H2O",
+            "yield": "52%",
+            "reactant_smiles": "CCOC(=O)C#CC(O)CC(=C/I)C",
+            "product_smiles": "CC(=C/I)CC1C=C(CCC=O)C(=O)O1",
+            "notes": "Intramolecular Trost Alder-ene reaction of an iodo-alkene with an alkyne-ester, followed by lactonization to form a furanone with an aldehyde side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "99%",
+            "reactant_smiles": "C/C(=C\\CCC1=CC(C/C(=C\\I)/C)OC1=O)/C=O",
+            "product_smiles": "C/C(=C\\CCC1=CC(C/C(=C\\I)/C)OC1=O)/CO",
+            "notes": "Reduction of a terminal aldehyde to a primary alcohol using sodium borohydride. Stereochemistry of existing double bonds is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "CuI, CsF, Pd(PPh3)4",
+            "reagent_smiles": "CC1=C(C=O)OC(=C1)[Sn](C)(C)C",
+            "conditions": "DMF",
+            "yield": "92%",
+            "reactant_smiles": "O=C1OC([C@H](CC(=C/I)C))C=C(CCC(=C/CO)C)1",
+            "product_smiles": "O=C1OC([C@H](CC(=C/C(=C/C3=C(C=O)OC=C3C)C)C))C=C(CCC(=C/CO)C)1",
+            "notes": "Suzuki coupling of a vinyl iodide (part of a lactone) with a vinyl stannane (part of a furan-2-carbaldehyde) to form a conjugated diene.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Stannylation (Directed Ortho-Metallation)",
+                    "reagents": "BuLi, MeONHMe, then Me3SnCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "85%",
+                    "reactant_smiles": "CC1=C(C=O)OC=C1",
+                    "product_smiles": "CC1=C(C=O)OC([Sn](C)(C)C)=C1",
+                    "notes": "Directed lithiation of the furan ring at the 5-position by the 2-carbaldehyde group, followed by electrophilic quench with trimethyltin chloride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Appel reaction",
+            "reagents": "NBS, PPh3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "C/C(=C\\CCC1=CC(C/C(=C\\C2=CC(=C(C=O)O2)C)/C)OC1=O)/CO",
+            "product_smiles": "C/C(=C\\CCC1=CC(C/C(=C\\C2=CC(=C(C=O)O2)C)/C)OC1=O)/CBr",
+            "notes": "Appel reaction converting a primary alcohol to a primary bromide using N-bromosuccinimide (NBS) and triphenylphosphine (PPh3).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nozaki-Hiyama-Kishi reaction",
+            "reagents": "CrCl2, NiCl2",
+            "reagent_smiles": "[Cr]Cl2.[Ni]Cl2",
+            "conditions": "",
+            "yield": "59%",
+            "reactant_smiles": "C/C(=C\\CBr)CCC1=C[C@@H](C/C=C(\\C)C2=CC(=C(C=O)O2)C)OC1=O",
+            "product_smiles": "C=C(C)[C@@H]1CCC2=C[C@H](C/C=C(\\C)C3=CC(=C([C@H]1O)O3)C)OC2=O",
+            "notes": "Macrocyclization via Nozaki-Hiyama-Kishi reaction, forming a tertiary alcohol from an aldehyde and an alkyl bromide, accompanied by a double bond rearrangement from internal to terminal.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive deoxygenation",
+            "reagents": "TFA, Et3SiH",
+            "reagent_smiles": "O=C(O)C(F)(F)F.CC[SiH](CC)CC",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "C=C(C)[C@@H]1CCC[C@H](O)[C@H]2C(=O)O[C@H]2C/C=C(\\C)C3=CC(=C(C)O3)CC1",
+            "product_smiles": "C=C(C)[C@@H]1CCC[C@H][C@H]2C(=O)O[C@H]2C/C=C(\\C)C3=CC(=C(C)O3)CC1",
+            "notes": "Reductive deoxygenation of a secondary alcohol using trifluoroacetic acid and triethylsilane, resulting in stereoinversion at the former alcohol position.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Epoxidation",
+            "reagents": "NaOH, H2O2, MeOH",
+            "reagent_smiles": "[Na+].[OH-].OO.CO",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "C=C(C)[C@@H]1CCC2=C[C@H](C/C(=C\\C3=CC(=C(C1)O3)C)/C)OC2=O",
+            "product_smiles": "C=C(C)[C@@H]1CCC[C@@]23O[C@H]3(C/C(=C\\C4=CC(=C(C1)O4)C)/C)OC2=O",
+            "notes": "Nucleophilic epoxidation of the alpha,beta-unsaturated lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Furan Ring Opening / Rearrangement",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "73%",
+            "reactant_smiles": "C=C(C)[C@@H]1CC[C@]23[C@H]([C@H](C/C(=C\\C4=CC(=C(C1)O4)C)/C)OC2=O)O3",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@]23[C@H]([C@H](C/C(=C\\C(=O)C[C@@H](C)C(=O)C1)/C)OC2=O)O3",
+            "notes": "Oxidative rearrangement of a furan ring and adjacent alkene to form a diketone within a macrocycle using m-CPBA.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "Sc(OTf)3",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "63%",
+            "reactant_smiles": "CC(=C)[C@@H]1CCCC(=O)C[C@@H](C)C(=O)C=C(C)C[C@@H]2OC(=O)C[C@]123O3",
+            "product_smiles": "CC(=C)[C@@H]1CCC(=O)C[C@@H](C)C[C@@H]2OC(=O)C[C@]12[C@@H]3[C@@]4(O)[C@H](O)C[C@H]3O4C",
+            "notes": "Lewis acid-catalyzed cyclization involving epoxide opening and formation of a furan ring and two hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

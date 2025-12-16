@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ibogamine-townsend-2023",
+        "molecule_name": "Ibogamine",
+        "class": "Natural Product",
+        "author": "Townsend",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Sulfinylimine formation",
+            "reagents": "TsOH",
+            "reagent_smiles": "[tBu]S(=O)N",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCCC(OC)(OC)OC",
+            "product_smiles": "CCC\\C(=N/[S@@](=O)[tBu])/OC",
+            "notes": "Formation of N-sulfinylimine from a trimethyl orthoester and tert-butylsulfinamide, catalyzed by TsOH.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Addition to Imine (Allylsilane formation)",
+            "reagents": "PhMe2SiLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCC/C(=N\\[S@@](=O)[tBu])/OC",
+            "product_smiles": "CC/C=C(\\[Si](C)(C)[Ph])N[S@@](=O)[tBu]",
+            "notes": "Addition of a silyllithium reagent to a chiral sulfinimine, forming a chiral allylsilane. The sulfoxide stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chiral Auxiliary-mediated [3+3] Annulation",
+            "reagents": "LHMDS",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "CCC/C=C(/N[S@](=O)C(C)(C)C)\\[Si](C)(C)c1ccccc1",
+            "product_smiles": "[C@H]1(N[S@](=O)C(C)(C)C)[C@H](C)([Si](C)(C)c2ccccc2)[C@@H](C(=O)OC)C[C@@H](C(=O)OC)C1",
+            "notes": "A chiral sulfinyl imine derivative undergoes a [3+3] annulation with methyl acrylate to form a highly substituted cyclohexyl ring with multiple stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclization / Pummerer-type rearrangement",
+            "reagents": "HCl, MeOH, NaHCO3, EtOAc",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@H]1CC[C@@H](C(=O)OC)C[C@H](C(=O)OC)[C@]1([Si](C)(C)c2ccccc2)[NH][S@@](=O)C(C)(C)C",
+            "product_smiles": "O=C1N2[C@]3([Si](C)(C)c4ccccc4)CC([C@H](CC))CC([C@H](C(=O)OC))C231",
+            "notes": "Intramolecular cyclization likely involving a Pummerer-type rearrangement of the chiral sulfoxide and subsequent cyclization to form a 2-azabicyclo[3.2.1]octan-3-one system, with removal of the t-butylsulfinyl group. The stereochemistry of the products is well-defined.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lactam activation / Imidate formation",
+            "reagents": "Tf2O",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCC[C@@H]1C[C@@]2([Si](C)(C)c3ccccc3)C(=O)[N@H]3[C@H]2C[C@H]13CC(=O)OC",
+            "product_smiles": "CCC[C@@H]1C[C@@]2([Si](C)(C)c3ccccc3)C(=N3[C@H]2C[C@H]13CC(=O)OC)OS(=O)(=O)C(F)(F)F",
+            "notes": "Conversion of a bicyclic lactam to its corresponding imidate triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78%",
+            "reactant_smiles": "COC(=O)C[C@@]1([Si](C)(C)c2ccccc2)[C@H]3CC[C@@H](CC)C[C@H]1N=C(OS(=O)(=O)C(F)(F)F)[C@H]3",
+            "product_smiles": "COC(=O)C[C@@]1([Si](C)(C)c2ccccc2)[C@H]3CC[C@@H](CC)C[C@H]1N[C@H]3",
+            "notes": "Reduction of an exocyclic oxime triflate to a cyclic secondary amine. (2 steps)",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "NH4F",
+            "reagent_smiles": "CC#N",
+            "conditions": "MeCN, 75 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@H]1C[C@@H](CC(=O)OC)[C@H]2[C@H]1C([Si](C)(C)c3ccccc3)[NH]2",
+            "product_smiles": "CC[C@H]1C[C@@H](CC(=O)OC)[C@H]2[C@H]1C[NH]2",
+            "notes": "Desilylation of a PhMe2Si group from the C1 bridgehead position of an 8-azabicyclo[3.2.1]octane derivative, resulting in a C-H bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaI, K2CO3",
+            "reagent_smiles": "[COOMe]CCCCl",
+            "conditions": "80 °C",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "CCC1CC2CC(C1NC2)C[COOMe]",
+            "product_smiles": "CCC1CC2CC(C1N(CCC[COOMe])C2)C[COOMe]",
+            "notes": "N-alkylation of a secondary amine with methyl 4-chlorobutanoate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization / Condensation",
+            "reagents": "LHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1CN2C(C(CCC2)C(CC)C1)CCC(=O)OC",
+            "product_smiles": "COC(=O)C1CN2C(C(C3C(=O)CCC2)C(CC)C1)C3",
+            "notes": "Intramolecular cyclization of a diester using LHMDS base to form a ketone and an ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Fischer Indole Synthesis",
+            "reagents": "",
+            "reagent_smiles": "O=S(O)(O)=O.NNc1ccccc1",
+            "conditions": "65 °C",
+            "yield": "42% (2 steps)",
+            "reactant_smiles": "CCC1CC2CN3CC(C(=O)C4C3CC1C24)C(=O)OC",
+            "product_smiles": "CCC1CC2CN3CCC4C5=C(NC=C43)C=CC=C5C21",
+            "notes": "Fischer indole synthesis from a ketone and phenylhydrazine, followed by intramolecular cyclization.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cephalotaxine-beaudry-2019",
+        "molecule_name": "Cephalotaxine",
+        "class": "Natural Product",
+        "author": "Beaudry",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Lactonization, Cyclization",
+            "reagents": "LDA, then DBU",
+            "reagent_smiles": "CCOC(=O)CCl",
+            "conditions": "THF",
+            "yield": "57%",
+            "reactant_smiles": "CC(=O)CCCO[TBS]",
+            "product_smiles": "O=C1OC=C(CC[OTBS])C1",
+            "notes": "Intramolecular formation of an alpha,beta-unsaturated gamma-lactone from a ketone and ethyl chloroacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-methylation / Furan formation",
+            "reagents": "NaH, HMPA, Me2SO4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "80%",
+            "reactant_smiles": "O=C1OC=C(CC[OTBS])C1",
+            "product_smiles": "COC1=CC(CC[OTBS])C=CO1",
+            "notes": "O-methylation of an alpha,beta-unsaturated lactone leading to furan formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Friedel-Crafts alkylation",
+            "reagents": "2,6-lutidine",
+            "reagent_smiles": "ClCC1=CC(CC[NHTFA])=C2C=C1OCO2",
+            "conditions": "CF3CH2OH",
+            "yield": "68%",
+            "reactant_smiles": "COC1=CC(=CO1)CCO[OTBS]",
+            "product_smiles": "COC1=CC(CC2=CC(CC[NHTFA])=C3C=C2OCO3)=C(O1)CCO[OTBS]",
+            "notes": "Friedel-Crafts alkylation of a furan derivative with a benzylic chloride, forming a new C-C bond at the C3 position of the furan ring.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "N-acylation",
+                    "reagents": "TFAA, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "benzene, 0 °C",
+                    "yield": "87%",
+                    "reactant_smiles": "C1=CC2=C(C=C1CCN)OCO2",
+                    "product_smiles": "FC(F)(F)C(=O)NCCC1=CC2=C(OCO2)C=C1",
+                    "notes": "Amine reacted with trifluoroacetic anhydride to form an N-trifluoroacetamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Chloromethylation",
+                    "reagents": "CH2O, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "96%",
+                    "reactant_smiles": "O=C(C(F)(F)F)NCCc1ccc2c(c1)OCO2",
+                    "product_smiles": "O=C(C(F)(F)F)NCCc1cc(CCl)c2c(c1)OCO2",
+                    "notes": "Electrophilic aromatic chloromethylation of the 1,3-benzodioxole derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COc1c(Cc2c(CC[NHTFA])c3ococ3cc2)cc(CCCCO[OTBS])o1",
+            "product_smiles": "COc1c(Cc2c(CC[NHTFA])c3ococ3cc2)cc(CCCCOH)o1",
+            "notes": "Deprotection of TBS ether to primary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "69% (2 steps)",
+            "reactant_smiles": "COC1=CC(CCCO)=CO1CC2=C(CCNC(=O)C(F)(F)F)C=C3C(=C2)OCO3",
+            "product_smiles": "COC1=CC(CCCOS(=O)(=O)C)=CO1CC2=C(CCNC(=O)C(F)(F)F)C=C3C(=C2)OCO3",
+            "notes": "Conversion of a primary alcohol to a mesylate",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection and Intramolecular Cyclization",
+            "reagents": "LiOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "62-85%",
+            "reactant_smiles": "COC1=C(CC2=C(CC[NHTFA])C=C3C(=C2)OCO3)OC(=C1)CC[OMs]",
+            "product_smiles": "COC1=C2CC3=C(CCNCCC(=C1)O2)C=C4C(=C3)OCO4",
+            "notes": "Deprotection of N-trifluoroacetamide to a free amine, followed by intramolecular amine alkylation (SN2) of the mesylate to form a new heterocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dehydrogenation/Oxidation",
+            "reagents": "DDQ, CF3CH2OH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "COc1c(cc2c3c1CC[NH]C4CCC(c5cc(OCO)ccc53)C24)o",
+            "product_smiles": "COc1cc2c3c1C(=O)[C@@H]4[C@]5(CCNCC54)c6cc(OCO)ccc632",
+            "notes": "Oxidation of a tetrahydrofuran ring and a secondary amine to form a cyclopentenone and a tertiary amine. The product is a simplified version of Cephalotaxine (2-demethoxy-14-deoxycephalotaxine).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Asymmetric Transfer Hydrogenation",
+            "reagents": "[(R,R)-TsDPEN]Ru(p-cymene) catalyst",
+            "reagent_smiles": "O=CO.CCN(CC)CC",
+            "conditions": "",
+            "yield": "50%",
+            "reactant_smiles": "COC1=C[C@]23CCCN3CCC4=CC5=C(OCO5)C=C4[C@H]2C1=O",
+            "product_smiles": "COC1=C[C@]23CCCN3CCC4=CC5=C(OCO5)C=C4[C@H]2[C@H]1O",
+            "notes": "Asymmetric transfer hydrogenation of an enone (ketone) to an allylic alcohol using a chiral ruthenium catalyst, formic acid, and triethylamine.",
+            "substeps": []
+        }
+    ]
+}

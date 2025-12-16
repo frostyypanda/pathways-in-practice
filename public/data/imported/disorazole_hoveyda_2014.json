@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "disorazole-hoveyda-2014",
+        "molecule_name": "Disorazole",
+        "class": "Natural Product",
+        "author": "Hoveyda",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic Esterification / Kinetic Resolution",
+            "reagents": "Amano Lipase PS",
+            "reagent_smiles": "C=COC(=O)C",
+            "conditions": "pentane",
+            "yield": "45%",
+            "reactant_smiles": "C=CC(CC(=O)O[tBu])O",
+            "product_smiles": "C=C[C@H](CC(=O)O[tBu])O[OAc]",
+            "notes": "Enantioselective acetylation of a secondary alcohol using vinyl acetate and Amano Lipase PS. The racemic reactant is resolved to give a single enantiomer of the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection (Hydrolysis)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "82%",
+            "reactant_smiles": "C=C[C@H](CC(=O)OC(C)(C)C)[OAc]",
+            "product_smiles": "C=C[C@H](CC(=O)OC(C)(C)C)O",
+            "notes": "Basic hydrolysis of an acetate ester to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "O-methylation",
+            "reagents": "Me3OBF4, Proton Sponge",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "79%",
+            "reactant_smiles": "C=C[C@@H](O)CC(=O)OC(C)(C)C",
+            "product_smiles": "C=C[C@@H](OC)CC(=O)OC(C)(C)C",
+            "notes": "O-methylation of a secondary alcohol with retention of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis / Deprotection",
+            "reagents": "",
+            "reagent_smiles": "C(=O)O",
+            "conditions": "",
+            "yield": "93%",
+            "reactant_smiles": "C=C[C@@H](CC(=O)OC(C)(C)C)OC",
+            "product_smiles": "C=C[C@@H](CC(=O)O)OC",
+            "notes": "Tert-butyl ester is hydrolyzed to a carboxylic acid using formic acid, with retention of stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling",
+            "reagents": "TFFH*, (i-Pr)₂EtN",
+            "reagent_smiles": "COC(=O)[C@@H](CO)N",
+            "conditions": "THF",
+            "yield": "83%",
+            "reactant_smiles": "C=C[C@H](CC(=O)O)OC",
+            "product_smiles": "C=C[C@H](CC(=O)N[C@@H](CO)C(=O)OC)OC",
+            "notes": "Amide bond formation between a carboxylic acid and an amino ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxazoline Formation / Cyclodehydration",
+            "reagents": "DAST, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H](OC)CC(=O)N[C@@H](CO)C(=O)OC",
+            "product_smiles": "C=C[C@H](OC)CC1=N[C@H](C(=O)OC)CO1",
+            "notes": "Formation of a 2-oxazoline ring from a secondary amide and a β-hydroxy group. DAST mediates the cyclodehydration, with inversion of stereochemistry at the β-carbon (the carbon bearing the original alcohol group and the methyl ester).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dehydrogenation / Aromatization (Oxazoline to Oxazole)",
+            "reagents": "BrCCl3, DBU",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "58% (2 steps)",
+            "reactant_smiles": "C=C[C@H](CC1=NC(CO1)C(=O)OC)OC",
+            "product_smiles": "C=C[C@H](CC1=NC(=CO1)C(=O)OC)OC",
+            "notes": "Aromatization of a 4,5-dihydrooxazole (oxazoline) to an oxazole using BrCCl3 and DBU.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "Hoveyda-Grubbs 2nd Gen. catalyst",
+            "reagent_smiles": "BrCCC=C",
+            "conditions": "toluene, 70 °C",
+            "yield": "81%",
+            "reactant_smiles": "C=C[C@H](CC1=NC(=CO1)C(=O)OC)OC",
+            "product_smiles": "CO[C@H](/C=C/CCBr)CC1=NC(=CO1)C(=O)OC",
+            "notes": "Cross-metathesis of a terminal alkene with 4-bromo-1-butene, forming a trans alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dehydrobromination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "91%",
+            "reactant_smiles": "CO[C@H](/C=C/CCBr)C1=NC(=CO1)C(=O)OC",
+            "product_smiles": "CO[C@H](/C=C/CC=C)C1=NC(=CO1)C(=O)OC",
+            "notes": "E2 elimination of a bromide to form a terminal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "Ba(OH)2, NaHSO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "",
+            "reactant_smiles": "C=C/C=C/[C@H](CC1=NC(=CO1)C(=O)OC)OC",
+            "product_smiles": "C=C/C=C/[C@H](CC1=NC(=CO1)C(=O)O)OC",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Esterification",
+            "reagents": "DMAP, DCC",
+            "reagent_smiles": "C/C=C/[C@@H](C(C)(C)[C@H](C/C=C\\I)O)[OTBS]",
+            "conditions": "CDCl3",
+            "yield": "83%",
+            "reactant_smiles": "C=C/C=C/[C@H](CC1=NC(=CO1)C(=O)O)OC",
+            "product_smiles": "C=C/C=C/[C@@H](CC1=NC(=CO1)C(=O)O[C@H](C/C=C\\I)C(C)(C)[C@@H](/C=C/C)[OTBS])OC",
+            "notes": "Esterification of a carboxylic acid with a secondary alcohol, mediated by DCC and DMAP. The reaction proceeds with the formation of an ester linkage.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Asymmetric Aldol / Stereoselective Addition",
+                    "reagents": "N-Ts-D-Valin, BH3 · THF",
+                    "reagent_smiles": "CC(C)=C([OTBS])OC",
+                    "conditions": "CH2Cl2, -78 °C",
+                    "yield": "86%",
+                    "reactant_smiles": "C/C=C/C=O",
+                    "product_smiles": "C/C=C/[C@@H]([OTBS])C(C)(C)C(OC)[OTBS]",
+                    "notes": "Asymmetric stereoselective addition of a silyl ketene acetal to an α,β-unsaturated aldehyde, likely followed by reduction and silylation of the carbonyl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Acetal cleavage / Elimination",
+                    "reagents": "NaHMDS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 to 0 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "C/C=C/[C@@H](O[TBS])C(C)(C)C(OC)O[TBS]",
+                    "product_smiles": "C/C=C/[C@@H](O[TBS])C(C)(C)C=O",
+                    "notes": "An acetal derivative undergoes elimination of one TBS group and the methoxy group to form an aldehyde. Stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Lewis Acid Catalyzed Allylation",
+                    "reagents": "Sc(OTf)3",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -10 °C",
+                    "yield": "98%",
+                    "reactant_smiles": "C/C=C/[C@H]([OTBS])C(C)(C)C=O",
+                    "product_smiles": "C/C=C/[C@H]([OTBS])C(C)(C)[C@H](O)CC=C",
+                    "notes": "Allylation of an aldehyde to form a homoallylic alcohol, preserving the existing stereocenter and forming a new one.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Silylation / Alcohol Protection",
+                    "reagents": "TMSCl, (i-Pr)2EtN, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "C=CC[C@@H](C(C)(C)[C@H](/C=C/C)[OTBS])O",
+                    "product_smiles": "C=CC[C@@H]([OTMS])C(C)(C)[C@H](/C=C/C)[OTBS]",
+                    "notes": "Protection of a secondary alcohol as a trimethylsilyl (TMS) ether in the presence of a pre-existing tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.5",
+                    "reaction_type": "Terminal Alkene Functionalization",
+                    "reagents": "vinyl-B(pin), Mo catalyst",
+                    "reagent_smiles": "",
+                    "conditions": "hexanes, 100 torr, 22 °C",
+                    "yield": "72%",
+                    "reactant_smiles": "C/C=C/[C@@H]([OTBS])C(C)(C)[C@@H]([OTMS])CC=C",
+                    "product_smiles": "C/C=C/[C@@H]([OTBS])C(C)(C)[C@@H]([OTMS])C/C=C\\[B](OC(C)(C)C(C)(C)O)",
+                    "notes": "Addition of a vinyl borane moiety to the terminal alkene of the reactant, with retention of the E-alkene and the two silyl-protected alcohols. The new alkene formed is Z-configured.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.6",
+                    "reaction_type": "Iododeboronation",
+                    "reagents": "I2, aq. NaOH",
+                    "reagent_smiles": "C=CC[Si]1(Cl)N(CC2=CC=C(C=C2)Br)[C@H]3CCCC[C@H]3N1CC4=CC=C(C=C4)Br",
+                    "conditions": "THF",
+                    "yield": "79%",
+                    "reactant_smiles": "C/C=C/[C@@H](O[TBS])C(C)(C)[C@H](O[TMS])C/C=C\\B1OC(C)(C)C(C)(C)O1",
+                    "product_smiles": "C/C=C/[C@@H](O[TBS])C(C)(C)[C@H](O[TMS])C/C=C\\I",
+                    "notes": "Iododeboronation of an alkenylboronic ester with retention of alkene geometry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.7",
+                    "reaction_type": "Deprotection",
+                    "reagents": "PPTS",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, Methanol",
+                    "yield": "85%",
+                    "reactant_smiles": "C/C=C/[C@@H](C(C)(C)[C@H](C/C=C\\I)[OTMS])[OTBS]",
+                    "product_smiles": "C/C=C/[C@@H](C(C)(C)[C@H](C/C=C\\I)O)[OTBS]",
+                    "notes": "Selective deprotection of trimethylsilyl (TMS) ether to a hydroxyl group using PPTS, leaving the tert-butyldimethylsilyl (TBS) ether intact.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "vinyl-B(pin)",
+            "reagent_smiles": "",
+            "conditions": "hexanes, 100 torr, 22 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H](OC)CC1=NC(=CO1)C(=O)O[C@@H](C/C=C\\I)C(C)(C)[C@H](/C=C/C)[OTBS]",
+            "product_smiles": "C/C=C/B1OC(C)(C)C(C)(C)O1[C@H](OC)CC1=NC(=CO1)C(=O)O[C@@H](C/C=C\\I)C(C)(C)[C@H](/C=C/C)[OTBS]",
+            "notes": "Cross-metathesis of terminal alkene with vinyl pinacolborane catalyzed by Hoveyda-Grubbs catalyst. The new alkene bond is formed with E-stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Suzuki cross-coupling",
+            "reagents": "Pd[(o-tol)3P]2, CsCO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "60%",
+            "reactant_smiles": "B1(OC(C)(C)C(C)(C)O1)/C=C/C=C\\C[C@H](OC)CC2=NC(=CO2)C(=O)O[C@@H](C/C=C\\I)C(C)(C)[C@H](/C=C/C)[OTBS]",
+            "product_smiles": "C[C@H](/C=C/C)[OTBS]C(C)(C)[C@@H]1OC(=O)C2=NC=CO2CC[C@H](OC)C/C=C/C=C\\C=C\\C[C@@H](C(C)(C)[C@H](/C=C/C)[OTBS])OC(=O)C3=NC=CO3CC[C@H](OC)C/C=C/C=C\\C=C\\C1",
+            "notes": "Suzuki cross-coupling of an alkyl iodide and a boronic ester, leading to a macrocyclic dimer.",
+            "substeps": []
+        }
+    ]
+}

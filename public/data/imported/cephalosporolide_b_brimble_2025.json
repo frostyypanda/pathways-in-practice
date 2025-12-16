@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cephalosporolide-b-brimble-2025",
+        "molecule_name": "Cephalosporolide B",
+        "class": "Natural Product",
+        "author": "Brimble",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "97%",
+            "reactant_smiles": "C=CCC[C@@H](C)O",
+            "product_smiles": "C=CCC[C@@H](C)[OTBS]",
+            "notes": "Protection of a secondary alcohol to form a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, PPh3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CCC[C@@H](C)[OTBS]",
+            "product_smiles": "O=CCC[C@@H](C)[OTBS]",
+            "notes": "Ozonolysis of a terminal alkene to yield an aldehyde, with a TBS protected alcohol on a chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Addition",
+            "reagents": "Vinylmagnesium bromide, THF",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "-78 to 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "O=CCC[C@@H](C)[OTBS]",
+            "product_smiles": "C=CC(O)CC[C@@H](C)[OTBS]",
+            "notes": "Grignard addition of vinyl magnesium bromide to an aldehyde, forming a secondary alcohol. The existing chiral center is retained with S configuration. A new chiral center is formed at the alcohol position, with unspecified stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=CC(O)CC[C@@H](C)O[TBS]",
+            "product_smiles": "C=CC(OC(=O)C)CC[C@@H](C)O[TBS]",
+            "notes": "Acetylation of a secondary alcohol using acetic anhydride and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enzymatic Stereoselective Inversion and Chiral Center Formation",
+            "reagents": "Novozyme 435, NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, 30 °C",
+            "yield": "49%",
+            "reactant_smiles": "C=CC(CC[C@@H](C)[OTBS])OC(=O)C",
+            "product_smiles": "C=C[C@@H](CC[C@H](C)[OTBS])OC(=O)C",
+            "notes": "Enzymatic reaction catalyzed by Novozyme 435 resulting in the inversion of the stereocenter adjacent to the OTBS group (from R to S) and the formation of a new chiral center at the OAc position with S configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, H2O, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "C=C[C@@H](CC[C@@H](C)[OTBS])OC(=O)C",
+            "product_smiles": "C=C[C@@H](CC[C@@H](C)O)OC(=O)C",
+            "notes": "Acidic deprotection of a TBS ether to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Macrolactonization (Steglich Esterification)",
+            "reagents": "DCC, DMAP",
+            "reagent_smiles": "C=C[C@@H](CC(=O)O)[OTBS]",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H](CC[C@@H](C)O)OC(=O)C",
+            "product_smiles": "C[C@@H]1OC(=O)C[C@@H](C=C)[OTBS]CC[C@@H](C=C)OC(=O)C CC1",
+            "notes": "Macrolactonization of an alcohol with a carboxylic acid. Note: The product as drawn in the screenshot (23 carbons) has two more carbons than the sum of the reactant (9 carbons) and the drawn carboxylic acid reagent (12 carbons). The product SMILES reflects the structure exactly as drawn in the screenshot, including the chain length.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Fischer Glycosylation",
+                    "reagents": "H2SO4, H2O",
+                    "reagent_smiles": "CO",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "O[C@H]1C[C@@H](O)[C@@H](CO)O1",
+                    "product_smiles": "CO[C@H]1C[C@@H](O)[C@@H](CO)O1",
+                    "notes": "Acid-catalyzed methanolysis of a furanose to form the methyl glycoside.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Iodination / Alcohol to Alkyl Iodide",
+                    "reagents": "I₂, PPh₃, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C to reflux",
+                    "yield": "63%",
+                    "reactant_smiles": "COC1C[C@@H](O)[C@H](CO)O1",
+                    "product_smiles": "COC1C[C@@H](O)[C@H](CI)O1",
+                    "notes": "Conversion of a primary alcohol to a primary iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Protection",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, CH2Cl2, 0 °C to rt",
+                    "yield": "85%",
+                    "reactant_smiles": "COC1C[C@H](O)[C@@H](CI)O1",
+                    "product_smiles": "[OTBS][C@H]1CC(OC)O[C@@H]1CI",
+                    "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Reductive elimination (dehalogenation), Acetal hydrolysis",
+                    "reagents": "AcOH, THF, H2O",
+                    "reagent_smiles": "[Zn]",
+                    "conditions": "reflux",
+                    "yield": "",
+                    "reactant_smiles": "[TBS]O[C@H]1C[C@@H](CI)O[C@H](OC)C1",
+                    "product_smiles": "C=C[C@H](CC=O)O[TBS]",
+                    "notes": "Reductive elimination of the iodomethyl group followed by hydrolysis of the methyl acetal to form an aldehyde, possibly via ring-opening.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Oxidation (Pinnick)",
+                    "reagents": "NaClO₂, NaH₂PO₄, 2-methyl-2-butene",
+                    "reagent_smiles": "",
+                    "conditions": "tBuOH, H₂O",
+                    "yield": "67%",
+                    "reactant_smiles": "C=C[C@H](CC=O)[TBSO]",
+                    "product_smiles": "C=C[C@H](CC(=O)O)[TBSO]",
+                    "notes": "Aldehyde oxidized to carboxylic acid with retention of stereochemistry and TBS protecting group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetate Hydrolysis",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O, 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "O1C(=O)C[C@@H](C=C)O[TBS]CC[C@@H](C=C)O[Ac]CCC[C@H](C)1",
+            "product_smiles": "O1C(=O)C[C@@H](C=C)O[TBS]CC[C@@H](C=C)OCCC[C@H](C)1",
+            "notes": "Hydrolysis of an acetate ester to a hydroxyl group, while the TBS ether and macrolactone are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "MeCN, air, reflux",
+            "yield": "99%",
+            "reactant_smiles": "O=C1C[C@@H](C=C)[OTBS]CC[C@@H](C=C)[C@@H](O)CCC[C@@H](C)O1",
+            "product_smiles": "O=C1C[C@@H](C=C)[OTBS]CC[C@@H](C=C)C(=O)CCC[C@@H](C)O1",
+            "notes": "Oxidation of a secondary alcohol to a ketone in a 12-membered macrolactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "50%",
+            "reactant_smiles": "C=CC(=O)CC[C@H](C)OC(=O)C[C@H](C=C)O[TBS]",
+            "product_smiles": "[TBS]O[C@H]1/C=C/C(=O)CC[C@@H](C)OC(=O)C1",
+            "notes": "Intramolecular ring-closing metathesis reaction to form a 9-membered macrocyclic lactone. The stereochemistry of the methyl group at the lactone changes from R to S during the reaction, while the TBS-bearing stereocenter remains R. The newly formed double bond has E-configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "HF, pyridine",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "[OTBS][C@@H]1/C=C\\C(=O)CC[C@@H](C)OC(=O)C1",
+            "product_smiles": "C[C@@H]1CCC(=O)/C=C\\[C@H](O)CC(=O)O1",
+            "notes": "Deprotection of a TBS ether to a hydroxyl group using HF/pyridine.",
+            "substeps": []
+        }
+    ]
+}

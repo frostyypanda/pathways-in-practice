@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hunanamycin-a-reddy-2013",
+        "molecule_name": "Hunanamycin A",
+        "class": "Natural Product",
+        "author": "Reddy",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "NaIO₄, NaHCO₃",
+            "reagent_smiles": "",
+            "conditions": "THF/H₂O",
+            "yield": "",
+            "reactant_smiles": "CC1(C)OC[C@H]([C@H]([C@@H]([C@H]2COC(C)(C)O2)O)O)O1",
+            "product_smiles": "CC1(C)OC[C@H](C=O)O1",
+            "notes": "Oxidative cleavage of the central vicinal diols using sodium periodate to yield an aldehyde. The reaction produces two fragments, and one is shown as the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Wittig olefination",
+            "reagents": "",
+            "reagent_smiles": "COC(=O)C=P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "-60 °C",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "CC1(C)OC[C@H](C=O)O1",
+            "product_smiles": "CC1(C)OC[C@H](/C=C\\C(=O)OC)O1",
+            "notes": "Wittig olefination of an aldehyde to form a Z-alpha,beta-unsaturated methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1(C)OC[C@H](/C=C\\C(=O)OC)O1",
+            "product_smiles": "CC1(C)OC[C@H](/C=C\\CO)O1",
+            "notes": "Reduction of a methyl ester to a primary alcohol using DIBAL-H, preserving the alkene stereochemistry and acetonide protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Appel reaction",
+            "reagents": "Ph3P, CBr4",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C",
+            "yield": "79%",
+            "reactant_smiles": "CC1(C)OC[C@H](/C=C\\CO)O1",
+            "product_smiles": "CC1(C)OC[C@H](/C=C\\CBr)O1",
+            "notes": "Appel reaction converting a primary alcohol to a primary bromide with retention of alkene stereochemistry and chiral center configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH",
+            "reagent_smiles": "CC1=C(C)C2=C3C(=C1)NC(=O)C(=O)N3CCC2(C)C",
+            "conditions": "DMF, 0 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC1(C)OC[C@H](/C=C\\CBr)O1",
+            "product_smiles": "CC1=C(C)C2=C3C(=C1)N(C/C=C\\[C@H]4COC(C)(C)O4)C(=O)C(=O)N3CCC2(C)C",
+            "notes": "N-alkylation of a quinazolinedione derivative with a bromo-alkene-dioxolane moiety via deprotonation with NaH.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Condensation, Heterocycle Formation",
+                    "reagents": "HCl",
+                    "reagent_smiles": "O=C(O)C(=O)O",
+                    "conditions": "",
+                    "yield": "72%",
+                    "reactant_smiles": "Cc1c(N)cc(N)c(C)c1",
+                    "product_smiles": "CC1=C(C)C=C2C(=C1)NC(=O)C(=O)N2",
+                    "notes": "Condensation of 2,3-dimethyl-1,4-diaminobenzene with oxalic acid to form 5,6-dimethylquinoxaline-2,3-dione.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "prenylBr, K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "DMSO, 10 °C",
+                    "yield": "42%",
+                    "reactant_smiles": "CC1=C(C)C=C2C(=C1)NC(=O)C(=O)N2",
+                    "product_smiles": "CC(=CCN1C2=CC(=C(C)C=C2NC(=O)C1=O)C)C",
+                    "notes": "N-alkylation of 6,7-dimethyl-1,4-dihydroquinoxaline-2,3-dione with prenyl bromide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Friedel-Crafts alkylation",
+                    "reagents": "AlCl3",
+                    "reagent_smiles": "",
+                    "conditions": "PhCl, 120 °C",
+                    "yield": "65%",
+                    "reactant_smiles": "CC1=C(C)C=C2C(=O)NC(=O)N(CC/C(C)=C/C)C2=C1",
+                    "product_smiles": "CC1=C(C)C2=C3C(=C1)NC(=O)C(=O)N3CCC(C)(C)C2",
+                    "notes": "Intramolecular Friedel-Crafts alkylation of a quinazolinedione derivative, where the N-isopentenyl chain cyclizes onto the electron-rich dimethylbenzene ring.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sharpless Dihydroxylation",
+            "reagents": "NMO, OsO4, t-BuOOH",
+            "reagent_smiles": "",
+            "conditions": "acetone/t-BuOH",
+            "yield": "79%",
+            "reactant_smiles": "CC1=C(C)C2=C3C(=C1)N(C/C=C\\[C@H]4COC(C)(C)O4)C(=O)C(=O)N3CCC2(C)C",
+            "product_smiles": "CC1=C(C)C2=C3C(=C1)N(C[C@@H](O)[C@@H](O)[C@H]4COC(C)(C)O4)C(=O)C(=O)N3CCC2(C)C",
+            "notes": "Z-alkene is dihydroxylated to a syn-diol, retaining the stereochemistry of the acetonide group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetonide Deprotection",
+            "reagents": "aq AcOH",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "65%",
+            "reactant_smiles": "CC1=C(C)C2=C3C(=C1)N(C[C@@H](O)[C@@H]4OC(C)(C)O[C@H]4CO)C(=O)C(=O)N3CCC2(C)C",
+            "product_smiles": "CC1=C(C)C2=C3C(=C1)N(C[C@@H](O)[C@@H](O)[C@@H](O)CO)C(=O)C(=O)N3CCC2(C)C",
+            "notes": "Deprotection of an acetonide group to yield a vicinal triol.",
+            "substeps": []
+        }
+    ]
+}

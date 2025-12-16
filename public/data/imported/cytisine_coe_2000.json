@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cytisine-coe-2000",
+        "molecule_name": "Cytisine",
+        "class": "Natural Product",
+        "author": "Coe",
+        "year": 2000
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "n-BuLi, B(OMe)3, Pd(PPh3)4, CsF, 85",
+            "reagent_smiles": "COC(=O)c1cncc(Br)c1",
+            "conditions": "Et2O, DME, -40 °C",
+            "yield": "55%",
+            "reactant_smiles": "COc1cccc(n1)Br",
+            "product_smiles": "COC(=O)c1cncc(C2=NC=CC=C2OC)c1",
+            "notes": "Suzuki coupling between 2-bromo-6-methoxypyridine (converted to boronic ester in situ) and methyl 5-bromo-3-pyridinecarboxylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=CC(=N1)C2=CC(=CN=C2)C(=O)OC",
+            "product_smiles": "COC1=CC=CC(=N1)C2=CC(=CN=C2)CO",
+            "notes": "Ester reduction to primary alcohol using Lithium Aluminum Hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Alkylation (Quaternization)",
+            "reagents": "BnBr",
+            "reagent_smiles": "BrCC1=CC=CC=C1",
+            "conditions": "CH3CN",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "COC1=NC=CC=C1C2=CC(CO)=CN=C2",
+            "product_smiles": "COC1=NC=CC=C1C2=CC(CO)=C[N+](=C2)CC3=CC=CC=C3.[Br-]",
+            "notes": "N-alkylation of the pyridine nitrogen adjacent to the hydroxymethyl group with benzyl bromide, forming an N-benzylpyridinium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2",
+            "reagent_smiles": "CCN(CC)CC.O=[Pt]=O",
+            "conditions": "MeOH",
+            "yield": "100%",
+            "reactant_smiles": "[N+]1([Bn])=C(c2ncccc2OC)C=C(CO)C=C1.[Br-]",
+            "product_smiles": "[Bn]N1C[C@@H](c2ncccc2OC)C[C@@H](CO)C1",
+            "notes": "Catalytic hydrogenation of the pyridinium ring to a piperidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[OMe]C1=CC=CC(=N1)[C@@H]2C[C@@H](CN([Bn])C2)CO",
+            "product_smiles": "[OMe]C1=CC=CC(=N1)[C@@H]2C[C@@H](CN([Bn])C2)[OMs]",
+            "notes": "Conversion of a primary alcohol to a mesylate using methanesulfonyl chloride (MsCl) and triethylamine (Et3N).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular cyclization / Lactamization",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "PhMe, reflux",
+            "yield": "",
+            "reactant_smiles": "CN1(CC2=CC=CC=C2)C[C@H](C3=NC=CC=C3OC)CCC[C@@H]1COS(=O)(=O)C",
+            "product_smiles": "O=C1C=CN2C3=C1CC[C@H]4CN(CC5=CC=CC=C5)CCC[C@@H]34",
+            "notes": "Intramolecular cyclization of an N-benzyl-piperidine mesylate, involving the pyridine nitrogen as a nucleophile, followed by lactam formation, leading to a 1-benzylcytisine derivative. The reaction occurs under thermal conditions (reflux in toluene).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Debenzylation / Hydrogenolysis",
+            "reagents": "H2, Pd(OH)2, NH4CO2H",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "58% (3 steps)",
+            "reactant_smiles": "[Bn]N1C[C@@H]2C[C@H](C1)C3=CC=CC(=O)N3C2",
+            "product_smiles": "O=C1N2[C@@H]3CN[C@H]2CC=CC13",
+            "notes": "Hydrogenolysis of N-benzylcytisine to cytisine.",
+            "substeps": []
+        }
+    ]
+}

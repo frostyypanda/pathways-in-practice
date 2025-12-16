@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cotylenol-renata-2024",
+        "molecule_name": "Cotylenol",
+        "class": "Natural Product",
+        "author": "Renata",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxidation",
+            "reagents": "H2O2, DCC, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, H2O",
+            "yield": "80%",
+            "reactant_smiles": "C=C(C)[C@H]1CC=C(C)CC1",
+            "product_smiles": "C=C(C)[C@H]1CC[C@]2(C)O[C@H]2C1",
+            "notes": "Epoxidation of the internal alkene of (S)-Limonene, forming a trans-epoxide relative to the isopropenyl group. The exocyclic alkene remains unreacted.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide opening / rearrangement",
+            "reagents": "Et2AlTMP",
+            "reagent_smiles": "",
+            "conditions": "benzene, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=C(C)[C@@H]1CCC2(C)C(C1)O2",
+            "product_smiles": "C=C(C)[C@@H]1CC(=C)CC[C@H](O)C1",
+            "notes": "Epoxide opening with aluminum reagent leading to a methylene cyclohexane and a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Epoxidation",
+            "reagents": "VO(acac)2, TBHP",
+            "reagent_smiles": "",
+            "conditions": "toluene, 40 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@H]1CC(=C)[C@@H](O)CC1",
+            "product_smiles": "C=C(C)[C@H]1CC([C@@]2(OC2))[C@@H](O)CC1",
+            "notes": "Vanadium-catalyzed epoxidation of an exocyclic alkene, forming a spiro epoxide. The stereochemistry of the existing chiral centers and the newly formed epoxide ring are cis to each other, as indicated by the wedges in the drawing.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxide Ring Opening / Methanolysis",
+            "reagents": "NaOMe, MeOH",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@@H]1CC[C@H](O)[C@@]2[C@H]1O2",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@@H](O)[C@H](O)[C@@H](COC)C1",
+            "notes": "Base-catalyzed ring opening of a fused epoxide with methanol, forming a 1,2-diol with an adjacent methoxy ether. The isopropenyl group and the original hydroxyl are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Cleavage (Periodate)",
+            "reagents": "NaIO4, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "H2O, THF",
+            "yield": "59%",
+            "reactant_smiles": "C=C(C)[C@H]1CC[C@@](O)(COC)[C@@H](O)C1",
+            "product_smiles": "C=C(C)[C@H](CCC(=O)COC)CC=O",
+            "notes": "Oxidative cleavage of a vicinal diol to an aldehyde and a ketone. The reaction appears to add one carbon, as the reactant is C10 and the product is C11, which is unusual for NaIO4 cleavage. Stereochemistry of the reactant has been corrected to match the relative stereochemistry in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Aldol Condensation",
+            "reagents": "piperidine, AcOH",
+            "reagent_smiles": "",
+            "conditions": "toluene, 70 °C",
+            "yield": "94%",
+            "reactant_smiles": "C=C(C)[C@@H](CCC(=O)COC)CC=O",
+            "product_smiles": "C=C(C)[C@@H]1CC(COC)=C(C=O)C1",
+            "notes": "Intramolecular aldol condensation of a keto-aldehyde to form a cyclopentene ring via enolate formation at the alpha-carbon of the aldehyde, followed by attack on the ketone carbonyl, and subsequent dehydration.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nozaki-Hiyama-Kishi Reaction / Intramolecular Cyclization",
+            "reagents": "Mn, CrCl2, TMSCl",
+            "reagent_smiles": "CC(C)[C@@H]1C=C(CCl)C=C1",
+            "conditions": "DMF",
+            "yield": "86%",
+            "reactant_smiles": "C=C(C)[C@@H]1CCC(=C1C=O)COC",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@@]2(C1)C=C(COC)C[C@@H](C(C)C)[C@@]2(C(=C)[C@@](C)([OTMS]))",
+            "notes": "An intramolecular Nozaki-Hiyama-Kishi reaction couples an aldehyde with an allyl chloride (formed in situ from the reagent) followed by cyclization and silylation of the intermediate alcohol to form a complex spiro bicyclic system. The `TMSCl` reagent contributes to the formation of the `[OTMS]` group.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Hydrogenation",
+                    "reagents": "H2, PtO2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=C(C)[C@@H]1CC=C(C)CC1",
+                    "product_smiles": "CC(C)[C@@H]1CC=C(C)CC1",
+                    "notes": "Selective hydrogenation of the exocyclic double bond in (R)-Limonene to form p-menth-1-ene (or 4-isopropyl-1-methylcyclohexene). The endocyclic double bond remains untouched, and the stereochemistry at C1 is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Ozonolysis",
+                    "reagents": "O3, Me2S",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)[C@@H]1CC=C(C)CC1",
+                    "product_smiles": "CC(C)[C@@H](CCC(=O)C)CC=O",
+                    "notes": "Ozonolysis of an alkene, cleaving the double bond to form an aldehyde and a ketone, while retaining the stereochemistry of the isopropyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Intramolecular Aldol Condensation / Cyclization",
+                    "reagents": "piperidine, AcOH, Na2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, reflux",
+                    "yield": "53% (3 steps)",
+                    "reactant_smiles": "O=CCC[C@@H](C(C)C)CCC(=O)C",
+                    "product_smiles": "O=CC1=C(C)CC[C@H](C(C)C)C1",
+                    "notes": "Intramolecular cyclization of a dialdehyde/ketone derivative to form a cyclopentene with an alpha,beta-unsaturated aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, DCM, 0 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "CC(C)[C@H]1CCC(=C1C=O)C",
+                    "product_smiles": "CC(C)[C@H]1CCC(=C1CO)C",
+                    "notes": "Aldehyde reduced to primary alcohol using sodium borohydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Chlorination",
+                    "reagents": "(COCl)2, DMSO",
+                    "reagent_smiles": "ClC(=O)C(=O)Cl.CS(C)=O",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "CC(C)[C@H]1CCC(=C1CO)C",
+                    "product_smiles": "CC(C)[C@H]1CCC(=C1CCl)C",
+                    "notes": "Conversion of a primary alcohol to a primary chloride using Swern-type conditions (oxalyl chloride and DMSO).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "9-BBN, NaOAc, PCC",
+            "reagent_smiles": "",
+            "conditions": "THF, DCM, reflux",
+            "yield": "59%",
+            "reactant_smiles": "CC(C)[C@@H]1CCC[C@@]2(C)C1[C@H](O[Si](C)(C)C)C3=C(COC)CC[C@@H]4C(=C)C3C24",
+            "product_smiles": "CC(C)[C@@H]1CCC[C@@]2(C)C1[C@H](O[Si](C)(C)C)C3=C(COC)CC[C@@H]4[C@H]([C@H](C)C=O)C3C24",
+            "notes": "Exocyclic alkene converted to branched aldehyde with a new stereocenter and an added carbon atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization / Desilylation",
+            "reagents": "BF3, Bu4NHF2",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "62%",
+            "reactant_smiles": "C[C@@H]1C(=O)CC2=C3C(COC)=C3CC[C@@]4(C)C(O[Si](C)(C)C)=C(C)[C@@H](C(C)C)CC124",
+            "product_smiles": "C[C@@H]1C(=O)CC2=C3C(COC)=C3CC[C@@]4(C)[C@H](C(C)C)C=C(CC124)C",
+            "notes": "Intramolecular cyclization of an aldehyde and exocyclic alkene, leading to a new ring formation and ketone, followed by removal of the TMS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alpha-Hydroxylation / Oxidation",
+            "reagents": "",
+            "reagent_smiles": "O=O.COP(OC)OC.[Li+].CC(C)(C)[O-].[K+].[H-]",
+            "conditions": "THF, -78 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC(C)C1=C2CC(=O)[C@H](C)[C@@]3(C)CCC(=C3C[C@@]2(C)CC1)COC",
+            "product_smiles": "CC(C)C1=C2[C@@H](O)C(=O)[C@H](C)[C@@]3(C)CCC(=C3C[C@@]2(C)CC1)COC",
+            "notes": "Alpha-hydroxylation of a ketone using dioxygen and phosphite, followed by base, to form a new tertiary alcohol with specified stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Allylic Oxidation / Rearrangement",
+            "reagents": "O2, MoBsc9, Y112M, αKG",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "67%",
+            "reactant_smiles": "CC(C)C1=C2[C@@H](C(=O)[C@H](C)[C@]3(C)CCC(=C3C[C@]2CC1)COC)O",
+            "product_smiles": "C[C@H]1C(=O)C[C@@]2(C)C[C@@H](O)[C@]3C=C(COC)[C@H](O)C[C@H]2CC(C)=C1C(C)C",
+            "notes": "Enzyme-catalyzed oxidation of a methoxymethyl alkene to an allylic alcohol with double bond migration.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "Me4NBH(OOCiPr)3",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "87%",
+            "reactant_smiles": "C[C@H]1C(=O)[C@H]2[C@@H](CC(C=C1)(C)C)C3=C[C@@](C)(CC3)[C@H]4CC[C@](O)(COC)C4=C2",
+            "product_smiles": "C[C@H]1[C@@H](O)[C@H]2[C@@H](CC(C=C1)(C)C)C3=C[C@@](C)(CC3)[C@H]4CC[C@](O)(COC)C4=C2",
+            "notes": "Reduction of a ketone to a secondary alcohol.",
+            "substeps": []
+        }
+    ]
+}

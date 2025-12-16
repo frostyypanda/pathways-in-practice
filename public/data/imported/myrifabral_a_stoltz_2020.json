@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "myrifabral-a-stoltz-2020",
+        "molecule_name": "Myrifabral A",
+        "class": "Natural Product",
+        "author": "Stoltz",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-alkylation / Aminomethylation",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "O=S(=O)(c1ccccc1)CNC(=O)OC(C)(C)C",
+            "conditions": "DCM, rt",
+            "yield": "95%",
+            "reactant_smiles": "C=CCOC(=O)C1CCCCC1=O",
+            "product_smiles": "C=CCOC(=O)C1(CCCCC1=O)CNC(=O)OC(C)(C)C",
+            "notes": "Aminomethylation of allyl 2-oxocyclohexane-1-carboxylate via its enolate using N-(tert-butoxycarbonyl)aminomethyl phenyl sulfone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "No apparent reaction",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCC1(CCC(=O)CC1)C(=O)OCC=C",
+            "product_smiles": "[Boc]NCC1(CCC(=O)CC1)C(=O)OCC=C",
+            "notes": "The product structure shown in the screenshot is identical to the reactant structure. The conditions (TFA, DCM, rt) typically perform Boc deprotection, but the Boc group is still present in the drawn product. The SMILES reflect the structures as drawn in the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection / Intramolecular Amidation",
+            "reagents": "",
+            "reagent_smiles": "B(O)(O)c1ccc(C(F)(F)F)cc1.OC(=O)CCCC(=O)O",
+            "conditions": "xylenes, reflux, Dean-Stark",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "O=C1C(C(=O)OCC=C)(C[NH][Boc])CCC1",
+            "product_smiles": "O=C1C(C(=O)OCC=C)(CN2C(=O)CCCC2=O)CCC1",
+            "notes": "The Boc protecting group is removed, and the resulting primary amine reacts with glutaric acid to form an N-linked glutarimide via intramolecular cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Decarboxylative Allylation",
+            "reagents": "Pd2(dba)3, (S)-(CF3)3-t-BuPHOX",
+            "reagent_smiles": "",
+            "conditions": "toluene, rt",
+            "yield": "94%",
+            "reactant_smiles": "C=CCOC(=O)C1(O=C2CCC(=O)N(CC1)C2)CCCCC1=O",
+            "product_smiles": "C=CC[C@@]1(O=C2CCC(=O)N(CC1)C2)CCCCC1=O",
+            "notes": "Asymmetric decarboxylative allylation of an allyl ester to form a chiral quaternary carbon center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enol Ether Formation",
+            "reagents": "CH(OEt)3, p-TsOH·H2O, EtOH",
+            "reagent_smiles": "C(OCC)(OCC)OCC.Cc1ccc(S(=O)(=O)O)cc1.O.CCO",
+            "conditions": "40 °C",
+            "yield": "91%",
+            "reactant_smiles": "O=C1N(C[C@H]2C3CCC(=O)CC3C2C=C)C(=O)CCCC1",
+            "product_smiles": "O=C1N(C[C@H]2C3CCC=C(OCC)C3C2C=C)C(=O)CCCC1",
+            "notes": "Formation of an enol ether from a ketone using triethyl orthoformate and acid catalysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Imide Reduction / Intramolecular Cyclization",
+            "reagents": "LiEt3BH",
+            "reagent_smiles": "",
+            "conditions": "DCM, then EtOAc",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@]1(CC=C(OCC)CC1)CN2C(=O)CCCC2=O",
+            "product_smiles": "O=C1CCC(O)N[C@@]2C(C=CC)C3CC=C(OCC)CC3N12",
+            "notes": "Reduction of glutarimide with LiEt3BH leads to a rearranged product with a cyclic hemiaminal-like structure where the nitrogen directly attaches to the former spiro carbon, forming a bicyclic system with bridgehead N and C atoms. The stereochemistry at the former spiro center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lewis acid-catalyzed rearrangement/oxidation",
+            "reagents": "BF3•OEt2, DCM",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "C=CCC1(N2C(O)C(=O)CCC2)C3CC(=C(OCC))CC1",
+            "product_smiles": "C=CCC1(N2C(=O)CCC2)C3CC(=O)CC1",
+            "notes": "A spiro compound with a secondary alcohol and an enol ether undergoes a Lewis acid-catalyzed transformation. The alcohol is removed (reduced to CH2) and the enol ether is converted to a ketone, likely through a complex rearrangement and oxidation pathway.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "L-Selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCC1(C(=O)C2CCCC1)CC3CN(C(=O)CCC3)CC2",
+            "product_smiles": "C=CCC1([C@@H](O)C2CCCC1)CC3CN(C(=O)CCC3)CC2",
+            "notes": "Stereoselective reduction of ketone to secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Amide Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[LiH4Al]",
+            "conditions": "-78 °C to reflux",
+            "yield": "97% (2 steps)",
+            "reactant_smiles": "O=C1N(C2CCC[C@H](O)[C@@]3(C=C)CCCC23)CCC1",
+            "product_smiles": "C1N(C2CCC[C@H](O)[C@@]3(C=C)CCCC23)CCC1",
+            "notes": "Reduction of a lactam (cyclic amide) to a cyclic tertiary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "Grubbs-II",
+            "reagent_smiles": "C/C=C/B1OC(C)(C)C(C)(C)O1",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C=C([C@@]12[C@H](O)C3CCCCN1[C@@H]2C3)C",
+            "product_smiles": "CC1(C)C(C)(C)OB(/C=C/C[C@@]23[C@H](O)C4CCCCN2[C@@H]3C4)O1",
+            "notes": "Cross-metathesis between the vinyl group of the reactant and the trans-propenylboronic ester. The vinyl group of the reactant is reduced to a methylene, extending the chain with the boronic ester moiety. The new double bond retains trans stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

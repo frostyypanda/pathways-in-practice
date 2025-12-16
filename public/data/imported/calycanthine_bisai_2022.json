@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "calycanthine-bisai-2022",
+        "molecule_name": "Calycanthine",
+        "class": "Natural Product",
+        "author": "Bisai",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Protection",
+            "reagents": "NaH, Boc2O, THF",
+            "reagent_smiles": "",
+            "conditions": "0 - 25 °C",
+            "yield": "96%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=O)NC2=C3C(=O)NC4=CC=CC=C43",
+            "product_smiles": "C1=CC=C2C(=C1)C(=O)N([Boc])C2=C3C(=O)N([Boc])C4=CC=CC=C43",
+            "notes": "N-Boc protection of indigo.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkene Reduction",
+            "reagents": "Zn dust, AcOH",
+            "reagent_smiles": "",
+            "conditions": "25 °C",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)/C(=C\\3/C4=C(C=CC=C4)N([Boc])C3=O)/C1=O",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)C(C3C4=C(C=CC=C4)N([Boc])C3=O)C1=O",
+            "notes": "Reduction of the carbon-carbon double bond between the two indole-2,3-dione units, forming two new chiral centers with unspecified stereochemistry as indicated by wavy bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Michael Addition / Alkylation",
+            "reagents": "",
+            "reagent_smiles": "C=C1CN2CCC1C[C@H]2[C@H](c3c4ccccc4nc3)NC(=S)Nc5cc(C(F)(F)F)cc(C(F)(F)F)c5.C=C[Se](=O)c1ccccc1",
+            "conditions": "MeCN, 25 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C(=O)c2ccccc2C1C3C(=O)N(C(=O)OC(C)(C)C)c4ccccc43",
+            "product_smiles": "CC(C)(C)OC(=O)N1C2=C(C=CC=C2)[C@](CC[Se](=O)(=O)c3ccccc3)(C1=O)[C@@]4(CC[Se](=O)(=O)c5ccccc5)C6=C(C=CC=C6)N(C4=O)C(=O)OC(C)(C)C",
+            "notes": "Diastereoselective Michael addition/alkylation of 3,3'-bis(1-Boc-indolin-2-one) with vinyl phenyl selenoxide, catalyzed by a chiral thiourea. The C-C bond in the reactant is retained, with two new C-alkyl-selenone groups added to the C3 positions of the indolinone units.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Substitution / Grignard reaction",
+                    "reagents": "THF",
+                    "reagent_smiles": "C=C[Mg]Br",
+                    "conditions": "0 - 25 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Ph][Se][Se][Ph]",
+                    "product_smiles": "C=C[Se][Ph]",
+                    "notes": "Grignard reagent addition to diphenyl diselenide, cleaving the Se-Se bond.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "Oxone, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "60 °C",
+                    "yield": "91%",
+                    "reactant_smiles": "C=C[Se][Ph]",
+                    "product_smiles": "C=C[Se](=O)(=O)[Ph]",
+                    "notes": "Oxidation of a vinyl selenide to a vinyl selenone using Oxone. The yield is for a 2-step process.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "Na N3",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-].CN(C)C=O",
+            "conditions": "DMF, 80 °C",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CC[Se](=O)(=O)[Ph])(C1=O)[C@@]3(CC[Se](=O)(=O)[Ph])C4=C(C=CC=C4)N([Boc])C3=O",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CC[N-]=[N+]=[N-])(C1=O)[C@@]3(CC[N-]=[N+]=[N-])C4=C(C=CC=C4)N([Boc])C3=O",
+            "notes": "Double substitution of ethyl-phenylselenone groups with azide groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Staudinger reaction",
+            "reagents": "",
+            "reagent_smiles": "P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "PhMe, H2O, 70 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CCN=N=N)(C1=O)[C@@]3(CCN=N=N)C4=C(C=CC=C4)N(C3=O)[Boc]",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CCN)(C1=O)[C@@]3(CCN)C4=C(C=CC=C4)N(C3=O)[Boc]",
+            "notes": "Staudinger reduction of two azide groups to amines, preserving stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carbamoylation",
+            "reagents": "ClCO2Me",
+            "reagent_smiles": "COC(=O)Cl",
+            "conditions": "25 °C",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CCN)(C1=O)[C@@]3(CCN)C4=C(C=CC=C4)N(C3=O)[Boc]",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CCN[Moc])(C1=O)[C@@]3(CCN[Moc])C4=C(C=CC=C4)N(C3=O)[Boc]",
+            "notes": "Diamine carbamoylation with methyl chloroformate to form N-Moc protected amines.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "O=C(O)C(F)(F)F",
+            "conditions": "DCM, 25 °C",
+            "yield": "97%",
+            "reactant_smiles": "[Moc]NCC[C@@]1(C2=C(C=CC=C2)N([Boc])C1=O)[C@@]3(CC[NH][Moc])C4=C(C=CC=C4)N([Boc])C3=O",
+            "product_smiles": "[Moc]NCC[C@@]1(C2=C(C=CC=C2)NC1=O)[C@@]3(CC[NH][Moc])C4=C(C=CC=C4)NC3=O",
+            "notes": "Acid-catalyzed Boc deprotection of both N-Boc groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Cyclization / N-Alkylation",
+            "reagents": "Red-Al",
+            "reagent_smiles": "[Na+].[AlH2](OCCOC)2",
+            "conditions": "PhMe, 110 °C",
+            "yield": "85%",
+            "reactant_smiles": "COC(=O)NCC[C@@]1(C2=C(C=CC=C2)NC1=O)[C@@]3(CCNC(=O)OC)C4=C(C=CC=C4)NC3=O",
+            "product_smiles": "CN1CC[C@@]2(C[C@@]34CCN(C)[C@H]3N(C)C5=C4C=CC=C5)C6=C(C=CC=C6)N(C)[C@H]21",
+            "notes": "Reduction of lactam carbonyls to methylene, reductive cyclization of carbamate-protected aminoethyl chains to N-methylpyrrolidine rings, and N-methylation of indoline nitrogens. This forms a Calycanthine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Rearrangement",
+            "reagents": "AcOH, H2O",
+            "reagent_smiles": "CC(=O)O.O",
+            "conditions": "110 °C",
+            "yield": "61%",
+            "reactant_smiles": "C[N@H]1CC[C@@]23[C@@H](NC4=CC=CC=C43)[C@@H](C5=CC=CC=C5N[C@@H]2C1)",
+            "product_smiles": "CN1CC[C@@H]2[C@H]3C4(N[C@H]5C2C6=CC=CC=C6C5=C4)[C@H]7C3(C8=CC=CC=C8N[C@@H]7C1)N(C)C",
+            "notes": "Rearrangement of Chimonanthine to (-)-Calycanthine. The reactant and product are both C22H26N4, consistent with known structures for these alkaloids.",
+            "substeps": []
+        }
+    ]
+}

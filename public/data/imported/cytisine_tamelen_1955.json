@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cytisine-tamelen-1955",
+        "molecule_name": "Cytisine",
+        "class": "Natural Product",
+        "author": "Tamelen",
+        "year": 1955
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "n-BuLi, B(OMe)3, Pd(PPh3)4, CsF",
+            "reagent_smiles": "BrC1=CN=CC(=C1)C(=O)OC",
+            "conditions": "Et2O, DME, -40 °C, 85",
+            "yield": "55%",
+            "reactant_smiles": "COC1=CC=CC(=N1)Br",
+            "product_smiles": "COC1=CC=CC(=N1)C2=CC(=CN=C2)C(=O)OC",
+            "notes": "Suzuki coupling where methyl 3-bromo-5-pyridinecarboxylate is converted to the boronate in situ, then reacted with 2-bromo-6-methoxypyridine. The '85' in conditions is ambiguously labelled, likely referring to temperature (85 °C) or time (e.g., 85 min/hr) for the coupling step.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Reduction",
+            "reagents": "LiAlH4, Et2O",
+            "reagent_smiles": "[Li+].[AlH4-].CCOCC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=CC(=N1)C2=CC(=CN=C2)C(=O)OC",
+            "product_smiles": "COC1=CC=CC(=N1)C2=CC(=CN=C2)CO",
+            "notes": "Reduction of a methyl ester to a primary alcohol using lithium aluminum hydride and diethyl ether as solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Alkylation / Pyridine Quaternization",
+            "reagents": "BnBr",
+            "reagent_smiles": "BrCc1ccccc1.CC#N",
+            "conditions": "CH3CN",
+            "yield": "80%",
+            "reactant_smiles": "N1=C(C2=NC=CC(OC)=C2)C=C(CO)C=C1",
+            "product_smiles": "[N+]1(CC2=CC=CC=C2)=C(C3=NC=CC(OC)=C3)C=C(CO)C=C1.[Br-]",
+            "notes": "N-alkylation of the pyridine nitrogen (bearing the hydroxymethyl group) with benzyl bromide, forming a pyridinium salt. The yield refers to a 2-step process.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "H2, Et3N, PtO2",
+            "reagent_smiles": "CCN(CC)CC.O=[Pt]=O",
+            "conditions": "MeOH",
+            "yield": "100%",
+            "reactant_smiles": "[Br-].[N+]1(Cc2ccccc2)C=C(c3ncccc3OC)C=C(CO)C=C1",
+            "product_smiles": "COC1=CC=CC(=N1)[C@@H]2C[C@H](CN(CC3=CC=CC=C3)C2)CO",
+            "notes": "Catalytic hydrogenation of an N-benzylpyridinium salt to the corresponding N-benzylpiperidine, reducing one pyridine ring to a piperidine with retention of the 2-methoxypyridine ring and stereoselective formation of a trans-disubstituted piperidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=NC=C([C@@H]2CC[C@@H](CO)N([Bn])C2)C=C1",
+            "product_smiles": "COC1=NC=C([C@@H]2CC[C@@H](COS(=O)(=O)C)N([Bn])C2)C=C1",
+            "notes": "Mesylation of a primary alcohol to a mesylate using mesyl chloride and triethylamine, forming a 2,6-disubstituted piperidine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement",
+            "reagents": "PhMe",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=CC(=N1)[C@@H]2C[C@H](CN([Bn])C2)C[OMs]",
+            "product_smiles": "[Bn]N2C[C@@H]3C[C@H](C2)C4=CC=CC(=O)N4C3",
+            "notes": "Intramolecular cyclization involving the loss of a mesylate leaving group and transformation of a 2-methoxypyridine to a bridged pyridin-2-one system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenolysis / Debenzylation",
+            "reagents": "H2, Pd(OH)2, NH4CO2H",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "58% (3 steps)",
+            "reactant_smiles": "[Bn]N2C[C@@H]3C[C@H](C2)C4=CC=CC(=O)N4C3",
+            "product_smiles": "C1=CC(=O)N2C[C@@H]3C[C@H](CNC3)C2=C1",
+            "notes": "N-debenzylation of a cytisine derivative to form cytisine.",
+            "substeps": []
+        }
+    ]
+}

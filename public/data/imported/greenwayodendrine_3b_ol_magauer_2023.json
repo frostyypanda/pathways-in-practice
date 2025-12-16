@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "greenwayodendrine-3b-ol-magauer-2023",
+        "molecule_name": "Greenwayodendrine-3b-ol",
+        "class": "Natural Product",
+        "author": "Magauer",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "PBr3",
+            "reagent_smiles": "BrP(Br)Br",
+            "conditions": "Et2O, -41 °C to -9 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC/C(=C/CO)/C)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC/C(=C/CBr)/C)/C)C",
+            "notes": "Conversion of a primary allylic alcohol to an allylic bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkylation",
+            "reagents": "nBuLi",
+            "reagent_smiles": "O=S(=O)(c1ccccc1)n2c(=Cc3ccccc32)",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC/C(=C/CBr)/C)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC/C(=C/CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c3ccccc3)/C)/C)C",
+            "notes": "Alkylation of N-phenylsulfonylindole at the 3-position with a tertiary allylic bromide.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Oxidation, Chlorination (of sulfur)",
+                    "reagents": "SOCl2, H2O2",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC=C(C=C1)S",
+                    "product_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "notes": "Oxidation of thiophenol to benzenesulfonyl chloride using thionyl chloride and hydrogen peroxide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "N-Sulfonylation",
+                    "reagents": "NaOH, THF",
+                    "reagent_smiles": "C1=CC2=C(C=C1)NC=C2",
+                    "conditions": "0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "product_smiles": "C1=CC2=C(C=C1)N(C=C2)S(=O)(=O)[Ph]",
+                    "notes": "N-sulfonylation of indole with benzenesulfonyl chloride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Dihydroxylation",
+            "reagents": "K2OsO4, K2CO3, K3[Fe(CN)6], CH3SO2NH2",
+            "reagent_smiles": "CCCC(N(C1=CC2=C(C=CC=C2C=C1)[C@H](C)[C@H](CC3=NC=CC4=CC5=C(C=CC=C5)C(=C43)C6=C7C=CC=CC7=CC8=C6C=CC=C8)C(=O)N9CCC[C@H]9C(=O)OCC)C(=O)C(C)(C)C)O",
+            "conditions": "tBuOH, H2O, THF, rt to 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC/C(=C/CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c3ccccc3)/C)/C)C",
+            "product_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c3ccccc3)/CC/C=C(\\C)/CC[C@@H](C(C)(C)O)O",
+            "notes": "Asymmetric dihydroxylation of a terminal alkene within an isoprenoid chain using a Sharpless-type ligand.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, pyridine, CH2Cl2",
+            "reagent_smiles": "CS(=O)(=O)Cl.c1ccncc1.ClCCl",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "c1ccc(S(=O)(=O)N2C=C(CC/C=C(\\C)CC/C=C(/C)\\CC[C@H](O)C(C)(C)O)C3=CC=CC=C32)cc1",
+            "product_smiles": "c1ccc(S(=O)(=O)N2C=C(CC/C=C(\\C)CC/C=C(/C)\\CC[C@H](OS(=O)(=O)C)C(C)(C)O)C3=CC=CC=C32)cc1",
+            "notes": "Selective mesylation of the secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxide formation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1S(=O)(=O)[Ph])/CC/C=C(\\C)/CC[C@@H](C(C)(C)O)[OMs]",
+            "product_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1S(=O)(=O)[Ph])/CC/C=C(\\C)/CC[C@H]1C(C)(C)O1",
+            "notes": "Base-catalyzed intramolecular SN2 cyclization of a vicinal mesylate and alcohol to form an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-deprotection",
+            "reagents": "KOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "88%",
+            "reactant_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1S(=O)(=O)[Ph])/CC/C=C(\\C)/CC[C@H]4C(C)(C)O4",
+            "product_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1)/CC/C=C(\\C)/CC[C@H]3C(C)(C)O3",
+            "notes": "N-deprotection of the phenylsulfonyl group from the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Bromocyclization",
+            "reagents": "NBS, Et3N",
+            "reagent_smiles": "O=C(Br)N.CCN(CC)CC",
+            "conditions": "CH2Cl2, -35 °C to -20 °C",
+            "yield": "91%",
+            "reactant_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1)/CC/C=C(\\C)/CC[C@H]3C(C)(C)O3",
+            "product_smiles": "CC[C@H]1C(C)(C)O1CC/C=C(\\C)CC[C@@H]2C(C)NC3=CC=CC=C3C(Br)C2",
+            "notes": "Electrophilic bromocyclization of the indole with the internal alkene, forming a new 6-membered ring and brominating the indole C3 position.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acid-catalyzed cascade cyclization",
+            "reagents": "BF₃•OEt₂",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H]1CC/C(=C\\C)/CCC/C(=C\\CC2C(=C(Br)c3ccccc23)[NH])/C",
+            "product_smiles": "CC1(C)[C@@H]2CC[C@@H](C)[C@@H](CC4=C(Br)C=C5C(=C4)[NH]C6=CC=CC=C65)[C@@H]2[C@@H](C)CC[C@H](O)C1",
+            "notes": "Cascade cyclization of macrocyclic epoxide and alkenes, forming new 5- and 6-membered rings.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Dehalogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "22% (2 steps)",
+            "reactant_smiles": "CC12CCC3C4(C)CCC(C3(C)C2CC5=C(C6=C(C=CC=C6)N51)Br)O",
+            "product_smiles": "CC12CCC3C4(C)CCC(C3(C)C2CC5=CNC6=CC=CC=C65)O",
+            "notes": "Reductive dehalogenation of a bromoindole derivative to form an unsubstituted indole. The bromine atom is removed from the C3 position of the indole ring via hydrogenation.",
+            "substeps": []
+        }
+    ]
+}

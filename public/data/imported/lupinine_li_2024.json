@@ -1,0 +1,72 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lupinine-li-2024",
+        "molecule_name": "Lupinine",
+        "class": "Natural Product",
+        "author": "Li",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Michael Addition / Alkylation",
+            "reagents": "diisopropylamine, n-BuLi, CH3I",
+            "reagent_smiles": "C1CCN(CC1)C[C@H](N[C@H](c2ccccc2)[C@H](c3ccccc3)N[C@H](CN4CCCCC4)C)C",
+            "conditions": "THF, -78 °C",
+            "yield": "61%",
+            "reactant_smiles": "C/C=C/C=C/C(=O)O",
+            "product_smiles": "C=C/C=C/[C@@H](CCC[N-]=[N+]=[N-])C(=O)O",
+            "notes": "Asymmetric Michael addition/alkylation using a chiral diamine ligand to introduce an azidopropyl group to a conjugated dienoic acid, forming a new chiral center. The N3 group from text reagents implies azide, which is then incorporated.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification (Methylation)",
+            "reagents": "TMSCHN2",
+            "reagent_smiles": "",
+            "conditions": "Et2O, MeOH",
+            "yield": "",
+            "reactant_smiles": "C=C/C=C/[C@@H](CCC[N-]=[N+]=[N-])C(=O)O",
+            "product_smiles": "C=C/C=C/[C@@H](CCC[N-]=[N+]=[N-])C(=O)OC",
+            "notes": "Methylation of a carboxylic acid to a methyl ester using trimethylsilyldiazomethane (TMSCHN2).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Li][AlH4].CCOCC",
+            "conditions": "Et2O, -78 to 23 °C",
+            "yield": "",
+            "reactant_smiles": "C=C/C=C/[C@@H](CCC[N-]=[N+]#N)C(=O)OC",
+            "product_smiles": "C=C/C=C/[C@@H](CCCN)CO",
+            "notes": "Reduction of methyl ester to primary alcohol and azide to primary amine using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Mannich / Aza-Cope cyclization",
+            "reagents": "HCHO, BHT, CSA",
+            "reagent_smiles": "",
+            "conditions": "H2O, EtOH, 85 °C",
+            "yield": "19% (3 steps)",
+            "reactant_smiles": "C=C/C=C/[C@@H](CCCN)CO",
+            "product_smiles": "C1C=CC[C@H]2[C@H](CO)CCCN12",
+            "notes": "Intramolecular cyclization of an amino alcohol with formaldehyde to form a bicyclic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH, HCl, H2O, 23 °C",
+            "yield": "93%",
+            "reactant_smiles": "OC[C@@H]1[C@H]2CCCCN2C=CCC1",
+            "product_smiles": "OC[C@@H]1[C@H]2CCCCN2CCCC1",
+            "notes": "Catalytic hydrogenation of the internal alkene in a bicyclic quinolizidine derivative. The existing stereocenters are retained.",
+            "substeps": []
+        }
+    ]
+}

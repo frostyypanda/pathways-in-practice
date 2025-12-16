@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "collybolide-shenvi-2022",
+        "molecule_name": "Collybolide",
+        "class": "Natural Product",
+        "author": "Shenvi",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Halogenation",
+            "reagents": "Br2",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)CCC(=O)OC",
+            "product_smiles": "COC(=O)CC(Br)C(=O)C",
+            "notes": "Alpha-bromination of a methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Elimination (Dehydrobromination)",
+            "reagents": "Et3N",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 0 °C",
+            "yield": "45% (2 steps)",
+            "reactant_smiles": "CC(=O)C(Br)CC(=O)OC",
+            "product_smiles": "CC(=O)C=CC(=O)OC",
+            "notes": "Base-catalyzed dehydrobromination of an alpha-bromo-beta-ketoester to form an alpha,beta-unsaturated ketoester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Silyl enol ether formation",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "COC(=O)/C=C/C(=O)C",
+            "product_smiles": "COC(=O)/C=C/C(=C)[OTBS]",
+            "notes": "Formation of a silyl enol ether from an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Diels-Alder Reaction",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "CCOC(=O)/C=C/C=O.CC[Si](CC)(CC)OC(C1=CC(=CC(=C1)C(F)(F)F)C(F)(F)F)(C2=CC(=CC(=C2)C(F)(F)F)C(F)(F)F)[C@H]3CCC[NH2+]3.[O-]S(=O)(=O)C(F)(F)F",
+            "conditions": "4 °C",
+            "yield": "72%",
+            "reactant_smiles": "COC(=O)/C=C/C(=C)[OTBS]",
+            "product_smiles": "O=C[C@H]1[C@@H](C(=O)OCC)CC(=C[OTBS])[C@@H](C(=O)OC)C1",
+            "notes": "Asymmetric Diels-Alder reaction between a diene and an α,β-unsaturated aldehyde, catalyzed by a chiral secondary amine-based organocatalyst, forming a cyclohexene ring with multiple stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Wittig Reaction",
+            "reagents": "MePPh3Br, NaHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 to -5 °C",
+            "yield": "79%",
+            "reactant_smiles": "COC(=O)[C@@H]1[C@H](C=O)C=C([C@@H](CC1)C(=O)OCC)[OTBS]",
+            "product_smiles": "COC(=O)[C@@H]1[C@H](C=C)C=C([C@@H](CC1)C(=O)OCC)[OTBS]",
+            "notes": "Aldehyde converted to vinyl group via Wittig reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic Bromination",
+            "reagents": "NBS, CHCl3",
+            "reagent_smiles": "O=C1CCC(=O)N1Br.ClC(Cl)Cl",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1[C@H](C(=O)OC)C[C@@H](C(=O)OCC)C=C1[OTBS]",
+            "product_smiles": "C=C[C@@H]1[C@H](C(=O)OC)[C@H](Br)[C@@H](C(=O)OCC)C=C1[OTBS]",
+            "notes": "Allylic bromination of a cyclohexene derivative with N-bromosuccinimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection / Oxidation / Elimination",
+            "reagents": "TBAF, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "94% (2 steps)",
+            "reactant_smiles": "C=C[C@H]1[C@H](C(=O)OCC)C=C(O[TBS])[C@@H](Br)[C@H](C(=O)OC)1",
+            "product_smiles": "O=C1C=C(C(=O)OC)[C@H](C=C)[C@H](C(=O)OCC)CC1",
+            "notes": "Deprotection of a TBS enol ether and elimination of bromine, followed by oxidation to form an alpha,beta-unsaturated cyclohexenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "1,4-Conjugate Addition (Michael Addition)",
+            "reagents": "Cu(OTf)2",
+            "reagent_smiles": "C[Al](C)C.Cl[Si](C)(C)C.C1CCOC1",
+            "conditions": "0 to 4 °C",
+            "yield": "50%",
+            "reactant_smiles": "C=C[C@H]1[C@@H](CC(=O)C=C1C(=O)OC)C(=O)OCC",
+            "product_smiles": "C=C[C@H]1[C@@H](CC(=O)C[C@@]1(C)C(=O)OC)C(=O)OCC",
+            "notes": "1,4-conjugate addition of a methyl group to the alpha,beta-unsaturated ketone of the cyclohexenone ring, reducing the double bond and creating a new chiral center with specific stereochemistry for the new methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Lactonization",
+            "reagents": "L-selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "74%",
+            "reactant_smiles": "C=C[C@H]1[C@@H](CC(=O)C[C@@]1(C)C(=O)OC)C(=O)OCC",
+            "product_smiles": "C=C[C@H]1[C@@H](C[C@@H]2C[C@@]1(C)C(=O)O2)C(=O)OCC",
+            "notes": "Reductive lactonization of a ketone with an adjacent methyl ester using L-selectride, forming a fused bicyclic lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydroboration",
+            "reagents": "BH3•Me2S, cyclohexene",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1[C@@H](C[C@@H]2C[C@@]1(C)C(=O)O2)C(=O)OCC",
+            "product_smiles": "CCOC(=O)[C@@H]1C[C@@H]2C[C@](C)([C@H]1CCB(C3CCCCC3)C4CCCCC4)C(=O)O2",
+            "notes": "Regioselective anti-Markovnikov hydroboration of the terminal alkene to form a primary alkylborane. Dicyclohexylborane is generated in situ from BH3•Me2S and cyclohexene.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 45 °C",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "CCOC(=O)[C@@H]1CC[C@H]2[C@H](CC[BCy2])[C@@]4(C)OC(=O)[C@@H]4[C@@H]1C2",
+            "product_smiles": "CCOC(=O)[C@@H]1CC[C@H]2[C@H](CC=O)[C@@]4(C)OC(=O)[C@@H}4[C@@H]1C2",
+            "notes": "Oxidation of a dicyclohexylalkylborane to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Alpha-Benzoyloxylation",
+            "reagents": "DMSO",
+            "reagent_smiles": "CC(C)(C)NOC(=O)c1ccccc1",
+            "conditions": "rt",
+            "yield": "56%",
+            "reactant_smiles": "CCOC(=O)[C@@H]1C[C@@H]2C[C@](C)([C@H]1CC=O)C(=O)O2",
+            "product_smiles": "CCOC(=O)[C@@H]1C[C@@H]2C[C@](C)([C@H]1[C@H](C=O)[OBz])C(=O)O2",
+            "notes": "Alpha-benzoyloxylation of an aldehyde using N-tert-butyl-O-benzoylhydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Grignard-type Addition and Lactonization",
+            "reagents": "nBuLi, MgBr2.Et2O, LaCl3.(LiCl)2, THF, aq. HCl, dioxane",
+            "reagent_smiles": "Brc1ccco1",
+            "conditions": "-46 °C",
+            "yield": "20%",
+            "reactant_smiles": "CCOC(=O)[C@@H]1C[C@@H]2C[C@](C)([C@@H]1[C@@H](C=O)[OBz])C(=O)O2",
+            "product_smiles": "C[C@@]12C[C@@H](C[C@@H]3[C@@H]1[C@@H]4OC(=O)C3O[C@@H]4(C5=COC=C5)[OBz])OC2=O",
+            "notes": "A 2-furyl magnesium bromide equivalent adds to the aldehyde, followed by cyclization to form a new 6-membered lactone ring, incorporating the original ethyl ester and displacing the ethoxy group.",
+            "substeps": []
+        }
+    ]
+}

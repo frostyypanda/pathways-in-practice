@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fexofenadine-just-1994",
+        "molecule_name": "Fexofenadine",
+        "class": "Natural Product",
+        "author": "Just",
+        "year": 1994
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "TMSCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "99%",
+            "reactant_smiles": "O=C(O)Cc1ccc(Br)cc1",
+            "product_smiles": "COC(=O)Cc1ccc(Br)cc1",
+            "notes": "Esterification of 4-bromophenylacetic acid with methanol to form methyl 4-bromophenylacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alpha-Alkylation",
+            "reagents": "NaH, then MeI",
+            "reagent_smiles": "[NaH].CI",
+            "conditions": "THF, rt",
+            "yield": "71%",
+            "reactant_smiles": "COC(=O)CC1=CC=C(C=C1)Br",
+            "product_smiles": "CC(C)(C1=CC=C(C=C1)Br)C(=O)OC",
+            "notes": "Alpha-alkylation of a methyl ester using sodium hydride as base and methyl iodide as alkylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "Pd(PPh3)4, CuBr, Et3N",
+            "reagent_smiles": "C#CCCO",
+            "conditions": "reflux",
+            "yield": "97%",
+            "reactant_smiles": "CC(C)(C1=CC=C(Br)C=C1)C(=O)OC",
+            "product_smiles": "CC(C)(C1=CC=C(C#CCCO)C=C1)C(=O)OC",
+            "notes": "Sonogashira coupling of a para-bromo aromatic ester with but-3-yn-1-ol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylate formation",
+            "reagents": "MsCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, rt",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)(C1=CC=C(C#CCCO)C=C1)C(=O)OC",
+            "product_smiles": "CC(C)(C1=CC=C(C#CCCOS(=O)(=O)C)C=C1)C(=O)OC",
+            "notes": "Alcohol is converted to a mesylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "SN2 Reaction / Amine Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "N1[C@@H](C(O)(c2ccccc2)c3ccccc3)C[C@@H]([NH3+])CC1.[Cl-]",
+            "conditions": "CH3CN, reflux",
+            "yield": "75%",
+            "reactant_smiles": "CC(C)(C1=CC=C(C#CCCOS(=O)(=O)C)C=C1)C(=O)OC",
+            "product_smiles": "CC(C)(C1=CC=C(C#CCN2[C@@H](C(O)(c3ccccc3)c4ccccc4)C[C@@H](N)CC2)C=C1)C(=O)OC",
+            "notes": "The piperidine nitrogen undergoes SN2 displacement of the mesylate group. The chain length between the alkyne and the piperidine nitrogen is 2 carbons.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkyne Hydration",
+            "reagents": "HgO, aq. H2SO4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt to 55 °C",
+            "yield": "75%",
+            "reactant_smiles": "N1(CC#CC2=CC=C(C=C2)C(C)(C)C(=O)OC)CCC(C(O)(c3ccccc3)c4ccccc4)CC1",
+            "product_smiles": "N1(CCC(=O)C2=CC=C(C=C2)C(C)(C)C(=O)OC)CCC(C(O)(c3ccccc3)c4ccccc4)CC1",
+            "notes": "Markovnikov hydration of an internal alkyne to form a ketone, using mercury(II) oxide and sulfuric acid in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "[Na][BH4].CO",
+            "conditions": "rt",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)(c1ccc(C(=O)CCCN2CCC(C(O)([Ph])[Ph])CC2)cc1)C(=O)OC",
+            "product_smiles": "CC(C)(c1ccc(C(O)CCCN2CCC(C(O)([Ph])[Ph])CC2)cc1)C(=O)OC",
+            "notes": "Reduction of a ketone to a secondary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "aq. KOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 80 °C",
+            "yield": "76%",
+            "reactant_smiles": "COC(=O)C(C)(C)c1ccc(C(O)CCCN2CCC(C(O)(c3ccccc3)c4ccccc4)CC2)cc1",
+            "product_smiles": "OC(=O)C(C)(C)c1ccc(C(O)CCCN2CCC(C(O)(c3ccccc3)c4ccccc4)CC2)cc1",
+            "notes": "Hydrolysis of the methyl ester of Fexofenadine to Fexofenadine.",
+            "substeps": []
+        }
+    ]
+}

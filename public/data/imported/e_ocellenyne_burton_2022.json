@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "e-ocellenyne-burton-2022",
+        "molecule_name": "E-Ocellenyne",
+        "class": "Natural Product",
+        "author": "Burton",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Triflate formation",
+            "reagents": "Tf₂O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)OC[C@H]([C@]2H[C@@H](O)[C@H]3[C@](O2)OC(C)(C)O3)O1",
+            "product_smiles": "CC1(C)OC[C@H]([C@]2H[C@@H]([OTf])[C@H]3[C@](O2)OC(C)(C)O3)O1",
+            "notes": "Alcohol to triflate conversion",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive Cleavage / Reductive Elimination",
+            "reagents": "TBABH4",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)OC[C@H]([C@H]2[C@@H]([C@@H]3[C@H](O2)OC(C)(C)O3)[OTf])O1",
+            "product_smiles": "CC1(C)OC[C@H]([C@H]2C[C@@H]3[C@H](O2)OC(C)(C)O3)O1",
+            "notes": "Reductive cleavage of a triflate group. The stereochemistry at the former triflate-bearing carbon (C3) is maintained (H is 'up' in both reactant and product). The stereochemistry of the fusion carbon (C2) and other chiral centers is also maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetonide Deprotection / Hydrolysis",
+            "reagents": "AcOH, H2O",
+            "reagent_smiles": "CC(=O)O.O",
+            "conditions": "rt",
+            "yield": "72% (3 steps)",
+            "reactant_smiles": "CC1(C)OC[C@H]([C@H]2C[C@@H]3C(O2)OC(C)(C)O3)O1",
+            "product_smiles": "CC1(C)OC2C[C@H]([C@H](CO)O)OC2O1",
+            "notes": "Selective deprotection of the acetonide on the side chain to a diol using mild acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxidation / Intramolecular Mitsunobu Reaction",
+            "reagents": "PPh3",
+            "reagent_smiles": "C1=C(C=CC(=C1)Cl)COC(=O)N=NC(=O)OCC2=CC=C(C=C2)Cl",
+            "conditions": "toluene, reflux",
+            "yield": "80%",
+            "reactant_smiles": "CC1(C)O[C@@H]2C[C@@H]([C@@H](CO)O)O[C@@H]2O1",
+            "product_smiles": "CC1(C)O[C@@H]2C[C@@H]([C@H]3CO3)O[C@@H]2O1",
+            "notes": "Intramolecular Mitsunobu reaction of a 1,2-diol using triphenylphosphine (PPh3) and bis(4-chlorobenzyl) azodicarboxylate to form an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxide opening / Nucleophilic addition",
+            "reagents": "n-BuLi, BF3·Et2O",
+            "reagent_smiles": "CCC#C",
+            "conditions": "THF, -78 °C",
+            "yield": "86%",
+            "reactant_smiles": "CC1(C)O[C@@H]2[C@H]([C@H]([C@H]3CO3))O[C@@H]2O1",
+            "product_smiles": "CC1(C)O[C@@H]2[C@H]([C@H]([C@H]([C@H](O)CC#CCC)))O[C@@H]2O1",
+            "notes": "Lewis acid (BF3·Et2O) catalyzed ring opening of a chiral epoxide by a lithiated alkyne (formed from 1-butyne and n-BuLi) to form a new carbon-carbon bond and a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkyne Hydrogenation (Z-selective reduction)",
+            "reagents": "Ni(OAc)2, NaBH4, ethylenediamine, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "99%",
+            "reactant_smiles": "CCC#CCH2[C@H](O)[C@H]1C[C@@H]2[C@H](OC(C)(C)O2)O1",
+            "product_smiles": "CC/C=C/CH2[C@H](O)[C@H]1C[C@@H]2[C@H](OC(C)(C)O2)O1",
+            "notes": "Selective hydrogenation of an alkyne to a Z-alkene using modified nickel boride catalyst system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetylation",
+            "reagents": "DMAP",
+            "reagent_smiles": "CC(=O)OC",
+            "conditions": "CH2Cl2, rt",
+            "yield": "93%",
+            "reactant_smiles": "CC/C=C\\C[C@H](O)[C@@H]1O[C@H]2[C@@H](C[C@H]1O2)OC(C)(C)O",
+            "product_smiles": "CC/C=C\\C[C@H](OC(=O)C)[C@@H]1O[C@H]2[C@@H](C[C@H]1O2)OC(C)(C)O",
+            "notes": "Acetylation of a secondary alcohol using acetic anhydride and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetal Deprotection, Allylation",
+            "reagents": "HBF4.Et2O",
+            "reagent_smiles": "C=CC[Si](C)(C)C",
+            "conditions": "CH2Cl2, reflux",
+            "yield": "56%",
+            "reactant_smiles": "CC/C=C\\C[C@H]([C@H]1C[C@@H]2[C@H](O1)OC(C)(C)O2)OC(=O)C",
+            "product_smiles": "CC/C=C\\C[C@H]([C@H]1C[C@@H](O)[C@H](CC=C)O1)OC(=O)C",
+            "notes": "Allylation of an acetonide-protected sugar derivative with allyltrimethylsilane and HBF4.Et2O catalyst. The acetonide is removed and an allyl group is installed, with an adjacent alcohol formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC/C=C\\C[C@H]([C@H]1C[C@H]([C@H](C=CC)O1)O)OC(=O)C",
+            "product_smiles": "CC/C=C\\C[C@H]([C@H]1C[C@H]([C@H](C=CC)O1)[OMs])OC(=O)C",
+            "notes": "Mesylation of a secondary alcohol using methanesulfonyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CO.O",
+            "conditions": "MeOH, H2O, rt",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "CC/C=C\\C[C@@H]([C@H]1C[C@H]([C@H](CC=C)O1)[OMs])OC(=O)C",
+            "product_smiles": "CC/C=C\\C[C@@H]([C@H]1C[C@H]([C@H](CC=C)O1)[OMs])O",
+            "notes": "Hydrolysis of an acetate ester to a hydroxyl group using potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Williamson Ether Synthesis",
+            "reagents": "DMF",
+            "reagent_smiles": "[NaH]",
+            "conditions": "0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "CC/C=C\\C[C@@H](O)[C@@H]1O[C@@H](CC=C)C[C@H]1OS(=O)(=O)C",
+            "product_smiles": "CC/C=C\\C[C@@H]1O[C@@H]2[C@@H](CC=C)C[C@@H]1O2",
+            "notes": "Intramolecular cyclization of an alcohol displacing a mesylate to form a bicyclic ether (2,6-dioxabicyclo[3.3.0]octane derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Dibromination",
+            "reagents": "BTMABr3, LiBr",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C",
+            "yield": "35%",
+            "reactant_smiles": "CC/C=C\\C[C@H]1O[C@@]2(O[C@@H](CC=C)CC2)CCC1",
+            "product_smiles": "CC[C@@H](Br)[C@H](Br)C[C@H]1O[C@@]2(O[C@@H](CC=C)CC2)CCC1",
+            "notes": "Electrophilic anti-dibromination of a Z-alkene. The stereochemistry of the spiroketal core remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "HG-II",
+            "reagent_smiles": "C=CC=O",
+            "conditions": "CH2Cl2, reflux",
+            "yield": "91%",
+            "reactant_smiles": "C=CC[C@H]1O[C@H]2CC[C@H]1O[C@H]2C[C@H](Br)[C@@H](Br)CC",
+            "product_smiles": "O=C/C=C/C[C@H]1O[C@H]2CC[C@H]1O[C@H]2C[C@H](Br)[C@@H](Br)CC",
+            "notes": "Cross-metathesis of the terminal allyl alkene with acrolein, catalyzed by Hoveyda-Grubbs 2nd generation catalyst, forming a conjugated aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Seyferth-Gilbert Homologation",
+            "reagents": "TMSCHN2, n-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC[C@@H](Br)[C@H](Br)CC[C@H]1OC[C@H]2OC1(C/C=C/C=O)C2",
+            "product_smiles": "CC[C@@H](Br)[C@H](Br)CC[C@H]1OC[C@H]2OC1(C/C=C/C#C)C2",
+            "notes": "Conversion of an α,β-unsaturated aldehyde to an α,β-unsaturated terminal alkyne.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "flustramine-macmillan-2004",
+        "molecule_name": "Flustramine",
+        "class": "Natural Product",
+        "author": "MacMillan",
+        "year": 2004
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Pictet-Spengler",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "CN1C(=O)[C@H](C(C)(C)C)N[C@H]1CC2=CC=CC=C2.C=CC=O",
+            "conditions": "-84 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC(=CCN1C=C(CCN[Boc])C2=CC=C(C=C21)Br)C",
+            "product_smiles": "CC(=CCN1C2=CC(=CC=C2C3(CCC=O)CCN([C@H]31)[Boc])Br)C",
+            "notes": "Asymmetric Pictet-Spengler type cyclization involving indole and acrolein, catalyzed by a chiral imidazolidinone, forming a spiroindoline derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aldehyde Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "90%",
+            "reactant_smiles": "CC(=CCN1C2=CC(=CC=C2[C@]3(CCC=O)CCN([C@@H]31)[Boc])Br)C",
+            "product_smiles": "CC(=CCN1C2=CC(=CC=C2[C@]3(CCCO)CCN([C@@H]31)[Boc])Br)C",
+            "notes": "Reduction of an aldehyde group to a primary alcohol group using sodium borohydride. All existing stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "CC(=CCN1C2=CC(=CC=C2[C@@]3(CCO)CCN([C@@H]31)[Boc])Br)C",
+            "product_smiles": "CC(=CCN1C2=CC(=CC=C2[C@@]3(CCOS(=O)(=O)C)CCN([C@@H]31)[Boc])Br)C",
+            "notes": "Mesylation of a primary alcohol to form a mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Grieco elimination",
+            "reagents": "4-Nitrophenyl selenocyanate, Hydrogen peroxide",
+            "reagent_smiles": "N#C[Se]c1ccc([N+](=O)[O-])cc1.OO",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CC(=CCN1C2=CC(=CC=C2[C@]3(CCCOS(=O)(=O)C)CCN([C@@H]31)C(=O)OC(C)(C)C)Br)C",
+            "product_smiles": "C=C1c2ccc(Br)cc2N(CC=C(C)C)[C@H]3CCN(C(=O)OC(C)(C)C)C13",
+            "notes": "Formation of exocyclic alkene via Grieco elimination of mesylate; reaction occurs in 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cross Metathesis",
+            "reagents": "Grubbs' I",
+            "reagent_smiles": "CC=C(C)C",
+            "conditions": "CH2Cl2, 40 °C",
+            "yield": "94%",
+            "reactant_smiles": "C=CC[C@@]12CC3=CC=C(C=C3N(CC=C(C)C)[C@H]1N(CC2)[Boc])Br",
+            "product_smiles": "CC(=CC[C@@]12CCN([C@@H]1N(CC=C(C)C)C3=CC(=CC=C32)Br)[Boc])C",
+            "notes": "Cross metathesis of the allyl group at C11 with isobutylene, catalyzed by Grubbs' I.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TMSI",
+            "reagent_smiles": "I[Si](C)(C)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "BrC1=CC2=C(N(C1)CC=C(C)C)C[C@]3(CC[C@H](C[C@H]2)N(C3)[Boc])CC=C(C)C",
+            "product_smiles": "BrC1=CC2=C(N(C1)CC=C(C)C)C[C@]3(CC[C@H](C[C@H]2)N(C3))CC=C(C)C",
+            "notes": "Deprotection of N-Boc group using Trimethylsilyl iodide (TMSI).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH4, (CHO)n",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "CC(=CC[C@]12CC[N@H][C@H]1N(CC=C(C)C)C3=CC(=CC=C32)Br)C",
+            "product_smiles": "CC(=CC[C@]12CC[N@](C)[C@H]1N(CC=C(C)C)C3=CC(=CC=C32)Br)C",
+            "notes": "N-methylation of secondary amine via reductive amination using formaldehyde (from (CHO)n) and sodium borohydride.",
+            "substeps": []
+        }
+    ]
+}

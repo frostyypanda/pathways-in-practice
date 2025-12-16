@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycibarbarine-c-brimble-2023",
+        "molecule_name": "Lycibarbarine C",
+        "class": "Natural Product",
+        "author": "Brimble",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetal formation / Diol protection",
+            "reagents": "CSA, CH2Cl2",
+            "reagent_smiles": "COC(C1=CC=CC=C1)OC",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "C=CC[C@H](O)[C@H](O)CO",
+            "product_smiles": "O[C@H](c1ccccc1)O[C@H]1C[C@H](O)[C@H](CC=C)1",
+            "notes": "Selective formation of a 1,3-dioxane acetal from a 1,3-diol, protecting two hydroxyl groups of the triol while leaving one free.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silylation",
+            "reagents": "TIPSOTf, 2,6-lutidine",
+            "reagent_smiles": "O=S(=O)(C(F)(F)F)O[Si](C(C)C)(C(C)C)C(C)C.Cc1cc(C)nccc1",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@H]1[C@@H](CO[C@@H](C2=CC=CC=C2)O1)O",
+            "product_smiles": "C=CC[C@H]1[C@@H](CO[C@@H](C2=CC=CC=C2)O1)[OTIPS]",
+            "notes": "Protection of a secondary alcohol as a TIPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Epoxidation",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "C=CC[C@@H]1[C@@H](CO[C@@H](C2=CC=CC=C2)O1)[OTIPS]",
+            "product_smiles": "[OTIPS][C@@H]1CO[C@@H](C2=CC=CC=C2)O[C@@H]1CC1OC1",
+            "notes": "Epoxidation of an alkene with m-CPBA to form a racemic epoxide. The relative stereochemistry of the 1,3-dioxane ring is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxide opening / Halohydrin formation",
+            "reagents": "LiBr, AcOH",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]O[C@H]1CO[C@@H](C2=CC=CC=C2)O[C@H]1C[C@@H]3CO3",
+            "product_smiles": "[TIPS]O[C@H]1CO[C@@H](C2=CC=CC=C2)O[C@H]1CC(O)CBr",
+            "notes": "Epoxide ring opening with LiBr and acetic acid to form a bromoalcohol. Stereochemistry of the new alcohol center is undefined (racemic or mixture) as indicated by the wavy bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "72%",
+            "reactant_smiles": "[TIPS]O[C@@H]1CO[C@@H]([Ph])O[C@H]1CC(O)CBr",
+            "product_smiles": "[TIPS]O[C@@H]1CO[C@@H]([Ph])O[C@H]1CC(=O)CBr",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin periodinane (DMP). The yield is stated for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "DIPEA",
+            "reagent_smiles": "C1CC2=C(C=CC(=C2NC1)O)Br",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[OTIPS][C@@H]1CO[C@@H](C2=CC=CC=C2)O[C@H]1CC(=O)CBr",
+            "product_smiles": "[OTIPS][C@@H]1CO[C@@H](C2=CC=CC=C2)O[C@H]1CC3(CN4CCCC5=C(C=CC(=C54)O3)Br)O",
+            "notes": "Intramolecular cyclization of an alpha-bromo ketone with a tetrahydroquinoline derivative, involving nucleophilic attack of the amine and cyclization of the phenol with the ketone.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Bromination",
+                    "reagents": "MeCN",
+                    "reagent_smiles": "O=C1N(Br)C(=O)N(Br)C(=O)N1Br",
+                    "conditions": "",
+                    "yield": "72%",
+                    "reactant_smiles": "OC1=CC=C2N=CC=CC2=C1",
+                    "product_smiles": "OC1=CC=C2N=CC(Br)=CC2=C1",
+                    "notes": "Bromination of 8-hydroxyquinoline with N-bromosuccinimide derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Hantzsch Reduction",
+                    "reagents": "B(OH)3",
+                    "reagent_smiles": "CCOC(=O)C1=C(C)NC(=C(C1)C(=O)OCC)C.B(O)(O)O",
+                    "conditions": "DCE",
+                    "yield": "88%",
+                    "reactant_smiles": "C1=CC2=C(C=CC(=C2N=C1)O)Br",
+                    "product_smiles": "C1CC2=C(C=CC(=C2NC1)O)Br",
+                    "notes": "Reduction of quinoline to tetrahydroquinoline.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection, Intramolecular Spiroketalization",
+            "reagents": "CSA, MeOH, toluene",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "27% (2 steps)",
+            "reactant_smiles": "BrC1=CC=C2C(=C1O)C(O)(C[C@H](C3=CC=CC=C3)O[C@H]4C[C@H]([OTIPS])O4)CNCCC2",
+            "product_smiles": "BrC1=CC=C2C(=C1O)C3(O)(C[C@H]([OTIPS])C[C@H](O)O3)CNCCC2",
+            "notes": "The phenyl group is removed, and a new intramolecular spiroketal is formed from the tertiary alcohol on the spiro carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Lithiation, Formylation",
+            "reagents": "nBuLi, DMF, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "40%",
+            "reactant_smiles": "[OTIPS]O[C@@H]1CO[C@@]2(C[C@@H]1O)CN3CCCC4=C(C=CC(=C43)O2)Br",
+            "product_smiles": "[OTIPS]O[C@@H]1CO[C@@]2(C[C@@H]1O)CN3CCCC4=C(C=CC(=C43)O2)C=O",
+            "notes": "Bromine-lithium exchange with nBuLi, followed by trapping with DMF to form an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (Desilylation)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "60%",
+            "reactant_smiles": "O=Cc1ccc2c(c1O[C@@]34C[C@@H](O)C[C@@H]([OTIPS])O4)N(CCC2)C[C]3",
+            "product_smiles": "O=Cc1ccc2c(c1O[C@@]34C[C@@H](O)C[C@@H](O)O4)N(CCC2)C[C]3",
+            "notes": "Deprotection of a TIPS (Triisopropylsilyl) ether to a hydroxyl group using TBAF.",
+            "substeps": []
+        }
+    ]
+}

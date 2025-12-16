@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strempeliopine-romiti-2025",
+        "molecule_name": "Strempeliopine",
+        "class": "Natural Product",
+        "author": "Romiti",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "TBAB, K2CO3",
+            "reagent_smiles": "COC(=O)CCCBr",
+            "conditions": "MeCN, 60 °C",
+            "yield": "75%",
+            "reactant_smiles": "[Boc]CC#N",
+            "product_smiles": "[Boc]C(C#N)CCC(=O)OC",
+            "notes": "C-alkylation of tert-butyl cyanoacetate with methyl 4-bromobutanoate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alpha-halogenation (Chlorination)",
+            "reagents": "TMSOTf, Et3N, NCS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "[Boc]C(CC(=O)[OMe])C#N",
+            "product_smiles": "[Boc]C(Cl)(CC(=O)[OMe])C#N",
+            "notes": "Alpha-chlorination of a nitrile-activated carbon, likely via silyl ketene acetal formation then N-chlorosuccinimide (NCS).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Allylation",
+            "reagents": "NiCl2•glyme, ZnF2, Cp2ClZr, n-Bu",
+            "reagent_smiles": "c1ccc2c1C[C@@H]3[C@H]2N=C(O3)C4=NC[C@@H](O4)[C@@H]5C6=CC=CC=C6C5",
+            "conditions": "DME, 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C(CCC(=O)OC)(C#N)Cl",
+            "product_smiles": "CCCC\\C=C/[C@](CCC(=O)OC)(C#N)C(=O)OC(C)(C)C",
+            "notes": "Asymmetric allylation reaction where a chlorine atom is replaced by an E-alkene n-butyl group, forming a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide coupling",
+            "reagents": "I2, Ph3P, i-Pr2NEt",
+            "reagent_smiles": "C=CCNCCC1=CNC2=CC=CC=C12",
+            "conditions": "CH2Cl2, 22 °C",
+            "yield": "73%",
+            "reactant_smiles": "CCCC/C=C/[C@@](CC(=O)OC)(C#N)C(=O)O",
+            "product_smiles": "CCCC/C=C/[C@@](CC(=O)OC)(C#N)C(=O)N(CC=C)CCC1=CNC2=C1C=CC=C2",
+            "notes": "Carboxylic acid is converted to an amide through a Mitsunobu-type amidation with a 2-(indol-3-yl)-N-allyl-ethylamine derivative, preserving the chiral center and alkene stereochemistry.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Bromination",
+                    "reagents": "NBS, Ph3P",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "76%",
+                    "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)CCO",
+                    "product_smiles": "C1=CC=C2C(=C1)C(=CN2)CCBr",
+                    "notes": "Conversion of a primary alcohol to a primary alkyl bromide using NBS and triphenylphosphine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Alkylation (SN2)",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "C=CCN",
+                    "conditions": "22 °C",
+                    "yield": "82%",
+                    "reactant_smiles": "BrCCC1=CNc2cccc12",
+                    "product_smiles": "C=CCNC(CC)C1=CNc2cccc12",
+                    "notes": "Nucleophilic substitution of primary alkyl bromide with allylamine to form a secondary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "",
+            "reagent_smiles": "Cl[Ru](Cl)(C1=CC=CC=C1OC(C)C)=C2N(c3ccccc3C)CCN2c4ccccc4C",
+            "conditions": "DCE, 80 °C",
+            "yield": "85%",
+            "reactant_smiles": "COC(=O)CC[C@](C#N)(C(=O)N(CC=C)CCC1=CNC2=C1C=CC=C2)(C/C=C(\\CCCC))",
+            "product_smiles": "COC(=O)CC[C@]1(C=CCN(CCC2=CNC3=C2C=CC=C3)C1=O)C#N",
+            "notes": "Intramolecular ring-closing metathesis forming a 6-membered piperidinone ring with a diene, from an enamide and terminal alkene. The n-butyl group is cleaved from the reactant's original alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization and Reduction",
+            "reagents": "2-fluoropyridine, Tf2O, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, MeOH, 22 to 40 °C, then 0 to 22 °C",
+            "yield": "72%",
+            "reactant_smiles": "COC(=O)CC[C@]1(C=CCN(CCC2=CNC3=C2C=CC=C3)C1=O)C#N",
+            "product_smiles": "COC(=O)CC[C@]1(C=CCN2CCC3=C([C@@H]12)NC4=C3C=CC=C4)C#N",
+            "notes": "Intramolecular cyclization of an indole derivative onto an activated lactam (via iminium formation), forming a new fused ring system. This is followed by reduction of the lactam carbonyl to a tertiary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "",
+            "reagents": "TMSOK, Et2O",
+            "reagent_smiles": "",
+            "conditions": "0 to 22 °C",
+            "yield": "97%",
+            "reactant_smiles": "COC(=O)CC[C@]1(C=CCN2CCC3=C([C@@H]12)NC4=C3C=CC=C4)C#N",
+            "product_smiles": "",
+            "notes": "Product structure is not shown in the screenshot. The reaction depicts an intramolecular cyclization leading to the indicated polycyclic core.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification / Coupling",
+            "reagents": "TMSOK, DIC, DMAP",
+            "reagent_smiles": "C1=CC2=C(C=C1)C(=O)N(C2=O)O",
+            "conditions": "Et2O, CH2Cl2, 0 to 22 °C",
+            "yield": "80%",
+            "reactant_smiles": "",
+            "product_smiles": "C1=CC2=C(C=C1)C(=O)N(C2=O)OC(=O)CC[C@]3(C=CCN4CCC5=C([C@@H]34)NC6=C5C=CC=C6)C#N",
+            "notes": "Formation of a complex polycyclic indole derivative with a phthalimide ester. The overall process depicted involves two stages: an initial reaction with TMSOK followed by a coupling reaction with N-hydroxyphthalimide in the presence of DIC/DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Radical cyclization",
+            "reagents": "(n-Bu)3SnH, AIBN",
+            "reagent_smiles": "[SnH](CCCC)(CCCC)CCCC",
+            "conditions": "toluene, 110 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=C1C2=CC=CC=C2C(=O)N1ONC(=O)CC[C@](C#N)3[C@@H]4N(CC=C5CC3)CC[C@@H]6NC7=C6C=CC=C7C45",
+            "product_smiles": "C1=CC=C2NC3=C2[C@@H]4C[C@](C#N)5CCC[C@@H]6N(CCC4C5)CC[C@H]63",
+            "notes": "Reductive radical cyclization of an N-phthalimidooxy ester to form a polycyclic indole derivative (Strempeliopine). The alkene is reduced and a new C-C bond is formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrozirconation-Oxidation (Nitrile to Aldehyde)",
+            "reagents": "Cp₂ZrHCl, CH₂Cl₂, 22 °C",
+            "reagent_smiles": "Cl[Zr](CP1CCCC1)CP1CCCC1",
+            "conditions": "CH₂Cl₂, 22 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C2C(=C1)N[C@H]3C[C@H]4[C@H](C[C@H](C#N)[C@@]5(N4)C=CCC5)CN32",
+            "product_smiles": "C1=CC=C2C(=C1)N[C@H]3C[C@H]4[C@H](C[C@H](C=O)[C@@]5(N4)C=CCC5)CN32",
+            "notes": "Conversion of a nitrile group to an aldehyde group using Schwartz's reagent (Cp₂ZrHCl). Stereochemistry of the newly formed aldehyde carbon is maintained due to the reaction mechanism, but as it's not a chiral center, no specific stereodescriptor is needed for the aldehyde carbon itself.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Homologation (aldehyde to nitrile)",
+            "reagents": "TosMIC, KOt-Bu",
+            "reagent_smiles": "",
+            "conditions": "THF, -50 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC2=C(C=C1)N[C@H]34CC[C@H](C=CCN5CC[C@H]23)C=O",
+            "product_smiles": "C1=CC2=C(C=C1)N[C@H]34CC[C@H]5(C=CCN(CC[C@H]23)[C@H]54)CC#N",
+            "notes": "Aldehyde group converted to cyanomethyl group (nitrile homologation) using TosMIC under basic conditions. All stereocenters are retained with 'H' pointing up.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Nitrile hydrolysis, Lactamization",
+            "reagents": "MeOH, HCl",
+            "reagent_smiles": "",
+            "conditions": "65 °C",
+            "yield": "86% (3 steps)",
+            "reactant_smiles": "N#CC[C@@H]1C[C@H]2C[C@H]3N(C=CCN4CC[C@H]32)c5ccccc5N[C@H]41",
+            "product_smiles": "O=C1N(c2ccccc2[C@H]3)C[C@@H]4[C@H](C[C@H]5N(C=CCN5CC[C@H]34)C1)",
+            "notes": "Intramolecular cyclization of an indole-nitrile compound to form a lactam, likely via nitrile hydrolysis to carboxylic acid followed by amide formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "CO.CC(=O)OCC",
+            "conditions": "22 °C",
+            "yield": "95%",
+            "reactant_smiles": "O=C1N2C3=CC=CC=C3C4[C@H]5C=CC[C@]6(CCC2)N(C[C@@H]5)[C@H]4[C@@H]16",
+            "product_smiles": "O=C1N2C3=CC=CC=C3C4[C@H]5CCC[C@]6(CCC2)N(C[C@@H]5)[C@H]4[C@@H]16",
+            "notes": "Hydrogenation of the C=C double bond in the rightmost 6-membered ring of dehydrostrempeliopine to yield strempeliopine.",
+            "substeps": []
+        }
+    ]
+}

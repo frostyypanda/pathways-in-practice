@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "herbindole-b-danheiser-2025",
+        "molecule_name": "Herbindole B",
+        "class": "Natural Product",
+        "author": "Danheiser",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Nitration",
+            "reagents": "Ac2O, HNO3, NaOH",
+            "reagent_smiles": "",
+            "conditions": "ClCH2CH2Cl, H2O, 50 to 80 °C",
+            "yield": "70%",
+            "reactant_smiles": "Cc1c(C)ccc(N)c1",
+            "product_smiles": "Cc1c(C)c([N+](=O)[O-])c(N)cc1",
+            "notes": "Nitration of 2,3-dimethylaniline to 2,3-dimethyl-4-nitroaniline",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Sandmeyer reaction",
+            "reagents": "CuBr2, Br2, t-BuONO",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "79%",
+            "reactant_smiles": "Cc1cc(C)c(N)c([N+](=O)[O-])c1",
+            "product_smiles": "Brc1c([N+](=O)[O-])cc(C)c(C)c1Br",
+            "notes": "Amination to dibromination of an aromatic ring via Sandmeyer reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bartoli Indole Synthesis",
+            "reagents": "THF",
+            "reagent_smiles": "C=CMgBr",
+            "conditions": "-40 °C",
+            "yield": "36%",
+            "reactant_smiles": "Cc1c(Br)c([N+](=O)[O-])c(Br)c(C)c1",
+            "product_smiles": "Cc1c(Br)c2c([nH]c2)c(C)c1Br",
+            "notes": "Bartoli indole synthesis of a dibromodimethylnitrobenzene with vinylmagnesium bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Protection (Silylation)",
+            "reagents": "KHMDS, TBSOTf",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "Cc1c(C)c2c(Br)c([nH])cc2c1Br",
+            "product_smiles": "Cc1c(C)c2c(Br)c(N([TBS]))cc2c1Br",
+            "notes": "Protection of the indole N-H with a tert-butyldimethylsilyl (TBS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "C1C=CC=C1",
+            "conditions": "toluene, -78 °C to RT",
+            "yield": "88%",
+            "reactant_smiles": "[TBS]N1C=CC2=C(C)C(Br)=C(Br)C(C)=C21",
+            "product_smiles": "[TBS]N1C=CC2=C(C)C(=C3C4C=CC(C4)C3=C21)C",
+            "notes": "The dibromoindole is presumably debrominated in situ by n-BuLi to form a benzyne intermediate, which then undergoes Diels-Alder cycloaddition with cyclopentadiene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Syn-dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "53%",
+            "reactant_smiles": "CC1=C(C)C2=C(N1[TBS])C=CC2=C3C4(C)C=CC(C4)C3",
+            "product_smiles": "CC1=C(C)C2=C(N1[TBS])C=CC2=C3C4(C)[C@@H](O)[C@@H](O)C(C4)C3",
+            "notes": "Syn-dihydroxylation of the alkene in the bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "81%",
+            "reactant_smiles": "C[Si](C)(C(C)(C)C)N1C=CC2=C(C)C(=C3C4CC(C3=C21)[C@H]([C@@H]4O)O)C",
+            "product_smiles": "C[Si](C)(C(C)(C)C)N1C=CC2=C(C)C(=C3[C@@H](C[C@H](C=O)C3=C21)C=O)C",
+            "notes": "Oxidative cleavage of 1,2-diol to dialdehyde using sodium periodate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dithioacetal formation, TBS deprotection",
+            "reagents": "EtSH, BF3•OEt2",
+            "reagent_smiles": "CCS.CCOCC.F[B](F)F",
+            "conditions": "-78 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "[TBS]N1C=CC2=C(C)C(=C3[C@@H](C[C@@H](C=O)C3=C21)C=O)C",
+            "product_smiles": "N1C=CC2=C(C)C(=C3[C@@H](C[C@@H](C(SCC)SCC)C3=C21)C(SCC)SCC)C",
+            "notes": "Formation of dithioacetals from dialdehyde, concurrent deprotection of N-TBS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive desulfurization",
+            "reagents": "Raney Nickel",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "96%",
+            "reactant_smiles": "S(CC)C(S(CC))[C@@H]1C[C@H](C(S(CC))(S(CC)))C2=C3C(=C(C)C(=C12)C)C=C[nH]3",
+            "product_smiles": "C[C@@H]1C[C@H](C)C2=C3C(=C(C)C(=C12)C)C=C[nH]3",
+            "notes": "Reductive desulfurization of two dithioacetal groups to methyl groups on a complex tetracyclic indole derivative.",
+            "substeps": []
+        }
+    ]
+}

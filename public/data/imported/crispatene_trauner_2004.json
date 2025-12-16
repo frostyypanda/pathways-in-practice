@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "crispatene-trauner-2004",
+        "molecule_name": "Crispatene",
+        "class": "Natural Product",
+        "author": "Trauner",
+        "year": 2004
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Wittig reaction",
+            "reagents": "",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3=C(C)C(=O)OCC",
+            "conditions": "THF, reflux",
+            "yield": "94%",
+            "reactant_smiles": "CC[C@H]([OTBS])[C@H](C)/C=C(\\C)/C=O",
+            "product_smiles": "CC[C@H]([OTBS])[C@H](C)/C=C(\\C)/C=C(\\C)/C(=O)OCC",
+            "notes": "Aldehyde converted to alpha,beta-unsaturated ester using a stabilized Wittig ylide, forming an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78° C",
+            "yield": "98%",
+            "reactant_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/C=C(\\C)/C(=O)OCC)[OTBS]",
+            "product_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/C=C(\\C)/CO)[OTBS]",
+            "notes": "Reduction of an ethyl ester to a primary alcohol using DIBAL, preserving the OTBS protecting group and alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "88%",
+            "reactant_smiles": "CC[C@@H]([C@H](C)/C=C(\\C)/C=C(\\C)/CO)[OTBS]",
+            "product_smiles": "CC[C@@H]([C@H](C)/C=C(\\C)/C=C(\\C)/C=O)[OTBS]",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin Periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Wittig reaction",
+            "reagents": "THF",
+            "reagent_smiles": "I/C(C)=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "-78 °C to rt",
+            "yield": "86%",
+            "reactant_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/C=C(\\C)/C=O)[OTBS]",
+            "product_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/C=C(\\C)/C=C(/C)\\I)[OTBS]",
+            "notes": "Aldehyde is converted to a vinyl iodide using a methyl(iodo)methylenetriphenylphosphorane Wittig reagent. The stereochemistry of existing chiral centers and double bonds is preserved, and a new E-configured vinyl iodide is formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd2(dba)3, (2-furyl)3P, CuI",
+            "reagent_smiles": "CCOC(=O)C(=C[Sn](C)(C)C)C",
+            "conditions": "NMP, rt",
+            "yield": "57%",
+            "reactant_smiles": "CC[C@@H]([C@@H](C)/C=C(\\C)/C=C(\\C)/C=C(/C)\\I)[OTBS]",
+            "product_smiles": "CC[C@@H]([C@@H](C)/C=C(\\C)/C=C(\\C)/C=C(/C)\\C=C(/C)\\C(=O)OCC)[OTBS]",
+            "notes": "Stille coupling of an iodoalkene with a vinyl stannane, extending the conjugated polyene system and forming an ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Pauson-Khand type reaction (cyclization)",
+            "reagents": "Me₂AlCl",
+            "reagent_smiles": "Cl[Al](C)C",
+            "conditions": "DCM, rt",
+            "yield": "83%",
+            "reactant_smiles": "CC[C@H]([C@@H](C)/C=C(\\C)/C=C(\\C)/C=C(\\C)/C=C(/C)\\C(=O)OCC)[OTBS]",
+            "product_smiles": "CC[C@H]([C@@H](C)/C=C(\\C)/[C@H]1C(=C(C)2[C@@H]1[C@]2(C)C(=O)C)C)[OTBS]",
+            "notes": "Intramolecular cyclization of an all-E polyene chain to form a fused bicyclic system (cyclopentene-cyclopropane) with a methyl ketone, catalyzed by dimethylaluminum chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Weinreb Amide Formation (Grignard)",
+            "reagents": "iPrMgCl, Me(OMe)NH",
+            "reagent_smiles": "CC(C)[Mg]Cl.CNOC",
+            "conditions": "THF, rt",
+            "yield": "76%",
+            "reactant_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/[C@H]1C(=C[C@@]2(C)[C@@H]1[C@]2(C)C(=O)C)C)[OTBS]",
+            "product_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/[C@H]1C(=C[C@@]2(C)[C@@H]1[C@]2(C)C(=O)N(C)OC)C)[OTBS]",
+            "notes": "Formation of a Weinreb amide from a ketone via reaction with isopropylmagnesium chloride and N-methyl-O-methylhydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Grignard Reaction / Weinreb Amide Addition",
+            "reagents": "THF",
+            "reagent_smiles": "CC[Mg]Br",
+            "conditions": "0 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/[C@H]1C(=C[C@@]2(C)[C@@H]1[C@]2(C)C(=O)N(C)OC)C)[OTBS]",
+            "product_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/[C@H]1C(=C[C@@]2(C)[C@@H]1[C@]2(C)C(=O)CC)C)[OTBS]",
+            "notes": "Addition of ethylmagnesium bromide (EtMgBr) to a Weinreb amide, converting it to an ethyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ketone alkylation / Chain extension",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC(Cl)C(=O)C(=O)OC",
+            "conditions": "THF, hexanes, -78 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/[C@H]1C(=C[C@@]2(C)[C@@H]1[C@]2(C)C(=O)CC)C)[OTBS]",
+            "product_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/[C@H]1C(=C[C@@]2(C)[C@@H]1[C@]2(C)C(=O)[C@H](C)C(=O)[C@H](C)C(=O)OC)C)[OTBS]",
+            "notes": "The ketone is functionalized by reaction with methyl 2-chloro-3-oxobutanoate under LiHMDS conditions, leading to a complex chain extension with new stereocenters formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Pyrones Formation",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "benzene, 60 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/[C@H]1C2=C(C)[C@@]3(C)(C)[C@@H]1[C@]3(C)C2C(=O)C(C)C(=O)C(C)C(=O)OC)[OTBS]",
+            "product_smiles": "CC[C@H]([C@H](C)/C=C(\\C)/[C@H]1C2=C(C)[C@@]3(C)(C)[C@@H]1[C@]3(C)C2C4(C)=C(C)C(O)=C(=O)O4)[OTBS]",
+            "notes": "Base-catalyzed intramolecular cyclization of keto-ester to form a 4-hydroxy-2-pyrone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "O-Methylation",
+            "reagents": "",
+            "reagent_smiles": "COS(=O)(=O)F",
+            "conditions": "DCM, -5°C",
+            "yield": "32%",
+            "reactant_smiles": "CC[C@@H]([C@@H](C)/C=C(/C)/[C@@H]1C(=CC2(C)[C@H]1[C@H]2(C)C3=C(C)C(=C(C)C(=O)O3)O)C)[OTBS]",
+            "product_smiles": "CC[C@@H]([C@@H](C)/C=C(/C)/[C@@H]1C(=CC2(C)[C@H]1[C@H]2(C)C3=C(C)C(=O)C(=C(OC)O3)C)C)[OTBS]",
+            "notes": "Methylation of the phenolic hydroxyl group on the lactone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "HF·pyridine",
+            "reagent_smiles": "",
+            "conditions": "pyridine",
+            "yield": "77%",
+            "reactant_smiles": "CC[C@H]([C@H](C)/C=C(/C)\\[C@H]1C(=C[C@@]2(C)[C@@H]1[C@]2(C)C3=C(C)C(=O)C(=C(OC)O3)C)C)[OTBS]",
+            "product_smiles": "CC[C@H]([C@H](C)/C=C(/C)\\[C@H]1C(=C[C@@]2(C)[C@@H]1[C@]2(C)C3=C(C)C(=O)C(=C(OC)O3)C)C)O",
+            "notes": "Deprotection of a TBS ether to a hydroxyl group using HF·pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, DCM",
+            "reagent_smiles": "",
+            "conditions": "solvent: DCM",
+            "yield": "86%",
+            "reactant_smiles": "CC[C@H](O)[C@@H](C)/C=C(\\C)/[C@H]1C(=C[C@H]2[C@](C)1[C@@](C)2C3=C(C)C(=O)C(=C(OC)O3)C)C",
+            "product_smiles": "CCC(=O)[C@@H](C)/C=C(\\C)/[C@H]1C(=C[C@H]2[C@](C)1[C@@](C)2C3=C(C)C(=O)C(=C(OC)O3)C",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin Periodinane (DMP).",
+            "substeps": []
+        }
+    ]
+}

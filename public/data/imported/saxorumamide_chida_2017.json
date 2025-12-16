@@ -1,0 +1,242 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "saxorumamide-chida-2017",
+        "molecule_name": "Saxorumamide",
+        "class": "Natural Product",
+        "author": "Chida",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Partial Reduction (Ester to Aldehyde)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCCBr",
+            "product_smiles": "O=CCCCBr",
+            "notes": "Partial reduction of an ethyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric alkynylation",
+            "reagents": "(S,S)-ProPhenol, ZnMe2",
+            "reagent_smiles": "COC(=O)C#C",
+            "conditions": "toluene, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "O=CCCCBr",
+            "product_smiles": "COC(=O)C#C[C@H](O)CCCBr",
+            "notes": "Addition of methyl propiolate to 4-bromobutanal, forming an (S)-alcohol with a defined stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reductive Cyclization / Hydrogenation & Lactonization",
+            "reagents": "Pd/PEI, H2, HCl aq.",
+            "reagent_smiles": "",
+            "conditions": "MeOH/dioxane, rt",
+            "yield": "72%",
+            "reactant_smiles": "COC(=O)C#C[C@@H](CCCBr)O",
+            "product_smiles": "O=C1OC([C@@H](CCCBr))C=C1",
+            "notes": "Hydrogenation of alkyne and hydrolysis of methyl ester followed by lactonization to form a gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lewis acid-catalyzed cycloaddition / Michael addition-aldol sequence",
+            "reagents": "SnCl4",
+            "reagent_smiles": "[N]1([PMB])C([OTIPS])=CC=C1",
+            "conditions": "CH2Cl2, -78 to -60 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1OC[C@H](CCCBr)C=C1",
+            "product_smiles": "[N]1([PMB])C([OTIPS])=C([C@@H]2C[C@H](CCCBr)C(=O)O2)C=C1",
+            "notes": "Formation of a pyrrole-lactone fused ring system via reaction of an N-PMB-2-OTIPS-pyrrole with an α,β-unsaturated γ-lactone.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Hydrolysis / Amination / Cyclization",
+                    "reagents": "HCl, H₂O",
+                    "reagent_smiles": "N[PMB]",
+                    "conditions": "rt",
+                    "yield": "61%",
+                    "reactant_smiles": "COC1C=CC(OC)O1",
+                    "product_smiles": "O=C1C=CCN1[PMB].O=C1CC=CCN1[PMB]",
+                    "notes": "Acid-catalyzed hydrolysis of 2,5-dimethoxy-2,5-dihydrofuran followed by reaction with p-methoxybenzylamine and cyclization to yield a mixture of N-PMB-dihydropyrrolidone regioisomers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Enol Silyl Ether Formation",
+                    "reagents": "TIPSCl, NaHMDS",
+                    "reagent_smiles": "Cl[Si](C(C)C)(C(C)C)C(C)C.[Na]N(Si(C)(C)C)Si(C)(C)C",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "76%",
+                    "reactant_smiles": "O=C1CC=CN1[PMB]",
+                    "product_smiles": "[OTIPS]C1=CC=CN1[PMB]",
+                    "notes": "Formation of a silyl enol ether from a cyclic amide (lactam). The beta,gamma-unsaturated lactam is deprotonated at the alpha position to form an enolate, which is then trapped by TIPSCl to yield the silyl enol ether with an aromatic pyrrole ring.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Cyclization / Pyrrole Reduction",
+            "reagents": "TiCl4, Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, -78 °C to rt",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "[TIPS]OC1=CC=C([C@@H]2CC(=O)O[C@H]2CCCBr)N1[PMB]",
+            "product_smiles": "[PMB]N2C(CCC2=O)[C@@H]3CC(=O)O[C@H]3CCCBr",
+            "notes": "Lewis acid-mediated reduction of an O-TIPS pyrrole to a pyrrolidinone ketone. The TIPS group is removed and effectively oxidized to a ketone, while the pyrrole ring is reduced. Stereochemistry at one lactone chiral center is inverted, another retained. A new racemic/unspecified chiral center is formed in the pyrrolidinone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection (Oxidative)",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O",
+            "yield": "94%",
+            "reactant_smiles": "[PMB]N2[CH](CCC2=O)[C@H]3CC(=O)O[C@@H]3CCCBr",
+            "product_smiles": "HN2[CH](CCC2=O)[C@H]3CC(=O)O[C@@H]3CCCBr",
+            "notes": "Oxidative deprotection of the p-methoxybenzyl (PMB) group from the lactam nitrogen using Cerium Ammonium Nitrate (CAN).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular N-alkylation",
+            "reagents": "NaH, TBAI, TMSOTf",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "57%",
+            "reactant_smiles": "BrCCCC[C@@H]1OCC(=O)C[C@H]21[C@H]3CCC(=O)N32",
+            "product_smiles": "O=C1[C@@H]2[C@H](C[C@H]3CCC(=O)N3CCC2)CCC(=O)O1",
+            "notes": "Intramolecular N-alkylation (cyclization) to form a fused lactone-pyrrolidinone-azepane tricyclic system from a bromopropyl-substituted lactone-pyrrolidinone. Stereochemistry at the new ring junction is established.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "LiHMDS, MeI",
+            "reagent_smiles": "CI.[Li][N]([Si](C)(C)C)[Si](C)(C)C",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "84%",
+            "reactant_smiles": "O=C1OC[C@H]2[C@@H]([C@@H]3N(C[C@H]2CCC3=O)CC)C1",
+            "product_smiles": "O=C1OC[C@H]2[C@](C)([C@@H]3N(C[C@H]2CCC3=O)CC)C1",
+            "notes": "Alpha-methylation of the lactone using LiHMDS as a base and iodomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Furan Addition / Rearrangement",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "CC1=C(O[TBS])C=CO1",
+            "conditions": "THF, -78 °C to 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "C[C@H]1[C@@H]2[C@@H]3CCC(=O)N3CCC[C@@H]2OC1=O",
+            "product_smiles": "CC1=C(O[TBS])C=C(C2=C(C)[C@@H]3[C@@H]4CCC(=O)N4CCC[C@@H]3O2)O1",
+            "notes": "Nucleophilic addition of 2-methyl-3-(OTBS)furan lithiate to the lactone, followed by rearrangement to form a fused bicyclic furan system.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Reduction",
+                    "reagents": "BH3•SMe2",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "80%",
+                    "reactant_smiles": "C1=COC=C1C(=O)O",
+                    "product_smiles": "C1=COC=C1CO",
+                    "notes": "Reduction of furan-2-carboxylic acid to furan-2-ylmethanol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Protection (Alcohol Silylation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=COC=C1CO",
+                    "product_smiles": "C1=COC=C1C[OTBS]",
+                    "notes": "Protection of a primary alcohol with tert-butyldimethylsilyl (TBS) group to form a silyl ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Brook rearrangement",
+                    "reagents": "n-BuLi, HMPA",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "79%",
+                    "reactant_smiles": "O1C=C(C[OTBS])C=C1",
+                    "product_smiles": "O1C([TBS])=C(CO)C=C1",
+                    "notes": "Brook rearrangement of a furan-3-ylmethyloxysilane to a furan-2-silyloxymethyl alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Mesylation",
+                    "reagents": "Ms2O, i-Pr2NEt",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[TBS]c1oc(CO)cc1",
+                    "product_smiles": "[TBS]c1oc(C[OMs])cc1",
+                    "notes": "Conversion of a primary alcohol to its mesylate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.5",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiBHEt3",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "93% (2 steps)",
+                    "reactant_smiles": "[TBS]c1oc(C[OS](C)(=O)=O)cc1",
+                    "product_smiles": "[TBS]c1oc(C)cc1",
+                    "notes": "Reduction of a benzylic mesylate to a methyl group using lithium triethylborohydride (Super-Hydride).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Alkylation",
+            "reagents": "NaBH3CN, CCl2HCO2H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "[TBS]C1=C(C)C=C(C2=C(C)[C@H]3[C@@H]4CCC(=O)N4CCC[C@H]3O2)O1",
+            "product_smiles": "[TBS]C1=C(C)C=C([C@H]2[C@H](C)[C@H]3[C@@H]4CCC(=O)N4CCC[C@H]3O2)O1",
+            "notes": "Stereoselective reduction of an enone to an alkane with concomitant methyl group installation, forming two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "mCBPA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[TBS]C1=C(C)C=C([C@@H]2[C@@H](C)[C@@H]3[C@@H]4CCC(=O)N4CCC[C@H]3O2)O1",
+            "product_smiles": "[TBS]C12C(C)(C=C([C@@H]3[C@@H](C)[C@@H]4[C@@H]5CCC(=O)N5CCC[C@H]4O3)O1)O2",
+            "notes": "Furan oxidation and rearrangement to a bicyclic acetal with an exocyclic double bond using mCPBA.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Desilylation, Reduction, Rearrangement",
+            "reagents": "TBAF, NaBH4, AcOH",
+            "reagent_smiles": "",
+            "conditions": "THF, -40 °C",
+            "yield": "46% (2steps)",
+            "reactant_smiles": "CC1=C[C@@H]2[C@@H]([C@@H]3CCC(=O)N3CCC[C@@H]2O1)[C@@]4(C)O[C@H](C=C4C)O[Si](C)(C)C(C)(C)C",
+            "product_smiles": "CC1=C[C@@H]2[C@@H]([C@@H]3CCC(=O)N3CCC[C@@H]2O1)C4=C(C)O[Si](C)(C)C(C)(C)C",
+            "notes": "Transformation of a silyl ketal (dihydrofuran derivative) into a furan O-TBS ether via desilylation and reduction.",
+            "substeps": []
+        }
+    ]
+}

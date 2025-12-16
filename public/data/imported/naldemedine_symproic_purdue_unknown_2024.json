@@ -1,0 +1,97 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "naldemedine-symproic-purdue-unknown-2024",
+        "molecule_name": "Naldemedine (Symproic Purdue)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac₂O, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, 40 °C",
+            "yield": "",
+            "reactant_smiles": "C1CC1CN2CC[C@]34C5=C6C=CC(=C5O[C@H]4C(=O)CC[C@]3([C@@H]2C6)O)O.[Cl-].[Cl-]",
+            "product_smiles": "[OAc]C1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@@H]([C@]35CCN4CC6CC6)O2)O",
+            "notes": "Acetylation of the phenolic hydroxyl group of Naldemedine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Carbamate formation",
+            "reagents": "CuCl2, H2O",
+            "reagent_smiles": "CC(C)(C1=NC(=NO1)C2=CC=CC=C2)N=C=O",
+            "conditions": "EtOAc, rt",
+            "yield": "89%",
+            "reactant_smiles": "CC(=O)OC1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@@H]([C@]35CCN4CC6CC6)O2)O",
+            "product_smiles": "CC(=O)OC1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@@H]([C@]35CCN4CC6CC6)O2)OC(=O)NC(C)(C)C7=NC(=NO7)C8=CC=CC=C8",
+            "notes": "Tertiary alcohol reacts with isocyanate to form a carbamate. Reaction described as 2 steps.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "1,2,4-Oxadiazole Formation",
+                    "reagents": "DIPEA, isobutyl chloroformate",
+                    "reagent_smiles": "C1=CC=C(C=C1)C(=NO)N",
+                    "conditions": "n-PrOAc, 0 to 95 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]NC(C)(C)C(=O)O",
+                    "product_smiles": "[Boc]NC(C)(C)C1=NC(=NO1)C2=CC=CC=C2",
+                    "notes": "Formation of a 1,2,4-oxadiazole from a Boc-protected alpha-methylalanine carboxylic acid and benzamidoxime, likely via mixed anhydride formation with isobutyl chloroformate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Deprotection",
+                    "reagents": "aq. HCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]NC(C)(C)C1=NC(=NO1)C2=CC=CC=C2",
+                    "product_smiles": "NC(C)(C)C1=NC(=NO1)C2=CC=CC=C2",
+                    "notes": "Boc deprotection of a primary amine using aqueous HCl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Carbamoylation / Amine protection",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "COC(=O)Cl",
+                    "conditions": "aq., toluene, 50 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C1=NC(=NO1)C2=CC=CC=C2)N",
+                    "product_smiles": "CC(C)(C1=NC(=NO1)C2=CC=CC=C2)NC(=O)OC",
+                    "notes": "Primary amine undergoes carbamoylation with methyl chloroformate to form a methyl carbamate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.4",
+                    "reaction_type": "Carbamate to Isocyanate Conversion / Decarboxylative Elimination",
+                    "reagents": "BCl3, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, 50 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "CC(C)(C1=NC(=NO1)C2=CC=CC=C2)NC(=O)OC",
+                    "product_smiles": "CC(C)(C1=NC(=NO1)C2=CC=CC=C2)N=C=O",
+                    "notes": "Conversion of a methyl carbamate to an isocyanate using boron trichloride and triethylamine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Multistep Functional Group Transformation",
+            "reagents": "aq. KOH, p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH, 80 °C (first step); i-PrOH (second step); MeOH, i-PrOAc (third step)",
+            "yield": "66%",
+            "reactant_smiles": "CC(=O)OC1=C2C=CC3C[C@@H]4[C@]5(C(=O)CC[C@H]6[C@H]5C2=C(O3)C6(O)CCN4CC7CC7)C(=O)NC(C)(C)C8=NC(=NO8)C9=CC=CC=C9",
+            "product_smiles": "CC(C)(C1=NC(=NO1)C2=CC=CC=C2)NC(=O)C3=C4C=C[C@H]5[C@H]3C(=O)C=C[C@H]6[C@@]7(O)C8=C(O)C=CC(C=C8O5)CCN6CC9CC9.CS(=O)(=O)C1=CC=C(C=C1)O",
+            "notes": "Hydrolysis of acetate, enone formation via oxidation/rearrangement, and protonation of the tertiary amine to form a p-toluenesulfonate salt. This is a three-step synthesis of Naldemedine.",
+            "substeps": []
+        }
+    ]
+}

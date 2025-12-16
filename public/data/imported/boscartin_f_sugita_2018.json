@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "boscartin-f-sugita-2018",
+        "molecule_name": "Boscartin F",
+        "class": "Natural Product",
+        "author": "Sugita",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sharpless asymmetric epoxidation",
+            "reagents": "Ti(OiPr)4, L-DET, TBHP",
+            "reagent_smiles": "",
+            "conditions": "DCM, -25 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC(C)C(=C)CO",
+            "product_smiles": "CC(C)[C@@]1(CO)CO1",
+            "notes": "Asymmetric epoxidation of a primary allylic alcohol to yield an epoxy alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide opening / Grignard reaction",
+            "reagents": "THF",
+            "reagent_smiles": "C=C[Mg]Br.Br[Cu].CS.C",
+            "conditions": "-78 to 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "O1[C@@](C1)(C(C)C)CO",
+            "product_smiles": "C=C[C@@](O)(CO)C(C)C",
+            "notes": "Copper-catalyzed vinyl Grignard reaction (vinylmagnesium bromide and CuBr•SMe2) opens the epoxide. The vinyl group attacks the more substituted carbon of the epoxide with retention of stereochemistry, forming a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Epoxide Formation",
+            "reagents": "MsCl, Et3N, DBU",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@](CO)(C(C)C)O",
+            "product_smiles": "C=CC[C@]1(C(C)C)CO1",
+            "notes": "Intramolecular epoxide formation from a 1,2-diol. The primary alcohol is likely activated (e.g., as a mesylate by MsCl/Et3N), followed by intramolecular attack by the secondary hydroxyl group, facilitated by DBU.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxide opening / Copper-catalyzed Grignard addition",
+            "reagents": "",
+            "reagent_smiles": "C=C(C)C[Mg]Br.[Cu]I",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "47%",
+            "reactant_smiles": "C=CC[C@@]1(C(C)C)OC1",
+            "product_smiles": "C=CC[C@@](O)(CCC(=C)C)C(C)C",
+            "notes": "Grignard reagent attacks the less substituted carbon of the epoxide, leading to a tertiary alcohol. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Iodoetherification",
+            "reagents": "I2, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "86%",
+            "reactant_smiles": "CC(C)[C@]1(O)CC(C)(C=C)CC(CC=C)C1",
+            "product_smiles": "C[C@H](C)[C@@H]1CC[C@](C)(CI)OC1(CC=C)",
+            "notes": "Intramolecular cyclization of a cyclic diene alcohol to form a cyclic ether with concurrent iodination of one alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "KO2, 18-crown-6",
+            "reagent_smiles": "",
+            "conditions": "DMSO, rt",
+            "yield": "71%",
+            "reactant_smiles": "O1[C@](C)(CI)CC[C@](C=CC)(C(C)C)1",
+            "product_smiles": "O1[C@](C)(CO)CC[C@](C=CC)(C(C)C)1",
+            "notes": "Superoxide-mediated nucleophilic substitution of iodide by hydroxide, forming an alcohol from an iodomethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX, DMSO",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "71%",
+            "reactant_smiles": "C=CC[C@@]1(CC[C@](C)(CO)O1)C(C)C",
+            "product_smiles": "C=CC[C@@]1(CC[C@](C)(C=O)O1)C(C)C",
+            "notes": "Primary alcohol is oxidized to an aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Aldol Addition",
+            "reagents": "LHMDS",
+            "reagent_smiles": "C=C(C)CC/C=C(\\C)/C(=O)C",
+            "conditions": "-78 °C",
+            "yield": "65%",
+            "reactant_smiles": "C=CC[C@@]1(CC[C@](C)(C=O)O1)C(C)C",
+            "product_smiles": "C=CC[C@@]1(CC[C@](C)([C@H](O)CC(=O)/C(C)=C\\CCC(=C)C)O1)C(C)C",
+            "notes": "Stereoselective aldol addition of a ketone enolate (formed by LHMDS) to an aldehyde, forming a beta-hydroxy ketone with a new chiral center and retaining existing stereochemistry. The E-configuration of the alpha-beta unsaturated ketone moiety is maintained.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Johnson-Claisen Rearrangement",
+                    "reagents": "(EtO)₃CCH₃, AcOH",
+                    "reagent_smiles": "CC(OCC)(OCC)OCC.CC(=O)O",
+                    "conditions": "150-170 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=C(C)CO",
+                    "product_smiles": "CCOC(=O)CCC(=C)C",
+                    "notes": "Johnson-Claisen rearrangement of an allylic alcohol to an alpha,beta-unsaturated ethyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "DIBAL",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CCC(=C)C",
+                    "product_smiles": "C=C(C)CCC=O",
+                    "notes": "Partial reduction of an ester to an aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Horner-Wadsworth-Emmons Olefination",
+                    "reagents": "NaH",
+                    "reagent_smiles": "CC(=O)C(C)P(=O)(OC)OC",
+                    "conditions": "THF, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=C(C)CCC=O",
+                    "product_smiles": "C=C(C)CCC/C=C(\\C(=O)C)C",
+                    "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde with an alpha-phosphoryl ketone to form an alpha,beta-unsaturated ketone with E-stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Stewart-Grubbs Cat.",
+            "reagent_smiles": "",
+            "conditions": "toluene, 60 °C",
+            "yield": "55%",
+            "reactant_smiles": "CC(C)[C@@]1(C)O[C@](C)(O)[C@H](CC(=O)/C(=C/CCC(=C)C)/C)CC1",
+            "product_smiles": "CC(C)[C@@]12C/C=C(\\C)/CC/C=C(\\C)/C(=O)C[C@@H]([C@@](C)(CC1)O2)O",
+            "notes": "Intramolecular ring-closing metathesis forming a 14-membered macrocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Epoxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC(C)[C@@]12CC[C@](C)(O[C@@H](C(=O)/C(=C/CC/C=C(\\C)/C)C1)O)O2",
+            "product_smiles": "CC(C)[C@@]12CC[C@](C)(O[C@@H](C(=O)/C(=C/CC[C@H]3O[C@](C)(CC1)3)O2)O)C1",
+            "notes": "Selective epoxidation of the less hindered alkene.",
+            "substeps": []
+        }
+    ]
+}

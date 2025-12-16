@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fosravuconazole-nailin-eisai-unknown-2024",
+        "molecule_name": "Fosravuconazole (Nailin Eisai)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amidation (Aminolysis of ester)",
+            "reagents": "morpholine, NaOMe, MeOH",
+            "reagent_smiles": "O1CCNCC1.[Na+].CO[O-].CO",
+            "conditions": "5 to 20 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H](C(=O)OC)O",
+            "product_smiles": "C[C@H](C(=O)N1CCOCC1)O",
+            "notes": "Methyl ester is amidated with morpholine, catalyzed by sodium methoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection (THP ether formation)",
+            "reagents": "3,4-dihydro-2H-pyran, MeSO3H",
+            "reagent_smiles": "",
+            "conditions": "THF, 5 to 25 °C",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "C[C@H](C(=O)N1CCOCC1)O",
+            "product_smiles": "C[C@H](C(=O)N1CCOCC1)[OTHP]",
+            "notes": "Protection of a secondary alcohol as a tetrahydropyranyl (THP) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard reaction, Amide to Ketone",
+            "reagents": "THF, aq. HOAc",
+            "reagent_smiles": "C1=C(C=C(C(=C1)[Mg]Br)F)F.CC(=O)O",
+            "conditions": "35 °C",
+            "yield": "81%",
+            "reactant_smiles": "C[C@H](C(=O)N1CCOCC1)[OTHP]",
+            "product_smiles": "C[C@H](C(=O)c1c(F)ccc(C)c1)[OTHP]",
+            "notes": "Nucleophilic addition of 2,4-difluorophenylmagnesium bromide to a morpholine amide, followed by acidic workup.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Corey Chaykovsky reaction",
+            "reagents": "Me3SOI, NaOt-Bu, 1,2,4-triazole",
+            "reagent_smiles": "",
+            "conditions": "THF, DMF, 20 to 25 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(c1c(F)cc(F)cc1)[C@H](C)[OTHP]",
+            "product_smiles": "C[C@H]([C@]1(CO1)c2c(F)cc(F)cc2)[OTHP]",
+            "notes": "Corey-Chaykovsky reaction transforming a ketone into a spiro-epoxide. The stereochemistry of the chiral center is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Epoxide Ring Opening",
+            "reagents": "1,2,4-triazole",
+            "reagent_smiles": "",
+            "conditions": "THF, DMF, 20 to 25 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H](OC3CCCCO3)[C@@]1(CO1)c2c(F)cc(F)cc2",
+            "product_smiles": "C[C@H](OC3CCCCO3)[C@@](O)(CN1C=NC=N1)c2c(F)cc(F)cc2",
+            "notes": "Nucleophilic ring opening of epoxide with 1,2,4-triazole, resulting in inversion of configuration at the opened carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)OC(C)C.CS(=O)(=O)O",
+            "conditions": "i-PrOAc, 25 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]([C@](CN1C=NC=N1)(C2=CC=C(C=C2F)F)O)OC3CCCCO3",
+            "product_smiles": "C[C@@H]([C@](CN1C=NC=N1)(C2=CC=C(C=C2F)F)O)O",
+            "notes": "Acid-catalyzed deprotection of a tetrahydropyranyl (THP) ether to form a diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N, THF, MTBE",
+            "reagent_smiles": "",
+            "conditions": "-10 to 2 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](O)[C@@](O)(CN1C=NC=N1)c2c(F)cc(F)cc2",
+            "product_smiles": "C[C@@H](OS(=O)(=O)C)[C@@](O)(CN1C=NC=N1)c2c(F)cc(F)cc2",
+            "notes": "Selective mesylation of the secondary alcohol in the presence of a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Epoxide Formation (Intramolecular Williamson Ether Synthesis)",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "5 °C",
+            "yield": "40% (4 steps)",
+            "reactant_smiles": "C[C@@H](OS(=O)(=O)C)[C@@](O)(CN1C=NC=N1)c2c(F)ccc(F)c2",
+            "product_smiles": "C[C@H]1[C@@](CN2C=NC=N2)(c3c(F)ccc(F)c3)O1",
+            "notes": "Intramolecular cyclization forming an epoxide from an alcohol and a mesylate under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Epoxide Ring Opening / C-C Bond Formation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC(C)(O)C#N",
+            "conditions": "THF, 0 to 22 °C",
+            "yield": "90%",
+            "reactant_smiles": "C[C@@H]1[C@@](CN2C=NC=N2)(C3=CC=C(C=C3F)F)O1",
+            "product_smiles": "C[C@](O)(C#N)[C@@H](CN1C=NC=N1)(C2=CC=C(C=C2F)F)",
+            "notes": "Nucleophilic ring opening of a spiro-epoxide by the anion of acetone cyanohydrin (formed by deprotonation with LiHMDS) to yield a tertiary alcohol and a nitrile. A new C-C bond is formed, and the stereochemistry at the epoxide carbons is preserved/inverted as expected for SN2-like opening.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Thiocyanation / Addition of Thiophosphoryl Isothiourea",
+            "reagents": "",
+            "reagent_smiles": "CCOP(=S)(OCC)S",
+            "conditions": "i-PrOH, H2O, 75 °C",
+            "yield": "",
+            "reactant_smiles": "CN1C=NC=N1C[C@](O)(c2c(F)ccc(F)c2)[C@@H](C)C#N",
+            "product_smiles": "CN1C=NC=N1C[C@](O)(c2c(F)ccc(F)c2)[C@@H](C)C(=N)SP(=S)(OCC)OCC",
+            "notes": "Addition of O,O-diethyl hydrogen phosphorodithioate to a nitrile, forming a thiophosphoryl isothiourea. Stereochemistry and fluorine positions are maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "H2SO4",
+            "reagent_smiles": "",
+            "conditions": "40 °C",
+            "yield": "91%",
+            "reactant_smiles": "CCOP(=S)(OCC)SC(=N)[C@@H](C)[C@@](CN1C=NC=N1)(c2ccc(F)cc2F)O",
+            "product_smiles": "C[C@@H](C(=S)N)[C@@](CN1C=NC=N1)(c2ccc(F)cc2F)O",
+            "notes": "Acid-catalyzed hydrolysis of a thiophosphonoimidate to a thiocarboxamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hantzsch Thiazole Synthesis",
+            "reagents": "EtOH",
+            "reagent_smiles": "BrCC(=O)C1=CC=C(C#N)C=C1",
+            "conditions": "60 to 70 °C",
+            "yield": "86%",
+            "reactant_smiles": "C[C@@H](C(=S)N)[C@](CN1C=NC=N1)(C2=CC=C(C=C2F)F)O",
+            "product_smiles": "C[C@@H](C1=NC(=CS1)C2=CC=C(C=C2)C#N)[C@](CN3C=NC=N3)(C4=CC=C(C=C4F)F)O",
+            "notes": "Thiazole ring formation from a thioamide and an alpha-bromoketone, preserving stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Phosphorylation",
+            "reagents": "NaH, I2",
+            "reagent_smiles": "CC(C)(C)OP(=O)(OCCl)OC(C)(C)C",
+            "conditions": "THF, 41 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](C1=NC(=CS1)C2=CC=C(C=C2)C#N)[C@](CN1C=NC=N1)(C4=CC=C(C=C4F)F)O",
+            "product_smiles": "CC(C)(C)OP(=O)(OC(C)(C)C)OCO[C@](CN1C=NC=N1)([C@@H](C)C2=NC(=CS2)C3=CC=C(C=C3)C#N)C4=CC=C(C=C4F)F",
+            "notes": "Alcohol is converted to a di-tert-butyl phosphate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=P(O[tBu])(O[tBu])OCO[C@](CN1C=NC=N1)([C@@H](C)C2=NC(=CS2)C3=CC=C(C=C3)C#N)c1c(F)cc(F)cc1",
+            "product_smiles": "C[C@@H](C1=NC(=CS1)C2=CC=C(C=C2)C#N)[C@](CN3C=NC=N3)(c1c(F)cc(F)cc1)OCOP(=O)(O)O",
+            "notes": "Deprotection of di-tert-butyl phosphate to phosphoric acid using trifluoroacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Salt formation / Co-crystallization",
+            "reagents": "MeOH",
+            "reagent_smiles": "NCCCC[C@H](N)C(=O)O",
+            "conditions": "60 °C, then EtOH",
+            "yield": "67%",
+            "reactant_smiles": "C[C@H](C1=NC(=CS1)C2=CC=C(C=C2)C#N)[C@@](CN3C=NC=N3)(C4=CC=C(C=C4F)F)OCOP(=O)(O)O",
+            "product_smiles": "C[C@H](C1=NC(=CS1)C2=CC=C(C=C2)C#N)[C@@](CN3C=NC=N3)(C4=CC=C(C=C4F)F)OCOP(=O)(O)O.NCCCC[C@H](N)C(=O)O.CCO",
+            "notes": "Formation of the L-lysine salt of Fosravuconazole via association/co-crystallization. Stereochemistry of the main product corrected to (2R,3S).",
+            "substeps": []
+        }
+    ]
+}

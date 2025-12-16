@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hirsutine-kwon-2012",
+        "molecule_name": "Hirsutine",
+        "class": "Natural Product",
+        "author": "Kwon",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc₂O",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C=C(C=O)N2",
+            "product_smiles": "[Boc]N1C(=CC2=CC=CC=C21)C=O",
+            "notes": "N-protection of indole nitrogen using di-tert-butyl dicarbonate (Boc₂O)",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Imine formation / Condensation",
+            "reagents": "",
+            "reagent_smiles": "O=S(N)(=O)C1=CC=C([N+]([O-])=O)C=C1.Cl[Ti](Cl)(Cl)Cl.CCN(CC)CC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C(=CC2=CC=CC=C21)C=O",
+            "product_smiles": "[Boc]N1C(=CC2=CC=CC=C21)C=N[Ns]",
+            "notes": "Formation of an N-sulfonyl imine from an aldehyde and 4-nitrobenzenesulfonamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Michael Addition / [3+2] Cycloaddition",
+            "reagents": "cat. Bu3P",
+            "reagent_smiles": "CCOC(=O)C(=C)C",
+            "conditions": "CH2Cl2, rt",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C(=CC2=CC=CC=C21)C=N[N][Ns]",
+            "product_smiles": "CCOC(=O)C1=CCC(C2=CC3=C(C=CC=C3)N2C(=O)OC(C)(C)C)N(C1)[Ns]",
+            "notes": "Phosphine-catalyzed reaction involving an N-Boc-indole-2-carbaldehyde N-nosylhydrazone and ethyl 2-methylacrylate, forming a 1-Ns-1,2,3,6-tetrahydropyridine-5-carboxylate ring substituted at C2 with the indole moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "SiO2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "N1([Ns])C(C(c2cc3ccccc3n2[Boc]))CC=C(C(=O)OCC)C1",
+            "product_smiles": "N1([Ns])C(C(c2cc3ccccc3[nH]2))CC=C(C(=O)OCC)C1",
+            "notes": "Boc deprotection of the indole nitrogen using SiO2.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Electrophilic Aromatic Substitution / Indole functionalization",
+            "reagents": "(COCl)2",
+            "reagent_smiles": "ClC(=O)C(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=CCC(C(N(C1)[Ns])c2[nH]c3ccccc3c2)",
+            "product_smiles": "CCOC(=O)C1=CCC(C(N(C1)[Ns])c2[nH]c(C(=O)C(=O)Cl)c3ccccc3c2)",
+            "notes": "Indole C3 functionalization with oxalyl chloride to form an indole-3-glyoxaloyl chloride derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "BH3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "[Ns]N1C(C2=C(C(=O)C(=O)Cl)C3=C(C=CC=C3)[nH]2)CCC=C1C(=O)OCC",
+            "product_smiles": "[Ns]N1C(C2=C(CCO)C3=C(C=CC=C3)[nH]2)CCC=C1C(=O)OCC",
+            "notes": "Reduction of an alpha-keto acyl chloride to a 2-hydroxyethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "K2CO3",
+            "reagent_smiles": "c1ccccc1S",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=CCC(C2=C(CCO)C3=C(C=CC=C3)N2)N([Ns])C1",
+            "product_smiles": "CCOC(=O)C1=CCC(C2=C(CCO)C3=C(C=CC=C3)N2)NC1",
+            "notes": "Nosyl deprotection of a dihydropyridine nitrogen using thiophenol and potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Appel reaction",
+            "reagents": "I2, Ph3P",
+            "reagent_smiles": "II.P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "[COOEt]C1=CCC(C2=C(CCO)C3=CC=CC=C3N2)NC1",
+            "product_smiles": "[COOEt]C1=CCC2C3=C(CCN2C1)C4=CC=CC=C4N3",
+            "notes": "Intramolecular cyclization of an alcohol (via Appel reaction) to form a fused tetrahydro-beta-carboline system, converting the indole N-H and the C-C-OH chain into a new 6-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Michael Addition, Intramolecular Cyclization",
+            "reagents": "CH2(CO2Me)2, NaOMe",
+            "reagent_smiles": "COC(=O)CC(=O)OC.[Na]OC",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CCOC(=O)C1=CCC2C3=C(CCN2C1)C4=CC=CC=C4N3",
+            "product_smiles": "COC(=O)[C@H]1CN2CC[C@@H]3C4=C([C@H]2C[C@@H]1C(C(=O)OC)C(=O)OC)NC5=CC=CC=C45",
+            "notes": "Michael addition of dimethyl malonate to the alpha,beta-unsaturated ester, followed by an intramolecular cyclization leading to the formation of a complex polycyclic system, Hirsutine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@H]1CN2CCC3=C([C@H]2C[C@@H]1C(C(=O)OC)C(=O)OC)NC4=C3C=CC=C4",
+            "product_smiles": "O=C[C@H]1CN2CCC3=C([C@H]2C[C@@H]1C(C(=O)OC)C=O)NC4=C3C=CC=C4",
+            "notes": "Partial reduction of a methyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Wittig olefination",
+            "reagents": "",
+            "reagent_smiles": "C=[P](c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "",
+            "yield": "41% (2 steps)",
+            "reactant_smiles": "COC(=O)C([C@H]1C[C@H]2C3=C(CCN2C[C@H]1C=O)C4=C(C=CC=C4)N3)C(=O)OC",
+            "product_smiles": "C=C[C@H]1CN2CCC3=C([C@H]2C[C@H]1C(C(=O)OC)C(=O)OC)NC4=CC=CC=C34",
+            "notes": "Wittig olefination transforms an aldehyde group into a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "C=C[C@H]1CN2CCC3=C([C@H]2C[C@@H]1C(C(=O)OC)C(=O)OC)NC4=C3C=CC=C4",
+            "product_smiles": "CC[C@H]1CN2CCC3=C([C@H]2C[C@@H]1C(C(=O)OC)C(=O)OC)NC4=C3C=CC=C4",
+            "notes": "Hydrogenation of the terminal alkene (vinyl group) to an ethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ester Reduction to Aldehyde",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC[C@H]1C[C@H]2C[C@@]3N4CCC5=C([nH]C(=C45)C3)C2N1[C@H](C(=O)OC)C(=O)OC",
+            "product_smiles": "CC[C@H]1C[C@H]2C[C@@]3N4CCC5=C([nH]C(=C45)C3)C2N1C(C(=O)OC)C=O",
+            "notes": "Partial reduction of one methyl ester to an aldehyde using DIBAL-H. The stereocenter alpha to the reduced ester becomes undefined (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Homologation / Enol Ether Formation",
+            "reagents": "TMSCHN2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "31% (2 steps)",
+            "reactant_smiles": "COC(=O)C(C=O)C[C@H]1[C@H](C)C[C@H]2N3C[C@H]1CC4=C3C(=C[nH]4)C5=CC=CC=C5",
+            "product_smiles": "COC(=O)/C(=C/OC)C[C@H]1[C@H](C)C[C@H]2N3C[C@H]1CC4=C3C(=C[nH]4)C5=CC=CC=C5",
+            "notes": "Arndt-Eistert-like homologation of an aldehyde to an alpha,beta-unsaturated methyl ester/enol ether.",
+            "substeps": []
+        }
+    ]
+}

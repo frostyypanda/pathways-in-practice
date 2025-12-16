@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "herquline-c-schindler-2019",
+        "molecule_name": "Herquline C",
+        "class": "Natural Product",
+        "author": "Schindler",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HBTU, TEA",
+            "reagent_smiles": "[Boc]N[C@@H](C(=O)O)CC1=CC(I)=C(OCC2=CC=CC=C2)C=C1",
+            "conditions": "DMF, rt",
+            "yield": "83%",
+            "reactant_smiles": "CN[C@@H](CC1=CC(I)=C(OC)C=C1)C(=O)OC",
+            "product_smiles": "[Boc]N[C@@H](C(=O)N(C)[C@@H](CC2=CC(I)=C(OC)C=C2)C(=O)OC)CC1=CC(I)=C(OCC3=CC=CC=C3)C=C1",
+            "notes": "Amide coupling between a Boc-protected amino acid and a methyl ester amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection / Cyclization",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@H](CC1=CC(=C(C=C1)OCC2=CC=CC=C2)I)C(=O)N(C)[C@@H](CC3=CC(=C(C=C3)OC)I)C(=O)OC",
+            "product_smiles": "CN1[C@H](CC2=CC=C(C(=C2)I)OC)C(=O)N[C@H](CC3=CC(=C(C=C3)OCC4=CC=CC=C4)I)C1=O",
+            "notes": "Boc deprotection and methyl ester deprotection followed by intramolecular cyclization to form a cyclic urea.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Alkylation",
+            "reagents": "BnBr, DMF",
+            "reagent_smiles": "NaH",
+            "conditions": "0 °C",
+            "yield": "81%",
+            "reactant_smiles": "CN1[C@@H](CC2=CC=C(C(=C2)I)OC)C(=O)N[C@@H](CC3=CC(=C(C=C3)OCC4=CC=CC=C4)I)C1=O",
+            "product_smiles": "CN1[C@@H](CC2=CC=C(C(=C2)I)OC)C(=O)N(CC3=CC=CC=C3)[C@@H](CC4=CC(=C(C=C4)OCC5=CC=CC=C5)I)C1=O",
+            "notes": "The amide NH is deprotonated by NaH and subsequently alkylated with benzyl bromide (BnBr) to form an N-benzyl amide. The O-benzyl group on the right aryl ring remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "PdCl₂(dppf)·CH₂Cl₂, B₂(Pin)₂, K₂CO₃",
+            "reagent_smiles": "",
+            "conditions": "DMSO, H₂O, air, 90 °C",
+            "yield": "81%",
+            "reactant_smiles": "CN1[C@H](CC2=CC=C(C(=C2)I)[OMe])C(=O)N([Bn])[C@H](CC4=CC(=C(C=C4)I)[OBn])C1=O",
+            "product_smiles": "CN1C(=O)[C@H](CC2=CC(C(=C2)C3=C(C=CC(C3)=C[C@H](C1=O)N([Bn]))[OBn])[OMe])",
+            "notes": "Intramolecular Suzuki-Miyaura coupling of a di-iodinated macrocycle to form a biaryl system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (Benzyl ether, N-methyl amide)",
+            "reagents": "BCl3, C6Me5H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "99%",
+            "reactant_smiles": "CN1C(=O)[C@@H](CC2=CC=C(OC)C(=C2)C3=CC=C(OCC4=CC=CC=C4)C=C3)C(=O)N(CC5=CC=CC=C5)[C@@H]1",
+            "product_smiles": "COC1=C2C=C(C=C1)C[C@@H]3C(=O)N(CC4=CC=CC=C4)[C@@H](CC5=CC=C(C2=C5)O)C(=O)N3",
+            "notes": "Debenzylation of benzyl ether and N-demethylation of N-methyl amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative Dearomatization and N-Methylation",
+            "reagents": "PhI(OAc)2",
+            "reagent_smiles": "CC(=O)OI(C1=CC=CC=C1)OC(=O)C",
+            "conditions": "THF, MeOH, -6 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C2C=C(C=C1)C[C@@H]3C(=O)N(CC4=CC=CC=C4)[C@H](CC5=CC=C(C2=C5)O)C(=O)N3",
+            "product_smiles": "COC1=C2C=C(C=C1)C[C@@H]3C(=O)N(CC4=CC=CC=C4)[C@H](CC5=C(C2=C5)C(=O)C(OC)=CC(=O)C5)C(=O)N(C)3",
+            "notes": "Phenol is oxidized to a 2-methoxy-2,5-cyclohexadien-1,4-dione (para-quinone), and the secondary amide nitrogen is methylated.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "L-selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "79% (2 steps)",
+            "reactant_smiles": "CN1[C@@H]2CC3=CC=C(C(=C3)C4(C=C(C=CC4=O)C[C@@H](C1=O)N([Bn])C2=O)C)OC",
+            "product_smiles": "CN1[C@@H]2CC3=CC=C(C(=C3)C4(C=C(CCC4=O)C[C@H](C1=O)N([Bn])C2=O)C)OC",
+            "notes": "1,4-reduction of a cyclohexadienone to a cyclohexenone, with stereoselective reduction of one chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH₄",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "COC1=C(C=C[C@H]2C[C@H](C(=O)C=CC2)[C@H]3C[C@H](N(C)C[C@H](C)C[C@@H](N(CC4=CC=CC=C4)[C@H]3C))C=C1",
+            "product_smiles": "COC1=C(C=C[C@H]2C[C@H]([C@H](O)C=CC2)[C@H]3C[C@H](N(C)C[C@H](C)C[C@@H](N(CC4=CC=CC=C4)[C@H]3C))C=C1",
+            "notes": "Ketone reduced to secondary alcohol with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Birch reduction",
+            "reagents": "Na, NH3",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "55%",
+            "reactant_smiles": "COc1ccc2c(c1[C@H]3CC[C@@H](O)C=C3)[C@H]1CCN(C)C[C@@H](CN(CC4ccccc4)C1)C2",
+            "product_smiles": "COc1=C([C@H]3CC[C@@H](O)C=C3)CC=C([C@H]1CCN(C)C[C@@H](CN(CC4ccccc4)C1)C)C1",
+            "notes": "Birch reduction of the aromatic ring to a 1,4-cyclohexadiene.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrolysis",
+            "reagents": "HCl (1M)",
+            "reagent_smiles": "",
+            "conditions": "acetone, rt",
+            "yield": "90%",
+            "reactant_smiles": "CN1C[C@@H]2CC3=C[C@@H]([C@@H]4C=C(CC[C@H]4O)C[C@H]1CN2CC5=CC=CC=C5)[C@@H](CC3)OC",
+            "product_smiles": "CN1C[C@H]2CC3=CC(=O)[C@@H]([C@@H]4C=C(CC[C@H]4O)C[C@H]1CN2CC5=CC=CC=C5)[C@@H](CC3)",
+            "notes": "Acid-catalyzed hydrolysis of the enol ether (methoxy group on alkene) to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DMSO, DCM",
+            "yield": "82%",
+            "reactant_smiles": "C[C@@]12CC(=O)C=C(C1)C[C@@H]3CN(CC4=CC=CC=C4)[C@H](CC5=C[C@@H]2[C@@H](CC5)O)CN3C",
+            "product_smiles": "C[C@@]12CC(=O)C=C(C1)C[C@@H]3CN(CC4=CC=CC=C4)[C@H](CC5=C[C@@H]2C(=O)CC5)CN3C",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Catalytic Hydrogenation, Reductive Debenzylation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O, 45 °C",
+            "yield": "85%",
+            "reactant_smiles": "CN1C[C@@H]2C[C@@]3([C@@H](C=C4CCC(=O)C4)[C@H]5C=C(CCC(=O)C5)C3)C[C@H](CN(CC6=CC=CC=C6)C1)C2",
+            "product_smiles": "CN1C[C@@H]2C[C@@]3([C@@H](C4CC(CCC(=O)C4))C[C@H]5CC(CCC(=O)C5)C3)C[C@H](CN[C@H]1)C2",
+            "notes": "Hydrogenation of two alpha,beta-unsaturated ketones and reductive debenzylation of a tertiary amine to a secondary amine.",
+            "substeps": []
+        }
+    ]
+}

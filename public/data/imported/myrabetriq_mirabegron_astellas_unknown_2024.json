@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "myrabetriq-mirabegron-astellas-unknown-2024",
+        "molecule_name": "Myrabetriq (Mirabegron Astellas)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxide Ring Opening / Amination",
+            "reagents": "",
+            "reagent_smiles": "NCCC1=CC=C(C=C1)[N+](=O)[O-]",
+            "conditions": "2-propanol",
+            "yield": "22%",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@@H]2CO2",
+            "product_smiles": "C1=CC=C(C=C1)[C@H](O)CNCCC2=CC=C(C=C2)[N+](=O)[O-]",
+            "notes": "Stereoselective ring opening of 2-phenyloxirane by a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Boc Protection",
+            "reagents": "t-butyl dicarbonate",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@H](CNCCC2=CC=C(C=C2)[N+](=O)[O-])O",
+            "product_smiles": "[Boc]N(CCC1=CC=C(C=C1)[N+](=O)[O-])C[C@H](C2=CC=CC=C2)O",
+            "notes": "Secondary amine protected with tert-butyloxycarbonyl (Boc) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitro group reduction (Hydrogenation)",
+            "reagents": "10% Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "ethanol, rt",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N(CCC1=CC=C(C=C1)[N+](=O)[O-])C[C@H](O)C2=CC=CC=C2",
+            "product_smiles": "[Boc]N(CCC1=CC=C(C=C1)N)C[C@H](O)C2=CC=CC=C2",
+            "notes": "Aromatic nitro group reduced to primary amine, Boc protecting group and stereochemistry remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EDCI, HOBt",
+            "reagent_smiles": "O=C(O)CC1=CSC(=N1)N",
+            "conditions": "THF",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N(CCC1=CC=C(C=C1)N)C[C@H](C2=CC=CC=C2)O",
+            "product_smiles": "CC(C)(C)OC(=O)N(CCC1=CC=C(C=C1)NC(=O)CC2=CSC(=N2)N)C[C@H](C3=CC=CC=C3)O",
+            "notes": "Amide bond formation between an aniline and 2-(2-aminothiazol-4-yl)acetic acid using EDCI/HOBt coupling reagents.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "MeOH, 4 N HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "52%",
+            "reactant_smiles": "[Boc]N(CC1=CC=C(C=C1)NC(=O)CC2=CSC(=N2)N)C[C@@H](C3=CC=CC=C3)O",
+            "product_smiles": "C1=CC=C(C=C1)[C@@H](CNCC2=CC=C(C=C2)NC(=O)C3=CSC(=N3)N)O.Cl",
+            "notes": "Deprotection of a Boc-protected amine using acidic conditions to yield the free amine (as its HCl salt).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotonation",
+            "reagents": "NaOH",
+            "reagent_smiles": "[Na+].[OH-]",
+            "conditions": "1 M",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)[C@H](CNCCC2=CC=C(C=C2)NC(=O)CC3=CSC(=N3)N)O.Cl",
+            "product_smiles": "C1=CC=C(C=C1)[C@H](CNCCC2=CC=C(C=C2)NC(=O)CC3=CSC(=N3)N)O",
+            "notes": "Deprotonation of hydrochloride salt to form the free base.",
+            "substeps": []
+        }
+    ]
+}

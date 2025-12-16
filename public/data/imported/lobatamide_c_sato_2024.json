@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lobatamide-c-sato-2024",
+        "molecule_name": "Lobatamide C",
+        "class": "Natural Product",
+        "author": "Sato",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Silylation / Silyl Ether Formation",
+            "reagents": "TBSCl, DMAP, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM, 23 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](C(=O)OC)O",
+            "product_smiles": "[OTBS][C@@H](C)C(=O)OC",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction (Ester to Aldehyde)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, toluene, -80 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H](C)C(=O)OC",
+            "product_smiles": "[OTBS][C@@H](C)C=O",
+            "notes": "Methyl ester is selectively reduced to an aldehyde using DIBAL-H at low temperature, retaining the chiral center configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Wittig reaction",
+            "reagents": "benzene",
+            "reagent_smiles": "O=CCH=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "O=C[C@@H](C)[OTBS]",
+            "product_smiles": "O=C/C=C/[C@@H](C)[OTBS]",
+            "notes": "Wittig reaction between an aldehyde and a stabilized phosphonium ylide to form an alpha,beta-unsaturated aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Propargylboration / Allene Synthesis",
+            "reagents": "(S)-3,3'-bis(2,4,6-triisopropylphenyl)-[1,1'-binaphthalene]-2,2'-diyl hydrogen phosphate (catalyst), 4A MS",
+            "reagent_smiles": "C#CCH2B1OCC(C)(C)C(C)(C)O1",
+            "conditions": "toluene, -45 °C",
+            "yield": "92%",
+            "reactant_smiles": "[OTBS][C@@H](C)/C=C/C=O",
+            "product_smiles": "C=C=C(C)[C@H](O)/C=C/[C@@H](C)[OTBS]",
+            "notes": "Asymmetric 1,2-addition of a propargylborane to an α,β-unsaturated aldehyde, leading to an allene product. The reaction is highly stereoselective.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Silylation / Etherification",
+            "reagents": "TIPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, 23 °C",
+            "yield": "85%",
+            "reactant_smiles": "C=C=C(C)[C@H](O)/C=C/[C@@H](C)[OTBS]",
+            "product_smiles": "C=C=C(C)[C@H]([OTIPS])/C=C/[C@@H](C)[OTBS]",
+            "notes": "Selective silylation of a secondary alcohol with TIPSCl to form a TIPS ether in the presence of an existing TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "disiamylborane, NaOH, H₂O₂",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C then 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "C=C=C(C)[C@H]([TIPS]O)/C=C/[C@@H](C)[OTBS]",
+            "product_smiles": "HOCC(C)=C[C@H]([TIPS]O)/C=C/[C@@H](C)[OTBS]",
+            "notes": "Hydroboration-oxidation of an allene to form an allylic alcohol, with existing TIPS and TBS protecting groups remaining unchanged. Stereocenters are maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Chlorination (via tosylation/SN2)",
+            "reagents": "p-TsCl, DMAP",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)Cl)cc1.CN(C)c1ccncc1",
+            "conditions": "DCM, 23 °C",
+            "yield": "70%",
+            "reactant_smiles": "[TIPSO][C@H](C)/C=C/[C@@H](C)[OTBS]/C=C/CO",
+            "product_smiles": "[TIPSO][C@H](C)/C=C/[C@@H](C)[OTBS]/C=C/CCl",
+            "notes": "The primary alcohol is converted to a primary alkyl chloride. This typically involves initial tosylation of the alcohol by p-TsCl/DMAP to form an OTs leaving group, followed by nucleophilic substitution (SN2) with a chloride source (potentially from DCM or an unstated reagent).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "TMSOK",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, 60 °C",
+            "yield": "",
+            "reactant_smiles": "[TIPS]O[C@H](C)/C=C/[C@@H](C)O[TBS]/C(=C\\CC1=C2C(=CC=C1)OC(C)(C)OC2=O)",
+            "product_smiles": "[TIPS]O[C@H](C)/C=C/[C@@H](C)O[TBS]/C(=C\\CC1=C(C(=CC=C1)O)C(=O)O)",
+            "notes": "Hydrolysis of a 2,2-dimethyl-4H-1,3-benzodioxin-4-one system to reveal a salicylic acid derivative (carboxylic acid and ortho-phenol). Stereochemistry of TIPS- and TBS-protected chiral centers and the double bonds are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification",
+            "reagents": "ClCH2CN, Et3N",
+            "reagent_smiles": "",
+            "conditions": "acetone, reflux",
+            "yield": "78%",
+            "reactant_smiles": "[TIPS]O[C@H](C)/C=C/[C@@H](/C(=C\\CC1=C(C(=CC=C1)O)C(=O)O)/C)[OTBS]",
+            "product_smiles": "[TIPS]O[C@H](C)/C=C/[C@@H](/C(=C\\CC1=C(C(=CC=C1)O)C(=O)OCC#N)/C)[OTBS]",
+            "notes": "Carboxylic acid converted to cyanomethyl ester. The 78% yield is over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Transesterification",
+            "reagents": "NaOAc, 4Å MS",
+            "reagent_smiles": "O=C(O)C[C@@H](O)CC#C",
+            "conditions": "DMA, 60 °C",
+            "yield": "75%",
+            "reactant_smiles": "C#CCOCOC(=O)c1c(O)cccc1CC/C(=C/C)[C@H](O[TIPS])C/C=C/[C@@H](C)O[TBS]",
+            "product_smiles": "O=C(O)C[C@@H](CC#C)OC(=O)c1c(O)cccc1CC/C(=C/C)[C@H](O[TIPS])C/C=C/[C@@H](C)O[TBS]",
+            "notes": "Transesterification of the cyanoacetate ester with the secondary alcohol of the reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "HF•pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C",
+            "yield": "",
+            "reactant_smiles": "C#CC[C@@H](CC(=O)O)OC(=O)c1c(O)c(CC/C=C(/C)[C@@H]([OTIPS])\\C=C/[C@@H](C)[OTBS])ccc1",
+            "product_smiles": "C#CC[C@@H](CC(=O)O)OC(=O)c1c(O)c(CC/C=C(/C)[C@@H]([OTIPS])\\C=C/[C@@H](C)O)ccc1",
+            "notes": "Selective deprotection of a tert-butyldimethylsilyl (TBS) ether to an alcohol, while a triisopropylsilyl (TIPS) ether remains intact. The reaction proceeds via acid catalysis from HF•pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Esterification / [3,3]-Sigmatropic Rearrangement",
+            "reagents": "DCM",
+            "reagent_smiles": "[Ts]N(C)C#C",
+            "conditions": "23 °C",
+            "yield": "71% (2 steps)",
+            "reactant_smiles": "C#CC[C@H](CCC(=O)O)OC(=O)c1c(O)ccc(C/C=C(/C)\\[C@H](/C=C/[C@@H](C)O)[OTIPS])c1",
+            "product_smiles": "C#CC[C@H](CCC(=O)OC(=C)N(C)[Ts])OC(=O)c1c(O)ccc(C/C=C(/C)\\[C@H](/C=C/[C@@H](C)O)[OTIPS])c1",
+            "notes": "Esterification of a carboxylic acid with N-methyl-N-tosylpropargylamine followed by rearrangement to an N-tosylated enamine ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Macrolactonization",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 23 °C",
+            "yield": "33%",
+            "reactant_smiles": "C#CC[C@@H](CC(=O)OC(=C)N(C)[Ts])OC(=O)c1c(O)cccc1C/C=C(/C)\\[C@H](/C=C/[C@H](C)O)[TIPS]O",
+            "product_smiles": "C#CC[C@H]1CC(=O)O[C@@H](C)/C=C/[C@H](/C(=C\\CC2=C(C(=CC=C2)O)C(=O)O1)/C)[TIPS]O",
+            "notes": "Intramolecular macrolactonization of a seco-acid precursor. The reaction proceeds via the intramolecular attack of a secondary alcohol on an activated carboxylic acid (derived from the enol ester), forming a 12-membered macrolactone. Epimerization is observed at the alkyne-bearing chiral center and the chiral alcohol center, while the stereochemistry of the TIPS-protected chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "O-Silylation",
+            "reagents": "",
+            "reagent_smiles": "Cl[Si](CC)(CC)CC.C1=CNC=N1",
+            "conditions": "DMF, 23 °C",
+            "yield": "86%",
+            "reactant_smiles": "C#CC[C@H]1CC(=O)O[C@@H](C)/C=C\\[C@@H](/C(=C\\CC2=C(C(=CC=C2)O)C(=O)O1)/C)[OTIPS]",
+            "product_smiles": "C#CC[C@H]1CC(=O)O[C@@H](C)/C=C\\[C@@H](/C(=C\\CC2=C(C(=CC=C2)[OTES])C(=O)O1)/C)[OTIPS]",
+            "notes": "Phenolic hydroxyl group is silylated using triethylsilyl chloride (TESCI) and imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Hydrozirconation / Iodination",
+            "reagents": "Cp₂ZrHCl, 4Å MS, NIS",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C then -78 °C",
+            "yield": "87%",
+            "reactant_smiles": "C#CC[C@H]1CC(=O)O[C@@H](C)/C=C/[C@@H]([TIPS])\\C(C)=C\\CC2=C(C(=CC=C2)[OTES])C(=O)O1",
+            "product_smiles": "IC/C=C/[C@H]1CC(=O)O[C@@H](C)/C=C/[C@@H]([TIPS])\\C(C)=C\\CC2=C(C(=CC=C2)[OTES])C(=O)O1",
+            "notes": "Alkyne converted to (E)-vinyl iodide via hydrozirconation and subsequent iodination. Stereochemistry of macrocyclic Z-alkene retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Copper-catalyzed C-N Cross-Coupling / Vinyl Amination",
+            "reagents": "CuI, K3PO4, 4A MS",
+            "reagent_smiles": "CN[C@@H]1CC[C@H](NC)C1.CO/N=C/C=C/C(=O)N",
+            "conditions": "1,4-dioxane, 70 °C",
+            "yield": "33%",
+            "reactant_smiles": "[OTES]c1c(C(=O)O[C@H](C/C=C/I)CC(=O)O[C@H](C)/C=C/[C@H]([OTIPS])/C=C(C)CCC1)ccc1",
+            "product_smiles": "[OTES]c1c(C(=O)O[C@H](C/C=C/NC(=O)/C=C/C=N/OC)CC(=O)O[C@H](C)/C=C/[C@H]([OTIPS])/C=C(C)CCC1)ccc1",
+            "notes": "Copper-catalyzed vinyl amination of a vinyl iodide with an N-methoxy enamide reagent, forming an amide bond and extending the side chain. The macrocyclic core remains unchanged.",
+            "substeps": [
+                {
+                    "step_id": "17.1",
+                    "reaction_type": "Oxime formation / Lactone ring opening",
+                    "reagents": "H2O",
+                    "reagent_smiles": "CON",
+                    "conditions": "rt",
+                    "yield": "92%",
+                    "reactant_smiles": "C1=CC(=O)OC1O",
+                    "product_smiles": "CO/N=C/C=C/C(=O)O",
+                    "notes": "Lactone ring opens and reacts with methoxyamine to form a conjugated O-methyl oxime carboxylic acid. The reactant has 4 carbons (C4H4O3), while the product has 6 carbons (C6H8NO4). The reagent, methoxyamine (CH5NO), adds 1 carbon, suggesting an additional two-carbon source is involved that is not explicitly shown in the reagents, or there is an error in one of the structures' interpretation from the image leading to this carbon imbalance. The stereochemistry of all double bonds in the product is E (trans) as depicted.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "17.2",
+                    "reaction_type": "Amide formation",
+                    "reagents": "ClCO2Et, Et3N, NH4OH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "95%",
+                    "reactant_smiles": "CO\\N=C\\C=C/C(=O)O",
+                    "product_smiles": "CO\\N=C\\C=C/C(=O)N",
+                    "notes": "Amidation of a carboxylic acid to an amide, retaining the Z-stereochemistry of the double bonds.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "17.3",
+                    "reaction_type": "Geometric Isomerization",
+                    "reagents": "HCl, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, 23 °C",
+                    "yield": "81%",
+                    "reactant_smiles": "CO\\N=C/C=C/C(=O)N",
+                    "product_smiles": "CO/N=C/C=C/C(=O)N",
+                    "notes": "Acid-catalyzed isomerization of the Z-methoxyimine double bond to the E-methoxyimine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Deprotection",
+            "reagents": "HF•pyridine",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "50%",
+            "reactant_smiles": "[OTES]C1=CC=CC2=C1C(=O)O[C@@H](C/C=C/NC(=O)/C=C/C=N/OC)CC(=O)O[C@@H](C)/C=C/[C@@H](/C(=C\\C2)/C)[OTIPS]",
+            "product_smiles": "OC1=CC=CC2=C1C(=O)O[C@@H](C/C=C/NC(=O)/C=C/C=N/OC)CC(=O)O[C@@H](C)/C=C/[C@@H](/C(=C\\C2)/C)O",
+            "notes": "Deprotection of triethylsilyl (TES) and triisopropylsilyl (TIPS) ethers to hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

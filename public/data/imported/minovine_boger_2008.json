@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "minovine-boger-2008",
+        "molecule_name": "Minovine",
+        "class": "Natural Product",
+        "author": "Boger",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide/Urea Formation (via CDI)",
+            "reagents": "CDI",
+            "reagent_smiles": "",
+            "conditions": "DCM - THF",
+            "yield": "86%",
+            "reactant_smiles": "CN1C=C(CCN)C2=CC=CC=C21",
+            "product_smiles": "CN1C=C(CCNC(=O)N2C=CN=C2)C3=CC=CC=C31",
+            "notes": "Primary amine reacts with CDI to form an N-imidazole-carbonyl derivative (a carbamide).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Acyl Substitution / Transamidation",
+            "reagents": "AcOH",
+            "reagent_smiles": "COC(=O)C(=O)NN",
+            "conditions": "THF, 40 °C",
+            "yield": "93%",
+            "reactant_smiles": "CN1C=C(CCNC(=O)N2C=CN=C2)C3=C1C=CC=C3",
+            "product_smiles": "CN1C=C(CCNC(=O)NNC(=O)C(=O)OC)C2=C1C=CC=C2",
+            "notes": "Replacement of N-acylimidazole with a hydrazide ester via nucleophilic acyl substitution.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization / Cyclodehydration (Oxadiazole formation)",
+            "reagents": "TsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "83%",
+            "reactant_smiles": "CN1C=C(CCNC(=O)NNC(=O)C(=O)OC)C2=C1C=CC=C2",
+            "product_smiles": "CN1C=C(CCNC2=NN=C(C(=O)OC)O2)C3=C1C=CC=C3",
+            "notes": "Formation of a 1,3,4-oxadiazole ring from an N-acyl hydrazine oxalate derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amidation / Amide Coupling",
+            "reagents": "EDCI, DMAP",
+            "reagent_smiles": "CCC(=C)CCC(=O)O",
+            "conditions": "DCM",
+            "yield": "87%",
+            "reactant_smiles": "CN1C=C(CCNC2=NN=C(C(=O)OC)O2)C3=C1C=CC=C3",
+            "product_smiles": "CCC(=C)CCC(=O)N(CCC1=CN(C)C2=C1C=CC=C2)C3=NN=C(C(=O)OC)O3",
+            "notes": "Formation of a tertiary amide by coupling a secondary amine (reactant) with a carboxylic acid (reagent) using EDCI and DMAP.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Halogenation (Alcohol to Alkyl Chloride)",
+                    "reagents": "SOCl₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCC(CO)(CO)CO",
+                    "product_smiles": "CCC(CCl)(CCl)CCl",
+                    "notes": "Conversion of three primary alcohol groups to primary alkyl chlorides using thionyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Grignard Reaction / Carbonation / Elimination (implied)",
+                    "reagents": "Mg, CO₂",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCC(CCl)(CCl)CCl",
+                    "product_smiles": "O=C(O)CCC(=C)CC",
+                    "notes": "A complex transformation involving Grignard reaction, carbonation, and implied elimination/rearrangement to form a carboxylic acid with a terminal alkene from a polychlorinated alkane. The original product SMILES was incorrect.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "1,2-Cl2C6H4",
+            "reagent_smiles": "",
+            "conditions": "180-190 °C",
+            "yield": "74%",
+            "reactant_smiles": "O=C(CC(=C)CC)N(CCC1=CN(C)C2=C1C=CC=C2)C3=NN=C(C(=O)OC)O3",
+            "product_smiles": "C[C@]12CCC(=O)N3CC[C@]45C6=CC=CC=C6N(C)[C@H]4[C@](C1)(C(=O)OC)O[C@]253",
+            "notes": "Intramolecular cyclization to form the complex polycyclic Minovine core.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Thionation",
+            "reagents": "Lawesson's reagent",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "85%",
+            "reactant_smiles": "C[C@]12CCC(=O)N3CC[C@]45C6=CC=CC=C6N(C)[C@H]4[C@](C1)(C(=O)OC)O[C@]253",
+            "product_smiles": "C[C@]12CCC(=S)N3CC[C@]45C6=CC=CC=C6N(C)[C@H]4[C@](C1)(C(=O)OC)O[C@]253",
+            "notes": "Lactam carbonyl is converted to a thioamide using Lawesson's reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive desulfurization",
+            "reagents": "Raney-Ni",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "90%",
+            "reactant_smiles": "COC(=O)[C@@]12[C@H](C)[C@@H]3N(C)c4ccccc4[C@@]3([C@H]1O[C@H]5[C@@H]2CCC(=S)N5)C",
+            "product_smiles": "COC(=O)[C@@]12[C@H](C)[C@@H]3N(C)c4ccccc4[C@@]3([C@H]1O[C@H]5[C@@H]2CCCCN5)C",
+            "notes": "Reductive desulfurization of a thiocarbonyl using Raney-Ni to form a methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Ether Cleavage",
+            "reagents": "PtO2, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "73%",
+            "reactant_smiles": "COC(=O)[C@@H]1CN(C)c2ccccc2C34[C@H]1C[C@@](C)(O[C@H]5CC[N](C[C@H]3C4)C5)[C@H]5",
+            "product_smiles": "COC(=O)[C@@H]1CN(C)c2ccccc2C34[C@H]1C[C@](C)(O)([C@H]5CC[N](C[C@H]3C4)C5)[C@H]5",
+            "notes": "Reductive cleavage of the internal ether linkage to form a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Substitution (Alcohol Functionalization)",
+            "reagents": "Burgess reagent",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "91%",
+            "reactant_smiles": "COC(=O)[C@@]1(O)C2N3CCC4(c5ccccc5N(C)C4[C@H]13)[C@@](C)(CC)[C@H]2CC",
+            "product_smiles": "COC(=O)[C@@]1(OS(=O)(=O)NC(=O)OC)C2N3CCC4(c5ccccc5N(C)C4[C@H]13)[C@@](C)(CC)[C@H]2CC",
+            "notes": "Tertiary alcohol is functionalized with a sulfamate/carbamate group, retaining stereochemistry at the reaction center.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Elimination",
+            "reagents": "NaH",
+            "reagent_smiles": "",
+            "conditions": "THF, toluene, 100 °C",
+            "yield": "39%",
+            "reactant_smiles": "CC[C@]12CCCN3CC[C@@]4(C5=C(C=CC=C5)N(C)[C@H]4[C@](C1)(C(=O)OC)OS(=O)(=O)NC(=O)OC)[C@@H]23",
+            "product_smiles": "CCC1=C(C(=O)OC)[C@H]2C3=C(C=CC=C3)N(C)[C@H]2[C@@]4(CCC[N@@]5C1)[C@@H]54",
+            "notes": "Base-mediated elimination of sulfonyl carbamate to form an α,β-unsaturated ester. The ester group migrates to the newly formed double bond.",
+            "substeps": []
+        }
+    ]
+}

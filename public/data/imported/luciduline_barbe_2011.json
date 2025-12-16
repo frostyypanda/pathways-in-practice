@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "luciduline-barbe-2011",
+        "molecule_name": "Luciduline",
+        "class": "Natural Product",
+        "author": "Barbe",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Acylation and Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "C1=CC=C(C=C1)COC(=O)Cl",
+            "conditions": "-78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C1=CC=NC=C1",
+            "product_smiles": "c1ccccc1COC(=O)N2C=CCC=C2",
+            "notes": "N-acylation of pyridine with benzyl chloroformate followed by reduction with sodium borohydride to form N-(benzyloxycarbonyl)-1,4-dihydropyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aza-Diels-Alder",
+            "reagents": "",
+            "reagent_smiles": "CN1C(=O)C(C)(C)N[C@@H](Cc2ccccc2)1.Cl.C=CC=O",
+            "conditions": "MeCN, H2O, rt",
+            "yield": "",
+            "reactant_smiles": "O=C(OCC1=CC=CC=C1)N2CC=CC=C2",
+            "product_smiles": "O=C[C@H]1C[C@@H]2CN([Cbz])[C@H]1CC=C2",
+            "notes": "An asymmetric aza-Diels-Alder reaction between 1-Cbz-1,2-dihydropyridine and acrolein, catalyzed by a chiral imidazolidinone catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 0 °C",
+            "yield": "33% (3 steps)",
+            "reactant_smiles": "O=CC1C2CCC(N([Cbz])C2)C=C1",
+            "product_smiles": "OC(C1)C2CCC(N([Cbz])C2)C=C1",
+            "notes": "Aldehyde reduction to primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78°C to rt",
+            "yield": "",
+            "reactant_smiles": "[Cbz]N1C2CCC(=CC2)C(CO)C1",
+            "product_smiles": "[Cbz]N1C2CCC(=CC2)C(C=O)C1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Swern conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Reaction",
+            "reagents": "DCM",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "-78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "O=CC1C2CC=CC(N2[Cbz])C1",
+            "product_smiles": "O=C(O)C[C@H]1[C@@H]2C=CCN2[C@H]1[C@H](C)C=C",
+            "notes": "Allylmagnesium bromide addition to an aldehyde, forming a secondary allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "Imidazole, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "C=CCC(C1CC2C=CC1N(C2)[Cbz])O",
+            "product_smiles": "C=CCC(C1CC2C=CC1N(C2)[Cbz])[OTBS]",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether. The yield provided (61%) is for 3 steps, not this single step.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "81%",
+            "reactant_smiles": "C=CCC(C1CC2C=CC1N(C2)[Cbz])[OTBS]",
+            "product_smiles": "C=CC[C@H]1CC[C@H]2N([Cbz])C[C@H]3[C@H]([OTBS])C=CC123",
+            "notes": "Formation of a cis-decahydroquinoline derivative via intramolecular ring-closing metathesis.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "92%",
+            "reactant_smiles": "[Cbz]N1[C@@H](C=C)C[C@H]2[C@H]1[C@H]([OTBS])C=CCC2",
+            "product_smiles": "[Cbz]N1[C@@H](C=C)C[C@H]2[C@H]1[C@H](O)C=CCC2",
+            "notes": "Deprotection of a TBS ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "DCM, rt",
+            "reagent_smiles": "CC(=O)O[I](OC(=O)C)(OC(=O)C)C1=CC=CC=C1",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "O[C@@H]1CC=CC[C@H]2[C@H]3CN([Cbz])C[C@@H](C=C)[C@H]3C12",
+            "product_smiles": "O=C1CC=CC[C@H]2[C@H]3CN([Cbz])C[C@@H](C=C)[C@H]3C12",
+            "notes": "Dess-Martin periodinane (DMP) oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Purification/Workup",
+            "reagents": "Basic Al2O3",
+            "reagent_smiles": "CCOC(=O)C",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1C[C@H]2[C@H](CC=CC2=O)N(C1)[Cbz]",
+            "product_smiles": "C=C[C@H]1C[C@H]2[C@H](CC=CC2=O)N(C1)[Cbz]",
+            "notes": "The reaction describes a purification or workup step, as the product is identical to the reactant. Basic alumina is used as the stationary phase, and ethyl acetate is the solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Conjugate Addition",
+            "reagents": "Me2CuLi",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1CC[C@H]2[C@H]3N([Cbz])CC[C@H]13C(=O)CC=C2",
+            "product_smiles": "C=C[C@@H]1CC[C@H]2[C@H]3N([Cbz])CC[C@H]13C(=O)C[C@@H](C)C2",
+            "notes": "Methyl group added to the C=C double bond, reducing it to a single bond. The reported 81% yield is for 3 steps, not specifically for this step.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Wacker oxidation",
+            "reagents": "O2, PdCl2",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, rt",
+            "yield": "78%",
+            "reactant_smiles": "C=C[C@@H]1C[C@H]2[C@H](C[C@H](C)CC2=O)N(C1)[Cbz]",
+            "product_smiles": "C(=O)C[C@@H]1C[C@H]2[C@H](C[C@H](C)CC2=O)N(C1)[Cbz]",
+            "notes": "Wacker oxidation of a terminal alkene to a methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Aldol Condensation / Cyclization",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "62%",
+            "reactant_smiles": "[Cbz]N2C[C@@H](C(=O)C)[C@@H]3C[C@@H](C)[C@H]4CC(=O)C[C@@H]2C34",
+            "product_smiles": "[Cbz]N2C3C=CC(=O)C2C4CC(C3)C4",
+            "notes": "Intramolecular base-catalyzed cyclization of a diketone (with an N-Cbz protecting group) to form a bridged bicyclic enone.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Hydrogenation / Reductive Amination / Deprotection",
+            "reagents": "H₂, Pd/C",
+            "reagent_smiles": "C=O",
+            "conditions": "EtOH, rt",
+            "yield": "75%",
+            "reactant_smiles": "C[C@@H]1C2CC(=O)C=C3CN([C@H]1C3C2)[Cbz]",
+            "product_smiles": "C[C@@H]1C2CCCC(=O)C3CN([C@H]1C3C2)C",
+            "notes": "Reductive deprotection of the N-Cbz group, hydrogenation of the alkene, and concomitant N-methylation using formaldehyde.",
+            "substeps": []
+        }
+    ]
+}

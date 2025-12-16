@@ -1,0 +1,254 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bilain-c-strand-2024",
+        "molecule_name": "Bilain C",
+        "class": "Natural Product",
+        "author": "Strand",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "ClS(=O)Cl",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CNCC(=O)O",
+            "product_smiles": "CNCC(=O)OC",
+            "notes": "Esterification of N-methylglycine to methyl N-methylglycinate using thionyl chloride and methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation (Aminolysis of Ester)",
+            "reagents": "MeNH2",
+            "reagent_smiles": "CN",
+            "conditions": "EtOH",
+            "yield": "49% (2 steps)",
+            "reactant_smiles": "CNCC(=O)OC",
+            "product_smiles": "CNCC(=O)NC",
+            "notes": "The methyl ester is converted to a secondary amide by reaction with methylamine (MeNH2).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization, Acylation",
+            "reagents": "(COCl)2, Imidazole, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "40%",
+            "reactant_smiles": "CNCC(=O)NC",
+            "product_smiles": "CN1CC(=O)N(C)C(=O)C1=O",
+            "notes": "Cyclization of N-methyl-2-(methylamino)acetamide with oxalyl chloride to form 1,3-dimethylbarbituric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "C-Alkylation",
+            "reagents": "PMBBr, Cs₂CO₃",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "74%",
+            "reactant_smiles": "CN1CC(=O)N(C)C(=O)C1=O",
+            "product_smiles": "CN1C(CC2=CC=C(C=C2)OC)C(=O)N(C)C(=O)C1=O",
+            "notes": "Alkylation of 1,3-dimethylbarbituric acid with p-methoxybenzyl bromide using cesium carbonate as base.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alpha-Sulfenylation",
+            "reagents": "",
+            "reagent_smiles": "C[C@@H](C1=CC=C(C=C1)OC)SN2C(=O)CCC2=O.C1=CC=C(C=C1)[C@@H]2N3C4=CC=CC=C4N2C5=NC=CC=C5",
+            "conditions": "acetone, 50 °C",
+            "yield": "99%",
+            "reactant_smiles": "CN1C(CC2=CC=C(C=C2)OC)C(=O)N(C)C(=O)C1=O",
+            "product_smiles": "C[C@@H](C1=CC=C(C=C1)OC)SC2(CC3=CC=C(C=C3)OC)C(=O)N(C)C(=O)C(=O)N2C",
+            "notes": "Alpha-sulfenylation of a 1,3-dimethylbarbituric acid derivative at the C5 position using a chiral sulfenylating agent and a chiral benzimidazole catalyst.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Mitsunobu Reaction",
+                    "reagents": "DEAD, PPh3",
+                    "reagent_smiles": "CC(=O)S",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "58%",
+                    "reactant_smiles": "CC(C1=CC=C(C=C1)OC)O",
+                    "product_smiles": "CC(C1=CC=C(C=C1)OC)SC(=O)C",
+                    "notes": "Mitsunobu reaction converting a secondary alcohol to a thioacetate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4, THF",
+                    "reagent_smiles": "",
+                    "conditions": "reflux",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(C1=CC=C(C=C1)OC)SC(=O)C",
+                    "product_smiles": "CC(C1=CC=C(C=C1)OC)S",
+                    "notes": "Reduction of a thioester to a thiol using LiAlH4.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Asymmetric Thiol Addition / Alpha-alkylation of Thiol",
+                    "reagents": "",
+                    "reagent_smiles": "CC(C)C1=CC(=C(C(=C1)C(C)C)S(=O)(=O)N[C@@H](C2=CC=NC3=C2C=C(C=C3)OC)C4C5CCC(CC5)N4C)C(C)C.CC1CC(=O)OC(=O)C1",
+                    "conditions": "MTBE, -30 °C",
+                    "yield": "63%",
+                    "reactant_smiles": "CC(C1=CC=C(C=C1)OC)S",
+                    "product_smiles": "C[C@@H](C1=CC=C(C=C1)OC)S",
+                    "notes": "Asymmetric addition of 1-(4-methoxyphenyl)ethanethiol to an unknown electrophile, catalyzed by a chiral sulfonamide and possibly involving a glutaric anhydride derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Thiol functionalization",
+                    "reagents": "DIPEA, NCS",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "36%",
+                    "reactant_smiles": "C[C@H](C1=CC=C(OC)C=C1)S",
+                    "product_smiles": "C[C@H](C1=CC=C(OC)C=C1)SN1C(=O)CC1=O",
+                    "notes": "Thiol reacts to form a succinimide thioether, retaining stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carbonyl Reduction",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "",
+            "conditions": "-20 °C",
+            "yield": "72%",
+            "reactant_smiles": "CN1C(=O)[C@](S[C@H](C)c2ccc(OC)cc2)(Cc3ccc(OC)cc3)C(=O)N(C)C1",
+            "product_smiles": "CN1C(=O)[C@](S[C@H](C)c2ccc(OC)cc2)(Cc3ccc(OC)cc3)N(C)[C@H](O)C1",
+            "notes": "One of the cyclic amide carbonyls is reduced to a hydroxyl group using NaBH4.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "BF3•Et2O",
+            "reagent_smiles": "CSCC1=CC=C(OC)C=C1",
+            "conditions": "THF, 0 °C",
+            "yield": "54%",
+            "reactant_smiles": "C[C@H](C1=CC=C(C=C1)OC)S[C@]2(CC3=CC=C(C=C3)OC)C(=O)N(C)[C@H](C(=O)N2C)O",
+            "product_smiles": "C[C@H](C1=CC=C(C=C1)OC)S[C@]2(CC3=CC=C(C=C3)OC)C(=O)N(C)C(C(=O)N2C)SCC4=CC=C(C=C4)OC",
+            "notes": "Hydroxyl group is substituted by a p-methoxybenzylthio group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection / Demethylation / Thioether cleavage",
+            "reagents": "",
+            "reagent_smiles": "B(Br)(Br)Br",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H](C1=CC=C(C=C1)OC)S[C@]2(CC3=CC=C(C=C3)OC)C(=O)N(C)C(C(=O)N2C)SCC4=CC=C(C=C4)OC",
+            "product_smiles": "CN1C(=O)C(N(C)C(=O)[C@@]1(CC2=CC=C(C=C2)O)S)S",
+            "notes": "Demethylation of a para-methoxybenzyl group to a para-hydroxybenzyl group. Cleavage of two thioether groups (a para-methoxyphenylethylthio group and a para-methoxybenzylthio group) to yield two thiol groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Thiol Methylation",
+            "reagents": "Mel, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "O=C1N(C)[C@@H](S)C(=O)N(C)[C@](S)(CC2=CC=C(O)C=C2)C1",
+            "product_smiles": "O=C1N(C)[C@@H](SC)C(=O)N(C)[C@](SC)(CC2=CC=C(O)C=C2)C1",
+            "notes": "Methylation of two thiol groups to form methyl thioethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "O-Alkylation",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "C=CCOC(=O)/C(=C/CBr)/C",
+            "conditions": "acetone",
+            "yield": "85%",
+            "reactant_smiles": "CN1C(=O)[C@H](N(C)C(=O)[C@@]1(CC2=CC=C(C=C2)O)SC)SC",
+            "product_smiles": "C=CCOC(=O)/C(=C/COC1=CC=C(C=C1)C[C@@]2(C(=O)N(C)[C@H](C(=O)N2C)SC)SC)/C",
+            "notes": "Phenolic hydroxyl group undergoes Williamson ether synthesis with an allyl 2-(bromomethyl)acrylate derivative.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Esterification",
+                    "reagents": "Et3N, THF",
+                    "reagent_smiles": "CC(C(=O)Br)Br",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "C=CCO",
+                    "product_smiles": "C=CCOC(=O)C(C)Br",
+                    "notes": "Allyl alcohol reacts with 2-bromopropionyl bromide in the presence of triethylamine to form allyl 2-bromopropanoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Wittig Ylide Formation",
+                    "reagents": "PPh3, Na2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "50 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=CCOC(=O)C(C)Br",
+                    "product_smiles": "C=CCOC(=O)C(=[PPh3])C",
+                    "notes": "Formation of a Wittig ylide from an alpha-bromo ester and triphenylphosphine, followed by deprotonation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Wittig reaction / Olefination",
+                    "reagents": "glycoaldehyde dimer",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, reflux",
+                    "yield": "65%",
+                    "reactant_smiles": "C=CCOC(=O)C(C)=[P]([Ph])3",
+                    "product_smiles": "C=CCOC(=O)/C(=C/CO)/C",
+                    "notes": "Wittig reaction of an allylic ester-substituted phosphonium ylide with glycolaldehyde dimer, forming an alpha,beta-unsaturated ester with E-stereochemistry. The stated yield is for a 3-step sequence.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Appel Reaction (Bromination of Alcohol)",
+                    "reagents": "CBr4, PPh3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "87%",
+                    "reactant_smiles": "C=CCOC(=O)/C(=C/CO)/C",
+                    "product_smiles": "C=CCOC(=O)/C(=C/CBr)/C",
+                    "notes": "Conversion of a primary alcohol to a primary bromide using CBr4 and PPh3.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Allyl Ester Deprotection",
+            "reagents": "Pd(PPh3)4, CH3COOH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "88%",
+            "reactant_smiles": "C=CCOC(=O)/C(=C/COC1=CC=C(C=C1)C[C@]2(C(=O)N(C)[C@@H](C(=O)N2C)SC)SC)/C",
+            "product_smiles": "C/C(=C\\COC1=CC=C(C=C1)C[C@]2(C(=O)N(C)[C@@H](C(=O)N2C)SC)SC)/C(=O)O",
+            "notes": "Allyl ester is deprotected to a carboxylic acid using palladium catalysis (Tsuji-Trost type reaction). Stereochemistry of the diketopiperazine core remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Amide Coupling",
+            "reagents": "N-hydroxysuccinimide, DCC, Beta-Alanine, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "76%",
+            "reactant_smiles": "C/C(=C/COC1=CC=C(C=C1)C[C@@]2(SC)N(C)C(=O)[C@H](SC)N(C)C(=O)C2)C(=O)O",
+            "product_smiles": "C/C(=C/COC1=CC=C(C=C1)C[C@@]2(SC)N(C)C(=O)[C@H](SC)N(C)C(=O)C2)C(=O)NCCC(=O)O",
+            "notes": "Amide bond formation between the carboxylic acid of the reactant and the primary amine of Beta-Alanine using DCC/NHS activation.",
+            "substeps": []
+        }
+    ]
+}

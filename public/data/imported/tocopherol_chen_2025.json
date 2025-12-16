@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tocopherol-chen-2025",
+        "molecule_name": "Tocopherol",
+        "class": "Natural Product",
+        "author": "Chen",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective Silylation / Protection",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "84%",
+            "reactant_smiles": "Cc1c(C)c(O)c(C)c(C)c1O",
+            "product_smiles": "Cc1c(C)c(O)c(C)c(C)c1[OTBS]",
+            "notes": "One hydroxyl group of 2,3,5,6-tetramethylbenzene-1,4-diol is selectively protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-Methylation",
+            "reagents": "Me2SO4, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "acetone, reflux",
+            "yield": "88%",
+            "reactant_smiles": "Oc1c(C)c([OTBS])c(C)c(C)c1C",
+            "product_smiles": "COc1c(C)c([OTBS])c(C)c(C)c1C",
+            "notes": "Phenol O-methylation to form a methyl ether using dimethyl sulfate and potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Formylation, Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "C1N2CN3CN1CN(C2)C3",
+            "conditions": "80 °C",
+            "yield": "78%",
+            "reactant_smiles": "COc1c(C)c(C)c([OTBS])c(C)c1C",
+            "product_smiles": "COc1c(C)c(C=O)c(O)c(C)c1C",
+            "notes": "Duff-type formylation of the aromatic substrate using hexamethylenetetramine (Urotropine) and trifluoroacetic acid. The reaction also involves the deprotection of the tert-butyldimethylsilyl ether and the transformation of a methyl group to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Protection (MOM ether formation)",
+            "reagents": "MOMBr, NaH",
+            "reagent_smiles": "COCBr.[NaH]",
+            "conditions": "THF",
+            "yield": "89%",
+            "reactant_smiles": "CC1=C(C(=C(C)C(=C1C)OC)C=O)O",
+            "product_smiles": "CC1=C(C(=C(C)C(=C1C)OC)C=O)O[MOM]",
+            "notes": "Phenolic hydroxyl group is protected as a methoxymethyl (MOM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Claisen-Schmidt Condensation",
+            "reagents": "NaOH",
+            "reagent_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC(=O)C",
+            "conditions": "EtOH, 60 °C",
+            "yield": "84%",
+            "reactant_smiles": "O=CC1=C(C)C(OC)=C(C)C(COCO)=C1C",
+            "product_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC(=O)/C=C/C1=C(C)C(OC)=C(C)C(COCO)=C1C",
+            "notes": "Aldol condensation between an aldehyde and a methyl ketone to form an alpha,beta-unsaturated ketone.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Oxidative Cleavage",
+                    "reagents": "KMnO4",
+                    "reagent_smiles": "",
+                    "conditions": "acetone",
+                    "yield": "91%",
+                    "reactant_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC/C(=C/CO)/C",
+                    "product_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC(=O)C",
+                    "notes": "Oxidative cleavage of an allylic alcohol to a methyl ketone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "91%",
+            "reactant_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCCC(=O)/C=C/C1=C(C)C(=C(C)C(=C1[OMOM])C)OC",
+            "product_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCCC(=O)CCC1=C(C)C(=C(C)C(=C1[OMOM])C)OC",
+            "notes": "Reduction of an α,β-unsaturated ketone to a saturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig reaction",
+            "reagents": "Ph3PCH3Br, t-BuOK",
+            "reagent_smiles": "",
+            "conditions": "50 °C, THF",
+            "yield": "87%",
+            "reactant_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCCC(=O)CCC1=C(C)C(=C(C)C(=C1OCOC)C)OC",
+            "product_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCCC(=C)CCC1=C(C)C(=C(C)C(=C1OCOC)C)OC",
+            "notes": "Wittig reaction converting a ketone to an exocyclic methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "BF₃•Et₂O, Me₂S",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "74%",
+            "reactant_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCCC(=C)CCC1=C(C)C(=C(C)C(=C1[OMOM])C)OC",
+            "product_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCCC(=C)CCC1=C(C)C(=C(C)C(=C1O)C)OC",
+            "notes": "Deprotection of a methoxymethyl (MOM) ether to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Asymmetric Bromocyclization",
+            "reagents": "NBS",
+            "reagent_smiles": "CC1=CC(=C(C(=C1)C)NP2(=O)OC3=C(C4=C(C=CC=C4)C=C3C5=C6C=CC=CC6=CC7=C5C=CC=C7)C8=C9C=CC=CC9=CC(=C8O2)C%10=C%11C=CC=CC%11=CC%12=C%10C=CC=C%12)C",
+            "conditions": "DCM, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCCC(=C)CCC1=C(C)C(=C(C)C(=C1O)C)OC",
+            "product_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC[C@H]1OC2=C(C)C(OC)=C(C)C(C)=C2C[C@@H](Br)C1",
+            "notes": "Intramolecular cyclization of an alkenylphenol to form a 3-bromo-2-alkylchromane, catalyzed by a chiral phosphoric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "CCN(CC)CC.CO",
+            "conditions": "Et3N, MeOH",
+            "yield": "81%",
+            "reactant_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC[C@@]1(CCC2=C(C)C(=C(C)C(=C2O1)C)OC)CH2Br",
+            "product_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC[C@@]1(C)CCC2=C(C)C(=C(C)C(=C2O1)C)OC",
+            "notes": "Reductive dehalogenation of a primary alkyl bromide to a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3, DCM",
+            "reagent_smiles": "B(Br)(Br)Br",
+            "conditions": "-10 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC[C@]1(C)CCC2=C(C)C(=C(C)C(=C2O1)C)OC",
+            "product_smiles": "CC(C)CCC[C@@H](C)CCC[C@@H](C)CCC[C@]1(C)CCC2=C(C)C(=C(C)C(=C2O1)C)O",
+            "notes": "Demethylation of a methoxy-substituted tocopherol derivative to a hydroxyl group using boron tribromide.",
+            "substeps": []
+        }
+    ]
+}

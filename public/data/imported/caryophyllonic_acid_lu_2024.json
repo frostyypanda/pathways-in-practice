@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "caryophyllonic-acid-lu-2024",
+        "molecule_name": "Caryophyllonic Acid",
+        "class": "Natural Product",
+        "author": "Lu",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ketene-alkyne [2+2] cycloaddition",
+            "reagents": "MeCN",
+            "reagent_smiles": "[OEt]C#C",
+            "conditions": "rt to 45 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC(=C=O)C",
+            "product_smiles": "[OEt]C1=CC(=O)C1(C)C",
+            "notes": "A ketene-alkyne [2+2] cycloaddition reaction between isopropylidene ketene and ethoxyacetylene, forming a substituted cyclobutenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "tBuLi",
+            "reagent_smiles": "ICCC1(C)(C)SCCS1",
+            "conditions": "Et2O, -78 °C",
+            "yield": "65%",
+            "reactant_smiles": "CCOC1=CC(=O)C1(C)C",
+            "product_smiles": "CC1(C)C(=CC1=O)CCC2(C)(C)SCCS2",
+            "notes": "Nucleophilic attack on the cyclobutenone ring by a carbanion derived from the dithiolane-containing alkyl iodide, displacing the ethoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric 1,4-reduction / Silyl enol ether formation",
+            "reagents": "Cu(OAc)2, NaOtBu, (EtO)2MeSiH",
+            "reagent_smiles": "[Fe](C1=CC=C(C=C1)[C@H](C)P(C2CCCCC2)C3CCCCC3)(C4=CC=C(C=C4)P(C5=CC=CC=C5)C6=CC=CC=C6)",
+            "conditions": "THF, rt to -20 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C(=O)C(=C1)CCC2(C)(C)SCCS2",
+            "product_smiles": "CC1(C)[C@H](CCC2(C)(C)SCCS2)C=C(OSi(C)(OCC)OCC)C1",
+            "notes": "Asymmetric 1,4-reduction of a cyclobutenone to a silyl enol ether, forming a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alpha-bromination of enol silyl ether",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "87%",
+            "reactant_smiles": "CCO[Si](C)(OCC)OC1=C[C@@H](CCC2(C)SCCS2)C1(C)C",
+            "product_smiles": "CC1(C)[C@@H](CCC2(C)SCCS2)C(Br)C1=O",
+            "notes": "Alpha-bromination of an enol silyl ether to yield an alpha-bromo ketone. The transformation involves bromination and hydrolysis of the silyl enol ether in two steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nickel-catalyzed Cross-coupling / Alkylation",
+            "reagents": "Mg, LiCl, 1,2-dibromoethane, ZnCl2, NiBr2·glyme",
+            "reagent_smiles": "",
+            "conditions": "THF, DME, 80 °C to rt, -60 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC1(C)[C@@H](CCC2(C)SCCS2)C(Br)C1=O",
+            "product_smiles": "C=C(CCCOCC1=CC=CC=C1)[C@@H]2[C@H](CCC3(C)SCCS3)C(C)(C)C2=O",
+            "notes": "Nickel-catalyzed asymmetric cross-coupling of an alpha-bromo cyclobutanone (with wavy bond indicating unspecified stereochemistry at bromine-bearing carbon) with an alkenyl nucleophile. The reaction forms a new C-C bond, replacing the bromine with an alkenyl-ether group. The relative stereochemistry of the two adjacent chiral centers in the cyclobutanone product is trans (solid vs. dashed wedge). The complex bis-oxazoline structure drawn in the center is interpreted as a chiral ligand for the Ni catalyst, not a stoichiometric reagent, hence its SMILES is not provided in `reagent_smiles`.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "BnBr, NaH, TBAI",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, -30 °C",
+                    "yield": "74%",
+                    "reactant_smiles": "C=C(CCCO)Br",
+                    "product_smiles": "C=C(CCC[OBn])Br",
+                    "notes": "Benzyl protection of primary alcohol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=C(CC[OBn])[C@H]2[C@H](CCC3(C)SCCS3)C(C)(C)C2=O",
+            "product_smiles": "C=C(CC[OBn])[C@H]2[C@H](CCC3(C)SCCS3)C(C)(C)[C@H]2O",
+            "notes": "Reduction of a cyclobutanone to a cyclobutanol using Lithium Aluminum Hydride. Stereochemistry of the newly formed alcohol is controlled.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dithiane Deprotection",
+            "reagents": "Mel, CaCO3",
+            "reagent_smiles": "CI.CaCO3",
+            "conditions": "MeCN, H2O, 45 °C",
+            "yield": "90%",
+            "reactant_smiles": "C=C(CCC[OBn])[C@@H]2[C@H](CCC3(C)SCCS3)C(C)(C)[C@@H]2O",
+            "product_smiles": "C=C(CCC[OBn])[C@@H]2[C@H](CCC(=O)C)C(C)(C)[C@@H]2O",
+            "notes": "Deprotection of a dithiane to a ketone using methyl iodide and calcium carbonate. The benzyl ether, alkene, and alcohol groups remain untouched. The stereochemistry of the three chiral centers on the cyclobutane is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Xanthate formation",
+            "reagents": "CS₂, MeI, NaH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "95%",
+            "reactant_smiles": "C=C(CCCO[Bn])[C@@H]1[C@@H](O)C(C)(C)[C@H]1CCC(=O)C",
+            "product_smiles": "C=C(CCCO[Bn])[C@@H]1[C@@H](OC(=S)SC)C(C)(C)[C@H]1CCC(=O)C",
+            "notes": "Conversion of an alcohol to an O-alkyl S-methyl dithiocarbonate (xanthate).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Radical deoxygenation (Barton-McCombie)",
+            "reagents": "AIBN, nBu3SnH",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 100 °C",
+            "yield": "48%",
+            "reactant_smiles": "C=C(CCCOCC1=CC=CC=C1)[C@H]2[C@@H](CCC(=O)C)C(C)(C)[C@H]2OC(=S)SC",
+            "product_smiles": "C=C(CCCOCC1=CC=CC=C1)[C@H]2[C@@H](CCC(=O)C)C(C)(C)[C@H]2",
+            "notes": "Radical deoxygenation of a xanthate to remove the -OC(=S)SMe group, forming an alkane. This is a Barton-McCombie type reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Debenzylation",
+            "reagents": "LDA, Li-naphthalenide",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 to -25 °C",
+            "yield": "63%",
+            "reactant_smiles": "C=C(CCCO[Bn])[C@@H]2CC(C)(C)[C@H]2CCC(=O)C",
+            "product_smiles": "C=C(CCCO)[C@@H]1CC(C)(C)[C@H]1CCC(=O)C",
+            "notes": "Cleavage of benzyl ether to form a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "CrO3, H2SO4, H2O",
+            "reagent_smiles": "",
+            "conditions": "acetone, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "C=C(CCCO)[C@@H]1[C@H](CCC(=O)C)C(C)(C)CC1",
+            "product_smiles": "C=C(CCC(=O)O)[C@@H]1[C@H](CCC(=O)C)C(C)(C)CC1",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid using Jones reagent conditions.",
+            "substeps": []
+        }
+    ]
+}

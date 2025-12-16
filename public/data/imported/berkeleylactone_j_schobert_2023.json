@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "berkeleylactone-j-schobert-2023",
+        "molecule_name": "Berkeleylactone J",
+        "class": "Natural Product",
+        "author": "Schobert",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Addition to Epoxide",
+            "reagents": "Mg, CuCN",
+            "reagent_smiles": "C[C@H]1OC1",
+            "conditions": "THF, reflux, -40 - 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "C=CCCCCCCCCBr",
+            "product_smiles": "C=CCCCCCCCCC[C@H](C)O",
+            "notes": "Formation of an alkyl Grignard reagent followed by nucleophilic attack on (S)-methyloxirane. The reaction extends the carbon chain and introduces a secondary alcohol. The stereochemistry of the drawn epoxide is (S)-methyloxirane, while the drawn product is (R)-alcohol. Mechanistically, this reaction would typically retain configuration, implying a potential stereochemical inconsistency between the drawn reagent and product in the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification (Acetylation)",
+            "reagents": "Ac2O, pyridine, DMAP",
+            "reagent_smiles": "CC(=O)OC(=O)C.c1ccncc1.CN(C)c1ccncc1",
+            "conditions": "CH2Cl2, rt",
+            "yield": "98%",
+            "reactant_smiles": "C=CCCCCCCC[C@H](C)O",
+            "product_smiles": "C=CCCCCCCC[C@H](C)[OAc]",
+            "notes": "Acetylation of a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "K2OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "acetone/H2O, 0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "C=CCCCCCCCCC[C@H](C)OC(=O)C",
+            "product_smiles": "C[C@H](CCCCCCCCCC(CO)O)OC(=O)C",
+            "notes": "Terminal alkene syn-dihydroxylation (Upjohn dihydroxylation) to form a 1,2-diol. The acetate stereocenter is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Vicinal Diol Cleavage / Periodate Oxidation",
+            "reagents": "NaIO4, SiO2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H](CCCCCCCCC(O)CO)[OAc]",
+            "product_smiles": "C[C@@H](CCCCCCCCC=O)[OAc]",
+            "notes": "Oxidative cleavage of a vicinal diol using sodium periodate to yield an aldehyde. The secondary alcohol and the primary alcohol are cleaved, resulting in an aldehyde. The stereocenter remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Aldehyde chain extension / Homologation",
+            "reagents": "SnCl2, CH2Cl2",
+            "reagent_smiles": "[N-]=[N+]=C(C(=O)OCC)",
+            "conditions": "0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "O=CCCCCCCCCC[C@@H](C)OC(=O)C",
+            "product_smiles": "CCOC(=O)CC(=O)CCCCCCCCCC[C@@H](C)OC(=O)C",
+            "notes": "Aldehyde is converted to a beta-keto ester via addition of ethyl diazoacetate, forming a new C-C bond and extending the carbon chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "[RuCl2(C6H6)2], (S)-BINAP, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 60 °C",
+            "yield": "87%",
+            "reactant_smiles": "[OEt]C(=O)CC(=O)CCCCCCCCC[C@@H](C)[OAc]",
+            "product_smiles": "[OEt]C(=O)C[C@@H](O)CCCCCCCCC[C@@H](C)[OAc]",
+            "notes": "Asymmetric hydrogenation of a ketone to a chiral alcohol using a ruthenium-BINAP catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetal formation",
+            "reagents": "(MeO)₂CH₂, P₂O₅",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "95%",
+            "reactant_smiles": "CCOC(=O)C[C@H](CCCCCCCCC[C@@H](C)[OAc])O",
+            "product_smiles": "CCOC(=O)C[C@H](CCCCCCCCC[C@@H](C)[OAc])OCOC",
+            "notes": "Formation of a dimethyl acetal from a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "CCOC(=O)C[C@H](CCCCCCCC[C@@H](C)OC(=O)C)OCOC",
+            "product_smiles": "C[C@@H](O)CCCCCCCC[C@H](OCOC)CC=O",
+            "notes": "Partial reduction of an ethyl ester to an aldehyde and reduction of an acetate to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wittig-type Macrocyclization",
+            "reagents": "toluene",
+            "reagent_smiles": "O=C=C=[P](c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "55 °C",
+            "yield": "62%",
+            "reactant_smiles": "C[C@H](CCCCCCCCC[C@H](CC=O)OCOC)O",
+            "product_smiles": "C[C@H]1CCCCCCCCC[C@@H](C/C=C/C(=O)O1)OCOC",
+            "notes": "An aldehyde and a secondary alcohol undergo a Wittig-type macrocyclization with ketenylidenetriphenylphosphorane to form an alpha,beta-unsaturated macrolactone. The MOM protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "",
+            "reagent_smiles": "O=[Se]=O",
+            "conditions": "1,4-dioxane, 155 °C",
+            "yield": "77%",
+            "reactant_smiles": "C[C@@H]1CCCCCCCCC[C@@H](C/C=C/C(=O)O1)OCOC",
+            "product_smiles": "C[C@@H]1CCCCCCCCC[C@@H](C(=O)/C=C/C(=O)O1)OCOC",
+            "notes": "Allylic oxidation of a methylene group adjacent to an alpha,beta-unsaturated ester to form an alpha,beta-unsaturated ketone (enone).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "Zn(BH4)2",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -78 °C",
+            "yield": "96%",
+            "reactant_smiles": "C[C@@H]1CCCCCCCCC[C@@H](C(=O)/C=C/C(=O)O1)OCOC",
+            "product_smiles": "C[C@@H]1CCCCCCCCC[C@@H]([C@H](/C=C/C(=O)O1)O)OCOC",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol within a macrolactone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "MOM Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "95%",
+            "reactant_smiles": "C[C@@H]1CCCCCCCCC[C@H](OCOC)[C@@H](\\C=C/C(=O)O1)O",
+            "product_smiles": "C[C@@H]1CCCCCCCCC[C@H](O)[C@@H](\\C=C/C(=O)O1)O",
+            "notes": "Acid-catalyzed deprotection of methoxymethyl (MOM) ether to a hydroxyl group.",
+            "substeps": []
+        }
+    ]
+}

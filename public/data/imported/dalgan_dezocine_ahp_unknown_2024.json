@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dalgan-dezocine-ahp-unknown-2024",
+        "molecule_name": "Dalgan (Dezocine AHP)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "t-BuOH",
+            "reagent_smiles": "BrCCCCCBr.CC(C)([O-])[K+]",
+            "conditions": "",
+            "yield": "68%",
+            "reactant_smiles": "O=C1CC(C)C2=CC=C(OC)C=C21",
+            "product_smiles": "O=C1CC(C)(C)(CCCCCBr)C2=CC=C(OC)C=C21",
+            "notes": "Alkylation of a ketone enolate. The product structure in the screenshot shows an additional methyl group at the C3 position compared to the reactant, which is not accounted for by the listed reagents (1,5-dibromopentane, t-BuOK).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular SN2 cyclization",
+            "reagents": "NaH",
+            "reagent_smiles": "[NaH]",
+            "conditions": "DMF",
+            "yield": "65%",
+            "reactant_smiles": "COc1ccc2c(c1)C(=O)CC(C)(CCCCCBr)C2",
+            "product_smiles": "COc1ccc2c(c1)C(=O)C1(C)CCCCCCC1C2",
+            "notes": "Intramolecular cyclization of an alpha-bromoalkyl ketone to form a fused polycyclic system, likely via enolate formation and attack on the alkyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxime formation",
+            "reagents": "NH2OH.HCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "45%",
+            "reactant_smiles": "CC12CCCCCC(CC3=CC=C(C=C31)OC)C2=O",
+            "product_smiles": "CC/12CCCCCC(CC3=CC=C(C=C31)OC)\\C2=N/O",
+            "notes": "Ketone undergoes oxime formation with hydroxylamine hydrochloride in the presence of pyridine under reflux.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "Raney Ni, NH4OH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 50 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC12CCCCC(CC3=CC=C(C=C31)OC)C2=NOH",
+            "product_smiles": "CC12CCCCC(CC3=CC=C(C=C31)OC)C2N",
+            "notes": "Reduction of an oxime to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Chiral Resolution",
+            "reagents": "chiral resolution",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "26%",
+            "reactant_smiles": "COc1ccc2c(c1)CC3(C)CCCCC3C(N)C2",
+            "product_smiles": "COc1ccc2c(c1)C[C@@]3(C)CCCCC[C@H](N)[C@H]3C2",
+            "notes": "Resolution of a racemic mixture to a specific enantiomer, leading to the isolation of one diastereomer with defined stereochemistry at three centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ether Cleavage / Demethylation",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "89%",
+            "reactant_smiles": "CC12CCC[C@H](N)[C@@H]1C[C@@H]3Cc4ccc(OC)cc4C23",
+            "product_smiles": "CC12CCC[C@H](N)[C@@H]1C[C@@H]3Cc4ccc(O)cc4C23",
+            "notes": "Hydrolysis of a methyl ether to a phenol.",
+            "substeps": []
+        }
+    ]
+}

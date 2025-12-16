@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sativenediol-dreiding-1988",
+        "molecule_name": "Sativenediol",
+        "class": "Natural Product",
+        "author": "Dreiding",
+        "year": 1988
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "[2+2] Cycloaddition",
+            "reagents": "Et3N",
+            "reagent_smiles": "CC(C)CC(=O)Cl",
+            "conditions": "reflux",
+            "yield": "71%",
+            "reactant_smiles": "C1=CCC=C1",
+            "product_smiles": "C1C(=O)C(C(C)C)C2C1C=CC2",
+            "notes": "[2+2] cycloaddition of cyclopentadiene with 3-methylbutanoyl chloride (likely forming a ketene in situ with Et3N) to form a bicyclic ketone with an isopropyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylic Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "hv, CCl4, 77 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)C1C2C=CCC2C1=O",
+            "product_smiles": "CC(C)C1C2C=CC(Br)C2C1=O",
+            "notes": "Free radical allylic bromination of a bicyclic ketone using NBS and light.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reductive Cyclization / Intramolecular Cyclopropanation",
+            "reagents": "t-BuLi, Ti(OiPr)4",
+            "reagent_smiles": "",
+            "conditions": "THF, -80 °C",
+            "yield": "52%",
+            "reactant_smiles": "CC(C)C1C2C=CC(Br)C2C1=O",
+            "product_smiles": "CC(C)[C@H]1CC(C)(C)C(=C)[C@H]2C(=O)C3C=C([C@H]12)C3",
+            "notes": "Tandem reductive cyclization of a bromoketone containing an alkene, mediated by t-BuLi and Ti(OiPr)4, to form a complex tricyclic ketone with multiple chiral centers, two methyl groups, an isopropyl group, an exocyclic methylene, and an endocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Dibromomethyllithium Addition to Ketone",
+            "reagents": "CH2Br2, TMPH, MeLi",
+            "reagent_smiles": "BrCBr.[Li]C.CC1(C)CCCC(C)(C)N1",
+            "conditions": "Et2O, -80 °C",
+            "yield": "63%",
+            "reactant_smiles": "CC(C)[C@@H]1C(=O)C2(C)C(=C)[C@H]3C=C[C@@H]4[C@H]1[C@H](C3)C42",
+            "product_smiles": "CC(C)[C@@H]1[C@](O)(C(Br)Br)C2(C)C(=C)[C@H]3C=C[C@@H]4[C@H]1[C@H](C3)C42",
+            "notes": "Addition of dibromomethyllithium (generated in situ from CH2Br2, MeLi, and TMPH) to the ketone, forming a tertiary alcohol with a gem-dibromomethyl group. The isopropyl group maintains its stereochemistry. The hydroxyl group is added as a dash, and the dibromomethyl group as a wedge.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Rearrangement, Dehalogenation, Ketone Formation",
+            "reagents": "MeLi",
+            "reagent_smiles": "C[Li]",
+            "conditions": "Et2O, -80 °C",
+            "yield": "41%",
+            "reactant_smiles": "CC(C)[C@H]1C2C=CC3C2C=CC(C)(C3=C)[C@@](O)(C(Br)Br)C1",
+            "product_smiles": "CC(C)[C@H]1C[C@H]2C(=O)C3(C)C(=C)CC[C@H]2[C@H]13",
+            "notes": "A complex transformation involving the conversion of a gem-dibromo alcohol to a ketone, likely via a rearrangement mechanism initiated by MeLi.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Wolff-Kishner Reduction",
+            "reagents": "N2H4 H2O, K2CO3, O2",
+            "reagent_smiles": "",
+            "conditions": "triethylene glycol, 180 °C",
+            "yield": "81%",
+            "reactant_smiles": "CC(C)[C@H]1CCC(=O)C2(C)C(=C)[C@@H]3C=C[C@H]4[C@H]2[C@H]13",
+            "product_smiles": "CC(C)[C@H]1CCCC2(C)C(=C)[C@@H]3C=C[C@H]4[C@H]2[C@H]13",
+            "notes": "Reduction of a cyclic ketone to a methylene group in a polycyclic system (Wolff-Kishner type reaction).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Syn-dihydroxylation",
+            "reagents": "OsO4, Pyridine",
+            "reagent_smiles": "",
+            "conditions": "Et2O, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@H]1CC[C@@H]2[C@H]3C=C[C@@]4([C@H]21)C3(C)C(=C)C4",
+            "product_smiles": "CC(C)[C@H]1CC[C@@H]2[C@H]3[C@H](O)[C@H](O)[C@@]4([C@H]21)C3(C)C(=C)C4",
+            "notes": "Syn-dihydroxylation of the internal double bond using osmium tetroxide to form a vicinal diol. The exocyclic double bond remains untouched.",
+            "substeps": []
+        }
+    ]
+}

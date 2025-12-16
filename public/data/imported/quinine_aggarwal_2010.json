@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "quinine-aggarwal-2010",
+        "molecule_name": "Quinine",
+        "class": "Natural Product",
+        "author": "Aggarwal",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidation (Oppenauer)",
+            "reagents": "Benzophenone, KO-tBu",
+            "reagent_smiles": "O=C(c1ccccc1)c2ccccc2.CC(C)(C)[O-].[K+]",
+            "conditions": "toluene, reflux",
+            "yield": "96%",
+            "reactant_smiles": "C=CC1CN2CCC1CC2[C@H](C3=C4C=C(C=CC4=NC=C3)OC)O",
+            "product_smiles": "C=CC1CN2CCC1CC2C(=O)C3=C4C=C(C=CC4=NC=C3)OC",
+            "notes": "Oxidation of a secondary alcohol (quinin-9-ol) to a ketone (quinin-9-one). The reaction uses benzophenone as the hydride acceptor and potassium tert-butoxide as a base in toluene under reflux conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "KO-tBu, O2",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH/THF",
+            "yield": "",
+            "reactant_smiles": "COC1=CC2=C(C=CN=C2C=C1)C(=O)CN3C[C@@H](C=C)C4CCC3CC4",
+            "product_smiles": "COC1=CC2=C(C=CN=C2C=C1)C(=O)O",
+            "notes": "Oxidative cleavage of an alpha-amino ketone derivative to a carboxylic acid, likely via enolate oxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "BH3 THF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "96%",
+            "reactant_smiles": "COC1=CC2=C(C=CN=C2C=C1)C(=O)O",
+            "product_smiles": "COC1=CC2=C(C=CN=C2C=C1)CO",
+            "notes": "Reduction of a quinoline carboxylic acid to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Carbamate Formation, Reduction",
+            "reagents": "TMS(CH2)2OH, triphosgene, K2CO3, then NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "79%",
+            "reactant_smiles": "COC1=CC2=C(C=CN=C2C=C1)CO",
+            "product_smiles": "COC1=CC2=C(C=C1)N(CC=C2CO)C(=O)OCC[Si](C)(C)C",
+            "notes": "The quinoline nitrogen is protected with a 2-(trimethylsilyl)ethyl carbamate (Teoc group) using TMS(CH2)2OH and triphosgene/K2CO3, followed by reduction of the quinoline ring system to a 1,2-dihydroquinoline using NaBH4.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Sulfonium Salt Formation",
+            "reagents": "2,6-di-tert-butylpyridine",
+            "reagent_smiles": "CC(C)(C)c1nccc(C(C)(C)C)c1.O=S(=O)(C(F)(F)F)OS(=O)(=O)C(F)(F)F.[S@]1C2CCC1C2(C)C",
+            "conditions": "CH2Cl2",
+            "yield": "71%",
+            "reactant_smiles": "COC1=CC2=C(C=C1)N(C(=O)OCC[Si](C)(C)C)CC=C(CO)C2",
+            "product_smiles": "COC1=CC2=C(C=C1)N(C(=O)OCC[Si](C)(C)C)CC=C(C[S@+]3C(C)(C)C4CCC3C4)C2.[O-]S(=O)(=O)C(F)(F)F",
+            "notes": "Formation of a chiral sulfonium salt from an alcohol using a chiral sulfide and triflic anhydride. The hydroxyl group is converted to a sulfonium leaving group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Sulfonium Ylide Cycloaddition",
+            "reagents": "KOH",
+            "reagent_smiles": "C=C[C@H]1CC[C@@H](CC=O)N([Teoc])C1",
+            "conditions": "CH3CN, t-BuOH",
+            "yield": "81%",
+            "reactant_smiles": "COc1ccc2c(c1)C=C(C[S+](C)[C@@H]3CC[C@@H]4C(C)(C)[C@@H]3C[C@H]4C)CN([Teoc])C2.[OTf]",
+            "product_smiles": "C=C[C@H]1CC[C@@H](C[C@@H]2O[C@@H]([C@@H]3C4=C2C=C(OC)C=C4N([Teoc])CC3)C)N([Teoc])C1",
+            "notes": "Intramolecular asymmetric sulfonium ylide reaction between a quinoline derivative and a piperidine-containing aldehyde, forming a polycyclic product with a new furan ring.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Oppenauer Oxidation",
+                    "reagents": "Benzophenone, KO-tBu",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, reflux",
+                    "yield": "96%",
+                    "reactant_smiles": "C=CC1CN2CCC1CC2[C@@H](C3=C4C=C(C=CC4=NC=C3)OC)O",
+                    "product_smiles": "C=CC1CN2CCC1CC2C(=O)C3=C4C=C(C=CC4=NC=C3)OC",
+                    "notes": "Oxidation of a secondary alcohol to a ketone using benzophenone as hydrogen acceptor and potassium tert-butoxide as base.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Oxidative Fragmentation",
+                    "reagents": "KO-tBu, O2",
+                    "reagent_smiles": "",
+                    "conditions": "i-PrOH/THF",
+                    "yield": "",
+                    "reactant_smiles": "COc1ccc2nc(ccc2c1)C(=O)C3CC(C=C)CN4CC3CC4",
+                    "product_smiles": "C=C[C@H]1[C@H](CC(=O)OC(C)C)CCC[NH]1",
+                    "notes": "Oxidative fragmentation of a quinine derivative into a 2,3-disubstituted piperidine via cleavage of the quinoline and ketone moiety, forming an isopropyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Amine Protection",
+                    "reagents": "TMS(CH2)2OH, K2CO3, triphosgene",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "85%",
+                    "reactant_smiles": "C=C[C@H]1CNCC[C@@H]1CC(=O)OC(C)C",
+                    "product_smiles": "C=C[C@H]1CN([Teoc])CC[C@@H]1CC(=O)OC(C)C",
+                    "notes": "Protection of a secondary piperidine amine as a Teoc carbamate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "71%",
+                    "reactant_smiles": "[Teoc]N1[C@H](C=C)[C@H](CC(=O)OC(C)C)CCC1",
+                    "product_smiles": "[Teoc]N1[C@H](C=C)[C@H](CCO)CCC1",
+                    "notes": "Reduction of an isopropyl ester to a primary alcohol using lithium aluminum hydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Swern Oxidation",
+                    "reagents": "(COCl)₂, DMSO, Et₃N",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂",
+                    "yield": "97%",
+                    "reactant_smiles": "C=C[C@@H]1CC[C@@H](CCO)CN([Teoc])C1",
+                    "product_smiles": "C=C[C@@H]1CC[C@@H](CC=O)CN([Teoc])C1",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde using Swern conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection, Ether Cleavage, Rearomatization",
+            "reagents": "CsF",
+            "reagent_smiles": "",
+            "conditions": "DMF, MW, 180 °C",
+            "yield": "",
+            "reactant_smiles": "ClC(Cl)(Cl)CCOC(=O)N1C[C@H](C=C)[C@@H]2CC[N](C2)[C@H]([C@@H]3O[C@H]4C=C[C@@H](N(C(=O)OCC(Cl)(Cl)Cl)c5c4ccc(OC)c5)C3)",
+            "product_smiles": "C=C[C@@H]1C[C@@H]2NCCC12[C@@H](O)c3cc4ccc(OC)cc4nc3",
+            "notes": "Deprotection of two Teoc groups and cleavage of an internal ether bond, along with aromatization of the dihydroquinoline ring, to yield Quinine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "O₂, DMF",
+            "reagent_smiles": "",
+            "conditions": "DMF (solvent)",
+            "yield": "73%",
+            "reactant_smiles": "C=CC1CN2CCC1CC2[C@@H](O)C3=C(C=C)NC4=C3C=C(OC)C=C4",
+            "product_smiles": "C=CC1CN2CCC1CC2[C@@H](O)c3cnc4ccc(OC)cc4c3",
+            "notes": "Oxidation of a 1,2-dihydroquinoline derivative (1,2-dihydroquinine) to an aromatic quinoline (Quinine). The yield is stated for a 2-step process.",
+            "substeps": []
+        }
+    ]
+}

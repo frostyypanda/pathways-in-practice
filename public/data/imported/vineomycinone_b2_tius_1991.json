@@ -1,0 +1,266 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vineomycinone-b2-tius-1991",
+        "molecule_name": "Vineomycinone B2",
+        "class": "Natural Product",
+        "author": "Tius",
+        "year": 1991
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Etherification / Protection",
+            "reagents": "MOMCl, i-Pr₂NEt",
+            "reagent_smiles": "",
+            "conditions": "CHCl₃, reflux",
+            "yield": "73%",
+            "reactant_smiles": "C1=CC(=C2C(=C1)C(=O)C3=C(C=CC=C3O)C2=O)O",
+            "product_smiles": "C1=CC(=C2C(=C1O[MOM])C(=O)C3=C(C=CC=C3O[MOM])C2=O",
+            "notes": "Protection of both phenolic hydroxyl groups of 1,8-dihydroxyanthraquinone with methoxymethyl (MOM) chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "CC(C)O",
+            "conditions": "i-PrOH, reflux",
+            "yield": "87%",
+            "reactant_smiles": "COCOC1=CC=CC2=C1C(=O)C3=C(C=CC=C3C2=O)OCOC",
+            "product_smiles": "COCOC1=CC=CC2=CC3=C(C=CC=C3C=C21)OCOC",
+            "notes": "Reduction of 1,5-bis(methoxymethoxy)anthracene-9,10-dione to 1,5-bis(methoxymethoxy)anthracene using sodium borohydride in isopropanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Stannylation",
+            "reagents": "t-BuLi, pentane, Et2O, n-Bu3SnCl",
+            "reagent_smiles": "",
+            "conditions": "-10 °C",
+            "yield": "74%",
+            "reactant_smiles": "O[MOM]C1=CC=CC2=CC3=C(C=CC=C3C=C21)O[MOM]",
+            "product_smiles": "[Sn]([Bu])([Bu])[Bu]C1=CC=C2C=C3C(=CC2=C1O[MOM])C=CC=C3O[MOM]",
+            "notes": "Directed ortho-metalation (DOM) of 1,8-bis(methoxymethoxy)anthracene followed by stannylation with tributyltin chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Iododestannylation",
+            "reagents": "DCM",
+            "reagent_smiles": "I",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)c1ccc2c(c1[MOMO])ccc3c2c([MOMO])ccc3",
+            "product_smiles": "Ic1ccc2c(c1[MOMO])ccc3c2c([MOMO])ccc3",
+            "notes": "A tributylstannyl group on an anthracene core is replaced by an iodine atom via reaction with I2.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "Pd(PPh3)2Cl2, DIBAL",
+            "reagent_smiles": "C[C@@H]1OC=C([Zn]Cl)[C@H]([OTBS])[C@@H](C)[C@@H]1[OTBS]",
+            "conditions": "THF",
+            "yield": "79%",
+            "reactant_smiles": "COCCOc1c(I)c2cc3ccccc3cc2cc1OCOC",
+            "product_smiles": "COCCOc1cc(OCOC)c2cc(C3=C[C@H]([OTBS])[C@@H](C)[C@@H]([OTBS])C([C@@H](C)O3))c4ccccc4cc2c1",
+            "notes": "Negishi coupling of an aryl iodide with a functionalized dihydropyran zinc reagent, forming a C-C bond at the C9 position of the anthracene.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Deacetylation / Ester Hydrolysis",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "",
+                    "reactant_smiles": "[OAc]C[C@@H]1[C@H]([C@@H](C=CO1)[OAc])[OAc]",
+                    "product_smiles": "C1=CO[C@@H](CO)[C@H]([C@@H]1O)O",
+                    "notes": "Hydrolysis of all acetate esters to alcohols using potassium carbonate in methanol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Mesylation",
+                    "reagents": "MsCl, Et3N",
+                    "reagent_smiles": "CCN(CC)CC.CS(Cl)(=O)=O",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "O1C=C[C@@H](O)[C@@H](O)[C@H](CO)1",
+                    "product_smiles": "O1C=C[C@@H](O)[C@@H](O)[C@H](COS(=O)(=O)C)1",
+                    "notes": "Selective mesylation of the primary alcohol group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Acetylation (Esterification)",
+                    "reagents": "Ac₂O, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "52%",
+                    "reactant_smiles": "[OMs]C[C@@H]1OC=C[C@H](O)[C@@H]1O",
+                    "product_smiles": "[OMs]C[C@@H]1OC=C[C@H]([OAc])[C@@H]1[OAc]",
+                    "notes": "3 steps",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Nucleophilic Substitution",
+                    "reagents": "LiI",
+                    "reagent_smiles": "[Li]I",
+                    "conditions": "THF, reflux",
+                    "yield": "95%",
+                    "reactant_smiles": "[OAc][C@H]1C=C[C@@H](C[OMs])O[C@H]1[OAc]",
+                    "product_smiles": "[OAc][C@H]1C=C[C@@H](CI)O[C@H]1[OAc]",
+                    "notes": "Substitution of a mesyloxy group with an iodide, maintaining configuration at the chiral center alpha to the leaving group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.5",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "[AlH4-].[Li+]",
+                    "conditions": "THF, rt",
+                    "yield": "92%",
+                    "reactant_smiles": "[Ac]O[C@@H]1[C@H](O[Ac])C=C[C@H](C[I])O1",
+                    "product_smiles": "C[C@H]1[C@H]([C@@H](C=CO1)O)O",
+                    "notes": "Reduction of acetate esters to hydroxyl groups and alkyl iodide to a methyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.6",
+                    "reaction_type": "Alcohol Silylation (Protection)",
+                    "reagents": "TBSOTf, Et3N",
+                    "reagent_smiles": "CCN(CC)CC",
+                    "conditions": "DCM",
+                    "yield": "96%",
+                    "reactant_smiles": "C[C@@H]1O[C@@H](O)[C@H](O)C=C1",
+                    "product_smiles": "C[C@@H]1O[C@@H]([OTBS])[C@H]([OTBS])C=C1",
+                    "notes": "Stereoselective bis-silylation of vicinal diols using TBSOTf and Et3N.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.7",
+                    "reaction_type": "Metalation",
+                    "reagents": "t-BuLi, ZnCl2",
+                    "reagent_smiles": "CC(C)(C)[Li].Cl[Zn]Cl",
+                    "conditions": "THF, pentane",
+                    "yield": "",
+                    "reactant_smiles": "C[C@H]1O[C@H]2C=C[C@@H]([OTBS])[C@H]2[OTBS]",
+                    "product_smiles": "C[C@H]1O[C@H]2C=C([Zn]Cl)[C@@H]([OTBS])[C@H]2[OTBS]",
+                    "notes": "Direct C-H metalation on the double bond of a dihydropyran with retained stereochemistry and double bond position.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkene Reduction",
+            "reagents": "NaBH3CN, HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "87%",
+            "reactant_smiles": "O[C@@](C)([OTBS])[C@H]([OTBS])C=C(c1c([OMOM])cc2c3ccc([OMOM])cc3c2c1)O1",
+            "product_smiles": "O[C@@](C)([OTBS])[C@H]([OTBS])CC[C@@H](c1c([OMOM])cc2c3ccc([OMOM])cc3c2c1)O1",
+            "notes": "Reductive saturation of the dihydropyran alkene to a tetrahydropyran. The stereochemistry at the anthracene attachment point is established as down (dashed) in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Aryl Stannylation",
+            "reagents": "n-BuLi, TMEDA, THF",
+            "reagent_smiles": "CCCC[Sn](CCCC)Cl",
+            "conditions": "0 °C",
+            "yield": "92%",
+            "reactant_smiles": "C[C@H]1O[C@@H](C[C@H](O[Si](C)(C)C(C)(C)C)C[C@@H]1O[Si](C)(C)C(C)(C)C)c2cc(OCOC)c3ccc4ccc(OCOC)c4c3c2",
+            "product_smiles": "C[C@H]1O[C@@H](C[C@H](O[Si](C)(C)C(C)(C)C)C[C@@H]1O[Si](C)(C)C(C)(C)C)c2c([Sn](CCCC)(CCCC)CCCC)c(OCOC)c3ccc4ccc(OCOC)c4c3c2",
+            "notes": "Regioselective stannylation of the aromatic C-H bond via lithiation with n-BuLi/TMEDA and subsequent quenching with n-Bu3SnCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd2(dba)3.CHCl3, PPh3",
+            "reagent_smiles": "CC(C)(C)[C@@H]1OC(=CC(=O)O1)CBr",
+            "conditions": "THF, 70 °C",
+            "yield": "50%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)C1=C(OCOC)C2=CC3=C(C=C2C=C1)C(OCOC)=CC=C3[C@@H]4O[C@H](C)[C@@H]([C@H](C[C@H]4[OTBS])[OTBS])",
+            "product_smiles": "C[C@H]1O[C@@H]2[C@H](C[C@H](C[C@@H]2[OTBS])[OTBS])C3=CC4=C(C=C3C=C(C=C4OCOC)CC5=CC(=O)O[C@@H](C(C)(C)C)O5)OCOC",
+            "notes": "Stille coupling of an anthracene-tributyltin with a brominated lactone, replacing the tin group with a new carbon-carbon bond.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Acetalization / Condensation",
+                    "reagents": "pivaldehyde, H+ cat.",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C[C@H](CC(=O)O)O",
+                    "product_smiles": "C[C@H]1CC(=O)O[C@H](C(C)(C)C)O1",
+                    "notes": "Formation of a cyclic 1,3-dioxan-4-one from (R)-3-hydroxybutanoic acid and pivaldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Alpha-bromination",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C[C@H]1CC(=O)O[C@H](C(C)(C)C)O1",
+                    "product_smiles": "C[C@H]1[C@@H](Br)C(=O)O[C@H](C(C)(C)C)O1",
+                    "notes": "Alpha-bromination of a lactone using NBS, introducing bromine at the C6 position with inversion of configuration relative to hydrogen.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Reductive Elimination / Dehydrohalogenation",
+                    "reagents": "H2, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C[C@@H]1[C@H](Br)C(=O)O[C@@H](C(C)(C)C)O1",
+                    "product_smiles": "CC1=CC(=O)O[C@@H](C(C)(C)C)O1",
+                    "notes": "Reductive elimination of HBr to form an alpha,beta-unsaturated lactone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Allylic Bromination",
+                    "reagents": "NBS, (BzO)₂",
+                    "reagent_smiles": "",
+                    "conditions": "hv, CCl₄",
+                    "yield": "42%",
+                    "reactant_smiles": "CC1=CC(=O)O[C@H](C(C)(C)C)O1",
+                    "product_smiles": "BrCC1=CC(=O)O[C@H](C(C)(C)C)O1",
+                    "notes": "Allylic bromination of the methyl group to a bromomethyl group. The chiral center's stereochemistry is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Conjugate Addition (1,4-addition)",
+            "reagents": "(CH3)2CuLi",
+            "reagent_smiles": "C[Cu](C)Li",
+            "conditions": "Et2O",
+            "yield": "51%",
+            "reactant_smiles": "[OTBS][C@H]1C[C@H]([OTBS])O[C@H](C)[C@@H]1c2ccc3c(c2[OMOM])ccc(c3[OMOM])CH2C4=CC(=O)O[C@H](C(C)(C)C)O4",
+            "product_smiles": "[OTBS][C@H]1C[C@H]([OTBS])O[C@H](C)[C@@H]1c2ccc3c(c2[OMOM])ccc(c3[OMOM])CH2[C@H](C)C4CC(=O)O[C@H](C(C)(C)C)O4",
+            "notes": "Methyl conjugate addition to an alpha,beta-unsaturated delta-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "bis(pyr)AgMnO₄, silica gel",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "85%",
+            "reactant_smiles": "[OTBS][C@@H]1C[C@@H](C2=CC=C3C=C4C(=CC3=C2[OMOM])C=CC(=C4[OMOM])C[C@@]5(C)CC(=O)O[C@H](C(C)(C)C)O5)O[C@@H](C)[C@H]1[OTBS]",
+            "product_smiles": "[OTBS][C@@H]1C[C@@H](C2=CC=C3C(=C2[OMOM])C(=O)C4=C(C(=C(C=C4)C[C@@]5(C)CC(=O)O[C@H](C(C)(C)C)O5)[OMOM])C3=O)O[C@@H](C)[C@H]1[OTBS]",
+            "notes": "Oxidation of naphthalene to anthraquinone using Ley-Griffith reagent.",
+            "substeps": []
+        }
+    ]
+}

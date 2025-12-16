@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "goniomitine-2014-jia-unknown-2024",
+        "molecule_name": "Goniomitine (2014 Jia)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA",
+            "reagent_smiles": "ICCCOCC1=CC=CC=C1",
+            "conditions": "THF, -78 °C to 0 °C",
+            "yield": "70%",
+            "reactant_smiles": "CCOC(=O)C[C@@H](C(=O)OCC)O",
+            "product_smiles": "CCOC(=O)C(CCCOC1=CC=CC=C1)[C@@H](C(=O)OCC)O",
+            "notes": "Alkylation of diethyl 3-hydroxyglutarate at the C2 position with 1-iodo-3-(benzyloxy)propane. A new chiral center is formed at C2 with mixed stereochemistry (indicated by wavy bond), while the original stereochemistry at C3 is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkylation",
+            "reagents": "LiHMDS, THF",
+            "reagent_smiles": "ICCCO[OTBS]",
+            "conditions": "THF",
+            "yield": "40%",
+            "reactant_smiles": "CCOC(=O)[C@H](O)C(CCOCC1=CC=CC=C1)C(=O)OCC",
+            "product_smiles": "CCOC(=O)[C@H](O)[C@@](C(=O)OCC)(CCOCC1=CC=CC=C1)CCCO[OTBS]",
+            "notes": "Alkylation of an alpha-carbon of a beta-hydroxy ester to form a quaternary stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "KOH, MeOH/H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H](O)[C@@](C(=O)OCC)(CC[OBn])CC[OTBS]",
+            "product_smiles": "OC(=O)[C@@H](O)[C@@](C(=O)OCC)(CC[OBn])CC[OTBS]",
+            "notes": "Selective hydrolysis of a diethyl malonate derivative to a monoester/monoacid, leaving another ester and silyl ether intact. The reaction is base-catalyzed hydrolysis using KOH in methanol/water.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Periodate cleavage / Oxidation",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "CCOC(=O)[C@@](CC[OTBS])(CC[OBn])[C@@H](C(=O)O)O",
+            "product_smiles": "CCOC(=O)[C@](CC[OTBS])(CC[OBn])C=O",
+            "notes": "Oxidative cleavage of an alpha-hydroxy carboxylic acid to an aldehyde and carbon dioxide using sodium periodate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Stork-Wittig Reaction",
+            "reagents": "ICH2PPh3I, NaHMDS, HMPA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "90%",
+            "reactant_smiles": "CCOC(=O)[C@](CCCO[OTBS])(CCO[Bn])C=O",
+            "product_smiles": "CCOC(=O)[C@](CCCO[OTBS])(CCO[Bn])/C=C/I",
+            "notes": "An aldehyde is converted to a Z-vinyl iodide via a Stork-Wittig reaction. The stereochemistry of the chiral center is retained. The TBS and Benzyl ether protecting groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Suzuki Coupling",
+            "reagents": "Pd(dppf)Cl2, Cs2CO3",
+            "reagent_smiles": "CC(=O)OCCC1=C(B2OC(C)(C)C(C)(C)O2)NC3=C1C=CC=C3",
+            "conditions": "DMF",
+            "yield": "86%",
+            "reactant_smiles": "CCOC(=O)[C@@](CCCO[OTBS])(/C=C\\I)CCOCC1=CC=CC=C1",
+            "product_smiles": "[OAc]CCC1=C2C=C[C@@](CCCO[OTBS])(CCOCC3=CC=CC=C3)C(=O)N2C4=C1C=CC=C4",
+            "notes": "Suzuki coupling of an iodoalkene and an indole boronic ester, followed by intramolecular cyclization and lactam formation to construct a tetracyclic system.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "C-H Borylation",
+                    "reagents": "[Ir(OMe)(COD)]2, PinBH, dtbpy",
+                    "reagent_smiles": "",
+                    "conditions": "hexane/CH2Cl2",
+                    "yield": "80%",
+                    "reactant_smiles": "CC(=O)OCC1=CNC2=C1C=CC=C2",
+                    "product_smiles": "CC(=O)OCC1=C(B2OC(C)(C)C(C)(C)O2)NC3=C1C=CC=C3",
+                    "notes": "Iridium-catalyzed C-H borylation at the C2 position of the indole ring.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenation / Hydrogenolysis",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "90%",
+            "reactant_smiles": "CC(=O)OCCC1=CC2=C(N3C(=O)[C@](C[OBn])(CC[OTBS])(C=CC3C2))C=C1",
+            "product_smiles": "CC(=O)OCCC1=CC2=C(N3C(=O)[C@](CO)(CC[OTBS])(CCC3C2))C=C1",
+            "notes": "Catalytic hydrogenation of alkene and deprotection of benzyl ether to primary alcohol. Acetate and TBS ether groups are retained. Stereochemistry is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Mitsunobu Reaction",
+            "reagents": "PPH3, I2, ImH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "81%",
+            "reactant_smiles": "O[Si](C)(C)C(C)(C)COCCC[C@@]1(CC2=C(CC[OAc])C3=C(C=CC=C3)N2C1=O)CCO",
+            "product_smiles": "O[Si](C)(C)C(C)(C)COCCC[C@@]1(CC2=C(CC[OAc])C3=C(C=CC=C3)N2C1=O)CCI",
+            "notes": "Conversion of a primary alcohol to a primary iodide via Mitsunobu reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alkylation / Reductive Dehalogenation",
+            "reagents": "Raney Ni, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "CC(=O)OCC1=C2CC[C@](CCC[OTBS])(CCI)C(=O)N2C3=C1C=CC=C3",
+            "product_smiles": "CC[C@@]1(CCC[OTBS])CCC2=C(CCOC(=O)C)C3=C(C=CC=C3)N2C1=O",
+            "notes": "The iodide group at the stereocenter of the reactant is replaced by an n-propyl group in the product. While Raney Ni and H2 typically perform reductive dehalogenation (replacing a halogen with hydrogen), the drawn product shows replacement with a methyl group (leading to n-propyl from ethyl iodide), which is an unexpected outcome for the specified reagents.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "71% (2 steps)",
+            "reactant_smiles": "CC[C@]1(CCCO[Si](C)(C)C(C)(C)C)CCC2=C(CCOC(=O)C)C3=C(C=CC=C3)N2C1=O",
+            "product_smiles": "CC[C@]1(CCCO)CCC2=C(CCOC(=O)C)C3=C(C=CC=C3)N2C1=O",
+            "notes": "TBS silyl ether deprotection to primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "PPh3, DEAD, DPPA",
+            "reagent_smiles": "P(c1ccccc1)(c1ccccc1)c1ccccc1.O=C(OCC)N=NC(=O)OCC.O=P(N=[N+]=[N-])(Oc1ccccc1)Oc1ccccc1",
+            "conditions": "THF",
+            "yield": "81%",
+            "reactant_smiles": "O=C1N(C2=C3C=CC=C3C(=C2CCOC(=O)C))C[C@@](CC)(CCCO)C1",
+            "product_smiles": "O=C1N(C2=C3C=CC=C3C(=C2CCOC(=O)C))C[C@@](CC)(CCCN=[N+]=[N-])C1",
+            "notes": "Alcohol is converted to an azide via a Mitsunobu reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4, THF, then HOAc",
+            "reagent_smiles": "[Li][AlH4].C1CCOC1.CC(=O)O",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "CCOC(=O)CCc1c2c(c3c1n(C(=O)[C@@](CC)(CCC[N-]=N#N)CCC3)C2)",
+            "product_smiles": "CCOCCc1c2c(c3c1n(C[C@H]4CC[C@@](CC)(C3)NC4)C2)",
+            "notes": "Reduction of an azide, an ester, and a lactam to form a secondary amine, an alcohol, and a tertiary amine, respectively, using lithium aluminum hydride followed by acetic acid workup.",
+            "substeps": []
+        }
+    ]
+}

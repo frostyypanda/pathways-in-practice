@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hamayne-banwell-2011",
+        "molecule_name": "Hamayne",
+        "class": "Natural Product",
+        "author": "Banwell",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol protection (Silyl ether formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "91%",
+            "reactant_smiles": "C=CCC(O)CC=C",
+            "product_smiles": "C=CCC(O[TBS])CC=C",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs I",
+            "reagent_smiles": "",
+            "conditions": "PhH, 90 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCC([OTBS])CC=C",
+            "product_smiles": "C1CC([OTBS])=CC1",
+            "notes": "A diene undergoes ring-closing metathesis to form a cyclopentene derivative, mediated by Grubbs I catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclopropanation",
+            "reagents": "CHBr3, Et3BnNBr",
+            "reagent_smiles": "",
+            "conditions": "PhH, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "C1=CCC(C1)[OTBS]",
+            "product_smiles": "[OTBS]C1CC2C(Br)(Br)C2C1",
+            "notes": "Dibromocarbene addition to cyclopentene to form a bicyclo[3.1.0]hexane with gem-dibromo functionality. The reported yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclopropane Ring Opening / Rearrangement (with azide)",
+            "reagents": "chlorobenzene, DMF",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-]",
+            "conditions": "140°C",
+            "yield": "92%",
+            "reactant_smiles": "[OTBS]C1CCC2C1C2(Br)Br",
+            "product_smiles": "[OTBS][C@H]1CC([C@@H]([N-]=[N+]=[N-]))C=C(Br)C1",
+            "notes": "Thermal nucleophilic ring opening of a gem-dibromocyclopropane to a cyclohexene derivative with azide, accompanied by rearrangement and bromine addition.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Staudinger reduction",
+            "reagents": "PPh3, Et3N, NsCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH, DCM",
+            "yield": "83%",
+            "reactant_smiles": "BrC1=CC[C@H]([OTBS])C[C@@H]([N3])C1",
+            "product_smiles": "BrC1=CC[C@H]([OTBS])C[C@@H]([NHNs])C1",
+            "notes": "Staudinger reduction of an azide to a primary amine, followed by in situ sulfonylation with NsCl to form a nosylamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "Pd(dppf)Cl2, Et3N",
+            "reagent_smiles": "B(O)Oc1ccc2c(c1)OCO2",
+            "conditions": "DCM, THF/H2O, 70 °C",
+            "yield": "90%",
+            "reactant_smiles": "[OTBS][C@H]1CC[C@H](N[Ns])C=C(Br)C1",
+            "product_smiles": "[OTBS][C@H]1CC[C@H](N[Ns])C=C(c2ccc3c(c2)OCO3)C1",
+            "notes": "Suzuki coupling of an aryl bromide with a boronic acid to form a biaryl system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, 1-bromobut-2-yne",
+            "reagent_smiles": "[Na][H].CCC#CCBr",
+            "conditions": "DMF, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "[OTBS][C@H]1CC=C(C2=CC=C3C(=C2)OCO3)[C@H](C1)NH[Ns]",
+            "product_smiles": "CC#CCN([C@H]1C[C@H](CC=C1C2=CC=C3C(=C2)OCO3)[OTBS])[Ns]",
+            "notes": "N-alkylation of a secondary amine (sulfonamide) with 1-bromobut-2-yne using sodium hydride as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Palladium-catalyzed Spirocyclization (Heck-type)",
+            "reagents": "Pd(OAc)2",
+            "reagent_smiles": "C1=CC=C(C=C1)C=NCCN=CC2=CC=CC=C2",
+            "conditions": "PhH, 120 °C, mw",
+            "yield": "75%",
+            "reactant_smiles": "C#CCN([C@H]1C[C@H](CC=C1C2=CC3=C(C=C2)OCO3)[OTBS])[Ns]",
+            "product_smiles": "C/C=C/1\\CN([C@H]2C[C@H](C=C[C@]12C3=CC=C4C(=C3)OCO4)[OTBS])[Ns]",
+            "notes": "Intramolecular cyclization of an N-tethered arylalkyne to form a spirocyclic system with an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Upjohn dihydroxylation",
+            "reagents": "NMO, OsO4, citric acid",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C(\\[C@@]12c3ccc4c(c3)OCO4)CN([C@H]2C[C@@H]([OTBS])C=C1)[Ns]",
+            "product_smiles": "C(O)(C(O)C)(\\[C@@]12c3ccc4c(c3)OCO4)CN([C@H]2C[C@@H]([OTBS])C=C1)[Ns]",
+            "notes": "Dihydroxylation of the exocyclic alkene using NMO/OsO4, yielding a diol with unspecified stereochemistry on the newly formed alcohol centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative rearrangement",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "CC(=O)O[I](OC(=O)C)c1ccccc1",
+            "conditions": "",
+            "yield": "53% (2 steps)",
+            "reactant_smiles": "CC([C@@]1(CN([C@@H]2C[C@H](C=C[C@@]21C3=CC=C4C(=C3)OCO4)[OTBS])[Ns])O)O",
+            "product_smiles": "[OTBS][C@H]1C=C[C@@]2(C(=O))(C3=CC=C4C(=C3)OCO4)([C@@H](C1)N([CH2]2)[Ns])",
+            "notes": "Oxidative rearrangement involving cyclopropane ring opening and conversion of tertiary alcohol to exocyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "N-Deprotection / Imine Formation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH/THF, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "[OTBS]O[C@H]1C=C[C@@]23[C@H](C1)N(S(=O)(=O)C4=CC=C(N(=O)=O)C=C4)CC3[C@@]2(O=C5C5C6=CC=C7C(=C6)OCO7)",
+            "product_smiles": "[OTBS]O[C@H]1C=C[C@@]23[C@H](C1)N=C3[C@@]2(O=C4C4C5=CC=C6C(=C5)OCO6)",
+            "notes": "Elimination of Ns group with concomitant imine formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction / Alkylation (Apparent)",
+            "reagents": "NaBH(OAc)3",
+            "reagent_smiles": "[Na]B(OC(C)=O)(OC(C)=O)OC(C)=O.CCOC(=O)C",
+            "conditions": "EtOAc, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[TBS]O[C@H]1C=C[C@@]2(c3ccc4c(c3)OCO4)[C@H]5N=C4C(=O)[C@@]2([C@H]1)C54",
+            "product_smiles": "[TBS]O[C@H]1C=C[C@@]2(c3ccc4c(c3)OCO4)[C@H]5N[C@@H](C)C4[C@@]2[C@@](O)(C)N54",
+            "notes": "The imine is reduced to a secondary amine and the ketone is reduced to a tertiary alcohol. Two methyl groups are present in the product that were not in the reactant (one on the amine carbon and one on the alcohol carbon). This apparent methylation is inconsistent with the reagent NaBH(OAc)3.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Pictet-Spengler reaction",
+            "reagents": "(CH2O)n, HCOOH",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "",
+            "reactant_smiles": "[TBS]O[C@H]1C=C[C@]2(C3=CC=C4C(=C3)OCO4)[C@H](C1)NCC2(C)O",
+            "product_smiles": "[TBS]O[C@H]1C=C[C@@]2([C@H](C1)N3CC4=C5C=C(c6ccc7OCOc7c6)C4=C3)C(C)(O)C2",
+            "notes": "Intramolecular Pictet-Spengler reaction between a secondary amine and formaldehyde to form a new tetracyclic system with a tertiary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection",
+            "reagents": "NH3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "65%",
+            "reactant_smiles": "CC1(O)CN2CC3=C(C=C4C(=C3)OCO4)[C@@]51C=C[C@H](C[C@@H]52)[OTBS]",
+            "product_smiles": "CC1(O)CN2CC3=C(C=C4C(=C3)OCO4)[C@@]51C=C[C@H](C[C@@H]52)O",
+            "notes": "Deprotection of a TBS silyl ether to a secondary alcohol (Hamayane).",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tsitsikammamine-a-vanderwal-2024",
+        "molecule_name": "Tsitsikammamine A",
+        "class": "Natural Product",
+        "author": "Vanderwal",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Curtius Rearrangement",
+            "reagents": "DPPA, Et3N, EtOH",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C(=CC=C1)C(=O)O)OC",
+            "product_smiles": "CCOC(=O)Nc1c(OC)c(OC)ccc1",
+            "notes": "A carboxylic acid undergoes Curtius rearrangement via DPPA to form an acyl azide, which decomposes to an isocyanate. The isocyanate is trapped by ethanol to form the corresponding ethyl carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection (Carbamate Hydrolysis)",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "CCOC(=O)NC1=C(OC)C(OC)=CC=C1",
+            "product_smiles": "NC1=C(OC)C(OC)=CC=C1",
+            "notes": "Deprotection of N-ethoxycarbonyl carbamate to yield primary amine under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "Na2CO3",
+            "reagent_smiles": "CI.CCOCC.O",
+            "conditions": "Et2O, H2O, -10 °C",
+            "yield": "69%",
+            "reactant_smiles": "Nc1c(OC)cccc1OC",
+            "product_smiles": "Nc1c(OC)cc(I)cc1OC",
+            "notes": "Iodination of 2,6-dimethoxyaniline in the para position to the amino group, using ICl.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Buchwald-Hartwig amination / Indole formation (via Sonogashira coupling and cyclization)",
+            "reagents": "Pd/C, K2CO3",
+            "reagent_smiles": "[TES]C#CCO[TES]",
+            "conditions": "DMF, 125 °C",
+            "yield": "",
+            "reactant_smiles": "NC1=C(I)C(OC)=C(OC)C=C1",
+            "product_smiles": "[TES]C1=C(CCO[TES])C2=C(C(=C(C=C2)OC)OC)N1",
+            "notes": "Palladium-catalyzed cyclization of an iodoaniline with a terminal alkyne to form an indole. The alkyne is substituted with two TES (triethylsilyl) protecting groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "[TES]C1=C(CC[OTES])C2=C(C(=C(C=C2)OC)OC)N1",
+            "product_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CCO)OC",
+            "notes": "Acid-catalyzed deprotection of triethylsilyl (TES) and triethylsilyloxy (OTES) groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Azide formation",
+            "reagents": "DPPA, DBU",
+            "reagent_smiles": "",
+            "conditions": "toluene, 40 °C",
+            "yield": "84%",
+            "reactant_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CCO)OC",
+            "product_smiles": "COC1=C(C2=C(C=C1)C(=CN2)CC[N-]=[N+]=[N-])OC",
+            "notes": "Transformation of a primary alcohol to an alkyl azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Acetylation",
+            "reagents": "AcCl, tBuOK",
+            "reagent_smiles": "CC(C)(C)O[K].CC(=O)Cl",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "[N-]=N=NCCC1=CNC2=C1C(OC)=C(OC)C=C2",
+            "product_smiles": "CC(=O)N1C=C(CCC[N-]=N=N)C2=C1C(OC)=C(OC)C=C2",
+            "notes": "N-acetylation of indole using acetyl chloride and potassium tert-butoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Dearomatization-Cyclization / Cascade Cyclization",
+            "reagents": "PIFA, TMSOTf, HFIP, H2O",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC(=O)N1C2=C(OC)C(OC)=CC2=C(CC[N-]=[N+]=N)C=C1",
+            "product_smiles": "COC1=CC2=[NH+]CCC3=CNC(=C32)C1=O.C(=O)(C(F)(F)F)[O-]",
+            "notes": "Oxidative cyclization of an N-acetylated, 5,6-dimethoxy-3-(2-azidoethyl)indole to form a complex polycyclic quinone-imine system, with loss of the N-acetyl group and dearomatization/rearrangement of one methoxy group to a quinone carbonyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nucleophilic Aromatic Substitution / Imine Reduction",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "[Cl-].[NH3+]CC(O)c1ccc(O)cc1.O.CO.[Na+].[HCO3-]",
+            "conditions": "MeOH, H2O, 40 °C",
+            "yield": "87%",
+            "reactant_smiles": "COc1cc(=O)c2c1C(=[NH+])CCC3=c2[nH]c3.O=C([O-])C(F)(F)F",
+            "product_smiles": "O=c1cc(N[CH2][CH](O)c2ccc(O)cc2)c3c1[NH]CCC4=c3[nH]c4",
+            "notes": "Nucleophilic substitution of a methoxy group on a quinone-like core by a phenethylamine derivative, concurrent with the reduction of an imine to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "BF3•OEt2, MeOH",
+            "reagent_smiles": "FB(F)F.CCOCC.CO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=CC(=C1)O)C(CNC2=CC3=NCCC4=CNC(=C43)C2=O)O",
+            "product_smiles": "C1=C(C=CC(=C1)O)C2CNC3=C2C4=NCCC5=CNC(=C54)C3=O",
+            "notes": "Lewis acid-catalyzed intramolecular cyclization of an alcohol onto an indole-quinone system, forming a new six-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Acid-base reaction (Protonation)",
+            "reagents": "TFA, EtOAc",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "36%",
+            "reactant_smiles": "Oc1ccc(cc1)C2CNC3=C2C(=O)C4=C(C=C5CCC(=N)C6=CNC(=C65)C4)NC3=O",
+            "product_smiles": "Oc1ccc(cc1)C2CNC3=C2C(=O)C4=C(C=C5CCC(=[N+]H)C6=CNC(=C65)C4)NC3=O.O=C([O-])C(F)(F)F",
+            "notes": "Protonation of Tsitsikammamine A (neutral base) with trifluoroacetic acid to form the trifluoroacetate salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation (Dehydrogenation)",
+            "reagents": "O₂",
+            "reagent_smiles": "",
+            "conditions": "110 °C, neat",
+            "yield": "40%",
+            "reactant_smiles": "O=C1C(=O)c2c1c1cc[nH]c1c1c2CC[NH+]1c1c3c(cc[nH]c3)C(Cc1)C1=CC=C(O)C=C1.C(=O)(C(F)(F)F)[O-]",
+            "product_smiles": "[NH+]1CCC2=C(C1)C(=O)C(=O)C3=C2C4=CNC=C4C(=C3)C1=CC=C(O)C=C1.C(=O)(C(F)(F)F)[O-]",
+            "notes": "Dehydrogenation of the right-side indole ring to form a more aromatic system. The quinone core is maintained.",
+            "substeps": []
+        }
+    ]
+}

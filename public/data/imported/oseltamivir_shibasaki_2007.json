@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "oseltamivir-shibasaki-2007",
+        "molecule_name": "Oseltamivir",
+        "class": "Natural Product",
+        "author": "Shibasaki",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aziridine Ring Opening / Azidation",
+            "reagents": "2,6-dimethylphenol",
+            "reagent_smiles": "O=P(c1ccccc1)(c2ccccc2)C[C@H]1OC[C@@H](O)[C@@H](O1)Oc3c(F)cc(O)c(F)c3.C[Si](C)(C)[N-]=[N+]=[N-].[Y](OC(C)C)(OC(C)C)OC(C)C",
+            "conditions": "EtCN, rt",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC[C@@H]2[C@H](C1)N2C(=O)C3=CC(=CC(=C3)[N+](=O)[O-])[N+](=O)[O-]",
+            "product_smiles": "C1C=CC[C@@H](N=[N+]=[N-])[C@H](NC(=O)C2=CC(=CC(=C2)[N+](=O)[O-])[N+](=O)[O-])1",
+            "notes": "Stereoselective aziridine ring opening with TMSN3, catalyzed by a chiral yttrium complex (formed from Y(Oi-Pr)3 and the drawn phosphine oxide ligand), leading to a trans-azidoamide cyclohexene product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amine Protection",
+            "reagents": "Boc₂O, NaOH, DMAP",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C.[Na+].[OH-].CN(C)C1=CN=CC=C1",
+            "conditions": "MeCN, H₂O",
+            "yield": "98%",
+            "reactant_smiles": "[N-]=[N+]=N[C@@H]1[C@H](NC(=O)C2=CC(=CC(=C2)[N+](=O)[O-])[N+](=O)[O-])CCC=C1",
+            "product_smiles": "[N-]=[N+]=N[C@@H]1[C@H](N[Boc])CCC=C1",
+            "notes": "Conversion of a secondary amide (3,5-dinitrophenylcarbonyl derivative) to a Boc-protected secondary amine (carbamate). The azide group and cyclohexene ring remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Iodocyclization / Intramolecular Carbamate Cyclization",
+            "reagents": "I2, KI, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 60 °C",
+            "yield": "83%",
+            "reactant_smiles": "[N-]=[N+]=[N-][C@H]1CC=CC[C@@H]1N[Boc]",
+            "product_smiles": "I[C@H]1C[C@H]([N-]=[N+]=[N-])[C@@H]2OC(=O)N[C@@H]12",
+            "notes": "Intramolecular iodocyclization of an azide-substituted cyclohexene with concomitant cyclization of the Boc-protected amine to form a bicyclic iodocarbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "E2 Elimination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "85%",
+            "reactant_smiles": "C1[C@H]([C@H]2C[C@@H]([C@H]1NC(=O)O2)[N+]#N)I",
+            "product_smiles": "C1=C[C@@H]([C@@H]2C[C@H]1OC(=O)N2)[N+]#N",
+            "notes": "Dehydroiodination of a cyclic carbamate to form an alkene using DBU as base.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-Protection (Boc carbamate formation)",
+            "reagents": "Boc₂O, Et₃N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "99%",
+            "reactant_smiles": "O=C1N[C@@H]2[C@@H]([N-]=N=N)C=C[C@H](C2)O1",
+            "product_smiles": "O=C1N([Boc])[C@@H]2[C@@H]([N-]=N=N)C=C[C@H](C2)O1",
+            "notes": "Amine (carbamate NH) is protected as a Boc carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Staudinger-type reduction and acylation",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)S.Cc1ncccc1C.ClC(Cl)Cl",
+            "conditions": "60 °C",
+            "yield": "83%",
+            "reactant_smiles": "[Boc]N1[C@@H]2C[C@@H](C=C[C@H]2[N-]=[N+]=[N-])OC1=O",
+            "product_smiles": "[Ac]N[C@H]1C=C[C@H]2C[C@@H]1N([Boc])C(=O)O2",
+            "notes": "Reduction of azide to amine followed by acylation with thioacetic acid to form acetamide. Retention of stereochemistry at chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ring-opening, Azidation, Deacetylation",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "CCCCO",
+            "conditions": "n-BuOH",
+            "yield": "86%",
+            "reactant_smiles": "CC(=O)N[C@H]1C[C@H](C=C)[C@@H]2N(C(=O)OC(C)(C)C)C(=O)O[C@@H]12",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H]1C[C@@H](C=C[C@H]1[N+]#N)O",
+            "notes": "Ring-opening of bicyclic cyclic carbamate, deacetylation, and azidation with inversion of stereochemistry at one position.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation, Azide-to-Amide Transformation, Ring Rearrangement",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 4 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "[Boc]N[C@@H]1CC=C[C@H]([N+]#N)[C@H](O)C1",
+            "product_smiles": "[Ac]N[C@H]1C=CC(=O)C[C@@H]1N[Boc]",
+            "notes": "The reaction involves the oxidation of a secondary alcohol to a ketone, the conversion of an azide to an acetamide, and a rearrangement of the double bond within the cyclohexene ring. Stereochemistry of the N-Boc group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Stereoselective Cyano-phosphonate Addition",
+            "reagents": "",
+            "reagent_smiles": "O=P(OCC)(OCC)C#N.[Li+]C#N",
+            "conditions": "THF, -20 °C",
+            "yield": "",
+            "reactant_smiles": "[Ac]N[C@H]1C=CC(=O)C[C@@H]1N[Boc]",
+            "product_smiles": "[Ac]N[C@H]1C=C[C@@H](C[C@@](O[P](=O)(OCC)OCC)(C#N)C1)N[Boc]",
+            "notes": "Stereoselective addition of diethyl cyanophosphonate and lithium cyanide to a cyclic enone ketone, forming a new quaternary stereocenter and a cyclic vinyl phosphate. The existing chiral centers retain their relative stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Allylic rearrangement and hydrolysis",
+            "reagents": "PhMe",
+            "reagent_smiles": "",
+            "conditions": "sealed tube, 140 °C",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "CCOP(=O)(OCC)O[C@]1(C#N)C=C[C@@H](N[Ac])[C@H](N[Boc])C1",
+            "product_smiles": "O[C@H]1C[C@@H](N[Boc])[C@H](N[Ac])C=C(C#N)C1",
+            "notes": "The diethyl phosphate group at C1 is eliminated and replaced by a hydroxyl group. The nitrile group migrates from C1 to C3 of the double bond. The double bond itself shifts position from C2-C3 to C2'-C3'. The relative stereochemistry at C1, C4, and C5 is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "p-NO2BzOH, Ph3P, DEAD, LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, -20 °C",
+            "yield": "80%",
+            "reactant_smiles": "[Ac]N[C@H]1[C@@H](CC(=C[C@H]1O)C#N)N[Boc]",
+            "product_smiles": "[Ac]N[C@H]1[C@@H](CC(=C[C@@H]1O)C#N)N[Boc]",
+            "notes": "Mitsunobu reaction with inversion of stereochemistry at the alcohol group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P, DEAD",
+            "reagent_smiles": "O=C(OCC)N=NC(=O)OCC.P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "THF, -20 °C",
+            "yield": "66%",
+            "reactant_smiles": "[Ac]N[C@@H]1[C@H](N[Boc])CC(=C(C#N))[C@H](O)1",
+            "product_smiles": "[Ac]N1[C@@H]2C[C@H](N[Boc])CC=C(C#N)[C@@H]12",
+            "notes": "Mitsunobu reaction to form an aziridine from a hydroxyl group, with retention of other functional groups and stereocenters relative to the ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Cyclopropane Ring Opening / Nucleophilic Substitution",
+            "reagents": "3-pentanol, BF3•OEt2, 5A MS",
+            "reagent_smiles": "",
+            "conditions": "-20 °C",
+            "yield": "56%",
+            "reactant_smiles": "[Ac]N1[C@H]2C=C(C[C@@H]([C@H]21)N[Boc])C#N",
+            "product_smiles": "[Ac]N[C@@H]1[C@H](N[Boc])CC=C(C#N)[C@H]1OC(CC)CC",
+            "notes": "Cyclopropane ring opening of the bicyclic reactant with 3-pentanol under Lewis acid catalysis to form a substituted cyclohexene.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Nitrile Hydrolysis, Esterification, Boc Deprotection",
+            "reagents": "HCl, EtOH, H2O",
+            "reagent_smiles": "CCO.Cl.O",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "CC(=O)N[C@@H]1[C@H](NC(=O)OC(C)(C)C)CC=C(C#N)[C@H]1OC(CC)CC",
+            "product_smiles": "CC(=O)N[C@@H]1[C@H](N)CC=C(C(=O)OCC)[C@H]1OC(CC)CC",
+            "notes": "Deprotection of Boc-amine and hydrolysis/esterification of nitrile to ethyl ester, yielding Oseltamivir.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "griseusin-c-thorson-2015",
+        "molecule_name": "Griseusin C",
+        "class": "Natural Product",
+        "author": "Thorson",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2C=CC=C(C2=C1)O)O",
+            "product_smiles": "[OAc]C1=C2C=CC=C(C2=CC=C1)O",
+            "notes": "Selective acetylation of one hydroxyl group of 1,5-dihydroxynaphthalene to form 1-acetoxy-5-hydroxynaphthalene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation, Bromination",
+            "reagents": "NBS, AcOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "55%",
+            "reactant_smiles": "[OAc]C1=CC=CC2=C1C=CC(O)=C2",
+            "product_smiles": "[OAc]C1=CC=CC2=C1C(=O)C(=CC2=O)Br",
+            "notes": "Oxidation of 1-acetoxy-5-hydroxynaphthalene to 1-acetoxy-5,8-naphthoquinone, followed by bromination.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "H2SO4, EtOH",
+            "reagent_smiles": "CCO.OS(=O)(=O)O",
+            "conditions": "95 °C",
+            "yield": "90%",
+            "reactant_smiles": "[OAc]C1=C2C(=CC=C1)C(=O)C(=CC2=O)Br",
+            "product_smiles": "O=C1C=C(Br)C(=O)C2=C1C(=CC=C2)O",
+            "notes": "Hydrolysis of an acetate ester to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "Na₂S₂O₄",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H₂O",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2C(=C1)C(=O)C(=CC2=O)Br)O",
+            "product_smiles": "C1=CC(=C2C(=C1)C(=C(C=C2O)Br)O)O",
+            "notes": "Reduction of 8-hydroxy-3-bromo-1,4-naphthoquinone to 3-bromo-1,4,8-trihydroxynaphthalene using sodium dithionite.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ketal formation / Protection of diol",
+            "reagents": "HClO4, acetone",
+            "reagent_smiles": "CC(C)(OC)OC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2C(=C1)C(=C(C=C2O)Br)O)O",
+            "product_smiles": "CC1(C)OC2=C3C(=CC=C2)C(=C(C=C3O1)Br)O",
+            "notes": "Formation of an isopropylidene ketal from two adjacent phenolic hydroxyl groups using 2,2-dimethoxypropane and perchloric acid (acid catalyst), with acetone as a solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "O-methylation (Williamson Ether Synthesis)",
+            "reagents": "KOH, Me2SO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1(C)OC2=C3C(=CC=C2)C(=C(C=C3O1)Br)O",
+            "product_smiles": "CC1(C)OC2=C3C(=CC=C2)C(=C(C=C3O1)Br)OC",
+            "notes": "Methylation of a phenolic hydroxyl group to a methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Heck cyclization",
+            "reagents": "(C6H11)2NMe, Pd(tBu3P)2",
+            "reagent_smiles": "C=CCC(=O)OC",
+            "conditions": "toluene, 100 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC1(C)OC2=C3C(=CC=C2)C(=C(C=C3O1)Br)OC",
+            "product_smiles": "CC1(C)OC2=C3C(=CC=C2)C(=C(/C=C/CC(=O)OC)C=C3O1)OC",
+            "notes": "Heck coupling of aryl bromide with methyl pent-4-enoate, forming an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Sharpless asymmetric dihydroxylation, lactonization",
+            "reagents": "AD-mix-β, MeSO2NH2, tBuOH, H2O, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "tBuOH, H2O",
+            "yield": "84%",
+            "reactant_smiles": "CC1(C)OC2=C3C(=CC=C2)C(=C(/C=C/CC(=O)OC)C=C3O1)OC",
+            "product_smiles": "CC1(C)OC2=C3C(=CC=C2)C(=C(C=C3O1)[C@@H]4[C@H](CC(=O)O4)O)OC",
+            "notes": "Sharpless asymmetric dihydroxylation of the α,β-unsaturated methyl ester, followed by intramolecular lactonization to form a γ-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "Pd(OAc)2, Li2CO3, Ag2CO3, Celite",
+            "reagent_smiles": "C=CC(=O)C[C@@H](C)[OTBS]",
+            "conditions": "DCE, 80 °C",
+            "yield": "48%",
+            "reactant_smiles": "CC1(C)OC2=C3C(=CC=C2)C(=C(C=C3O1)[C@@H]4[C@@H](CC(=O)O4)O)OC",
+            "product_smiles": "CC1(C)OC2=C3C(C=CC=C3C(OC)=C(C2O1)[C@@H]4O[C@@H](CC(=O)O4)[C@@H]5CC(=O)C[C@@H](C)[OTBS])",
+            "notes": "Intramolecular cyclization and Heck-type coupling leading to complex fused ring system formation.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole, DCM",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C[C@@H](C)O",
+                    "product_smiles": "CCOC(=O)C[C@@H](C)[OTBS]",
+                    "notes": "Protection of the secondary alcohol group as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Weinreb Amide Synthesis",
+                    "reagents": "N,O-dimethylhydroxylamine, iPrMgCl",
+                    "reagent_smiles": "CN(C)OC",
+                    "conditions": "THF, -20 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C[C@@H](C)[OTBS]",
+                    "product_smiles": "CON(C)C(=O)C[C@@H](C)[OTBS]",
+                    "notes": "Ester is converted to a Weinreb amide using N,O-dimethylhydroxylamine and iPrMgCl. The stereocenter remains untouched.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Grignard Reaction, Ketone Synthesis",
+                    "reagents": "THF",
+                    "reagent_smiles": "C=C[Mg]Br",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CN(OC)C(=O)C[C@H](C)O[TBS]",
+                    "product_smiles": "C=CC(=O)C[C@H](C)O[TBS]",
+                    "notes": "Vinyl Grignard reagent adds to a Weinreb amide to form an alpha,beta-unsaturated ketone, maintaining the stereochemistry of the TBS-protected alcohol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "DBU, TESCl",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@H](C)CC(=O)C[C@@H]1C2=C3C4=C(C=CC=C4C(=C2[C@H]5[C@@H](CC(=O)O5)O1)OC)OC(C)(C)O3",
+            "product_smiles": "[OTES]/C(=C/C[C@@H]1C2=C3C4=C(C=CC=C4C(=C2[C@H]5[C@@H](CC(=O)O5)O1)OC)OC(C)(C)O3)/C[C@H](C)[OTBS]",
+            "notes": "Ketone transformed to a silyl enol ether with E-stereochemistry via deprotonation and silylation. Existing OTBS group and core stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Saegusa-Ito oxidation",
+            "reagents": "Pd(OAc)2, O2",
+            "reagent_smiles": "",
+            "conditions": "DMSO",
+            "yield": "45% (2 steps)",
+            "reactant_smiles": "[OTES]/C(=C/C1C2=C3C4=C(C=CC=C4C(=C2[C@@H]5[C@@H](CC(=O)O5)O1)OC)OC(C)(C)O3)/C[C@@H](C)[OTBS]",
+            "product_smiles": "[OTBS][C@@H](C)CC(=O)/C=C/1C2=C3C4=C(C=CC=C4C(=C2[C@@H]5[C@@H](CC(=O)O5)O1)OC)OC(C)(C)O3",
+            "notes": "Saegusa-Ito oxidation of a vinyl silyl ether to a vinyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "TBS Deprotection",
+            "reagents": "HF·pyridine, TEA",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "85%",
+            "reactant_smiles": "[OTBS][C@@H](C)CC(=O)/C=C/1C2=C3C4=C(C=CC=C4C(=C2[C@@H]5[C@@H](CC(=O)O5)O1)OC)OC(C)(C)O3",
+            "product_smiles": "C[C@@H](O)CC(=O)/C=C/1C2=C3C4=C(C=CC=C4C(=C2[C@@H]5[C@@H](CC(=O)O5)O1)OC)OC(C)(C)O3",
+            "notes": "TBS silyl ether deprotection to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidative Intramolecular Cyclization",
+            "reagents": "TfOH, DMDO",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C to 0 °C",
+            "yield": "80%",
+            "reactant_smiles": "C[C@H](CC(=O)/C=C1\\C2=C3C4=C(C=CC=C4C(=C2[C@@H]5[C@@H](CC(=O)O5)O1)OC)OC(C)(C)O3)O",
+            "product_smiles": "C[C@@H]1CC(=O)[C@H]([C@]2(C3=C(C(=C4C=CC=C5C4=C3OC(C)(C)O5)OC)[C@@H]6[C@@H](CC(=O)O6)O2)O1)O",
+            "notes": "Acid-catalyzed intramolecular oxidative cyclization of an enone-alcohol to form a complex polycyclic structure, featuring new spiro center and ring formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidative Deprotection and Quinone Formation",
+            "reagents": "AgO, HNO3",
+            "reagent_smiles": "O[N+](=O)[O-].[Ag]=O.C1CCOC1",
+            "conditions": "THF",
+            "yield": "63%",
+            "reactant_smiles": "C[C@@H]1CC(=O)[C@H]([C@]2(C3=C(C(=C4C=CC=C5C4=C3OC(C)(C)O5)OC)[C@@H]6[C@@H](CC(=O)O6)O2)O1)O",
+            "product_smiles": "C[C@@H]1CC(=O)[C@H]([C@]2(C3=C(C(=O)C4=CC=CC(=C4C3=O)O)[C@@H]5[C@@H](CC(=O)O5)O2)O1)O",
+            "notes": "Oxidative deprotection of isopropylidene ketal and oxidation of methoxy to quinone/phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Lactone Reduction",
+            "reagents": "AgO, HNO3",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "85%",
+            "reactant_smiles": "CC1C[C@H](O)C[C@H](OC2(O[C@H]3[C@H](O)[C@@H](O)C[C@H]3O2)(O[C@H]4[C@H](CC(=O)O4)O2)C5=C(C(=O)C6=CC=CC(=C6C5=O)O)O)C1",
+            "product_smiles": "CC1C[C@H](O)C[C@H](OC2(O[C@H]3[C@H](O)[C@@H](O)C[C@H]3O2)(O[C@H]4(O)CCC(O))C5=C(C(=O)C6=CC=CC(=C6C5=O)O)O)C1",
+            "notes": "Reduction of the spiro-fused gamma-lactone to an acyclic triol.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "modhephene-mash-1988",
+        "molecule_name": "Modhephene",
+        "class": "Natural Product",
+        "author": "Mash",
+        "year": 1988
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enol Triflate Formation",
+            "reagents": "NaH, Tf2O",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1CCCC1=O",
+            "product_smiles": "COC(=O)C1=C(CCC1)[OTf]",
+            "notes": "Enolization of a cyclic ketone and subsequent trapping with triflic anhydride to form an enol triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Organostannylation",
+            "reagents": "C6H5S(Me3Sn)CuLi",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=C(CCC1)OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "COC(=O)C1=C(CCC1)[Sn](C)(C)C",
+            "notes": "A vinyl triflate is converted to a vinyl stannane using a higher-order stannyl cuprate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alkylation / Cyclization",
+            "reagents": "LDA",
+            "reagent_smiles": "CC(CCBr)Br",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "COC(=O)C1=C(CCC1)[Sn](C)(C)C",
+            "product_smiles": "CC(CCC1(CCC=C1Br[Sn](C)(C)C)C(=O)OC)Br",
+            "notes": "Intramolecular alkylation of an alkenyl stannane leading to a new quaternary center and a rearranged double bond, forming a bicyclic system with a pendant alkyl bromide chain and a trimethyltin bromide group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Radical cyclization",
+            "reagents": "Bu3SnH, AIBN",
+            "reagent_smiles": "CCCC[SnH](CCCC)CCCC.CC(C)(C#N)N=NC(C)(C)C#N",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "CC(Br)CCC1(C(=O)OC)CCC=C1[Sn](C)(C)C",
+            "product_smiles": "C[C@H]1CC[C@@H]2C=CCC12C(=O)OC",
+            "notes": "Reductive intramolecular radical cyclization of a bromoalkyl stannyl-alkene, forming a bicyclo[3.3.0]octene system with elimination of a stannyl radical.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)OC",
+            "product_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)O",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "(COCl)₂",
+            "reagent_smiles": "ClC(=O)C(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)O",
+            "product_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)Cl",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "Cl[Zn]C#C[TMS]",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)Cl",
+            "product_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)C#C[TMS]",
+            "notes": "Acyl chloride undergoes Negishi coupling with an organozinc reagent (TMS-ethynylzinc chloride) catalyzed by Pd(PPh3)4 to form an alkynyl ketone. The stereochemistry at the bridgehead carbon and the methyl-bearing carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Desilylation",
+            "reagents": "KF, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)C#C[Si](C)(C)C",
+            "product_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)C#C",
+            "notes": "TMS group removed from the alkyne using KF in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alkyne Hydroiodination / Vinyl Iodide Formation",
+            "reagents": "TMSI, (i-Pr)₂NEt",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "C#CC(=O)[C@@]12CCC=C2[C@H](C)CC1",
+            "product_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)/C=C\\I",
+            "notes": "Alkyne is converted to an E-vinyl iodide. The relative stereochemistry of the methyl group and the carbonyl substituent on the bicyclic core is cis, both being depicted with wedge bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular radical cyclization",
+            "reagents": "Bu₃SnH, AIBN, DPPE",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(CCC=C12)C(=O)/C=C/I",
+            "product_smiles": "C[C@H]1CC[C@@]23CCC[C@]13C=CC2=O",
+            "notes": "Intramolecular radical cyclization of an iodoalkene, initiated by tributyltin hydride and AIBN, to form a complex polycyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "MeLi",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@H]2C[C@H]3C=CC(=O)[C@]1([C@H]23)CC",
+            "product_smiles": "C[C@H]1C[C@H]2C[C@H]3C=CC([C@]1([C@H]23)CC)(C)O",
+            "notes": "Ketone undergoes nucleophilic addition with methyllithium (MeLi) to form a tertiary alcohol. The existing bicyclic system and alkene are preserved. The new alcohol carbon forms as a mixture of stereoisomers (indicated by wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Jones oxidation",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H]1CC(O)C23CCC[C@]13C=C[C@]2C",
+            "product_smiles": "C[C@H]1CC(=O)[C@@]23CCC[C@]13C=C[C@]2C",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Jones reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Conjugate Addition",
+            "reagents": "Me₂CuCNLi₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "C[C@]12CCC(C)=C([C@@]1(C)[C@H]3C[C@H]2CCC3)C=O",
+            "product_smiles": "C[C@@]12CCC([C@H](C)[C@@]1(C)[C@H]3C[C@H]2CCC3)(C)C=O",
+            "notes": "1,4-addition of a methyl group from lithium dimethylcuprate cyanide to an α,β-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Wittig olefination",
+            "reagents": "Wittig olefination",
+            "reagent_smiles": "C=[P+]([PH])([PH])[PH]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12C[C@@H](C(=O)C[C@@H]3)[C@H]4[C@@]1(C)[C@@H]2CCC43",
+            "product_smiles": "C=C1C[C@@]2([C@@H](C)CC2)C[C@H]3C4[C@@]1(C)[C@@H]2CCC43",
+            "notes": "Wittig reaction converting a ketone to an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Acid-catalyzed rearrangement",
+            "reagents": "acid",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C1CC[C@@]23CCC([C@@H]1C[C@H]23)C(C)(C)",
+            "product_smiles": "C[C@]1(C)CC[C@H]2[C@@H]3C=C(C)[C@H]4[C@@]23[C@@H]14",
+            "notes": "Isomerization of an exocyclic methylene and gem-dimethyl containing tricyclic hydrocarbon to Modhephene, involving skeletal rearrangement and methyl shifts.",
+            "substeps": []
+        }
+    ]
+}

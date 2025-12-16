@@ -1,0 +1,97 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nirogacestat-ogsiveo-pfizer-unknown-2024",
+        "molecule_name": "Nirogacestat (Ogsiveo Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -30 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C(=O)OC)N1C=C(N=C1)[N+](=O)[O-]",
+            "product_smiles": "CC(C)(C=O)N1C=C(N=C1)[N+](=O)[O-]",
+            "notes": "Reduction of a methyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive Amination",
+            "reagents": "Na(OAc)3BH",
+            "reagent_smiles": "CC(C)(C)CN",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C=O)N1C=C(N=C1)[N+](=O)[O-]",
+            "product_smiles": "CC(C)(C)CNCC(C)(C)N1C=C(N=C1)[N+](=O)[O-]",
+            "notes": "An aldehyde undergoes reductive amination with neopentylamine using sodium triacetoxyborohydride to form a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "[Pd]",
+            "conditions": "MeOH, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)CNCC(C)(C)N1C=C([N+](=O)[O-])N=C1",
+            "product_smiles": "CC(C)(C)CNCC(C)(C)N1C=C(N)N=C1",
+            "notes": "Reduction of nitro group to primary amine",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide coupling",
+            "reagents": "TPTU, DIPEA",
+            "reagent_smiles": "CCC[C@H](C(=O)O)N[C@H]1CCC2=CC(=CC(=C2C1)F)F",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)CNCC(C)(C)n1cnc(N)n1",
+            "product_smiles": "CCC[C@H](C(=O)Nc1nnc(n1C(C)(C)CNCC(C)(C)C))N[C@H]2CCC3=C(C2)C(=CC(=C3)F)F",
+            "notes": "Amide coupling between a 3-amino-1H-1,2,4-triazole derivative and an N-substituted amino acid.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Reductive Amination",
+                    "reagents": "Na(OAc)3BH",
+                    "reagent_smiles": "CCC[C@@H](C(=O)OC(C)(C)C)N",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "C1CC(=O)CC2=C(C=C(C=C12)F)F",
+                    "product_smiles": "CCC[C@@H](C(=O)OC(C)(C)C)NC1CCC2=CC(=CC(=C2C1)F)F",
+                    "notes": "Reductive amination of a difluorotetralone with an L-leucine tert-butyl ester, reducing the ketone to a secondary amine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Chiral Resolution",
+                    "reagents": "Chiral HPLC",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCCC(C(=O)OC(C)(C)C)NC1CCC2=CC(=CC(=C2C1)F)F",
+                    "product_smiles": "CCC[C@H](C(=O)OC(C)(C)C)N[C@@H]1CCC2=CC(=CC(=C2C1)F)F",
+                    "notes": "Separation of stereoisomers using Chiral HPLC to obtain the (R,R)-enantiomer.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Ester Hydrolysis (Boc deprotection)",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCC[C@@H](C(=O)OC(C)(C)C)N[C@H]1CCC2=CC(=CC(=C2C1)F)F",
+                    "product_smiles": "CCC[C@@H](C(=O)O)N[C@H]1CCC2=CC(=CC(=C2C1)F)F",
+                    "notes": "Deprotection of a tert-butyl ester to a carboxylic acid using HCl.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

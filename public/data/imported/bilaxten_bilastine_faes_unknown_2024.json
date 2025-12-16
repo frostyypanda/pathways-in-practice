@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bilaxten-bilastine-faes-unknown-2024",
+        "molecule_name": "Bilaxten (Bilastine FAES)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "H2SO4",
+            "reagent_smiles": "CC(C)(C)OC",
+            "conditions": "rt",
+            "yield": "93%",
+            "reactant_smiles": "CC(C)(C1=CC=C(C=C1)Br)C(=O)O",
+            "product_smiles": "CC(C)(C1=CC=C(C=C1)Br)C(=O)OC",
+            "notes": "Acid-catalyzed esterification of a carboxylic acid to a methyl ester, likely using methyl tert-butyl ether (tBuOMe) as both solvent and methyl source.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "Pd(PPh3)4, K2CO3",
+            "reagent_smiles": "C=CB1OB(C=C)OB(C=C)O1",
+            "conditions": "DME/H2O, 130 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)(C1=CC=C(C=C1)Br)C(=O)OC",
+            "product_smiles": "C=CC1=CC=C(C=C1)C(C)(C)C(=O)OC",
+            "notes": "Suzuki coupling of an aryl bromide with a vinyl boronate ester to form a vinyl-substituted aromatic compound.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "BH3 Me2S, NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "83%",
+            "reactant_smiles": "C=CC1=CC=C(C=C1)C(C)(C)C(=O)OC",
+            "product_smiles": "COC(=O)C(C)(C)C1=CC=C(CCO)C=C1",
+            "notes": "Anti-Markovnikov hydration of a vinyl group to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "toluene",
+            "yield": "91%",
+            "reactant_smiles": "CC(C)(C1=CC=C(C=C1)CCO)C(=O)OC",
+            "product_smiles": "CC(C)(C1=CC=C(C=C1)CCOS(=O)(=O)C)C(=O)OC",
+            "notes": "Conversion of a primary alcohol to its mesylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-Alkylation",
+            "reagents": "DIPEA",
+            "reagent_smiles": "CCOCCN1C2=C(C=CC=C2)N=C1C3CCNCC3",
+            "conditions": "DMF, 80 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC(C)(C1=CC=C(C=C1)CCOS(=O)(=O)C)C(=O)OC",
+            "product_smiles": "CCOCCN1C2=C(C=CC=C2)N=C1C3CCN(CCC4=CC=C(C=C4)C(C)(C)C(=O)OC)CC3",
+            "notes": "N-alkylation of a piperidine secondary amine with a mesylate to form a tertiary amine.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Benzimidazole Synthesis",
+                    "reagents": "Polyphosphoric Acid",
+                    "reagent_smiles": "C1CNCCC1C(=O)O",
+                    "conditions": "100 °C",
+                    "yield": "64%",
+                    "reactant_smiles": "C1=CC=C(C(=C1)N)N",
+                    "product_smiles": "C1=CC=C2C(=C1)NC(=N2)C3CCNCC3",
+                    "notes": "Condensation of o-phenylenediamine with 4-piperidinecarboxylic acid to form 2-(piperidin-4-yl)-1H-benzimidazole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Amine Protection",
+                    "reagents": "Boc₂O, NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C2C(=C1)NC(=N2)C3CCNCC3",
+                    "product_smiles": "[Boc]N1CCC(C2=NC3=CC=CC=C3N2)CC1",
+                    "notes": "N-protection of a secondary amine (piperidine) with Boc anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "CCOCCCl",
+                    "conditions": "DMF, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "[Boc]N1CCC(CC1)C2=NC3=CC=CC=C3N2",
+                    "product_smiles": "CCOCCN1C2=C(C=CC=C2)N=C1C3CCN(CC3)[Boc]",
+                    "notes": "N-alkylation of the benzimidazole NH group with 1-chloro-2-ethoxyethane.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 80 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "CCOCCN1C2=C(C=CC=C2)N=C1C3CCN([Boc])CC3",
+                    "product_smiles": "CCOCCN1C2=C(C=CC=C2)N=C1C3CCNCC3",
+                    "notes": "Acid-catalyzed Boc deprotection of a piperidine nitrogen.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, MeOH, THF, H2O",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "64%",
+            "reactant_smiles": "CCOCCN1C(=NC2=CC=CC=C21)C3CCN(CCC4=CC=C(C=C4)C(C)(C)C(=O)OC)CC3",
+            "product_smiles": "CCOCCN1C(=NC2=CC=CC=C21)C3CCN(CCC4=CC=C(C=C4)C(C)(C)C(=O)O)CC3",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid under basic conditions using lithium hydroxide.",
+            "substeps": []
+        }
+    ]
+}

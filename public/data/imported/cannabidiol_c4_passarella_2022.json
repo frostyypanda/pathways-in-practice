@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cannabidiol-c4-passarella-2022",
+        "molecule_name": "Cannabidiol-C4",
+        "class": "Natural Product",
+        "author": "Passarella",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Wittig Reaction",
+            "reagents": "n-BuLi, THF",
+            "reagent_smiles": "CCCC[P+](c1ccccc1)(c1ccccc1)c1ccccc1.[Br-]",
+            "conditions": "-78 to 65 °C",
+            "yield": "94%",
+            "reactant_smiles": "COC1=CC(=CC(=C1)OC)C=O",
+            "product_smiles": "CCC=CC1=CC(=CC(=C1)OC)OC",
+            "notes": "An aldehyde undergoes a Wittig reaction with a phosphonium ylide (generated from butyltriphenylphosphonium bromide and n-BuLi) to form a butenyl-substituted alkene. The wavy bond indicates unspecified stereochemistry of the newly formed double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "83%",
+            "reactant_smiles": "CCC=CC1=CC(=CC(=C1)OC)OC",
+            "product_smiles": "CCCCC1=CC(=CC(=C1)OC)OC",
+            "notes": "Catalytic hydrogenation of an alkene (but-1-enyl) to an alkane (pentyl) group on a 3,5-dimethoxyphenyl core.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Directed Ortho Metalation (DoM) / Formylation",
+            "reagents": "n-BuLi, TMEDA, DMF",
+            "reagent_smiles": "CCCC[Li].CN(C)CCN(C)C",
+            "conditions": "THF, -78 to -20 °C then -20 °C",
+            "yield": "94%",
+            "reactant_smiles": "CCCCC1=CC(OC)=CC(OC)=C1",
+            "product_smiles": "O=Cc1c(OC)cc(CCCC)c(OC)c1",
+            "notes": "Lithiation of the aryl ring directed by methoxy groups, followed by electrophilic quench with DMF to introduce an aldehyde group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Claisen-Schmidt Condensation",
+            "reagents": "NaOH",
+            "reagent_smiles": "CC(=O)C.[Na]",
+            "conditions": "H2O, 60 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=Cc1c(OC)cc(CCCC)cc1OC",
+            "product_smiles": "CC(=O)\\C=C/c1c(OC)cc(CCCC)cc1OC",
+            "notes": "Aldehyde condenses with acetone to form an alpha,beta-unsaturated ketone with E-stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Asymmetric Reduction (CBS Reduction)",
+            "reagents": "BH3",
+            "reagent_smiles": "CB1N2CCC[C@@H]2C(O1)(c3ccccc3)c4ccccc4",
+            "conditions": "THF, -78 °C",
+            "yield": "76%",
+            "reactant_smiles": "COC1=C(/C=C/C(=O)C)C=C(CCCCC)C(OC)=C1",
+            "product_smiles": "COC1=C(/C=C/[C@@H](C)O)C=C(CCCCC)C(OC)=C1",
+            "notes": "Asymmetric reduction of an α,β-unsaturated methyl ketone to the corresponding allylic alcohol, forming an R-configured stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Esterification (Steglich esterification)",
+            "reagents": "EDCI, Et3N, DMAP",
+            "reagent_smiles": "CC(=C)CCCC(=O)O",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "CCCC1=CC(=C(/C=C/[C@H](C)O)C(=C1)OC)OC",
+            "product_smiles": "CCCC1=CC(=C(/C=C/[C@H](C)OC(=O)CCCC(=C)C)C(=C1)OC)OC",
+            "notes": "Esterification of a secondary alcohol with 5-methyl-5-hexenoic acid, retaining stereochemistry and alkene geometry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular cyclization / Cannabinoid synthesis",
+            "reagents": "TMSCl, Et2N, LDA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C then -78°C to reflux",
+            "yield": "85%",
+            "reactant_smiles": "CCCCCc1cc(OC)c(\\C=C/[C@H](C)OC(=O)CCCC(=C)C)c(OC)c1",
+            "product_smiles": "CCCCCc1cc(OC)c3c(OC)c1C2=C(C(=O)O)[C@H](CCC(=C)C)[C@@H](CC)C32",
+            "notes": "Formation of a cyclohexenyl carboxylic acid ring fused to the dimethoxy-pentyl-benzene ring from an open-chain ester precursor via intramolecular cyclization, likely involving an enolate. The ester is hydrolyzed to a carboxylic acid during the reaction. The stereochemistry of the new chiral centers and the double bond geometry have been preserved/established as shown in the product image.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Addition (Organolithium)",
+            "reagents": "MeLi, Et₂O",
+            "reagent_smiles": "[CH3-]Li+.CCOCC",
+            "conditions": "0 °C to rt",
+            "yield": "78%",
+            "reactant_smiles": "CCCCc1cc(OC)c([C@@H](CCC(=C)C)[C@H](/C=C/C)C(=O)O)c(OC)c1",
+            "product_smiles": "CCCCc1cc(OC)c([C@@H](CCC(=C)C)[C@H](/C=C/C)C(=O)C)c(OC)c1",
+            "notes": "Carboxylic acid is converted to a methyl ketone by addition of methyllithium. Stereochemistry at the chiral centers and the trans-alkene is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Umicore M73 SIMes",
+            "reagent_smiles": "",
+            "conditions": "DCM, 40 °C",
+            "yield": "90%",
+            "reactant_smiles": "CCCCC1=CC(=C([C@H](C/C=C\\C)[C@@H](CC(=C)C)C(=O)C)C(=C1)OC)OC",
+            "product_smiles": "CC1CCC=C(C)C1[C@@H]2C(=O)C[C@H]3C4=C(OC)C(CCCCC)=CC(OC)=C4O3C2OC",
+            "notes": "Intramolecular cyclization of an acyclic diene to form a fused tricyclic system via ring-closing metathesis, generating a new six-membered carbocyclic ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Wittig reaction",
+            "reagents": "MePPh3Br, n-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "56%",
+            "reactant_smiles": "C[C@H]1CC=C(C)CC1C2=C3C=C(CCCCC)C(OC)=C3C(OC)=C2[C@@H](C(=O)C)",
+            "product_smiles": "C[C@H]1CC=C(C)CC1C2=C3C=C(CCCCC)C(OC)=C3C(OC)=C2[C@@H](C(C)=C)",
+            "notes": "Ketone transformed into an exocyclic methylene alkene (isopropenyl group) via Wittig reaction using methyltriphenylphosphonium bromide and n-BuLi.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ether Cleavage / Demethylation",
+            "reagents": "NaSEt",
+            "reagent_smiles": "[Na+].[S-]CC",
+            "conditions": "DMF, 140 °C",
+            "yield": "79%",
+            "reactant_smiles": "CCCCCc1cc(OC)c([C@@H]2C=C(C)CC[C@H]2C(=C)C)c(OC)c1",
+            "product_smiles": "CCCCCc1cc(O)c([C@@H]2C=C(C)CC[C@H]2C(=C)C)c(OC)c1",
+            "notes": "Aryl methyl ether is demethylated to an aryl alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Rearrangement / Demethylation",
+            "reagents": "NaSEt",
+            "reagent_smiles": "[Na+]SCC.CN(C)C=O",
+            "conditions": "DMF, 145 °C",
+            "yield": "28%",
+            "reactant_smiles": "CCCCC1=CC(O)=C(OC)C2=C1[C@H](C(=C)C)[C@@H]3C=C(C)CC32",
+            "product_smiles": "CCCCC1=CC(O)=C(O)C=C1[C@H](C(=C)C)[C@@H]2C=C(C)CC2",
+            "notes": "Rearrangement and methyl ether cleavage of a cannabidiol methyl ether derivative to form (-)-Cannabidiol-C4.",
+            "substeps": []
+        }
+    ]
+}

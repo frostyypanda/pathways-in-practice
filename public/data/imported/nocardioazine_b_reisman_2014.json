@@ -1,0 +1,194 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nocardioazine-b-reisman-2014",
+        "molecule_name": "Nocardioazine B",
+        "class": "Natural Product",
+        "author": "Reisman",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Allylation",
+            "reagents": "[(η3-allyl)Pd(cod)]BF4, O=C1NC(PAr2)=CC=C1 (Ar: m,m'-(CF3)2C6H3)",
+            "reagent_smiles": "OCC=C",
+            "conditions": "toluene, 50 °C",
+            "yield": "80%",
+            "reactant_smiles": "C1=CC2=C(C=C1)NC=C2",
+            "product_smiles": "C=CCC1=CNC2=C1C=CC=C2",
+            "notes": "Palladium-catalyzed C3-allylation of indole using allyl alcohol, a palladium catalyst, and a pyridone-phosphine ligand.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C=CCC1=CNC2=C1C=CC=C2",
+            "product_smiles": "C=CCC1=CN(C)C2=C1C=CC=C2",
+            "notes": "Indole nitrogen is deprotonated by NaH and subsequently methylated by methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Mannich-type cyclization / Dearomatization",
+            "reagents": "(S)-BINOL, SnCl4",
+            "reagent_smiles": "C=C(C(=O)OC)NC(=O)CF3",
+            "conditions": "DCM, 23 °C",
+            "yield": "52%",
+            "reactant_smiles": "C=CCC1=CN(C)C2=C1C=CC=C2",
+            "product_smiles": "C=CC[C@@]12C[C@H](C(=O)OC)N(C(=O)CF3)[C@@H]1N(C)C3=C2C=CC=C3",
+            "notes": "An intramolecular Mannich-type cyclization of a N-methyl-3-allylindole and a chiral methyl 2-(trifluoroacetamido)acrylate, catalyzed by (S)-BINOL and SnCl4, forms a complex polycyclic structure with defined stereochemistry.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Esterification, Amine Protonation",
+                    "reagents": "",
+                    "reagent_smiles": "CC(=O)Cl",
+                    "conditions": "MeOH",
+                    "yield": "",
+                    "reactant_smiles": "N[C@@H](CO)C(=O)O",
+                    "product_smiles": "COC(=O)[C@@H](CO)[NH3+].Cl",
+                    "notes": "Esterification of L-serine's carboxylic acid group with methanol, likely acid-catalyzed by HCl formed from acetyl chloride, which also protonates the amine to its ammonium salt.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Amide formation / Acylation (Trifluoroacetylation)",
+                    "reagents": "Tf2O, pyridine, DCM",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)[C@@H](CO)[N+]H3.[Cl-]",
+                    "product_smiles": "COC(=O)[C@@H](CO)NC(=O)C(F)(F)F",
+                    "notes": "Trifluoroacetylation of the primary amine salt to form the trifluoroacetamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Dehydration / Elimination",
+                    "reagents": "DCM",
+                    "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "[OMe]C(=O)[C@@H](N[TFA])CO",
+                    "product_smiles": "[OMe]C(=O)C(=C)N[TFA]",
+                    "notes": "Conversion of a beta-hydroxy ester to an alpha,beta-unsaturated ester via mesylate formation and elimination.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "TfOH, MeOH",
+            "reagent_smiles": "O=S(O)(F)(F)F.CO",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "C=CC[C@]12C[C@H](C(=O)OC)[NH+]C([C@@H]1N(C)C3=C2C=CC=C3).O=C([O-])C(F)(F)F",
+            "product_smiles": "C=CC[C@]12C[C@H](C(=O)OC)N[C@@H]1N(C)C3=C2C=CC=C3",
+            "notes": "Trifluoroacetyl (TFA) group deprotection",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling / N-Acylation",
+            "reagents": "BOP-Cl, collidine",
+            "reagent_smiles": "O=C(O)[C@H]1C[C@]2(C)[C@H]3N(CC=C)c4ccccc4[C@H]2N13",
+            "conditions": "DCM",
+            "yield": "84%",
+            "reactant_smiles": "COC(=O)[C@H]1C[C@@]2(CC=C)[C@H]3N(C)c4ccccc4[C@H]2N13",
+            "product_smiles": "COC(=O)[C@H]1C[C@@]2(CC=C)[C@H]3N(C)c4ccccc4[C@H]2N1[C@H](C(=O)N(C(=O)C(F)(F)F)[C@H]5C[C@@]6(C)[C@H]7N(CC=C)c8ccccc8[C@H]6N57)",
+            "notes": "Amide bond formation between a carboxylic acid and a secondary amine, followed by trifluoroacetylation of the remaining secondary amine. The main reactant is an indole-fused pyrrolidine methyl ester with an N-methyl and an allyl group. The second reactant is a similar indole-fused pyrrolidine carboxylic acid with an N-allyl and a methyl group.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "C=CCI",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CNC2=C1C=CC=C2",
+                    "product_smiles": "C=CCN1C=C(C)C2=C1C=CC=C2",
+                    "notes": "N-alkylation of Skatole with allyl iodide, mediated by sodium hydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Enantioselective cycloaddition/Mannich reaction (pyrroloindoline formation)",
+                    "reagents": "(R)-3,3'-Cl2-BINOL, SnCl4",
+                    "reagent_smiles": "C=C(C(=O)[OBn])N[TFA]",
+                    "conditions": "DCM, 23 °C",
+                    "yield": "47%",
+                    "reactant_smiles": "CC1=CN(CC=C)C2=CC=CC=C12",
+                    "product_smiles": "C=CCN1C2=C(C=CC=C2)[C@@]3(C)C[C@@H](C(=O)[OBn])N([TFA])[C@H]13",
+                    "notes": "Enantioselective formation of a tricyclic pyrroloindoline derivative via addition of 1-allyl-3-methylindole to N-trifluoroacetyl benzyl acrylate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Transesterification",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, rt",
+                    "yield": "89%",
+                    "reactant_smiles": "C=CCN1C2=CC=CC=C2[C@]3(C)C[C@@H](C(=O)[OBn])N([TFA])[C@H]31",
+                    "product_smiles": "C=CCN1C2=CC=CC=C2[C@]3(C)C[C@@H](C(=O)OC)N([TFA])[C@H]31",
+                    "notes": "Benzyl ester undergoes transesterification to a methyl ester in the presence of potassium carbonate and methanol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Epimerization",
+                    "reagents": "LiHMDS, THF, then AcOH",
+                    "reagent_smiles": "",
+                    "conditions": "-78 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "C=CCN1C2=C(C=CC=C2)[C@]3(C)C[C@@H](C(=O)OC)N(C(F)(F)=O)[C@@H]4C13",
+                    "product_smiles": "C=CCN1C2=C(C=CC=C2)[C@]3(C)C[C@H](C(=O)OC)N(C(F)(F)=O)[C@@H]4C13",
+                    "notes": "Stereochemical inversion at the ester-bearing chiral center via deprotonation and reprotonation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.5",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "DCM, H2O",
+                    "reagent_smiles": "BrB(Br)Br",
+                    "conditions": "-78 °C to rt",
+                    "yield": "88%",
+                    "reactant_smiles": "C=CCN1C2=C(C=CC=C2)[C@]3(C)C[C@H](C(=O)OC)N(C(=O)C(F)(F)F)[C@H]31",
+                    "product_smiles": "C=CCN1C2=C(C=CC=C2)[C@]3(C)C[C@H](C(=O)O)N(C(=O)C(F)(F)F)[C@H]31",
+                    "notes": "Methyl ester is hydrolyzed to a carboxylic acid using BBr3.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrolysis-Cyclization (Diketopiperazine Formation)",
+            "reagents": "LiOH, THF/H2O, then HCl",
+            "reagent_smiles": "C1CCOC1.O.[Li+].[OH-].Cl",
+            "conditions": "THF/H2O",
+            "yield": "74%",
+            "reactant_smiles": "C=CCn1c2ccccc2[C@H]3(C)C[C@H]4[C@@H](N3)C(=O)N(C(=O)C(F)(F)F)[C@H](C(=O)OC)[C@H]5[C@H]6N(C)c7ccccc7[C@@]6(CC=C)C[C@H]5[C@H]4N1",
+            "product_smiles": "C=CC[C@@]12C[C@H]3C(=O)N4[C@H](C[C@]5(C)C6=C(C=CC=C6)N(CC=C)[C@H]54)C(=O)N3[C@H]1N(C)C7=C2C=CC=C7",
+            "notes": "Hydrolysis of methyl ester and N-trifluoroacetyl group, followed by intramolecular cyclization to form a diketopiperazine core.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-deallylation",
+            "reagents": "Pd2(dba)3, dppb, DMBA",
+            "reagent_smiles": "",
+            "conditions": "DCE, 80 °C",
+            "yield": "99%",
+            "reactant_smiles": "C=CC[C@]12C[C@@H]3C(=O)N4[C@H](C[C@]5(C6=C(C=CC=C6)N(CC=C)[C@H]54))C(=O)N3[C@H]1N(C)C7=C2C=CC=C7",
+            "product_smiles": "C=CC[C@]12C[C@@H]3C(=O)N4[C@H](C[C@]5(C6=C(C=CC=C6)N[C@H]54))C(=O)N3[C@H]1N(C)C7=C2C=CC=C7",
+            "notes": "Palladium-catalyzed N-deallylation of an indole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tremulenolide-a-martin-2005",
+        "molecule_name": "Tremulenolide A",
+        "class": "Natural Product",
+        "author": "Martin",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxide ring opening / Rearrangement",
+            "reagents": "BuLi, Me3S+I-",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "84%",
+            "reactant_smiles": "C=CC1(C)CO1",
+            "product_smiles": "C=CC(C)(C=C)O",
+            "notes": "Epoxide ring opening and rearrangement to form a tertiary diene alcohol, with a carbon addition from the ylide reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acylation / Esterification",
+            "reagents": "DMAP, NaOAc",
+            "reagent_smiles": "C=C1CC(=O)O1",
+            "conditions": "THF",
+            "yield": "93%",
+            "reactant_smiles": "C=CC(C)(C=C)O",
+            "product_smiles": "C=CC(C)(C=C)OC(=O)CC(=O)C",
+            "notes": "Acylation of a tertiary alcohol with diketene, forming an acetoacetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diazo Transfer",
+            "reagents": "Et3N, p-TsN3, MeCN",
+            "reagent_smiles": "N(CC)(CC)CC.CC1=CC=C(C=C1)S(=O)(=O)N=[N+]=[N-].CC#N",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC(C)(C=C)OC(=O)CC(=O)C",
+            "product_smiles": "C=CC(C)(C=C)OC(=O)C(=[N+]=[N-])C(=O)C",
+            "notes": "Formation of an alpha-diazo-beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrolysis / Decarbonylation",
+            "reagents": "LiOH, H₂O",
+            "reagent_smiles": "",
+            "conditions": "H₂O",
+            "yield": "97% (2 steps)",
+            "reactant_smiles": "C=CC(C)(C=C)OC(=O)C(=N#N)C(=O)C",
+            "product_smiles": "C=CC(C)(C=C)OC(=O)C(=N#N)",
+            "notes": "Hydrolysis and decarbonylation of a β-keto diazoester to yield a diazoester.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular cyclopropanation",
+            "reagents": "Rh₂[(5R)-MEPY]₄",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "99%",
+            "reactant_smiles": "CC(C=C)(C=C)OC(=O)C(=N#N)",
+            "product_smiles": "C=CC1(OC(=O)[C@H]2CC12)",
+            "notes": "Rhodium-catalyzed intramolecular cyclopropanation of a diazoester with a vinyl group to form a bicyclic lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic Alkylation (Tsuji-Trost)",
+            "reagents": "NaH, Pd(PPh3)4",
+            "reagent_smiles": "COC(=O)C(CC#CO[Bn])C(=O)OC",
+            "conditions": "THF",
+            "yield": "71%",
+            "reactant_smiles": "C=CC1OC(=O)[C@@H]2C[C@@H]2C1",
+            "product_smiles": "C/C=C(\\[C@@H]1C[C@H]1C(=O)O)/CC(CC#CO[Bn])(C(=O)OC)C(=O)OC",
+            "notes": "Palladium-catalyzed allylic alkylation of a vinyl lactone with a malonate derivative, featuring a cyclopropane ring and a benzyl-protected alkyne. The lactone ring opens during the reaction.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Etherification (Williamson Ether Synthesis), Alkylation",
+                    "reagents": "NaH, BnBr, TBAI",
+                    "reagent_smiles": "",
+                    "conditions": "DMF",
+                    "yield": "53%",
+                    "reactant_smiles": "C(#CCO)CO",
+                    "product_smiles": "OCC#CC[OBn]",
+                    "notes": "Selective O-benzylation of one primary alcohol group of but-2-yne-1,4-diol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Alcohol Mesylation",
+                    "reagents": "MsCl, TEA",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "92%",
+                    "reactant_smiles": "OCC#CCO[Bn]",
+                    "product_smiles": "[Ms]OCC#CCO[Bn]",
+                    "notes": "Conversion of a primary alcohol to a mesylate, with a benzyl ether and alkyne functional groups remaining untouched.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Substitution / Alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "COC(=O)CC(=O)OC",
+                    "conditions": "THF",
+                    "yield": "97%",
+                    "reactant_smiles": "CS(=O)(=O)OCC#CC[OBn]",
+                    "product_smiles": "[MeO2C]C(CC#CC[OBn])[MeO2C]",
+                    "notes": "Alkylation of malonate with propargyl mesylate",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acid Chloride Formation",
+            "reagents": "(COCl)2, DMF",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\CC(CC#CCOCC1=CC=CC=C1)(C(=O)OC)C(=O)OC)/[C@]2C[C@@H]2C(=O)O",
+            "product_smiles": "C/C(=C\\CC(CC#CCOCC1=CC=CC=C1)(C(=O)OC)C(=O)OC)/[C@]2C[C@@H]2C(=O)Cl",
+            "notes": "Carboxylic acid is converted to an acid chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction (Ester to Aldehyde)",
+            "reagents": "Red-Al",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "84%",
+            "reactant_smiles": "C/C(=C\\[C@H]1C[C@@H](C(=O)OC)1)/CC(CCC#CCH2OCC1=CC=CC=C1)(C(=O)OC)C(=O)OC",
+            "product_smiles": "C/C(=C\\[C@H]1C[C@@H](C=O)1)/CC(CCC#CCH2OCC1=CC=CC=C1)(C(=O)OC)C(=O)OC",
+            "notes": "Partial reduction of a cyclopropyl methyl ester to an aldehyde using Red-Al. The dimethyl malonate and benzyl propargyl ether are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Pauson-Khand / [2+2+2] Cycloaddition",
+            "reagents": "",
+            "reagent_smiles": "O=C[Rh]1(Cl)(C=O)[Rh](Cl)(C=O)1C=O",
+            "conditions": "toluene, 110 °C",
+            "yield": "85%",
+            "reactant_smiles": "C/C(C)=C/[C@]1CC([C@@H]1C=O)CC(CC#CCOCC2=CC=CC=C2)(C(=O)OC)C(=O)OC",
+            "product_smiles": "C[C]1=C(COCC2=CC=CC=C2)C[C@@H](C=O)CC[C@@H]3C4C(C(C(=O)OC)(C(=O)OC)C4)C13",
+            "notes": "Rhodium-catalyzed intramolecular cycloaddition involving an alkyne, alkene, and cyclopropyl-alkene to form a complex tricyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1(C[C@@H]2C3=C(COC4=CC=CC=C4)[C@H](C=O)C=C(C)C=C3C2)C(=O)OC",
+            "product_smiles": "COC(=O)C1(C[C@@H]2C3=C(COC4=CC=CC=C4)[C@H](CO)C=C(C)C=C3C2)C(=O)OC",
+            "notes": "Reduction of an aldehyde to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Protection",
+            "reagents": "DMF",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)Cl.N1C=CN=C1",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "COC(=O)C1(C(=O)OC)C[C@@H]2CC3=C(COCC4=CC=CC=C4)C=C(C)[C@H](CO)CC23",
+            "product_smiles": "COC(=O)C1(C(=O)OC)C[C@@H]2CC3=C(COCC4=CC=CC=C4)C=C(C)[C@H](COS[Si](C)(C)C(C)(C)C)CC23",
+            "notes": "Protection of primary alcohol as a TBS ether",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C[C@@H]1CC=C(C)[C@H]2CC(CC2=C1[OBn])(C(=O)OC)C(=O)OC",
+            "product_smiles": "[OTBS]C[C@@H]1CC=C(C)[C@H]2CC(CC2=C1[OBn])(CO)CO",
+            "notes": "Reduction of geminal methyl esters to primary alcohols using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "72%",
+            "reactant_smiles": "O[CH2]C1(CO)CCC[C@@H]2[C@H]1C=C(C)C(=C([OBn]))C([C@H](C[OTBS]))C2",
+            "product_smiles": "[OMs]CH2C1(C[OMs])CCC[C@@H]2[C@H]1C=C(C)C(=C([OBn]))C([C@H](C[OTBS]))C2",
+            "notes": "Dimesylation of primary alcohols. The reaction proceeds in 2 steps as indicated in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reductive Elimination",
+            "reagents": "LiBEt3H",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C[C@H]1C=C(C)C2=C(C[OBn])C=CC[C@H]([C@@H]1C2)C(C[OMs])(C[OMs])CC",
+            "product_smiles": "[OTBS]C[C@H]1C=C(C)C2=C(C[OBn])C=CC[C@H]([C@@H]1C2)C(C)(C)CC",
+            "notes": "Reductive elimination of two mesylate (OMs) groups to form two methyl (CH3) groups at a spiro carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "[OTBS]OC[C@@H]1CC=C(C)[C@@H]2CC(C)(C)CC2=C1COCC3=CC=CC=C3",
+            "product_smiles": "CC1=CC[C@@H](CO)C(=C2CC(C)(C)C[C@@H]12)COCC3=CC=CC=C3",
+            "notes": "Deprotection of TBS ether to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Catalytic Hydrogenation / Debenzylation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "82%",
+            "reactant_smiles": "C[C@@]1(C)CC[C@H]2[C@H](C1)C=C(C)C[C@@H](CO)CC=C2CO[Bn]",
+            "product_smiles": "C[C@@]1(C)CC[C@H]2[C@H](C1)[C@@H](C)C[C@@H](CO)CC[C@H]2CO",
+            "notes": "Hydrogenation of two double bonds in the 8-membered ring and deprotection of the benzyl ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "CC1(C)CC[C@H]2C[C@@H](C)[C@H]3CCC(=C(CO)C=C3)C21CO",
+            "product_smiles": "CC1(C)CC[C@H]2C[C@@H](C)[C@H]3CCC(=C4C(=O)OC[C@H]34)C21",
+            "notes": "Oxidation of a primary diol to form a gamma-lactone using manganese dioxide.",
+            "substeps": []
+        }
+    ]
+}

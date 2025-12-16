@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "speradine-c-jia-2019",
+        "molecule_name": "Speradine C",
+        "class": "Natural Product",
+        "author": "Jia",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "98%",
+            "reactant_smiles": "BrC1=CC=CC2=C1NC=C2",
+            "product_smiles": "BrC1=CC=CC2=C1N(C)C=C2",
+            "notes": "N-alkylation of indole using sodium hydride and methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard Reaction / Nucleophilic Substitution",
+            "reagents": "THF",
+            "reagent_smiles": "CC(=CCBr)C.[Mg]",
+            "conditions": "reflux",
+            "yield": "73%",
+            "reactant_smiles": "CN1C=CC2=C1C=CC=C2Br",
+            "product_smiles": "CC(=CCC1=CC=CC2=C1C=CN2C)C",
+            "notes": "Grignard reaction of 7-bromo-1-methyl-1H-indole with 3-methylbut-2-enylmagnesium bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Vilsmeier-Haack Reaction",
+            "reagents": "POCl3, DMF, KOH",
+            "reagent_smiles": "",
+            "conditions": "rt, then 90 °C",
+            "yield": "81%",
+            "reactant_smiles": "CN1C=CC2=C1C=CC(CC=C(C)C)=C2",
+            "product_smiles": "CN1C(C=O)=CC2=C1C=CC(CC=C(C)C)=C2",
+            "notes": "Formylation of 1-methyl-7-(3-methylbut-2-enyl)-1H-indole at the C3 position via Vilsmeier-Haack reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Aldol-type Addition",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "COC(=O)C[NH][Ts]",
+            "conditions": "THF, -78 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC(=CCC1=CC=CC2=C1C(=CN2C)C=O)C",
+            "product_smiles": "CC(=CCC1=CC=CC2=C1C(=CN2C)C(O)C([NH][Ts])C(=O)OC)C",
+            "notes": "Diastereoselective addition of a N-tosylglycine methyl ester derived nucleophile to an indole aldehyde, forming two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "Tf2NH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 35 °C",
+            "yield": "53%",
+            "reactant_smiles": "CC(=CCC1=CC=CC2=C1C(=CN2C)C(C(C(=O)OC)NS(=O)(=O)c3ccc(C)cc3)O)C",
+            "product_smiles": "C(C)(C)1[C@@H]2CC3=CC=CC4=C3C(=CN4C)[C@@H]2[C@@H](C(=O)OC)N1[S](=O)(=O)c5ccc(C)cc5",
+            "notes": "Intramolecular cascade cyclization forming a tetracyclic indole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-deprotection",
+            "reagents": "",
+            "reagent_smiles": "[Mg]",
+            "conditions": "MeOH/THF",
+            "yield": "40%",
+            "reactant_smiles": "CC(C)[C@H]2CC3=CC=CC4=C3C(=CN4C)[C@@H]2[C@@H](C(=O)OC)N1[Ts]",
+            "product_smiles": "CC(C)[C@H]2CC3=CC=CC4=C3C(=CN4C)[C@@H]2[C@@H](C(=O)OC)N1",
+            "notes": "Reductive removal of N-tosyl protecting group using magnesium metal in methanol/THF.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling (N-acylation)",
+            "reagents": "DMAP, EDC•HCl",
+            "reagent_smiles": "C/C=C/C(=O)O",
+            "conditions": "CH2Cl2",
+            "yield": "75%",
+            "reactant_smiles": "C[C@]1(C)[C@@H]2C[C@H]2C3=CC=CC4=C3C(=CN4C)[C@@H]2[C@@H](C(=O)OC)N1",
+            "product_smiles": "C/C=C/C(=O)N1[C@@H]([C@@H]2C3=CN(C)C4=C3C(=CC=C4)C[C@H]2[C@@]1(C)C)C(=O)OC",
+            "notes": "Secondary amine is acylated with crotonic acid via EDC/DMAP coupling.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "NaHMDS, Ph3P, O2",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "45%",
+            "reactant_smiles": "C/C=C/C(=O)N1[C@@H](C(=O)OC)[C@@H]2C3=CN(C)C4=C3C(=CC=C4)C[C@H]2[C@H]1C",
+            "product_smiles": "C/C=C/C(=O)N1[C@H](C)[C@@H]2C3=CN(C)C4=C3C(=CC=C4)C[C@H]2[C@](O)(C(=O)OC)1",
+            "notes": "Alpha-hydroxylation of the methyl ester group in the presence of base (NaHMDS) and oxygen, potentially via an enolate and a triphenylphosphine-oxygen adduct.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Cyclization and Indole Oxidation",
+            "reagents": "NCS, HCl",
+            "reagent_smiles": "CC(C)(C)O.O",
+            "conditions": "t-BuOH/H2O",
+            "yield": "35%",
+            "reactant_smiles": "C/C=C/C(=O)N1C(C)(C)[C@@H]2C[C@@H]3c4cccc5c4c3C=CN5C2[C@@]1(O)C(=O)OC",
+            "product_smiles": "CN1c2cccc3c2[C@]2(O)C(=O)N(C)C4=C2C=C4[C@@H]5CC(C)(C)N6[C@]5(O)C(=O)O[C@@H](C)C[C@H](O)C6",
+            "notes": "Transformation involves oxidation of the N-methyl indole ring system, and cyclization of the crotonamide side chain to form a 7-membered lactone ring, with new hydroxyl groups and stereocenters formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "RuCl3, Oxone, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH3CN/H2O/EtOAc",
+            "yield": "32%",
+            "reactant_smiles": "C/C=C/C(=O)N1[C@@H]([C@@H](O)[C@]2(C)[C@H]3CC4=CC=CC5=C4[C@@]6(C(=O)N5C)[C@@]3([C@]1(C(=O)O6)O)O)C",
+            "product_smiles": "C[C@@H](O)[C@H](O)C(=O)N1[C@@H]([C@@H](O)[C@]2(C)[C@H]3CC4=CC=CC5=C4[C@@]6(C(=O)N5C)[C@@]3([C@]1(C(=O)O6)O)O)C",
+            "notes": "Dihydroxylation of the terminal alkene of the enamide side chain.",
+            "substeps": []
+        }
+    ]
+}

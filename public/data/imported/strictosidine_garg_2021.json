@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strictosidine-garg-2021",
+        "molecule_name": "Strictosidine",
+        "class": "Natural Product",
+        "author": "Garg",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Peracetylation and Glycosyl Halide Formation",
+            "reagents": "AcBr, AcOH, MeOH then Ac₂O",
+            "reagent_smiles": "",
+            "conditions": "AcOH, MeOH",
+            "yield": "81%",
+            "reactant_smiles": "C([C@@H]1[C@H]([C@@H]([C@H]([C@@H](O)O1)O)O)O)O",
+            "product_smiles": "[OAc]C[C@@H]1[C@H]([C@@H]([C@H]([C@@H](Br)O1)[OAc])[OAc])[OAc]",
+            "notes": "D-glucose undergoes peracetylation of all hydroxyl groups and bromination at the anomeric center.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Glycosylation, Substitution",
+            "reagents": "",
+            "reagent_smiles": "[Na+].O=C(/C=C/[O-])C",
+            "conditions": "DMSO",
+            "yield": "31%",
+            "reactant_smiles": "[C@H]1(C[OAc])OC([OAc])[C@@H]([OAc])[C@@H](Br)[C@H]1[OAc]",
+            "product_smiles": "CC(=O)C=CO[C@H]1OC[C@H]([OAc])[C@@H]([OAc])[C@@H]([OAc])[C@H]1(C[OAc])",
+            "notes": "Glycosylation at the anomeric center (C1) with an enolate, maintaining stereochemistry. Bromide at C3 is replaced by an acetate group with inversion of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Olefin formation/Silylation",
+            "reagents": "",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)OS(=O)(=O)C(F)(F)F.CCN(CC)CC",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[OAc]C[C@@H]1O[C@H](OC/C=C/C(=O)C)[C@@H]([OAc])[C@H]([OAc])[C@@H]1[OAc]",
+            "product_smiles": "[OAc]C[C@@H]1O[C@H](OC/C=C(/[OTBS])C=C)[C@@H]([OAc])[C@H]([OAc])[C@@H]1[OAc]",
+            "notes": "Formation of an exocyclic methylene and silyl enol ether from an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Rubottom oxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "61%",
+            "reactant_smiles": "[OTBS]C(=C)/C=C/O[C@H]1[C@H]([OAc])[C@@H]([OAc])[C@H]([OAc])[C@@H](C[OAc])O1",
+            "product_smiles": "[OTBS]CC(=O)/C=C/O[C@H]1[C@H]([OAc])[C@@H]([OAc])[C@H]([OAc])[C@@H](C[OAc])O1",
+            "notes": "(2 steps)",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Luche reduction",
+            "reagents": "NaBH4, CeCl3•7H2O",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CC(=O)/C=C/OC1C(O[OAc])C(O[OAc])C(O[OAc])C(C[OAc])O1",
+            "product_smiles": "[OAc]C1C(O[OAc])C(O[OAc])C(O[OAc])C(O/C=C/CH(C[OTBS])O)O1",
+            "notes": "Selective reduction of alpha,beta-unsaturated ketone to allylic alcohol under Luche conditions, preserving the double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetylation",
+            "reagents": "",
+            "reagent_smiles": "O=C(C)OC(=O)C.CCN(CC)CC.CN1C=CN(C=C1)C",
+            "conditions": "CH2Cl2",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "C[Si](C)(C(C)(C)C)OC[C*H](O)/C=C/O[C@H]1O[C@@H](C[OAc])[C@H]([OAc])[C@@H]([OAc])[C@@H]1[OAc]",
+            "product_smiles": "C[Si](C)(C(C)(C)C)OC[C*H]([OAc])/C=C/O[C@H]1O[C@@H](C[OAc])[C@H]([OAc])[C@@H]([OAc])[C@@H]1[OAc]",
+            "notes": "Acetylation of a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Cleavage and Alkene Reduction",
+            "reagents": "NiCl2(DME), NaBH4",
+            "reagent_smiles": "[Na+].[BH4-].[Ni+2].[Cl-].[Cl-].COCCOC",
+            "conditions": "MeOH, THF",
+            "yield": "42%",
+            "reactant_smiles": "[OTBS]C[CH]([OAc])/C=C/O[C@H]1O[C@H]([C@H]([OAc])[C@@H]([OAc])[C@H]([OAc])[C@@H]1C[OAc])",
+            "product_smiles": "[OTBS]CCCCO[C@H]1O[C@H]([C@H]([OAc])[C@@H]([OAc])[C@H]([OAc])[C@@H]1C[OAc])",
+            "notes": "Reductive cleavage of the allylic acetate and simultaneous reduction of the alkene using NiCl2(DME) and NaBH4.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Diels Alder cycloaddition",
+            "reagents": "HFIP",
+            "reagent_smiles": "C1C=C(C=O)C(=O)C1",
+            "conditions": "50 °C",
+            "yield": "27%",
+            "reactant_smiles": "CC(=O)OC[C@@H]1O[C@H](OCCC/C=C/C[OTBS])[C@@H](OC(=O)C)[C@H](OC(=O)C)[C@@H]1OC(=O)C",
+            "product_smiles": "[OTBS]CCC[C@@H]1[C@@H]2CCC(=O)C2=CCO1O[C@H]3[C@@H](OC(=O)C)[C@H](OC(=O)C)[C@H](OC(=O)C)[C@@H](COC(=O)C)O3",
+            "notes": "Diels-Alder cycloaddition of a hexenyl glucoside with 2-formylcyclopent-2-en-1-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "[OTBS]CC[C@@H]1[C@H]2CCC(=O)C2=CO[C@H]1O[C@@H]3O[C@H](CH2[OAc])[C@H]([OAc])[C@H]([OAc])[C@H]3[OAc]",
+            "product_smiles": "HOCC[C@@H]1[C@H]2CCC(=O)C2=CO[C@H]1O[C@@H]3O[C@H](CH2[OAc])[C@H]([OAc])[C@H]([OAc])[C@H]3[OAc]",
+            "notes": "Deprotection of a TBS ether to a primary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Grieco elimination",
+            "reagents": "o-NO₂PhSeCN, PBu₃, H₂O₂",
+            "reagent_smiles": "N#C[Se]c1ccccc1[N+](=O)[O-].P(CCCC)(CCCC)CCCC",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)OC[C@@H]5O[C@@H](O[C@H]1[C@@H](CCO)[C@H]2CCC(=O)C2=CO1)[C@H](OC(=O)C)[C@@H](OC(=O)C)[C@H]5OC(=O)C",
+            "product_smiles": "CC(=O)OC[C@@H]5O[C@@H](O[C@H]1[C@@H](C=C)[C@H]2CCC(=O)C2=CO1)[C@H](OC(=O)C)[C@@H](OC(=O)C)[C@H]5OC(=O)C",
+            "notes": "Grieco elimination of primary alcohol to terminal alkene with selenium reagents.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Silyl enol ether formation",
+            "reagents": "TBSOTf, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1[C@@H]2CCC(=O)C2=CO[C@H]1OC3C(C(C(C(COC(=O)C)O3)OC(=O)C)OC(=O)C)OC(=O)C",
+            "product_smiles": "C=C[C@@H]1[C@@H]2CC=C(C2=CO[C@H]1OC3C(C(C(C(COC(=O)C)O3)OC(=O)C)OC(=O)C)OC(=O)C)[OTBS]",
+            "notes": "Formation of a TBS enol ether from a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Rubottom oxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "53% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]1O[C@H](OC3C([OAc])C([OAc])C([OAc])C([OAc])CO3)C=C[C@H]4[C@@H]1CC=C([OTBS])C4",
+            "product_smiles": "C=C[C@@H]1O[C@H](OC3C([OAc])C([OAc])C([OAc])C([OAc])CO3)C=C[C@H]4[C@@H]1C(=O)[C@H](O)C4",
+            "notes": "Rubottom oxidation transforms a silyl enol ether/allylic silyl ether into an alpha-hydroxy ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidative Cleavage / Rearrangement",
+            "reagents": "MeOH",
+            "reagent_smiles": "O=C(C)O[Pb](OC(=O)C)(OC(=O)C)OC(=O)C",
+            "conditions": "-20 °C",
+            "yield": "91%",
+            "reactant_smiles": "C=C[C@@H]1[C@H]2C[C@H](C(=O)C2=CO[C@H]1OC3C(C(C(C(CO[OAc])O3)[OAc])[OAc])[OAc])O",
+            "product_smiles": "C=C[C@@H]1[C@H](CC=O)C(=CO[C@H]1OC2C(C(C(C(CO[OAc])O2)[OAc])[OAc])[OAc])C(=O)OC",
+            "notes": "Oxidative cleavage of the cyclopentane-lactone system with ring opening, rearrangement of the pyran ring double bond, and formation of an aldehyde and methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Ester Hydrolysis (Deprotection)",
+            "reagents": "LiOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "C=C[C@H]1[C@@H](CC=O)C=C(C(=O)OC)O[C@H]1O[C@H]2[C@H](OC(=O)C)[C@@H](OC(=O)C)[C@H](OC(=O)C)[C@@H](COC(=O)C)O2",
+            "product_smiles": "C=C[C@H]1[C@@H](CC=O)C=C(C(=O)OC)O[C@H]1O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@@H](CO)O2",
+            "notes": "Hydrolysis of four acetate protecting groups on the glucoside moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Pictet-Spengler reaction",
+            "reagents": "strictosidine synthase, NaH2PO4",
+            "reagent_smiles": "C1=CC2=C(C=C1)NC=C2CCN",
+            "conditions": "H2O, 30 °C",
+            "yield": "82%",
+            "reactant_smiles": "C=C[C@@H]1[C@H](CC=O)C(=CO[C@H]1O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]2O)C(=O)OC",
+            "product_smiles": "C=C[C@@H]1[C@H]([C@]2(C[C@H]3CC4=C(C=CC=C4)NC3)N2)C(=CO[C@H]1O[C@H]5O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]5O)C(=O)OC",
+            "notes": "An intramolecular Pictet-Spengler reaction between an indole derivative (tryptamine part) and an aldehyde to form (-)-Strictosidine, a complex polycyclic indole alkaloid. The reaction is enzyme-catalyzed.",
+            "substeps": []
+        }
+    ]
+}

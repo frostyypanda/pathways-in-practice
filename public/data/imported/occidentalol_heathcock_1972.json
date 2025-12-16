@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "occidentalol-heathcock-1972",
+        "molecule_name": "Occidentalol",
+        "class": "Natural Product",
+        "author": "Heathcock",
+        "year": 1972
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Pyrone synthesis / Cyclocondensation",
+            "reagents": "Acetic anhydride, ZnCl2 (cat.)",
+            "reagent_smiles": "COC(OC)CC(OC)OC",
+            "conditions": "reflux",
+            "yield": "53%",
+            "reactant_smiles": "COC(=O)CC(=O)OC",
+            "product_smiles": "COC(=O)C1=CC=COC1=O",
+            "notes": "Dimethyl malonate undergoes a cyclocondensation reaction with 1,1,3,3-tetramethoxypropane (a malondialdehyde equivalent) and acetic anhydride, catalyzed by ZnCl2, to form a 2-pyrone derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "",
+            "reagent_smiles": "CC1=CCC(=O)CC1",
+            "conditions": "150 °C",
+            "yield": "40%",
+            "reactant_smiles": "COC(=O)C1=CC=COC1=O",
+            "product_smiles": "C[C@@]12C=C(C(=O)OC)C=C[C@H]2CC(=O)CC1",
+            "notes": "Diels-Alder cycloaddition between a pyrone derivative (diene) and a cyclohexenone derivative (dienophile) to form a bicyclic adduct.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketone Protection (Acetal Formation)",
+            "reagents": "Ethylene glycol, TsOH",
+            "reagent_smiles": "",
+            "conditions": "PhH, 80 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12C=CC=C([C@H]2CC(=O)CC1)C(=O)OC",
+            "product_smiles": "C[C@@]12C=CC=C([C@H]2CC3(CC1)OCCO3)C(=O)OC",
+            "notes": "The ketone functional group is protected as an ethylene acetal using ethylene glycol and p-toluenesulfonic acid (TsOH) as a catalyst, in benzene (PhH) at 80 °C.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "94% (2 steps)",
+            "reactant_smiles": "C[C@@]12C=C(C(=O)OC)[C@H](C=C1)CC3(OCCO3)CC2",
+            "product_smiles": "C[C@@]12C=C(CO)[C@H](C=C1)CC3(OCCO3)CC2",
+            "notes": "Reduction of a methyl ester to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Sulfation / Esterification",
+            "reagents": "SO3•pyr",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@@H]2C=CC=C(CO)[C@@H]1CC3(CC2)OCCO3",
+            "product_smiles": "C[C@H]1C[C@@H]2C=CC=C(COS(=O)(=O)[O-])[C@@H]1CC3(CC2)OCCO3.[n+]1ccccc1",
+            "notes": "Conversion of a primary alcohol to a sulfate ester using sulfur trioxide pyridine complex.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "O=S(=O)([O-])OCC1=CC=C([C@H]2CCC3(CC(C1)C2(C))OCCO3)C=C1.[n+]1ccccc1",
+            "product_smiles": "CC1=CC=C([C@H]2CCC3(CC(C1)C2(C))OCCO3)C=C1",
+            "notes": "Reduction of an alkyl sulfate to a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "HCl, HOAc",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@]1(C)CCC(OCCO)C[C@@H]2C=CC(C)=C12",
+            "product_smiles": "C[C@@]1(C)CCC(=O)C[C@@H]2C=CC(C)=C12",
+            "notes": "Deprotection of an ethylene glycol acetal to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "HMPA, glyme",
+            "reagent_smiles": "CCOP(=O)(C(C)SC)OCC",
+            "conditions": "62 °C",
+            "yield": "72%",
+            "reactant_smiles": "C[C@]12CC(=O)C[C@H]1C=CC(C)=C2",
+            "product_smiles": "CC1=CC=C[C@]2(C)CC/C(=C(/C)/SC)/C[C@H]12",
+            "notes": "Horner-Wadsworth-Emmons olefination converts a ketone to an alkene, incorporating a methylthio-substituted carbon fragment.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ketene thioacetal hydrolysis",
+            "reagents": "HgCl2 (aq)",
+            "reagent_smiles": "Cl[Hg]Cl",
+            "conditions": "MeCN, rt",
+            "yield": "53%",
+            "reactant_smiles": "CS/C(C)=C/C1CC[C@@]2(C)[C@H](CCC1)C=CC(C)=C2",
+            "product_smiles": "O=C(C)[C@@H]1CC[C@@]2(C)[C@H](CCC1)C=CC(C)=C2",
+            "notes": "Mercury(II) chloride-catalyzed hydrolysis of an enethioether to form a methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nucleophilic Addition (Organolithium)",
+            "reagents": "MeLi, Et2O",
+            "reagent_smiles": "C[Li]",
+            "conditions": "-78 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC1=CC=C[C@]2(C)CC[C@@H](C[C@H]12)C(=O)C",
+            "product_smiles": "CC1=CC=C[C@]2(C)CC[C@@H](C[C@H]12)C(C)(C)O",
+            "notes": "Methyl lithium adds to the ketone, forming a tertiary alcohol.",
+            "substeps": []
+        }
+    ]
+}

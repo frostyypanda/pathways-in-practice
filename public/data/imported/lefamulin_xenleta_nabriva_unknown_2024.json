@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lefamulin-xenleta-nabriva-unknown-2024",
+        "molecule_name": "Lefamulin (Xenleta Nabriva)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide Bond Formation",
+            "reagents": "acetone",
+            "reagent_smiles": "N[C@@H](C)c1ccccc1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CCC(CC1)C(=O)O",
+            "product_smiles": "C1=CCC(CC1)C(=O)N[C@H](C)c2ccccc2",
+            "notes": "Formation of an amide from a carboxylic acid and (R)-1-phenylethylamine, with inversion of stereochemistry at the chiral center in the product as depicted.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Hydrolysis / Chiral Auxiliary Cleavage",
+            "reagents": "HCl, H2O, MTBE",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](c1ccccc1)NC(=O)C1CC=CCC1",
+            "product_smiles": "O=C(O)[C@H]1CCC=CC1",
+            "notes": "Acidic hydrolysis of a cyclohexenecarboxamide, retaining stereochemistry at the product's chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acyl Azide Formation (Curtius precursor)",
+            "reagents": "DPPA, TEA",
+            "reagent_smiles": "",
+            "conditions": "PhCH3",
+            "yield": "",
+            "reactant_smiles": "C1=CC[C@@H](CC1)C(=O)O",
+            "product_smiles": "C1=CC[C@@H](CC1)C(=O)[N-]=N+=N",
+            "notes": "Conversion of a carboxylic acid to an acyl azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction / Protection",
+            "reagents": "tBuOH, CuCl",
+            "reagent_smiles": "CC(C)(C)O.[Cu]Cl",
+            "conditions": "80 to 100 °C",
+            "yield": "81% (4 steps)",
+            "reactant_smiles": "C1=C[C@@H](CCC1)C(=O)N=[N+]=[N-]",
+            "product_smiles": "[Boc]N[C@@H]1C=CCC1",
+            "notes": "Reduction of an azide to an amine (likely via a Staudinger-like reduction or similar mechanism) followed by protection with a Boc group. This reaction is part of a 4-step sequence.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 15 to 40 °C",
+            "yield": "63%",
+            "reactant_smiles": "[NHBoc][C@@H]1CC=CCC1",
+            "product_smiles": "[NHBoc][C@@H]1CC[C@@H]2[C@@H](C1)O2",
+            "notes": "Stereoselective epoxidation of a cyclohexene with mCPBA, yielding a product where the epoxide oxygen is cis to the existing NHBoc group, both pointing 'down' relative to the cyclohexane ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Epoxide opening / Thioester formation",
+            "reagents": "PhCH3, TBAC",
+            "reagent_smiles": "O=C(S)c1ccccc1",
+            "conditions": "40 to 45 °C",
+            "yield": "63%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H]1CCC[C@H]2O[C@H]12",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H]1CCC[C@H]([C@H](C1)O)SC(=O)c2ccccc2",
+            "notes": "Nucleophilic opening of an epoxide by thiobenzoic acid to form a beta-hydroxy thioester. The relative stereochemistry of the substituents on the cyclohexane ring (NHBoc, -S(CO)Ph, -OH) is preserved relative to the original epoxide and NHBoc groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Thioester cleavage / Hydrazinolysis",
+            "reagents": "NH2NH2•H2O, DTT",
+            "reagent_smiles": "",
+            "conditions": "DCM, 18 to 22 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H]1CCC[C@H]([C@H]1O)SC(=O)[Ph]",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H]1CCC[C@H]([C@H]1O)S",
+            "notes": "Hydrazinolysis of a thioester to a thiol, with retention of stereochemistry. The thioester is cleaved and reduced to a thiol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "SN2 Displacement / Thioether Formation",
+            "reagents": "MTBE, BTBAC, NaOH, H₂O",
+            "reagent_smiles": "C=C[C@]1(C)C[C@H]([C@]2(C)[C@H](C)CC[C@]3(CCC(=O)[C@@H]23)[C@@H](C)[C@@H]1O)OC(=O)CH2[OTs]",
+            "conditions": "17 to 23 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H]1CC[C@H]([C@@H](C1)O)S",
+            "product_smiles": "C=C[C@]1(C)C[C@H]([C@]2(C)[C@H](C)CC[C@]3(CCC(=O)C23)[C@@H](C)[C@@H]1O)OC(=O)CS[C@@H]4CC[C@@H](C[C@H]4O)[Boc]",
+            "notes": "Thiol nucleophilically attacks the alpha-carbon of the tosylate ester, displacing the tosylate leaving group to form a thioether linkage.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Esterification (Tosylation)",
+                    "reagents": "pTsCl, NaOH",
+                    "reagent_smiles": "Cc1ccc(S(Cl)(=O)=O)cc1.[Na+].[OH-]",
+                    "conditions": "DCM, H2O",
+                    "yield": "92%",
+                    "reactant_smiles": "C=C[C@]1(C)C[C@H]([C@]2(C)[C@H](C)CC[C@]3(CCC(=O)C23)[C@@H](C)[C@@H]1O)OC(=O)CO",
+                    "product_smiles": "C=C[C@]1(C)C[C@H]([C@]2(C)[C@H](C)CC[C@]3(CCC(=O)C23)[C@@H](C)[C@@H]1O)OC(=O)CO[OTs]",
+                    "notes": "The primary alcohol of the glycolate ester side chain is tosylated to form a tosylate ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "H3PO4, H2O",
+            "reagent_smiles": "",
+            "conditions": "iPrOH, 50 °C",
+            "yield": "84%",
+            "reactant_smiles": "C=C[C@]1(C)C[C@H]([C@]2(C)[C@H](C)CC[C@]3(CCC(=O)C23)[C@@H](C)[C@@H]1O)OC(=O)CS[C@@H]1[C@H](O)CC[C@H](N[Boc])C1",
+            "product_smiles": "C=C[C@]1(C)C[C@H]([C@]2(C)[C@H](C)CC[C@]3(CCC(=O)C23)[C@@H](C)[C@@H]1O)OC(=O)CS[C@@H]1[C@H](O)CC[C@H](N)C1",
+            "notes": "The Boc protecting group on the cyclohexyl amine is deprotected to a primary amine. The reported yield of 84% is for 2 steps.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tetraketide-mohapatra-2016",
+        "molecule_name": "Tetraketide",
+        "class": "Natural Product",
+        "author": "Mohapatra",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Williamson Ether Synthesis / O-alkylation",
+            "reagents": "NaH, BnBr, TBAI",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "85%",
+            "reactant_smiles": "C=CC[C@@H](C)O",
+            "product_smiles": "C=CC[C@@H](C)[OBn]",
+            "notes": "Alkylation of a secondary alcohol with benzyl bromide to form a benzyl ether, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "OsO4, NaIO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@H](C)O[Bn]",
+            "product_smiles": "C[C@@H](CC=O)O[Bn]",
+            "notes": "Oxidative cleavage of an alkene to an aldehyde, preserving the stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reetz allylation",
+            "reagents": "TiCl4",
+            "reagent_smiles": "C=CC[Si](C)(C)C",
+            "conditions": "-78 °C",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "C[C@@H](CC=O)[OBn]",
+            "product_smiles": "C=CC[C@@H](C[C@H](C)[OBn])O",
+            "notes": "Allylation of a β-alkoxy aldehyde with allyltrimethylsilane.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "93%",
+            "reactant_smiles": "C[C@H]([OBn])C[C@@H](O)CC=C",
+            "product_smiles": "C[C@H]([OBn])C[C@@H]([OTBS])CC=C",
+            "notes": "Selective protection of a secondary alcohol with TBSCl in the presence of a benzyloxy group and an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Debenzylation",
+            "reagents": "Li, naphthalene",
+            "reagent_smiles": "",
+            "conditions": "THF, -20 °C",
+            "yield": "78%",
+            "reactant_smiles": "C=CC[C@@H](C[C@@H](C)O[Bn])O[TBS]",
+            "product_smiles": "C=CC[C@@H](C[C@@H](C)O)O[TBS]",
+            "notes": "Selective removal of benzyl protecting group to form an alcohol, leaving the TBS ether intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative Cleavage / Hemiacetal Formation",
+            "reagents": "OsO4, NaIO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "76%",
+            "reactant_smiles": "C=CC[C@H](C[C@@H](C)O)[OTBS]",
+            "product_smiles": "C[C@H]1OC[C@@H]([OTBS])CC(O)O1",
+            "notes": "Oxidative cleavage of the terminal alkene to an aldehyde, followed by intramolecular hemiacetal formation with the existing hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Allylation",
+            "reagents": "AuCl3",
+            "reagent_smiles": "C=CC[Si](C)(C)C",
+            "conditions": "DCM, rt",
+            "yield": "92%",
+            "reactant_smiles": "C[C@H]1OC(O)CC[C@H]1[OTBS]",
+            "product_smiles": "C[C@H]1OC[C@H]([OTBS])CC[C@@H]1CC=C",
+            "notes": "Gold-catalyzed allylation of a lactol with allyltrimethylsilane, converting the anomeric hydroxyl to an allyl group with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Cleavage (Lemieux-Johnson Oxidation)",
+            "reagents": "OsO4, NaIO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "92%",
+            "reactant_smiles": "C=CC[C@H]1C[C@@H]([OTBS])C[C@H](C)O1",
+            "product_smiles": "O=CCC[C@H]1C[C@@H]([OTBS])C[C@H](C)O1",
+            "notes": "Oxidative cleavage of a terminal alkene to an aldehyde, while preserving the stereochemistry of the ring and other chiral centers. The original TBS group was incorrectly represented as TIPS in the input SMILES.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Pinnick oxidation",
+            "reagents": "NaClO2, NaH2PO4, t-BuOH, H2O, 2-methyl-2-butene",
+            "reagent_smiles": "",
+            "conditions": "Solvent: t-BuOH, H2O",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1CC[C@@H](O[TBS])C[C@H](CC=O)O1",
+            "product_smiles": "C[C@H]1CC[C@@H](O[TBS])C[C@H](CC(=O)O)O1",
+            "notes": "Oxidation of an aldehyde to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "HF.Pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C-rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@@H]([OTBS])C[C@H](CC(=O)O)O1",
+            "product_smiles": "C[C@H]1C[C@@H](O)C[C@H](CC(=O)O)O1",
+            "notes": "TBS deprotection to alcohol",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Mitsunobu reaction",
+            "reagents": "PPh3, DEAD",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C-rt",
+            "yield": "58% (2 steps)",
+            "reactant_smiles": "C[C@H]1CC[C@@H](O)[C@@H](O)[C@H](CC(=O)O)O1",
+            "product_smiles": "C[C@H]1O[C@H]2C[C@@H](C(=O)O2)CC1",
+            "notes": "Formation of a bicyclic lactone via intramolecular Mitsunobu reaction. The C3 hydroxyl group of the pyran ring reacts with the carboxylic acid side chain, leading to the formation of a 5-membered lactone ring fused to the existing pyran. This reaction inverts the stereochemistry at the carbon atom bearing the reacting hydroxyl group (C3 in the reactant).",
+            "substeps": []
+        }
+    ]
+}

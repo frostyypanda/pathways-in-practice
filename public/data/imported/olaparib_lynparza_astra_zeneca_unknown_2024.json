@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "olaparib-lynparza-astra-zeneca-unknown-2024",
+        "molecule_name": "Olaparib (Lynparza Astra-Zeneca)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Phosphorylation",
+            "reagents": "MeONa, CH3OH, MsOH",
+            "reagent_smiles": "COP(=O)OC",
+            "conditions": "0° to 20° C",
+            "yield": "95%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(O)OC2=O",
+            "product_smiles": "COP(=O)(C1C2=C(C=CC=C2)C(=O)O1)OC",
+            "notes": "Phosphorylation of the hydroxyl group of the lactone with dimethyl phosphite.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Horner-Wadsworth-Emmons reaction",
+            "reagents": "Et3N",
+            "reagent_smiles": "O=Cc1ccc(F)c(C#N)c1",
+            "conditions": "THF, rt",
+            "yield": "96%",
+            "reactant_smiles": "COP(=O)(C1C2=C(C=CC=C2)C(=O)O1)OC",
+            "product_smiles": "C1=CC=C2C(=C1)C(=CC3=CC(=C(C=C3)F)C#N)OC2=O",
+            "notes": "Phosphonate reacted with an aldehyde to form an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "THF, 90°C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CC3=CC(=C(C=C3)F)C#N)OC2=O",
+            "product_smiles": "C1=CC=C(C(=C1)C(=CC2=CC(=C(C=C2)F)C(=O)O)O)C(=O)O",
+            "notes": "Hydrolysis of a lactone and a nitrile group to form dicarboxylic acids.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclocondensation / Phthalazinone Synthesis",
+            "reagents": "N2H4.H2O, then 2M HCl",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1ccccc1C(=CO)c2ccc(F)c(C(=O)O)c2",
+            "product_smiles": "O=C(O)c1ccc(F)c(CC2=NNC(=O)c3ccccc23)c1",
+            "notes": "Cyclization of a 2-(2-hydroxy-2-arylvinyl)benzoic acid derivative with hydrazine to form a phthalazinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HBTU, DIPEA",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1CCNCC1",
+            "conditions": "DMA, rt",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1c(F)ccc(CC(c2c(=O)n[nH]c3ccccc23))c1",
+            "product_smiles": "O=C(N1CCN([Boc])CC1)c2c(F)ccc(CC(c3c(=O)n[nH]c4ccccc34))c2",
+            "notes": "Amide bond formation between carboxylic acid and N-Boc-piperazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "46%",
+            "reactant_smiles": "[Boc]N1CCN(CC1)C(=O)C2=C(C=CC(=C2)CC3=NNC(=O)C4=C3C=CC=C4)F",
+            "product_smiles": "C1=CC2=C(C=C1)C(=O)NN=C2CC3=CC=C(C(=C3)C(=O)N4CCNCC4)F",
+            "notes": "Deprotection of Boc group on piperazine. Yield reported over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "C1CC1C(=O)Cl",
+            "conditions": "DCM, 10 to 15°C",
+            "yield": "90%",
+            "reactant_smiles": "O=C1NN=C(CC2=CC(=C(F)C=C2)C(=O)N3CCNCC3)C4=CC=CC=C14",
+            "product_smiles": "O=C1NN=C(CC2=CC(=C(F)C=C2)C(=O)N3CCN(C(=O)C4CC4)CC3)C5=CC=CC=C15",
+            "notes": "N-acylation of the piperazine ring on the phthalazinone derivative using cyclopropanecarbonyl chloride.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sertraline-lautens-1997",
+        "molecule_name": "Sertraline",
+        "class": "Natural Product",
+        "author": "Lautens",
+        "year": 1997
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Diazotization / Diels-Alder (in-situ generated benzyne with furan)",
+            "reagents": "furan, isoamyl nitrite",
+            "reagent_smiles": "",
+            "conditions": "1,2-dimethoxyethane, reflux",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C(=C1)C(=O)O)N",
+            "product_smiles": "C1=CC2=C(C=C1)C3C=CC2O3",
+            "notes": "Formation of a 1,4-epoxy-1,4-dihydronaphthalene derivative from 2-aminobenzoic acid via benzyne intermediate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Reductive Ring-Opening",
+            "reagents": "Ni(COD)2, (R)-BINAP, DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "88%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C3OC2C4=C3C4",
+            "product_smiles": "C1=CC=C2C(=C1)C=CC[C@@H]2O",
+            "notes": "Asymmetric reductive ring opening of a cyclopropene-epoxide fused system to form a chiral alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "imidazole, DMAP",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(c1ccccc1)c2ccccc2",
+            "conditions": "CH2Cl2",
+            "yield": "88%",
+            "reactant_smiles": "O[C@@H]1C=CCC2=CC=CC=C21",
+            "product_smiles": "[OTBDPS][C@@H]1C=CCC2=CC=CC=C21",
+            "notes": "Protection of an (S)-secondary alcohol with tert-butyldiphenylsilyl chloride (TBDPSCl) to form the corresponding TBDPS ether, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Allylic Bromination / Double Bond Rearrangement",
+            "reagents": "Br2, Et3N, DBU",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C, then PhH",
+            "yield": "83%",
+            "reactant_smiles": "[OTBDPS][C@@H]3CC=CC4=CC=CC=C43",
+            "product_smiles": "[OTBDPS][C@@H]3CC=C(C4=CC=CC=C43)Br",
+            "notes": "An allylic bromination reaction where the double bond shifts from C3=C4 to C2=C3, and a bromine atom is introduced at C4 of the dihydronaphthalene core. The stereochemistry at C1 is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Stille coupling",
+            "reagents": "(MeCN)2PdCl2, AsPh3, (3,4-diCl)C6H3SnMe3",
+            "reagent_smiles": "",
+            "conditions": "NMP, 80 °C",
+            "yield": "55%",
+            "reactant_smiles": "[OTBDPS][C@@H]1CCC(=CBr)C2=CC=CC=C21",
+            "product_smiles": "[OTBDPS][C@@H]1CCC(=C(c2ccc(Cl)c(Cl)c2))C3=CC=CC=C31",
+            "notes": "Stille coupling of a vinyl bromide with 3,4-dichlorophenyltrimethylstannane to form a 1-(3,4-dichlorophenyl)-1,2-dihydronaphthalene derivative. The TBDPS protecting group and stereocenter are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF, AcOH, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CC[C@H]2O[TBDPS])C3=CC(=C(C=C3)Cl)Cl",
+            "product_smiles": "C1=CC=C2C(=C1)C(=CC[C@H]2O)C3=CC(=C(C=C3)Cl)Cl",
+            "notes": "Deprotection of a TBDPS silyl ether to a secondary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "[Ir(COD)pyPCy3]PF6, H2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "88%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CC[C@H]2O)C3=CC(=C(C=C3)Cl)Cl",
+            "product_smiles": "C1=CC=C2C(=C1)[C@@H](CC[C@H]2O)C3=CC(=C(C=C3)Cl)Cl",
+            "notes": "Asymmetric hydrogenation of an enol system to form a chiral alcohol with defined anti-stereochemistry at the newly formed stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Azide synthesis (Stereoinvertive substitution)",
+            "reagents": "DPPA, DBU",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "88%",
+            "reactant_smiles": "C1=CC=C2C(=C1)[C@@H](CC[C@H]2O)C3=CC(=C(C=C3)Cl)Cl",
+            "product_smiles": "C1=CC=C2C(=C1)[C@@H](CC[C@@H]2[N-]=[N+]=N)C3=CC(=C(C=C3)Cl)Cl",
+            "notes": "Conversion of a secondary alcohol to an azide with inversion of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "CCO",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "N=[N+]=[N-][C@@H]1CC[C@@H](C2=CC=CC=C21)C3=CC(=C(Cl)C=C3)Cl",
+            "product_smiles": "C1=CC=C2C(=C1)[C@@H](CC[C@@H]2N)C3=CC(=C(C=C3)Cl)Cl",
+            "notes": "Azide group reduced to a primary amine, retaining the absolute stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Carbamate Formation",
+            "reagents": "MeCN, K2CO3",
+            "reagent_smiles": "CCOC(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "N[C@@H]1CC[C@@H](c2ccc(Cl)c(Cl)c2)C3=CC=CC=C31",
+            "product_smiles": "CCOC(=O)N[C@@H]1CC[C@@H](c2ccc(Cl)c(Cl)c2)C3=CC=CC=C31",
+            "notes": "Formation of an ethyl carbamate from a primary amine using ethyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction / N-methylation",
+            "reagents": "LiAlH(OMe)₃",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "86%",
+            "reactant_smiles": "CCOC(=O)N[C@H]1CC[C@@H](C2=CC=C(Cl)C(Cl)=C2)C3=CC=CC=C31",
+            "product_smiles": "CN[C@H]1CC[C@@H](C2=CC=C(Cl)C(Cl)=C2)C3=CC=CC=C31",
+            "notes": "Reduction of an ethyl carbamate to a methyl secondary amine (sertraline precursor to sertraline). The yield is stated as 86% over 3 steps.",
+            "substeps": []
+        }
+    ]
+}

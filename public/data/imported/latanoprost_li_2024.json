@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "latanoprost-li-2024",
+        "molecule_name": "Latanoprost",
+        "class": "Natural Product",
+        "author": "Li",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic Acetylation / Transesterification",
+            "reagents": "pancreatin, Et3N",
+            "reagent_smiles": "C=COC(=O)C",
+            "conditions": "THF",
+            "yield": "65%",
+            "reactant_smiles": "C1=C[C@H](C[C@H]1O)O",
+            "product_smiles": "[OAc][C@@H]1C=C[C@@H](C1)O",
+            "notes": "Chemo- and regioselective enzymatic acetylation of a diol using vinyl acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Orthoester Claisen Rearrangement",
+            "reagents": "o-NO2PhOH",
+            "reagent_smiles": "CCOC(C)(OCC)OCC",
+            "conditions": "180 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@@H]1C=C[C@@H]([OAc])C1",
+            "product_smiles": "[OEt]C(=O)C[C@@H]1C=CC[C@@H]1[OAc]",
+            "notes": "An orthoester Claisen rearrangement of an allylic alcohol derivative to form a gamma,delta-unsaturated ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis, Lactonization",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C[C@H]1C=CC[C@@H]1[OAc]",
+            "product_smiles": "C1=C[C@H]2CC(=O)O[C@@H]2C1",
+            "notes": "Acetate hydrolysis followed by intramolecular lactonization of the ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Halohydrin formation",
+            "reagents": "NBS, H2O, DMSO, CHCl3",
+            "reagent_smiles": "",
+            "conditions": "10 °C",
+            "yield": "69%",
+            "reactant_smiles": "C1=C[C@H]2CC(=O)O[C@H]2C1",
+            "product_smiles": "O=C1O[C@H]2C[C@H](O)[C@H](Br)[C@H]2C1",
+            "notes": "Bromohydrin formation via anti-addition to the alkene, resulting in a product where all four stereocenters (two bridgehead, two newly formed) have the 'down' configuration as depicted by dashed bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Organometallic Coupling (Negishi-type)",
+            "reagents": "NiBr2 glyme, Zn, MgCl2, TMS-imidazole, pyridine, DMA",
+            "reagent_smiles": "Br\\C=C/[C@H](O)CCCc1ccccc1",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "O=C1C[C@@H]2[C@H](O1)[C@H]3C[C@H](O)[C@@H](Br)[C@H]23",
+            "product_smiles": "O=C1C[C@@H]2[C@H](O1)[C@H]3C[C@H](O)[C@@H](/C=C/[C@H](O)CCCc4ccccc4)[C@H]23",
+            "notes": "Stereoselective C-C bond formation via Negishi-type coupling of an alpha,beta-unsaturated bromoalkene with a bicyclic lactone bromide, replacing bromine with the alkene side chain. The stereochemistry at the point of attachment and the alkene is retained (E-alkene, (S)-alcohol carbon). The hydroxyl on the lactone ring is retained.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Bromination",
+                    "reagents": "NBS, AgNO₃",
+                    "reagent_smiles": "",
+                    "conditions": "Acetone",
+                    "yield": "",
+                    "reactant_smiles": "C#C[C@@H](O)CC[Ph]",
+                    "product_smiles": "BrC#C[C@@H](O)CC[Ph]",
+                    "notes": "Electrophilic bromination of a terminal alkyne to form a bromoalkyne, with retention of stereochemistry at the chiral alcohol center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Alkyne Reduction (stereoselective)",
+                    "reagents": "LiAlH4, AlCl3",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, 0 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "BrC#C[C@H](O)CC[Ph]",
+                    "product_smiles": "Br/C=C/[C@H](O)CC[Ph]",
+                    "notes": "Partial reduction of a terminal bromo-alkyne to a trans-bromo-alkene, retaining the stereochemistry of the adjacent chiral alcohol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Raney Ni",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "O=C1O[C@H]2[C@H](CC(=O)O1)[C@H](O)[C@@H](C/C=C/[C@H](O)CC[Ph])C2",
+            "product_smiles": "O=C1O[C@H]2[C@H](CC(=O)O1)[C@H](O)[C@@H](CCC[C@H](O)CC[Ph])C2",
+            "notes": "Reduction of an alkene to an alkane using H2 and Raney Ni.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lactone Reduction (to Hemiacetal)",
+            "reagents": "DIBAL-H, DCM",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@H]1CC[C@@H](CCC[C@@H](O)CCc2ccccc2)[C@@H]2OC(=O)C[C@H]21",
+            "product_smiles": "O[C@H]1CC[C@@H](CCC[C@@H](O)CCc2ccccc2)[C@@H]2OC[C@@H](O)C[C@H]21",
+            "notes": "Reduction of a gamma-lactone to a cyclic hemiacetal using DIBAL-H at low temperature.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Wittig reaction (deprotection, oxidation, Wittig)",
+            "reagents": "tBuOK",
+            "reagent_smiles": "O=C(O)CCCC[P+]([Ph])([Ph])[Ph].[Br-]",
+            "conditions": "THF, 0 °C",
+            "yield": "61% (3 steps)",
+            "reactant_smiles": "O[C@H]1C[C@@H](CC[C@@H](O)CCPh)[C@H]2O[C@H]([C@H](O)C)[C@@H]2[C@H]1O",
+            "product_smiles": "O=C(O)CCC/C=C/[C@H]1[C@H](O)[C@@H](C[C@H]1O)CC[C@@H](O)CCPh",
+            "notes": "The bicyclic ketal is likely hydrolyzed and oxidized to an aldehyde, which then undergoes a Wittig reaction with the phosphonium ylide to form a Z-alkene. The 3 steps indicated in the yield refer to this sequence.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification",
+            "reagents": "CsCO3, DMF",
+            "reagent_smiles": "CC(C)I",
+            "conditions": "DMF",
+            "yield": "67%",
+            "reactant_smiles": "O=C(O)CCCC/C=C\\C[C@@H]1[C@H](O)[C@H](O)[C@@H](CC[C@H](O)CCPh)[C@@H]1",
+            "product_smiles": "CC(C)OC(=O)CCC/C=C\\C[C@@H]1[C@H](O)[C@H](O)[C@@H](CC[C@H](O)CCPh)[C@@H]1",
+            "notes": "Esterification of a carboxylic acid with isopropyl iodide to form an isopropyl ester (Latanoprost).",
+            "substeps": []
+        }
+    ]
+}

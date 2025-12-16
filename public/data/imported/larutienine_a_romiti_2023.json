@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "larutienine-a-romiti-2023",
+        "molecule_name": "Larutienine A",
+        "class": "Natural Product",
+        "author": "Romiti",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "LDA, HMPA",
+            "reagent_smiles": "ICCCCl",
+            "conditions": "THF, -78 °C",
+            "yield": "71%",
+            "reactant_smiles": "C1CC(=O)OC1",
+            "product_smiles": "O=C1OCC(CCCCl)C1",
+            "notes": "Alpha-alkylation of gamma-butyrolactone with 1-chloro-3-iodopropane.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Enol silyl ether formation",
+            "reagents": "LDA, THF",
+            "reagent_smiles": "Cl[Si](C)(C)C",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "ClCCC1CC(=O)OC1",
+            "product_smiles": "[OTMS]C1=C(CCCCl)CCO1",
+            "notes": "Formation of an enol silyl ether from a gamma-butyrolactone using TMSCl and LDA.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bromination / Lactone formation",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "[OTMS]C1=C(CCCCl)CCO1",
+            "product_smiles": "C(CC1(CCOC1=O)Br)CCl",
+            "notes": "Oxidative bromination of a silyl enol ether, followed by desilylation and lactone formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ni-catalyzed cross-coupling / Alkylation",
+            "reagents": "Cp2ClZr(nBu-CH=CH), NiCl2*glyme",
+            "reagent_smiles": "CC(C)(C)[C@H]1COC(=N1)C2=NC=C(C=C2)C(F)(F)F",
+            "conditions": "dioxane",
+            "yield": "25%",
+            "reactant_smiles": "C(CC1(CCOC1=O)Br)CCl",
+            "product_smiles": "CCCC/C=C/[C@]1(CCCCl)CCOC1=O",
+            "notes": "Nickel-catalyzed stereoselective alkylation of an alkyl bromide with an organozirconium reagent, facilitated by a chiral oxazoline ligand. The bromine atom is replaced by a trans-alkenyl-n-butyl group with creation of a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "HG II, ethylene",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "78%",
+            "reactant_smiles": "CCCC/C=C/[C@@]1(CCCCl)CCOC1=O",
+            "product_smiles": "C=C[C@@]1(CCCCl)CCOC1=O",
+            "notes": "Cross-metathesis reaction with ethylene, replacing a trans-alkene with a vinyl group. Stereochemistry at the chiral center is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Lactamization / Cyclization",
+            "reagents": "NaI, Et3N",
+            "reagent_smiles": "C1=CC2=C(C=C1)NC=C2CCN",
+            "conditions": "toluene, 110 °C",
+            "yield": "87%",
+            "reactant_smiles": "C=C[C@]1(CCCCl)CCOC1=O",
+            "product_smiles": "C=C[C@]1(CCCN(CCC2=CNC3=C2C=CC=C3)C1=O)CCOH",
+            "notes": "Transformation of a 5-membered lactone to a 6-membered lactam, incorporating tryptamine. The chloropropyl side chain in the reactant (3 carbons) is transformed into a hydroxyethyl side chain in the product (2 carbons), implying carbon loss or an error in the original drawing.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "CC(=O)OC(=O)C.C1=CC=CN=C1",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "C=C[C@]1(CCCN(CCC2=CNC3=CC=CC=C23)C1=O)CCO",
+            "product_smiles": "C=C[C@]1(CCCN(CCC2=CNC3=C2C=CC=C3)C1=O)CC[OAc]",
+            "notes": "Acetylation of a primary alcohol using acetic anhydride and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Pictet-Spengler-type cyclization, Lactam reduction",
+            "reagents": "Tf2O, 2-chloropyridine, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 to 0 °C then MeOH, 0 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "C=C[C@@H]1CCC(=O)N(CCc2c[nH]c3c2cccc3)C1CCOC(=O)C",
+            "product_smiles": "C=C[C@@H]1(CCOC(=O)C)CCC[C@H]2N(CC1)C3=C(C2)NC4=C3C=CC=C4",
+            "notes": "Intramolecular cyclization of an indole-containing lactam, involving iminium formation and subsequent reduction of the lactam carbonyl to a methylene group, leading to a complex fused polycyclic alkaloid structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=C[C@]1(CCCN2CCC3=C([C@H]12)NC4=C3C=CC=C4)CCO[Ac]",
+            "product_smiles": "C=C[C@]1(CCCN2CCC3=C([C@H]12)NC4=C3C=CC=C4)CCO",
+            "notes": "Reduction of a primary acetate ester to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative cyclization",
+            "reagents": "TPAP, NMO, 4Å MS",
+            "reagent_smiles": "",
+            "conditions": "MeCN, CH2Cl2",
+            "yield": "74%",
+            "reactant_smiles": "C=C[C@]1(CCCN2CCC3=C([C@H]12)NC4=C3C=CC=C4)CCO",
+            "product_smiles": "C=C[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2",
+            "notes": "A primary alcohol is oxidized and undergoes intramolecular cyclization with an indole N-H to form a 5-membered lactam ring (an oxindole derivative). The stereochemistry at existing chiral centers is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Catalytic Alkene Hydration / Oxidation",
+            "reagents": "Mn(acac)₃, Ph(iOPr)SiH₂, PPh₃, O₂",
+            "reagent_smiles": "",
+            "conditions": "THF, 50 °C",
+            "yield": "39%",
+            "reactant_smiles": "C=C[C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2",
+            "product_smiles": "C[C@@H]([C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)C(=O)C2)O",
+            "notes": "Stereoselective hydration and oxidation of a terminal vinyl group to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "55%",
+            "reactant_smiles": "CCC[C@]1(O)[C@@H](O)C[C@H]2N3CCC4=C(C[C@]12)N(C5=CC=CC=C5)C(=O)C34",
+            "product_smiles": "CCC[C@]1(O)[C@@H](O)C[C@H]2N3CCC4=C(C[C@]12)N(C5=CC=CC=C5)[C@H](O)C34",
+            "notes": "Lactam is reduced to a secondary alcohol using DIBAL.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Cyclization / Ether Formation",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "40 °C",
+            "yield": "89%",
+            "reactant_smiles": "C[C@@H]([C@]12CCCN3CCC4=C([C@H]13)N(C5=C4C=CC=C5)[C@H](C2)O)O",
+            "product_smiles": "C[C@H]1[C@]23CCCN4CCC5=C([C@H]24)N(C6=C5C=CC=C6)C(C3)O1",
+            "notes": "Acid-catalyzed intramolecular cyclization of a diol to form a cyclic ether, with inversion of configuration at the stereocenter forming the C-O bond.",
+            "substeps": []
+        }
+    ]
+}

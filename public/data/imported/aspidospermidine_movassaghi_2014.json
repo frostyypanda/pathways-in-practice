@@ -1,0 +1,290 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspidospermidine-movassaghi-2014",
+        "molecule_name": "Aspidospermidine",
+        "class": "Natural Product",
+        "author": "Movassaghi",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Formylation",
+            "reagents": "HCO2NH4",
+            "reagent_smiles": "O=CN",
+            "conditions": "150 °C",
+            "yield": "98%",
+            "reactant_smiles": "[Ph][C@H](O)[C@@H](N)[Ph]",
+            "product_smiles": "[Ph][C@H](O)[C@@H](NC=O)[Ph]",
+            "notes": "N-Formylation of an amino alcohol using formamide, likely involving ammonium formate as a catalyst or additional reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Cyclodehydration / Oxazoline Formation",
+            "reagents": "SOCl2",
+            "reagent_smiles": "",
+            "conditions": "0 to 23 °C",
+            "yield": "",
+            "reactant_smiles": "O=CN[C@H](c1ccccc1)[C@@H](O)c2ccccc2",
+            "product_smiles": "C1=N[C@H](c2ccccc2)[C@@H](c3ccccc3)O1",
+            "notes": "Formation of a 4,5-diphenyl-4,5-dihydrooxazole from an N-formyl-1,2-diphenyl-2-hydroxyethylamine via cyclodehydration.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis",
+            "reagents": "H2O",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "O1[C@@H]([Ph])[C@@H]([Ph])N=C1",
+            "product_smiles": "N[C@@H]([Ph])[C@H](O)[Ph]",
+            "notes": "Hydrolysis of a 4,5-dihydrooxazole to a 2-amino-1,2-diphenylethanol derivative. Stereochemistry is maintained/controlled during the transformation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Formation / N-formylation",
+            "reagents": "Et2O, THF",
+            "reagent_smiles": "CC(=O)OCHO",
+            "conditions": "-40 to 23 °C",
+            "yield": "99%",
+            "reactant_smiles": "O[C@H]([Ph])[C@H](N)[Ph]",
+            "product_smiles": "O[C@H]([Ph])[C@H](NC=O)[Ph]",
+            "notes": "N-formylation of a chiral amino alcohol using acetic formic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "Et2O, THF, 0 to 23 °C",
+            "yield": "97%",
+            "reactant_smiles": "O[C@@H]([Ph])[C@H]([Ph])NC(=O)H",
+            "product_smiles": "O[C@@H]([Ph])[C@H]([Ph])N(C)H",
+            "notes": "Reduction of an N-formyl amide to an N-methyl amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide formation",
+            "reagents": "Et3N",
+            "reagent_smiles": "C/C=C/C(=O)Cl",
+            "conditions": "THF, -30 to 23 °C",
+            "yield": "97%",
+            "reactant_smiles": "CN[C@H]([Ph])[C@@H](O)[Ph]",
+            "product_smiles": "C/C=C/C(=O)N(C)[C@H]([Ph])[C@@H](O)[Ph]",
+            "notes": "Acylation of a secondary amine with crotonyl chloride to form a tertiary amide. The stereochemistry at the two chiral centers is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Asymmetric Conjugate Addition",
+            "reagents": "LTMP, LiCl",
+            "reagent_smiles": "COC1=CC=C(C=C1)CN2C=C(CCI)c3ccccc23",
+            "conditions": "THF, -40 to -23 °C",
+            "yield": "54% (2 steps)",
+            "reactant_smiles": "C/C=C/C(=O)N(C)[C@@H]([Ph])[C@H](O)[Ph]",
+            "product_smiles": "C=C[C@H](CCC1=C(C=C)N(Cc2ccc(OC)cc2)c3ccccc13)C(=O)N(C)[C@@H]([Ph])[C@H](O)[Ph]",
+            "notes": "Asymmetric conjugate addition of a lithiated indole derivative to an α,β-unsaturated amide, followed by a C=C bond shift.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Reductive Amination",
+                    "reagents": "AcOH, NaCNBH3",
+                    "reagent_smiles": "COC1=CC=C(C=C1)C=O",
+                    "conditions": "MeOH, 0 °C to rt",
+                    "yield": "83%",
+                    "reactant_smiles": "C1=CC=C(C(=C1)I)N",
+                    "product_smiles": "C1=CC=C(C(=C1)I)N[PMB]",
+                    "notes": "Reductive amination of 2-iodoaniline with 4-methoxybenzaldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Sonogashira reaction",
+                    "reagents": "(Ph3P)2PdCl2, CuI, Et3N",
+                    "reagent_smiles": "C#CCO",
+                    "conditions": "45 °C",
+                    "yield": "",
+                    "reactant_smiles": "IC1=C(N[PMB])C=CC=C1",
+                    "product_smiles": "OCCC#CC1=C(N[PMB])C=CC=C1",
+                    "notes": "Sonogashira coupling. There is an inconsistency in the reaction scheme: the drawn reagent is propargyl alcohol (HC≡C-CH2-OH, SMILES C#CCO), but the alkyne fragment incorporated into the product is a but-3-yn-1-ol derivative (-C≡C-CH2-CH2-OH, fragment SMILES OCCC#C-). The SMILES provided below accurately reflect the individual drawn structures, highlighting this inconsistency.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Indole Synthesis, Intramolecular Cyclization",
+                    "reagents": "CuI, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "140 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "[PMB]NC1=CC=CC=C1C#CCCO",
+                    "product_smiles": "[PMB]N1C=C(CCO)C2=CC=CC=C21",
+                    "notes": "Copper-catalyzed intramolecular cyclization of an ortho-alkynylaniline to form a 2-substituted N-PMB indole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Iodination (Appel-type reaction)",
+                    "reagents": "PPh3, I2, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "THF, rt",
+                    "yield": "92%",
+                    "reactant_smiles": "[PMB]N1C(=CC2=CC=CC=C21)CCO",
+                    "product_smiles": "[PMB]N1C(=CC2=CC=CC=C21)CCI",
+                    "notes": "Conversion of a primary alcohol to an alkyl iodide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA, LiCl, EtI, DMPU",
+            "reagent_smiles": "",
+            "conditions": "-78 to -40 °C",
+            "yield": "69%",
+            "reactant_smiles": "C=C[C@@H](CCC1=CC2=C(C=CC=C2)N1CC3=CC=C(C=C3)OC)C(=O)N(C)[C@H](C4=CC=CC=C4)[C@@H](O)C5=CC=CC=C5",
+            "product_smiles": "C=C[C@@H](CC)(CCC1=CC2=C(C=CC=C2)N1CC3=CC=C(C=C3)OC)C(=O)N(C)[C@H](C4=CC=CC=C4)[C@@H](O)C5=CC=CC=C5",
+            "notes": "Stereoselective alkylation of the amide alpha-carbon with ethyl iodide. This transformation is part of a sequence yielding Aspidospermidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Amide Hydrolysis",
+            "reagents": "n-Bu4NOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "100 °C, t-BuOH",
+            "yield": "99%",
+            "reactant_smiles": "[PMB]N1C=C(C[C@@](C=C)(CC)C(=O)N(C)[C@@H]([Ph])[C@H](O)[Ph])C2=CC=CC=C21",
+            "product_smiles": "[PMB]N1C=C(C[C@@](C=C)(CC)C(=O)O)C2=CC=CC=C21",
+            "notes": "Amide group is hydrolyzed to a carboxylic acid, with cleavage of the chiral N-diphenylhydroxyethyl group. Stereochemistry at the remaining chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Indole C3 Alkylation / Acetal Reduction",
+            "reagents": "TFA, CH2Cl2",
+            "reagent_smiles": "CC=CN(CC(OC)OC)C(=O)C(F)(F)F.CC[SiH](CC)CC",
+            "conditions": "23 °C",
+            "yield": "75%",
+            "reactant_smiles": "N([PMB])c2ccc3c(c2)c(CCC[C@@](C(=O)O)(C=C)(CC))cn3",
+            "product_smiles": "N([PMB])c2ccc3c(c2)c(CCC[C@@](C(=O)O)(C=C)(CC))c(CCN(CC=C)C(=O)C(F)(F)F)n3",
+            "notes": "Indole C3 undergoes electrophilic alkylation with the reagent's iminium intermediate (derived from the acetal), followed by reduction of the resulting imine to an amine. The existing C2 side chain and chiral center (S-configuration) remain untouched. The PMB protecting group is also preserved.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Acylation (Trifluoroacetylation)",
+                    "reagents": "Et3N",
+                    "reagent_smiles": "O=C(OC(=O)C(F)(F)F)C(F)(F)F",
+                    "conditions": "THF, rt",
+                    "yield": "90%",
+                    "reactant_smiles": "COC(CN)OC",
+                    "product_smiles": "COC(CNC(=O)C(F)(F)F)OC",
+                    "notes": "Trifluoroacetylation of a primary amine with trifluoroacetic anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "N-alkylation",
+                    "reagents": "NaH, DMF",
+                    "reagent_smiles": "C=CCBr",
+                    "conditions": "rt",
+                    "yield": "85%",
+                    "reactant_smiles": "COC(CNC(=O)C(F)(F)F)OC",
+                    "product_smiles": "C=CCN(CC(OC)OC)C(=O)C(F)(F)F",
+                    "notes": "N-alkylation of an amide with allyl bromide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 100 °C",
+            "yield": "99%",
+            "reactant_smiles": "C=CCN(CCC1=C(CC[C@](C=C)(CC)C(=O)O)N([PMB])C3=CC=CC=C13)C(=O)C(F)(F)F",
+            "product_smiles": "C=CCNCCC1=C(CC[C@](C=C)(CC)C(=O)O)N([PMB])C3=CC=CC=C13",
+            "notes": "Hydrolysis of the N-trifluoroacetamide protecting group. The N-PMB protecting group and the chiral center's stereochemistry are retained. The PMB group was abbreviated as shown in the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Lactamization",
+            "reagents": "PPh3, I2, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -5 to 23 °C",
+            "yield": "78%",
+            "reactant_smiles": "C=CCNCC1=C(CC[C@@](C=C)(CC)C(=O)O)N([PMB])C2=CC=CC=C12",
+            "product_smiles": "C=CCN1CC2=C(CC[C@](C=C)(CC)C1=O)N([PMB])C3=CC=CC=C23",
+            "notes": "Intramolecular lactamization via activation of carboxylic acid, forming a 9-membered lactam ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "1,2-DCE, 80 °C",
+            "yield": "87%",
+            "reactant_smiles": "C=CCN1CC2=C(CC[C@](C=C)(CC)C1=O)N([PMB])C4=CC=CC=C24",
+            "product_smiles": "CC[C@]1(C(=O)N2CC=CC1)C3C=C(N([PMB])C4=CC=CC=C34)CCN2",
+            "notes": "Intramolecular ring-closing metathesis of a diene precursor to form a new 6-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Tandem Radical Cyclization / Rearrangement",
+            "reagents": "nBu3SnH, Tf2O",
+            "reagent_smiles": "",
+            "conditions": "MeCN, -40 to 23 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H]1CCC(=CO1)C[C@@]23CCC(=O)N(C=C2)[C@]4(CCC(=C4)N(C[PMB])c5ccccc53)C3",
+            "product_smiles": "CC[C@@H]12C=CC[N+]3=C1[C@@]4(CC3)C5=C(C=CC=C5)[N+](=C4CC2)C[PMB].[O-]S(=O)(=O)C(F)(F)F.[O-]S(=O)(=O)C(F)(F)F",
+            "notes": "Radical cyclization initiated by nBu3SnH/Tf2O, leading to a complex polycyclic system with two iminium/quaternary ammonium centers. Ether cleavage and new C-N bond formations are observed.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH(OMe)3",
+            "reagent_smiles": "[Na+].[BH](OC)(OC)OC",
+            "conditions": "THF, 0 to 23 °C",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "CC[C@]12C=CC[N+]3=C1[C@@]4(CC3)C5=C(C=CC=C5)[N+](=C4CC2)[PMB].[O-]S(=O)(=O)C(F)(F)F.[O-]S(=O)(=O)C(F)(F)F",
+            "product_smiles": "CC[C@H]1C[C@H]2N3CC[C@]4(C5=C(C=CC=C5)N([PMB])[C@H]4CC1)[C@H]23",
+            "notes": "Double iminium reduction to secondary amines using sodium trimethoxyborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "N-Deprotection",
+            "reagents": "",
+            "reagent_smiles": "Sc1ccccc1",
+            "conditions": "TFA, 55 °C",
+            "yield": "79%",
+            "reactant_smiles": "CC[C@]12C=CCN3CC[C@@]4(C5=C(C=CC=C5)N[PMB][C@H]4CC1)[C@H]23",
+            "product_smiles": "CC[C@]12C=CCN3CC[C@@]4(C5=C(C=CC=C5)N[C@H]4CC1)[C@H]23",
+            "notes": "N-PMB deprotection of an indole derivative using thiophenol and trifluoroacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Hydrogenation",
+            "reagents": "PtO2, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 23 °C",
+            "yield": "84%",
+            "reactant_smiles": "CC[C@]12C=CCN3CC[C@@]4(C5=CC=CC=C5N[C@H]4CC1)[C@H]23",
+            "product_smiles": "CC[C@]12CC[C@@H]N3CC[C@@]4(C5=CC=CC=C5N[C@H]4CC1)[C@H]23",
+            "notes": "Hydrogenation of the endocyclic double bond in an aspidospermidine derivative to form (-)-Aspidospermidine.",
+            "substeps": []
+        }
+    ]
+}

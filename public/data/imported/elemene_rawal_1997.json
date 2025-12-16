@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "elemene-rawal-1997",
+        "molecule_name": "Elemene",
+        "class": "Natural Product",
+        "author": "Rawal",
+        "year": 1997
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Reduction",
+            "reagents": "(+)-Ipc₂BCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C([Ph])CCC(=O)[Ph]",
+            "product_smiles": "O[C@H]([Ph])CCC[C@H](O)[Ph]",
+            "notes": "Asymmetric reduction of a 1,5-diketone to a 1,5-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, TEA",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "DCM, -10 °C",
+            "yield": "90%",
+            "reactant_smiles": "O[C@H]([Ph])CCC[C@H](O)[Ph]",
+            "product_smiles": "[OMs][C@H]([Ph])CCC[C@H]([OMs])[Ph]",
+            "notes": "Double mesylation of a 1,4-diol to form a 1,4-dimesylate, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Reductive Amination / Double SN2 Reaction",
+            "reagents": "allylamine",
+            "reagent_smiles": "C=CCN",
+            "conditions": "neat",
+            "yield": "71%",
+            "reactant_smiles": "CS(=O)(=O)O[C@@H](c1ccccc1)CC[C@@H](OS(=O)(=O)C)c1ccccc1",
+            "product_smiles": "C=CCN1[C@H](c2ccccc2)CC[C@@H]1c2ccccc2",
+            "notes": "Intramolecular cyclization of a di-mesylate with allylamine to form a substituted pyrrolidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Deallylation",
+            "reagents": "(PPh3)3RhCl",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O",
+            "yield": "98%",
+            "reactant_smiles": "C=CCN1[C@H]([Ph])CC[C@@H]1[Ph]",
+            "product_smiles": "C1C[C@@H](N[C@H]1[Ph])[Ph]",
+            "notes": "N-deallylation of a chiral pyrrolidine derivative using Wilkinson's catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enamine Formation",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)/C=C/OC",
+            "conditions": "neat, 75 °C",
+            "yield": "90%",
+            "reactant_smiles": "N1[C@H]([Ph])CCC[C@@H]1[Ph]",
+            "product_smiles": "C(C)(/C=C/C(=O)C)=N1[C@H]([Ph])CCC[C@@H]1[Ph]",
+            "notes": "Formation of an enamine via condensation of a secondary amine with an α,β-unsaturated ketone, followed by displacement of a methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Enolization / Silyl enol ether formation",
+            "reagents": "KHMDS, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)/C=C/N1[C@H]([Ph])CC[C@@H]1[Ph]",
+            "product_smiles": "C=C(/C=C/N1[C@H]([Ph])CC[C@@H]1[Ph])[OTBS]",
+            "notes": "Conversion of an α,β-unsaturated ketone into its kinetic silyl enol ether using KHMDS and TBSCl, retaining the stereochemistry of the pyrrolidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "PhMe",
+            "reagent_smiles": "CC(=C)C=O",
+            "conditions": "0 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "C=C([OTBS])/C=C/N1[C@H]([Ph])CC[C@@H]1[Ph]",
+            "product_smiles": "[C@H]1(N2[C@H]([Ph])CC[C@@H]2[Ph])CC[C@H](C)(C=O)C=C([OTBS])C1",
+            "notes": "A chiral pyrrolidine-substituted diene undergoes a Diels-Alder cycloaddition with 2-methylacrolein to form a substituted cyclohexene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Wittig olefination",
+            "reagents": "THF",
+            "reagent_smiles": "C=[P]([Ph])([Ph])[Ph]",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS]C1=CC([C@](C)(CC1)C=O)N2[C@H](CC[C@@H]2[Ph])[Ph]",
+            "product_smiles": "[OTBS]C1=CC([C@](C)(CC1)C=C)N2[C@H](CC[C@@H]2[Ph])[Ph]",
+            "notes": "Wittig reaction converts an aldehyde to an alkene, forming a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection / Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "83%",
+            "reactant_smiles": "[OTBS]OC1=CC([N]2[C@H]([Ph])CC[C@@H]2[Ph])CC[C@@]1(C)C=C",
+            "product_smiles": "O=C1C=C[C@@]1(C)(C=C)CC1",
+            "notes": "Acid-catalyzed hydrolysis of an enol silyl ether, accompanied by the removal of the chiral amine auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "i-PrLi, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -78°C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@]1(C)C=CC(=O)CC1",
+            "product_smiles": "C=C[C@]1(C)C=CC(CC1)(C(C)C)O",
+            "notes": "1,2-addition of an isopropyl group to a cyclic enone ketone using isopropyl lithium (organolithium) and cerium(III) chloride as an additive, forming a tertiary alcohol. The existing chiral center's stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Dauben oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "C=C[C@]1(C)C=CC(CC1)(C(C)C)O",
+            "product_smiles": "C=C[C@]1(C)CCC(=CC1=O)C(C)C",
+            "notes": "Allylic oxidation of a tertiary alcohol to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Nucleophilic Addition (1,2-addition)",
+            "reagents": "i-PrLi, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)C=C1CCC[C@](C)(C=C)C1=O",
+            "product_smiles": "CC(C)C=C1CC[C@](C)(C=C)[C@@](O)(C(C)C)C1",
+            "notes": "1,2-addition of isopropyl lithium to an α,β-unsaturated ketone, facilitated by CeCl3 to promote selective 1,2-addition.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Dehydration / Rearrangement",
+            "reagents": "HClO4",
+            "reagent_smiles": "",
+            "conditions": "AcOH",
+            "yield": "81%",
+            "reactant_smiles": "CC(C)C=C1CC[C@](C)(C=C)C(O)(C(C)C)C1",
+            "product_smiles": "CC(C)C=C1CC[C@](C)(C=C)C(=C(C)C)C1",
+            "notes": "Dehydration of tertiary alcohol and double bond rearrangement to form (-)-Elemene.",
+            "substeps": []
+        }
+    ]
+}

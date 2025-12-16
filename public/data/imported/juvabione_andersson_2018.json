@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "juvabione-andersson-2018",
+        "molecule_name": "Juvabione",
+        "class": "Natural Product",
+        "author": "Andersson",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH, THF",
+            "reagent_smiles": "CCOC(=O)CP(=O)(OCC)OCC",
+            "conditions": "reflux, overnight",
+            "yield": "",
+            "reactant_smiles": "[TIPS]OC1=CC=C(C=C1)C(=O)C",
+            "product_smiles": "CCOC(=O)/C=C(\\C)/C1=CC=C(C=C1)O[TIPS]",
+            "notes": "Horner-Wadsworth-Emmons olefination of a protected acetophenone with a phosphonate reagent to form an E-alpha,beta-unsaturated ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "Ir. Cat, H2",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "95%",
+            "reactant_smiles": "CCOC(=O)/C=C(\\C1=CC=C(C=C1)[OTIPS])/C",
+            "product_smiles": "CCOC(=O)C[C@H](C)C1=CC=C(C=C1)[OTIPS]",
+            "notes": "Stereoselective catalytic hydrogenation of an alpha,beta-unsaturated ester, generating an (R)-chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Weinreb Amide Synthesis",
+            "reagents": "",
+            "reagent_smiles": "CC(C)MgCl.CNOC",
+            "conditions": "THF, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "CCOC(=O)C[C@@H](C)C1=CC=C(C=C1)[OTIPS]",
+            "product_smiles": "[OTIPS]C1=CC=C(C=C1)[C@@H](C)CC(=O)N(C)OC",
+            "notes": "Ester converted to N-methoxy-N-methylamide (Weinreb amide) via reaction with N-methoxy-N-methylamine and isopropylmagnesium chloride. The TIPS protecting group and the chiral center are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ketone synthesis (Weinreb amide alkylation)",
+            "reagents": "i-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "76%",
+            "reactant_smiles": "[TIPS]OC1=CC=C(C=C1)[C@@H](C)CC(=O)N(C)OC",
+            "product_smiles": "CC(C)CC(=O)C[C@@H](C)C1=CC=C(C=C1)O[TIPS]",
+            "notes": "Conversion of a Weinreb amide to an isobutyl ketone using isobutyllithium, with preservation of the chiral center and TIPS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ketal Formation",
+            "reagents": "p-TSA",
+            "reagent_smiles": "OCCO",
+            "conditions": "Toluene, 130 °C",
+            "yield": "96%",
+            "reactant_smiles": "CC(C)CC(=O)C[C@H](C)C1=CC=C(O[TIPS])C=C1",
+            "product_smiles": "CC(C)CC1(OCCO1)C[C@H](C)C2=CC=C(O[TIPS])C=C2",
+            "notes": "Formation of an ethylene glycol ketal from a ketone using p-TSA as an acid catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Birch Reduction",
+            "reagents": "Li, NH3",
+            "reagent_smiles": "CC(C)(C)O",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "CC(C)CC1(C[C@@H](C)C2=CC=C(C=C2)O[TIPS])OCCO1",
+            "product_smiles": "CC(C)CC1(C[C@@H](C)C2C=CC(O[TIPS])C=C2)OCCO1",
+            "notes": "Birch reduction of an aryl TIPS ether, leading to a 1,4-cyclohexadiene. The ketal and chiral center are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "Ir cat., K3PO4, H2",
+            "reagent_smiles": "",
+            "conditions": "PhCF3, rt",
+            "yield": "90%",
+            "reactant_smiles": "[C@H](C1=CC=C([OTIPS])C=C1)CC2([iBu])OCCO2",
+            "product_smiles": "[C@H]([C@@H]1CC=CCC([OTIPS])C1)CC2([iBu])OCCO2",
+            "notes": "Asymmetric hydrogenation of a 1,4-cyclohexadiene to a 1,4-disubstituted cyclohexene, creating a new chiral center on the ring while retaining the existing stereocenter on the side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Triflation",
+            "reagents": "PhNTf2, CsF, DME",
+            "reagent_smiles": "O=S(F)(F)(F)N(C1=CC=CC=C1)S(=O)(=O)C(F)(F)F.COCCOC.[F-].[Cs+]",
+            "conditions": "rt",
+            "yield": "67%",
+            "reactant_smiles": "C(C)CC1(C[C@H](C)[C@H]2CC=C(CC2)[OTIPS])OCCO1",
+            "product_smiles": "C(C)CC1(C[C@H](C)[C@H]2CC=C(CC2)[OTf])OCCO1",
+            "notes": "Triflation of an allylic silyl ether (alcohol precursor) using N-phenylbis(trifluoromethanesulfonimide) and cesium fluoride in DME.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Carbonylation",
+            "reagents": "Pd(OAc)2, PPh3, DIPEA",
+            "reagent_smiles": "[C-]#[O+]",
+            "conditions": "MeOH, rt",
+            "yield": "60%",
+            "reactant_smiles": "[iBu]C1(C[C@H](C)[C@@H]2CC=C(CC2)[OTf])OCCO1",
+            "product_smiles": "[iBu]C1(C[C@H](C)[C@@H]2CC=C(CC2)[CO2Me])OCCO1",
+            "notes": "Palladium-catalyzed carbonylation of a vinyl triflate to a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ketal hydrolysis / Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)CC1(C[C@H](C)[C@@H]2CC=C(CC2)C(=O)OC)OCCO1",
+            "product_smiles": "CC(C)CC(=O)C[C@H](C)[C@@H]1CC=C(CC1)C(=O)OC",
+            "notes": "Hydrolysis of a 1,3-dioxolane ketal to a ketone using trifluoroacetic acid (TFA). The methyl ester and cyclohexene ring remain intact, as does the stereochemistry of the chiral centers.",
+            "substeps": []
+        }
+    ]
+}

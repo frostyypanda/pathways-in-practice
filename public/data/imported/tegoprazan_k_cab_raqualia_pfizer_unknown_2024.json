@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tegoprazan-k-cab-raqualia-pfizer-unknown-2024",
+        "molecule_name": "Tegoprazan (K-CAB RaQualia-Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-alkylation (Williamson Ether Synthesis)",
+            "reagents": "K2CO3, NaI",
+            "reagent_smiles": "ClCc1ccccc1",
+            "conditions": "EtOH, 80 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C(C(=C1)O)N)[N+](=O)[O-]",
+            "product_smiles": "Nc1c([OBn])ccc([N+](=O)[O-])c1",
+            "notes": "O-alkylation of a phenol with benzyl chloride to form a benzyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Bromination",
+            "reagents": "MeCN",
+            "reagent_smiles": "BrN1C(=O)CCC1=O",
+            "conditions": "reflux",
+            "yield": "59% (2 steps)",
+            "reactant_smiles": "[Bn]OC1=C(N)C([N+](=O)[O-])=CC=C1",
+            "product_smiles": "[Bn]OC1=C(N)C([N+](=O)[O-])=CC(Br)=C1",
+            "notes": "Electrophilic aromatic bromination of the reactant using NBS to add bromine to the 5-position of the aniline ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, H2SO4",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "HOAc, 70 °C",
+            "yield": "83%",
+            "reactant_smiles": "C1=CC=C(C=C1)COC2=CC(=CC(=C2N)[N+](=O)[O-])Br",
+            "product_smiles": "CC(=O)NC1=C(C=C(C=C1OCC2=CC=CC=C2)Br)[N+](=O)[O-]",
+            "notes": "Acetylation of the aniline to form an amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyanation (Palladium-catalyzed)",
+            "reagents": "Zn(CN)2, Pd(PPh3)4, DMF",
+            "reagent_smiles": "",
+            "conditions": "170 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)Nc1c([N+](=O)[O-])cc(Br)cc1OCCc2ccccc2",
+            "product_smiles": "CC(=O)Nc1c([N+](=O)[O-])cc(C#N)cc1OCCc2ccccc2",
+            "notes": "Palladium-catalyzed cyanation of an aryl bromide using zinc cyanide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nitro group reduction and benzimidazole cyclization",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)O.[Fe]",
+            "conditions": "reflux",
+            "yield": "82%",
+            "reactant_smiles": "N#CC1=CC(O[Bn])=C(NC(C)=O)C([N+](=O)[O-])=C1",
+            "product_smiles": "N#CC1=CC(O[Bn])=C2NC(C)=NC2=C1",
+            "notes": "Intramolecular cyclization involving nitro reduction to amine, followed by reaction with adjacent N-acetyl group to form a benzimidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nitrile hydrolysis",
+            "reagents": "KOH, (HOCH₂)₂",
+            "reagent_smiles": "[OH-].[K+].OCCO",
+            "conditions": "170 °C",
+            "yield": "93%",
+            "reactant_smiles": "CC1=NC2=C(C=C(C=C2[OBn])C#N)N1",
+            "product_smiles": "CC1=NC2=C(C=C(C=C2[OBn])C(=O)O)N1",
+            "notes": "The nitrile group (-CN) is hydrolyzed to a carboxylic acid group (-COOH) under basic conditions with heating. The benzyloxy and methyl groups remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide formation",
+            "reagents": "Me2NH2Cl, HBTU, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DMF, 23 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC1=NC2=C(C=C(C=C2OCC3=CC=CC=C3)C(=O)O)N1",
+            "product_smiles": "CC1=NC2=C(C=C(C=C2OCC3=CC=CC=C3)C(=O)N(C)C)N1",
+            "notes": "Carboxylic acid converted to N,N-dimethylamide using dimethylamine hydrochloride and HBTU coupling agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Tosylation",
+            "reagents": "NaH, TsCl",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 to 23 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC1=NC2=C(C=C(C=C2OCC3=CC=CC=C3)C(=O)N(C)C)N1",
+            "product_smiles": "CC1=NC2=C(C=C(C=C2OCC3=CC=CC=C3)C(=O)N(C)C)N1[Ts]",
+            "notes": "N-Tosylation of the imidazole nitrogen using NaH as base and TsCl as the tosylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation / Benzyl ether deprotection",
+            "reagents": "Pd/C, H2, HOAc",
+            "reagent_smiles": "",
+            "conditions": "23 °C",
+            "yield": "36%",
+            "reactant_smiles": "CN(C)C(=O)c1cc(O[Bn])c2nc(C)n([Ts])c2c1",
+            "product_smiles": "CN(C)C(=O)c1cc(O)c2nc(C)n([Ts])c2c1",
+            "notes": "Reductive deprotection of a benzyl ether to a hydroxyl group using hydrogen over palladium on carbon catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "n-Bu3P, ADDP",
+            "reagent_smiles": "O[C@H]1CCc2c(F)cc(F)cc2O1.CCCCP(CCCC)CCCC.O=C(N1CCCCC1)N=NC(=O)N1CCCCC1",
+            "conditions": "toluene, 23 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC1=NC2=C(C=C(C=C2O)C(=O)N(C)C)N1[Ts]",
+            "product_smiles": "CC1=NC2=C(C=C(C=C2O[C@H]3CCc4c(F)cc(F)cc4O3)C(=O)N(C)C)N1[Ts]",
+            "notes": "Mitsunobu etherification between a phenol and a chiral alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "NaOH, THF, i-PrOH",
+            "reagent_smiles": "",
+            "conditions": "23 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC1=NC2=C(C=C(C=C2N1[Ts])C(=O)N(C)C)O[C@H]3CCOC4=C3C(=CC(=C4)F)F",
+            "product_smiles": "CC1=NC2=C(C=C(C=C2O[C@H]3CCOC4=C3C(=CC(=C4)F)F)C(=O)N(C)C)N1",
+            "notes": "Deprotection of an N-tosyl benzimidazole using strong base.",
+            "substeps": []
+        }
+    ]
+}

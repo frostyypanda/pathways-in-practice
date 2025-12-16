@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lipitor-atorvastatin-pfizer-unknown-2024",
+        "molecule_name": "Lipitor (Atorvastatin  Pfizer)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aldol-type reaction / Lactone opening",
+            "reagents": "LDA, MgCl2",
+            "reagent_smiles": "O=C1OC[C@H](O)C1",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CC(=O)OC(C)(C)C",
+            "product_smiles": "O=C(OC(C)(C)C)CC(=O)C[C@H](O)CO",
+            "notes": "Enolate of tert-butyl acetate reacts with (R)-4-hydroxydihydrofuran-2(3H)-one (a chiral lactone), leading to ring opening and formation of a chiral β-hydroxy-δ-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Selective Esterification / Protection",
+            "reagents": "pyridine, BzCl",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "77%",
+            "reactant_smiles": "O=C(OC(C)(C)C)CC(=O)C[C@H](O)CO",
+            "product_smiles": "O=C(OC(C)(C)C)CC(=O)C[C@H](O)[OBz]",
+            "notes": "Selective benzoylation of the primary alcohol, leaving the secondary alcohol untouched. Benzoyl chloride (BzCl) is used for benzoylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "Baker's yeast reductase (E. coli HB101)",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[CO2t-Bu]CC(=O)C[C@@H](O)C[OBz]",
+            "product_smiles": "[CO2t-Bu]C[C@@H](O)C[C@@H](O)C[OBz]",
+            "notes": "Chemo- and stereoselective reduction of a β-keto ester to a 1,3-diol using Baker's yeast reductase.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetonide Formation",
+            "reagents": "p-TSA, CH2Cl2",
+            "reagent_smiles": "CC(OC)(OC)C",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "[OBz]C[C@@H](O)C[C@@H](O)CC(=O)OC(C)(C)C",
+            "product_smiles": "[OBz]C[C@@H]1OC(C)(C)O[C@@H](CC(=O)OC(C)(C)C)C1",
+            "notes": "Protection of a 1,3-diol as an acetonide using 2,2-dimethoxypropane and p-toluenesulfonic acid catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Hydrolysis / Deprotection",
+            "reagents": "MeOH, aq. NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)COC(=O)C[C@H]1C[C@H](C[OBz])OC(C)(C)O1",
+            "product_smiles": "CC(C)COC(=O)C[C@H]1C[C@H](CO)OC(C)(C)O1",
+            "notes": "Hydrolysis of a benzoyl ester to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sulfonate ester formation / Alcohol activation",
+            "reagents": "Et3N",
+            "reagent_smiles": "ClC1=CC=C(S(Cl)(=O)=O)C=C1",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@H]1C[C@H](CO)OC(C)(C)O1",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@H]1C[C@H](COS(=O)(=O)C2=CC=C(Cl)C=C2)OC(C)(C)O1",
+            "notes": "Primary alcohol is converted to a p-chlorobenzenesulfonate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaCN",
+            "reagent_smiles": "",
+            "conditions": "DMSO",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@H]1C[C@H](COS(=O)(=O)C2=CC=C(Cl)C=C2)OC(C)(C)O1",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@H]1C[C@H](CC#N)OC(C)(C)O1",
+            "notes": "Displacement of 4-chlorobenzenesulfonate leaving group by cyanide to form a nitrile. Stereochemistry of the 1,3-dioxane ring is preserved. The yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "H2, Raney Ni",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "95%",
+            "reactant_smiles": "O=C(OC(C)(C)C)C[C@H]1CC[C@H](CC#N)OC(C)(C)O1",
+            "product_smiles": "O=C(OC(C)(C)C)C[C@H]1CC[C@H](CCN)OC(C)(C)O1",
+            "notes": "Nitrile reduction to primary amine using catalytic hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Paal-Knorr pyrrole synthesis",
+            "reagents": "pivalic acid",
+            "reagent_smiles": "CCC(=O)C(C(C1=CC=CC=C1)C(=O)C2=CC=C(C=C2)F)C(=O)NC3=CC=CC=C3",
+            "conditions": "toluene-heptane-THF",
+            "yield": "75%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@H]1C[C@H](CCN)OC(C)(C)O1",
+            "product_smiles": "CC(C)(C)OC(=O)C[C@H]1C[C@H](CCN2C(=C(C(=C2C3=CC=C(C=C3)F)C4=CC=CC=C4)C(=O)NC5=CC=CC=C5)C(C)C)OC(C)(C)O1",
+            "notes": "Formation of a pyrrole ring via Paal-Knorr synthesis, condensing a primary amine with a 1,4-diketone. The stereochemistry of the dioxane ring is preserved.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Knoevenagel condensation",
+                    "reagents": "β-alanine, AcOH",
+                    "reagent_smiles": "O=CC1=CC=CC=C1",
+                    "conditions": "hexane",
+                    "yield": "85%",
+                    "reactant_smiles": "CC(C)C(=O)CC(=O)NC1=CC=CC=C1",
+                    "product_smiles": "CC(C)C(=O)C(=CC1=CC=CC=C1)C(=O)NC2=CC=CC=C2",
+                    "notes": "A Knoevenagel condensation between N-phenyl-3-methyl-3-oxobutanamide and benzaldehyde, catalyzed by β-alanine and acetic acid, to form N-phenyl-2-benzylidene-3-methyl-3-oxobutanamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Stetter Reaction",
+                    "reagents": "",
+                    "reagent_smiles": "CC[N+]1=CSC(=C1C)CCO.O=Cc1ccc(F)cc1",
+                    "conditions": "",
+                    "yield": "80%",
+                    "reactant_smiles": "CC(C)C(=O)C(=CC1=CC=CC=C1)C(=O)NC2=CC=CC=C2",
+                    "product_smiles": "CC(C)C(=O)C(C(C1=CC=CC=C1)C(=O)C2=CC=C(F)C=C2)C(=O)NC3=CC=CC=C3",
+                    "notes": "Stetter reaction involving 1,4-addition of 4-fluorobenzaldehyde to an alpha,beta-unsaturated N-phenyl amide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "HCl, MeOH then NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)C[C@H]1C[C@@H](CCN2C(=C(C(=C2C3=CC=C(C=C3)F)C4=CC=CC=C4)C(=O)NC5=CC=CC=C5)C(C)C)OC(C)(C)O1",
+            "product_smiles": "CC(C)C1=C(C(=C(C2=CC=C(C=C2)F)N1CC[C@H](C[C@@H](CC(=O)O)O)O)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4",
+            "notes": "Hydrolysis of tert-butyl ester and acetal to yield Atorvastatin (free acid form).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Salt formation",
+            "reagents": "Ca(OAc)₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)C1=C(C(=C(C2=CC=C(C=C2)F)N1CC[C@H](C[C@H](CC(=O)O)O)O)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4",
+            "product_smiles": "[Ca+2].2CC(C)C1=C(C(=C(C2=CC=C(C=C2)F)N1CC[C@H](C[C@H](CC(=O)[O-])O)O)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4",
+            "notes": "Conversion of Atorvastatin free acid to Atorvastatin calcium salt.",
+            "substeps": []
+        }
+    ]
+}

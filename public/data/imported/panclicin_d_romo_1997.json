@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "panclicin-d-romo-1997",
+        "molecule_name": "Panclicin D",
+        "class": "Natural Product",
+        "author": "Romo",
+        "year": 1997
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Brown asymmetric allylation",
+            "reagents": "Ipc2B allyl",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -100 °C",
+            "yield": "52%",
+            "reactant_smiles": "CCCCCCC=O",
+            "product_smiles": "CCCCCCC[C@H](O)CC=C",
+            "notes": "Asymmetric allylation of an aldehyde to form a chiral secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol protection (Silyl ether formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "95%",
+            "reactant_smiles": "CCCCCCC[C@H](CC=C)O",
+            "product_smiles": "CCCCCCC[C@H](CC=C)O[TBS]",
+            "notes": "Protection of a secondary alcohol using TBSCl and imidazole in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, Me2S",
+            "reagent_smiles": "",
+            "conditions": "DCM/MeOH, -78 °C",
+            "yield": "93%",
+            "reactant_smiles": "CCCCCCC[C@@H](CC=C)[OTBS]",
+            "product_smiles": "CCCCCCC[C@@H](CC=O)[OTBS]",
+            "notes": "Ozonolysis of a terminal alkene to form an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Aldol reaction / Ketene-aldehyde cycloaddition (Romo Lactonization)",
+            "reagents": "ZnCl2",
+            "reagent_smiles": "CCCCCCCCCC=C(O[TBS])Sc1ccncc1",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CCCCCCC[C@H](O[TBS])CC=O",
+            "product_smiles": "CCCCCCCCCC[C@H]1[C@@H](C[C@H](O[TBS])CCCCCCC)OC1=O",
+            "notes": "A silyl ketene acetal (derived from an alpha-thioester) reacts with an aldehyde in the presence of Lewis acid (ZnCl2) to form a gamma-lactone. The reaction maintains the stereochemistry of the OTBS-bearing carbon in the aldehyde and creates two new chiral centers with specific relative stereochemistry, with C10H21 and OTBS on opposite faces and the lactone oxygen group having its defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (Silyl Ether)",
+            "reagents": "aq HF",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0°C to rt",
+            "yield": "53% (2 steps)",
+            "reactant_smiles": "CCCCCCCCCC[C@H]1[C@@H](C[C@@H](CCCCCCC)[OTBS])OC1=O",
+            "product_smiles": "CCCCCCCCCC[C@H]1[C@@H](C[C@@H](CCCCCCC)O)OC1=O",
+            "notes": "Deprotection of a TBS ether to a hydroxyl group in a beta-lactone framework.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DIAD, PPh3",
+            "reagent_smiles": "O=CNC(=O)CO",
+            "conditions": "THF, 0°C to rt",
+            "yield": "88%",
+            "reactant_smiles": "O=C1O[C@H]([C@H](O)CCCCCCC)[C@@H]2C[C@H](CCCCCCCCCC)1",
+            "product_smiles": "O=C1O[C@H]([C@@H](OC(=O)CNC=O)CCCCCCC)[C@@H]2C[C@H](CCCCCCCCCC)1",
+            "notes": "Mitsunobu reaction converting a secondary alcohol into an ester of N-formylglycine with inversion of stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,242 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "scabrolide-a-sarlah-2023",
+        "molecule_name": "Scabrolide A",
+        "class": "Natural Product",
+        "author": "Sarlah",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ring-closing metathesis, Silylation",
+            "reagents": "H-G II, NaH, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@](C)(CCC(C)=C(C))O",
+            "product_smiles": "[OTBS][C@@]1(C)C=CCC1",
+            "notes": "Ring-closing metathesis of the diene followed by protection of the resulting alcohol as a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "RuCl3, t-BuOOH, Mg(OAc)2",
+            "reagent_smiles": "",
+            "conditions": "DCM, H2O",
+            "yield": "43% (2 steps)",
+            "reactant_smiles": "[OTBS][C@@]1(C)C=CCC1",
+            "product_smiles": "[OTBS][C@@]1(C)CC(=O)C=C1",
+            "notes": "Oxidation of a cyclopentene with a remote double bond to a conjugated cyclopentenone, accompanied by double bond migration and ketone formation. The tert-butyldimethylsilyl (TBS) protecting group and methyl stereocenter are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Carbocyclization / Cycloaddition",
+            "reagents": "Ni(cod)2, P(m-Tol)3, Et3B",
+            "reagent_smiles": "C=C1CC1",
+            "conditions": "Et2O, 75 °C",
+            "yield": "75%",
+            "reactant_smiles": "[OTBS][C@@]1(C)C=CC(=O)C1",
+            "product_smiles": "C=C1CC[C@H]2C(=O)C[C@](C)([OTBS])[C@H]12",
+            "notes": "Nickel-catalyzed carbocyclization of a protected cyclopentenone with cyclopropene.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Elimination (Dehydrobromination)",
+                    "reagents": "KO'Bu",
+                    "reagent_smiles": "",
+                    "conditions": "DMSO, 35 °C",
+                    "yield": "55%",
+                    "reactant_smiles": "C1CC1CBr",
+                    "product_smiles": "C=C1CC1",
+                    "notes": "Elimination of HBr from (bromomethyl)cyclopropane to form methylidenecyclopropane using potassium tert-butoxide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "SeO2",
+            "reagent_smiles": "CC(C)(C)OO",
+            "conditions": "DCM",
+            "yield": "65%",
+            "reactant_smiles": "C=C1CC[C@H]2C(=O)C[C@@](C)([C@H]12)[OTBS]",
+            "product_smiles": "C=C1C[C@@H](O)[C@H]2C(=O)C[C@@](C)([C@H]12)[OTBS]",
+            "notes": "Allylic oxidation of a methylene group to a secondary alcohol using selenium dioxide and tert-butyl hydroperoxide. The TBS protecting group and all existing stereocenters are retained, and the new hydroxyl group is formed with a specific stereochemistry (dashed bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "RuCl3, NaIO4, H2O, MeCN, CCl4",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "C=C1[C@@H](C[C@H]2C(=O)C[C@](C)([C@@]12C)[OTBS])O",
+            "product_smiles": "[OTBS][C@]1(C)CC(=O)[C@@H]2[C@@H](C1)[C@@H](C(=O)O)[C@H]2CC(=O)O",
+            "notes": "Oxidative cleavage of an exocyclic alkene to a dicarboxylic acid using catalytic RuCl3/NaIO4 (Lemieux-Johnson oxidation).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction, Lactonization",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[TBS]O[C@]1(C)CC(=O)[C@H](CC(=O)O)[C@@H]1C(=O)O",
+            "product_smiles": "[TBS]O[C@]1(C)C[C@H]2[C@H](CC(=O)O2)[C@@H]1C(=O)O",
+            "notes": "Ketone reduction by sodium borohydride followed by intramolecular lactonization to form a fused gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Thioesterification",
+            "reagents": "PhSH, DCC, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "[OTBS][C@]1(C)C[C@H]2[C@H](CC(=O)O2)[C@H]1C(=O)O",
+            "product_smiles": "[OTBS][C@]1(C)C[C@H]2[C@H](CC(=O)O2)[C@H]1C(=O)Sc1ccccc1",
+            "notes": "Carboxylic acid is converted to a thioester using thiophenol (PhSH) under DCC/DMAP coupling conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd2(dba)3, P(o-furyl)3, CuDPP",
+            "reagent_smiles": "[PMB]O[C@H]1CC[C@@H](C=C)C=C([Sn](CCCC)(CCCC)CCCC)C1",
+            "conditions": "THF, 60 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)O[C@]1(C)C[C@@H]2[C@H](CC(=O)O2)[C@@H]1C(=O)S[Ph]",
+            "product_smiles": "C=C(C)[C@@H]1CC[C@H](O[PMB])C=C(C(=O)[C@H]2[C@@H]3CC(=O)O[C@@H]3C[C@@]2(C)O[Si](C)(C)C(C)(C)C)C1",
+            "notes": "A Stille coupling reaction forming a new C-C bond by coupling a thiophenyl ester with an organotin reagent. The bicyclic core remains intact, and the cyclooctene moiety is introduced.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Alcohol to Phosphonate Formation",
+                    "reagents": "PhMe",
+                    "reagent_smiles": "[Zn](I)I.CCOP(OCC)OCC",
+                    "conditions": "140 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "OCC1CC=C[C@@H](C=C(C))CC1",
+                    "product_smiles": "[PO(OEt)2]C1CC=C[C@@H](C=C(C))CC1",
+                    "notes": "Conversion of a primary alcohol to a diethyl phosphonate, likely via an Arbuzov-type reaction with triethyl phosphite and ZnI2.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Ozonolysis / Ring Expansion / Cyclization",
+                    "reagents": "O₃, Me₂S then, K₂CO₃, H₂O",
+                    "reagent_smiles": "",
+                    "conditions": "H₂O",
+                    "yield": "54%",
+                    "reactant_smiles": "CCOP(=O)(CC1=CC[C@H](CC1)C(=C)C)OCC",
+                    "product_smiles": "C=C(C)[C@@H]1CC=CC(=O)CC1",
+                    "notes": "Selective ozonolysis of the cyclohexene double bond, followed by intramolecular cyclization and ring expansion to form a cycloheptenone. The phosphonate group is lost during the reaction sequence.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Alpha-halogenation",
+                    "reagents": "I2, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, rt",
+                    "yield": "43%",
+                    "reactant_smiles": "C=C(C)[C@@H]1CCC(=O)C=CC1",
+                    "product_smiles": "C=C(C)[C@@H]1CCC(=O)C(I)=CC1",
+                    "notes": "Alpha-iodination of an alpha,beta-unsaturated ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Ketone Reduction (Luche Reduction)",
+                    "reagents": "NaBH4, CeCl3",
+                    "reagent_smiles": "[NaH4B].[Cl3Ce]",
+                    "conditions": "MeOH, -78 °C",
+                    "yield": "96%",
+                    "reactant_smiles": "C=C(C)[C@@H]1CC=C(I)C(=O)CC1",
+                    "product_smiles": "C=C(C)[C@@H]1CC=C(I)[C@H](O)CC1",
+                    "notes": "Stereoselective reduction of an α,β-unsaturated ketone to an allylic alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Williamson Ether Synthesis / Alcohol Protection",
+                    "reagents": "PMBCI, NaH",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 0 °C to rt",
+                    "yield": "73%",
+                    "reactant_smiles": "C=C(C)[C@@H]1CCC[C@H](O)C(I)=CC1",
+                    "product_smiles": "C=C(C)[C@@H]1CCC[C@H](O[PMB])C(I)=CC1",
+                    "notes": "Protection of a secondary alcohol as a p-methoxybenzyl (PMB) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.6",
+                    "reaction_type": "Halogen-Metal Exchange / Transmetallation",
+                    "reagents": "Bu3SnCl, t-BuLi",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "67%",
+                    "reactant_smiles": "I/C1=C/[C@H]([PMBO])CC[C@@H](C(=C)C)CC1",
+                    "product_smiles": "[SnBu3]/C1=C/[C@H]([PMBO])CC[C@@H](C(=C)C)CC1",
+                    "notes": "Iodide on a cyclic alkene is replaced by a tributylstannyl group via halogen-metal exchange (using t-BuLi) and subsequent transmetallation with Bu3SnCl. The relative stereochemistry of the PMBO and isopropenyl groups on the 8-membered ring is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular cyclization / Michael addition",
+            "reagents": "LDA, ZnI2",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "53%",
+            "reactant_smiles": "C=C(C)[C@@H]1CC=C([C@H](CC1)[OPMB])C(=O)[C@H]3[C@H]4CC(=O)O[C@@H]4C[C@@]3(C)[OTBS]",
+            "product_smiles": "C=C(C)[C@@H]1CCC=C2[C@H](C1)[C@H]3[C@@]4(C)[C@H](C[C@](C)(C4C2=O)[OTBS])OC3=O",
+            "notes": "Intramolecular cyclization of an enone via Michael addition, concurrent deprotection and intramolecular cyclization involving the PMB group to form a new 6-membered ring and replace the PMB with a double bond. The TBS group remains intact. The new product is an additional fused 6-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alpha-hydroxylation",
+            "reagents": "DBU, O₂, P(OMe)₃",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "59%",
+            "reactant_smiles": "C=C(C)[C@H]1CCC=C2[C@H]1[C@H]3[C@H]4[C@@H](C[C@](C)([OTBS])[C@@]4(C)C(=O)O3)C(=O)C2",
+            "product_smiles": "C=C(C)[C@H]1CCC=C2[C@H]1[C@H]3[C@H]4[C@@H](C[C@](C)([OTBS])[C@@]4(C)C(=O)O3)C(=O)[C@@H](O)C2",
+            "notes": "Alpha-hydroxylation of a ketone using DBU, O₂, P(OMe)₃.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC, SiO2",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "70%",
+            "reactant_smiles": "C=C(C)[C@@H]1C[C@H]2CC=C[C@H]3[C@H]4[C@H]5[C@@H](C[C@@]6(C)[OTBS])[C@H]([C@]7(O)[C@H]3C5=O)OC(=O)[C@H]27",
+            "product_smiles": "C=C(C)[C@@H]1C[C@H]2C(=O)[C@H]3C(=O)C(=C[C@H]4[C@H]5[C@H](C[C@@]6(C)[OTBS])[C@H]5C4=O)OC(=O)[C@H]26",
+            "notes": "Oxidation of a tertiary alcohol to a ketone, and allylic oxidation/rearrangement of an alkene in a 7-membered ring to an alpha,beta-unsaturated ketone. The provided reactant SMILES had incorrect connectivity (alcohol and ketone on the same carbon). The provided product SMILES had incorrect connectivity for the alpha,beta-unsaturated ketone and an incomplete TBS group. The heavy atom count for reactant and product derived from the screenshot is consistent (26 carbons, 1 silicon). Oxygen count is 5 for reactant and 6 for product, consistent with the oxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection (TBS ether to alcohol)",
+            "reagents": "TASF, DMF, H2O",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "42%",
+            "reactant_smiles": "C=C(C)[C@@H]1C[C@H]2C(=CC(=O)C1)C(=O)C3[C@@]4(C)[C@@H](C[C@@]3(C)[OTBS])OC(=O)[C@H]24",
+            "product_smiles": "C=C(C)[C@@H]1C[C@H]2C(=CC(=O)C1)C(=O)C3[C@@]4(C)[C@@H](C[C@@]3(C)O)OC(=O)[C@H]24",
+            "notes": "Deprotection of a tert-butyldimethylsilyl (TBS) ether to form a tertiary alcohol.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vermiculine-corey-1975",
+        "molecule_name": "Vermiculine",
+        "class": "Natural Product",
+        "author": "Corey",
+        "year": 1975
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Partial Reduction (Ester to Aldehyde)",
+            "reagents": "DIABL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "50%",
+            "reactant_smiles": "COC(=O)C(OC)(OC)CCC(=O)OC",
+            "product_smiles": "COC(=O)C(OC)(OC)CCC=O",
+            "notes": "Selective reduction of one methyl ester group to an aldehyde using DIBAL-H, preserving the other ester and the geminal dimethoxy (acetal) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Organometallic Addition / Carbonyl Addition",
+            "reagents": "bis(2-methylallyl)cadmium",
+            "reagent_smiles": "[Cd](CC(=C)C)(CC(=C)C)",
+            "conditions": "ether, - 78 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C(OC)(OC)CCC=O",
+            "product_smiles": "C=C(C)CC(CCC(C(=O)OC)(OC)OC)O",
+            "notes": "Addition of a 2-methylallyl group from bis(2-methylallyl)cadmium to an aldehyde, forming a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Silyl ether formation",
+            "reagents": "Bn3SiCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "C=C(C)CC(CCC(C(=O)OC)(OC)OC)O",
+            "product_smiles": "C=C(C)CC(CCC(C(=O)OC)(OC)OC)O[Si(Bn)3]",
+            "notes": "Formation of tri(benzyl)silyl (Bn3Si) ether from a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "DIABAL-H",
+            "reagent_smiles": "CC(C)C[AlH]CC(C)C.ClCCl",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(OC)C(OC)(OC)CCC[C@H](CC=C(C)C)O[Si]([Bn])([Bn])[Bn]",
+            "product_smiles": "O=CC(OC)(OC)CCC[C@H](CC=C(C)C)O[Si]([Bn])([Bn])[Bn]",
+            "notes": "Ester is selectively reduced to an aldehyde using DIABAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Horner Wadsworth Emmons olefination",
+            "reagents": "Horner Wadsworth Emmons olefination",
+            "reagent_smiles": "CCOC(=O)CP(=O)(OCC)OCC",
+            "conditions": "",
+            "yield": "94% (2 steps)",
+            "reactant_smiles": "C=C(C)CC(CCC(C=O)(OC)OC)O[Si]([Bn])([Bn])[Bn]",
+            "product_smiles": "CCOC(=O)/C=C/C(CCC(CC(=C)C)O[Si]([Bn])([Bn])[Bn])(OC)OC",
+            "notes": "An aldehyde is converted to an alpha,beta-unsaturated ethyl ester via a Horner-Wadsworth-Emmons olefination with diethyl phosphonoacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "LiOH, MeOH, H2O",
+            "reagent_smiles": "[Li][OH].CO.O",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "CCOC(=O)/C=C/C(CCC(CC(=C)C)[OSiBn3])(OC)OC",
+            "product_smiles": "OC(=O)/C=C/C(CCC(CC(=C)C)O)(OC)OC",
+            "notes": "Hydrolysis of ethyl ester to carboxylic acid and deprotection of tribenzylsilyl ether to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Thioesterification",
+            "reagents": "Ph3P",
+            "reagent_smiles": "C1=CC(=NC=C1)SSC2=NC=CC=C2",
+            "conditions": "xylene",
+            "yield": "77%",
+            "reactant_smiles": "C=C(C)CC(O)CCC(OC)(OC)/C=C/C(=O)O",
+            "product_smiles": "C=C(C)CC(O)CCC(OC)(OC)/C=C/C(=O)SC1=NC=CC=C1",
+            "notes": "Formation of a 2-pyridyl thioester from a carboxylic acid using 2,2'-dipyridyl disulfide and triphenylphosphine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Macrolactonization",
+            "reagents": "xylene, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "30%",
+            "reactant_smiles": "C=C(C)CC(CCC(/C=C/C(=O)SC1=NC=CC=C1)(OC)OC)O",
+            "product_smiles": "O1C(=O)/C=C/C(OC)(OC)CCC[C@@H](CC(=C)C)OC(=O)/C=C/C(OC)(OC)CCC[C@@H](CC(=C)C)1",
+            "notes": "Double macrolactonization of a hydroxy thioester to form the macrocyclic diester Vermiculine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Cleavage (Lemieux-Johnson)",
+            "reagents": "NaIO4",
+            "reagent_smiles": "O=[Os](=O)(=O)=O",
+            "conditions": "t-BuOH",
+            "yield": "70%",
+            "reactant_smiles": "CC(=C)C[C@H]1OC(=O)/C=C/C(OC)(OC)CCC[C@H]2OC(=O)/C=C/C(OC)(OC)CCC12",
+            "product_smiles": "CC(=O)C[C@H]1OC(=O)/C=C/C(OC)(OC)CCC[C@H]2OC(=O)/C=C/C(OC)(OC)CCC12",
+            "notes": "Oxidative cleavage of two exocyclic isopropenyl groups to methyl ketones.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "AcOH, H2O, THF",
+            "reagent_smiles": "",
+            "conditions": "45 °C",
+            "yield": "100%",
+            "reactant_smiles": "CC(=O)C[C@@H]1OC(=O)/C=C/C(OC)(OC)CC[C@@H](CC(=O)C)OC(=O)/C=C/C(OC)(OC)CC1",
+            "product_smiles": "CC(=O)C[C@@H]1OC(=O)/C=C/C(=O)CC[C@@H](CC(=O)C)OC(=O)/C=C/C(=O)CC1",
+            "notes": "Hydrolysis of two gem-dimethoxy groups within a macrocycle to form two ketone groups, yielding Vermiculine. The stereochemistry of the chiral carbons is preserved, and the trans-double bond geometry is maintained.",
+            "substeps": []
+        }
+    ]
+}

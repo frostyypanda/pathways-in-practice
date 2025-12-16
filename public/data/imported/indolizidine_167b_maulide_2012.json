@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "indolizidine-167b-maulide-2012",
+        "molecule_name": "Indolizidine 167B",
+        "class": "Natural Product",
+        "author": "Maulide",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aromatic Nucleophilic Substitution (SNAr)",
+            "reagents": "K2CO3, DMF",
+            "reagent_smiles": "C1CCNC1",
+            "conditions": "150 °C",
+            "yield": "69%",
+            "reactant_smiles": "COC1=CC(=C(C=C1)C=O)F",
+            "product_smiles": "COC1=CC(=C(C=C1)C=O)N2CCCC2",
+            "notes": "Fluorine on the aromatic ring is replaced by pyrrolidine via an SNAr reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "Sc(OTf)3",
+            "reagent_smiles": "",
+            "conditions": "1,2-DCE, 80 °C",
+            "yield": "65%",
+            "reactant_smiles": "COc1ccc(N2CCCC2)c(C=O)c1",
+            "product_smiles": "COC1=CC2=C(C=C1)COC3CCCN23",
+            "notes": "Intramolecular cyclization of an aldehyde and an ortho-amine to form a tricyclic system containing a fused ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Reaction (Ring-Opening)",
+            "reagents": "",
+            "reagent_smiles": "BrMgCC(CCC)1OCCO1",
+            "conditions": "0 °C",
+            "yield": "96%",
+            "reactant_smiles": "COC1=CC2=C(C=C1)COC3CCCN23",
+            "product_smiles": "CCC1(CCCC2CCCN2C3=C(C=CC(=C3)OC)CO)OCCO1",
+            "notes": "Ring-opening Grignard reaction of a fused oxazino-indolizidine derivative, forming an aryl-substituted pyrrolidine with an alkyl chain containing a protected ketone (ketal) and a primary alcohol.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Ketone synthesis (Gilman reaction)",
+                    "reagents": "CuI, THF",
+                    "reagent_smiles": "CCC[Mg]Br",
+                    "conditions": "-78 °C to r.t.",
+                    "yield": "",
+                    "reactant_smiles": "BrCCC(=O)Cl",
+                    "product_smiles": "CCC(=O)CCCBr",
+                    "notes": "Acyl chloride reacts with propylmagnesium bromide in the presence of CuI (forming an organocuprate in situ) to yield a ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Acetal formation (ketal formation)",
+                    "reagents": "pTsOH, C6H6",
+                    "reagent_smiles": "OCCO",
+                    "conditions": "reflux",
+                    "yield": "41% (2 steps)",
+                    "reactant_smiles": "CCCC(=O)CCCBr",
+                    "product_smiles": "CCC1(CCCBr)OCCO1",
+                    "notes": "Formation of a cyclic acetal (ketal) from a ketone and ethylene glycol under acidic conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Grignard reagent formation",
+                    "reagents": "Mg",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C to r.t.",
+                    "yield": "",
+                    "reactant_smiles": "O1CC(CCCBr)(CCC)O1",
+                    "product_smiles": "O1CC(CCC[Mg]Br)(CCC)O1",
+                    "notes": "Formation of a Grignard reagent from an alkyl bromide, retaining a cyclic acetal protecting group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Dearomatization / Ketal Hydrolysis",
+            "reagents": "(NH₄)₂Ce(NO₃)₆",
+            "reagent_smiles": "",
+            "conditions": "0 °C, MeCN/H₂O",
+            "yield": "",
+            "reactant_smiles": "CCCC1(CCCC2CCCN2C3=C(C=CC(=C3)OC)CO)OCCO1",
+            "product_smiles": "O=C1CC(CC)CC(CC2[NH]CCC2)C1",
+            "notes": "Oxidative cleavage of the benzylic alcohol and electron-rich phenyl ring, concurrent with ketal hydrolysis to form a ketone, using Cerium(IV) Ammonium Nitrate (CAN).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Amination / Intramolecular Cyclization",
+            "reagents": "H2, 10% Pd-C",
+            "reagent_smiles": "",
+            "conditions": "aq. HCl, MeOH, r.t.",
+            "yield": "57%",
+            "reactant_smiles": "N1CCC(CCC(=O)CCC)C1",
+            "product_smiles": "CC[C@@H]1CCC[C@H]2CCCN12",
+            "notes": "Intramolecular reductive cyclization of a keto-amine to an indolizidine.",
+            "substeps": []
+        }
+    ]
+}

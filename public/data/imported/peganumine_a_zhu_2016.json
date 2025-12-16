@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "peganumine-a-zhu-2016",
+        "molecule_name": "Peganumine A",
+        "class": "Natural Product",
+        "author": "Zhu",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide Formation (Formylation)",
+            "reagents": "ethyl formate",
+            "reagent_smiles": "",
+            "conditions": "55 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC2=C(C=C1)C(=CN2)CCN",
+            "product_smiles": "COC1=CC2=C(C=C1)C(=CN2)CCNC=O",
+            "notes": "Primary amine reacts with ethyl formate to form an N-formyl amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Protection",
+            "reagents": "DMAP, Boc₂O",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "COC1=CC2=C(C=C1)C(=CN2)CCNC=O",
+            "product_smiles": "COC1=CC2=C(C=C1)N([Boc])C(=C2)CCNC=O",
+            "notes": "Indole nitrogen is protected with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Lithiation-Stannylation",
+            "reagents": "TMPLi, Bu3SnCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "78%",
+            "reactant_smiles": "[Boc]N1C=C(CCNC=O)C2=C1C=C(C=C2)OC",
+            "product_smiles": "[Bu3Sn]C1=C(CCNC=O)C2=C(C=C(C=C2)OC)N1[Boc]",
+            "notes": "Regioselective stannylation at C2 of the indole via C2-lithiation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Liebeskind-Srogl cross-coupling",
+            "reagents": "CuDPP, AsPh3, Pd2dba3",
+            "reagent_smiles": "O=CCC(C)(C)C(=O)Sc1ccccc1",
+            "conditions": "hexane, THF, rt",
+            "yield": "95%",
+            "reactant_smiles": "[Bu3Sn]C1=C(CCNC=O)C2=C(C=C(C=C2)OC)N1[Boc]",
+            "product_smiles": "[Boc]N1C2=C(C=CC(=C2)OC)C(=C1C(=O)CC(C)(C)C=O)CCNC=O",
+            "notes": "Liebeskind-Srogl cross-coupling of a C3-tributylstannyl indole with a thioester to form a C3-ketone.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Johnson-Claisen Rearrangement",
+                    "reagents": "",
+                    "reagent_smiles": "Oc1ccccc1.CCOC(C)(OCC)OCC",
+                    "conditions": "130 to 160 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(=CCO)C",
+                    "product_smiles": "C=CC(C)(C)CC(=O)OCC",
+                    "notes": "Johnson-Claisen rearrangement of 3-methylbut-2-en-1-ol with triethyl orthoacetate to form an ethyl pentenoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Hydrolysis",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, EtOH, rt",
+                    "yield": "74%",
+                    "reactant_smiles": "C=CC(C)(C)CC(=O)OCC",
+                    "product_smiles": "C=CC(C)(C)CC(=O)O",
+                    "notes": "Ester hydrolysis to carboxylic acid under basic conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Thioesterification",
+                    "reagents": "CH2Cl2",
+                    "reagent_smiles": "FC(F)(F)C(=O)OC(=O)C(F)(F)F.[Ph]SH",
+                    "conditions": "rt, then reflux",
+                    "yield": "85%",
+                    "reactant_smiles": "C=CC(C)(C)CC(=O)O",
+                    "product_smiles": "C=CC(C)(C)CC(=O)S[Ph]",
+                    "notes": "Carboxylic acid is activated by trifluoroacetic anhydride (TFAA) and subsequently reacted with thiophenol (PhSH) to form a thioester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "Ozonolysis",
+                    "reagents": "O3",
+                    "reagent_smiles": "O=P(c1ccccc1)(c1ccccc1)c1ccccc1",
+                    "conditions": "CH2Cl2, -78 °C, then rt",
+                    "yield": "83%",
+                    "reactant_smiles": "C=CC(C)(C)CC(=O)S[Ph]",
+                    "product_smiles": "O=CC(C)(C)CC(=O)S[Ph]",
+                    "notes": "Ozonolysis of an alkene followed by reductive workup with PPh3 to form an aldehyde.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dehydration",
+            "reagents": "POCl3, NEt3",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC(=C2)[OMe])C(=C1C(=O)CC(C)(C)C=O)CCNC=O",
+            "product_smiles": "[Boc]N1C2=C(C=CC(=C2)[OMe])C(=C1C(=O)CC(C)(C)C=O)CCC#N",
+            "notes": "Dehydration of formamide to nitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "MeNHOH·HCl, NaHCO3, AcOH, 4 Å MS",
+            "reagent_smiles": "",
+            "conditions": "AcOH, 4 Å MS",
+            "yield": "75%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC(=C2)OC)C(=C1C(=O)CC(C)(C)C=O)CC#N",
+            "product_smiles": "[Boc]N1C2=C(C=CC(=C2)OC)C3=C1N(C(=O)C(C)(C)C=CC3)CC3",
+            "notes": "Indole derivative undergoes intramolecular cyclization involving the aldehyde and cyanoethyl side chains, incorporating an external nitrogen source (MeNHOH) to form a new 6-membered nitrogen-containing ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Imine formation / Condensation",
+            "reagents": "4 Å MS",
+            "reagent_smiles": "COC1=CC2=C(C=C1)C(=CN2)CCN",
+            "conditions": "toluene, reflux",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=CC(OC)=CC=C2C=C1C3=C(C(=O)C(C)(C)C(=O)N(CC4)C3)C4",
+            "product_smiles": "CC(C)(C)OC(=O)N1C2=CC(OC)=CC=C2C=C1C3=C(C(=NCCC4=CNC5=C4C=CC(=C5)OC)C(C)(C)C(=O)N(CC6)C3)C6",
+            "notes": "Formation of an imine from a ketone and an amine, catalyzed by molecular sieves to remove water.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Asymmetric Cascade Cyclization",
+            "reagents": "BzOH, TFA, toluene",
+            "reagent_smiles": "CC(C)[C@@H](C(=O)N(C)CC1=CC=CC=C1)NC(=S)NC2=CC(=CC(=C2)C(F)(F)F)C(F)(F)F",
+            "conditions": "CH2Cl2, 35 °C, reflux",
+            "yield": "69%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=C(C=CC(=C2)OC)C3=C1C4=CC(C)(C)C(=NCCC5=CNC6=C5C=CC(=C6)OC)C(=O)N4CC3",
+            "product_smiles": "CC1(C)[C@H]2CN3CCC4=C(C=C(OC)C=C4)N3[C@H]2[C@@H]5OC6=C(C=C(OC)C=C6)N[C@@H]5CN1",
+            "notes": "Intramolecular cyclization of an imine precursor to form a complex polycyclic alkaloid (+)-Peganumine A. Catalyzed by a chiral thiourea. Includes Boc deprotection and ether bridge formation.",
+            "substeps": []
+        }
+    ]
+}

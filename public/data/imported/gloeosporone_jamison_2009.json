@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "gloeosporone-jamison-2009",
+        "molecule_name": "Gloeosporone",
+        "class": "Natural Product",
+        "author": "Jamison",
+        "year": 2009
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxidation",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C=CCCCCCCO",
+            "product_smiles": "OCCCCC1COC1",
+            "notes": "Epoxidation of a terminal alkene using m-CPBA to form a terminal epoxide, retaining the alcohol functionality.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ley oxidation",
+            "reagents": "TPAP, NMO",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "OCCCCC[C@@H]1CO1",
+            "product_smiles": "O=CCCCCCCC[C@@H]1CO1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde, preserving the epoxide stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Alkylation / Organozinc Addition to Aldehyde",
+            "reagents": "(n-pentyl)2Zn, Ti(O^iPr)4",
+            "reagent_smiles": "C1CC[C@@H]([C@@H](C1)NS(=O)(=O)C(F)(F)F)NS(=O)(=O)C(F)(F)F",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=CCCCCCC[C@@H]1CO1",
+            "product_smiles": "CCCCC[C@H](CCCCC[C@@H]1CO1)O",
+            "notes": "Asymmetric addition of an n-pentyl group to an aldehyde, forming a new chiral secondary alcohol. The epoxide moiety remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Esterification (Steglich)",
+            "reagents": "DCC, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "CCCCC[C@H](O)CCCCC[C@H]1O[C@H]1CCC",
+            "product_smiles": "CCCCC[C@H](OC(=O)CCCC#C[Ph])CCCCC[C@H]1O[C@H]1CCC",
+            "notes": "Esterification of a secondary alcohol containing an epoxide with an alkyne-substituted carboxylic acid using DCC/DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃, PPh₃",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C1CCCC/C=C\\[Ph]CCC[C@H](O)CCCCC[C@@H](CCCCC)O1",
+            "product_smiles": "O=C1CCCC(=O)CCC[C@H](O)CCCCC[C@@H](CCCCC)O1",
+            "notes": "Ozonolysis of an exocyclic alkene, followed by reductive workup with triphenylphosphine, results in the cleavage of the carbon-carbon double bond. The carbon originally bearing the phenyl group is transformed into a ketone, while the other alkene carbon becomes a methylene group. The phenyl group is lost in the process.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "Et3SiOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "94% (2 steps)",
+            "reactant_smiles": "CCCCC[C@@H]1CCCCC[C@@H](CC(=O)CCCC(=O)O1)O",
+            "product_smiles": "CCCCC[C@@H]1CCCCC[C@@H](CC(=O)CCCC(=O)O1)[OTES]",
+            "notes": "Protection of a secondary alcohol as a triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Enamine formation",
+            "reagents": "",
+            "reagent_smiles": "CC(C)COC(N(C)C)N(C)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCCCC[C@@H]1CCCCCC[C@@H](CC(=O)CCCC(=O)O1)O[Si](CC)(CC)CC",
+            "product_smiles": "CCCCC[C@@H]1CCCCCC[C@@H](C/C=C(/N(C)C)CCC(=O)O1)O[Si](CC)(CC)CC",
+            "notes": "Enamine formation from a ketone using Bredereck's reagent. The ketone reacts with the reagent to form an E-configured enamine. The silyl protecting group is changed from TBS to TES.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Photooxidation",
+            "reagents": "O2, Rose Bengal",
+            "reagent_smiles": "",
+            "conditions": "hv",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "CCCCC[C@H]1CCCCC[C@H](CC(=O)/C(=C/N(C)C)/CCC(=O)O1)[OTES]",
+            "product_smiles": "CCCCC[C@H]1CCCCC[C@H](CC(=O)C(=O)CCC(=O)O1)[OTES]",
+            "notes": "Oxidation of an enamine to an alpha-diketone via singlet oxygen.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection / Intramolecular Cyclization",
+            "reagents": "HF•Pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "CCCCC[C@@H]1OC(=O)CCC(=O)CC(=O)C[C@H]([OTES])CCCCCC1",
+            "product_smiles": "CCCCC[C@@H]1CCCCCC[C@H]2OC(=O)C[C@@](O)(CCC(=O)O1)O2",
+            "notes": "Deprotection of TES ether followed by intramolecular cyclization to form a fused furanone and a hydroxyl group.",
+            "substeps": []
+        }
+    ]
+}

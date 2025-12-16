@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "janthinoid-a-yang-2025",
+        "molecule_name": "Janthinoid A",
+        "class": "Natural Product",
+        "author": "Yang",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sharpless Dihydroxylation",
+            "reagents": "K2OsO4, K3Fe(CN)6, K2CO3",
+            "reagent_smiles": "CC(C)(C)O.CS(=O)(=O)N.O",
+            "conditions": "tBuOH, H2O",
+            "yield": "97%",
+            "reactant_smiles": "CC(C)=CCC/C(C)=C/CCC(=O)C",
+            "product_smiles": "CC(C)=CCC/C[C@](C)(O)[C@@H](O)CCC(=O)C",
+            "notes": "E-alkene dihydroxylated to anti-diol with (R,S) configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxidation",
+            "reagents": "MsCl, pyridine, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "85%",
+            "reactant_smiles": "C/C(=C/CCC(=O)C)/CC[C@H](O)C(C)(C)O",
+            "product_smiles": "C/C(=C/CCC(=O)C)/CC[C@@H]1C(C)(C)O1",
+            "notes": "Epoxide formation via intramolecular cyclization. The alkene stereochemistry (Z) was corrected for both reactant and product. The chiral center stereochemistry of the reactant (S, anti-diol) and the epoxide stereochemistry of the product (cis-epoxide) were corrected to accurately reflect the drawn structures. Note a potential stereochemical inconsistency: the reactant is depicted as an anti-diol, while the product is depicted as a cis-epoxide. A cis-epoxide typically forms from a syn-diol via intramolecular SN2, suggesting a discrepancy between the drawn reactant and product structures if formed directly.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Addition, Esterification",
+            "reagents": "PivCl, pyridine, THF",
+            "reagent_smiles": "C#CMgBr",
+            "conditions": "0 °C to rt",
+            "yield": "89%",
+            "reactant_smiles": "C/C(=C\\CCC(=O)C)/CC[C@@H]1C(C)(C)O1",
+            "product_smiles": "C#CC(C)(CC/C=C(\\C)/CC[C@@H]1C(C)(C)O1)O[Piv]",
+            "notes": "Addition of ethynylmagnesium bromide to a ketone, followed by pivaloylation of the resulting tertiary alcohol. The alkene and epoxide moieties remain untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alkyne-Allene Rearrangement",
+            "reagents": "Rh2(TFA)4",
+            "reagent_smiles": "",
+            "conditions": "toluene, 60 °C",
+            "yield": "93%",
+            "reactant_smiles": "C#CC(C)([OPiv])CC/C=C(C)/CC[C@@H]1C(C)(C)O1",
+            "product_smiles": "[OPiv]CH=C=C(C)CC/C=C(C)/CC[C@@H]1C(C)(C)O1",
+            "notes": "Rhodium-catalyzed rearrangement of a propargyl pivalate to an allene pivalate. The epoxide and alkene moieties remain unchanged, with the alkene stereochemistry being E.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lewis acid catalyzed cascade cyclization",
+            "reagents": "BF3•Et2O",
+            "reagent_smiles": "FB(F)F.CCOCC",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "65%",
+            "reactant_smiles": "CC(C)(C)C(=O)OC=C=C(C)CC/C=C(\\C)/CC[C@@H]1C(C)(C)O1",
+            "product_smiles": "CC1=C(C=O)[C@@]2(C)C[C@H](C(C)(C)CC2CC1)O",
+            "notes": "Intramolecular cyclization and rearrangement initiated by Lewis acid, involving epoxide opening and allene activation, leading to a complex tricyclic product. Two carbons are lost during the reaction (C20 reactant -> C18 product).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "91%",
+            "reactant_smiles": "CC1=C(C=O)[C@]2(C)CC(C)(C)CC[C@@H](O)CC2C1",
+            "product_smiles": "CC1=C(C=O)[C@]2(C)CC(C)(C)CC(=O)CC2C1",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin Periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Horner-Wadsworth-Emmons",
+            "reagents": "nBuLi",
+            "reagent_smiles": "CCOC(=O)C(C)P(=O)(OCC)OCC",
+            "conditions": "THF, rt",
+            "yield": "76%",
+            "reactant_smiles": "O=CC(=C1CCC[C@@]2(C)C(=O)C(C)(C)CC12)C",
+            "product_smiles": "CCOC(=O)/C(C)=C(/C1=C(C)CCC[C@@]2(C)C(=O)C(C)(C)CC12)",
+            "notes": "Aldehyde converted to alpha,beta-unsaturated ethyl ester via Horner-Wadsworth-Emmons reaction, forming a Z-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "K-Selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "98%",
+            "reactant_smiles": "CCOC(=O)/C(=C/C1=C(C)CC2CC(C)(C)C(=O)C[C@]21C)/C",
+            "product_smiles": "CCOC(=O)/C(=C/C1=C(C)CC2CC(C)(C)[C@H](C[C@]21C)O)/C",
+            "notes": "Ketone reduction to alcohol using K-Selectride. Stereoselective reduction.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, H₂O",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C(=C/C1=C(C)CCC2CC(C)(C)[C@H](C[C@]21C)O)/C",
+            "product_smiles": "CC1=C(/C=C(\\C)/C(=O)O)[C@]2(C)C[C@H](C(C)(C)CC2CC1)O",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "96%",
+            "reactant_smiles": "C[C@@]12C(CCC(C)(C)C[C@H](O)C1)=C(C)C(=C(C)C(=O)O)CC2",
+            "product_smiles": "C[C@@]12C(CCC(C)(C)C[C@H](OC(=O)C)C1)=C(C)C(=C(C)C(=O)O)CC2",
+            "notes": "Acetylation of a secondary alcohol to form an acetate ester. The carboxylic acid functional group remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Acyl chloride formation",
+            "reagents": "(COCl)2, DMF",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CC1=C(/C=C(\\C)/C(=O)O)[C@]2(C)C[C@@H](C(C)(C)CC2CC1)OC(=O)C",
+            "product_smiles": "CC1=C(/C=C(\\C)/C(=O)Cl)[C@]2(C)C[C@@H](C(C)(C)CC2CC1)OC(=O)C",
+            "notes": "Carboxylic acid is converted to an acyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Alkylation / C-C bond formation",
+            "reagents": "KHMDS",
+            "reagent_smiles": "COC(=O)CC(=O)OC",
+            "conditions": "THF, rt",
+            "yield": "70%",
+            "reactant_smiles": "CC1=C(/C=C(\\C)/C(=O)Cl)[C@]2(C)C[C@@H](C(C)(C)CC2CC1)OC(=O)C",
+            "product_smiles": "CC1=C(/C=C(\\C)/C(=O)C(C(=O)OC)C(=O)OC)[C@]2(C)C[C@@H](C(C)(C)CC2CC1)OC(=O)C",
+            "notes": "Nucleophilic addition of dimethyl malonate enolate to an acid chloride, forming a beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Cyclization / Cascade Reaction",
+            "reagents": "Fe(ClO4)3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "55%",
+            "reactant_smiles": "CC1=C(/C=C(\\C)/C(=O)C(C(=O)OC)C(=O)OC)[C@]2(C)C[C@@H](C(C)(C)CC2CC1)OC(=O)C",
+            "product_smiles": "CC1=C[C@]23[C@@]4(C)C[C@@H](C(C)(C)CC4CC[C@]2(C)[C@](C1=O)(C(=O)OC)C(=O)O3)OC(=O)C",
+            "notes": "Lewis acid-catalyzed intramolecular cyclization of a complex polycyclic reactant to form a highly fused product featuring a new 6-membered ring and a spiro-fused furanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Nucleophilic Addition (Organolithium)",
+            "reagents": "MeLi",
+            "reagent_smiles": "",
+            "conditions": "Et₂O, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC1=C[C@@](C2=O)(C(=O)OC)[C@@]3(O2)O[C@](C)(C4C(C)(C)[C@H](OC(=O)C)CC4)CCC13",
+            "product_smiles": "CC1=C[C@](C2(C)O)(C(=O)OC)[C@@]3(O2)O[C@](C)(C4C(C)(C)[C@H](OC(=O)C)CC4)CCC13",
+            "notes": "Addition of methyl lithium to a ketone, forming a tertiary alcohol and a new methyl group at the spiro center.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "Burgess reagent, toluene",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "42% (2 steps)",
+            "reactant_smiles": "CC(=O)O[C@H]1CC(C)(C)CC[C@@]2(C)[C@]34CCC[C@H]3[C@](C)(O)C=C[C@@]4(C(=O)OC)O2C(=O)",
+            "product_smiles": "CC(=O)O[C@H]1CCC(C)(C)CC[C@@]2(C)[C@]34CCC[C@H]3C=C[C](C(=C))[C@@]4(C(=O)OC)O2C(=O)",
+            "notes": "Dehydration of a tertiary alcohol to form an exocyclic methylene and a shifted double bond in a six-membered ring.",
+            "substeps": []
+        }
+    ]
+}

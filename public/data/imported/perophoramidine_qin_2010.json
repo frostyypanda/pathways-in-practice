@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "perophoramidine-qin-2010",
+        "molecule_name": "Perophoramidine",
+        "class": "Natural Product",
+        "author": "Qin",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Addition",
+            "reagents": "allylMgBr",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "86%",
+            "reactant_smiles": "C1=CC2=C(C=C1Br)NC(=O)C2=O",
+            "product_smiles": "C=CCC1(O)C2=C(C=C(Br)C=C2)NC1=O",
+            "notes": "Nucleophilic addition of allylmagnesium bromide to the C3 carbonyl of 5-bromoisatin, forming a tertiary alcohol and a new chiral center at C3 (racemic mixture indicated by wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol protection (Silylation)",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "95%",
+            "reactant_smiles": "BrC1=CC=C2NC(=O)C(O)(CC=C)C2=C1",
+            "product_smiles": "BrC1=CC=C2NC(=O)C([OTBS])(CC=C)C2=C1",
+            "notes": "Protection of a tertiary alcohol with TBSOTf to form a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "Me₂S, O₃",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=C1NC2=C(C=C(Br)C=C2)C1(CCC=C)[OTBS]",
+            "product_smiles": "O=C1NC2=C(C=C(Br)C=C2)C1(CC=O)[OTBS]",
+            "notes": "Reductive ozonolysis of alkene to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Asymmetric Imine Formation (Sulfinimine synthesis)",
+            "reagents": "(S)-tBuSONH2",
+            "reagent_smiles": "CC(C)(C)[S@@](=O)N",
+            "conditions": "4 Å MS, DCM",
+            "yield": "",
+            "reactant_smiles": "BrC1=CC2=C(C=C1)NC(=O)C2([OTBS])CC=O",
+            "product_smiles": "BrC1=CC2=C(C=C1)NC(=O)C2([OTBS])C/C=N/[S@@](=O)C(C)(C)C",
+            "notes": "Formation of an (E)-N-sulfinyl imine from an aldehyde using (S)-tert-butanesulfinamide. The chiral center at C3 of the indolinone remains racemic as indicated by a wavy bond in both reactant and product.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Imine Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "83%",
+            "reactant_smiles": "[tBu][S@@+]([O-])N=CCC1([OTBS])C(=O)NC2=CC=C(Br)C=C21",
+            "product_smiles": "[tBu][S@@+]([O-])NCC[C]1([OTBS])C(=O)NC2=CC=C(Br)C=C21",
+            "notes": "Reduction of a sulfoximine imine to the corresponding sulfoximine amine using sodium borohydride. The wavy bond indicates a racemic center at the indolinone C3 position, which is maintained in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement and N-Boc Protection",
+            "reagents": "NaOH",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "DCM, rt",
+            "yield": "90%",
+            "reactant_smiles": "O=C1NC2=CC(Br)=CC=C2C1([OTBS])CCN[NH][S+]([O-])[tBu]",
+            "product_smiles": "BrC1=CC([NHBoc])=C(C=C1)C2([OTBS])CCC(=O)N2[S+]([O-])[tBu]",
+            "notes": "Intramolecular rearrangement and cyclization to form a pyrrolidinone ring system, accompanied by an N-Boc protection of the newly formed aryl amine. The indolin-2-one core transforms to a pyrrolidin-2-one fused to a bromophenyl ring with an NHBoc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (Silyl Ether)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)(C)OC(=O)NC1=C(C=CC(=C1)Br)C2(CCN(C2=O)[S@](=O)C(C)(C)C)[OTBS]",
+            "product_smiles": "CC(C)(C)OC(=O)NC1=C(C=CC(=C1)Br)C2(CCN(C2=O)[S@](=O)C(C)(C)C)O",
+            "notes": "Deprotection of TBS silyl ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Chlorination",
+            "reagents": "SOCl2, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]NC1=C(C=CC(=C1)Br)C2(O)CCN(C2=O)[S@](=O)[tBu]",
+            "product_smiles": "[Boc]NC1=C(C=CC(=C1)Br)C2(Cl)CCN(C2=O)[S@](=O)[tBu]",
+            "notes": "Secondary benzylic alcohol is converted to a chloride with retention of stereochemistry (indicated as racemic by wavy bond) using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hetero-Diels-Alder cycloaddition",
+            "reagents": "AgClO4",
+            "reagent_smiles": "C1=CC=C2C(=C1)NC=C2CC[NPhth]",
+            "conditions": "PhMe, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "[Boc]NC1=C2C(Br)=CC=C1C(Cl)C(=O)N2[S@](=O)C(C)(C)C",
+            "product_smiles": "[Boc]N1[C@H]2[C@@]3(C1=C(C=CC(Br)=C1))C(=O)N([*])C[C@@H](CC[NPhth])[C@@]4(C3)C5=C6C=CC=C6N54",
+            "notes": "A hetero-Diels-Alder cycloaddition between a chiral N-sulfinyl-2-oxindole derivative (likely acting as dienophile after imine formation) and an N-H indole derivative (acting as diene). The reaction forms a complex polycyclic product with multiple fused rings and stereocenters. The N-sulfinyl group from the reactant is lost and replaced by R* (presumably H), and the chlorine atom is also eliminated.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Imide Formation",
+                    "reagents": "pyridine",
+                    "reagent_smiles": "C1=CC2=C(C=C1)C(=O)OC2=O",
+                    "conditions": "90 °C",
+                    "yield": "82%",
+                    "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)CCN",
+                    "product_smiles": "C1=CC=C2C(=C1)C(=CN2)CC[NPhth]",
+                    "notes": "A primary amine (tryptamine) reacts with phthalic anhydride to form an N-alkylphthalimide, a common protecting group strategy.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "NaH, MeI",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 0 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "C1=CC=CC2=C1NC=C2CC[NPhth]",
+                    "product_smiles": "C1=CC=CC2=C1N(C)C=C2CC[NPhth]",
+                    "notes": "Methylation of the indole nitrogen.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative chlorination, N-deprotection",
+            "reagents": "NaClO, HOAc, MeOH",
+            "reagent_smiles": "",
+            "conditions": "-40 °C",
+            "yield": "91%",
+            "reactant_smiles": "CN1C2=CC=CC=C2C3=C1[C@@H]4[C@@]5(C(=O)N(*)CC(C[NPhth]))[C@H]4C7=CC(Br)=CC=C7[N]([Boc])[C@@H]31",
+            "product_smiles": "CN1C2=CC(Cl)=CC(Cl)=C2C3=C1[C@@H]4[C@@]5(C(=O)NCCC(C[NPhth]))[C@H]4C7=CC(Br)=CC=C7[N]([Boc])[C@@H]31",
+            "notes": "Oxidative chlorination of the N-methyl indole ring. The N-R* group on the lactam is converted to N-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "89%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC(=C2)Br)[C@]3(CCNC3=O)(C[NPhth])[C@@H]4C5=C(C(=CC(=C5)Cl)Cl)N(C)[C@@H]41",
+            "product_smiles": "[Boc]N1C2=C(C=CC(=C2)Br)[C@]3(CCNC3=O)(C[NPhth])[C@@H]4C5=C(C(=CC(=C5)Cl)Cl)N(C=O)[C@@H]41",
+            "notes": "Oxidation of N-methyl to N-formyl group using Pyridinium Chlorochromate (PCC).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "O-Ethylation, Boc-deprotection",
+            "reagents": "Et3OBF4, DIPEA",
+            "reagent_smiles": "CC[O+](CC)CC.[BF4-].CCN(CC(C)C)C(C)C",
+            "conditions": "DCM, rt",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=C(C=CC(=C2)Br)[C@H]3N(C=O)C4=C(C(Cl)=CC(Cl)=C4)[C@H]3C5=C1[C@]6(C[NPhth])C(=O)N[C@]56",
+            "product_smiles": "[NH]1C2=C(C=CC(=C2)Br)[C@H]3N(C=O)C4=C(C(Cl)=CC(Cl)=C4)[C@H]3C5=C1[C@]6(C[NPhth])C(OCC)=N[C@]56",
+            "notes": "Conversion of a lactam to an O-ethyl lactim ether and concomitant Boc-deprotection.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection / Rearrangement",
+            "reagents": "MeNH₂, MeOH",
+            "reagent_smiles": "CN.CO",
+            "conditions": "CHCl₃, 60 °C",
+            "yield": "77%",
+            "reactant_smiles": "O=CN1C2=C(Cl)C=C(Cl)C=C2[C@H]3N[C@@]4(C13C5=CC=C(Br)C=C5[C@H]6C=NC[C@@H]6C[C@H]([NPhth])[C@H]([OEt]))C4",
+            "product_smiles": "ClC1=CC(Cl)=C2N[C@H]3N[C@@]4(C13C5=CC=C(Br)C=C5[C@H]6C[C@H](N)[C@H]7C[C@H](N=C)[C@H]7C[C@H]4)C6",
+            "notes": "Deprotection of N-formyl and N-phthalimido groups, and removal of ethoxy group with concurrent rearrangement and cyclization to form a complex polycyclic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "76%",
+            "reactant_smiles": "BrC1=CC=C2N=C3[C@]4(NCCC(=N)C4)[C@H](N2)[C@H]([NH]C5=C(Cl)C=C(Cl)C=C53)CC",
+            "product_smiles": "BrC1=CC=C2N=C3[C@]4(N=CCN4)N=CCC3C5=CC(Cl)=CC(Cl)=C52",
+            "notes": "Oxidation of two secondary amines to imines, leading to aromatization of portions of the fused ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "No visible transformation / Acid-catalyzed treatment",
+            "reagents": "PPTS",
+            "reagent_smiles": "",
+            "conditions": "CHCl₃, 60 °C",
+            "yield": "100%",
+            "reactant_smiles": "ClC1=CC(Cl)=C2NC3=C(C=N2)[C@]45[C@H](C3)CC[C@H]6NC[C@]4(C=C7C=C(Br)C=C7)C5=N6",
+            "product_smiles": "ClC1=CC(Cl)=C2NC3=C(C=N2)[C@]45[C@H](C3)CC[C@H]6NC[C@]4(C=C7C=C(Br)C=C7)C5=N6",
+            "notes": "The product structure is identical to the reactant structure in the provided image. This step likely represents an acid-catalyzed treatment or a purification under specified conditions without a visible chemical transformation.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "N-methylation",
+            "reagents": "MeOTf, NaHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "BrC1=CC=C2N=C3[C@@]4(C(C5=C(Cl)C=C(Cl)C=C5[NH]3)[C@@H]6C[NH]C=C4[C@@H]7C=N)C=C21",
+            "product_smiles": "BrC1=CC=C2N=C3[C@@]4(C(C5=C(Cl)C=C(Cl)C=C5[NH]3)[C@@H]6C[N](C)C=C4[C@@H]7C=N)C=C21",
+            "notes": "Selective N-methylation of the secondary amine in the 5-membered ring, leaving the indole NH untouched.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,290 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pederin-rawal-2007",
+        "molecule_name": "Pederin",
+        "class": "Natural Product",
+        "author": "Rawal",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxide opening / Grignard addition (Gilman-type)",
+            "reagents": "CuI",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC[C@H]1CO1",
+            "product_smiles": "C=CC[C@H](O)COC",
+            "notes": "Vinylmagnesium bromide, activated by CuI (forming a Gilman-type reagent), attacks the less hindered carbon of the epoxide. The original chiral center's stereochemistry is retained. Both reactant and product show S configuration at their respective chiral centers based on the given stereobonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TIPS-Cl, Imidazole",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "C=CC[C@@H](COC)O",
+            "product_smiles": "C=CC[C@@H](COC)[OTIPS]",
+            "notes": "Protection of a secondary alcohol to form a TIPS silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃, PPh₃",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "83%",
+            "reactant_smiles": "C=CC[C@@H]([OTIPS])COC",
+            "product_smiles": "[OTIPS][C@@H](CC=O)COC",
+            "notes": "Ozonolysis of a terminal alkene to an aldehyde, with retention of stereochemistry at the adjacent chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Vinylogous Mukaiyama Aldol / Lactonization",
+            "reagents": "Al(2,6-diphenyl-phenoxide)2Me, TMSOTf",
+            "reagent_smiles": "CC(=C(C=COC)[OTBS])C",
+            "conditions": "-78°C to -45°C",
+            "yield": "65%",
+            "reactant_smiles": "O=CCC[C@@H]([OTIPS])COC",
+            "product_smiles": "C(C)(C)1C(=O)C=CO[C@@H]1C[C@H](O)COC",
+            "notes": "Vinylogous Mukaiyama aldol reaction of an aldehyde with a silyl dienyl ether, followed by intramolecular cyclization (lactonization) and desilylation to form a dihydropyranone with an alcohol side chain.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Enol ether formation / Condensation",
+                    "reagents": "NaOMe, DMSO, Me₂SO₄",
+                    "reagent_smiles": "COC=O",
+                    "conditions": "",
+                    "yield": "47%",
+                    "reactant_smiles": "CC(C)C(=O)C",
+                    "product_smiles": "CC(C)C(=O)\\C=C/OC",
+                    "notes": "Enolization of ketone followed by condensation with methyl formate and subsequent O-methylation to form an alpha,beta-unsaturated methoxy ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Silyl Enol Ether Formation",
+                    "reagents": "TBSOTf, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, 0°C to rt",
+                    "yield": "85%",
+                    "reactant_smiles": "CC(C)C(=O)/C=C/OC",
+                    "product_smiles": "CC(=C([OTBS])/C=C/OC)C",
+                    "notes": "Formation of silyl enol ether from an α,β-unsaturated ketone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "O-Methylation",
+            "reagents": "NaHMDS, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78°C to 0°C",
+            "yield": "87%",
+            "reactant_smiles": "C[C@@]1(C)C(=O)C=CO[C@@H]1C[C@H](O)COC",
+            "product_smiles": "C[C@@]1(C)C(=O)C=CO[C@@H]1C[C@H](OC)COC",
+            "notes": "Deprotonation of a secondary alcohol with NaHMDS followed by alkylation with iodomethane (MeI) to form a methyl ether, preserving the stereochemistry at the reacting center.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mukaiyama Michael Reaction",
+            "reagents": "Sc(OTf)3",
+            "reagent_smiles": "COC/C(OC)=C/[OTBS]",
+            "conditions": "CH2Cl2, -78°C-rt",
+            "yield": "85%",
+            "reactant_smiles": "COC[C@H](OC)C[C@@H]1OC=CC(=O)C(C)(C)C1",
+            "product_smiles": "COC[C@H](OC)C[C@@H]1OC[C@@H](C(=O)C(C)(C)C1)[C@@H](C(=O)OC)OC",
+            "notes": "Stereoselective Mukaiyama Michael addition of a silyl ketene acetal to an alpha,beta-unsaturated lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "L-selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, -78°C",
+            "yield": "92%",
+            "reactant_smiles": "COC[C@@H](OC)[C@@H](C)[C@@H]1O[C@@H](C(=O)OC)(OC)CC(=O)[C@@H]1C",
+            "product_smiles": "COC[C@@H](OC)[C@@H](C)[C@@H]1O[C@@H](C(=O)OC)(OC)C[C@@H](O)[C@@H]1C",
+            "notes": "Stereoselective reduction of a cyclic ketone to a secondary alcohol, creating a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC(OC)COC[C@H]1O[C@@H]([C@H](C)[C@@H](O)[C@@H](CC1)C(C(=O)OC)OC)C",
+            "product_smiles": "CC(OC)COC[C@H]1O[C@@H]([C@H](C)[C@@H](O)[C@@H](CC1)C(C(=O)O)OC)C",
+            "notes": "Methyl ester hydrolysis to carboxylic acid",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Curtius Rearrangement",
+            "reagents": "DPPA, Et3N",
+            "reagent_smiles": "C[Si](C)(C)CCO",
+            "conditions": "THF, reflux",
+            "yield": "75%",
+            "reactant_smiles": "C[C@@]1(C)[C@@H](O)[C@@H]2OC([C@@H](CC(OC)COC)O2)[C@@H](C[C@H](C(=O)O)OC)",
+            "product_smiles": "C[C@@]1(C)[C@@H](O)[C@@H]2OC([C@@H](CC(OC)COC)O2)[C@@H](C[C@H](NC(=O)OCC[Si](C)(C)C)OC)",
+            "notes": "Carboxylic acid converted to 2-(trimethylsilyl)ethyl carbamate via Curtius rearrangement, retaining stereochemistry at the alpha carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Silylation / Alcohol Protection",
+            "reagents": "Imidazole",
+            "reagent_smiles": "C[Si](C)(C)Cl",
+            "conditions": "DMF",
+            "yield": "72%",
+            "reactant_smiles": "C[C@@]1(C)[C@@H](C[C@@](C)([C@@H](NC(=O)OCC[TMS])OC)O[C@@H]1CC(COC)OC)O",
+            "product_smiles": "C[C@@]1(C)[C@@H](CC(COC)OC)O[C@](C)(C[C@H]1[OTMS])[C@@H](NC(=O)OCC[TMS])OC",
+            "notes": "Protection of a secondary alcohol with TMS-Cl to form a TMS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "N-Acylation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "C=C1C[C@H](C)[C@@H](C)O[C@@]([OMe])([C@H](C(=O)Cl)[OBz])C1",
+            "conditions": "THF, -78°C to 0°C",
+            "yield": "75%",
+            "reactant_smiles": "[TMS]CCC(=O)N[C@@H]1[OMe]O[C@@](C)(CC([OMe])CO[OMe])[C@H]([OTMS])[C@H](C)C1",
+            "product_smiles": "[TMS]CCC(=O)N(C(=O)[C@H]([OBz])[C@@]([OMe])5O[C@H](C)(C=C)[C@@H](C)C[C@H]5C)[C@@H]1[OMe]O[C@@](C)(CC([OMe])CO[OMe])[C@H]([OTMS])[C@H](C)C1",
+            "notes": "N-acylation of a carbamate-protected secondary amine with an acid chloride to form an N-acyl carbamate.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Enantioselective allylboration",
+                    "reagents": "n-BuLi, t-BuOK, BF3.OEt2",
+                    "reagent_smiles": "B(OC)([C@@H]1C[C@@H]2C[C@H]([C@H]1C)C2(C)C)([C@@H]3C[C@@H]4C[C@H]([C@H]3C)C4(C)C)",
+                    "conditions": "THF, 45°C, -78°C",
+                    "yield": "",
+                    "reactant_smiles": "C/C=C\\C",
+                    "product_smiles": "C/C=C\\CB([C@@H]1C[C@@H]2C[C@H]([C@H]1C)C2(C)C)([C@@H]3C[C@@H]4C[C@H]([C@H]3C)C4(C)C)",
+                    "notes": "Enantioselective allylboration of cis-but-2-ene with (-)-B-methoxy-diisopinocampheylborane to form a chiral allylborane.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Brown asymmetric crotonylation",
+                    "reagents": "",
+                    "reagent_smiles": "CC=O",
+                    "conditions": "-78°C",
+                    "yield": "75%",
+                    "reactant_smiles": "C/C=C\\CB([C@@H]1C[C@@H]2C[C@H]([C@H]1C)C2(C)C)[C@H]3C[C@@H]4C[C@H]([C@@H]3C)C4(C)C",
+                    "product_smiles": "C=C[C@@H](C)[C@@H](C)O",
+                    "notes": "",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Esterification",
+                    "reagents": "EDC, DMAP",
+                    "reagent_smiles": "O=C(O)[C@@H]1COC(O1)c2ccccc2",
+                    "conditions": "",
+                    "yield": "91%",
+                    "reactant_smiles": "C[C@@H](O)[C@H](C)C=C",
+                    "product_smiles": "C[C@@H](OC(=O)[C@@H]1COC(O1)c2ccccc2)[C@H](C)C=C",
+                    "notes": "Steglich esterification of a secondary alcohol with a chiral carboxylic acid using EDC and DMAP.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Petasis reaction",
+                    "reagents": "Cp₂TiMe₂",
+                    "reagent_smiles": "",
+                    "conditions": "toluene",
+                    "yield": "85%",
+                    "reactant_smiles": "C=C[C@@H](C)[C@@H](C)OC(=O)[C@H]1COC([C@@H]([Ph]))O1",
+                    "product_smiles": "C=C[C@@H](C)[C@@H](C)OC(=C)[C@H]1COC([C@@H]([Ph]))O1",
+                    "notes": "A Petasis reaction where an ester carbonyl is converted into a vinyl ether (methylene group) using Cp₂TiMe₂.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.5",
+                    "reaction_type": "Wacker-type cyclization / Oxa-Michael Addition",
+                    "reagents": "PdCl2, Benzoquinone, MeOH, HC(OMe)3, Propylene Oxide",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "78%",
+                    "reactant_smiles": "C=C[C@@H](C)[C@@H](C)OC(=C)[C@H]1COC(O1)[Ph]",
+                    "product_smiles": "C=C1C[C@@]([C@H]2COC(O2)[Ph])([OMe])O[C@@H](C)[C@@H]1C",
+                    "notes": "Intramolecular oxo-cyclization of an enol ether with an alkene, forming a 6-membered cyclic ether with concomitant methoxy addition.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.6",
+                    "reaction_type": "Reductive Cleavage (Acetal)",
+                    "reagents": "Na/NH3(l)",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH",
+                    "yield": "93%",
+                    "reactant_smiles": "C=C1C[C@@]([C@H]2COC([C@@H]([Ph]))O2)(OC)O[C@H](C)[C@@H]1C",
+                    "product_smiles": "C=C1C[C@@]([C@@H](CO)O)(OC)O[C@H](C)[C@@H]1C",
+                    "notes": "Reductive cleavage of a benzylidene acetal to yield a 1,2-diol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.7",
+                    "reaction_type": "Alcohol Silylation / Protection",
+                    "reagents": "TES-Cl, DIPEA",
+                    "reagent_smiles": "Cl[Si](CC)(CC)CC.CCN(C(C)C)C(C)C",
+                    "conditions": "",
+                    "yield": "93%",
+                    "reactant_smiles": "C=C1C[C@]([C@H](CO)O)(OC)O[C@@H](C)[C@@H]1C",
+                    "product_smiles": "C=C1C[C@]([C@H](C[OTES])O)(OC)O[C@@H](C)[C@@H]1C",
+                    "notes": "Protection of the primary alcohol with a TES group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.8",
+                    "reaction_type": "Acylation / Esterification",
+                    "reagents": "BzCl, DMAP, DIPEA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "94%",
+                    "reactant_smiles": "[OTES]C[C@H](O)[C@]1(C[C](=C)[C@@H](C)[C@@H](C)O1)[OMe]",
+                    "product_smiles": "[OTES]C[C@H]([OBz])[C@]1(C[C](=C)[C@@H](C)[C@@H](C)O1)[OMe]",
+                    "notes": "Benzoylation of a secondary alcohol using benzoyl chloride, DMAP, and DIPEA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.9",
+                    "reaction_type": "Oxidation",
+                    "reagents": "PDC",
+                    "reagent_smiles": "",
+                    "conditions": "DMF",
+                    "yield": "83%",
+                    "reactant_smiles": "CC[Si](CC)(CC)OC[C@@H]([C@]1(CC(=C)[C@@H](C)[C@@H](C)O1)OC)OC(=O)C2=CC=CC=C2",
+                    "product_smiles": "OC(=O)[C@@H]([C@]1(CC(=C)[C@@H](C)[C@@H](C)O1)OC)OC(=O)C2=CC=CC=C2",
+                    "notes": "Oxidation of a primary alcohol (protected as TES ether) to a carboxylic acid using PDC.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.10",
+                    "reaction_type": "Acyl Chloride Formation",
+                    "reagents": "SOCl2, Pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=C1C[C@@]([C@@H](C(=O)O)[OBz])([OMe])O[C@H](C)[C@@H]1C",
+                    "product_smiles": "C=C1C[C@@]([C@@H](C(=O)Cl)[OBz])([OMe])O[C@H](C)[C@@H]1C",
+                    "notes": "Carboxylic acid is converted to an acyl chloride using thionyl chloride (SOCl2) and pyridine.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "exiguamine-a-trauner-2008",
+        "molecule_name": "Exiguamine A",
+        "class": "Natural Product",
+        "author": "Trauner",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Williamson Ether Synthesis / O-Benzylation",
+            "reagents": "BnCl, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "83%",
+            "reactant_smiles": "C1=C(C=O)C(=CC(=C1)Br)O",
+            "product_smiles": "C1=CC=C(C=C1)COC2=CC(=CC=C2C=O)Br",
+            "notes": "The phenolic hydroxyl group is selectively benzylated to form a benzyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Knoevenagel condensation / Nitro-Michael type addition (Staudinger reaction is a subsequent step to convert N3 to NH)",
+            "reagents": "NaOMe",
+            "reagent_smiles": "COC(=O)C[N+]#N",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "O=Cc1c(O[Bn])ccc(Br)c1",
+            "product_smiles": "COC(=O)/C(=C/c1c(O[Bn])ccc(Br)c1)/[N-]=[N+]=N",
+            "notes": "An aldehyde undergoes reaction with methyl azidoacetate in the presence of sodium methoxide in methanol to form a Z-configured alpha-azido-beta-substituted acrylate. This is often referred to as a Huisgen cycloaddition precursor or a variation of a Knoevenagel condensation with an azide synthon.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hemetsberger indole synthesis",
+            "reagents": "o-xylene",
+            "reagent_smiles": "",
+            "conditions": "160 °C",
+            "yield": "47% (2 steps)",
+            "reactant_smiles": "COC(=O)/C(=C/C1=CC(O[Bn])=C(Br)C=C1)/[N-]=[N+]#N",
+            "product_smiles": "COC(=O)c1c[nH]c2c1c(O[Bn])cc(Br)c2",
+            "notes": "Hemetsberger indole synthesis starting from a 2-azido-acrylate derivative and an o-substituted aryl group to form an indole-2-carboxylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Decarboxylation",
+            "reagents": "NaOH, Cu2SO4, quinoline",
+            "reagent_smiles": "",
+            "conditions": "215 °C",
+            "yield": "73% (3 steps)",
+            "reactant_smiles": "COC(=O)c1c[nH]c2c1c(Br)cc(OCC3=ccccc3)c2",
+            "product_smiles": "Brc1cc(OCC2=ccccc2)c2c1[nH]cc2",
+            "notes": "Methyl ester at C2 of the indole ring is removed via decarboxylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Vilsmeier-Haack formylation",
+            "reagents": "POCl3, DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "[OBn]C2=CC(=CC3=C2C=CN3)Br",
+            "product_smiles": "[OBn]C2=CC(=CC3=C2C(=CN3)C=O)Br",
+            "notes": "Vilsmeier-Haack formylation of 4-benzyloxy-6-bromo-1H-indole at the C3 position to yield the corresponding indole-3-carbaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Henry reaction",
+            "reagents": "NH4OAc, MeNO2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "[OBn]c1cc(Br)c2c([nH]c(C=O)c2)c1",
+            "product_smiles": "[OBn]c1cc(Br)c2c([nH]c(C/C=C\\[N+](=O)[O-])c2)c1",
+            "notes": "Aldehyde undergoes a Henry reaction with nitromethane to form a trans-nitroalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction and Protection",
+            "reagents": "LiAlH4, Boc2O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "O=[N+]([O-])/C=C/c1c[nH]c2c1c(Br)cc(OCc3ccccc3)c2",
+            "product_smiles": "[Boc]NCCC1=CN([Boc])c2c1c(Br)cc([OBn])c2",
+            "notes": "Reduction of the nitroalkene to an amine using LiAlH4, followed by Boc protection of the newly formed amine and the indole nitrogen using Boc2O/DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille coupling",
+            "reagents": "LiCl, CuCl, Pd(PPh3)4",
+            "reagent_smiles": "[Sn]([Me])([Me])[Me]c1c([OMe])c([OMe])cc(CCN([Me])[Me])c1",
+            "conditions": "DMSO, 60 °C",
+            "yield": "71%",
+            "reactant_smiles": "[Boc]NCCC1=CN([Boc])c2c1c(O[Bn])cc(Br)c2",
+            "product_smiles": "[Boc]NCCC1=CN([Boc])c2c1c(O[Bn])cc(c3c([OMe])c([OMe])cc(CCN([Me])[Me])c3)c2",
+            "notes": "Stille coupling of a bromoindole with an organostannane to form a biaryl product.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Directed Ortho-Metalation / Stannylation",
+                    "reagents": "BuLi, Me3SnCl",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, 0 °C to rt",
+                    "yield": "73%",
+                    "reactant_smiles": "COC1=C(OC)C=C(CCN(C)C)C=C1",
+                    "product_smiles": "COC1=C(OC)C([Sn](C)(C)C)=C(CCN(C)C)C=C1",
+                    "notes": "Directed ortho-lithiation of a dimethoxybenzene derivative, followed by electrophilic quench with trimethyltin chloride to introduce a trimethylstannyl group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Debenzylation / Hydrogenolysis",
+            "reagents": "Pd black, HCO2NH4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "[Boc]NCCC1=CN([Boc])C2=C1C(=CC(=C2)C3=C(C=CC(=C3OC)OC)CCN(C)C)[OBn]",
+            "product_smiles": "[Boc]NCCC1=CN([Boc])C2=C1C(=CC(=C2)C3=C(C=CC(=C3OC)OC)CCN(C)C)O",
+            "notes": "Debenzylation of a benzyl ether to a phenol via catalytic transfer hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "salcomine, O2",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)NCC1=CN(C2=C1C(=CC(=C2)C3=C(CCN(C)C)C=CC(=C3OC)OC)O)C(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)NCC1=CN(C2=C1C(=O)C=C(C3=C(C=CC(=C3OC)OC)CCN(C)C)C2=O)C(=O)OC(C)(C)C",
+            "notes": "Phenol oxidation to quinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "HCO2H, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "27%",
+            "reactant_smiles": "[Boc]NCCC1=CN([Boc])C2=C1C(=O)C=C(C3=C(CCN(C)C)C=CC(=C3[OMe])[OMe])C2=O",
+            "product_smiles": "[Boc]NCCC1=CNC2=C1C(=O)C=C(C3=C(C=CC(=C3[OMe])[OMe])CCN(C)C)C2=O",
+            "notes": "Deprotection of indole N-Boc group. Reaction performed in 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Conjugate Addition / C-Alkylation of Quinone",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CN1CC(=O)N(C)C1=O",
+            "conditions": "THF, -78°C",
+            "yield": "60%",
+            "reactant_smiles": "[Boc]NCCC1=CNC2=C1C(=O)C=C(C3=C(OC)C(OC)=CC(CCN(C)C)=C3)C2=O",
+            "product_smiles": "[Boc]NCCC1=CNC2=C1C(=O)C(C3=C(OC)C(OC)=CC(CCN(C)C)=C3)C(C4C(=O)N(C)C(=O)N(C)C4=O)C2=O",
+            "notes": "The drawn reagent in the reaction scheme is 1,3-dimethylalloxan (N,N'-dimethylparabanic acid, CN1C(=O)C(=O)C(=O)N1C), however, the incorporated moiety in the product structure (Exiguamine A) is derived from 1,3-dimethylimidazolidine-2,4-dione. The 'reagent_smiles' provided corresponds to 1,3-dimethylimidazolidine-2,4-dione (CN1CC(=O)N(C)C1=O) to match the final product structure. The Boc group has been abbreviated.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "BBr3, HCO2H",
+            "reagent_smiles": "B(Br)(Br)Br.C(=O)O",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "[Boc]NCC1=CNC2=C1C(=O)C(=C(C3=C(OC)C(OC)=CC(CCN(C)C)=C3)C2=O)C4C(=O)N(C)C(=O)N(C)C4=O",
+            "product_smiles": "NCCC1=CNC2=C1C(=O)C(=C(C3=C(OC)C(OC)=CC(CCN(C)C)=C3)C2=O)C4C(=O)N(C)C(=O)N(C)C4=O",
+            "notes": "Boc deprotection of a secondary amine to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "AgO, MeOH/HCO2H",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "46% (3 steps)",
+            "reactant_smiles": "CN(C)CCC1=C(C2=C(C(=O)C3=C(C2=O)NC=C3CCN)C4C(=O)N(C)C(=O)N4C)C(=C(C=C1)OC)OC",
+            "product_smiles": "CN1C(=O)[C@]2(C3=C(C4=C(C(=CC5=C4CC[N+]5(C)C)O)O2)C(=O)C6=C(C(=CN6)CCN)C3=O)N(C)C1=O",
+            "notes": "Intramolecular oxidative cyclization to form a novel fused ring system, including an ether bridge and a quaternary ammonium salt. One methoxy group is lost/converted.",
+            "substeps": []
+        }
+    ]
+}

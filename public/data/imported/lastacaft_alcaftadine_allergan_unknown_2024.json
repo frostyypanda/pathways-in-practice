@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lastacaft-alcaftadine-allergan-unknown-2024",
+        "molecule_name": "Lastacaft (Alcaftadine Allergan)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaOMe, MeOH, DMF",
+            "reagent_smiles": "C1=CC=C(C=C1)CCBr",
+            "conditions": "30 °C",
+            "yield": "32%",
+            "reactant_smiles": "C1=CN=CN1",
+            "product_smiles": "C1=CC=C(C=C1)CCN2C=CN=C2",
+            "notes": "N-alkylation of imidazole with (2-bromoethyl)benzene, likely via deprotonation of imidazole followed by SN2.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "C-Acylation",
+            "reagents": "pyridine, Et3N, MeCN",
+            "reagent_smiles": "CCOC(=O)N1CCC(CC1)C(=O)Cl.CCN(CC)CC.CC#N",
+            "conditions": "MeCN",
+            "yield": "34%",
+            "reactant_smiles": "C1=CC=C(C=C1)CCN2C=CN=C2",
+            "product_smiles": "CCOC(=O)N1CCC(CC1)C(=O)C2=NC=CN2CCC3=CC=CC=C3",
+            "notes": "Acylation of the imidazole ring with an acyl chloride, forming a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "98%",
+            "reactant_smiles": "CCOC(=O)N1CCC(CC1)C(=O)C2=NC=CN2CCC3=CC=CC=C3",
+            "product_smiles": "C1=CC=C(C=C1)CCN2C=CN=C2C(=O)C3CCNCC3",
+            "notes": "Hydrolysis of ethyl carbamate protecting group on piperidine nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Leuckart reaction",
+            "reagents": "NaOH",
+            "reagent_smiles": "C=O.O=CO",
+            "conditions": "",
+            "yield": "82%",
+            "reactant_smiles": "C1=CC=C(C=C1)CCN2C=CN=C2C(=O)C3CCNCC3",
+            "product_smiles": "CN1CCC(CC1)C(=O)C2=NC=CN2CCC3=CC=CC=C3",
+            "notes": "Methylation of the piperidine nitrogen via Leuckart reaction using formaldehyde and formic acid, followed by NaOH treatment.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Cyclization / Dehydration",
+            "reagents": "CF3SO3H, NaOH",
+            "reagent_smiles": "C(F)(F)(F)S(=O)(=O)O",
+            "conditions": "110 °C",
+            "yield": "",
+            "reactant_smiles": "CN1CCC(CC1)C(=O)C2=NC=CN2CCC3=CC=CC=C3",
+            "product_smiles": "CN1CCC(=C2C3=C(C=CC=C3)CCN4C=CN=C24)CC1",
+            "notes": "Acid-catalyzed intramolecular cyclization of the N-phenethyl-substituted imidazole derivative, leading to a tricyclic system with an exocyclic alkene formed from the carbonyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Aminomethylation / Mannich-type reaction (with formaldehyde as electrophile)",
+            "reagents": "",
+            "reagent_smiles": "C=O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN1CCC(=C2C3=C(C=CC=C3)CCN4C=CN=C24)CC1",
+            "product_smiles": "CN1CCC(=C2C3=C(C=CC=C3)CCN4C(=CN=C24)CO)CC1",
+            "notes": "Formaldehyde reacts with the imidazole ring to add a hydroxymethyl group. This is the synthesis of Alcaftadine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation (primary alcohol to aldehyde)",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "",
+            "reactant_smiles": "CN1CCC(=C2C3=C(C=CC=C3)CCN4C(=CN=C24)CO)CC1",
+            "product_smiles": "CN1CCC(=C2C3=C(C=CC=C3)CCN4C(=CN=C24)C=O)CC1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using manganese dioxide.",
+            "substeps": []
+        }
+    ]
+}

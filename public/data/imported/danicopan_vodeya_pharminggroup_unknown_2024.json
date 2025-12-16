@@ -1,0 +1,98 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "danicopan-vodeya-pharminggroup-unknown-2024",
+        "molecule_name": "Danicopan (Vodeya PharmingGroup)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(C)(C)OC(=O)CBr",
+            "conditions": "DMF",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)C1=NNC2=C1C=C(C=C2)Br",
+            "product_smiles": "CC(=O)C1=NN(CC(=O)OC(C)(C)C)C2=C1C=C(C=C2)Br",
+            "notes": "N-alkylation of 3-acetyl-5-bromo-1H-indazole with tert-butyl bromoacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC1=NC=C(C=N1)B2OC(C)(C)C(C)(C)O2",
+            "conditions": "reflux",
+            "yield": "68%",
+            "reactant_smiles": "CC(=O)C1=NN(CC(=O)OC(C)(C)C)C2=C1C=C(C=C2)Br",
+            "product_smiles": "CC(=O)C1=NN(CC(=O)OC(C)(C)C)C2=C1C=C(C=C2)C3=CN=C(C)N=C3",
+            "notes": "Bromoarene undergoes Suzuki coupling with a 2-methylpyrimidin-5-yl boronic pinacol ester.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Boronylation",
+                    "reagents": "Pd(dppf)Cl2, KOAc",
+                    "reagent_smiles": "CC1(C)C(C)(C)OBB(OC1(C)C)OC(C)(C)C(C)(C)O",
+                    "conditions": "1,4-Dioxane",
+                    "yield": "",
+                    "reactant_smiles": "CC1=NC=C(Br)C=N1",
+                    "product_smiles": "CC1=NC=C(B2OC(C)(C)C(C)(C)O2)C=N1",
+                    "notes": "Palladium-catalyzed C-Br bond boronylation of a bromopyrimidine with bis(pinacolato)diboron.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester hydrolysis / Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)C1=NN(CC(=O)OC(C)(C)C)C2=C1C=C(C=C2)C3=CN=C(C)N=C3",
+            "product_smiles": "CC(=O)C1=NN(CC(=O)O)C2=C1C=C(C=C2)C3=CN=C(C)N=C3",
+            "notes": "Hydrolysis of tert-butyl ester to carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Coupling",
+            "reagents": "DIPEA, DMF",
+            "reagent_smiles": "BrC1=NC=CC(=C1)NC(=O)[C@@H]2C[C@H](F)CN2",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C1=NN(CC(=O)O)C2=C1C=C(C=C2)C3=CN=C(C)N=C3",
+            "product_smiles": "CC(=O)C1=NN(CC(=O)N2C[C@@H](C[C@H]2C(=O)NC3=CC=CC(=N3)Br)F)C4=C1C=C(C=C4)C5=CN=C(C)N=C5",
+            "notes": "Amide coupling between a carboxylic acid and a secondary amine (from the pyrrolidine ring).",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Amide Coupling",
+                    "reagents": "MsCl, NMI",
+                    "reagent_smiles": "[Boc]N1[C@@H](C(=O)O)C[C@H](F)C1",
+                    "conditions": "DCM",
+                    "yield": "89%",
+                    "reactant_smiles": "Nc1ncc(Br)cc1",
+                    "product_smiles": "[Boc]N1[C@@H](C[C@H](F)C1)C(=O)Nc2ncc(Br)cc2",
+                    "notes": "Amide formation between 2-amino-6-bromopyridine and (2S,4R)-1-(tert-butoxycarbonyl)-4-fluoropyrrolidine-2-carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Deprotection",
+                    "reagents": "HCl, NaHCO3",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, 1,4-Dioxane",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N1[C@@H](C(=O)NC2=NC(Br)=CC=C2)C[C@H](F)C1",
+                    "product_smiles": "C1=CC(=NC(=C1)NC(=O)[C@@H]2C[C@H](CN2)F)Br",
+                    "notes": "Acid-catalyzed Boc deprotection of a fluoropyrrolidine amide.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

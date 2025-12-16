@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspidospermidine-chang-2019",
+        "molecule_name": "Aspidospermidine",
+        "class": "Natural Product",
+        "author": "Chang",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, BnBr",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C - rt",
+            "yield": "",
+            "reactant_smiles": "O=C1CCCC2=C1Nc3c2cccc3",
+            "product_smiles": "O=C1CCCC2=C1N([Bn])c3c2cccc3",
+            "notes": "N-alkylation of the indole nitrogen with benzyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alpha-Alkylation (Enolate Alkylation)",
+            "reagents": "LDA, EtI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1CCCC2=C1C3=CC=CC=C3N2[Bn]",
+            "product_smiles": "O=C1CC(CC)CC2=C1C3=CC=CC=C3N2[Bn]",
+            "notes": "Alkylation of the ketone alpha-carbon with ethyl iodide via LDA-mediated enolate formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alpha-alkylation / Carbamate formation",
+            "reagents": "allyl chloroformate, LDA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "CCC1CCC2=C(N([Bn])C3=C2C=CC=C3)C1=O",
+            "product_smiles": "C=CCOC(=O)[C@@]1(CC)CCC2=C(N([Bn])C3=C2C=CC=C3)C1=O",
+            "notes": "An N-benzyl-dihydroindolone derivative undergoes alpha-alkylation with allyl chloroformate in the presence of LDA to form an allyl carbamate at the alpha position to the ketone, introducing a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Palladium-catalyzed decarboxylative allylic alkylation",
+            "reagents": "Pd₂(dba)₃",
+            "reagent_smiles": "CC(C)(C)[C@H]1COC(=N1)C2=CC=CC=C2P(c3ccccc3)c4ccccc4",
+            "conditions": "PhMe, 70 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCOC(=O)[C@]1(CC)CCC2=C(C3=CC=CC=C3N2[Bn])C1=O",
+            "product_smiles": "C=CC[C@]1(CC)CCC2=C(C3=CC=CC=C3N2[Bn])C1=O",
+            "notes": "Decarboxylative allylic alkylation of an allyl ester to form an allyl-substituted product, mediated by a chiral phosphine ligand and palladium catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "9-BBN, H2O2, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "THF, 0°C - rt",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@]1(CC)CCC2=C(C3=CC=CC=C3N2[Bn])C1=O",
+            "product_smiles": "CC[C@@]1(CCCO)CCC2=C(C3=CC=CC=C3N2[Bn])C1=O",
+            "notes": "Hydroboration-oxidation of an alkene (allyl group) to a primary alcohol, preserving the chiral center's stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCCO)C2CCC(=O)C3=C(N(CC4=CC=CC=C4)c5ccccc53)C12",
+            "product_smiles": "CC[C@@]1(CCC=O)C2CCC(=O)C3=C(N(CC4=CC=CC=C4)c5ccccc53)C12",
+            "notes": "Dess-Martin oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Amination",
+            "reagents": "BnNH2, NaBH(OAc)3, AcOH",
+            "reagent_smiles": "",
+            "conditions": "THF, 30 °C",
+            "yield": "61%",
+            "reactant_smiles": "CC[C@@]1(CCC=O)CCC2=C(c3ccccc3N([Bn])2)C1=O",
+            "product_smiles": "CC[C@@]12CCCN([Bn])[C@H]2C4=C(CC1)N([Bn])c5ccccc45",
+            "notes": "Reductive amination of a ketone and aldehyde with benzylamine to form an Aspidospermidine-like skeleton.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Debenzylation / Reductive Cleavage",
+            "reagents": "Na, NH3 (l); Pd/C, HCO2NH4",
+            "reagent_smiles": "",
+            "conditions": "-78 °C; then MeOH, reflux",
+            "yield": "90%",
+            "reactant_smiles": "CC[C@@]12CCCN(CC3=CC=CC=C3)[C@H]2C4=C(CC1)N(CC5=CC=CC=C5)C6=CC=CC=C64",
+            "product_smiles": "CC[C@@]12CCCN[C@H]2C3=C(CC1)N(CC4=CC=CC=C4)C5=CC=CC=C53",
+            "notes": "Selective debenzylation of the piperidine nitrogen using sodium in liquid ammonia, followed by a transfer hydrogenation with Pd/C and ammonium formate to remove the N-benzyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "N-Acylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "BrCC(=O)Br",
+            "conditions": "DCM, 0 °C - rt",
+            "yield": "70%",
+            "reactant_smiles": "CC[C@]12CC[C@H](N)[C@H]3C4=C(CC1)C=CC=C4N3[Bn]",
+            "product_smiles": "CC[C@]12CC[C@H](N(C(=O)CBr))[C@H]3C4=C(CC1)C=CC=C4N3[Bn]",
+            "notes": "Secondary amine acylation with bromoacetyl bromide. Benzyl group on indole nitrogen is abbreviated.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Cyclopropanation",
+            "reagents": "NaI, AgOTf",
+            "reagent_smiles": "",
+            "conditions": "acetone, reflux",
+            "yield": "73%",
+            "reactant_smiles": "CCC[C@@]1([C@H](CCCN2C(=O)CBr)C2C3=C4CC1C=C3N(Cc5ccccc5)c6ccccc46)",
+            "product_smiles": "CCC[C@@]1([C@H](CCCN2C(=O)C)C2[C@H]3C4=C5CC1[C@@H]3C=C4N(Cc6ccccc6)c7ccccc57)",
+            "notes": "Intramolecular cyclization where the bromomethyl group forms a cyclopropane ring with the adjacent alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "62%",
+            "reactant_smiles": "CC[C@@]12CCCN3C(=O)C[C@]4(C5=CC=CC=C5N[Bn]C4CC1)[C@H]23",
+            "product_smiles": "CC[C@@]12CCN3CC[C@]4(C5=C(C=CC=C5)N[C@H]4CC1)[C@H]23",
+            "notes": "Lactam and N-benzyl indole reduction to form aspidospermidine.",
+            "substeps": []
+        }
+    ]
+}

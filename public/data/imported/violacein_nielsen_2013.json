@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "violacein-nielsen-2013",
+        "molecule_name": "Violacein",
+        "class": "Natural Product",
+        "author": "Nielsen",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "PMBCI, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "C=CCN",
+            "product_smiles": "C=CCN[PMB]",
+            "notes": "N-alkylation of allylamine with p-methoxybenzyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Acylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "C=CC(=O)Cl",
+            "conditions": "DCM, -78°C",
+            "yield": "54%",
+            "reactant_smiles": "C=CC[NH][PMB]",
+            "product_smiles": "C=CCN([PMB])C(=O)C=C",
+            "notes": "N-acylation of an allyl p-methoxybenzylamine with acryloyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Hydroarylation / Cyclization",
+            "reagents": "(o-tol)-HG II",
+            "reagent_smiles": "N1C=CC2=CC([OBn])=CC=C12",
+            "conditions": "THF, 65°C",
+            "yield": "70%",
+            "reactant_smiles": "C=CCN([PMBN])C(=O)C=C",
+            "product_smiles": "[PMBN]N1C(CCC1=O)C2=CNC3=CC=C([OBn])C=C23",
+            "notes": "An intramolecular cyclization of an N-allyl-N-acyl indole precursor with a 6-benzyloxy-1H-indole, catalyzed by mercury(II), forming a fused pyrrolidinone-indole system.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alpha-selenylation of lactam (via enolate formation)",
+            "reagents": "LDA, PhSeBr",
+            "reagent_smiles": "CC(C)N(C(C)C)Li.Br[Se][Ph]",
+            "conditions": "THF, -78°C",
+            "yield": "",
+            "reactant_smiles": "[PMBN]N1C(C2=CNC3=CC=C([OBn])C=C23)CCC1=O",
+            "product_smiles": "[PMBN]N1C(C2=CNC3=CC=C([OBn])C=C23)CC([Se][Ph])C1=O",
+            "notes": "Deprotonation of the alpha-carbon of the lactam by LDA, followed by addition of phenylselenyl bromide (PhSeBr) to form an alpha-selenylated lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grieco elimination",
+            "reagents": "35% H2O2",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "44% (2 steps)",
+            "reactant_smiles": "[PMB]N1C(=O)[C@H]([Se]Ph)C[C@H]1C2=CNC3=CC=C([OBn])C=C23",
+            "product_smiles": "[PMB]N1C(=O)C=C[C@H]1C2=CNC3=CC=C([OBn])C=C23",
+            "notes": "Grieco elimination of a phenylselanyl group to form an unsaturated lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Condensation / Knoevenagel-type reaction",
+            "reagents": "Ti(Oi-Pr)4",
+            "reagent_smiles": "O=C1NC2=CC=CC=C2C1=O",
+            "conditions": "PhMe, 110 °C",
+            "yield": "88%",
+            "reactant_smiles": "[PMBN]N1[C@H](C2=CNC3=CC=C([OBn])C=C23)C=CC1=O",
+            "product_smiles": "[PMBN]N1C(=O)C(=C2C=CNC3=CC=C([OBn])C=C23)C(=C/4\\C(=O)NC5=CC=CC=C54)N1",
+            "notes": "Intermolecular condensation between an activated lactam and isatin to form a violacein derivative. The chiral center in the reactant is eliminated in the product as new double bonds are formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "49%",
+            "reactant_smiles": "O=C1NC2=CC=CC=C2C(=C1)\\C=C3/C(=O)N([PMBN])C4=C([OBn])C=CC=C4C3=C5CNC6=CC=CC=C56",
+            "product_smiles": "O=C1NC2=CC=CC=C2C(=C1)\\C=C3/C(=O)NC4=C(O)C=CC=C4C3=C5CNC6=CC=CC=C56",
+            "notes": "Deprotection of PMBN protecting group on maleimide nitrogen and benzyl ether on indole to yield violacein.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rauvomine-b-smith-2024",
+        "molecule_name": "Rauvomine B",
+        "class": "Natural Product",
+        "author": "Smith",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "[Na+].[BH4-].CO",
+            "conditions": "0 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)/C=C/[Ph]",
+            "product_smiles": "CC(O)/C=C/[Ph]",
+            "notes": "Reduction of an α,β-unsaturated ketone to a secondary allylic alcohol, maintaining the trans alkene geometry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Enzymatic Kinetic Resolution (Transesterification)",
+            "reagents": "Novozym-435, vinyl acetate",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "",
+            "yield": "50%",
+            "reactant_smiles": "[Ph]/C=C/C(C)O",
+            "product_smiles": "[Ph]/C=C/[C@H](O)C",
+            "notes": "Enzymatic kinetic resolution of a secondary allylic alcohol with Novozym-435 and vinyl acetate, yielding the (S)-enantiomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H](O)/C=C/[Ph]",
+            "product_smiles": "C[C@@H]([OAc])/C=C/[Ph]",
+            "notes": "O-acetylation of a secondary alcohol to form an acetate, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Tsuji-Trost reaction / Allylic alkylation",
+            "reagents": "Pd(dppe)2, Et3N",
+            "reagent_smiles": "COC(=O)[C@H](N)CC1=CNC2=CC=CC=C12",
+            "conditions": "DCM, 80 °C",
+            "yield": "70%",
+            "reactant_smiles": "C[C@@H]([OAc])\\C=C\\[Ph]",
+            "product_smiles": "COC(=O)[C@H](CC1=CNC2=CC=CC=C12)N[C@@H](C)\\C=C\\[Ph]",
+            "notes": "Palladium-catalyzed allylic alkylation of a chiral indole-alanine derivative with a chiral allyl acetate, forming a new C-N bond while retaining stereochemistry at both chiral centers and the double bond geometry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Pictet-Spengler Reaction",
+            "reagents": "4Å MS",
+            "reagent_smiles": "O=CCC[Se]Ph.CC(=O)O",
+            "conditions": "DCM, 0 to 5 °C",
+            "yield": "82%",
+            "reactant_smiles": "C[C@@H](/C=C/Ph)N[C@@H](CC1=CNC2=CC=CC=C12)C(=O)OC",
+            "product_smiles": "C[C@@H](/C=C/Ph)N1[C@@H](CCC[Se]Ph)C3=C(C[C@@H]1C(=O)OC)C4=CC=CC=C4N3",
+            "notes": "Intramolecular Pictet-Spengler cyclization of an indole-ethylamine derivative with an aldehyde, forming a tetrahydro-beta-carboline.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 120 °C",
+                    "yield": "98%",
+                    "reactant_smiles": "c1ccccc1[Se][Se]c2ccccc2",
+                    "product_smiles": "OCCC[Se]c1ccccc1",
+                    "notes": "Reductive cleavage of diselenide and substitution/reduction to form a selanyl alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "SO3•pyr, pyridine, Et3N, DMSO",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "90%",
+                    "reactant_smiles": "OCCC[Se]c1ccccc1",
+                    "product_smiles": "O=CCC[Se]c1ccccc1",
+                    "notes": "Primary alcohol oxidized to aldehyde using Swern-like oxidation conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O",
+            "yield": "",
+            "reactant_smiles": "C[C@H](/C=C/[Ph])N1[C@H](CCC[Se][Ph])C3=C(C[C@H]1C(=O)OC)C4=CC=CC=C4N3",
+            "product_smiles": "C[C@H](/C=C/[Ph])N1[C@H](CCC[Se](=O)[Ph])C3=C(C[C@H]1C(=O)OC)C4=CC=CC=C4N3",
+            "notes": "Oxidation of selenide to selenoxide",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Selenoxide elimination",
+            "reagents": "Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "toluene, 110 °C",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "C[C@H](/C=C/c1ccccc1)N1[C@H](CCC[Se](=O)c2ccccc2)C3=C(C[C@H]1C(=O)OC)C4=CC=CC=C4N3",
+            "product_smiles": "C=CC[C@H]1C2=C(C[C@H](C(=O)OC)N1[C@H](C)/C=C/c3ccccc3)C4=CC=CC=C4N2",
+            "notes": "Conversion of beta-hydroxyselenide (via in situ selenoxide formation) to an alkene through syn-elimination.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "DCM, 45 °C",
+            "yield": "59%",
+            "reactant_smiles": "C=CC[C@H]1C2=C(C[C@@H](C(=O)OC)N1[C@@H](C)\\C=C\\c3ccccc3)C4=CC=CC=C4N2",
+            "product_smiles": "C[C@@H]1C=CC[C@H]2C3=C(C[C@@H](C(=O)OC)N12)C4=CC=CC=C4N3",
+            "notes": "Intramolecular ring-closing metathesis reaction, catalyzed by Hoveyda-Grubbs 2nd generation catalyst, forming a new 6-membered dihydropyridine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C=CC[C@H]2C3=C(C[C@@H](C(=O)OC)N12)C4=CC=CC=C4N3",
+            "product_smiles": "C[C@H]1C=CC[C@H]2C3=C(C[C@@H](C=O)N12)C4=CC=CC=C4N3",
+            "notes": "Partial reduction of a methyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Homologation (Bestmann-Ohira variant)",
+            "reagents": "MeOH, NaOMe, toluene",
+            "reagent_smiles": "CC(=O)C(=N2)P(=O)(OC)OC",
+            "conditions": "-78 °C to rt",
+            "yield": "56% (2 steps)",
+            "reactant_smiles": "C[C@H]1C=CC[C@H]2C3=C(C[C@@H](C=O)N12)C4=CC=CC=C4N3",
+            "product_smiles": "C#C[C@@H]1CC2=C([C@@H]3CC=C[C@H](C)N13)NC4=CC=CC=C24",
+            "notes": "Aldehyde converted to a terminal alkyne with retention of stereochemistry using a diazo-phosphonate reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc2O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "C#C[C@@H]1CC2=C([C@@H]3CC=C[C@H](C)N13)NC4=CC=CC=C24",
+            "product_smiles": "C#C[C@@H]1CC2=C([C@@H]3CC=C[C@H](C)N13)N([Boc])C4=CC=CC=C24",
+            "notes": "N-protection of the indole nitrogen with a Boc group using di-tert-butyl dicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Click Reaction (Alkyne-Azide Cycloaddition)",
+            "reagents": "TsN3, CuTC, toluene",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C#C[C@@H]1CC2=C([C@H]3CC=C[C@@H](C)N13)N(C4=CC=CC=C24)C(=O)OC(C)(C)C",
+            "product_smiles": "C[C@@H]1C=CC[C@H]2C3=C(C[C@@H](C4=CN([Ts])N=N4)N12)C7=CC=CC=C7N3C(=O)OC(C)(C)C",
+            "notes": "The alkyne group in the reactant undergoes a copper-catalyzed azide-alkyne cycloaddition (CuAAC) with tosyl azide (TsN3) to form a 1,4-disubstituted 1,2,3-triazole with the tosyl group attached to N1 of the triazole. The stereochemistry at three chiral centers was corrected.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Carbene C-H Insertion / Cyclopropanation",
+            "reagents": "Rh2(OAc)4",
+            "reagent_smiles": "",
+            "conditions": "DCE, 100 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C=CC[C@H]2C3=C(C[C@@H](C4=CN(N=N4)[Ts])N12)C5=CC=CC=C5N3[Boc]",
+            "product_smiles": "[Boc]N1C2=CC=CC=C2C3=C1[C@H](C3)N4C5([C@H]5C(=N[Ts])C6)C[C@H]4C6",
+            "notes": "Rhodium(II)-catalyzed intramolecular cyclization of an N-tosyl-1,2,3-triazole derivative with a dihydropyridine to form a complex polycyclic structure involving a cyclopropane and a tosylimine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Imine hydrolysis",
+            "reagents": "K2CO3, MeOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "solvent: MeOH, H2O",
+            "yield": "39%",
+            "reactant_smiles": "[Boc]N1c2ccccc2c3c1C[C@H]4[C@@H]5[C@H]([C@@H]6C[C@@H](C3)N45)[C@]7(C)C(=N[Ts])N67",
+            "product_smiles": "[Boc]N1c2ccccc2c3c1C[C@H]4[C@@H]5[C@H]([C@@H]6C[C@@H](C3)N45)[C@]7(C)C(=O)N67",
+            "notes": "Imine hydrolysis to aldehyde. Product yield is for 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection (Boc removal)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "[Boc]N1C2=CC=CC=C2C=3C1CC4C[C@]5([C@H]6[C@H](C=O)C5)C[C@H]3N4C6",
+            "product_smiles": "C1[C@@H]2C[C@@H]3[C@]4([C@H]5[C@H](C=O)C4)C[C@H]2N3C6=CC=CC=C6N1",
+            "notes": "Deprotection of the Boc protecting group from the indole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

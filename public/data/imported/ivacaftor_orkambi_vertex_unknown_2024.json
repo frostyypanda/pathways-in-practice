@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ivacaftor-orkambi-vertex-unknown-2024",
+        "molecule_name": "Ivacaftor (Orkambi Vertex)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Carbonate formation / Acylation",
+            "reagents": "Et3N, DMAP",
+            "reagent_smiles": "COC(=O)Cl",
+            "conditions": "CH2Cl2, 0 to 25 °C",
+            "yield": "100%",
+            "reactant_smiles": "CC(C)(C)C1=CC(=C(C=C1)O)C(C)(C)C",
+            "product_smiles": "CC(C)(C)C1=CC(=C(C=C1)OC(=O)OC)C(C)(C)C",
+            "notes": "Phenol reacts with methyl chloroformate to form a methyl carbonate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aromatic Nitration",
+            "reagents": "HNO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -5 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)Oc1c(C(C)(C)C)ccc(C(C)(C)C)c1",
+            "product_smiles": "COC(=O)Oc1c(C(C)(C)C)cc(C(C)(C)C)c(N(=O)=O)c1",
+            "notes": "Electrophilic aromatic substitution installing a nitro group on the benzene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nitro group reduction",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 25 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)C1=C(C=C(C(=C1)C(C)(C)C)[N+](=O)[O-])OC(=O)OC",
+            "product_smiles": "CC(C)(C)C1=CC(=C(C=C1N)OC(=O)OC)C(C)(C)C",
+            "notes": "Reduction of an aromatic nitro group to an amine using catalytic hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide formation",
+            "reagents": "T3P, pyridine",
+            "reagent_smiles": "O=C(O)c1cnc2ccccc2[nH]1",
+            "conditions": "2-MeTHF",
+            "yield": "",
+            "reactant_smiles": "COC(=O)Oc1c(C(C)(C)C)cc(N)c(C(C)(C)C)c1",
+            "product_smiles": "COC(=O)Oc1c(C(C)(C)C)cc(NC(=O)c2cnc3ccccc3[nH]2)c(C(C)(C)C)c1",
+            "notes": "Amide bond formation between an amine and a carboxylic acid using T3P as a coupling agent.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Condensation / Transamidation",
+                    "reagents": "PhNH2",
+                    "reagent_smiles": "C1=CC=CC=C1N",
+                    "conditions": "140 to 150 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC=C(C(=O)OCC)C(=O)OCC",
+                    "product_smiles": "CCOC(=O)C(=CNC1=CC=CC=C1)C(=O)OCC",
+                    "notes": "Diethyl 2-(ethoxymethylene)malonate undergoes a condensation reaction with aniline (PhNH2) at elevated temperature, where the ethoxy group is replaced by a phenylamino group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Quinoline synthesis",
+                    "reagents": "POCl3, PPA",
+                    "reagent_smiles": "",
+                    "conditions": "70 °C",
+                    "yield": "70% (2 steps)",
+                    "reactant_smiles": "CCOC(=O)C(=CNC1=CC=CC=C1)C(=O)OCC",
+                    "product_smiles": "CCOC(=O)C1=C(O)C2=CC=CC=C2N=C1",
+                    "notes": "Intramolecular cyclization to form a quinoline derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Ester Hydrolysis and Tautomerization",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "reflux",
+                    "yield": "92%",
+                    "reactant_smiles": "CCOC(=O)C1=C(C2=CC=CC=C2N=C1)O",
+                    "product_smiles": "C1=CC=C2C(=C1)C(=O)C(=CN2)C(=O)O",
+                    "notes": "Ester hydrolysis of an ethyl ester to a carboxylic acid, accompanied by tautomerization of a 4-hydroxy group to a 4-oxo group in the quinoline ring.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (Hydrolysis)",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)C1=C(C=C(C(=C1)C(C)(C)C)OC(=O)OC)NC(=O)C2=CNC3=CC=CC=C3C2=O",
+            "product_smiles": "O=C1C=C(C(=O)NC2=C(C(C)(C)C)C=C(O)C(=C2)C(C)(C)C)NC3=CC=CC=C31",
+            "notes": "Hydrolysis of a methyl carbonate protecting group on a phenol to yield the free phenol.",
+            "substeps": []
+        }
+    ]
+}

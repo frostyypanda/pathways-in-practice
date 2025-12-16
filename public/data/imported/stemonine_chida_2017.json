@@ -1,0 +1,218 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "stemonine-chida-2017",
+        "molecule_name": "Stemonine",
+        "class": "Natural Product",
+        "author": "Chida",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCCBr",
+            "product_smiles": "O=CCCCBr",
+            "notes": "Ester reduction to aldehyde using DIBAL-H",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Alkynylation",
+            "reagents": "(S,S)-ProPhenol, ZnMe2",
+            "reagent_smiles": "COC(=O)C#C",
+            "conditions": "toluene, 0 °C",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "O=CCCCBr",
+            "product_smiles": "COC(=O)C#C[C@H](O)CCCBr",
+            "notes": "Asymmetric addition of methyl propiolate to 4-bromobutanal, producing a chiral secondary alcohol with (R) configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Lactonization; Alkyne Reduction",
+            "reagents": "Pd/PEI, H2, HCl aq.",
+            "reagent_smiles": "",
+            "conditions": "MeOH/dioxane, rt",
+            "yield": "72%",
+            "reactant_smiles": "COC(=O)C#C[C@@H](O)CCCBr",
+            "product_smiles": "O=C1OC[C@@H](CCCBr)C=C1",
+            "notes": "Methyl ester containing an alkyne and secondary alcohol undergoes intramolecular lactonization, forming a butenolide. The alkyne is reduced to an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Michael Addition / Conjugate Addition",
+            "reagents": "SnCl4",
+            "reagent_smiles": "[TIPS]OC1=CN([PMB])C=C1",
+            "conditions": "CH2Cl2, -78 to -60 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1OC[C@@H](CCCBr)C=C1",
+            "product_smiles": "BrCCC[C@@H]1OC(=O)[C@@H]([C@H]1c2cn([PMB])c(O[TIPS])c2)C1",
+            "notes": "Pyrrole derivative undergoes Michael addition to an alpha,beta-unsaturated gamma-lactone, forming a new C-C bond and saturating the lactone ring. Three new chiral centers are formed/retained.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Acetal Hydrolysis, Cyclization",
+                    "reagents": "HCl, H2O",
+                    "reagent_smiles": "N[PMB]",
+                    "conditions": "rt",
+                    "yield": "61%",
+                    "reactant_smiles": "COC1C=CC(OC)O1",
+                    "product_smiles": "[PMB]N1C=CCC1=O.[PMB]N1C(=O)C=CC1",
+                    "notes": "Acid-catalyzed hydrolysis of 2,5-dimethoxy-2,5-dihydrofuran followed by condensation with 4-methoxybenzylamine (PMB-NH2) to yield two regioisomeric lactams.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Silylation, Enol Silyl Ether Formation",
+                    "reagents": "TIPSCl, NaHMDS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "76%",
+                    "reactant_smiles": "[PMB]N1C(=O)C=CC1",
+                    "product_smiles": "[PMB]N1C([OTIPS])=CC=C1",
+                    "notes": "Formation of an N-substituted 2-(triisopropylsilyloxy)pyrrole from an N-substituted 2,5-dihydro-1H-pyrrol-2-one by deprotonation and silylation.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Deprotection / Pyrrole Reduction",
+            "reagents": "TiCl4, Et3SiH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "[TIPS]OC1=CC=C([C@@H]2CC(=O)O[C@H]2CCCBr)N1[PMB]",
+            "product_smiles": "[PMB]N1[*]([C@@H]2CC(=O)O[C@H]2CCCBr)CCC1=O",
+            "notes": "Reduction of pyrrole ring and deprotection of TIPS enol ether to form a pyrrolidinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H₂O",
+            "yield": "94%",
+            "reactant_smiles": "[PMB]N2[C@@H](CCC2=O)[C@H]3CC(=O)O[C@@H]3CCCBr",
+            "product_smiles": "BrCCC[C@@H]1OC(=O)C[C@H]1[C@@H]2CCC(=O)N2",
+            "notes": "PMB deprotection of a lactam nitrogen using Cerium Ammonium Nitrate (CAN).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular N-Alkylation / Cyclization",
+            "reagents": "NaH, TBAI, TMSOTf",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "57%",
+            "reactant_smiles": "O=C1C[C@H]2[C@H](O1)[C@@H](CCCBr)[CH]3N(C(=O)CC3)[C@H]2",
+            "product_smiles": "O=C1C[C@H]2[C@@H](O1)[C@H]3N(C(=O)CC3)C[C@H]2",
+            "notes": "Intramolecular cyclization of an N-H pyrrolidinone with a terminal alkyl bromide to form a new 7-membered ring and a fused tricyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alpha-Methylation",
+            "reagents": "LiHMDS, MeI",
+            "reagent_smiles": "[Li+].[N-]([Si](C)(C)C)[Si](C)(C)C.CI",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "84%",
+            "reactant_smiles": "O=C1CCC2N(CCCC3)[C@H]3[C@H](C(=O)O[C@@H]4)C24",
+            "product_smiles": "C[C@H]1C(=O)O[C@@H]2C3N(CCCC4)[C@H]4[C@H]3CC21",
+            "notes": "Alpha-methylation of the lactone via deprotonation with LiHMDS and subsequent alkylation with MeI.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Deoxygenation",
+            "reagents": "IrCl(CO)(PPh3)2, (Me2HSi)O",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@@H]2[C@H]3N(C(=O)CC3)[C@H]2OC1=O",
+            "product_smiles": "C[C@H]1C[C@@H]2[C@H]3N(C=CC3)[C@H]2OC1=O",
+            "notes": "Reductive deoxygenation of the lactam carbonyl to form a pyrroline ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "[3+2] Cycloaddition / Furanone annulation",
+            "reagents": "2-NO2C6H4CO2H",
+            "reagent_smiles": "CC1=CC(O[Si](C)(C)C(C)(C)C)=CO1",
+            "conditions": "MeCN",
+            "yield": "43%",
+            "reactant_smiles": "C[C@H]1[C@@H]2[C@@H]3C=CN(CCC[C@@H]2)C[C@@H]3OC1=O",
+            "product_smiles": "C[C@H]1[C@@H]2[C@@H]3N(CCC[C@@H]2)[C@@H]4C(=C(C)C(=O)O4)C[C@@H]3OC1=O",
+            "notes": "Intramolecular formal [3+2] cycloaddition using a silyloxyfuran to construct a new fused lactone ring.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Reduction",
+                    "reagents": "BH3•SMe2",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "80%",
+                    "reactant_smiles": "O=C(O)c1occc1",
+                    "product_smiles": "OCCC1=CC=CO1",
+                    "notes": "Reduction of furan-2-carboxylic acid to furan-2-ylmethanol using borane-dimethyl sulfide complex.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=COC=C1CO",
+                    "product_smiles": "C1=COC=C1C[OTBS]",
+                    "notes": "Protection of a primary alcohol on a furan ring with TBSCl.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Brook rearrangement",
+                    "reagents": "n-BuLi, HMPA",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "79%",
+                    "reactant_smiles": "O1C=C(C[OTBS])C=C1",
+                    "product_smiles": "O1C(=C[TBS])C=C(CO)C1",
+                    "notes": "Brook rearrangement of an O-silyl furan derivative to a C-silyl furan derivative with concomitant hydroxyl group formation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Mesylation",
+                    "reagents": "Ms2O, i-Pr2NEt",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[TBS]c1occc1CO",
+                    "product_smiles": "[TBS]c1occc1COS(=O)(=O)C",
+                    "notes": "Conversion of a primary alcohol to a mesylate (methanesulfonate ester).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.5",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiBHEt3",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "93% (2 steps)",
+                    "reactant_smiles": "[TBS]c1c(COS(=O)(=O)C)occ1",
+                    "product_smiles": "[TBS]c1c(C)occ1",
+                    "notes": "Reductive removal of a mesylate leaving group to form a methyl group.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

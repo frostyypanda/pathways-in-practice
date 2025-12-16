@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "spiroindimicin-c-sperry-2016",
+        "molecule_name": "Spiroindimicin C",
+        "class": "Natural Product",
+        "author": "Sperry",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydroxymethylation",
+            "reagents": "CH₂O, DMAP",
+            "reagent_smiles": "C=O.CN(C)c1ccncc1",
+            "conditions": "THF/H₂O",
+            "yield": "55%",
+            "reactant_smiles": "C1=CC(=O)CC1",
+            "product_smiles": "OCC1=CCC(=O)C1",
+            "notes": "Alpha-hydroxymethylation of an α,β-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Substitution (Alcohol to Alkyl Bromide)",
+            "reagents": "HBr",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "52%",
+            "reactant_smiles": "O=C1C=C(CO)CC1",
+            "product_smiles": "O=C1C=C(CBr)CC1",
+            "notes": "Conversion of a primary alcohol to a primary bromide using HBr.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Alkylation / Spirocyclization",
+            "reagents": "NaH, TBAI",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)NC2=C(I)C=C(Cl)C=C2)cc1",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "O=C1CC=C(CBr)C1",
+            "product_smiles": "Cc1ccc(S(=O)(=O)N2CC3C=CC(=O)C34C5=CC=C(Cl)C=C524)cc1",
+            "notes": "Intramolecular nucleophilic substitution of bromide by tosylamide, followed by intramolecular cyclization of the iodophenyl group onto the cyclopentenone carbonyl to form a spirocyclic indoline system.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Heck cyclization",
+            "reagents": "Pd(OAc)2, HCO2Na, TBAC, AgNO3, NMP",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "93%",
+            "reactant_smiles": "O=C1C=C(CN([Ts])C2=C(I)C=C(Cl)C=C2)CC1",
+            "product_smiles": "O=C1CC[C@]2(CC1)C3=C(N([Ts])CC2)C=C(Cl)C=C3",
+            "notes": "Intramolecular Heck cyclization of an iodo-substituted tosylamide to form a spiro-indoline derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "99%",
+            "reactant_smiles": "C1=CC(=O)[C@@]2(C1)CN([Ts])c3ccc(Cl)cc32",
+            "product_smiles": "O=C1CC[C@@]2(C1)CN([Ts])c3ccc(Cl)cc32",
+            "notes": "Hydrogenation of the alpha,beta-unsaturated ketone in the cyclopentenone ring to form a saturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Fischer indole Synthesis",
+            "reagents": "AcOH",
+            "reagent_smiles": "Clc1ccc(NN)cc1.CC(O)=O",
+            "conditions": "110 °C",
+            "yield": "75%",
+            "reactant_smiles": "O=C1CC[C@@]2(C1)C[N]([Ts])c3ccc(Cl)cc32",
+            "product_smiles": "Clc1ccc2c(c1)[nH]c3c2[C@@]4(CC3)C[N]([Ts])c5ccc(Cl)cc54",
+            "notes": "Fischer indole synthesis of a spiro-fused indole derivative. The ketone reacts with 4-chlorophenylhydrazine to form the indole system. The existing TsN-4-chlorophenyl group and stereocenters are retained, and a new indole 4-chlorophenyl group is introduced, resulting in two chlorine atoms in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Boc protection",
+            "reagents": "Boc₂O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "96%",
+            "reactant_smiles": "C1=CC2=C(C=C1Cl)C3=C([C@@]4(CC3)[C@@H]N(C5=C4C=C(C=C5)Cl)[Ts])N2",
+            "product_smiles": "[Boc]N1C2=C(C=C(C=C2)Cl)C3=C1[C@@]4(CC3)[C@@H]N(C5=C4C=C(C=C5)Cl)[Ts]",
+            "notes": "Indole N-H protection using Boc anhydride and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Free Radical Bromination",
+            "reagents": "NBS, AIBN",
+            "reagent_smiles": "",
+            "conditions": "CCl4, 65 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=CC(=CC=C2Cl)C3=C1[C@@]4(CC5CC3)CN(C6=CC=C(Cl)C=C6)[Ts]",
+            "product_smiles": "CC(C)(C)OC(=O)N1C2=CC(=CC=C2Cl)C3=C1[C@@]4([C@H](Br)C5CC3)CN(C6=CC=C(Cl)C=C6)[Ts]",
+            "notes": "Free radical bromination of the methylene group alpha to the spiro center, forming a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C2=C(C=C(C=C2)Cl)[C@]3=C1[C@@]4(CC3Br)CN(S(=O)(=O)C5=CC=C(Cl)C=C5)",
+            "product_smiles": "[Boc]N1C2=C(C=C(C=C2)Cl)[C@]3=C1[C@@]4(CC3O)CN(S(=O)(=O)C5=CC=C(Cl)C=C5)",
+            "notes": "Substitution of bromide with hydroxyl group, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "69% (3 steps)",
+            "reactant_smiles": "[Boc]N1C2=C(C=C(Cl)C=C2)C3=C1[C@@]4(C[C@@H](O)C3)CCN(c5ccc(Cl)cc5)S(=O)(=O)c6ccc(Cl)cc6",
+            "product_smiles": "[Boc]N1C2=C(C=C(Cl)C=C2)C3=C1[C@@]4(CC(=O)C3)CCN(c5ccc(Cl)cc5)S(=O)(=O)c6ccc(Cl)cc6",
+            "notes": "Oxidation of a secondary alcohol to a ketone using manganese dioxide. The N-sulfonyl-N-aryl group was correctly identified as N-(4-chlorophenyl)-(4-chlorobenzenesulfonyl), and its connectivity to the spiro system was corrected. Stereochemistry at the spiro carbon and the hydroxyl-bearing carbon is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Thioacetalization",
+            "reagents": "TiCl4, NEt3",
+            "reagent_smiles": "Cc1ccc(S)cc1",
+            "conditions": "rt",
+            "yield": "78%",
+            "reactant_smiles": "[Boc]N1C2=C(C=C(Cl)C=C2)C3=C1[C@@]4(CC(=O)CC3)CN([Ts])C5=CC=C(Cl)C=C5",
+            "product_smiles": "[Boc]N1C2=C(C=C(Cl)C=C2)C3=C1[C@](CN([Ts])C4=CC=C(Cl)C=C4)([S][Tol])([S][Tol])C3",
+            "notes": "The ketone in the spiro-fused cyclopentanone ring is converted to a dithioacetal using 4-methylbenzenethiol. The original SMILES contained a triflyl group instead of a tosyl group and incorrectly represented the product's sulfur groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "m-CPBA, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to reflux",
+            "yield": "70%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=C(C=C(C=C2)Cl)C3=C1[C@@]4([TolS])([TolS])[C@H](CN([Ts])C8=CC=C(Cl)C=C8)[C@@H]3",
+            "product_smiles": "CC(C)(C)OC(=O)N1C2=C(C=C(C=C2)Cl)C3=C1C=C([C@@]4([Ts])[C@H](CN([Ts])C7=CC=C(Cl)C=C7))C3",
+            "notes": "Oxidation of a spiro thioacetal to a double bond with a tosyl group and removal of a p-tolylthio group, resulting in a spirocyclic ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Schöllkopf-Magnus-Barton-Zard reaction",
+            "reagents": "KOtBu",
+            "reagent_smiles": "C#[N+]CC(=O)OC",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "62%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=C(C=C(Cl)C=C2)C3=C1C4([C@@H](CN(S(=O)(=O)c5ccc(C)cc5)c6ccc(Cl)cc6))[C@H](C3)=C(S(=O)(=O)c7ccc(C)cc7)C4",
+            "product_smiles": "CC(C)(C)OC(=O)N1C2=C(C=C(Cl)C=C2)C3=C1[C@@]4([C@@H](CN(S(=O)(=O)c5ccc(C)cc5)c6ccc(Cl)cc6))[C@H](C3)=C(C(=O)OC)N34",
+            "notes": "Schöllkopf-type indole synthesis involving isonitrile cycloaddition, forming a new fused 5-membered ring and replacing a Ts group with a carbamate-containing moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "Na-Naphthalenide",
+            "reagent_smiles": "c1ccc2ccccc2c1",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C2=C(C=C(C=C2)Cl)C3=C1[C@]4(CN(C5=C4C=C(C=C5)Cl)S(=O)(=O)c6ccc(C)cc6)C6=C(C(=O)OC)NC=C36",
+            "product_smiles": "COC(=O)C1=C2C(=CN1)C3=C([C@]42CN(C5=C4C=C(C=C5)Cl)S(=O)(=O)c6ccc(C)cc6)NC6=C3C=C(C=C6)Cl",
+            "notes": "Reductive deprotection of a Boc group from an indole nitrogen using sodium naphthalenide.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "AlCl3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "COC(=O)C1=C2C(=CN1)C3=C([C@]42CN(c5ccc(Cl)cc5)[Ts])NC6=C3C=C(Cl)C=C6",
+            "product_smiles": "COC(=O)C1=C2C(=CN1)C3=C([C@]42CNC(c5ccc(Cl)cc5))NC6=C3C=C(Cl)C=C6",
+            "notes": "Tosyl group deprotection from the secondary amine using AlCl3, forming a free secondary amine. The stereochemistry at the spiro center is retained.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "caulamidine-d-xu-2023",
+        "molecule_name": "Caulamidine D",
+        "class": "Natural Product",
+        "author": "Xu",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Fischer Indole Synthesis",
+            "reagents": "HCl, H3PO4",
+            "reagent_smiles": "O=C(O)CCC(=O)C(=O)O",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "ClC1=CC=C(NN)C=C1",
+            "product_smiles": "ClC1=CC=C2C(CC(=O)O)=CNC2=C1",
+            "notes": "Fischer indole synthesis of 2-(5-chloro-1H-indol-3-yl)acetic acid from 4-chlorophenylhydrazine and 2-oxoglutaric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "C1=C(C=C2C(=CNC2=C1)CC(=O)O)Cl",
+            "product_smiles": "COC(=O)CC1=CNC2=CC=C(C=C12)Cl",
+            "notes": "Esterification of a carboxylic acid to a methyl ester via activation with thionyl chloride (2 steps for yield calculation).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Spirocyclization",
+            "reagents": "[Pd(prenyl)Cl]2, Cs2CO3",
+            "reagent_smiles": "C=CCN(c1ccccc1)[P@]1(OC2=C(C=CC=C2)[C@@]3(C=C4C=CC=C4C5=C3C=CC=C5)C6=CC=CC=C6O1).COC(=O)OCC=C(C)C",
+            "conditions": "toluene, rt",
+            "yield": "67%",
+            "reactant_smiles": "COC(=O)CC1=CNC2=CC=C(C=C12)Cl",
+            "product_smiles": "ClC1=CC=C2N[C@@]1(CCC(=O)OC)(C/C=C(/C)C)C=C2",
+            "notes": "Palladium-catalyzed asymmetric spirocyclization of 5-chloro-1H-indole-3-acetic acid methyl ester with methyl 3-methylbut-2-enyl carbonate using a chiral phosphoramidite ligand.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "NaClO2, NaH2PO4, 2-methyl-2-butene",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "96%",
+            "reactant_smiles": "CC(C)=C(C)CC[C@@]1(CC(=O)OC)C=NC2=CC=C(C=C21)Cl",
+            "product_smiles": "CC(C)=C(C)CC[C@@]1(CC(=O)OC)C2=CC(=CC=C2NC1=O)Cl",
+            "notes": "Oxidation of an indolenine to an oxindole, likely a modified Pinnick oxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amidation",
+            "reagents": "MeNH2, CaCl2, MeOH",
+            "reagent_smiles": "CN.[Ca+2].[Cl-].[Cl-].CO",
+            "conditions": "70 °C",
+            "yield": "74%",
+            "reactant_smiles": "CC(C)=CCC[C@]1(CC(=O)OC)C(=O)NC2=CC(Cl)=CC=C2[C@]1",
+            "product_smiles": "CC(C)=CCC[C@]1(CC(=O)NC)C(=O)NC2=CC(Cl)=CC=C2[C@]1",
+            "notes": "Aminolysis of a methyl ester to an N-methyl amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ozonolysis / Intramolecular Cyclization",
+            "reagents": "O₃, DMS",
+            "reagent_smiles": "[O-][O+]=O.CS(C)C.ClCCl",
+            "conditions": "DCM, -78 °C",
+            "yield": "78%",
+            "reactant_smiles": "ClC1=CC=C2C(C(=O)N[C@@]2(CC(=O)NC)(CCC=C(C)C))C=C1",
+            "product_smiles": "CN1C=C[C@@]2(CC1=O)C3=CC(Cl)=CC=C3NC2=O",
+            "notes": "Ozonolysis of the isopentenyl double bond, followed by intramolecular cyclization of the resulting aldehyde with the N-methyl amide to form a dihydropyridinone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Chlorination",
+            "reagents": "NCS",
+            "reagent_smiles": "O=C1CCC(=O)N1Cl",
+            "conditions": "MeCN, rt",
+            "yield": "92%",
+            "reactant_smiles": "CN1C=C[C@]2(CC1=O)C3=CC(=CC=C3NC2=O)Cl",
+            "product_smiles": "CN1C=C(Cl)[C@]2(CC1=O)C3=CC(Cl)=CC=C3NC2=O",
+            "notes": "Electrophilic chlorination of the dihydropyridinone moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "O-alkylation",
+            "reagents": "Me3OBF4, DTBMP",
+            "reagent_smiles": "C[O+](C)C.F[B-](F)(F)F.CC1=CC(C(C)(C)C)=NC(C(C)(C)C)=C1",
+            "conditions": "DCM, rt",
+            "yield": "72%",
+            "reactant_smiles": "CC1=C[C@]2(Cl)[C@H]3NC(=O)C4=C3C(=CC(Cl)=C4)C2C(=O)N1",
+            "product_smiles": "CC1=C[C@]2(Cl)[C@H]3N=C(OC)C4=C3C(=CC(Cl)=C4)C2C(=O)N1",
+            "notes": "O-alkylation of an amide to form a methyl imino ether using trimethyloxonium tetrafluoroborate and a hindered base.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nucleophilic substitution (amination)",
+            "reagents": "MeNH2, Ti(OiPr)4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "91%",
+            "reactant_smiles": "Clc1ccc(Cl)c2c1N=C(OC)C3=C2[C@@]4(CC(=O)N(C)C=C4)N3",
+            "product_smiles": "Clc1ccc(Cl)c2c1N=C(NC)C3=C2[C@@]4(CC(=O)N(C)C=C4)N3",
+            "notes": "A methoxy group on an activated cyclic imine is replaced by a methylamino group via reaction with methylamine, catalyzed by titanium(IV) isopropoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Rearrangement/Cyclization",
+            "reagents": "LDA, THF",
+            "reagent_smiles": "F[S](=O)(=O)OCCS(=O)(=O)F",
+            "conditions": "-78 °C to rt",
+            "yield": "58%",
+            "reactant_smiles": "C[NH]C1=NC2=C(Cl)C3=C(Cl)C=CC2=C3[C@@]41C=CN(C)C(=O)C4",
+            "product_smiles": "C[C@@H]1CCN(C)C2=NC3=C(Cl)C4=C(Cl)C=CC3=C4[C@@]21C=CN(C)C(=O)C1",
+            "notes": "Intramolecular cyclization and rearrangement of an indole derivative via electrophilic attack by ethylene glycol bis(triflate), resulting in ring expansion and formation of a new stereocenter. The exocyclic N-methyl group is incorporated into a new 6-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Alkylation / C-C Coupling",
+            "reagents": "LDA, HMPA",
+            "reagent_smiles": "ICc1c([N-]=[N+]=[N-])ccc(Cl)c1",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "54%",
+            "reactant_smiles": "CN1CC[C@@H]2[C@]3(N(C)C4=CC(Cl)=CC=C4C3=N)C(=O)N(C)C=C(Cl)C12",
+            "product_smiles": "CN1C(=O)C(Cl)[C@@H](C2=CC(Cl)=CC(=C2)[N-]=[N+]=N)[C@@]34C5=CC(Cl)=CC=C5N(C)C=C3N(C)CC[C@]14",
+            "notes": "Alkylation of a deprotonated a-carbon with an iodomethyl-substituted benzene, forming a new C-C bond and saturating an exocyclic double bond, replacing H with the new aryl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Staudinger Reduction / Intramolecular Cyclization",
+            "reagents": "PBu3, toluene",
+            "reagent_smiles": "P(CCCC)(CCCC)CCCC",
+            "conditions": "170 °C, Microwave",
+            "yield": "94%",
+            "reactant_smiles": "CN1C(=O)C=C2[C@]3(C[C@H]1C4=C(C=CC(Cl)=C4)N=C3N(C)[C@H]2C5=CC=C(Cl)C(N=[N+]=[N-])=C5)",
+            "product_smiles": "CN1C=C2[C@]3(C=NC(=N2)N(C)[C@@H]1C4=C(C=CC(Cl)=C4)N=C3C5=CC=C(Cl)C=C5)",
+            "notes": "Intramolecular Staudinger reduction of an azide followed by cascade cyclization and imine formation from the lactam, resulting in a complex polycyclic imine system.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Diastereoselective Reduction",
+            "reagents": "Mn(dpm)₃, Ph(OiPr)SiH₂, PhSH, B(OiPr)₃",
+            "reagent_smiles": "",
+            "conditions": "iPrOH",
+            "yield": "49%",
+            "reactant_smiles": "CN1CC[C@@]23C4=C(C=CC(=C4)Cl)N=C2N(C)C=C([C@H]5C3C6=C(C=CC(=C6)Cl)N=C51)",
+            "product_smiles": "CN1C[C@@H]2C3=C(N=C2[C@@]45CCC(N(C)C5)C6=CC=C(Cl)C=C6)C=CC(=C3)Cl",
+            "notes": "Diastereoselective reduction of the enamine/imine group in the reactant to form a chiral pyrrolidine ring in the product. The double bond in one of the five-membered nitrogen-containing rings is reduced to a single bond, leading to the formation of a new chiral center and retaining the existing spiro chiral center with specific relative stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

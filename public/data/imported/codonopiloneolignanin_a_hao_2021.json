@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "codonopiloneolignanin-a-hao-2021",
+        "molecule_name": "Codonopiloneolignanin A",
+        "class": "Natural Product",
+        "author": "Hao",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "COC1=CC(=CC(=C1O)OC)C=O",
+            "product_smiles": "O=Cc1cc(OC)c([OTBS])c(OC)c1",
+            "notes": "Protection of the phenolic hydroxyl group of syringaldehyde with a TBS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=Cc1cc(OC)c([OTBS])cc1OC",
+            "product_smiles": "O=Cc1c(Br)c(OC)c([OTBS])cc1OC",
+            "notes": "Bromination of an electron-rich aromatic aldehyde using N-bromosuccinimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "C=C[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "toluene, 95 °C",
+            "yield": "",
+            "reactant_smiles": "O=Cc1cc(OC)c([OTBS])c(Br)c1OC",
+            "product_smiles": "O=Cc1cc(OC)c([OTBS])c(C=C)c1OC",
+            "notes": "Stille coupling reaction where an aryl bromide is coupled with vinyltributyltin to introduce a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "C=CCCC[Mg]Br",
+            "conditions": "THF, 0 °C",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "O=CC1=C(C=C)C(OC)=C(O[TBS])C(OC)=C1",
+            "product_smiles": "C=CCC(O)C1=C(C=C)C(OC)=C(O[TBS])C(OC)=C1",
+            "notes": "A 4-butenyl Grignard reagent adds to the aldehyde group of the reactant, forming a secondary alcohol. The vinyl, methoxy, and OTBS groups on the aromatic ring remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ley Oxidation",
+            "reagents": "TPAP, NMO",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "87%",
+            "reactant_smiles": "C=CCC(O)C1=CC(OC)=C([OTBS])C(OC)=C1C=C",
+            "product_smiles": "C=CCCC(=O)C1=CC(OC)=C([OTBS])C(OC)=C1C=C",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "95%",
+            "reactant_smiles": "C=CCCC(=O)c1c(C=C)c(OC)c([OTBS])c(OC)c1",
+            "product_smiles": "[OTBS]c1c(OC)c2C(=O)CCC=C2c(OC)c1",
+            "notes": "Intramolecular ring-closing metathesis forming a 7-membered cycloheptenone ring fused to an aromatic ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, DCM, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "O=C1CCC=CC2=C1C(OC)=C([OTBS])C(OC)=C2",
+            "product_smiles": "C(O)1CCC=CC2=C1C(OC)=C([OTBS])C(OC)=C2",
+            "notes": "Ketone reduced to secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cyanation",
+            "reagents": "B(C6F5)3, TMSCN",
+            "reagent_smiles": "B(c1c(F)c(F)c(F)c(F)c1F)(c2c(F)c(F)c(F)c(F)c2F)c3c(F)c(F)c(F)c(F)c3F.C[Si](C)(C)C#N",
+            "conditions": "MeCN",
+            "yield": "69%",
+            "reactant_smiles": "[OTBS]c1c(OC)c2c(OC)cc1[C@@H](O)CCCC=C2",
+            "product_smiles": "[OTBS]c1c(OC)c2c(OC)cc1C(C#N)CCCC=C2",
+            "notes": "Replacement of hydroxyl group with a cyano group at a chiral center, likely via a cyano-deoxygenation or substitution reaction. Stereochemistry is lost or unspecified in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nitrile reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "55%",
+            "reactant_smiles": "COc1cc(OC)c([OTBS])c2c1CCC(C#N)=CC2",
+            "product_smiles": "COc1cc(OC)c([OTBS])c2c1CCC(C=O)=CC2",
+            "notes": "Reduction of a nitrile to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nucleophilic Addition / Rearrangement / Cyclization",
+            "reagents": "nBuLi",
+            "reagent_smiles": "COC1=CC(=CC(=C1[OTBS])OC)Br",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "O=CC1C=CCC=C2C=C(OC)C([OTBS])=C(OC)C12",
+            "product_smiles": "COC1=C([OTBS])C(OC)=CC2=C1C=C3C4CC2C3C4[C@H](O)C5=CC(OC)=C([OTBS])C(OC)=C5",
+            "notes": "Aryl lithium (generated in situ from bromoarene and nBuLi) undergoes nucleophilic addition to the aldehyde, forming a secondary alcohol. Concurrently, the 8-membered ring system of the reactant undergoes a complex intramolecular rearrangement and cyclization to form a bridged tricyclic core.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Bromination",
+                    "reagents": "NaH, NBS",
+                    "reagent_smiles": "",
+                    "conditions": "CHCl3",
+                    "yield": "44%",
+                    "reactant_smiles": "COc1c(O)cccc1OC",
+                    "product_smiles": "COc1c(O)cc(Br)cc1OC",
+                    "notes": "Electrophilic aromatic bromination of 2,6-dimethoxyphenol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Silyl ether formation / Alcohol protection",
+                    "reagents": "TBSCl, imid., DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "86%",
+                    "reactant_smiles": "COC1=CC(=CC(=C1O)OC)Br",
+                    "product_smiles": "COC1=CC(=CC(=C1[OTBS])OC)Br",
+                    "notes": "Protection of a phenol as its tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Cyclization / Cascade Reaction",
+            "reagents": "SnCl4",
+            "reagent_smiles": "",
+            "conditions": "DCM, -30 °C to rt",
+            "yield": "41% (2 steps)",
+            "reactant_smiles": "[OTBS]OC1=C(OC)C=C(C(O)C2CCC=CC3=C2C=C(OC)C([OTBS])=C3OC)C=C1",
+            "product_smiles": "[OTBS]OC1=C(OC)C=C(C2=C1[C@@H]3CC[C@@H]4[C@H]3C5=CC(=C(OC)C([OTBS])=C5OC)[C@H]42)C=C1",
+            "notes": "Biomimetic intramolecular cyclization leading to a complex polycyclic system with a cyclopropane bridge.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection (Silyl Ether Hydrolysis)",
+            "reagents": "TBAF, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "COC1=C([OTBS])C(=CC2=C1[C@@H]3C[C@H]4[C@H]5[C@H](CC6=CC(=C(C(=C6[C@H]5[C@H]43)2)OC)[OTBS])OC)OC",
+            "product_smiles": "COC1=C(O)C(=CC2=C1[C@@H]3C[C@H]4[C@H]5[C@H](CC6=CC(=C(C(=C6[C@H]5[C@H]43)2)OC)O)OC)OC",
+            "notes": "Hydrolysis of two tert-butyldimethylsilyl (TBS) ethers to hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

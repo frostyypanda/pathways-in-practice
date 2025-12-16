@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ineleganolide-sarlah-2025",
+        "molecule_name": "Ineleganolide",
+        "class": "Natural Product",
+        "author": "Sarlah",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "HG II",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@](C)(CCC=C(C)C)O",
+            "product_smiles": "C[C@@]1(C=CCC1)O",
+            "notes": "Intramolecular ring-closing metathesis to form a cyclopentene from a diene-alcohol precursor.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection (O-silylation)",
+            "reagents": "NaH, TBSCl",
+            "reagent_smiles": "[NaH].Cl[Si](C)(C)C(C)(C)C",
+            "conditions": "THF, 0 to 65 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@H]1[C@@H](C)C=CC1",
+            "product_smiles": "[OTBS][C@H]1[C@@H](C)C=CC1",
+            "notes": "Protection of an alcohol with a tert-butyldimethylsilyl (TBS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "RuCl3, TBHP, Mg(OAc)2",
+            "reagent_smiles": "",
+            "conditions": "DCM, H2O, rt",
+            "yield": "43% (3 steps)",
+            "reactant_smiles": "[OTBS][C@@]1(C)CCC=C1",
+            "product_smiles": "[OTBS][C@@]1(C)CC(=O)C=C1",
+            "notes": "Allylic oxidation of cyclopentene derivative to cyclopentenone derivative with retention of stereochemistry at the substituted carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nickel-catalyzed [3+2] cycloaddition",
+            "reagents": "Ni(cod)2, P(m-Tol)3, Et3B",
+            "reagent_smiles": "C=C1CC1",
+            "conditions": "Et2O, 75 °C",
+            "yield": "75%",
+            "reactant_smiles": "O=C1C=CC([C@](C)([TBS]O))C1",
+            "product_smiles": "C=C1CC[C@H]2C(=O)C[C@](C)([C@@H]12)[TBS]O",
+            "notes": "Stereoselective [3+2] annulation of methylenecyclopropane to an α,β-unsaturated cyclopentenone, forming a fused bicyclic ketone.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Elimination",
+                    "reagents": "tBuOK",
+                    "reagent_smiles": "",
+                    "conditions": "DMSO, 35 °C",
+                    "yield": "55%",
+                    "reactant_smiles": "C1CC1CBr",
+                    "product_smiles": "C=C1CC1",
+                    "notes": "Dehydrobromination of cyclopropylmethyl bromide to methylenecyclopropane.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "SeO2, TBHP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "65%",
+            "reactant_smiles": "C=C1CC[C@H]2C(=O)C[C@](C)([C@@H]12)[OTBS]",
+            "product_smiles": "C[C@@H]1(O)CC[C@H]2C(=O)C[C@](C)([C@@H]12)[OTBS]",
+            "notes": "Allylic oxidation of exocyclic alkene to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ozonolysis and Reduction",
+            "reagents": "O3, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "DCM, MeOH, -78 °C to rt",
+            "yield": "89%",
+            "reactant_smiles": "C=C1C[C@H](O)[C@@H]2[C@H]1C(=O)C[C@]2(C)[OTBS]",
+            "product_smiles": "C[C@]1([OTBS])C[C@H](O)[C@@H]2[C@H]1C[C@@H](O)[C@H]2O",
+            "notes": "Ozonolysis of an exocyclic alkene to a diol, and reduction of a ketone to an alcohol. Stereochemistry of new hydroxyl groups is defined.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Cleavage, Lactonization",
+            "reagents": "NaIO4, SiO2, Bobbit's salt",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "86%",
+            "reactant_smiles": "[OTBS][C@@]1(C)C[C@@H](O)[C@H]2[C@@H](O)C[C@H](O)[C@@]12",
+            "product_smiles": "[OTBS][C@@]1(C)C[C@H]2[C@H](C=O)[C@@H]3OC(=O)C[C@]321",
+            "notes": "Oxidative cleavage of a vicinal diol followed by lactonization with an adjacent alcohol and aldehyde oxidation.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Wittig reaction",
+            "reagents": "NaHMDS, MOMPPh3Cl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[TBS]OC1(C)C[C@H]2[C@H](CC(=O)O2)[C@H]1C=O",
+            "product_smiles": "[TBS]OC1(C)C[C@H]2[C@H](CC(=O)O2)[C@H]1/C=C/[MOM]",
+            "notes": "Aldehyde converted to an (E)-α,β-unsaturated methyl acetal (MOM ether) via Wittig reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetal Formation, Alkene Reduction, MOM Deprotection",
+            "reagents": "HCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "76%",
+            "reactant_smiles": "[OTBS][C@]1(C)C[C@H]2[C@H](CC(=O)O2)[C@@H]1/C=C/OCOC",
+            "product_smiles": "[OTBS][C@]1(C)C[C@H]2[C@H](CC(=O)O2)[C@@H]1CC(OC)OC",
+            "notes": "Acetal formation from enol ether and reduction of alkene, along with MOM group deprotection under acidic conditions in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Michael Addition / Spirocyclization",
+            "reagents": "TIPSOTf, TMP, La(OTf)3",
+            "reagent_smiles": "C=C(C)[C@@H]1CC=CC(=O)C1",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "60%",
+            "reactant_smiles": "[OTBS][C@]1(C)[C@H](CC(OC)OC)[C@H]2[C@@H](CC(=O)O2)C1",
+            "product_smiles": "C=C(C)[C@@H]1C[C@@H](C=C(C1)[OTIPS])C2C(=O)OC[C@H]3[C@H]2[C@H](C[C@](C)([C@H]3CC(OC)OC)[OTBS])C1",
+            "notes": "Lactone enolate acts as nucleophile in an intramolecular Michael addition with the cyclohexenone, forming a spirocyclic product. TIPSOTf/TMP generates the silyl enol ether from the cyclohexenone, which then undergoes Lewis acid catalyzed Michael addition.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular cyclization/rearrangement",
+            "reagents": "Bu2BOTf, AcOH, DCM",
+            "reagent_smiles": "",
+            "conditions": "-78 to 95 °C",
+            "yield": "62%",
+            "reactant_smiles": "C=C(C)[C@@H]1C[C@H](C=C(C1)[OTIPS])[C@H]2[C@H]3[C@H](C[C@](C)([C@H]3CC(OC)OC)[OTBS])OC2=O",
+            "product_smiles": "C=C(C)[C@@H]1C[C@@H]2C(=CC[C@@H]3[C@](C)(C[C@H]4[C@]3(C)[C@H]2C(=O)O4)[OTBS])C(=O)C1",
+            "notes": "Complex intramolecular cyclization of a polycyclic lactone with an enol ether and dimethoxyacetal, forming multiple new rings and a cyclohexanone moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "DBU, P(OMe)3, O2",
+            "reagent_smiles": "C1CN=C2N1CCCC2.P(OC)(OC)OC.O=O",
+            "conditions": "MeCN, rt",
+            "yield": "81%",
+            "reactant_smiles": "C=C(C)[C@@H]1C[C@@H]2C(=CC[C@H]3[C@@](C)(C[C@@H]4[C@]3(C)[C@@H]2C(=O)O4)[OTBS])C(=O)C1",
+            "product_smiles": "C=C(C)[C@@H]1C[C@@H]2[C@H]3[C@H]4[C@H](C=C[C@]2(C(=O)C1)O)[C@@](C)(C[C@@H]4OC3=O)[OTBS]",
+            "notes": "Allylic oxidation of the 7-membered ring's double bond, adjacent to the ketone, leading to hydroxyl formation and double bond migration.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection / Desilylation",
+            "reagents": "TASF",
+            "reagent_smiles": "",
+            "conditions": "DMF, H₂O, 80 °C",
+            "yield": "76%",
+            "reactant_smiles": "C[C@]1([OTBS])[C@@H]2C[C@@H](OC(=O)[C@@H]3[C@@H]2[C@]4(C)[C@H](C=C[C@H]5[C@@]4(C)[C@@H](C(=O)C[C@@H]3C(=C)C)O)C5)",
+            "product_smiles": "C[C@]1(O)[C@@H]2C[C@@H](OC(=O)[C@@H]3[C@@H]2[C@]4(C)[C@H](C=C[C@H]5[C@@]4(C)[C@@H](C(=O)C[C@@H]3C(=C)C)O)C5)",
+            "notes": "Deprotection of a tert-butyldimethylsilyl (TBS) ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Allylic Hydroxylation",
+            "reagents": "SmI₂, HMPA",
+            "reagent_smiles": "",
+            "conditions": "O₂, THF, -78 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC(=C)[C@H]1CC(=O)C2=C[C@H]3[C@@H]4[C@H]5[C@@H](O)[C@@](C)(C[C@H]5OC(=O)[C@H]2)[C@H]3C41",
+            "product_smiles": "CC(=C)[C@H]1CC(=O)C2=C[C@H](O)[C@H]3[C@@H]4[C@H]5[C@@H](O)[C@@](C)(C[C@H]5OC(=O)[C@H]2)[C@H]3C41",
+            "notes": "Samarium diiodide-mediated allylic hydroxylation of a polycyclic lactone precursor to Ineleganolide.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)=C[C@H]1CC(=O)C[C@H]2[C@H]1[C@@H]3[C@H]4OC(=O)[C@H]4[C@H](O)C[C@@]3(C)O[C@@H]2=C",
+            "product_smiles": "CC(C)=C[C@H]1CC(=O)C[C@H]2[C@H]1[C@@H]3[C@H]4OC(=O)[C@H]4C(=O)C=C[C@@]3(C)O[C@@H]2",
+            "notes": "Oxidation of a secondary alcohol to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Intramolecular cyclization / Rearrangement",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C",
+            "yield": "80%",
+            "reactant_smiles": "O=C1O[C@H]2[C@]3(C)[C@@H]4C(O)(C)[C@@H]5[C@@H]2C(=CC(=O)C[C@H](C(C)=C)[C@H]6C(=O)C[C@@H]65)C[C@@H]34",
+            "product_smiles": "C=C(C)[C@@H]1CC(=O)[C@@H]2[C@@H]3C(=O)[C@H]4[C@@H]5[C@H](C[C@]4(C)O3)OC(=O)[C@@H]5[C@]2(C)C1",
+            "notes": "Intramolecular cyclization where the tertiary alcohol's oxygen adds across the alpha,beta-unsaturated ketone to form a new cyclic ether.",
+            "substeps": []
+        }
+    ]
+}

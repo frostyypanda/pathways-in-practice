@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "penicibilaene-a-dong-2021",
+        "molecule_name": "Penicibilaene A",
+        "class": "Natural Product",
+        "author": "Dong",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBALH, DCM",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "97%",
+            "reactant_smiles": "COC(=O)C1=CCCC1",
+            "product_smiles": "C1CCC(=C1)CO",
+            "notes": "Reduction of an alpha,beta-unsaturated methyl ester to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Appel Reaction (Bromination)",
+            "reagents": "Br2, PPh3, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "C1CCC(=C1)CO",
+            "product_smiles": "C1CCC(=C1)CBr",
+            "notes": "Conversion of a primary alcohol to a primary bromide using Br2/PPh3/imidazole system.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Negishi coupling / Cuprate addition-alkylation",
+            "reagents": "t-BuLi, CuBr•SMe2, HMPA",
+            "reagent_smiles": "COC1(CC(C1)Br)OC.C(#C)C(=O)OCC",
+            "conditions": "Et2O/THF, -78 °C to 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1CCC(=C1)CBr",
+            "product_smiles": "CCOC(=O)/C(=C(\\C)/C1CC(C1)(OC)OC)/CC1C=CCC1",
+            "notes": "Organocuprate formation from bromocyclobutane followed by addition to ethyl propiolate and alkylation with bromomethylcyclopentene.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Hunsdiecker Reaction",
+                    "reagents": "HgO, Br2, MgSO4",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, reflux",
+                    "yield": "",
+                    "reactant_smiles": "O=C1CC(C(=O)O)C1",
+                    "product_smiles": "O=C1CC(Br)C1",
+                    "notes": "Decarboxylative bromination of a cyclobutanone carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Acetalization",
+                    "reagents": "HC(OMe)3, H2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "69% (2 steps)",
+                    "reactant_smiles": "C1C(CC1=O)Br",
+                    "product_smiles": "COC1(CC(C1)Br)OC",
+                    "notes": "Formation of a dimethyl acetal from a cyclobutanone, protecting the ketone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "HCl, acetone",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "50% (2 steps)",
+            "reactant_smiles": "CCOC(=O)/C(=C(\\C)/C1CC(C1)(OC)OC)/CC2=CCCC2",
+            "product_smiles": "CCOC(=O)/C(=C(\\C)/C1CC(=O)C1)/CC2=CCCC2",
+            "notes": "Hydrolysis of a dimethyl acetal to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "H2O/MeOH, THF, 70 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=C(C)C2(C)CC(=O)C3CCCC3(C1)C2",
+            "product_smiles": "OC(=O)C1=C(C)C2(C)CC(=O)C3CCCC3(C1)C2",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Esterification (with N-hydroxypyridinethione)",
+            "reagents": "EDC",
+            "reagent_smiles": "[Na+]O[N-]1C(=S)C=CC=C1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1=C(CC23CCCC3C(=O)CC1C2)C(=O)O",
+            "product_smiles": "CC1=C(CC23CCCC3C(=O)CC1C2)C(=O)ON4C=CC=CC4=S",
+            "notes": "Formation of an active ester from a carboxylic acid using sodium 1-oxopyridine-2-thione and EDC.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Radical Decarboxylation (Barton-McCombie type)",
+            "reagents": "tBuSH, AIBN",
+            "reagent_smiles": "CC(C)(C)S.N#CC(C)(C)N=NC(C)(C)C#N",
+            "conditions": "toluene, 75 °C",
+            "yield": "53% (2 step)",
+            "reactant_smiles": "CC1=C(CC23CCCC3C(=O)CC1C2)C(=O)ON4C=CC=CC4=S",
+            "product_smiles": "CC1=CCC23CCCC3C(=O)CC1C2",
+            "notes": "Radical decarboxylation of a Barton ester derivative using tBuSH and AIBN, removing the 2-thiopyridyl N-oxide moiety and replacing the carbonyl carbon with a hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dehydrogenation / Oxidative C-H Activation",
+            "reagents": "Pd(OAc)2, O2, TFA",
+            "reagent_smiles": "",
+            "conditions": "DMSO, 60 °C",
+            "yield": "38%",
+            "reactant_smiles": "CC1=CCC23CCCC3C(=O)CC1C2",
+            "product_smiles": "CC1=CCC23CCC=C3C(=O)CC1C2",
+            "notes": "Oxidative dehydrogenation of a saturated cyclohexane ring to form a new alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Stereoselective Borylation",
+            "reagents": "CuI, IMes•HBF4, NaOtBu, B2Pin2",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=CC2C3CC4C(C(=O)CC2)C3C=C41",
+            "product_smiles": "CC1=CC2C3CC4C(C(=O)CC2)[C@H]([PinB])C3C4",
+            "notes": "Copper-catalyzed stereoselective hydroboration/borylation of an alkene with a PinB group, forming a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "NaBO3",
+            "reagent_smiles": "",
+            "conditions": "H2O, rt",
+            "yield": "59% (2 step)",
+            "reactant_smiles": "CC1=CCC23CC[C@@H]([PinB])C3C(=O)CC1C2",
+            "product_smiles": "CC1=CCC23CC[C@H](O)C3C(=O)CC1C2",
+            "notes": "Oxidation of a boronic ester (PinB) to an alcohol (HO) with inversion of stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Grignard Reaction (Ketone addition)",
+            "reagents": "LaCl3, LiCl, MeMgBr",
+            "reagent_smiles": "C[Mg]Br",
+            "conditions": "THF, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "CC1=CCC23CC[C@@H](O)C3C(=O)CC1C2",
+            "product_smiles": "CC1=CCC23CC[C@H](O)C3[C@](C)(O)CC1C2",
+            "notes": "Grignard addition to a ketone, forming a tertiary alcohol. The existing secondary alcohol's stereochemistry appears to have inverted, and a new methyl group and hydroxyl are added to the former ketone carbon with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, 80 °C",
+            "yield": "93%",
+            "reactant_smiles": "CC1=CCC23CCC(C3C(C)(CC1C2)O)O",
+            "product_smiles": "CC1=CCC23CCC(=O)C3C(C)(CC1C2)O",
+            "notes": "Selective oxidation of a secondary alcohol to a ketone using IBX, leaving the tertiary alcohol untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Dehydrogenation / Enone formation",
+            "reagents": "LDA",
+            "reagent_smiles": "[tBu]N=S(Cl)c1ccccc1",
+            "conditions": "THF, -78 °C",
+            "yield": "51%",
+            "reactant_smiles": "CC1=CCC23CCC(=O)C3C(C)(CC1C2)O",
+            "product_smiles": "CC1=CCC23C=CC(=O)C3C(C)(CC1C2)O",
+            "notes": "Formation of an alpha,beta-unsaturated ketone via dehydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Conjugate Addition",
+            "reagents": "CuBr·SMe2, MeMgBr",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "60%",
+            "reactant_smiles": "CC1=CCC23C=CC(=O)C3C(C)(CC1C2)O",
+            "product_smiles": "C[C@@H]1CC[C@H]2C3C(=O)[C@H](C)CC3[C@](C)(O)CC12",
+            "notes": "1,4-conjugate addition of a methyl group to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NMe4•BH(OAc)3",
+            "reagent_smiles": "",
+            "conditions": "AcOH/MeCN, rt",
+            "yield": "89%",
+            "reactant_smiles": "CC1=CCC23C(CC1C(C)(O)C(CC(=O)C32)C)C",
+            "product_smiles": "CC1=CCC23C(CC1C(C)(O)C(CC(C)(O)C32)C)C",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol. The newly formed alcohol has a specific stereochemistry (wedged OH, dashed H) as shown in the product.",
+            "substeps": []
+        }
+    ]
+}

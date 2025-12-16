@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "invanz-ertapenem-merck-unknown-2024",
+        "molecule_name": "Invanz (Ertapenem Merck)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Phosphorylation / Oxidative Phosphorylation",
+            "reagents": "NaClO",
+            "reagent_smiles": "CC(C)OP(O)OC(C)C",
+            "conditions": "pH = 9, 0-5 °C",
+            "yield": "80%",
+            "reactant_smiles": "C1[C@H](CN[C@@H]1C(=O)O)O",
+            "product_smiles": "CC(C)OP(=O)(OC(C)C)N1C[C@@H](C[C@H]1C(=O)O)O",
+            "notes": "N-phosphorylation of (2S,4R)-4-hydroxypyrrolidine-2-carboxylic acid using diisopropyl phosphite and sodium hypochlorite to form a phosphoramidate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification / Carboxylic Acid Activation",
+            "reagents": "DIPEA",
+            "reagent_smiles": "O=P(Cl)(c1ccccc1)c1ccccc1",
+            "conditions": "DCM, -20 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)OP(N1C[C@@H](O)C[C@H]1C(=O)O)OC(C)C",
+            "product_smiles": "CC(C)OP(N1[C@H](C(=O)OP(=O)(c2ccccc2)c2ccccc2)C[C@@H](O)C1)OC(C)C",
+            "notes": "Esterification of the carboxylic acid group with diphenylphosphinic chloride to form a mixed anhydride. The N-P(OiPr)2 group and the hydroxyl group are unchanged. Stereochemistry is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mesylation",
+            "reagents": "pyridine",
+            "reagent_smiles": "CS(=O)(=O)Cl.c1ccncc1",
+            "conditions": "-20 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@@H]1CC[C@H](N(C1)c2c(C(C)C)cccc2C(C)C)C(=O)OP(=O)([Ph])([Ph])",
+            "product_smiles": "CS(=O)(=O)O[C@@H]1CC[C@H](N(C1)c2c(C(C)C)cccc2C(C)C)C(=O)OP(=O)([Ph])([Ph])",
+            "notes": "Conversion of a secondary alcohol to its mesylate derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "Na2S, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "N1([DIPP])C[C@H](OMs)C[C@@H](C(=O)OP(=O)([Ph])[Ph])C1",
+            "product_smiles": "O=C1[C@@H]2N([DIPP])C[C@H]1SC2",
+            "notes": "Formation of a bicyclic thiirane-lactam system from a mesylate and a phosphonate ester, with incorporation of sulfide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ring Opening / Aminolysis / Amide Formation",
+            "reagents": "",
+            "reagent_smiles": "C1=CC(=CC(=C1)N)C(=O)O",
+            "conditions": "AcOH",
+            "yield": "",
+            "reactant_smiles": "O=C1[C@H]2N([DIPP])C[C@@H]3SC1[C@H]23",
+            "product_smiles": "O=C(O)c1ccc(NC(=O)[C@H]2N([DIPP])CC[C@@H]2[SH])cc1",
+            "notes": "Nucleophilic attack of 3-aminobenzoic acid on a DIPP-protected bicyclic thiolactone, leading to ring opening and amide bond formation. The thiolactone ring opens, the sulfur becomes a thiol, and an amide bond is formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carbapenem synthesis / Coupling / Deprotection",
+            "reagents": "H2, Pd/C, NaOH then NEP, TMG",
+            "reagent_smiles": "C[C@H]1C(=O)N2[C@H]1[C@@H]([C@@H](C)O)C2=C(C(=O)[OPNB])OP(=O)([OPh])[OPh]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1cc(NC(=O)[C@@H]2N([PPID])CC[C@H]2S)ccc1",
+            "product_smiles": "CC1C(=O)N2[C@H]1[C@@H]([C@@H](C)O)[C@@H]2S[C@H]3C[C@H](C(=O)NC4=CC(=CC=C4)C(=O)O[Na])[NH2+]C3",
+            "notes": "Formation of Ertapenem Sodium from a pyrrolidine thiol and a carbapenem enol phosphate intermediate.",
+            "substeps": []
+        }
+    ]
+}

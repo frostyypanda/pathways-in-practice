@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sessilifoliamide-c-smith-2021",
+        "molecule_name": "Sessilifoliamide C",
+        "class": "Natural Product",
+        "author": "Smith",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Paal-Knorr Pyrrole Synthesis",
+            "reagents": "AcOH, H2O, NaOAc",
+            "reagent_smiles": "COC1OC(OC)CCC1",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "CCOC(=O)CCCCN",
+            "product_smiles": "CCOC(=O)CCCN1C=CC=C1",
+            "notes": "Formation of a pyrrole ring from an amino ester and 2,5-dimethoxytetrahydrofuran (a 1,4-diketone equivalent).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCCCN1C=CC=C1",
+            "product_smiles": "O=CCCCN1C=CC=C1",
+            "notes": "Reduction of an ethyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Horner-Wadsworth-Emmons Olefination",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CCOC(=O)CP(=O)(OCC)OCC",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "O=CCCCN1C=CC=C1",
+            "product_smiles": "CCOC(=O)C=CCCCN1C=CC=C1",
+            "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde with a phosphonate to form an alpha,beta-unsaturated ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "MsOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "80%",
+            "reactant_smiles": "CCOC(=O)C=CCCCCN1C=CC=C1",
+            "product_smiles": "CCOC(=O)CC1CCCCN2C=CC=C12",
+            "notes": "Intramolecular cyclization of an N-alkylpyrrole with an α,β-unsaturated ethyl ester to form a fused bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "i-Pr2NH, n-BuLi, EtI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C, then -78 °C to 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "CCOC(=O)CC1CCCCN2C=CC=C12",
+            "product_smiles": "CCC(C1CCCCN2C=CC=C12)C(=O)OCC",
+            "notes": "Alpha-alkylation of an ethyl ester via enolate formation using diisopropylamine (i-Pr2NH) and n-butyllithium (n-BuLi), followed by trapping with iodoethane (EtI) to introduce an ethyl group at the alpha-position.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative Cyclization / Dess Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCC(C1CCCCN2C=CC=C12)C(=O)OCC",
+            "product_smiles": "CCC(C1CCCCN2C(=O)C=CC12OC(=O)C3=CC=CC=C3I)C(=O)OCC",
+            "notes": "Oxidative cyclization of the pyrrole ring, forming an unsaturated lactam (2H-pyrrol-3(4H)-one derivative) and an ester linkage to a 2-iodobenzoyl group at the newly formed quaternary carbon. The Dess Martin periodinane (DMP) is the oxidizing agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement",
+            "reagents": "BF3OEt2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCC(C1CCCCN2C(=O)C=CC12OC(=O)C3=CC=CC=C3I)C(=O)OCC",
+            "product_smiles": "CCC(C(=C1CCCCN2C(=O)C=CC12))C(=O)OCC",
+            "notes": "Intramolecular cyclization and rearrangement with loss of iodobenzoate. Product is Sessilifoliamide B. The reported yield of 81% is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H₂, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "59%",
+            "reactant_smiles": "CCC(C1=C2C=CC(=O)N2CCCC1)C(=O)OCC",
+            "product_smiles": "CC[C@@H](C(=O)OCC)[C@H]1CC[C@H]2CCCN1C(=O)CC2",
+            "notes": "Hydrogenation of exocyclic double bond and internal double bond of lactam, leading to new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "LiBH4, MeOH, Et2O",
+            "reagent_smiles": "",
+            "conditions": "35 °C",
+            "yield": "68%",
+            "reactant_smiles": "CC[C@H](C(=O)OCC)[C@@H]1CC[C@H]2N3C(=O)CC[C@@H]3C[C@H]1CC2",
+            "product_smiles": "CC[C@H](CO)[C@@H]1CC[C@H]2N3C(=O)CC[C@@H]3C[C@H]1CC2",
+            "notes": "Ester group is reduced to a primary alcohol using lithium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 to -40 °C",
+            "yield": "",
+            "reactant_smiles": "CCC[C@H](CO)[C@H]1CCCCN2[C@@H]1C(=O)CC2",
+            "product_smiles": "CCC[C@H](C=O)[C@H]1CCCCN2[C@@H]1C(=O)CC2",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Grignard reaction",
+            "reagents": "",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "THF, -78 °C",
+            "yield": "99% (2 steps)",
+            "reactant_smiles": "CC[C@H](C=O)[C@@H]1[C@H]2N3CCC(=O)C3CCCC1CC2",
+            "product_smiles": "C=C[C@@H](O)[C@H](CC)[C@@H]1[C@H]2N3CCC(=O)C3CCCC1CC2",
+            "notes": "Grignard addition of vinylmagnesium bromide to an aldehyde, forming a secondary alcohol. The stereocenter formed at the alcohol is controlled (OH wedge, vinyl dash).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Esterification (Acylation)",
+            "reagents": "Et3N, CH2Cl2",
+            "reagent_smiles": "C=CC(=O)Cl.CCN(CC)CC",
+            "conditions": "0 °C",
+            "yield": "68%",
+            "reactant_smiles": "CC[C@@H]1N2C(=O)CC[C@H]([C@H](O)C=C)C2CCCCCC1",
+            "product_smiles": "CC[C@@H]1N2C(=O)CC[C@H]([C@H](OC(=O)C=C)C=C)C2CCCCCC1",
+            "notes": "Esterification of a secondary alcohol with acryloyl chloride to form an acrylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "GII",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 40 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC[C@@H]([C@@H]1CCCCN2[C@@H]1CCC2=O)[C@@H](C=C)OC(=O)C=C",
+            "product_smiles": "CC[C@@H]([C@@H]1CCCCN2[C@@H]1CCC2=O)[C@@H]3C=CC(=O)O3",
+            "notes": "Intramolecular ring-closing metathesis (RCM) between an acrylate and a terminal alkene to form a butenolide/furanone, catalyzed by Grubbs' second-generation catalyst (GII). Two carbons are lost as ethylene.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "[Pd]",
+            "conditions": "EtOH",
+            "yield": "88%",
+            "reactant_smiles": "O=C1CC[C@H]2N3[C@H](C1)CC([C@@H](CC)[C@@H]4C=CC(=O)O4)[C@H]2CCC3",
+            "product_smiles": "O=C1CC[C@H]2N3[C@H](C1)CC([C@@H](CC)[C@@H]4CCC(=O)O4)[C@H]2CCC3",
+            "notes": "Selective hydrogenation of an alpha,beta-unsaturated lactone to a saturated lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Alpha-alkylation of Lactone",
+            "reagents": "LiHMDS, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 to -40 °C then -78 to 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC[C@@H]([C@@H]1CCC[C@@H]2N(C(=O)CCC2)C1)[C@H]3CCC(=O)O3",
+            "product_smiles": "CC[C@@H]([C@@H]1CCC[C@@H]2N(C(=O)CCC2)C1)[C@H]3C[C@@H](C)C(=O)O3",
+            "notes": "Methylation of the lactone alpha-carbon via enolate formation with LiHMDS and subsequent alkylation with methyl iodide.",
+            "substeps": []
+        }
+    ]
+}

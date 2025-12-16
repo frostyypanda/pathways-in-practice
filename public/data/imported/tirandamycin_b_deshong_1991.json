@@ -1,0 +1,278 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tirandamycin-b-deshong-1991",
+        "molecule_name": "Tirandamycin B",
+        "class": "Natural Product",
+        "author": "DeShong",
+        "year": 1991
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nozaki-Hiyama-Kishi reaction (variant)",
+            "reagents": "CrCl3",
+            "reagent_smiles": "C/C=C/CBr.[Li+].[AlH4-]",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "CC(C=O)COCC1=CC=CC=C1",
+            "product_smiles": "C=C[C@H](C)[C@H](O)[C@H](C)COCC1=CC=CC=C1",
+            "notes": "Allylation of an aldehyde using allylic bromide with CrCl3 and LAH, forming new C-C bonds and stereocenters. Stereochemistry is controlled.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silyl Ether Formation",
+            "reagents": "TBDMSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "82%",
+            "reactant_smiles": "C=C[C@@H](C)[C@@H]([C@@H](C)C[OBn])O",
+            "product_smiles": "C=C[C@@H](C)[C@@H]([C@@H](C)C[OBn])[OTBDMS]",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBDMS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3",
+            "reagent_smiles": "[Zn].CC(=O)O",
+            "conditions": "aq",
+            "yield": "95%",
+            "reactant_smiles": "C=C[C@H](C)[C@@H]([C@H](C)COBn)OTBDMS",
+            "product_smiles": "O=C[C@H](C)[C@@H](OTBDMS)[C@H](C)COBn",
+            "notes": "Ozonolysis of a terminal alkene to an aldehyde using reductive workup (Zn/HOAc). Stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Addition (Directed ortho-lithiation/Aldol-type)",
+            "reagents": "t-BuLi, TMEDA",
+            "reagent_smiles": "[TIPS]OCH2c1oc(C)c[H]c1",
+            "conditions": "",
+            "yield": "84%",
+            "reactant_smiles": "O=C[C@H](C)[C@@H]([OTBDMS])[C@@H](C)C[OBn]",
+            "product_smiles": "[TIPS]OCH2c1oc(C)c([C@H](O)[C@H](C)[C@@H]([OTBDMS])[C@@H](C)C[OBn])c1",
+            "notes": "Nucleophilic addition of lithiated furan to an aldehyde, forming a secondary alcohol. Stereochemistry of the newly formed alcohol and the C4-methyl group in the product was corrected.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Furan Synthesis (Hantzsch type)",
+                    "reagents": "Pyridine",
+                    "reagent_smiles": "ClC=O",
+                    "conditions": "",
+                    "yield": "63%",
+                    "reactant_smiles": "CC(=O)CC(=O)OC",
+                    "product_smiles": "CCOC(=O)C1=C(C)OC=C1",
+                    "notes": "The reaction appears to be a Hantzsch-type furan synthesis, where methyl acetoacetate reacts with an alpha-halo carbonyl compound (implied by the product) in the presence of a base (pyridine). The product also shows an ester exchange from methyl to ethyl, suggesting ethanol is present as a solvent or reagent (not explicitly shown). However, the drawn reagent 'Cl-C(=O)-CH' is interpreted as formyl chloride (ClC=O), which is chemically unstable and highly unlikely to participate in this reaction to form the given product. The provided 'reagent' SMILES 'C(=O)CCl' (chloroketene) also does not match the drawing, nor is it a plausible reagent for this specific transformation. The SMILES has been corrected to strictly match the visual representation of the drawn reagent (formyl chloride), despite its chemical implausibility in this context.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "LAH",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, reflux",
+                    "yield": "83%",
+                    "reactant_smiles": "CCOC(=O)C1=C(C)OC=C1",
+                    "product_smiles": "CC1=C(CO)C=CO1",
+                    "notes": "Reduction of an ethyl ester to a primary alcohol using Lithium Aluminum Hydride (LAH).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Alcohol Protection (Silylation)",
+                    "reagents": "TIPSCl, base",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC1=C(CO)C=CO1",
+                    "product_smiles": "CC1=C(C[OTIPS])C=CO1",
+                    "notes": "Primary alcohol protected as a TIPS ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Achmatowicz reaction",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "[TIPS]OCC1=C(C)OC(=C1)[C@H](O)[C@H](C)[C@H]([OTBDMS])[C@H](C)CO[Bn]",
+            "product_smiles": "[TIPS]OCC1=CC(=O)[C@H]([C@H](C)[C@H]([OTBDMS])[C@H](C)CO[Bn])OC(C)(O)C1",
+            "notes": "Achmatowicz oxidation of a furan to a 2,3-dihydropyran-4-one, with retention of side chain stereochemistry (except where the new hemiacetal is formed, which is racemic).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Ketal/Acetal Formation / Cyclization",
+            "reagents": "HF, H2SiF6",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "35%",
+            "reactant_smiles": "[TIPS]OCH2C1=CC(=O)[C@@H]([C@H](C)[C@@H]([C@H](C)O[Bn])O[TBDMS])O[C]1(C)O",
+            "product_smiles": "[TIPS]OCH2C1=CC(=O)[C@@H]2[C@@H](C)O[C@]12(C)[C@@H]3C[C@H](C)O[Bn]",
+            "notes": "Deprotection of TBDMS and subsequent intramolecular cyclization involving the ketone and the existing hydroxyl group (or the newly formed one from TBDMS deprotection) to form a fused bicyclic ketal/acetal system. The TIPS group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Luche reduction",
+            "reagents": "NaBH4, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC1(C)OC(C)([C@H](C)CO[Bn])OC2=C(CO[TIPS])C=C(=O)[C@@H]2C1",
+            "product_smiles": "CC1(C)OC(C)([C@H](C)CO[Bn])OC2=C(CO[TIPS])C=C([C@@H](O))[C@@H]2C1",
+            "notes": "Stereoselective reduction of an alpha,beta-unsaturated ketone to an allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Epoxidation",
+            "reagents": "m-CPBA, NaH2PO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "73%",
+            "reactant_smiles": "[TIPS]OCC1=C[C@@H](C2C(C)C([C@H](C)CH2O[Bn])OC1(C)O2)O",
+            "product_smiles": "[TIPS]OC[C@]12[C@H]([C@@H](C3C(C)C([C@H](C)CH2O[Bn])OC1(C)O3)O)O2",
+            "notes": "Epoxidation of the 1,2-disubstituted alkene to form an epoxide. The epoxide is formed syn to the existing hydroxyl group, retaining the stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive debenzylation",
+            "reagents": "Li, DTBBP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "[OTIPS]C[C@]12[C@H]([C@@H](C3C(C)C([C@H](C)COCC4=CC=CC=C4)OC1(C)O3)O)O2",
+            "product_smiles": "[OTIPS]C[C@]12[C@H]([C@@H](C3C(C)C([C@H](C)CO)OC1(C)O3)O)O2",
+            "notes": "Reductive cleavage of a benzyl ether protecting group to yield a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "PDC",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "[TIPS]OC[C@]12[C@H]([C@](C)3[C@H](C)([C@H](C)CO)OC1(C)O3)O)O2",
+            "product_smiles": "[TIPS]OC[C@]12C(=O)[C@](C)3[C@H](C)([C@H](C)C=O)OC1(C)O3)O2",
+            "notes": "Oxidation of a secondary alcohol to a ketone and a primary alcohol to an aldehyde using PDC.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Nozaki-Hiyama-Kishi (NHK) allylation / Barbier-type allylation",
+            "reagents": "CrCl3, LAH",
+            "reagent_smiles": "C/C=C/CBr",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "[OTIPS]OC[C@]12[C@H](C(=O)C3C(C)C([C@H](C)C=O)OC1(C)O3)O2",
+            "product_smiles": "[OTIPS]OC[C@]12[C@H](C(=O)C3C(C)C([C@H](C)C(O)C(C)C=C)OC1(C)O3)O2",
+            "notes": "Allylation of an aldehyde with trans-1-bromobut-2-ene using CrCl3/LAH (likely generating Cr(II) species) to form a secondary alcohol. The new chiral centers in the side chain are formed as a mixture of diastereomers (indicated by wavy bonds). The ketone in the main ring system is not reduced. Both reactant and product SMILES as provided in the input were missing one methyl group on the polycyclic core structure compared to the screenshot. This structural error remains in the corrected SMILES to reflect the provided input's core representation, but it is noted here.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "OsO4, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "C=C[C@@H](C)C(C(C)C1C(C)C2C(=O)[C@H]3[C@](CO[TIPS])(C(C)(O1)O2)O3)O",
+            "product_smiles": "[TIPS]OC[C@]12[C@H](C(=O)C3C(C)C(C(C)C(C(C=O)O))OC1(C)O3)O2",
+            "notes": "Oxidative cleavage of a terminal alkene to an aldehyde using OsO4 and NaIO4 (Lemieux-Johnson oxidation).",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Dehydration",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "[TIPS]OC[C@]12[C@H](C(=O)C3C(C)C(C(C)C(O)C=O)O[C@]1(C)O3)O2",
+            "product_smiles": "[TIPS]OC[C@]12[C@H](C(=O)C3C(C)C(C(C)=CC=O)O[C@]1(C)O3)O2",
+            "notes": "Acid-catalyzed dehydration of a beta-hydroxy aldehyde to an alpha,beta-unsaturated aldehyde, forming a new C=C double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "KOt-Bu, THF",
+            "reagent_smiles": "CCOP(=O)(OCC)C/C(=C/1/C(=O)CN(CC2=CC=C(C=C2OC)OC)C1=O)/O",
+            "conditions": "0 °C",
+            "yield": "72%",
+            "reactant_smiles": "C[C@H](C=C(C)C=O)C1C(C)C2C(C)([C@@]3(CO[TIPS])[C@H](C(=O)O2)O3)O1",
+            "product_smiles": "[TIPS]OC[C@]12[C@H](C(=O)[C@H]3C4[C@](C)(C=C(C)C=CC(=C5C(=O)CN(CC6=CC=C(C=C6OC)OC)C5=O)O)C4(C)OC31O2)O2",
+            "notes": "Horner-Wadsworth-Emmons olefination. The aldehyde of the reactant reacts with the phosphonate reagent to form an extended conjugated polyene system. All new and existing double bonds are depicted with wavy lines, indicating an unspecified or mixed E/Z stereochemistry.",
+            "substeps": [
+                {
+                    "step_id": "14.1",
+                    "reaction_type": "N-acylation",
+                    "reagents": "DCM",
+                    "reagent_smiles": "BrCC(=O)CC(=O)CBr",
+                    "conditions": "-40 °C",
+                    "yield": "95%",
+                    "reactant_smiles": "CCOC(=O)CNCC1=C(OC)C=C(OC)C=C1",
+                    "product_smiles": "CCOC(=O)CN(CC1=C(OC)C=C(OC)C=C1)C(=O)CC(=O)CBr",
+                    "notes": "N-acylation of the secondary amine with 1,5-dibromo-2,4-pentanedione, forming an amide bond and retaining one bromomethyl ketone moiety.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.2",
+                    "reaction_type": "Horner-Wadsworth-Emmons Cyclization",
+                    "reagents": "KOP(OEt)2",
+                    "reagent_smiles": "[K+].[O-]P(OCC)OCC",
+                    "conditions": "THF",
+                    "yield": "82%",
+                    "reactant_smiles": "BrCC(=O)CC(=O)N(CCOC(=O)C)CC1=C(OC)C=CC(OC)=C1",
+                    "product_smiles": "N1(CC2=C(OC)C=CC(OC)=C2)CH2C(=O)C(O)=C(CP(=O)(OCC)OCC)C1=O",
+                    "notes": "Intramolecular Horner-Wadsworth-Emmons reaction followed by tautomerization to form a cyclic enol-imide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "CF3CO2H",
+            "reagent_smiles": "O=C(O)C(F)(F)F",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "[TIPS]OC[C@]12[C@H](C(=O)[C@@H]3C(C)C([C@H](C)C=C(C)C=CC(=C\\4/C(=O)CN(CC1=CC(OC)=CC(OC)=C1)C4=O)/O)OC31C)O2",
+            "product_smiles": "[TIPS]OC[C@]12[C@H](C(=O)[C@@H]3C(C)C([C@H](C)C=C(C)C=CC(=C\\4/C(=O)CNC4=O)/O)OC31C)O2",
+            "notes": "N-Benzyl deprotection of a succinimide derivative using trifluoroacetic acid. The 3,5-dimethoxybenzyl protecting group is removed to yield a secondary amide (NH). The TIPS group and polycyclic core remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection (Silyl ether hydrolysis)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[TIPS]OC[C@]12[C@H](C(=O)C3C(C)C([C@H](C)/C=C(\\C)/C=C/C(=C4C(=O)CNC4=O)O)OC1(C)O3)O2",
+            "product_smiles": "C/C(=C\\[C@@H](C)C1C(C)C2C(=O)[C@H]3[C@@](CO)(C(C)(O1)O2)O3)/C=C/C(=C4C(=O)CNC4=O)O",
+            "notes": "Deprotection of a triisopropylsilyl (TIPS) ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "None (Isolation/Purification/Tautomerization)",
+            "reagents": "PhCH3",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](C1C(C)C2C(=O)[C@H]3[C@](CO)(C(C)(O1)O2)O3)C=C(C)C=CC/C=C/C(=C/4/C(=O)NC(=O)CC4)/O",
+            "product_smiles": "C[C@@H](C1C(C)C2C(=O)[C@H]3[C@](CO)(C(C)(O1)O2)O3)C=C(C)C=CC/C=C/C(=C/4/C(=O)NC(=O)CC4)/O",
+            "notes": "The reactant and product structures shown are identical, indicating no chemical transformation, possibly an isolation, purification, or a tautomerization process under reflux conditions in toluene. Corrections made to reactant and product SMILES to accurately reflect the drawn structure and remove artifacts.",
+            "substeps": []
+        }
+    ]
+}

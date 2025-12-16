@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lysergine-luo-2017",
+        "molecule_name": "Lysergine",
+        "class": "Natural Product",
+        "author": "Luo",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sulfonamide formation",
+            "reagents": "NEt3",
+            "reagent_smiles": "C#CCN",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CC1=CC(=C(C(=C1)C)S(=O)(=O)Cl)C",
+            "product_smiles": "C#CCNS(=O)(=O)c1c(C)cc(C)cc1C",
+            "notes": "Formation of N-propargyl mesitylenesulfonamide from mesitylenesulfonyl chloride and propargylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "BrCC=C",
+            "conditions": "MeCN",
+            "yield": "81%",
+            "reactant_smiles": "C#CCNHS(=O)(=O)[Mes]",
+            "product_smiles": "C#CCN(CC=C)S(=O)(=O)[Mes]",
+            "notes": "N-alkylation of a propargyl sulfonamide with allyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Carbenoid cyclization / Intramolecular C-H insertion",
+            "reagents": "Rh2(TFA)4",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "63%",
+            "reactant_smiles": "C#CCN(CC=C)S(=O)(=O)[Mes]",
+            "product_smiles": "[Mes]S(=O)(=O)N1C=C[C@@H]2C[C@H]2C1",
+            "notes": "Intramolecular cyclization of an N-sulfonylated propargyl/allyl amine to form an azabicyclo[3.1.0]hexene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "BH3·SMe2, H2O2",
+            "reagent_smiles": "B.CSC.OO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "Cc1cc(C)c(S(=O)(=O)N2C=C[C@H]3C[C@H]3C2)c(C)c1",
+            "product_smiles": "Cc1cc(C)c(S(=O)(=O)N2CC[C@H](O)[C@H]3C[C@H]3C2)c(C)c1",
+            "notes": "Hydroboration-oxidation of the enamine to a beta-amino alcohol, with syn-addition of the B-H across the double bond followed by oxidation to replace B with OH, resulting in overall syn-addition of H and OH (anti-Markovnikov addition). The new hydroxyl group is cis to the adjacent cyclopropane bridgehead hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "58% (2 steps)",
+            "reactant_smiles": "CC1=CC(C)=CC(C)=C1S(=O)(=O)N2C[C@@H](O)[C@@H]3C[C@@H]3C2",
+            "product_smiles": "CC1=CC(C)=CC(C)=C1S(=O)(=O)N2C[C@@H]3C[C@@H]3C(=O)C2",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Enol Trflate Formation",
+            "reagents": "LiHMDS, PhNTf2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Mes]S(=O)(=O)N1C[C@@H]2C[C@@H]2C(=O)C1",
+            "product_smiles": "[Mes]S(=O)(=O)N1C[C@@H]2C[C@@H]2C(=C1)[OTf]",
+            "notes": "Conversion of a ketone to its enol triflate using a strong base (LiHMDS) and a triflating agent (PhNTf2). The bicyclic ring system and cyclopropane stereochemistry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "Pd(dppf)Cl2, K2CO3",
+            "reagent_smiles": "O=Cc1cnc(S(=O)(=O)c2ccc(C)cc2)c3c(B4OC(C)(C)C(C)(C)O4)cccc31",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "CS(=O)(=O)N1C[C@H]2C[C@H]2C(=C1)OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "CS(=O)(=O)N1C[C@H]2C[C@H]2C(=C1)c3c(C=O)cn(S(=O)(=O)c4ccc(C)cc4)c5c3cccc5",
+            "notes": "Suzuki coupling of a vinyl triflate with an indole-7-boronic ester, forming a new C-C bond. Stereochemistry of the cyclopropane is retained.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Vilsmeier-Haack reaction",
+                    "reagents": "POCl3, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=C2C=CNC2=C1)Br",
+                    "product_smiles": "O=Cc1[nH]c2cccc(Br)c2c1",
+                    "notes": "Formylation of 7-bromo-1H-indole at the 3-position.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "N-Tosylation",
+                    "reagents": "TsCl, DMAP, NEt3",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "90%",
+                    "reactant_smiles": "C1=CC(=C2C(=CNC2=C1)C=O)Br",
+                    "product_smiles": "C1=CC(=C2C(=CN(C2=C1)[Ts])C=O)Br",
+                    "notes": "(2 steps)",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Suzuki-Miyaura Borylation",
+                    "reagents": "Pd(dppf)Cl2.CH2Cl2, KOAc",
+                    "reagent_smiles": "CC1(C)C(C)(C)OB(B2OC(C)(C)C(C)(C)O2)O1",
+                    "conditions": "1,4-dioxane",
+                    "yield": "",
+                    "reactant_smiles": "O=Cc1cn([Ts])c2c1ccc(Br)c2",
+                    "product_smiles": "O=Cc1cn([Ts])c2c1ccc([Bpin])c2",
+                    "notes": "Aryl bromide is converted to an aryl boronate ester using bis(pinacolato)diboron and a palladium catalyst.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Mes]SO2N1C[C@@H]2C[C@@H]2C(=C1)C3=C4C(=CN(C4=CC=C3)[Ts])C=O",
+            "product_smiles": "[Mes]SO2N1C[C@@H]2C[C@@H]2C(=C1)C3=C4C(=CN(C4=CC=C3)[Ts])CO",
+            "notes": "Aldehyde reduced to primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, NEt3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Mes]S(=O)(=O)N1C[C@@H]2C[C@@H]2C(=C1)C3=C4C(=CN([Ts])C4=CC=C3)CO",
+            "product_smiles": "[Mes]S(=O)(=O)N1C[C@@H]2C[C@@H]2C(=C1)C3=C4C(=CN([Ts])C4=CC=C3)CO[Ms]",
+            "notes": "Mesylation of a primary alcohol to a mesylate, using mesyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Substitution / Multi-step transformation",
+            "reagents": "EtOC(S)SK",
+            "reagent_smiles": "[K+]SC(=S)OCC",
+            "conditions": "",
+            "yield": "73% (3 steps)",
+            "reactant_smiles": "[Mes]S(=O)(=O)N1C[C@@H]2C[C@@H]2C(=C1)c3c(C[OMs])cn([Ts])c4c3cccc4",
+            "product_smiles": "[Mes]S(=O)(=O)N1C[C@@H]2C[C@@H]2C(=C1)c3c(CS(=S)OCC)cn([Ts])c4c3cccc4",
+            "notes": "The reactant's Mes and Ts groups were incorrectly extracted as Ms. The reagent SMILES was junk and corrected to potassium ethyl xanthate. For the product, the drawn structure exhibits a chemical inconsistency at the indole C3 position (showing both an OEt group and a cyclic dithiolane part while maintaining a C2-C3 double bond). The corrected product SMILES represents a plausible substitution product (CH₂S(=S)OEt at indole C3) based on the reagent, and is consistent with the core structure and other substituents, prioritizing chemical validity over a literal interpretation of the ambiguous drawing.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Radical Cyclization/Reduction",
+            "reagents": "ACCN",
+            "reagent_smiles": "[SiH]([Si](C)(C)C)([Si](C)(C)C)[Si](C)(C)C",
+            "conditions": "PhCl, 140 °C",
+            "yield": "62%",
+            "reactant_smiles": "CCOC(=S)SCC1=C(N([Ts])C=C2C1=CC=CC2)C3=C(C=CC=C3)C4=C(C=C(C=C4)N(CC5C[C@@H]6[C@H]6C5)[Mes])C",
+            "product_smiles": "C[C@H]1[C@@H]2CN([Mes])C=C3C2C=CC=C3C4=C5C=CC=C4C(=C5)N([Ts])C1",
+            "notes": "Radical cyclization and reduction of the dithiolane, leading to the formation of the ergoline core. (TMS)3SiH acts as a radical reductant, and ACCN is likely a radical initiator.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "sodium naphthalenide",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1C=C2C3=C4C(=CN([Ts])C4=CC=C3)C[C@H]2N([Mes])C1",
+            "product_smiles": "C[C@@H]1C=C2C3=C4C(=CNC4=CC=C3)C[C@H]2NC1",
+            "notes": "Removal of N-sulfonyl protecting groups (Tosyl and Mesyl) from a lysergine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reductive amination",
+            "reagents": "formalin, NaBH3CN, AcOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "C[C@H]1C=C2CCC3=C(C[C@@H]4[C@H]3NC[C@H]1)C5=C2C=CN5C=C4",
+            "product_smiles": "C[C@H]1C=C2CCC3=C(C[C@@H]4[C@H]3N(C)C[C@H]1)C5=C2C=CN5C=C4",
+            "notes": "Methylation of secondary amine to tertiary amine via reductive amination using formalin and sodium cyanoborohydride.",
+            "substeps": []
+        }
+    ]
+}

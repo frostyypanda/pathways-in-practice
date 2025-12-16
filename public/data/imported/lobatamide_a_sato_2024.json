@@ -1,0 +1,278 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lobatamide-a-sato-2024",
+        "molecule_name": "Lobatamide A",
+        "class": "Natural Product",
+        "author": "Sato",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, DMAP, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM, 23 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](C(=O)OC)O",
+            "product_smiles": "[OTBS][C@@H](C)C(=O)OC",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Partial Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, toluene, -80 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H](C)C(=O)OC",
+            "product_smiles": "[OTBS][C@@H](C)C=O",
+            "notes": "Partial reduction of a methyl ester to an aldehyde using DIBAL-H, retaining the stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Wittig reaction",
+            "reagents": "",
+            "reagent_smiles": "O=CC=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "benzene",
+            "yield": "87%",
+            "reactant_smiles": "O=C[C@@H](C)[OTBS]",
+            "product_smiles": "O=C/C=C/[C@@H](C)[OTBS]",
+            "notes": "Wittig reaction of an aldehyde with a formylmethylene triphenylphosphorane to form an E-alpha,beta-unsaturated aldehyde, preserving the chirality of the adjacent center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Allene synthesis / Propargylation",
+            "reagents": "Chiral phosphoric acid catalyst (structure shown), 4Å MS",
+            "reagent_smiles": "CC#CB1OC(C)(C)C(C)(C)O1",
+            "conditions": "toluene, -45 °C",
+            "yield": "92%",
+            "reactant_smiles": "C[C@@H]([OTBS])/C=C/C=O",
+            "product_smiles": "C=C=C(C)[C@@H](O)/C=C/[C@@H](C)[OTBS]",
+            "notes": "Addition of propargyl borane to an α,β-unsaturated aldehyde, catalyzed by a chiral phosphoric acid, forming a new chiral center and an allene moiety. The stereochemistry of the existing chiral center is preserved, and a new one is formed with high diastereoselectivity (syn relationship relative to the existing OTBS group).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TIPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, 23 °C",
+            "yield": "85%",
+            "reactant_smiles": "C=C=C(C)[C@H](O)/C=C/[C@@H](C)[OTBS]",
+            "product_smiles": "C=C=C(C)[C@H]([OTIPS])/C=C/[C@@H](C)[OTBS]",
+            "notes": "Secondary alcohol is protected as a triisopropylsilyl (TIPS) ether. The existing tert-butyldimethylsilyl (TBS) ether remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "disiamylborane, NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C, then 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "C[C@H](O[TBS])/C=C/[C@@H](O[TIPS])C(C)=C=C",
+            "product_smiles": "C[C@H](O[TBS])/C=C/[C@@H](O[TIPS])C(C)=C/CO",
+            "notes": "Allene is converted to a primary alcohol and an internal alkene. The existing stereocenters and trans double bond are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Chlorination",
+            "reagents": "p-TsCl, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 23 °C",
+            "yield": "70%",
+            "reactant_smiles": "[TIPS]O[C@H](C)/C=C/[C@H]([OTBS])C(=C\\CO)C",
+            "product_smiles": "[TIPS]O[C@H](C)/C=C/[C@H]([OTBS])C(=C\\CCl)C",
+            "notes": "Primary alcohol is converted to an alkyl chloride. Likely involves formation of a tosylate intermediate from the alcohol, followed by chloride displacement.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd(PPh3)4, CuTC, NaI",
+            "reagent_smiles": "C[Sn](C)(C)C1=CC=CC2=C1C(=O)OC(C)(C)O2",
+            "conditions": "NMP, 23 °C",
+            "yield": "73%",
+            "reactant_smiles": "[OTBS][C@@H](C)/C=C/[C@@H](O[TIPS])C(C)=C\\CCl",
+            "product_smiles": "[OTBS][C@@H](C)/C=C/[C@@H](O[TIPS])C(C)=C\\CC1=C2C(=CC=C1)OC(C)(C)O2",
+            "notes": "Intramolecular Stille coupling of a vinyl chloride with an organostannane to form a macrocyclic product.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Cyclization, Ketal Formation",
+                    "reagents": "acetone, DME",
+                    "reagent_smiles": "ClS(=O)Cl.CN(C)c1ccncc1",
+                    "conditions": "0 to 23 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "O=C(O)c1c(O)cc(O)cc1",
+                    "product_smiles": "CC1(C)OC2=CC=CC(=C2C(=O)O1)O",
+                    "notes": "Formation of a 2,2-dimethyl-1,3-benzodioxin-4-one by cyclization of 2,4-dihydroxybenzoic acid with acetone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Triflation",
+                    "reagents": "Tf2O, pyridine, DCM",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "90%",
+                    "reactant_smiles": "CC1(C)OC2=CC=CC(=C2C(=O)O1)O",
+                    "product_smiles": "CC1(C)OC2=CC=CC(=C2C(=O)O1)[OTf]",
+                    "notes": "Hydroxyl group is converted to a triflate group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Stille Coupling",
+                    "reagents": "(Me3Sn)2, Pd(PPh3)4, LiCl",
+                    "reagent_smiles": "",
+                    "conditions": "1,4-dioxane, 100 °C",
+                    "yield": "79%",
+                    "reactant_smiles": "CC1(C)OC2=CC=CC(=C2C(=O)O1)[OTf]",
+                    "product_smiles": "CC1(C)OC2=CC=CC(=C2C(=O)O1)[SnMe3]",
+                    "notes": "Aryl triflate undergoes Stille coupling with hexamethylditin to form an arylstannane.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "TMSOK",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, 60 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1OC(C)(C)OC2=C(C1)C(=CC=C2)CC/C=C(C)/[C@@H](CC)O[TIPS]/C=C/[C@H](C)O[TBS]",
+            "product_smiles": "O=C(O)C1=C(O)C(=CC=C1)CC/C=C(C)/[C@@H](CC)O[TIPS]/C=C/[C@H](C)O[TBS]",
+            "notes": "Hydrolysis of a macrocyclic lactone and acetal (dioxolane) under basic conditions, yielding a carboxylic acid and a phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification",
+            "reagents": "ClCH2CN, Et3N",
+            "reagent_smiles": "ClCC#N.CCN(CC)CC",
+            "conditions": "acetone, reflux",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "[TIPS]O[C@@H](C)/C=C/[C@@H]([OTBS])(C)/C=C/CCc1c(C(=O)O)c(O)ccc1",
+            "product_smiles": "[TIPS]O[C@@H](C)/C=C/[C@@H]([OTBS])(C)/C=C/CCc1c(C(=O)OCC#N)c(O)ccc1",
+            "notes": "Esterification of a carboxylic acid with chloroacetonitrile to form a cyanoethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Transesterification",
+            "reagents": "NaOAc, 4Å MS",
+            "reagent_smiles": "O=C(O)C[C@@H](O)CC#C",
+            "conditions": "DMA, 60 °C",
+            "yield": "75%",
+            "reactant_smiles": "[TBS]O[C@@H](C)/C=C/[C@H]([TIPS]O)/C(=C/C)CC1=C(O)C=CC=C1C(=O)OCC#N",
+            "product_smiles": "[TBS]O[C@@H](C)/C=C/[C@H]([TIPS]O)/C(=C/C)CC1=C(O)C=CC=C1C(=O)O[C@@H](CC(=O)O)CC#C",
+            "notes": "Esterification of an aromatic ester with a secondary alcohol (4-hydroxy-5-hexynoic acid), replacing the cyanoethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "HF•pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C",
+            "yield": "",
+            "reactant_smiles": "C#CC[C@@H](CC(=O)O)OC(=O)C1=C(O)C=CC=C1C/C=C(/C)[C@@H]([OTBS])/C=C/[C@H](C)[OTIPS]",
+            "product_smiles": "C#CC[C@@H](CC(=O)O)OC(=O)C1=C(O)C=CC=C1C/C=C(/C)[C@@H](O)/C=C/[C@H](C)[OTIPS]",
+            "notes": "Selective deprotection of TBS ether in the presence of TIPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Esterification",
+            "reagents": "DCM",
+            "reagent_smiles": "C#CN(C)[Ts]",
+            "conditions": "23 °C",
+            "yield": "71% (2 steps)",
+            "reactant_smiles": "C#CC[C@@H](CC(=O)O)OC(=O)c1c(O)ccc(C/C=C(/C)\\[C@H](O[TIPS])C/C=C/[C@@H](C)O)c1",
+            "product_smiles": "C#CC[C@@H](CC(=O)OC(=C)N(C)[Ts])OC(=O)c1c(O)ccc(C/C=C(/C)\\[C@H](O[TIPS])C/C=C/[C@@H](C)O)c1",
+            "notes": "Esterification of a carboxylic acid with N-methyl-N-tosylpropargylamine (ynamide) to form a vinylic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Macrolactonization",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 23 °C",
+            "yield": "33%",
+            "reactant_smiles": "C#CC[C@@H](CC(=O)OC(=C)N(C)[Ts])OC(=O)c1c(O)ccc(CC/C=C(/C)\\[C@H](O[TIPS])/C=C/[C@H](C)O)c1",
+            "product_smiles": "C#CC[C@@H]1CC(=O)O[C@@H](C)/C=C/[C@H](O[TIPS])C/C=C(C)\\[CH]2CC(O)=C(C(=O)O1)C=C2",
+            "notes": "Intramolecular macrolactonization between an activated N-tosyl ketene aminal ester and a terminal alcohol, forming a 12-membered macrolactone. The phenolic OH and a second ester group remain within the macrocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Phenol Silylation / Silyl Ether Formation",
+            "reagents": "DMF",
+            "reagent_smiles": "Cl[Si](CC)(CC)CC.C1=CNC=N1",
+            "conditions": "23 °C",
+            "yield": "86%",
+            "reactant_smiles": "C#CC[C@H]1CC(=O)O[C@@H](C)/C=C/[C@@H]([OTIPS])/C(=C\\CC2=C(C(=CC=C2)O)C(=O)O1)\\C",
+            "product_smiles": "C#CC[C@H]1CC(=O)O[C@@H](C)/C=C/[C@@H]([OTIPS])/C(=C\\CC2=C(C(=CC=C2)[OTES])C(=O)O1)\\C",
+            "notes": "Protection of the phenolic hydroxyl group as a triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Hydrozirconation-Iodination",
+            "reagents": "Cp₂ZrHCl, 4Å MS, NIS",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C, then -78 °C",
+            "yield": "87%",
+            "reactant_smiles": "C#CC[C@H]1CC(=O)O[C@@H](C)/C=C/[C@@H](/C(=C\\CC2=C(C(=CC=C2)[OTES])C(=O)O1)/C)[OTIPS]",
+            "product_smiles": "I/C=C/CC[C@H]1CC(=O)O[C@@H](C)/C=C/[C@@H](/C(=C\\CC2=C(C(=CC=C2)[OTES])C(=O)O1)/C)[OTIPS]",
+            "notes": "Terminal alkyne is converted to an (E)-vinyl iodide using Schwartz's reagent (Cp₂ZrHCl) followed by N-iodosuccinimide (NIS).",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Copper-catalyzed amidation (Ullmann/Chan-Lam type)",
+            "reagents": "CuI, K3PO4, 4A MS",
+            "reagent_smiles": "C1CC[C@H]2[C@@H](C1)NCCN2.CO/N=C/C=C/C(=O)N",
+            "conditions": "1,4-dioxane, 70 °C",
+            "yield": "46%",
+            "reactant_smiles": "CC(C)[Si](C(C)C)(C(C)C)O[C@@H](C)\\C=C/[C@@H](C)CC[C@H]1OC(=O)C[C@H](C/C=C/I)OC(=O)c2cc(CC1)c(O[Si](CC)(CC)CC)cc2",
+            "product_smiles": "CC(C)[Si](C(C)C)(C(C)C)O[C@@H](C)\\C=C/[C@@H](C)CC[C@H]1OC(=O)C[C@H](C/C=C/NC(=O)/C=C/C=N/OC)OC(=O)c2cc(CC1)c(O[Si](CC)(CC)CC)cc2",
+            "notes": "Copper-catalyzed amidation of a vinyl iodide with an alpha,beta-unsaturated amide, forming a new C-N bond while preserving the macrolactone core and silyl protecting groups.",
+            "substeps": [
+                {
+                    "step_id": "17.1",
+                    "reaction_type": "Lactone Ring Opening, Oxime Formation",
+                    "reagents": "H2O",
+                    "reagent_smiles": "CON",
+                    "conditions": "rt",
+                    "yield": "92%",
+                    "reactant_smiles": "C1=CC(=O)OC1O",
+                    "product_smiles": "CO/N=C/C=C\\C(=O)O",
+                    "notes": "Ring opening of a 5-hydroxy-2-furanone derivative with O-methylhydroxylamine to form a conjugated Z,E-oxime carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "17.2",
+                    "reaction_type": "Amide Formation / Amidation",
+                    "reagents": "NH4OH",
+                    "reagent_smiles": "CCOC(=O)Cl.CCN(CC)CC",
+                    "conditions": "THF, 0 °C",
+                    "yield": "95%",
+                    "reactant_smiles": "CO/N=C/C=C/C(=O)O",
+                    "product_smiles": "CO/N=C/C=C/C(=O)N",
+                    "notes": "Conversion of a carboxylic acid to a primary amide using ethyl chloroformate as an activating agent followed by reaction with ammonium hydroxide. The E,E-dienoate is maintained.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

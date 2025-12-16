@@ -1,0 +1,242 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "indidene-c-baudoin-2024",
+        "molecule_name": "Indidene C",
+        "class": "Natural Product",
+        "author": "Baudoin",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination / Electrophilic Aromatic Substitution",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "90%",
+            "reactant_smiles": "CC1(C)OC2=CC=CC=C2O1",
+            "product_smiles": "CC1(C)OC2=CC=C(Br)C=C2O1",
+            "notes": "Bromination of 2,2-dimethyl-1,3-benzodioxole using NBS in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed ortho-metalation, Formylation",
+            "reagents": "n-BuLi, DIPEA, DMF",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "89%",
+            "reactant_smiles": "CC1(C)OC2=C(C=C(C=C2)Br)O1",
+            "product_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)C=O)O1",
+            "notes": "Bromine-substituted benzodioxole undergoes directed ortho-metalation with n-BuLi/DIPEA, followed by formylation with DMF to yield the corresponding ortho-formylated product.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)C=O)O1",
+            "product_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)CO)O1",
+            "notes": "Aldehyde group reduced to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Halogenation (Alcohol to Alkyl Halide)",
+            "reagents": "PBr3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)CO)O1",
+            "product_smiles": "CC1(C)OC2=C(C(=C(C=C2)Br)CBr)O1",
+            "notes": "Conversion of a primary alcohol to a primary bromide using phosphorus tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkylation",
+            "reagents": "NaH",
+            "reagent_smiles": "COC(=O)C(CCCOCC1=CC=C(C=C1)C2=CC=CC=C2)C(=O)OC",
+            "conditions": "THF, 0 °C to reflux",
+            "yield": "58%",
+            "reactant_smiles": "CC1(C)OC2=C(CBr)C=CC(Br)=C2O1",
+            "product_smiles": "CC1(C)OC2=C(C(C(=O)OC)(C(=O)OC)CCCOCC3=CC=C(C=C3)C4=CC=CC=C4)C=CC(Br)=C2O1",
+            "notes": "Alkylation of dimethyl malonate enolate with a primary benzylic bromide to form a new C-C bond.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "NaH",
+                    "reagent_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)CBr",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "76%",
+                    "reactant_smiles": "OCCCO",
+                    "product_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)COCCCO",
+                    "notes": "A Williamson ether synthesis reacting propane-1,3-diol with 1-(bromomethyl)-4-phenylbenzene, forming an ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Alcohol iodination (Appel reaction)",
+                    "reagents": "PPh3, I2, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "90%",
+                    "reactant_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)COCCCO",
+                    "product_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)COCCCI",
+                    "notes": "Conversion of a primary alcohol to a primary iodide using PPh3, I2, and imidazole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Malonic Ester Synthesis / Alkylation",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "COC(=O)CC(=O)OC",
+                    "conditions": "MeCN, 80 °C",
+                    "yield": "78%",
+                    "reactant_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)COCCCI",
+                    "product_smiles": "COC(=O)C(CCCOCC1=CC=C(C=C1)C2=CC=CC=C2)C(=O)OC",
+                    "notes": "Alkylation of dimethyl malonate with an alkyl iodide, forming a C-C bond and displacing iodide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular C-H Arylation / Heck-type Cyclization",
+            "reagents": "Cs2CO3, CsOPiv, 5Å MS",
+            "reagent_smiles": "[Pd]Cl[C]1N2CC3OC(C4(CCCCC4)OC3)N1",
+            "conditions": "trifluorotoluene, 140 °C",
+            "yield": "63%",
+            "reactant_smiles": "CC1(C)OC2=C(C=C(Br)C(=C2)CC(CCCOC3=CC=C(C=C3)C4=CC=CC=C4)(C(=O)OC)C(=O)OC)O1",
+            "product_smiles": "CC1(C)OC2=C(C3=C(C=C2)C(CCOCC4=CC=C(C=C4)C5=CC=CC=C5)C(C3)(C(=O)OC)C(=O)OC)O1",
+            "notes": "Intramolecular palladium-catalyzed C-H arylation to form an indane ring system fused to a benzodioxine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Decarbomethoxylation",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 140 °C",
+            "yield": "48%",
+            "reactant_smiles": "CC1(C)OC2=C(C3=C(C=C2)C(CCOCC4=CC=C(C=C4)C5=CC=CC=C5)C(C3)(C(=O)OC)C(=O)OC)O1",
+            "product_smiles": "CC1(C)OC2=C(C3=C(C=C2)[C@@H](CCOCC4=CC=C(C=C4)C5=CC=CC=C5)[C@@H](C3)C(=O)OC)O1",
+            "notes": "Decarbomethoxylation of a geminal diester to a monoester. Two new chiral centers are formed in the indane ring system with a cis relationship.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Grignard Reaction (Ester to Tertiary Alcohol)",
+            "reagents": "MeMgBr",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "70%",
+            "reactant_smiles": "CC1(C)OC2=C(C3=C(C=C2)[C@@H](CCOCC4=CC=C(C=C4)C5=CC=CC=C5)[C@H](C3)C(=O)OC)O1",
+            "product_smiles": "CC(C)(O)[C@H]1CC2=C(C=CC3=C2OC(C)(C)O3)[C@@H]1CCOCC4=CC=C(C=C4)C5=CC=CC=C5",
+            "notes": "Grignard addition of methylmagnesium bromide to a methyl ester, resulting in a tertiary alcohol with two methyl groups. The existing stereocenters in the fused ring system are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)([C@H]1CC2=C(OC(C)(C)O3)C3=CC=C2[C@H]1CCOCC4=CC=C(C=C4)C5=CC=CC=C5)O",
+            "product_smiles": "CC(C)([C@H]1CC2=C(OC(C)(C)O3)C3=CC=C2[C@H]1CCO)O",
+            "notes": "Hydrogenolysis of a benzyl ether to a primary alcohol using Pd/C and H2.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation, Lactonization",
+            "reagents": "TEMPO, PIDA",
+            "reagent_smiles": "",
+            "conditions": "H2O, DCM, rt",
+            "yield": "76%",
+            "reactant_smiles": "CC(C)([C@@H]1CC2=C(C=CC3=C2OC(C)(C)O3)[C@H]1CCO)O",
+            "product_smiles": "CC1(C)[C@@H]2CC3=C(C=CC4=C3OC(C)(C)O4)[C@H]2CC(=O)O1",
+            "notes": "Oxidation of a primary alcohol and intramolecular lactonization with a tertiary alcohol to form a six-membered lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Aromatic Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "86%",
+            "reactant_smiles": "CC1(C)OC(=O)C[C@H]2[C@@H]1CC3=C2C=CC4=C3OC(C)(C)O4",
+            "product_smiles": "CC1(C)OC(=O)C[C@H]2[C@@H]1CC3=C2C=C(Br)C4=C3OC(C)(C)O4",
+            "notes": "Electrophilic aromatic bromination of an activated benzene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd2(dba)3, SPhos, K3PO4",
+            "reagent_smiles": "CCOCOCCOC1=CC=C(B2OC(C)(C)C(C)(C)O2)C(OC)=C1",
+            "conditions": "H2O, toluene, 110 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC1(C)OC(=O)C[C@H]2[C@H]3CC4=C(Br)C=C5OC(C)(C)OC5=C4C32",
+            "product_smiles": "CC1(C)OC(=O)C[C@H]2[C@H]3CC4=C(C6=CC=C(OCCOC)C(OC)=C6)C=C5OC(C)(C)OC5=C4C32",
+            "notes": "Aryl bromide undergoes Suzuki coupling with an aryl boronic ester to form a biphenyl derivative.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Etherification / Protecting Group Installation",
+                    "reagents": "EOMCI, DIPEA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "75%",
+                    "reactant_smiles": "COC1=C(Br)C=CC(O)=C1",
+                    "product_smiles": "CCOCOC1=CC(=C(C=C1)OC)Br",
+                    "notes": "Phenol is etherified to an ethoxymethyl (EOM) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Aromatic Borylation",
+                    "reagents": "HBPin, Et3N, Pd(dppf)Cl2•DCM",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, 100 °C",
+                    "yield": "45%",
+                    "reactant_smiles": "BrC1=C(OC)C=C(OCOC C)C=C1",
+                    "product_smiles": "B1(OC(C)(C)C(C)(C)O1)C2=C(OC)C=C(OCOC C)C=C2",
+                    "notes": "Palladium-catalyzed borylation of an aryl bromide with pinacolborane (HBPin) to form an arylboronate ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "AlCl3, 1,2-ethanedithiol",
+            "reagent_smiles": "[Al+3].HSCCS",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(OCC)=CC=C1C2=CC3=C(C4=C2C[C@@H]5C(C(=O)O[C@](C)(C)[C@@H]5)C4)OC(C)(C)O3",
+            "product_smiles": "COC1=CC(O)=CC=C1C2=CC3=C(C4=C2C[C@@H]5C(C(=O)O[C@](C)(C)[C@@H]5)C4)C(=CC(=C3O)O)",
+            "notes": "Deprotection of an isopropylidene acetal to a catechol and an ethyl aryl ether to a phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Lactone Hydrolysis / Acid-catalyzed Methanolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "79%",
+            "reactant_smiles": "CC1(C)[C@@H]2CC3=C([C@H]2CC(=O)O1)C(=CC(=C3O)O)C4=C(C=C(C=C4)O)OC",
+            "product_smiles": "CC(C)([C@@H]1CC2=C(C(=CC(=C2O)O)C3=C(C=C(C=C3)O)OC)[C@H]1C(=O)OC)O",
+            "notes": "The spiro-lactone is opened in the presence of HCl and methanol to form a methyl ester and a tertiary alcohol. The stereochemistry at the two chiral centers is retained.",
+            "substeps": []
+        }
+    ]
+}

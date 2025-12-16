@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "madumycin-1-seiple-2017",
+        "molecule_name": "Madumycin 1",
+        "class": "Natural Product",
+        "author": "Seiple",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enolization / Silylation",
+            "reagents": "DIPA, n-BuLi, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C, -78 °C, -78 °C to 23 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C\\CC(=O)OC",
+            "product_smiles": "C/C=C\\C=C(\\OC)/[OTBS]",
+            "notes": "Methyl ester is deprotonated at the alpha position and subsequently silylated to form a silyl enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Aldol Reaction",
+            "reagents": "TfOH, DCM, IPA",
+            "reagent_smiles": "CC(C)C=O",
+            "conditions": "-78 °C",
+            "yield": "94%",
+            "reactant_smiles": "C/C=C\\C=C(\\OC)/[OTBS]",
+            "product_smiles": "CC(C)[C@H](O)[C@@H](C)/C=C/C(=O)OC",
+            "notes": "Asymmetric Mukaiyama aldol reaction using a chiral borane catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidation / Ester to Amide Conversion",
+            "reagents": "AlMe3",
+            "reagent_smiles": "NCCC#C",
+            "conditions": "DCM, 0 °C to 23 °C then DCM, 50 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)[C@H](O)[C@H](C)/C=C\\C(=O)OC",
+            "product_smiles": "C#CCNC(=O)/C=C\\[C@H](C)[C@H](O)C(C)C",
+            "notes": "Methyl ester converted to N-propargyl amide via amidation with propargylamine using trimethylaluminum.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrostannylation",
+            "reagents": "CuCN, n-BuLi, Bu3SnH",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "100%",
+            "reactant_smiles": "C#CCNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)O",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)O",
+            "notes": "Copper-catalyzed hydrostannylation of a terminal alkyne, forming an E-vinylstannane.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Esterification / Fmoc Deprotection",
+            "reagents": "DCC, DMAP, Et2NH",
+            "reagent_smiles": "[Fmoc]N[C@@H](C)C(=O)O",
+            "conditions": "DCM, 23 °C",
+            "yield": "88%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)O",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)[C@@H](C)N",
+            "notes": "Esterification of a secondary alcohol with Fmoc-protected (S)-alanine using DCC/DMAP, followed by in-situ Fmoc deprotection to yield the free amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Macrolactamization / Amide Coupling",
+            "reagents": "DIPEA, HATU",
+            "reagent_smiles": "Br/C(\\C)=C/[C@H](CC(=O)CC1=NC(=C(O1)[Si](C)(C)C)C(=O)O)O[Si](C)(C)C(C)(C)C",
+            "conditions": "DCM, 23 °C",
+            "yield": "88%",
+            "reactant_smiles": "CC(C)[C@H]([C@H](C)/C=C/C(=O)NC/C=C/[Sn](CCCC)(CCCC)CCCC)OC(=O)[C@H](C)N",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@H](C)[C@H](C(C)C)OC(=O)[C@H](C)NC(=O)C1=C(OC(=N1)CC(=O)C[C@H](/C=C(\\C)/Br)O[Si](C(C)C)(C(C)C)C(C)C)[Si](C)(C)C",
+            "notes": "Amide coupling between the primary amine of the reactant and the carboxylic acid of the reagent, leading to macrocyclization. All stereocenters are retained (R configuration for all shown 'wedge' groups). Tributyltin (SnBu3), tert-butyldimethylsilyl ether (OTBS), and trimethylsilyl (TMS) groups are retained.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Bromination",
+                    "reagents": "DCM",
+                    "reagent_smiles": "BrBr",
+                    "conditions": "-30 °C",
+                    "yield": "",
+                    "reactant_smiles": "C/C=C/CCO",
+                    "product_smiles": "C[C@@H]([C@H](CO)Br)Br",
+                    "notes": "Anti-addition of bromine to an E-alkene, forming a vicinal dibromide with specific relative stereochemistry (syn-addition of bromine to the double bond is anti-diastereoselectivity).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Elimination (Dehydrohalogenation)",
+                    "reagents": "LDA, HMPA",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "C[C@@H]([C@@H](CO)Br)Br",
+                    "product_smiles": "Br/C(C)=C\\CO",
+                    "notes": "Stereoselective E2 elimination of a vicinal dibromide to form an E-allylic alcohol, likely involving deprotonation of the alcohol followed by elimination.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Oxidation",
+                    "reagents": "MnO2",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "C/C(=C\\CO)/Br",
+                    "product_smiles": "C/C(=C\\C=O)/Br",
+                    "notes": "Oxidation of an allylic alcohol to an alpha,beta-unsaturated aldehyde using manganese dioxide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Asymmetric Aldol Addition",
+                    "reagents": "TiCl4, DIPEA",
+                    "reagent_smiles": "CC(C)[C@H]1CSC(=S)N1C(=O)C",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "64%",
+                    "reactant_smiles": "Br/C(C)=C/C=O",
+                    "product_smiles": "CC(C)[C@H]1CSC(=S)N1C(=O)C[C@H](O)/C=C(\\C)/Br",
+                    "notes": "Aldol addition of an α,β-unsaturated aldehyde to a chiral thiazolidinethione auxiliary, forming a β-hydroxy amide equivalent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Silyl ether formation",
+                    "reagents": "TBSOTf, 2,6-lutidine",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@@H](/C=C(\\C)/Br)O",
+                    "product_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@@H](/C=C(\\C)/Br)[OTBS]",
+                    "notes": "Protection of a secondary alcohol to form a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.6",
+                    "reaction_type": "Chiral Auxiliary Mediated Acylation",
+                    "reagents": "n-BuLi",
+                    "reagent_smiles": "CC1=NC(=C(O1)[Si](C)(C)C)C(=O)O",
+                    "conditions": "THF, -78 °C",
+                    "yield": "71%",
+                    "reactant_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@@H](/C=C(\\C)/Br)[OTBS]",
+                    "product_smiles": "Br/C(C)=C/[C@H]([OTBS])CC(=O)CC1=NC(=C(O1)[Si](C)(C)C)C(=O)O",
+                    "notes": "Acyl substitution of the thiazolidine-2-thione chiral auxiliary by deprotonated 2-methyl-4-(trimethylsilyl)oxazole-5-carboxylic acid, retaining alkene and stereocenter configuration.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Stille coupling",
+            "reagents": "JackiePhos, Pd2dba3",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 50 °C",
+            "yield": "64%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)[C@@H](C)NC(=O)C1=C(OC(=N1)CC(=O)C[C@@H](/C=C(\\C)/Br)[OTBS])[TMS]",
+            "product_smiles": "CC(C)[C@@H]1[C@@H](C)/C=C/C(=O)NC/C=C/C(=C/[C@@H](CC(=O)CC2=NC(=C(O2)[TMS])C(=O)N[C@@H](C)C(=O)O1)[OTBS])/C",
+            "notes": "Macrocyclization via Stille coupling, joining a vinyl stannane and a vinyl bromide to form a new conjugated diene.",
+            "substeps": []
+        }
+    ]
+}

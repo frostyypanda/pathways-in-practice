@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ibogamine-olson-2025",
+        "molecule_name": "Ibogamine",
+        "class": "Natural Product",
+        "author": "Olson",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Condensation / Imine Formation",
+            "reagents": "TsOH",
+            "reagent_smiles": "[tBu][S@](=O)N",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCCC(OC)(OC)OC",
+            "product_smiles": "CCC/C(=N/[S@@](=O)[tBu])/OC",
+            "notes": "Acid-catalyzed condensation of an orthoester with a chiral sulfinamide to form a chiral sulfinimine. Stereochemistry at sulfur is inverted in the product based on visual representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Addition / Imine Alkylation",
+            "reagents": "PhMe2SiLi",
+            "reagent_smiles": "[Li][Si](C)(C)c1ccccc1.C1CCOC1",
+            "conditions": "THF, -78 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCC/C(=N\\[S@@](=O)C(C)(C)C)\\OC",
+            "product_smiles": "CCC/C=C(/N[S@](=O)C(C)(C)C)\\[Si](C)(C)c1ccccc1",
+            "notes": "Addition of a silyllithium reagent to a chiral sulfinyl imine, leading to an allylsilane product with stereochemical control at the new double bond and retention of sulfur configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cycloaddition / Michael Addition and Ring Formation",
+            "reagents": "LHMDS",
+            "reagent_smiles": "C=CC(=O)OC",
+            "conditions": "THF, -78 °C",
+            "yield": "80%",
+            "reactant_smiles": "CCC/C=C(\\[Si](C)(C)c1ccccc1)/N[S@](=O)C(C)(C)C",
+            "product_smiles": "C[C@H]1C[C@H](C(=O)OC)C[C@@H](C(=O)OC)C[C@@]1([Si](C)(C)c2ccccc2)N[S@](=O)C(C)(C)C",
+            "notes": "Formal [4+2] cycloaddition or Michael addition followed by ring closure, forming a cyclohexyl derivative. Atom count discrepancy detected: Reactant + Reagent has 21 C, 35 H, 1 Si, 1 N, 1 S, 3 O. Product has 23 C, 37 H, 1 Si, 1 N, 1 S, 5 O. The product structure shows 2 additional carbons, 2 additional oxygens, and 2 additional hydrogens compared to the sum of reactant and reagent heavy atoms. This suggests a more complex transformation or an additional unstated component/solvent involved in the reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization / Lactam Formation",
+            "reagents": "HCl, MeOH, NaHCO3, EtOAc",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H]1CC[C@H](C(=O)OC)C[C@@H](C(=O)OC)[C@@]1([Si](C)(C)c2ccccc2)N[S@](=O)C(C)(C)C",
+            "product_smiles": "O=C1N2C[C@@H](C(=O)OC)C[C@@]3([Si](C)(C)c4ccccc4)N1C[C@H](CC)CC3",
+            "notes": "An intramolecular cyclization leading to a bicyclic lactam. The chiral sulfinamide auxiliary is cleaved, and a methyl group is transformed into an ethyl group (a net gain of 1 carbon), along with incorporation of one additional carbon atom into the product structure, resulting in a net loss of 3 carbons overall.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide O-triflation",
+            "reagents": "Tf2O",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1CC2CC(C(=O)OC)C1(NC2=O)[Si](C)(C)[Ph]",
+            "product_smiles": "CCC1CC2CC(C(=O)OC)C1(N=C2OS(=O)(=O)C(F)(F)F)[Si](C)(C)[Ph]",
+            "notes": "Activation of a tertiary amide to form an O-triflated iminium intermediate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Imine Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "CC[C@@]1C[C@@H]2C[C@@]1([Si](C)(C)c3ccccc3)C[C@H](C(=O)OC)N=C2OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "CC[C@@]1C[C@@H]2C[C@@]1([Si](C)(C)c3ccccc3)C[C@H](C(=O)OC)[N@H][C@H]2",
+            "notes": "Reductive cleavage of an imine triflate to form a bicyclic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "NH4F",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 75 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1C[C@@]2N[C@H]3CC[C@@]1(C[C@H]3CC(=O)OC)[Si](C)(C)c4ccccc4",
+            "product_smiles": "CCC1C[C@@]2N[C@H]3CC[C@H]1(C[C@H]3CC(=O)OC)",
+            "notes": "Fluoride-mediated cleavage of dimethylphenylsilyl group to generate a C-H bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaI, K2CO3",
+            "reagent_smiles": "COC(=O)CCCCl",
+            "conditions": "80 °C",
+            "yield": "81%",
+            "reactant_smiles": "CCC1CC2C(C(C[NH]2)C1)CC(=O)OC",
+            "product_smiles": "CCC1CC2C(C(CN(CCCC(=O)OC)2)C1)CC(=O)OC",
+            "notes": "N-alkylation of a secondary amine (2-azabicyclo[2.2.2]octane derivative) with methyl 4-chlorobutanoate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Dieckmann Condensation",
+            "reagents": "LHMDS",
+            "reagent_smiles": "[Li+]N(Si(C)(C)C)Si(C)(C)C.C1CCOC1",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1CC2CC(C1N(CCCC(=O)OC)C2)C(=O)OC",
+            "product_smiles": "CCC1CC2C3CC(C1N2C4CCC(C4)C(=O)C(C(=O)OC)CC3)C",
+            "notes": "Intramolecular Dieckmann condensation forms a new 7-membered beta-keto ester ring system. One methyl ester group is lost (as methanol), and the other remains as part of the beta-keto ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Fischer Indole Synthesis",
+            "reagents": "H2SO4, PhNHNH2",
+            "reagent_smiles": "OS(=O)(=O)O.C1=CC=C(C=C1)NN",
+            "conditions": "65 °C",
+            "yield": "42% (2 steps)",
+            "reactant_smiles": "CCC1C2C3N4C(C2)C5CC(=O)C(C(=O)OC)C6C4C3C16",
+            "product_smiles": "CC[C@H]1CC2C3C1N(C2)C4C5=CC=CC=C5N[C@@H]4C3",
+            "notes": "Fischer indole synthesis of a polycyclic beta-ketoester to form (+)-Epiibogamine. The methyl ester and ketone groups are incorporated into the indole ring.",
+            "substeps": []
+        }
+    ]
+}

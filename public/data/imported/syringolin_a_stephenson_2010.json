@@ -1,0 +1,254 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "syringolin-a-stephenson-2010",
+        "molecule_name": "Syringolin A",
+        "class": "Natural Product",
+        "author": "Stephenson",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "C=CMgBr",
+            "conditions": "THF, -78 °C",
+            "yield": "86%",
+            "reactant_smiles": "CC1(C)N([C@H](C=O)CO1)[Cbz]",
+            "product_smiles": "C=CCH(O)[C@H]1COC(C)(C)N1[Cbz]",
+            "notes": "Nucleophilic addition of vinylmagnesium bromide to an aldehyde, forming a new secondary alcohol. The new chiral center is formed as a diastereomeric mixture (indicated by wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Johnson-Claisen rearrangement",
+            "reagents": "MeC(OMe)3, EtCO2H",
+            "reagent_smiles": "",
+            "conditions": "xylene",
+            "yield": "93%",
+            "reactant_smiles": "C=CC([C@H]1COC(C)(C)N1[Cbz])O",
+            "product_smiles": "CC1(C)N([C@H](\\C=C/CC[COOMe])CO1)[Cbz]",
+            "notes": "Johnson-Claisen rearrangement of an allylic alcohol to a gamma,delta-unsaturated methyl ester, with retention of oxazolidine stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "[Li+].[OH-]",
+            "conditions": "THF/H2O",
+            "yield": "96%",
+            "reactant_smiles": "CC1(C)N([C@@H](/C=C/CCC(=O)OC)CO1)[Cbz]",
+            "product_smiles": "CC1(C)N([C@@H](/C=C/CCC(=O)O)CO1)[Cbz]",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid using lithium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Curtius rearrangement",
+            "reagents": "DPPA, TEA, 4A MS",
+            "reagent_smiles": "",
+            "conditions": "toluene, then tBuOH",
+            "yield": "81%",
+            "reactant_smiles": "O=C(O)CCC/C=C/[C@@H]1N([Cbz])C(C)(C)OC1",
+            "product_smiles": "[Boc]NCCC/C=C/[C@@H]1N([Cbz])C(C)(C)OC1",
+            "notes": "Carboxylic acid converted to Boc-protected amine via Curtius rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxazolidine hydrolysis",
+            "reagents": "pTsOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "[Boc]NCC/C=C/[C@H]1COC(C)(C)N1[Cbz]",
+            "product_smiles": "[Boc]NCC/C=C/[C@H](CO)N[Cbz]",
+            "notes": "Acid-catalyzed hydrolysis of an oxazolidine protecting group to yield an amino alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Jones oxidation",
+            "reagents": "CrO₃, aq H₂SO₄",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "78%",
+            "reactant_smiles": "[Boc]NCC/C=C/[C@@H](CO)N[Cbz]",
+            "product_smiles": "[Boc]NCC/C=C/[C@@H](C(=O)O)N[Cbz]",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Peptide Coupling / Amide Formation",
+            "reagents": "EDCI, HOBt, DIPEA",
+            "reagent_smiles": "N[C@@H](C(C)C)/C=C/C(=O)OC",
+            "conditions": "DCM",
+            "yield": "70%",
+            "reactant_smiles": "[Boc]NHCC/C=C/[C@@H](C(=O)O)NH[Cbz]",
+            "product_smiles": "[Boc]NHCC/C=C/[C@@H](C(=O)N[C@@H](C(C)C)/C=C/C(=O)OC)NH[Cbz]",
+            "notes": "Amide bond formed between a Boc/Cbz protected amino acid and an amino ester via EDCI/HOBt coupling.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Amide Formation (Weinreb Amide Synthesis)",
+                    "reagents": "MeNH(OMe)HCl, EDCI, NMM",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "96%",
+                    "reactant_smiles": "CC(C)[C@@H](C(=O)O)N[Boc]",
+                    "product_smiles": "CC(C)[C@@H](C(=O)N(C)OC)N[Boc]",
+                    "notes": "Formation of a Weinreb amide from an N-Boc protected amino acid and N,O-dimethylhydroxylamine hydrochloride, with stereochemistry retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Weinreb Amide Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0°C",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)[C@H](C(=O)N(C)OC)N[Boc]",
+                    "product_smiles": "CC(C)[C@H](C=O)N[Boc]",
+                    "notes": "Reduction of a Weinreb amide to an aldehyde using lithium aluminum hydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Wittig reaction",
+                    "reagents": "Ph₃PCHCO₂Et",
+                    "reagent_smiles": "CCOC(=O)C=[P](c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "THF",
+                    "yield": "91% (2 steps)",
+                    "reactant_smiles": "CC(C)[C@@H](C=O)N[Boc]",
+                    "product_smiles": "CC(C)[C@@H](/C=C/C(=O)OC)N[Boc]",
+                    "notes": "Aldehyde converted to an alpha,beta-unsaturated methyl ester via a Wittig reaction, retaining the stereochemistry at the chiral center and forming an E-alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Boc deprotection",
+                    "reagents": "TFA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "99%",
+                    "reactant_smiles": "CC(C)[C@@H](N[Boc])/C=C/C(=O)OC",
+                    "product_smiles": "CC(C)[C@@H](N)/C=C/C(=O)OC",
+                    "notes": "Deprotection of a Boc-protected amine to a primary amine under acidic conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "[Li+].[OH-]",
+            "conditions": "H2O/THF",
+            "yield": "91%",
+            "reactant_smiles": "[Boc]NCCC/C=C/[C@@H]([Cbz]N)C(=O)N[C@H](C(C)C)/C=C/C(=O)OC",
+            "product_smiles": "[Boc]NCCC/C=C/[C@@H]([Cbz]N)C(=O)N[C@H](C(C)C)/C=C/C(=O)O",
+            "notes": "Hydrolysis of methyl ester to carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@H](/C=C/C(=O)O)NC(=O)[C@@H](/C=C/CCNH[Boc])NH[Cbz]",
+            "product_smiles": "CC(C)[C@H](/C=C/C(=O)O)NC(=O)[C@@H](/C=C/CC[NH2])NH[Cbz]",
+            "notes": "Deprotection of N-Boc protecting group to yield a primary amine using trifluoroacetic acid (TFA) in dichloromethane (DCM).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Macrolactamization / Peptide coupling",
+            "reagents": "BOP, HOAt, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "15% (2 steps)",
+            "reactant_smiles": "NCCC/C=C/[C@H](N[Cbz])C(=O)N[C@@H](C(C)C)/C=C/C(=O)O",
+            "product_smiles": "CC(C)[C@@H]1/C=C/C(=O)NCC/C=C/[C@H](N[Cbz])C(=O)N1",
+            "notes": "Intramolecular amide bond formation between a terminal amine and carboxylic acid, forming a 12-membered macrocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection (Cbz)",
+            "reagents": "HBr/AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "N1C(=O)CC/C=C/C[C@@H](N[Cbz])C(=O)N[C@H](C(C)C)/C=C/CCC1",
+            "product_smiles": "N1C(=O)CC/C=C/C[C@@H](N)C(=O)N[C@H](C(C)C)/C=C/CCC1",
+            "notes": "Deprotection of a Cbz-protected amine to a primary amine using HBr/AcOH on a complex macrocyclic lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Amide Coupling",
+            "reagents": "BOP, HOAt, DIPEA",
+            "reagent_smiles": "OC(=O)[C@H](C(C)C)NC(=O)N[C@@H](C(C)C)C(=O)OC(C)(C)C",
+            "conditions": "DCM/DMF",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)[C@H]1\\C=C/C(=O)NCC/C=C/[C@@H](C(=O)N1)N",
+            "product_smiles": "CC(C)[C@H]1\\C=C/C(=O)NCC/C=C/[C@@H](C(=O)N1)NC(=O)[C@H](C(C)C)NC(=O)N[C@@H](C(C)C)C(=O)OC(C)(C)C",
+            "notes": "Amide coupling of a primary amine on a macrolactam with a dipeptide (valine dimer) carboxylic acid using BOP, HOAt, and DIPEA as reagents in DCM/DMF.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Isocyanate Formation, Ester Exchange",
+                    "reagents": "NaHCO3",
+                    "reagent_smiles": "C(=O)(OC(Cl)(Cl)Cl)OC(Cl)(Cl)Cl",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "85%",
+                    "reactant_smiles": "CC(C)[C@H]([Boc])N",
+                    "product_smiles": "CC(C)[C@H]([Cbz])N=C=O",
+                    "notes": "Conversion of an amine to an isocyanate, accompanied by an ester exchange from tert-butyl to benzyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Urea Formation",
+                    "reagents": "DIPEA",
+                    "reagent_smiles": "CC(C)[C@H](N)C(=O)OC(C)(C)C",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "CC(C)[C@@H](C(=O)O[Bn])N=C=O",
+                    "product_smiles": "CC(C)[C@@H](C(=O)O[Bn])NC(=O)N[C@@H](C(C)C)C(=O)OC(C)(C)C",
+                    "notes": "Formation of a urea from an isocyanate and an amine. The stereochemistry of the incoming amine reagent is drawn as (R), while the corresponding chiral center in the product is drawn as (S). This represents an apparent inversion of stereochemistry in the drawing, which is chemically unlikely for this type of reaction. The generated SMILES reflect the visual representation in the screenshot.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Hydrogenolysis",
+                    "reagents": "Pd/C, H2",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "97%",
+                    "reactant_smiles": "CC(C)[C@@H]([Cbz])NC(=O)N[C@H](C(C)C)C(=O)OC(C)(C)C",
+                    "product_smiles": "CC(C)[C@@H](C(=O)O)NC(=O)N[C@H](C(C)C)C(=O)OC(C)(C)C",
+                    "notes": "Selective deprotection of benzyl ester to a carboxylic acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ester Deprotection",
+            "reagents": "HCO2H",
+            "reagent_smiles": "O=CO",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "O=C1[C@@H](NC(=O)[C@H](C(C)C)NC(=O)N[C@H](C(C)C)C(=O)OC(C)(C)C)C(=O)N[C@H](C(C)C)/C=C/CCCCCN1",
+            "product_smiles": "O=C1[C@@H](NC(=O)[C@H](C(C)C)NC(=O)N[C@H](C(C)C)C(=O)O)C(=O)N[C@H](C(C)C)/C=C/CCCCCN1",
+            "notes": "Acid-catalyzed hydrolysis of tert-butyl ester to carboxylic acid.",
+            "substeps": []
+        }
+    ]
+}

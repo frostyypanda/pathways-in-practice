@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "deoxocassine-ha-2016",
+        "molecule_name": "Deoxocassine",
+        "class": "Natural Product",
+        "author": "Ha",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Aziridination",
+            "reagents": "CH3CN, K2CO3",
+            "reagent_smiles": "N[C@@H](C)c1ccccc1",
+            "conditions": "0 °C to rt",
+            "yield": "60%",
+            "reactant_smiles": "CCOC(=O)C(Br)CBr",
+            "product_smiles": "CCOC(=O)[C@@H]1CN1[C@H](C)c1ccccc1",
+            "notes": "Formation of an aziridine ring from a vicinal dibromide and an amine with retention of stereochemistry at the amine chiral center and inversion/cyclization at the carbon centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "[Ph][C@H](C)N1C[C@@H]1[C(=O)OEt]",
+            "product_smiles": "[Ph][C@H](C)N1C[C@@H]1CO",
+            "notes": "Stereospecific reduction of an ethyl aziridine-2-carboxylate to an aziridine-2-methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "ClC(=O)C(=O)Cl.CS(=O)C.CCN(CC)CC",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@@H]([Ph])N1CC[C@@H](CO)1",
+            "product_smiles": "C[C@@H]([Ph])N1CC[C@@H](C=O)1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Addition",
+            "reagents": "LiHMDS, Ethyl propiolate",
+            "reagent_smiles": "[Li]N(Si(C)(C)C)Si(C)(C)C.CCOC(=O)C#C",
+            "conditions": "THF, 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "C[C@H]([Ph])N1[C@H](C=O)[C@H]1",
+            "product_smiles": "C[C@H]([Ph])N1[C@H]([C@H](O)C#CC(=O)OCC)[C@H]1",
+            "notes": "Nucleophilic addition of ethyl propiolate to a chiral aziridine aldehyde, forming a propargyl alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol protection (Silyl ether formation)",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "93%",
+            "reactant_smiles": "CCOC(=O)C#C[C@H](O)[C@@H]1CN1[C@H](C)[Ph]",
+            "product_smiles": "CCOC(=O)C#C[C@H](O[TBS])[C@@H]1CN1[C@H](C)[Ph]",
+            "notes": "Secondary alcohol is protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Weinreb Amide Synthesis",
+            "reagents": "NHMe(OMe), i-PrMgCl, THF",
+            "reagent_smiles": "CNOC.CC(C)[Mg]Cl.C1CCOC1",
+            "conditions": "THF",
+            "yield": "79%",
+            "reactant_smiles": "CCOC(=O)C#C[C@@H]([OTBS])[C@@H]1CN1[C@@H](C)[Ph]",
+            "product_smiles": "O=C(N(C)OC)C#C[C@@H]([OTBS])[C@@H]1CN1[C@@H](C)[Ph]",
+            "notes": "Ester converted to Weinreb amide via reaction with i-PrMgCl and N-methyl-N-methoxyamine. Stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Grignard reaction",
+            "reagents": "",
+            "reagent_smiles": "CCCCCCCCCCCC[Mg]Br",
+            "conditions": "THF",
+            "yield": "90%",
+            "reactant_smiles": "c1ccccc1[C@@H](C)N1[C@H][C@@H](C#CC(=O)N(C)OC)1[OTBS]",
+            "product_smiles": "c1ccccc1[C@@H](C)N1[C@H][C@@H](C#CC(=O)CCCCCCCCCCCC)1[OTBS]",
+            "notes": "Grignard reagent addition to a Weinreb amide to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenolysis, Aziridine Ring Expansion, Alkyne Reduction",
+            "reagents": "Pd(OH)2, H2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[C@H](C)[Ph]N1[C@@H]C([OTBS])(C#CC(=O)CCCCCCCCCCCC)C1",
+            "product_smiles": "[C@@H](C)1[NH]C[C@@H](CCCCCCCCCCCC)CC[C@H]1[OTBS]",
+            "notes": "The N-(1-phenylethyl) protecting group is removed by hydrogenolysis. The alkyne is reduced to an alkane. The C(=O)C#C part of the side chain is eliminated, and the aziridine ring opens and rearranges to form a piperidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (TBS ether cleavage)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "96% (2 steps)",
+            "reactant_smiles": "CCCCCCCCCCCC[C@H]1CC[C@H]([C@H](C)N1)[OTBS]",
+            "product_smiles": "CCCCCCCCCCCC[C@H]1CC[C@H]([C@H](C)N1)O",
+            "notes": "Acid-catalyzed cleavage of the TBS ether protecting group to yield an alcohol.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fasicularin-fuwa-2024",
+        "molecule_name": "Fasicularin",
+        "class": "Natural Product",
+        "author": "Fuwa",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "imidazole",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C",
+            "conditions": "DCM",
+            "yield": "99%",
+            "reactant_smiles": "OC[C@@H]1CO1",
+            "product_smiles": "[OTBS]C[C@@H]1CO1",
+            "notes": "Protection of the primary alcohol of (R)-glycidol as its tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide opening / Azide addition",
+            "reagents": "NaN3, NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)OC[C@H]1CO1",
+            "product_smiles": "CC(C)(C)[Si](C)(C)OC[C@@H](O)CN=[N+]=[N-]",
+            "notes": "Nucleophilic opening of epoxide by azide, forming an azide and a hydroxyl group. Stereochemistry appears to invert at the carbon bearing the hydroxyl group (from (S) in reactant to (R) in product).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Staudinger Reduction / Aziridine Formation",
+            "reagents": "PPh3",
+            "reagent_smiles": "",
+            "conditions": "CH3CN, rt to 80 °C",
+            "yield": "",
+            "reactant_smiles": "[N-]=[N+]=NCC[C@H](O)CO[OTBS]",
+            "product_smiles": "C1NC[C@@H]1CO[OTBS]",
+            "notes": "Azide reduction to amine, followed by intramolecular cyclization (SN2-like) to form an aziridine with inversion of stereochemistry at the substituted carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Protection (Carbamate Formation)",
+            "reagents": "",
+            "reagent_smiles": "ClC(=O)OCC1=CC=CC=C1.CCN(CC)CC",
+            "conditions": "0 °C to rt",
+            "yield": "85%",
+            "reactant_smiles": "N1[C@@H](CC1)CC[OTBS]",
+            "product_smiles": "N([Cbz])[C@@H](CC1)CC[OTBS]",
+            "notes": "(2 steps)",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Aziridine ring opening",
+            "reagents": "LiI, AcOH",
+            "reagent_smiles": "[Li]I.CC(=O)O",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "[OTBS]C[C@@H]1CN1[Cbz]",
+            "product_smiles": "IC[C@H](N[Cbz])CO[TBS]",
+            "notes": "Acid-catalyzed aziridine ring opening by iodide nucleophile with stereochemical inversion.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Coupling reaction",
+            "reagents": "[Cu(CH3CN)4]BF4, K2CO3",
+            "reagent_smiles": "C1=CC(=NC=C1)C2=CC=CC(=N2)C3=CC=CC=N3.C#CCC/C=C\\C[TMS]",
+            "conditions": "DMSO, 50 °C",
+            "yield": "35%",
+            "reactant_smiles": "I-C[C@H]([NHCbz])CO[TBS]",
+            "product_smiles": "[TBS]OC[C@H](CC#CCC/C=C\\C[TMS])[NHCbz]",
+            "notes": "Copper-catalyzed coupling of an iodoalkane with a silyl-protected enyne, preserving stereochemistry.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Allylic silylation with double bond migration",
+                    "reagents": "KOtBu, n-BuLi, TMSCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -25 °C to rt",
+                    "yield": "55%",
+                    "reactant_smiles": "C=CCCCCCCCCO",
+                    "product_smiles": "OCCCC/C=C\\C[Si](C)(C)C",
+                    "notes": "Reactant is a 1-nonen-9-ol. Product is a 5-(trimethylsilyl)hept-3-en-1-ol. The reaction involves the addition of a TMS group, a double bond migration from the terminal position, and a formal loss of two carbons from the main chain.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Swern Oxidation",
+                    "reagents": "(COCl)2, DMSO, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "-78 to 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C[Si](C)(C)C/C=C\\CCCCCCO",
+                    "product_smiles": "C[Si](C)(C)C/C=C\\CCCCC=O",
+                    "notes": "Primary alcohol oxidized to aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Seyferth-Gilbert Homologation",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "CC(=O)C(=[N+]=[N-])P(=O)(OC)OC",
+                    "conditions": "MeOH",
+                    "yield": "75%",
+                    "reactant_smiles": "[TMS]C/C=C\\CCCCC=O",
+                    "product_smiles": "C#CCCCC/C=C\\C[TMS]",
+                    "notes": "Conversion of an aldehyde to a terminal alkyne using a diazo phosphonate reagent.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Gold-catalyzed cascade cyclization / Deprotection",
+            "reagents": "(Ph3P)AuCl, AgSbF6, benzoic acid",
+            "reagent_smiles": "",
+            "conditions": "DCE, 40 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C[C@H](CC#CCCC/C=C\\C[TMS])N[Cbz]",
+            "product_smiles": "C=C[C@@H]1CCCC[C@@]21CC[C@@H](CO)N2[Cbz]",
+            "notes": "Intramolecular cyclization of an enyne with concomitant deprotection of TBS and TMS groups, and formation of a fused bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)Cl.C1=CNC=N1",
+            "conditions": "DCE, 0 °C",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]1CCCC[C@@]21CC[C@@H](CO)N2[Cbz]",
+            "product_smiles": "C=C[C@@H]1CCCC[C@@]21CC[C@@H](C[OTBS])N2[Cbz]",
+            "notes": "Protection of a primary alcohol with a TBS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Cleavage (Lemieux-Johnson)",
+            "reagents": "OsO4, NMO, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "88%",
+            "reactant_smiles": "N1([Cbz])[C@H](CO[OTBS])CC[C@@]2([C@H](C=C)CCCC2)C1",
+            "product_smiles": "N1([Cbz])[C@H](CO[OTBS])CC[C@@]2([C@H](C=O)CCCC2)C1",
+            "notes": "An alkene is oxidatively cleaved to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Horner-Wadsworth-Emmons reaction",
+            "reagents": "KOtBu",
+            "reagent_smiles": "CCCCCC(=O)CP(=O)(OC)OC",
+            "conditions": "THF, 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "[TBS]OC[C@@H]1CC[C@H]2C[C@H](C=O)CCC[C@H]2N1[Cbz]",
+            "product_smiles": "[TBS]OC[C@@H]1CC[C@H]2C[C@@H](\\C=C/C(=O)CCCCCC)CCC[C@H]2N1[Cbz]",
+            "notes": "Aldehyde undergoes Horner-Wadsworth-Emmons reaction with dimethyl hexanoylmethylphosphonate to form an E-alpha,beta-unsaturated ketone.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Horner-Wadsworth-Emmons type reaction (beta-ketophosphonate synthesis)",
+                    "reagents": "nBuLi",
+                    "reagent_smiles": "CCCCCCC(=O)OC",
+                    "conditions": "-78 °C, THF",
+                    "yield": "91%",
+                    "reactant_smiles": "COP(=O)(C)OC",
+                    "product_smiles": "CCCCCCC(=O)CP(=O)(OC)OC",
+                    "notes": "Deprotonation of methylphosphonate to form a carbanion, followed by addition to a methyl ester to form a beta-ketophosphonate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "H2, Pd(OH)2/C, EtOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCCCC(=O)/C=C/[C@@H]1CCCC[C@@]21CC[C@H](C[OTBS])N2[Cbz]",
+            "product_smiles": "N1C[C@H](C[OTBS])C[C@@H]2C[C@@]31CCCC[C@@H]42C[C@H](CCCCCC)CC(N1)3",
+            "notes": "Reductive cyclization involving hydrogenolysis of Cbz, reduction of alkene and ketone, and intramolecular reductive amination to form a complex polycyclic tertiary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection (TBS ether to alcohol)",
+            "reagents": "HCl, EtOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "solvent: EtOH, H2O",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "CCCCCC[C@H]1CC[C@H]2CCCC[C@@]32CC[C@@H](C[OTBS])N13",
+            "product_smiles": "CCCCCC[C@H]1CC[C@H]2CCCC[C@@]32CC[C@@H](CO)N13",
+            "notes": "Acid-catalyzed deprotection of a TBS (tert-butyldimethylsilyl) ether to yield the primary alcohol. The reaction is stated to be 76% over two steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "NH4SCN, Ph3P, DEAD",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "56%",
+            "reactant_smiles": "CCCCCC[C@H]1CC[C@@H]2CCCC[C@@]32CC[C@@H](CO)N13",
+            "product_smiles": "CCCCCC[C@H]1CC[C@@H]2CCCC[C@@]32CC[C@H](CN=C=S)N13",
+            "notes": "Alcohol converted to isothiocyanate with inversion of stereochemistry at the reacting carbon.",
+            "substeps": []
+        }
+    ]
+}

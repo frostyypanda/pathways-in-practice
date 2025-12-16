@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strychnine-macmillan-2011",
+        "molecule_name": "Strychnine",
+        "class": "Natural Product",
+        "author": "MacMillan",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, PMBCl",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC2=C(C1)NC3=CC=CC=C23",
+            "product_smiles": "[Boc]N1CCC2=C(C1)N([PMB])C3=CC=CC=C23",
+            "notes": "Alkylation of the indole nitrogen with p-methoxybenzyl chloride (PMBCl) using sodium hydride (NaH) as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidative Ring Opening / Oxidation",
+            "reagents": "dioxane",
+            "reagent_smiles": "O=[Se]=O.O",
+            "conditions": "dioxane, H2O",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC2=C(C1)N([PMB])C3=CC=CC=C23",
+            "product_smiles": "[Boc]NCCC1=C(C=O)N([PMB])C2=CC=CC=C12",
+            "notes": "Oxidation of a 2,3,4,9-tetrahydro-1H-pyrido[3,4-b]indole derivative with SeO2, leading to ring opening, formation of an indole aldehyde at C1 and an N-Boc protected aminoethyl side chain at C2.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "18-crown-6, KHMDS",
+            "reagent_smiles": "CCOP(=O)(OCC)C[Se]C",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "O=Cc1c(CCC[NH][Boc])n([PMB])c2ccccc12",
+            "product_smiles": "C[Se]\\C=C/c1c(CCC[NH][Boc])n([PMB])c2ccccc12",
+            "notes": "Horner-Wadsworth-Emmons olefination of an indole aldehyde to form a seleno-vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cascade cyclization",
+            "reagents": "propargyl aldehyde",
+            "reagent_smiles": "CN1C(=O)N[C@@H](C(C)(C)C)[C@@H]1c2cccc3ccccc23",
+            "conditions": "toluene",
+            "yield": "",
+            "reactant_smiles": "[Boc]NHCCC1=C(/C=C/[Se]C)N([PMB])C2=CC=CC=C12",
+            "product_smiles": "[Boc]N1CC[C@@]23C4=C(C=CC=C4)N([PMB])C3=CC=C(C=O)[C@@H]21",
+            "notes": "Intramolecular cyclization of an indole derivative with propargyl aldehyde and a chiral imidazolidinone catalyst, featuring the elimination of a selenomethyl group and formation of a complex polycyclic structure containing an aldehyde and a protected amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Decarbonylation",
+            "reagents": "(Ph₃P)RhCl",
+            "reagent_smiles": "",
+            "conditions": "solvent: toluene, PhCN",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@]23C4=C(C=CC=C4)N([PMB])C3=CC=C(C=O)[C@@H]21",
+            "product_smiles": "[Boc]N1CC[C@]23C4=C(C=CC=C4)N([PMB])C3=CC=C[C@@H]21",
+            "notes": "Aldehyde decarbonylation to an alkene using Wilkinson's catalyst (Ph₃P)RhCl. The aldehyde group (-CHO) is removed and replaced by a hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carboxylation / Esterification",
+            "reagents": "COCl2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "toluene, then MeOH",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@@]23C4=C(C=CC=C4)N([PMB])C3=CC=C[C@@H]21",
+            "product_smiles": "[Boc]N1CC[C@@]23C4=C(C=CC=C4)N([PMB])C3C(C(=O)OC)=CC[C@@H]21",
+            "notes": "Formation of a methyl ester at the C-3 position of the diene, accompanied by the saturation of one double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@@]23C4=CC=CC=C4N([PMB])C3=C(C=C[C@@H]21)C(=O)OC",
+            "product_smiles": "[Boc]N1CC[C@@]23C4=CC=CC=C4N([PMB])C3=C(CCH[C@@H]21)C(=O)OC",
+            "notes": "Partial reduction of a conjugated diene system with DIBAL-H. One double bond is reduced to a single bond, forming two new achiral centers (as stereochemistry is not indicated in the product structure for these new centers). The existing stereocenters are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "O=C(O)C(F)(F)F",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)CN2C3=CC=CC=C3[C@]4(C2)[C@H]5C=C[C@H](C(=O)OC)C[C@H]5N(C(=O)OC(C)(C)C)C4",
+            "product_smiles": "COC1=CC=C(C=C1)CN2C3=CC=CC=C3[C@]4(C2)[C@H]5C=C[C@H](C(=O)OC)C[C@H]5N4",
+            "notes": "Boc deprotection of a complex spiro-fused indole derivative using trifluoroacetic acid (TFA).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular N-Alkylation",
+            "reagents": "DBU, K2CO3, DMF",
+            "reagent_smiles": "CC(=O)OC/C=C/C(I)Br",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(OC)[C@H]1\\C=C/[C@H]2[C@@H]3N([PMB])C4=CC=CC=C4[C@]32C[C@H]5CNCC[C@H]51",
+            "product_smiles": "O=C(OC)[C@H]1\\C=C/[C@H]2[C@@H]3N([PMB])C5=CC=CC=C5[C@]32C[C@H]6N(CC(I)=C/CO[OAc])CC[C@H]61",
+            "notes": "Intramolecular N-alkylation of the secondary amine with an allylic iodo-bromide reagent to form a new 6-membered ring and extend the bridged system. Stereochemistry maintained in the core, and alkene in reagent/product is cis for the double bond with iodine and OAc.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Selective Alcohol Protection",
+                    "reagents": "TESCl, imidazole, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C(#CCO)CO",
+                    "product_smiles": "[TES]OCC#CCO",
+                    "notes": "One primary alcohol is selectively protected as a triethylsilyl (TES) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Hydroalumination and Iodination (Z-Vinyl Iodide Formation)",
+                    "reagents": "Red-Al then, I2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[TESO]CC#CCO",
+                    "product_smiles": "[TESO]C/C(=C/CO)/I",
+                    "notes": "Formation of a (Z)-vinyl iodide from a propargyl alcohol derivative, protected as a TES ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Deprotection and Esterification",
+                    "reagents": "Et3N, AcCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC[Si](CC)(CC)OCC(I)=CCO",
+                    "product_smiles": "OCC(I)=CC[OAc]",
+                    "notes": "Selective deprotection of TES group and acetylation of a primary alcohol. Note: the deprotection of the TES group is unexpected with the given reagents (Et3N, AcCl).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Appel reaction",
+                    "reagents": "",
+                    "reagent_smiles": "[Ph]3P.BrBr.[Et]3N",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC(=O)O\\C=C(/CO)I",
+                    "product_smiles": "CC(=O)O\\C=C(/I)CBr",
+                    "notes": "An Appel reaction converts a primary alcohol to a primary bromide using triphenylphosphine and bromine, in this case on an E-alkene framework.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "CC(C)C[AlH]CC(C)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OAc]CC=C(I)C[N]1CC[C@]23C4=C(C=CC=C4)[N]([PMB])[C@H]3C(=CC[C@@H]21)C(=O)OC",
+            "product_smiles": "HOCC=C(I)C[N]1CC[C@]23C4=C(C=CC=C4)[N]([PMB])[C@H]3C(=CC[C@@H]21)C(=O)OC",
+            "notes": "Reduction of an allylic acetate to an allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Heck cyclization",
+            "reagents": "Pd(OAc)2, Bu4NCl, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)CN2C3=C(C=CC=C3)[C@@]4(CC5N(C/C(=C/CO)/I)CC5)[C@@H](C=C(C(=O)OC)CC4)C2",
+            "product_smiles": "COC1=CC=C(C=C1)CN2[C@H]3[C@@H](O)C4=CC(O5)[C@H]6C[C@H]7N(CC8)[C@H]8CC([C@@]32)(C=CC=C)C7C456",
+            "notes": "Intramolecular Heck cyclization to form a polycyclic structure with a new ether ring and a hydroxyl group, along with the elimination of iodine and the reduction of the alkene to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "N-deprotection (PMB)",
+            "reagents": "PhSH, TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[PMB]N2C3=C(C=CC=C3)[C@]45CCN6CC7=CCOC([C@H]([C@H]7C[C@H]46)[C@@H]52)O",
+            "product_smiles": "C1=CC=C2C(=C1)[C@]34CCN5CC6=CCOC([C@H]([C@H]6C[C@@H]35)[C@@H]4N2)O",
+            "notes": "Deprotection of N-p-methoxybenzyl (N-PMB) group from the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Lactamization, Cyclization, Strychnine Synthesis",
+            "reagents": "NaOAc, Ac₂O, AcOH, malonic acid",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C2C(=C1)[C@]34CCN5CC6=CCOC([C@@H]([C@@H]6C[C@@H]35)[C@@H]4N2)O",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)C[C@@H]4[C@H]5[C@@H]6C[C@@H]7[C@]2(CCN7CC6=CCO4)[C@@H]53",
+            "notes": "Conversion of Wieland-Gumlich aldehyde to (-)-Strychnine. Stereochemistry of reactant and product SMILES corrected to precisely match the drawn representation in the screenshot.",
+            "substeps": []
+        }
+    ]
+}

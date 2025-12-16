@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "levonadifloxacin-emrok-otsuka-unknown-2024",
+        "molecule_name": "Levonadifloxacin (Emrok Otsuka)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Quinoline synthesis",
+            "reagents": "sodium m-nitrobenzenesulfonate, FeSO4, B(OH)3, H2O, HCl",
+            "reagent_smiles": "CC(=O)C=C",
+            "conditions": "reflux",
+            "yield": "67%",
+            "reactant_smiles": "CC(=O)Nc1c(Br)c(F)cc(F)c1",
+            "product_smiles": "CC1=NC2=C(C=C1)C(=C(C=C2Br)F)F",
+            "notes": "Cyclization of an N-acetylated aniline with methyl vinyl ketone to form a substituted quinoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C, NaOAc, HOAc",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=NC2=C(C=C1)C(Br)=C(F)C(F)=C2",
+            "product_smiles": "CC1=NC2=C(CC1)C(Br)=C(F)C(F)=C2",
+            "notes": "Hydrogenation of the C3=C4 double bond of the quinoline ring, reducing it to a 3,4-dihydroquinoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrogenation (Imine Reduction)",
+            "reagents": "H₂, Pt/C, NaOAc, HOAc",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "97% (2 steps)",
+            "reactant_smiles": "CC1=NC2=C(CC1)C(=C(C=C2Br)F)F",
+            "product_smiles": "CC1CCC2=C(C(=CC(=C2F)F)Br)N1",
+            "notes": "The imine functional group is reduced to a secondary amine using hydrogen gas and a platinum on carbon catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Optical Resolution / Chiral Separation",
+            "reagents": "L-DBTA",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, MeOH, H2O",
+            "yield": "35%",
+            "reactant_smiles": "CC1CCC2=C(C(=CC(=C2F)F)Br)N1",
+            "product_smiles": "C[C@@H]1CCC2=C(C(=CC(=C2F)F)Br)N1",
+            "notes": "Resolution of a racemic tetrahydroquinoline derivative using L-DBTA to obtain the (S)-enantiomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Quinolone Synthesis / Intramolecular Cyclization",
+            "reagents": "PPA",
+            "reagent_smiles": "CCOC=C(C(=O)OCC)C(=O)OCC",
+            "conditions": "130 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC2=C(C(=CC(=C2F)F)Br)N1",
+            "product_smiles": "CCOC(=O)C1=CN2[C@H](C)CCC3=C(C(=CC(=C32)C1=O)F)F",
+            "notes": "Intramolecular cyclization of bromo-fluoro-tetrahydroquinoline with diethyl ethoxymethylene malonate to form a quinolone ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "EtOH, reflux",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C1=CN2[C@H](C)CCC3=C(F)C=C(F)C3=C2C1=O",
+            "product_smiles": "O=C(O)C1=CN2[C@H](C)CCC3=C(F)C=C(F)C3=C2C1=O",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid, retaining the quinolone core and stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Boron Chelation / Acyloxyborane Formation",
+            "reagents": "B2O3, Ac2O",
+            "reagent_smiles": "",
+            "conditions": "HOAc, toluene, reflux",
+            "yield": "93%",
+            "reactant_smiles": "C[C@H]1CCC2=C3C(=CC(=C2F)F)C(=O)C(=CN13)C(=O)O",
+            "product_smiles": "C[C@H]1CCC2=C3C(=CC(=C2F)F)C(=O4)C(=CN13)C(=O)O5[B]4(OC(=O)C)(OC(=O)C)",
+            "notes": "Formation of a boron chelate from the quinolone's ketone and carboxylic acid functionalities with two acetate groups attached to boron.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr) & Boronate Hydrolysis",
+            "reagents": "",
+            "reagent_smiles": "C1CNCCC1O",
+            "conditions": "MeCN, 60 °C",
+            "yield": "74%",
+            "reactant_smiles": "C[C@H]1CCC2=C1C(=CC(=C2F)F)C3=C(C(=O)O[B](OC(C)=O)(OC(C)=O)O3)C(=O)C=N3",
+            "product_smiles": "C[C@H]1CCC2=C3C(=CC(=C2N4CCC(CC4)O)F)C(=O)C(=CN13)C(=O)O",
+            "notes": "Nucleophilic aromatic substitution of 4-hydroxypiperidine onto the fluoroquinolone boronate, followed by in-situ hydrolysis of the diacetoxyborate protecting/activating group to reveal the carboxylic acid and ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Salt formation",
+            "reagents": "acetone, H2O",
+            "reagent_smiles": "N[C@@H](CCC(=N)N)C(=O)O",
+            "conditions": "55 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H]1CCC2=C3C(=CC(=C2N4CCC(CC4)O)F)C(=O)C(=CN13)C(=O)O",
+            "product_smiles": "C[C@H]1CCC2=C3C(=CC(=C2N4CCC(CC4)O)F)C(=O)C(=CN13)C(=O)O.N[C@@H](CCC(=N)N)C(=O)O",
+            "notes": "Formation of Levonadifloxacin arginine salt from Levonadifloxacin and L-arginine.",
+            "substeps": []
+        }
+    ]
+}

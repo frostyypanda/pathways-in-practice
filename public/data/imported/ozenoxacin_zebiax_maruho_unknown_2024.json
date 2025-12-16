@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ozenoxacin-zebiax-maruho-unknown-2024",
+        "molecule_name": "Ozenoxacin (Zebiax Maruho)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Buchwald-Hartwig amination",
+            "reagents": "Pd2(dba)3, (S)-BINAP, tBuONa",
+            "reagent_smiles": "C1CC1N",
+            "conditions": "toluene, 80 °C",
+            "yield": "84%",
+            "reactant_smiles": "Cc1c(Br)cccc(Br)c1",
+            "product_smiles": "Cc1c(Br)cccc(NC2CC2)c1",
+            "notes": "One aryl bromide is replaced with a cyclopropylamine group via Buchwald-Hartwig amination.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Conrad-Limpach Quinolone Synthesis",
+            "reagents": "PPA",
+            "reagent_smiles": "CCOC=C(C(=O)OCC)C(=O)OCC",
+            "conditions": "130 °C",
+            "yield": "43%",
+            "reactant_smiles": "Cc1c(Br)c(NC2CC2)ccc1",
+            "product_smiles": "CCOC(=O)c1cn(C2CC2)c2c(C)c(Br)ccc2c1=O",
+            "notes": "Synthesis of a quinolone derivative via condensation of an aniline with diethyl ethoxymethylenemalonate, followed by cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Stille coupling",
+            "reagents": "PdCl2(PPh3)2",
+            "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)C1=CC(=C(N=C1)N(C)C(=O)C)C",
+            "conditions": "toluene, reflux",
+            "yield": "80%",
+            "reactant_smiles": "CCOC(=O)C1=CN(C2CC2)C3=C(C)C(=CC=C3C1=O)Br",
+            "product_smiles": "CCOC(=O)C1=CN(C2CC2)C3=C(C)C(=CC=C3C1=O)C4=CC(=C(N=C4)N(C)C(=O)C)C",
+            "notes": "Stille coupling of a brominated quinolone with a pyridyl tributyltin reagent.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Nucleophilic Aromatic Substitution",
+                    "reagents": "40% MeNH2",
+                    "reagent_smiles": "",
+                    "conditions": "180 °C",
+                    "yield": "90%",
+                    "reactant_smiles": "CC1=C(Cl)N=CC(=C1)Br",
+                    "product_smiles": "CC1=C(NC)N=CC(=C1)Br",
+                    "notes": "Chloride on pyridine is substituted by methylamine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "N-Acetylation",
+                    "reagents": "pyridine",
+                    "reagent_smiles": "CC(=O)OC(=O)C",
+                    "conditions": "reflux",
+                    "yield": "89%",
+                    "reactant_smiles": "CNC1=NC=C(Br)C=C1C",
+                    "product_smiles": "CC(=O)N(C)c1nc(C)cc(Br)c1",
+                    "notes": "N-Acetylation of a secondary amine using acetic anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Stille coupling",
+                    "reagents": "(Bu₃Sn)₂, PdCl₂(PPh₃)₂, toluene",
+                    "reagent_smiles": "",
+                    "conditions": "reflux",
+                    "yield": "41%",
+                    "reactant_smiles": "CN(C(=O)C)c1ncc(Br)cc1C",
+                    "product_smiles": "CN(C(=O)C)c1ncc(C)cc1[Sn](CCCC)(CCCC)CCCC",
+                    "notes": "Bromine at the pyridine ring is replaced by a tributyltin group via a Stille coupling reaction.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrolysis (Ester Hydrolysis)",
+            "reagents": "aq NaOH, 1M HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "88%",
+            "reactant_smiles": "CCOC(=O)C1=CN(C2CC2)C3=C(C)C(=CC=C3C1=O)C4=CC(=C(N=C4)N(C)C(=O)C)C",
+            "product_smiles": "O=C(O)C1=CN(C2CC2)C3=C(C)C(=CC=C3C1=O)C4=CC(=C(N=C4)N(C)C(=O)C)C",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Hydrolysis / Deacetylation",
+            "reagents": "conc HCl",
+            "reagent_smiles": "",
+            "conditions": "H2O, reflux",
+            "yield": "85%",
+            "reactant_smiles": "O=C1C=C(C(=O)O)N(C2CC2)c3c(C)cc(cc13)-c4c(C)ncc(C)c4N(C)C(=O)C",
+            "product_smiles": "O=C1C=C(C(=O)O)N(C2CC2)c3c(C)cc(cc13)-c4c(C)ncc(C)c4NC",
+            "notes": "Deacetylation of an N-acetyl-N-methylamino group on a pyridine ring using acid hydrolysis.",
+            "substeps": []
+        }
+    ]
+}

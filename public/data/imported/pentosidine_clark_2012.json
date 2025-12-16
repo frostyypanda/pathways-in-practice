@@ -1,0 +1,146 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pentosidine-clark-2012",
+        "molecule_name": "Pentosidine",
+        "class": "Natural Product",
+        "author": "Clark",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reductive Amination",
+            "reagents": "TFA, NaBH(OAc)3",
+            "reagent_smiles": "COC1=CC=C(C=O)C(=C1)OC",
+            "conditions": "EtOAc",
+            "yield": "83%",
+            "reactant_smiles": "C1=CN=C(C(=C1)N)Cl",
+            "product_smiles": "N1=CC=C(N[DMB])C(Cl)=C1",
+            "notes": "Formation of a secondary amine via reductive amination of 2-chloro-3-aminopyridine with 2,4-dimethoxybenzaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Buchwald-Hartwig Amination (intramolecular cyclization)",
+            "reagents": "Pd2dba3, Me4tBuXPhos, K3PO4, formamide",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH, 110°C",
+            "yield": "82%",
+            "reactant_smiles": "[DMB]NC1=CC=CN=C1Cl",
+            "product_smiles": "[DMB]N1C=NC2=NC=CC=C21",
+            "notes": "Intramolecular cyclization of 2-chloro-3-(2,4-dimethoxybenzylamino)pyridine to 1-(2,4-dimethoxybenzyl)-1H-imidazo[4,5-b]pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "C-H Chlorination",
+            "reagents": "LDA, C2Cl6",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "81%",
+            "reactant_smiles": "COc1ccc(cc1OC)CN2C=NC3=NC=CC=C32",
+            "product_smiles": "COc1ccc(cc1OC)CN2C(Cl)=NC3=NC=CC=C32",
+            "notes": "Direct chlorination of an N-(2,4-dimethoxybenzyl)imidazo[1,2-a]pyridine derivative at the 3-position.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution (SNAr)",
+            "reagents": "DIPEA",
+            "reagent_smiles": "[Boc]N[C@@H](CCC[NH3+])C(=O)OC(C)(C)C",
+            "conditions": "reflux",
+            "yield": "87%",
+            "reactant_smiles": "COc1ccc(cc1OC)CN2C3=CC=CN=C3N=C2Cl",
+            "product_smiles": "COc1ccc(cc1OC)CN2C3=CC=CN=C3N=C(NCCC[C@@H](N[Boc])C(=O)OC(C)(C)C)2",
+            "notes": "Nucleophilic aromatic substitution of the chloride on the imidazo[4,5-c]pyridine with a protected amino acid (lysine derivative) via its primary amine, under basic conditions (DIPEA) and reflux.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Esterification",
+                    "reagents": "t-BuOH",
+                    "reagent_smiles": "CC(C)N=C(OC(C)(C)C)NC(C)C",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@H](CCC[Cbz]N)C(=O)O",
+                    "product_smiles": "[Boc]N[C@@H](C(=O)O[tBu])CCC[Cbz]N",
+                    "notes": "Carboxylic acid is converted to a tert-butyl ester using a diisopropyl-O-tert-butylisourea activating agent. Stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Hydrogenolysis / Cbz deprotection",
+                    "reagents": "Pd/C, H2",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 1M HCl",
+                    "yield": "99%",
+                    "reactant_smiles": "[tBu]OC(=O)[C@H](N[Boc])CCCCN[Cbz]",
+                    "product_smiles": "[tBu]OC(=O)[C@H](N[Boc])CCCC[NH3+].[Cl-]",
+                    "notes": "Cbz protecting group removed by hydrogenolysis to yield a primary amine, which is then protonated to its hydrochloride salt. (2 steps)",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Menshutkin Reaction (N-Alkylation)",
+            "reagents": "THF",
+            "reagent_smiles": "CC(C)(C)OC(=O)N[C@@H](CCCCI)C(=O)OC(C)(C)C",
+            "conditions": "75 °C",
+            "yield": "69%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@@H](CCCNC1=NC2=NC=CC=C2N1[DMB])NC(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)[C@@H](CCCNC1=NC2=[N+](CCCC[C@H](C(=O)OC(C)(C)C)NC(=O)OC(C)(C)C)C=CC=C2N1[DMB])NC(=O)OC(C)(C)C.[I-]",
+            "notes": "N-alkylation of the pyridine nitrogen with an iodoalkane, forming a pyridinium iodide salt. Stereochemistry of the existing chiral center is retained, and the new chiral center is formed as (R).",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Deamination",
+                    "reagents": "Na₂[Fe(CN)₅(NO)], aq NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "aq NaOH",
+                    "yield": "65%",
+                    "reactant_smiles": "NCCCC[C@@H]([NH]Boc)C(=O)O",
+                    "product_smiles": "OCCCC[C@@H]([NH]Boc)C(=O)O",
+                    "notes": "Conversion of a primary amine to a primary alcohol while retaining Boc-protected amine and carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Esterification",
+                    "reagents": "",
+                    "reagent_smiles": "CC(C)N=C(OC(C)(C)C)NC(C)C",
+                    "conditions": "DCM, t-BuOH",
+                    "yield": "",
+                    "reactant_smiles": "OCCCC[C@@H](N[Boc])C(=O)O",
+                    "product_smiles": "OCCCC[C@@H](N[Boc])C(=O)O[tBu]",
+                    "notes": "Formation of a tert-butyl ester from a carboxylic acid using O-tert-butyl-N,N'-diisopropylisourea.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Appel reaction",
+                    "reagents": "I2, PPh3",
+                    "reagent_smiles": "I.I.P(c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "benzene",
+                    "yield": "91%",
+                    "reactant_smiles": "OCCCC[C@H]([NHBoc])[CO2tBu]",
+                    "product_smiles": "ICCCC[C@H]([NHBoc])[CO2tBu]",
+                    "notes": "Conversion of a primary alcohol to a primary iodide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection, Acid-catalyzed hydrolysis",
+            "reagents": "H2O, TFA",
+            "reagent_smiles": "",
+            "conditions": "75 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@H](CCCNC1=NC2=[N+](CCCC[C@@H](C(=O)OC(C)(C)C)NC(=O)OC(C)(C)C)C=CC=C2N1[DMB])NC(=O)OC(C)(C)C.[I-]",
+            "product_smiles": "O=C(C)OCCCCN1C=NC(N[C@H]([NH3+])(C(=O)[O-])CCC)C1=[N+]2C=CC=CC2(CCCC[C@@H](C(=O)[O-])[NH3+])",
+            "notes": "Acid-catalyzed removal of Boc protecting groups and tert-butyl esters, and replacement of the DMB group with an acetylated 4-hydroxybutyl chain on the imidazole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

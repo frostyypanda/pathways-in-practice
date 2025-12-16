@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "virginiamycin-m1-seiple-2017",
+        "molecule_name": "Virginiamycin M1",
+        "class": "Natural Product",
+        "author": "Seiple",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enolization and Silylation",
+            "reagents": "DIPA, n-BuLi, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C, -78 °C, -78 °C to 23 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C\\CC(=O)OC",
+            "product_smiles": "COC=C([OTBS])/C=C\\C",
+            "notes": "Deprotonation of the alpha-carbon of the ester using LDA (formed from DIPA and n-BuLi) followed by trapping with TBSCl to form an enol silyl ether, resulting in a conjugated diene system.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Aldol Reaction",
+            "reagents": "TfOH, IPA",
+            "reagent_smiles": "[C@@H]1(C(c2ccccc2)(c3ccccc3)O[B-]4[N+]1C[C@H]4CCC).CC(C)C=O",
+            "conditions": "DCM, -78 °C",
+            "yield": "94%",
+            "reactant_smiles": "C/C=C/C([OTBS])=C\\OC",
+            "product_smiles": "CC(C)[C@H]([C@H](C)/C=C/C(=O)OC)O",
+            "notes": "Asymmetric aldol reaction of a chiral borane catalyst with an enol ether and an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidation",
+            "reagents": "",
+            "reagent_smiles": "C[Al](C)C.NCCC#C",
+            "conditions": "DCM, 0 °C to 23 °C then DCM, 50 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(C)[C@H]([C@H](C)\\C=C/C(=O)OC)O",
+            "product_smiles": "C#CCNC(=O)\\C=C/[C@@H](C)[C@@H](C(C)C)O",
+            "notes": "Methyl ester converted to N-propargyl amide via amidation with propargylamine and trimethylaluminum.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrostannylation",
+            "reagents": "CuCN, n-BuLi, Bu3SnH",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "100%",
+            "reactant_smiles": "C#CCNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)O",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)O",
+            "notes": "Terminal alkyne is converted to an (E)-vinylstannane via hydrostannylation, with retention of other stereocenters and functional groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Esterification / Fmoc Deprotection",
+            "reagents": "DCC, DMAP, Et2NH",
+            "reagent_smiles": "O=C(O)[C@H](C)N[Fmoc]",
+            "conditions": "DCM, 23 °C",
+            "yield": "88%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)O",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)[C@H](C)N",
+            "notes": "Esterification of a secondary alcohol with Fmoc-protected L-Alanine, followed by in-situ Fmoc deprotection of the resulting ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Coupling (Peptide Synthesis)",
+            "reagents": "DCC, DMAP, Et2NH",
+            "reagent_smiles": "O=C(O)[C@@H]1CCCN1[Fmoc]",
+            "conditions": "DCM, 23 °C",
+            "yield": "88%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)[C@@H](C)N",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)[C@@H](C)NC(=O)[C@@H]1CCCN1",
+            "notes": "Amide bond formation between the primary amine of the reactant and Fmoc-protected L-proline, followed by in-situ Fmoc deprotection.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Imine Formation",
+            "reagents": "PhIO",
+            "reagent_smiles": "O=I(c1ccccc1)",
+            "conditions": "DCM, 23 °C",
+            "yield": "92%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)[C@H]1CCCN1",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)C1=NCCC1",
+            "notes": "Oxidation of an N-acylproline derivative to form a cyclic imine using iodosylbenzene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Macrolactamization",
+            "reagents": "2,6-lutidine",
+            "reagent_smiles": "C/C(=C\\[C@H](CC(=O)CC1=NC(=C(O1)[Si](C)(C)C)C(=O)Cl)O[Si](C)(C)C(C)(C)C)/Br",
+            "conditions": "DCM, 23 °C",
+            "yield": "65%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)C1=NCCC1",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/CNC(=O)/C=C/[C@@H](C)[C@@H](C(C)C)OC(=O)C1CCC[N](C(=O)C2=C(OC(=N2)CC(=O)C[C@H](/C=C(/C)\\Br)[OTBS])[Si](C)(C)C)C1",
+            "notes": "Amide bond formation between a pyrrolidine nitrogen and an oxazole acyl chloride, leading to macrocycle formation. The pyrroline imine in the reactant is implicitly reduced to a pyrrolidine during the reaction, providing a secondary amine for amide formation.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Bromination",
+                    "reagents": "Br2",
+                    "reagent_smiles": "BrBr",
+                    "conditions": "DCM, -30 °C",
+                    "yield": "",
+                    "reactant_smiles": "C/C=C/CO",
+                    "product_smiles": "C[C@@H]([C@H](CO)Br)Br",
+                    "notes": "Anti-addition of bromine across an alkene, forming a vicinal dibromide. The stereochemistry of the product is (2R,3S).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Elimination with rearrangement",
+                    "reagents": "LDA, HMPA",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "C[C@H](Br)[C@H](Br)CO",
+                    "product_smiles": "C/C(=C\\CO)/Br",
+                    "notes": "Base-induced elimination of dibromide to form a bromoalkene with methyl migration.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Oxidation",
+                    "reagents": "MnO2",
+                    "reagent_smiles": "[Mn](=O)=O",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "Br/C(C)=C\\CO",
+                    "product_smiles": "Br/C(C)=C\\C=O",
+                    "notes": "Allylic alcohol oxidation to an alpha,beta-unsaturated aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Asymmetric Aldol Addition",
+                    "reagents": "TiCl4, DIPEA",
+                    "reagent_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "64%",
+                    "reactant_smiles": "Br/C(C)=C\\C=O",
+                    "product_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@@H](O)\\C=C(/Br)\\C",
+                    "notes": "Asymmetric aldol addition of a chiral auxiliary enolate to an alpha,beta-unsaturated aldehyde. The reaction forms a new chiral center with S configuration and preserves the E-alkene stereochemistry from the reactant.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Protection (Silylation)",
+                    "reagents": "TBSOTf, 2,6-lutidine",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@@H](/C=C(\\C)/Br)O",
+                    "product_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@@H](/C=C(\\C)/Br)[OTBS]",
+                    "notes": "Silylation of a secondary alcohol to form a TBS ether, with retention of stereochemistry at the alcohol carbon.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.6",
+                    "reaction_type": "Acyl Substitution / Alpha-Acylation",
+                    "reagents": "n-BuLi",
+                    "reagent_smiles": "CC1=NC(=C(O1)[Si](C)(C)C)C(=O)O",
+                    "conditions": "THF, -78 °C",
+                    "yield": "71%",
+                    "reactant_smiles": "CC(C)[C@H]1CSC(=S)N1C(=O)C[C@H](/C=C(/C)\\Br)O[TBS]",
+                    "product_smiles": "C/C=C(/[C@H](CC(=O)CC1=NC(=C(O1)[Si](C)(C)C)C(=O)O)O[TBS])\\Br",
+                    "notes": "Acylation of the C5-position of the oxazole-5-carboxylic acid (presumably via its enolate) with the chiral N-acyl-thiazolidinethione. The stereochemistry of the existing chiral center and alkene is preserved. The chiral auxiliary is cleaved.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Stille coupling",
+            "reagents": "JackiePhos, Pd2dba3",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 80 °C",
+            "yield": "43%",
+            "reactant_smiles": "[Bu3Sn]C/C=C/1CNC(=O)/C=C/[C@@H](C)[C@H](C(C)C)OC(=O)[C@H]2CCCN2C(=O)C3=C([TMS])OC(=N3)CC(=O)C[C@@H]([OTBS])/C=C(\\C)Br1",
+            "product_smiles": "C/C=C(\\C)1[C@@H]([OTBS])CC(=O)C2=C([TMS])OC(=N2)C(=O)[C@H]3CCCN3C(=O)O[C@H](C(C)C)[C@@H](C)/C=C/C(=O)NC/C=C/1",
+            "notes": "Intramolecular Stille coupling of a vinyl stannane and a vinyl bromide within a macrocycle, forming a new double bond and a larger macrocyclic product.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF, imidazole•HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)[C@H]1[C@H](C)/C=C\\C(=O)NC/C=C\\C(=C\\[C@H](CC(=O)CC2=NC(=C(O2)[TMS])C(=O)N3CCCC3C(=O)O1)[OTBS])/C",
+            "product_smiles": "CC(C)[C@H]1[C@H](C)/C=C\\C(=O)NC/C=C\\C(=C\\[C@H](CC(=O)CC2=NC(=CO2)C(=O)N3CCCC3C(=O)O1)O)/C",
+            "notes": "Deprotection of TBS ether and TMS group on oxazole.",
+            "substeps": []
+        }
+    ]
+}

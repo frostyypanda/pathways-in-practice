@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "makaluvamine-k-wood-2023",
+        "molecule_name": "Makaluvamine K",
+        "class": "Natural Product",
+        "author": "Wood",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidation (e.g., Baeyer-Villiger type or similar for aldehyde to phenol)",
+            "reagents": "NaOH, MeOH, H2O, H2O2",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "96%",
+            "reactant_smiles": "COC1=C(C(=CC(=C1)C=O)[N+](=O)[O-])O",
+            "product_smiles": "COC1=C(C(=CC(=C1)O)[N+](=O)[O-])O",
+            "notes": "Oxidation of an aldehyde to a phenol (or hydroquinone derivative) on a nitro-substituted methoxy-phenol benzene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-Methylation",
+            "reagents": "K2CO3, MeI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "80%",
+            "reactant_smiles": "COC1=C(C(=CC(=C1)O)[N+](=O)[O-])O",
+            "product_smiles": "COC1=CC(=C(C(=C1)[N+](=O)[O-])OC)OC",
+            "notes": "Double O-methylation of phenolic hydroxyl groups",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Aromatic Iodination",
+            "reagents": "",
+            "reagent_smiles": "I[I].[Ag+].[N+](=O)[O-]",
+            "conditions": "MeCN, DCM",
+            "yield": "91%",
+            "reactant_smiles": "COC1=CC(=C(C(=C1)[N+](=O)[O-])OC)OC",
+            "product_smiles": "COC1=C(C(=C(C(=C1)OC)I)[N+](=O)[O-])OC",
+            "notes": "Electrophilic aromatic iodination of 1-nitro-2,4,6-trimethoxybenzene to form 5-iodo-1-nitro-2,4,6-trimethoxybenzene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nitro group reduction",
+            "reagents": "Fe, NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "THF, EtOH, H2O, 95 °C",
+            "yield": "85%",
+            "reactant_smiles": "COc1c(N(=O)=O)c(OC)cc(OC)c1I",
+            "product_smiles": "COc1c(N)c(OC)cc(OC)c1I",
+            "notes": "Reduction of a nitro group to an amino group using iron and ammonium chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Indole synthesis",
+            "reagents": "Pd(PPh3)4, NBu4Cl, DIPEA",
+            "reagent_smiles": "[TBS]OCC#C[TES]",
+            "conditions": "DMF, 120 °C",
+            "yield": "95%",
+            "reactant_smiles": "Nc1c(I)c(OC)cc(OC)c1OC",
+            "product_smiles": "[TES]c1[nH]c2c(c(OC)c(OC)c2OC)c1CCO[TBS]",
+            "notes": "Sonogashira coupling of an iodoaniline with a terminal alkyne, followed by intramolecular cyclization to form an indole.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "97%",
+                    "reactant_smiles": "C#CCCO",
+                    "product_smiles": "C#CCCO[TBS]",
+                    "notes": "Protection of a primary alcohol with tert-butyldimethylsilyl chloride (TBSCl) to form a TBS ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Silylation of terminal alkyne",
+                    "reagents": "nBuLi, TESCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "C#CCC[OTBS]",
+                    "product_smiles": "[TES]C#CCC[OTBS]",
+                    "notes": "Protection of terminal alkyne with TES group using nBuLi as base, while TBS group remains intact.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "COc1cc(OC)c(OC)c2c1[NH]c([TES])c2CCO[TBS]",
+            "product_smiles": "COc1cc(OC)c(OC)c2c1N(C)c([TES])c2CCO[TBS]",
+            "notes": "Indole nitrogen is methylated using sodium hydride as a base and methyl iodide as the alkylating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation, Deprotection",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O",
+            "yield": "",
+            "reactant_smiles": "[TES]c1c(CCO[TBS])c2c(c(OC)cc(OC)c2OC)n1C",
+            "product_smiles": "[TES]c1c(CCO)c2c(c(=O)cc(OC)c2=O)n1C",
+            "notes": "Oxidation of an indole to a quinone, accompanied by deprotection of a TBS ether to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, DMAP, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "63%",
+            "reactant_smiles": "[TES]C1=C(CCO)C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "product_smiles": "[TES]C1=C(CCO[Ts])C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "notes": "Formation of a primary tosylate from an alcohol. This is stated as part of a 2-step sequence.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaN3, DMF",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-]",
+            "conditions": "60 °C",
+            "yield": "57%",
+            "reactant_smiles": "[TES]C1=C(CCC[OTs])C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "product_smiles": "[TES]C1=C(CCC[N-]=[N+]=[N-])C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "notes": "Displacement of tosylate by azide on a propyl side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Azide reduction and intramolecular cyclization",
+            "reagents": "PPh3, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "65%",
+            "reactant_smiles": "[TES]C1=C(CCN=N=N)C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "product_smiles": "COC1=CC(=O)C2=NC3CCC4=C([TES])C=CN(C)C432",
+            "notes": "Staudinger reduction of the azide to an amine, followed by intramolecular cyclization to form a fused dihydropyridine ring through imine formation with a quinone carbonyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amination / SNAr",
+            "reagents": "",
+            "reagent_smiles": "C1=C(C=CC(=C1)O)CCN",
+            "conditions": "MeOH",
+            "yield": "43%",
+            "reactant_smiles": "[TES]C1=C2CCN=C3C=C(C(=O)C(=C23)N1C)OC",
+            "product_smiles": "[TES]C1=C2CCN=C3C=C(C(=O)C(=C23)N1C)NCCC4=CC=C(C=C4)O",
+            "notes": "Nucleophilic aromatic substitution of methoxy group with 2-(4-hydroxyphenyl)ethanamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "TES deprotection, aromatization, iminium formation",
+            "reagents": "TBAF, TFA",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH",
+            "yield": "51%",
+            "reactant_smiles": "CC[Si](CC)(CC)C1=C2CCN=C3C=C(C(=O)C(=C23)N1C)NCCC4=CC=C(O)C=C4",
+            "product_smiles": "CN1C=C2C(NCCC3=CC=C(O)C=C3)=CC(=O)C4=C1C2C=C[N+H]4",
+            "notes": "Deprotection of the triethylsilyl (TES) group is followed by aromatization of the indole ring and protonation of a nitrogen, leading to the formation of the iminium cation Makaluvamine K.",
+            "substeps": []
+        }
+    ]
+}

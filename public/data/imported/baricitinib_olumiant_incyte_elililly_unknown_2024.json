@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "baricitinib-olumiant-incyte-elililly-unknown-2024",
+        "molecule_name": "Baricitinib (Olumiant Incyte-EliLilly)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-alkylation / N-protection",
+            "reagents": "DMA",
+            "reagent_smiles": "ClCOCC[Si](C)(C)C.[NaH]",
+            "conditions": "0 to 5 °C",
+            "yield": "89%",
+            "reactant_smiles": "C1=CNC2=NC=NC(=C12)Cl",
+            "product_smiles": "C1=[N]([SEM])C2=NC=NC(=C12)Cl",
+            "notes": "N-protection of the pyrrole nitrogen with a 2-(trimethylsilyl)ethoxymethyl (SEM) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "K2CO3, Pd(PPh3)4",
+            "reagent_smiles": "CCOC(C)N1C=C(C=N1)B2OC(C)(C)C(C)(C)O2",
+            "conditions": "1-butanol, H2O, reflux",
+            "yield": "",
+            "reactant_smiles": "ClC1=NC=NC2=C1C=CN([SEM])2",
+            "product_smiles": "CCOC(C)N1C=C(C=N1)C2=NC=NC3=C2C=CN([SEM])3",
+            "notes": "Suzuki cross coupling of an aryl chloride with a boronic ester, yielding a substituted pyrrolo[2,3-d]pyrimidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection (N-alkyl group)",
+            "reagents": "aq. HCl, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "CCOC(C)N1N=C(C=N1)C2=C3C=CN([SEM])C3=NC=N2",
+            "product_smiles": "C1=CN([SEM])C2=C1N=CN=C2C3=NN([H])C=N3",
+            "notes": "Acid-catalyzed deprotection of the 1-(1-ethoxypropan-2-yl)-1H-1,2,4-triazole substituent to a 1H-1,2,4-triazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Alkylation (Michael Addition)",
+            "reagents": "DBU",
+            "reagent_smiles": "CCS(=O)(=O)N1CC(=CC#N)C1",
+            "conditions": "MeCN",
+            "yield": "97%",
+            "reactant_smiles": "[SEM]N1C=CC2=C(c3cc[nH]n3)N=CN=C21",
+            "product_smiles": "CCS(=O)(=O)N1CC(CC#N)(C1)N2C=C(C=N2)C3=C4C=CN([SEM])C4=NC=N3",
+            "notes": "N-Alkylation of 1H-pyrazol-4-yl with 1-(ethylsulfonyl)-3-(cyanomethylene)cyclobutane via Michael addition, protected by SEM group.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Horner-Wadsworth-Emmons olefination",
+                    "reagents": "t-BuOK, THF",
+                    "reagent_smiles": "CCOP(=O)(CC#N)OCC",
+                    "conditions": "-5 to -10 °C",
+                    "yield": "61%",
+                    "reactant_smiles": "[Boc]N1CC(=O)C1",
+                    "product_smiles": "[Boc]N1CCC(C=CC#N)C1",
+                    "notes": "Horner-Wadsworth-Emmons olefination of an N-Boc azetidin-2-one to form an N-Boc 2-(2-cyanoethenyl)azetidine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N1CC(=CC#N)C1",
+                    "product_smiles": "C(=C1CNC1)C#N",
+                    "notes": "Deprotection of an N-Boc group on an azetidine ring using HCl in acetonitrile.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "N-Sulfonylation",
+                    "reagents": "DIPEA",
+                    "reagent_smiles": "CCS(=O)(=O)Cl",
+                    "conditions": "MeCN, 0 to 5 °C",
+                    "yield": "68%",
+                    "reactant_smiles": "N#CC=C1C[NH]CC1",
+                    "product_smiles": "CCS(=O)(=O)N1CC(=CC#N)C1",
+                    "notes": "N-sulfonylation of azetidine; reaction occurred in 2 steps",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "LiBF4, NH4OH",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O, 80 °C, then aq.",
+            "yield": "",
+            "reactant_smiles": "CCS(=O)(=O)N1CC(CC#N)(C1)N2C=C(C=N2)C3=C4C=CN([SEM])C4=NC=N3",
+            "product_smiles": "CCS(=O)(=O)N1CC(CC#N)(C1)N2C=C(C=N2)C3=C4C=CNC4=NC=N3",
+            "notes": "Deprotection of the SEM protecting group on the pyrrole nitrogen to form Baricitinib.",
+            "substeps": []
+        }
+    ]
+}

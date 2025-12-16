@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "onbrez-indacaterol-novartis-unknown-2024",
+        "molecule_name": "Onbrez (Indacaterol Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Friedel-Crafts acylation",
+            "reagents": "AlCl3",
+            "reagent_smiles": "CC(=O)Cl",
+            "conditions": "DCM, 70 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2C(=C1)C=CC=N2)O",
+            "product_smiles": "CC(=O)C1=C2C=CC=NC2=C(C=C1)O",
+            "notes": "Friedel-Crafts acylation of 8-hydroxyquinoline with acetyl chloride to form 7-acetyl-8-hydroxyquinoline.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-alkylation / Williamson Ether Synthesis",
+            "reagents": "BnBr, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "acetone, rt",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C1=C2C=CC=NC2=C(C=C1)O",
+            "product_smiles": "CC(=O)C1=C2C=CC=NC2=C(C=C1)[OBn]",
+            "notes": "Phenolic hydroxyl group is alkylated with benzyl bromide to form a benzyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C1=C2C=CC=NC2=C(C=C1)[OBn]",
+            "product_smiles": "CC(=O)C1=C2C=CC=[N+](C2=C(C=C1)[OBn])O[O-]",
+            "notes": "Oxidation of quinoline to quinoline N-oxide",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-oxide rearrangement",
+            "reagents": "Ac2O",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "40 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C1=C2C=CC=[N+](C2=C(C=C1)[OBn])[O-]",
+            "product_smiles": "CC(=O)C1=C2C=CC(=O)NC2=C(C=C1)[OBn]",
+            "notes": "Thermal rearrangement of a quinoline N-oxide to a 2-quinolone (carbostyril) derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alpha-bromination",
+            "reagents": "Br2, BF3 OEt2",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C1=C2C=CC(=O)NC2=C(C=C1)OCC3=CC=CC=C3",
+            "product_smiles": "C1=CC=C(C=C1)COC2=C3C(=C(C=C2)C(=O)CBr)C=CC(=O)N3",
+            "notes": "Alpha-bromination of the acetyl ketone group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Corey asymmetric reduction",
+            "reagents": "BH3.Me2S, (+)-CBS",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "81%",
+            "reactant_smiles": "O=C1NC=CC2=C1C=C(C(=O)CBr)C(O[Bn])=C2",
+            "product_smiles": "O=C1NC=CC2=C1C=C([C@H](O)CBr)C(O[Bn])=C2",
+            "notes": "Asymmetric reduction of an alpha-bromo ketone to an alpha-bromo alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Epoxide formation (intramolecular Williamson ether synthesis)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "acetone, 10 °C",
+            "yield": "",
+            "reactant_smiles": "[OBn]C2=C3C(=C(C=C2)[C@H](CBr)O)C=CC(=O)N3",
+            "product_smiles": "[OBn]C2=C3C(=C(C=C2)[C@@H]4CO4)C=CC(=O)N3",
+            "notes": "Intramolecular cyclization via nucleophilic attack of the deprotonated hydroxyl group on the alkyl bromide to form an epoxide. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Epoxide Ring Opening",
+            "reagents": "",
+            "reagent_smiles": "CCC1=C(CC)C2=C(C=C1)CC(N)C2",
+            "conditions": "DME, 100 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1NC=CC2=CC([C@@H]3CO3)=C([OBn])C=C12",
+            "product_smiles": "CCC1=C(CC)C=C2CC(CC2=C1)NC[C@@H](O)C3=C4C=CC(=O)NC4=C([OBn])C=C3",
+            "notes": "Nucleophilic ring opening of an epoxide by an amine.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Amidation / Acylation",
+                    "reagents": "iPrOAc",
+                    "reagent_smiles": "CCOC(=O)C(F)(F)F",
+                    "conditions": "10 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C2CC(CC2=C1)N",
+                    "product_smiles": "C1=CC2=C(C=C1)CC(C2)NC(=O)C(F)(F)F",
+                    "notes": "Amidation of 2-aminoindane with ethyl trifluoroacetate to form a trifluoroacetamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Friedel-Crafts acylation",
+                    "reagents": "AlCl3",
+                    "reagent_smiles": "CC(=O)Cl",
+                    "conditions": "2-methylpentane, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)CC(C2)NC(=O)C(F)(F)F",
+                    "product_smiles": "CC(=O)C1=CC=C2CC(CC2=C1)NC(=O)C(F)(F)F",
+                    "notes": "A Friedel-Crafts acylation reaction where acetyl chloride acylates the indane derivative at the 5-position of the aromatic ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Ketone Reduction / Hydrogenation",
+                    "reagents": "H2, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, rt",
+                    "yield": "79%",
+                    "reactant_smiles": "CC(=O)C1=CC=C2CC(CC2=C1)NC(=O)C(F)(F)F",
+                    "product_smiles": "CCC1=CC=C2CC(CC2=C1)NC(=O)C(F)(F)F",
+                    "notes": "The acetyl group (ketone) on the indoline ring is reduced to an ethyl group (alkane) via hydrogenation with H2 and Pd/C. The trifluoroacetamide group and the indoline core remain unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Friedel-Crafts acylation",
+                    "reagents": "AlCl3",
+                    "reagent_smiles": "CC(=O)Cl",
+                    "conditions": "2-methylpentane, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCC1=CC=C2CC(CC2=C1)NC(=O)C(F)(F)F",
+                    "product_smiles": "C1CC2=C(C=C3CC(CC3=C2)NC(=O)C(F)(F)F)C(=O)C1",
+                    "notes": "Friedel-Crafts acylation of the aromatic ring, replacing the ethyl group with a fused cyclohexanone ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Reductive Deoxygenation (Ketone Reduction)",
+                    "reagents": "H2, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, rt",
+                    "yield": "91% (2 Steps)",
+                    "reactant_smiles": "CCC1=CC(=C2CCC(NC(=O)C(F)(F)F)C2=C1)C(=O)C",
+                    "product_smiles": "CCC1=CC(=C2CCC(NC(=O)C(F)(F)F)C2=C1)CC",
+                    "notes": "The acetyl ketone group on the benzene ring of the indane derivative is reduced to an ethyl group. The trifluoroacetamide group remains unchanged. The reaction is stated to be a two-step process, likely involving a multi-step reduction or deoxygenation mechanism for the ketone to alkane transformation using H2 and Pd/C.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.6",
+                    "reaction_type": "Hydrolysis / Deprotection",
+                    "reagents": "NaOH, EtOH",
+                    "reagent_smiles": "",
+                    "conditions": "78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCCc1c(CC)cc2c1CC(NC(=O)C(F)(F)F)C2",
+                    "product_smiles": "CCCc1c(CC)cc2c1CC(N)C2",
+                    "notes": "Hydrolysis of a trifluoroacetamide to a primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "H2, Pd, AcOH",
+            "reagent_smiles": "[Pd].CC(=O)O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC1=C(CC)C=C2CC(CC2=C1)NC[C@@H](C3=C4C=CC(=O)NC4=C(C=C3)[OBn])O",
+            "product_smiles": "CCC1=C(CC)C=C2CC(CC2=C1)NC[C@@H](C3=C4C=CC(=O)NC4=C(C=C3)O)O",
+            "notes": "Hydrogenolysis of a benzyl ether to yield a phenol (Indacaterol).",
+            "substeps": []
+        }
+    ]
+}

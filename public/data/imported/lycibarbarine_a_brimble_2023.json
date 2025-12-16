@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycibarbarine-a-brimble-2023",
+        "molecule_name": "Lycibarbarine A",
+        "class": "Natural Product",
+        "author": "Brimble",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Wittig reaction / Ring-opening",
+            "reagents": "Ph3PMeBr, KOtBu",
+            "reagent_smiles": "",
+            "conditions": "THF, 40 °C",
+            "yield": "74%",
+            "reactant_smiles": "O1[C@H](O)C[C@@H](O)[C@H](O)C1",
+            "product_smiles": "C=CC[C@H]([C@@H](CO)O)O",
+            "notes": "Ring-opening of a cyclic hemiacetal (pyranose derivative) followed by Wittig olefination to form an acyclic terminal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection",
+            "reagents": "NaH, TBDPSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@H]([C@@H](CO)O)O",
+            "product_smiles": "C=CC[C@H]([C@@H](C[OTBDPS])O)O",
+            "notes": "Selective protection of primary alcohol with TBDPS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetonide Formation / Diol Protection",
+            "reagents": "PPTS",
+            "reagent_smiles": "CC(C)(OC)OC",
+            "conditions": "CH2Cl2",
+            "yield": "78%",
+            "reactant_smiles": "C=CC[C@@H]([C@H](CO[OTBDPS])O)O",
+            "product_smiles": "C=CC[C@@H]1[C@H](CO[OTBDPS])OC(C)(C)O1",
+            "notes": "Acetonide formation via protection of a 1,2-diol. The yield is reported over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxidation",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=CC[C@H]1[C@@H](C[OTBDPS])OC(C)(C)O1",
+            "product_smiles": "[OTBDPS]C[C@@H]1[C@H](C2CO2)OC(C)(C)O1",
+            "notes": "Epoxidation of an alkene with m-CPBA to form a racemic epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxide opening",
+            "reagents": "LiBr, AcOH, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "[TBDPS]OC[C@@H]3[C@H](CC4CO4)OC(C)(C)O3",
+            "product_smiles": "[TBDPS]OC[C@@H]3[C@H](CC(CBr)O)OC(C)(C)O3",
+            "notes": "Epoxide opening to form a bromohydrin with unspecified stereochemistry at the new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "[OTBDPS]C[C@@H]3[C@H](CC(CBr)O)OC(C)(C)O3",
+            "product_smiles": "[OTBDPS]C[C@@H]3[C@H](CC(=O)CBr)OC(C)(C)O3",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin Periodinane (DMP). The TBDPS protecting group and acetonide are retained. Stereochemistry at the alcohol carbon is undefined in reactant and becomes a ketone in product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Spiroketal/Aminal Formation",
+            "reagents": "DIPEA",
+            "reagent_smiles": "C1CC2=C(C=CC(=C2NC1)O)Br",
+            "conditions": "CH2Cl2",
+            "yield": "46%",
+            "reactant_smiles": "[OTBDPS]OC[C@@H]1[C@H](BrCC(=O)C)OC(C)(C)O1",
+            "product_smiles": "[OTBDPS]OC[C@@H]1[C@H](C[C]2(O)N3CCCC4=C(C=CC(=C43)O2)Br)OC(C)(C)O1",
+            "notes": "Intramolecular cyclization of an alkyl bromide-ketone with a tetrahydroquinoline containing an amine and a phenol, forming a spiroketal/aminal system and a new hydroxyl group. The hydroxyl group at the spiro center is depicted with a wavy bond, indicating mixed or undefined stereochemistry.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Bromination",
+                    "reagents": "",
+                    "reagent_smiles": "C1(=O)N(C(=O)N(C(=O)N1Br)Br)Br",
+                    "conditions": "MeCN",
+                    "yield": "72%",
+                    "reactant_smiles": "C1=CC(=C2C(=C1)C=CC=N2)O",
+                    "product_smiles": "Oc1c(Br)ccc2nccc12",
+                    "notes": "Electrophilic bromination of 8-hydroxyquinoline to 5-bromo-8-hydroxyquinoline using N,N',N''-tribromoisocyanuric acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "B(OH)3",
+                    "reagent_smiles": "CCOC(=O)C1=C(C)NC(=C(C1)C(=O)OCC)C.B(O)(O)O",
+                    "conditions": "DCE",
+                    "yield": "88%",
+                    "reactant_smiles": "Oc1ccc(Br)c2c1N=CCC2",
+                    "product_smiles": "Oc1ccc(Br)c2c1NCCC2",
+                    "notes": "Reduction of the pyridine ring of the quinoline to a tetrahydropyridine ring using a Hantzsch ester analogue and boric acid.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Cyclization, Isopropylidene deprotection",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "46%",
+            "reactant_smiles": "[TBDPS]OCH2[C@H]1(O[C]2(C)C)[C@@H](O2)CH2[C@@]3(O)(CN4CCCC5=C(C=CC(=C54)O3)Br)",
+            "product_smiles": "[TBDPS]OCH2[C@H]1O[C@@]2(CN3CCCC4=C(C=CC(=C43)O2)Br)C[C@@H](O)C1",
+            "notes": "Intramolecular cyclization involving an alcohol from the side chain and the hemiacetal formed from the spiro carbon. Concomitant deprotection of the isopropylidene acetal leads to a new 5-membered cyclic ether and a free hydroxyl group. The wavy bond for the reactant's OH implies a mixture, but the spiro carbon itself is assigned fixed chirality [C@@] as per its connection to the ring systems in 3D.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Halogen-metal exchange / Formylation",
+            "reagents": "nBuLi, DMF, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "56%",
+            "reactant_smiles": "[OTBDPS]C[C@H]3[C@@H](C[C@]4(CN5CCCC6=C(C=CC(=C65)O4)Br)O3)O",
+            "product_smiles": "[OTBDPS]C[C@H]3[C@@H](C[C@]4(CN5CCCC6=C(C=CC(=C65)O4)C=O)O3)O",
+            "notes": "Aromatic bromine is replaced by a formyl group via lithium-halogen exchange and subsequent reaction with DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "53%",
+            "reactant_smiles": "[TBDPS]OC[C@@H]3[C@H](O)C[C@]4(CN5CCCC6=C(C=CC(=C65)C=O)O4)O3",
+            "product_smiles": "C1CC2=C(C=CC3=C2N(C1)C[C@@]4(C[C@@H]([C@@H](CO)O4)O)O3)C=O",
+            "notes": "Deprotection of TBDPS silyl ether to primary alcohol",
+            "substeps": []
+        }
+    ]
+}

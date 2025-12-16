@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "chihunamide-b-nakamura-2024",
+        "molecule_name": "Chihunamide B",
+        "class": "Natural Product",
+        "author": "Nakamura",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Arylation (SNAr)",
+            "reagents": "NaOH",
+            "reagent_smiles": "FC1=C([N+](=O)[O-])C(Br)=CC=C1",
+            "conditions": "DMSO, rt",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CNC2=C1C=CC=C2)C(=O)O",
+            "product_smiles": "[Boc]N[C@@H](CC1=CN(c2c([N+](=O)[O-])c(Br)ccc2)C2=C1C=CC=C2)C(=O)O",
+            "notes": "N-Arylation of the indole nitrogen with a fluoronitrobromobenzene, displacing fluorine via SNAr.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification, Deprotection",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "N[Boc][C@H](C(=O)O)CC1=CN(C2=C1C=CC=C2)C3=C(C(=CC=C3)Br)[N+](=O)[O-]",
+            "product_smiles": "COC(=O)[C@H](N)CC1=CN(C2=C1C=CC=C2)C3=C(C(=CC=C3)Br)[N+](=O)[O-]",
+            "notes": "Esterification of the carboxylic acid to a methyl ester and deprotection of the Boc-protected amine to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide Coupling",
+            "reagents": "DIPEA, HATU",
+            "reagent_smiles": "CC[C@H](C)[C@H](C(=O)O)N[Boc]",
+            "conditions": "DMF, rt",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "COC(=O)[C@@H](CC1=CN(C2=C1C=CC=C2)C3=C(C(=CC=C3)Br)[N+](=O)[O-])N",
+            "product_smiles": "CC[C@@H](C)[C@H](C(=O)N[C@@H](CC1=CN(C2=C1C=CC=C2)C3=C(C(=CC=C3)Br)[N+](=O)[O-])C(=O)OC)N[Boc]",
+            "notes": "Amide bond formation between an indole-substituted tryptophan methyl ester and a Boc-protected 2-(Boc-amino)-3-methylpentanoic acid derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@H](C)[C@@H](N[Boc])C(=O)N[C@@H](C(=O)OC)Cc1c[n](c2ccccc12)c3c(N(=O)=O)cc(Br)cc3",
+            "product_smiles": "CC[C@H](C)[C@@H](N)C(=O)N[C@@H](C(=O)OC)Cc1c[n](c2ccccc12)c3c(N(=O)=O)cc(Br)cc3",
+            "notes": "Boc deprotection to primary amine",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling / Peptide Synthesis",
+            "reagents": "DIPEA, HATU",
+            "reagent_smiles": "O=C(O)[C@@H](NC(=O)OC(C)(C)C)CC(=O)OCC1=CC=CC=C1",
+            "conditions": "DMF, rt",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "CC[C@H](C)[C@@H](C(=O)N[C@@H](CC1=CN(C2=C1C=CC=C2)C3=CC=CC(=C3[N+](=O)[O-])Br)C(=O)OC)N",
+            "product_smiles": "CC[C@H](C)[C@@H](C(=O)N[C@@H](CC1=CN(C2=C1C=CC=C2)C3=CC=CC(=C3[N+](=O)[O-])Br)C(=O)OC)NC(=O)[C@@H](NC(=O)OC(C)(C)C)CC(=O)OCC4=CC=CC=C4",
+            "notes": "Formation of an amide bond between the N-terminal primary amine of the reactant and the carboxylic acid of the N-Boc-O-benzyl-D-aspartic acid derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@@H](CC1=CC=C2N(c3c(Br)c([N+](=O)[O-])ccc3)C=C1C=C2)NC(=O)[C@@H]([C@H](C)CC)NC(=O)[C@@H](CCC(=O)OCc1ccccc1)NC(=O)OC(C)(C)C",
+            "product_smiles": "COC(=O)[C@@H](CC1=CC=C2N(c3c(Br)c([N+](=O)[O-])ccc3)C=C1C=C2)NC(=O)[C@@H]([C@H](C)CC)NC(=O)[C@@H](CCC(=O)OCc1ccccc1)N",
+            "notes": "Deprotection of a C-terminal Boc-protected amine to a primary amine on a complex tripeptide derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide bond formation, Macrocyclization",
+            "reagents": "DIPEA, HATU",
+            "reagent_smiles": "CC[Si](CC)(CC)C#CC[C@@H](C(=O)O)NC(=O)OC(C)(C)C",
+            "conditions": "DMF, rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@@H](CC1=CN(C2=C1C=CC=C2)C3=CC=CC(=C3[N+](=O)[O-])Br)NC(=O)[C@@H]([C@@H](C)CC)NC(=O)[C@@H](CC(=O)OCC4=CC=CC=C4)N",
+            "product_smiles": "COC(=O)[C@@H](CC1=CN(C(=O)[C@@H]([C@@H](C)CC)NC(=O)[C@@H](CC(=O)OCC2=CC=CC=C2)NC(=O)[C@@H](CC#C[Si](CC)(CC))NC(=O)OC(C)(C)C)C3=C1C=CC=C3)",
+            "notes": "Primary amine of the glutamic acid derivative reacts with the carboxylic acid of the alkyne-TES-Boc reagent to form a new amide bond. Concurrently, the indole nitrogen (which was previously attached to a bromonitrophenyl group) cyclizes by forming an amide bond with the carbonyl of the sec-butyl residue, leading to the formation of a macrocyclic product and the elimination of the bromonitrophenyl group.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Activated Ester Formation / Peptide Coupling",
+                    "reagents": "DCM",
+                    "reagent_smiles": "C12=C(C(=C(C(=C1Cl)Cl)Cl)Cl)C(=O)N(C2=O)O.CC(C)N=C=NC(C)C",
+                    "conditions": "rt",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H](CC(=O)O)C(=O)[OMe]",
+                    "product_smiles": "CC(C)(C)OC(=O)N[C@@H](CC(=O)ON1C(=O)C2=C(C(=C(C(=C2Cl)Cl)Cl)Cl)C1=O)C(=O)[OMe]",
+                    "notes": "Formation of an N-hydroxy tetrachlorophthalimide ester from a carboxylic acid using diisopropylcarbodiimide (DIC) as a coupling agent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Nickel-catalyzed Alkylation / Coupling",
+                    "reagents": "NiCl2, tBubpy",
+                    "reagent_smiles": "CC[Si](CC)(CC)C#C[Zn]Cl",
+                    "conditions": "DMF, rt",
+                    "yield": "51%",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H](CC(=O)ON1C(=O)C2=C(C(=C(C(=C2Cl)Cl)Cl)Cl)C1=O)C(=O)OC",
+                    "product_smiles": "CC[Si](CC)(CC)C#CC[C@@H](C(=O)OC)NC(=O)OC(C)(C)C",
+                    "notes": "Nickel-catalyzed alkylation of an activated ester (derived from a Boc-protected amino acid) with a TES-protected alkynyl zinc chloride. The stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "LiOH, H2O2",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, THF, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[TES]C#CC[C@H](C(=O)OC)N[Boc]",
+                    "product_smiles": "[TES]C#CC[C@H](C(=O)O)N[Boc]",
+                    "notes": "Methyl ester hydrolysis to carboxylic acid using LiOH/H2O2. Stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nitro group reduction",
+            "reagents": "Fe, NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O, EtOAc, 50 °C",
+            "yield": "43% (3 steps)",
+            "reactant_smiles": "CC[C@@H](C)[C@@H]1NC(=O)C(Br)=C([N+](=O)[O-])C=C(N2C3=CC=CC=C3C(CC([C@H](C(=O)OC)N2)=C4)=C4)C=C1NC(=O)[C@@H](CCC(=O)OCC5=CC=CC=C5)NC(=O)[C@@H](CC#C[Si](CC)(CC)CC)NC(=O)OC(C)(C)C",
+            "product_smiles": "CC[C@@H](C)[C@@H]1NC(=O)C(Br)=C(N)C=C(N2C3=CC=CC=C3C(CC([C@H](C(=O)OC)N2)=C4)=C4)C=C1NC(=O)[C@@H](CCC(=O)OCC5=CC=CC=C5)NC(=O)[C@@H](CC#C[Si](CC)(CC)CC)NC(=O)OC(C)(C)C",
+            "notes": "Reduction of an aromatic nitro group to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Sonogashira Cyclization / Indole Formation",
+            "reagents": "Pd(OAc)2, DIPEA, tBu3P·HBF4",
+            "reagent_smiles": "",
+            "conditions": "toluene, 110 °C",
+            "yield": "68%",
+            "reactant_smiles": "COC(=O)[C@@H]1NC(=O)[C@H]([C@@H](C)CC)NC(=O)[C@@H](CC(=O)O[Bn])C(=O)N2C(=C(CC1)N(c3c(Br)cccc3N)C4=C2C=CC=C4)[C@H](CC#C[TES])NC(=O)O[Boc]",
+            "product_smiles": "COC(=O)[C@@H]1NC(=O)[C@H]([C@@H](C)CC)NC(=O)[C@@H](CC(=O)O[Bn])C(=O)N2C(=C(CC1)N(c3ccc4c(c3)[nH]c(C[TES])c4)C5=C2C=CC=C5)[C@H](C(=O)N[C@H](CC[TES])NC(=O)O[Boc])",
+            "notes": "Intramolecular cyclization of an aryl bromide and an alkyne to form a new indole ring, fused to an existing aromatic system. The reaction is part of a macrocyclic peptide synthesis. The TES group is retained in the product as part of the newly formed indole ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Debenzylation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH, rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@H](C)[C@H]1C(=O)N[C@@H](CC2=CN(C3=C2C=CC=C3)C4=CC=CC5=C4N(C([Si](CC)(CC)CC))=C5C[C@@H](C(=O)N[C@@H](CCC(=O)[OBn])C(=O)N1)[NHBoc])[OMe]",
+            "product_smiles": "CC[C@H](C)[C@H]1C(=O)N[C@@H](CC2=CN(C3=C2C=CC=C3)C4=CC=CC5=C4N(C([Si](CC)(CC)CC))=C5C[C@@H](C(=O)N[C@@H](CCC(=O)O)C(=O)N1)[NHBoc])[OMe]",
+            "notes": "Benzyl ester is deprotected to carboxylic acid via catalytic hydrogenolysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amidation / Peptide Coupling",
+            "reagents": "NH4Cl, DIPEA, HATU",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "58% (2 steps)",
+            "reactant_smiles": "CC[C@H](C)[C@H]1C(=O)N[C@@H](CC2=CN(C3=C2C=CC=C3)C4=CC=CC5=C4[NTES]C(=C5C[C@@H](C(=O)N[C@@H](CC(=O)O)C(=O)N1)[NHBoc]))C(=O)OC",
+            "product_smiles": "CC[C@H](C)[C@H]1C(=O)N[C@@H](CC2=CN(C3=CC=CC4=C3[NTES]C(=C4C[C@@H](C(=O)N[C@@H](CC(=O)N)C(=O)N1)[NHBoc]))C5=C2C=CC=C5)C(=O)OC",
+            "notes": "Amidation of a carboxylic acid to a primary amide. TES and NHBoc protecting groups are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, THF, H2O, MeOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@H](C)[C@H]1C(=O)N[C@H](CC2=CN(C3=C2C=CC=C3)C4=CC=CC5=C4N([Si](CC)(CC)CC)C(=C5C[C@H](C(=O)N[C@H](CC(=O)N)C(=O)N1)N[Boc]))C(=O)[OMe]",
+            "product_smiles": "CC[C@H](C)[C@H]1C(=O)N[C@H](CC2=CN(C3=C2C=CC=C3)C4=CC=CC5=C4N([Si](CC)(CC)CC)C(=C5C[C@H](C(=O)N[C@H](CC(=O)N)C(=O)N1)N[Boc]))C(=O)O",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "C(F)(F)(F)C(=O)O.ClCCl",
+            "conditions": "DCM, rt",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H]1C(=O)N[C@@H](C(=O)O)CC2=CNC3=CC=CC=C32C(=O)N[C@H]([C@H](C)CC)C(=O)N[C@@H](CC(=O)N)C(=O)N1CC4=CN([Si](CC)(CC)CC)C5=C4C=CC=C5",
+            "product_smiles": "N[C@@H]1C(=O)N[C@@H](C(=O)O)CC2=CNC3=CC=CC=C32C(=O)N[C@H]([C@H](C)CC)C(=O)N[C@@H](CC(=O)N)C(=O)N1CC4=CNC5=CC=CC=C54",
+            "notes": "Deprotection of N-Boc and N-TES protecting groups of a cyclic peptide to yield Cihunamide B.",
+            "substeps": []
+        }
+    ]
+}

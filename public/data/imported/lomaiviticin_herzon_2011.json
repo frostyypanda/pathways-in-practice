@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lomaiviticin-herzon-2011",
+        "molecule_name": "Lomaiviticin",
+        "class": "Natural Product",
+        "author": "Herzon",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TIPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "96 %",
+            "reactant_smiles": "CCC1=CC=CC(=C1)O",
+            "product_smiles": "CCC1=CC=CC(=C1)[OTIPS]",
+            "notes": "Formation of a TIPS silyl ether from 3-ethylphenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Birch reduction",
+            "reagents": "Li, NH3, t-BuOH",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 -> -30 -> -78 °C",
+            "yield": "98 %",
+            "reactant_smiles": "CCC1=CC(=CC=C1)[OTIPS]",
+            "product_smiles": "CCC1CC=CC([OTIPS])C=C1",
+            "notes": "Birch reduction of a 1-ethyl-3-OTIPS-benzene to a 1-ethyl-4-OTIPS-cyclohexa-2,5-diene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sharpless asymmetric dihydroxylation",
+            "reagents": "(DHQD)₂PHAL, K₂OsO₄•2H₂O, K₂CO₃, K₃Fe(CN)₆, MeSO₂NH₂",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH, TBME, H₂O - 5 °C",
+            "yield": "62%",
+            "reactant_smiles": "CCC1CCCC=C1[OTIPS]",
+            "product_smiles": "CC[C@@H]1C[C@@H](O)C[C@H](O)C(=C1)[OTIPS]",
+            "notes": "The reaction is labeled as Sharpless asymmetric dihydroxylation. However, the drawn reactant only features one double bond (at positions C1-C2, where C1 bears the OTIPS group), while the drawn product shows this double bond remaining unchanged and two new hydroxyl groups introduced at positions C5 and C6 (which were saturated in the reactant). This implies an inconsistency where the drawn reactant is missing a double bond at positions C5-C6 that underwent dihydroxylation, or the reaction scheme is misrepresenting the transformation.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Saegusa oxidation",
+            "reagents": "O₂, Pd(OAc)₂",
+            "reagent_smiles": "",
+            "conditions": "1 atm, DMSO",
+            "yield": "92%",
+            "reactant_smiles": "CC[C@@]1(O)[C@H](O)CCC=C1[OTIPS]",
+            "product_smiles": "CC[C@@]1(O)[C@H](O)CC(=O)C=C1",
+            "notes": "Oxidation of a vinylic silyl ether to an alpha,beta-unsaturated ketone (enone).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acetalization",
+            "reagents": "PPTS, MeCN",
+            "reagent_smiles": "CC1=CC(=C(C(=C1)C)C(OC)OC)C",
+            "conditions": "24 -> 50 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC[C@@]1(CC(=O)C=C[C@H]1O)O",
+            "product_smiles": "CC[C@@]12CC(=O)C=C[C@H]1OC([Mes])O2",
+            "notes": "Protection of a 1,2-diol as an acetal with mesitaldehyde dimethyl acetal.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "1,4-Conjugate Addition / Silyl Enol Ether Formation",
+            "reagents": "CuI, TMSCH2MgBr, HMPA, Et3N, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -30 -> -78 -> 24 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1C(=O)C=C[C@H]2O[C]([Mes])O12",
+            "product_smiles": "CC[C@@]1C=C(O[TMS])[C@H](C[Si](C)(C)C)[C@H]2O[C]([Mes])O12",
+            "notes": "1,4-conjugate addition of a trimethylsilylmethyl group to the cyclohexenone, followed by trapping of the resulting enolate with trimethylsilyl chloride to form a silyl enol ether. Catalyzed by copper(I) iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "Pd(OAc)2",
+            "reagent_smiles": "CC(=O)O[Pd](OC(C)=O)",
+            "conditions": "MeCN",
+            "yield": "82 % (2 steps)",
+            "reactant_smiles": "CC[C@@]12OC([Mes])O[C@H]4[C@H]1[C@@H](C[TMS])C=C(O[TMS])CC24",
+            "product_smiles": "CC[C@@]12OC([Mes])O[C@H]4[C@H]1[C@@H](C[TMS])C(=O)C=CC24",
+            "notes": "Pd(II)-catalyzed oxidation of an enol ether to form an α,β-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Michael Addition / Conjugate Addition",
+            "reagents": "TASF(Et)",
+            "reagent_smiles": "COCOC1=CC=C2C(=C1OCOC)C(=O)C(Br)=C(Br)C2=O",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "81 %",
+            "reactant_smiles": "CC[C@@]12OC(c3c(C)cc(C)cc3C)O[C@@H]1C(=O)C=C(C[TMS])CC2",
+            "product_smiles": "CC[C@@]12OC(c3c(C)cc(C)cc3C)O[C@@H]1C(=O)C=C(CC4=C(Br)C(=O)c5c(OCOC)ccc(OCOC)c5C4=O)CC2",
+            "notes": "C-C bond formation between silyl enol ether (after desilylation) and bromonaphthoquinone via conjugate addition, with cleavage of TMS group and reduction of one quinone bromine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Heck cyclization",
+            "reagents": "Pd(OAc)2, PPh3, Ag2CO3",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 80 °C",
+            "yield": "95%",
+            "reactant_smiles": "CC[C@]12CC(=O)C=C(CC3=C(Br)C(=O)C4=C([MOMO])C=CC([MOMO])=C4C3=O)[C@H]1O[CH]([Mes])O2",
+            "product_smiles": "CC[C@]12CC(=O)C3=C(C=C4C3=C(C5=C([MOMO])C=CC([MOMO])=C5C4=O)O)[C@H]1O[CH]([Mes])O2",
+            "notes": "Heck cyclization forming a new 5-membered carbocyclic ring and a hydroxyl group from a brominated naphthoquinone derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Azidation",
+            "reagents": "TfN₃, DMAP",
+            "reagent_smiles": "",
+            "conditions": "MeCN, - 20 °C",
+            "yield": "22 %",
+            "reactant_smiles": "CC[C@]12CC(=O)C3=C(C=C4C3=C(C5=C(C=CC(=C5C4=O)[MOMO])[MOMO])O)[C@H]1OC([Mes])O2",
+            "product_smiles": "CC[C@]12CC(=O)C3=C(C(C4=C3C(=O)C5=C(C=CC(=C5C4=O)[MOMO])[MOMO])[N-]=N=N)[C@H]1OC([Mes])O2",
+            "notes": "Azidation of a hydroxyquinone derivative with subsequent cyclization/rearrangement to form a new 5-membered ring containing the azide group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "TMSOTf, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[MOMO]Oc1ccc2c(c1O[MOMO])C(=O)c3c(c2=O)C(=C([N+]#N)C4=C5[C@H]3O[C@H]([Mes])O[C@H]4C(=O)C[C@](CC)5",
+            "product_smiles": "[MOMO]Oc1ccc2c(c1O[MOMO])C(=O)c3c(c2=O)C(=C([N+]#N)C4=C5[C@H]3O[C@H]([Mes])O[C@H]4C=C(O[Si](C)(C)C)[C@](CC)5",
+            "notes": "Ketone undergoes silylation with TMSOTf and Et3N to form a trimethylsilyl enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative dimerization",
+            "reagents": "Mn(hfacac)3, benzene",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "26%",
+            "reactant_smiles": "CC[C@]12C=C(C3=C(C(C4=C3C(=O)C5=C(C=CC(=C5C4=O)[MOMO])[MOMO])[N+]#N)[C@H]1O[C@H]([Mes])O2)O[Si](C)(C)C",
+            "product_smiles": "CC[C@@]12[C@@H]([C@H]3C(=O)C4=C(C(=C3[C@@H]1O[C@H]([Mes])O2)[N+]#N)C(=O)C5=C(C(=CC=C5[MOMO])[MOMO])C4=O)[C@H]6C(=O)C7=C(C(=C8C7=C(C9=C(C(=CC=C9[MOMO])[MOMO])C8=O)[N+]#N))[C@@H]%10[C@]6(CC)O[C@@H]([Mes])O%10",
+            "notes": "Oxidative dimerization of the reactant to form Lomaivitricin. The TMS-O group is eliminated, and a new C-C bond forms between two monomer units.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection, Hydrolysis, Rearrangement",
+            "reagents": "TFA, TBHP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -35 °C",
+            "yield": "39 %",
+            "reactant_smiles": "CC[C@]12/C(=C\\3/C(=O)C4=C(C(C5=C4C(=O)C6=C(C(=CC=C6[MOMO])[MOMO])C5=O)[N+]#N)[C@@H]7[C@]3(CC)O[C@H](C)O7)/C(=O)C8=C(C(=C9C8C(=O)C%10=C(C(=CC=C%10[MOMO])[MOMO])C9=O)[N+]#N)[C@@H]1O[C@H](C)O2",
+            "product_smiles": "CC[C@]12[C@@H](C3=C(C4=C(C(=C3[N+]#N)C(=O)C5=C(C=CC(=C5C4=O)O)O)[C@]6(C7=C8[C@](CC)([C@@H](C(=C7[C@](CC)(O)O6)[C@@]1(O)O8)O)O)O)[N+]#N)",
+            "notes": "Deprotection of MOMO groups to hydroxyls, hydrolysis of O-C(=O)-Mes esters to hydroxyls, and rearrangement of the central bicyclic system with ring expansion.",
+            "substeps": []
+        }
+    ]
+}

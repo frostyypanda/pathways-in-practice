@@ -1,0 +1,278 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "quinine-ishikawa-2019",
+        "molecule_name": "Quinine",
+        "class": "Natural Product",
+        "author": "Ishikawa",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Isothiocyanate Formation",
+            "reagents": "THF",
+            "reagent_smiles": "C1=CN(C=N1)C(=S)N2C=CN=C2",
+            "conditions": "50 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CNCC1=CC(OC)=C(C=C1)OC",
+            "product_smiles": "CN=C=SCC1=CC(OC)=C(C=C1)OC",
+            "notes": "Conversion of 2,4-dimethoxybenzylamine to 2,4-dimethoxybenzyl isothiocyanate using 1,1'-Thiocarbonyldiimidazole (TCDI).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Thiocarbamate Synthesis",
+            "reagents": "MgCl2, Et3N",
+            "reagent_smiles": "COC(=O)CC(=O)[O-].[K+]",
+            "conditions": "THF, 50 °C",
+            "yield": "82%",
+            "reactant_smiles": "COc1c(CN=C=S)ccc(OC)c1",
+            "product_smiles": "COC(=O)CC(=S)N(Cc1c(OC)cc(OC)cc1)",
+            "notes": "Synthesis of N-(2,4-dimethoxybenzyl)-2-(methoxycarbonyl)ethanethioamide from 1,4-dimethoxy-2-(isothiocyanatomethyl)benzene and potassium methyl malonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization / Michael Addition",
+            "reagents": "",
+            "reagent_smiles": "O=C/C=C/CO[Si](C(C)(C)C)(c1ccccc1)c2ccccc2.C[Si](c1ccccc1)(c2ccccc2)O[C@@H](c3ccccc3)[C@@H]4NCCC[C@H]4.OC(=O)c5ccccc5",
+            "conditions": "MeOH, toluene, 30 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)NC(=S)CC(=O)OC",
+            "product_smiles": "COC1=CC=C(C=C1)N2C(=S)[C@@H](C(=O)OC)[C@@H](CCO[Si](C(C)(C)C)(c3ccccc3)c4ccccc4)C[C@@H](O)C2",
+            "notes": "Intramolecular cyclization of a thioamide with an α,β-unsaturated aldehyde catalyzed by a chiral pyrrolidine derivative, yielding a six-membered thiacycle with multiple stereocenters.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Alcohol protection",
+                    "reagents": "TBDPS-Cl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, rt",
+                    "yield": "",
+                    "reactant_smiles": "C=CCCO",
+                    "product_smiles": "C=CCCO[OTBDPS]",
+                    "notes": "Protection of a primary alcohol with TBDPS group to form a silyl ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Cross-metathesis",
+                    "reagents": "HG2 catalyst",
+                    "reagent_smiles": "C=CC=O",
+                    "conditions": "DCM, rt",
+                    "yield": "85%",
+                    "reactant_smiles": "C=CCCCO[OTBDPS]",
+                    "product_smiles": "[OTBDPS]CC/C=C/C=O",
+                    "notes": "Cross-metathesis of but-3-en-1-yloxy-TBDPS with acrolein to form an alpha,beta-unsaturated aldehyde, protected with TBDPS ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyanation / Substitution",
+            "reagents": "TMSCN, BF3 OEt2",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]OCC[C@@H]3CC(O)N([DMB])C(=S)C3C(=O)OC",
+            "product_smiles": "[OTBDPS]OCC[C@@H]3CC(C#N)N([DMB])C(=S)C3C(=O)OC",
+            "notes": "Hydroxyl group is replaced by a nitrile group. The DMB abbreviation is maintained from the reactant to the product as shown in the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nitrile to Methyl Imidate Conversion",
+            "reagents": "DBU, MeOH",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "79%",
+            "reactant_smiles": "[OTBDPS]CCC[C@@H]1[C@@H](C#N)CC[N]([PMB])C(=S)[C@H]1[CO2Me]",
+            "product_smiles": "[OTBDPS]CCC[C@@H]1[C@H](C(=N)OC)CC[N]([PMB])C(=S)[C@H]1[CO2Me]",
+            "notes": "Conversion of a nitrile to a methyl imidate with inversion of stereochemistry at the reacting carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction / Desulfurization",
+            "reagents": "NiCl2, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF/MeOH",
+            "yield": "78%",
+            "reactant_smiles": "COC(=N)[C@@H]1N([DMB])C(=S)[C@H](C(=O)OC)C[C@@H](CCOC[OTBDPS])C1",
+            "product_smiles": "COC(=N)[C@@H]1N([DMB])CC[C@H](C(=O)OC)C[C@@H](CCOC[OTBDPS])C1",
+            "notes": "Reduction of a cyclic thiocarbamate to a cyclic amine (methylene).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "DCM",
+            "reagent_smiles": "[AlH](CC(C)C)CC(C)C",
+            "conditions": "-95 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]CC[C@@H]1C[C@@H](C(=N)OC)N(CC2=CC=C(OC)C=C2)C[C@H]1C(=O)OC",
+            "product_smiles": "[OTBDPS]CC[C@@H]1C[C@@H](C(=N)OC)N(CC2=CC=C(OC)C=C2)C[C@H]1C=O",
+            "notes": "Ester is reduced to an aldehyde using DIBAL.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrolysis",
+            "reagents": "AcOH",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]OCC[C@@H]1C[C@@H](C(=N)OC)N([DMB])C[C@H]1C=O",
+            "product_smiles": "[OTBDPS]OCC[C@@H]1C[C@@H](C(=O)OC)N([DMB])C[C@H]1C=O",
+            "notes": "Hydrolysis of an imino-ester to a methyl carbamate",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Methylenation",
+            "reagents": "Tebbe reagent",
+            "reagent_smiles": "",
+            "conditions": "toluene/THF",
+            "yield": "70% (3 steps)",
+            "reactant_smiles": "[OTBDPS]CC[C@H]1C[C@@H](C(=O)OC)N([DMB])C[C@@H]1C=O",
+            "product_smiles": "C=C[C@@H]1CN([DMB])[C@@H](C[C@H]1CC[OTBDPS])C(=O)OC",
+            "notes": "Methylenation of an aldehyde to a terminal alkene using Tebbe reagent. Relative stereochemistry preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL, DCM",
+            "reagent_smiles": "",
+            "conditions": "-95 °C",
+            "yield": "83%",
+            "reactant_smiles": "C=C[C@H]1C[C@H](CCO[OTBDPS])C[C@H](C(=O)OC)N1[DMB]",
+            "product_smiles": "C=C[C@H]1C[C@H](CCO[OTBDPS])C[C@H](C=O)N1[DMB]",
+            "notes": "Reduction of a methyl ester to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Organolithium Addition / Nucleophilic Addition",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "COc1ccc2c(c1Br)C=CCN2S(=O)(=O)c3ccccc3",
+            "conditions": "THF",
+            "yield": "72%",
+            "reactant_smiles": "C=C[C@@H]1CN([DMB])[C@H](C[C@H]1CC[OTBDPS])C=O",
+            "product_smiles": "C=C[C@@H]1CN([DMB])[C@H](C[C@H]1CC[OTBDPS])C(O)c2ccc(OC)c3c2C=CN(S(=O)(=O)c4ccccc4)C3",
+            "notes": "Addition of a lithium carbanion generated from the bromo-dihydroquinoline to an aldehyde.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Sulfonamide Formation",
+                    "reagents": "pyridine, DMAP",
+                    "reagent_smiles": "COC1=CC=C(C=C1)N",
+                    "conditions": "60 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "product_smiles": "COC1=CC=C(C=C1)NS(=O)(=O)C2=CC=CC=C2",
+                    "notes": "Formation of an N-arylbenzenesulfonamide from benzenesulfonyl chloride and 4-methoxyaniline.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Mitsunobu reaction",
+                    "reagents": "DEAD, PPh3",
+                    "reagent_smiles": "C#CCO",
+                    "conditions": "THF, toluene, reflux",
+                    "yield": "",
+                    "reactant_smiles": "COC1=CC=C(C=C1)NS(=O)(=O)C2=CC=CC=C2",
+                    "product_smiles": "C#CCN(C1=CC=C(C=C1)OC)S(=O)(=O)C2=CC=CC=C2",
+                    "notes": "N-alkylation of a sulfonamide with propargyl alcohol via Mitsunobu reaction.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Bromination",
+                    "reagents": "NBS, AgNO3",
+                    "reagent_smiles": "",
+                    "conditions": "acetone, RT",
+                    "yield": "",
+                    "reactant_smiles": "C#CCN(C1=CC=C(C=C1)OC)S(=O)(=O)C2=CC=CC=C2",
+                    "product_smiles": "COC1=CC=C(C=C1)N(CC#CBr)S(=O)(=O)C2=CC=CC=C2",
+                    "notes": "Terminal alkyne is brominated to form a bromoalkyne.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Rh-catalyzed cyclization",
+                    "reagents": "Rh cat.",
+                    "reagent_smiles": "",
+                    "conditions": "Toluene, 80 °C",
+                    "yield": "",
+                    "reactant_smiles": "COC1=CC=C(C=C1)N(CC#CBr)S(=O)(=O)C2=CC=CC=C2",
+                    "product_smiles": "COc1ccc2c(c1)C(Br)=CCN2S(=O)(=O)c3ccccc3",
+                    "notes": "Rhodium-catalyzed cyclization of N-aryl-N-(propargyl)sulfonamide to form a 1,2-dihydroquinoline derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1CC[C@@H](CCO[OTBDPS])N(Cc2ccc(OC)c(OC)c2)C(C(O)c3ccc4c(c3)C=CCN4S(=O)(=O)c5ccccc5)C1",
+            "product_smiles": "C=C[C@H]1CC[C@@H](CCO[OTBDPS])N(Cc2ccc(OC)c(OC)c2)C(C(OC(=O)C)c3ccc4c(c3)C=CCN4S(=O)(=O)c5ccccc5)C1",
+            "notes": "Acetylation of secondary alcohol using acetic anhydride and pyridine. Stereochemistry of alcohol becomes undefined (racemic mixture).",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": ">99% (2 steps)",
+            "reactant_smiles": "C=C[C@@H]1C[C@H](CCO[OTBDPS])C(C(OC(C)=O)C2C=CC3=C(C=CC(OC)=C3)N(S(=O)(=O)c4ccccc4)C2)N(CC5=CC(OC)=CC(OC)=C5)C1",
+            "product_smiles": "C=C[C@@H]1C[C@H](CCO)C(C(OC(C)=O)C2C=CC3=C(C=CC(OC)=C3)N(S(=O)(=O)c4ccccc4)C2)N(CC5=CC(OC)=CC(OC)=C5)C1",
+            "notes": "Deprotection of TBDPS ether to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N, DCM",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1CC[C@H](CCO)N(CC2=CC(OC)=CC(OC)=C2)C1C(OC(=O)C)C3=C4C=CC(OC)=C4C=CN3S(=O)(=O)C5=CC=CC=C5",
+            "product_smiles": "C=C[C@@H]1CC[C@H](CCOS(=O)(=O)C)N(CC2=CC(OC)=CC(OC)=C2)C1C(OC(=O)C)C3=C4C=CC(OC)=C4C=CN3S(=O)(=O)C5=CC=CC=C5",
+            "notes": "Mesylation of a primary alcohol to form an alkyl mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "anisole, toluene",
+            "reagent_smiles": "",
+            "conditions": "120 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H]1C[C@@H](CCOS(=O)(=O)C)CN([DMB])CC1C(OC(=O)C)C2=C3C=CC(OC)=CC3=C[N](S(=O)(=O)c4ccccc4)CC=C2",
+            "product_smiles": "C=C[C@@H]1CN2CC[C@H]1CC2C(OC(=O)C)C3=C4C=CC(OC)=CC4=C[N](S(=O)(=O)c5ccccc5)CC=C3",
+            "notes": "Intramolecular cyclization involving displacement of the mesylate group by the N-DMB nitrogen, forming an azabicyclo[2.2.2]octane (quinuclidine-like) core.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection",
+            "reagents": "KOt-Bu",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH",
+            "yield": "77%",
+            "reactant_smiles": "C=C[C@@H]1CN2CC[C@H]1CC2C(OC(=O)C)C3=C(C=C[N]4S(=O)(=O)c5ccccc5CC3)c6ccc(OC)cc6",
+            "product_smiles": "C=C[C@@H]1CN2CC[C@H]1CC2[C@H](O)C3=C4C=C(C=CC4=NC=C3)OC",
+            "notes": "Deprotection of acetate and N-sulfonyl group, yielding (+)-Quinine. The yield is reported over 3 steps.",
+            "substeps": []
+        }
+    ]
+}

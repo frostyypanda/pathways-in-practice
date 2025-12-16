@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "illudin-c-funk-2001",
+        "molecule_name": "Illudin C",
+        "class": "Natural Product",
+        "author": "Funk",
+        "year": 2001
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclopropanation / Double Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "C(CBr)Br",
+            "conditions": "DMF, rt",
+            "yield": "72%",
+            "reactant_smiles": "CC(=O)CC(=O)C",
+            "product_smiles": "CC(=O)C1(CC1)C(=O)C",
+            "notes": "Alkylation of 2,4-pentanedione (acetylacetone) with 1,2-dibromoethane in the presence of base to form 1,1-diacetylcyclopropane.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Chemoselective Ketone Reduction",
+            "reagents": "LiAl(O-t-Bu)3H",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -78 °C to rt",
+            "yield": "58%",
+            "reactant_smiles": "CC(=O)[C@@H]1C[C@@H](C(=O)C)[C@H]2[C@H]1C2",
+            "product_smiles": "C[C@H](O)[C@@H]1C[C@@H](C(=O)C)[C@H]2[C@H]1C2",
+            "notes": "Chemoselective and stereoselective reduction of one ketone group to a secondary alcohol in a bicyclic diketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "PPh3, I2, imidazole, DBU",
+            "reagent_smiles": "",
+            "conditions": "benzene, rt, 80 °C",
+            "yield": "48%",
+            "reactant_smiles": "CC(=O)C1(C2CC2)[C@@H](C)O",
+            "product_smiles": "CC(=O)C1(C=C)C2CC2",
+            "notes": "Dehydration of a secondary alcohol to form a vinyl group, maintaining the spiro-cyclopropane ketone core.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Addition / Annulation / Rearrangement",
+            "reagents": "t-BuLi",
+            "reagent_smiles": "BrC1=C(/C=N/O)[C@H](C)C(C)(C)CC1",
+            "conditions": "THF, -78 °C",
+            "yield": "68%",
+            "reactant_smiles": "C=C[C@@]1C(=O)CC[C@](C)([C@H]2C[C@H]12)",
+            "product_smiles": "C=C[C@@]1([C@H]2C[C@H]2C1)[C@](C)(O)C=C(/C=N/O)[C@](C)",
+            "notes": "Formation of a vinyllithium from a bromo-oxime, followed by addition to a cyclic ketone and subsequent intramolecular cyclization/rearrangement to form a complex bicyclic structure with an alkene, hydroxyl, and oxime.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Prins reaction",
+                    "reagents": "TsOH, p-cymene",
+                    "reagent_smiles": "C=CCO",
+                    "conditions": "reflux, 48 h",
+                    "yield": "95%",
+                    "reactant_smiles": "CC(C)C=O",
+                    "product_smiles": "C=CCC(C)(C)C=O",
+                    "notes": "Acid-catalyzed condensation of isobutyraldehyde with allyl alcohol leading to an alpha-branched aldehyde with an allyl substituent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Wacker Oxidation",
+                    "reagents": "CuCl/PdCl2/O2",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, H2O",
+                    "yield": "84%",
+                    "reactant_smiles": "C=CCC(C)(C)C=O",
+                    "product_smiles": "CC(=O)CC(C)(C)C=O",
+                    "notes": "Terminal alkene is oxidized to a methyl ketone, while the aldehyde group remains unaffected.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Intramolecular Aldol Condensation / Dehydration",
+                    "reagents": "aq. KOH, THF, Et2O",
+                    "reagent_smiles": "",
+                    "conditions": "reflux",
+                    "yield": "82%",
+                    "reactant_smiles": "CC(=O)CC(C)(C)C=O",
+                    "product_smiles": "CC1(C)C=CC(=O)C1",
+                    "notes": "Intramolecular aldol reaction of a methyl ketone and an aldehyde, followed by dehydration, to form a 4,4-dimethylcyclopent-2-en-1-one.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "Reductive Silylation / Hydrosilylation",
+                    "reagents": "RhCl(PPh3)3, Et3SiH",
+                    "reagent_smiles": "",
+                    "conditions": "benzene, 50 °C",
+                    "yield": "88%",
+                    "reactant_smiles": "CC1(C)C=CC(=O)C1",
+                    "product_smiles": "CC[Si](CC)(CC)OC1=CCCC1(C)C",
+                    "notes": "Reductive silylation of an α,β-unsaturated ketone to a silyl enol ether, with concurrent reduction of the C=C double bond in the ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.5",
+                    "reaction_type": "Vilsmeier-Haack reaction",
+                    "reagents": "POBr3, DMF, CH2Cl2",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "64%",
+                    "reactant_smiles": "[SiEt3]OC1=CC[C@@](C)(C)C1",
+                    "product_smiles": "O=CC1=C(Br)CC[C@@](C)(C)C1",
+                    "notes": "Vilsmeier-Haack reaction of an enol silyl ether to form a bromo-aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.6",
+                    "reaction_type": "Oxime Formation",
+                    "reagents": "NH2OH·HCl, NaOAc",
+                    "reagent_smiles": "NO.Cl.CC(=O)O[Na].CCO.O",
+                    "conditions": "EtOH, H2O",
+                    "yield": "82%",
+                    "reactant_smiles": "O=CC1=C(Br)CCC1(C)C",
+                    "product_smiles": "O/N=C/C1=C(Br)CCC1(C)C",
+                    "notes": "Aldehyde is converted to an E-oxime.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Cyclization (Nitrone Cycloaddition variant)",
+            "reagents": "chloramine-T",
+            "reagent_smiles": "CCO.Cc1ccc(S(=O)(=O)N(Cl)Na)cc1",
+            "conditions": "EtOH, 40 °C, 6 h",
+            "yield": "99%",
+            "reactant_smiles": "C=C[C@@]1(C)CC1[C@](O)(C)C2=C(\\C=N\\O)C3=C2CC(C)(C)CC3",
+            "product_smiles": "CC1(C)CCC2C1[C@@H]3[C@](O)(C)([C@@]4(C)CC4)[C@@H]5[C@H]6ON([C@@H](C3)C2)C5",
+            "notes": "Intramolecular cyclization of an oxime and a terminal alkene, forming a new 6-membered ring containing N and O.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Cleavage/Rearrangement",
+            "reagents": "Raney nickel, H2, B(OH)3",
+            "reagent_smiles": "",
+            "conditions": "MeOH/H2O",
+            "yield": "72%",
+            "reactant_smiles": "CC1(C)CCC2=C1C(=N[O]C3=C(C2)[C@H]4[C@@H]5C[C@@H]5[C@@](C)(O)C3)",
+            "product_smiles": "CC1(C)CCC2=C1C(=O)C3=C(C2)[C@@](C)(O)[C@H]4[C@@H]5C[C@@H]5[C@H](CO)C3",
+            "notes": "Reductive cleavage of oxaziridine and imine with rearrangement to form ketone and primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Elimination (Dehydration via Mesylate)",
+            "reagents": "MesCl, NEt3, DBU",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C; rt",
+            "yield": "73%",
+            "reactant_smiles": "C[C@@]1(C)CC2=C(C1)[C@](C)([C@]3(CC3)[C@H](CO)C2=O)O",
+            "product_smiles": "C=C1C(=O)C2=C(C[C@@](C)(C)C2)[C@](C)([C@]31CC3)O",
+            "notes": "Formation of a primary mesylate followed by DBU-mediated elimination of the primary alcohol and a proton to form an exocyclic double bond. The initial primary alcohol is alpha to a ketone.",
+            "substeps": []
+        }
+    ]
+}

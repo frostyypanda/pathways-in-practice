@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lycoricidine-sarlah-2019",
+        "molecule_name": "Lycoricidine",
+        "class": "Natural Product",
+        "author": "Sarlah",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective Etherification / Alcohol Protection",
+            "reagents": "BnOH, p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "81%",
+            "reactant_smiles": "OC[C@H]1OC[C@@H](O)[C@@H](O)[C@H]1O",
+            "product_smiles": "OC[C@H]1OC[C@@H](O)[C@@H](O)[C@H]1[OBn]",
+            "notes": "Selective benzylation of a hydroxyl group on a pyranose ring catalyzed by p-TsOH. The bottom-most hydroxyl group (axial, up) is replaced by a benzyloxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ketal Formation (Diol Protection)",
+            "reagents": "DMP, acetone, p-TsOH",
+            "reagent_smiles": "CC(OC)(OC)C.CC(=O)C.Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "O[C@@H]1[C@H](O)[C@@H](O)[C@H](O)C(CO1)[OBn]",
+            "product_smiles": "O[C@@H]1([OBn])[C@H]2O[C](C)(C)O[C@@H]2[C@H](O)CO1",
+            "notes": "Formation of an isopropylidene ketal from two vicinal diols on a pyranose ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection (alcohol silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "CC1(C)O[C@@H]2[C@H]([OBn])C[C@@H](O)[C@@H]3O[C@@H]2O13",
+            "product_smiles": "CC1(C)O[C@@H]2[C@H]([OBn])C[C@@H]([OTBS])[C@@H]3O[C@@H]2O13",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Deprotection (Birch Reduction)",
+            "reagents": "Li, NH₃",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H]1COC([C@@H]2[C@H]1OC(C)(C)O2)O[Bn]",
+            "product_smiles": "[OTBS][C@@H]1COC([C@@H]2[C@H]1OC(C)(C)O2)O",
+            "notes": "Reductive cleavage of benzyl ether to a hydroxyl group, while tert-butyldimethylsilyl ether and isopropylidene acetal are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidative Ring Opening, Oxime Formation",
+            "reagents": "BnONH2, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89% (2 steps)",
+            "reactant_smiles": "O[TBS][C@H]1C[C@@H](O)[C@H]2OC(C)(C)O[C@@H]2O1",
+            "product_smiles": "OC[C@H](O[TBS])C[C@H](/C=N/OCC1=CC=CC=C1)[C@H]2OC(C)(C)O[C@@H]2",
+            "notes": "A pyranose derivative undergoes oxidative ring opening, converting an internal secondary alcohol to an aldehyde, which then reacts with benzylhydroxylamine to form an anti-oxime. The acetonide and tert-butyldimethylsilyl (TBS) protecting groups are retained. The ring oxygen of the pyran is converted to a primary alcohol (CH2OH) in the open-chain product.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ley oxidation",
+            "reagents": "TPAP, NMO, 4Å MS",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H](CO)[C@H]1[C@H](/C=N/OCC2=CC=CC=C2)OC(C)(C)O1",
+            "product_smiles": "[OTBS][C@@H](C=O)[C@H]1[C@H](/C=N/OCC2=CC=CC=C2)OC(C)(C)O1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Corey-Fuchs reaction",
+            "reagents": "",
+            "reagent_smiles": "C(Br)(Br)(Br)Br.P(c1ccccc1)(c2ccccc2)c3ccccc3.CCN(CC)CC",
+            "conditions": "",
+            "yield": "55% (2 steps)",
+            "reactant_smiles": "[OTBS][C@H](C=O)[C@H]1[C@@H](/C=N/[OBn])OC(C)(C)O1",
+            "product_smiles": "[OTBS][C@H](C=C(Br)Br)[C@H]1[C@@H](/C=N/[OBn])OC(C)(C)O1",
+            "notes": "Corey-Fuchs reaction converting an aldehyde to a gem-dibromoalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Corey-Fuchs reaction",
+            "reagents": "nBuLi",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "[OTBS][C@H](C=C(Br)Br)[C@H]1[C@@H](/C=N/OCC2=CC=CC=C2)OC(C)(C)O1",
+            "product_smiles": "C#C[C@H]([OTBS])[C@H]1[C@@H](/C=N/OCC2=CC=CC=C2)OC(C)(C)O1",
+            "notes": "Transformation of a gem-dibromoalkene into a terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "Pd(OAc)2, Et3N, PPh3, CuI",
+            "reagent_smiles": "C1=C(C=O)C(=CC2=C1OCO2)Br",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "C#C[C@H]([C@H]1[C@@H](/C=N/[NOBn])OC(C)(C)O1)[OTBS]",
+            "product_smiles": "[OTBS][C@H](C#CC1=CC2=C(C=C1C=O)OCO2)[C@H]3[C@@H](/C=N/[NOBn])OC(C)(C)O3",
+            "notes": "Sonogashira coupling of a terminal alkyne with an aryl bromide, forming a new carbon-carbon triple bond linkage. The TBS and O-benzyl oxime groups are retained, as is the acetonide and stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "HF, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "[OTBS][C@H](C#CC1=CC2=C(C=C1C=O)OCO2)[C@H]3[C@@H](\\C=N\\[OBn])OC(C)(C)O3",
+            "product_smiles": "O[C@H](C#CC1=CC2=C(C=C1C=O)OCO2)[C@H]3[C@@H](\\C=N\\[OBn])OC(C)(C)O3",
+            "notes": "Deprotection of a TBS silyl ether to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Corey-Gilman-Ganem oxidation",
+            "reagents": "MnO2, NaCN, HOAc",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "81%",
+            "reactant_smiles": "CC1(C)O[C@@H](/C=N/OCC2=CC=CC=C2)[C@@H]([C@@H](C#CC3=CC4=C(C=C3C=O)OCO4)O)O1",
+            "product_smiles": "CC1(C)O[C@@H](/C=N/OCC2=CC=CC=C2)[C@@H]([C@@H](C#CC3=C(C=C4C(=C3)OCO4)C(=O)OC)O)O1",
+            "notes": "Oxidation of an aldehyde to a methyl ester using Corey-Gilman-Ganem conditions (MnO2, NaCN, HOAc in MeOH). Stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Photoinduced Radical Cyclization (Thiol-Ene Reaction)",
+            "reagents": "",
+            "reagent_smiles": "Sc1ccccc1",
+            "conditions": "toluene, 27 °C, hν",
+            "yield": "91%",
+            "reactant_smiles": "CC1(C)O[C@H](/C=N\\OCC2=CC=CC=C2)[C@H]([C@@H](C#CC3=C(C=C4C(=C3)OCO4)C(=O)OC)O)O1",
+            "product_smiles": "CC1(C)O[C@H]2[C@H](O1)[C@H](O)C(=C(Sc1ccccc1)C3=CC4=C(C=C3C(=O)OC)OCO4)[C@H]2ONCC5=CC=CC=C5",
+            "notes": "Photoinduced radical cyclization via thiol addition to the alkyne and subsequent cyclization to form a cyclohexene ring, along with reduction of the imine oxygen to form N-hydroxyimine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Reductive Cyclization",
+            "reagents": "SmI2",
+            "reagent_smiles": "I[Sm]I",
+            "conditions": "THF",
+            "yield": "76%",
+            "reactant_smiles": "CC1(C)O[C@H]2[C@H]([C@H](O)C=C(Sc3ccccc3)C(c4cc5c(cc4C(=O)OC)OCO5)[C@@H](N(O)Cc6ccccc6)C2)O1",
+            "product_smiles": "CC1(C)O[C@H]2[C@H]([C@H](O)C=C(c3cc4c(cc3C(=O)N[C@@H]5C2)OCO4)C5)O1",
+            "notes": "Intramolecular reductive cyclization of a methyl ester and N-benzylhydroxylamine derivative mediated by SmI2, resulting in lactam formation and concurrent phenylthio group removal. The double bond shifts position.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection (acetonide)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "CC1(C)O[C@@H]2[C@H](C=C3C4=CC5=C(C=C4C(=O)N[C@H]3[C@@H]2O1)OCO5)[C@H](O)",
+            "product_smiles": "C1=C2C3=CC4=C(C=C3C(=O)N[C@H]2[C@@H]([C@@H]([C@H]1O)O)O)OCO4",
+            "notes": "Acid-catalyzed deprotection of an acetonide to reveal vicinal diols.",
+            "substeps": []
+        }
+    ]
+}

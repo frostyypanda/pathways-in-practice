@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "komaroviquinone-burtoloso-2019",
+        "molecule_name": "Komaroviquinone",
+        "class": "Natural Product",
+        "author": "Burtoloso",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Conjugate Addition / Enolate Alkylation",
+            "reagents": "CuBrSMe2, MeMgBr, DMPU",
+            "reagent_smiles": "C=CCBr",
+            "conditions": "0° to rt",
+            "yield": "79%",
+            "reactant_smiles": "CC1=CC(=O)CCC1",
+            "product_smiles": "O=C1[C@H](CC=C)C(C)(C)CCC1",
+            "notes": "Tandem conjugate addition of methyl Grignard (via cuprate) followed by enolate alkylation with allyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Corey-Chaykovsky reaction",
+            "reagents": "tBuOK",
+            "reagent_smiles": "[CH2-][S+](C)C",
+            "conditions": "DMSO, rt",
+            "yield": "88%",
+            "reactant_smiles": "C=CC[C@@H]1C(=O)CCC[C@@]1(C)C",
+            "product_smiles": "C=CC[C@H]1[C@](C)(C)CCC[C@@]21CO2",
+            "notes": "Corey-Chaykovsky reaction converting a cyclohexanone derivative to a spiro-epoxide. The stereochemistry of the existing allyl and gem-dimethyl groups is preserved, and the epoxide forms with the oxygen pointing upwards relative to the ring plane.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dihydroxylation (Sharpless)",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1C2O[C@H]3C[C@H](CC=C)[C@@H](C)C(C)(C)C132",
+            "product_smiles": "C[C@@H]1C2O[C@H]3C[C@H](C[C@@H](O)CO)[C@@H](C)C(C)(C)C132",
+            "notes": "The allyl group is dihydroxylated, forming a vicinal diol. The dihydroxylation occurs from the bottom face, as indicated by the dashed bond for one of the hydroxyl groups and the unchanged stereochemistry of the attached chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Vicinal Diol Cleavage / Oxidation",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "CC1(C)CC[C@H](CC(CO)O)[C@H]2O[C@@H]1C2",
+            "product_smiles": "CC1(C)CC[C@H](CC=O)[C@H]2O[C@@H]1C2",
+            "notes": "Oxidation of a 1,2-diol (vicinal diol) to an aldehyde using sodium periodate. The C-C bond between the two hydroxyl-bearing carbons is cleaved, and the primary alcohol is lost as formaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Negishi-type Cross-Coupling / Intramolecular Cyclization",
+            "reagents": "NiI2, pyridine, 4-4'-dimethoxy-2,2'-bipyridine, NaI, Zn, Et3N·HCl, DMPU",
+            "reagent_smiles": "CC(C)C1=C(C=C(C(=C1OC)OC)Br)OC",
+            "conditions": "",
+            "yield": "25%",
+            "reactant_smiles": "C[C@@]1(C)CCC[C@]2(CO2)[C@H]1CC=O",
+            "product_smiles": "CC(C)C1=C(C=C(C[C@@]3CCC[C@](C)(C)[C@@]23CC[C@H](O)O2)C(=C1OC)OC)OC",
+            "notes": "Aryl bromide undergoes Negishi-type cross-coupling with the aldehyde. The resulting alcohol then undergoes intramolecular cyclization via opening of the oxirane ring, forming a fused tetrahydrofuran system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation / Lactonization",
+            "reagents": "Ag2CO3/Celite",
+            "reagent_smiles": "O=C([O-])[O-].[Ag+].[Ag+]",
+            "conditions": "toulene, 140 °C",
+            "yield": "92%",
+            "reactant_smiles": "CC(C)C1=C(C=C(C[C@@]23CCC[C@@H](C)CC3CC(O)O2)C(=C1OC)OC)OC",
+            "product_smiles": "CC(C)C1=C(C=C(C[C@@]23CCC[C@@H](C)CC3CC(=O)O2)C(=C1OC)OC)OC",
+            "notes": "Oxidation of a bicyclic hemiacetal to a lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "NIS, pTSOH.H2O",
+            "reagent_smiles": "",
+            "conditions": "DCM, 45 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC(C)c1c(OC)c(OC)c(C[C@@]2(OC(=O)CC2)C[C@H]3CCC[C@H](C)[C@@H]3)c(OC)c1",
+            "product_smiles": "CC(C)c1c(OC)c(OC)c(C[C@@]2(OC(=O)CC2)C[C@H]3CCC[C@H](C)[C@@H]3)c(I)c1OC",
+            "notes": "Electrophilic iodination of an activated aromatic ring using N-iodosuccinimide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Grignard Reaction / Lactone ring opening and intramolecular cyclization",
+            "reagents": "iPrMgCl·LiCl",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -40 °C to rt",
+            "yield": "92%",
+            "reactant_smiles": "CC(C)C1=C(OC)C(OC)=C(C[C@@]23CCC[C@@](C)(C)[C@@H]3CC(=O)O2)C(OC)=C1",
+            "product_smiles": "CC(C)C1=C(OC)C(OC)=C(C[C@]2(O)C3CCC[C@@](C)(C)[C@@H]3CC(=O)C2)C(OC)=C1",
+            "notes": "Lactone ring opening via Grignard addition (using iPrMgCl·LiCl) followed by intramolecular cyclization, resulting in the formation of a new six-membered ring containing a ketone and a tertiary alcohol. Stereochemistry at the alcohol is defined as up.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation / Dearomatization / Ring closure",
+            "reagents": "AgO, HNO3",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane",
+            "yield": "63%",
+            "reactant_smiles": "CC(C)c1c(OC)c(OC)c2c(c1OC)[C@]3(O)CC(=O)C4C[C@H]5C[C@@]6(C)CCC[C@H]5C2[C@H]43",
+            "product_smiles": "CC(C)c1c(OC)c(=O)c2c(c1=O)[C@]3(O)C[C@H]4O[C@@]5(C)CCC[C@@H]6C[C@H]5[C@@](C)(C)C3C26",
+            "notes": "Oxidative dearomatization of a methoxy-substituted aromatic ring to a quinone, accompanied by the formation of a cyclic ether and epimerization of the decalin bridgehead hydrogen.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "epothilone-d-breit-2016",
+        "molecule_name": "Epothilone D",
+        "class": "Natural Product",
+        "author": "Breit",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-allylation",
+            "reagents": "ZnCl2, allylmagnesium chloride",
+            "reagent_smiles": "",
+            "conditions": "THF, -10 to 0°C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)[OtBu]",
+            "product_smiles": "C=CC[C@H](C)C(=O)[OtBu]",
+            "notes": "Alpha-allylation of a propionate ester using allylmagnesium chloride and ZnCl2, forming a chiral product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0°C",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@H](C)C(=O)OC(C)(C)C",
+            "product_smiles": "C=CC[C@H](C)CO",
+            "notes": "Ester reduction to primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Silyl ether formation (alcohol protection)",
+            "reagents": "TBSCl, imidazole, 4-DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, RT",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@H](C)CO",
+            "product_smiles": "C=CC[C@H](C)C[OTBS]",
+            "notes": "Protection of a primary alcohol with a tert-butyldimethylsilyl (TBS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration",
+            "reagents": "{Rh(CO)(PPh3)2Cl}, HBpin",
+            "reagent_smiles": "",
+            "conditions": "THF, RT",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@H](C)CO[OTBS]",
+            "product_smiles": "[Bpin]CCC[C@H](C)CO[OTBS]",
+            "notes": "Rhodium-catalyzed hydroboration of an alkene with HBpin, yielding an alkylboronate with preservation of a chiral center and TBS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "1,4-di(chloromagnesium)butane, ZnBr2, {Pd(PPh3)2Cl2}",
+            "reagent_smiles": "[Bpin]C(Br)=C(/C)",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Bpin]CCC[C@@H](C)CO[TBS]",
+            "product_smiles": "[Bpin]/C=C(/C)CCC[C@@H](C)CO[TBS]",
+            "notes": "A Negishi cross-coupling reaction in which an alkyl boronate (presumably converted in situ to an organozinc species) reacts with a vinyl bromide. The alkyl chain from the reactant couples with the vinyl group from the reagent, replacing the bromine. The Bpin group originally on the alkyl chain is lost, and the Bpin group from the vinyl reagent is incorporated into the product. The (Z)-stereochemistry of the vinyl group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Iododeboronation / Halogenation",
+            "reagents": "NaOH, I2",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](C[OTBS])CCC/C(=C\\[Bpin])/C",
+            "product_smiles": "C[C@@H](C[OTBS])CCC/C(=C\\I)/C",
+            "notes": "Vinyl boronate converted to vinyl iodide with retention of alkene configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "tBuLi, ZnBr2, {Pd(PPh3)2Cl2}",
+            "reagent_smiles": "C[Si](C)(C)C#CCI",
+            "conditions": "THF, -78°C to RT",
+            "yield": "",
+            "reactant_smiles": "I\\C=C(/C)CCC[C@@H](C)CO[OTBS]",
+            "product_smiles": "[TMS]C#CC/C=C(\\C)CCC[C@H](C)CO[OTBS]",
+            "notes": "Formation of a new C-C bond via Negishi coupling between an iodoalkene and a zincated alkyne. The iodoalkene is retained with E-stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (TBS ether hydrolysis)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C[C@@H](C)CCC/C(=C\\CCC#C[TMS])/C",
+            "product_smiles": "[TMS]C#CCC/C=C(\\C)CCC[C@@H](C)CO",
+            "notes": "Deprotection of a primary TBS silyl ether to a primary alcohol using TBAF, while the TMS-protected alkyne remains intact. The configuration of the chiral center and the E-alkene geometry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Macro-aldol cyclization",
+            "reagents": "LDA",
+            "reagent_smiles": "O=C(O)C[C@H]([OTBS])C(C)(C)C(=O)CC",
+            "conditions": "THF, -78 to -40 °C",
+            "yield": "",
+            "reactant_smiles": "C#CCC\\C=C(/C)CCC[C@@H](C)C=O",
+            "product_smiles": "C#CC1CC\\C=C(/C)CCC[C@@H](C)[C@H](O)C(=O)C(C)(C)[C@H]([OTBS])(C1)CC(=O)O",
+            "notes": "Intramolecular aldol-type reaction leading to a macrocyclic product. The aldehyde of the reactant reacts with the alpha-carbon of the ketone in the reagent, followed by cyclization. The product is Epothilone D.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Asymmetric Hydrogenation",
+                    "reagents": "Chiral Ruthenium-BINAP catalyst",
+                    "reagent_smiles": "",
+                    "conditions": "H2 (80 bar), MeOH, 10 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCC(=O)C(C)(C)C(=O)CC(=O)OC(C)(C)C",
+                    "product_smiles": "CCC(=O)C(C)(C)[C@@H](O)CC(=O)OC(C)(C)C",
+                    "notes": "Asymmetric reduction of a ketone to a chiral secondary alcohol using a chiral ruthenium catalyst and hydrogen.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Ester Deprotection",
+                    "reagents": "TFA, CH2Cl2",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CCC(=O)C(C)(C)[C@H](O)C[Boc]",
+                    "product_smiles": "CCC(=O)C(C)(C)[C@H](O*)CC(=O)O",
+                    "notes": "The t-butyl ester is deprotected to a carboxylic acid. The hydroxyl group is shown as 'OR' in the product, represented as 'O*' in the SMILES to denote an unspecified R group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Silylation",
+                    "reagents": "2,6-lutidine, TBSOTf",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, -78 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CCC(=O)C(C)(C)[C@H](O)CC(=O)O",
+                    "product_smiles": "CCC(=O)C(C)(C)[C@H]([OTBS])CC(=O)[OTBS]",
+                    "notes": "Diastereoselective silylation of a secondary alcohol and a carboxylic acid to form their respective TBS ethers/esters. Stereochemistry at the alcohol is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Deprotection, Ester Hydrolysis",
+                    "reagents": "NaHCO3",
+                    "reagent_smiles": "",
+                    "conditions": "THF, rt",
+                    "yield": "",
+                    "reactant_smiles": "CCC(=O)C(C)(C)[C@@H](CC(=O)[OTBS])[OTBS]",
+                    "product_smiles": "CCC(=O)C(C)(C)[C@@H](CC(=O)O)[OTBS]",
+                    "notes": "Selective hydrolysis of TBS ester to carboxylic acid using sodium bicarbonate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Silylation / Protecting Group Installation",
+            "reagents": "2,6-lutidine, TBSOTf",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C#CCC/C=C(/C)\\CCC[C@H](C)[C@@H]([C@@H](C)C(=O)[C@](C)(C)[C@H](CC(=O)O)[OTBS])O",
+            "product_smiles": "C#CCC/C=C(/C)\\CCC[C@H](C)[C@@H]([C@@H](C)C(=O)[C@](C)(C)[C@H](CC(=O)[OTBS])[OTBS])[OTBS]",
+            "notes": "Protection of a secondary alcohol (C19) and a carboxylic acid (at C13) as TBS ether and TBS ester, respectively. The existing TBS ether at C13 remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C#CCC/C=C(/C)\\CCC[C@H](C)[C@@H]([C@@H](C)C(=O)C(C)(C)[C@H](CC(=O)[OTBS])[OTBS])[OTBS]",
+            "product_smiles": "C#CCC/C=C(/C)\\CCC[C@H](C)[C@@H]([C@@H](C)C(=O)C(C)(C)[C@H](CC(=O)O)[OTBS])[OTBS]",
+            "notes": "Hydrolysis of a TBS ester to a carboxylic acid using sodium bicarbonate in THF at room temperature. The other two TBS ether protecting groups remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Macrolactonization / Alkyne Reduction",
+            "reagents": "[{Rh(cod)Cl}2], benzoic acid",
+            "reagent_smiles": "O(c1c(P(c2ccccc2)c3ccccc3)cccc1)c4c(P(c5ccccc5)c6ccccc6)cccc4",
+            "conditions": "dichloroethane, 70 °C",
+            "yield": "",
+            "reactant_smiles": "C#CCC\\C=C(/C)CCC[C@H]1C[C@H]([OTBS])[C@@H](C)C(=O)[C@]2(C)[C@H](CC(=O)O)[OTBS]C[C@H]12C",
+            "product_smiles": "C=C[C@H]1OC(=O)C[C@H]([OTBS])[C@@]2(C)C(=O)[C@@H](C)[C@H]([OTBS])C[C@H]3C2(C)C\\C=C(/C)CCC[C@H]31",
+            "notes": "A macrolactonization reaction where the terminal alkyne is reduced to a terminal vinyl group, which then acts as the alcohol for the lactone formation with the carboxylic acid. The bicyclic core remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Wittig olefination",
+            "reagents": "KHMDS, THF",
+            "reagent_smiles": "CC1=CSC(=N1)CP(CCCC)(CCCC)CCCC.Cl",
+            "conditions": "-78 to -20 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1[C@@H](C)[C@H]([OTBS])[C@@H](C)CC/C=C(/C)CCC[C@H](C)[C@H]([OTBS])C[C@H](C=O)O1",
+            "product_smiles": "O=C1[C@@H](C)[C@H]([OTBS])[C@@H](C)CC/C=C(/C)CCC[C@H](C)[C@H]([OTBS])C/C=C(C)/C2=CSC(=N2)CO1",
+            "notes": "An aldehyde is converted to an E-configured α,β-unsaturated alkene via Wittig olefination. The aldehyde carbon (C15) becomes part of the new double bond. The ylide is derived from a 4-methylthiazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1ncsc1/C=C(\\C)[C@H]1OCCC/C=C(\\C)CCC[C@H](C)[C@@H](C)[C@H]([OTBS])C(=O)C2(C)C(=O)[C@@H]([OTBS])CC(=O)C2C1",
+            "product_smiles": "Cc1ncsc1/C=C(\\C)[C@H]1OCCC/C=C(\\C)CCC[C@H](C)[C@@H](C)[C@H](O)C(=O)C2(C)C(=O)[C@@H](O)CC(=O)C2C1",
+            "notes": "Desilylation of bis-TBS protected epothilone D precursor to epothilone D.",
+            "substeps": []
+        }
+    ]
+}

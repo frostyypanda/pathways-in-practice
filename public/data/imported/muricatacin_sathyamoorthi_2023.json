@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "muricatacin-sathyamoorthi-2023",
+        "molecule_name": "Muricatacin",
+        "class": "Natural Product",
+        "author": "Sathyamoorthi",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ring-opening of oxetane by acetylide",
+            "reagents": "n-BuLi, BF3*OEt2",
+            "reagent_smiles": "C1COC1",
+            "conditions": "THF",
+            "yield": "30%",
+            "reactant_smiles": "CCCCCCCCCCCCCC#C",
+            "product_smiles": "CCCCCCCCCCCC#CCCCO",
+            "notes": "Terminal alkyne is deprotonated by n-BuLi to form an acetylide, which then attacks the oxetane (a cyclic ether), likely activated by BF3*OEt2, to yield a primary alcohol after workup. This effectively adds a -CH2CH2CH2OH group to the alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Lindlar Reduction",
+            "reagents": "Lindlar, H2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "65%",
+            "reactant_smiles": "CCCCCCCCCCCC#CCCCO",
+            "product_smiles": "CCCCCCCCCCCC/C=C\\CCCO",
+            "notes": "Partial reduction of an alkyne to a cis-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol silylation / Silyl ether formation",
+            "reagents": "(t-Bu)₂SiOTf₂, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "60%",
+            "reactant_smiles": "CCCCCCCCCCCC/C=C\\CCCO",
+            "product_smiles": "CCCCCCCCCCCC/C=C\\CCCO[Si](C(C)(C)C)(C(C)(C)C)O",
+            "notes": "Primary alcohol is protected as a di-tert-butylhydroxysilyl ether. The double bond stereochemistry (Z) is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "70%",
+            "reactant_smiles": "CCCCCCCCCCCC/C=C\\CCCO[Si](O)(C(C)(C)C)C(C)(C)C",
+            "product_smiles": "CCCCCCCCCCCC[C@H]1[C@@H](CCCO[Si](O)(C(C)(C)C)C(C)(C)C)O1",
+            "notes": "Epoxidation of a cis-alkene to form an epoxide. The product's stereochemistry is drawn as trans (dashed oxygen, solid C12H25 group), which is encoded in the SMILES. This is chemically inconsistent with the epoxidation of a cis-alkene, which typically yields a cis-epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lewis acid catalyzed intramolecular epoxide cyclization",
+            "reagents": "Ph3CBF4, NaHCO3",
+            "reagent_smiles": "[B-](F)(F)(F)F.C(c1ccccc1)(c1ccccc1)c1ccccc1.[Na+].[O-]C(=O)O",
+            "conditions": "DCM",
+            "yield": "80%",
+            "reactant_smiles": "O[Si](O)(C(C)(C)C)(C(C)(C)C)O[C@H]1[C@@H](CCCCCCCCCCCC)[C@@H]2OC2CC1",
+            "product_smiles": "O1[C@H]([C@H](CCCCCCCCCCCC)O[Si](O)(C(C)(C)C)(C(C)(C)C))[C@@H]2CCC1",
+            "notes": "Intramolecular cyclization of a hydroxyditertbutylsilyloxy-epoxide to form a tetrahydrofuran ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "RuCl3, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "CCl4, MeCN, H2O",
+            "yield": "49%",
+            "reactant_smiles": "CCCCCCCCCCCC[C@@H]([C@@H]1CCCO1)O[Si](O)([tBu])([tBu])",
+            "product_smiles": "CCCCCCCCCCCC[C@@H]([C@@H]1CCC(=O)O1)O[Si](O)([tBu])([tBu])",
+            "notes": "Oxidative cleavage of a cyclic ether (tetrahydrofuran) to a gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "HF-Pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "91%",
+            "reactant_smiles": "O=C1OC[C@@H](OSi(O)(C(C)(C)C)C(C)(C)C)C[C@@H]1CCCCCCCCCCCC",
+            "product_smiles": "O=C1OC[C@@H](O)C[C@@H]1CCCCCCCCCCCC",
+            "notes": "Silyl ether deprotection to alcohol",
+            "substeps": []
+        }
+    ]
+}

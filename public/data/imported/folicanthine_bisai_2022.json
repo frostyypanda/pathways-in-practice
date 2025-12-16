@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "folicanthine-bisai-2022",
+        "molecule_name": "Folicanthine",
+        "class": "Natural Product",
+        "author": "Bisai",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Protection",
+            "reagents": "NaH, Boc2O",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 - 25 °C",
+            "yield": "96%",
+            "reactant_smiles": "C1=CC/2=C(C=C1)NC(=O)\\C2=C\\3/C4=C(C=CC=C4)NC3=O",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)/C(=C\\3/C4=C(C=CC=C4)N([Boc])C3=O)/C1=O",
+            "notes": "Di-Boc protection of the indole nitrogens of indigo.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "Zn dust, AcOH",
+            "reagent_smiles": "",
+            "conditions": "25 °C",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N1C(=O)C2=CC=CC=C2C1=C3C(=O)N([Boc])C4=CC=CC=C4C3",
+            "product_smiles": "[Boc]N1C(=O)C2=CC=CC=C2C1C3C(=O)N([Boc])C4=CC=CC=C4C3=O",
+            "notes": "Reduction of a C=C double bond to a C-C single bond, forming two new unspecified stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric C-H Functionalization / Conjugate Addition",
+            "reagents": "",
+            "reagent_smiles": "C=C1CN2CCC1C[C@H]2[C@H](C3=C4C=CC=CC4=NC=C3)NC(=S)NC5=CC(=CC(=C5)C(F)(F)F)C(F)(F)F.C=C[Se](=O)(=O)[Ph]",
+            "conditions": "MeCN, 25 °C",
+            "yield": "90%",
+            "reactant_smiles": "O=C1N([Boc])C2=CC=CC=C2C1C3C(=O)N([Boc])C4=CC=CC=C4C3",
+            "product_smiles": "[Boc]N1C2=CC=CC=C2C(=O)[C@](CC[Se](=O)(=O)[Ph])1[C@@]3(CC[Se](=O)(=O)[Ph])C4=CC=CC=C4N([Boc])C3=O",
+            "notes": "Diastereoselective and enantioselective addition of vinyl phenyl selenone to a bis-indolinone, catalyzed by a cinchonine-derived thiourea catalyst, forming two new C-C bonds and two new chiral centers.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Substitution / Selenium addition",
+                    "reagents": "THF",
+                    "reagent_smiles": "C=C[Mg]Br",
+                    "conditions": "0 - 25 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Ph][Se][Se][Ph]",
+                    "product_smiles": "C=C[Se][Ph]",
+                    "notes": "Grignard reagent attacks diselenide, forming a vinyl phenyl selenide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Oxidation (Selenium)",
+                    "reagents": "Oxone, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "60 °C",
+                    "yield": "91% (2 steps)",
+                    "reactant_smiles": "C=C[Se][Ph]",
+                    "product_smiles": "C=C[Se](=O)(=O)[Ph]",
+                    "notes": "Oxidation of vinyl phenyl selenide to vinyl phenyl selenone using Oxone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-]",
+            "conditions": "DMF, 80 °C",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CC[Se](=O)(=O)c3ccccc3)(C1=O)[C@@]4(CC[Se](=O)(=O)c5ccccc5)C6=C(C=CC=C6)N([Boc])C4=O",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)[C@](CC[N-]=[N+]=[N-])(C1=O)[C@@]4(CC[N-]=[N+]=[N-])C6=C(C=CC=C6)N([Boc])C4=O",
+            "notes": "Bis-azide formation from bis-selenone",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Staudinger reaction",
+            "reagents": "PPh3",
+            "reagent_smiles": "P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "PhMe, H2O, 70 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C2=C(C=CC=C2)C(=O)[C@]1(CC[N-]=[N+]=N)[C@@]3(CC[N-]=[N+]=N)C(=O)N([Boc])C4=CC=CC=C43",
+            "product_smiles": "[Boc]N1C2=C(C=CC=C2)C(=O)[C@]1(CCN)[C@@]3(CCN)C(=O)N([Boc])C4=CC=CC=C43",
+            "notes": "Reduction of azide groups to primary amines via Staudinger reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carbamate Formation",
+            "reagents": "ClCO2Me",
+            "reagent_smiles": "COC(=O)Cl",
+            "conditions": "25 °C",
+            "yield": "86% (2 steps)",
+            "reactant_smiles": "[Boc]N1C(=O)C2=CC=CC=C2[C@@]1(CCN)[C@@]3(CCN)C(=O)C4=CC=CC=C4N3[Boc]",
+            "product_smiles": "[Boc]N1C(=O)C2=CC=CC=C2[C@@]1(CC[NH][Moc])[C@@]3(CC[NH][Moc])C(=O)C4=CC=CC=C4N3[Boc]",
+            "notes": "Formation of bis-methyl carbamate from bis-primary amine using methyl chloroformate. The two Boc protecting groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 25 °C",
+            "yield": "97%",
+            "reactant_smiles": "[Moc]NCC[C@@]1(C2=C(C=CC=C2)N(C1=O)[Boc])[C@@]3(CCNC(=O)[Moc])C4=C(C=CC=C4)N(C3=O)[Boc]",
+            "product_smiles": "[Moc]NCC[C@@]1(C2=C(C=CC=C2)NC1=O)[C@@]3(CCNC(=O)[Moc])C4=C(C=CC=C4)NC3=O",
+            "notes": "Double Boc deprotection of the indole nitrogens using trifluoroacetic acid (TFA). The Moc protecting groups on the side chains are retained, and the stereochemistry of the spiro centers is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive cyclization",
+            "reagents": "Red-Al",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 110 °C",
+            "yield": "85%",
+            "reactant_smiles": "COC(=O)NCC[C@@]1(C2=C(C=CC=C2)NC1=O)[C@]3(CCNC(=O)OC)C4=C(C=CC=C4)NC3=O",
+            "product_smiles": "CN1C[C@@H]2[C@@]3([C@@H](C1)C4=CC=CC=C4N[C@H]2)C5=CC=CC=C5N[C@@H]3",
+            "notes": "Reductive cyclization of a bis-lactam, bis-carbamate to form a tetracyclic core with two N-methyl-pyrrolidine rings.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "N-methylation / Reductive Amination",
+            "reagents": "formalin, NaBH(OAc)3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 23 °C",
+            "yield": "83%",
+            "reactant_smiles": "CN1CC[C@]2(C[C@]34CCN(C)[C@H]3NC5=C4C=CC=C5)C6=C(C=CC=C6)N[C@H]21",
+            "product_smiles": "CN1CC[C@@]2(C3=C(C=CC=C3)N(C)[C@H]21)[C@]45CCN(C)[C@H]4N(C)C6=C5C=CC=C6",
+            "notes": "Reductive N-methylation of two secondary indole amines to yield (+)-Folicanthine.",
+            "substeps": []
+        }
+    ]
+}

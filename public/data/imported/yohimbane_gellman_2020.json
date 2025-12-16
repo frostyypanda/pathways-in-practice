@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "yohimbane-gellman-2020",
+        "molecule_name": "Yohimbane",
+        "class": "Natural Product",
+        "author": "Gellman",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ozonolysis with selective acetal formation",
+            "reagents": "O3, NaHCO3",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)O)cc1.CSC",
+            "conditions": "MeOH, CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C1=CCCCCC1",
+            "product_smiles": "COC(CCCCCC=O)OC",
+            "notes": "Cyclooctene undergoes ozonolysis, followed by reductive workup to form an 8-carbon dialdehyde. One aldehyde group is then converted to a dimethyl acetal under acidic conditions (p-TsOH, MeOH).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "COC(=O)CP(=O)(OC)OC",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC(CCCCCC=O)OC",
+            "product_smiles": "COC(OC)CCCC/C=C/C(=O)OC",
+            "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde to form an alpha,beta-unsaturated methyl ester. The bis-methoxy group is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "H+",
+            "reagent_smiles": "[H+]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)/C=C/CCCCC(OC)OC",
+            "product_smiles": "COC(=O)/C=C/CCCCC=O",
+            "notes": "Acid-catalyzed hydrolysis of an acetal to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization (e.g., Aldol/Michael-type)",
+            "reagents": "",
+            "reagent_smiles": "C[Si](C)(C)OC(C1=CC=CC=C1)(C2=CC=CC=C2)[C@H]3CCC[NH]3.O=C(NC1=CC(=CC(=C1)C(F)(F)F)C(F)(F)F)NC2=CC(=CC(=C2)C(F)(F)F)C(F)(F)F",
+            "conditions": "Toluene, rt",
+            "yield": "72%",
+            "reactant_smiles": "COC(=O)/C=C/CCCCCC=O",
+            "product_smiles": "COC(=O)C[C@H]1CCCC[C@H]1C=O",
+            "notes": "Stereoselective intramolecular cyclization of an aldehyde-ester with two chiral catalysts.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Imine formation",
+            "reagents": "MeOH",
+            "reagent_smiles": "C1=CC=C2C(=C1)C(=CN2)CCN",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C[C@@H]1CCCC[C@H]1C=O",
+            "product_smiles": "COC(=O)C[C@@H]1CCCC[C@H]1C=NCC2=CNC3=C2C=CC=C3",
+            "notes": "Condensation of a cyclohexanecarbaldehyde derivative with tryptamine to form an imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Cyclization / Lactamization",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C[C@@H]1CCCC[C@H]1C=NCCC2=CNC3=C2C=CC=C3",
+            "product_smiles": "C1CC[C@H]2CN(CCC3=CNC4=C3C=CC=C4)C(=O)C[C@@H]2C1",
+            "notes": "Imine reduced to secondary amine, which then performs an intramolecular nucleophilic attack on the methyl ester to form a lactam (piperidin-2-one).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Bischler-Napieralski reaction",
+            "reagents": "POCl3, NaBH4",
+            "reagent_smiles": "ClP(=O)(Cl)Cl.[NaH4B]",
+            "conditions": "CH2Cl2, 50 °C then 0 °C",
+            "yield": "35% (3-steps)",
+            "reactant_smiles": "C1CC[C@@H]2C[C@@H](C1)CN(CCC3=CNC4=C3C=CC=C4)C2=O",
+            "product_smiles": "C1CC[C@H]2C[C@H](C1)C[C@H]3N4CCC5=C(NC6=C5C=CC=C6)[C@H]4[C@H]23",
+            "notes": "Bischler-Napieralski cyclization of an indole-ethyl lactam, followed by reduction, to form Yohimbane.",
+            "substeps": []
+        }
+    ]
+}

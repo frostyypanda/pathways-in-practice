@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ustiloxin-d-hutton-2015",
+        "molecule_name": "Ustiloxin D",
+        "class": "Natural Product",
+        "author": "Hutton",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Williamson Ether Synthesis / O-Alkylation",
+            "reagents": "NaHCO3, NaI, DMF",
+            "reagent_smiles": "ClCc1ccccc1",
+            "conditions": "40 °C",
+            "yield": "46%",
+            "reactant_smiles": "O=Cc1cc(O)c(O)cc1",
+            "product_smiles": "O=Cc1cc(O)c(O[Bn])cc1",
+            "notes": "Selective O-alkylation of the 4-hydroxyl group of 3,4-dihydroxybenzaldehyde with benzyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acetylation",
+            "reagents": "Et3N, DMAP, Ac2O, Et2O, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "82%",
+            "reactant_smiles": "O=Cc1cc(O)c(O[Bn])cc1",
+            "product_smiles": "O=Cc1cc([OAc])c(O[Bn])cc1",
+            "notes": "Acetylation of phenolic hydroxyl group to acetate",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric [3+2] Cycloaddition",
+            "reagents": "LiClO4, AgSbF6, 3A MS",
+            "reagent_smiles": "COC=C(C(=O)OC)N=CC1=CC=C(OC)C=C1",
+            "conditions": "toluene",
+            "yield": "85%",
+            "reactant_smiles": "O=Cc1c(OC(C)=O)cc(OCC2=ccccc2)cc1",
+            "product_smiles": "CC(=O)Oc1c([C@H]2[C@H](C(=O)OC)N=C(c3ccc(OC)cc3)O2)cc(OCCc4ccccc4)cc1",
+            "notes": "Asymmetric [3+2] cycloaddition between an aromatic aldehyde (reactant) and a methyl 2-((4-methoxyphenyl)imino)-3-methoxyacrylate (reagent), catalyzed by a chiral aluminum complex, forming a substituted oxazoline product.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Amide Formation / N-Acylation",
+                    "reagents": "Et3N",
+                    "reagent_smiles": "COC(=O)CCN",
+                    "conditions": "CH2Cl2",
+                    "yield": "90%",
+                    "reactant_smiles": "COC1=CC=C(C=C1)C(=O)Cl",
+                    "product_smiles": "COC1=CC=C(C=C1)C(=O)NCC(=O)OC",
+                    "notes": "Amide formation reaction between 4-methoxybenzoyl chloride and methyl 3-aminopropanoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Oxazole Synthesis / Dehydrative Cyclization",
+                    "reagents": "PPh3, I2, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "83%",
+                    "reactant_smiles": "COC1=CC=C(C=C1)C(=O)NCC(=O)OC",
+                    "product_smiles": "COC1=NC([PMP])=CO1",
+                    "notes": "Formation of a 2,5-disubstituted oxazole from an N-acylglycine methyl ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Isomerization/Epimerization",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "92%",
+            "reactant_smiles": "[OAc]C1=C([OBn])C=CC(=C1)[C@@H]2[C@H]([COOMe])N=C([PMP])O2",
+            "product_smiles": "[OAc]C1=C([OBn])C=CC(=C1)[C@@H]2[C@H]([COOMe])N=C([PMP])O2",
+            "notes": "The reactant and product structures, including stereochemistry, are drawn identically in the screenshot. The input product SMILES indicated an epimerization at one stereocenter (trans to cis), but this was corrected to match the drawing (trans). The overall transformation shown is essentially A -> A, possibly indicating conditions for a desired epimerization that either didn't occur or is incorrectly depicted.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive N-methylation",
+            "reagents": "",
+            "reagent_smiles": "CS(=O)(=O)C(F)(F)F.[Na+].[BH4-]",
+            "conditions": "EtOH, CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)OC1=C(C=CC(=C1)[C@@H]2[C@@H](C(=O)OC)N=C([PMP])O2)OCC4=CC=CC=C4",
+            "product_smiles": "CC(=O)OC1=C(C=CC(=C1)[C@@H]2[C@@H](C(=O)OC)N(C)[C@H]([PMP])O2)OCC4=CC=CC=C4",
+            "notes": "Oxazoline imine is reduced to an oxazolidine amine, and the nitrogen is N-methylated. Stereochemistry at three chiral centers in the product is specified to match the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxazolidine ring opening, N-protection, Acetal hydrolysis",
+            "reagents": "HCl, NaHCO3, CbzCl",
+            "reagent_smiles": "",
+            "conditions": "dioxane",
+            "yield": "59%",
+            "reactant_smiles": "CC(=O)OC1=C(C=CC(=C1)[C@H]2O[C]([PMP])N(C)[C@H](C(=O)OC)2)OCC3=CC=CC=C3",
+            "product_smiles": "CC(=O)OC1=C(C=CC(=C1)[C@@H](O)[C@H](C(=O)OC)N(C)[Cbz])OCC3=CC=CC=C3",
+            "notes": "Oxazolidine ring opening, deprotection of PMP acetal, and Cbz protection of the secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Protection (Silyl Ether Formation)",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC(=O)OC1=C(C=CC(=C1)[C@H](O)[C@@H](C(=O)OC)N(C)C(=O)OCC2=CC=CC=C2)OCC3=CC=CC=C3",
+            "product_smiles": "CC(=O)OC1=C(C=CC(=C1)[C@H]([OTBS])[C@@H](C(=O)OC)N(C)C(=O)OCC2=CC=CC=C2)OCC3=CC=CC=C3",
+            "notes": "Secondary alcohol is protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "[OTBS][C@@H](C1=CC=C(C(=C1)[OAc])[OBn])[C@H](C(=O)OC)N(C)[Cbz]",
+            "product_smiles": "[OTBS][C@@H](C1=CC=C(C(=C1)O)[OBn])[C@H](C(=O)O)N(C)[Cbz]",
+            "notes": "Hydrolysis of methyl ester and acetate groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification",
+            "reagents": "PMBBr, DBU",
+            "reagent_smiles": "",
+            "conditions": "CH2CN",
+            "yield": "78%",
+            "reactant_smiles": "[OTBS][C@H](C1=CC(=C(C=C1)[OBn])O)[C@@H](C(=O)O)N(C)[Cbz]",
+            "product_smiles": "[OTBS][C@H](C1=CC(=C(C=C1)[OBn])O)[C@@H](C(=O)O[PMB])N(C)[Cbz]",
+            "notes": "Carboxylic acid is converted to its p-methoxybenzyl (PMB) ester. The reaction uses PMBBr (p-methoxybenzyl bromide) and DBU (1,8-Diazabicyclo[5.4.0]undec-7-ene) in acetonitrile (CH2CN).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Trost Asymmetric Allylation",
+            "reagents": "Pd2dba3*CHCl3, (S,S)-Trost Ligand",
+            "reagent_smiles": "C=CC1(C)CO1",
+            "conditions": "DCM",
+            "yield": "96%",
+            "reactant_smiles": "[OTBS][C@@H](C1=CC(O)=C([Bn]O)C=C1)[C@H](C(=O)O[PMB])N(C)[Cbz]",
+            "product_smiles": "C=C[C@](C)(CO)OC1=C([Bn]O)C=CC(=C1)[C@@H]([C@H](C(=O)O[PMB])N(C)[Cbz])[OTBS]",
+            "notes": "Phenol undergoes asymmetric allylation with a chiral epoxide, forming a new ether linkage and a new tertiary alcohol, catalyzed by a palladium complex and a Trost ligand.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction (Catalytic Transfer Hydrogenation)",
+            "reagents": "NH2NH2, CuSO4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 0 °C",
+            "yield": "91%",
+            "reactant_smiles": "C=C[C@](C)(CO)OC1=C([OBn])C=CC(=C1)[C@H]([C@@H](C(=O)O[PMB])N(C)[Cbz])[OTBS]",
+            "product_smiles": "CC[C@](C)(CO)OC1=C([OBn])C=CC(=C1)[C@H]([C@@H](C(=O)O[PMB])N(C)[Cbz])[OTBS]",
+            "notes": "Reduction of the terminal alkene to an alkane.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 80 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC[C@](C)(CO)OC1=C(O[Bn])C=CC(=C1)[C@@H]([C@@H]([PMBO2C])N(C)[Cbz])[OTBS]",
+            "product_smiles": "CC[C@](C)(C=O)OC1=C(O[Bn])C=CC(=C1)[C@@H]([C@@H]([PMBO2C])N(C)[Cbz])[OTBS]",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ugi reaction",
+            "reagents": "NH3, TFE",
+            "reagent_smiles": "CC(C)[C@@H](C(=O)O)NC(=O)OC(C)(C)C.O=C(OCC1=CC=CC=C1)C[N+]#[C-]",
+            "conditions": "0 °C",
+            "yield": "77%",
+            "reactant_smiles": "CC[C@](C)(C=O)OC1=C(C=CC(=C1)[C@H](C(=O)OCC2=CC=C(C=C2)OC)[C@@H](N(C)C(=O)OCC3=CC=CC=C3)[OTBS])OCC4=CC=CC=C4",
+            "product_smiles": "CC[C@](C)([C@H](NC(=O)[C@H](C(C)C)NC(=O)OC(C)(C)C)(C(=O)NCC(=O)OCC1=CC=CC=C1))OC2=C(C=CC(=C2)[C@H](C(=O)OCC4=CC=C(C=C4)OC)[C@@H](N(C)C(=O)OCC5=CC=CC=C5)[OTBS])OCC3=CC=CC=C3",
+            "notes": "Ugi reaction of an aldehyde, ammonia, a Boc-protected valine derivative, and a benzyl ester isonitrile. Product shows correct formation of two amide bonds. The stereochemistry of the valine derivative is drawn as [C@@H] in the reagent but [C@H] in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@](C)(C(C(=O)NCC(=O)O[Bn])NC(=O)[C@H](C(C)C)[NHBoc])OC1=CC(=CC=C1O[Bn])[C@H]([C@@H](C(=O)O[PMB])N(C)[Cbz])[OTBS]",
+            "product_smiles": "C[C@](C)(C(C(=O)NCC(=O)O[Bn])NC(=O)[C@H](C(C)C)N)OC1=C(C=CC(=C1)[C@H]([C@@H](C(=O)O)N(C)[Cbz])O)O[Bn]",
+            "notes": "Deprotection of Boc amine, PMB ester, and TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Amide bond formation / Macrolactamization",
+            "reagents": "EDCI, HOBt, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C to rt",
+            "yield": "25% (2 steps)",
+            "reactant_smiles": "[Cbz]CNC(=O)[C@@](C)(OC2=CC(=CC=C2[OBn])[C@H](O)[C@H](C(=O)O)N(C)[Cbz])NC(=O)[C@@H](C(C)C)N",
+            "product_smiles": "[C@@H](C(C)C)1NC(=O)[C@@](C)(OC2=CC(=CC=C2[OBn])[C@H](O)[C@H](C(=O)N1)N(C)[Cbz])NC(=O)C[Cbz]",
+            "notes": "Intramolecular amide bond formation (cyclization) between the carboxylic acid and terminal primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Catalytic Hydrogenation / Deprotection",
+            "reagents": "Pd Black, H2",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "86%",
+            "reactant_smiles": "CC(C)[C@H]1N(C(=O)NCC(=O)O[Bn])C(=O)[C@@H](COC2=C(O[Bn])C=CC(=C2)[C@H](O)[C@@H](N(C)[Cbz])C(=O)N1)",
+            "product_smiles": "CC(C)[C@H]1N(C(=O)NCC(=O)O)C(=O)[C@@H](COC2=C(O)C=CC(=C2)[C@H](O)[C@@H](N(C))C(=O)N1)",
+            "notes": "Three protecting groups (Cbz, benzyl ether, benzyl ester) are removed by catalytic hydrogenation to yield Ustiloxin D.",
+            "substeps": []
+        }
+    ]
+}

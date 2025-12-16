@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "dorzagliatin-huatangning-huamedicine-unknown-2024",
+        "molecule_name": "Dorzagliatin (HuaTangNing HuaMedicine)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-Vinylation",
+            "reagents": "THF",
+            "reagent_smiles": "C#CC(=O)OCC.CC(C)(C)O[K]",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "C1=CC=C(C(=C1)Cl)O",
+            "product_smiles": "CCOC(=O)/C=C(\\C)/OC1=CC=CC=C1Cl",
+            "notes": "O-vinylation of 2-chlorophenol with ethyl propiolate to form an enol ether, catalyzed by potassium tert-butoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylic bromination",
+            "reagents": "NBS, AIBN",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "87%",
+            "reactant_smiles": "CCOC(=O)/C=C(\\C)/OC1=CC=CC=C1Cl",
+            "product_smiles": "CCOC(=O)/C=C(\\CBr)/OC1=CC=CC=C1Cl",
+            "notes": "Radical bromination of an allylic methyl group to a bromomethyl group, mediated by NBS and AIBN.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic substitution",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "CC(C)C[C@@H](C(=O)OC)N.CCO",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C=C/CBr\\OC1=CC=CC=C1Cl",
+            "product_smiles": "CCOC(=O)/C=C/CN[C@@H](CC(C)C)C(=O)OC\\OC1=CC=CC=C1Cl",
+            "notes": "Nucleophilic substitution of a vinylic bromide with an amine, retaining the E-stereochemistry of the double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular cyclization, Ester hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "2-MeTHF",
+            "yield": "57% (2 steps)",
+            "reactant_smiles": "CCOC(=O)/C=C(/CN[C@H](CC(C)C)C(=O)OC)/OC1=CC=CC=C1Cl",
+            "product_smiles": "CC(C)C[C@H](C(=O)O)N1C(=O)CC=C1OC2=CC=CC=C2Cl",
+            "notes": "Intramolecular cyclization to form a pyrrolone ring, accompanied by the hydrolysis of the methyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Formation",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)C[C@@H](C(=O)O)N1CC=C(OC2=CC=CC=C2Cl)C(=O)C1",
+            "product_smiles": "CC(C)C[C@@H](C(=O)NC1=NN(C=C1C[C@H]2OC(C)(C)O[C@@H]2)C)N3CC=C(OC4=CC=CC=C4Cl)C(=O)C3",
+            "notes": "Amide formation between a carboxylic acid and an N-substituted pyrazole containing a 2,2-dimethyl-1,3-dioxolane group. This involves modification of the side chain on the lactam nitrogen.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amidation / Acetylation",
+                    "reagents": "Ac₂O",
+                    "reagent_smiles": "",
+                    "conditions": "EtOAc",
+                    "yield": "94%",
+                    "reactant_smiles": "C1=CNN=C1N",
+                    "product_smiles": "CC(=O)NC1=NNC=C1",
+                    "notes": "Amidation of 3-amino-1H-pyrazole with acetic anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "NaOt-Bu, LiCl",
+                    "reagent_smiles": "CC1(C)OC[C@@H](CCl)O1",
+                    "conditions": "DMF",
+                    "yield": "83%",
+                    "reactant_smiles": "CC(=O)NC1=NNC=C1",
+                    "product_smiles": "CC(=O)NC1=NN(C=C1)C[C@@H]2COC(C)(C)O2",
+                    "notes": "N-alkylation of 3-acetamido-1H-pyrazole with a chiral chloromethyl-1,3-dioxolane. The pyrazole N-H is alkylated.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Amide Hydrolysis / N-Acetyl Deprotection",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "H2O",
+                    "yield": "68%",
+                    "reactant_smiles": "CC(=O)Nc1ccn(C[C@@H]2COC(C)(C)O2)n1",
+                    "product_smiles": "CC1(C)OC[C@@H](CN2C=CC(=N2)N)O1",
+                    "notes": "Hydrolysis of an N-acetylamide on a pyrazole ring to reveal a primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection (acetal hydrolysis)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH, EtOH",
+            "yield": "80%",
+            "reactant_smiles": "Clc1ccccc1OC=2C(=O)N([C@@H](C)C(=O)NC=3N=N(C=3)C[C@@H]4COC(C)(C)O4)C=C2",
+            "product_smiles": "Clc1ccccc1OC=2C(=O)N([C@@H](C)C(=O)NC=3N=N(C=3)C[C@@H](CO)O)C=C2",
+            "notes": "Acid-catalyzed hydrolysis of a 1,3-dioxolane acetal to a 1,2-diol. The product is Dorzagliatin.",
+            "substeps": []
+        }
+    ]
+}

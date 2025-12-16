@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rubiginone-a2-kaliappan-2014",
+        "molecule_name": "Rubiginone A2",
+        "class": "Natural Product",
+        "author": "Kaliappan",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sharpless asymmetric epoxidation",
+            "reagents": "D-(-)-DIPT, Ti(OiPr)4, tBuOOH",
+            "reagent_smiles": "CC(C)OC(=O)[C@H](O)[C@H](O)C(=O)OC(C)C.CC(C)O[Ti](OC(C)C)(OC(C)C)OC(C)C.CC(C)(C)OOH",
+            "conditions": "CH2Cl2, 4Å MS, -22 °C",
+            "yield": "65%",
+            "reactant_smiles": "C/C=C/CCO",
+            "product_smiles": "C[C@@H]1[C@@H](CO)O1",
+            "notes": "Sharpless asymmetric epoxidation of (E)-but-2-en-1-ol to form a chiral epoxide. The D-(-)-DIPT ligand dictates the (2R,3R) stereochemistry of the epoxide from the (E)-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(c1ccccc1)c1ccccc1.c1cnc[nH]1",
+            "conditions": "CH₂Cl₂, 0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "C[C@@H]1[C@@H](CO)O1",
+            "product_smiles": "C[C@@H]1[C@@H](CO[OTBDPS])O1",
+            "notes": "Protection of the primary alcohol group as a TBDPS silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Epoxide opening (Allylation)",
+            "reagents": "CuI",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "THF, -20 °C",
+            "yield": "81%",
+            "reactant_smiles": "C[C@@H]1[C@H](C[OTBDPS])O1",
+            "product_smiles": "C=CCC[C@H](C)[C@@H](C[OTBDPS])O",
+            "notes": "Allylation of a chiral epoxide mediated by CuI, leading to a homoallylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Protection",
+            "reagents": "MOMCl, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "88%",
+            "reactant_smiles": "C=CCC[C@@H](C)[C@@H](C[OTBDPS])O",
+            "product_smiles": "C=CCC[C@@H](C)[C@@H](C[OTBDPS])OCOC",
+            "notes": "Formation of MOM ether from a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "85%",
+            "reactant_smiles": "C=CCC[C@@H](C)[C@H](C[OTBDPS])[OMOM]",
+            "product_smiles": "C=CCC[C@@H](C)[C@H](CO)[OMOM]",
+            "notes": "Cleavage of TBDPS ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, reflux",
+            "yield": "",
+            "reactant_smiles": "C=CCC[C@@H](C)[C@@H](CO)[OMOM]",
+            "product_smiles": "C=CCC[C@@H](C)[C@@H](C=O)[OMOM]",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Seyferth–Gilbert homologation (Aldehyde to Alkyne conversion)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CC(=O)C(=N#N)P(=O)(OC)OC",
+            "conditions": "MeOH",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "C=CCC[C@@H](C)[C@@H](C=O)[OMOM]",
+            "product_smiles": "C=CCC[C@@H](C)[C@@H](C#C)[OMOM]",
+            "notes": "Conversion of an aldehyde to an alkyne using the Ohira-Bestmann reagent. The reported yield of 66% is for 2 steps, not solely this individual step.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ring-closing enyne metathesis",
+            "reagents": "Grubbs-I",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, reflux",
+            "yield": "77%",
+            "reactant_smiles": "C=CCC[C@@H](C)[C@@H](C#C)[OMOM]",
+            "product_smiles": "C=CC1=CCC[C@@H](C)[C@H]1[OMOM]",
+            "notes": "Intramolecular enyne metathesis to form a cyclohexene with an exocyclic vinyl group. The relative stereochemistry of the two chiral centers changes from cis (R,R) in the reactant to trans (R,S) in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Diels-Alder reaction",
+            "reagents": "toluene",
+            "reagent_smiles": "COC1=CC=CC2=C1C(=O)C=C(C2=O)Br",
+            "conditions": "80 to 100 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC1=CCC[C@@H](C)[C@@H]1OCOC",
+            "product_smiles": "C[C@@H]1CC[C@H]2C(=CC[C@@H]3C(=O)C4=C(C=CC=C4OC)C(=O)[C@@]23Br)[C@@H]1OCOC",
+            "notes": "Intermolecular Diels-Alder reaction of a cyclohexene diene with a bromoquinone dienophile.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Methylation",
+                    "reagents": "Me₂SO₄, K₂CO₃",
+                    "reagent_smiles": "",
+                    "conditions": "acetone, reflux",
+                    "yield": "97%",
+                    "reactant_smiles": "Oc1cccc2cccc(O)c21",
+                    "product_smiles": "[OMe]c1cccc2cccc([OMe])c21",
+                    "notes": "Methylation of naphthalene-1,5-diol to 1,5-dimethoxynaphthalene via Williamson ether synthesis.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Vilsmeier-Haack formylation",
+                    "reagents": "POCl3, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe, 0 °C to reflux",
+                    "yield": "93%",
+                    "reactant_smiles": "COC1=CC=CC2=C1C=CC=C2OC",
+                    "product_smiles": "COC1=CC=C(C=O)C2=C1C=CC=C2OC",
+                    "notes": "Vilsmeier-Haack formylation of 1,5-dimethoxynaphthalene to introduce an aldehyde group at the 4-position.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Baeyer-Villiger Oxidation",
+                    "reagents": "mCPBA",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "99%",
+                    "reactant_smiles": "COC1=CC=C(C=O)C2=C1C=CC=C2OC",
+                    "product_smiles": "COC1=CC=C(C2=C1C=CC=C2OC)OC=O",
+                    "notes": "Baeyer-Villiger oxidation of an aldehyde to a formate ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Hydrolysis (Ester Hydrolysis)",
+                    "reagents": "KOH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, MeOH, 0 °C",
+                    "yield": "77%",
+                    "reactant_smiles": "COc1ccc(OC)c2c1cccc2OC(=O)H",
+                    "product_smiles": "COc1ccc(OC)c2c1cccc2O",
+                    "notes": "Hydrolysis of a formate ester to a hydroxyl group using potassium hydroxide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.5",
+                    "reaction_type": "Oxidation",
+                    "reagents": "CAN",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, MeCN",
+                    "yield": "85%",
+                    "reactant_smiles": "COC1=CC=C(C2=C1C=CC=C2OC)O",
+                    "product_smiles": "COC1=CC=CC2=C1C(=O)C=CC2=O",
+                    "notes": "Oxidative demethylation of 1,4-dimethoxy-2-naphthol to 8-methoxy-1,4-naphthoquinone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.6",
+                    "reaction_type": "Electrophilic Bromination",
+                    "reagents": "Br2, AcOH (aq)",
+                    "reagent_smiles": "",
+                    "conditions": "CHCl3, 0 °C; EtOAc, reflux",
+                    "yield": "80%",
+                    "reactant_smiles": "COC1=CC=CC2=C1C(=O)C=CC2=O",
+                    "product_smiles": "COC1=CC=CC2=C1C(=O)C=C(Br)C2=O",
+                    "notes": "Bromination of 5-methoxy-1,4-naphthoquinone on the less hindered carbon of the quinone ring.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Elimination, Aromatization",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, dark",
+            "yield": "77%",
+            "reactant_smiles": "C[C@@H]1CC[C@H]2C(=CC[C@H]3C(=O)C4=C(C=CC=C4OC)C(=O)[C@@]23Br)[C@H]1[OMOM]",
+            "product_smiles": "C[C@@H]1CCC2=C(C=CC3=C2C(=O)C4=C(C(=CC=C4)OC)C3=O)[C@H]1[OMOM]",
+            "notes": "Elimination of bromine and subsequent aromatization of the fused ring system over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Photo-oxidation",
+            "reagents": "O₂",
+            "reagent_smiles": "",
+            "conditions": "hv, benzene",
+            "yield": "79%",
+            "reactant_smiles": "[OMe]c1ccc2c(c1)C(=O)c3c(C(=O)c2)cc4c(c3)[C@H](C)[C@@H]([MOM])CC4",
+            "product_smiles": "[OMe]c1ccc2c(c1)C(=O)c3c(C(=O)c2)cc4c(c3)[C@H](C)[C@@H]([MOM])C(=O)C4",
+            "notes": "Oxidation of a methylene group in the saturated ring to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "AcCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "C[C@@H]1CC(=O)C2=C(C=CC3=C2C(=O)C4=C(C(=CC=C4)OC)C3=O)[C@H]1OCOC",
+            "product_smiles": "C[C@@H]1CC(=O)C2=C(C=CC3=C2C(=O)C4=C(C(=CC=C4)OC)C3=O)[C@H]1O",
+            "notes": "Deprotection of a methoxymethyl (MOM) ether to a hydroxyl group.",
+            "substeps": []
+        }
+    ]
+}

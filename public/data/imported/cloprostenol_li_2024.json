@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cloprostenol-li-2024",
+        "molecule_name": "Cloprostenol",
+        "class": "Natural Product",
+        "author": "Li",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic Acylation",
+            "reagents": "pancreatin, Et3N",
+            "reagent_smiles": "C=COC(=O)C",
+            "conditions": "THF",
+            "yield": "65%",
+            "reactant_smiles": "O[C@@H]1C=C[C@@H](O)C1",
+            "product_smiles": "O[C@@H]1C=C[C@@H]([OAc])C1",
+            "notes": "Enzymatic selective acylation of one hydroxyl group of (1S,4S)-cyclopent-2-ene-1,4-diol with vinyl acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Orthoester Claisen Rearrangement",
+            "reagents": "o-NO2PhOH",
+            "reagent_smiles": "C(OCC)(OCC)OCC",
+            "conditions": "180 °C",
+            "yield": "",
+            "reactant_smiles": "[OAc][C@@H]1C=C[C@@H](O)C1",
+            "product_smiles": "[COOEt]C[C@@H]1C=CC[C@@H]1[OAc]",
+            "notes": "Conversion of an allylic alcohol to a γ,δ-unsaturated ester via orthoester Claisen rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Lactonization",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH (solvent)",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C[C@H]1C=CC[C@@H]1OC(=O)C",
+            "product_smiles": "C1=C[C@@H]2CC(=O)O[C@H]2C1",
+            "notes": "Base-catalyzed intramolecular transesterification/lactonization of an acetoxy ethyl ester to form a bicyclic gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Halohydrin formation (Bromohydrin formation)",
+            "reagents": "NBS, H2O",
+            "reagent_smiles": "",
+            "conditions": "DMSO, CHCl3, 10 °C",
+            "yield": "69%",
+            "reactant_smiles": "C1=C[C@H]2CC(=O)O[C@H]2C1",
+            "product_smiles": "O=C1OC[C@H]2[C@H]1[C@@H](O)[C@H](Br)C2",
+            "notes": "Addition of bromine and a hydroxyl group across an alkene to form a bromohydrin. The alkene carbons are saturated, and new chiral centers are formed with trans-stereochemistry for Br and OH. The cis-fusion of the bicyclic system is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Organometallic Coupling (Negishi-type)",
+            "reagents": "NiBr2.glyme, Zn, MgCl2, TMS-imidazole, pyridine",
+            "reagent_smiles": "Br/C=C/[C@@H](O)COC1=CC(Cl)=CC=C1",
+            "conditions": "DMA",
+            "yield": "84%",
+            "reactant_smiles": "O=C1OC[C@@H]2C[C@@H](O)[C@H](Br)[C@H]12",
+            "product_smiles": "O=C1OC[C@@H]2C[C@@H](O)[C@H](/C=C/[C@@H](O)COC3=CC(Cl)=CC=C3)[C@H]12",
+            "notes": "Stereoselective Negishi-type cross-coupling of a cyclic bromo-lactone with an organozinc reagent (formed in situ from an organobromine). Stereochemistry at all centers, and the E-alkene, are preserved or created correctly.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Bromination of Alkyne",
+                    "reagents": "NBS, AgNO3",
+                    "reagent_smiles": "",
+                    "conditions": "Acetone",
+                    "yield": "",
+                    "reactant_smiles": "C#C[C@@H](O)COC1=CC(Cl)=CC=C1",
+                    "product_smiles": "BrC#C[C@@H](O)COC1=CC(Cl)=CC=C1",
+                    "notes": "Terminal alkyne is brominated to a bromoalkyne, retaining the S-configuration at the adjacent chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Alkyne Reduction (to trans-alkene)",
+                    "reagents": "LiAlH4, AlCl3",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, 0 °C",
+                    "yield": "81% (2 steps)",
+                    "reactant_smiles": "C1=CC(=CC(=C1)Cl)OC[C@H](C#CBr)O",
+                    "product_smiles": "C1=CC(=CC(=C1)Cl)OC[C@H](\\C=C/Br)O",
+                    "notes": "Stereoselective reduction of a terminal alkyne to a trans-alkene using LiAlH4/AlCl3, while preserving the chiral secondary alcohol and the aryl ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "No observed reaction (under reduction conditions)",
+            "reagents": "DIBAL-H, DCM",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CC(=C1)Cl)OC[C@@H](O)/C=C/[C@H]2[C@H]3CC(=O)O[C@H]3C[C@H]2O",
+            "product_smiles": "C1=CC(=CC(=C1)Cl)OC[C@@H](O)/C=C/[C@H]2[C@H]3CC(=O)O[C@H]3C[C@H]2O",
+            "notes": "The product structure shown in the screenshot is identical to the reactant structure. DIBAL-H is a reducing agent that typically reduces lactones to lactols (hemiacetals); however, no such reduction is depicted here.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig Reaction (lactone opening)",
+            "reagents": "tBuOK",
+            "reagent_smiles": "O=C(O)CCCC[P+](c1ccccc1)(c1ccccc1)c1ccccc1.[Br-]",
+            "conditions": "THF, 0 °C",
+            "yield": "59% (2 steps)",
+            "reactant_smiles": "O=C1O[C@H](C[C@@H]1O)[C@@H]\\C=C\\[C@@H](O)COC2=CC(Cl)=CC=C2",
+            "product_smiles": "O=C(O)CCC/C=C\\C[C@@H]1[C@H](O)[C@@H](O)[C@H]1\\C=C\\[C@@H](O)COC2=CC(Cl)=CC=C2",
+            "notes": "A bicyclic lactone undergoes opening and a subsequent Wittig reaction. The Wittig reaction introduces a carboxylic acid-functionalized chain with a Z-configured double bond. The existing trans-double bond and stereochemistry of the cyclopentane ring and side-chain alcohol are preserved.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "malettin-e-yokoshima-2023",
+        "molecule_name": "Malettin E",
+        "class": "Natural Product",
+        "author": "Yokoshima",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Aldol Reaction",
+            "reagents": "H2O, MeCN",
+            "reagent_smiles": "C1C[C@@H](C(C2=CC(=CC(=C2)C(F)(F)F)C(F)(F)F)(C3=CC(=CC(=C3)C(F)(F)F)C(F)(F)F)O)NC1.CCCC=O",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C=O",
+            "product_smiles": "CCOC(=O)[C@@H](O)[C@H](C)C=O",
+            "notes": "Organocatalytic asymmetric aldol reaction between ethyl glyoxylate and butanal, catalyzed by a chiral pyrrolidine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction (Aldehyde to Primary Alcohol)",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "2 steps",
+            "yield": "67%",
+            "reactant_smiles": "CCOC(=O)[C@@H]([C@H](C)C=O)O",
+            "product_smiles": "CCOC(=O)[C@@H]([C@H](C)CO)O",
+            "notes": "Reduction of an alpha-hydroxy-beta-methyl aldehyde ethyl ester to the corresponding primary alcohol using sodium borohydride. Stereochemistry is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "80%",
+            "reactant_smiles": "CCOC(=O)[C@@H](O)[C@@H](C)CO",
+            "product_smiles": "CCOC(=O)[C@@H](O)[C@@H](C)CO[OTBS]",
+            "notes": "Protection of primary alcohol with tert-butyldimethylsilyl chloride (TBSCl).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Weinreb Amide Synthesis",
+            "reagents": "i-PrMgCl•LiCl, MeNH(OMe)",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "CCOC(=O)[C@@H](O)[C@H](C)C[OTBS]",
+            "product_smiles": "O=C(N(C)OC)[C@@H](O)[C@H](C)C[OTBS]",
+            "notes": "Conversion of an ethyl ester to a Weinreb amide using isopropylmagnesium chloride and N,O-dimethylhydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "O-Alkylation (Williamson Ether Synthesis)",
+            "reagents": "NaH",
+            "reagent_smiles": "BrCc1ccc(OC)cc1",
+            "conditions": "THF, DMF, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "[OTBS]C[C@@H](C)[C@@H](O)C(=O)N(C)OC",
+            "product_smiles": "[OTBS]C[C@@H](C)[C@@H]([OPMB])C(=O)N(C)OC",
+            "notes": "O-alkylation of a secondary alcohol to form a PMB ether, protecting group conversion.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Weinreb Ketone Synthesis",
+            "reagents": "THF",
+            "reagent_smiles": "C=C(C)[Mg]Br",
+            "conditions": "0° C",
+            "yield": "98%",
+            "reactant_smiles": "[OTBS]C[C@@H](C)[C@H]([OPMB])C(=O)N(OC)C",
+            "product_smiles": "[OTBS]C[C@@H](C)[C@H]([OPMB])C(=O)C(C)=C",
+            "notes": "Grignard reagent addition to a Weinreb amide to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Michael Addition / Conjugate Addition",
+            "reagents": "DBU",
+            "reagent_smiles": "Cc1c(C[N+](=O)[O-])cc([OTIPS])c(OC)c1",
+            "conditions": "MeCN, rt",
+            "yield": "80%",
+            "reactant_smiles": "C=C(C)C(=O)[C@H]([OPMB])[C@H](C)C[OTBS]",
+            "product_smiles": "C[C@H](C[OTBS])[C@H]([OPMB])C(=O)[C@H](C)CC(Cc1c(C[N+](=O)[O-])cc([OTIPS])c(OC)c1)",
+            "notes": "Michael addition of a nitronate (generated from the aryl nitromethyl compound) to an α,β-unsaturated ketone. The original stereocenters are retained, and a new chiral center is created at the α-position (relative to the ketone). The β-position, where the aryl group adds, is also a chiral center but its stereochemistry is not explicitly shown.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Wolff-Kishner Reduction",
+                    "reagents": "KOH, H2NNH2, ethylene glycol",
+                    "reagent_smiles": "",
+                    "conditions": "190 °C",
+                    "yield": "",
+                    "reactant_smiles": "COc1ccc(C=O)c(O)c1",
+                    "product_smiles": "Cc1ccc(OC)c(O)c1",
+                    "notes": "Aldehyde group is reduced to a methyl group under Wolff-Kishner conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "AcOH, rt",
+                    "yield": "",
+                    "reactant_smiles": "COc1ccc(C)c(O)c1",
+                    "product_smiles": "COc1c(Br)cc(C)c(O)c1",
+                    "notes": "Bromination of an activated phenol derivative at the most activated ortho position to both hydroxyl and methoxy groups.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Silylation (Protection)",
+                    "reagents": "TIPSCI, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 0 °C to rt",
+                    "yield": "88%",
+                    "reactant_smiles": "COc1c(O)cc(C)c(Br)c1",
+                    "product_smiles": "COc1c(O[TIPS])cc(C)c(Br)c1",
+                    "notes": "Protection of a phenolic hydroxyl group with triisopropylsilyl (TIPS) chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Buchwald–Hartwig Amination (C-N coupling)",
+                    "reagents": "Pd₂(dba)₃, Cs₂CO₃, XPhos",
+                    "reagent_smiles": "C[N+](=O)[O-]",
+                    "conditions": "MeNO₂, 60 °C",
+                    "yield": "84%",
+                    "reactant_smiles": "[TIPS]Oc1c(OC)ccc(C)c1Br",
+                    "product_smiles": "[TIPS]Oc1c(OC)ccc(C)c1C[N+](=O)[O-]",
+                    "notes": "Bromoarene undergoes coupling with nitromethane to form a nitromethyl group, via a C-C coupling reaction, likely involving a nitromethyl palladium species.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection / Intramolecular Hemiketal Formation",
+            "reagents": "HF·NEt3, AcOH",
+            "reagent_smiles": "CCN(CC)CC.CC(=O)O",
+            "conditions": "THF, rt",
+            "yield": "69%",
+            "reactant_smiles": "[TIPS]OC1=C(OC)C=C(C)C(=C1)C([N+]([O-])=O)CC[C@H](C)C(=O)[C@@H](O[PMB])[C@@H](C)C[OTBS]",
+            "product_smiles": "OC1=C(OC)C=C(C)C(=C1)C([N+]([O-])=O)CC[C@H](C)[C@]2(O,O[PMB])C[C@@H](C)O2",
+            "notes": "Deprotection of TIPS and TBS groups, followed by intramolecular cyclization of the ketone and a newly formed hydroxyl to yield a spiro-furanone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Spirocyclization",
+            "reagents": "PIFA, HFIP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "36%",
+            "reactant_smiles": "CC1=C(C=C(C(=C1)O)OC)C(CC(C)C2([C@@H]([C@H](C)CO2)[OPMB])O)[N+](=O)[O-]",
+            "product_smiles": "C[C@@H]1CO[C@@]2(OC3=CC(=O)C(OC)=CC3)O[C@@H](O)[C@H](C)[C@H]2[N+](=O)[O-]",
+            "notes": "Dearomatization and intramolecular spirocyclization of phenol to form a tricyclic dienone-ether system, accompanied by PMB deprotection.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Elimination / Rearrangement",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "toluene, rt",
+            "yield": "82%",
+            "reactant_smiles": "CC1=CC(=O)C(=CC2=C1[C@H]([N+](=O)[O-])[C@@H](C)[C@]3([C@@H]([C@H](C)CO3)O)O2)OC",
+            "product_smiles": "CC1=CC(=O)C(=CC2=C1C[C@@H](C)[C@]3([C@@H]([C@H](C)CO3)O)O2)OC",
+            "notes": "Elimination of a nitro group and intramolecular rearrangement to form a fused pyran ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "95%",
+            "reactant_smiles": "CC1=CC(=O)C(=CC2=C1C[C@H](C)[C@]3([C@@H]([C@@H](C)CO3)O)O2)OC",
+            "product_smiles": "CC1=CC(=O)C(=CC2=C1C[C@H](C)[C@@]3(C(=O)C[C@@H](C)O3)O2)OC",
+            "notes": "Oxidation of a tertiary alcohol to a lactone using Dess-Martin periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "THF, -78 °C",
+            "yield": "58%",
+            "reactant_smiles": "CC1=CC(=O)C(=CC2=C1C[C@@H](C)[C@@]3(C(=O)[C@H](C)CO3)O2)OC",
+            "product_smiles": "CC1=CC(=O)C(=CC2=C1C[C@@H](C)[C@]3([C@@H](O)[C@H](C)CO3)O2)OC",
+            "notes": "Lactone reduction to a lactol (hemiacetal) using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ether Cleavage / Demethylation",
+            "reagents": "MgI2",
+            "reagent_smiles": "",
+            "conditions": "THF/Et2O, rt",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H]1CC2=C3C[C@@H](C)CC4(O)OC[C@H](C)[C@@H](O)CC4OC3=C(OC)C(=O)C=C2",
+            "product_smiles": "C[C@@H]1CC2=C3C[C@@H](C)CC4(O)OC[C@H](C)[C@@H](O)CC4OC3=C(O)C(=O)C=C2",
+            "notes": "Methyl ether is cleaved to a hydroxyl group.",
+            "substeps": []
+        }
+    ]
+}

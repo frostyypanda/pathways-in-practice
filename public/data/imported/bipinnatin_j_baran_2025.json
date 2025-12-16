@@ -1,0 +1,254 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bipinnatin-j-baran-2025",
+        "molecule_name": "Bipinnatin J",
+        "class": "Natural Product",
+        "author": "Baran",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Stereoselective Hydroiodination",
+            "reagents": "Cp2ZrCl2",
+            "reagent_smiles": "II.C[Al](C)C",
+            "conditions": "THF, DCM, -20 °C",
+            "yield": "",
+            "reactant_smiles": "C#CCO",
+            "product_smiles": "C/C(=C\\I)/CO",
+            "notes": "Terminal alkyne is converted to an E-configured iodoalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol protection",
+            "reagents": "MOMCl, iPr2NEt, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to r.t.",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\I)/CO",
+            "product_smiles": "C/C(=C\\I)/C[OMOM]",
+            "notes": "Protection of primary alcohol as MOM ether. The 65% yield is reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ni-catalyzed Reductive Cross-coupling",
+            "reagents": "NiCl2, 2,2'-bpy, AgNO3, Mg(+)/RVC(-)",
+            "reagent_smiles": "COC(=O)CCC(=O)ON1C(=O)C2=C(C=CC=C2)C1=O",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "C/C(=C/I)COCOC",
+            "product_smiles": "C/C(=C/CCC(=O)OC)COCOC",
+            "notes": "E-selective cross-coupling of vinyl iodide with a phthalimide-derived radical, forming a new C-C bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "CCOCC.CO",
+            "conditions": "MeOH, H2O, Et2O",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "C/C(=C\\CCC(=O)OC)/COCOC",
+            "product_smiles": "C/C(=C\\CCC(=O)O)/COCOC",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid. The MOM protecting group and E-alkene stereochemistry are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Active Ester Formation",
+            "reagents": "DIC",
+            "reagent_smiles": "O=C1C2=CC=CC=C2C(=O)N1O",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "OC(=O)CC/C=C(/C)COCOC",
+            "product_smiles": "O=C1C2=CC=CC=C2C(=O)N1OC(=O)CC/C=C(/C)COCOC",
+            "notes": "Formation of an O-acyl-N-hydroxyphthalimide active ester from a carboxylic acid and N-hydroxyphthalimide, mediated by DIC. The double bond maintains its E-stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Cross-Coupling",
+            "reagents": "NiCl2, 2,2'-bpy, AgNO3, LiCl",
+            "reagent_smiles": "[OTBS]C[C@H]1C=C(C(=O)O1)Br",
+            "conditions": "NMP, DMF, Mg(+)/RVC(-)",
+            "yield": "44% (2 steps)",
+            "reactant_smiles": "C/C(=C\\CCC(=O)ON1C(=O)C2=C(C=CC=C2)C1=O)/COCOC",
+            "product_smiles": "[OTBS]C[C@H]1C=C(CC/C=C(\\C)/COCOC)C(=O)O1",
+            "notes": "Reductive coupling of a N-hydroxyphthalimide ester with a vinyl bromide to form a substituted furanone.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Silyl ether formation / Alcohol protection",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "99%",
+                    "reactant_smiles": "OC[C@H]1CO1",
+                    "product_smiles": "[TBS]OC[C@H]1CO1",
+                    "notes": "Protection of the primary alcohol of (R)-glycidol to form the TBS ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Epoxide opening / Lactonization / Bromination",
+                    "reagents": "BF3, NBS",
+                    "reagent_smiles": "[TMS]C#CN1CCOCC1",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "O[TBS]C[C@H]1CO[C@@H]1",
+                    "product_smiles": "O[TBS]C[C@H]1CC(C(=O)O1)(Br)Br",
+                    "notes": "Epoxide opening by TMS-alkyne, followed by lactone formation and dibromination.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Double Dehydrobromination",
+                    "reagents": "LiCl, Li2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 70 °C",
+                    "yield": "55% (2 steps)",
+                    "reactant_smiles": "CC(C)(C)[Si](C)(C)OC[C@H]1OC(=O)C(Br)(Br)C1",
+                    "product_smiles": "CC(C)(C)[Si](C)(C)OC[C@H]1OC(=O)C(Br)=C1",
+                    "notes": "Elimination of two HBr molecules from a gem-dibrominated lactone to form an alpha,beta-unsaturated lactone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Elimination and Rearrangement",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "94%",
+            "reactant_smiles": "[OTBS]OC[C@H]1C=C(CC/C=C(C)\\COCOC)C(=O)O1",
+            "product_smiles": "C/C(=C\\CCC1=CC(=C)OC1=O)/COCOC",
+            "notes": "Base-catalyzed elimination of a silyl ether followed by double bond rearrangement within the furanone ring to form an exocyclic methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nickel-catalyzed Reductive Cross-Coupling",
+            "reagents": "NiBr2, Zn, DMF, DMSO, H2O",
+            "reagent_smiles": "BrC1=CC(C)=C(C2=NCOC(C)(C)C2)O1",
+            "conditions": "0 °C to 10 °C",
+            "yield": "61%",
+            "reactant_smiles": "O=C1OC=C(CCC/C=C(/C)\\COCOC)C(=C)1",
+            "product_smiles": "O=C1OC=C(CCC/C=C(/C)\\COCOC)C(C(H)CH2/C=C(\\C)C2=CC(C)=C(C3=NCOC(C)(C)C3)O2)1",
+            "notes": "Reductive coupling of a bromofuran with an exocyclic methylene on a lactone, resulting in chain elongation and addition of a methyl group on the newly formed alkene.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Dihydrooxazole formation",
+                    "reagents": "NBS, 4Å MS",
+                    "reagent_smiles": "CC(C)(CO)N",
+                    "conditions": "DCM, 40 °C",
+                    "yield": "71%",
+                    "reactant_smiles": "Brc1cc(C=O)o1",
+                    "product_smiles": "CC1(C)COC(=N1)c2cc(Br)o2",
+                    "notes": "Formation of a 4,5-dihydrooxazole by cyclization of an aldehyde with an amino alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Directed ortho-lithiation / Bromination / Suzuki-Miyaura Coupling",
+                    "reagents": "LDA, NBS",
+                    "reagent_smiles": "CC(=C([TMS])B1OC(C)(C)C(C)(C)O1)",
+                    "conditions": "THF, DMF, -78 °C to 0 °C",
+                    "yield": "74%",
+                    "reactant_smiles": "CC1(C)COC(=N1)C2=CC=C(Br)O2",
+                    "product_smiles": "O1C(C2=NC(C)(C)CO2)=C(Br)C=C1/C=C(\\C)[TMS]",
+                    "notes": "Bromination at C3 via directed ortho-lithiation using LDA and subsequent electrophilic quench with NBS, followed by Suzuki-Miyaura coupling at C5 with the alkenyl boronic ester. The TMS group is abbreviated as shown in the image, and the alkene has E-stereochemistry (trans between furan and methyl group).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Lithiation followed by methylation (electrophilic substitution)",
+                    "reagents": "Mel, nBuLi",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "98%",
+                    "reactant_smiles": "C/C(=C/C1=CC(=C(C2=NC(C)(C)CO2)O1)Br)\\[TMS]",
+                    "product_smiles": "CC1=C(C2=NC(C)(C)CO2)OC(=C1)/C=C(\\C)\\[TMS]",
+                    "notes": "Bromine on furan ring is replaced by a methyl group using nBuLi for lithiation and Mel as electrophile. Stereochemistry of the exocyclic double bond is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Bromodesilylation",
+                    "reagents": "NBS, MeCN",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "CC1=C(C2=NC(C)(C)CO2)OC(=C1)/C=C(/C)[TMS]",
+                    "product_smiles": "CC1=C(C2=NC(C)(C)CO2)OC(=C1)/C=C(/C)\\Br",
+                    "notes": "Stereoselective bromination of a vinylsilane to replace the TMS group with bromine, maintaining the Z-stereochemistry of the double bond.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Asymmetric Conjugate Addition / Reduction",
+            "reagents": "DCM",
+            "reagent_smiles": "O=[N+]1c2ccc(O)cc2C=C(C1)[C@H](O)[C@H]3CN4CCC3CC4",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "C/C(=C\\CCC1C=C(C/C(=C\\C2=CC(=C(C3=NC(C)(C)CO3)O2)C)/C)OC1=O)/COCOC",
+            "product_smiles": "O=C1C=C(CCC/C(=C\\COCOC)/C)[C@@H](C/C(=C\\C2=CC(=C(C3=NC(C)(C)CO3)O2)C)/C)O1",
+            "notes": "Asymmetric reduction of an alpha,beta-unsaturated lactone, mediated by a chiral cinchona alkaloid N-oxide catalyst, leading to a new chiral center and a re-arranged 2(5H)-furanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "No observable reaction (visual)",
+            "reagents": "MeOTf, LiBEt₃H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\CCC1=C[C@H](C/C(=C/C2=CC(=C(C3=NC(C)(C)CO3)O2)C)/C)OC1=O)/COCOC",
+            "product_smiles": "C/C(=C\\CCC1=C[C@H](C/C(=C/C2=CC(=C(C3=NC(C)(C)CO3)O2)C)/C)OC1=O)/COCOC",
+            "notes": "The product structure shown in the screenshot is visually identical to the reactant. The original provided product SMILES indicated a reduction of the oxazoline C=N bond and N-methylation (C3N(C)C(C)(C)CO3), which is consistent with the listed reagents (MeOTf, LiBEt3H). However, as per instructions to match the screenshot, the product SMILES has been corrected to be identical to the reactant SMILES.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection / Hydrolysis",
+            "reagents": "PPTS",
+            "reagent_smiles": "",
+            "conditions": "tBuOH, reflux",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "C/C(=C\\CCC1=C[C@H](C/C(=C\\C2=CC(=C(C3N(C)C(C)(C)CO3)O2)C)/C)OC1=O)/C[OMOM]",
+            "product_smiles": "C/C(=C\\CCC1=C[C@H](C/C(=C\\C2=CC(=C(C=O)O2)C)/C)OC1=O)/CO",
+            "notes": "Deprotection of oxazolidine to aldehyde and MOM ether to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Halogenation (Appel reaction)",
+            "reagents": "NBS, PPh3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -5 °C",
+            "yield": "63%",
+            "reactant_smiles": "C/C(=C/CCC1=C[C@@H](C/C(=C/C2=CC(=C(C=O)O2)C)/C)OC1=O)/CO",
+            "product_smiles": "C/C(=C/CCC1=C[C@@H](C/C(=C/C2=CC(=C(C=O)O2)C)/C)OC1=O)/CBr",
+            "notes": "Conversion of a primary alcohol to a primary alkyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Nozaki-Hiyama-Kishi Reaction / Reductive Cyclization",
+            "reagents": "CrCl2",
+            "reagent_smiles": "Cl[Cr]Cl",
+            "conditions": "THF",
+            "yield": "74%",
+            "reactant_smiles": "BrC[C](C)=C/CCC=C1C(=O)O[C@H](C/C=C(C)/c2oc(C=O)c(C)c2)C1",
+            "product_smiles": "Cc1cc([C@H](O)[C@@H](C)CCC=C2C(=O)O[C@@H](C/C=C(C)/c1)C2)oc1",
+            "notes": "Intramolecular reductive cyclization of an aldehyde and an allyl bromide to form a homoallylic alcohol and a 14-membered macrocycle. The configuration at the original lactone chiral center is inverted, and two new chiral centers are formed with specific stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

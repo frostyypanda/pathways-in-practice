@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "enzalutamide-xtandi-medivation-unknown-2024",
+        "molecule_name": "Enzalutamide (Xtandi Medivation)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acylation (Acid Chloride Formation)",
+            "reagents": "SOCl₂, DMF",
+            "reagent_smiles": "",
+            "conditions": "2-PrOAc, 60 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C(C(=C1)C(=O)O)F)Br",
+            "product_smiles": "C1=C(C=C(C(=C1)C(=O)Cl)F)Br",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amidation",
+            "reagents": "MeNH2",
+            "reagent_smiles": "CN",
+            "conditions": "(2 steps)",
+            "yield": "90%",
+            "reactant_smiles": "Brc1c(F)cc(C(=O)Cl)cc1",
+            "product_smiles": "Brc1c(F)cc(C(=O)NC)cc1",
+            "notes": "Amidation of 4-bromo-2-fluorobenzoyl chloride with methylamine to form an N-methyl amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ullmann C-N coupling",
+            "reagents": "CuI, K2CO3, 2-acetylcyclohexanone",
+            "reagent_smiles": "CC(C)(N)C(=O)O",
+            "conditions": "DMF, H2O, 105 °C",
+            "yield": "75%",
+            "reactant_smiles": "CNC(=O)C1=CC=C(C=C1F)Br",
+            "product_smiles": "CC(C)(C(=O)O)NC1=CC=C(C(=C1)F)C(=O)NC",
+            "notes": "Ullmann C-N coupling of an aryl bromide with alpha-aminoisobutyric acid to form a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CI",
+            "conditions": "DMF, H2O, 40 °C",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)(C(=O)O)NC1=CC=C(C(=C1)F)C(=O)NC",
+            "product_smiles": "CC(C)(C(=O)OC)NC1=CC=C(C(=C1)F)C(=O)NC",
+            "notes": "Methyl ester formation from carboxylic acid using methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Urea/Thiourea formation",
+            "reagents": "DMSO, 2-PrOAc",
+            "reagent_smiles": "N#Cc1ccc(NCS)c(C(F)(F)F)c1",
+            "conditions": "83 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)(C(=O)OC)Nc1ccc(C(=O)NC)c(F)c1",
+            "product_smiles": "CC1(C)C(=O)N(c2ccc(C#N)c(C(F)(F)F)c2)C(=S)N1c3ccc(C(=O)NC)c(F)c3",
+            "notes": "Formation of Enzalutamide (Xtandi) via reaction of an amine with an isothiocyanate, followed by cyclization to a thiourea/urea heterocyclic core.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Thiocarbonylation / Benzoylation",
+                    "reagents": "NH4SCN, PhCOCl",
+                    "reagent_smiles": "",
+                    "conditions": "acetone, 60 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=CC(=C1C#N)C(F)(F)F)N",
+                    "product_smiles": "C1=CC(=CC(=C1C#N)C(F)(F)F)NC(=S)NC(=O)[Ph]",
+                    "notes": "Aniline reacts with ammonium thiocyanate and benzoyl chloride to form a benzoylthiourea derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Hydrolysis / Debenzoylation",
+                    "reagents": "NaOH, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "55 to 60 °C",
+                    "yield": "68%",
+                    "reactant_smiles": "N#Cc1cc(C(F)(F)F)cc(NC(=S)NC(=O)c2ccccc2)c1",
+                    "product_smiles": "N#Cc1cc(C(F)(F)F)cc(NC(=S)N)c1",
+                    "notes": "Hydrolysis of N-benzoylthiourea derivative to the corresponding thiourea.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Desulfurization",
+                    "reagents": "PhCl",
+                    "reagent_smiles": "Clc1ccccc1",
+                    "conditions": "130 to 135 °C",
+                    "yield": "65%",
+                    "reactant_smiles": "N#CC1=C(C(F)(F)F)C=C(NC(=S)N)C=C1",
+                    "product_smiles": "N#CC1=C(C(F)(F)F)C=C(N=C=S)C=C1",
+                    "notes": "Conversion of a phenylthiourea derivative to a phenylisothiocyanate.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

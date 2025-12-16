@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "panacene-mcerlean-2006",
+        "molecule_name": "Panacene",
+        "class": "Natural Product",
+        "author": "McErlean",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "THP Ether Formation / Alcohol Protection",
+            "reagents": "PPTS, CH2Cl2",
+            "reagent_smiles": "C1=COCCC1",
+            "conditions": "0 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCC1=CC(=CC=C1)O",
+            "product_smiles": "CCC1=CC(=CC=C1)O[THP]",
+            "notes": "Protection of a phenol as its tetrahydropyranyl (THP) ether using 3,4-dihydro-2H-pyran and PPTS as catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed Ortho-Metalation / Silylation",
+            "reagents": "TMSCl, nBuLi",
+            "reagent_smiles": "Cl[Si](C)(C)C.CCCC[Li].C1CCOC1",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "CCC1=CC(=CC=C1)[OTHP]",
+            "product_smiles": "CCC1=CC([OTHP])=C([TMS])C=C1",
+            "notes": "Aromatic directed ortho-lithiation followed by silylation with TMSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "CAN, MeCN, H2O",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "76%",
+            "reactant_smiles": "CCC1=CC(=C(C=C1)[Si](C)(C)C)[OTHP]",
+            "product_smiles": "CCC1=CC(=C(C=C1)[Si](C)(C)C)O",
+            "notes": "Deprotection of a THP ether to a phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Diels-Alder / Cycloaddition (via o-quinone methide)",
+            "reagents": "PIDA",
+            "reagent_smiles": "C1=COC=C1",
+            "conditions": "TFE, -25 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1=CC(=C(C=C1)[TMS])O",
+            "product_smiles": "CCC1=C2C(=C([TMS])C=C1)O[C@H]3C=CO[C@@H]32",
+            "notes": "Phenol oxidation followed by Diels-Alder cycloaddition with furan to form a fused polycyclic ether. Stereochemistry of the two bridgehead hydrogens is trans.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF, CsF",
+            "reagent_smiles": "",
+            "conditions": "DMF, 100 °C",
+            "yield": "44% (2 steps)",
+            "reactant_smiles": "CCC1=C2C(=C(C=C1)[TMS])O[C@H]3C=CO[C@@H]32",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C=CO[C@@H]32",
+            "notes": "Cleavage of TMS group",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxymercuration-Demercuration (Alkene Hydration)",
+            "reagents": "Hg(OAc)₂, H₂O, NaBH₄, NaOH",
+            "reagent_smiles": "",
+            "conditions": "Et₂O, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C=CO[C@H]32",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H]3CC(O)O[C@H]32",
+            "notes": "Hydration of the internal alkene in the dihydrofuran ring, leading to the formation of a hydroxyl group. The two existing bridgehead stereocenters are preserved. The new stereocenter created by the addition of the hydroxyl group is shown with a wavy bond, indicating a mixture of stereoisomers.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig olefination",
+            "reagents": "",
+            "reagent_smiles": "P(c1ccccc1)(c1ccccc1)c1ccccc1=CC#C[Si](C)(C)C",
+            "conditions": "THF",
+            "yield": "75%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C[C@@H](O)O[C@H]32",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@H]3C[C@@H](O)(CC/C=C/C#C[Si](C)(C)C)C32",
+            "notes": "Wittig olefination of a cyclic hemiacetal, resulting in ring opening of the 6-membered oxygen heterocycle and formation of a new hydroxylated side chain with an E-alkene and alkyne-TMS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Bromination",
+            "reagents": "NBS, AgNO3",
+            "reagent_smiles": "",
+            "conditions": "acetone, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@@H](C/C=C/C#[TMS])[C@H]2O",
+            "product_smiles": "CCC1=C2C(=CC=C1)O[C@@H](C/C=C/C#CBr)[C@H]2O",
+            "notes": "Bromodesilylation of a terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization / Allene Formation",
+            "reagents": "",
+            "reagent_smiles": "SCCS.[Hg](OC(=O)C)OC(=O)C",
+            "conditions": "benzene",
+            "yield": "75%",
+            "reactant_smiles": "CCC1=C2C(=CC=C1)O[C@@H](C/C=C\\C#CBr)[C@H]2O",
+            "product_smiles": "CCC1=CC=CC2=C1[C@@H]3[C@H](C[C@H](C=C=CBr)O3)O2",
+            "notes": "Mercury-catalyzed intramolecular cyclization of an allene precursor to form a fused tricyclic system with an allene side chain.",
+            "substeps": []
+        }
+    ]
+}

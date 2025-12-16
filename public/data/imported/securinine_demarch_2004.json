@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "securinine-demarch-2004",
+        "molecule_name": "Securinine",
+        "class": "Natural Product",
+        "author": "DeMarch",
+        "year": 2004
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "BH3",
+            "reagent_smiles": "[BH3]",
+            "conditions": "THF, rt",
+            "yield": "96%",
+            "reactant_smiles": "[Boc]N1CCCC[C@H]1C(=O)O",
+            "product_smiles": "[Boc]N1CCCC[C@H]1CO",
+            "notes": "Reduction of a N-Boc protected piperidine-2-carboxylic acid to a N-Boc protected piperidine-2-methanol using borane.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "76%",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1CO",
+            "product_smiles": "[Boc]N1CCCC[C@@H]1C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Reaction",
+            "reagents": "",
+            "reagent_smiles": "Br[Mg]CCC1OCCO1",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "[Boc]N1CCCC[C@H]1C=O",
+            "product_smiles": "[Boc]N1CCCC[C@]1C(O)CCC1OCCO1",
+            "notes": "Nucleophilic addition of an alkyl Grignard reagent to an aldehyde, forming a secondary alcohol. The pre-existing chiral center's stereochemistry is retained (S), while a new chiral center is formed at the alcohol, depicted as racemic (wavy bond). The N-Boc protecting group remains intact. The Grignard reagent contains a 1,3-dioxolane protected aldehyde equivalent.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "81%",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1C(CCC2OCCO2)O",
+            "product_smiles": "[Boc]N1CCCC[C@@H]1C(=O)CCC2OCCO2",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Reaction / Ketone Addition",
+            "reagents": "",
+            "reagent_smiles": "C=CMgBr",
+            "conditions": "THF, -40 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1C(=O)CCC2OCCO2",
+            "product_smiles": "C=C[C](CCC1OCCO1)([C@@H]2CCCCN2[Boc])O",
+            "notes": "Grignard addition of vinylmagnesium bromide to a ketone, forming a tertiary alcohol. The new chiral center is shown as racemic.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Esterification (Acylation of Alcohol)",
+            "reagents": "",
+            "reagent_smiles": "C=CC(=O)Cl",
+            "conditions": "THF, rt",
+            "yield": "57%",
+            "reactant_smiles": "C=C[C](O)(CCC1OCCO1)[C@H]2CCCCN2[Boc]",
+            "product_smiles": "C=CC(=O)O[C](C=C)(CCC1OCCO1)[C@H]2CCCCN2[Boc]",
+            "notes": "Acylation of a secondary alcohol with acryloyl chloride to form an ester. The 57% yield is reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "",
+            "conditions": "DCM, 40 °C",
+            "yield": "65%",
+            "reactant_smiles": "C=CC(=O)OC(C=C)(CCC1OCCO1)[C@H]2CCCCN2C(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCCC[C@@H]1C2(C=CC(=O)O2)CCC3OCCO3",
+            "notes": "Intramolecular ring-closing metathesis of a diene to form a fused γ-lactone (furanone) with the loss of ethene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetal Deprotection / Oxidation to Aldehyde",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CCCC[C@@H]1C2(CCC3OCCO3)C=CC(=O)O2",
+            "product_smiles": "CC(C)(C)OC(=O)N1CCCC[C@@H]1C2(CCC=O)C=CC(=O)O2",
+            "notes": "Oxidative cleavage of 1,3-dioxolane to an aldehyde using DDQ.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wittig olefination",
+            "reagents": "Ph3PCHI",
+            "reagent_smiles": "P(c1ccccc1)(c1ccccc1)c1ccccc1=CI",
+            "conditions": "THF, -78 °C",
+            "yield": "30%",
+            "reactant_smiles": "[Boc]N1CCCC[C@H]1C2(CCC=O)C=CC(=O)O2",
+            "product_smiles": "[Boc]N1CCCC[C@H]1C2(CC\\C=C/I)C=CC(=O)O2",
+            "notes": "Wittig olefination converting an aldehyde to an (E)-vinyl iodide. The yield is for 2 steps, but only one is shown in detail.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Heck cyclization",
+            "reagents": "Pd(PPh3)2Cl2",
+            "reagent_smiles": "",
+            "conditions": "DMF, 90 °C",
+            "yield": "78%",
+            "reactant_smiles": "[Boc]N1CCCC[C@H]1C2(CC/C=C\\I)C=CC(=O)O2",
+            "product_smiles": "[Boc]N1CCCC[C@H]1[C@]23CCC=CC3=CC(=O)O2",
+            "notes": "Intramolecular Heck cyclization to form a polycyclic securinine derivative. The stereochemistry at the spiro center is resolved in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Wohl-Ziegler bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "CCl4, 80 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCCC[C@@H]1[C@@]23CCC=CC3=CC(=O)O2",
+            "product_smiles": "[Boc]N1CCCC[C@@H]1[C@@]23CC[C@H](Br)C=CC3=CC(=O)O2",
+            "notes": "Allylic bromination with N-bromosuccinimide (NBS). Bromine is introduced at an allylic position with inversion of stereochemistry at that carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "O=C1OC=C2C1C3C=C(Br)C=C3[C@H]4[C@@H]2C[C@H](N([Boc])C4)CC",
+            "product_smiles": "O=C1OC=C2C1C3C=C(Br)C=C3[C@H]4[C@@H]2C[C@H](NC4)CC",
+            "notes": "N-Boc protecting group removal from a complex fused ring system using trifluoroacetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Elimination (Dehydrobromination)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "53% (2 steps)",
+            "reactant_smiles": "BrC[C@@H]1C[C@H]2C(=O)O[C@]23[C@H]4N5CCCC[C@H]5[C@@]314",
+            "product_smiles": "C1=CC(=O)O[C@]23C[C@H]4N5CCCC[C@H]5[C@@]42C=C1",
+            "notes": "Elimination of HBr from the brominated precursor to form Securinine. The stereochemistry is preserved in the relevant centers, while a new double bond is formed.",
+            "substeps": []
+        }
+    ]
+}

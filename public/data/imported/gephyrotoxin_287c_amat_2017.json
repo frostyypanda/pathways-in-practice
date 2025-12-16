@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "gephyrotoxin-287c-amat-2017",
+        "molecule_name": "Gephyrotoxin 287C",
+        "class": "Natural Product",
+        "author": "Amat",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "TBSCl, KHMDS",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "",
+            "reactant_smiles": "OCCC[C@H]1NC(=O)CC1",
+            "product_smiles": "[OTBS]CCC[C@H]1NC(=O)CC1",
+            "notes": "Protection of a primary alcohol as a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc₂O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "84% (2 steps)",
+            "reactant_smiles": "[OTBS]C[C@H]1CCC(=O)N1",
+            "product_smiles": "[Boc]N1C(=O)CC[C@H]1C[OTBS]",
+            "notes": "N-Boc protection of a lactam nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Addition to Lactam",
+            "reagents": "",
+            "reagent_smiles": "C1CCC(=C1)CCC[Mg]Br",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1C(=O)CC[C@H]1[CH2][OTBS]",
+            "product_smiles": "[Boc]N1[C@@](O)(CCCC2=CCCC2)CC[C@H]([CH2][OTBS])C1",
+            "notes": "Grignard reagent addition to a lactam, forming an N-Boc-protected pyrrolidine alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "BF3·Et2O, L-Selectride",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@@H](CC[C@]1(CCCC2=CCCC2)O)CO[Si](C)(C)C(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@H](CCCC2=CCCC2)CC[C@@H]1CO[Si](C)(C)C(C)(C)C",
+            "notes": "Reductive removal of tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ozonolysis",
+            "reagents": "",
+            "reagent_smiles": "O=O=O.P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "CH2Cl2, -78 °C then -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@@H](CCCC2=CCCC2)CC[C@@H]1[OTBS]",
+            "product_smiles": "[Boc]N1[C@@H](CCCC(=O)CCC=O)CC[C@@H]1[OTBS]",
+            "notes": "Alkene cleaved via ozonolysis to form a ketone and an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Wittig Olefination",
+            "reagents": "Wittig olefination",
+            "reagent_smiles": "[Ph]P([Ph])([Ph])=C(C(=O)C)",
+            "conditions": "",
+            "yield": "84% (2 steps)",
+            "reactant_smiles": "[OTBS]C[C@@H]1CC[C@H](CCCC(=O)CCCC=O)N1[Boc]",
+            "product_smiles": "[OTBS]C[C@@H]1CC[C@H](CCCC(=O)CCC/C=C/C(=O)C)N1[Boc]",
+            "notes": "Wittig olefination of an aldehyde with an ylide (Ph3P=C(COCH3)) to form an alpha,beta-unsaturated ketone with E-stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Boc deprotection, TBS deprotection, reductive amination, intramolecular cyclization",
+            "reagents": "TFA, NaBH(OAc)3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt; then CHCl3, 40 °C; then CH2Cl2, rt",
+            "yield": "79%",
+            "reactant_smiles": "CC(=O)/C=C/CCC(=O)CCCC[C@@H]1CC[C@H](C[OTBS])N1[Boc]",
+            "product_smiles": "CC(=O)C[C@H]1[C@@H]2CC[C@@H](CO)[C@H]3N2CCC[C@H]13",
+            "notes": "Intramolecular reductive amination and cyclization of an aldehyde (formed in situ from the ketone/alkene chain) and deprotection of Boc and TBS groups to form a polycyclic amine with an alcohol and methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC(=O)C[C@@H]1CCC[C@@H]2[C@H]1CC[C@@H]3CC[C@@H](CO)N23",
+            "product_smiles": "CC(=O)C[C@@H]1CCC[C@@H]2[C@H]1CC[C@@H]3CC[C@@H](C=O)N23",
+            "notes": "Oxidation of a primary alcohol to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wittig olefination",
+            "reagents": "KHMDS",
+            "reagent_smiles": "[Cl-].[P+]([Ph])([Ph])([Ph])COC",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "CC(=O)C[C@@H]1CCC[C@@H]2[C@H]1CC[C@@H]3CC[C@@H](C=O)N32",
+            "product_smiles": "CC(=O)C[C@@H]1CCC[C@@H]2[C@H]1CC[C@@H]3CC[C@@H](C=COC)N32",
+            "notes": "Wittig olefination of an aldehyde to form an enol ether. The stereochemistry of the newly formed double bond is undefined.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ketone to Alkyne Homologation (Corey-Fuchs type)",
+            "reagents": "",
+            "reagent_smiles": "CC1(C)CCCC(C)(C)[N-]1.[Li+].ClP(=O)(OCC)OCC",
+            "conditions": "THF, -78 °C to rt then LiTMP -78 °C to rt",
+            "yield": "79%",
+            "reactant_smiles": "CC(=O)C[C@H]1CCC[C@H]2[C@@H]1CC[C@@H]3CC[C@H](C=COC)N32",
+            "product_smiles": "C#CC[C@H]1CCC[C@H]2[C@@H]1CC[C@@H]3CC[C@H](C=COC)N32",
+            "notes": "The methyl ketone group is converted to a propargyl group. This transformation proceeds via deprotonation to form an enolate, reaction with diethyl chlorophosphate to form an enol phosphate, followed by further deprotonation and elimination to yield the terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrolysis of Enol Ether",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O, 25 °C",
+            "yield": "",
+            "reactant_smiles": "C#CC[C@@H]1CCC[C@@H]2[C@H]1CC[C@H]3CC[C@H](C=COC)N32",
+            "product_smiles": "C#CC[C@@H]1CCC[C@@H]2[C@H]1CC[C@H]3CC[C@H](C=CO)N32",
+            "notes": "Acid-catalyzed hydrolysis of a methyl enol ether to an enol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-].CO",
+            "conditions": "MeOH",
+            "yield": "91%",
+            "reactant_smiles": "C#CC[C@@H]1CCC[C@H]2[C@@H]1CC[C@H]3N(C2)CC[C@@H](C=CO)C3",
+            "product_smiles": "C#CC[C@@H]1CCC[C@H]2[C@@H]1CC[C@H]3N(C2)CC[C@@H](CCO)C3",
+            "notes": "Reduction of an alkene (vinyl alcohol) side chain to an alkane (ethanol) side chain using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Cross-coupling (Hydroindation-mediated Sonogashira-like coupling)",
+            "reagents": "HInCl₂, Et₃B, AcOH, [Pd₂(dba)₃•CHCl₃], tri(2-furyl)phosphine",
+            "reagent_smiles": "[TMS]C#CI",
+            "conditions": "THF, -78 °C then DMF/THF, reflux",
+            "yield": "",
+            "reactant_smiles": "C#CC[C@@H]1CCC[C@@H]2[C@H]1CC[C@@H]3CC[C@@H](CCO)N32",
+            "product_smiles": "[TMS]C#C/C=C\\C[C@@H]1CCC[C@@H]2[C@H]1CC[C@@H]3CC[C@@H](CCO)N32",
+            "notes": "Palladium-catalyzed cross-coupling of a terminal alkyne with iodotrimethylsilylacetylene, forming an enyne system with a Z-configured double bond. The initial step likely involves hydroindation followed by coupling.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "68%",
+            "reactant_smiles": "C[Si](C)(C)C#C/C=C\\C[C@@H]1CCC[C@@H]2[C@H]1CC[C@H]3CC[C@@H](CCO)N32",
+            "product_smiles": "C#C/C=C\\C[C@@H]1CCC[C@@H]2[C@H]1CC[C@H]3CC[C@@H](CCO)N32",
+            "notes": "Desilylation of a trimethylsilyl-protected terminal alkyne using potassium carbonate in methanol.",
+            "substeps": []
+        }
+    ]
+}

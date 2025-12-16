@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tambromycin-renata-2018",
+        "molecule_name": "Tambromycin",
+        "class": "Natural Product",
+        "author": "Renata",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "C-H Borylation",
+            "reagents": "Ir cat., B2Pin2, HBpin",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=CN([TIPS])C2=CC=CC(=C12)OC",
+            "product_smiles": "CCOC(=O)C1=CN([TIPS])C2=CC(=CC(=C12)OC)B3OC(C)(C)C(C)(C)O3",
+            "notes": "Iridium-catalyzed C-H borylation of an N-TIPS protected indole at the C6 position.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Chlorodeboronation, N-deprotection",
+            "reagents": "CuCl2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "53% (2 Steps)",
+            "reactant_smiles": "CCOC(=O)C1=C[N]([TIPS])C2=CC(=CC(=C12)OC)B3OC(C)(C)C(C)(C)O3",
+            "product_smiles": "CCOC(=O)C1=CNC2=CC(=CC(=C12)OC)Cl",
+            "notes": "The pinacolborane group is replaced by a chlorine atom, and the N-TIPS protecting group is removed to give the free indole NH.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Alkylation (N-methylation)",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=CNC2=CC(=CC(=C12)OC)Cl",
+            "product_smiles": "CCOC(=O)C1=CN(C)C2=CC(=CC(=C12)OC)Cl",
+            "notes": "N-methylation of an indole using sodium hydride and iodomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "73%",
+            "reactant_smiles": "CCOC(=O)C1=CN(C)C2=CC(=CC(=C12)[OMe])Cl",
+            "product_smiles": "CN1C=C(C2=C(C=C(C=C21)Cl)[OMe])C(=O)O",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling",
+            "reagents": "DMTMM, DIPEA",
+            "reagent_smiles": "N[C@@H](C(=O)OC)[C@H](O)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN1C=C(C2=C(C=C(C=C21)Cl)OC)C(=O)O",
+            "product_smiles": "COC1=C(Cl)C=CC2=C1N(C)C=C2C(=O)N[C@@H](C(=O)OC)[C@H](O)C",
+            "notes": "Carboxylic acid of indole derivative reacts with the amino group of methyl (2S,3R)-2-amino-3-hydroxybutanoate to form an amide linkage.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Dehydrative cyclization (Oxazoline formation)",
+            "reagents": "DAST",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "81%",
+            "reactant_smiles": "C[C@@](CO)(C(=O)OC)NC(=O)C1=CN(C)C2=CC(=CC(=C12)OC)Cl",
+            "product_smiles": "C[C@@]1(COC(=N1)C2=CN(C)C3=CC(=CC(=C23)OC)Cl)C(=O)OC",
+            "notes": "Formation of a 5-membered oxazoline ring via dehydrative cyclization of a beta-hydroxy amide, retaining the stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "BBr3",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "C[C@]1(COC(=N1)C2=CN(C)C3=CC(=CC(=C23)OC)Cl)C(=O)OC",
+            "product_smiles": "C[C@]1(COC(=N1)C2=CN(C)C3=CC(=CC(=C23)O)Cl)C(=O)O",
+            "notes": "Demethylation of methyl ester to carboxylic acid and methyl ether to phenol using boron tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "N[C@@H]1CCCN1C(=O)N[C@](C)(C(=O)OC)[C@H](O)C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(O)[C@@]1(C)COC(=N1)c2c(N(C)c3c2c(O)cc(Cl)c3)",
+            "product_smiles": "C[C@@]1(COC(=N1)c2c(N(C)c3c2c(O)cc(Cl)c3))C(=O)N[C@@H]4CCCN4C(=O)N[C@](C)(C(=O)OC)[C@H](O)C",
+            "notes": "Peptide coupling between a carboxylic acid and a dipeptide reagent.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Hydroxylation",
+                    "reagents": "KDO1, αKG, Fe2+, O2",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "N[C@@H](CCCCN)C(=O)O",
+                    "product_smiles": "NCCCC[C@@H](O)[C@@H](N)C(=O)O",
+                    "notes": "Enzymatic hydroxylation of L-lysine at the delta-carbon (C4) to form (2S,4R)-2,6-diamino-4-hydroxyhexanoic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Amine Protection",
+                    "reagents": "Boc2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "N[C@H]1CCCC[C@@H]1[C@@H](O)[C@H](N)C(=O)O",
+                    "product_smiles": "CC(C)(C)OC(=O)N1C[C@@H](O)[C@H](N(C(=O)OC(C)(C)C))C(=O)O)CCC(N(C(=O)OC(C)(C)C))1",
+                    "notes": "Protection of three amine groups (ring nitrogen, C6-amino, and alpha-amino) with Boc groups.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Esterification",
+                    "reagents": "",
+                    "reagent_smiles": "Br[Bn]",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "O=C(O)[C@H]([N][Boc])C[C@H]1[C@H](O)CC[N]([Boc])C1",
+                    "product_smiles": "O=C([O][Bn])[C@H]([N][Boc])C[C@H]1[C@H](O)CC[N]([Boc])C1",
+                    "notes": "Benzyl ester formation via reaction of carboxylic acid with benzyl bromide. All three chiral centers shown with wedge bonds are given a consistent configuration ([C@H]).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Cyclic Sulfamate Formation, Oxidation",
+                    "reagents": "SOCl₂, RuCl₃, NaIO₄",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[H][N]1([Boc])CCC[C@H](O)[C@@H]([H][N][Boc])C(=O)O[Bn]1",
+                    "product_smiles": "[Boc][N]1[H]CCC[C@H]2OS(=O)(=O)N([Boc])[C@@H](C(=O)O[Bn])21",
+                    "notes": "Formation of a 5-membered cyclic sulfamate from an amino alcohol and its subsequent oxidation to a sulfonyl derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Intramolecular Cyclization/Rearrangement",
+                    "reagents": "DMA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "61% (2 steps)",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N1CCCC[C@H]2OS(=O)(=O)N(C(=O)OC(C)(C)C)[C@@H](C(=O)OCC3=CC=CC=C3)[C@H]21",
+                    "product_smiles": "CC(C)(C)OC(=O)N[C@H]([C@H]1CCCN1C(=O)OC(C)(C)C)C(=O)OCC2=CC=CC=C2",
+                    "notes": "Sulfamide ring opening followed by pyrrolidine ring formation via intramolecular cyclization, involving a C-C bond formation and potentially deprotection/reprotection steps (as indicated by '2 steps').",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.6",
+                    "reaction_type": "Hydrogenolysis",
+                    "reagents": "H2, Pd/C",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N1CCC[C@@H]1C(N[Boc])C(=O)O[Bn]",
+                    "product_smiles": "[Boc]N1CCC[C@@H]1C(N[Boc])C(=O)O",
+                    "notes": "Deprotection of a benzyl ester to a carboxylic acid using catalytic hydrogenation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.7",
+                    "reaction_type": "Amide coupling",
+                    "reagents": "HATU, DIPEA",
+                    "reagent_smiles": "COC(=O)C(C)(C[C@H](N)CO)",
+                    "conditions": "",
+                    "yield": "91%",
+                    "reactant_smiles": "[Boc]N[C@@H]([C@H]1CCCN1[Boc])C(=O)O",
+                    "product_smiles": "[Boc]N[C@@H]([C@H]1CCCN1[Boc])C(=O)N[C@](C)(CO)C(=O)OC",
+                    "notes": "The structure explicitly drawn as reagent (HO-CH2-CH(NH2)-C(Me)(CO2Me)) differs from the amine fragment incorporated into the product (H2N-C(Me)(CH2OH)(CO2Me)). The reagent_smiles represents the drawn structure, while product_smiles represents the actual product formed. The reaction yield of 91% is for 2 steps.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.8",
+                    "reaction_type": "Deprotection",
+                    "reagents": "TFA",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "90%",
+                    "reactant_smiles": "[Boc]N[C@@H](C[C@H]1CCCN1[Boc])C(=O)N[C@@](C)(CO)C(=O)OC",
+                    "product_smiles": "N[C@@H](C[C@H]1CCCN1)C(=O)N[C@@](C)(CO)C(=O)OC",
+                    "notes": "Acidic deprotection of two Boc groups on an amine and a pyrrolidine nitrogen.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O/CH3OH",
+            "yield": "76%",
+            "reactant_smiles": "C[C@]1(COC(=N1)C2=CN(C)C3=C2C(=CC(=C3)Cl)O)C(=O)N[C@@H]([C@H]4CCCN4)C(=O)N[C@](C)(CO)C(=O)OC",
+            "product_smiles": "C[C@]1(COC(=N1)C2=CN(C)C3=C2C(=CC(=C3)Cl)O)C(=O)N[C@@H]([C@H]4CCCN4)C(=O)N[C@](C)(CO)C(=O)O",
+            "notes": "Hydrolysis of methyl ester to carboxylic acid. Yield refers to 2 steps.",
+            "substeps": []
+        }
+    ]
+}

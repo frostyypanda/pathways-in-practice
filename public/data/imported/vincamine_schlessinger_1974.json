@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "vincamine-schlessinger-1974",
+        "molecule_name": "Vincamine",
+        "class": "Natural Product",
+        "author": "Schlessinger",
+        "year": 1974
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-Alkylation",
+            "reagents": "LDA",
+            "reagent_smiles": "BrCCCBr",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "CCC(=O)OC(C)(C)C",
+            "product_smiles": "CCC(CCCBr)C(=O)OC(C)(C)C",
+            "notes": "Alpha-alkylation of a tert-butyl ester with 1,3-dibromopropane using LDA as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester to Acyl Chloride Conversion",
+            "reagents": "p-TsOH, (COCl)2",
+            "reagent_smiles": "",
+            "conditions": "benzene",
+            "yield": "",
+            "reactant_smiles": "CCC(CCCBr)C(=O)O[tBu]",
+            "product_smiles": "CCC(CCCBr)C(=O)Cl",
+            "notes": "Conversion of a tert-butyl ester to an acyl chloride. Implies acid-catalyzed deprotection of the tert-butyl ester to a carboxylic acid, followed by conversion to the acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide Formation / Acylation",
+            "reagents": "LiH",
+            "reagent_smiles": "C1=CC=C2C(=C1)C(=CN2)CCN",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CCC(CCCBr)C(=O)Cl",
+            "product_smiles": "CCC(CCCBr)C(=O)NCCC1=CNC2=C1C=CC=C2",
+            "notes": "Nucleophilic acyl substitution of an acid chloride with tryptamine (generated in situ from its HCl salt by LiH) to form an amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "KH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "95%",
+            "reactant_smiles": "CCC(CCCBr)C(=O)NCC1=CNC2=C1C=CC=C2",
+            "product_smiles": "O=C1C(CC)CCCN1CC2=CNC3=C2C=CC=C3",
+            "notes": "Intramolecular N-alkylation (cyclization) forming a 6-membered lactam ring from a bromo-amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Michael addition",
+            "reagents": "LDA",
+            "reagent_smiles": "CSCC(=C)C(=O)OC",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "CCC1CCCN(CC2=CNC3=C2C=CC=C3)C1=O",
+            "product_smiles": "CCC1(CCCN(CC2=CNC3=C2C=CC=C3)C1=O)CC(C(=O)OC)SC",
+            "notes": "Michael addition of methyl 3-(methylthio)-2-methylenepropanoate to the alpha-carbon of the lactam, which already bears an ethyl group, forming a quaternary center.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Bischler-Napieralski Cyclization / Iminium Formation",
+            "reagents": "POCl3, LiClO4",
+            "reagent_smiles": "O=P(Cl)(Cl)Cl.[Li+].[O-]Cl(=O)(=O)=O",
+            "conditions": "CH3CN",
+            "yield": "93%",
+            "reactant_smiles": "CCC1(CCCN(CCC2=CNC3=C2C=CC=C3)C1=O)CC(SC)C(=O)OC",
+            "product_smiles": "CCC1(CCC[N+]2=C3Cc4[nH]c5ccccc5c4C3C2)CC(SC)C(=O)OC",
+            "notes": "Intramolecular cyclization of a lactam with an indole, catalyzed by POCl3, forming an iminium ion and a new fused indoloquinolizine ring system. The lactam carbonyl oxygen is lost in the process.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Iminium Reduction",
+            "reagents": "LTBA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "98%",
+            "reactant_smiles": "CCC1(CCC[N+]2=C1C3=C(CC2)C4=CC=CC=C4N3)CC(C(=O)OC)SC",
+            "product_smiles": "CCC[C@@]1(CCCN2CCC3=C([C@H]12C)NC4=CC=CC=C34)CC(C(=O)OC)SC",
+            "notes": "Stereoselective reduction of an indoloquinolizidinium salt to vincamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation (Sulfoxidation)",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "96%",
+            "reactant_smiles": "CC[C@]1(CCCN2CCC3=C([C@H]12)NC4=CC=CC=C34)CC(C(=O)OC)SC",
+            "product_smiles": "CC[C@]1(CCCN2CCC3=C([C@H]12)NC4=CC=CC=C34)CC(C(=O)OC)S(=O)C",
+            "notes": "Oxidation of a methyl sulfide to a methyl sulfoxide using m-CPBA. The stereochemistry of the two chiral centers in the polycyclic core remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Lactamization / Amidation",
+            "reagents": "NaH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "98%",
+            "reactant_smiles": "CC[C@H]1CC[N@@]2(CC[C@H]3C4=C(NC5=CC=CC=C54)C=C32)C1CC(C(=O)OC)SC",
+            "product_smiles": "CC[C@H]1CC[N@@]2(CC[C@H]3C4=C(N(C(=O)C(C1)SC)C5=CC=CC=C54)C=C32)",
+            "notes": "Intramolecular cyclization of an indole-containing ester to form a 7-membered lactam, catalyzed by NaH.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular cyclization / Rearrangement",
+            "reagents": "NaOMe",
+            "reagent_smiles": "CC(=O)Cl",
+            "conditions": "MeOH",
+            "yield": "80%",
+            "reactant_smiles": "CC[C@@]12CCCN3CCC4=C([C@]13C)N(C5=CC=CC=C45)C(=O)[C@H](S(=O)C)C2",
+            "product_smiles": "COC(=O)[C@]1(O)[C@@H](CC)C2CCCN3CCC4=C([C@]23)N1C5=CC=CC=C45",
+            "notes": "Synthesis of Vincamine via base-mediated cyclization involving an indole-lactam-sulfoxide precursor.",
+            "substeps": []
+        }
+    ]
+}

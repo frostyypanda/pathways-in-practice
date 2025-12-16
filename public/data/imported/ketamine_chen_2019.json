@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ketamine-chen-2019",
+        "molecule_name": "Ketamine",
+        "class": "Natural Product",
+        "author": "Chen",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "Br₂, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "C1CCC(=O)C(=C1)O",
+            "product_smiles": "O=C1C(Br)=C(O)CCC1",
+            "notes": "Alpha-bromination of an enolized ketone",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-Methylation",
+            "reagents": "Et2O",
+            "reagent_smiles": "C=[N+]=[N-]",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "C1CC(=C(C(=O)C1)O)Br",
+            "product_smiles": "COC1=C(CCCC1=O)Br",
+            "notes": "O-methylation of the enol hydroxyl group using diazomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "Pd(OAc)2, PPh3, K2CO3",
+            "reagent_smiles": "B(O)OC1=C(Cl)C=CC=C1",
+            "conditions": "THF/H2O",
+            "yield": "88%",
+            "reactant_smiles": "O=C1C(OC)=C(Br)CCC1",
+            "product_smiles": "O=C1C(OC)=C(C2=C(Cl)C=CC=C2)CCC1",
+            "notes": "Suzuki cross-coupling of a cyclic enol ether bromide with 2-chlorophenylboronic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Noyori asymmetric hydrogenation",
+            "reagents": "[(η6-benzene)RuCl(Ts-DPEN)] catalyst, Et3N, HCO2H",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "93%",
+            "reactant_smiles": "O=C1C(OC)=C(C2=CC=CC=C2Cl)CCC1",
+            "product_smiles": "O[C@H]1C(OC)=C(C2=CC=CC=C2Cl)CCC1",
+            "notes": "Asymmetric transfer hydrogenation of an α,β-unsaturated ketone to a chiral allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Carbamoylation",
+            "reagents": "DCM",
+            "reagent_smiles": "ClC(Cl)(Cl)C(=O)N=C=O",
+            "conditions": "0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "COC1=C(C2=C(Cl)C=CC=C2)C=C[C@@H](O)CC1",
+            "product_smiles": "COC1=C(C2=C(Cl)C=CC=C2)C=C[C@@H](OC(=O)N)CC1",
+            "notes": "The hydroxyl group on the cyclohexene ring is converted into a carbamate using trichloroacetyl isocyanate. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carbamate Dehydration / Rearrangement (Lossen-type)",
+            "reagents": "TFAA, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "COC1=C(C2=C(Cl)C=CC=C2)C[C@@H](OC(N)=O)CCC1",
+            "product_smiles": "CO[C@H]1[C@@H](N=C=O)[C@H](C2=C(Cl)C=CC=C2)C=CC1",
+            "notes": "Dehydration of a carbamate to form an isocyanate with concomitant rearrangement of the cyclohexene ring and creation of two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "80%",
+            "reactant_smiles": "COC1=C[C@@](N=C=O)(C2=C(Cl)C=CC=C2)CCC1",
+            "product_smiles": "COC1=C[C@@](NC)(C2=C(Cl)C=CC=C2)CCC1",
+            "notes": "Reduction of an isocyanate to a methylamine using LiAlH4.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Enol ether hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "93%",
+            "reactant_smiles": "CN[C@@]1(C2=C(Cl)C=CC=C2)(CCC=C(OC)C1)",
+            "product_smiles": "CN[C@@]1(C2=C(Cl)C=CC=C2)(CCC(=O)CC1)",
+            "notes": "Hydrolysis of an enol ether to a ketone, preserving the chiral center.",
+            "substeps": []
+        }
+    ]
+}

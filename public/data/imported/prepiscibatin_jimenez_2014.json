@@ -1,0 +1,158 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "prepiscibatin-jimenez-2014",
+        "molecule_name": "Prepiscibatin",
+        "class": "Natural Product",
+        "author": "Jimenez",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclization",
+            "reagents": "acetone",
+            "reagent_smiles": "CC(C)(OC)OC",
+            "conditions": "reflux",
+            "yield": "99%",
+            "reactant_smiles": "C([C@@H](C(=O)O)N)S",
+            "product_smiles": "CC1(C)N[C@@H](CS1)C(=O)O",
+            "notes": "Formation of a thiazolidine ring from cysteine and acetone dimethyl acetal.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-protection",
+            "reagents": "Boc₂O, pyridine",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C.c1ccncc1",
+            "conditions": "0 °C to rt",
+            "yield": "49%",
+            "reactant_smiles": "CC1(C)N[C@@H](CS1)C(=O)O",
+            "product_smiles": "[Boc]N1[C@@H](CSC1(C)C)C(=O)O",
+            "notes": "N-protection of thiazolidine-carboxylic acid with Boc anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide Formation (Weinreb Amide)",
+            "reagents": "EDC, DIPEA",
+            "reagent_smiles": "CNOC",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "35%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@@H](C(=O)O)CSC1(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@@H](C(=O)N(C)OC)CSC1(C)C",
+            "notes": "Carboxylic acid converted to a Weinreb amide using N-methyl-O-methylhydroxylamine (MeNHOMe), EDC, and DIPEA.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Weinreb Amide Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li+].[AlH4-]",
+            "conditions": "Et2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1[C@@H](CSC1(C)C)C(=O)N(C)OC",
+            "product_smiles": "[Boc]N1[C@@H](CSC1(C)C)C=O",
+            "notes": "Reduction of a Weinreb amide to an aldehyde using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Samarium Diiodide Mediated Aldol-type Addition",
+            "reagents": "SmI2",
+            "reagent_smiles": "CC(C)[C@H]1COC(=O)N1C(=O)CCl",
+            "conditions": "THF, -78 °C",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "[Boc]N1[C@@H](C=O)CSC(C)(C)C1",
+            "product_smiles": "CC(C)[C@H]1COC(=O)N1C(=O)C[C@H](O)[C@@H]2N([Boc])C(C)(C)SC2",
+            "notes": "Diastereoselective addition of an enolate (derived from chloroacetyl chiral auxiliary) to an aldehyde.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "N-acylation",
+                    "reagents": "nBuLi",
+                    "reagent_smiles": "ClCC(=O)Cl",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "81%",
+                    "reactant_smiles": "CC(C)[C@@H]1COC(=O)N1",
+                    "product_smiles": "CC(C)[C@@H]1COC(=O)N(C1)C(=O)CCl",
+                    "notes": "N-acylation of a chiral oxazolidinone auxiliary using 2-chloroacetyl chloride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ring opening; Transesterification",
+            "reagents": "EtONa",
+            "reagent_smiles": "[Na+].[O-]CC",
+            "conditions": "EtOH, 0 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)[C@@H]1COC(=O)N1C(=O)C[C@@H]([C@@H]2CSC(C)(C)N2C(=O)OC(C)(C)C)O",
+            "product_smiles": "CCOC(=O)C[C@@H]([C@@H]1CSC(C)(C)N1C(=O)OC(C)(C)C)O",
+            "notes": "Ethanolysis of a chiral oxazolidinone auxiliary to yield an ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection, Thiazolidine Ring Opening",
+            "reagents": "TFA, CH2Cl2, MeOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "71%",
+            "reactant_smiles": "CCOC(=O)C[C@@H](O)[C@H]1N([Boc])C(C)(C)SC1",
+            "product_smiles": "CCOC(=O)C[C@@H](O)[C@@H](N)CS",
+            "notes": "Acidic Boc deprotection and cleavage of the thiazolidine ring to yield a free amine and thiol, along with a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Heterocyclic condensation / Thiazolidine formation",
+            "reagents": "AcOK, MeOH",
+            "reagent_smiles": "C1=CC=C(C(=C1)C2=N[C@@H](CS2)C(=O)H)O",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@@H]([C@H](CS)N)O",
+            "product_smiles": "CCOC(=O)C[C@@H]([C@H]1CS[C@@H]([C@H]2CSC(=N2)C3=CC=CC=C3O)N1)O",
+            "notes": "Formation of a complex fused heterocycle (Prepsicibatin) from an ethyl cysteine derivative and a thiazolidine carbaldehyde.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Heterocycle formation (2,3-dihydrothiazole), Amide formation (Weinreb amide)",
+                    "reagents": "MeHNOMe, EDC, DIPEA",
+                    "reagent_smiles": "C([C@H](C(=O)O)N)S",
+                    "conditions": "MeOH, CH2Cl2, 0 °C",
+                    "yield": "57%",
+                    "reactant_smiles": "C1=CC=C(C(=C1)C#N)O",
+                    "product_smiles": "CN(OC)C(=O)[C@H]1CSC(=NC1)c2c(O)cccc2",
+                    "notes": "Formation of a 2,3-dihydrothiazole ring system from 2-hydroxybenzonitrile and L-cysteine, with subsequent formation of a Weinreb amide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "[Li][AlH4]",
+                    "conditions": "Et2O, -20 °C",
+                    "yield": "95%",
+                    "reactant_smiles": "O-c1ccccc1C2=N[C@@H](C(=O)N(OC)C)CS2",
+                    "product_smiles": "O-c1ccccc1C2=N[C@@H](C=O)CS2",
+                    "notes": "Reduction of a Weinreb amide to an aldehyde using lithium aluminum hydride, retaining stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Lactamization",
+            "reagents": "Toluene",
+            "reagent_smiles": "",
+            "conditions": "120 °C",
+            "yield": "44% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C[C@H](O)[C@]1CS[C@@H]([C@H]2CSC(=N2)C3=CC=CC=C3O)N1",
+            "product_smiles": "Oc1ccccc1C2=N[C@@H](CS2)[C@@]3CS[C@H]4N3C(=O)C[C@H](O)C4",
+            "notes": "Intramolecular cyclization of an ester to form a 6-membered lactam, with concurrent loss of ethanol, under thermal conditions.",
+            "substeps": []
+        }
+    ]
+}

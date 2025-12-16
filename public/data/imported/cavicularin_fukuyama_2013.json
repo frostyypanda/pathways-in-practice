@@ -1,0 +1,290 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cavicularin-fukuyama-2013",
+        "molecule_name": "Cavicularin",
+        "class": "Natural Product",
+        "author": "Fukuyama",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Benzylic Bromination",
+            "reagents": "NBS, AIBN",
+            "reagent_smiles": "",
+            "conditions": "CCl4, reflux",
+            "yield": "72%",
+            "reactant_smiles": "CC1=CC=CC(=C1)OC",
+            "product_smiles": "COC1=CC(=CC=C1)CBr",
+            "notes": "Radical bromination of the benzylic methyl group using NBS and AIBN initiator in CCl4 solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "Br2",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, rt",
+            "yield": "92%",
+            "reactant_smiles": "COC1=CC(CBr)=CC=C1",
+            "product_smiles": "COC1=CC(CBr)=C(Br)C=C1",
+            "notes": "Electrophilic aromatic substitution where a bromine atom is introduced ortho to the existing bromomethyl group and meta to the methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Arbusov reaction",
+            "reagents": "",
+            "reagent_smiles": "COP(OC)OC",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "Brc1c(CBr)ccc(OC)c1",
+            "product_smiles": "Brc1c(CP(=O)(OC)OC)ccc(OC)c1",
+            "notes": "Arbusov reaction transforming a benzylic bromide into a phosphonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "O=CC1=CC=C(OC2=CC=C(C(=O)OC)C=C2)C=C1",
+            "conditions": "THF, 0 °C",
+            "yield": "98%",
+            "reactant_smiles": "COC1=CC(=C(C=C1)Br)CP(=O)(OC)OC",
+            "product_smiles": "COC1=CC(=C(C=C1)Br)/C=C/C2=CC=C(OC3=CC=C(C(=O)OC)C=C3)C=C2",
+            "notes": "Horner-Wadsworth-Emmons olefination of a phosphonate with an aldehyde to form a trans-alkene.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Corey-Gamen-Gilman Oxidation",
+                    "reagents": "NaCN, AcOH, MnO2",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "",
+                    "reactant_smiles": "COC1=CC=C(C=C1O)C=O",
+                    "product_smiles": "COC1=CC=C(C=C1O)C(=O)OC",
+                    "notes": "Oxidation of an aldehyde to a methyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Ullman coupling",
+                    "reagents": "CuO, K2CO3, pyridine",
+                    "reagent_smiles": "O=Cc1ccc(Br)cc1",
+                    "conditions": "reflux",
+                    "yield": "76%",
+                    "reactant_smiles": "COC1=CC=C(C=C1O)C(=O)OC",
+                    "product_smiles": "COC1=CC=C(C=C1Oc2ccc(C=O)cc2)C(=O)OC",
+                    "notes": "O-arylation of a phenol with 4-bromobenzaldehyde via Ullmann coupling to form a diaryl ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "98%",
+            "reactant_smiles": "COc1ccc(Br)c(/C=C/c2ccc(Oc3ccc(C(=O)OC)c(OC)c3)cc2)c1",
+            "product_smiles": "COc1ccc(Br)c(/C=C/c2ccc(Oc3ccc(CO)c(OC)c3)cc2)c1",
+            "notes": "Reduction of a methyl ester to a primary alcohol using lithium aluminium hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Bromination of primary alcohol",
+            "reagents": "SOBr2",
+            "reagent_smiles": "O=S(Br)Br",
+            "conditions": "benzene, 0 °C",
+            "yield": "",
+            "reactant_smiles": "COc1ccc(Br)c(/C=C/c2ccc(Oc3c(OC)ccc(CO)c3)cc2)c1",
+            "product_smiles": "COc1ccc(Br)c(/C=C/c2ccc(Oc3c(OC)ccc(CBr)c3)cc2)c1",
+            "notes": "Conversion of a primary alcohol to a primary alkyl bromide using thionyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Arbusov reaction",
+            "reagents": "P(OMe)3",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "COC1=CC(Br)=C(/C=C/C2=CC=C(OC3=C(OC)C=CC(CBr)=C3)C=C2)=C1",
+            "product_smiles": "COC1=CC(Br)=C(/C=C/C2=CC=C(OC3=C(OC)C=CC(CP(=O)(OC)OC)=C3)C=C2)=C1",
+            "notes": "Arbuzov reaction converts a primary alkyl bromide to a phosphonate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "O=Cc1cc([MOMO])c([OBn])cc1",
+            "conditions": "THF, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "Brc1c(/C=C/c2ccc(Oc3c(OC)ccc(CP(=O](OC)OC)c3)cc2)ccc(OC)c1",
+            "product_smiles": "Brc1c(/C=C/c2ccc(Oc3c(OC)ccc(/C=C/c4cc([MOMO])c([OBn])cc4)c3)cc2)ccc(OC)c1",
+            "notes": "Horner-Wadsworth-Emmons olefination to form a new C=C bond.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Demethylenation",
+                    "reagents": "BCl3, Me2S",
+                    "reagent_smiles": "",
+                    "conditions": "1,2-dichloroethane, 85 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=C(C=C2C(=C1)OCO2)C=O",
+                    "product_smiles": "C1=CC(=C(C=C1C=O)O)O",
+                    "notes": "Demethylenation of a 1,3-benzodioxole to a catechol, specifically converting 3,4-(methylenedioxy)benzaldehyde to 3,4-dihydroxybenzaldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "O-Alkylation / Williamson Ether Synthesis",
+                    "reagents": "BnBr, K2CO3, KI",
+                    "reagent_smiles": "",
+                    "conditions": "acetone, reflux",
+                    "yield": "",
+                    "reactant_smiles": "O=Cc1ccc(O)c(O)c1",
+                    "product_smiles": "O=Cc1ccc(O)c([OBn])c1",
+                    "notes": "Selective benzylation of one phenolic hydroxyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Protection",
+                    "reagents": "MOMCl, DIPEA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, rt",
+                    "yield": "",
+                    "reactant_smiles": "O=Cc1ccc([OBn])c(O)c1",
+                    "product_smiles": "O=Cc1ccc([OBn])c([OMOM])c1",
+                    "notes": "Protection of a phenolic hydroxyl group as a methoxymethyl (MOM) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "TsNHNH2, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "ethoxyethanol",
+            "yield": "97%",
+            "reactant_smiles": "[MOMO]C1=C(C=CC(=C1)/C=C/C2=CC=C(C(=C2)OC3=CC=C(/C=C/C4=C(C=CC(=C4)OC)Br)C=C3)OC)[OBn]",
+            "product_smiles": "[MOMO]C1=C(C=CC(=C1)CCC2=CC=C(C(=C2)OC3=CC=C(CCC4=C(C=CC(=C4)OC)Br)C=C3)OC)[OBn]",
+            "notes": "Reduction of two carbon-carbon double bonds to alkanes.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Catalytic Hydrogenation / Deprotection",
+            "reagents": "H₂, Pd(OH)₂/C",
+            "reagent_smiles": "",
+            "conditions": "CHCl₃-MeOH",
+            "yield": "93%",
+            "reactant_smiles": "[MOMO]c1c(O[Bn])ccc(CCC2=C(OC)C=CC(OC3=CC=C(CCC4=C(Br)C=C(OC)C=C4)C=C3)C=C2)c1",
+            "product_smiles": "[MOMO]c1c(O)ccc(CCC2=C(OC)C=CC(OC3=CC=C(CCC4=C(Br)C=C(OC)C=C4)C=C3)C=C2)c1",
+            "notes": "Deprotection of a benzyl ether (OBn) to a hydroxyl group (OH) via catalytic hydrogenation, leaving the MOMO group intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2O, DMAP",
+            "reagent_smiles": "O=S(=O)(C(F)(F)F)OS(=O)(=O)C(F)(F)F.CN(C)c1ccncc1",
+            "conditions": "DCM",
+            "yield": "96%",
+            "reactant_smiles": "[MOMO]C1=C(C=CC(=C1)CCC2=CC=C(C(=C2)OC3=CC=C(CCC4=C(C=CC(=C4)OC)Br)C=C3)OC)O",
+            "product_smiles": "[MOMO]C1=C(C=CC(=C1)CCC2=CC=C(C(=C2)OC3=CC=C(CCC4=C(C=CC(=C4)OC)Br)C=C3)OC)[OTf]",
+            "notes": "Phenolic hydroxyl group is converted to a triflate using triflic anhydride and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Borylation",
+            "reagents": "B₂(pin)₂, Pd(PPh₃)₄, K₃PO₄",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 100 °C",
+            "yield": "81%",
+            "reactant_smiles": "[MOMO]C1=C(C=CC(=C1)CCC2=CC=C(C(=C2)OC3=CC=C(CCC4=C(C=CC(=C4)[OMe])Br)C=C3)[OMe])OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "CC1(C)C(C)(C)OB(C2=C(CCC3=CC=C(C=C3)OC4=CC(=CC=C4[OMe])CCC5=CC(=C(C=C5)[OTf])[MOMO])C=C(C=C2)[OMe])O1",
+            "notes": "Palladium-catalyzed borylation of an aryl bromide to form a pinacol boronic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd2(dba)3, S-Phos, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 100 °C",
+            "yield": "72%",
+            "reactant_smiles": "CC(C)(C)OB1OC(C)(C)C(C)(C)O1c2cc(OC)ccc2CCCc3ccc(Oc4c(OC)ccc(CCCc5ccc([MOM])c([OTf])c5)c4)cc3",
+            "product_smiles": "COc1ccc(C2=C(CCCc3ccc([MOM])c(Oc4c(OC)ccc(CCCc5ccc1C=CC=C5)c4)c3)C=CC=C2)",
+            "notes": "Macrocyclization via Suzuki-Miyaura coupling between a boronic ester and an aryl triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "MOM Deprotection",
+            "reagents": "Dowex",
+            "reagent_smiles": "",
+            "conditions": "MeOH:EtOAc, 70 °C",
+            "yield": "83%",
+            "reactant_smiles": "[OMe]c1ccc2c(c1[OMe])CCC1=CC=C(OC3=CC=C(CCC4=CC=C(C2)C(=C4)[OMOM])C=C3)C=C1",
+            "product_smiles": "[OMe]c1ccc2c(c1[OMe])CCC1=CC=C(OC3=CC=C(CCC4=CC=C(C2)C(=C4)O)C=C3)C=C1",
+            "notes": "Deprotection of a methoxymethyl (MOM) ether to a hydroxyl group using an acidic Dowex resin.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "NaI, NaOH, NaOCl",
+            "reagent_smiles": "CO",
+            "conditions": "MeOH, rt",
+            "yield": "75%",
+            "reactant_smiles": "COC1=CC2=C(C=C1)C3=C(C=C(CCC4=CC=C(C(=C4)OC5=CC=C(CC2)C=C5)OC)C=C3)O",
+            "product_smiles": "COC1=CC2=C(C=C1)C3=C(C=C(CCC4=CC=C(C(=C4)OC5=CC=C(CC2)C=C5)OC)C(=C3)I)O",
+            "notes": "Iodination of an activated aromatic ring (phenol) in a complex macrocyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "97%",
+            "reactant_smiles": "[OMe]C1=CC2=C(C=C1)C3=C(C=C(CCC4=CC=C(C(=C4)OC5=CC=C(CC2)C=C5)[OMe])C(=C3)I)O",
+            "product_smiles": "[OAc]C1=C2C=C(C(=C1)CCC3=CC=C(C(=C3)OC4=CC=C(CCC5=C2C=CC(=C5)[OMe])C=C4)[OMe])I",
+            "notes": "Acetylation of a phenolic hydroxyl group to an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Intramolecular Biaryl Coupling",
+            "reagents": "nBu₃P, Pd(OAc)₂, Ag₂CO₃",
+            "reagent_smiles": "",
+            "conditions": "DMF, 120 °C",
+            "yield": "50%",
+            "reactant_smiles": "CC(=O)OC1=C2C=C(C(=C1)CCC3=CC=C(C(=C3)OC4=CC=C(CCC5=C2C=CC(=C5)OC)C=C4)OC)I",
+            "product_smiles": "COC1=CC=C(C=C1)O[C@@H]2C(=C(C(=C2CCC3=CC=C(C=C3)C4=C(OC(C)=O)[C@@H]5CCC[C@H]5C=C4)OC)C=C1)CCC",
+            "notes": "Intramolecular palladium-catalyzed biaryl coupling of an aryl iodide to form a complex polycyclic system with two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "CO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C([C@H]2[C@@](C)(C[C@H](C3=CC=C(OC)C=C3)[C@H]4C5=CC=CC=C5OC6=CC=CC=C6C5C7=CCC8=CC=C(OC)C=C8C7=C5C4)C[C@H](OC(=O)C)C1)C=C2",
+            "product_smiles": "COC1=CC=C([C@H]2[C@@](C)(C[C@H](C3=CC=C(OC)C=C3)[C@H]4C5=CC=CC=C5OC6=CC=CC=C6C5C7=CCC8=CC=C(OC)C=C8C7=C5C4)C[C@H](O)C1)C=C2",
+            "notes": "Hydrolysis of an acetate ester to a hydroxyl group using potassium carbonate in methanol.",
+            "substeps": []
+        }
+    ]
+}

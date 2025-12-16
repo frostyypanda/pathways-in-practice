@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pumiliotoxin-251d-overman-1981",
+        "molecule_name": "Pumiliotoxin 251D",
+        "class": "Natural Product",
+        "author": "Overman",
+        "year": 1981
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "MeOH, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "[Bn]OC(=O)N2CCC[C@H]2C(=O)O",
+            "product_smiles": "COC(=O)[C@H]1CCCN1C(=O)O[Bn]",
+            "notes": "Methyl esterification of a carboxylic acid to a methyl ester, using methanol as solvent and sulfuric acid as catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard Reaction / Ester Alkylation",
+            "reagents": "MeI, Mg",
+            "reagent_smiles": "CI.[Mg]",
+            "conditions": "Et2O, reflux",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@@H]1CCCN1C(=O)[OBn]",
+            "product_smiles": "CC(C)([C@@H]1CCCN1C(=O)[OBn])O",
+            "notes": "A Grignard reaction converts a methyl ester into a tertiary alcohol using methylmagnesium iodide. The stereocenter at the pyrrolidine ring is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "SOCl₂, pyridine, THF",
+            "reagent_smiles": "",
+            "conditions": "-45 °C",
+            "yield": "46% (2 steps)",
+            "reactant_smiles": "CC(C)([C@@H]1CCCN1C(=O)OCC2=CC=CC=C2)O",
+            "product_smiles": "C=C(C)[C@H]1CCCN1C(=O)OCC2=CC=CC=C2",
+            "notes": "Dehydration of a tertiary alcohol to form an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxidation",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 25 °C",
+            "yield": "37%",
+            "reactant_smiles": "C=C(C)[C@H]1CCCN1C(=O)[OBn]",
+            "product_smiles": "C[C@]1(CO1)[C@@H]2CCCN2C(=O)[OBn]",
+            "notes": "Epoxidation of the isopropenyl group using m-CPBA to form a substituted epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Organometallic Ring Opening / Lactonization",
+            "reagents": "LiMe(tBu)2Al, Et2O",
+            "reagent_smiles": "CCCC[C@@H](C)/C=C(/C)\\[Si](C)(C)C",
+            "conditions": "Et2O",
+            "yield": "38%",
+            "reactant_smiles": "C[C@]1(CO1)[C@H]2CCCN2C(=O)OCC3=CC=CC=C3",
+            "product_smiles": "CCCC[C@@H](C)/C=C(\\C[C@]1(C)[C@H]2CCCN2C(=O)O1)/[Si](C)(C)C",
+            "notes": "Addition of a lithium alkylaluminum complex of an alkenylsilane to an epoxide, followed by intramolecular cyclization (lactone formation).",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Oxidation",
+                    "reagents": "CrO3, H2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "66%",
+                    "reactant_smiles": "CCCC(C#C)O",
+                    "product_smiles": "CCCC(=O)C#C",
+                    "notes": "Oxidation of a secondary alcohol to a ketone using Jones reagent (CrO3/H2SO4).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Asymmetric Reduction",
+                    "reagents": "THF",
+                    "reagent_smiles": "C[C@H]1CC2(C)C[C@@H]([C@H]1C)B3C4CCC3CCC4",
+                    "conditions": "",
+                    "yield": "67%",
+                    "reactant_smiles": "CCCC(=O)C#C",
+                    "product_smiles": "CCCC[C@H](C#C)O",
+                    "notes": "Asymmetric reduction of an alkynyl ketone to an alkynol using a chiral borane reagent ((-)-B-isopinocampheyl-9-borabicyclo[3.3.1]nonane).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Protection (Bis-Silylation)",
+                    "reagents": "MeLi, TMSCl",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, -50 °C to reflux",
+                    "yield": "",
+                    "reactant_smiles": "CCC[C@@H](C#C)O",
+                    "product_smiles": "CCC[C@@H](C#[TMS])O[TMS]",
+                    "notes": "Deprotonation of the terminal alkyne and the secondary alcohol with MeLi, followed by silylation with TMSCl to form a bis-trimethylsilyl ether and alkyne.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "80%",
+                    "reactant_smiles": "CCCC[C@@H](C#C[TMS])O[TMS]",
+                    "product_smiles": "CCCC[C@@H](C#C[TMS])O",
+                    "notes": "Hydrolysis of silyl ether. The reported yield is for 2 steps.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.5",
+                    "reaction_type": "Carbonate formation / Acylation",
+                    "reagents": "nBuLi, THF",
+                    "reagent_smiles": "COC(=O)Cl",
+                    "conditions": "",
+                    "yield": "87%",
+                    "reactant_smiles": "CCCC[C@@H](C#C[TMS])O",
+                    "product_smiles": "CCCC[C@@H](C#C[TMS])OC(=O)OC",
+                    "notes": "Alcohol is deprotonated by nBuLi, then reacts with methyl chloroformate to form a methyl carbonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.6",
+                    "reaction_type": "Grignard reaction / Cuprate reaction (addition to ester, followed by elimination)",
+                    "reagents": "MeMgBr, CuI",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 25 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "CCCC[C@@H](C#[TMS])OC(=O)OC",
+                    "product_smiles": "CCC[C@@H](C)C#[TMS]",
+                    "notes": "Methyl Grignard (MeMgBr) with CuI reacts with the methyl carbonate, performing a net substitution of the methyl carbonate group with a methyl group and retention of stereochemistry at the chiral center. The TMS-alkyne group remains intact.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.7",
+                    "reaction_type": "Carboalumination of alkyne",
+                    "reagents": "DIBALH, MeLi, LiMe(iBu)2Al",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, reflux",
+                    "yield": "",
+                    "reactant_smiles": "CCC[C@@H](C)C#C[Si](C)(C)C",
+                    "product_smiles": "CCCC[C@@H](C)/C=C(\\[Si](C)(C)C)[Al](C)(CC(C)C)(CC(C)C)",
+                    "notes": "Addition of LiMe(iBu)2Al to a TMS-protected alkyne, forming a Z-vinylalane with retention of stereochemistry at the chiral center.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Lactone hydrolysis / Ring-opening",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH, H2O, reflux",
+            "yield": "87%",
+            "reactant_smiles": "CCCC[C@@H](C)/C=C(/C[C@H]1[C@@H]2CCCN2C(=O)O1)\\[TMS]",
+            "product_smiles": "CCCC[C@@H](C)/C=C(/C[C@H](O)[C@@H]1CCCN1)\\[TMS]",
+            "notes": "Basic hydrolysis of a bicyclic lactone to an amino alcohol, retaining alkene geometry and TMS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Mannich cyclization / Oxazolidine formation",
+            "reagents": "paraformaldehyde",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 80 °C",
+            "yield": "",
+            "reactant_smiles": "CCCC[C@@H](C)/C=C(\\[TMS])C[C@H](O)[C@]1([H])CCCN1",
+            "product_smiles": "CCCC[C@@H](C)/C=C(\\[TMS])C[C@H]1[C@]2([H])CCCN2CO1",
+            "notes": "Formation of a fused pyrrolidine-oxazolidine ring system via reaction of the secondary amine and tertiary alcohol with formaldehyde.",
+            "substeps": []
+        }
+    ]
+}

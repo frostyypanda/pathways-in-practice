@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fumiquinazoline-c-snider-2002",
+        "molecule_name": "Fumiquinazoline C",
+        "class": "Natural Product",
+        "author": "Snider",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection",
+            "reagents": "ether, NaHCO3",
+            "reagent_smiles": "O=C(Cl)OCC(Cl)(Cl)Cl",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "COC(=O)[C@@H](CC1=CNC2=CC=CC=C12)N",
+            "product_smiles": "COC(=O)[C@@H](CC1=CNC2=CC=CC=C12)NC(=O)OCC(Cl)(Cl)Cl",
+            "notes": "Protection of the primary amine of methyl 2-amino-3-(1H-indol-3-yl)propanoate with 2,2,2-trichloroethyl chloroformate (TrocCl).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Indole N-Acylation and Intramolecular Cyclization / Oxidation",
+            "reagents": "BH3 THF, TFA, Cbz-L-Ala, DCC, DDQ",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "77%",
+            "reactant_smiles": "COC(=O)[C@H](CC1=CNC2=CC=CC=C12)[Troc]",
+            "product_smiles": "C[C@@H]1N([Cbz])C(=O)N2C=C(C[C@H](C(=O)OC)[Troc])C3=CC=CC=C3C2C1",
+            "notes": "Acylation of indole N1 with Cbz-L-Alanine followed by cyclization between the alanine alpha-carbon and indole C2, likely an oxidative cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Electrophilic Iodination",
+            "reagents": "Hg(OTFA)2, KI, I2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "COc(=O)[C@H](C[C]1=C(c2ccccc2n1C(=O)[C@@H](C)N[Cbz]))NC(=O)OCC(Cl)(Cl)Cl",
+            "product_smiles": "COc(=O)[C@H](C[C]1=C(I)C(c2ccccc2n1C(=O)[C@@H](C)N[Cbz]))NC(=O)OCC(Cl)(Cl)Cl",
+            "notes": "Iodination of the indole C2 position, mediated by mercury(II) trifluoroacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Heck reaction",
+            "reagents": "Pd2(dba)3, P(o-tolyl)3, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "64%",
+            "reactant_smiles": "C[C@@H]1C(=O)N2c3ccccc3C4=C2N([Cbz])C1C(I)=C4C[C@H]([CO2Me])[Troc]HN",
+            "product_smiles": "C[C@@H]1C(=O)N2c3ccccc3C4=C2N1([Cbz])C4C[C@H]([CO2Me])[Troc]HN",
+            "notes": "Intramolecular Heck cyclization to form a new C-C bond between the C2-position of the indole and the carbon adjacent to the methyl group in the fused piperazinedione ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydroxylation / Methoxylation (Oxidative dearomatization)",
+            "reagents": "",
+            "reagent_smiles": "[N@](CCCC)1OS(=O)(=O)C2=CC=CC=C21",
+            "conditions": "MeOH/CH2Cl2",
+            "yield": "65%",
+            "reactant_smiles": "C[C@H]1C(=O)N([Cbz])C2(N3C4=CC=CC=C4C3)C(=C(C[C@H](C(=O)OC)N[Troc]))CC21",
+            "product_smiles": "C[C@H]1C(=O)N([Cbz])C3(N4C5=CC=CC=C5C4C(OC)[C@@](O)(C[C@H](C(=O)OC)N[Troc]))CC31",
+            "notes": "Oxidative dearomatization of the indoline ring with stereoselective hydroxylation at the spiro center and methoxylation at the C2 position. Troc and Cbz are used as protecting groups, [Cbz] = C(=O)OCC1=CC=CC=C1, [Troc] = C(=O)OCC(Cl)(Cl)Cl.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Lactone formation, Reductive deprotection, Ether cleavage",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "AcOH, SiO2 in CH2Cl2",
+            "yield": "66%",
+            "reactant_smiles": "C[C@H]1C(=O)N2C3=CC=CC=C3[C@@](CC[C@H](C(=O)OC)N[Troc])([C]2(N1[Cbz])OC)O",
+            "product_smiles": "C[C@H]1C(=O)N2C3=CC=CC=C3[C@]4(C[C@H](C(=O)O4)N[Troc])[C@@]2N1",
+            "notes": "This reaction involves a cascade of transformations: the methyl ester and the hydroxyl group form a 5-membered lactone ring. Simultaneously, the Cbz protecting group on a nitrogen atom is reductively removed to form a secondary amine (NH). The methoxy group (OMe) is also cleaved (likely reductively) from a quaternary carbon, converting it into a tertiary CH group. Stereochemistry on the side chain and the OMe-bearing carbon in the reactant, and on the carbon derived from OMe in the product, were corrected to match the visual representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Troc deprotection, Amidation, Fmoc protection",
+            "reagents": "anthranilic acid, EDAC",
+            "reagent_smiles": "CC(=O)O.CC#N.[Zn]",
+            "conditions": "CH3CN",
+            "yield": "85%",
+            "reactant_smiles": "CC1NC(=O)N2[C@H]([C@@]3(N1)c4ccccc4C2=O)C[C@@H](N[Troc])C(=O)O3",
+            "product_smiles": "CC1NC(=O)N([Fmoc])[C@H]([C@@]2(N1)c3ccccc3C(=O)N2)C[C@@H](NC(=O)c4ccccc4N)C(=O)O2",
+            "notes": "Reductive deprotection of the Troc group (2,2,2-trichloroethoxycarbonyl) and subsequent amidation with anthranilic acid (EDAC-mediated coupling). An unexplained Fmoc protection (9-fluorenylmethoxycarbonyl) occurs on the hydantoin nitrogen, as no Fmoc source is indicated in the reagents.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EDAC, CH3CN",
+            "reagent_smiles": "O=C(O)[C@@H](CS[Se]c1ccccc1)N[Fmoc]",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "[Fmoc]N1C(=O)[C@@H](C)[C@H]2[C@@]3(c4ccccc4N12)OC(=O)[C@H](NC(=O)c5ccccc5N)C[C@@]3",
+            "product_smiles": "[Fmoc]N1C(=O)[C@@H](C)[C@H]2[C@@]3(c4ccccc4N12)OC(=O)[C@H](NC(=O)c5ccccc5NC(=O)[C@@H](CS[Se]c6ccccc6)N[Fmoc])C[C@@]3",
+            "notes": "Amide coupling reaction between an o-aminobenzamide and N-Fmoc-selenophenyl-cysteine derivative. The free amine of the aminobenzamide reacts with the carboxylic acid of the selenium-containing amino acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cyclodehydration / Condensation",
+            "reagents": "Ph3P, Br2, i-Pr2NEt",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "[Fmoc]N1C(=O)[C@H](C)C[C@@]2(N3C(=O)c4ccccc43)[C@H](C(=O)O2)NC(=O)c5ccccc5NC(=O)[C@H](C[Se][Ph])N[Fmoc]",
+            "product_smiles": "[Fmoc]N1C(=O)[C@H](C)C[C@@]2(N3C(=O)c4ccccc43)[C@H](C(=O)O2)N=C5c6ccccc6N=C([C@H](C[Se][Ph])N[Fmoc])O5",
+            "notes": "Intramolecular cyclization involving an amide, an imide, and a carbonyl, resulting in the formation of a fused oxazolo-quinazoline ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Fmoc Deprotection and Quinazoline Ring Opening/Rearrangement",
+            "reagents": "piperidine",
+            "reagent_smiles": "C1CCNCC1",
+            "conditions": "EtOAc, rt",
+            "yield": "",
+            "reactant_smiles": "O=C1N([Fmoc])[C@H](C)C2=NC3=CC=CC=C3[C@]21[C@H]4C(=O)O[C@H]4N=C5OC(=N[C@H](C[Se][Ph])N([Fmoc]))C7=CC=CC=C7N5",
+            "product_smiles": "C[C@H]1C(=O)N2C3=C(C=CC=C3)[C@]4(C[C@H](C(=O)O4)NC(=O)C5=C(C=CC=C5)N=C([C@H](C[Se][Ph])N)N6CCCCC6)[C@@]2(C)N1C(=O)OCC7C8=C(C=CC=C8)C9=C7C=CC=C9",
+            "notes": "Deprotection of Fmoc group on the upper amine and opening/rearrangement of the quinazoline ring, forming an amidine with piperidine and an amide linkage.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement",
+            "reagents": "CH3CN, HOAc",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "11% (2 steps)",
+            "reactant_smiles": "C[C@H]1C(=O)N([Fmoc])C2=C(C=CC=C2)[C@]3(C1)O[C@H](C(=O)O3)NC(=O)C4=CC=CC=C4N=C([C@@H](N)CH2[Se]Ph)N5CCCCC5",
+            "product_smiles": "C=C1C(=O)N2C3=C(C=CC=C3)N=C1[C@H](O)C[C@@]4(C5=C(C=CC=C5)N6C(=O)[C@H](C)N([Fmoc])[C@]46)C(=O)N2",
+            "notes": "Intramolecular cascade reaction involving cyclization, rearrangement, and elimination of the selenide group to form Fumiquinazoline C. This occurs over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Intramolecular Cyclization / Amide Formation",
+            "reagents": "CH3CN",
+            "reagent_smiles": "CC(=O)O",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C=C1C2=NC3=C(C=CC=C3)C(=O)N2[C@H](C[C@@]4(C5=C(C=CC=C5)N6C(=O)[C@H](C)N([Fmoc])[C@@]46C)O)C(=O)N1",
+            "product_smiles": "C[C@H]1O[C@@]2([C@H]3N([Cbz])[C@H](C)C(=O)[C@@]23C)C5=CC=CC=C5N6C(=O)C1=NC(=O)N6",
+            "notes": "Intramolecular cyclization involving the exocyclic alkene and hydroxyl group, forming a new six-membered oxygen-containing ring and a C-O-C bridge. The Fmoc protecting group is replaced by a Cbz group on the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection (Cbz)",
+            "reagents": "H2, Pd",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "C[C@H]1C(=O)N2C3=C(C=CC=C3)[C@@]4(C[C@@H]5C(=O)N[C@](C)(C6=NC7=C(C=CC=C7)C(=O)N56)O4)[C@H]2N1[Cbz]",
+            "product_smiles": "C[C@H]1C(=O)N2C3=C(C=CC=C3)[C@@]4(C[C@@H]5C(=O)N[C@](C)(C6=NC7=C(C=CC=C7)C(=O)N56)O4)[C@H]2N1H",
+            "notes": "Catalytic hydrogenation for the deprotection of the Cbz group to yield the free amine.",
+            "substeps": []
+        }
+    ]
+}

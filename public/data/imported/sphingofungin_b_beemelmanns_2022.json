@@ -1,0 +1,182 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sphingofungin-b-beemelmanns-2022",
+        "molecule_name": "Sphingofungin B",
+        "class": "Natural Product",
+        "author": "Beemelmanns",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amidation (Weinreb amide formation)",
+            "reagents": "",
+            "reagent_smiles": "CNOC.C[Al](C)C",
+            "conditions": "CH2Cl2, -15 °C",
+            "yield": "93%",
+            "reactant_smiles": "CC1(C)O[C@H](C(=O)OC)[C@@H](C(=O)OC)O1",
+            "product_smiles": "CC1(C)O[C@H]([C@@H](C(=O)N(C)OC)O1)C(=O)N(C)OC",
+            "notes": "Two methyl ester groups are converted to Weinreb amides via reaction with N,O-dimethylhydroxylamine, catalyzed by trimethylaluminum. The 2,3-O-isopropylidene acetal protecting group and stereochemistry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard addition",
+            "reagents": "",
+            "reagent_smiles": "C=CMgBr",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@H]([C@@H](C(=O)N(C)OC)O1)C(=O)N(C)OC",
+            "product_smiles": "C=CC(=O)[C@H]1[C@@H](C(=O)N(C)OC)OC(C)(C)O1",
+            "notes": "Grignard addition of vinylmagnesium bromide to a Weinreb amide, forming a vinyl ketone. Stereochemistry of the dioxolane core is preserved (trans).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Luche reduction",
+            "reagents": "CeCl3, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, -78 °C",
+            "yield": "61% (2 steps)",
+            "reactant_smiles": "C=CC(=O)[C@@H]1[C@@H](C(=O)N(C)OC)OC(C)(C)O1",
+            "product_smiles": "C=C[C@@H](O)[C@@H]1[C@@H](C(=O)N(C)OC)OC(C)(C)O1",
+            "notes": "Selective Luche reduction of an alpha,beta-unsaturated ketone to an allylic alcohol. The Weinreb amide, 1,3-dioxolane (acetonide), and the two pre-existing stereocenters are preserved. A new stereocenter is formed at the alcohol carbon with the (R) configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Weinreb Amide Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, H₂O",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H](O)[C@@H]1OC(C)(C)O[C@H]1C(=O)N(C)OC",
+            "product_smiles": "C=C[C@H](O)[C@@H]1OC(C)(C)O[C@H]1C(=O)O",
+            "notes": "Hydrolysis of a Weinreb amide to a carboxylic acid under basic conditions, with retention of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acetylation",
+            "reagents": "pyridine",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@H](O)[C@H]1OC(C)(C)O[C@@H]1C(=O)O",
+            "product_smiles": "C=C[C@@H](OC(=O)C)[C@H]1OC(C)(C)O[C@@H]1C(=O)O",
+            "notes": "Acetylation of a secondary alcohol to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amidation / Chiral Auxiliary Reaction",
+            "reagents": "Ni(OAc)2, Zn, NMM, NMP",
+            "reagent_smiles": "C12=C(C(=C(C(=C1C(=O)N(C2=O)OC(=[N+](C)C)N(C)C)Cl)Cl)Cl)Cl.[tBuO]N=[S@](=O)[Mes]",
+            "conditions": "",
+            "yield": "54%",
+            "reactant_smiles": "C=C[C@H]([OAc])[C@H]1OC(C)(C)O[C@H]1C(=O)O",
+            "product_smiles": "C=C[C@H]([OAc])[C@H]1OC(C)(C)O[C@H]1[C@H](C(=O)[OtBu])N[S@](=O)[Mes]",
+            "notes": "Carboxylic acid is converted to a t-butyl ester and coupled with an N-tBuO-S-mesitylsulfoximine chiral auxiliary, with inversion of stereochemistry at the alpha-carbon. Stereochemistry of the allyl group and dioxolane ring remain consistent.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "N-Sulfonylation",
+                    "reagents": "Na2CO3",
+                    "reagent_smiles": "[Mes]S(=O)(=O)Cl",
+                    "conditions": "H2O, EtOAc, THF",
+                    "yield": "92%",
+                    "reactant_smiles": "N[C@H]1C[C@@H](O)C2=CC=CC=C21",
+                    "product_smiles": "[Mes]S(=O)(=O)N[C@H]1C[C@@H](O)C2=CC=CC=C21",
+                    "notes": "The primary amine is selectively sulfonated with mesitylsulfonyl chloride to form the corresponding sulfonamide, retaining the stereochemistry at both chiral centers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Cyclization",
+                    "reagents": "SOCl2, 3,5-lutidine",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -45 °C",
+                    "yield": "81%",
+                    "reactant_smiles": "Cc1cc(C)cc(C)c1S(=O)(=O)N[C@@H]2C[C@H](O)c3cccc(C2)c3",
+                    "product_smiles": "Cc1cc(C)cc(C)c1S(=O)(=O)N2S(=O)O[C@H]3C[C@H]2c4cccc(C3)c4",
+                    "notes": "Formation of a cyclic N,O-sulfamidate via intramolecular cyclization of a sulfonamide and an alcohol using thionyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Nucleophilic Ring Opening / Grignard Reaction",
+                    "reagents": "MesMgBr",
+                    "reagent_smiles": "Cc1cc(C)cc(C)c1[Mg]Br",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "Cc1cc(C)cc(C)c1S(=O)(=O)N2[C@H]3C4=CC=CC=C4[C@H]3OS(=O)2",
+                    "product_smiles": "Cc1cc(C)cc(C)c1S(=O)(=O)N[C@H]2C3=CC=CC=C3[C@H]2OS(=O)c1cc(C)cc(C)c1C",
+                    "notes": "Nucleophilic ring opening of a cyclic sulfamide by mesitylmagnesium bromide, where the mesityl group adds to the sulfoxide sulfur and the nitrogen is protonated.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Reductive Cleavage (Dissolving Metal Reduction)",
+                    "reagents": "Li/NH3, Fe(NO3)3",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "58%",
+                    "reactant_smiles": "c1ccc2c(c1)[C@@H](NS(=O)(=O)[Mes])[C@H](OS(=O)[Mes])C2",
+                    "product_smiles": "N[S@](=O)[Mes]",
+                    "notes": "Reductive cleavage of indane derivative, with both sulfonamide and sulfinate ester moieties, to form a chiral sulfinamide. Reaction proceeds in 2 steps.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Condensation / N-Sulfonyl Imine Formation",
+                    "reagents": "pyrrolidine, 4Å MS",
+                    "reagent_smiles": "CC(C)(C)OC(=O)C=O",
+                    "conditions": "CH2Cl2",
+                    "yield": "86%",
+                    "reactant_smiles": "Cc1cc(C)c(S(=O)N)c(C)c1",
+                    "product_smiles": "Cc1cc(C)c(S(=O)N=C/C(=O)OC(C)(C)C)c(C)c1",
+                    "notes": "Condensation of 2,4,6-trimethylphenylsulfinamide with tert-butyl glyoxalate to form an N-sulfonyl imine. The `S-` notation in the reactant image is interpreted as a neutral sulfinamide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "G-II, CuI",
+            "reagent_smiles": "C=CCCCCC[C@H](O)CCCC",
+            "conditions": "CH2Cl2, 40 °C",
+            "yield": "58%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@H](N[S@](=O)C1=CC(C)=C(C)C=C1C)[C@H]2OC(C)(C)O[C@H]2[C@H](OC(=O)C)C=C",
+            "product_smiles": "CC(C)(C)OC(=O)[C@H](N[S@](=O)C1=CC(C)=C(C)C=C1C)[C@H]2OC(C)(C)O[C@H]2[C@H](OC(=O)C)[C@H](/C=C/CCCCCC[C@H](O)CCCC)",
+            "notes": "Grubbs-II catalyzed cross-metathesis between the terminal alkene of the chiral building block and the terminal alkene of the branched alcohol. A trans alkene is formed in the product. The stereochemistry of all chiral centers is retained.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Nucleophilic Epoxide Opening / Grignard (Gilman Reagent)",
+                    "reagents": "",
+                    "reagent_smiles": "C=CCCCCC[Mg]Br.[Cu]I",
+                    "conditions": "THF, -40 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCCCC[C@@H]1CO1",
+                    "product_smiles": "C=CCCCCC[C@H](O)CCCCC",
+                    "notes": "Nucleophilic attack of a hept-6-enyl Grignard reagent (likely modified by CuI to form a Gilman reagent) on the less substituted carbon of (2R)-2-pentyloxirane. The epoxide ring opens, forming an alcohol group at the more substituted carbon with retention of stereochemistry, resulting in (S)-heptadec-1-en-7-ol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Global Deprotection",
+            "reagents": "BCl3",
+            "reagent_smiles": "BCl3.ClCCl",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "34%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@H](N[S@](=O)C1=CC(C)=CC(C)=C1C)[C@@H]2O[C](C)(C)O[C@@H]2[C@@H](OC(=O)C)/C=C/CCCCC[C@H](O)CCCC",
+            "product_smiles": "O=C(O)[C@@H](N)[C@@H](O)[C@H](O)[C@@H](OC(=O)C)/C=C/CCCCC[C@H](O)CCCC",
+            "notes": "Deprotection of tert-butyl ester, sulfonimidamide, and acetonide (1,3-dioxolane) to yield carboxylic acid, primary amine, and diols.",
+            "substeps": []
+        }
+    ]
+}

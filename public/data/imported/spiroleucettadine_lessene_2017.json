@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "spiroleucettadine-lessene-2017",
+        "molecule_name": "Spiroleucettadine",
+        "class": "Natural Product",
+        "author": "Lessene",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Williamson Ether Synthesis (O-alkylation)",
+            "reagents": "BnCl, K2CO3, TBAI",
+            "reagent_smiles": "",
+            "conditions": "Me2O, 70 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@H](CC1=CC=C(O)C=C1)C(=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@H](CC1=CC=C([OBn])C=C1)C(=O)OC",
+            "notes": "Phenol is benzylated to form a benzyl ether using benzyl chloride and potassium carbonate as a base, with TBAI as a phase-transfer catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "DCM, MeOH",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H](CC1=CC=C(C=C1)OCC2=CC=CC=C2)C(=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H](CC1=CC=C(C=C1)OCC2=CC=CC=C2)C(=O)O",
+            "notes": "Methyl ester hydrolysis to carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide formation (Weinreb amide)",
+            "reagents": "N(OCH3)(CH3)HCl, EDCI, HOBT, Et3N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C([OBn])C=C1)C(=O)O",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC=C([OBn])C=C1)C(=O)N(C)OC",
+            "notes": "Formation of a Weinreb amide from a carboxylic acid using EDCI/HOBT coupling reagents and N,O-dimethylhydroxylamine hydrochloride with triethylamine as a base. The stereochemistry and protecting groups (Boc, Bn) are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Grignard Addition",
+            "reagents": "",
+            "reagent_smiles": "COC1=CC=C(C=C1)C[Mg]Cl",
+            "conditions": "THF 0 °C",
+            "yield": "67%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H](CC1=CC=C(C=C1)OCC2=CC=CC=C2)C(=O)N(C)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H](CC1=CC=C(C=C1)OCC2=CC=CC=C2)C(=O)CC3=CC=C(C=C3)OC",
+            "notes": "Grignard reaction with a Weinreb amide to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, EtOAc",
+            "yield": "84%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)[OBn])C(=O)CC2=CC=C(C=C2)OC",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)O)C(=O)CC2=CC=C(C=C2)OC",
+            "notes": "Hydrogenolytic deprotection of benzyl ether to phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C(O)C=C1)C(=O)CC2=CC=C(OC)C=C2",
+            "product_smiles": "COC1=CC=C(C=C1)CC(=O)[C@@H](CC2=CC=C(C=C2)O)[NH3+].FC(F)(F)C(=O)[O-]",
+            "notes": "Boc deprotection using TFA to yield the primary amine as a trifluoroacetate salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Spiroimidazolidinone Formation",
+            "reagents": "",
+            "reagent_smiles": "CN1C(=O)NC=C1",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C=C1)CC(=O)[C@H](CC2=CC=C(C=C2)O)[NH3+].FC(F)(F)C([O-])=O",
+            "product_smiles": "CN1C(=O)N[C@H](CC2=CC=C(C=C2)O)C1(CC3=CC=C(C=C3)OC)O",
+            "notes": "Formation of a spiroimidazolidinone from an alpha-amino ketone TFA salt and a cyclic N-methylated urea derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "PIDA",
+            "reagent_smiles": "CC(=O)O[I](OC(=O)C)C1=CC=CC=C1",
+            "conditions": "TFE 0 °C",
+            "yield": "17%",
+            "reactant_smiles": "CN1C(=O)N[C@H](CC2=CC=C(C=C2)O)C1(CC3=CC=C(C=C3)OC)O",
+            "product_smiles": "CN1C(=O)N[C@H]2CC3(C=CC(=O)C=C3)O[C@]21CC4=CC=C(C=C4)OC",
+            "notes": "Intramolecular oxidative cyclization of a hydantoin derivative to form a spirocyclic system with a fused tetrahydrofuran and a cyclohexadienone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Acetoxylation",
+            "reagents": "DMP",
+            "reagent_smiles": "Fc1ccccc1",
+            "conditions": "60 °C, fluorobenzene",
+            "yield": "75%",
+            "reactant_smiles": "CN1C(=O)N[C@H]2(CC4=CC=C(OC)C=C4)C5[C@@]3(C=CC(=O)C=C3)O[C@H]25",
+            "product_smiles": "CN1C(=O)N[C@]2(OC(=O)C)(CC4=CC=C(OC)C=C4)C5[C@@]3(C=CC(=O)C=C3)O[C@H]25",
+            "notes": "Oxidation of the alpha-carbon (adjacent to lactam NH) to an acetoxy group using Dess-Martin Periodinane (DMP). The stereochemistry at this carbon changes from [C@H] to [C@].",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amination / Acetate substitution",
+            "reagents": "NH2Me HCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "91%",
+            "reactant_smiles": "CC(=O)O[C@]12CC3(C=CC(=O)C=C3)O[C@@]1(CC4=CC=C(C=C4)OC)N(C)C(=O)N2",
+            "product_smiles": "CN[C@]12CC3(C=CC(=O)C=C3)O[C@@]1(CC4=CC=C(C=C4)OC)N(C)C(=O)N2",
+            "notes": "Nucleophilic substitution of an acetate group with methylamine, retaining stereochemistry. The hydantoin ring nitrogen remains NH.",
+            "substeps": []
+        }
+    ]
+}

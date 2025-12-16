@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aspidospermidine-coldham-2007",
+        "molecule_name": "Aspidospermidine",
+        "class": "Natural Product",
+        "author": "Coldham",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Kulinkovich Reaction",
+            "reagents": "EtMgBr, Ti(OiPr)₄",
+            "reagent_smiles": "CC[Mg]Br.CC(C)O[Ti](OC(C)C)(OC(C)C)OC(C)C",
+            "conditions": "Et₂O, rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCBr",
+            "product_smiles": "C1C[C@]1(CCBr)O",
+            "notes": "Kulinkovich reaction of an ethyl bromoester with ethylmagnesium bromide and titanium tetraisopropoxide to form a bromocyclopropanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidative Ring-Opening / Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "CCl4",
+            "yield": "82%",
+            "reactant_smiles": "C1C[C@]1(CCBr)O",
+            "product_smiles": "C(CBr)C(=O)CCBr",
+            "notes": "Oxidative ring-opening of cyclopropanol with bromination, forming a dibromo ketone. The yield of 82% is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketal formation / Ketone protection",
+            "reagents": "PhH, TsOH",
+            "reagent_smiles": "C(CO)O",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C(CBr)C(=O)CCBr",
+            "product_smiles": "C(CBr)C1(CCBr)OCCO1",
+            "notes": "Protection of a ketone as a 1,3-dioxolane ketal using ethylene glycol and p-toluenesulfonic acid in benzene solvent under reflux.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Elimination (Dehydrobromination)",
+            "reagents": "t-BuOK",
+            "reagent_smiles": "[K+].CC(C)([O-])C",
+            "conditions": "THF, PhMe, 0 °C",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "BrCCC1(CCCBr)OCCO1",
+            "product_smiles": "C=CC1(CCCBr)OCCO1",
+            "notes": "One of the bromoethyl chains undergoes dehydrobromination to form a vinyl group, catalyzed by potassium tert-butoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkylation",
+            "reagents": "n-PrCN, LDA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "88%",
+            "reactant_smiles": "C=CC1(CCBr)OCCO1",
+            "product_smiles": "CCC(C#N)CCC1(C=C)OCCO1",
+            "notes": "Alkylation of an activated nitrile (butyronitrile) with a primary alkyl bromide using LDA as a strong base.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkylation",
+            "reagents": "LDA",
+            "reagent_smiles": "BrCCCCl",
+            "conditions": "THF, -78 °C",
+            "yield": "96%",
+            "reactant_smiles": "C1(C=C)(CC(CC)C#N)OCCO1",
+            "product_smiles": "C1(C=C)(CC(CC)(C#N)CCCCl)OCCO1",
+            "notes": "Alkylation of the alpha-carbon to the nitrile with 1-bromo-3-chloropropane. LDA deprotonates the alpha-carbon, which then performs an SN2 reaction at the bromine-bearing carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "82%",
+            "reactant_smiles": "CCC(CCCCl)(CCC1(C=C)OCCO1)C#N",
+            "product_smiles": "CCC(CCCCl)(CCC1(C=C)OCCO1)C=O",
+            "notes": "Nitrile reduction to aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cascade Cyclization",
+            "reagents": "CSA",
+            "reagent_smiles": "NCC(O)=O",
+            "conditions": "PhMe, reflux",
+            "yield": "79%",
+            "reactant_smiles": "CC[C](CCCCl)(CCC1(C=C)OCCO1)C=O",
+            "product_smiles": "CC[C@]1(OCCO1)CC2C[C@@H]3N4CCC([C@H]5[C@H]3CC[C@@H]4)C2C5",
+            "notes": "Intramolecular cyclization of an aldehyde, alkene, and alkyl chloride, incorporating nitrogen from glycine, to form a complex polycyclic amine with spiro ketal.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ketal Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 80 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC[C@]12C[C@@H]3[C@H]1CCCN4CC[C@@]23C5(OCCO5)CC4",
+            "product_smiles": "CC[C@]12C[C@@H]3[C@H]1CCCN4CC[C@@]23C(=O)CC4",
+            "notes": "Acid-catalyzed hydrolysis of an ethylene ketal to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Condensation (Hydrazone formation)",
+            "reagents": "",
+            "reagent_smiles": "NNC[Ph]",
+            "conditions": "benzene, reflux",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]12CCCN3CC[C@@H](C(=O)CC1)[C@@]23",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@@H](C(=NNC[Ph])CC1)[C@@]23",
+            "notes": "Formation of a phenylhydrazone from a ketone and phenylhydrazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Fischer-Indole Synthesis",
+            "reagents": "AcOH",
+            "reagent_smiles": "",
+            "conditions": "95 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]12CCCN3CC[C@@]4(/C(=N/NC5=CC=CC=C5)CC1)[C@@H]23",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@]4(C5=C(C=CC=C5)N=C4CC1)[C@@H]23",
+            "notes": "Fischer indole synthesis of a polycyclic hydrazone to form an indole-containing product (a dehydroaspidospermidine derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Imine Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, reflux",
+            "yield": "42%",
+            "reactant_smiles": "CC[C@]12CCCN3CC[C@]4(C5=C(C=CC=C5)N=C4CC1)[C@@H]23",
+            "product_smiles": "CC[C@@]12CCCN3CC[C@]4(C5=C(C=CC=C5)N[C@@H]4CC1)[C@@H]23",
+            "notes": "Reduction of imine to secondary amine. Reaction yield is over 3 steps.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "strychnine-canesi-2015",
+        "molecule_name": "Strychnine",
+        "class": "Natural Product",
+        "author": "Canesi",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amidation",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "C1=CC(=C(C=C1)N)I",
+            "conditions": "THF, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "COC(=O)CCC1=CC=C(C=C1)O",
+            "product_smiles": "C1=CC(=C(C=C1)NC(=O)CCC2=CC=C(C=C2)O)I",
+            "notes": "Methyl ester is converted to an amide via reaction with 2-iodoaniline.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "PhI(OAc)2, MeOH",
+            "reagent_smiles": "CC(=O)O[I](OC(=O)C)c1ccccc1.CO",
+            "conditions": "rt",
+            "yield": "54%",
+            "reactant_smiles": "O=C(CCCN1C=CC(=C(I)C=C1)N)C2=CC=C(O)C=C2",
+            "product_smiles": "CO[C@]1(CCC(=O)NC2=C(I)C=CC=C2)C=CC(=O)C=C1",
+            "notes": "Intramolecular oxidative cyclization of a phenolic amide using hypervalent iodine reagent, followed by methanol trapping to form a spiro-cyclohexadienone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Dearomatizing Michael Addition and Enol Silylation",
+            "reagents": "TBSOTf, Et3N",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "86%",
+            "reactant_smiles": "CO[C@]1(C=CC(=O)C=C1)CCC(=O)NC2=C(C=CC=C2)I",
+            "product_smiles": "[OTBS]C1=C[C@@H]2[C@](C=C1)(CCC(=O)N2C3=CC=CC=C3I)OC",
+            "notes": "Intramolecular dearomatizing Michael addition of the amide nitrogen onto the cyclohexadienone ring, forming a 6-membered lactam and a new chiral center, followed by silylation of the resulting enolate to form the silyl enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Heck Cyclization",
+            "reagents": "Pd2dba3, Et3N",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 80 °C",
+            "yield": "82%",
+            "reactant_smiles": "I-c1cccc(N2C(=O)CC[C@H]3[C@]4(OC)C=C([OTBS])C=C[C@H]34)c12",
+            "product_smiles": "CO[C@@]12C=CC(=O)[C@H]3C4=CC=CC=C4N(C(=O)CC1)[C@H]32",
+            "notes": "Intramolecular cyclization of an iodoaryl-lactam with a silyl enol ether via Heck reaction, forming a fused tetracyclic system with an α,β-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkylation",
+            "reagents": "KHMDS, THF",
+            "reagent_smiles": "C=CCBr",
+            "conditions": "-78 °C",
+            "yield": "79%",
+            "reactant_smiles": "COc1c[C@H](C=O)[C@H]2[C@H]3C4=CC=CC=C4N(C(=O)CC2)C3",
+            "product_smiles": "C=CC[C@]12[C@H](OC)[C@H](C=O)[C@H]3C4=CC=CC=C4N(C(=O)CC1)C32",
+            "notes": "Alpha-alkylation of a complex polycyclic ketone using allyl bromide and a strong base (KHMDS) to form a new quaternary stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative Cleavage / Lemieux-Johnson Oxidation",
+            "reagents": "OsO4, NaIO4, lutidine, dioxane, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "C=CC[C@@]12C(=O)C=C[C@]1(OC)[C@H]3N(C(=O)CC[C@H]3)c4cccc(c4C2)",
+            "product_smiles": "O=CC[C@@]12C(=O)C=C[C@]1(OC)[C@H]3N(C(=O)CC[C@H]3)c4cccc(c4C2)",
+            "notes": "Terminal alkene cleaved to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Demethoxylation",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)O.[Zn]",
+            "conditions": "MeOH, 65 °C",
+            "yield": "63%",
+            "reactant_smiles": "CO[C@]12C=CC(=O)[C@@]3(CC=O)C4=CC=CC=C4N(C(=O)CC1)[C@H]23",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)CCC4=CCC(=O)[C@@]2(CC=O)[C@H]43",
+            "notes": "Reductive demethoxylation and alkene reduction/migration using zinc and acetic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Reductive Amination",
+            "reagents": "NaBH3CN",
+            "reagent_smiles": "NC/C=C(I)\\CO[TBS]",
+            "conditions": "AcOH, MeOH, -78 °C",
+            "yield": "60%",
+            "reactant_smiles": "O=C1NC2=C(C=CC=C2)[C@@]3(CC=O)[C@H]4CC(=O)C=C[C@H]3N14",
+            "product_smiles": "O=C1NC2=C(C=CC=C2)[C@@]34C[C@H](C=CC[C@H]3N1)[C@H]5N(CC4)CC/C=C(I)\\CO[TBS]5",
+            "notes": "Reductive amination of the aldehyde with the external primary amine, followed by intramolecular cyclization of the newly formed amine with the ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Heck Cyclization",
+            "reagents": "Pd(OAc)2, TBAC, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CO/C=C(\\I)CN1CC[C@@]23C4=CC=CC=C4N5C(=O)C=CCC([C@H]1[C@@H]25)[C@@H]3",
+            "product_smiles": "[OTBS]CO/C=C/1CN2CC[C@@]34C5=CC=CC=C5N6C(=O)CC=C([C@H]1[C@@H]26)[C@@H]43",
+            "notes": "Palladium-catalyzed intramolecular cyclization of an iodoalkene onto an endocyclic alkene, forming a new 7-membered ring with a trans-alkene, and eliminating iodide. The TBS protecting group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "KOH, EtOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "28%",
+            "reactant_smiles": "C1=CC=C2C(=C1)[C@@]34CCN5CC/C(=C/CO)/[C@H](C[C@@H]35)C6=CCC(=O)N2[C@@H]64",
+            "product_smiles": "C1=CC2=C(C=C1)N3C(=O)C[C@H]4[C@@H]5[C@H]6C[C@H]7[C@]2(CCN7CC6=CCO4)[C@H]53",
+            "notes": "Intramolecular cyclization of an allylic alcohol to form a cyclic ether, accompanied by double bond rearrangement, converting a strychnine precursor to strychnine.",
+            "substeps": []
+        }
+    ]
+}

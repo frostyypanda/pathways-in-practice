@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "histrionicotoxin-fuchs-2006",
+        "molecule_name": "Histrionicotoxin",
+        "class": "Natural Product",
+        "author": "Fuchs",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Reaction",
+            "reagents": "Mg, Et2O, HCOOEt",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "C=CCCCBr",
+            "product_smiles": "C=CCCCC(CCCC=C)O",
+            "notes": "Formation of a Grignard reagent from 4-bromobut-1-ene, followed by addition to ethyl formate to form a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Oxidation",
+            "reagents": "PCC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "92%",
+            "reactant_smiles": "C=CCCCC(O)CCCC=C",
+            "product_smiles": "C=CCCCC(=O)CCCC=C",
+            "notes": "Oxidation of a secondary alcohol to a ketone using PCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Metathesis",
+            "reagents": "HG-II",
+            "reagent_smiles": "C=CC#N",
+            "conditions": "CH2Cl2, 120 °C, microwave",
+            "yield": "62%",
+            "reactant_smiles": "C=CCCCC(=O)CCCC=C",
+            "product_smiles": "O=C1(CCC/C=C/C#N)CCCCC/C=C/C#N1",
+            "notes": "Double cross-metathesis of terminal alkenes with acrylonitrile followed by intramolecular ring-closing metathesis to form a spirocyclic ketone. Both new double bonds exhibit Z-stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxime Formation & Intramolecular Cyclization",
+            "reagents": "NH2OH · HCl, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "MeOH:CH3CN, rt to reflux",
+            "yield": "89%",
+            "reactant_smiles": "C1CCCCC1C(C/C=C/C#N)CCC(=O)CCC/C=C\\C#N",
+            "product_smiles": "N#CC[C@H]1CCC2[C@H]1N(O[C@@H](C#N))[C@]2",
+            "notes": "Tandem oxime formation and intramolecular cyclization leads to a tricyclic fused product. This is an intermediate in Histrionicotoxin synthesis.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Thermal Rearrangement",
+            "reagents": "toluene",
+            "reagent_smiles": "",
+            "conditions": "180 °C",
+            "yield": "95%",
+            "reactant_smiles": "C1CC[C@H](CC#N)N2O[C@H](C#N)[C@@]3(C1)CCCC23",
+            "product_smiles": "C1CC[C@H](CC#N)N2C3(C1)CCCC([C@@](C#N)(O2)C3)",
+            "notes": "Intramolecular rearrangement of an isoxazolidine derivative to a spirocyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction (Nitrile to Aldehyde)",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "toluene, -78 °C",
+            "yield": "97%",
+            "reactant_smiles": "N1C[C@@H](CC#N)CCC2(N1)OCCC2(CC#N)",
+            "product_smiles": "N1C[C@@H](CC=O)CCC2(N1)OCCC2(CC=O)",
+            "notes": "Partial reduction of two cyanoethyl groups to form aldehydes using DIBAL-H. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig olefination",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "[Cl-][P+](c1ccccc1)(c2ccccc2)c3ccccc3CCC(Cl)(Cl)Cl",
+            "conditions": "toluene, -40 °C to 10 °C",
+            "yield": "59%",
+            "reactant_smiles": "O=CC[C@@H]1C[C@H]2N3C4(O12)CC[C@H](C=O)C[C@@H]4C3",
+            "product_smiles": "ClC(Cl)(Cl)CC/C=C/[C@@H]1C[C@H]2N3C4(O12)CC[C@H](/C=C/CC(Cl)(Cl)Cl)C[C@@H]4C3",
+            "notes": "Double Wittig olefination of a tricyclic dialdehyde, forming two Z-alkene side chains with trichloromethyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dehydrochlorination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, rt",
+            "yield": "99%",
+            "reactant_smiles": "C(=C/CC(Cl)(Cl)Cl)/C[C@@H]1CCCC23CCCC(C2/C=C\\CC(Cl)(Cl)Cl)ON13",
+            "product_smiles": "C(=C/C=C(Cl)Cl)/C[C@@H]1CCCC23CCCC(C2/C=C\\C=C(Cl)Cl)ON13",
+            "notes": "Double dehydrochlorination of terminal trichloromethyl groups (CCl3) to dichloroethylene groups (C=CCl2). The existing double bond stereochemistry and the chiral center are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dehydrohalogenation",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "[Na]N(Si(C)(C)C)Si(C)(C)C",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "C(=C/C=C(Cl)Cl)/C[C@H]1CCCC23CCCC(C2/C=C/C=C(Cl)Cl)",
+            "product_smiles": "C(=C/C[C@H]1CCCC23CCCC(C2/C=C/C#CCl))",
+            "notes": "Double elimination of HCl from two gem-dichlorovinyl groups (C=C(Cl)Cl) to form chloroalkynes (C#C-Cl) using a strong base. The core structure representation in the provided SMILES is highly complex and likely has errors in its ring numbering and fusion that cannot be fixed by simple corrections (e.g., the 'ON13' fragment was removed as N and O are not bonded). The initial chain attachments in the provided SMILES also appear to be misrepresented in length or branching compared to the image.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nalbuphone-hudlicky-2013",
+        "molecule_name": "Nalbuphone",
+        "class": "Natural Product",
+        "author": "Hudlicky",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-Acetylation",
+            "reagents": "Ac2O, DMAP, NEt3",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CN1CC[C@]23C4=C5C(=CC=C4C[C@@H]1[C@@]3(CCC(=O)[C@@H]2O5)O)O",
+            "product_smiles": "[OAc]C1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@@H]([C@]35CCN4C)O2)O",
+            "notes": "O-Acetylation of the phenolic hydroxyl group of Oxymorphone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Oxidation",
+            "reagents": "mCPBA, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OAc]C1=C2C3=C(C=C1)C[C@H]4[C@@]5(O)(CCC(=O)[C@]35CCN4C)O2",
+            "product_smiles": "[OAc]C1=C2C3=C(C=C1)C[C@H]4[C@@]5(O)(CCC(=O)[C@]35CC[N@+](C)[O-]4)O2",
+            "notes": "Oxidation of a tertiary amine to its N-oxide using mCPBA. The Acetyl (AcO) group and the C-14 hydroxyl group remain unchanged. The configuration of the N-oxide is indicated in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Burgess dehydration",
+            "reagents": "DCM",
+            "reagent_smiles": "[O-]S(=O)(=O)N(C(=O)OC).[N+](CC)(CC)CC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(=O)OC1=C2C3=C(C=C1)C[C@H]4[C@@]5(CCC(=O)[C@H]([C@]35C[C@@H]4[N+](C)[O-])O2)O",
+            "product_smiles": "CC(=O)OC1=C2C3=C(C=C1)C[C@@H]4[C@@]5(CCC(=O)[C@H]6[C@]35O[C@H]4[C@H]6N(C)C)O2",
+            "notes": "Intramolecular cyclization via Burgess dehydration, forming a new 6,14-ether bridge and reducing the N-oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetal Formation",
+            "reagents": "TMSCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "[OAc]c1c2ccc3[C@H]4C[C@@]56C(=O)CC[C@H]7[C@@]5(O)CCN7[C@H]6[C@@H]3[C@H]4O2",
+            "product_smiles": "[OAc]c1c2ccc3[C@H]4C[C@@]56C(OC)(OC)CC[C@H]7[C@@]5(O)CCN7[C@H]6[C@@H]3[C@H]4O2",
+            "notes": "Ketone functional group on the reactant is converted to a dimethyl acetal in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-alkylation & Ester Hydrolysis",
+            "reagents": "",
+            "reagent_smiles": "C1CC(C1)[Mg]Cl",
+            "conditions": "THF",
+            "yield": "56%",
+            "reactant_smiles": "CC(=O)OC1=C2C=CC(=C1O[C@H]3[C@@]24CC[C@@](C)(O[C@H]5[C@@H]4[C@H]6CCN5C6CC3)(OC)OC",
+            "product_smiles": "OC1=C2C=CC(=C1O[C@H]3[C@]24CC[C@@](C)(O[C@H]5[C@@H]4[C@H]6CCN(CC7CCC7)C5[C@H]6CC3)(OC)OC",
+            "notes": "The reaction involves the hydrolysis of the acetate group to a hydroxyl group and the N-alkylation of the tertiary amine with a cyclobutylmethyl group. While cyclobutylmagnesium chloride is shown as the reagent, Grignards typically do not directly alkylate tertiary amines or hydrolyze esters in this manner without additional reagents or steps (e.g., prior N-demethylation/deprotonation and subsequent alkylation with an alkyl halide, or specific catalytic conditions). The SMILES are generated to match the visual representation of the reactant (tertiary N) and product (N-cyclobutylmethyl).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ketal hydrolysis",
+            "reagents": "aq. HCl, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "COC1(CC[C@]2([C@H]3CC4=CC=C(C5=C4[C@@]2(CCN3CC6CCC6)[C@H]1O5)O)O)OC",
+            "product_smiles": "C1CC(C1)CN2CC[C@]34C5=C6C(=CC=C5C[C@@H]2[C@@]4(CCC(=O)[C@@H]3O6)O)O",
+            "notes": "Acid-catalyzed hydrolysis of the geminal dimethoxy (ketal) group to a ketone. The phenolic and tertiary hydroxyl groups remain unchanged.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,170 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "largazole-phillips-2008",
+        "molecule_name": "Largazole",
+        "class": "Natural Product",
+        "author": "Phillips",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hantsch thiazole synthesis",
+            "reagents": "EtOH, NH4OH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "53%",
+            "reactant_smiles": "[Boc]NCC(=S)N",
+            "product_smiles": "NC(=O)c1ncc(CN[Boc])s1",
+            "notes": "Hantsch thiazole synthesis to form a 2-carbamoyl-5-aminomethyl thiazole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dehydration",
+            "reagents": "(CF3CO)2O, Et3N",
+            "reagent_smiles": "O=C(C(F)(F)F)OC(=O)C(F)(F)F.CCN(CC)CC",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]NCC1=NC(=CS1)C(=O)N",
+            "product_smiles": "[Boc]NCC1=NC(=CS1)C#N",
+            "notes": "Dehydration of a primary amide to a nitrile using trifluoroacetic anhydride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Heterocycle Formation (Thiazolidine)",
+            "reagents": "NaHCO3, buffer",
+            "reagent_smiles": "C[C@@](CS)(C(=O)O)N",
+            "conditions": "MeOH, 70 °C",
+            "yield": "77%",
+            "reactant_smiles": "[Boc]NCC1=CSC(C#N)=N1",
+            "product_smiles": "[Boc]NCC1=NC(=CS1)C2=N[C@@](C)(CS2)C(=O)O",
+            "notes": "Reaction of 4-cyano-2-(Boc-aminomethyl)thiazole with (S)-cysteine derivative to form a fused bicyclic thiazolidine-thiazole system.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Coupling / Peptide Synthesis",
+            "reagents": "DCC",
+            "reagent_smiles": "N[C@H](C(C)C)C(=O)O[C@H](C=C)CC(=O)OC(C)(C)C.C1(=C(C(=C(C(=C1F)F)O)F)F)F",
+            "conditions": "THF, rt",
+            "yield": "52%",
+            "reactant_smiles": "[Boc]NCC1=NC(=CS1)C2=N[C@@](C)(CS2)C(=O)O",
+            "product_smiles": "C=C[C@H](CC(=O)OC(C)(C)C)OC(=O)[C@H](C(C)C)NC(=O)[C@@]1(C)CSC(=N1)C2=CSC(=N2)CN[Boc]",
+            "notes": "Formation of an amide bond between the carboxylic acid of the thiazoline and the primary amine of the amino acid derivative, using DCC with pentafluorophenol.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Aldol Addition",
+                    "reagents": "LDA, acrolein",
+                    "reagent_smiles": "",
+                    "conditions": "THF, rt",
+                    "yield": "46%",
+                    "reactant_smiles": "CC(=O)OC(C)(C)C",
+                    "product_smiles": "C=CCH(CC(=O)OC(C)(C)C)O",
+                    "notes": "Enolate of tert-butyl acetate adds to acrolein, forming a beta-hydroxy ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Enzymatic Kinetic Resolution",
+                    "reagents": "PS Amano lipase, vinyl acetate",
+                    "reagent_smiles": "",
+                    "conditions": "pentane, 30 °C, 4 Å MS",
+                    "yield": "47%",
+                    "reactant_smiles": "C=CC(O)CC(=O)O[tBu]",
+                    "product_smiles": "C=C[C@@H](O)CC(=O)O[tBu]",
+                    "notes": "Lipase-catalyzed kinetic resolution of a racemic secondary alcohol via transesterification with vinyl acetate, yielding the (R)-enantiomer.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Esterification / Peptide Coupling",
+                    "reagents": "FmocValOH, EDCI, DMAP",
+                    "reagent_smiles": "",
+                    "conditions": "DMF",
+                    "yield": "",
+                    "reactant_smiles": "C=C[C@@H](CC(=O)OC(C)(C)C)O",
+                    "product_smiles": "[Fmoc]N[C@@H](C(C)C)C(=O)O[C@@H](C=C)CC(=O)OC(C)(C)C",
+                    "notes": "Esterification of a chiral alcohol with Fmoc-protected Valine using EDCI and DMAP coupling reagents.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.4",
+                    "reaction_type": "Fmoc Deprotection",
+                    "reagents": "Et2NH",
+                    "reagent_smiles": "CCN",
+                    "conditions": "CH2Cl2",
+                    "yield": "62%",
+                    "reactant_smiles": "[Fmoc]N[C@@H](C(C)C)C(=O)O[C@H](C=C)CC(=O)OC(C)(C)C",
+                    "product_smiles": "N[C@@H](C(C)C)C(=O)O[C@H](C=C)CC(=O)OC(C)(C)C",
+                    "notes": "Deprotection of Fmoc protecting group from a primary amine to yield a free amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Macrolactamization / Peptide Coupling",
+            "reagents": "TFA, PyAOP, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, MeCN",
+            "yield": "50% (2 steps)",
+            "reactant_smiles": "C=C[C@H](CC[CO2tBu])OC(=O)[C@H](C(C)C)NC(=O)[C@@]1(C)CSC(=N1)C2=CSC(=N2)C[NHBoc]",
+            "product_smiles": "C=C[C@H]1CC(=O)NCC2=NC(=CS2)C3=N[C@@](C)(CS3)C(=O)N[C@@H](C(C)C)C(=O)O1",
+            "notes": "Deprotection of N-Boc and t-butyl ester groups, followed by intramolecular amide bond formation (macrolactamization) to yield the macrocyclic product.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "CCCCCCCC(=O)SCCC=C",
+            "conditions": "toluene, 60 °C",
+            "yield": "63%",
+            "reactant_smiles": "C=C[C@H]1CC(=O)N[C@@]2(C)SCC(=N2)C3=NC=CS3NC(=O)[C@@H](C(C)C)C(=O)O1",
+            "product_smiles": "CCCCCCCC(=O)SC/C=C/[C@H]1CC(=O)N[C@@]2(C)SCC(=N2)C3=NC=CS3NC(=O)[C@@H](C(C)C)C(=O)O1",
+            "notes": "An acyclic macrolactam containing a terminal alkene undergoes ring-closing metathesis with an alkyl thioester bearing a terminal alkene in the presence of Grubbs II catalyst. This forms a larger macrolactam containing an E-configured internal double bond and a thioester side chain.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Acyl transfer / Thioacylation",
+                    "reagents": "benzene",
+                    "reagent_smiles": "CC(=S)N",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCCCCCC(=O)Cl",
+                    "product_smiles": "CCCCCCC(=O)SC(=N)C",
+                    "notes": "Nucleophilic acyl substitution of acyl chloride with thioacetamide to form a thioacyl thioimidate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Hydrolysis",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "benzene, rt",
+                    "yield": "80% (2 steps)",
+                    "reactant_smiles": "CCCCCCC(=O)SC(=N)C",
+                    "product_smiles": "CCCCCCC(=O)[SH]",
+                    "notes": "Hydrolysis of an iminothioester to a thioacid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "S-Alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "BrCCC=C",
+                    "conditions": "THF, rt",
+                    "yield": "81%",
+                    "reactant_smiles": "CCCCCCC(=O)S",
+                    "product_smiles": "CCCCCCC(=O)SCCC=C",
+                    "notes": "Deprotonation of thiocarboxylic acid with sodium hydride, followed by nucleophilic substitution (S-alkylation) with 4-bromo-1-butene to form a thioester.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

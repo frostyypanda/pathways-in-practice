@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "palmyrolide-a-brimble-2012",
+        "molecule_name": "Palmyrolide A",
+        "class": "Natural Product",
+        "author": "Brimble",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Jacobsen asymmetric kinetic resolution",
+            "reagents": "Jacobsen catalyst",
+            "reagent_smiles": "[Co].CC(C)(C)c1cc(C(C)(C)C)c([O-])c(C=N[C@@H]2[C@H](N=Cc3c([O-])cc(C(C)(C)C)cc3C(C)(C)C)CCCC2)1.Cc1ccc(S(=O)(=O)[O-])cc1",
+            "conditions": "H2O, rt",
+            "yield": "48%",
+            "reactant_smiles": "CC(C)(C)C1CO1",
+            "product_smiles": "CC(C)(C)[C@@H]1CO1",
+            "notes": "Asymmetric kinetic resolution of a racemic epoxide using a Jacobsen catalyst to yield the (S)-enantiomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide Ring Opening / Grignard Reaction",
+            "reagents": "CuI",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "THF, -25 °C",
+            "yield": "65%",
+            "reactant_smiles": "CC(C)(C)[C@H]1CO1",
+            "product_smiles": "C=CC[C@@H](C(C)(C)C)O",
+            "notes": "A vinyl Grignard reagent, likely forming a cuprate with CuI, opens the epoxide. The nucleophile attacks the less hindered carbon (the terminal CH2) of the epoxide. The reactant is shown as (S) configuration at the carbon bearing the tert-butyl group. The product is drawn as (R) configuration for the corresponding alcohol. This implies either an SN1-like opening or an inversion at the chiral center, which is unusual for attack at the terminal carbon of a disubstituted epoxide, where retention of configuration at the substituted chiral center is typically expected. The SMILES are corrected to match the drawn stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Esterification (Acylation)",
+            "reagents": "DMAP, i-Pr2NEt",
+            "reagent_smiles": "C=CC(=O)Cl",
+            "conditions": "CH2Cl2",
+            "yield": "96%",
+            "reactant_smiles": "C=CC[C@H](C(C)(C)C)O",
+            "product_smiles": "C=CC[C@H](C(C)(C)C)OC(=O)C=C",
+            "notes": "Esterification of a secondary alcohol with acryloyl chloride, retaining stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, reflux",
+            "yield": "87%",
+            "reactant_smiles": "C=CC[C@H](C(C)(C)C)OC(=O)C=C",
+            "product_smiles": "CC(C)(C)[C@H]1CC=CC(=O)O1",
+            "notes": "Intramolecular ring-closing metathesis of a diene ester to form a delta-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Alkylation / Methylcuprate Addition",
+            "reagents": "CuI, MeMgBr",
+            "reagent_smiles": "",
+            "conditions": "Et2O, -78 °C",
+            "yield": "73%",
+            "reactant_smiles": "CC(C)(C)[C@@H]1OCC=CC(=O)O1",
+            "product_smiles": "CC(C)(C)[C@@H]1OC(=O)C[C@H](C)CC1",
+            "notes": "Methylcuprate (Gilman reagent) mediated addition of a methyl group and reduction of the γ,δ-alkene in a δ-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "DibalH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@H](C(C)(C)C)OC(=O)C1",
+            "product_smiles": "C[C@H]1C[C@H](C(C)(C)C)OC(O)C1",
+            "notes": "Reduction of a lactone to a lactol (hemiacetal). The stereochemistry at the hemiacetal carbon is undefined.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "THF, NaH",
+            "reagent_smiles": "CCOP(=O)(CC(=O)OC)OCC",
+            "conditions": "-78 °C",
+            "yield": "66%",
+            "reactant_smiles": "C[C@@H]1CC[C@H](C(C)(C)C)CC(O)O1",
+            "product_smiles": "COC(=O)/C=C/C[C@@H](C)CC[C@H](C(C)(C)C)[C@H](O)",
+            "notes": "Horner-Wadsworth-Emmons olefination of a cyclic hemiacetal to form an E-alkene and an acyclic ester, with inversion of configuration at the hemiacetal carbon (which becomes the alkene). The stereochemistry of the two existing chiral centers and the newly formed chiral center (from the carbonyl) are retained/established as shown.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H](C/C=C/C(=O)OC)C[C@H](C(C)(C)C)O",
+            "product_smiles": "C[C@H](CCCC(=O)OC)C[C@H](C(C)(C)C)O",
+            "notes": "Hydrogenation of an alpha,beta-unsaturated methyl ester to a saturated methyl ester. The alkene is reduced while the methyl ester, alcohol, and stereocenters remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "[Na+].[OH-]",
+            "conditions": "CH2Cl2, MeOH",
+            "yield": "91%",
+            "reactant_smiles": "C[C@@H](CCCC(=O)OC)C[C@H](C(C)(C)C)O",
+            "product_smiles": "C[C@@H](CCCC(=O)O)C[C@H](C(C)(C)C)O",
+            "notes": "Methyl ester is hydrolyzed to a carboxylic acid under basic conditions. The two chiral centers are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amidation",
+            "reagents": "HOAt, EDCI",
+            "reagent_smiles": "C=CCN(C)C",
+            "conditions": "CH2Cl2",
+            "yield": "85%",
+            "reactant_smiles": "C[C@H](CCCC(=O)O)C[C@H](C(C)(C)C)O",
+            "product_smiles": "C=CCN(C)C(=O)CCC[C@H](C)C[C@H](C(C)(C)C)O",
+            "notes": "Amide bond formation between a carboxylic acid and N-methylallylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Macrolactonization",
+            "reagents": "DMAP, i-Pr2NEt",
+            "reagent_smiles": "C1=C(C(=C(C=C1Cl)Cl)C(=O)Cl)Cl.C=CC[C@@H](C)C(=O)O",
+            "conditions": "benzene",
+            "yield": "96%",
+            "reactant_smiles": "C[N]1(CC=C)C(=O)CCC[C@@H](C)C[C@H](O)C(C)(C)CC1",
+            "product_smiles": "C[N]1(CC=C)C(=O)CCC[C@@H](C)C[C@H](C(C)(C)C)OC(=O)[C@@H](C)(CC=C)CC1",
+            "notes": "The hydroxyl group of the starting macrolactam undergoes esterification with the added carboxylic acid reagent, forming a new macrocyclic ester (macrolactone).",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "N-Acylation",
+                    "reagents": "NaOMe",
+                    "reagent_smiles": "CCC(=O)OC",
+                    "conditions": "rt",
+                    "yield": "95%",
+                    "reactant_smiles": "C[C@@H]([C@H](C1=CC=CC=C1)O)NC",
+                    "product_smiles": "CCC(=O)N(C)[C@@H](C)[C@H](C1=CC=CC=C1)O",
+                    "notes": "The secondary amine of (1R,2S)-2-(methylamino)-1-phenylpropan-1-ol is acylated with methyl propionate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Myers asymmetric alkylation",
+                    "reagents": "LDA, LiCl, allyl iodide",
+                    "reagent_smiles": "C=CCI",
+                    "conditions": "THF, -78 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "CCC(=O)N(C)[C@H](C)[C@H](C1=CC=CC=C1)O",
+                    "product_smiles": "C=CC[C@@H](C)C(=O)N(C)[C@H](C)[C@H](C1=CC=CC=C1)O",
+                    "notes": "Myers asymmetric alkylation of an amide enolate, where the alpha-carbon to the carbonyl is alkylated with allyl iodide to form a new chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Amide Hydrolysis / Chiral Auxiliary Cleavage",
+                    "reagents": "H2SO4, dioxane",
+                    "reagent_smiles": "",
+                    "conditions": "reflux",
+                    "yield": "",
+                    "reactant_smiles": "C=CC[C@@H](C)C(=O)N(C)[C@H](C)[C@H](C1=CC=CC=C1)O",
+                    "product_smiles": "C=CC[C@@H](C)C(=O)O",
+                    "notes": "Acid-catalyzed hydrolysis of a chiral amide, removing the N-methyl-(1-phenyl-2-hydroxyethyl) chiral auxiliary to yield a carboxylic acid. Stereochemistry of the chiral center in the allyl chain is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs II",
+            "reagent_smiles": "",
+            "conditions": "ClCH2CH2Cl, reflux",
+            "yield": "74%",
+            "reactant_smiles": "C=CC[C@H](C)C(=O)O[C@@H](CC[C@@H](C)CCCC(=O)N(C)CC=C)C(C)(C)C",
+            "product_smiles": "C[C@@H]1CCCC(=O)N(C)C/C=C/C[C@@H](C)C(=O)O[C@@H](CC1)C(C)(C)C",
+            "notes": "Macrocyclization via ring-closing metathesis of a diene to form a macrolactam/macrolactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Alkene Isomerization",
+            "reagents": "RuH(PPh3)3(CO)(Cl)",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "87%",
+            "reactant_smiles": "C[C@H]1CCCC(=O)N(C)C/C=C/C[C@@H](C)C(=O)O[C@H](CC1)C(C)(C)C",
+            "product_smiles": "C[C@H]1CCCC(=O)N(C)/C=C/CC[C@@H](C)C(=O)O[C@H](CC1)C(C)(C)C",
+            "notes": "Ruthenium-catalyzed alkene migration (isomerization) from the N-allylamide to the N-enamide position. The macrocycle 'Palmyrolide A' isomerizes to 'Palmyrolide'.",
+            "substeps": []
+        }
+    ]
+}

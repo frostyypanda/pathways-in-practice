@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "petrosaspongiolide-l-christmann-2020",
+        "molecule_name": "Petrosaspongiolide L",
+        "class": "Natural Product",
+        "author": "Christmann",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Lactone Reduction",
+            "reagents": "LiAlH4, THF",
+            "reagent_smiles": "[Li][AlH4].C1CCOC1",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CCC[C@H]2[C@]1(C)CC[C@@]3(C)C(=O)O[C@]2(C)C3",
+            "product_smiles": "CC1(C)CCC[C@H]2[C@]1(C)CC[C@@]3(C)(CCO)[C@](C)(O)C2",
+            "notes": "Lactone is reduced to a 1,4-diol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "DMF",
+            "reagent_smiles": "Cc1ccccc1CCl.CCCC[N+](CCCC)(CCCC)CCCC.[I-].[K+].[OH-]",
+            "conditions": "45 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@@H]2CC[C@@](C)(C)[C@H]1CC[C@@H](CCO)[C@](C)(O)C2",
+            "product_smiles": "C[C@H]1C[C@@H]2CC[C@@](C)(C)[C@H]1CC[C@@H](CCOCc1ccccc1C)[C@](C)(O)C2",
+            "notes": "Selective Williamson ether synthesis of a primary alcohol to form a 2-methylbenzyl ether, with an intact tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Elimination / Deprotection",
+            "reagents": "n-BuLi, THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to -13 °C",
+            "yield": "40%",
+            "reactant_smiles": "CC(C)[C@H]1CC[C@@]2(C)[C@H]1CC[C@@](O)(C)[C@@H]2CCOCC3=CC=CC=C3",
+            "product_smiles": "CC(C)[C@H]1CC[C@@]2(C)[C@H]1CC[C@@](O)(C)[C@@H]2C=C",
+            "notes": "Elimination of benzyloxyethyl group to form a terminal alkene. The given yield is for 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydroboration",
+            "reagents": "(9-BBN)₂",
+            "reagent_smiles": "",
+            "conditions": "toluene, 85 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(C)[C@H](C=C)[C@@](O)(C)C2CCC1",
+            "product_smiles": "C[C@H]1CC[C@@]2(C)[C@H](CCB3C4CCCC3C4)[C@@](O)(C)C2CCC1",
+            "notes": "Alkyne hydroboration with 9-BBN, converting a vinyl group to an ethyl borane group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "XPhos Pd G2, NaOH",
+            "reagent_smiles": "C1=CN=C(C(=C1)I)Cl",
+            "conditions": "1,4-dioxane, 65 °C",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CC[C@@]2(C)[C@H]1CC[C@](C)(O)[C@H]2CCB3C4CCCC3CCC4",
+            "product_smiles": "C[C@@H]1CC[C@@]2(C)[C@H]1CC[C@](C)(O)[C@H]2CC3=CC=CN=C3Cl",
+            "notes": "Suzuki cross coupling of an alkyl borane (9-BBN derivative) with 2-chloro-3-iodopyridine, forming an alkylated 2-chloropyridine product. The decalin core and its stereochemistry remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "SOCl2, NEt3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -118 °C to -78 °C",
+            "yield": "98%",
+            "reactant_smiles": "C[C@H]1CC[C@H]2[C@@](C)(O)[C@H](C)C[C@@H]2[C@@H](CCC3=NC=CC=C3Cl)C1",
+            "product_smiles": "C=C1[C@H](C)C[C@@H]2[C@H](C)C[C@@H](CCC3=NC=CC=C3Cl)[C@@H]2C1",
+            "notes": "Tertiary alcohol is dehydrated to an exocyclic alkene using thionyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Minisci reaction",
+            "reagents": "Fe(acac)3, PhSiH3, TFA",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH, 120 °C",
+            "yield": "49%",
+            "reactant_smiles": "C[C@@]12CCC[C@@H](C(C)C)[C@H](CCn3c(Cl)ccc3)C(=C)[C@H]2C1",
+            "product_smiles": "C[C@]12CCC[C@@H](C(C)C)[C@H]3C4=C(CC[C@H]2C1)C=NC5=C4CCC35",
+            "notes": "Reductive cyclization via Minisci reaction of 2-chloro-3-pyridyl with an exocyclic alkene, forming a fused tetrahydroquinoline system and cleaving the C-Cl bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Directed ortho-metalation / Electrophilic aromatic substitution (iodination)",
+            "reagents": "n-BuLi, I2",
+            "reagent_smiles": "CN(C)CCO",
+            "conditions": "toluene -78 °C, THF -78 °C",
+            "yield": "75%",
+            "reactant_smiles": "C[C@H]1CCC[C@@]2(C)[C@H]1CC[C@@]3(C)[C@@H]2CCC4=C3C(=NC=C4)Cl",
+            "product_smiles": "C[C@H]1CCC[C@@]2(C)[C@H]1CC[C@@]3(C)[C@@H]2CCC4=C3C(=NC(=C4)I)Cl",
+            "notes": "Directed ortho-lithiation of the pyridine ring followed by iodination at the 3-position.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Sonogashira cross coupling",
+            "reagents": "Pd(PPh3)2Cl2, CuI, NEt3",
+            "reagent_smiles": "C#CCO",
+            "conditions": "THF, 23 °C",
+            "yield": "98%",
+            "reactant_smiles": "C[C@]1(C)CCC[C@@]2(C)C1CC[C@@]3(C)C4=C(CCC32)C(=NC(=C4)I)Cl",
+            "product_smiles": "C[C@@]1(C)CCC[C@@]2(C)C1CC[C@@]3(C)C4=C(CCC32)C(=NC(=C4)C#CCO)Cl",
+            "notes": "Sonogashira cross coupling of aryl iodide with propargyl alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Dehalogenation, Alkyne Hydrogenation, Alcohol Oxidation/Esterification",
+            "reagents": "H2, Pd/C, KOH, air",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "60%",
+            "reactant_smiles": "C[C@@]1(C)CCC[C@@]2(C)C1CC[C@@]3(C)C4=C(CCC32)C(=NC(=C4)C#CCO)Cl",
+            "product_smiles": "C[C@@]1(C)CCC[C@@]2(C)C1CC[C@@]3(C)C4=C(CCC32)C=NC(=C4)CCC(=O)OC",
+            "notes": "Reductive dehalogenation of aryl chloride and hydrogenation of alkyne to alkyl chain, followed by oxidation of primary alcohol to methyl ester.",
+            "substeps": []
+        }
+    ]
+}

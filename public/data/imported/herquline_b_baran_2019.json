@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "herquline-b-baran-2019",
+        "molecule_name": "Herquline B",
+        "class": "Natural Product",
+        "author": "Baran",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine protection, Esterification",
+            "reagents": "Boc₂O, TEA",
+            "reagent_smiles": "",
+            "conditions": "Dioxane:H₂O",
+            "yield": "",
+            "reactant_smiles": "N[C@@H](C(=O)O)Cc1cc(I)c(O)cc1",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H](Cc1cc(I)c(O)cc1)C(=O)OC",
+            "notes": "Primary amine protected as Boc carbamate and carboxylic acid converted to methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-Methylation (Williamson Ether Synthesis)",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CI",
+            "conditions": "Acetone",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=C(I)C=C(O)C=C1)C(=O)OC",
+            "product_smiles": "[Boc]N[C@@H](CC1=C(I)C=C(OC)C=C1)C(=O)OC",
+            "notes": "Phenol O-methylation to anisole using methyl iodide (MeI) and potassium carbonate (K2CO3) in acetone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, DMF",
+            "reagent_smiles": "CI",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC(=C(C=C1)OC)I)C(=O)OC",
+            "product_smiles": "[Boc]N(C)[C@@H](CC1=CC(=C(C=C1)OC)I)C(=O)OC",
+            "notes": "N-methylation of the Boc-protected amine",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "[Boc]N(C)[C@@H](CC1=CC(=C(C=C1)OC)I)C(=O)OC",
+            "product_smiles": "CN[C@@H](CC1=CC(=C(C=C1)OC)I)C(=O)OC",
+            "notes": "Boc deprotection to yield secondary amine, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "O=C(O)[C@@H]([NH][Boc])CC1=CC(=C(C=C1)OC)I",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN[C@@H](CC1=CC(=C(C=C1)OC)I)C(=O)OC",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC(=C(C=C1)OC)I)C(=O)N(C)[C@@H](CC2=CC(=C(C=C2)OC)I)C(=O)OC",
+            "notes": "Formation of a dipeptide by amide coupling between a secondary amine and a Boc-protected amino acid using HATU/DIPEA.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amine Protection, Esterification",
+                    "reagents": "Boc₂O, TEA",
+                    "reagent_smiles": "",
+                    "conditions": "Dioxane:H₂O",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=C(C=C1C[C@@H](C(=O)O)N)I)O",
+                    "product_smiles": "CC(C)(C)OC(=O)N[C@@H](CC1=CC(=C(C=C1)O)I)C(=O)OC",
+                    "notes": "Protection of primary amine with di-tert-butyl dicarbonate (Boc₂O) and esterification of the carboxylic acid to a methyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Williamson Ether Synthesis / O-alkylation",
+                    "reagents": "K2CO3, Acetone",
+                    "reagent_smiles": "CI",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@H](CC1=CC(=C(C=C1)O)I)[CO2Me]",
+                    "product_smiles": "[Boc]N[C@@H](CC1=CC(=C(C=C1)OC)I)[CO2Me]",
+                    "notes": "Methylation of a phenol using methyl iodide and potassium carbonate as a base in acetone solvent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Ester hydrolysis",
+                    "reagents": "LiOH•H2O",
+                    "reagent_smiles": "",
+                    "conditions": "THF:MeOH:H2O",
+                    "yield": "99%",
+                    "reactant_smiles": "[Boc]N[C@@H](C(=O)OC)Cc1c(I)c(OC)ccc1",
+                    "product_smiles": "[Boc]N[C@@H](C(=O)O)Cc1c(I)c(OC)ccc1",
+                    "notes": "Methyl ester is hydrolyzed to carboxylic acid under basic conditions, retaining the stereochemistry at the chiral center.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Diketopiperazine formation",
+            "reagents": "HCO2H",
+            "reagent_smiles": "O=CO",
+            "conditions": "105 °C",
+            "yield": "70%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@@H](CC1=CC(=C(C=C1)OC)I)C(=O)N(C)[C@@H](CC2=CC(=C(C=C2)OC)I)C(=O)OC",
+            "product_smiles": "CN1[C@@H](CC2=CC(=C(C=C2)OC)I)C(=O)N[C@@H](CC3=CC(=C(C=C3)OC)I)C1=O",
+            "notes": "Deprotection of Boc protecting group and methyl ester followed by intramolecular cyclization to form a diketopiperazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Biaryl Coupling (Suzuki-Miyaura type)",
+            "reagents": "Pd(0), B2Pin2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "CN1[C@@H](CC2=CC(=C(C=C2)OC)I)C(=O)N[C@@H](CC3=CC(=C(C=C3)OC)I)C1=O",
+            "product_smiles": "CN1[C@@H]2CC3=CC=C(C(=C3)C4=C(C=CC(=C4)C[C@@H](C1=O)NC2=O)OC)OC",
+            "notes": "Intramolecular biaryl coupling of di-iodinated diketopiperazine using bis(pinacolato)diboron and a Pd(0) catalyst to form a macrocyclic diketopiperazine (Herquline B).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Birch reduction",
+            "reagents": "Li (0), NH3",
+            "reagent_smiles": "",
+            "conditions": "TFE",
+            "yield": "77%",
+            "reactant_smiles": "CN1[C@H]2CC3=CC=C(C(=C3)C4=C(C=CC(=C4)C[C@H](C1=O)NC2=O)OC)OC",
+            "product_smiles": "CN1[C@H]2CC3=CC=C(C(=C3)[C@H]4C=C(CC=C4OC)C[C@H](C1=O)NC2=O)OC",
+            "notes": "Birch reduction of one of the methoxy-substituted aromatic rings, forming a 1,4-cyclohexadiene and a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "[Ir(COE)Cl]2, Et2SiH2",
+            "reagent_smiles": "CC[SiH](CC)H",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "CN1[C@H]2CC3=CC=C(OC)C(=C3)[C@H]4C=C(OC)CC=C4[C@@H](C2=O)NC1=O",
+            "product_smiles": "CN1CC[C@@H]2C3=CC(OC)=C(CC[C@@H]1C[C@@H]2N)C(=C3)[C@H]4C=CC=C4OC",
+            "notes": "Diastereoselective reduction of a cyclic urea using an iridium catalyst and a silane reducing agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ketal/Acetal formation (from enol ether)",
+            "reagents": "H+",
+            "reagent_smiles": "C(CO)O.[H+]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN1CC[C@H]2C3=C[C@H](C4=C(C=CC(=C4)C[C@H]1[C@H]2NCC3)OC)C(=CC3)OC",
+            "product_smiles": "CN1CCN[C@H]2CC3=C[C@H](C4=C(C=CC(=C4)C[C@H]21)OC)[C@@]5(CC3)OCCO5",
+            "notes": "Acid-catalyzed hydrolysis of enol ether followed by spiroketal formation with ethylene glycol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Birch reduction",
+            "reagents": "Li (0), NH3, t-BuOH",
+            "reagent_smiles": "CC(C)(C)O.[Li].N",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN1CCN[C@@H]2CC3=C[C@@H]([C@@H]4CC(=C(C=C4)OC)[C@@H]21)[C@@]5(CC3)OCCO5",
+            "product_smiles": "CN1CCN[C@@H]2CC3=C[C@@H]([C@@H]4C=C(CC=C4OC)[C@@H]21)[C@@]5(CC3)OCCO5",
+            "notes": "Birch reduction of a 1,4-cyclohexadiene (reactant) to a 1,3-cyclohexadiene (product), with inversion of double bond position.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrolysis / Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN1CCN[C@@H]2CC3=C[C@H]([C@@H]4C=C(OC)C=CC4C[C@H]21)C5(CC3)OCCO5",
+            "product_smiles": "CN1CCN[C@@H]2CC3=C[C@H]([C@@H]4C=CC(=O)CC4C[C@H]21)C(=O)CC3",
+            "notes": "Acid-catalyzed hydrolysis of an enol ether and a cyclic ketal to form two cyclohexenone rings.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Isomerization / Epimerization",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "Toluene",
+            "yield": "24%",
+            "reactant_smiles": "C[N]1C[C@H]2C[C@H]3C(=O)CCC=C3[C@H]([C@@H]([C@H]4C=C(CCC4=O))[C@H]2NC1)C",
+            "product_smiles": "C[N]1C[C@H]2C[C@@H]3C(=O)CCC=C3[C@H]([C@H]([C@@H]4C=C(CCC4=O))[C@H]2NC1)C",
+            "notes": "Base-mediated isomerization/epimerization of a Herquline B precursor to (+)-Herquline B. The yield is given over 4 steps.",
+            "substeps": []
+        }
+    ]
+}

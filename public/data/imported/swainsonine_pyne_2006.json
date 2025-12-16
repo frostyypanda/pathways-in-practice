@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "swainsonine-pyne-2006",
+        "molecule_name": "Swainsonine",
+        "class": "Natural Product",
+        "author": "Pyne",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "Grubbs' II",
+            "reagent_smiles": "C=C[S](=O)(=O)c1ccccc1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CCC[OTBDPS]",
+            "product_smiles": "[OTBDPS]CCC/C=C/S(=O)(=O)c1ccccc1",
+            "notes": "Cross-metathesis of a TBDPS-protected terminal alkene with vinyl phenyl sulfone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Sharpless asymmetric dihydroxylation",
+            "reagents": "AD-Mix β",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]CCC/C=C/S(=O)(=O)C1=CC=CC=C1",
+            "product_smiles": "[OTBDPS]CCC[C@H](O)C=O",
+            "notes": "Asymmetric dihydroxylation of a terminal alkene, followed by potential cleavage/rearrangement to an aldehyde, to form a chiral α-hydroxy aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Petasis reaction",
+            "reagents": "allylamine, CH2Cl2",
+            "reagent_smiles": "B(O)(O)/C=C/c1ccccc1",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[OTBDPS]OCCCC[C@H](O)C=O",
+            "product_smiles": "[OTBDPS]OCCCC[C@H](O)[C@H](NCCC=C)/C=C/c1ccccc1",
+            "notes": "Petasis reaction converting an aldehyde to a beta-amino alcohol with new carbon-carbon bonds and stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "70%",
+            "reactant_smiles": "C=CCN[C@H](/C=C/[Ph])[C@@H](O)CCC[OTBDPS]",
+            "product_smiles": "C=CCN[C@H](/C=C/[Ph])[C@@H](O[TBS])CCC[OTBDPS]",
+            "notes": "Protection of a secondary alcohol as its tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "KOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "60%",
+            "reactant_smiles": "[TBDPS]OCCC[C@@H]([OTBS])[C@H](NC=C)/C=C/[Ph]",
+            "product_smiles": "OCCC[C@@H]([OTBS])[C@H](NC=C)/C=C/[Ph]",
+            "notes": "Deprotection of TBDPS ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular N-alkylation (Appel conditions)",
+            "reagents": "PPh3, CBr4, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "71%",
+            "reactant_smiles": "OCCC[C@H]([OTBS])[C@@H](NC=C)/C=C/[Ph]",
+            "product_smiles": "C=CCN1CCC[C@H]([OTBS])[C@@H]1/C=C/[Ph]",
+            "notes": "Intramolecular cyclization of an amino alcohol under Appel reaction conditions to form a piperidine derivative. The primary alcohol is likely converted to a bromide (in situ) which then undergoes intramolecular N-alkylation with the secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Ti(Oi-Pr)4, Grubbs II",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "80%",
+            "reactant_smiles": "C=CCN1CCCC[C@H]([OTBS])[C@H]1/C=C/[Ph]",
+            "product_smiles": "[OTBS][C@H]1CCC[C@H]2N1CC=C[C@H]2",
+            "notes": "Intramolecular ring-closing metathesis reaction of a N-allyl-piperidine derivative to form a bicyclic indolizidine system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Asymmetric Dihydroxylation",
+            "reagents": "AD-Mix α, Sharpless asymmetric dihydroxylation",
+            "reagent_smiles": "CS(=O)(=O)N",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O[TBS][C@@H]1CCCN2CC=C[C@@H]12",
+            "product_smiles": "O[TBS][C@@H]1CCCN2C[C@H](O)[C@@H](O)[C@@H]12",
+            "notes": "Sharpless asymmetric dihydroxylation of an alkene to a diol with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H]1CCCN2C[C@H]([C@H](O)[C@@H]12)O",
+            "product_smiles": "C1C[C@H]([C@@H]2[C@@H]([C@@H](CN2C1)O)O)O",
+            "notes": "Deprotection of a tert-butyldimethylsilyl (TBS) ether to a hydroxyl group using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, pyridine, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "68%",
+            "reactant_smiles": "C1CN2C[C@H]([C@H]([C@H]1O)[C@@H]2O)[C@H](O)",
+            "product_smiles": "[OAc]C1C[C@@H]2N(C[C@H]1[C@@H]([OAc])[C@H]2[OAc])[C@H]([OAc])",
+            "notes": "Acetylation of the three hydroxyl groups of Swainsonine to form the triacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrolysis (Deacetylation)",
+            "reagents": "Amberlite IRA-401",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "96%",
+            "reactant_smiles": "CC(=O)OC1CCC[C@@H]2N(C1)[C@@H]3C[C@H](OC(=O)C)[C@H](OC(=O)C)[C@@H]32",
+            "product_smiles": "OC1CCC[C@@H]2N(C1)[C@@H]3C[C@H](O)[C@H](O)[C@@H]32",
+            "notes": "Deacetylation of peracetylated swainsonine to (-)-swainsonine.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "singulair-montelukast-merck-unknown-2024",
+        "molecule_name": "Singulair (Montelukast Merck)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Knoevenagel Condensation",
+            "reagents": "Ac2O",
+            "reagent_smiles": "O=CC1=CC(C=O)=CC=C1",
+            "conditions": "toluene, 100°C",
+            "yield": "75%",
+            "reactant_smiles": "CC1=NC2=CC(=CC=C2C=C1)Cl",
+            "product_smiles": "O=CC1=CC(/C=C/C2=NC3=CC(=CC=C3C=C2)Cl)=CC=C1",
+            "notes": "A Knoevenagel condensation reaction between 6-chloro-2-methylquinoline and isophthalaldehyde, forming a styrene derivative with an aldehyde group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Grignard Reaction",
+            "reagents": "toluene, HF",
+            "reagent_smiles": "C=CMgBr",
+            "conditions": "0-5 °C",
+            "yield": "93%",
+            "reactant_smiles": "C1=CC(=CC(=C1)/C=C/C2=NC3=CC(=CC=C3C=C2)Cl)C=O",
+            "product_smiles": "C=CC(C1=CC(=CC=C1)/C=C/C2=NC3=CC(=CC=C3C=C2)Cl)O",
+            "notes": "Grignard addition of vinyl magnesium bromide to an aldehyde, forming a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Heck reaction",
+            "reagents": "Pd(OAc)2, LiCl, LiOAc - 2H2O",
+            "reagent_smiles": "COC(=O)C1=CC=CC=C1Br",
+            "conditions": "DMF, 95°C",
+            "yield": "",
+            "reactant_smiles": "C=CC(C1=CC(=CC=C1)/C=C/C2=NC3=CC(=CC=C3C=C2)Cl)O",
+            "product_smiles": "COC(=O)C1=C(C=CC=C1)CCC(=O)C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl",
+            "notes": "Heck coupling of a chloroquinoline derivative with methyl 2-bromobenzoate, resulting in the formation of a new carbon-carbon bond via oxidative addition and reductive elimination.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Brown asymmetric reduction",
+            "reagents": "(-)-Ipc2BCl",
+            "reagent_smiles": "",
+            "conditions": "THF, heptane, 15 °C",
+            "yield": "95%",
+            "reactant_smiles": "COC(=O)C1=C(C=CC=C1)CCC(=O)C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl",
+            "product_smiles": "COC(=O)C1=C(C=CC=C1)CC[C@@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)O",
+            "notes": "Ketone reduced to secondary alcohol with R-configuration via asymmetric reduction.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Addition",
+            "reagents": "MeMgCl, CeCl3",
+            "reagent_smiles": "C[Mg]Cl.Cl[Ce](Cl)Cl",
+            "conditions": "THF, 0 °C",
+            "yield": "89%",
+            "reactant_smiles": "COC(=O)C1=C(C=CC=C1)CC[C@@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)O",
+            "product_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)O)O",
+            "notes": "Grignard addition of methylmagnesium chloride (MeMgCl) to a methyl ester, facilitated by cerium(III) chloride (CeCl3), to form a tertiary alcohol. The existing secondary alcohol and trans alkene stereochemistry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Mesylation",
+            "reagents": "i-Pr₂NEt",
+            "reagent_smiles": "CS(=O)(=O)Cl",
+            "conditions": "",
+            "yield": "81-95%",
+            "reactant_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)O)O",
+            "product_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)OS(=O)(=O)C)O",
+            "notes": "Conversion of a secondary alcohol to a mesylate",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic substitution (mesylate displacement by thiolate)",
+            "reagents": "NaOt-Bu",
+            "reagent_smiles": "C1CC1(CC(=O)O)CS",
+            "conditions": "NMP, 10 °C",
+            "yield": "",
+            "reactant_smiles": "Clc1ccc2c(c1)nccc2/C=C/c3ccc([C@@H](CCC4=CC=CC=C4C(C)(C)O)[OMs])cc3",
+            "product_smiles": "Clc1ccc2c(c1)nccc2/C=C/c3ccc([C@H](CCC4=CC=CC=C4C(C)(C)O)SCC5(CC5)CC(=O)O)cc3",
+            "notes": "Displacement of a mesylate leaving group by a thiolate, generated in situ from the mercaptan and NaOt-Bu, to form a thioether. The stereochemistry at the chiral center is inverted from (R) to (S).",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Intramolecular Williamson Ether Synthesis (Cyclization)",
+                    "reagents": "KOH, EtOH",
+                    "reagent_smiles": "CCO",
+                    "conditions": "EtOH (solvent)",
+                    "yield": "99%",
+                    "reactant_smiles": "BrCC(CO)(CO)CBr",
+                    "product_smiles": "BrCC1(CO)COC1",
+                    "notes": "One hydroxyl group attacks a bromomethyl group, forming a 4-membered oxetane ring and eliminating HBr.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Nucleophilic Substitution (SN2)",
+                    "reagents": "NaCN",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 78 °C",
+                    "yield": "54%",
+                    "reactant_smiles": "C(C1(CO)COC1)Br",
+                    "product_smiles": "C(C#N)C1(CO)COC1",
+                    "notes": "Bromide group is replaced by a cyanide group on a spiro-oxetane scaffold.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Complex Rearrangement / Multistep Transformation",
+                    "reagents": "HBr, AcOH",
+                    "reagent_smiles": "",
+                    "conditions": "100 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "NCCC1(CCO)COC1",
+                    "product_smiles": "C1C(=O)OCC1(CBr)CBr",
+                    "notes": "Transformation of 3-(cyanomethyl)-3-(hydroxymethyl)oxetane to 3,3-bis(bromomethyl)dihydrofuran-2(3H)-one. This involves the conversion of a nitrile group to a bromomethyl group, an alcohol group to a bromomethyl group, and the rearrangement/oxidation of the oxetane ring into a gamma-lactone. The reaction results in a net loss of one carbon atom and one oxygen atom.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Intramolecular Reductive Cyclization",
+                    "reagents": "DMA",
+                    "reagent_smiles": "[Zn]",
+                    "conditions": "120 °C",
+                    "yield": "70-80%",
+                    "reactant_smiles": "C1C(=O)OCC1(CBr)CBr",
+                    "product_smiles": "C1CC12CC(=O)OC2",
+                    "notes": "Intramolecular reductive cyclization of a dibromide (via zinc) forming a spiro cyclopropane.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Lactone to Thiolactone Conversion",
+                    "reagents": "DMA",
+                    "reagent_smiles": "C1=C(C=CC(=C1)O)O.CC(=O)[S-]",
+                    "conditions": "155 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "C1CC12CC(=O)OC2",
+                    "product_smiles": "C1CC12CC(=O)SC2",
+                    "notes": "Conversion of a gamma-lactone to a gamma-thiolactone where the ring oxygen is replaced by sulfur.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.6",
+                    "reaction_type": "Hydrolysis",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, 100 °C",
+                    "yield": "95%",
+                    "reactant_smiles": "C1CC12CC(=O)SC2",
+                    "product_smiles": "C1CC1(CC(=O)O)CS",
+                    "notes": "Hydrolysis of a thiolactone to a carboxylic acid and thiol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acid-base reaction (salt formation)",
+            "reagents": "t-BuNH2",
+            "reagent_smiles": "CC(C)(C)N",
+            "conditions": "",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)SCC5(CC5)CC(=O)O)O",
+            "product_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)SCC5(CC5)CC(=O)O[O-])O.CC(C)(C)[NH3+]",
+            "notes": "The carboxylic acid group of the reactant is deprotonated by t-butylamine to form a carboxylate anion, which then forms a salt with the t-butylammonium cation.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification",
+            "reagents": "",
+            "reagent_smiles": "C(C(C(=O)O)O)(C(=O)O)O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)SCC5(CC5)CC(=O)[O-])O.[NH3+]C(C)(C)C",
+            "product_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)SCC5(CC5)CC(=O)OC(C(=O)O)C(O)C(=O)O)O",
+            "notes": "The Montelukast carboxylate salt reacts to form an ester with one of the hydroxyl groups of tartaric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ester hydrolysis / Salt formation",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)SCC5(CC5)CC(=O)OC(=O)[C@@H](O)[C@@H](O)C(=O)O)O",
+            "product_smiles": "CC(C)(C1=C(C=CC=C1)CC[C@H](C2=CC(=CC=C2)/C=C/C3=NC4=CC(=CC=C4C=C3)Cl)SCC5(CC5)CC(=O)[O-])O.[Na+]",
+            "notes": "Hydrolysis of the mixed anhydride (Montelukast-tartaric acid derivative) to form Montelukast sodium salt.",
+            "substeps": []
+        }
+    ]
+}

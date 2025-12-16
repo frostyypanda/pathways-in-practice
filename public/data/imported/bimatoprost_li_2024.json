@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "bimatoprost-li-2024",
+        "molecule_name": "Bimatoprost",
+        "class": "Natural Product",
+        "author": "Li",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Selective Acetylation (Enzymatic)",
+            "reagents": "pancreatin, Et3N",
+            "reagent_smiles": "C=COC(=O)C",
+            "conditions": "THF",
+            "yield": "65%",
+            "reactant_smiles": "O[C@@H]1[C@@H](O)C=CC1",
+            "product_smiles": "CC(=O)O[C@@H]1[C@@H](O)C=CC1",
+            "notes": "Enzyme-catalyzed selective monoacetylation of a cis-1,2-diol using vinyl acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Claisen Rearrangement",
+            "reagents": "o-NO₂PhOH",
+            "reagent_smiles": "CCOC(C)(OCC)OCC",
+            "conditions": "180 °C",
+            "yield": "",
+            "reactant_smiles": "[OAc][C@@H]1C=C[C@@H](C1)O",
+            "product_smiles": "[OEt]C(=O)C[C@@H]1C=CC[C@@H]1[OAc]",
+            "notes": "Allylic alcohol undergoes [3,3]-sigmatropic rearrangement with 1,1,1-triethoxyethane (an orthoester) to form a homoallylic ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis / Intramolecular Lactonization",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "CCOC(=O)C[C@H]1C=CC[C@@H]1OC(=O)C",
+            "product_smiles": "C1=C[C@@H]2CC(=O)O[C@@H]2C1",
+            "notes": "Hydrolysis of acetate and ethyl ester, followed by intramolecular cyclization to form a lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Bromohydroxylation",
+            "reagents": "NBS, H2O",
+            "reagent_smiles": "",
+            "conditions": "DMSO, CHCl3, 10 °C",
+            "yield": "69%",
+            "reactant_smiles": "C1=C[C@H]2CC(=O)O[C@H]2C1",
+            "product_smiles": "O=C1OC[C@H]2[C@H]1C[C@H](O)[C@H](Br)C2",
+            "notes": "Bromohydroxylation of a bicyclic lactone with NBS and water.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "NiBr2·glyme, Zn, MgCl2, TMS-imidazole, pyridine, DMA",
+            "reagent_smiles": "Br/C=C/[C@@H](O)CCC1=CC=CC=C1",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "C1[C@H]2[C@H](CC(=O)O2)[C@H]([C@@H]1O)Br",
+            "product_smiles": "O=C1OC[C@H]2[C@H]1C[C@@H](O)[C@H](C/C=C/[C@@H](O)CCC3=CC=CC=C3)C2",
+            "notes": "A Negishi cross-coupling reaction replaces the bromo group of the bicyclic lactone with a chiral bromo-alkene containing an alcohol and phenyl substituent, forming a new carbon-carbon bond.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Bromination of Terminal Alkyne",
+                    "reagents": "NBS, AgNO3",
+                    "reagent_smiles": "",
+                    "conditions": "Acetone",
+                    "yield": "",
+                    "reactant_smiles": "C#C[C@H](CCc1ccccc1)O",
+                    "product_smiles": "BrC#C[C@H](CCc1ccccc1)O",
+                    "notes": "Terminal alkyne is brominated using NBS and AgNO3, preserving the stereochemistry of the adjacent secondary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Alkyne Reduction (to Z-alkene) with maintained stereochemistry",
+                    "reagents": "LiAlH4, AlCl3",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, 0 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "BrC#C[C@@H](O)CCc1ccccc1",
+                    "product_smiles": "Br/C=C/C[C@@H](O)CCc1ccccc1",
+                    "notes": "(2 steps)",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C(=C\\[C@@H]1[C@@H]2CC(=O)O[C@@H]2C[C@H]1O)/[C@H](CC[Ph])O",
+            "product_smiles": "C(=C\\[C@@H]1[C@@H]2C[C@H](O)O[C@@H]2C[C@H]1O)/[C@H](CC[Ph])O",
+            "notes": "Reduction of a cyclic ester (lactone) to a lactol (cyclic hemiacetal) using DIBAL-H. The stereochemistry of the newly formed hydroxyl group is established as down (alpha).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig reaction",
+            "reagents": "tBuOK",
+            "reagent_smiles": "[Br-].NCC(=O)CCCC[P+](c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "THF, 0 °C",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "O[C@H]1[C@H](O)[C@@H]2C[C@H](O)[C@@H](C/C=C/[C@H](O)CCc3ccccc3)[C@H]2O1",
+            "product_smiles": "CCNC(=O)CCCC/C=C\\C[C@@H]1[C@H](O)[C@@H](C/C=C/[C@H](O)CCc2ccccc2)[C@H](O)C1",
+            "notes": "Transformation of a bicyclic hemiacetal (aldehyde equivalent) to Bimatoprost via Wittig reaction.",
+            "substeps": []
+        }
+    ]
+}

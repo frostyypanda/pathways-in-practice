@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rizatriptan-maxalt-merck-unknown-2024",
+        "molecule_name": "Rizatriptan (Maxalt Merck)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Alkylation / S_N2",
+            "reagents": "IPA",
+            "reagent_smiles": "C1=NN=CN1N",
+            "conditions": "heat",
+            "yield": "99%",
+            "reactant_smiles": "C1=C(C=CC(=C1)[N+](=O)[O-])CBr",
+            "product_smiles": "C1=C(C=CC(=C1)[N+](=O)[O-])CN2C=[N+](C=N2)N",
+            "notes": "Nucleophilic substitution of a benzyl bromide by 3-amino-1,2,4-triazole, forming a triazolium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deamination",
+            "reagents": "HNO2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "100%",
+            "reactant_smiles": "N[N+]1=NN=CN(Cc2ccc([N+]([O-])=O)cc2)1",
+            "product_smiles": "O=[N+]([O-])c1ccc(CN2N=CN=N2)cc1",
+            "notes": "Deamination of a 1-amino-1H-tetrazolium salt using nitrous acid (HNO2) to yield the corresponding 1H-tetrazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "97%",
+            "reactant_smiles": "C1=C(C=CC(=C1)[N+](=O)[O-])CN2C=NC=N2",
+            "product_smiles": "C1=C(C=CC(=C1)N)CN2C=NC=N2",
+            "notes": "Reduction of a nitro group to an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "ICl, CaCO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O",
+            "yield": "95%",
+            "reactant_smiles": "NC1=CC=C(CN2C=NC=N2)C=C1",
+            "product_smiles": "NC1=CC(I)=C(CN2C=NC=N2)C=C1",
+            "notes": "Iodination of an aniline derivative ortho to the amino group, meta to the alkyl-triazole group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Sonogashira coupling / Indole annulation",
+            "reagents": "Pd(OAc)2, Na2CO3",
+            "reagent_smiles": "CC[Si](CC)(CC)C#CCCO[Si](CC)(CC)CC",
+            "conditions": "DMF, 100 °C",
+            "yield": "80%",
+            "reactant_smiles": "C1=C(C=C(C(=C1)N)I)CN2C=NC=N2",
+            "product_smiles": "CC[Si](CC)(CC)C1=C(CCO[Si](CC)(CC)CC)C2=CC(=CC=C2N1)CN3C=NC=N3",
+            "notes": "Sonogashira coupling of an iodoaniline with a protected alkyne, followed by in situ cyclization to form the indole ring system. The alkyne reagent used is (triethylsilyl)but-3-yn-1-yl triethylsilyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "Citric Acid, 2.5M HCl",
+            "reagent_smiles": "",
+            "conditions": "IPAC",
+            "yield": "72%",
+            "reactant_smiles": "CC[Si](CC)(CC)C1=C(CCO[Si](CC)(CC)CC)C2=CC(CN3C=NC=N3)=CC=C2N1",
+            "product_smiles": "N1C=C(CCO)C2=CC(CN3C=NC=N3)=CC=C21",
+            "notes": "Acid-catalyzed removal of two triethylsilyl (TES) protecting groups: a silyl ether (OTES) is hydrolyzed to an alcohol, and a silyl group directly attached to the indole ring (SiEt3) is replaced by hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, TEA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C2C(=CNC2=C1)CCO)CN3C=NC=N3",
+            "product_smiles": "[OMs]CCC1=CNC2=CC=C(C=C12)CN3C=NC=N3",
+            "notes": "Alcohol is converted to a mesylate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Substitution (SN2), Alkylation",
+            "reagents": "diethylamine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "75-85%",
+            "reactant_smiles": "[OMs]CCC1=CNC2=CC=C(C=C12)CN3C=NC=N3",
+            "product_smiles": "CN(C)CCC1=CNC2=CC=C(C=C12)CN3C=NC=N3",
+            "notes": "Alkylation of a secondary amine (dimethylamine) by displacement of a mesylate leaving group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Salt Formation",
+            "reagents": "Benzoic Acid",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "CN(C)CCC1=CNC2=CC=C(C=C12)CN3C=NC=N3",
+            "product_smiles": "CN(C)CCC1=CNC2=CC=C(C=C12)CN3C=NC=N3.O=C(O)c1ccccc1",
+            "notes": "Formation of Rizatriptan Benzoate salt from Rizatriptan and Benzoic Acid.",
+            "substeps": []
+        }
+    ]
+}

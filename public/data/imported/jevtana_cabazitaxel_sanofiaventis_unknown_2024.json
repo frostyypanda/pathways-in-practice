@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "jevtana-cabazitaxel-sanofiaventis-unknown-2024",
+        "molecule_name": "Jevtana (Cabazitaxel SanofiAventis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Silylation (TES protection)",
+            "reagents": "TESCI, pyridine",
+            "reagent_smiles": "Cl[Si](CC)(CC)CC.c1ccncc1",
+            "conditions": "23 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@H]3[C@H]([C@](C[C@@H]1O)(C2(C)C)O)[OBz])[OAc])O)O",
+            "product_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@H]3[C@H]([C@](C[C@@H]1O)(C2(C)C)O)[OBz])[OAc])O)[OTES]",
+            "notes": "Protection of the C13 hydroxyl group of 10-deacetylbaccatin III to form the triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-methylation (Alkylation)",
+            "reagents": "NaH, CH3I",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "91%",
+            "reactant_smiles": "[OTES][C@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)O)C4(C)C)C)O)O)[OBz])[OAc]",
+            "product_smiles": "[OTES][C@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)OC)C4(C)C)C)O)O)[OBz])[OAc]",
+            "notes": "O-methylation of the C13-hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "HF, pyridine",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "89%",
+            "reactant_smiles": "[OTES][C@@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)OC)C4(C)C)C)O)O)[OBz])[OAc]",
+            "product_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@]3(C)[C@@H]([C@@](C[C@@H]1O)(C2(C)C)O)[OBz])[OAc])O)OC",
+            "notes": "Deprotection of triethylsilyl ether (OTES) to a hydroxyl group (OH) using hydrofluoric acid and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "O-Methylation",
+            "reagents": "Proton sponge, molecular sieve",
+            "reagent_smiles": "CN(C)C(=[O+])N(C)C.F[B-](F)(F)F",
+            "conditions": "DCM, rt",
+            "yield": "66%",
+            "reactant_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@H]3[C@@H]([C@](C[C@@H]1O)(C2(C)C)O)[OBz])[OAc])O)OC",
+            "product_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@H]3[C@@H]([C@](C[C@@H]1O)(C2(C)C)O)[OBz])[OAc])OC)OC",
+            "notes": "Methylation of a secondary hydroxyl group (C7-OH) to a methyl ether (C7-OMe) on a polycyclic taxane derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ring-opening acylation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1C(=O)[C@H](C2=CC=CC=C2)[C@@H]1OSi(CC)(CC)CC",
+            "conditions": "THF, -40 °C",
+            "yield": "60%",
+            "reactant_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@]3(C)[C@@H]([C@](C[C@@H]1O)(C2(C)C)O)OC(=O)C5=CC=CC=C5)OC(=O)C)OC)",
+            "product_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@]3(C)[C@@H]([C@](C[C@@H]1O)(C2(C)C)OC(=O)[C@@H](OSi(CC)(CC)CC)[C@H](C5=CC=CC=C5)NC(=O)OC(C)(C)C))OC(=O)C5=CC=CC=C5)OC(=O)C)OC)",
+            "notes": "Nucleophilic attack of the C13 alkoxide of the taxane core onto the beta-lactam carbonyl, leading to ring-opening and acylation. Stereochemistry and functional groups of the taxane core and beta-lactam side chain are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection (Silyl Ether Hydrolysis)",
+            "reagents": "HF, pyridine",
+            "reagent_smiles": "CC#N",
+            "conditions": "MeCN, rt",
+            "yield": "77%",
+            "reactant_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@H]3[C@@H]([C@](C[C@@H]1OC(=O)[C@H]([Ph])[C@@H](O[TES])N[Boc])(C2(C)C)O)[OBz])[OAc])OC)OC",
+            "product_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@H]3[C@@H]([C@](C[C@@H]1OC(=O)[C@H]([Ph])[C@@H](O)N[Boc])(C2(C)C)O)[OBz])[OAc])OC)OC",
+            "notes": "Deprotection of the triethylsilyl (TES) ether to a hydroxyl group on the side chain of the taxane derivative.",
+            "substeps": []
+        }
+    ]
+}

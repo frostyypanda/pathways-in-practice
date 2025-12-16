@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "makaluvamine-a-wood-2023",
+        "molecule_name": "Makaluvamine A",
+        "class": "Natural Product",
+        "author": "Wood",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidation (aldehyde to phenol)",
+            "reagents": "NaOH, MeOH, H₂O, H₂O₂",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "96%",
+            "reactant_smiles": "COC1=C(C(=CC(=C1)C=O)[N+](=O)[O-])O",
+            "product_smiles": "COC1=C(C(=CC(=C1)O)[N+](=O)[O-])O",
+            "notes": "Aldehyde group is oxidized to a hydroxyl group on the benzene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-Methylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CI",
+            "conditions": "DMF, 60 °C",
+            "yield": "80%",
+            "reactant_smiles": "COC1=C(C(=CC(=C1)O)[N+](=O)[O-])O",
+            "product_smiles": "COC1=CC(=C(C(=C1)[N+](=O)[O-])OC)OC",
+            "notes": "O-methylation of two phenolic hydroxyl groups to methoxy groups using methyl iodide and potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Electrophilic Aromatic Iodination",
+            "reagents": "I2, AgNO3, MeCN, DCM",
+            "reagent_smiles": "",
+            "conditions": "MeCN, DCM",
+            "yield": "91%",
+            "reactant_smiles": "COc1cc(OC)c(cc1OC)[N+](=O)[O-]",
+            "product_smiles": "COc1cc(OC)c(c(I)c1OC)[N+](=O)[O-]",
+            "notes": "Aromatic iodination of 1-nitro-2,4,6-trimethoxybenzene using iodine and silver nitrate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nitro Reduction",
+            "reagents": "Fe, NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "THF, EtOH, H2O, 95 °C",
+            "yield": "85%",
+            "reactant_smiles": "COC1=C(OC)C(I)=C([N+](=O)[O-])C(OC)=C1",
+            "product_smiles": "COC1=C(OC)C(I)=C(N)C(OC)=C1",
+            "notes": "Reduction of an aromatic nitro group to an aromatic amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cacchi reaction (intramolecular Sonogashira coupling)",
+            "reagents": "Pd(PPh3)4, NBu4Cl, DIPEA",
+            "reagent_smiles": "[TES]C#CCC[OTBS]",
+            "conditions": "DMF, 120 °C",
+            "yield": "95%",
+            "reactant_smiles": "COC1=C(C(=C(C(=C1)OC)I)N)OC",
+            "product_smiles": "[TES]C1=C(CCO[OTBS])C2=C(C(=C(C=C2OC)OC)OC)[nH]1",
+            "notes": "Formation of an indole derivative via intramolecular Sonogashira coupling and cyclization.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "97%",
+                    "reactant_smiles": "C#CCCO",
+                    "product_smiles": "C#CCCO[OTBS]",
+                    "notes": "Protection of a primary alcohol with a tert-butyldimethylsilyl (TBS) group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Silylation of terminal alkyne",
+                    "reagents": "nBuLi, TESCl",
+                    "reagent_smiles": "CCCC[Li].Cl[Si](CC)(CC)CC",
+                    "conditions": "THF, -78 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "C#CCCCO[TBS]",
+                    "product_smiles": "[TES]C#CCCCO[TBS]",
+                    "notes": "The terminal alkyne is deprotonated by nBuLi, and the resulting acetylide is silylated with triethylsilyl chloride (TESCl).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-alkylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[TES]C1=C(CCO[TBS])C2=C(C(=C(C=C2OC)OC)OC)N1",
+            "product_smiles": "[TES]C1=C(CCO[TBS])C2=C(C(=C(C=C2OC)OC)OC)N1C",
+            "notes": "N-methylation of indole using sodium hydride and methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation, Deprotection",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O",
+            "yield": "",
+            "reactant_smiles": "[TES]C1=C(CC[TBSO])C2=C(C(=C(C=C2OC)OC)OC)N1C",
+            "product_smiles": "[TES]C1=C(CCO)C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "notes": "Oxidation of a trimethoxybenzene to a quinone and deprotection of a TBS ether to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, DMAP, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "[TES]C1=C(CCO)C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "product_smiles": "[TES]C1=C(CCO[OTs])C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "notes": "Tosylation of a primary alcohol using TsCl, DMAP, and Et3N in DCM.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaN3",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "57%",
+            "reactant_smiles": "CN1C2=C(C(=O)C=C(OC)C2=O)C=C1C([TES])=C(CCC[OTs])",
+            "product_smiles": "CN1C2=C(C(=O)C=C(OC)C2=O)C=C1C([TES])=C(CCC[N3])",
+            "notes": "Tosylate leaving group is replaced by azide. The TES and quinone core remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Staudinger-aza-Wittig Cyclization",
+            "reagents": "",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "THF, H2O",
+            "yield": "65%",
+            "reactant_smiles": "[TES]C1=C(CCC[N-]=[N+]=N)C2=C(C(=O)C(=CC2=O)OC)N1C",
+            "product_smiles": "[TES]C1=C2CCN=C3C(N(C)C1)=C(OC)C(=O)C=C32",
+            "notes": "Intramolecular Staudinger reduction of an azide followed by aza-Wittig cyclization, forming a fused 6-membered nitrogen heterocycle and converting a quinone carbonyl into an imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amination / Nucleophilic Aromatic Substitution",
+            "reagents": "NH4Cl",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "56%",
+            "reactant_smiles": "COc1cc(=O)c2c(n(C)c3c([TES])c2cc3)CCN=1",
+            "product_smiles": "Nc1cc(=O)c2c(n(C)c3c([TES])c2cc3)CCN=1",
+            "notes": "Replacement of a methoxy group with an amino group on a complex polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection, Iminium formation",
+            "reagents": "TBAF, TFA",
+            "reagent_smiles": "",
+            "conditions": "THF, MeOH",
+            "yield": "69%",
+            "reactant_smiles": "[TES]C1=C2CCN=C3C=C(C(=O)C(=C23)N1C)N",
+            "product_smiles": "CN1C=C2CC[NH+]=C3C=C(C(=O)C1=C23)N",
+            "notes": "Desilylation of TES protecting group and subsequent iminium formation via protonation of the imine. The product structure shown in the image, specifically the rightmost 6-membered ring and the N-charge, is represented by the provided SMILES, although it differs from the commonly accepted structure of Makaluvamine A which features an aromatic pyridinium ring.",
+            "substeps": []
+        }
+    ]
+}

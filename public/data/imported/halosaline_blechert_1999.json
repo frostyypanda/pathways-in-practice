@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "halosaline-blechert-1999",
+        "molecule_name": "Halosaline",
+        "class": "Natural Product",
+        "author": "Blechert",
+        "year": 1999
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydrolysis (Enzymatic)",
+            "reagents": "lipase",
+            "reagent_smiles": "",
+            "conditions": "99% ee",
+            "yield": "40%",
+            "reactant_smiles": "[OAc][C@@H]1C=C[C@@H](C1)[OAc]",
+            "product_smiles": "[OAc][C@@H]1C=C[C@@H](C1)O",
+            "notes": "Enantioselective hydrolysis of one acetate group using lipase, yielding a chiral monoacetate alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silylation",
+            "reagents": "Me₂AllylSiCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CC(=O)O[C@H]1C=C[C@H](O)C1",
+            "product_smiles": "C=CC[Si](C)(C)O[C@@H]1C=C[C@@H](OC(=O)C)C1",
+            "notes": "Selective silylation of a secondary alcohol using dimethylallylchlorosilane and pyridine in DCM, inverting the stereochemistry at the silylated carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC[Si](C)(C)O[C@@H]1C=C[C@@H](C1)OC(=O)C",
+            "product_smiles": "C=CC[Si](C)(C)O[C@@H]1C=C[C@@H](C1)O",
+            "notes": "Reduction of an acetate ester to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "N-Ts-but-1-enylamine, ADDP, Bu3P",
+            "reagent_smiles": "[Ts]NHCCC=C.O=C(N1CCCCC1)N=NC(=O)N2CCCCC2.P(CCCC)(CCCC)CCCC",
+            "conditions": "benzene",
+            "yield": "",
+            "reactant_smiles": "C=CC[Si](C)(C)O[C@@H]1C=C[C@@H](O)C1",
+            "product_smiles": "C=CC[Si](C)(C)O[C@@H]1C=C[C@H](C1)N([Ts])CCC=C",
+            "notes": "Mitsunobu reaction inverts the stereochemistry of the secondary alcohol, replacing it with the N-Ts-but-3-enylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "5% Grubbs I",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "96%",
+            "reactant_smiles": "C1=CC[C@H](O[Si](C)(C)CC=C)[C@@H]1N([Ts])CCC=C",
+            "product_smiles": "[Ts]N1CCC=C[C@H]1CC[C@@H]2O[Si](C)(C)C=CCC2",
+            "notes": "Intramolecular ring-closing metathesis of a bis-alkene containing a cyclopentene core, a silyloxy group and a tosylamide to form a bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Silyl ether deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "[Ts]N1C[C@H](CCC=C1)C[C@@H]2O[Si](C)(C)CC=CCC2",
+            "product_smiles": "C=CC[C@@H](O)C[C@H]1C=CCCN1[Ts]",
+            "notes": "Deprotection of a cyclic silyl ether to a secondary alcohol and a terminal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@H](O)CC[C@@H]1N([Ts])C=CCC1",
+            "product_smiles": "CCC[C@@H](O)CC[C@@H]1N([Ts])CCCC1",
+            "notes": "Hydrogenation of the exocyclic alkene and the endocyclic alkene in the tetrahydropyridine ring, retaining stereochemistry at both chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Deprotection",
+            "reagents": "Na/Hg, KH2PO4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "CCC[C@H](C[C@H]1CCCCN1[Ts])O",
+            "product_smiles": "CCC[C@H](C[C@H]1CCCCN1)O",
+            "notes": "Reductive cleavage of the tosyl protecting group from a secondary amine (piperidine nitrogen).",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lingzhilactone-b-magauer-2024",
+        "molecule_name": "Lingzhilactone B",
+        "class": "Natural Product",
+        "author": "Magauer",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkylation",
+            "reagents": "NaH",
+            "reagent_smiles": "C=CCCBr",
+            "conditions": "DMF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CC(=O)OC",
+            "product_smiles": "COC(=O)C(CCC=C)C(=O)OC",
+            "notes": "Alkylation of dimethyl malonate with 3-bromoprop-1-ene (allyl bromide).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ozonolysis",
+            "reagents": "MeOH",
+            "reagent_smiles": "[O-]O[O+].CS(C)",
+            "conditions": "-78 °C",
+            "yield": "62% (2 steps)",
+            "reactant_smiles": "C=CCCC(C(=O)OC)C(=O)OC",
+            "product_smiles": "COC(=O)C(CCC=O)C(=O)OC",
+            "notes": "Ozonolysis of a terminal alkene to an aldehyde, followed by reductive workup with dimethyl sulfide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nozaki-Hiyama-Kishi reaction (Barbier-type allyl addition)",
+            "reagents": "NiCl2, CrCl2, DMF",
+            "reagent_smiles": "IC(=C)CO[Bn]",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C(CCC=O)C(=O)OC",
+            "product_smiles": "C=C(CO[Bn])C(CCC(C(=O)OC)C(=O)OC)O",
+            "notes": "Addition of a benzyloxymethylallyl iodide to an aldehyde, forming a new C-C bond and a secondary alcohol.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Hydroiodination",
+                    "reagents": "TMSCl, NaI",
+                    "reagent_smiles": "",
+                    "conditions": "H₂O, MeCN, 0 °C to rt",
+                    "yield": "35%",
+                    "reactant_smiles": "C#CCO",
+                    "product_smiles": "IC(=C)CO",
+                    "notes": "Hydroiodination of a propargyl alcohol to a vinyl iodide, retaining the primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Etherification / Benzylation",
+                    "reagents": "TfOH",
+                    "reagent_smiles": "ClC(Cl)(Cl)C(=N)OCC1=CC=CC=C1",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "51%",
+                    "reactant_smiles": "C=C(CO)I",
+                    "product_smiles": "C=C(COCC1=CC=CC=C1)I",
+                    "notes": "Benzylation of an allyl alcohol using benzyl 2,2,2-trichloroacetimidate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBSCl, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "57% (2 steps)",
+            "reactant_smiles": "C=C(COCC1=CC=CC=C1)C(CCC(C(=O)OC)C(=O)OC)O",
+            "product_smiles": "C=C(COCC1=CC=CC=C1)C(CCC(C(=O)OC)C(=O)OC)[OTBS]",
+            "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular cyclization (possibly based on metathesis/radical type chemistry for the alkene closure and cyclization of diester)",
+            "reagents": "Ti(OtBu)4, CuO, I2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "61%",
+            "reactant_smiles": "COC(=O)C(C(=O)OC)CCC([OTBS])C(=C)CO[Bn]",
+            "product_smiles": "[OTBS][C@@H]1CC[C@]2(C(=O)OC)C(=O)OC[C@@]12CO[Bn]",
+            "notes": "Intramolecular cyclization forming a bicyclic lactone. The reactant's TBS group and the product's stereochemistry for the OTBS group were corrected.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Decarboxylation",
+            "reagents": "LiCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "DMSO, 140 °C",
+            "yield": "87%",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@]2(C(=O)OC)C(=O)OC[C@@]12O[Bn]",
+            "product_smiles": "[TBS]O[C@H]1CC[C@H]2C(=O)OC[C@@]12O[Bn]",
+            "notes": "Decarboxylation of a methyl ester, likely Krapcho decarboxylation conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Debenzylation / Catalytic Hydrogenation",
+            "reagents": "H2, Pd(OH)2/C",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@H]1CC[C@H]2C(=O)OC[C@]21C[OBn]",
+            "product_smiles": "[OTBS][C@H]1CC[C@H]2C(=O)OC[C@]21CO",
+            "notes": "Catalytic hydrogenation removes the benzyl ether protecting group, converting it to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "",
+            "reagent_smiles": "ClC(=O)C(=O)Cl.CS(=O)C.CCN(CC)CC.ClCCl",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@H]2C(=O)OC[C@]21CO",
+            "product_smiles": "[TBS]O[C@H]1CC[C@H]2C(=O)OC[C@]21C=O",
+            "notes": "Primary alcohol oxidized to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetal Formation",
+            "reagents": "DOWEX 50WX4, HC(OMe)3",
+            "reagent_smiles": "C(OC)(OC)OC",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "[OTBS][C@@H]1CC[C@H]2C(=O)O[C@H][C@]21C=O",
+            "product_smiles": "[OTBS][C@@H]1CC[C@H]2C(=O)O[C@H][C@]21C(OC)OC",
+            "notes": "Aldehyde is converted to a dimethyl acetal using trimethyl orthoformate and an acidic resin (DOWEX 50WX4).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "KHMDS",
+            "reagent_smiles": "C=CCI",
+            "conditions": "THF",
+            "yield": "64%",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)O[C@H]1CC[C@@H]2[C@H](C(=O)OC[C@]12C(OC)OC)",
+            "product_smiles": "CC(C)(C)[Si](C)(C)O[C@H]1CC[C@@H]2[C@@](CC=C)(C(=O)OC[C@]12C(OC)OC)",
+            "notes": "Alpha-alkylation of a gamma-lactone with allyl iodide via enolate formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, PPh3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=C[C@H]1CC[C@@H]([OTBS])[C@]2(C(OC)OC)COC(=O)[C@@]12",
+            "product_smiles": "O=C[C@H]1CC[C@@H]([OTBS])[C@]2(C(OC)OC)COC(=O)[C@@]12",
+            "notes": "Ozonolysis of a terminal alkene to an aldehyde with reductive workup.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Pinnick Oxidation",
+            "reagents": "KH2PO4, NaClO2, 2-methyl-2-butene",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH, H2O, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@H]1CC[C@@]2(C[CH]=O)C(=O)O[C@@H](OC)(OC)[C@@]12",
+            "product_smiles": "[OTBS][C@H]1CC[C@@]2(C[C](=O)O)C(=O)O[C@@H](OC)(OC)[C@@]12",
+            "notes": "Oxidation of an aldehyde to a carboxylic acid using sodium chlorite (Pinnick oxidation).",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Esterification (Mizunoe-type)",
+            "reagents": "2,4,6-Trichlorobenzoyl chloride, Et3N, DMAP",
+            "reagent_smiles": "OC1=CC=C(C=C1)O[TBS]",
+            "conditions": "THF",
+            "yield": "97%",
+            "reactant_smiles": "[TBS]O[C@H]1CC[C@@]2(CC(=O)O)C(=O)OC[C@@]12C(OC)OC",
+            "product_smiles": "[TBS]OC1=CC=C(C=C1)OC(=O)C[C@]23CC[C@H]([C@@]3(COC2=O)C(OC)OC)O[TBS]",
+            "notes": "Carboxylic acid of the bicyclic lactone is esterified with 4-(t-butyldimethylsilyl)oxy phenol using a Mizunoe-type esterification reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Photo-Fries rearrangement",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "n-hexane, 254nm",
+            "yield": "50%",
+            "reactant_smiles": "CC(C)(C)[Si](C)(C)OC1=CC=C(C=C1)OC(=O)C2CC[C@@H]([C@@]3(COC2=O)[C@H](OC)OC)O[Si](C)(C)C(C)(C)C",
+            "product_smiles": "O=C(C1=C(O)C=C(C=C1)O[Si](C)(C)C(C)(C)C)C2CC[C@@H]([C@@]3(COC2=O)[C@H](OC)OC)O[Si](C)(C)C(C)(C)C",
+            "notes": "Photo-Fries rearrangement of phenyl ester to ortho-hydroxyaryl ketone, with concurrent deprotection of the aryl silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "HF•Et₃N",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "95%",
+            "reactant_smiles": "[TBS]OC1=CC=C(C(=C1)C(=O)C[C@]23CC[C@@H]([C@@]3(COC2=O)[C@H](OC)OC)O[TBS])O",
+            "product_smiles": "[C@H](OC)OC[C@]12COC(=O)[C@@]2(CC[C@@H]1O)CC(=O)c3c(O)cc(O)c3",
+            "notes": "Deprotection of two TBS ethers to hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "pTsOH",
+            "reagent_smiles": "",
+            "conditions": "acetone, H2O",
+            "yield": "55%",
+            "reactant_smiles": "O=C1OC[C@@]2(C(OC)OC)(CC(=O)c3cc(O)c(O)cc3)C[C@H](O)CC2",
+            "product_smiles": "O=C1OC[C@@]2(C=O)(CC(=O)c3cc(O)c(O)cc3)C[C@H](O)CC2",
+            "notes": "Dimethyl acetal is hydrolyzed to an aldehyde. Stereochemistry of the spiro center and the hydroxyl group is retained.",
+            "substeps": []
+        }
+    ]
+}

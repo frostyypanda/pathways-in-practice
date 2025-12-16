@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "balanol-jacobsen-1997",
+        "molecule_name": "Balanol",
+        "class": "Natural Product",
+        "author": "Jacobsen",
+        "year": 1997
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-Benzylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "BrCc1ccccc1",
+            "conditions": "DMF",
+            "yield": "75%",
+            "reactant_smiles": "C1=C(C(=C(C=C1C(=O)O)O)Br)O",
+            "product_smiles": "O=C(O[Bn])c1cc([OBn])c(Br)c([OBn])c1",
+            "notes": "Benzylation of carboxylic acid and phenolic hydroxyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, 100 °C",
+            "yield": "95%",
+            "reactant_smiles": "C1=CC=C(C=C1)COC2=CC(=CC(=C2Br)OCC3=CC=CC=C3)C(=O)OCC4=CC=CC=C4",
+            "product_smiles": "C1=CC=C(C=C1)COC2=CC(=CC(=C2Br)OCC3=CC=CC=C3)C(=O)O",
+            "notes": "Benzyl ester is hydrolyzed to a carboxylic acid, while benzyl ethers remain intact under these conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Esterification (Carboxylic acid to tert-butyl ester)",
+            "reagents": "CDI, t-BuOH, DBU",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "99%",
+            "reactant_smiles": "O=C(O)C1=CC(O[Bn])=C(Br)C(O[Bn])=C1",
+            "product_smiles": "O=C(OC(C)(C)C)C1=CC(O[Bn])=C(Br)C(O[Bn])=C1",
+            "notes": "Conversion of a benzoic acid to its tert-butyl ester using CDI and t-BuOH.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lithium-halogen exchange, Carboxylation",
+            "reagents": "BuLi, CO₂",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "48%",
+            "reactant_smiles": "CC(C)COC(=O)C1=CC(=C(C(=C1)OCC2=CC=CC=C2)Br)OCC3=CC=CC=C3",
+            "product_smiles": "CC(C)COC(=O)C1=CC(=C(C(=C1)OCC2=CC=CC=C2)C(=O)O)OCC3=CC=CC=C3",
+            "notes": "Carboxylation of an aryl bromide via lithium-halogen exchange to form an aryl carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "DMF",
+            "reagent_smiles": "ClC(=O)C(=O)Cl",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1c(O[Bn])cc(C(=O)OC(C)(C)C)c(O[Bn])c1",
+            "product_smiles": "O=C(Cl)c1c(O[Bn])cc(C(=O)OC(C)(C)C)c(O[Bn])c1",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Esterification",
+            "reagents": "t-BuOK",
+            "reagent_smiles": "Brc1c(O[Bn])ccc(CO)c1",
+            "conditions": "THF",
+            "yield": "81%",
+            "reactant_smiles": "ClC(=O)c1c(O[Bn])cc(C(=O)O[tBu])c(O[Bn])c1",
+            "product_smiles": "O=C(O[tBu])c1c(O[Bn])cc(C(=O)OCc2ccc(Br)c(O[Bn])c2)c(O[Bn])c1",
+            "notes": "Acid chloride reacts with a primary alcohol (after deprotonation by t-BuOK) to form an ester. The yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Anionic Fries rearrangement",
+            "reagents": "THF",
+            "reagent_smiles": "CCCC[Li]",
+            "conditions": "-78 °C",
+            "yield": "51%",
+            "reactant_smiles": "O=C(OC[c]1c(Br)c([OBn])ccc1)c2c([OBn])c([OBn])cc(C(=O)OC(C)(C)C)c2",
+            "product_smiles": "O=C(c1c(CO)c(O)ccc1)c2c([OBn])c([OBn])cc(C(=O)OC(C)(C)C)c2",
+            "notes": "Anionic Fries rearrangement where the ester migrates, the Br is replaced by OH, and an existing BnO is cleaved to form a benzylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "PDC",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "97%",
+            "reactant_smiles": "CC(C)(C)OC(=O)C1=CC(=C(C(=C1)[OBn])C(=O)C2=C(C=CC=C2CO)[OBn])[OBn]",
+            "product_smiles": "CC(C)(C)OC(=O)C1=CC(=C(C(=C1)[OBn])C(=O)C2=C(C=CC=C2C=O)[OBn])[OBn]",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using PDC.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "Bu4NMnO4, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "O=C(OC(C)(C)C)C1=CC(=C(C(=C1)OCC2=CC=CC=C2)C(=O)C3=C(C=CC=C3C=O)OCC4=CC=CC=C4)OCC5=CC=CC=C5",
+            "product_smiles": "O=C(OC(C)(C)C)C1=CC(=C(C(=C1)OCC2=CC=CC=C2)C(=O)C3=C(C=CC=C3C(=O)O)OCC4=CC=CC=C4)OCC5=CC=CC=C5",
+            "notes": "Aldehyde group is oxidized to a carboxylic acid group using tetrabutylammonium permanganate.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Esterification",
+            "reagents": "BnBr, K2CO3",
+            "reagent_smiles": "Br[Bn].[K+].[K+].O=C([O-])[O-]",
+            "conditions": "DMF",
+            "yield": "73%",
+            "reactant_smiles": "O=C(O)c1c(O[Bn])c(C(=O)c2c(O[Bn])c(O[Bn])cc(C(=O)OC(C)(C)C)c2)cc(O[Bn])c1",
+            "product_smiles": "[Bn]OC(=O)c1c(O[Bn])c(C(=O)c2c(O[Bn])c(O[Bn])cc(C(=O)OC(C)(C)C)c2)cc(O[Bn])c1",
+            "notes": "Esterification of a carboxylic acid with benzyl bromide to form a benzyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Thermal Deprotection / Ester Hydrolysis",
+            "reagents": "quinoline",
+            "reagent_smiles": "",
+            "conditions": "205°C",
+            "yield": "68%",
+            "reactant_smiles": "O=C(C1=C([OBn])C=CC=C1[BnO2C])C2=C([OBn])C=C([CO2t-Bu])C=C2[OBn]",
+            "product_smiles": "O=C(C1=C([OBn])C=CC=C1[BnO2C])C2=C([OBn])C=C([CO2H])C=C2[OBn]",
+            "notes": "Thermal deprotection of a tert-butyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "(COCl)2",
+            "reagent_smiles": "O=C(Cl)C(=O)Cl",
+            "conditions": "DMF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)COC2=C(C(=CC=C2)C(=O)OCC3=CC=CC=C3)C(=O)C4=C(C=C(C=C4OCC5=CC=CC=C5)C(=O)O)OCC6=CC=CC=C6",
+            "product_smiles": "C1=CC=C(C=C1)COC2=C(C(=CC=C2)C(=O)OCC3=CC=CC=C3)C(=O)C4=C(C=C(C=C4OCC5=CC=CC=C5)C(=O)Cl)OCC6=CC=CC=C6",
+            "notes": "Carboxylic acid is converted to an acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Esterification",
+            "reagents": "TEA, DMAP",
+            "reagent_smiles": "C1C=CCC([C@@H](O))[C@@H](NC(=O)c2ccc(OCc3ccccc3)cc2)CN(Cc4ccccc4)C1",
+            "conditions": "DCM",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "O=C(Cl)c1c([OBn])cc([OBn])c(C(=O)c2c([OBn])cccc2[BnO2C])c1",
+            "product_smiles": "C1C=CCC([C@@H](OC(=O)c2cc(OCc3ccccc3)cc(C(=O)c4c(OCc5ccccc5)cccc4C(=O)OCc6ccccc6)c2OCc7ccccc7))[C@@H](NC(=O)c8ccc(OCc9ccccc9)cc8)CN(Cc%10ccccc%10)C1",
+            "notes": "Esterification of an acid chloride with a chiral azocine alcohol to form a complex ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection (Hydrogenation/Hydrolysis)",
+            "reagents": "Pd(OH)2/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH/EtOH/DCM",
+            "yield": "33%",
+            "reactant_smiles": "N1(CC2=CC=CC=C2)[C@@H](NC(=O)C3=CC=C(OCC4=CC=CC=C4)C=C3)CCC[C@H](OC(=O)C5=C(OCC6=CC=CC=C6)C=C(C(=O)C7=C(C(=O)OCC8=CC=CC=C8)C=CC(=C7)OCC9=CC=CC=C9)C=C5OCC%10=CC=CC=C%10)C1",
+            "product_smiles": "C1=CC(=C(C(=C1)C(=O)O)C(=O)C2=C(C=C(C=C2O)C(=O)O[C@@H]3CCCNC[C@H]3NC(=O)C4=CC=C(C=C4)O)O)O",
+            "notes": "Global deprotection of benzyl ethers, N-benzyl amine, and benzyl esters via catalytic hydrogenation. Double bond in azepane ring is also saturated.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,206 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lencapavir-sunlenca-gilead-unknown-2024",
+        "molecule_name": "Lencapavir (Sunlenca Gilead)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidative Amidation",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "CC(C)(C)[S@@](=O)N",
+            "conditions": "NMP",
+            "yield": "",
+            "reactant_smiles": "O=Cc1c(Br)cnc(Br)c1",
+            "product_smiles": "CC(C)(C)[S@@](=O)NC(=O)c1c(Br)cnc(Br)c1",
+            "notes": "Oxidative amidation of 2,6-dibromo-3-formylpyridine with (S)-tert-butylsulfinamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Organozinc Addition and Sulfinamide Deprotection",
+            "reagents": "HCl, CMPE",
+            "reagent_smiles": "Br[Zn]CC1=CC(F)=CC(F)=C1",
+            "conditions": "THF, CH3CN",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)[S@](=O)NC(=O)c1c(Br)ccc(Br)n1",
+            "product_smiles": "C1=CC(=NC(=C1Br)[C@H](CC2=CC(=CC(=C2)F)F)N)Br",
+            "notes": "Organozinc reagent addition to a pyridine carboxamide followed by acidic hydrolysis to remove the chiral tert-butyl sulfinamide and yield a primary amine. The stereochemistry at the new chiral center is controlled by the chiral sulfinamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amine protection",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "2-MeTHF, H2O",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=NC(=C1Br)[C@H](CC2=CC(=CC(=C2)F)F)N)Br",
+            "product_smiles": "[Boc]N[C@H](CC1=CC(=CC(=C1)F)F)C2=C(C=CC(=N2)Br)Br",
+            "notes": "Amine protection using di-tert-butyl dicarbonate (Boc2O).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "CuI, Pd(PPh3)2Cl2, TEA",
+            "reagent_smiles": "C#CC(C)(C)S(=O)(=O)C",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC(=CC(=C1)F)F)C2=C(C=CC(=N2)Br)Br",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC(=CC(=C1)F)F)C2=C(C=CC(=N2)C#CC(C)(C)S(=O)(=O)C)Br",
+            "notes": "Regioselective Sonogashira coupling replacing a bromine on the pyridine ring with a tert-butyl methylsulfonyl alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd(dppf)Cl2, Cs2CO3",
+            "reagent_smiles": "CC1(C)C(C)(C)OB(C2=CC=C(C3=C2N(CC(F)(F)F)N=C3N)Cl)O1",
+            "conditions": "dioxane, H2O",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC(=CC(=C1)F)F)C2=C(C=CC(=N2)C#CC(C)(C)S(=O)(=O)C)Br",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC(=CC(=C1)F)F)C2=C(C=CC(=N2)C#CC(C)(C)S(=O)(=O)C)C3=C4C(=C(C=C3)Cl)C(=NN4CC(F)(F)F)N",
+            "notes": "A Suzuki-Miyaura coupling between an aryl bromide (reactant) and a pinacol boronate (reagent) forming a biaryl product. The Boc protecting group, difluorophenyl group, chiral center, and alkyne-sulfone moiety are preserved.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Pyrazole Synthesis",
+                    "reagents": "LHMDS, THF, HCl, dioxane, EtOH",
+                    "reagent_smiles": "CCOC(=O)C(F)(F)F.NNC(=O)OCC",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1C2CC(=O)CC12",
+                    "product_smiles": "CCOC(=O)CN1C2=C(C3CC3C2)C(=N1)C(F)(F)F",
+                    "notes": "Formation of a fused pyrazole ring from a bicyclic ketone, ethyl 2,2,2-trifluoroacetate, and ethyl 2-hydrazinoacetate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "NaClO2, N-hydroxyphthalimide",
+                    "reagent_smiles": "",
+                    "conditions": "CH3CN, H2O",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CN1N=C(C(F)(F)F)C2=C1C3CC3CC2",
+                    "product_smiles": "CCOC(=O)CN1N=C(C(F)(F)F)C2=C1C3CC3C(=O)C2",
+                    "notes": "Oxidation of an sp3 carbon in a bicyclic system to a ketone, catalyzed by N-hydroxyphthalimide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "",
+                    "conditions": "2-Me THF, H2O",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CN1C2=C(C3CC3C2=O)C(=N1)C(F)(F)F",
+                    "product_smiles": "C1C2C1C(=O)C3=C2C(=NN3CC(=O)O)C(F)(F)F",
+                    "notes": "Base-catalyzed hydrolysis of an ethyl ester to a carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Thioketalization / Ketone Protection",
+                    "reagents": "1,2-ethanedithiol, BF3•2AcOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "OC(=O)CN1N=C(C(F)(F)F)C2=C1C3C4C(=O)C2C34",
+                    "product_smiles": "OC(=O)CN1N=C(C(F)(F)F)C2=C1C3C4C(S1CCS1)C2C34",
+                    "notes": "Protection of a ketone as a 1,3-dithiolane using 1,2-ethanedithiol and boron trifluoride diacetic acid complex.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.5",
+                    "reaction_type": "Gem-difluorination",
+                    "reagents": "HF•py",
+                    "reagent_smiles": "O=C1NC(=O)N(Br)C(C)(C)N1Br",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1CSC2(C3CC3C4=C2N(CC(=O)O)N=C4C(F)(F)F)S1",
+                    "product_smiles": "C1C2C1C(C3=C2C(=NN3CC(=O)O)C(F)(F)F)(F)F",
+                    "notes": "Conversion of a spiro 1,3-dithiolane to a gem-difluoride on a complex polycyclic pyrazole derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sulfonylation",
+            "reagents": "MsCl, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC(=CC(=C1)F)F)C2=C(C=CC(=N2)C#CC(C)(C)S(=O)(=O)C)C3=C4C(=C(C=C3)Cl)C(=NN4CC(F)(F)F)N",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC(=CC(=C1)F)F)C2=C(C=CC(=N2)C#CC(C)(C)S(=O)(=O)C)C3=C4C(=C(C=C3)Cl)C(=NN4CC(F)(F)F)N(S(=O)(=O)C)S(=O)(=O)C",
+            "notes": "Bis-sulfonylation of an indazole primary amine using methanesulfonyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](Cc1cc(F)cc(F)c1)c2cc(C#CC(C)(C)S(C)(=O)=O)cnc2-c3c(Cl)ccc4c3C(=NN(CC(F)(F)F))C4S(=O)(=O)N5S(=O)(=O)C45",
+            "product_smiles": "N[C@@H](Cc1cc(F)cc(F)c1)c2cc(C#CC(C)(C)S(C)(=O)=O)cnc2-c3c(Cl)ccc4c3C(=NN(CC(F)(F)F))C4S(=O)(=O)N5S(=O)(=O)C45",
+            "notes": "Deprotection of Boc-protected amine to yield primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "OC(=O)CN1C(=N)C(CF3)=C2C(F)(F)[C@H]3[C@@H]12",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "CC(C)(S(=O)(=O)C)C#CC1=NC(=C(C=C1)C2=C3C(=C(C=C2)Cl)C(=NN3CC(F)(F)F)N(S(=O)(=O)C)S(=O)(=O)C)[C@H](CC4=CC(=CC(=C4)F)F)N",
+            "product_smiles": "CC(C)(S(=O)(=O)C)C#CC1=NC(=C(C=C1)C2=C3C(=C(C=C2)Cl)C(=NN3CC(F)(F)F)N(S(=O)(=O)C)S(=O)(=O)C)[C@H](CC4=CC(=CC(=C4)F)F)NC(=O)CN5C(=N)C(CF3)=C6C(F)(F)[C@H]7[C@@H]56",
+            "notes": "Amide formation between an amine and a carboxylic acid using HATU as coupling reagent.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Heterocycle Formation (Indazole Synthesis)",
+                    "reagents": "N2H4, i-PrOH, H2O",
+                    "reagent_smiles": "NN.CC(C)O.O",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "Brc1c(F)c(C#N)c(Cl)cc1",
+                    "product_smiles": "Brc1cc(Cl)c2c1[nH]nc2N",
+                    "notes": "Intramolecular cyclization of an ortho-fluoro-nitrile with hydrazine to form a substituted indazole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "K3PO4",
+                    "reagent_smiles": "FC(F)(F)CCOS(=O)(=O)C(F)(F)F",
+                    "conditions": "DMF",
+                    "yield": "",
+                    "reactant_smiles": "C1=C(C2=C(C(=C1)Cl)C(=NN2)N)Br",
+                    "product_smiles": "C1=C(C2=C(C(=C1)Cl)C(=NN2CC(F)(F)F)N)Br",
+                    "notes": "The indazole nitrogen is alkylated with 2,2,2-trifluoroethyl trifluoromethanesulfonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Suzuki-Miyaura Borylation",
+                    "reagents": "B2pin2, Pd(PPh3)2Cl2, KOAc",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, PhMe",
+                    "yield": "",
+                    "reactant_smiles": "C1=C(C2=C(C(=C1)Cl)C(=NN2CC(F)(F)F)N)Br",
+                    "product_smiles": "CC1(C)C(C)(C)OB(C2=CC=C(C3=C2N(CC(F)(F)F)N=C3N)Cl)O1",
+                    "notes": "Bromoarene undergoes borylation with bis(pinacolato)diboron catalyzed by Pd(II).",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

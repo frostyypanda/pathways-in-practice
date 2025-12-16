@@ -1,0 +1,315 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "psymberin-floreancig-2011",
+        "molecule_name": "Psymberin",
+        "class": "Natural Product",
+        "author": "Floreancig",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Allene formation / Decarboxylative allene synthesis",
+            "reagents": "DMC, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "90%",
+            "reactant_smiles": "COC(=O)CC(=O)CC(=O)OC",
+            "product_smiles": "COC(=O)C=C=CC(=O)OC",
+            "notes": "Conversion of a β-keto diester to an allene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Diels-Alder / Aromatization / Deprotection",
+            "reagents": "Et3N·HF",
+            "reagent_smiles": "C/C=C(/O[Si](C)(C)C)/C(OCC)=C(/O[Si](C)(C)C)",
+            "conditions": "EtOH",
+            "yield": "70%",
+            "reactant_smiles": "COC(=O)C=C=CC(=O)OC",
+            "product_smiles": "COC(=O)C1=C(O)C(CC(=O)OC)=C(O)C(C)=C1",
+            "notes": "Allene [4+2] cycloaddition with a bis(silyloxy)diene, followed by aromatization and TMS deprotection to form a polysubstituted phenol.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Silyl Enol Ether Formation",
+                    "reagents": "TMSCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCC(=O)CC(=O)OCC",
+                    "product_smiles": "CC/C(=C\\C(=O)OCC)/[OTMS]",
+                    "notes": "Formation of a trimethylsilyl enol ether from an ethyl beta-keto ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Double silylation / Silyl enol ether formation",
+                    "reagents": "LDA, TMSCl",
+                    "reagent_smiles": "Cl[Si](C)(C)C",
+                    "conditions": "",
+                    "yield": "73%",
+                    "reactant_smiles": "CC/C(=C/C(=O)OCC)/[OTMS]",
+                    "product_smiles": "CC/C=C(\\C=C(\\OCC)/[OTMS])/[OTMS]",
+                    "notes": "Alpha,beta-unsaturated ethyl ester is deprotonated by LDA and subsequently silylated with TMSCl at both the original enolizable carbonyl oxygen and an enolizable proton site to form an E,E-bis(trimethylsilyloxy)diene.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Phenol Silyl Ether Formation / Hydroxyl Protection",
+            "reagents": "DCM",
+            "reagent_smiles": "CN(C)c1ccncc1.C[Si](C)(C(C)(C)C)OS(=O)(=O)C(F)(F)F",
+            "conditions": "0 °C",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)CC1=C(C)C(O)=CC(O)=C1C(=O)OC",
+            "product_smiles": "COC(=O)CC1=C(C)C([OTBS])=CC([OTBS])=C1C(=O)OC",
+            "notes": "Two phenolic hydroxyl groups are protected as tert-butyldimethylsilyl (TBS) ethers using TBSOTf and 4-dimethylaminopyridine (DMAP).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Partial Reduction",
+            "reagents": "DIBALH",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1c([OTBS])c(CC(=O)OC)c(C(=O)OC)c([OTBS])c1",
+            "product_smiles": "Cc1c([OTBS])c(CC=O)c(C(=O)OC)c([OTBS])c1",
+            "notes": "Partial reduction of the aliphatic methyl ester to an aldehyde using DIBALH. The aromatic methyl ester and TBS ethers remain unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Asymmetric Allylation",
+            "reagents": "(Z)-Ipc2B(allyl)",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "COC(=O)c1c([OTBS])cc([OTBS])c(C)c1CC=O",
+            "product_smiles": "COC(=O)c1c([OTBS])cc([OTBS])c(C)c1CC[C@@H](O)[C@H](C)C=C",
+            "notes": "Allylation of an aldehyde to form a homoallylic alcohol with two new stereocenters, with stereoselective control.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Silylation",
+            "reagents": "TBSOTf",
+            "reagent_smiles": "CC1=CC=CC(=N1)C",
+            "conditions": "DCM, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C=C[C@H](C)[C@@H](O)CC1=C(C(=O)OC)C([OTBS])=CC(C)=C1[OTBS]",
+            "product_smiles": "C=C[C@H](C)[C@@H]([OTBS])CC1=C(C(=O)OC)C([OTBS])=CC(C)=C1[OTBS]",
+            "notes": "Silylation of a secondary alcohol to a TBS ether using TBSOTf and 2,6-lutidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃, PPh₃",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "93%",
+            "reactant_smiles": "COc(=O)c1c(O[TBS])c(O[TBS])c(O[TBS])c(C)c1C[C@@H](O[TBS])[C@H](C)C=C",
+            "product_smiles": "COc(=O)c1c(O[TBS])c(O[TBS])c(O[TBS])c(C)c1C[C@@H](O[TBS])[C@H](C)C=O",
+            "notes": "Ozonolysis of a terminal alkene using ozone and triphenylphosphine (reductive workup) to yield an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Mukaiyama Aldol Reaction",
+            "reagents": "BF3.OEt2",
+            "reagent_smiles": "C=CC[C@@H](C(C)(C)C(=C)O[TMS])O[TES]",
+            "conditions": "DCM, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "COC(=O)c1c([OTBS])c(C[C@@H]([OTBS])[C@H](C)C=O)c(C)c([OTBS])c1[OTBS]",
+            "product_smiles": "COC(=O)c1c([OTBS])c(C[C@@H]([OTBS])[C@H](C)[C@H](O)CC(=O)C(C)(C)[C@@H]([OTES])CC=C)c(C)c([OTBS])c1[OTBS]",
+            "notes": "Mukaiyama aldol reaction between an aldehyde and a silyl enol ether, forming a new C-C bond, a new hydroxyl group, and a ketone.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Silylation, Enol Silyl Ether Formation",
+                    "reagents": "Et3N, TMSOTf",
+                    "reagent_smiles": "CCN(CC)CC.C[Si](C)(C)OS(=O)(=O)C(F)(F)F",
+                    "conditions": "solvent: Et2O",
+                    "yield": "99%",
+                    "reactant_smiles": "C=CC[C@@H](C(C)(C)C(=O)C)[OTES]",
+                    "product_smiles": "C=CC[C@@H](C(C)(C)C(=C)[TMSO])[OTES]",
+                    "notes": "Formation of a TMS enol silyl ether from a ketone under basic conditions with TMS triflate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4, Et2BOMe",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "74%",
+            "reactant_smiles": "C=CC[C@H]([OTES])C(C)(C)C(=O)C[C@H](O)[C@@H](C)[C@@H](CC1=C(C(=O)OC)C([OTBS])=C(C)C([OTBS])=C1[OTBS])",
+            "product_smiles": "C=CC[C@H]([OTES])C(C)(C)[C@H](O)C[C@H](O)[C@@H](C)[C@@H](CC1=C(C(=O)OC)C([OTBS])=C(C)C([OTBS])=C1[OTBS])",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ozonolysis and Intramolecular Hemiacetal Formation",
+            "reagents": "O3, PPh3",
+            "reagent_smiles": "O=O=O.P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "DCM, -78 °C",
+            "yield": "93%",
+            "reactant_smiles": "C=CC[C@H]([OTES])C(C)(C)[C@@H](O)C[C@@H](O)C[C@H](C)[C@H]([OTBS])CC1=C(C(=CC(=C1C)[OTBS])[OTBS])C(=O)OC",
+            "product_smiles": "O1[C@H](O)CC[C@H]([OTES])C(C)(C)CC1[C@@H](O)C[C@H](C)[C@H]([OTBS])CC2=C(C(=CC(=C2C)[OTBS])[OTBS])C(=O)OC",
+            "notes": "Ozonolysis of terminal alkene to an aldehyde, followed by intramolecular cyclization with an adjacent secondary alcohol to form a six-membered cyclic hemiacetal.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Selective Alcohol Derivatization (Acetylation and Silylation)",
+            "reagents": "Ac2O, Et3N, DMAP, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "71%",
+            "reactant_smiles": "CC[Si](CC)(CC)O[C@@H]1CC(O)C[C@](C)(C)OC1C[C@@H](O[Si](C)(C)C(C)(C)C)[C@H](C)[C@@H](O)Cc2c(C(=O)OC)c(C)c(O[Si](C)(C)C(C)(C)C)cc2O[Si](C)(C)C(C)(C)C",
+            "product_smiles": "CC[Si](CC)(CC)O[C@@H]1CC(OC(=O)C)C[C@](C)(C)OC1C[C@@H](O[Si](C)(C)C(C)(C)C)[C@H](C)[C@@H](O[Si](C)(C)C)Cc2c(C(=O)OC)c(C)c(O[Si](C)(C)C(C)(C)C)cc2O[Si](C)(C)C(C)(C)C",
+            "notes": "Selective acetylation of the alcohol on the tetrahydropyran ring and silylation (TMS) of the alcohol on the aliphatic chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Cyanation",
+            "reagents": "TMSCN, TMSOTf",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 °C",
+            "yield": "88%",
+            "reactant_smiles": "[OTES][C@@H]1CC([OAc])O[C@H](C[C@@H]([C@@H](C)[C@H](CC2=C(C(=CC(=C2C)[OTBS])[OTBS])C(=O)OC)[OTBS])[TMS])C1(C)C",
+            "product_smiles": "[OTES][C@@H]1C[C@@H](C#N)O[C@H](C[C@@H]([C@@H](C)[C@H](CC2=C(C(=CC(=C2C)[OTBS])[OTBS])C(=O)OC)[OTBS])[TMS])C1(C)C",
+            "notes": "Conversion of an acetate group to a nitrile with inversion of stereochemistry at that position. Other protecting groups (OTBS, TMS, OTES) and stereocenters remain unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Imine Formation / Nitrile-Acyl Chloride Coupling",
+            "reagents": "Cp2ZrHCl",
+            "reagent_smiles": "C=C(C)C[C@H](OC)[C@@H](OC(=O)C1=CC=CC=C1)C(=O)Cl",
+            "conditions": "DCM, 0 °C to -78 °C",
+            "yield": "",
+            "reactant_smiles": "CC[Si](CC)(CC)O[C@H]1C[C@@H](C#N)O[C@H](C[C@@H]([C@H](C)[C@@H](CC2=C(C(=CC(=C2C)O[Si](C)(C)C(C)(C)C)O[Si](C)(C)C(C)(C)C)C(=O)OC)O[Si](C)(C)C(C)(C)C)O[Si](C)(C)C)C1(C)C",
+            "product_smiles": "CC[Si](CC)(CC)O[C@H]1C[C@@H](C=NC(=O)[C@@H](OC(=O)C2=CC=CC=C2)[C@H](OC)CC(=C)C)O[C@H](C[C@@H]([C@H](C)[C@@H](CC3=C(C(=CC(=C3C)O[Si](C)(C)C(C)(C)C)O[Si](C)(C)C(C)(C)C)C(=O)OC)O[Si](C)(C)C(C)(C)C)O[Si](C)(C)C)C1(C)C",
+            "notes": "Coupling of nitrile with acyl chloride to form an imine, catalyzed by Cp2ZrHCl. Retains complex stereochemistry and protecting groups.",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Oxidation",
+                    "reagents": "DMP",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=C(C)CCO",
+                    "product_smiles": "C=C(C)CC=O",
+                    "notes": "Primary alcohol oxidation to aldehyde using Dess-Martin Periodinane.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "Aldol Addition",
+                    "reagents": "LiHMDS, THF",
+                    "reagent_smiles": "C[C@@]1(OC)OC(=O)CO[C@@]1(C)OC",
+                    "conditions": "-78 °C",
+                    "yield": "88%",
+                    "reactant_smiles": "C=C(C)CC=O",
+                    "product_smiles": "C[C@@]1(OC)OC(=O)[C@@H]([C@@H](O)CC(=C)C)O[C@@]1(C)OC",
+                    "notes": "Stereoselective aldol addition of enolate from chiral auxiliary to an α,β-unsaturated aldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.3",
+                    "reaction_type": "O-methylation",
+                    "reagents": "proton sponge, Me3OBF4",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, rt",
+                    "yield": "95%",
+                    "reactant_smiles": "C=C(C)C[C@@H](O)C[C@@H]1C(=O)O[C@@](C)(O)[C@]2(C)OC(C)(C)O2C1",
+                    "product_smiles": "C=C(C)C[C@@H](OC)C[C@@H]1C(=O)O[C@@](C)(OC)[C@]2(C)OC(C)(C)O2C1",
+                    "notes": "Methylation of two hydroxyl groups to form methoxy ethers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.4",
+                    "reaction_type": "Acetal Hydrolysis / Deprotection",
+                    "reagents": "CSA",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, rt",
+                    "yield": "88%",
+                    "reactant_smiles": "C=C(C)CC[C@H](OC)C1CC(=O)OC(C)(C)(OC)O1",
+                    "product_smiles": "C=C(C)CC[C@H](OC)[C@@H](O)C(=O)OC",
+                    "notes": "Acetal protecting group of a β-hydroxy ester is hydrolyzed to yield the corresponding β-hydroxy methyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.5",
+                    "reaction_type": "Esterification (Benzoylation)",
+                    "reagents": "BzCl, Et3N, DMAP",
+                    "reagent_smiles": "CCN(CC)CC.O=C(Cl)C1=CC=CC=C1.CN(C)C1=CC=NC=C1",
+                    "conditions": "DCM, 0°C",
+                    "yield": "95%",
+                    "reactant_smiles": "C=C(C)C[C@H]([C@@H](C(=O)OC)O)OC",
+                    "product_smiles": "C=C(C)C[C@H]([C@@H](C(=O)OC)[OBz])OC",
+                    "notes": "Benzoylation of a secondary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.6",
+                    "reaction_type": "Enzymatic Hydrolysis",
+                    "reagents": "Candida antarctica lipase B",
+                    "reagent_smiles": "",
+                    "conditions": "pH 8, heptane, 35 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=C(C)C[C@@H](OC)[C@H]([OBz])C(=O)OC",
+                    "product_smiles": "C=C(C)C[C@@H](OC)[C@H]([OBz])C(=O)O",
+                    "notes": "Enzymatic hydrolysis of a methyl ester to a carboxylic acid, retaining stereochemistry at both chiral centers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.7",
+                    "reaction_type": "Acyl Chloride Formation",
+                    "reagents": "(COCl)2, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, rt",
+                    "yield": "",
+                    "reactant_smiles": "CC(=C)C[C@H]([OBz])[C@H](OC)C(=O)O",
+                    "product_smiles": "CC(=C)C[C@H]([OBz])[C@H](OC)C(=O)Cl",
+                    "notes": "Carboxylic acid is converted to an acyl chloride.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Imine Reduction",
+            "reagents": "Zn(OTf)2, (MeO)3CH",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)C[C@@H]([C@@H](C(=O)N=C([OMe])C1C[C@H](C(C)(C)[C@@H](C[C@@H]([C@@H](C)[C@@H](CC2=C(C(=CC(=C2C)[OTBS])[OTBS])[MeO2C])[OTBS])[TMS])O1)[OTES])[OBz])[OMe]",
+            "product_smiles": "[OTES][C@@H]1C[C@@H](C(NC(=O)[C@H]([C@H](CC(=C)C)[OMe])[OBz])[OMe])O[C@H](C[C@@H]([C@H](C)[C@@H](CC2=C(C(=CC(=C2C)[OTBS])[OTBS])[MeO2C])[OTBS])[TMS])C1(C)C",
+            "notes": "Reduction of an imine to an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection and Oxidation/Lactone Formation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "27%",
+            "reactant_smiles": "C=C(C)C[C@@H](O[Bz])[C@@H](O[OMe])C(=O)N[C@H](O[OMe])[C@H]1O[C@@](C)(C)[C@H](O[TES])C[C@@H]1[C@@H](C)[C@@H](O[TMS])C[C@@H]2c3c(C(=O)O[OMe])c(C)c(O[TBS])c(C[C@@H]2O[TBS])c3",
+            "product_smiles": "C=C(C)C[C@H](O)[C@H](O[OMe])[C@@H](NC(=O)[C@@H](O[OMe])[C@H]1OC(C)(C)[C@@H](O)C[C@@H]1[C@@H](C)[C@@H](O)C[C@H]2C(=O)OC3=C(O)C(=C(C)C=C3O2)O",
+            "notes": "Multiple silyl ether and benzoate protecting group deprotections, methyl ester hydrolysis, and oxidation/lactone formation of the aromatic ring system. The reaction occurs over two steps with an overall yield of 27%.",
+            "substeps": []
+        }
+    ]
+}

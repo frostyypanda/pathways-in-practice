@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "isocorydine-di-2015",
+        "molecule_name": "Isocorydine",
+        "class": "Natural Product",
+        "author": "Di",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "Br2, NaOAc",
+            "reagent_smiles": "BrBr.CC(=O)[O-].[Na+].CC(=O)O",
+            "conditions": "AcOH, rt",
+            "yield": "65%",
+            "reactant_smiles": "COC1=C(C=C(C=C1)C=O)O",
+            "product_smiles": "COC1=C(C(=C(C=C1)C=O)Br)O",
+            "notes": "Bromination of 4-hydroxy-3-methoxybenzaldehyde at the ortho position relative to the hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Williamson Ether Synthesis / O-Alkylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "BrCC1=CC=CC=C1",
+            "conditions": "DMF, rt",
+            "yield": "86%",
+            "reactant_smiles": "COC1=C(C(=C(C=C1)C=O)Br)O",
+            "product_smiles": "COC1=C(C(=C(C=C1)C=O)Br)OCC2=CC=CC=C2",
+            "notes": "Phenolic hydroxyl group is alkylated with benzyl bromide to form a benzyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "90%",
+            "reactant_smiles": "O=Cc1c(Br)c([OBn])c([OMe])cc1",
+            "product_smiles": "OCc1c(Br)c([OBn])c([OMe])cc1",
+            "notes": "Aldehyde group reduced to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Alcohol chlorination",
+            "reagents": "SOCl2, DMF",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "COc1c(OCC2=ccccc2)c(Br)c(CO)cc1",
+            "product_smiles": "COc1c(OCC2=ccccc2)c(Br)c(CCl)cc1",
+            "notes": "Primary alcohol is converted to a primary alkyl chloride using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Substitution (Cyanide Displacement)",
+            "reagents": "KCN, DMF, H2O",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "84%",
+            "reactant_smiles": "COC1=C(C(=C(C=C1)CCl)Br)OCC2=CC=CC=C2",
+            "product_smiles": "COC1=C(C(=C(C=C1)CC#N)Br)OCC2=CC=CC=C2",
+            "notes": "A chloromethyl group on a brominated dimethoxybenzene is replaced by a cyanomethyl group using potassium cyanide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nitrile Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, MeOH, H2O, 100 °C",
+            "yield": "83%",
+            "reactant_smiles": "COC1=C(C(=C(C=C1)CC#N)Br)OCC2=CC=CC=C2",
+            "product_smiles": "COC1=C(C(=C(C=C1)CC(=O)O)Br)OCC2=CC=CC=C2",
+            "notes": "Hydrolysis of a cyanomethyl group to a carboxymethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Formation",
+            "reagents": "N2",
+            "reagent_smiles": "COC1=C(OC)C=CC(CCN)=C1",
+            "conditions": "170 °C",
+            "yield": "89%",
+            "reactant_smiles": "COC1=C(C(=C(C=C1)CC(=O)O)Br)OCC2=CC=CC=C2",
+            "product_smiles": "COC1=C(C(=C(C=C1)CC(=O)NCCC2=CC(OC)=C(OC)C=C2)Br)OCC3=CC=CC=C3",
+            "notes": "Amide formation via direct coupling of a carboxylic acid with a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Bischler-Napieralski cyclization",
+            "reagents": "POCl3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, N2",
+            "yield": "",
+            "reactant_smiles": "O=C(Cc1c(Br)c(OCc2ccccc2)c(OC)cc1)NCCc3ccc(OC)c(OC)c3",
+            "product_smiles": "COC1=CC(OC)=C2C(CC(c3c(Br)c(OCc4ccccc4)c(OC)cc3)=N2)=CC1",
+            "notes": "Amide undergoes cyclodehydration to form an imine (isoquinoline derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Noyori asymmetric reduction",
+            "reagents": "Ru catalyst, HCO2H:Et3N",
+            "reagent_smiles": "O=S(=O)(c1ccc(C(C)C)cc1)N[C@H](c2ccccc2)[C@@H](c3ccccc3)N",
+            "conditions": "DMF, rt",
+            "yield": "80%",
+            "reactant_smiles": "COc1cc(OC)c2c(c1)CCN=C(C2)Cc3ccc(OC)c(Br)c3OCCc4ccccc4",
+            "product_smiles": "COc1cc(OC)c2c(c1)CCN[C@H](Cc3ccc(OC)c(Br)c3OCCc4ccccc4)C2",
+            "notes": "Asymmetric reduction of an imine to a chiral secondary amine using a Ru-catalyst with a (1R,2S)-1,2-diphenylethylenediamine-N-(4-isopropylphenylsulfonyl) ligand (stereochemistry derived strictly from drawing).",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-methylation / Reductive amination",
+            "reagents": "HCHO, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "93%",
+            "reactant_smiles": "COC1=CC=C(C[C@@H]2C3=C(CCN2)C=C(C(=C3)OC)OC)C(=C1OCC4=CC=CC=C4)Br",
+            "product_smiles": "CN1CCC2=CC(=C(C=C2[C@@H]1CC3=CC=C(C(=C3Br)OCC4=CC=CC=C4)OC)OC)OC",
+            "notes": "N-methylation of a secondary amine using formaldehyde and sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Heck Reaction",
+            "reagents": "Pd(OAc)2, K2CO3, PPh3",
+            "reagent_smiles": "",
+            "conditions": "DMA, 175 °C",
+            "yield": "50%",
+            "reactant_smiles": "CN1CCC2=C([OMe])C([OMe])=C(C=C2[C@H]1CC3=CC=C(C(=C3Br)[OBn])[OMe])",
+            "product_smiles": "CN1CCC2=C([OMe])C([OMe])=C(C3=C2[C@H]1CC4=C3C(=C(C=C4)[OMe])[OBn])",
+            "notes": "Intramolecular Heck reaction to form the aporphine core via C-C bond formation. The stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Debenzylation (Hydrogenolysis)",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "86%",
+            "reactant_smiles": "CN1CCC2=CC(=C(C3=C2[C@H]1CC4=C3C(=C(C=C4)OC)OCC5=CC=CC=C5)OC)OC",
+            "product_smiles": "CN1CCC2=CC(=C(C3=C2[C@H]1CC4=C3C(=C(C=C4)OC)O)OC)OC",
+            "notes": "Hydrogenolysis of a benzyl ether to a hydroxyl group, retaining stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

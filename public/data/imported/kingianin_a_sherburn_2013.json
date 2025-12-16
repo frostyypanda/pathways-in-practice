@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "kingianin-a-sherburn-2013",
+        "molecule_name": "Kingianin A",
+        "class": "Natural Product",
+        "author": "Sherburn",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alkyne bromination",
+            "reagents": "NBS, AgNO3",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "87%",
+            "reactant_smiles": "C#CCCO",
+            "product_smiles": "BrC#CCCOH",
+            "notes": "Terminal alkyne is selectively brominated using NBS and silver nitrate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkyne Coupling (Diyne Formation)",
+            "reagents": "CuI, piperidine",
+            "reagent_smiles": "[TMS]C#CH",
+            "conditions": "0 °C",
+            "yield": "89%",
+            "reactant_smiles": "BrC#CCCO",
+            "product_smiles": "[TMS]C#CC#CCCO",
+            "notes": "Copper-catalyzed coupling of a bromoalkyne with trimethylsilylacetylene to form a protected diyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "86%",
+            "reactant_smiles": "[TMS]C#CC#CCO",
+            "product_smiles": "[TMS]C#CC#CCO[TBS]",
+            "notes": "Protection of a primary alcohol with TBSCl to form a TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Alkyne Coupling",
+            "reagents": "CuCl, dry air",
+            "reagent_smiles": "C[Si](C)(C)C#CCC1=CC2=C(OCO2)C=C1",
+            "conditions": "DMF, 60 °C",
+            "yield": "40%",
+            "reactant_smiles": "C[Si](C)(C)C#CC#CCOS[Si](C)(C)C(C)(C)C",
+            "product_smiles": "O1COC2=C1C=CC(=C2)CC#CC#CC#CC#CCOS[Si](C)(C)C(C)(C)C",
+            "notes": "Oxidative coupling of a TMS-protected di-yne with a TMS-protected terminal alkyne to form a tetra-yne.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Alcohol to Alkyl Bromide (Substitution)",
+                    "reagents": "PBr3, Et2O",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "96%",
+                    "reactant_smiles": "C1=CC2=C(C=C1CO)OCO2",
+                    "product_smiles": "C1=CC2=C(C=C1CBr)OCO2",
+                    "notes": "Conversion of a primary alcohol to a primary bromide using PBr3.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Negishi Coupling",
+                    "reagents": "MeLi·LiBr, ZnCl2, PdCl2(dppf), THF",
+                    "reagent_smiles": "[TMS]C#CC#C[TMS]",
+                    "conditions": "66 °C",
+                    "yield": "84%",
+                    "reactant_smiles": "BrCc1ccc2c(c1)OCO2",
+                    "product_smiles": "[TMS]C#CC#CCc1ccc2c(c1)OCO2",
+                    "notes": "Replacement of benzylic bromide with a silylated butadiyne using a palladium-catalyzed cross-coupling.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Macrocyclization",
+            "reagents": "Rieke Zn",
+            "reagent_smiles": "[Zn]",
+            "conditions": "THF, EtOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]OCH2CH2C#CC#CC#CC#CC#CCC1=CC=C2C(=C1)OCO2",
+            "product_smiles": "C1(C2=CC=C3C(=C2)OCO3)/C=C\\C/C=C\\C/C=C\\C/C=C\\C/C=C\\CC(CO[TBS])C1",
+            "notes": "Rieke Zn mediated reductive macrocyclization of a polyyne to form a 13-membered macrocyclic polyene with all-cis double bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Diels-Alder Reaction",
+            "reagents": "Toluene",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS]CC/C=C\\C=C\\C=C\\C=C\\CC1=CC=C2C(=C1)OCO2",
+            "product_smiles": "[OTBS]CC[C@@H]1[C@H]2C=CCC[C@H]2[C@H]1CC3=CC=C4C(=C3)OCO4",
+            "notes": "Intramolecular Diels-Alder reaction of a conjugated tetraene, forming a bicyclo[4.2.0]octane derivative (Kingianin A).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection (TBS ether hydrolysis)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "10%",
+            "reactant_smiles": "[OTBS]CC[C@H]1[C@H](CC2=CC=C3C(=C2)OCO3)[C@@H]4C=CC=C[C@H]14",
+            "product_smiles": "OCCC[C@H]1[C@H](CC2=CC=C3C(=C2)OCO3)[C@@H]4C=CC=C[C@H]14",
+            "notes": "Deprotection of a TBS ether to a primary alcohol. The product is Kingianin A. The 10% yield is for 3 steps, of which this is one step.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "TPAP, NMO, H2O",
+            "reagent_smiles": "",
+            "conditions": "CH3CN",
+            "yield": "",
+            "reactant_smiles": "C1=C[C@H]2[C@H](C=C1)[C@H](CC3=CC=C4C(=C3)OCO4)[C@H]2CCO",
+            "product_smiles": "C1=C[C@H]2[C@H](C=C1)[C@H](CC(=O)O)[C@H]2CC3=CC=C4C(=C3)OCO4",
+            "notes": "Oxidation of a primary alcohol to a carboxylic acid using TPAP/NMO.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Dimerization / Cascade Cyclization",
+            "reagents": "(p-BrC6H4)3N.SbCl6",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)C[C@@H]1[C@H](CC2=CC3=C(OCO3)C=C2)[C@@H]4C=CC[C@@H]14",
+            "product_smiles": "O=C(O)C[C@@H]1[C@@H]2C[C@@H](C=C3[C@@H]2[C@@H]4[C@@H]5C[C@H](C=C(CC6=CC7=C(OCO7)C=C6)[C@@H]5C3)[C@@H]4C=C1)CC(O)=O",
+            "notes": "The reactant undergoes an oxidative dimerization and cascade cyclization to form a complex polycyclic structure, Kingianin A.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EtNH2, HOBt, EDC.HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 40 °C",
+            "yield": "11%",
+            "reactant_smiles": "C1=C(C[C@@H]2[C@@H](CC(=O)O)[C@@H]3[C@H]4C=C[C@@H]([C@@H]5C=C[C@@H]6[C@@H](CC7=CC=C8C(=C7)OCO8)[C@H](CC(=O)O)[C@@H]6[C@]543)[C@@H]23)C=C9C(=C1)OCO9",
+            "product_smiles": "CCNC(=O)C[C@@H]1[C@@H](CC2=CC=C3C(=C2)OCO3)[C@@H]4[C@H]1[C@@H]5C=C[C@@H]4[C@@H]6C=C[C@@H]7[C@@H](CC8=CC=C9C(=C8)OCO9)[C@H](CC(=O)NCC)[C@]7[C@@H]65",
+            "notes": "Double amidation of dicarboxylic acid using ethylamine and amide coupling reagents (HOBt, EDC.HCl). The reaction is 11% yield over 3 steps.",
+            "substeps": []
+        }
+    ]
+}

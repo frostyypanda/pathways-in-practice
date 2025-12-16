@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "furmonertinib-ivesa-allistpharma-unknown-2024",
+        "molecule_name": "Furmonertinib (Ivesa AllistPharma)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "NaH",
+            "reagent_smiles": "FC(F)(F)CCO",
+            "conditions": "PhMe",
+            "yield": "",
+            "reactant_smiles": "Clc1ncc(Cl)c(N(=O)=O)c1",
+            "product_smiles": "FC(F)(F)COCc1ncc(Cl)c(N(=O)=O)c1",
+            "notes": "SNAr reaction where 2,6-dichloro-3-nitropyridine reacts with 2,2,2-trifluoroethanol (deprotonated by NaH) to replace the chlorine at position 2 with a 2,2,2-trifluoroethoxy group. The chlorine at position 6 remains.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitro Reduction",
+            "reagents": "Na2S2O6, HCl",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O, aq.",
+            "yield": "",
+            "reactant_smiles": "FC(F)(F)COc1nc(Cl)ccc1[N+](=O)[O-]",
+            "product_smiles": "FC(F)(F)COc1nc(Cl)ccc1N",
+            "notes": "Reduction of a nitro group to an amine on a pyridine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidation / Acylation",
+            "reagents": "TFAA, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "NC1=CC=C(Cl)N=C1OCC(F)(F)F",
+            "product_smiles": "FC(F)(F)C(=O)NC1=CC=C(Cl)N=C1OCC(F)(F)F",
+            "notes": "Amidation of the primary amine with trifluoroacetic anhydride (TFAA) in the presence of DIPEA as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nitration",
+            "reagents": "H2SO4, KNO3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "FC(F)(F)C(=O)Nc1cc(Cl)c(OCC(F)(F)F)nc1",
+            "product_smiles": "FC(F)(F)C(=O)Nc1c([N+](=O)[O-])cc(Cl)c(OCC(F)(F)F)nc1",
+            "notes": "Electrophilic nitration of the pyridine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (Amide Hydrolysis)",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C1=C(C(=NC(=C1[N+](=O)[O-])Cl)OCC(F)(F)F)NC(=O)C(F)(F)F",
+            "product_smiles": "C1=C(C(=NC(=C1[N+](=O)[O-])Cl)OCC(F)(F)F)N",
+            "notes": "Deprotection of a trifluoroacetamide group to a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amination (SNAr)",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "CN1C=C(C2=C1C=CC=C2)C3=CC=NC(=N3)Cl",
+            "conditions": "PhMe",
+            "yield": "",
+            "reactant_smiles": "C1=C(C(=NC(=C1[N+](=O)[O-])Cl)OCC(F)(F)F)N",
+            "product_smiles": "CN1C=C(C2=C1C=CC=C2)C3=CC=NC(=N3)NC4=CC(=C(Cl)N=C4OCC(F)(F)F)[N+](=O)[O-]",
+            "notes": "Nucleophilic aromatic substitution of the chloro-pyrimidine with the pyridine amine.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Friedel-Crafts Alkylation/Acylation (or similar electrophilic aromatic substitution)",
+                    "reagents": "AlCl3",
+                    "reagent_smiles": "Clc1ncc(Cl)n1.Cl[Al](Cl)Cl",
+                    "conditions": "DCE",
+                    "yield": "71%",
+                    "reactant_smiles": "CN1C=CC2=C1C=CC=C2",
+                    "product_smiles": "CN1C=C(c2cccc3c2n(C)cc3)c4cnc(Cl)nc4",
+                    "notes": "1-methyl-1H-indole undergoes electrophilic aromatic substitution at the 3-position with 2,4-dichloropyrimidine, resulting in the formation of 1-methyl-3-(2-chloropyrimidin-4-yl)-1H-indole.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr) with subsequent N-methylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CNCCN(C)C",
+            "conditions": "DMF",
+            "yield": "77% (2 steps)",
+            "reactant_smiles": "CN1C=C(C2=C1C=CC=C2)c3cncc(NC4=CC(Cl)=C([N+](=O)[O-])C(=N4)OCC(F)(F)F)n3",
+            "product_smiles": "CN1C=C(C2=C1C=CC=C2)c3cncc(NC4=CC(N(C)CCN(C)C)=C([N+](=O)[O-])C(=N4)OCC(F)(F)F)n3",
+            "notes": "The reaction is a nucleophilic aromatic substitution (SNAr) where the chlorine atom on the pyridine ring of the reactant is replaced. The drawn reagent is N,N-dimethylethylenediamine (HN-CH2-CH2-N(CH3)2), but the product shows an N-methylated version of this amine attached to the pyridine ring (-N(CH3)-CH2-CH2-N(CH3)2). This N-methylation is likely the second step implied by '77% (2 steps)'.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nitro Reduction",
+            "reagents": "Na2S2O6, HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "94%",
+            "reactant_smiles": "CN1C=C(C2=CC=CC=C21)C3=NC=CC(=N3)NC4=C([N+](=O)[O-])C(=NC(OCC(F)(F)F)=N4)N(C)C",
+            "product_smiles": "CN1C=C(C2=CC=CC=C21)C3=NC=CC(=N3)NC4=C(N)C(=NC(OCC(F)(F)F)=N4)N(C)C",
+            "notes": "Reduction of a nitro group to an amine group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Amidation",
+            "reagents": "TEA, DCM",
+            "reagent_smiles": "O=C(Cl)CCCl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "Cn1c(C=CC=C1)C2=CN=C(NC3=C(N)C(=CN=C3OCC(F)(F)F)N(C)CN(C)C)N=C2",
+            "product_smiles": "Cn1c(C=CC=C1)C2=CN=C(NC3=C(NC(=O)CCCl)C(=CN=C3OCC(F)(F)F)N(C)CN(C)C)N=C2",
+            "notes": "Amidation of the primary amine group on the pyrimidine ring with 3-chloropropionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dehydrohalogenation",
+            "reagents": "TEA",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "93%",
+            "reactant_smiles": "CN1C=C(C2=CC=CC=C21)C3=CC(=NC(=N3)NC4=C(NC(=O)CCCl)C=C(N(C)C)C(=N4)OCC(F)(F)F)",
+            "product_smiles": "CN1C=C(C2=CC=CC=C21)C3=CC(=NC(=N3)NC4=C(NC(=O)C=C)C=C(N(C)C)C(=N4)OCC(F)(F)F)",
+            "notes": "Dehydrohalogenation of a β-chloroamide to form an acrylamide derivative (Furmonertinib).",
+            "substeps": []
+        }
+    ]
+}

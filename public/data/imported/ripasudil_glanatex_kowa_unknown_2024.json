@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ripasudil-glanatex-kowa-unknown-2024",
+        "molecule_name": "Ripasudil (Glanatex Kowa)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Sulfonylation",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "ClS(=O)(=O)c1ccc([N+](=O)[O-])cc1",
+            "conditions": "THF, rt",
+            "yield": "82%",
+            "reactant_smiles": "C[C@@H](CO)N",
+            "product_smiles": "C[C@@H](CO)N[Ns]",
+            "notes": "N-Sulfonylation of a primary amine with nosyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, NMM",
+            "reagent_smiles": "CS(=O)(=O)Cl.CN1CCOCC1",
+            "conditions": "0 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "C[C@@H](CO)N[Ns]",
+            "product_smiles": "C[C@@H](COS(=O)(=O)C)N[Ns]",
+            "notes": "Primary alcohol is converted to a mesylate using methanesulfonyl chloride and N-methylmorpholine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular Cyclization / Nucleophilic Substitution",
+            "reagents": "K2CO3, 3-aminopropanol",
+            "reagent_smiles": "NCCCO",
+            "conditions": "MeCN, 70 °C",
+            "yield": "",
+            "reactant_smiles": "[OMs]C[C@H](C)N[Ns]",
+            "product_smiles": "OC1CN(CC[NH]1)CC[C@H](C)N[Ns]",
+            "notes": "Nucleophilic substitution of mesylate by 3-aminopropanol, followed by intramolecular cyclization to form a 2-hydroxypiperazine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amine protection",
+            "reagents": "(Boc)₂O",
+            "reagent_smiles": "O=C(OC(C)(C)C)OC(=O)OC(C)(C)C",
+            "conditions": "rt",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "OCC1OCC(N[C@@H](C)NS(=O)(=O)c2ccc([N+](=O)[O-])cc2)NC1",
+            "product_smiles": "OCC1OCC(N[C@@H](C)NS(=O)(=O)c2ccc([N+](=O)[O-])cc2)N([Boc])C1",
+            "notes": "N-Boc protection of the secondary amine in the morpholine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "PPh3, DIAD",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3.CC(C)OC(=O)N=NC(=O)OC(C)C",
+            "conditions": "THF, 5°C to rt",
+            "yield": "75%",
+            "reactant_smiles": "OCCC[N]([Boc])C[C@@H](C)N[Ns]",
+            "product_smiles": "C[C@@H]1CN([Boc])CCC[N]1[Ns]",
+            "notes": "Mitsunobu reaction to form a 7-membered cyclic amine by intramolecular cyclization of an alcohol with a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nosyl deprotection",
+            "reagents": "K2CO3",
+            "reagent_smiles": "c1ccccc1S",
+            "conditions": "20°C",
+            "yield": "86%",
+            "reactant_smiles": "C[C@H]1CN([Ns])CCCN1[Boc]",
+            "product_smiles": "C[C@H]1CN(CCCN1)[Boc]",
+            "notes": "Deprotection of an N-Nosyl protected amine using thiophenol and potassium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Sulfonylation",
+            "reagents": "TEA",
+            "reagent_smiles": "C1=CC2=C(C(=C1)S(=O)(=O)Cl)C(=CN=C2)F",
+            "conditions": "MeCN, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H]1CN(CCCN1)[Boc]",
+            "product_smiles": "C[C@H]1CN(CCCN1S(=O)(=O)C2=CC=CC3=C2C(=CN=C3)F)[Boc]",
+            "notes": "Sulfonylation of a secondary amine with a quinolinesulfonyl chloride fluoride reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N1CC[C@@H](C)CN(S(=O)(=O)c2c(F)ccc3nccc(c23))CC1",
+            "product_smiles": "N1CC[C@@H](C)CN(S(=O)(=O)c2c(F)ccc3nccc(c23))CC1",
+            "notes": "Boc deprotection of a 1,5-diazepane using HCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Salt Formation / Protonation",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "EtOH, acetone, 80 °C to rt",
+            "yield": "83%",
+            "reactant_smiles": "C[C@H]1CNCCCN1S(=O)(=O)C2=CC=CC3=C2C(=CN=C3)F",
+            "product_smiles": "C[C@H]1CNCCCN1S(=O)(=O)C2=CC=CC3=C2C(=CN=C3)F",
+            "notes": "Formation of Ripasudil HCl salt. The drawn structure represents the neutral base.",
+            "substeps": []
+        }
+    ]
+}

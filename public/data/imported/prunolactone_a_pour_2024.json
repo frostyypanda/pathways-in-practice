@@ -1,0 +1,230 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "prunolactone-a-pour-2024",
+        "molecule_name": "Prunolactone A",
+        "class": "Natural Product",
+        "author": "Pour",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "ClS(=O)Cl.CO",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "C1C=C(C(=O)O)[C@@H](O)[C@H](O)[C@H]1O",
+            "product_smiles": "C1C=C(C(=O)OC)[C@@H](O)[C@H](O)[C@H]1O",
+            "notes": "Esterification of (-)-Shikimic Acid to its methyl ester using thionyl chloride and methanol, with retention of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acetal formation (diol protection)",
+            "reagents": "CSA",
+            "reagent_smiles": "CC(C)(OC)OC",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)C1=CC[C@H](O)[C@@H](O)[C@H](O)C1",
+            "product_smiles": "CC1(C)O[C@@H]2C=C(C[C@H]([C@@H]2O1)O)C(=O)OC",
+            "notes": "Selective protection of two hydroxyl groups as an isopropylidene acetal, leaving one hydroxyl group free. The acetal forms between the 1,2-diol from the C5 and C6 positions of the starting material.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "O-H Insertion / Carbene Chemistry",
+            "reagents": "Rh2(OAc)4",
+            "reagent_smiles": "[N-]=[N+]=C(C(=O)OC)C(=O)OC",
+            "conditions": "PhMe, reflux",
+            "yield": "65%",
+            "reactant_smiles": "CC1(C)O[C@@H]2C=C(C[C@@H]([C@H]2O1)O)C(=O)OC",
+            "product_smiles": "CC1(C)O[C@@H]2C=C(C[C@@H]([C@H]2O1)OC(C(=O)OC)C(=O)OC)C(=O)OC",
+            "notes": "Rhodium-catalyzed O-H insertion of dimethyl diazomalonate into a secondary alcohol to form an ether.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Diazo Transfer",
+                    "reagents": "Et3N",
+                    "reagent_smiles": "CC(=O)NC1=CC=C(C=C1)S(=O)(=O)N=[N+]=[N-]",
+                    "conditions": "MeCN",
+                    "yield": "93%",
+                    "reactant_smiles": "COC(=O)CC(=O)OC",
+                    "product_smiles": "COC(=O)C(=[N+]=[N-])C(=O)OC",
+                    "notes": "Formation of a diazo compound from an active methylene group using a sulfonyl azide reagent and a base.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Electrophilic alpha-amination / Alkylation",
+            "reagents": "Et3N, CH2Cl2",
+            "reagent_smiles": "C#[N+]C",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "CC1(C)O[C@@H]2C=C(C[C@@H]([C@@H]2O1)OC(C(=O)OC)C(=O)OC)C(=O)OC",
+            "product_smiles": "CC1(C)O[C@@H]2C=C(C[C@@H]([C@@H]2O1)OC(C(=O)OC)(C(=O)OC)[CH2]N)C(=O)OC",
+            "notes": "Addition of an aminomethyl group to the alpha-carbon of the malonate, likely via a nitrilium ion intermediate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination (Decarboxylative elimination)",
+            "reagents": "Mel",
+            "reagent_smiles": "",
+            "conditions": "MeCN, reflux",
+            "yield": "97%",
+            "reactant_smiles": "CC1(C)O[C@@H]2C=C(C[C@H]([C@@H]2O1)OC(C[NH2])(C(=O)OC)C(=O)OC)C(=O)OC",
+            "product_smiles": "CC1(C)O[C@@H]2C=C(C[C@H]([C@@H]2O1)OC(=C)C(=O)OC)C(=O)OC",
+            "notes": "Decarboxylative elimination of an alpha-amino-alpha,alpha-diester to an alpha,beta-unsaturated ester. Involves the loss of one CO2Me group and the amino group, likely via N-alkylation by Mel.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetonide Hydrolysis / Deprotection",
+            "reagents": "AcOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "87%",
+            "reactant_smiles": "C=C(C(=O)OC)O[C@@H]1CC(=C[C@H]2[C@H]1OC(C)(C)O2)C(=O)OC",
+            "product_smiles": "C=C(C(=O)OC)O[C@@H]1CC(=C[C@H](O)[C@H]1O)C(=O)OC",
+            "notes": "Hydrolysis of the acetonide protecting group to reveal the diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lactonization / Intramolecular Transesterification",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "93%",
+            "reactant_smiles": "C=C(C(=O)OC)O[C@H]1CC(=C[C@@H]([C@H]1O)O)C(=O)OC",
+            "product_smiles": "COC(=O)C1=CC[C@H](O)[C@H]2OC(=O)C(=C)O[C@H]12",
+            "notes": "Intramolecular lactonization of a diol-acrylate ester, catalyzed by base, to form a fused lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Mitsunobu Reaction",
+            "reagents": "THF",
+            "reagent_smiles": "O=C(O)c1ccccc1.CCOC(=O)N=NOC(=O)OCC.P(c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "0 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "C=C1C(=O)O[C@@H]2[C@@H](C=C(C[C@H]2O1)C(=O)OC)O",
+            "product_smiles": "C=C1C(=O)O[C@@H]2[C@H](CC(=C[C@@H]2[OBz])C(=O)OC)O1",
+            "notes": "Stereospecific conversion of secondary alcohol to benzoate ester via Mitsunobu reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Base-catalyzed Hydrolysis / Methanolysis",
+            "reagents": "Na2CO3, MeOH",
+            "reagent_smiles": "[Na+].[Na+].[O-]C([O-])=O.CO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C=C1CC[C@@H]([OBz])[C@H]2OC(=O)OC=C12",
+            "product_smiles": "C=C(C(=O)OC)O[C@@H]1CC(=C[C@@H]([C@@H]1O)O)C(=O)OC",
+            "notes": "Deprotection of benzoate ester to alcohol and ring-opening of cyclic carbonate by methanolysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Conjugate Addition and Lactonization",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 50 °C",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "C=C(C(=O)OC)O[C@@H]1CC(=C(C(=O)OC)[C@@H](O)[C@H](O)1)",
+            "product_smiles": "COC(=O)C1=C[C@@H](O)[C@@H]2OC(=O)C(=C)CC21",
+            "notes": "Intramolecular cyclization likely involving Michael addition of a hydroxyl group to the alkene, followed by lactonization.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intermolecular Michael Addition / Cascade Cyclization",
+            "reagents": "Et3N",
+            "reagent_smiles": "CC1=C(O)C2=C(C(O)=C1)C(=O)O[C@H](C[I])C2=O",
+            "conditions": "THF, 50 °C",
+            "yield": "59%",
+            "reactant_smiles": "C=C1C(=O)O[C@@H](C2=CC(C(=O)OC)C[C@H](O)C2)O1",
+            "product_smiles": "COC(=O)C1=CC[C@H](O)[C@@H]2OC(=O)[C@@]3(CC(=O)O[C@@H]2)CCC4=C(O)C(C)=C(O)C5=C4OC3=O)C5=O",
+            "notes": "Cascade reaction involving a Michael addition, cyclization, and deiodination to form a complex polycyclic product (Prunolactone A). The exocyclic alkene of the lactone reacts with the iodomethyl group of the naphthoquinone derivative.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Directed ortho metalation, Electrophilic Iodination",
+                    "reagents": "nBuLi, diiodoethane, THF",
+                    "reagent_smiles": "CNCCN(C)C",
+                    "conditions": "0 to -20 °C, then -40 °C",
+                    "yield": "57%",
+                    "reactant_smiles": "Cc1c(OC)cc(OC)c(C=O)c1",
+                    "product_smiles": "Cc1c(OC)c(I)c(OC)c(C=O)c1",
+                    "notes": "Benzaldehyde derivative undergoes directed ortho metalation with nBuLi/diamine, followed by iodination with diiodoethane at the ortho position relative to the aldehyde and para to an existing methoxy group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "NaH2PO4, NaClO2, H2O2",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, H2O",
+                    "yield": "91%",
+                    "reactant_smiles": "O=Cc1c(OC)c(C)c(OC)c(I)c1",
+                    "product_smiles": "O=C(O)c1c(OC)c(C)c(OC)c(I)c1",
+                    "notes": "Oxidation of an aldehyde to a carboxylic acid (Pinnick oxidation).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Esterification",
+                    "reagents": "MeI, K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 90 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "CC1=C(OC)C(C(=O)O)=C(I)C=C1OC",
+                    "product_smiles": "COC(=O)C1=C(OC)C(C)=C(OC)C=C1I",
+                    "notes": "Methylation of a carboxylic acid to its methyl ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Stille coupling, Lactonization",
+                    "reagents": "Pd black, LiCl",
+                    "reagent_smiles": "OC/C=C(\\Sn(CCCC)(CCCC)CCCC)/CO",
+                    "conditions": "DMF, 90 °C",
+                    "yield": "52%",
+                    "reactant_smiles": "COC(=O)c1c(OC)c(C)cc(I)c1OC",
+                    "product_smiles": "COc1c(C)c(OC)cc2c1C(=O)OC(CO)C2=C",
+                    "notes": "Stille coupling of an aryl iodide with a vinyl stannane, followed by intramolecular lactonization.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.5",
+                    "reaction_type": "Demethylation",
+                    "reagents": "BBr3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, -78 °C to rt",
+                    "yield": "74%",
+                    "reactant_smiles": "C=C1C2=C(C(=C(C)C(=C2)OC)OC)C(=O)OC1CO",
+                    "product_smiles": "C=C1C2=C(C(=C(C)C(=C2)O)O)C(=O)OC1CO",
+                    "notes": "Demethylation of two aryl methyl ethers to phenols using boron tribromide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.6",
+                    "reaction_type": "Appel Reaction (Iodination)",
+                    "reagents": "I2, PPh3, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, MeCN",
+                    "yield": "81%",
+                    "reactant_smiles": "C=C1C2=C(C(=C(C)C(=C2)O)O)C(=O)OC1CO",
+                    "product_smiles": "C=C1C2=C(C(=C(C)C(=C2)O)O)C(=O)OC1CI",
+                    "notes": "Conversion of a primary alcohol (hydroxymethyl group) to an alkyl iodide (iodomethyl group).",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

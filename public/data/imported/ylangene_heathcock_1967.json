@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ylangene-heathcock-1967",
+        "molecule_name": "Ylangene",
+        "class": "Natural Product",
+        "author": "Heathcock",
+        "year": 1967
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CCC(=O)C=C2C(=O)CCC1",
+            "product_smiles": "C[C@@]12CCC(=O)C=C2[C@@H](O)CCC1",
+            "notes": "Selective reduction of the ketone in the saturated ring to an alcohol using sodium borohydride, leaving the alpha,beta-unsaturated ketone intact. Stereochemistry of methyl and newly formed hydroxyl are cis (both wedges).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-Sulfonylation",
+            "reagents": "TsCl, pyridine",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)Cl)cc1.c1ccncc1",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CCC(=O)C=C2CCC[C@@H]1O",
+            "product_smiles": "C[C@@]12CCC(=O)C=C2CCC[C@@H]1[OTs]",
+            "notes": "Formation of a tosylate from an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrogenation / Reduction",
+            "reagents": "H2, Pd-SrCO3",
+            "reagent_smiles": "CCOC(=O)C",
+            "conditions": "EtOAc",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CCC(=O)C=C2CCC[C@@H]1[OTs]",
+            "product_smiles": "C[C@@]12CCC(=O)C[C@H]2CCC[C@@H]1[OTs]",
+            "notes": "Stereoselective reduction of an alpha,beta-unsaturated ketone to a saturated ketone. The double bond is reduced, forming a new chiral center where hydrogen adds from the bottom face.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Elimination",
+            "reagents": "pyridine",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "92%",
+            "reactant_smiles": "C[C@@]12CCC(=O)C[C@H]2CCC[C@@H]1O[Ts]",
+            "product_smiles": "C[C@@]12CC(=O)CC[C@H]2CC=CC1",
+            "notes": "Base-mediated elimination of a tosylate to form an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Bromination",
+            "reagents": "NBS, BnOH",
+            "reagent_smiles": "",
+            "conditions": "53 °C",
+            "yield": "45%",
+            "reactant_smiles": "C[C@@]12CCC=CC[C@H]2CC(=O)CC1",
+            "product_smiles": "C[C@@]1[C@@H](Br)C[C@H](OCC3=CC=CC=C3)C[C@H]2CC(=O)CC1",
+            "notes": "Bromination of the alkene with NBS in benzyl alcohol, resulting in the addition of a bromine atom and a benzyloxy group across the double bond with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Alkylation / Cyclopropanation",
+            "reagents": "NaH",
+            "reagent_smiles": "",
+            "conditions": "DMSO, 75 °C",
+            "yield": "96%",
+            "reactant_smiles": "C[C@]12CCC(=O)C[C@@H]2CC[C@H](Br)[C@@H]1OCC3=CC=CC=C3",
+            "product_smiles": "C[C@]12CCC(=O)C3C2CC[C@H]([C@H]31)OCC4=CC=CC=C4",
+            "notes": "Intramolecular cyclization of an alpha-bromo ketone derivative to form a cyclopropane ring via enolate formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Benzyl ether cleavage, Esterification (Solvolysis)",
+            "reagents": "HBr",
+            "reagent_smiles": "Br.CC(=O)O",
+            "conditions": "rt",
+            "yield": "57%",
+            "reactant_smiles": "CC12C(=O)CCC3C1CC(C3C2)[C@H]OCC4=CC=CC=C4",
+            "product_smiles": "CC12C(=O)CCC3C1CC(C3C2)[C@H]OC(=O)C",
+            "notes": "Acid-catalyzed cleavage of benzyl ether with acetic acid to form acetate ester, with retention of stereochemistry at the reacting center.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Addition / Ester Hydrolysis/Reduction",
+            "reagents": "i-PrLi",
+            "reagent_smiles": "",
+            "conditions": "Et2O, reflux",
+            "yield": "",
+            "reactant_smiles": "CC(=O)O[C@@H]1CC[C@@]2(C)[C@@H]3C(=O)CC[C@@]23C1",
+            "product_smiles": "CC(C)[C@@]1(O)CCC[C@@]2(C)[C@H]3CC[C@@H](O)[C@@]23C1",
+            "notes": "Nucleophilic addition of isopropyl lithium to the ketone and cleavage/reduction of the acetate ester to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Jones oxidation",
+            "reagents": "CrO₃, H₂SO₄",
+            "reagent_smiles": "",
+            "conditions": "acetone, -5 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)C1(O)CCC2(C)C3C=CC(O)C2C31",
+            "product_smiles": "CC(C)C1(O)CCC2(C)C3C=CC(=O)C2C31",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Jones reagent. The tertiary alcohol and the carbon-carbon double bond remain unreacted.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dehydration",
+            "reagents": "POCl3, pyridine",
+            "reagent_smiles": "",
+            "conditions": "95 °C",
+            "yield": "17% (3 steps)",
+            "reactant_smiles": "CC(C)[C@@]1(O)C[C@H]2C3[C@@](C)(C2C(=O)C3)CC1",
+            "product_smiles": "CC(C)=C1C[C@H]2C3[C@@](C)(C2C(=O)C3)CC1",
+            "notes": "Dehydration of a tertiary alcohol to form an alkene (Ylangene).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Catalytic Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "62%",
+            "reactant_smiles": "CC(C)C1=CCC2(C)C3CCC(=O)C2C13",
+            "product_smiles": "CC(C)[C@H]1CCC2(C)C3CCC(=O)C2C13",
+            "notes": "Hydrogenation of the exocyclic alkene, creating a new chiral center at the isopropyl-bearing carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Nucleophilic Addition (Organolithium)",
+            "reagents": "MeLi, Et2O",
+            "reagent_smiles": "C[Li].CCOCC",
+            "conditions": "rt",
+            "yield": "84%",
+            "reactant_smiles": "CC(C)[C@H]1CC[C@@]2(C)[C@H]3CCC(=O)[C@@]23C1",
+            "product_smiles": "CC(C)[C@H]1CC[C@@]2(C)[C@H]3CC[C](O)(C)[C@@]23C1",
+            "notes": "Methyl lithium adds to the ketone, forming a tertiary alcohol. The stereochemistry of the newly formed alcohol is defined by the attack of the nucleophile.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Dehydration",
+            "reagents": "POCl3, pyridine",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "53%",
+            "reactant_smiles": "CC(C)[C@@H]1CC[C@]2(C)[C@H]3CC[C@@](C)(O)[C@H]2[C@@H]13",
+            "product_smiles": "CC(C)[C@@H]1CC[C@]2(C)[C@H]3CC=C(C)[C@@H]2[C@@H]13",
+            "notes": "Dehydration of a tricyclic tertiary alcohol to form ylangene.",
+            "substeps": []
+        }
+    ]
+}

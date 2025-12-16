@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ent-clavilactone-b-barrett-2006",
+        "molecule_name": "ent-Clavilactone B",
+        "class": "Natural Product",
+        "author": "Barrett",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "imidazole",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(c1ccccc1)c1ccccc1",
+            "conditions": "CH2Cl2",
+            "yield": "96%",
+            "reactant_smiles": "C#CCO",
+            "product_smiles": "C#CCO[Si](c1ccccc1)(c1ccccc1)C(C)(C)C",
+            "notes": "Protection of the primary alcohol of propargyl alcohol with a TBDPS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Carboxylation (using ethyl chloroformate after deprotonation)",
+            "reagents": "n-BuLi; EtOCOCl",
+            "reagent_smiles": "CCCC[Li].CCOC(=O)Cl",
+            "conditions": "THF, -78 °C",
+            "yield": "99%",
+            "reactant_smiles": "C#CCO[TBDPS]",
+            "product_smiles": "CCOC(=O)C#CCO[TBDPS]",
+            "notes": "Terminal alkyne deprotonated with n-BuLi, then reacted with ethyl chloroformate to form a propiolate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Carbometallation / Grignard addition",
+            "reagents": "Mg, CuBr•SMe2, THF",
+            "reagent_smiles": "C=CCCBr",
+            "conditions": "-40 °C substrate, -78 °C",
+            "yield": "97%",
+            "reactant_smiles": "CCOC(=O)C#CC[OTBDPS]",
+            "product_smiles": "C=CCC/C(=C/C(=O)OCC)/CO[OTBDPS]",
+            "notes": "Copper-catalyzed addition of an allyl Grignard reagent to a propargyl ethyl ester, forming a substituted diene with retention of the TBDPS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAI-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, -78 °C",
+            "yield": "96%",
+            "reactant_smiles": "C=CCC/C(=C/C(=O)OCC)/CO[TBDPS]",
+            "product_smiles": "C=CCC/C(=C/CO)/CO[TBDPS]",
+            "notes": "Ester is reduced to a primary alcohol using DIBAL-H, while a terminal alkene and a TBDPS protected alcohol remain untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Sharpless asymmetric epoxidation",
+            "reagents": "Ti(Oi-Pr)4, L-(+)-DET, t-BuOOH, 4A MS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "93%",
+            "reactant_smiles": "OC/C=C(\\CCC=C)C[OTBDPS]",
+            "product_smiles": "C=CCC[C@]1(C[OTBDPS])[C@H](CO)O1",
+            "notes": "Sharpless asymmetric epoxidation of an allylic alcohol to form an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, DMSO, NEt3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "94%",
+            "reactant_smiles": "C=CCC[C@](C[O][Si](C(C)(C)C)(c1ccccc1)c2ccccc2)[C@H](CO)O1",
+            "product_smiles": "C=CCC[C@](C[O][Si](C(C)(C)C)(c1ccccc1)c2ccccc2)[C@H](C=O)O1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Swern conditions, without affecting the terminal alkene, internal epoxide, or TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Organometallic Addition / Directed Ortho-Metalation",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "COc1ccc(OC)c(F)c1.C=C(C)CMgCl",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCC[C@]1(CO[OTBDPS])[C@H](C=O)O1",
+            "product_smiles": "C=CCC[C@]1(CO[OTBDPS])[C@H](C(c2c(OC)c(CC(=C)C)ccc2OC)O)O1",
+            "notes": "Directed ortho-lithiation of fluorobenzene followed by addition to aldehyde; 2-methylallyl group incorporated onto aryl ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "87%",
+            "reactant_smiles": "C=CCC[C@H]1O[C@H](CCO[OTBDPS])[C@@H]1[C@H](O)c2c(OC)c(CC(=C)C)c(OC)cc2",
+            "product_smiles": "C=CCC[C@H]1O[C@H](CCO)[C@@H]1[C@H](O)c2c(OC)c(CC(=C)C)c(OC)cc2",
+            "notes": "Deprotection of a t-butyldiphenylsilyl (TBDPS) ether to a primary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ley oxidation (Lactonization)",
+            "reagents": "TPAP, NMO",
+            "reagent_smiles": "",
+            "conditions": "4A MS, MeCN",
+            "yield": "74%",
+            "reactant_smiles": "C=CCC[C@H]1(CO[C@@H](C2=C(C=CC(=C2C/C=C(C)C)OC)OC)[C@H]2O1)O2",
+            "product_smiles": "C=CCC[C@H]12[C@H]([C@@H](C3=C(C/C=C(C)C)C(=CC=C3OC)OC)OC1=O)O2",
+            "notes": "Oxidation of a 1,5-diol (formed in situ as a cyclic ether) to a lactone, preserving the epoxide and remote alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "No apparent chemical transformation",
+            "reagents": "Chiral aluminum Lewis acid catalyst (structure shown), CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "80%",
+            "reactant_smiles": "C=CCC[C@H]1C(=O)O[C@@]2([C@H](c3c(OC)c(CC(=C)C)cc3)C1O2)",
+            "product_smiles": "C=CCC[C@H]1C(=O)O[C@@]2([C@H](c3c(OC)c(CC(=C)C)cc3)C1O2)",
+            "notes": "Reactant and product structures are identical in the screenshot. The reaction may represent a purification, resolution, or a characterization step where the product is the same as the starting material depicted.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Cl2(Cy3P)(sIMes)Ru=CHPh (Grubbs 2nd generation catalyst), tetrafluorobenzoquinone",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "65%",
+            "reactant_smiles": "COC1=CC=C(OC)C2=C1C[C@@H]3OC(=O)[C@@H](CCC=C)C4OC32",
+            "product_smiles": "COC1=CC=C(OC)C2=C1C[C@@H]3OC(=O)[C@@H]4CC/C=C(/C)CC4C3O2",
+            "notes": "Intramolecular ring-closing metathesis of a diene to form an 11-membered macrocycle with an E-alkene. The two chiral centers are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O",
+            "yield": "74%",
+            "reactant_smiles": "COc1ccc(c(OC)c1)[C@H]2C(=O)O[C@@H]3[C@H]2O3C/C=C(C)/CCC4",
+            "product_smiles": "O=C1C=CC(=O)C(C1)[C@H]2C(=O)O[C@@H]3[C@H]2O3C/C=C(C)/CCC4",
+            "notes": "Oxidation of a dimethoxy-substituted aromatic ring to a quinone.",
+            "substeps": []
+        }
+    ]
+}

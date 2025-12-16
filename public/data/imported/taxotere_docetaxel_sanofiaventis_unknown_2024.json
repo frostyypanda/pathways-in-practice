@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "taxotere-docetaxel-sanofiaventis-unknown-2024",
+        "molecule_name": "Taxotere (Docetaxel SanofiAventis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acylation (Carbonate formation)",
+            "reagents": "DMAP",
+            "reagent_smiles": "ClC(=O)O[Bn]",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CC1=C2[C@@H](C(=O)[C@]3(C)[C@H](C[C@@](C)(O4)[C@@]([C@H]3[C@@H]([C@](C[C@@H]1OC(=O)[C@@H]([C@H](O)[Ph])NH[Bz])(C2(C)C)O)[OBz])[OAc])O)[OAc])O[Ac]",
+            "product_smiles": "CC1=C2[C@@H](C(=O)[C@]3(C)[C@H](C[C@@](C)(O4)[C@@]([C@H]3[C@@H]([C@](C[C@@H]1OC(=O)[C@@H]([C@H](OC(=O)O[Bn])[Ph])NH[Bz])(C2(C)C)O)[OBz])[OAc])O)[OAc])O[Ac]",
+            "notes": "O-acylation of a secondary alcohol (on the C13 side chain) with benzyl chloroformate to form a benzyl carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silyl ether formation (alcohol protection)",
+            "reagents": "",
+            "reagent_smiles": "C1=CN=CN1.Cl[Si](CC)(CC)CC",
+            "conditions": "DCM",
+            "yield": "95%",
+            "reactant_smiles": "CC1=C2[C@H](C(=O)[C@]3(C)[C@H](C[C@@H]4[C@@](CO4)([C@H]3[C@@H]([C@](C[C@@H]1OC(=O)[C@@H]([C@@H](NC(=O)[Bz])[Ph])O[Bn])(C2(C)C)O)O[Bz])O[Ac])O)",
+            "product_smiles": "[TES]O[C@H]1C[C@@H]2[C@@](CO2)([C@@]3(C)[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)O[Ac])C4(C)C)C)OC(=O)[C@@H]([C@H]([Ph])NC(=O)[Bz])O[Bn])O)O[Bz])O[Ac]",
+            "notes": "Protection of the C10 hydroxyl group as a triethylsilyl (TES) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Protection (Bocylation), Ketal Formation",
+            "reagents": "Boc₂O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 23 °C",
+            "yield": "81% (3 steps)",
+            "reactant_smiles": "[OTES][C@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)OC(=O)C)C4(C)C)C)OC(=O)[C@@H]([C@@H](C8=CC=CC=C8)NC(=O)C5=CC=CC=C5)OC(=O)OCC6=CC=CC=C6)O)OC(=O)C7=CC=CC=C7)OC(=O)C",
+            "product_smiles": "[OTES][C@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@H]4[C@@]5(C[C@@H](C(=C([C@H](C(=O)[C@]13C)OC(=O)C)C5(C)C)C)OC(=O)[C@@H]([C@@H](C8=CC=CC=C8)N(C(=O)OC(C)(C)C)(C(=O)C5=CC=CC=C5))OC(=O)OCC6=CC=CC=C6)OC(O4)(OC(C)(C)C)(C10=CC=CC=C10))OC(=O)C",
+            "notes": "N-Bocylation of the secondary amine on the side chain and cyclic ketal formation on the taxane core at C1 and C4 positions.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetal Hydrolysis / Transacetalization",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "CDCl3",
+            "yield": "98%",
+            "reactant_smiles": "[OTES][C@@H]1C[C@@H]2[C@](CO2)([C@H]3[C@H]4[C@@]5(C[C@@H](C(=C([C@H](C(=O)[C@]13C)[OAc])C5(C)C)C)OC(=O)[C@@H]([C@H]([Ph])N([Bz])[Boc])[Cbz])[C@]4(O[C@](O[C@H]2C)([Ph])C(C)(C)C)O)[OAc]",
+            "product_smiles": "[OTES][C@@H]1C[C@@H]2[C@](CO2)([C@H]3[C@H]4[C@@]5(C[C@@H](C(=C([C@H](C(=O)[C@]13C)[OAc])C5(C)C)C)OC(=O)[C@@H]([C@H]([Ph])N([Bz])[Boc])[Cbz])[C@]4(O)[C@H](O)[OBz])[OAc]",
+            "notes": "Hydrolysis of the cyclic tert-butylphenyl acetal, cleaving the protecting group to yield a hydroxyl group and a benzoyl ester. The phenyl group from the acetal carbon forms the benzoyl moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection / Transesterification",
+            "reagents": "MeOH",
+            "reagent_smiles": "CO[Mg]OC",
+            "conditions": "23 °C",
+            "yield": "75%",
+            "reactant_smiles": "[OTES][C@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)[OAc])C4(C)C)C)O)[OBz])[OAc])OC(=O)[C@H](OC(=O)OCH2c1ccccc1)[C@H]([Ph])N([Bz])[Boc]",
+            "product_smiles": "[OTES][C@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)[OAc])C4(C)C)C)O)[OBz])[OAc])OC(=O)[C@H](O)[C@H]([Ph])N[Boc]",
+            "notes": "Deprotection of benzyloxycarbonyl ester and N-benzoyl group on the taxane side chain. The reactant has a benzoyl (Bz) group and a Boc group on the nitrogen, and a benzyloxycarbonyl (OC(=O)OBn) group on the adjacent oxygen. The product has a free hydroxyl and a free secondary amine (NHBoc).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection (Silyl ether hydrolysis)",
+            "reagents": "HF, pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C",
+            "yield": "91%",
+            "reactant_smiles": "O[TES][C@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)O[Ac])C4(C)C)C)O[C@H]([C@@H]([NH][Boc])[Ph])O)O)O[Bz])O[Ac]",
+            "product_smiles": "O[C@H]1C[C@@H]2[C@@](CO2)([C@H]3[C@@H]([C@@]4(C[C@@H](C(=C([C@H](C(=O)[C@]13C)O[Ac])C4(C)C)C)O[C@H]([C@@H]([NH][Boc])[Ph])O)O)O[Bz])O[Ac]",
+            "notes": "Deprotection of a triethylsilyl (TES) ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dihydroxylation / Deacetylation",
+            "reagents": "H2O2, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "THF, 23 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC1=C(C)C=C2[C@H]3[C@H]([OAc])[C@H](C[C@@]4(C)[C@@](CO4)([C@H]3[C@@H](O)[C@H](OC(=O)[C@@H](O)[C@@H]([Ph])N[Boc])C4)[OBz])[C@H]([OAc])[C@]2(C)O",
+            "product_smiles": "CC1=C(C)C=C2[C@@H]3[C@]([C@@H]([C@H]4[C@@]5(CO5)[C@H]([C@@H]([C@](C(C)C)(C[C@H]1O)[C@H]2O)[OBz])[OAc])[C@@]3(C)[C@@H](O)[C@H](OC(=O)[C@@H](O)[C@@H]([Ph])N[Boc])C4)O",
+            "notes": "Dihydroxylation of the alkene in the C-ring to form a vicinal diol and deacetylation of the C2-OAc group to C2-OH.",
+            "substeps": []
+        }
+    ]
+}

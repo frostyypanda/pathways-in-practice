@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "cylindricine-c-molander-1999",
+        "molecule_name": "Cylindricine C",
+        "class": "Natural Product",
+        "author": "Molander",
+        "year": 1999
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl₂, MeOH",
+            "reagent_smiles": "CO.ClS(=O)Cl",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(O)C[C@@H](O)C(=O)O",
+            "product_smiles": "COC(=O)C[C@@H](O)C(=O)OC",
+            "notes": "Esterification of L-malic acid with methanol to form dimethyl L-malate. Thionyl chloride (SOCl₂) is used to activate the carboxylic acids.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, MeOH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "70%",
+            "reactant_smiles": "COC(=O)C[C@@H](C(=O)OC)O",
+            "product_smiles": "C(CO)[C@@H](CO)O",
+            "notes": "Stereoselective reduction of dimethyl (2R)-2-hydroxyglutarate to (2R)-butane-1,2,4-triol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketal formation (acetalization)",
+            "reagents": "TsOH",
+            "reagent_smiles": "CCC(=O)CC",
+            "conditions": "THF",
+            "yield": "71%",
+            "reactant_smiles": "C(CO)[C@@H](CO)O",
+            "product_smiles": "CCC1(CC)OC[C@@H](CCO)O1",
+            "notes": "Formation of a 1,3-dioxane ring from a 1,2-diol and a ketone under acidic conditions, retaining stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "87%",
+            "reactant_smiles": "CCC1(CC)OC[C@H](CCO)O1",
+            "product_smiles": "CCC1(CC)OC[C@H](CCO[Ts])O1",
+            "notes": "Protection of a primary alcohol as a tosylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkylation / Conjugate Addition",
+            "reagents": "LDA, Cu(OAc)2",
+            "reagent_smiles": "CN(C)N=C1CCCCC1",
+            "conditions": "THF, H2O",
+            "yield": "77%",
+            "reactant_smiles": "[OTs]CCC[C@@H]1OC(CC)(CC)O1",
+            "product_smiles": "CCC1(CC)OC[C@@H](CCC2CCCCC2=O)O1",
+            "notes": "Organocuprate-mediated alkylation of a primary tosylate with a cyclohexanone N,N-dimethylhydrazone equivalent, forming a C-C bond and displacing the tosylate. The acetal protecting group and existing stereocenter are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Enolate Formation, Silylation (Enol Ether Formation)",
+            "reagents": "TMSCl, Et3N, HMPA, DIPA, MeMgBr, Et2O",
+            "reagent_smiles": "Cl[Si](C)(C)C.CCN(CC)CC.O=P(N(C)C)(N(C)C)N(C)C.CC(C)NC(C)C.C[Mg]Br.CCOCC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC1(CC)OC[C@H](CCC2CCCCC2=O)O1",
+            "product_smiles": "CCC1(CC)OC[C@H](CCC2=C(CCCC2)[OTMS])O1",
+            "notes": "Formation of a silyl enol ether from a ketone under basic conditions, preserving the chiral dioxolane moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Triflation",
+            "reagents": "Tf₂NPh, TMEDA, MeLi",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "86%",
+            "reactant_smiles": "CCC1(CC)OC[C@H](CCC2=C(CCCC2)[OTMS])O1",
+            "product_smiles": "CCC1(CC)OC[C@H](CCC2=C(CCCC2)[OTf])O1",
+            "notes": "Formation of enol triflate from silyl enol ether (in 2 steps).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Carbonylative Stille Coupling",
+            "reagents": "LiCl, CO, Pd(PPh3)4",
+            "reagent_smiles": "CCCCCC/C=C/[Sn](C)(C)C",
+            "conditions": "55 °C",
+            "yield": "79%",
+            "reactant_smiles": "CCC1(CC)OC[C@H](CCC2=C(CCCC2)OS(=O)(=O)C(F)(F)F)O1",
+            "product_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@H]2COC(CC)(CC)O2",
+            "notes": "A trifluoromethanesulfonate (triflate) on a cyclohexene ring undergoes carbonylative Stille coupling with an (E)-oct-1-enyl(trimethyl)stannane in the presence of carbon monoxide and a palladium catalyst to form an α,β-unsaturated ketone. The stereochemistry of the ketal remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acetal Hydrolysis / Diol Formation",
+            "reagents": "PdCl2(MeCN)2",
+            "reagent_smiles": "",
+            "conditions": "MeCN, H2O",
+            "yield": "83%",
+            "reactant_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@H]2COC(CC)(CC)O2",
+            "product_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@H](CO)O",
+            "notes": "Palladium-catalyzed hydrolysis of a 1,3-dioxane protecting group to form a 1,2-diol, proceeding with retention of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alcohol protection (Silyl ether formation)",
+            "reagents": "TBSCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@@H](CO)O",
+            "product_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@@H]([OTBS])O",
+            "notes": "Selective protection of the primary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@H](C[OTBS])O",
+            "product_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@H](C[OTBS])[OMs]",
+            "notes": "Secondary alcohol is mesylated to form a mesylate. The stereochemistry at the alcohol/mesylate center is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-]",
+            "conditions": "DMF, 60 °C",
+            "yield": "86%",
+            "reactant_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@@H]([OTBS])[OMs]",
+            "product_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@H]([OTBS])[N-]=[N+]=[N-]",
+            "notes": "SN2 displacement of mesylate with azide, with inversion of stereochemistry. Reaction represents 3 steps within a synthesis sequence.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Azide Reduction",
+            "reagents": "CrCl2",
+            "reagent_smiles": "[Cr](Cl)Cl",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@H](CO[OTBS])[N-]=[N+]=[N-]",
+            "product_smiles": "CCCCCC/C=C/C(=O)C1=C(CCCC1)CC[C@H](CO[OTBS])N",
+            "notes": "Reduction of an azide to an amine using chromium(II) chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Cyclization / Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "45%",
+            "reactant_smiles": "CCCCCC/C=C/C(=O)C1=C(CC[C@@H](N)C[OTBS])CCCC1",
+            "product_smiles": "CCCCCC[C@H]1CC(=O)[C@@H]2CCCC[C@]3(N(C1)[C@@H](CC[C@@H]3CO)C2)",
+            "notes": "Intramolecular cyclization of an aminoalkene-cyclohexenone precursor to form the polycyclic alkaloid Cylindricine C. The TBS protecting group is removed by TBAF.",
+            "substeps": []
+        }
+    ]
+}

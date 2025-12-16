@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "makomakine-gribble-1985",
+        "molecule_name": "Makomakine",
+        "class": "Natural Product",
+        "author": "Gribble",
+        "year": 1985
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Electrophilic Bromination",
+            "reagents": "",
+            "reagent_smiles": "C1CO1.BrBr",
+            "conditions": "",
+            "yield": "83%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C=CN2S(=O)(=O)[Ph]",
+            "product_smiles": "C1=CC=C2C(=C1)C(=CN2S(=O)(=O)[Ph])Br",
+            "notes": "Bromination of N-phenylsulfonylindole at the 3-position, likely assisted by oxirane as a bromine scavenger or solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Lithiation / Epoxide Ring Opening",
+            "reagents": "tBuLi, BF3",
+            "reagent_smiles": "C1CO1.CC(C)(C)[Li].FB(F)F",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2S(=O)(=O)[Ph])Br",
+            "product_smiles": "C1=CC=C2C(=C1)C(=CN2S(=O)(=O)[Ph])CCO",
+            "notes": "Bromine-lithium exchange at C3 of indole, followed by ring opening of ethylene oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Substitution/Amidation (of alcohol via some intermediate, or direct amidation if alcohol converted in situ)",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "CC1=CC[C@H](C)CC1C(C)(C)N",
+            "conditions": "MeCN",
+            "yield": "69%",
+            "reactant_smiles": "OCCC1=CN(S(=O)(=O)c2ccccc2)c3ccccc13",
+            "product_smiles": "CC1=CC[C@@H](C)CC1NCCC2=CN(S(=O)(=O)c3ccccc3)c4ccccc24",
+            "notes": "Reactant alcohol group is replaced by an amine group derived from the drawn chiral amine. Stereochemistry at the chiral center of the amine is inverted during the reaction (from S to R, or vice versa, based on the `[C@H]` to `[C@@H]` change). The methyl group on the cyclohexene ring is shown at position 4 and is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative imine N-oxide formation",
+            "reagents": "O₂, Cu(OAc)₂",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=CC[C@H](CC1)C(C)(C)NCCC2=CN(C3=C2C=CC=C3)S(=O)(=O)[Ph]",
+            "product_smiles": "CC1=CC[C@H](CC1)C(C)(C)[N+]([O-])=C(CC2=CN(C3=C2C=CC=C3)S(=O)(=O)[Ph])",
+            "notes": "Oxidation of a secondary amine to an imine N-oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular 1,3-dipolar cycloaddition",
+            "reagents": "toluene",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "64%",
+            "reactant_smiles": "C[C@H]1CC=C[C@@H](C(C)(C)[N+]([O-])=C/C2=CN(S(=O)(=O)[Ph])C3=CC=CC=C23)CC1",
+            "product_smiles": "C[C@H]1CC[C@@H]2[C@H](O[C@]3(C)N(C[C@@H]12)[C@H](CC4=CN(C5=CC=CC=C45)S(=O)(=O)[Ph]))C3(C)",
+            "notes": "Intramolecular [3+2] cycloaddition of a nitrone with a cyclohexene moiety, forming a polycyclic isoxazolidine (Makomakine).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reductive Deprotection / N,O-Acetal Cleavage",
+            "reagents": "Zn, AcOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "96%",
+            "reactant_smiles": "C[C@H]1CC[C@@H]2[C@H](C[C@@H](Cc3c[n](S(=O)(=O)c4ccccc4)c5ccccc35)[N@]6C[C@@H]2C(O6)(C)C)[C@H]1",
+            "product_smiles": "C[C@H]1CC[C@@H]2[C@H](C[C@H](Cc3c[nH]c4ccccc34)[N@]5C[C@H]2C(O)(C)C)[C@H]1",
+            "notes": "Reductive deprotection of the N-phenylsulfonyl group and cleavage of the N,O-acetal bridge to yield a secondary amine and a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "POCl3, pyridine",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "8%",
+            "reactant_smiles": "CC1(C)C(O)C2CC[C@@H]3[C@@H](C2)N(C[C@H]4CC5=CNC6=CC=CC=C56)[C@H]4C3",
+            "product_smiles": "C=C1CC[C@@H]2[C@H](C1)N(C[C@H]3CC4=CNC5=CC=CC=C56)[C@H]3C2",
+            "notes": "Dehydration of a tertiary alcohol (gem-dimethyl, hydroxyl) to form an exocyclic methylene group.",
+            "substeps": []
+        }
+    ]
+}

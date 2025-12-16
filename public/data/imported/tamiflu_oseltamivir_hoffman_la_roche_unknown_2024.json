@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tamiflu-oseltamivir-hoffman-la-roche-unknown-2024",
+        "molecule_name": "Tamiflu (Oseltamivir Hoffman-La Roche)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Diels-Alder Cycloaddition",
+            "reagents": "10 mol% cat.",
+            "reagent_smiles": "C=CC(=O)OCC(F)(F)F.[N+]1(C2CCC1)[C@H](C3=CC=CC=C3)[C@H]4B(O1)C5=C(C)C=CC=C5.[N-](S(=O)(=O)C(F)(F)F)S(=O)(=O)C(F)(F)F",
+            "conditions": "neat, rt, 30 h",
+            "yield": "97%",
+            "reactant_smiles": "C=CC=C",
+            "product_smiles": "O=C(OCC(F)(F)F)[C@H]1CC=CCC1",
+            "notes": "Corey's asymmetric Diels-Alder cycloaddition between 1,3-butadiene and 2,2,2-trifluoroethyl acrylate catalyzed by a chiral borane complex.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Aminolysis",
+            "reagents": "NH3, CF3CH2OH",
+            "reagent_smiles": "N.OCC(F)(F)F",
+            "conditions": "40 °C, 5 h",
+            "yield": "100%",
+            "reactant_smiles": "O=C(OCC(F)(F)F)[C@H]1CC=CCC1",
+            "product_smiles": "O=C(N)[C@H]1CC=CCC1",
+            "notes": "Aminolysis of 2,2,2-trifluoroethyl ester to carboxamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Iodo-lactamization / Halocyclization",
+            "reagents": "(CO2Cl)2, (CH2Cl)2, t-BuOH",
+            "reagent_smiles": "",
+            "conditions": "70 °C, 2h, then 40 °C",
+            "yield": "83%",
+            "reactant_smiles": "C1=CC[C@@H](CC1)C(=O)N",
+            "product_smiles": "O=C1N[C@@H]2CCC[C@H](I)[C@H]1C2",
+            "notes": "Intramolecular cyclization of an unsaturated amide to form a bicyclic iodo-lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-Protection (Boc)",
+            "reagents": "(Boc)2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "99%",
+            "reactant_smiles": "I[C@H]1CCC[C@@H]2C(=O)N[C@@H]2C1",
+            "product_smiles": "I[C@H]1CCC[C@@H]2C(=O)N([Boc])[C@@H]2C1",
+            "notes": "Protection of the lactam nitrogen with a Boc group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Elimination (Dehydrohalogenation)",
+            "reagents": "DBU, THF",
+            "reagent_smiles": "",
+            "conditions": "reflux, 12 h",
+            "yield": "96%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@H]2CCC[C@@H](I)C[C@H]2C1=O",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@H]2C[C]=CC[C@H]2C1=O",
+            "notes": "Dehydrohalogenation of an iodide in a bicyclic lactam system to form an internal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic bromination",
+            "reagents": "cat. AIBN, NBS",
+            "reagent_smiles": "",
+            "conditions": "CCl4, reflux",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@@H]2C=CC[C@@H](C2)C1=O",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@@H]2C=C[C@H](Br)[C@@H](C2)C1=O",
+            "notes": "Allylic bromination of a bicyclic lactam, resulting in double bond migration and introduction of a bromine atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Lactam Ring-Opening, Transesterification, and Elimination",
+            "reagents": "Cs2CO3, EtOH",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "100%",
+            "reactant_smiles": "[Boc]N1[C@H]2C[C@@H](Br)C=CC2C1=O",
+            "product_smiles": "CCOC(=O)C1=CC(C[C@H](N[Boc])CC1)",
+            "notes": "A base-mediated reaction involving ring-opening of the bicyclic lactam, transesterification of the lactam carbonyl with ethanol, and elimination of HBr to form a 1,4-cyclohexadiene ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Bromination with stereoselective amidation",
+            "reagents": "SnBr4, NBA",
+            "reagent_smiles": "",
+            "conditions": "MeCN, -40 °C, 4 h",
+            "yield": "75%",
+            "reactant_smiles": "CCOC(=O)C1=CC[C@H]([NH][Boc])C=C1",
+            "product_smiles": "CCOC(=O)C1=CC[C@H]([NH][Boc])[C@@H](Br)[C@H]([NH][Ac])C1",
+            "notes": "Stereoselective bromination of a 1,4-cyclohexadiene, followed by ring opening/rearrangement to form a brominated cyclohexene with new amido group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Aziridine Formation",
+            "reagents": "n-Bu4NBr, KHMDS",
+            "reagent_smiles": "",
+            "conditions": "DME, -20 °C, 10 min",
+            "yield": "82%",
+            "reactant_smiles": "CCOC(=O)C1=C[C@@H]([C@H]([C@H](C1)NC(=O)OC(C)(C)C)Br)NC(=O)C",
+            "product_smiles": "CCOC(=O)C1=C[C@@H]2[C@@H]([C@H](C1)NC(=O)OC(C)(C)C)N2C(=O)C",
+            "notes": "Intramolecular cyclization forming an aziridine ring with elimination of bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Aziridine Ring Opening / Allylic Ether Formation",
+            "reagents": "cat. Cu2+",
+            "reagent_smiles": "CCC(O)CC",
+            "conditions": "0 °C, 12 h",
+            "yield": "61%",
+            "reactant_smiles": "CCOC(=O)C1=C[C@H]2C[C@@H](NC(=O)OC(C)(C)C)[C@H]1N2C(=O)C",
+            "product_smiles": "CCOC(=O)C1=C[C@@H](OC(CC)CC)C[C@@H](NC(=O)OC(C)(C)C)[C@H](NC(=O)C)C1",
+            "notes": "Aziridine ring opening by 3-pentanol, resulting in an allylic ether with inversion of stereochemistry at the allylic carbon, and a 1,2-migration of the N-Ac group to an adjacent carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "H3PO4, EtOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C1=C[C@@H]([Boc]N)[C@H]([Ac]N)[C@@H](OC(C)CC)C1",
+            "product_smiles": "CCOC(=O)C1=C[C@@H]([NH3+])[C@H]([Ac]N)[C@@H](OC(C)CC)C1.[O-]P(O)(O)=O",
+            "notes": "Acid-catalyzed Boc deprotection to form the ammonium phosphate salt.",
+            "substeps": []
+        }
+    ]
+}

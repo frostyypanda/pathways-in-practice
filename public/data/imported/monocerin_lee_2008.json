@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "monocerin-lee-2008",
+        "molecule_name": "Monocerin",
+        "class": "Natural Product",
+        "author": "Lee",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Deprotection (hydrogenolysis)",
+            "reagents": "Pd(OH)2, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "",
+            "reactant_smiles": "[Bn][C@@H]1COC(=O)N1C(=O)OC[Bn]",
+            "product_smiles": "OCC(=O)N1[C@@H]([Bn])COC1=O",
+            "notes": "Benzyl ether deprotection to primary alcohol via hydrogenolysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection (MOM ether formation)",
+            "reagents": "MOMCl, DIPEA, TBAI",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "O=C(CO)N1[C@H](CC2=CC=CC=C2)COC1=O",
+            "product_smiles": "COCOCC(=O)N1[C@H](CC2=CC=CC=C2)COC1=O",
+            "notes": "Protection of a primary alcohol using MOMCl/DIPEA/TBAI in DCM to form a methoxymethyl (MOM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Evans asymmetric aldol reaction",
+            "reagents": "DIPEA, Bu2BOT",
+            "reagent_smiles": "COC1=CC(=CC(=C1OC)OC)C=O",
+            "conditions": "THF, -78 °C",
+            "yield": "92%",
+            "reactant_smiles": "COCOCC(=O)N1[C@H](CC2=CC=CC=C2)COC1=O",
+            "product_smiles": "COC1=CC(=CC(=C1OC)OC)[C@H](O)[C@@H](O)C(=O)N2[C@H](CC3=CC=CC=C3)COC2=O",
+            "notes": "An Evans asymmetric aldol reaction between a chiral oxazolidinone auxiliary containing a MOM-protected acetyl group and 3,4,5-trimethoxybenzaldehyde. The MOM group is implicitly replaced with 'R' in the product structure (shown as 'O' in SMILES). The benzyl group on the oxazolidinone maintains its (S) stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Cleavage",
+            "reagents": "LiBH4",
+            "reagent_smiles": "",
+            "conditions": "THF/MeOH",
+            "yield": "95%",
+            "reactant_smiles": "COC1=CC(=CC(=C1OC)OC)[C@H](O)[C@@H](OC(=O)N1C(=O)OC[C@@H](CC2=CC=CC=C2)1)",
+            "product_smiles": "COC1=CC(=CC(=C1OC)OC)[C@H](O)[C@@H](OCOC)CO",
+            "notes": "Reductive cleavage of the chiral oxazolidinone auxiliary, leading to the formation of a primary alcohol and protection of a secondary alcohol as a methoxymethyl (MOM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "O[MOM][C@@H](CO)[C@@H](C1=CC([OMe])=C([OMe])C([OMe])=C1)O",
+            "product_smiles": "O[MOM][C@@H](C[OTs])[C@@H](C1=CC([OMe])=C([OMe])C([OMe])=C1)O",
+            "notes": "Primary alcohol is selectively converted to a tosylate. The stereochemistry of the chiral centers remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Williamson Ether Synthesis",
+            "reagents": "TBAI, NaH",
+            "reagent_smiles": "BrCC=CC",
+            "conditions": "THF, 0 °C",
+            "yield": "91%",
+            "reactant_smiles": "COC1=CC(OC)=C(OC)C(C[C@H](O)[C@@H](OCOC)CO[Ts])=C1",
+            "product_smiles": "COC1=CC(OC)=C(OC)C(C[C@H](OCCC=C)[C@@H](OCOC)CO[Ts])=C1",
+            "notes": "Alkylation of a secondary alcohol with 1-bromo-2-butene to form an allyl ether. The stereochemistry at the alcohol carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "DMF",
+            "reagent_smiles": "[NaH4B].c1ccccc1[Se][Se]c1ccccc1",
+            "conditions": "0 °C",
+            "yield": "91%",
+            "reactant_smiles": "COc1cc(OC)c(OC)cc1[C@H](OCC=C)[C@@H](C[OTs])OCOC",
+            "product_smiles": "COc1cc(OC)c(OC)cc1[C@H](OCC=C)[C@@H](C[Se]c2ccccc2)OCOC",
+            "notes": "Reductive substitution of a tosylate with a phenyl selenide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Rh(PPh3)3Cl, DABCO",
+            "reagent_smiles": "",
+            "conditions": "EtOH/H2O, 90 °C",
+            "yield": "",
+            "reactant_smiles": "CC=CCO[C@H](C1=CC(=C(C(=C1)[OMe])[OMe])[OMe])[C@@H](C[SePh])[OMOM]",
+            "product_smiles": "CCCCO[C@H](C1=CC(=C(C(=C1)[OMe])[OMe])[OMe])[C@@H](C[SePh])[OMOM]",
+            "notes": "Hydrogenation of an allyl ether to a saturated propyl ether using Wilkinson's catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Radical Cyclization / Ether Exchange",
+            "reagents": "(TMS)3SiH, Et3B",
+            "reagent_smiles": "",
+            "conditions": "PhMe, -20 °C",
+            "yield": "74 % (2 steps)",
+            "reactant_smiles": "CCC=CO[C@@H](C1=CC(=C(OC)C(=C1OC)OC))[C@H](C[Se]c2ccccc2)OCOC",
+            "product_smiles": "c1cc(OC)c(OC)c(OC)c1[C@@H]2O[C@@H](CCC)C[C@@H](OCC)C2",
+            "notes": "Radical-mediated cyclization of an enol ether and phenyl selenyl ether to form a tetrahydrofuran ring. The methoxymethyl (MOM) protecting group is replaced by an ethyl group during the transformation.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Intramolecular Electrophilic Aromatic Cyclization",
+            "reagents": "TiCl4",
+            "reagent_smiles": "",
+            "conditions": "DCM, -40 °C",
+            "yield": "67%",
+            "reactant_smiles": "CCC[C@H]1OC[C@H](C(OCOC)C2=CC(=C(C(=C2)OC)OC)OC)C[C@H]1",
+            "product_smiles": "CCC[C@H]1O[C@@H]2[C@@H](C3=C(CO2)C(=C(C(=C3)OC)OC)OC)O1",
+            "notes": "An intramolecular cyclization activated by TiCl4, where the acetal group's CH2 and oxygen participate in forming a new dihydropyran ring fused to the trimethoxyphenyl and tetrahydrofuran moieties.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "RuO₂, NaIO₄",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "43%",
+            "reactant_smiles": "CCC[C@H]1C[C@H]2[C@H](C3=C(CO2)C(=C(C(=C3)OC)OC)OC)O1",
+            "product_smiles": "CCC[C@H]1C[C@H]2[C@H](C3=C(C(=C(C(=C3)OC)OC)OC)C(=O)O2)O1",
+            "notes": "Oxidation of a benzylic methylene group to a carbonyl, forming a lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Demethylation",
+            "reagents": "BCl3",
+            "reagent_smiles": "ClB(Cl)Cl.ClCCl",
+            "conditions": "DCM, -20 °C",
+            "yield": "53%",
+            "reactant_smiles": "CCCC[C@H]1C[C@@H]2O[C@H]1C(=O)C3=C(OC)C(OC)=C(OC)C(OC)=C3O2",
+            "product_smiles": "CCCC[C@H]1C[C@@H]2O[C@H]1C(=O)C3=C(OC)C(OC)=C(OC)C(OH)=C3O2",
+            "notes": "Selective demethylation of an aryl methyl ether to an aryl alcohol using boron trichloride.",
+            "substeps": []
+        }
+    ]
+}

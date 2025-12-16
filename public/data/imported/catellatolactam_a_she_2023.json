@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "catellatolactam-a-she-2023",
+        "molecule_name": "Catellatolactam A",
+        "class": "Natural Product",
+        "author": "She",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Fischer Esterification",
+            "reagents": "H2SO4, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=C(C=C1C(=O)O)O)[N+](=O)[O-]",
+            "product_smiles": "COC(=O)C1=CC(=CC(=C1)[N+](=O)[O-])O",
+            "notes": "Esterification of a carboxylic acid with methanol catalyzed by sulfuric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitro Reduction",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "CO.[Pd]",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C1=CC(=CC(=C1)[N+](=O)[O-])O",
+            "product_smiles": "COC(=O)C1=CC(=CC(=C1)N)O",
+            "notes": "Catalytic hydrogenation of a nitro group to an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amine protection",
+            "reagents": "(Boc)2O, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O",
+            "yield": "79% (3 steps)",
+            "reactant_smiles": "COC(=O)C1=CC(=CC(=C1)N)O",
+            "product_smiles": "COC(=O)C1=CC([NHBoc])=CC(O)=C1",
+            "notes": "Protection of the primary amine with a tert-butoxycarbonyl (Boc) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Silyl ether formation",
+            "reagents": "TBDPSCl, imidazole, 4-DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)NC1=CC(=CC(=C1)O)C(=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)NC1=CC(=CC(=C1)[OTBDPS])C(=O)OC",
+            "notes": "Formation of a TBDPS ether from a phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "93% (2 steps)",
+            "reactant_smiles": "[Boc]NC1=CC(=CC(=C1)[OTBDPS])C(=O)OC",
+            "product_smiles": "[Boc]NC1=CC(=CC(=C1)[OTBDPS])CO",
+            "notes": "Reduction of a methyl ester to a primary alcohol using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alcohol Iodination",
+            "reagents": "NIS, PPh3",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "97%",
+            "reactant_smiles": "[NHBoc]C1=CC([OTBDPS])=CC(CO)=C1",
+            "product_smiles": "[NHBoc]C1=CC([OTBDPS])=CC(CI)=C1",
+            "notes": "Conversion of a benzylic primary alcohol to a primary alkyl iodide using NIS and PPh3.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Grignard Reaction / Alkylation",
+            "reagents": "THF",
+            "reagent_smiles": "BrMgC=CC",
+            "conditions": "0 °C",
+            "yield": "93%",
+            "reactant_smiles": "[NHBoc]C1=CC(CI)=CC([OTBDPS])=C1",
+            "product_smiles": "[NHBoc]C1=CC(C=CCCC)=CC([OTBDPS])=C1",
+            "notes": "Alkylation of benzylic iodide with a Grignard reagent, forming a pent-4-enyl chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Boc)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCCC1=CC([NHBoc])=CC([OTBDPS])=C1",
+            "product_smiles": "C=CCCC1=CC(N)=CC([OTBDPS])=C1",
+            "notes": "Boc protecting group is removed from the amine under acidic conditions to yield the primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH4",
+            "reagent_smiles": "COc1cc(OC)c(C=O)c1",
+            "conditions": "MeOH, 0 °C",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "C=CCCC1=CC(=CC(=C1)N)[OTBDPS]",
+            "product_smiles": "C=CCCC1=CC(=CC(=C1)NCc2cc(OC)c(OC)c2)[OTBDPS]",
+            "notes": "Reductive amination of an aniline with 2,4-dimethoxybenzaldehyde, followed by reduction of the intermediate imine to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acylation / N-acylation",
+            "reagents": "",
+            "reagent_smiles": "O=C1OC(C)(C)OC(=O)C1=C(O)CCC=C",
+            "conditions": "1,4-dioxane, 110 °C",
+            "yield": "",
+            "reactant_smiles": "C=CCCC1=CC([OTBDPS])=CC(NCC2=C([OMe])C=C([OMe])C=C2)=C1",
+            "product_smiles": "C=CCCC1=CC([OTBDPS])=CC(N(CC2=C([OMe])C=C([OMe])C=C2)C(=O)CC(=O)CCC=C)=C1",
+            "notes": "Acylation of a secondary amine with a Meldrum's acid derivative to form a beta-keto amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs I",
+            "reagent_smiles": "",
+            "conditions": "DCM, reflux",
+            "yield": "81%",
+            "reactant_smiles": "C=CCCC1=CC(=CC(=C1)N(CC2=CC=C(C=C2OC)OC)C(=O)CC(=O)CCC=C)[OTBDPS]",
+            "product_smiles": "[OTBDPS]C1=CC2=CC(=C1)CC/C=C/CCC(=O)CC(=O)N2CC3=CC=C(C=C3OC)OC",
+            "notes": "Formation of a 15-membered macrocycle via ring-closing metathesis, converting two terminal alkenes into an internal E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "N-Deprotection",
+            "reagents": "DDQ, TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, H2O, reflux",
+            "yield": "68%",
+            "reactant_smiles": "[OTBDPS]C3=CC4=CC(=C3)CC/C=C/CCCC(=O)N4CC5=CC=C(C=C5OC)OC",
+            "product_smiles": "[OTBDPS]C3=CC4=CC(=C3)CC/C=C/CCCC(=O)[NH]4",
+            "notes": "Oxidative deprotection of a 2,4-dimethoxybenzyl (DMPM) protecting group on a lactam nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection (silyl ether)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "[OTBDPS]C3=CC4=CC(=C3)CC/C=C/CCC(=O)CC(=O)N4",
+            "product_smiles": "OC1=CC2=CC(=C1)CC/C=C/CCC(=O)CC(=O)N2",
+            "notes": "Deprotection of a tert-butyldiphenylsilyl (TBDPS) ether to a phenol.",
+            "substeps": []
+        }
+    ]
+}

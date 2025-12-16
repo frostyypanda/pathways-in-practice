@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "telotristat-ethyl-xermelo-lexicon-unknown-2024",
+        "molecule_name": "Telotristat Ethyl (Xermelo Lexicon)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Triflation",
+            "reagents": "Tf2O, NMM",
+            "reagent_smiles": "",
+            "conditions": "DCM, -15 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)O)C(=O)OC",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)[OTf])C(=O)OC",
+            "notes": "Triflation of a phenol to form a triflate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Borylation / Suzuki-Miyaura Borylation",
+            "reagents": "B2(pin)2, KOAc, PCy3, Pd(OAc)2",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 80 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)OS(=O)(=O)C(F)(F)F)C(=O)OC",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)B2OC(C)(C)C(C)(C)O2)C(=O)OC",
+            "notes": "Palladium-catalyzed conversion of an aryl triflate to a pinacol boronate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH, HCl",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt (pH ~4.5)",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)B2OC(C)(C)C(C)(C)O2)C(=O)OC",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)B2OC(C)(C)C(C)(C)O2)C(=O)O",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid under basic then acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Suzuki cross coupling",
+            "reagents": "Pd(PPh3)2Cl2, KHCO3, citric acid",
+            "reagent_smiles": "C1=C(Cl)N=C(N)N=C1Cl",
+            "conditions": "aq. EtOH, 45-70 °C, H2O, 60 °C, pH ~4",
+            "yield": "84%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)B2OC(C)(C)C(C)(C)O2)C(=O)O",
+            "product_smiles": "[Boc]N[C@@H](CC1=CC=C(C=C1)C2=CC(=NC(=N2)N)Cl)C(=O)O",
+            "notes": "Suzuki cross coupling of a boronic ester with 2-amino-4,6-dichloropyrimidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr) / Deprotection",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "CC1=NN(C=C1)c2c([C@@H](O)C(F)(F)F)ccc(Cl)c2",
+            "conditions": "dioxane, 100 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@H](CC1=CC=C(C=C1)C2=NC(=NC(Cl)=C2)N)C(=O)O",
+            "product_smiles": "N[C@H](CC1=CC=C(C=C1)C2=NC(=NC(OC[C@@H](C(F)(F)F)c3c(N4N=C(C)C=C4)ccc(Cl)c3)=C2)N)C(=O)O",
+            "notes": "SNAr of 6-chloropyrimidine with alcohol and Boc deprotection of amino group.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Aromatic Nucleophilic Substitution (SNAr)",
+                    "reagents": "",
+                    "reagent_smiles": "Cc1cn[nH]c1.[K+].OC(C)(C)C.CS(=O)C",
+                    "conditions": "50 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "Brc1c(F)ccc(Cl)c1",
+                    "product_smiles": "Cc1cn(C2=C(Br)C=CC(Cl)=C2)n1",
+                    "notes": "Nucleophilic aromatic substitution of fluoride by 3-methyl-1H-pyrazole, deprotonated by KOt-Bu.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Grignard Reaction / Halogen-Magnesium Exchange",
+                    "reagents": "i-PrMgCl",
+                    "reagent_smiles": "CCOC(=O)C(F)(F)F",
+                    "conditions": "THF, 10 to -20 °C",
+                    "yield": "62%",
+                    "reactant_smiles": "Brc1c(N2N=C(C)C=C2)ccc(Cl)c1",
+                    "product_smiles": "Fc(F)(F)C(=O)c1c(N2N=C(C)C=C2)ccc(Cl)c1",
+                    "notes": "Halogen-magnesium exchange of aryl bromide with i-PrMgCl, followed by reaction of the resulting Grignard reagent with ethyl trifluoroacetate to form a trifluoromethyl ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Asymmetric Reduction",
+                    "reagents": "Cp*[IrCl2]2, KHCO2, H2O",
+                    "reagent_smiles": "CC1=CC=C(C=C1)S(=O)(=O)N[C@H](C2=CC=CC=C2)[C@@H](C3=CC=CC=C3)N",
+                    "conditions": "MeCN, 40 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "CC1=NN(C=C1)C2=CC(=CC=C2C(=O)C(F)(F)F)Cl",
+                    "product_smiles": "CC1=NN(C=C1)C2=CC(=CC=C2[C@H](C(F)(F)F)O)Cl",
+                    "notes": "Asymmetric reduction of a trifluoromethyl ketone to a chiral secondary alcohol using a chiral iridium catalyst and a chiral amine ligand.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amine protection",
+            "reagents": "Boc₂O",
+            "reagent_smiles": "",
+            "conditions": "toluene, rt then 6 N HCl, (pH ~4) EtOAc, rt",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "CC1=NN(C=C1)C2=CC(=CC=C2[C@H](C(F)(F)F)OC3=NC(=NC(=C3)C4=CC=C(C=C4)C[C@@H](C(=O)O)N)N)Cl",
+            "product_smiles": "CC1=NN(C=C1)C2=CC(=CC=C2[C@H](C(F)(F)F)OC3=NC(=NC(=C3)C4=CC=C(C=C4)C[C@@H](C(=O)O)N[Boc])N)Cl",
+            "notes": "Protection of the alpha-amino acid primary amine with Boc₂O.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "HCl, aq. NaOH/H3PO4",
+            "reagent_smiles": "",
+            "conditions": "THF, 35 to 40 °C then 58 °C, pH ~6.1",
+            "yield": "95%",
+            "reactant_smiles": "CC1=NN(C=C1)C2=CC(=CC=C2[C@H](C(F)(F)F)OC3=NC(=NC(=C3)C4=CC=C(C=C4)C[C@@H](C(=O)O)N[Boc])N)Cl",
+            "product_smiles": "CC1=NN(C=C1)C2=CC(=CC=C2[C@H](C(F)(F)F)OC3=NC(=NC(=C3)C4=CC=C(C=C4)C[C@@H](C(=O)O)N)N)Cl",
+            "notes": "Boc deprotection of an N-protected amino acid derivative under acidic conditions, followed by neutralization.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl₂, EtOH, aq. Na₂CO₃",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=NN(C=C1)C2=CC(=CC=C2[C@H](C(F)(F)F)OC3=NC(=NC(=C3)C4=CC=C(C=C4)C[C@H](C(=O)O)N)N)Cl",
+            "product_smiles": "CCOC(=O)[C@H](CC1=CC=C(C=C1)C2=CC(=NC(=N2)N)O[C@H](C3=CC=C(C=C3N4C=CC(=N4)C)Cl)C(F)(F)F)N",
+            "notes": "Esterification of a carboxylic acid to an ethyl ester using thionyl chloride and ethanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acid-Base Reaction / Salt Formation",
+            "reagents": "i-OPrAc",
+            "reagent_smiles": "O=C(O)CNC(=O)c1ccccc1",
+            "conditions": "EtOH, 60 °C",
+            "yield": "66% (2 steps)",
+            "reactant_smiles": "CCOC(=O)[C@@H](N)CC1=CC=C(C=C1)c2nc(N)nc(O[C@@H](C(F)(F)F)c3c(N4N=CC(C)=C4)ccc(Cl)c3)n2",
+            "product_smiles": "CCOC(=O)[C@@H]([NH3+])CC1=CC=C(C=C1)c2nc(N)nc(O[C@@H](C(F)(F)F)c3c(N4N=CC(C)=C4)ccc(Cl)c3)n2.O=C([O-])CNC(=O)c5ccccc5",
+            "notes": "Protonation of the primary amine on Telotristat Ethyl to form an ammonium salt, with N-benzoylglycine acting as the counterion in its deprotonated (carboxylate) form.",
+            "substeps": []
+        }
+    ]
+}

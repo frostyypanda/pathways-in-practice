@@ -1,0 +1,290 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sarinfacetamide-a-iwabuchi-2025",
+        "molecule_name": "Sarinfacetamide A",
+        "class": "Natural Product",
+        "author": "Iwabuchi",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Formylation / Aldol-type Condensation",
+            "reagents": "t-BuOK",
+            "reagent_smiles": "CCOC=O",
+            "conditions": "benzene, rt",
+            "yield": "",
+            "reactant_smiles": "O=C1C(C)CC([C@H](C=C(C)))CC1",
+            "product_smiles": "O=C1C(C)CC([C@H](C=C(C)))C(=CO)C1",
+            "notes": "Alpha-formylation of a cyclohexanone leading to an enolized beta-keto aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Annulation / Cyclization",
+            "reagents": "DBU",
+            "reagent_smiles": "CC(C)(C)C(=O)OCCC=O",
+            "conditions": "PhMe, rt",
+            "yield": "",
+            "reactant_smiles": "CC1=C(O)C(=O)CC[C@H](C(C)=C)C1",
+            "product_smiles": "C=C(C)[C@H]1CC[C@@H]2C3C(=O)C(C=O)[C@@](C)(O)C3C12",
+            "notes": "Intramolecular cyclization of an enolized keto-isopropenyl reactant with a pivalate-protected aldehyde, leading to a complex bicyclic system.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Acylation (Esterification)",
+                    "reagents": "pyridine, DMAP",
+                    "reagent_smiles": "C(CO)CO",
+                    "conditions": "DCM, rt",
+                    "yield": "65%",
+                    "reactant_smiles": "CC(C)(C)C(=O)Cl",
+                    "product_smiles": "CC(C)(C)C(=O)OCCO",
+                    "notes": "Acylation of ethylene glycol with pivaloyl chloride to form a monoester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Oxidation",
+                    "reagents": "NaClO, AZADOL, KBr, NaHCO3",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, H2O, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Piv]OCCCO",
+                    "product_smiles": "[Piv]OCCC=O",
+                    "notes": "Primary alcohol is oxidized to an aldehyde using TEMPO (AZADOL here is likely an analogous nitroxide catalyst) / hypochlorite system.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetylation (Esterification)",
+            "reagents": "Ac2O, DMAP, pyridine",
+            "reagent_smiles": "",
+            "conditions": "PhMe, rt",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@H]1CC(=O)C(=O)[C@]2(C)CCC([C@H](CO)CC12)",
+            "product_smiles": "C=C(C)[C@H]1CC(=O)C(=O)[C@]2(C)CCC([C@H](C[OAc])CC12)",
+            "notes": "A primary alcohol is acetylated to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Grignard addition",
+            "reagents": "THF",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "-60 °C",
+            "yield": "95%",
+            "reactant_smiles": "C=C(C)[C@H]1CC[C@]2(C)C(CCC1(C=O)C2=O)[OAc]",
+            "product_smiles": "C=C(C)[C@H]1CC[C@]2(C)C(CCC1([C@H](O)C=C)C2=O)[OAc]",
+            "notes": "Grignard addition of vinylmagnesium bromide to an aldehyde, forming a new secondary alcohol with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Diels-Alder Reaction",
+            "reagents": "HG II",
+            "reagent_smiles": "",
+            "conditions": "DCE, 80 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=C)[C@H]1CC[C@@H]2[C@H]3[C@@H](O)[C@@H](C=C)C1(C)[C@@H]2(C)C(=O)[C@@]4(C)C([CH2][OAc])C43",
+            "product_smiles": "[OAc][CH2][C@@]1(C)[C@@]2(C)C(=O)[C@@]3(C)[C@H](O)C=C(C)C23CC[C@@H]1([H])",
+            "notes": "Intramolecular Diels-Alder reaction of a vinyl alcohol and an isopropenyl group, forming a new six-membered carbocyclic ring with an endocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "nor-AZADO, PIDA",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "90%",
+            "reactant_smiles": "CC1=C[C@H](O)[C@H]2CCC3([C@@](C)(CC[C@@]12C)C3=O)[OAc]",
+            "product_smiles": "CC1=C(C)C(=O)[C@H]2CCC3([C@@](C)(CC[C@@]12C)C3=O)[OAc]",
+            "notes": "Oxidation of a secondary alcohol to a ketone, accompanied by double bond migration to form a cyclohexadienone system. Stereocenters unaffected by the reaction remain inverted in the provided SMILES from reactant to product; this has been corrected to preserve stereochemistry as shown in the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cuprate Conjugate Addition and Alkylation",
+            "reagents": "CuBr, LiCl, TMSCl",
+            "reagent_smiles": "C=C[Mg]Br",
+            "conditions": "THF, -78 °C",
+            "yield": "87%",
+            "reactant_smiles": "O=C1C(=C(C)C(=O)[C@@H]2CC3([C@](C)OC(=O)C)CC2([C@H]1)CCC3",
+            "product_smiles": "O=C1[C@](C)(C=C)[C@@H]2CC3([C@](C)OC(=O)C)CC2([C@H]1)CCC3",
+            "notes": "1,4-addition of vinyl group to the enone, with concurrent addition of a methyl group at the alpha-position to the ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-]",
+            "conditions": "MeOH, 0 °C",
+            "yield": "79%",
+            "reactant_smiles": "[OAc][C@@]1(C)C(=O)C23CC[C@H]4C(=O)C[C@@](C)(C=C)[C@@]2(C)[C@H]4C3",
+            "product_smiles": "[OAc][C@@]1(C)C(=O)C23CC[C@H]4[C@@H](O)C[C@@](C)(C=C)[C@@]2(C)[C@H]4C3",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Alcohol Triflation",
+            "reagents": "Tf2O, Pyridine",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@]1(C)C[C@@H](C23CCC([C@](C)(CC[C@@H]12)C3=O)[OAc])O",
+            "product_smiles": "C=C[C@@]1(C)C[C@@H](C23CCC([C@](C)(CC[C@@H]12)C3=O)[OAc])[OTf]",
+            "notes": "Secondary alcohol is activated by conversion to triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "TMSN3, TBAF",
+            "reagent_smiles": "[N-]=[N+]=N[Si](C)(C)C.CCCC[N+](CCCC)(CCCC)CCCC.[F-]",
+            "conditions": "PhMe, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@]1(C)C[C@@H](C23CCC([C@@](C)(CC[C@]12C)C3=O)[OAc])[OTf]",
+            "product_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@@](C)(CC[C@]12C)C3=O)[OAc])[N-]=[N+]=N",
+            "notes": "Triflate leaving group is substituted by azide with inversion of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Staudinger Reduction",
+            "reagents": "THF, H2O",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "60 °C",
+            "yield": "42%",
+            "reactant_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@@](C)(CC[C@]12C)C3=O)OC(=O)C)[N3]",
+            "product_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@@](C)(CC[C@]12C)C3=O)OC(=O)C)N",
+            "notes": "Azide reduction to amine. Yield reported over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Acetylation, Reduction",
+            "reagents": "Ac2O, Et3N",
+            "reagent_smiles": "CC(=O)OC(=O)C.CCN(CC)CC",
+            "conditions": "DCM, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@@](C)(CC[C@]12C)C3=O)OC(=O)C)N",
+            "product_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@@](C)(CC[C@]12C)[C@H](O))OC(=O)C)NC(=O)C",
+            "notes": "Acetylation of the primary amine to an acetamide, and reduction of the ketone to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Xanthate formation",
+            "reagents": "NaH",
+            "reagent_smiles": "CI.S=C=S",
+            "conditions": "THF, rt",
+            "yield": "93%",
+            "reactant_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@](C)(CC[C@]12C)C3O)OC(=O)C)NC(=O)C",
+            "product_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@](C)(CC[C@@]12C)C3OC(=S)SC)OC(=O)C)NC(=O)C",
+            "notes": "Conversion of a secondary alcohol to a xanthate ester using methyl iodide, carbon disulfide, and sodium hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Radical Deoxygenation (Barton-McCombie)",
+            "reagents": "",
+            "reagent_smiles": "Cc1ccccc1.CC(C)(C#N)N=NC(C)(C)C#N.[SnH](CCCC)(CCCC)CCCC",
+            "conditions": "PhMe, 110 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@@](C)(CC[C@]12C)C3OC(=S)SC)OC(=O)C)NC(=O)C",
+            "product_smiles": "C=C[C@@]1(C)C[C@H](C23CCC([C@@](C)(CC[C@]12C)C3)OC(=O)C)NC(=O)C",
+            "notes": "Radical deoxygenation of a xanthate group using tributyltin hydride and AIBN initiator.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Hydroxylation / Oxidation",
+            "reagents": "Co(acac)2, PhSiH3, O2, EtOH",
+            "reagent_smiles": "",
+            "conditions": "30 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@]1(C)C[C@H](C23CCC[C@](C)(C2)C(CCC13)OC(=O)C)NC(=O)C",
+            "product_smiles": "C[C@H](O)[C@@]1(C)C[C@H](C23CCC[C@](C)(C2)C(CCC13)OC(=O)C)NC(=O)C",
+            "notes": "Selective hydroxylation of the vinyl group to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "O=C1Oc2ccccc2[I](OC(=O)C)(OC(=O)C)1",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H](O)[C@@]1(C)C[C@H](NC(=O)C)C23CCC(COC(=O)C)[C@](C)(CC[C@]12C)C3",
+            "product_smiles": "CC(=O)[C@@]1(C)C[C@H](NC(=O)C)C23CCC(COC(=O)C)[C@](C)(CC[C@]12C)C3",
+            "notes": "Oxidation of a secondary alcohol to a methyl ketone using Dess-Martin Periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Aldol Condensation",
+            "reagents": "NaH",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)OC(C)(C)C=O",
+            "conditions": "THF, 0 °C",
+            "yield": "43%",
+            "reactant_smiles": "CC(=O)N[C@H]1C[C@](C)(C(=O)C)[C@]2(C)C[C@H]3C[C@](C)(OC(=O)C)[C@H]2C13",
+            "product_smiles": "CC(=O)N[C@H]1C[C@](C)(C(=O)/C=C/C(C)(C)O)[C@]2(C)C[C@H]3C[C@](C)(OC(=O)C)[C@H]2C13",
+            "notes": "Aldol condensation between the ketone reactant and the TBS-protected aldehyde reagent, followed by dehydration to form an alpha,beta-unsaturated ketone and deprotection of the TBS group to a hydroxyl.",
+            "substeps": [
+                {
+                    "step_id": "17.1",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, rt",
+                    "yield": "70%",
+                    "reactant_smiles": "CC(C)(C(=O)OC)O",
+                    "product_smiles": "CC(C)(C(=O)OC)[OTBS]",
+                    "notes": "Protection of a tertiary alcohol with TBSCl to form a TBS ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "17.2",
+                    "reaction_type": "Ester Reduction",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "hexane, -78 °C to rt",
+                    "yield": "90%",
+                    "reactant_smiles": "[TBS]OC(C)(C)C(=O)OC",
+                    "product_smiles": "[TBS]OC(C)(C)CO",
+                    "notes": "Methyl ester is reduced to a primary alcohol using DIBAL-H, while the TBS protecting group remains intact.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "17.3",
+                    "reaction_type": "Oxidation",
+                    "reagents": "TPAP, NMO, DCM, 4 Å MS",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "50%",
+                    "reactant_smiles": "[OTBS]C(C)(C)CO",
+                    "product_smiles": "[OTBS]C(C)(C)C=O",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde using TPAP/NMO (Ley-Griffith oxidation).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Acetylation",
+            "reagents": "DMAP",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "rt",
+            "yield": "63%",
+            "reactant_smiles": "CC(=O)N[C@@H]1C[C@](C)(C(=O)/C=C/C(C)(C)O)[C@@H]2C[C@H]3C[C@](C)(OC(C)=O)[C@@]2(C)CC3",
+            "product_smiles": "CC(=O)N[C@@H]1C[C@](C)(C(=O)/C=C/C(C)(C)OC(C)=O)[C@@H]2C[C@H]3C[C@](C)(OC(C)=O)[C@@]2(C)CC3",
+            "notes": "Acetylation of the tertiary alcohol on the side chain using acetic anhydride and DMAP.",
+            "substeps": []
+        }
+    ]
+}
