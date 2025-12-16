@@ -308,7 +308,8 @@ def save_batch_job(job_name: str, synthesis_ids: list, request_count: int):
     print(f"\nSaved job info to {BATCH_JOBS_FILE}")
 
 
-def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False, batch_num: int = None):
+def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False, batch_num: int = None,
+                 build_only: bool = False, output_file: str = None):
     """Submit batch job to Gemini API."""
 
     # Load prompt
@@ -328,12 +329,20 @@ def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False, bat
         return
 
     # Write JSONL file
-    jsonl_path = Path(__file__).parent / "batch_requests.jsonl"
+    if output_file:
+        jsonl_path = Path(__file__).parent / output_file
+    else:
+        jsonl_path = Path(__file__).parent / "batch_requests.jsonl"
+
     with open(jsonl_path, "w") as f:
         for req in requests:
             f.write(json.dumps(req) + "\n")
     print(f"\nWrote {len(requests)} requests to {jsonl_path}")
     print(f"File size: {jsonl_path.stat().st_size / 1024 / 1024:.2f} MB")
+
+    if build_only:
+        print("\n[BUILD ONLY] File ready for later upload")
+        return
 
     # Initialize Gemini client
     client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -389,6 +398,8 @@ def main():
     )
     parser.add_argument("--base-path", default=DEFAULT_BASE_PATH, help="Base path for images")
     parser.add_argument("--dry-run", action="store_true", help="Don't submit, just show what would be done")
+    parser.add_argument("--build-only", action="store_true", help="Build JSONL file only, don't upload or submit")
+    parser.add_argument("--output-file", help="Custom output filename for JSONL (default: batch_requests.jsonl)")
 
     args = parser.parse_args()
 
@@ -416,6 +427,8 @@ def main():
         base_path=args.base_path,
         dry_run=args.dry_run,
         batch_num=args.batch_num,
+        build_only=args.build_only,
+        output_file=args.output_file,
     )
 
 
