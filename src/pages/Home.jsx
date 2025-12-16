@@ -1,10 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { DataManager } from '../utils/DataManager';
 import { Search } from 'lucide-react';
 
+// Shuffle array using Fisher-Yates algorithm with seed for consistency per session
+const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+};
+
 const Home = () => {
     const [syntheses, setSyntheses] = useState([]);
+    const [randomSample, setRandomSample] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [minSteps, setMinSteps] = useState('');
     const [maxSteps, setMaxSteps] = useState('');
@@ -13,20 +24,30 @@ const Home = () => {
         const loadData = async () => {
             const data = await DataManager.getAllSyntheses();
             setSyntheses(data);
+            // Create random sample of 50 for initial display
+            setRandomSample(shuffleArray(data).slice(0, 50));
         };
         loadData();
     }, []);
 
-    const filteredSyntheses = syntheses.filter(s => {
-        const matchesSearch = s.molecule_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            s.author.toLowerCase().includes(searchTerm.toLowerCase());
+    // Check if any filters are active
+    const hasActiveFilters = searchTerm !== '' || minSteps !== '' || maxSteps !== '';
 
-        const steps = s.step_count || 1; // Default to 1 if not calculated yet
-        const matchesMinString = minSteps === '' || steps >= parseInt(minSteps);
-        const matchesMaxString = maxSteps === '' || steps <= parseInt(maxSteps);
+    const filteredSyntheses = useMemo(() => {
+        // Use full list when filtering, random sample when not
+        const sourceList = hasActiveFilters ? syntheses : randomSample;
 
-        return matchesSearch && matchesMinString && matchesMaxString;
-    });
+        return sourceList.filter(s => {
+            const matchesSearch = s.molecule_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                s.author.toLowerCase().includes(searchTerm.toLowerCase());
+
+            const steps = s.step_count || 1;
+            const matchesMinString = minSteps === '' || steps >= parseInt(minSteps);
+            const matchesMaxString = maxSteps === '' || steps <= parseInt(maxSteps);
+
+            return matchesSearch && matchesMinString && matchesMaxString;
+        });
+    }, [syntheses, randomSample, searchTerm, minSteps, maxSteps, hasActiveFilters]);
 
     return (
         <div className="home-page">
@@ -36,6 +57,7 @@ const Home = () => {
                     <h1>Pathways Practice</h1>
                     <p>Community-driven chemical synthesis library</p>
                 </div>
+                <div className="total-count">{syntheses.length} syntheses</div>
             </header>
 
             <div className="search-bar">
@@ -69,6 +91,12 @@ const Home = () => {
                         placeholder="Any"
                     />
                 </div>
+            </div>
+
+            <div className="results-info">
+                {hasActiveFilters
+                    ? `${filteredSyntheses.length} results`
+                    : `Showing 50 random syntheses`}
             </div>
 
             <div className="synthesis-grid">
