@@ -20,10 +20,13 @@
 | 1 | 100 | 1619 | 2025-12-16 09:32 | 2025-12-16 10:29 | 57m | 1612 | 7 |
 | 2 | 100 | 1838 | 2025-12-16 10:55 | 2025-12-16 11:47 | 52m | 1831 | 7 |
 | 3 | 100 | 1578 | 2025-12-16 11:53 | 2025-12-16 12:48 | 55m | 1570 | 8 |
+| 4 (big) | 400 | 6,959 | 2025-12-16 13:09 | 2025-12-16 16:02 | 2h 53m | 6919 | 40 |
 
 ## Pending Batches
 
-*None currently*
+| Batch | Syntheses | Requests | Submitted | Job Name |
+|-------|-----------|----------|-----------|----------|
+| 5 | 400 | 6,562 | 2025-12-16 14:59 | `batches/hdyh0mgbg1ieyfe9313xsevo3xn7osjko4ln` |
 
 ### Notes
 - Test batch had overnight delay (manually collected next day)
@@ -34,11 +37,11 @@
 
 | Metric | Count |
 |--------|-------|
-| Syntheses processed | 305 |
-| Total steps in DB | ~5,100 |
-| Remaining syntheses | 3,323 |
-| Estimated remaining steps | ~53,800 |
-| Batches remaining | 9 (at 400/batch) |
+| Syntheses processed | 705 |
+| Total steps in DB | 12,024 |
+| Remaining syntheses | 2,923 |
+| Estimated remaining steps | ~47,300 |
+| Batches remaining | 8 (at 400/batch) |
 
 ## Cost Estimation
 
@@ -48,21 +51,22 @@
 - Cost per step: ~$0.00034
 
 ### Completed Cost
-- Steps processed: 3,535
-- Estimated cost: ~$1.20
+- Steps processed: 12,024
+- Estimated cost: ~$4.10
 
 ### Projected Total Cost
-- Total steps: ~58,500
+- Total steps: ~59,300
 - Estimated total cost: ~$20
-- Already spent: ~$1.20
-- Remaining: ~$19
+- Already spent: ~$4.10
+- Remaining: ~$16
 
 ## Timeline Projection
 
-At ~55 min per batch (100 syntheses):
-- Batches remaining: 35
-- Time per day (if continuous): ~17 batches
-- Estimated completion: 2-3 days of batching
+At 400 syntheses per batch (~6,500 steps):
+- Batches remaining: 8
+- Batch API processing: ~55 min each
+- DB import with batched inserts: ~5-10 min (after optimization)
+- Estimated completion: 1-2 more days
 
 ## Commands
 
