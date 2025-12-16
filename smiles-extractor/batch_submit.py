@@ -331,6 +331,8 @@ def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False, bat
     # Write JSONL file
     if output_file:
         jsonl_path = Path(__file__).parent / output_file
+    elif batch_num:
+        jsonl_path = Path(__file__).parent / f"batch{batch_num}_requests.jsonl"
     else:
         jsonl_path = Path(__file__).parent / "batch_requests.jsonl"
 
