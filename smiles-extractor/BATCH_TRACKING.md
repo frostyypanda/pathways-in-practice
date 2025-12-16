@@ -27,6 +27,7 @@
 
 | Batch | Syntheses | Requests | Submitted | Job Name |
 |-------|-----------|----------|-----------|----------|
+| 6 | 400 | 6,669 | 2025-12-16 17:26 | `batches/wy1d3cva9h9aebho3iwteilyqn4tk2mkh1rg` |
 
 ### Notes
 - Test batch had overnight delay (manually collected next day)
