@@ -3,8 +3,17 @@
 Batch Collect - Download results from Gemini Batch API and store in DB.
 
 Usage:
-    python batch_collect.py --job-name batches/xxx
+    # Check status
     python batch_collect.py --job-name batches/xxx --status-only
+
+    # Download and import (default)
+    python batch_collect.py --job-name batches/xxx
+
+    # Download only (save to file)
+    python batch_collect.py --job-name batches/xxx --download-only
+
+    # Import from saved file
+    python batch_collect.py --from-file batch7_results.jsonl
 """
 
 import argparse
@@ -220,49 +229,49 @@ def check_status(client, job_name: str) -> dict:
     }
 
 
-def collect_results(job_name: str, status_only: bool = False):
-    """Collect results from batch job and store in DB."""
+def download_results(client, job_name: str, output_file: str = None) -> str:
+    """Download results from batch job to file. Returns output filename."""
+    job = client.batches.get(name=job_name)
+    dest_file = getattr(job, 'dest', None)
 
-    # Initialize Gemini client
-    client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
-
-    # Check status
-    print(f"Checking job: {job_name}")
-    status = check_status(client, job_name)
-    print(f"Status: {status['state']}")
-
-    if status_only:
-        return
-
-    if status['state'] != 'JOB_STATE_SUCCEEDED':
-        if status['state'] == 'JOB_STATE_FAILED':
-            print("ERROR: Job failed!")
-        else:
-            print(f"Job not complete yet. Current state: {status['state']}")
-            print("Run again later or use --status-only to check progress.")
-        return
-
-    # Download results
-    print("\nDownloading results...")
-    dest_file = status['dest']
     if not dest_file:
         print("ERROR: No destination file found")
-        return
+        return None
 
-    # Get the file name from dest object
+    print("\nDownloading results...")
     dest_file_name = dest_file.file_name if hasattr(dest_file, 'file_name') else str(dest_file)
     results_content = client.files.download(file=dest_file_name)
-    results_text = results_content.decode('utf-8')
 
-    # Parse results
+    # Determine output filename
+    if not output_file:
+        output_file = f"results_{job_name.split('/')[-1][:12]}.jsonl"
+
+    output_path = Path(__file__).parent / output_file
+    output_path.write_bytes(results_content)
+
+    line_count = len(results_content.decode('utf-8').strip().split('\n'))
+    print(f"Saved {line_count} results to {output_path}")
+    return str(output_path)
+
+
+def import_from_file(file_path: str):
+    """Import results from a local JSONL file into the database."""
+    print(f"Loading results from {file_path}...")
+
+    with open(file_path, 'r') as f:
+        results_text = f.read()
+
     results = []
     for line in results_text.strip().split('\n'):
         if line:
             results.append(json.loads(line))
 
-    print(f"Downloaded {len(results)} results")
+    print(f"Loaded {len(results)} results")
+    _import_results_to_db(results)
 
-    # Connect to DB
+
+def _import_results_to_db(results: list):
+    """Import parsed results into database."""
     conn = get_db_connection()
 
     try:
@@ -364,37 +373,77 @@ def collect_results(job_name: str, status_only: bool = False):
         conn.commit()
 
         print(f"\n{'='*60}")
-        print(f"RESULTS COLLECTED")
+        print(f"RESULTS IMPORTED")
         print(f"{'='*60}")
         print(f"Success: {success_count}")
         print(f"Failed: {fail_count}")
         print(f"Total: {len(results)}")
 
-        # Update batch jobs file
-        if BATCH_JOBS_FILE.exists():
-            jobs = json.loads(BATCH_JOBS_FILE.read_text())
-            if job_name in jobs:
-                jobs[job_name]['status'] = 'collected'
-                jobs[job_name]['collected_at'] = datetime.now().isoformat()
-                jobs[job_name]['success_count'] = success_count
-                jobs[job_name]['fail_count'] = fail_count
-                BATCH_JOBS_FILE.write_text(json.dumps(jobs, indent=2))
-
     finally:
         conn.close()
 
 
+def collect_results(job_name: str, status_only: bool = False, download_only: bool = False, output_file: str = None):
+    """Download results from batch job and optionally import to DB."""
+    client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+
+    print(f"Checking job: {job_name}")
+    status = check_status(client, job_name)
+    print(f"Status: {status['state']}")
+
+    if status_only:
+        return
+
+    if status['state'] != 'JOB_STATE_SUCCEEDED':
+        if status['state'] == 'JOB_STATE_FAILED':
+            print("ERROR: Job failed!")
+        else:
+            print(f"Job not complete yet. Current state: {status['state']}")
+        return
+
+    # Download to file
+    saved_file = download_results(client, job_name, output_file)
+    if not saved_file:
+        return
+
+    if download_only:
+        print("\nDownload complete. Run with --from-file to import.")
+        return
+
+    # Import to DB
+    import_from_file(saved_file)
+
+    # Update batch jobs tracking
+    if BATCH_JOBS_FILE.exists():
+        jobs = json.loads(BATCH_JOBS_FILE.read_text())
+        if job_name in jobs:
+            jobs[job_name]['status'] = 'collected'
+            jobs[job_name]['collected_at'] = datetime.now().isoformat()
+            BATCH_JOBS_FILE.write_text(json.dumps(jobs, indent=2))
+
+
 def main():
     parser = argparse.ArgumentParser(description="Collect batch results from Gemini API")
-    parser.add_argument("--job-name", required=True, help="Batch job name (e.g., batches/xxx)")
+    parser.add_argument("--job-name", help="Batch job name (e.g., batches/xxx)")
     parser.add_argument("--status-only", action="store_true", help="Only check status, don't collect")
+    parser.add_argument("--download-only", action="store_true", help="Download to file only, don't import")
+    parser.add_argument("--output-file", help="Output filename for downloaded results")
+    parser.add_argument("--from-file", help="Import from local JSONL file instead of downloading")
 
     args = parser.parse_args()
 
-    collect_results(
-        job_name=args.job_name,
-        status_only=args.status_only,
-    )
+    if args.from_file:
+        import_from_file(args.from_file)
+    elif args.job_name:
+        collect_results(
+            job_name=args.job_name,
+            status_only=args.status_only,
+            download_only=args.download_only,
+            output_file=args.output_file,
+        )
+    else:
+        parser.print_help()
+        print("\nError: Must specify either --job-name or --from-file")
 
 
 if __name__ == "__main__":
