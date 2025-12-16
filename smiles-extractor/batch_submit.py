@@ -379,8 +379,8 @@ def main():
     parser.add_argument(
         "--batch-size",
         type=int,
-        default=100,
-        help="Number of syntheses per batch (default: 100)"
+        default=400,
+        help="Number of syntheses per batch (default: 400)"
     )
     parser.add_argument(
         "--list-batches",
