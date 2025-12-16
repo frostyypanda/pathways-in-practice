@@ -69,7 +69,7 @@ const SequencePlayer = ({ sequence, synthesis, quizSettings, currentStepIndex, s
         <div className="sequence-player">
             {/* Header moved to parent */}
 
-            <div className="reaction-container">
+            <div className="reaction-container" key={currentStepIndex}>
                 <div className="molecule-block">
                     {renderQuizContent('reactant', (
                         <div className="molecule-canvas-container">

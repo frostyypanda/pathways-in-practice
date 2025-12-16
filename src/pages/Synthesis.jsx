@@ -1,10 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { DataManager } from '../utils/DataManager';
 import SequencePlayer from '../components/SequencePlayer';
 import QuizControls from '../components/QuizControls';
 import { ArrowLeft } from 'lucide-react';
 import useDeviceDetection from '../hooks/useDeviceDetection';
+
+// Parse hash like "#step-5.1.2" into [4, 0, 1] (0-indexed)
+const parseStepHash = () => {
+    const hash = window.location.hash;
+    const match = hash.match(/^#step-(.+)$/);
+    if (!match) return null;
+
+    const parts = match[1].split('.').map(n => parseInt(n, 10) - 1); // Convert to 0-indexed
+    if (parts.some(isNaN)) return null;
+    return parts;
+};
+
+// Build hash from navigationStack and currentStepIndex
+const buildStepHash = (navigationStack, currentStepIndex) => {
+    const parts = navigationStack.map(frame => frame.stepIndex + 1); // Convert to 1-indexed
+    parts.push(currentStepIndex + 1);
+    return `#step-${parts.join('.')}`;
+};
 
 const Synthesis = () => {
     const { id } = useParams();
@@ -29,6 +47,8 @@ const Synthesis = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
     // Navigation stack for substeps: each entry is { sequence, stepIndex }
     const [navigationStack, setNavigationStack] = useState([]);
+    // Track if we've initialized from hash to avoid updating hash during initial load
+    const [hashInitialized, setHashInitialized] = useState(false);
 
     const toggleQuizSetting = (id) => {
         setQuizSettings(prev => {
@@ -83,11 +103,48 @@ const Synthesis = () => {
             if (meta) {
                 const data = await DataManager.getSynthesis(meta.path);
                 setSynthesis(data);
+
+                // Restore position from hash after data loads
+                const hashPath = parseStepHash();
+                if (hashPath && hashPath.length > 0 && data?.sequence) {
+                    // Validate and apply the path
+                    let currentSeq = data.sequence;
+                    const newStack = [];
+                    let valid = true;
+
+                    // Navigate through all but the last index (those go into navigationStack)
+                    for (let i = 0; i < hashPath.length - 1 && valid; i++) {
+                        const idx = hashPath[i];
+                        if (idx >= 0 && idx < currentSeq.length && currentSeq[idx]?.substeps) {
+                            newStack.push({ stepIndex: idx });
+                            currentSeq = currentSeq[idx].substeps;
+                        } else {
+                            valid = false;
+                        }
+                    }
+
+                    // Last index is the currentStepIndex
+                    const lastIdx = hashPath[hashPath.length - 1];
+                    if (valid && lastIdx >= 0 && lastIdx < currentSeq.length) {
+                        setNavigationStack(newStack);
+                        setCurrentStepIndex(lastIdx);
+                    }
+                }
             }
             setLoading(false);
+            setHashInitialized(true);
         };
         loadSynthesis();
     }, [id]);
+
+    // Update hash when step position changes
+    useEffect(() => {
+        if (hashInitialized) {
+            const newHash = buildStepHash(navigationStack, currentStepIndex);
+            // Use replaceState to avoid polluting browser history with every step
+            window.history.replaceState(null, '', newHash);
+        }
+    }, [currentStepIndex, navigationStack, hashInitialized]);
 
     if (loading) return <div className="loading">Loading synthesis...</div>;
     if (!synthesis) return <div className="error">Synthesis not found.</div>;
@@ -113,6 +170,7 @@ const Synthesis = () => {
 
             <QuizControls settings={quizSettings} onToggle={toggleQuizSetting} />
             <SequencePlayer
+                key={id}
                 sequence={currentSequence}
                 synthesis={synthesis}
                 quizSettings={quizSettings}
