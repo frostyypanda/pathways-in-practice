@@ -31,6 +31,15 @@
 | 7 | 4909-5392 | 6,152 | 2025-12-16 19:05 | `batches/y5i1360gqy0e89maekquvekh3blaj8a36jm7` |
 | 8 | 5393-5855 | 6,538 | 2025-12-16 19:50 | `batches/x1c8fyjql6p97mveky0bmt9ixv0tbtcln56j` |
 
+## Planned Batches
+
+| Batch | IDs | Command |
+|-------|-----|---------|
+| 9 | 5856-6337 | `python batch_submit.py --from-id 5856 --to-id 6337 --build-only` |
+| 10 | 6338-6881 | `python batch_submit.py --from-id 6338 --to-id 6881 --build-only` |
+| 11 | 6882-7305 | `python batch_submit.py --from-id 6882 --to-id 7305 --build-only` |
+| 12 | 7306-7428 | `python batch_submit.py --from-id 7306 --to-id 7428 --build-only` |
+
 ### Notes
 - Test batch had overnight delay (manually collected next day)
 - Batches 1-2 processed in ~55 min on average
