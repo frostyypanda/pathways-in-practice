@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aigialomycin-d-montgomery-2008",
+        "molecule_name": "Aigialomycin D",
+        "class": "Natural Product",
+        "author": "Montgomery",
+        "year": 2008
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Silyl Ether Formation / Alcohol Protection",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.CN1C=NC=N1",
+            "conditions": "DMF",
+            "yield": "97%",
+            "reactant_smiles": "C#CCC[C@@H](CO)O",
+            "product_smiles": "C#CCC[C@@H](CO[OTBS])O[OTBS]",
+            "notes": "Stereoselective protection of a diol with TBSCl to form a bis-TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydroboration",
+            "reagents": "catecholborane then NaOH",
+            "reagent_smiles": "B1OC2=CC=CC=C2O1.[Na+].[OH-]",
+            "conditions": "THF, 60 °C",
+            "yield": "65%",
+            "reactant_smiles": "C#CCC[C@@H](C[OTBS])[OTBS]",
+            "product_smiles": "[OTBS]C[C@@H]([OTBS])CCC/C=C\\B(O)O",
+            "notes": "Stereoselective hydroboration of a terminal alkyne to form an E-vinyl boronic acid, retaining the stereochemistry of the adjacent chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "TIOEt, Pd(PPh3)4",
+            "reagent_smiles": "C#CC[C@H](C)OC(=O)c1c(OCOC)c(I)cc(OCOC)c1",
+            "conditions": "THF, H2O",
+            "yield": "90%",
+            "reactant_smiles": "O[B](O)\\C=C\\CC[C@H](O[Si](C)(C)C(C)(C)C)CO[Si](C)(C)C(C)(C)C",
+            "product_smiles": "C#CC[C@H](C)OC(=O)c1c(OCOC)c(/C=C/CC[C@H](O[Si](C)(C)C(C)(C)C)CO[Si](C)(C)C(C)(C)C)cc(OCOC)c1",
+            "notes": "Suzuki-Miyaura coupling of an aryl iodide with a vinyl boronic acid to form a C-C bond with preservation of alkene stereochemistry and chiral centers.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Protection (MOM ether formation)",
+                    "reagents": "MOMOCI, i-PrNEt2",
+                    "reagent_smiles": "COCCI.CCN(CC)C(C)C",
+                    "conditions": "DMF",
+                    "yield": "87%",
+                    "reactant_smiles": "COC(=O)C1=C(O)C(I)=CC=C1O",
+                    "product_smiles": "COC(=O)C1=C([MOM])C(I)=CC=C1[MOM]",
+                    "notes": "Double MOM protection of phenolic hydroxyl groups on methyl 2,5-dihydroxy-3-iodobenzoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Ester hydrolysis",
+                    "reagents": "NaOTMS, DME",
+                    "reagent_smiles": "[Na+].O[Si](C)(C)C",
+                    "conditions": "80 °C",
+                    "yield": "86%",
+                    "reactant_smiles": "[MOMO]OC1=CC(O[MOMO])=C(I)C(C(=O)OC)=C1",
+                    "product_smiles": "[MOMO]OC1=CC(O[MOMO])=C(I)C(C(=O)O)=C1",
+                    "notes": "Hydrolysis of methyl ester to carboxylic acid using sodium trimethylsilanolate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Mitsunobu Esterification",
+                    "reagents": "DEAD, PPh3",
+                    "reagent_smiles": "C#CC[C@H](C)O",
+                    "conditions": "DCM",
+                    "yield": "70%",
+                    "reactant_smiles": "O=C(O)c1c(I)c(O[MOMO])cc(O[MOMO])c1",
+                    "product_smiles": "C#CC[C@H](C)OC(=O)c1c(I)c(O[MOMO])cc(O[MOMO])c1",
+                    "notes": "Mitsunobu esterification of a carboxylic acid with an alcohol, proceeding with inversion of stereochemistry at the chiral center of the alcohol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Selective Silyl Ether Deprotection",
+            "reagents": "HF-pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "66%",
+            "reactant_smiles": "C#CC[C@H](C)OC(=O)c1c(/C=C/CC[C@@H](C[OTBS])[OTBS])c([MOMO])cc([MOMO])c1",
+            "product_smiles": "C#CC[C@H](C)OC(=O)c1c(/C=C/CC[C@@H](CO)[OTBS])c([MOMO])cc([MOMO])c1",
+            "notes": "Selective deprotection of the primary TBS ether in the presence of a secondary TBS ether and MOMO ethers using HF-pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "Dess-Martin periodinane",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "78%",
+            "reactant_smiles": "C#CC[C@H](C)OC(=O)c1c([MOMO])cc([MOMO])c(C/C=C/CC[C@@H](CO)[OTBS])c1",
+            "product_smiles": "C#CC[C@H](C)OC(=O)c1c([MOMO])cc([MOMO])c(C/C=C/CC[C@@H](C=O)[OTBS])c1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin periodinane. MOMO and TBS protecting groups are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Macrocyclization",
+            "reagents": "Ni(COD)2, IMeS•HCl, t-BuOK, HSiEt",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "61%",
+            "reactant_smiles": "C#CC[C@H](C)OC(=O)c1c([MOMO])c(/C=C/CC[C@@H](C=O)[OTBS])cc1[MOMO]",
+            "product_smiles": "[OTES][C@@H]1/C=C/CC[C@H](C)OC(=O)c2c([MOMO])c(/C=C/CC[C@@H]([OTBS])C1)cc2[MOMO]",
+            "notes": "Nickel-catalyzed intramolecular reductive cyclization of an alkyne and an aldehyde to form a 17-membered macrocycle with a new alkene and silyl ether.",
+            "substeps": []
+        }
+    ]
+}

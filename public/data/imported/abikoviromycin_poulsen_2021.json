@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "abikoviromycin-poulsen-2021",
+        "molecule_name": "Abikoviromycin",
+        "class": "Natural Product",
+        "author": "Poulsen",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine protection",
+            "reagents": "NaHCO3, Boc2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "NCCC#C",
+            "product_smiles": "N(CCC#C)[Boc]",
+            "notes": "Primary amine is protected with a Boc group using di-tert-butyl dicarbonate (Boc2O) in the presence of sodium bicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkyne allenation / Propargylation",
+            "reagents": "CuBr, HCOH, DIPA",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "C#CCN[Boc]",
+            "product_smiles": "C=C=CCN[Boc]",
+            "notes": "A terminal alkyne is converted to an allene, incorporating one carbon from formaldehyde (HCOH), forming N-(penta-3,4-dien-1-yl)carbamate from N-(but-3-yn-1-yl)carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Copper-catalyzed N-alkylation / Sonogashira-like coupling",
+            "reagents": "CuI, 1,10-phenanthroline, K3PO4",
+            "reagent_smiles": "BrC#C[TES]",
+            "conditions": "toluene, 80 °C",
+            "yield": "70%",
+            "reactant_smiles": "[Boc]NCC=C=C",
+            "product_smiles": "[Boc]N(C#[TES])CC=C=C",
+            "notes": "N-alkylation of a Boc-protected amine (containing an allene) with a TES-protected bromoalkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclocarbonylation (Pauson-Khand type)",
+            "reagents": "[Rh(CO)Cl(dppp)]2, CO",
+            "reagent_smiles": "",
+            "conditions": "toluene, reflux",
+            "yield": "64%",
+            "reactant_smiles": "C=C=CCCN(C#[TES])[Boc]",
+            "product_smiles": "O=C1CC2=C([TES])C=C3N([Boc])CCC=C321",
+            "notes": "Intramolecular cyclization involving an allene, alkyne, and carbon monoxide insertion to form a tricyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Aldol Addition",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC=O",
+            "conditions": "THF, -78 °C",
+            "yield": "74%",
+            "reactant_smiles": "[TES]C1=C(C(=O)CC2)C2=C3N([Boc])CCC31",
+            "product_smiles": "[TES]C1=C(C(=O)[C@@H](C(O)C)C2)C2=C3N([Boc])CCC31",
+            "notes": "Aldol addition reaction where an enolate, generated from the alpha-position of the cyclic ketone, attacks acetaldehyde. A new chiral center is formed at the alpha-carbon, with specific stereochemistry as indicated.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Dehydration",
+            "reagents": "Burgess reagent",
+            "reagent_smiles": "",
+            "conditions": "benzene, 50 °C",
+            "yield": "86%",
+            "reactant_smiles": "[TES]C1=C2C(=CCCN2[Boc])[C@@H](C(C)O)C1=O",
+            "product_smiles": "C/C=C\\1/C2=CCCN(C2=C(C1=O)[TES])[Boc]",
+            "notes": "Dehydration of a secondary alcohol to an exocyclic E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "89%",
+            "reactant_smiles": "[TES]C1=CC(=O)C(=C/C)C2=C1N([Boc])CCC=C2",
+            "product_smiles": "C/C=C/1C(=O)C=C2C=CNC3=CC1=C23",
+            "notes": "Deprotection of both Boc (tert-butoxycarbonyl) and TES (triethylsilyl) protecting groups. TFA is used for Boc deprotection, and TES is also acid-labile, leading to their removal.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Asymmetric Epoxidation",
+            "reagents": "",
+            "reagent_smiles": "C1C[C@@H]2[N+]3(CCC2C1)(CC=C)(CC4=CC=CC=C4)[C@@H](O)[C@@H](C5=CC=CC=C5)C6=NC=CC=C6.CC(C)(C1=CC=CC=C1)OO",
+            "conditions": "toluene, CHCl3",
+            "yield": "72%",
+            "reactant_smiles": "N1CCC=C2C=C3C(C=C2)C(=O)C(=C/C)C=C3",
+            "product_smiles": "N1CCC=C2C=C3C(C=C2)C(=O)C(=C/C)[C@@]4O[C@@]34",
+            "notes": "Asymmetric epoxidation of an α,β-unsaturated ketone's internal double bond using a chiral phase-transfer catalyst and cumene hydroperoxide. The epoxide oxygen is shown with dashed bonds, indicating a specific stereoisomer (likely below the plane of the ring).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Deoxygenation / Dehydrogenation",
+            "reagents": "[Ir(coe)2Cl]2",
+            "reagent_smiles": "CC[SiH2]CC",
+            "conditions": "CH2Cl2, r.t.",
+            "yield": "43%",
+            "reactant_smiles": "C/C=C/C1=C(C(=O)C=C2C1[C@H]3[C@H](O3)CC[NH]C2)",
+            "product_smiles": "C/C=C/C1=CC=C2[C@H]3[C@H](O3)CC(N=C2)C1",
+            "notes": "Iridium-catalyzed reductive deoxygenation of the enone to a dienamine, and imine formation from the secondary amine and a newly formed double bond. The epoxide and exocyclic alkene remain unchanged.",
+            "substeps": []
+        }
+    ]
+}

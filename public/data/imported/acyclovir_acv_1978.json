@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "acyclovir-acv-1978",
+        "molecule_name": "Acyclovir",
+        "class": "Natural Product",
+        "author": "ACV",
+        "year": 1978
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification / Nitrile hydrolysis",
+            "reagents": "(CH2OH)2",
+            "reagent_smiles": "",
+            "conditions": "90 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)C#N",
+            "product_smiles": "C1=CC=C(C=C1)C(=O)OCCO",
+            "notes": "Benzonitrile reacts with ethylene glycol at elevated temperature to form 2-hydroxyethyl benzoate. This transformation involves the hydrolysis of a nitrile group and subsequent esterification.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Chloromethylation / Ether Formation",
+            "reagents": "(H2CO)n, aq. HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)C(=O)OCCO",
+            "product_smiles": "C1=CC=C(C=C1)C(=O)OCCOCCl",
+            "notes": "A primary alcohol is converted to a chloromethyl ether using paraformaldehyde and hydrochloric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Alkylation",
+            "reagents": "TEA",
+            "reagent_smiles": "C1=NC2C(=NC(=NC2N1)Cl)Cl",
+            "conditions": "DMF",
+            "yield": "41%",
+            "reactant_smiles": "C1=CC=C(C=C1)C(=O)OCCOCCl",
+            "product_smiles": "C1=CC=C(C=C1)C(=O)OCCOCN2C=NC3C(=NC(=NC32)Cl)Cl",
+            "notes": "N-Alkylation of 2,6-dichloropurine. The yield of 41% is reported over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrolysis, Nucleophilic Aromatic Substitution",
+            "reagents": "NH3",
+            "reagent_smiles": "[NH3].CO",
+            "conditions": "MeOH, 95 °C",
+            "yield": "70%",
+            "reactant_smiles": "C1=CC=C(C=C1)C(=O)OCCOCN2C=NC3C(=NC(=NC32)Cl)Cl",
+            "product_smiles": "OCCN(CO)C1=NC=NC2=C1N=C(N)N=C2Cl",
+            "notes": "Hydrolysis of benzoyl ester and nucleophilic substitution of a chlorine atom (at C6 of purine) with ammonia to form an amine, while the other chlorine (at C2) remains.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deamination",
+            "reagents": "NaNO2, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C(COCN1C=NC2C(=NC(=NC21)Cl)N)O",
+            "product_smiles": "C(COCN1C=NC2C1N=C(Cl)N=C2O)O",
+            "notes": "Conversion of a purine 6-amino group to a 6-hydroxyl group via diazotization.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr), Amination",
+            "reagents": "NH3",
+            "reagent_smiles": "N.CO",
+            "conditions": "MeOH, 125 °C",
+            "yield": "50%",
+            "reactant_smiles": "OC1=NC(Cl)=NC2=C1N(COCCO)C=N2",
+            "product_smiles": "N(CC1=NC(N)=NC2=C1N=CN2)COCCO",
+            "notes": "Amination of a 2-chloropurine derivative (6-hydroxy form shown in reactant) with ammonia to yield Acyclovir (6-oxo form shown in product). This involves a tautomeric shift at the C6 position from hydroxy to keto.",
+            "substeps": []
+        }
+    ]
+}

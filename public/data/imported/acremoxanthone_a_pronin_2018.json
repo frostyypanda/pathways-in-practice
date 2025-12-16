@@ -1,0 +1,218 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "acremoxanthone-a-pronin-2018",
+        "molecule_name": "Acremoxanthone A",
+        "class": "Natural Product",
+        "author": "Pronin",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "PhSO2Na",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "73%",
+            "reactant_smiles": "O1CC(CCBr)CO1",
+            "product_smiles": "O1CC(CCSO2[Ph])CO1",
+            "notes": "Conversion of an alkyl bromide to an alkyl sulfone via SN2 reaction with sodium benzenesulfinate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkylation",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "C=C(CCl)OCOC",
+            "conditions": "THF, HMPA",
+            "yield": "",
+            "reactant_smiles": "C1COC(CCS(=O)(=O)[Ph])O1",
+            "product_smiles": "C=C(CC(CC1OCCO1)S(=O)(=O)[Ph])OCOC",
+            "notes": "Alkylation of a sulfone-stabilized carbanion with an allylic chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "n-BuLi, HMPA",
+            "reagent_smiles": "BrCC1=C(Br)C(OC)=CC(OC)=C1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C([OMOM])CC([Ph]S(=O)(=O))CC1OCCO1",
+            "product_smiles": "C=C([OMOM])C[C](S(=O)(=O)[Ph])(CC1OCCO1)CC2=C(Br)C(OC)=CC(OC)=C2",
+            "notes": "Alpha-alkylation of a sulfone with a benzylic bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Dearomatization / Cyclization",
+            "reagents": "PIFA, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "HFIP",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "C=C([OMOM])CC(CC1=CC(=C(C(=C1)OC)Br)OC)(CC2OCCO2)S(=O)(=O)[Ph]",
+            "product_smiles": "COC1=C(C(=C2CC(=O)CC(=CC2=C1)CC3OCCO3)OC)Br",
+            "notes": "Oxidative cyclization of an alkene and an aryl sulfone to form a dearomatized cyclohexenone fused system, with loss of MOM and sulfone groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Annulation / Cascade Reaction",
+            "reagents": "LiHMDS, DME",
+            "reagent_smiles": "CC1=CC(=C2C(=C1)C(C#N)OC2=O)OC",
+            "conditions": "-45 °C to 60 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C(=C2CC(=O)CC(=CC2=C1)CC3OCCO3)OC)Br",
+            "product_smiles": "CC1=CC2=C(C(=C1)OC)C(=O)C3=C(CC4=C(C=C(C(=C4OC)Br)OC)C[C@]3(CC5OCCO5)C2=O)O",
+            "notes": "Complex cascade reaction involving a deprotonation/cycloaddition to form a highly substituted polycyclic structure.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Formylation",
+                    "reagents": "n-BuLi, DMF",
+                    "reagent_smiles": "CCCC[Li].CN(C)C=O",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "Brc1cc(OC)cc(C)c1",
+                    "product_smiles": "Cc1cc(OC)cc(C=O)c1",
+                    "notes": "Bromine-lithium exchange followed by formylation with DMF.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Cyclization / multi-step reaction",
+                    "reagents": "n-BuLi, MeNH(CH₂)₂NMe₂, CO₂, KCN, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "48%",
+                    "reactant_smiles": "CC1=CC(=CC(=C1)C=O)OC",
+                    "product_smiles": "CC1=CC(=C2C(=C1)C(C#N)OC2=O)OC",
+                    "notes": "Ortho-lithiation followed by carboxylation, cyanation, and intramolecular cyclization to form a 3-cyanodihydrobenzofuranone from a substituted benzaldehyde.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetal Hydrolysis and Intramolecular Cyclopropanation",
+            "reagents": "HCl, iPrOH",
+            "reagent_smiles": "",
+            "conditions": "70 °C",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "CC1=CC2=C(C(=C1)OC)C(=O)C3=C(CC4=C(C=C(C(=C4OC)Br)OC)C[C@]3(CC5OCCO5)C2=O)O",
+            "product_smiles": "COc1cc(C)c2c(c1)C(=O)C3=C(O)C(=O)[C@@]45CC[C@H](O)C4C(Cc6c(Br)c(OC)cc(OC)c6)C5=O",
+            "notes": "Deprotection of cyclic acetal followed by intramolecular cyclopropanation, leading to a complex fused system with a new hydroxyl group and two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dehydration/Rearrangement",
+            "reagents": "TCDI",
+            "reagent_smiles": "",
+            "conditions": "1,2-DCB, 140 °C",
+            "yield": "53%",
+            "reactant_smiles": "CC1=CC2=C(C(=C1)OC)C(=O)C3=C2C(O)=C4C(=O)C5(C3)C(CC6=C(Br)C(OC)=CC(OC)=C6)([C@@H]7[C@H](O)C(=O)C4)C7",
+            "product_smiles": "CC1=CC2=C(C(=C1)OC)C(=O)C3=C2C(O)=C4C(=O)C5(C3)C(CC6=C(Br)C(OC)=CC(OC)=C6)(C=CC(=O)C4)",
+            "notes": "Dehydration of the tertiary alcohol and adjacent hydrogen to form a double bond in the bridged ring system. TCDI (1,1'-Thiocarbonyldiimidazole) acts as a dehydrating agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "Na2S2O4, NaHCO3, DMF, H2O",
+            "reagent_smiles": "",
+            "conditions": "80 °C",
+            "yield": "99%",
+            "reactant_smiles": "CC1=CC2=C(OC)C(O)=C1C(=O)[C@]3(C2=O)C=CCC4CC3=C4C(OC)=C(Br)C(OC)=C5",
+            "product_smiles": "CC1=CC2=C(OC)C(O)=C1C(=O)[C@]3([C@@H](O)C2)C=CCC4CC3=C4C(OC)=C(Br)C(OC)=C5",
+            "notes": "Reduction of a quinone carbonyl group to a secondary alcohol using sodium dithionite.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Carbonylative Stille Coupling",
+            "reagents": "Pd(PPh3)4, CuI, CO",
+            "reagent_smiles": "COC1=CC=C(C(=C1C(=O)OC)[Sn](C)(C)C)OC",
+            "conditions": "DMA, 60 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=CC2=C(C(=C1)OC)C(=C3C(=O)C4C=CC3(CC5=C4C(=C(C(=C5)OC)Br)OC)[C@@H]2O)O",
+            "product_smiles": "CC1=CC2=C(C(=C1)OC)C(=C3[C@@H]4C=C[C@@H](C5=C4C=C(C(=C5OC)C(=O)C6=C(C(=CC=C6O)O)C(=O)OC)OC)[C@@H]3(C2)O)O",
+            "notes": "Carbonylative Stille coupling of an aryl bromide with an aryl stannane to form a ketone, forming Acremoxanthone A.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Directed Ortho Metallation / Aromatic Stannylation",
+                    "reagents": "LiTMP, Me3SnCl",
+                    "reagent_smiles": "Cl[Sn](C)(C)C.[Li]N1C(C)(C)CCCC1(C)C",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "COC1=CC=C(C(=C1)C(=O)O)OC",
+                    "product_smiles": "COC1=CC=C(C(=C1C(=O)O)[Sn](C)(C)C)OC",
+                    "notes": "Directed ortho-metallation of 2,5-dimethoxybenzoic acid using LiTMP, followed by quenching with trimethyltin chloride to introduce a trimethylstannyl group at the ortho position (C6).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Esterification (Methylation)",
+                    "reagents": "PhH, MeOH",
+                    "reagent_smiles": "[N-]=[N+]=C[Si](C)(C)C",
+                    "conditions": "",
+                    "yield": "88%",
+                    "reactant_smiles": "COc1ccc(OC)c(C(=O)O)c1[Sn](C)(C)C",
+                    "product_smiles": "COc1ccc(OC)c(C(=O)OC)c1[Sn](C)(C)C",
+                    "notes": "Methylation of a carboxylic acid using trimethylsilyldiazomethane (TMS-diazomethane).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Bromination / Substitution",
+            "reagents": "PBr3, DCM",
+            "reagent_smiles": "",
+            "conditions": "r.t.",
+            "yield": "",
+            "reactant_smiles": "CC1=CC2=C(C(=C1)OC)C(=C3[C@@H]4C=C[C@@H](C5=C4C=C(C(=C5OC)C(=O)C6=C(C(=CC=C6O)O)C(=O)OC)OC)[C@@]3(C2)O)O",
+            "product_smiles": "COC1=C(C)C=C2C1=C(O)C3=C2[C@@H]4C=C[C@@H](C5=CC(=C(OC)C(=C54)C(=O)C6=CC(=C(O)C(=C6O)C(=O)OC)OC)OC)[C@](Br)3",
+            "notes": "Substitution of a tertiary hydroxyl group with bromine, proceeding with inversion of stereochemistry at the bridgehead carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "O-demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "-20 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1cc(OC)c(O)c2c1C(=O)c3c(OC)cc(C(=O)c4c(C(=O)OC)c(O)c(O)cc4)c3C[C@H]5C=C[C@@H](C5)[C@@H](Br)C2",
+            "product_smiles": "Cc1cc(O)c(O)c2c1C(=O)c3c(O)cc(C(=O)c4c(C(=O)OC)c(O)c(O)cc4)c3C[C@H]5C=C[C@@H](C5)[C@@H](Br)C2",
+            "notes": "O-demethylation of two aryl methyl ethers to phenols using BBr3.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Substitution",
+            "reagents": "NaOAc, AcOH, HFIP",
+            "reagent_smiles": "[Na+].CC(=O)[O-].CC(=O)O.C(C(F)(F)F)(F)(F)O",
+            "conditions": "60 °C",
+            "yield": "",
+            "reactant_smiles": "Cc1cc(O)c2c1C(=O)[C@@H]3[C@H](Br)[C@]4(c2)[C@@H]5C=C[C@H](C6=C5C=C(OC)C(=C6O)C(=O)C7=C(C(=CC=C7O)O)C(=O)OC)[C@]43",
+            "product_smiles": "Cc1cc(O)c2c1C(=O)[C@H]3(O)[C@H](OC(=O)C)[C@]4(c2)[C@@H]5C=C[C@H](C6=C5C=C(OC)C(=C6O)C(=O)C7=C(C(=CC=C7O)O)C(=O)OC)[C@]43",
+            "notes": "Nucleophilic substitution of bromide with acetate, with retention of configuration at the substitution center and inversion of configuration at an adjacent hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Cyclization / Xanthone Formation",
+            "reagents": "Cs2CO3, DMSO",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=CC2=C(C(=C1)O)C(O)=C3[C@H]4C=C[C@H]([C@H]3(C2)OC(C)=O)C5=C4C=C(C(=C5O)C(=O)C6=C(O)C(OC)=C(C(=O)OC)C=C6O)O",
+            "product_smiles": "CC1=CC2=C(C(=C1)O)C(O)=C3[C@H]4C=C[C@H]([C@H]3(C2)OC(C)=O)C5=C4C=C6C(=C5O)C(=O)C7=C(C=CC(=C7C(=O)OC)O)O6",
+            "notes": "Intramolecular cyclization involving the phenolic methyl ester and ketone groups to form a xanthone core, with the loss of a methoxy group. The OAc and CO2Me groups are retained.",
+            "substeps": []
+        }
+    ]
+}

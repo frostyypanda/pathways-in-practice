@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "acalabrutinib-calquence-aztra-zeneca-unknown-2024",
+        "molecule_name": "Acalabrutinib (Calquence Aztra-Zeneca)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amide Coupling / Condensation",
+            "reagents": "POCl3, pyridine",
+            "reagent_smiles": "Nc1ccccn1",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "O=C(O)C1=CC=C(Br)C=C1",
+            "product_smiles": "O=C(Nc1ccccn1)c2ccc(Br)cc2",
+            "notes": "Amide formation between 4-bromobenzoic acid and 2-aminopyridine, mediated by POCl3.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Borylation / Suzuki-Miyaura Precursor",
+            "reagents": "B2Pin2, Pd(dppf), AcOK",
+            "reagent_smiles": "",
+            "conditions": "toluene, 110 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=NC(=C1)NC(=O)C2=CC=C(C=C2)Br",
+            "product_smiles": "CC1(C)C(C)(C)OB(c2ccc(C(=O)Nc3ccccn3)cc2)O1",
+            "notes": "Aryl bromide is converted to a pinacol boronate ester via borylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection / Hydrolysis",
+            "reagents": "NaIO4, HCl",
+            "reagent_smiles": "",
+            "conditions": "aq, THF, rt; then aq, rt",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C(C)(C)OB(C2=CC=C(C=C2)C(=O)NC3=CC=CC=N3)O1",
+            "product_smiles": "C1=CC=NC(=C1)NC(=O)C2=CC=C(C=C2)B(O)O",
+            "notes": "Hydrolysis of a pinacol boronate ester to a boronic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Petasis-type reaction (multi-component reaction)",
+            "reagents": "NH3, 2,4-pentanedione",
+            "reagent_smiles": "C1=NC(=C(Cl)N=C1)C=O",
+            "conditions": "dioxane, H2O, 90 °C",
+            "yield": "81% (4 steps)",
+            "reactant_smiles": "C1=CC=NC(=C1)NC(=O)C2=CC=C(C=C2)B(O)O",
+            "product_smiles": "ClC1=NC=CN=C1C(N)c2ccc(C(=O)Nc3ncccc3)cc2",
+            "notes": "Formation of a benzylic amine from boronic acid, aldehyde, and ammonia. The specific mechanism likely involves multiple steps (indicated by '4 steps'), consistent with a Petasis-type reaction or related multi-component condensation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Formation (Acylation)",
+            "reagents": "Et3N, SOCl2, Et3N",
+            "reagent_smiles": "CC#CC(=O)N1CCC[C@H]1C(=O)O",
+            "conditions": "DCM, 30-40 °C, then 30-50 °C",
+            "yield": "",
+            "reactant_smiles": "NC(c1cc(Cl)ncn1)c2ccc(C(=O)Nc3ncccc3)cc2",
+            "product_smiles": "CC#CC(=O)N1CCC[C@H]1C(=O)N[C@H](c2cc(Cl)ncn1)c3ccc(C(=O)Nc4ncccc4)cc3",
+            "notes": "Amine on the reactant is acylated with (2S)-1-(but-2-ynoyl)pyrrolidine-2-carboxylic acid, likely via in situ formation of the acid chloride using SOCl2, followed by coupling with the amine using Et3N as base. The stereocenter at the proline derivative is retained, and a new (S)-stereocenter is formed at the benzylic carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cyclization / Dehydration",
+            "reagents": "POCl3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 80 to 100 °C",
+            "yield": "",
+            "reactant_smiles": "CC#CC(=O)N1CCC[C@H]1C(=O)NC(c2nc(Cl)n3c2cccc3)(c4ccc(C(=O)Nc5ccccn5)cc4)",
+            "product_smiles": "CC#CC(=O)N1CCC[C@H]1C2=NC(=C3C(=NC=CN32)Cl)C4=CC=C(C=C4)C(=O)NC5=CC=CC=N5",
+            "notes": "Intramolecular cyclodehydration and rearrangement to form an imidazoquinazoline system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr) / Amination",
+            "reagents": "NH3, i-PrOH",
+            "reagent_smiles": "",
+            "conditions": "rt to 120 °C",
+            "yield": "86% (4 steps)",
+            "reactant_smiles": "CC#CC(=O)N1CCC[C@H]1C2=NC(=C3C(=NC=CN32)Cl)C4=CC=C(C=C4)C(=O)Nc1ncccc1",
+            "product_smiles": "CC#CC(=O)N1CCC[C@H]1C2=NC(=C3C(=NC=CN32)N)C4=CC=C(C=C4)C(=O)Nc1ncccc1",
+            "notes": "Amination of a chloro-pyrrolo[2,3-d]pyrimidine using ammonia to form Acalabrutinib.",
+            "substeps": []
+        }
+    ]
+}

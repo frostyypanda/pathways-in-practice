@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "7-20-diisocyanoadociane-vanderwal-2022",
+        "molecule_name": "7,20-Diisocyanoadociane",
+        "class": "Natural Product",
+        "author": "Vanderwal",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Silyl Enol Ether Formation",
+            "reagents": "TBSOTf, TEA",
+            "reagent_smiles": "C[Si](C)(C(C)(C)C)OS(=O)(=O)C(F)(F)F.CCN(CC)CC",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@@H]1CC=C(C=O)CC1",
+            "product_smiles": "C=C(C)[C@@H]1CC=C(C(=CH)[OTBS])CC1",
+            "notes": "Formation of a silyl enol ether from an α,β-unsaturated aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxidation",
+            "reagents": "mCPBA, NaHCO₃",
+            "reagent_smiles": "",
+            "conditions": "Et₂O, rt",
+            "yield": "",
+            "reactant_smiles": "CC(=C)[C@@H]1CC=CC(=C([OTBS]))C1",
+            "product_smiles": "C=C(C)[C@@H]1C=CC2(CC1)C(O2)[OTBS]",
+            "notes": "Epoxidation of the exocyclic double bond, forming a spiro epoxide. The endocyclic double bond and the isopropenyl group are untouched. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Epoxide opening, deprotection, oxidative cleavage, and intramolecular cyclization",
+            "reagents": "NaIO₄, HF, H₂O, MeCN",
+            "reagent_smiles": "[Na+].[O-]I(=O)(=O)=O.F.O.CC#N",
+            "conditions": "",
+            "yield": "58% (3 steps)",
+            "reactant_smiles": "C=C(C)[C@@H]1C=CC2(CC1)C(O2)[OTBS]",
+            "product_smiles": "O=C1C=CC[C@@H](C=C(C))C1",
+            "notes": "The TBS protecting group is deprotected, the epoxide is opened to form a diol, which is then oxidatively cleaved by periodate. Subsequent intramolecular aldol condensation and dehydration leads to the alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Michael Addition / Alkylation",
+            "reagents": "CuI.LiCl",
+            "reagent_smiles": "[Mg]BrC1=C(OC)C=CC(C)=C1.CCOC(=O)CBr",
+            "conditions": "THF, -78 °C to rt, then HMPA",
+            "yield": "61%",
+            "reactant_smiles": "C=C(C)[C@@H]1C=CC(=O)CC1",
+            "product_smiles": "CCOC(=O)C[C@@H]1C(=O)CC[C@@H](C(=C)C)[C@H]1C1=C(OC)C=CC(C)=C1",
+            "notes": "Conjugate addition of 2-methoxy-5-methylphenylmagnesium bromide to cyclohexenone derivative, followed by alkylation with ethyl bromoacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Addition / Lactonization",
+            "reagents": "",
+            "reagent_smiles": "C[Mg]Br",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C[C@@H]1C(=O)CC[C@H](C(=C)C)[C@@H]1c2cc(OC)c(C)cc2",
+            "product_smiles": "C=C(C)[C@H]1CC[C@]2(C)[C@@H](CC(=O)O2)[C@@H]1c3cc(OC)c(C)cc3",
+            "notes": "Grignard addition to the ketone group, followed by intramolecular cyclization (lactonization) of the resulting alkoxide with the ester group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Epoxidation",
+            "reagents": "DMDO, DCM",
+            "reagent_smiles": "",
+            "conditions": "-25 to -10 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC(C)=CC=C1[C@H]2[C@@H](C=C(C)C)CC[C@]3(C)[C@H]2CC(=O)O3",
+            "product_smiles": "COC1=CC(C)=CC=C1[C@H]2[C@@H]([C@@]3(C)O[C@@H]3)CC[C@]4(C)[C@H]2CC(=O)O4",
+            "notes": "Epoxidation of the isopropenyl group to form an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Meinwald rearrangement, Friedel-Crafts cyclodehydration",
+            "reagents": "BF3•OEt2",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "85% (2 steps)",
+            "reactant_smiles": "COc1c([C@@H]2[C@H](CC[C@]3(C)[C@H]2CC(=O)O3)C4(C)CO4)c(C)cc1",
+            "product_smiles": "CC1=CC2=CC(=C(C=C2[C@H]3[C@@H]1CC[C@]4(C)[C@H]3CC(=O)O4)OC)C",
+            "notes": "Meinwald rearrangement followed by Friedel-Crafts cyclodehydration to form a fused aromatic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Birch reduction (lactone reduction)",
+            "reagents": "Li, sBuOH, NH3",
+            "reagent_smiles": "",
+            "conditions": "dioxane, -78 to -45 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12CCC([C@H]3[C@@H]1CC(=O)O3)[C@H]1C[C@H]2([H])C2=C(OC)C=C(C)CC2[C@H]1",
+            "product_smiles": "C[C@@]12CCC([C@H]3[C@@H]1C[C@H](O)O3)[C@H]1C[C@H]2([H])C2=C(OC)C=C(C)CC2[C@H]1",
+            "notes": "Reduction of a lactone to a lactol. The cyclohexadiene ring system is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Acid-catalyzed enol ether hydrolysis, cyclization, and acetalization",
+            "reagents": "HCl, MeOH/H2O",
+            "reagent_smiles": "",
+            "conditions": "22 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CC2=C(CC(=C(C)C2)OC)[C@@H]3[C@@H]1CC[C@]4(C)[C@H]3CC(O)O4",
+            "product_smiles": "C[C@@H]1C[C@@H]2CC(C)C(=O)C=C2[C@@H]3[C@@H]1CC[C@]4(C)[C@H]3CC(OC)O4",
+            "notes": "The enol ether in the bottom-left ring of the reactant undergoes hydrolysis and intramolecular cyclization to form an alpha,beta-unsaturated ketone in the product. Simultaneously, the cyclic hemiacetal (with a hydroxyl group) in the furan ring is converted to a cyclic acetal (with a methoxy group) under the acidic methanol conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Rh/Al2O3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 22 °C",
+            "yield": "97%",
+            "reactant_smiles": "C[C@H]1C[C@H]2C[C@@H](C)C(=O)C=C2[C@H]3[C@H]1CC[C](C)4[C@H]3C[C@@H](OC)O4",
+            "product_smiles": "C[C@H]1C[C@H]2C[C@@H](C)C(=O)C[C@@H]2[C@H]3[C@H]1CC[C](C)4[C@H]3C[C@@H](OC)O4",
+            "notes": "Hydrogenation of an α,β-unsaturated ketone to a saturated ketone, reducing the alkene bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Rearrangement",
+            "reagents": "DL-proline, (CO2H)2",
+            "reagent_smiles": "",
+            "conditions": "DMSO/H2O, 100 °C",
+            "yield": "64%",
+            "reactant_smiles": "C[C@H]1C[C@H]2CC(C)C(=O)C[C@@H]2[C@@H]3[C@@H]1CCC4(C)[C@H]3C[C@H](OC)O4",
+            "product_smiles": "C[C@H]1C[C@H]2CC(C)C(=O)C3=CC[C@H]4[C@@H]([C@@H]1CCC4(C)O)[C@@H]23",
+            "notes": "Acid-catalyzed rearrangement of a polycyclic ether to an unsaturated alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 22 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(C)[C@H]3C[C@H]4[C@H](C)[C@H]5C[C@@](C)(O)CC[C@@]5(C)[C@H]4[C@H](C3)C(=O)C=C12",
+            "product_smiles": "C[C@H]1CC[C@@]2(C)[C@H]3C[C@H]4[C@H](C)[C@H]5C[C@@](C)(O)CC[C@@]5(C)[C@H]4[C@H](C3)C(=O)[C@@H]1[C@@]2",
+            "notes": "Catalytic hydrogenation of an internal alkene to an alkane. The ketone and tertiary alcohol functionalities remain untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Reductive Alkylation (Ketone to Tertiary Alcohol)",
+            "reagents": "Me3Al",
+            "reagent_smiles": "C[Al](C)C",
+            "conditions": "PhMe, -78 to 22 °C",
+            "yield": "63%",
+            "reactant_smiles": "C[C@H]1C[C@H]2C[C@@H](C)C(=O)C3CC[C@H]4[C@@H]([C@@H]1CC[C@@]4(C)O)[C@H]23",
+            "product_smiles": "C[C@H]1C[C@H]2C[C@@H](C)[C@@](C)([C@H]3CC[C@H]4[C@H]([C@@H]1CC[C@@]4(C)O)[C@H]23)O",
+            "notes": "Ketone reduced to tertiary alcohol with addition of a methyl group from trimethylaluminum.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Acylation / Esterification",
+            "reagents": "TFAA, pyr, DCM",
+            "reagent_smiles": "O=C(OC(=O)C(F)(F)F)C(F)(F)F.c1ccncc1",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CC[C@@]2(C)[C@H](O)CC[C@H]3[C@H]4CC[C@@]5(C)[C@H](O)CC[C@@H]5[C@@H]4[C@H]3[C@@H]2C1",
+            "product_smiles": "C[C@H]1CC[C@@]2(C)[C@H](OC(=O)CF3)CC[C@H]3[C@H]4CC[C@@]5(C)[C@H](OC(=O)CF3)CC[C@@H]5[C@@H]4[C@H]3[C@@H]2C1",
+            "notes": "Conversion of two hydroxyl groups (one secondary, one tertiary) to trifluoroacetate esters.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Isocyanation",
+            "reagents": "",
+            "reagent_smiles": "C[Si](C)(C)C#N.[Sc+3].[O-]S(=O)(=O)C(F)(F)F.[O-]S(=O)(=O)C(F)(F)F.[O-]S(=O)(=O)C(F)(F)F",
+            "conditions": "rt",
+            "yield": "59%",
+            "reactant_smiles": "CC1C[C@H]2C[C@@H](C)[C@@H]3CC[C@H]4[C@H]([C@H]1CC[C@]4(C)OC(=O)C(F)(F)F)[C@@H]23OC(=O)C(F)(F)F",
+            "product_smiles": "CC1C[C@H]2C[C@@H](C)[C@@H]3CC[C@H]4[C@H]([C@H]1CC[C@]4(C)[N+]#[C-])[C@@H]23[N+]#[C-]",
+            "notes": "Di(trifluoroacetoxy)adociane converted to Diisocyanoadociane via nucleophilic substitution using TMSCN and Scandium triflate catalyst.",
+            "substeps": []
+        }
+    ]
+}

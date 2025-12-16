@@ -1,0 +1,84 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "adagrasib-krazati-bms-unknown-2024",
+        "molecule_name": "Adagrasib (Krazati BMS)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "DIPEA, DMA",
+            "reagent_smiles": "[Boc]N1CCC2=C(Cl)N=C(Cl)N=C2C1",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "[Cbz]N1C[C@H](CC#N)NCC1",
+            "product_smiles": "[Boc]N1CCC2=C(N=C(Cl)N=C2C1)N3CCN([C@H](CC#N)C3)[Cbz]",
+            "notes": "SNAr reaction of secondary amine (piperazine) with a dichloropyrimidine, replacing one chlorine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Buchwald-Hartwig C-O Coupling",
+            "reagents": "Pd2(dba)3, (R)-BINAP, K3PO4",
+            "reagent_smiles": "CN1CCC[C@H]1CO",
+            "conditions": "2-MeTHF",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC2=C(N=C(Cl)N=C2C1)N3CCN([C@@H](CC#N)C3)[Cbz]",
+            "product_smiles": "[Boc]N1CCC2=C(N=C(N=C2C1)OC[C@@H]3CCCN3C)N4CCN([C@@H](CC#N)C4)[Cbz]",
+            "notes": "Palladium-catalyzed coupling of an aryl chloride with (R)-N-methyl-2-pyrrolidinemethanol, resulting in inversion of stereochemistry at the new C-O bond. The Boc and Cbz protecting groups remain.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "[Boc]N1CCC2=C(N=C(N=C2C1)OC[C@@H]3CCCN3C)N4CCN([C@@H](CC#N)C4)[Cbz]",
+            "product_smiles": "CN1CCC[C@@H]1COC2=NC(=C3CCNCC3=N2)N4CCN([C@@H](CC#N)C4)[Cbz]",
+            "notes": "Boc protecting group is removed with HCl/H2O, leaving a secondary amine. Cbz protecting group and all stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Buchwald-Hartwig Amination",
+            "reagents": "Pd(OAc)2, (R)-BINAP, K2PO3, pTsOH",
+            "reagent_smiles": "C1=CC(=C2C(=C1)C=CC=C2Br)Cl",
+            "conditions": "2-MeTHF, acetone",
+            "yield": "71%",
+            "reactant_smiles": "CN1CCC[C@H]1COC2=NC(=C3CCNCC3=N2)N4CCN([C@@H](CC#N)C4)[Cbz]",
+            "product_smiles": "CN1CCC[C@H]1COC2=NC(=C3CCN(CC3=N2)C4=CC=CC5=CC=CC(=C54)Cl)N6CCN([C@@H](CC#N)C6)[Cbz]",
+            "notes": "Buchwald-Hartwig amination of a primary amine with an aryl halide to form a C-N bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Cbz Deprotection",
+            "reagents": "2-mercaptoethanol, K3PO4, DMA",
+            "reagent_smiles": "",
+            "conditions": "DMA",
+            "yield": "86%",
+            "reactant_smiles": "CN1CCC[C@H]1COC2=NC(=C3CCN(CC3=N2)C4=C5C(=CC=C4)C=CC=C5Cl)N6CCN([C@@H](CC#N)C6)[Cbz]",
+            "product_smiles": "CN1CCC[C@H]1COC2=NC(=C3CCN(CC3=N2)C4=C5C(=CC=C4)C=CC=C5Cl)N6CCN[C@@H](CC#N)C6",
+            "notes": "Deprotection of Cbz group on piperazine nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Formation",
+            "reagents": "T3P",
+            "reagent_smiles": "C=C(F)C(=O)ONa",
+            "conditions": "MeCN",
+            "yield": "70%",
+            "reactant_smiles": "CN1CCC[C@H]1COC2=NC(=C3CCN(CC3=N2)N(c4c(Cl)cccc5c4nccc5))N6CCN[C@H](CC#N)C6",
+            "product_smiles": "C=C(F)C(=O)N1CCN(C[C@H]1CC#N)C2=NC(=C3CCN(CC3=N2)N(c4c(Cl)cccc5c4nccc5))OC[C@@H]6CCCN6C",
+            "notes": "Acylation of a secondary amine with sodium 2-fluoroacrylate using T3P as coupling agent.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "acromelic-acid-a-hamashima-2014",
+        "molecule_name": "Acromelic Acid A",
+        "class": "Natural Product",
+        "author": "Hamashima",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Aromatic Substitution",
+            "reagents": "NaOMe, MeOH",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "99%",
+            "reactant_smiles": "C1=CC(=NC(=C1)Cl)Cl",
+            "product_smiles": "COC1=NC(=CC=C1)Cl",
+            "notes": "One chlorine atom on the pyridine ring is substituted by a methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Directed ortho-metalation / Formylation",
+            "reagents": "tBuLi, DMF",
+            "reagent_smiles": "",
+            "conditions": "THF -78 °C then -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COc1ncccc1Cl",
+            "product_smiles": "COc1nc(C=O)cc(Cl)c1",
+            "notes": "Directed ortho-lithiation of 2-methoxy-6-chloropyridine followed by formylation with DMF to yield 2-methoxy-6-chloro-3-pyridinecarbaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Palladium-catalyzed methoxycarbonylation",
+            "reagents": "CO, Pd(OAc)2, dppf, NaOAc",
+            "reagent_smiles": "",
+            "conditions": "MeOH, toluene, 50 °C",
+            "yield": "97%",
+            "reactant_smiles": "O=Cc1ccc(Cl)nc1OC",
+            "product_smiles": "O=Cc1ccc(C(=O)OC)nc1OC",
+            "notes": "Chloro-pyridine converted to methyl ester-pyridine using carbon monoxide and methanol, catalyzed by palladium. This step is part of a 2-step sequence.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Henry reaction",
+            "reagents": "CH3NO2, Et3N",
+            "reagent_smiles": "CN(=O)=O.CCN(CC)CC",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "COC1=NC(=CC(OC)=C1C=O)C(=O)OC",
+            "product_smiles": "COC1=NC(=CC(OC)=C1C(O)C[N+](=O)[O-])C(=O)OC",
+            "notes": "Henry reaction (nitroaldol) of an aldehyde with nitromethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dehydration / Elimination",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "[OMe]c1nc(C(=O)OC)ccc1C(O)C[N+](=O)[O-]",
+            "product_smiles": "[OMe]c1nc(C(=O)OC)ccc1/C=C/[N+](=O)[O-]",
+            "notes": "Dehydration of a secondary alcohol to form a trans-nitroalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Asymmetric Michael-Aldol Cyclization",
+            "reagents": "DME, Ni(OAc)2",
+            "reagent_smiles": "[C@H]1([C@@H](CCCC1)N(CC2=CC=CC=C2))N(CC3=CC=CC=C3).O=C(OC(C)(C)C)C(=O)C(C(=O)OCH(C1=CC=CC=C1)C2=CC=CC=C2).[Ni+2].CC(=O)[O-].CC(=O)[O-]",
+            "conditions": "-10 °C",
+            "yield": "88%",
+            "reactant_smiles": "COC1=NC(C(=O)OC)=CC=C1/C=C/[N+](=O)[O-]",
+            "product_smiles": "COC1=NC(C(=O)OC)=C[C@H]2[C@@H]([N+](=O)[O-])C[C@H](C(=O)OC(C)(C)C)(C(=O)OCH(C3=CC=CC=C3)C4=CC=CC=C4)[C@H]2C1",
+            "notes": "Chiral Ni-catalyzed [3+2] annulation of nitroalkene with β-keto ester to form a fused cyclopentapyridine derivative with four new stereocenters.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Esterification",
+                    "reagents": "Ph₂CN₂",
+                    "reagent_smiles": "",
+                    "conditions": "Et₂O",
+                    "yield": "85%",
+                    "reactant_smiles": "BrCCC(=O)O",
+                    "product_smiles": "BrCCC(=O)O[Dpm]",
+                    "notes": "Esterification of 3-bromopropanoic acid with diphenyldiazomethane to form diphenylmethyl 3-bromopropanoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Finkelstein Reaction",
+                    "reagents": "NaI, acetone",
+                    "reagent_smiles": "[Na]I.CC(=O)C",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "BrCCC(=O)OC(c1ccccc1)c1ccccc1",
+                    "product_smiles": "ICCC(=O)OC(c1ccccc1)c1ccccc1",
+                    "notes": "Bromine in the 3-bromopropanoic acid diphenylmethyl ester is replaced by iodine via a Finkelstein reaction using sodium iodide in acetone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Wittig ylide alkylation",
+                    "reagents": "AcOEt",
+                    "reagent_smiles": "[Boc]C(=O)C=P(c1ccccc1)(c1ccccc1)c1ccccc1",
+                    "conditions": "60 °C",
+                    "yield": "",
+                    "reactant_smiles": "ICC(=O)OC(c1ccccc1)c1ccccc1",
+                    "product_smiles": "[Boc]C(=O)C(=P(c1ccccc1)(c1ccccc1)c1ccccc1)CCC(=O)OC(c1ccccc1)c1ccccc1",
+                    "notes": "Alkylation of a stabilized phosphonium ylide with an iodo-ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Ozonolysis",
+                    "reagents": "O3, PPh3",
+                    "reagent_smiles": "[Ph3P]",
+                    "conditions": "CH2Cl2, -78 °C",
+                    "yield": "46% (3 steps)",
+                    "reactant_smiles": "O=C(OC(C)(C)C)C(=[Ph3P])CCC(=O)OC(c1ccccc1)c2ccccc2",
+                    "product_smiles": "O=C(OC(C)(C)C)C(=O)CCC(=O)OC(c1ccccc1)c2ccccc2",
+                    "notes": "Ozonolysis of a phosphonium ylide (similar to an enol ether) followed by reductive workup to yield a keto-diester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "Raney Ni",
+            "reagent_smiles": "",
+            "conditions": "H2 (900 psi), MeOH, 75 °C",
+            "yield": "",
+            "reactant_smiles": "COc1nc(C(=O)OC)ccc1[C@@H](C[N+](=O)[O-])[C@@H](CC(=O)OC(c2ccccc2)c3ccccc3)C(=O)OC(C)(C)C",
+            "product_smiles": "COc1nc(C(=O)OC)ccc1[C@@H]1C[NH][C@@H](C(=O)OC(C)(C)C)[C@@H](CC(=O)OC(c2ccccc2)c3ccccc3)1",
+            "notes": "Reduction of a nitro group and a keto group, followed by intramolecular cyclization to form a pyrrolidine ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenolysis / Deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "[Pd]",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "O=C(OC(c1ccccc1)c2ccccc2)C[C@H]1[C@H](C2=C(N=C(C=C2)C(=O)OC)OC)N[C@@H]1C(=O)OC(C)(C)C",
+            "product_smiles": "O=C(O)C[C@H]1[C@H](C2=C(N=C(C=C2)C(=O)OC)OC)N[C@@H]1C(=O)OC(C)(C)C",
+            "notes": "Hydrogenolysis of a diphenylmethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "68%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@@H]1[C@H](CC(=O)O)[C@H](CN1)C2=C(OC)N=C(C=C2)C(=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)[C@@H]1[C@H](CC(=O)OC)[C@H](CN1)C2=C(OC)N=C(C=C2)C(=O)OC",
+            "notes": "Carboxylic acid converted to methyl ester. Yield stated for 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Protection",
+            "reagents": "CbzCl, Et3N",
+            "reagent_smiles": "ClC(=O)OCC1=CC=CC=C1.CCN(CC)CC",
+            "conditions": "CH2Cl2",
+            "yield": "89%",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@H]1[C@@H](CC(=O)OC)[C@H](CN1)C2=C(N=C(C=C2)C(=O)OC)OC",
+            "product_smiles": "CC(C)(C)OC(=O)[C@H]1[C@@H](CC(=O)OC)[C@H](CN1[Cbz])C3=C(N=C(C=C3)C(=O)OC)OC",
+            "notes": "Protection of the pyrrolidine secondary amine with a Cbz group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection / Ester Hydrolysis",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)[C@H]1[C@@H](CC(=O)OC)[C@@H](CN1([Cbz]))C3=C(N=C(C=C3)C(=O)OC)OC",
+            "product_smiles": "COC(=O)C[C@@H]1[C@@H](CN([C@H]1C(=O)O)([Cbz]))C3=C(N=C(C=C3)C(=O)OC)OC",
+            "notes": "Hydrolysis of tert-butyl ester to carboxylic acid using trifluoroacetic acid. The provided SMILES (and corrections) assume a non-fused pyrrolidine-pyridine system, as implied by the input SMILES topology, despite the graphical representation appearing as a fused system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Stereochemical Isomerization/Rearrangement (based on reagent, though drawn structures are identical)",
+            "reagents": "AcONa, Ac₂O",
+            "reagent_smiles": "",
+            "conditions": "110 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "COC(=O)C[C@H]1[C@H](CN([C@@H]1C(=O)O)[Cbz])C3=C(N=C(C=C3)C(=O)OC)OC",
+            "product_smiles": "COC(=O)C[C@H]1[C@H](CN([C@@H]1C(=O)O)[Cbz])C3=C(N=C(C=C3)C(=O)OC)OC",
+            "notes": "The drawn reactant and product structures in the screenshot are visually identical, including all stereocenters. The original input reactant SMILES contained an incorrect stereochemistry for the carbon bearing the carboxylic acid group (was '@H', corrected to '@@H' to match the 'wedge away' bond in the drawing). The Cbz group was abbreviated to match the screenshot representation. The reagent SMILES was entirely junk and has been removed.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydrolysis, Deprotection, Ring Transformation (Pyridine to Pyridone)",
+            "reagents": "HBr, AcOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "100 °C",
+            "yield": "99%",
+            "reactant_smiles": "COC1=C(C=CC(=N1)C(=O)OC)[C@H]2CN([C@@H]([C@H]2CC(=O)OC)C(=O)O)[Cbz]",
+            "product_smiles": "O=C1NC(=C(C=C1)C(=O)O)[C@H]2CN[C@@H]([C@H]2CC(=O)O)C(=O)O",
+            "notes": "Hydrolysis of methyl esters, deprotection of Cbz, and conversion of the 2-methoxypyridine to a 2-pyridone",
+            "substeps": []
+        }
+    ]
+}

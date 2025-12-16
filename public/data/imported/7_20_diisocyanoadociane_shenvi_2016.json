@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "7-20-diisocyanoadociane-shenvi-2016",
+        "molecule_name": "7,20-Diisocyanoadociane",
+        "class": "Natural Product",
+        "author": "Shenvi",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-alkylation / Allylic alkylation",
+            "reagents": "LDA, THF, DMPU",
+            "reagent_smiles": "BrC/C=C/C",
+            "conditions": "THF, DMPU",
+            "yield": "",
+            "reactant_smiles": "CC1=C(C)OC(C)(C)OC1=O",
+            "product_smiles": "C/C=C/CC1=C(C)C(=O)OC(C)(C)O1",
+            "notes": "Alpha-alkylation of a beta-keto lactone with 1-bromo-(E)-2-butene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Diels-Alder / Claisen Rearrangement (likely, based on reactant and product structures and high temp)",
+            "reagents": "mesitylene",
+            "reagent_smiles": "C[C](c1ccccc1)[C@@H]1CCCC[C@H](O)C1",
+            "conditions": "150 °C",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "C/C=C/CCC1=C(C)C(=O)OC(C)(C)O1",
+            "product_smiles": "CCC/C=C/CC(=O)C(=C)C(=O)[TCC]",
+            "notes": "Transformation involves the rearrangement of a dioxinone to a diketone via a likely [4+2] cycloaddition and subsequent steps, catalyzed by TCC.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "Cu(OTf)2",
+            "reagent_smiles": "C[C@@H](C(=O)OC)CC(=C)C=C(OEt)[OTBS]",
+            "conditions": "DCM, -78 °C to 0 °C",
+            "yield": "60%",
+            "reactant_smiles": "C/C=C/CCC(=O)C(=C)C(=O)OCC(Cl)(Cl)Cl",
+            "product_smiles": "C[C@@H](C(=O)OC)CC(=C)CC1CCC(=O)C=C1[C@](C)(C(=O)OCC(Cl)(Cl)Cl)C/C=C/CCC",
+            "notes": "A Diels-Alder cycloaddition reaction. The reactant is a 1,3-diketone with an exocyclic methylene and a long alkene chain, where the TCC group is 2,2,2-trichloroethoxycarbonyl. The reagent is a complex triene featuring an ethyl vinyl ether and a TBS enol ether, along with a chiral methyl ester. The reaction forms a cyclohexenone ring. The ethyl and TBS groups of the reagent are lost during the reaction/workup. The TCC protecting group is retained, and a new methyl group is introduced at the quaternary center of the cyclohexenone ring, with defined stereochemistry.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Addition reaction",
+                    "reagents": "Me3Al",
+                    "reagent_smiles": "CCOC=C",
+                    "conditions": "Toluene, -10 °C",
+                    "yield": "56%",
+                    "reactant_smiles": "CC(=O)C#CBr",
+                    "product_smiles": "CCOC=C(C(=C)Br)C(=O)C",
+                    "notes": "Lewis acid-catalyzed addition of an enol ether to a bromo-alkyne, forming an α,β-unsaturated ketone with a vinyl bromide and enol ether group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Negishi Coupling",
+                    "reagents": "Pd(OAc)2",
+                    "reagent_smiles": "C[C@@H](C[Zn]Br)C(=O)OC",
+                    "conditions": "THF",
+                    "yield": "60%",
+                    "reactant_smiles": "CC(=O)/C(C(Br)=C)=C/OCC",
+                    "product_smiles": "CCO/C=C(\\C(=C)C[C@@H](C)C(=O)OC)/C(=C)O",
+                    "notes": "Negishi cross-coupling of a vinyl bromide with an organozinc reagent, accompanied by the reduction/enolization of a methyl ketone to a vinyl alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Silyl Ester Formation",
+                    "reagents": "TBSOTf, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCOC=C/C(=C(\\C(=O)O)/C(=C)C[C@@H](C)C(=O)OC)",
+                    "product_smiles": "CCOC=C/C(=C(\\C(=O)[OTBS])/C(=C)C[C@@H](C)C(=O)OC)",
+                    "notes": "Protection of a carboxylic acid as a silyl ester using TBSOTf and triethylamine. All stereocenters and alkene geometries are preserved.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Intramolecular Diels-Alder Reaction",
+            "reagents": "1,2-DCB",
+            "reagent_smiles": "",
+            "conditions": "180 to 200 °C",
+            "yield": "40%",
+            "reactant_smiles": "CC/C=C/C[C@@]1(OC(=O)C(Cl)(Cl)Cl)CCC(=O)C(=C1)C(=C)C[C@@H](C)C(=O)OC",
+            "product_smiles": "C[C@@H]1CC(=C2C(=O)CC[C@@H]3C(=O)CC[C@@H]1[C@H]32)C[C@@H](C)C(=O)OC",
+            "notes": "Intramolecular Diels-Alder reaction leading to a complex tetracyclic system. There is an inconsistency between the reactant and product drawings regarding the number of ketones: the reactant image clearly shows one ketone, while the product image (and its SMILES) clearly shows two ketones. This suggests an unshown oxidation or misrepresentation in one of the drawings.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Organometallic Addition",
+            "reagents": "Me3Al, MeMgBr",
+            "reagent_smiles": "C[Al](C)C.C[Mg]Br",
+            "conditions": "DCM, PhOMe, 30 °C",
+            "yield": "78%",
+            "reactant_smiles": "C[C@H]1CC(=C2C(=O)CC[C@@H]3C(=O)CC[C@@H]1[C@H]32)C[C@H](C)C(=O)OC",
+            "product_smiles": "C[C@H]1CC(=C2C(=O)CC[C@@H]3[C@H]2[C@@H]1CC[C@@]3(C)O)C[C@H](C)C(=O)OC",
+            "notes": "One ketone undergoes addition of a methyl group and is reduced to a tertiary alcohol. The other ketone remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alkene Reduction (Hydrogenation)",
+            "reagents": "Mn(dpm)3, TBHP, PhSiH3",
+            "reagent_smiles": "",
+            "conditions": "iPrOH",
+            "yield": "51%",
+            "reactant_smiles": "C[C@H]1CC(=C2(CC[C@H](C)C(=O)OC)C(=O)CC[C@H]3[C@H]2[C@H]1CC[C@@]3(C)O)",
+            "product_smiles": "C[C@H]1C[C@H](CC[C@H](C)C(=O)OC)[C@@H]2C(=O)CC[C@H]3[C@H]2[C@H]1CC[C@@]3(C)O",
+            "notes": "Stereoselective reduction of an alkene to form two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1C[C@@H](C[C@@H](C)C(=O)OC)[C@@H]2C(=O)CC[C@@H]3[C@@H]2[C@@H]1CC[C@](C)(O)[C@@H]3",
+            "product_smiles": "C[C@H]1C[C@@H](C[C@@H](C)CO)[C@@H]2C(=O)CC[C@@H]3[C@@H]2[C@@H]1CC[C@](C)(O)[C@@H]3",
+            "notes": "Reduction of a methyl ester to a primary alcohol using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C[C@H](C[C@@H]1C[C@H](C)[C@H]2CC[C@](C)([C@H]3CCC(=O)[C@@H]1[C@H]23)O)CO",
+            "product_smiles": "C[C@H](C[C@@H]1C[C@H](C)[C@H]2CC[C@](C)([C@H]3CCC(=O)[C@@H]1[C@H]23)O)C=O",
+            "notes": "Primary alcohol oxidized to an aldehyde using Dess-Martin Periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "NHC-catalyzed Cascade Cyclization / Rearrangement",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "C1CC(N2)C(=N[N+]2c3c(F)c(F)c(F)c(F)c3F)C1.[B-](F)(F)(F)F",
+            "conditions": "C2H4Cl2, 80 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H](C[C@@H]1C[C@H](C)[C@H]2CC[C@](C)([C@H]3CCC(=O)[C@@H]1[C@H]23)O)C=O",
+            "product_smiles": "C[C@H]1CC[C@@]2(O)[C@@](C)(O)[C@H]3[C@H](C)C[C@H]4CC[C@@H]1C(=O)[C@@H]2[C@H]43",
+            "notes": "NHC-catalyzed cascade cyclization of an aldehyde-ketone-alcohol into a di-tertiary-alcohol-ketone product with significant skeletal rearrangement.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Deoxygenation",
+            "reagents": "SmI2",
+            "reagent_smiles": "",
+            "conditions": "THF/MeOH, 22 °C",
+            "yield": "32%",
+            "reactant_smiles": "C[C@@H]1CC[C@@]23C[C@H](C)[C@@H]4[C@](O)([C@@](C)(O)C(=O)[C@@]5(C)C[C@H]3[C@@H]2C[C@@H]1C)CC54",
+            "product_smiles": "C[C@@H]1CC[C@@]23C[C@H](C)[C@@H]4[C@](O)([C@H](C)C(=O)[C@@]5(C)C[C@H]3[C@@H]2C[C@@H]1C)CC54",
+            "notes": "4 steps",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Peterson olefination",
+            "reagents": "TMSCH₂Li, CeCl₃, HF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@]12C[C@@H]3[C@H]4[C@H](C)C[C@H]5C(C)(O)CCC[C@@]35C1CCC(=O)[C@@H]2",
+            "product_smiles": "C=C1C[C@@]2(C)CC[C@H]3[C@@H]2[C@H](C)C[C@H]2C(C)(O)CCC[C@@]32C1",
+            "notes": "Conversion of a ketone to an exocyclic alkene using Peterson olefination conditions. The tertiary alcohol and all other stereocenters remain unchanged, except for the alpha carbon to the ketone which loses its chirality upon alkene formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydration / Rearrangement",
+            "reagents": "Hg(OAc)2, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "C[C@@]1(O)C2CC[C@@H]3[C@@](C)([C@H]4[C@H]2CC[C@]5([H])C(C)=C[C@H]5[C@H]3C4)C",
+            "product_smiles": "C[C@@]1(O)C2CC[C@@H]3[C@@](C)([C@H]4[C@H]2CC[C@]5([H])[C@@](C)(C)[C@@](O)(C)[C@H]5[C@H]3C4)C",
+            "notes": "The exocyclic alkene undergoes hydration with an unusual methyl migration. The original R-C(CH3)=CH2 group is transformed into R-C(CH3)2-C(OH)(CH3). All existing stereocenters are retained, and new hydroxyl and methyl groups are formed with beta (wedge) stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Triflation",
+            "reagents": "TFAA, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[H][C@@]12CCC3[C@@]([H])([C@]1(C)CC[C@@]4([H])[C@@]5(C)[C@](C)(O)C([H])([C@@]2([H])[C@@H]3C5(C)C)C(C)(C)O)C4",
+            "product_smiles": "[H][C@@]12CCC3[C@@]([H])([C@]1(C)CC[C@@]4([H])[C@@]5(C)[C@](C)([OTf])C([H])([C@@]2([H])[C@@H]3C5(C)C)C(C)(C)[OTf])C4",
+            "notes": "Conversion of a tetracyclic diol to its corresponding ditriflate using trifluoroacetic anhydride (TFAA) and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Substitution (Triflate to Isocyanide)",
+            "reagents": "TMSCN, Sc(OTf)3",
+            "reagent_smiles": "C[Si](C)(C)C#N.[Sc+3].[O-]S(=O)(=O)C(F)(F)F.[O-]S(=O)(=O)C(F)(F)F.[O-]S(=O)(=O)C(F)(F)F",
+            "conditions": "",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "C[C@]12CCC3C4CCC(C1)[C@@](C)(OS(=O)(=O)C(F)(F)F)[C@H]5CC[C@@H]6C3(C(C5)[C@H]6C2)C4C1(C)OS(=O)(=O)C(F)(F)F",
+            "product_smiles": "C[C@]12CCC3C4CCC(C1)[C@@](C)([N+]#[C-])[C@H]5CC[C@@H]6C3(C(C5)[C@H]6C2)C4C1(C)[N+]#[C-]",
+            "notes": "Double nucleophilic substitution of triflate groups by isocyanide groups on an adociane scaffold, retaining stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

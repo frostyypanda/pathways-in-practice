@@ -1,0 +1,230 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "7-deoxyceratinamide-a-yang-2022",
+        "molecule_name": "7-Deoxyceratinamide A",
+        "class": "Natural Product",
+        "author": "Yang",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "Br₂, TEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "C1C=CC(=O)CC1",
+            "product_smiles": "C1CCC(=O)C(=C1)Br",
+            "notes": "Alpha-bromination of cyclohexenone to form 2-bromocyclohex-2-en-1-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Luche Reduction",
+            "reagents": "NaBH4, CeCl3",
+            "reagent_smiles": "CO.[Na+].[BH4-].[Ce+3].[Cl-].[Cl-].[Cl-]",
+            "conditions": "MeOH, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "C1CCC(=O)C(=C1)Br",
+            "product_smiles": "OC1C(=C(Br)CCC1)",
+            "notes": "Selective 1,2-reduction of an α,β-unsaturated ketone to an allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Silylation / Alcohol Protection",
+            "reagents": "TBSOTf, Et3N",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "92%",
+            "reactant_smiles": "BrC1=CC(O)CCC1",
+            "product_smiles": "BrC1=CC([OTBS])CCC1",
+            "notes": "The hydroxyl group of 2-bromo-2-cyclohexen-1-ol is protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation (Allylic Oxidation)",
+            "reagents": "3,5-Dimethylpyrazole, CrO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "57%",
+            "reactant_smiles": "[OTBS]C1CCCC=C1Br",
+            "product_smiles": "[OTBS]C1CCC(=O)C=C1Br",
+            "notes": "Allylic oxidation of a silyl enol ether (indirectly, via the cyclohexene) to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Baeyer-Villiger Oxidation",
+            "reagents": "UHP, Na2HPO4, TFAA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 to 30 °C",
+            "yield": "52%",
+            "reactant_smiles": "[OTBS]C1C=C(Br)CCC1=O",
+            "product_smiles": "BrC1=CC([OTBS])CCC(=O)O1",
+            "notes": "Oxidative ring expansion of a cyclohexenone to a 7-membered lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Olefination / Tebbe-type olefination",
+            "reagents": "Cp2TiMe2",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 85 °C",
+            "yield": "74%",
+            "reactant_smiles": "[OTBS]C1CCC(=O)OC=C(Br)C1",
+            "product_smiles": "C=C1OC=C(Br)C([OTBS])CCC1",
+            "notes": "Lactone carbonyl converted to an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, -20 °C",
+            "yield": "87%",
+            "reactant_smiles": "O1C(=C)CCC([OTBS])C(Br)=C1",
+            "product_smiles": "O1C(=C)CCC(O)C(Br)=C1",
+            "notes": "Removal of TBS protecting group to yield a free hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "76%",
+            "reactant_smiles": "C=C1CCC(C(=CO1)Br)O",
+            "product_smiles": "C=C1CCC(=O)C(=CO1)Br",
+            "notes": "Oxidation of secondary alcohol to ketone using Dess-Martin periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "O-Methylation",
+            "reagents": "NaHMDS, MeOTf",
+            "reagent_smiles": "",
+            "conditions": "THF, DMF, -78 °C to rt",
+            "yield": "76%",
+            "reactant_smiles": "O1C=C(Br)C=C(=O)CCC(=C)1",
+            "product_smiles": "O1C=C(Br)C=C(OC)CCC(=C)1",
+            "notes": "Formation of a methyl enol ether from a cyclic ketone by deprotonation with NaHMDS and subsequent O-methylation with MeOTf. The double bond of the enol ether is conjugated with the existing double bond adjacent to the bromine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "1,3-Dipolar Cycloaddition",
+            "reagents": "NaHCO3, Na2HPO4",
+            "reagent_smiles": "CCOC(=O)/C(=N/O)/Cl",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "71%",
+            "reactant_smiles": "COC1=C(Br)C=CC(=C)O1",
+            "product_smiles": "CCOC(=O)C1=NOC[C@@]2(CC1)OC3C=CC(Br)=C(OC)C=C32",
+            "notes": "Formation of a fused isoxazoline ring system via a 1,3-dipolar cycloaddition using a nitrile oxide generated in situ, with stereoselective formation of the chiral center.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Diazotization/Halogenation (Formation of alpha-chloro oxime from alpha-amino ester)",
+                    "reagents": "NaNO2, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "-40 °C",
+                    "yield": "84%",
+                    "reactant_smiles": "CCOC(=O)CN",
+                    "product_smiles": "CCOC(=O)C(=NO)Cl",
+                    "notes": "Conversion of an alpha-amino ester to an alpha-chloro oxime, likely via an intermediate diazonium species.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Bromination / Dehydrogenation",
+            "reagents": "TBATB, DTBP",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "60%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@@]2(CC=C(C(=CO2)Br)OC)C1",
+            "product_smiles": "CCOC(=O)C1=NO[C@@]2(C(Br)=CC(=C(Br)C2)OC)C1",
+            "notes": "Allylic bromination with concurrent double bond rearrangement in the fused cyclohexadiene ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "70%",
+            "reactant_smiles": "CCOC(=O)C1=NO[C@@]2(CC(=C(C(=CO2)Br)OC)Br)C1",
+            "product_smiles": "OC(=O)C1=NO[C@@]2(CC(=C(C(=CO2)Br)OC)Br)C1",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using lithium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Amide Coupling (Condensation)",
+            "reagents": "TFA, TCFH, NMI",
+            "reagent_smiles": "O=CNCCC1=CC(Br)=C(OCCC[NH2])C(Br)=C1",
+            "conditions": "DCM, rt",
+            "yield": "58%",
+            "reactant_smiles": "COC1=C(C[C@@]2(CC(=NO2)C(=O)O)OC=C1Br)Br",
+            "product_smiles": "COC1=C(C[C@@]2(CC(=NO2)C(=O)NCCCOC3=C(Br)C=C(Br)C=C3CCNC=O)OC=C1Br)Br",
+            "notes": "Carboxylic acid of the bicyclic reactant couples with the primary amine to form an amide bond.",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "Br2, AcOH",
+                    "reagent_smiles": "BrBr.CC(=O)O",
+                    "conditions": "rt",
+                    "yield": "95%",
+                    "reactant_smiles": "C1=C(C=CC(=C1)O)CCN",
+                    "product_smiles": "NCCC1=CC(Br)=C(O)C(Br)=C1",
+                    "notes": "Electrophilic bromination of 4-(2-aminoethyl)phenol, with bromine atoms adding ortho to the hydroxyl group, which is a strong activating group and an ortho/para director.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "N-Formylation",
+                    "reagents": "L-proline",
+                    "reagent_smiles": "O=CN",
+                    "conditions": "100 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "NCCC1=CC(Br)=C(O)C(Br)=C1",
+                    "product_smiles": "O=CNCCC1=CC(Br)=C(O)C(Br)=C1",
+                    "notes": "The primary amine is formylated to a secondary formamide using formamide in the presence of L-proline.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.3",
+                    "reaction_type": "Williamson Ether Synthesis",
+                    "reagents": "K2CO3, DMF",
+                    "reagent_smiles": "CC(C)(C)OC(=O)NCCCBr",
+                    "conditions": "60 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "O=CNCCC1=CC(Br)=C(O)C(Br)=C1",
+                    "product_smiles": "O=CNCCC1=CC(Br)=C(OCCC(NC(=O)OC(C)(C)C))C(Br)=C1",
+                    "notes": "Phenolic hydroxyl group is alkylated with N-Boc-3-bromopropylamine to form an ether linkage. The formamide group remains untouched.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.4",
+                    "reaction_type": "Boc deprotection",
+                    "reagents": "TFA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, 0 °C to rt",
+                    "yield": "58%",
+                    "reactant_smiles": "O=CNCCCc1cc(Br)c(OCCC(=O)OC(C)(C)C)c(Br)c1",
+                    "product_smiles": "[H3N+]CCCCOc1c(Br)cc(Br)c(CCNC=O)c1.[O-]C(=O)C(F)(F)F",
+                    "notes": "Deprotection of a Boc-protected amine to form an amine TFA salt.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

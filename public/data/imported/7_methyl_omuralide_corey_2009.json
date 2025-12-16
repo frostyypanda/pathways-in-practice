@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "7-methyl-omuralide-corey-2009",
+        "molecule_name": "7-methyl Omuralide",
+        "class": "Natural Product",
+        "author": "Corey",
+        "year": 2009
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Amine Protection",
+            "reagents": "NaOH",
+            "reagent_smiles": "ClC(=O)OCC(Cl)(Cl)Cl",
+            "conditions": "aqueous",
+            "yield": "",
+            "reactant_smiles": "NCC(=O)O",
+            "product_smiles": "[Troc]NCC(=O)O",
+            "notes": "Glycine is protected at the amine with a Troc group using 2,2,2-trichloroethyl chloroformate (TrocCl) under aqueous basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "DCC, DMAP",
+            "reagent_smiles": "O[C@@H]1CCCC[C@H]1S(=O)(=O)c2ccc3ccccc3c2",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "[Troc]NCC(=O)O",
+            "product_smiles": "[Troc]NCC(=O)O[C@@H]1CCCC[C@H]1S(=O)(=O)c2ccc3ccccc3c2",
+            "notes": "Esterification of a Troc-protected amino acid with a chiral secondary alcohol catalyzed by DCC and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclization / Imide Formation",
+            "reagents": "LHMDS; (COCl)2C(CH3)2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "c1ccccc1S(=O)(=O)[C@H]2CCCC[C@@H]2OC(=O)CNC(=O)OCC(Cl)(Cl)Cl",
+            "product_smiles": "c1ccccc1S(=O)(=O)[C@H]2CCCC[C@@H]2OC(=O)C3C(=O)C(C)(C)C(=O)N3C(=O)OCC(Cl)(Cl)Cl",
+            "notes": "Formation of a spiro-dimethylated cyclic imide from an alpha-functionalized N-Troc-protected amide-ester via enolate formation with LHMDS and acylation with 2,2-dimethylmalonyl dichloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Aldol Addition / Troc Group Migration",
+            "reagents": "cat. KOtBu",
+            "reagent_smiles": "CC(C)C=O",
+            "conditions": "DMF-THF",
+            "yield": "61%",
+            "reactant_smiles": "c1ccccc1S(=O)(=O)[C@H]2CCCC[C@@H]2OC(=O)[C@H]1C(=O)C(C)(C)C(=O)N1C(=O)OCC(Cl)(Cl)Cl",
+            "product_smiles": "[C@@]3(C(C)C)(OC(=O)OCC(Cl)(Cl)Cl)(C(=O)O[C@H]1CCCC[C@@H]1S(=O)(=O)c2ccccc2)N3C(=O)C(C)(C)C(=O)C3",
+            "notes": "Formation of a new quaternary stereocenter via aldol addition of isobutyraldehyde, accompanied by N-Troc deprotection and migration to the newly formed alcohol (resulting in O-Troc). The carbon count of the drawn product (C25 if Ar=phenyl) appears to be lower than expected from reactant (C23) + reagent (iPrCHO, C4) = C27. The provided product SMILES reflects the expected C27 structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Deprotection / Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Na+].[BH-](OC(C)=O)(OC(C)=O)OC(C)=O.[Zn].CC(=O)O",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "N1C(=O)C(C)(C)C(=O)[C@@]1(C[C@H](C(C)C)[OTroc])C(=O)O[C@H]2CCCC[C@@H]2S(=O)(=O)[Ar]",
+            "product_smiles": "N1C(=O)C(C)(C)C(=O)[C@@]1(C[C@H](O)[C@@H](C(C)C)O)C(=O)O[C@H]2CCCC[C@@H]2S(=O)(=O)[Ar]",
+            "notes": "Reductive deprotection of the 2,2,2-trichloroethoxycarbonyl (Troc) protecting group, concomitant with the hydroxylation of the adjacent methylene, yielding a 1,2-diol. The stereochemistry of the carbon bearing the Troc group is inverted upon deprotection and hydroxylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "aq, THF",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H]([C@@]1([C@H](C(C)(C)C(=O)N1)O)C(=O)O[C@H]2CCCC[C@H]2S(=O)(=O)c1ccccc1)O",
+            "product_smiles": "CC(C)[C@@H]([C@@]1([C@H](C(C)(C)C(=O)N1)O)C(=O)O)O",
+            "notes": "Ester hydrolysis of a complex bicyclic lactam system to a carboxylic acid, with an aryl sulfonyl cyclohexyl ester leaving group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Lactonization",
+            "reagents": "BOPCI",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "CC(C)[C@H](O)[C@]1(C(=O)O)NC(=O)C(C)(C)O[C@H]1",
+            "product_smiles": "CC(C)[C@H](O)[C@]12C(=O)OC([C@H](C(C)(C)O)C(=O)N1)2",
+            "notes": "Formation of a gamma-lactone via intramolecular esterification between the carboxylic acid and a hydroxyl group on the pyrrolidinone ring, with retention of stereochemistry at the involved centers.",
+            "substeps": []
+        }
+    ]
+}

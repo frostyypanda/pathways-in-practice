@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "adociaquinone-b-gao-2021",
+        "molecule_name": "Adociaquinone B",
+        "class": "Natural Product",
+        "author": "Gao",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Mono-etherification (Protection)",
+            "reagents": "PMBOH, Amberlyst-15",
+            "reagent_smiles": "",
+            "conditions": "DCM, 50 °C",
+            "yield": "",
+            "reactant_smiles": "OCCCCCC O",
+            "product_smiles": "OCCCCCC[OPMB]",
+            "notes": "Selective mono-protection of 1,6-hexanediol with p-methoxybenzyl alcohol (PMBOH) catalyzed by Amberlyst-15.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Appel Reaction (Iodination)",
+            "reagents": "PPh3, imidazole, I2",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "74% (2 steps)",
+            "reactant_smiles": "OCCCCCO[PMB]",
+            "product_smiles": "ICCCCCCO[PMB]",
+            "notes": "Conversion of a primary alcohol to a primary alkyl iodide using triphenylphosphine, iodine, and imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "C-alkylation / Enolate alkylation",
+            "reagents": "LDA",
+            "reagent_smiles": "CCOC1=CC(=O)C(C)CC1",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "79%",
+            "reactant_smiles": "ICCCCCO[PMB]",
+            "product_smiles": "CCOC1=CC(=O)C(C)(CCCCCO[PMB])CC1",
+            "notes": "Alkylation of an enol ether with an alkyl iodide to form a spirocyclic compound.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction and Isomerization",
+            "reagents": "LAH",
+            "reagent_smiles": "",
+            "conditions": "Et2O, 0 °C then HCl, rt",
+            "yield": "65%",
+            "reactant_smiles": "CCOC1=CC(=O)C(C)(CCCCCO[PMB])CC1",
+            "product_smiles": "CC1(CCCCCO[PMB])CC(=O)C=CC1",
+            "notes": "LAH reduces the enol ether and causes rearrangement of the double bond and ketone within the cyclohexenone ring. The p-methoxybenzyl (PMB) protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation, PMB deprotection",
+            "reagents": "DDQ, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, rt then 50 °C",
+            "yield": "43%",
+            "reactant_smiles": "O=C1C=CCC(C)(CCCCCO[PMB])C1",
+            "product_smiles": "CC1(CCCCCO)C=CC(=O)C=C1",
+            "notes": "Oxidative deprotection of PMB group and formation of a cyclohexadienone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "DMSO, rt",
+            "yield": "60%",
+            "reactant_smiles": "CC1(CCCCCO)C=CC(=O)C=C1",
+            "product_smiles": "CC1(CCCCC=O)C=CC(=O)C=C1",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Organocatalytic Intramolecular Cyclization (Michael-Aldol type)",
+            "reagents": "",
+            "reagent_smiles": "C[Si](C)(C)OC(c1ccccc1)(c2ccccc2)[C@H]3NCCC3",
+            "conditions": "toluene, rt",
+            "yield": "60%",
+            "reactant_smiles": "CC1(CCCCC=O)C=CC(=O)C=C1",
+            "product_smiles": "C[C@@]12CCC[C@H](C=O)C1CC(=O)C=C2",
+            "notes": "An enone undergoes intramolecular cyclization with an aldehyde, catalyzed by a chiral secondary amine (MacMillan type catalyst), forming a bicyclic product with two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acetal Formation (Protection)",
+            "reagents": "BF3•OEt",
+            "reagent_smiles": "C(CO)CO",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@]12CCC[C@H](C=O)[C@]2CC(=O)C=C1",
+            "product_smiles": "C[C@]12CCC[C@H](O1CCC1O)[C@]2CC(=O)C=C1",
+            "notes": "Protection of an aldehyde as a 1,3-dioxane using propane-1,3-diol and boron trifluoride diethyl etherate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cascade cyclization / Addition",
+            "reagents": "Ti(Oi-Pr)4",
+            "reagent_smiles": "O=CC1=C(C)C(OC)=CC(OC)=C1",
+            "conditions": "hν, toluene",
+            "yield": "50%",
+            "reactant_smiles": "C[C@@]12CCC([C@@H]3OCCCO3)[C@@H]4CC[C@@H](C=CC(=O)C1)[C@@H]24",
+            "product_smiles": "COC1=C(OC)C=C2C(=O)C=C[C@@H]34CC[C@@H]5C[C@@H]([C@@H]6OCCCO6)CCC5[C@@]3(C)[C@@H]4C2=C1",
+            "notes": "A complex cascade reaction involving an intramolecular Diels-Alder or similar cycloaddition followed by further ring formation, coupling the cyclohexenone with the dimethoxy-benzaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Aromatization / Dehydrogenation",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "toluene, 80 °C",
+            "yield": "42%",
+            "reactant_smiles": "CC12[C@@H]3CC(=O)C=C4c5c(ccc(OC)c5OC)C[C@@H](C1)C4C23C6(CCC(O6)CC)",
+            "product_smiles": "CC12[C@@H]3CC(=O)c4c(C(=O)c5ccc(OC)c(OC)c45)[C@@H](C1)C3C2C6(CCC(O6)CC)",
+            "notes": "Dehydrogenation and aromatization of the cyclohexenone ring to form a naphthoquinone-like system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation (alpha-hydroxylation)",
+            "reagents": "O₂, tBuOK",
+            "reagent_smiles": "",
+            "conditions": "tBuOH, 40 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C2C(OC)=C(C=C3C(=O)C(C[C@@H]4[C@@](C)(CCC(C[C@H]4CC3)C5OCCCO5)C2)=C3)=C1",
+            "product_smiles": "COC1=CC=C2C(OC)=C(C=C3C(=O)C(=C[C@@H]4[C@@](C)(CCC(C[C@H]4CC3)C5OCCCO5)C2)O)=C1",
+            "notes": "Alpha-hydroxylation of a ketone, forming an alpha-hydroxy-alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection, Cyclization, Dehydration",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "COc1ccc2c(c1OC)C=C3C(=O)[C@@]4(O)C(=O)[C@@]5(C)[C@H]6CC[C@H](C)[C@@H](C7OCCCO7)C6C532",
+            "product_smiles": "COc1ccc2c(c1OC)C=C3C(=O)[C@@]4(C)C5=C(C=C4C32)C6CC[C@H](C)[C@H]5O6",
+            "notes": "Cascade reaction involving acid-catalyzed deprotection of the THP acetal, dehydroxylation of the tertiary alcohol, and subsequent intramolecular cyclization leading to the formation of a furan ring, resulting in Adociaquinone A.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "MeCN/H2O, 0 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "C[C@@]12CCCC3=COC(=C31)C(=O)C4=C2C=C5C(=C4)C(=CC=C5OC)OC",
+            "product_smiles": "C[C@@]12CCCC3=COC(=C31)C(=O)C4=C2C=C5C(=C4)C(=O)C=CC5=O",
+            "notes": "Oxidation of a 1,4-dimethoxybenzene system to a 1,4-quinone using Cerium Ammonium Nitrate (CAN).",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Cycloaddition / Aminosulfonylation",
+            "reagents": "",
+            "reagent_smiles": "C(CS(=O)(=O)O)N",
+            "conditions": "EtOH/MeCN/H2O, 50 °C",
+            "yield": "21%",
+            "reactant_smiles": "C[C@@]12CCCC3=COC(=C31)C(=O)C4=C2C=C5C(=C4)C(=O)C=CC5=O",
+            "product_smiles": "C[C@@]11CCCC2=COC(=C21)C(=O)C3=C1C=C4C(=C3)C(=O)C5CS(=O)(=O)CCNC5C4=O",
+            "notes": "Taurine reacts with the quinone system of the reactant to form a new 6-membered ring containing a sulfone and an amine, and one quinone carbonyl is lost.",
+            "substeps": []
+        }
+    ]
+}
