@@ -3,8 +3,20 @@
 Batch Submit - Submit SMILES extraction jobs to Gemini Batch API.
 
 Usage:
+    # Submit specific syntheses
     python batch_submit.py --synthesis-ids 3829,3842,3867,3869
-    python batch_submit.py --synthesis-ids 3829 --dry-run
+
+    # List batch plan for all unprocessed syntheses
+    python batch_submit.py --list-batches
+
+    # Submit batch 1 (first 100 unprocessed syntheses)
+    python batch_submit.py --batch-num 1
+
+    # Submit batch with custom size
+    python batch_submit.py --batch-num 1 --batch-size 50
+
+    # Dry run
+    python batch_submit.py --batch-num 1 --dry-run
 """
 
 import argparse
@@ -38,6 +50,93 @@ def get_db_connection():
         password=os.getenv("DB_PASSWORD"),
         sslmode=os.getenv("DB_SSLMODE", "require"),
     )
+
+
+def get_unprocessed_synthesis_ids() -> list:
+    """Get synthesis IDs that are ready for batch processing.
+
+    Criteria:
+    1. status = 'completed' (not failed)
+    2. Has at least one image (exists in smiles_results)
+    3. Not already processed (not in synthesis_steps)
+    """
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute('''
+                SELECT s.id
+                FROM synthesis s
+                WHERE s.status = 'completed'
+                  AND s.id NOT IN (SELECT DISTINCT synthesis_id FROM synthesis_steps)
+                  AND s.id IN (SELECT DISTINCT synthesis_id FROM smiles_results)
+                ORDER BY s.id
+            ''')
+            return [row[0] for row in cur.fetchall()]
+    finally:
+        conn.close()
+
+
+def get_batch_synthesis_ids(batch_num: int, batch_size: int) -> list:
+    """Get synthesis IDs for a specific batch number."""
+    all_ids = get_unprocessed_synthesis_ids()
+    start = (batch_num - 1) * batch_size
+    end = start + batch_size
+    return all_ids[start:end]
+
+
+def get_step_count_for_synthesis(conn, synthesis_id: int) -> int:
+    """Get number of steps for a synthesis."""
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            SELECT COUNT(DISTINCT regexp_replace(image_filename, '_(left|middle|right)\\.png$', ''))
+            FROM smiles_results
+            WHERE synthesis_id = %s
+            """,
+            (synthesis_id,),
+        )
+        return cur.fetchone()[0]
+
+
+def list_batches(batch_size: int):
+    """Show batch plan for all unprocessed syntheses."""
+    all_ids = get_unprocessed_synthesis_ids()
+    total_syntheses = len(all_ids)
+    num_batches = (total_syntheses + batch_size - 1) // batch_size
+
+    # Get step counts for all syntheses in one query
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute('''
+                SELECT synthesis_id, COUNT(DISTINCT regexp_replace(image_filename, '_(left|middle|right)\\.png$', ''))
+                FROM smiles_results
+                WHERE synthesis_id = ANY(%s)
+                GROUP BY synthesis_id
+            ''', (all_ids,))
+            step_counts = {row[0]: row[1] for row in cur.fetchall()}
+    finally:
+        conn.close()
+
+    # Calculate total steps
+    total_steps = sum(step_counts.get(sid, 0) for sid in all_ids)
+
+    print(f"Total unprocessed syntheses: {total_syntheses}")
+    print(f"Total steps to process: {total_steps}")
+    print(f"Batch size: {batch_size}")
+    print(f"Total batches: {num_batches}")
+    print(f"Avg steps per synthesis: {total_steps / total_syntheses:.1f}")
+    print()
+
+    for batch_num in range(1, num_batches + 1):
+        start = (batch_num - 1) * batch_size
+        end = min(start + batch_size, total_syntheses)
+        batch_ids = all_ids[start:end]
+
+        # Count steps for this batch
+        batch_steps = sum(step_counts.get(sid, 0) for sid in batch_ids)
+
+        print(f"Batch {batch_num:2d}: {len(batch_ids):3d} syntheses (IDs {batch_ids[0]}-{batch_ids[-1]}), ~{batch_steps} steps")
 
 
 def get_synthesis_name(conn, synthesis_id: int) -> str:
@@ -209,7 +308,7 @@ def save_batch_job(job_name: str, synthesis_ids: list, request_count: int):
     print(f"\nSaved job info to {BATCH_JOBS_FILE}")
 
 
-def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False):
+def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False, batch_num: int = None):
     """Submit batch job to Gemini API."""
 
     # Load prompt
@@ -246,10 +345,11 @@ def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False):
 
     # Submit batch job
     print("\nSubmitting batch job...")
+    display_name = f"smiles-batch{batch_num}-{datetime.now().strftime('%Y%m%d-%H%M%S')}" if batch_num else f"smiles-extraction-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
     batch_job = client.batches.create(
         model="gemini-2.5-flash",
         src=uploaded_file.name,
-        config={"display_name": f"smiles-extraction-{datetime.now().strftime('%Y%m%d-%H%M%S')}"}
+        config={"display_name": display_name}
     )
 
     print(f"\n{'='*60}")
@@ -269,21 +369,53 @@ def main():
     parser = argparse.ArgumentParser(description="Submit batch job to Gemini API")
     parser.add_argument(
         "--synthesis-ids",
-        required=True,
         help="Comma-separated synthesis IDs (e.g., 3829,3842,3867,3869)"
+    )
+    parser.add_argument(
+        "--batch-num",
+        type=int,
+        help="Batch number to submit (1-indexed)"
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=100,
+        help="Number of syntheses per batch (default: 100)"
+    )
+    parser.add_argument(
+        "--list-batches",
+        action="store_true",
+        help="Show batch plan without submitting"
     )
     parser.add_argument("--base-path", default=DEFAULT_BASE_PATH, help="Base path for images")
     parser.add_argument("--dry-run", action="store_true", help="Don't submit, just show what would be done")
 
     args = parser.parse_args()
 
-    # Parse synthesis IDs
-    synthesis_ids = [int(x.strip()) for x in args.synthesis_ids.split(",")]
+    # Handle --list-batches
+    if args.list_batches:
+        list_batches(args.batch_size)
+        return
+
+    # Determine synthesis IDs
+    if args.batch_num:
+        synthesis_ids = get_batch_synthesis_ids(args.batch_num, args.batch_size)
+        if not synthesis_ids:
+            print(f"Error: Batch {args.batch_num} is empty or out of range")
+            return
+        print(f"Batch {args.batch_num}: {len(synthesis_ids)} syntheses")
+    elif args.synthesis_ids:
+        synthesis_ids = [int(x.strip()) for x in args.synthesis_ids.split(",")]
+    else:
+        parser.print_help()
+        print("\nError: Must specify either --synthesis-ids, --batch-num, or --list-batches")
+        return
 
     submit_batch(
         synthesis_ids=synthesis_ids,
         base_path=args.base_path,
         dry_run=args.dry_run,
+        batch_num=args.batch_num,
     )
 
 
