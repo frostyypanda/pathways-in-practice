@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "allomatrine-sherburn-2022",
+        "molecule_name": "Allomatrine",
+        "class": "Natural Product",
+        "author": "Sherburn",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "DMF, (COCl)2",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "ClCCCC(=O)O",
+            "product_smiles": "ClCCCC(=O)Cl",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using oxalyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification",
+            "reagents": "PhOH",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "94%",
+            "reactant_smiles": "ClCCCC(=O)Cl",
+            "product_smiles": "ClCCCC(=O)O[Ph]",
+            "notes": "Acyl chloride reacts with phenol to form a phenyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Michael Addition / Intramolecular Cyclization",
+            "reagents": "LDA",
+            "reagent_smiles": "CC(C)(C)[S@@](=O)/N=C/C=C/C[Si](C)(C)C",
+            "conditions": "THF, -78 °C",
+            "yield": "75%",
+            "reactant_smiles": "ClCCCC(=O)Oc1ccccc1",
+            "product_smiles": "C(C)(C)[S@@](=O)N1[C@H](C(=O)Oc2ccccc2)CC(CCCCl)C[C@@H]1/C=C/C[Si](C)(C)C",
+            "notes": "Asymmetric conjugate addition of a chiral sulfinylimine to the alpha-carbon of a phenyl ester, followed by intramolecular cyclization forming a substituted piperidine ring. Stereochemistry of two new chiral centers are established with both hydrogens on the chiral centers being 'down' (trans relationship). The double bond in the TMS-alkenyl group is trans.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "N-sulfinyl deprotection",
+            "reagents": "HCl, dioxane",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C(Oc1ccccc1)[C@@H](CCCCl)[C@H](N[S@](=O)[tBu])C/C=C/C[TMS]",
+            "product_smiles": "O=C(Oc1ccccc1)[C@@H](CCCCl)[C@H]([NH3+])C/C=C/C[TMS].[Cl-]",
+            "notes": "Cleavage of the N-sulfinyl chiral auxiliary to reveal the free amine, which is subsequently protonated by HCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular cyclization / N-alkylation",
+            "reagents": "NaI, K2CO3, then allylBr",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 0 °C",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "[TMS]CH2\\C=C/C[C@@H]([NH3+])[C@@H](CCCCl)C(=O)Oc1ccccc1.[Cl-]",
+            "product_smiles": "C=CCN1CCC[C@@H](C(=O)Oc1ccccc1)[C@@H]1\\C=C/C[TMS]",
+            "notes": "The primary amine first deprotonates and performs an intramolecular SN2 reaction on the chloroalkyl chain to form a piperidine ring, likely with iodide assistance (Finkelstein reaction from -Cl to -I). This is followed by N-alkylation with allyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "CCOCC",
+            "conditions": "0 °C to rt",
+            "yield": "96%",
+            "reactant_smiles": "C=CCN1CCC[C@@H]([C@H]1/C=C/C[Si](C)(C)C)C(=O)Oc1ccccc1",
+            "product_smiles": "C=CCN1CCC[C@@H](CO)[C@H]1/C=C/C[Si](C)(C)C",
+            "notes": "Reduction of a phenyl ester to a primary alcohol using LiAlH4.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P",
+            "reagent_smiles": "O=C1NC(=O)CCC1",
+            "conditions": "THF/DCM, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "C=CCN1C[C@H](C/C=C/[Si](C)(C)C)[C@@H](CO)[C@H]2CCCC[C@H]12",
+            "product_smiles": "C=CCN1C[C@H](C/C=C/[Si](C)(C)C)[C@@H](C[N]2C(=O)CCC(=O)C2)[C@H]3CCCC[C@H]13",
+            "notes": "Mitsunobu reaction to convert a primary alcohol to an N-alkylated glutarimide derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "HCl, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, -10 °C",
+            "yield": "35%",
+            "reactant_smiles": "C=CCN1CCC[C@@H](CN2C(=O)CCCC2=O)[C@H]1/C=C/C[TMS]",
+            "product_smiles": "C=CCN1CCC[C@@H](CN2C(O)CCCC2=O)[C@H]1/C=C/C[TMS]",
+            "notes": "Reduction of an imide carbonyl to a hemiaminal using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "TfOH",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "74%",
+            "reactant_smiles": "C=CCN1CCC[C@H](C/C=C/C[TMS])[C@@H]2CN(O)C(=O)CCC21",
+            "product_smiles": "C=CCN1CCC[C@H]2[C@H](C=C)[C@@H]3CN(C(=O)CCC3)[C@@H]21",
+            "notes": "Intramolecular cyclization of an N-hydroxy lactam onto an alkene (likely via iminium ion formation), with loss of the TMS protecting group, to form a fused polycyclic amine structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Mercury(II)-catalyzed intramolecular cyclization / hydroamination",
+            "reagents": "HG II",
+            "reagent_smiles": "",
+            "conditions": "DCM, 40 °C",
+            "yield": "70%",
+            "reactant_smiles": "C=CCN1CCC[C@@H]2N(C(=O)CCC[C@@H]3[C@H]2C[C@H]4[C@@H]3C=C)CCC41",
+            "product_smiles": "O=C1N2CC[C@@H]3N4CCC=C[C@H]24[C@H]1C[C@@H]32",
+            "notes": "Intramolecular cyclization of an allyl amine and vinyl alkene precursor to form Allomatrine. The allyl group is incorporated into a new fused ring, and the vinyl group is saturated, leading to a new double bond within the nitrogen-containing ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "94%",
+            "reactant_smiles": "C1C[C@@H]2[C@H]3C=CCN4CCC[C@@H](CN2C(=O)C1)[C@H]34",
+            "product_smiles": "C1C[C@@H]2[C@H]3CCCN4CCC[C@@H](CN2C(=O)C1)[C@H]34",
+            "notes": "Hydrogenation of an internal alkene to an alkane within a complex polycyclic amine system.",
+            "substeps": []
+        }
+    ]
+}

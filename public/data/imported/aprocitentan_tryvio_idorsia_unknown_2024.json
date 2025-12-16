@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aprocitentan-tryvio-idorsia-unknown-2024",
+        "molecule_name": "Aprocitentan (Tryvio Idorsia)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "95%",
+            "reactant_smiles": "O=C(O)CC1=CC=C(Br)C=C1",
+            "product_smiles": "COC(=O)CC1=CC=C(Br)C=C1",
+            "notes": "Esterification of a carboxylic acid with methanol using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "C-C bond formation (alpha-alkylation / malonic ester synthesis variant)",
+            "reagents": "NaH",
+            "reagent_smiles": "COC(=O)OC",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CC1=CC=C(C=C1)Br",
+            "product_smiles": "COC(=O)C(C1=CC=C(C=C1)Br)C(=O)OC",
+            "notes": "Methyl (4-bromophenyl)acetate is deprotonated by sodium hydride to form an enolate, which then reacts with dimethyl carbonate to form a methyl 2-(4-bromophenyl)malonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cyclocondensation / Pyrimidine Synthesis",
+            "reagents": "NaOMe",
+            "reagent_smiles": "NC=N",
+            "conditions": "MeOH, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C(C1=CC=C(C=C1)Br)C(=O)OC",
+            "product_smiles": "Oc1nc(O)cc(C2=CC=C(Br)C=C2)n1",
+            "notes": "A malonate diester undergoes cyclocondensation with formamidine in the presence of sodium methoxide to form a 4-(4-bromophenyl)-2,6-dihydroxypyrimidine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Chlorination",
+            "reagents": "POCl3, DMA",
+            "reagent_smiles": "",
+            "conditions": "130 °C",
+            "yield": "81%",
+            "reactant_smiles": "Brc1ccc(cc1)c2c(O)nc(O)cn2",
+            "product_smiles": "Brc1ccc(cc1)c2c(Cl)nc(Cl)cn2",
+            "notes": "Chlorination of 5-(4-bromophenyl)pyrimidine-4,6-diol using POCl3.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "DMSO",
+            "reagent_smiles": "C1=CC=C(C=C1)CNS(=O)(=O)N[K]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "Brc1ccc(c2nc(Cl)ncc2Cl)cc1",
+            "product_smiles": "Brc1ccc(c2nc(NS(=O)(=O)NCH2c3ccccc3)ncc2Cl)cc1",
+            "notes": "Benzylsulfamide potassium salt reacts with 2,4-dichloro-5-(4-bromophenyl)pyrimidine via SNAr to replace a chlorine at position 2 with the sulfamide group.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Carbamate formation / Nucleophilic addition to isocyanate",
+                    "reagents": "t-BuOH, DCM",
+                    "reagent_smiles": "CC(C)(C)O",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "O=C=NS(=O)(=O)Cl",
+                    "product_smiles": "CC(C)(C)OC(=O)NS(=O)(=O)Cl",
+                    "notes": "Addition of tert-butanol to chlorosulfonyl isocyanate to form a tert-butyl N-(chlorosulfonyl)carbamate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Sulfonylation / Amidation",
+                    "reagents": "Et3N, DCM",
+                    "reagent_smiles": "C1=CC=C(C=C1)CN",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)OC(=O)NS(=O)(=O)Cl",
+                    "product_smiles": "CC(C)(C)OC(=O)NS(=O)(=O)NCC1=CC=CC=C1",
+                    "notes": "Nucleophilic substitution reaction where benzylamine attacks the sulfonyl chloride, displacing chloride and forming a new S-N bond.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Deprotection (Boc group)",
+                    "reagents": "HCl, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, rt",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)(C)OC(=O)NS(=O)(=O)NCC1=CC=CC=C1",
+                    "product_smiles": "C1=CC=C(C=C1)CNS(=O)(=O)N",
+                    "notes": "Acid-catalyzed Boc deprotection of a sulfamide",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Deprotonation",
+                    "reagents": "KOtBu",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C(C=C1)CNS(=O)(=O)N",
+                    "product_smiles": "C1=CC=C(C=C1)CNS(=O)(=O)[N-].[K+]",
+                    "notes": "Deprotonation of the sulfonamide NH2 group to form the potassium salt. The yield '46-98% (4 steps)' is for a multi-step sequence, not this single step.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "ethylene glycol, t-BuOK",
+            "reagent_smiles": "",
+            "conditions": "DME, 95 °C",
+            "yield": "83%",
+            "reactant_smiles": "C1=CC=C(C=C1)CNS(=O)(=O)NC2=C(C3=CC=C(C=C3)Br)C(=NC=N2)Cl",
+            "product_smiles": "C1=CC=C(C=C1)CNS(=O)(=O)NC2=C(C3=CC=C(C=C3)Br)C(=NC=N2)OCCO",
+            "notes": "SNAr reaction where the chlorine on the pyrimidine ring is substituted by a 2-hydroxyethoxy group derived from ethylene glycol, forming an ether linkage.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr) / Williamson Ether Synthesis",
+            "reagents": "NaH",
+            "reagent_smiles": "Brc1cnc(Cl)nc1",
+            "conditions": "THF, DMF, rt",
+            "yield": "76%",
+            "reactant_smiles": "OCCNOC1=NC(NS(=O)(=O)NCC2=CC=CC=C2)=C(C3=CC=C(Br)C=C3)N=C1",
+            "product_smiles": "Brc1ccc(cc1)C2=NC(OCCOC3=NC(Br)=CN=C3)=NC(NS(=O)(=O)NCC4=CC=CC=C4)=C2",
+            "notes": "Alkylation of the terminal alcohol with 2-chloro-5-bromopyrimidine to form a new ether linkage.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Debenzylation / Deprotection",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, CHCl3, rt",
+            "yield": "29%",
+            "reactant_smiles": "C1=CC=C(C=C1)CH2NS(=O)(=O)NC2=C(C3=CC=C(C=C3)Br)C(=NC=N2)OCCOC4=NC=C(C=N4)Br",
+            "product_smiles": "C1=C(C=CC(=C1)Br)C2=C(N=CN=C2OCCOC3=NC=C(C=N3)Br)NS(=O)(=O)N",
+            "notes": "Cleavage of the N-benzyl protecting group from the sulfonamide to yield a primary sulfonamide.",
+            "substeps": []
+        }
+    ]
+}

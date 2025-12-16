@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "alsoschlorisine-c-weinreb-2017",
+        "molecule_name": "Alsoschlorisine C",
+        "class": "Natural Product",
+        "author": "Weinreb",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Tosylation",
+            "reagents": "TsCl, NaH, imidazole",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "C1CCNC(=O)C1",
+            "product_smiles": "C1CCN(C(=O)C1)[Ts]",
+            "notes": "N-tosylation of 2-piperidinone (caprolactam derivative).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alpha-alkoxycarbonylation",
+            "reagents": "LiHMDS, ClCO2allyl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "[Ts]N1CCCC(=O)C1",
+            "product_smiles": "O=C1C(C(=O)OCC=C)CCCN1[Ts]",
+            "notes": "Alpha-carbon of the N-tosyl lactam is deprotonated by LiHMDS to form an enolate, which is then trapped by allyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alpha-selenation of a lactam",
+            "reagents": "LiHMDS, PhSeBr",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "[Ts]N1C(=O)C(C(=O)OCC=C)CCC1",
+            "product_smiles": "[Ts]N1C(=O)C(C(=O)OCC=C)([Se]c2ccccc2)CCC1",
+            "notes": "Deprotonation of alpha-carbon of lactam followed by electrophilic attack of phenylselenium bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Grieco elimination",
+            "reagents": "mCPBA",
+            "reagent_smiles": "OOC(=O)c1cc(Cl)ccc1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C1N([Ts])CCCC1(C(=O)OCC=C)[Se][Ph]",
+            "product_smiles": "O=C1N([Ts])CCC=C1C(=O)OCC=C",
+            "notes": "Oxidation of the phenylselenide followed by syn-elimination to form an alpha,beta-unsaturated lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Michael Addition",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC1=C(CC(=O)OC)N(C2=CC=CC=C12)[Boc]",
+            "conditions": "THF, -78 °C",
+            "yield": "69%",
+            "reactant_smiles": "C=CCOC(=O)C1=CC(=O)N(CC1)[Ts]",
+            "product_smiles": "C=CCOC(=O)C1CC(C(C(=O)OC)C2=C(C)N([Boc])C3=CC=CC=C23)C(=O)N([Ts])CCC1",
+            "notes": "Intermolecular Michael addition of indole derivative (after deprotonation of C3 by LiHMDS) to alpha,beta-unsaturated lactam.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "C-H Functionalization / Radical Reaction",
+                    "reagents": "Laurolyl peroxide",
+                    "reagent_smiles": "CCOC(=S)SCC(=O)OC",
+                    "conditions": "DCE, reflux",
+                    "yield": "66%",
+                    "reactant_smiles": "CC1=CNC2=CC=CC=C12",
+                    "product_smiles": "CC1=C(CC(=O)OC)NC2=CC=CC=C12",
+                    "notes": "Radical functionalization of Skatole at the C2 position with a dithiocarbonate, initiated by lauroyl peroxide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "N-Protection",
+                    "reagents": "Boc₂O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)CC1=C(C)[NH]C2=CC=CC=C2C=1",
+                    "product_smiles": "COC(=O)CC1=C(C)N([Boc])C2=CC=CC=C2C=1",
+                    "notes": "Indole N-H protection with a Boc group using di-tert-butyl dicarbonate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allylic alkylation, Decarboxylative allylation (Tsuji-Trost)",
+            "reagents": "K2CO3, morpholine",
+            "reagent_smiles": "ICCC=C.[Pd](P[Ph]3)4",
+            "conditions": "MeCN, reflux",
+            "yield": "74%",
+            "reactant_smiles": "O=C1[CH](C(=O)OCC=C)[CH](C2=C(C(=O)OC)C3=CC=CC=C3N2[Boc])CCN1[Ts]",
+            "product_smiles": "O=C1[C@@H](CC=C)[C@@H](C2=C(C(=O)OC)C3=CC=CC=C3N2[Boc])CCN1[Ts]",
+            "notes": "An initial allylic alkylation of the reactant with allyl iodide and K2CO3 is followed by a palladium-catalyzed decarboxylative allylation (Tsuji-Trost reaction) of the allyl ester, forming a new C-C bond with defined stereochemistry at two adjacent centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "78%",
+            "reactant_smiles": "COC(=O)[C@H]1C(=C2C(=O)CN([Ts])C[C@@H]1C=C)C3=CC=CC=C3N2[Boc]",
+            "product_smiles": "COC(=O)[C@H]1C(=C2[C@H](O)CN([Ts])C[C@@H]1C=C)C3=CC=CC=C3N2[Boc]",
+            "notes": "Reduction of a cyclic ketone to an alcohol using DIBAL.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection, Intramolecular Cyclization, Rearrangement/Methylation",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CC1=CC=C(C)C=C1S(=O)(=O)N2CCC[C@H](O)[C@H](CC=C)[C@H]3C4=CC=CC=C4N(C(=O)OC(C)(C)C)C=C3C(C(=O)OC)C2",
+            "product_smiles": "CC1=CC=C(C)C=C1S(=O)(=O)N2C[C@@H]3[C@@H](CC=C)[C@H]4C(C)=C5C=CC=C5N4C3C(C(=O)OC)C2",
+            "notes": "The reaction involves N-Boc deprotection, intramolecular cyclization forming a new 5-membered ring and a fused bicyclic system. Notably, a methyl group is added to the indole core (specifically at C3 position relative to the indole N), a transformation not typically achieved solely by TFA/DCM.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Aldol Addition",
+            "reagents": "LiHMDS, HCHO",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "94%",
+            "reactant_smiles": "C=CCC1C2CN([Ts])C3C1CC4C3N(C5=C(C=CC=C5)C(=C4C2C(=O)OC)C)",
+            "product_smiles": "C=CCC1C2CN([Ts])C3C1CC4C3N(C5=C(C=CC=C5)C(=C4[C@](CO)(C2)C(=O)OC)C)",
+            "notes": "Alpha-alkylation of the indole ester with formaldehyde, leading to the formation of a hydroxymethyl group and defined stereochemistry at the quaternary carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Silylation",
+            "reagents": "TBSOTf, 2,6-Lutidine",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "C=CCC1C2CN(C1N3C4=C(C=CC=C4)C(=C3[C@@]2(CO)C(=O)OC)C)[Ts]",
+            "product_smiles": "C=CCC1C2CN(C1N3C4=C(C=CC=C4)C(=C3[C@@]2(C[OTBS])C(=O)OC)C)[Ts]",
+            "notes": "Primary alcohol is protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Aza-Diels-Alder (with DEAD)",
+            "reagents": "Toluene",
+            "reagent_smiles": "CCOC(=O)N=NC(=O)OCC",
+            "conditions": "reflux",
+            "yield": "77%",
+            "reactant_smiles": "C=CCC1C2C[N]([Ts])(C1N3C4=C(C=CC=C4)C(=C3[C@@]2(C[OTBS])C(=O)OC)C)",
+            "product_smiles": "CCOC(=O)NN(C/C=C/C1C2C[N]([Ts])(C1N3C4=C(C=CC=C4)C(=C3[C@@]2(C[OTBS])C(=O)OC)C)C(=O)OCC",
+            "notes": "Inverse electron demand Diels-Alder reaction of an allyl alkene with diethyl azodicarboxylate (DEAD), followed by rearrangement/reduction to form a hydrazide-substituted alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidative Cleavage / Rearrangement",
+            "reagents": "OsO4, NMO, then Pb(OAc)4",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O, rt, EtOAc, rt",
+            "yield": "61%",
+            "reactant_smiles": "CCOC(=O)N(C/C=C/C1C2CN(C1N3C4=C(C=CC=C4)C(=C3[C@@]2(CO[TBS])C(=O)OC)C)[Ts])NC(=O)OCC",
+            "product_smiles": "[TBS]OC[C@@]1(C2CCN(C(C2C=O)N3C4=C(C=CC=C4)C(=C13)C)[Ts])C(=O)OC",
+            "notes": "Dihydroxylation of the alkene followed by oxidative cleavage of the resulting diol to an aldehyde using lead tetraacetate. The hydrazino group is also cleaved in this transformation, and a significant rearrangement of the bridged system occurs.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection (TBS ether hydrolysis)",
+            "reagents": "HCl, MeOH, CHCl3",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS]C[C@@]1(C2CCN(C(C2C=O)N3C4=C(C=CC=C4)C(=C13)C)[Ts])C(=O)OC",
+            "product_smiles": "CC1=C2[C@](CO)(C3CCN(C(C3C=O)N2C4=C1C=CC=C4)[Ts])C(=O)OC",
+            "notes": "Acid-catalyzed hydrolysis of a tert-butyldimethylsilyl (TBS) ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Cyclization / Ether Formation",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, rt",
+            "yield": "",
+            "reactant_smiles": "CC1=C2C(C=CC=C1)N3[C@H]4[C@@](C(=O)OC)(COC)[C@]5(C2N4[C@H]3[Ts])[C@H]5C=O",
+            "product_smiles": "CC1=C2C(C=CC=C1)N3[C@H]4[C@@](C(=O)OC)(C[C@H]5O)[C@]6(C2N4[C@H]3[Ts])[C@H]6[C@H](O)5",
+            "notes": "Intramolecular cyclization involving the aldehyde and primary alcohol to form an ether bridge and a new hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "",
+            "yield": "77% (3 steps)",
+            "reactant_smiles": "CC1=C2[C@]3(C(=O)OC)[C@@](C)(O4)[C@@H](O)C4CN5C(C3C2=N1)C6C5N([Ts])C(C6)",
+            "product_smiles": "CC1=C2[C@]3(C(=O)OC)[C@@](C)(O4)[C@@H]([OAc])C4CN5C(C3C2=N1)C6C5N([Ts])C(C6)",
+            "notes": "Acetylation of a secondary alcohol (hydroxyl group) to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Deacylation / Rearrangement",
+            "reagents": "Me3Al, TMSOTf",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C to rt",
+            "yield": "75%",
+            "reactant_smiles": "COC(=O)[C@@]12C3OC([C@@H](C4N(C2C5=CC=CC=C5)C(C)=C4)OC(=O)C)C3CCN1S(=O)(=O)C6=CC=C(C)C=C6",
+            "product_smiles": "COC(=O)[C@@]12C3OC([C@@H](C4N(C2C5=CC=CC=C5)C(C)=C4))C3CCN1S(=O)(=O)C6=CC=C(C)C=C6",
+            "notes": "Reductive removal of an acetate group from a complex polycyclic indole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "N-Detosylation",
+            "reagents": "Mg, MeOH",
+            "reagent_smiles": "[Mg].CO",
+            "conditions": "rt to 35 °C, sonicate",
+            "yield": "71%",
+            "reactant_smiles": "COC(=O)[C@@]1([C@H](C)O[C@]2(C1)C3CN([C@@H](C3)C4=C5C(=C(C)C=C4)N2C5)[Ts])",
+            "product_smiles": "COC(=O)[C@@]1([C@H](C)O[C@]2(C1)C3CN([C@@H](C3)C4=C5C(=C(C)C=C4)N2C5)H)",
+            "notes": "Reductive removal of the N-Tosyl protecting group to form a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Reductive Amination",
+            "reagents": "37% HCHO, Na(CN)BH3, AcOH",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "84%",
+            "reactant_smiles": "CC1=C2[C@]3(COC3C4C5CCNC4N2C6=C1C=CC=C6)(C(=O)OC)",
+            "product_smiles": "CC1=C2[C@]3(COC3C4C5CCN(C)C4N2C6=C1C=CC=C6)(C(=O)OC)",
+            "notes": "Methylation of a secondary amine to a tertiary amine using formaldehyde and sodium cyanoborohydride.",
+            "substeps": []
+        }
+    ]
+}

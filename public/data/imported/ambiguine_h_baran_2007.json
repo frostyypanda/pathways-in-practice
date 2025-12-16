@@ -1,0 +1,180 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ambiguine-h-baran-2007",
+        "molecule_name": "Ambiguine H",
+        "class": "Natural Product",
+        "author": "Baran",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxidation",
+            "reagents": "H₂O₂, NaOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H₂O",
+            "yield": "95%",
+            "reactant_smiles": "C=C(C)[C@H]1CC=C(C)C(=O)C1",
+            "product_smiles": "C=C(C)[C@H]1CC(=O)[C@]2(C)[C@H](C1)O2",
+            "notes": "Epoxidation of (S)-Carvone's alpha,beta-unsaturated ketone to yield an alpha,beta-epoxy ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrazone formation",
+            "reagents": "",
+            "reagent_smiles": "CC1=CC=C(C=C1)S(=O)(=O)NN",
+            "conditions": "THF, -10 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@@H]1CC(=O)[C@]2(C)[C@H](C1)O2",
+            "product_smiles": "C=C(C)[C@@H]1C/C(=N\\N[Ts])/[C@]2(C)[C@H](C1)O2",
+            "notes": "Ketone undergoes condensation with p-toluenesulfonhydrazide to form the corresponding tosylhydrazone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Addition / Tosylhydrazone Reduction / Epoxide Opening",
+            "reagents": "THF",
+            "reagent_smiles": "C=CMgBr",
+            "conditions": "-78 °C",
+            "yield": "48% (2 steps)",
+            "reactant_smiles": "C=C(C)[C@H]1CCC(=N[NH][Ts])[C@]2(C)OC[C@H]12",
+            "product_smiles": "C=C[C@@]1(C)[C@H](C[C@H](CC1=O)C(=C)C)O",
+            "notes": "Grignard reagent adds to the tosylhydrazone, followed by epoxide opening and subsequent hydrolysis to ketone, leading to installation of vinyl, methyl, hydroxyl, and isopropenyl groups with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Appel Reaction",
+            "reagents": "NCS, PPh3, THF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "68%",
+            "reactant_smiles": "C=C[C@@]1(C)[C@@H](O)C[C@H](C(=C)C)CC1=O",
+            "product_smiles": "C=C[C@@]1(C)[C@H](Cl)C[C@H](C(=C)C)CC1=O",
+            "notes": "Hydroxyl group converted to chloride with inversion of stereochemistry at the reaction center (C3).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Enol triflate formation",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "FC(F)(F)S(=O)(=O)N(S(=O)(=O)C(F)(F)F)c1ccc(Cl)cn1",
+            "conditions": "THF",
+            "yield": "83%",
+            "reactant_smiles": "C=C[C@@]1(C)[C@@H](C[C@@H](CC1=O)C(=C)C)Cl",
+            "product_smiles": "C=C[C@@]1(C)[C@@H](C[C@@H](C=C1OS(=O)(=O)C(F)(F)F)C(=C)C)Cl",
+            "notes": "Ketone is deprotonated by NaHMDS to form an enolate, which is then trapped by 2-(N,N-bis(trifluoromethylsulfonyl)amino)-4-chloropyridine to form an enol triflate.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd(dppf)Cl2, CuI, LiCl",
+            "reagent_smiles": "CCC[Sn](CCCC)(CCCC)C(OCC)=C",
+            "conditions": "DMF",
+            "yield": "87%",
+            "reactant_smiles": "C[C@@]1(C=C)C(=C(OS(=O)(=O)C(F)(F)F)C[C@@H](Cl)[C@@H](C(=C)C)C1)",
+            "product_smiles": "C=C[C@]1(C)C(=C[C@H](C[C@H]1Cl)C(=C)C)C(=C)OCC",
+            "notes": "Stille coupling of a vinyl triflate with an ethoxyvinyl tributyltin reagent, replacing the triflate with the vinyl ether moiety while preserving stereochemistry and other functional groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cascade Cyclization",
+            "reagents": "TMSOTf",
+            "reagent_smiles": "CC(C)(C1=CC2=C(C=CC=C2)N1)O[Si](C)(C)C.F[S](=O)(=O)O[Si](C)(C)C",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "46%",
+            "reactant_smiles": "C=C[C@]1(C)C(=C[C@H](C[C@@H]1Cl)C(=C)C)C(=C)OCC",
+            "product_smiles": "CC(=C)[C@]1(C)[C@@H](Cl)C[C@H](C(=C)C)[C@H]2[C@H]3CC(=O)C(C)(C)C3=C2C4=CC=CC=C4N1",
+            "notes": "Indole derivative undergoes Lewis acid-catalyzed cascade cyclization with the cyclohexene enol ether, forming a complex polycyclic product.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acid-catalyzed intramolecular cyclization / Rearrangement",
+            "reagents": "BF₃OEt₂, TBAF",
+            "reagent_smiles": "",
+            "conditions": "MeOH, CH₂Cl₂",
+            "yield": "",
+            "reactant_smiles": "C=C[C@]1(C)[C@H](C[C@@H](C(=C)C)[C@H]2C3=C(C(C)(C)CC(=O)[C@H]21)NC4=C3C=CC=C4)Cl",
+            "product_smiles": "Cc1ccc2[nH]c3c(c12)C(C)(C)C(=O)CC4[C@H]5[C@H]6C(C)(C)C3=C(C6)C7(C)C[C@H](Cl)C8[C@H]7[C@H]4[C@@]8(C)C5",
+            "notes": "An intramolecular cyclization/rearrangement promoted by BF₃OEt₂ occurs. The isopropenyl group on the reactant is cyclized to form a new 6-membered ring and converted to a gem-dimethyl group fused to the indole. The vinyl group also undergoes cyclization, forming another new 6-membered ring, and the quaternary carbon it was attached to becomes a gem-dimethyl quaternary center. The reaction creates a complex hexacyclic product from a tetracyclic reactant.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dehydrogenation",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "67%",
+            "reactant_smiles": "C=C[C@@]1(C)[C@@H](C[C@@]2(C)[C@H]3[C@H]1C(=O)CC(C)(C)C4=C3C5=C(C=CC=C5C2(C)C)N4)Cl",
+            "product_smiles": "C=C[C@@]1(C)[C@@H](C[C@@]2(C)C3=C1C(=O)CC(C)(C)C4=C3C5=C(C=CC=C5C2(C)C)N4)Cl",
+            "notes": "2 steps",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "DIBAL, Et2AlCl",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C2=CC=CC3=C2C(N3)=C(C(C)(C)C)C4=C5C(=O)C(C)(C)CC6=C5[C@](C=C)(C)[C@H](Cl)C[C@@H]6C1",
+            "product_smiles": "CC1(C)C2=CC=CC3=C2C(N3)=C(C(C)(C)C)C4=C5CC(C)(C)CC6=C5[C@](C=C)(C)[C@H](Cl)C[C@@H]6C1",
+            "notes": "The ketone in the 7-membered ring is reduced to a methylene group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "KHMDS, P(OMe)3, air",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "C=C[C@]1(C)C2=C3[C@@H](C[C@H]1Cl)C(C)(C)C4=CC=CC5=C4C3=C(C(C)(C)C=C2)N5",
+            "product_smiles": "C=C[C@]1(C)C2=C3C4=C(C(C)(C)C=C2)NC5=C4C(=CC=C5)C(C)(C)[C@]3(C[C@H]1Cl)O",
+            "notes": "Oxidation of a bridgehead C-H bond to a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "NBS, PPTS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "83%",
+            "reactant_smiles": "C=C[C@]1(C)C2=C3C4=C(C(C)(C)C=C2)NC5=C4C(=CC=C5)C(C)(C)[C@]3(C[C@@H]1Cl)O",
+            "product_smiles": "C=C[C@]1(C)C2=C3C4=C(C(C)(C)C(=C2)Br)NC5=C4C(=CC=C5)C(C)(C)[C@]3(C[C@@H]1Cl)O",
+            "notes": "Electrophilic bromination of an aromatic C-H bond using N-bromosuccinimide (NBS) and pyridinium p-toluenesulfonate (PPTS).",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Cyanation / Palladium-catalyzed cross-coupling",
+            "reagents": "Pd(dba)2, Zn, Zn(CN)2",
+            "reagent_smiles": "CC(C)(C)P(C(C)(C)C)C(C)(C)C.[Zn+2].[C-]#N.[C-]#N",
+            "conditions": "NMP, 110 °C",
+            "yield": "74%",
+            "reactant_smiles": "C=C[C@]1(C)C2=C3C4=C(C(C)(C)C(=C2)Br)NC5=C4C(=CC=C5)C(C)(C)[C@]3(C[C@H]1Cl)O",
+            "product_smiles": "C=C[C@]1(C)C2=C3C4=C(C(C)(C)C(=C2)C#N)NC5=C4C(=CC=C5)C(C)(C)[C@]3(C[C@H]1Cl)O",
+            "notes": "Palladium-catalyzed cyanation of an aryl bromide to form an aryl nitrile. Stereochemistry at the two chiral centers remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deoxygenation",
+            "reagents": "BF3•OEt2, Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -40 °C",
+            "yield": "84%",
+            "reactant_smiles": "C=C[C@]1(C)C2=C3C4=C(C(C)(C)C(=C2)C#N)NC5=C4C(=CC=C5)C(C)(C)[C@]3(C[C@@H]1Cl)O",
+            "product_smiles": "C=C[C@]1(C)C2=C3[C@@H](C[C@@H]1Cl)C(C)(C)C4=CC=CC5=C4C3=C(C(C)(C)C(=C2)C#N)N5",
+            "notes": "Reduction of a bridgehead tertiary alcohol to a methylene group using a Lewis acid and silane reducing agent.",
+            "substeps": []
+        }
+    ]
+}

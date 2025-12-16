@@ -1,0 +1,242 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "arimetamycin-a-townsend-2021",
+        "molecule_name": "Arimetamycin A",
+        "class": "Natural Product",
+        "author": "Townsend",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "SOCl2, CH3OH",
+            "reagent_smiles": "",
+            "conditions": "-8 °C to reflux",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]([C@H](C(=O)O)N)O",
+            "product_smiles": "C[C@@H]([C@H](C(=O)OC)N)O",
+            "notes": "The carboxylic acid group of (2S,3R)-2-amino-3-hydroxybutanoic acid is converted to a methyl ester. The stereochemistry at both chiral centers is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Alkylation",
+            "reagents": "BnBr, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "THF/DMSO, reflux",
+            "yield": "88% (2 steps)",
+            "reactant_smiles": "C[C@@H]([C@H](C(=O)OC)N)O",
+            "product_smiles": "C[C@@H]([C@H](C(=O)OC)N([Bn])[Bn])O",
+            "notes": "Double N-alkylation of the primary amine to a dibenzyl amine using benzyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "95%",
+            "reactant_smiles": "C[C@@H](O)[C@H](N(CC1=CC=CC=C1)CC2=CC=CC=C2)C(=O)OC",
+            "product_smiles": "C[C@@H]([OAc])[C@H](N(CC1=CC=CC=C1)CC2=CC=CC=C2)C(=O)OC",
+            "notes": "Acetylation of a secondary alcohol to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyclization / Enol Ether Formation / Alkylation",
+            "reagents": "LiHMDS, Me2SO4, NH3/MeOH",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]([OAc])[C@H](C(=O)OMe)N[Bn][Bn]",
+            "product_smiles": "C[C@H]1OC(=O)C=C(OC)C1N[Bn][Bn]",
+            "notes": "Intramolecular cyclization involving enolate formation followed by methylation and lactone formation to yield a substituted δ-lactone with an enol ether moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lactone reduction, enol ether hydrolysis, lactam formation",
+            "reagents": "DIBALH, CH3OH, aq. H2SO4",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 to -5 °C then -5 °C then -5 to 60 °C",
+            "yield": "71% (2 steps)",
+            "reactant_smiles": "C[C@H]1OC(=O)C(OC)=C[C@H]2[C@H]1CCC[C@@H]2N(Cc3ccccc3)Cc4ccccc4",
+            "product_smiles": "C[C@H]1OC=C[C@H]2[C@H]1CCC(=O)N(Cc3ccccc3)[C@@H]2",
+            "notes": "Lactone reduction, enol ether hydrolysis, and lactam formation. The original image for the product shows 'Bn2N' next to the nitrogen which is part of a lactam ring. Chemically, a nitrogen in a tertiary amide in a ring can only accommodate one exocyclic substituent. Thus, the 'Bn2N' label is interpreted as N-benzyl, implying the loss of one benzyl group during the reaction, which is chemically plausible in multi-step acid-catalyzed reactions.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Addition (Organolithium)",
+            "reagents": "THF",
+            "reagent_smiles": "C[Li]",
+            "conditions": "-78 °C",
+            "yield": "86%",
+            "reactant_smiles": "C[C@H]1C2C=CO[C@]1(C(=O)N2([Bn])[Bn])",
+            "product_smiles": "C[C@H]1C2C=CO[C@]1(C(C)(O)N2([Bn])[Bn])",
+            "notes": "Nucleophilic addition of methyl lithium to a lactam carbonyl group, resulting in a tertiary alcohol and the incorporation of a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxymercuration-Demercuration (of enol ether)",
+            "reagents": "Hg(OAc)2, aq. NaOH, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O",
+            "yield": "64% (2 steps)",
+            "reactant_smiles": "C[C@H]1[C@@H](O)[C@H]2CC[C@H](N([Bn])[Bn])[C@]12OC=C",
+            "product_smiles": "C[C@H]1[C@@H](O)[C@H]2CC[C@H](N([Bn])[Bn])[C@]12O[CH](O)C",
+            "notes": "Hydration of the enol ether moiety to a hemiacetal.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Silyl Ether Formation / Alcohol Protection",
+            "reagents": "",
+            "reagent_smiles": "C[Si](C)(C(C)(C)C)OS(=O)(=O)C(F)(F)F.CC1=NC=CC=C1C",
+            "conditions": "CH2Cl2",
+            "yield": "92%",
+            "reactant_smiles": "C[C@H]1OC2(C)[C@@H](O)[C@H](N(CC3=CC=CC=C3)CC4=CC=CC=C4)[C@H](O)C2[C@H](O)C1",
+            "product_smiles": "C[C@H]1OC2(C)[C@@H](O[Si](C)(C)C(C)(C)C)[C@H](N(CC3=CC=CC=C3)CC4=CC=CC=C4)[C@H](O)C2[C@H](O[Si](C)(C)C(C)(C)C)C1",
+            "notes": "Regioselective formation of two TBS ethers from a bicyclic triol, leaving one hydroxyl group unprotected.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Thioglycosidation / Acetal Cleavage",
+            "reagents": "PhSH, TMSOTf",
+            "reagent_smiles": "Sc1ccccc1.C[Si](C)(C)OS(=O)(=O)C(F)(F)F",
+            "conditions": "CH2Cl2, rt",
+            "yield": "92%",
+            "reactant_smiles": "C[C@@H]1[C@](C)([C@H](C2)N(Cc3ccccc3)Cc4ccccc4)[C@H](O[Si](C)(C)C(C)(C)C)C(C)(O[Si](C)(C)C(C)(C)C)O12",
+            "product_smiles": "C[C@@H]1C([C@](C)(N(Cc2ccccc2)Cc3ccccc3)[C@](C)(O[Si](C)(C)C(C)(C)C)CC(Sc1ccccc1)O1)",
+            "notes": "Cleavage of the bicyclic acetal with thiophenol catalyzed by TMSOTf to form a thioglycoside derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Glycosylation",
+            "reagents": "AgPF6, TTBP, CH2Cl2, 4 A MS",
+            "reagent_smiles": "O1[C@H]([OTBS])[C@H](C)[C@H](N[Bz])[C@H](O)CC1",
+            "conditions": "-10 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "C[C@H]1OC(S[Ph])C[C@@H](N[Bn][Bn])[C@](C)([OTBS])C1",
+            "product_smiles": "C[C@H]1O[C@H](O[C@H]2O[C@H](C)[C@H](N[Cbz])[C@H](O)CC2)C[C@@H](N[Bn][Bn])[C@](C)([OTBS])C1",
+            "notes": "Glycosylation of a thioglycoside (reactant) with a chiral sugar building block (reagent) to form a disaccharide (product).",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Amine Acylation",
+                    "reagents": "Cbz-OSuc, NaHCO3",
+                    "reagent_smiles": "",
+                    "conditions": "rt, 1,4-dioxane",
+                    "yield": "",
+                    "reactant_smiles": "CC(C)C[C@H](C(=O)N[C@@H]1[C@@H](C2=CC=C(C(=C2)Cl)OC3=CC4=CC(=C3O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](CO)O5)O)O)O[C@H]6C[C@@](C)([C@@H]([C@H](C)O6)O)N)OC7=CC=C(C=C7Cl)[C@H]([C@H]8C(=O)N[C@@H](C9=CC(=CC(=C9C%10=CC(=CC=C%10O)[C@H](C(=O)N8)NC(=O)[C@@H]4NC(=O)[C@H](CC(=O)N)NC1=O)O)O)C(=O)O)O)O)NC.Cl",
+                    "product_smiles": "CC(C)C[C@H](C(=O)N[C@@H]1[C@@H](C2=CC=C(C(=C2)Cl)OC3=CC4=CC(=C3O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](CO)O5)O)O)O[C@H]6C[C@@](C)([C@@H]([C@H](C)O6)O)[NHCBz])OC8=CC=C(C=C8Cl)[C@H]([C@H]9C(=O)N[C@@H](C%10=CC(=CC(=C%10C%11=CC(=CC=C%11O)[C@H](C(=O)N9)NC(=O)[C@@H]4NC(=O)[C@H](CC(=O)N)NC1=O)O)O)C(=O)O)",
+                    "notes": "Formation of a Cbz-carbamate on the vancosamine amine of vancomycin.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Glycopeptide degradation / Acylation / Acid hydrolysis",
+                    "reagents": "AcCl, HCl",
+                    "reagent_smiles": "CC(=O)Cl",
+                    "conditions": "MeOH, THF",
+                    "yield": "",
+                    "reactant_smiles": "CN[C@H](CC(C)C)C(=O)N[C@@H]1[C@@H](C2=CC=C(C(=C2)Cl)OC3=CC4=CC(=C3O[C@H]5[C@@H]([C@H]([C@@H]([C@@H](CO)O5)O)O)O[C@H]6C[C@@](C)([C@@H]([C@H](C)O6)O)N[Cbz])OC8=CC=C(C=C8Cl)[C@H]([C@H]9C(=O)N[C@@H](C%10=CC(=CC(=C%10C%11=C(C=CC(=C%11)[C@H](C(=O)N9)NC(=O)[C@@H]4NC(=O)[C@H](CC(=O)N)NC1=O)O)O)O)C(=O)",
+                    "product_smiles": "C[C@@H]1C[C@@H](O[C@H]([C@@H]1N[Bz])[C@H](O)CO)",
+                    "notes": "Complex degradation of a glycopeptide. The N-methyl group on the N-terminus of the reactant was added to the SMILES (`CN` group). An expanded Cbz protecting group in the reactant (`NC(=O)OCC7=CC=CC=C7`) was abbreviated to `N[Cbz]` to match the general abbreviation rule. The provided product SMILES was entirely incorrect and regenerated from scratch, including proper stereochemistry and the `N[Bz]` abbreviation for the N-benzoyl group. Discrepancy noted: The reagent listed is `AcCl` (acetyl chloride), but the product shows an `N[Bz]` (N-benzoyl) group, implying a benzoylating agent (e.g., BzCl) was used to form this group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Alcohol protection (Silyl ether formation)",
+                    "reagents": "",
+                    "reagent_smiles": "Cl[Si](C(C)(C)C)(C)C.C1=CNC=N1",
+                    "conditions": "DMF, rt",
+                    "yield": "43%",
+                    "reactant_smiles": "C[C@@]1(O)[C@@H](NC(=O)c2ccccc2)[C@@H]3[C@](C)(O[C@H](CO)C[C@H](C)CC3)N1",
+                    "product_smiles": "C[C@@]1(O)[C@@H](NC(=O)c2ccccc2)[C@@H]3[C@](C)(O[C@H](C[OTBS])C[C@H](C)CC3)N1",
+                    "notes": "Protection of primary alcohol with TBSCl. The reported yield is for 4 steps.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 50 °C",
+            "yield": "85%",
+            "reactant_smiles": "C[C@@H]1O[C@H](C[C@@H]([C@@H]1[OTBS])N([Bn])[Bn])O[CH2][C@H]2O[C@H](C[C@@H]([C@@H]2[OTBS])N[Cbz])C",
+            "product_smiles": "C[C@@H]1O[C@H](C[C@@H]([C@@H]1O)N([Bn])[Bn])O[CH2][C@H]2O[C@H](C[C@@H](C(C)O2)N[Cbz])O",
+            "notes": "Desilylation of two TBS protecting groups to yield two hydroxyl groups. One hydroxyl group in the product has unspecified stereochemistry (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Esterification",
+            "reagents": "EDC, DIPEA, DMAP",
+            "reagent_smiles": "OC(=O)CC1=CC=C(C=C1)[OTBDPS]",
+            "conditions": "CH2Cl2, rt",
+            "yield": "77%",
+            "reactant_smiles": "C[C@@H]1OC(O)[C@@H]([C@@H](C)N[Cbz])C[C@@H](OC3[C@@H](C)OC(O)[C@@H]([C@H](C)N([Bn])[Bn])CC3)C1",
+            "product_smiles": "C[C@@H]1OC(OC(=O)CC2=CC=C(C=C2)[OTBDPS])[C@@H]([C@@H](C)N[Cbz])C[C@@H](OC3[C@@H](C)OC(O)[C@@H]([C@H](C)N([Bn])[Bn])CC3)C1",
+            "notes": "The primary alcohol of the disaccharide reactant is esterified with 4-(tert-butyl(diphenyl)silyloxy)phenylacetic acid using EDC coupling conditions. Stereochemistry is inferred from common sugar representations and relative positions.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydrogenolysis, Deprotection",
+            "reagents": "NH4HCO2, CH3OH",
+            "reagent_smiles": "[Pd]",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "CC1C(C(C)(CC(O1)OC(=O)CC2=CC=C(C=C2)[OTBDPS])[NHCbz])OC6CC(C(C(C)O6)[Bn2N])O",
+            "product_smiles": "CC1C(C(C)(CC(O1)OC(=O)CC2=CC=C(C=C2)[OTBDPS])N)OC5CC(C(C(C)O5)N)O",
+            "notes": "Deprotection of Cbz and dibenzyl groups to primary amines via catalytic transfer hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Reductive Amination",
+            "reagents": "HCHO, AcOH, pyr•BH3",
+            "reagent_smiles": "",
+            "conditions": "CH3OH, 0 °C to rt",
+            "yield": "56%",
+            "reactant_smiles": "CC1C(C(C)(CC(O1)OC(=O)CC2=CC=C(C=C2)[OTBDPS])N)OC5CC(C)(C(C(C)O5)N)O",
+            "product_smiles": "CC1C(C(C)(CC(O1)OC(=O)CC2=CC=C(C=C2)[OTBDPS])N(C)C)OC5CC(C)(C(C(C)O5)N(C)C)O",
+            "notes": "Dimethylation of two primary amine groups via reductive amination using formaldehyde and pyridine-borane.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Glycosylation / Complex Rearrangement",
+            "reagents": "BF3.OEt2, 4 Å MS",
+            "reagent_smiles": "C[C@]1(C(=O)C2=CC3=C(C(=C2C([C@@H]1OC)O)O)C(=O)C4=C(C=C(C=C4C3=O)OC)O)O",
+            "conditions": "CH2Cl2, -78 to -5 °C",
+            "yield": "4% (2 steps)",
+            "reactant_smiles": "[OTBDPS]c1ccc(cc1)CC(=O)O[C@@H]1CC[C@@H](C)[C@H](O[C@H]2CC[C@@H](C)[C@H](O)[C@@H](N(C)C)[C@@H](C)O2)[C@@H](N(C)C)[C@@H](C)O1",
+            "product_smiles": "COc1cc(O)c2c(=O)c3c(c(O)c2=O)c(O[C@@H]4CC[C@@H](C)[C@H](O[C@H]5CC[C@@H](C)[C@H](O)[C@@H]([N+](C)(C))[C@@H](C)O5)[C@@H]([N+](C)(C))[C@@H](C)O4)c(C(=O)[C@]6(O)C(=O)[C@@H](O)[C@@H](OC)C6)c3=O.FC(F)(F)C(O)=O.FC(F)(F)C(O)=O",
+            "notes": "Lewis acid-catalyzed glycosylation of an anthracycline derivative with a disaccharide, followed by rearrangement to Arimetamycin A. The TBDPS protecting group and phenylacetate moiety are cleaved. The dimethylamino groups are protonated to ammonium salts with TFA.",
+            "substeps": [
+                {
+                    "step_id": "15.1",
+                    "reaction_type": "Hydrolysis (Deglycosylation)",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "1,4-dioxane, 90 °C",
+                    "yield": "",
+                    "reactant_smiles": "COc1cc(O)c2c(=O)c3c(c(=O)c2c1)C(=O)[C@@]4(O)[C@H](OC)[C@@H](O[C@@H]5O[C@H](C)[C@@H](OC)[C@H](O)[C@@H](OC)5)CC4=C3O",
+                    "product_smiles": "COc1cc(O)c2c(=O)c3c(c(=O)c2c1)C(=O)[C@@]4(O)[C@H](OC)[C@@H](O)CC4=C3O",
+                    "notes": "Acid-catalyzed hydrolysis of the glycosidic bond to remove the sugar moiety from the anthracycline.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

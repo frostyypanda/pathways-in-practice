@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aquatolide-hiemstra-2015",
+        "molecule_name": "Aquatolide",
+        "class": "Natural Product",
+        "author": "Hiemstra",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Titanium-catalyzed Aldol Addition",
+            "reagents": "Ti(OiPr)4, KOtBu",
+            "reagent_smiles": "C#CC=O",
+            "conditions": "THF, -10 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)C=O",
+            "product_smiles": "C#CC(C(C)(C)C=O)O",
+            "notes": "Isobutyraldehyde undergoes a titanium-catalyzed aldol addition with propargyl aldehyde to form a β-hydroxy aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Acetal formation",
+            "reagents": "HC(OMe)3, pTsOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "62%",
+            "reactant_smiles": "C#CC(C(C)(C)C=O)O",
+            "product_smiles": "C#CC(C(C)(C)C(OC)OC)O",
+            "notes": "Formation of an acetal from an aldehyde using trimethyl orthoformate and p-toluenesulfonic acid in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Esterification",
+            "reagents": "DCC, DMAP",
+            "reagent_smiles": "CCOP(=O)(C(CCC[OBn])C(=O)O)OCC",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C#CC(C(C)(C)C([OMe])[OMe])O",
+            "product_smiles": "C#CC(C(C)(C)C([OMe])[OMe])OC(=O)C(CCC[OBn])P(=O)(OCC)OCC",
+            "notes": "Esterification of a secondary alcohol with a phosphonate-containing carboxylic acid using DCC/DMAP.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "BrCCC[OBn]",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CP(=O)(OCC)OCC",
+                    "product_smiles": "CCOC(=O)C(CCC[OBn])P(=O)(OCC)OCC",
+                    "notes": "Alkylation of the alpha-carbon of diethyl 2-(diethoxyphosphoryl)acetate with 1-bromo-3-(benzyloxy)propane.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "KOH",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH (2 steps)",
+                    "yield": "65%",
+                    "reactant_smiles": "CCOC(=O)C(CCCOCC1=CC=CC=C1)P(=O)(OCC)OCC",
+                    "product_smiles": "CCOP(=O)(C(CCCOCC1=CC=CC=C1)C(=O)O)OCC",
+                    "notes": "Hydrolysis of an ethyl ester to a carboxylic acid using KOH in ethanol.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetal hydrolysis",
+            "reagents": "aq HCl, acetone",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "92% (2 steps)",
+            "reactant_smiles": "C#CC(C(C)(C)C(OC)OC)OC(=O)C(CCCCO[Bn])P(=O)(OCC)OCC",
+            "product_smiles": "C#CC(C(C)(C)C=O)OC(=O)C(CCCCO[Bn])P(=O)(OCC)OCC",
+            "notes": "Acetal hydrolysis of a dimethyl acetal to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "76%",
+            "reactant_smiles": "C#CC(C(C)(C)C=O)OC(=O)C(CCCOCC1=CC=CC=C1)P(=O)(OCC)OCC",
+            "product_smiles": "O1C(=O)C(CCCOCC2=CC=CC=C2)=CC(C(C)(C))C(C#C)O1",
+            "notes": "Intramolecular Horner-Wadsworth-Emmons olefination of an aldehyde/phosphonate to form a dihydropyranone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Allene formation (from alkyne)",
+            "reagents": "(CH₂O)n, (Cy)₂NH, CuI",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, reflux",
+            "yield": "79%",
+            "reactant_smiles": "C#CC1C(C)(C)C=C(CCCOCC2=CC=CC=C2)C(=O)O1",
+            "product_smiles": "C=C=CC1C(C)(C)C=C(CCCOCC2=CC=CC=C2)C(=O)O1",
+            "notes": "Conversion of a terminal alkyne to an allene using formaldehyde, dicyclohexylamine, and copper(I) iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Diels-Alder reaction",
+            "reagents": "hv (300nm)",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "77%",
+            "reactant_smiles": "C=C[C@H]1OC(=O)C(=C(CCCO[Bn]))C(C)(C)1",
+            "product_smiles": "C=C1[C@@H]2[C@H]3[C@](C)(C)[C@@H]1[C@H]2(CCCO[Bn])C(=O)O3",
+            "notes": "Photochemical intramolecular Diels-Alder reaction of a vinyl lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydroboration-oxidation",
+            "reagents": "BH3, THF, H2O2, NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "36%",
+            "reactant_smiles": "CC1(C)C2C3C(C1)C(C=C)(C3C2)C(=O)OC(CCC[OBn])",
+            "product_smiles": "CC1(C)C2C3C(C1)C(C(O))(C3C2)C(=O)OC(CCC[OBn])",
+            "notes": "Hydroboration-oxidation of an exocyclic alkene to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)C2C(CO)C3C(=O)OC4C3C(CCCO[Bn])C2C14",
+            "product_smiles": "CC1(C)C2C(C=O)C3C(=O)OC4C3C(CCCO[Bn])C2C14",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin Periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Grignard reaction",
+            "reagents": "EtMgBr",
+            "reagent_smiles": "CC[Mg]Br",
+            "conditions": "ether, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)1[C@H]2[C@H](C=O)[C@H]3[C@H]4[C@H]1C(=O)O[C@]2(CCCOCC5=CC=CC=C5)[C@@]34",
+            "product_smiles": "CC(C)1[C@H]2C(O)(CC)[C@H]3[C@H]4[C@H]1C(=O)O[C@]2(CCCOCC5=CC=CC=C5)[C@@]34",
+            "notes": "Grignard addition of ethylmagnesium bromide to an aldehyde, forming a secondary alcohol with unspecified stereochemistry at the newly formed chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Debenzylation / Hydrogenolysis",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "[Pd]",
+            "conditions": "EtOAc",
+            "yield": "",
+            "reactant_smiles": "CC(O)C[C@@H]1C2C3C(C)(C)C1C3(CCCOCc4ccccc4)C(=O)O2",
+            "product_smiles": "CC(O)C[C@@H]1C2C3C(C)(C)C1C3(CCCCO)C(=O)O2",
+            "notes": "Hydrogenation of a benzyl ether to yield an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCC(O)C1[C@H]2[C@H]3C(C)(C)[C@H]2[C@H]1[C@]4(CCCO)[C@H]3OC(=O)C4",
+            "product_smiles": "CCC(=O)C1[C@H]2[C@H]3C(C)(C)[C@H]2[C@H]1[C@]4(CCC=O)[C@H]3OC(=O)C4",
+            "notes": "Oxidation of a primary alcohol to an aldehyde and a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Acetal Formation",
+            "reagents": "CeCl3.7H2O",
+            "reagent_smiles": "COC(OC)OC",
+            "conditions": "MeOH",
+            "yield": "81%",
+            "reactant_smiles": "CCC(=O)[C@H]1C2C3C(C)(C)OC(=O)C3(CCC=O)C1C2",
+            "product_smiles": "CCC(=O)[C@H]1C2C3C(C)(C)OC(=O)C3(CCC(OC)OC)C1C2",
+            "notes": "Aldehyde converted to dimethyl acetal.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Enol Silyl Ether Formation",
+            "reagents": "LHMDS, TMSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C then -78 °C -> 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCC(=O)[C@H]1[C@@H]2[C@H]3[C@](C)(C)[C@@H]1[C@](CCC(OC)OC)(C(=O)O2)C3",
+            "product_smiles": "CC\\C=C(/O[TMS])[C@H]1[C@@H]2[C@H]3[C@](C)(C)[C@@H]1[C@](CCC(OC)OC)(C(=O)O2)C3",
+            "notes": "Formation of a Z-configured enol silyl ether from an ethyl ketone using LHMDS and TMSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Mukaiyama aldol reaction",
+            "reagents": "BF3•OEt",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C -> 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC=C([C@H]1C[C@@H]2C(=O)O[C@]2(CCC(OC)OC)[C@@H]3[C@H]1C3(C)C)[OTMS]",
+            "product_smiles": "CC1C(OC)CCC2C(=O)C1C34C5C(C(C3(C)C)C5[C@H]2C(=O)OC4)",
+            "notes": "Intramolecular Mukaiyama aldol reaction to form an 8-membered cyclic ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Acid-catalyzed rearrangement / Elimination",
+            "reagents": "pTsOH",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "toluene, reflux",
+            "yield": "",
+            "reactant_smiles": "COC1CCC(=O)[C@@H]2[C@H]3C4(C)C(=O)OC([C@@H]23)[C@H]4C1",
+            "product_smiles": "CC1=CCC(=O)[C@@H]2[C@H]3C4(C)C(=O)OC([C@@H]23)[C@H]4C1",
+            "notes": "Acid-catalyzed elimination of methanol and subsequent rearrangement to form a methylated alkene in the 7-membered ring. The yield of 59% is reported for '3 steps' collectively, not this single step. The stereochemistry of the carbon bearing the OMe group in the reactant is shown with wavy bonds in the diagram, indicating an undefined or mixed stereoisomer. The provided SMILES for the reactant defines the stereochemistry at this center, which is a common practice for canonical SMILES generation even with wavy bonds in 2D diagrams.",
+            "substeps": []
+        }
+    ]
+}

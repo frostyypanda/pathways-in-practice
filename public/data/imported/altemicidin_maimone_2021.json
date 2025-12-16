@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "altemicidin-maimone-2021",
+        "molecule_name": "Altemicidin",
+        "class": "Natural Product",
+        "author": "Maimone",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-alkylation",
+            "reagents": "K2CO3, allylbromide",
+            "reagent_smiles": "C=CCBr.[K+].[K+].[CO3-2]",
+            "conditions": "acetone, rt",
+            "yield": "83%",
+            "reactant_smiles": "CCOC(=O)/C(=N\\O)/C(=O)C",
+            "product_smiles": "CCOC(=O)/C(=N\\OCC=C)/C(=O)C",
+            "notes": "O-alkylation of an oxime with allyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silyl enol ether formation",
+            "reagents": "TMSI, NEt3",
+            "reagent_smiles": "I[Si](C)(C)C.CCN(CC)CC",
+            "conditions": "MeCN, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C=CCON=C(C(=O)C)C(=O)OCC",
+            "product_smiles": "C=CCON=C(C(=C)[OTMS])C(=O)OCC",
+            "notes": "Conversion of an acetyl group to a trimethylsilyl enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dihydropyridine formation",
+            "reagents": "",
+            "reagent_smiles": "N#Cc1ccncc1.ClC(=O)Oc1ccccc1.C[Si](C)(C)OS(=O)(=O)C(F)(F)F",
+            "conditions": "MeCN, rt",
+            "yield": "77%",
+            "reactant_smiles": "C=CCON=C(C(=C)[OTMS])C(=O)OCC",
+            "product_smiles": "C=CCON=C(C(=O)OCC)C(=O)C[C@H]1N(C(=O)Oc2ccccc2)C=C(C#N)C=C1",
+            "notes": "Formation of a chiral 1,4-dihydropyridine via N-acylation and addition from a silyl enol ether and 2-cyanopyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deallylation / Allyl Protecting Group Removal",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "CN1C(=O)CC(=O)N(C)C1=O",
+            "conditions": "DCM, rt",
+            "yield": "92%",
+            "reactant_smiles": "O=C(O[Ph])n1ccc(C[C@@H](C(=O)OCC)N=COCC=C)c(C#N)c1",
+            "product_smiles": "O=C(O[Ph])n1ccc(C[C@@H](C(=O)OCC)N=O)c(C#N)c1",
+            "notes": "Palladium-catalyzed deallylation of an allyl oxime ether to yield an oxime.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction (Ketone to Alcohol)",
+            "reagents": "NaBH4",
+            "reagent_smiles": "CO.C1CCOC1",
+            "conditions": "THF, -40 °C",
+            "yield": "41%",
+            "reactant_smiles": "CCOC(=O)C(=NOH)C(=O)CC1=C(C#N)C=CN1C(=O)O[Ph]",
+            "product_smiles": "CCOC(=O)C(=NOH)[C@H](O)CC1=C(C#N)C=CN1C(=O)O[Ph]",
+            "notes": "Chemoselective reduction of a ketone to a secondary alcohol with NaBH4, preserving the oxime and nitrile groups. Stereoselective reduction leading to a single chiral center configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular cyclization / Domino Reaction (likely involving N-carbamate deprotection, oxime addition, cyclization, and esterification)",
+            "reagents": "BHT, CF3Ph, LiBr, DBU",
+            "reagent_smiles": "",
+            "conditions": "130 °C; then MeOH, 0 °C",
+            "yield": "45%",
+            "reactant_smiles": "CCOC(=O)/C(=N\\O)/[C@H](O)CC1=C(C#N)C=CC(CC(=NOH)C(=O)OCC)=CN1C(=O)O[Ph]",
+            "product_smiles": "COC(=O)[C@]1(O)[C@@H]2ON[C@H]3[C@H]2O[C@H]4[C@H]3[C@H]5[C@@H]4NC=C5C#N",
+            "notes": "Complex domino reaction forming a polycyclic altemicidin core. The ethyl ester is converted to a methyl ester, and the N-CO2Ph group is lost during cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O",
+            "reagent_smiles": "CC(=O)OC(=O)C",
+            "conditions": "65 °C",
+            "yield": "89%",
+            "reactant_smiles": "COC(=O)[C@@]1(O[C@H]2[C@H](N[C@@H]3[C@H]2C[C@H](O)[C@@]13)C[C@H]4N=CC(C#N)=C4)",
+            "product_smiles": "COC(=O)[C@@]1(O[C@H]2[C@H](N(C(=O)C)[C@@H]3[C@H]2C[C@H](OC(=O)C)[C@@]13)C[C@H]4N=CC(C#N)=C4)",
+            "notes": "Acetylation of a secondary alcohol and secondary amine using acetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "DCM/DMF, -30 °C to -10 °C",
+            "yield": "98%",
+            "reactant_smiles": "CC(=O)N1[C@]2([C@H](C[C@@H]3C(=CN[C@H]([C@]32C)O1)C#N)OC(=O)C)C(=O)OC",
+            "product_smiles": "CC(=O)N1[C@]2([C@H](C[C@H]3C(=CN(C)[C@H]([C@]32C)O1)C#N)OC(=O)C)C(=O)OC",
+            "notes": "N-methylation of a secondary amine in a complex polycyclic system using sodium hydride and iodomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Aminal Formation",
+            "reagents": "Mo(CO)6, NaBH3CN",
+            "reagent_smiles": "CC#N",
+            "conditions": "MeCN, 87 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC(=O)N1[C@H]2[C@@]1(C(=O)OC)O[C@H]3C[C@H](OC(C)=O)[C@H]4C=C(C#N)N(C)CC4[C@H]32",
+            "product_smiles": "CC(=O)N1[C@H]2[C@@]1(C(=O)OC)[NH][C@H]3C[C@H](OC(C)=O)[C@H]4C=C(C#N)N(C)CC4[C@H]32",
+            "notes": "Reductive conversion of a hemiaminal ether to an aminal using sodium cyanoborohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nitrile Hydrolysis",
+            "reagents": "Pd(OAc)2, acetaldoxime",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, 105 °C",
+            "yield": "82%",
+            "reactant_smiles": "COC(=O)[C@@]1([C@H](C[C@H]2C(=CN(C)C[C@]21C)C#N)OC(=O)C)NC(=O)C",
+            "product_smiles": "COC(=O)[C@@]1([C@H](C[C@H]2C(=CN(C)C[C@]21C)C(=O)N)OC(=O)C)NC(=O)C",
+            "notes": "Palladium-catalyzed hydration of a nitrile to a primary amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Solvolysis / Deprotection / Rearrangement",
+            "reagents": "AcCl",
+            "reagent_smiles": "CC(=O)Cl.CCO",
+            "conditions": "EtOH, 105 °C",
+            "yield": "63%",
+            "reactant_smiles": "O=C(N)c1cnc(C)n(C)C[C@@H]2[C@H]1C[C@H]3[C@@H](C(=O)OOCH3)[C@H](N(C(=O)C))C[C@H]23",
+            "product_smiles": "O=C(N)c1cnc(C)n(C)C[C@@H]2[C@H]1C[C@H]3[C@H](O)[C@](N)(C(=O)OCC)[C@H]23",
+            "notes": "Solvolysis of methyl peroxy ester to ethyl ester, deprotection of N-acetyl group to primary amine, and formation of a hydroxyl group, accompanied by a structural rearrangement within the 5-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Amidation, Transesterification",
+            "reagents": "DDC, DMAP",
+            "reagent_smiles": "C(C(=O)O)S(=O)(=O)N",
+            "conditions": "DMF, rt",
+            "yield": "73%",
+            "reactant_smiles": "CCOC(=O)[C@@]1(N)[C@H](O)C[C@H]2(C)C(=CN(C)C[C@]12)C(=O)N",
+            "product_smiles": "C[C@]12C[C@H]([C@](C(=O)OC)([C@H]2(C)CN(C)C=C1C(=O)N)NC(=O)CS(=O)(=O)N)O",
+            "notes": "The primary amine is acylated with 2-(aminosulfonyl)acetic acid to form a secondary amide, accompanied by a transesterification from an ethyl ester to a methyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiI, pyridine",
+            "reagent_smiles": "",
+            "conditions": "130 °C",
+            "yield": "67%",
+            "reactant_smiles": "CN1CC[C@@H]2[C@H](C=C(C(=O)N)C1)[C@H]3C[C@H](O)[C@]4(C(=O)OC)NC(=O)CS(=O)(=O)N[C@@H]243",
+            "product_smiles": "CN1CC[C@@H]2[C@H](C=C(C(=O)N)C1)[C@H]3C[C@H](O)[C@]4(C(=O)O)NC(=O)CS(=O)(=O)N[C@@H]243",
+            "notes": "Methyl ester of altermicidin is hydrolyzed to the carboxylic acid, forming altermicidin.",
+            "substeps": []
+        }
+    ]
+}

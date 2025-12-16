@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "alstratine-a-zhu-2023",
+        "molecule_name": "Alstratine A",
+        "class": "Natural Product",
+        "author": "Zhu",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Pictet-Spengler reaction",
+            "reagents": "salicylic acid, 5 Å MS",
+            "reagent_smiles": "CC(C(=O)N(C)CC1=CC(=CC(=C1)C(F)(F)F)C(F)(F)F)NC2=C(C(=O)C2=O)NC3=CC(=CC(=C3)C(F)(F)F)C(F)(F)F.COC(=O)C(=O)CCC1OCCO1",
+            "conditions": "toluene",
+            "yield": "98%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2)CCN",
+            "product_smiles": "COC(=O)[C@@]1(CCC2OCCO2)C3=C(CCN1)C4=C(C=CC=C4)N3",
+            "notes": "Asymmetric intramolecular Pictet-Spengler cyclization of an indole derivative with a methyl ketoester to form a tetrahydro-beta-carboline.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Alkylation",
+            "reagents": "K2CO3, MeCN",
+            "reagent_smiles": "C/C=C/CBr",
+            "conditions": "50 °C",
+            "yield": "91%",
+            "reactant_smiles": "COC(=O)[C@@]1(CCC2OCCO2)C3=C(CCN1)C4=C(C=CC=C4)N3",
+            "product_smiles": "C/C=C/CN1CCC2=C([C@@]1(CCC3OCCO3)C(=O)OC)NC4=C2C=CC=C4",
+            "notes": "Alkylation of the piperidine nitrogen with trans-1-bromo-2-butene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Acylation",
+            "reagents": "Et3N, DMAP",
+            "reagent_smiles": "C1=CC=C(C=C1)C(=O)Cl.CCN(CC)CC",
+            "conditions": "DCM",
+            "yield": "85%",
+            "reactant_smiles": "C/C=C/CN1CCC2=C([C@@]1(CCC3OCCO3)C(=O)OC)NC4=CC=CC=C24",
+            "product_smiles": "C/C=C/CN1CCC2=C([C@@]1(CCC3OCCO3)C(=O)OC)N([Bz])C4=CC=CC=C24",
+            "notes": "N-Benzoylation of the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "acetone, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@]1(CCC2OCCO2)C3=C4C(C=CC=C4N([Bz])C3)=CN(C/C=C/C)CCC1",
+            "product_smiles": "COC(=O)[C@]1(CCC=O)C2=C3C(C=CC=C3N([Bz])C2)=CN(C/C=C/C)CCC1",
+            "notes": "Hydrolysis of cyclic acetal to aldehyde in the presence of acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation (Dehydrogenation)",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "DMSO, 65 °C",
+            "yield": "",
+            "reactant_smiles": "C/C=C/CN1CCC2=C([C@]1(CCC=O)C(=O)OC)N(C3=CC=CC=C23)[Bz]",
+            "product_smiles": "C/C=C/CN1CCC2=C([C@]1(/C=C/C=O)C(=O)OC)N(C3=CC=CC=C23)[Bz]",
+            "notes": "Oxidation of a saturated aldehyde chain to an alpha,beta-unsaturated aldehyde (enal).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Complex cascade cyclization",
+            "reagents": "mesitylene",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "",
+            "reactant_smiles": "C/C=C/CN1CCC2=C([C@]1(/C=C/C=O)C(=O)OC)N([Bz])c3ccccc23",
+            "product_smiles": "C[C@@H]1[C@H]2CN3CCC4=C([C@@]3([C@H]2C=CO1)C(=O)OC)N([Bz])c5ccccc45",
+            "notes": "Intramolecular cyclization forming a new pyran ring and a bridged ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-deprotection",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@@]12[C@H]3C=CO[C@H](C)[C@@H]1C[C@@H]1N(CC[C@@H]1)c1c(C2)c2ccccc2n3[Bz]",
+            "product_smiles": "COC(=O)[C@@]12[C@H]3C=CO[C@H](C)[C@@H]1C[C@@H]1N(CC[C@@H]1)c1c(C2)c2ccccc2[nH]3",
+            "notes": "Deprotection of N-benzoyl group from indole.",
+            "substeps": []
+        }
+    ]
+}

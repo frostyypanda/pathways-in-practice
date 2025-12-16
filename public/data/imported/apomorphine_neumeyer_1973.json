@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "apomorphine-neumeyer-1973",
+        "molecule_name": "Apomorphine",
+        "class": "Natural Product",
+        "author": "Neumeyer",
+        "year": 1973
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetylation",
+            "reagents": "NaOH, Ac₂O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "O=CC1=CC(O)=C([OMe])C=C1",
+            "product_smiles": "O=CC1=CC([OMe])=C([OAc])C=C1",
+            "notes": "Acetylation of the phenolic hydroxyl group of 4-hydroxy-3-methoxybenzaldehyde (vanillin) to yield 4-acetoxy-3-methoxybenzaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nitration",
+            "reagents": "CCl4, HNO3",
+            "reagent_smiles": "[N+](=O)(O)[O-].CCl4",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "[OAc]C1=C(C=C(C=C1)C=O)[OMe]",
+            "product_smiles": "[OAc]C1=C(C(=C(C=C1)C=O)[N+](=O)[O-])[OMe]",
+            "notes": "Aromatic nitration of a substituted benzaldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis / Deacetylation",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "CC(=O)OC1=C(C(=C(C=C1)C=O)[N+](=O)[O-])OC",
+            "product_smiles": "COC1=C(C=CC(=C1[N+](=O)[O-])C=O)O",
+            "notes": "Hydrolysis of an acetate ester to a hydroxyl group using sodium hydroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "O-methylation / Williamson Ether Synthesis",
+            "reagents": "KOH",
+            "reagent_smiles": "COS(=O)(=O)OC",
+            "conditions": "70 °C",
+            "yield": "79%",
+            "reactant_smiles": "O=Cc1c([N+]([O-])=O)c(OC)c(O)cc1",
+            "product_smiles": "O=Cc1c([N+]([O-])=O)c(OC)c(OC)cc1",
+            "notes": "Phenolic hydroxyl group is methylated to a methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-].CCO",
+            "conditions": "EtOH, reflux",
+            "yield": "79%",
+            "reactant_smiles": "O=CC1=C([N+](=O)[O-])C(OC)=C(OC)C=C1",
+            "product_smiles": "OCC1=C([N+](=O)[O-])C(OC)=C(OC)C=C1",
+            "notes": "Aldehyde group reduced to primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Substitution (Alcohol to Alkyl Chloride)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "81%",
+            "reactant_smiles": "COc1ccc(CO)c([N+](=O)[O-])c1OC",
+            "product_smiles": "COc1ccc(CCl)c([N+](=O)[O-])c1OC",
+            "notes": "Hydroxyl group is replaced by a chlorine atom.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Alkylation / C-C Bond Formation",
+            "reagents": "DMF, NaH",
+            "reagent_smiles": "O=C(c1ccccc1)N2C(C#N)c3ccccc3C=C2",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=C(C(=C(C=C1)CCl)[N+](=O)[O-])OC",
+            "product_smiles": "COC1=C(C=C(C(=C1)CC2(C#N)C3=C(C=CC=C3)C=CN2C(=O)C4=CC=CC=C4)[N+](=O)[O-])OC",
+            "notes": "A benzylic chloride undergoes SN2 reaction with the carbanion of a 1-cyano-1,2-dihydroisoquinoline derivative, formed by deprotonation with NaH.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Reissert reaction",
+                    "reagents": "BzCl, KCN",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC=C2C=NC=CC2=C1",
+                    "product_smiles": "[Bz]N2C=CC3=CC=CC=C3C2C#N",
+                    "notes": "Formation of 1-benzoyl-1,2-dihydroquinoline-2-carbonitrile from quinoline, characteristic of a Reissert reaction.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrolysis, Elimination, Aromatization",
+            "reagents": "EtOH, KOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)CC2(C#N)C3=C(C=CC=C3)C=CN2[Bz])[N+](=O)[O-])OC",
+            "product_smiles": "COC1=C(C=C(C(=C1)CC2=C3C=CC=CC3=CC=N2)[N+](=O)[O-])OC",
+            "notes": "Deprotection of N-benzoyl and nitrile, followed by aromatization of the dihydroisoquinoline ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Quaternization",
+            "reagents": "MeI",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "99%",
+            "reactant_smiles": "COC1=C(C=C(C(=C1)CC2=C3C=CC=CC3=CC=N2)[N+](=O)[O-])OC",
+            "product_smiles": "C[N+]1=C(CC2=CC(=C(C=C2[N+](=O)[O-])OC)OC)C3=C(C=CC=C3)C=C1",
+            "notes": "Methylation of the isoquinoline nitrogen by methyl iodide to form an isoquinolinium salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reduction",
+            "reagents": "KBH4",
+            "reagent_smiles": "[BH4-].[K+]",
+            "conditions": "EtOH, 30 °C then reflux",
+            "yield": "80%",
+            "reactant_smiles": "C[N+]1=C(CC2=CC(=C(C=C2[N+](=O)[O-])OC)OC)C3=C(C=CC=C3)C=C1",
+            "product_smiles": "CN1CCC2=CC=CC=C2C1CC3=C(C=C(C(=C3)OC)OC)[N+](=O)[O-]",
+            "notes": "Reduction of an N-methylisoquinolinium salt to a 1,2,3,4-tetrahydroisoquinoline using potassium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reduction",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "[H][H].[Pd]",
+            "conditions": "MeOH",
+            "yield": "80%",
+            "reactant_smiles": "CN1CCC2=CC=CC=C2C1CC3=C(C=C(C(=C3)OC)OC)[N+](=O)[O-]",
+            "product_smiles": "CN1CCC2=CC=CC=C2C1CC3=C(C=C(C(=C3)OC)OC)N",
+            "notes": "Reduction of a nitro group to an amine using hydrogen and palladium on carbon catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Pschorr cyclization",
+            "reagents": "H2SO4, NaNO2, then Cu2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN1CCC2=CC=CC=C2[C@H]1CCc3cc(N)c(OC)c(OC)c3",
+            "product_smiles": "CN1CCC2=CC=CC3=C2[C@H]1CC4=C3C(=C(C=C4)OC)OC",
+            "notes": "Intramolecular cyclization via a diazonium intermediate to form an aporphine core.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "O-Demethylation",
+            "reagents": "HI, Ac₂O",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "41%",
+            "reactant_smiles": "CN1CCC2=CC=CC3=C2C1CC4=C3C(=C(C=C4)OC)OC",
+            "product_smiles": "CN1CCC2=CC=CC3=C2C1CC4=C3C(=C(C=C4)O)O",
+            "notes": "O-demethylation of dimethoxyarene to catechol, forming Apomorphine.",
+            "substeps": []
+        }
+    ]
+}

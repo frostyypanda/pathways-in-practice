@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aphanamal-morken-2017",
+        "molecule_name": "Aphanamal",
+        "class": "Natural Product",
+        "author": "Morken",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Johnson-Claisen rearrangement",
+            "reagents": "EtCO2H, (EtO)3CMe",
+            "reagent_smiles": "",
+            "conditions": "150 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC(C)/C=C/CO",
+            "product_smiles": "C=CC(CC(=O)OCC)C(C)C",
+            "notes": "A Johnson-Claisen rearrangement of an allyl alcohol to an alpha-allyl-substituted ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction (Ester to Alcohol)",
+            "reagents": "THF",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "0 °C to rt",
+            "yield": "94%",
+            "reactant_smiles": "CCOC(=O)CC(C=C)C(C)C",
+            "product_smiles": "OCCC(C=C)C(C)C",
+            "notes": "Ester is reduced to a primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bromination",
+            "reagents": "PPh3, NBS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "C=CC(CCO)C(C)C",
+            "product_smiles": "C=CC(CCBr)C(C)C",
+            "notes": "Conversion of a primary alcohol to an alkyl bromide using PPh3 and NBS.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Borylation / Substitution",
+            "reagents": "LTMP",
+            "reagent_smiles": "C([Bpin])([Bpin])",
+            "conditions": "THF, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "C=CC(CCBr)C(C)C",
+            "product_smiles": "C=CC(CC[C]([Bpin])[Bpin])C(C)C",
+            "notes": "Conversion of an alkyl bromide to a geminal diborane.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Carbocyclization / Amination",
+            "reagents": "KOt-Bu",
+            "reagent_smiles": "C=[N+](C)C",
+            "conditions": "THF, rt",
+            "yield": "65%",
+            "reactant_smiles": "C(C)(C)([Bpin])([Bpin])CCC(C=C)C(C)C",
+            "product_smiles": "C[C@]1([Bpin])[C@H](C(C)C)CC[C@@H](CCN(C)C)C1",
+            "notes": "Intramolecular cyclization of bis-diborylated alkene followed by nucleophilic addition to dimethylmethyleneammonium ion.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Boronate 1,2-migration / Electrophilic trapping",
+            "reagents": "t-BuLi, I2",
+            "reagent_smiles": "CCOC=C",
+            "conditions": "THF, -78 °C then -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H]1CC[C@H](CCN(C)C)[C@@](C)([Bpin])1",
+            "product_smiles": "CC(C)[C@@H]1CC[C@H](CCN(C)C)[C@@](C)([C@]([Bpin])(OCC)CI)1",
+            "notes": "Alpha-lithiation of ethyl vinyl ether, addition to boronate, 1,2-migration of alkyl group from boron to carbon, followed by iodination of the double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Rearrangement and Oxidation",
+            "reagents": "NaOMe, HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH, -78 °C to rt",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "CC(C)[C@@H]1CC[C@](C)(C(I)(OCC)[B]2OC(C)(C)C(C)(C)O2)[C@H]1CCN(C)C",
+            "product_smiles": "CC(C)[C@@H]1CC[C@](C)(C(=O)C)[C@H]1CCN(C)C",
+            "notes": "Boron-mediated rearrangement and oxidation of a tertiary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-oxidation",
+            "reagents": "H2O2, MeOH",
+            "reagent_smiles": "OO.CO",
+            "conditions": "0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H]1CC[C@@](C)(C(=O)C)[C@H]1CCN(C)C",
+            "product_smiles": "CC(C)[C@@H]1CC[C@@](C)(C(=O)C)[C@H]1CC[N+](C)(C)[O-]",
+            "notes": "Oxidation of a tertiary amine to its N-oxide using hydrogen peroxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cope Elimination",
+            "reagents": "TMANO",
+            "reagent_smiles": "",
+            "conditions": "DMF, 130 °C",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "CC(C)[C@H]1CC[C@@](C)(C(=O)C)[C@@H]1CCN([O-])(C)C",
+            "product_smiles": "CC(C)[C@H]1CC[C@@](C)(C(=O)C)[C@@H]1C=C",
+            "notes": "Cope elimination of a tertiary amine N-oxide to form an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Enolate Alkylation",
+            "reagents": "LDA, THF",
+            "reagent_smiles": "IC[C](C)=C",
+            "conditions": "-78 to 0 °C then 0 °C to rt",
+            "yield": "89%",
+            "reactant_smiles": "C=C[C@H]1[C@@H](CC[C@@]1(C)C(=O)C)C(C)C",
+            "product_smiles": "C=C[C@H]1[C@@H](CC[C@@]1(C)C(=O)CCC(=C)C)C(C)C",
+            "notes": "Alpha-alkylation of the acetyl methyl group with 3-iodo-2-methylpropene.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ring-Closing Metathesis",
+            "reagents": "HG-II",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 80 °C",
+            "yield": "91%",
+            "reactant_smiles": "CC1=CCC(=O)[C@]2(C)C1CC[C@@H](C=C)[C@@H]2C(C)C",
+            "product_smiles": "CC1=C[C@@H]2[C@H](CCC(=O)[C@@]3(C)C2CC[C@@H](C(C)C)C3)C1",
+            "notes": "Intramolecular ring-closing metathesis reaction to form a tricyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Allylic Oxidation (Riley Oxidation)",
+            "reagents": "SeO2",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 80 °C",
+            "yield": "49%",
+            "reactant_smiles": "CC(C)[C@@H]1CC[C@@]2(C)[C@H]1C=C(C)CCC2=O",
+            "product_smiles": "CC(C)[C@@H]1CC[C@@]2(C)[C@H]1C=C(C=O)CCC2=O",
+            "notes": "Allylic oxidation of a methyl group to an alpha,beta-unsaturated aldehyde.",
+            "substeps": []
+        }
+    ]
+}

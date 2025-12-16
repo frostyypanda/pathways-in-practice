@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "anibamine-li-2007",
+        "molecule_name": "Anibamine",
+        "class": "Natural Product",
+        "author": "Li",
+        "year": 2007
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enamine formation",
+            "reagents": "",
+            "reagent_smiles": "CN(C)C(OC)OC",
+            "conditions": "reflux",
+            "yield": "84%",
+            "reactant_smiles": "CC(=O)CC(=O)C",
+            "product_smiles": "CC(=O)C(=CN(C)C)C(=O)C",
+            "notes": "Pentane-2,4-dione reacts with N,N-dimethylformamide dimethyl acetal to form a beta-keto enamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Isoxazole synthesis (Cyclocondensation)",
+            "reagents": "HONH2",
+            "reagent_smiles": "",
+            "conditions": "MeOH, reflux",
+            "yield": "68%",
+            "reactant_smiles": "CC(=O)C(=CN(C)C)C(=O)C",
+            "product_smiles": "CC(=O)C1=C(C)ON=C1",
+            "notes": "Cyclocondensation of a 1,3-diketone enamine derivative with hydroxylamine to form an isoxazole ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Isoxazole Ring Opening / Condensation",
+            "reagents": "PhNH2",
+            "reagent_smiles": "c1ccccc1N",
+            "conditions": "reflux",
+            "yield": "70%",
+            "reactant_smiles": "CC(=O)C1=C(C)ON=C1",
+            "product_smiles": "C/C(=C(\\N[Ph])/CC(=O)C)/C#N",
+            "notes": "Isoxazole ring opens and reacts with aniline to form a Z-configured enaminonitrile.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hantzsch Pyridine Synthesis",
+            "reagents": "KOH, MeOH",
+            "reagent_smiles": "N#CCC#N",
+            "conditions": "",
+            "yield": "74%",
+            "reactant_smiles": "CC(=O)CC(C#N)=C(C)N[Ph]",
+            "product_smiles": "CC1=C(C#N)C(O)=C(C#N)C(C)=N1",
+            "notes": "Formation of a substituted 4-hydroxypyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Halogenation",
+            "reagents": "TBAB, P2O5",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "68%",
+            "reactant_smiles": "Cc1c(C#N)c(C)c(C#N)c(O)n1",
+            "product_smiles": "Cc1c(C#N)c(C)c(C#N)c(Br)n1",
+            "notes": "Pyridine-2-ol converted to pyridine-2-bromide using P2O5 and TBAB.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "PdCl2(PPh3)2, CuI, Et3N",
+            "reagent_smiles": "C#CCO[PMB]",
+            "conditions": "",
+            "yield": "84%",
+            "reactant_smiles": "Cc1c(C#N)c(C)c(C#N)c(Br)n1",
+            "product_smiles": "Cc1c(C#N)c(C)c(C#N)c(C#CCO[PMB])n1",
+            "notes": "Sonogashira coupling of a bromopyridine with a propargyl p-methoxybenzyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "Cc1nc(C#N)c(C)c(C#N)c1C#CCO[PMB]",
+            "product_smiles": "Cc1nc(C#N)c(C)c(C#N)c1CCCO[PMB]",
+            "notes": "Reduction of alkyne to alkane using palladium on carbon and hydrogen gas. The p-methoxybenzyl (PMB) ether is unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nitrile Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, 0°C",
+            "yield": "77%",
+            "reactant_smiles": "CC1=NC(CCC[O][PMB])=C(C#N)C(C)=C1C#N",
+            "product_smiles": "CC1=NC(CCC[O][PMB])=C(C=O)C(C)=C1C=O",
+            "notes": "Reduction of two nitrile groups to two aldehyde groups using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Wittig olefination",
+            "reagents": "LHMDS",
+            "reagent_smiles": "CCCCCCCC/C=P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "",
+            "yield": "56%",
+            "reactant_smiles": "CC1=NC(C)=C(C=O)C(CCCO[PMB])=C1C=O",
+            "product_smiles": "CC1=NC(C)=C(C/C=C\\CCCCCCCC)C(CCCO[PMB])=C1C/C=C\\CCCCCCCC",
+            "notes": "Dialdehyde converted to diene via Wittig olefination with a nonyl Wittig reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection",
+            "reagents": "1 N HCl, EtOH",
+            "reagent_smiles": "CCO.Cl",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "Cc1nc(CCO[PMB])c(C/C=C\\CCCCCC C)c(C)c1C/C=C\\CCCCCC C",
+            "product_smiles": "Cc1nc(CCO)c(C/C=C\\CCCCCC C)c(C)c1C/C=C\\CCCCCC C",
+            "notes": "Hydrolysis of p-methoxybenzyl (PMB) ether to primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular cyclization / Quaternization",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "",
+            "yield": "85%",
+            "reactant_smiles": "CC1=C(C)C(C=CCCCCCCC)=C(C=CCCCCCCC)C(CCCO)=N1",
+            "product_smiles": "C=CCCCCCCCc1c(C)c(C=CCCCCCCC)c(C)c2ccc[n+]12",
+            "notes": "Intramolecular cyclization of an activated alcohol (via mesylate formation) with the pyridine nitrogen to form a pyrrolopyridinium salt.",
+            "substeps": []
+        }
+    ]
+}

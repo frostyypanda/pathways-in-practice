@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "anatoxin-a-aggarwal-1999",
+        "molecule_name": "Anatoxin A",
+        "class": "Natural Product",
+        "author": "Aggarwal",
+        "year": 1999
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "PDC",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "100%",
+            "reactant_smiles": "C1CC(CCCC(C1)O)O",
+            "product_smiles": "OC12CCC(C1)C(=O)CCC2",
+            "notes": "Oxidation and intramolecular cyclization converting a cyclic diol to a bicyclic ketone with a tertiary alcohol. Notably, the product (9 carbons) contains one more carbon atom than the reactant (8 carbons), implying a carbon insertion or rearrangement, which is unusual for a reaction mediated solely by PDC.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive amination",
+            "reagents": "aq. PhCH2NH2, PTSA, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "aq.",
+            "yield": "81%",
+            "reactant_smiles": "OC1(CCC2(C(=O)CCC2)CCC1)",
+            "product_smiles": "OC1(CCC2(N[Bn]CCC2)CCC1)",
+            "notes": "Ketone converted to a secondary benzylamine via reductive amination.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ring-opening fragmentation / Rearrangement",
+            "reagents": "Sc(OTf)2",
+            "reagent_smiles": "ClC(=O)OCC1=CC=CC=C1.CCN(C(C)C)C(C)C",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "OC1C2CCN(Cc3ccccc3)CC2",
+            "product_smiles": "C1=CC=C(C=C1)CN(C2CCCC(=O)CCC2)C(=O)OCC3=CC=CC=C3",
+            "notes": "Acid-catalyzed fragmentation of a bicyclic alcohol to form a cyclooctanone derivative, with simultaneous Cbz protection of the nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Enol Phosphate Formation",
+            "reagents": "",
+            "reagent_smiles": "N([Li])([C@H](C)c1ccccc1)[C@H](C)c2ccccc2.ClP(=O)(Oc3ccccc3)Oc4ccccc4",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "O=C1CC(N(CC2C=CC=CC=2)C(=O)OCC3C=CC=CC=3)CCCC1",
+            "product_smiles": "O=P(Oc1ccccc1)(Oc2ccccc2)OC=C1C[C@H](N(CC3C=CC=CC=3)C(=O)OCC4C=CC=CC=4)CCCC1",
+            "notes": "Formation of an enol phosphate from a cyclooctanone derivative using a chiral lithium amide base and diphenyl chlorophosphate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Stille cross-coupling",
+            "reagents": "[Pd(Ph3P)4], LiCl",
+            "reagent_smiles": "C=C(OCC)[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "THF",
+            "yield": "84%",
+            "reactant_smiles": "C1=CC=C(C=C1)CN([C@H]2CC/C=C(\\CCC2)OP(=O)(Oc3ccccc3)Oc4ccccc4)C(=O)OCC5=CC=CC=C5",
+            "product_smiles": "C1=CC=C(C=C1)CN([C@H]2CC/C=C(\\CCC2)C(=C)OCC)C(=O)OCC5=CC=CC=C5",
+            "notes": "Stille cross-coupling of an enol phosphate with a vinyl stannane to form a vinyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Michael addition",
+            "reagents": "45% HBr, AcOH",
+            "reagent_smiles": "Br.CC(=O)O",
+            "conditions": "",
+            "yield": "95%",
+            "reactant_smiles": "CCOC(=C)C1=CCC(CCC1)N([Bn])([Cbz])",
+            "product_smiles": "CC(=O)[C@H]1CCCC2CCC1N2[Bn]",
+            "notes": "Hydrolysis of the enol ether to a ketone, Cbz deprotection to form a secondary amine, followed by intramolecular Michael addition/cyclization to construct the tricyclic product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-Debenzylation, N-Boc Protection",
+            "reagents": "Pd/C, H2, Boc2O",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "89%",
+            "reactant_smiles": "CC(=O)[C@H]1CCCC2CCC1N2[Bn]",
+            "product_smiles": "CC(=O)[C@H]1CCCC2CCC1N2[Boc]",
+            "notes": "Benzyl group on nitrogen is removed by catalytic hydrogenation (Pd/C, H2) and the resulting secondary amine is protected with a Boc group using di-tert-butyl dicarbonate (Boc2O). Stereochemistry of the acetyl group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Enol Silyl Ether Formation",
+            "reagents": "KH, TMSCl, Et3N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "CC(=O)[C@@H]1CCCC2CCC1N2[Boc]",
+            "product_smiles": "C=C([C@@H]1CCCC2CCC1N2[Boc])[OTMS]",
+            "notes": "Formation of an enol silyl ether from a ketone via deprotonation and silylation, with retention of existing stereochemistry at the bridgehead.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Palladium-catalyzed cyclization/rearrangement (intramolecular Wacker-type oxidation)",
+            "reagents": "Pd(OAc)₂",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "41%",
+            "reactant_smiles": "[Boc]N1C2CCC([C@H](C=C([OTMS]))CC2)C1",
+            "product_smiles": "CC(=O)C1=C2CCC(N([Boc])C2)C1",
+            "notes": "Intramolecular palladium-catalyzed transformation of a silyl enol ether into an α,β-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection (Boc)",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "97%",
+            "reactant_smiles": "CC(=O)C1=CC[C@@H]2CCC[N@@]3([Boc])[C@H]1[C@H]23",
+            "product_smiles": "CC(=O)C1=CC[C@@H]2CCC[NH]3[C@H]1[C@H]23",
+            "notes": "Acid-catalyzed deprotection of Boc protecting group on nitrogen.",
+            "substeps": []
+        }
+    ]
+}

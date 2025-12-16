@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aristeromycin-morken-2021",
+        "molecule_name": "Aristeromycin",
+        "class": "Natural Product",
+        "author": "Morken",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc₂O, DMAP",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "89%",
+            "reactant_smiles": "C1=C[C@@H]2C[C@H]1C(=O)N2",
+            "product_smiles": "[Boc]N1[C@@H]2C=C[C@@H](C2)C1=O",
+            "notes": "N-protection of Vince lactam using Boc anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reductive Rearrangement",
+            "reagents": "NaBH4",
+            "reagent_smiles": "[Na+].[BH4-].CO",
+            "conditions": "MeOH, 0 °C",
+            "yield": "77%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1[C@@H]2C=C[C@@H](C2)C1=O",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@H]1C=C[C@H](C1)CO",
+            "notes": "Stereoselective reductive rearrangement of a bicyclic lactam to a functionalized cyclopentene with retention of the Boc protecting group and alkene double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(c1ccccc1)c2ccccc2.c1cnc[nH]1",
+            "conditions": "DCM",
+            "yield": "83%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@H]1C=C[C@H](C1)CO",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@H]1C=C[C@H](C1)C[OTBDPS]",
+            "notes": "Primary alcohol is protected as a TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Diboration",
+            "reagents": "Pt(dba)3, B2(Pin)2",
+            "reagent_smiles": "",
+            "conditions": "toluene, 50 °C",
+            "yield": "61%",
+            "reactant_smiles": "[Boc]N[C@H]1C=C[C@H](C[OTBDPS])C1",
+            "product_smiles": "[Boc]N[C@H]1[C@H]([BPin])[C@@H]([BPin])[C@H](C[OTBDPS])C1",
+            "notes": "Alkyne diboration forming a saturated cyclopentane with two BPin groups and retained stereochemistry for Boc-NH and OTBDPS groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[C@H]1(C[C@H](N[Boc])[C@@H]([C@@H]1CO[TBDPS])B2[Pin]2)B3[Pin]3",
+            "product_smiles": "[C@H]1(C[C@H](N)[C@@H]([C@@H]1CO[TBDPS])B2[Pin]2)B3[Pin]3",
+            "notes": "Boc deprotection to yield a primary amine. All other protecting groups (OTBDPS) and boronate esters (PinB, BPin) remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "Et3N, n-BuOH",
+            "reagent_smiles": "Nc1nc(Cl)nc(Cl)n1",
+            "conditions": "110 °C",
+            "yield": "51% (2 steps)",
+            "reactant_smiles": "[OTBDPS]C[C@H]1[C@H]([B]2OC(C)(C)C(C)(C)O2)[C@@H]([B]3OC(C)(C)C(C)(C)O3)[C@H](N)C1",
+            "product_smiles": "[OTBDPS]C[C@H]1[C@H]([B]2OC(C)(C)C(C)(C)O2)[C@@H]([B]3OC(C)(C)C(C)(C)O3)[C@H](NC4=NC(Cl)=NC(N)=C4)C1",
+            "notes": "Primary amine undergoes nucleophilic aromatic substitution with 2,4-dichloro-6-aminopyrimidine, displacing one chloride to form a secondary amine linkage.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Purine Synthesis / Cyclization",
+            "reagents": "CSA",
+            "reagent_smiles": "CCOC(OCC)OCC.O=S(=O)(O)C1(C)CC2CCC1(C)C2",
+            "conditions": "CH(OEt)3, rt",
+            "yield": "55%",
+            "reactant_smiles": "O[TBDPS]C[C@@H]1C[C@@H](N(C2=NC(Cl)=NC(N)=C2))[C@H](B3OC(C)(C)C(C)(C)O3)[C@H]1B4OC(C)(C)C(C)(C)O4",
+            "product_smiles": "O[TBDPS]C[C@@H]1C[C@@H](N1C=NC2=C1N=CN=C2Cl)[C@H](B3OC(C)(C)C(C)(C)O3)[C@H]1B4OC(C)(C)C(C)(C)O4",
+            "notes": "Intramolecular cyclization of a 2-(cyclopentylamino)-4-chloro-6-aminopyrimidine with triethyl orthoformate and CSA catalyst to form a 6-chloro-9-(cyclopentyl)purine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Oxidation",
+            "reagents": "H2O2",
+            "reagent_smiles": "OO",
+            "conditions": "THF",
+            "yield": "74%",
+            "reactant_smiles": "[OTBDPS]CH2[C@H]1[C@H](B2OC(C)(C)C(C)(C)O2)[C@@H](B2OC(C)(C)C(C)(C)O2)[C@@H](N2C=NC3=C2N=CN=C3Cl)C1",
+            "product_smiles": "[OTBDPS]CH2[C@H]1[C@H](O)[C@@H](O)[C@@H](N2C=NC3=C2N=CN=C3Cl)C1",
+            "notes": "Double oxidation of vicinal boronic esters (BPin groups) to vicinal diols, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C1[C@@H](N2C=NC3=C2N=CN=C3Cl)[C@H](C[OTBDPS])[C@@H](O)[C@@H]1O",
+            "product_smiles": "C1[C@@H](N2C=NC3=C2N=CN=C3Cl)[C@H](CO)[C@@H](O)[C@@H]1O",
+            "notes": "TBDPS protecting group removed to yield a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "NH3/MeOH",
+            "reagent_smiles": "",
+            "conditions": "dioxane, 90 °C",
+            "yield": "51%",
+            "reactant_smiles": "C1[C@H](CO)[C@H]([C@@H]([C@H]1N2C=NC3=C2N=CN=C3Cl)O)O",
+            "product_smiles": "C1[C@H](CO)[C@H]([C@@H]([C@H]1N2C=NC3=C2N=CN=C3N)O)O",
+            "notes": "Amination of 6-chloropurine to 6-aminopurine (Aristeromycin), replacing Cl with NH2. The yield is reported for 2 steps.",
+            "substeps": []
+        }
+    ]
+}

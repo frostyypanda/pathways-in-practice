@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "applanatumol-kuwahara-2025",
+        "molecule_name": "Applanatumol",
+        "class": "Natural Product",
+        "author": "Kuwahara",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Intramolecular Cyclization / Lactonization",
+            "reagents": "Me3Al, Et2AlCl",
+            "reagent_smiles": "C1=CC2=CC=C(C(=C2C=C1)C3=C(C=CC4=C3C=CC=C4)O)O.C=CC(=O)OC",
+            "conditions": "DCM, -78 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "C=CC=CCO",
+            "product_smiles": "C1=C[C@@H]2COC(=O)[C@@H]2CC1",
+            "notes": "Asymmetric intramolecular cyclization of hexa-2,4-dien-1-ol and methyl acrylate to form a bicyclic lactone, catalyzed by a chiral aluminum Lewis acid complex.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular cyclization / C-C bond formation",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CC(=O)OCC(C1=C(C=CC(=C1)OC)OC)[N+](=O)[O-]",
+            "conditions": "THF -78 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "C1=C[C@@H]2COC(=O)[C@@H]2CC1",
+            "product_smiles": "COC1=CC=C(C(=C1)[C@H]([N+](=O)[O-])C[C@]23CCC=C[C@@H]3COC2=O)OC",
+            "notes": "Addition of nitronate to cyclohexene followed by intramolecular cyclization and loss of acetate.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Cross-coupling",
+                    "reagents": "XPhos, Pd2(dba)3, Cs2CO3",
+                    "reagent_smiles": "C[N+](=O)[O-]",
+                    "conditions": "60 °C",
+                    "yield": "96%",
+                    "reactant_smiles": "COC1=CC(=C(C=C1)OC)Br",
+                    "product_smiles": "COC1=CC(=C(C=C1)OC)C[N+](=O)[O-]",
+                    "notes": "Aromatic bromination replaced by nitromethyl group via cross-coupling.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Henry Reaction (Nitroaldol Reaction)",
+                    "reagents": "HCHO, TEA",
+                    "reagent_smiles": "",
+                    "conditions": "1,4-dioxane, rt",
+                    "yield": "83%",
+                    "reactant_smiles": "COC1=CC(=C(C=C1)OC)C[N+](=O)[O-]",
+                    "product_smiles": "COC1=CC(=C(C=C1)OC)C(CO)[N+](=O)[O-]",
+                    "notes": "Addition of formaldehyde to a nitroalkane to form a beta-hydroxy nitro compound.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.3",
+                    "reaction_type": "Esterification",
+                    "reagents": "Ac₂O, Ce(OTf)₃",
+                    "reagent_smiles": "CC(=O)OC(=O)C.[Ce+3].[O-]S(=O)(=O)C(F)(F)F.[O-]S(=O)(=O)C(F)(F)F.[O-]S(=O)(=O)C(F)(F)F",
+                    "conditions": "MeCN, 0 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "COC1=CC(=C(C=C1)OC)C(CO)[N+](=O)[O-]",
+                    "product_smiles": "CC(=O)OCC(C1=C(C=CC(=C1)OC)OC)[N+](=O)[O-]",
+                    "notes": "Esterification of a primary alcohol to an acetate using acetic anhydride and cerium(III) triflate catalyst.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "O2, DBU",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "COc1cc(OC)ccc1[C@@H]([N+](=O)[O-])C[C@]23CCC=C[C@@H]3COC2=O",
+            "product_smiles": "COc1cc(OC)ccc1C(=O)C[C@]23CCC=C[C@@H]3COC2=O",
+            "notes": "Oxidation of a secondary nitroalkane to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Cleavage (Lemieux-Johnson like oxidation)",
+            "reagents": "OsO4, NaIO4, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "1,4-dioxane, H2O, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(C(=C1)C(=O)C[C@]23CCC=C[C@@H]3COC2=O)OC",
+            "product_smiles": "COC1=CC=C(C(=C1)C(=O)C[C@]2(CCC=O)[C@@H](C=O)COC2=O)OC",
+            "notes": "Oxidative cleavage of an alkene to yield a dialdehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Demethylation, Cyclization, Reduction",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 to -20 °C",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "COc1cc(OC)cc(C(=O)C[C@@]1(CCC=O)[C@H]2(C=O)OC(=O)C[C@@]1)c1",
+            "product_smiles": "Oc1cc(O)cc(C(=O)C[C@]1([C@H]2(C=O)OC(=O)C[C@]1)CC[C@@H](O)[C@H]2)c1",
+            "notes": "Demethylation of two aromatic methoxy groups to phenols. One aldehyde group (from the side chain) is reduced to an alcohol and cyclizes with the existing chiral lactone carbon to form a new 5-membered ring. The stereochemistry at the spiro center is inverted.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation (Pinnick Oxidation)",
+            "reagents": "NaClO₂, KH₂PO₄",
+            "reagent_smiles": "CC(C)=C",
+            "conditions": "H₂O, t-BuOH, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "Oc1cc(O)c(C(=O)CC2C[C@H](O)[C@]3(C=O)OC(=O)C23)cc1",
+            "product_smiles": "Oc1cc(O)c(C(=O)CC2C[C@H](O)[C@]3(C(=O)O)OC(=O)C23)cc1",
+            "notes": "Oxidation of an aldehyde group to a carboxylic acid group using sodium chlorite.",
+            "substeps": []
+        }
+    ]
+}

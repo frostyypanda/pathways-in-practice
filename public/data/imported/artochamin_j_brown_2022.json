@@ -1,0 +1,133 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "artochamin-j-brown-2022",
+        "molecule_name": "Artochamin J",
+        "class": "Natural Product",
+        "author": "Brown",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Protection (Silyl Ether Formation)",
+            "reagents": "TIPSCl, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "62%",
+            "reactant_smiles": "O=Cc1ccc(O)c(O)c1",
+            "product_smiles": "O=Cc1ccc(O[TIPS])c(O[TIPS])c1",
+            "notes": "Protection of the two hydroxyl groups with TIPS groups to form silyl ethers using TIPSCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Homologation, Borylation",
+            "reagents": "LiTMP, THF",
+            "reagent_smiles": "B1(OC(C)(C)C(C)(C)O1)B2OC(C)(C)C(C)(C)O2",
+            "conditions": "-78 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "O=Cc1ccc([TIPS]O)c([TIPS]O)c1",
+            "product_smiles": "[TIPS]Oc1ccc(/C=C/B2OC(C)(C)C(C)(C)O2)c([TIPS]O)c1",
+            "notes": "Aldehyde converted to trans-vinyl boronate with one carbon homologation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Photochemical [2+2] Cycloaddition / Metallaphotoredox Catalysis",
+            "reagents": "fac-Ir(dFppy)3, KOtBu",
+            "reagent_smiles": "CC(=CCO)C",
+            "conditions": "toluene, 450 nm",
+            "yield": "",
+            "reactant_smiles": "[OTIPS]c1cc([OTIPS])ccc1/C=C/B2OC(C)(C)C(C)(C)O2",
+            "product_smiles": "[OTIPS]c1cc([OTIPS])ccc1[C@@H]2[C@H](B3OC(C)(C)C(C)(C)O3)[C@H](CO)C2(C)C",
+            "notes": "A photochemical [2+2] cycloaddition between a vinylboronic pinacol ester and 3-methylbut-2-en-1-ol forms a cyclobutane product with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Suzuki-Miyaura coupling",
+            "reagents": "Pd2(dba)3, RuPhos",
+            "reagent_smiles": "CC1(C)C=CC2=C(C=C(C=C2O1)OC)Br",
+            "conditions": "toluene, THF/H2O, 70 °C",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "[OTIPS]C1=CC=C(C=C1[OTIPS])[C@H]2[C@@H]([C@H](CO)C2(C)C)B3OC(C)(C)C(C)(C)O3",
+            "product_smiles": "[OTIPS]C1=CC=C(C=C1[OTIPS])[C@H]2[C@@H](C3=C4C=CC(C)(C)OC4=CC(=C3)OC)[C@H](CO)C2(C)C",
+            "notes": "Suzuki-Miyaura cross-coupling of a pinacol boronic ester with an aryl bromide, forming a new C-C bond with retention of configuration at the stereocenter.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Chromene synthesis / Electrophilic cyclization",
+                    "reagents": "PhB(OH)2, PhCOOH",
+                    "reagent_smiles": "CC(=CC=O)C",
+                    "conditions": "heptane, 100 °C",
+                    "yield": "56%",
+                    "reactant_smiles": "COC1=CC(=CC(=C1)O)Br",
+                    "product_smiles": "CC1(C)C=CC2=C(C=C(C=C2O1)OC)Br",
+                    "notes": "Phenol derivative undergoes cyclization with 3-methylbut-2-enal to form a substituted 2,2-dimethyl-2H-chromene.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "[OTIPS]C1=CC=C(C=C1[OTIPS])[C@H]2[C@H](C3=C4C=CC(C)(C)OC4=CC(=C3)OC)[C@H](CO)C2(C)C",
+            "product_smiles": "[OTIPS]C1=CC=C(C=C1[OTIPS])[C@H]2[C@H](C3=C4C=CC(C)(C)OC4=CC(=C3)OC)[C@H](C=O)C2(C)C",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin Periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "2-methylbut-2-ene, NaClO₂, NaH₂PO₅•H₂O",
+            "reagent_smiles": "",
+            "conditions": "tBuOH/H₂O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "c1cc([OTIPS])c([OTIPS])c1[C@@H]2[C@H](C3=C4C=CC(C)(C)OC4=CC(=C3)OC)[C@H](C=O)C2(C)C",
+            "product_smiles": "c1cc([OTIPS])c([OTIPS])c1[C@@H]2[C@H](C3=C4C=CC(C)(C)OC4=CC(=C3)OC)[C@H](C(=O)O)C2(C)C",
+            "notes": "Pinnick oxidation of an aldehyde to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Cyclization / Ring Formation",
+            "reagents": "TFA, TFAA",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "39% (2 steps)",
+            "reactant_smiles": "[OTIPS]C1=CC=C(C=C1[OTIPS])[C@@H]2[C@H](C3=C4C=CC(C)(C)OC4=CC(=C3)OC)[C@H](C(=O)O)C2(C)C",
+            "product_smiles": "[OTIPS]C1=CC=C(C=C1[OTIPS])[C@@H]2[C@H]3C4=C(C(=CC5=C4C=CC(C)(C)O5)OC)C(=O)[C@@]3(C)C2(C)C",
+            "notes": "Intramolecular cyclization of a carboxylic acid onto an aromatic ring to form a fused polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "",
+            "reagent_smiles": "[Zn].Cl[Si](C)(C)C",
+            "conditions": "DCM/MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTIPS]c1cc([OTIPS])c([C@H]2[C@H]3C4=C(C(=CC5=C4C=CC(C)(C)O5)OC)C(=O)[C@H]3C2(C)C)c1",
+            "product_smiles": "[OTIPS]c1cc([OTIPS])c([C@H]2[C@H]3C4=C(C[C@H]3C2(C)C)C(=CC5=C4C=CC(C)(C)O5)OC)c1",
+            "notes": "Reduction of an indanone ketone to a methylene group (CH2). The stereochemistry of the cyclobutane bridgehead protons is maintained as cis. The newly formed methylene carbon also has a specific stereochemistry (H in 'up' position).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "68% (over 2 steps)",
+            "reactant_smiles": "COC1=C2C(=CC3=C2C=CC(C)(C)O3)[C@H]4[C@@H]5C6=C(C[C@@H]5C4(C)C)C(C7=CC(O[TIPS])C(O[TIPS])C=C7)=C6",
+            "product_smiles": "COC1=C2C(=CC3=C2C=CC(C)(C)O3)[C@H]4[C@@H]5C6=C(C[C@@H]5C4(C)C)C(C7=CC(O)C(O)C=C7)=C6",
+            "notes": "Deprotection of two triisopropylsilyl (TIPS) ether groups to form two hydroxyl groups on the phenyl moiety.",
+            "substeps": []
+        }
+    ]
+}

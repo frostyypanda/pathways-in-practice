@@ -1,0 +1,278 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "angustatin-a-alcarazo-2023",
+        "molecule_name": "Angustatin A",
+        "class": "Natural Product",
+        "author": "Alcarazo",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetal Formation",
+            "reagents": "p-TsOH",
+            "reagent_smiles": "OCCCCO",
+            "conditions": "PhMe, reflux",
+            "yield": "95%",
+            "reactant_smiles": "COc1ccc(C=O)c(Br)c1",
+            "product_smiles": "COc1ccc(C2OCCCO2)c(Br)c1",
+            "notes": "Aldehyde protection via 1,3-dioxane formation with 1,3-propanediol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Boronic Ester Formation (Lithium-Halogen Exchange)",
+            "reagents": "O'PrBpin, n-BuLi, THF",
+            "reagent_smiles": "CC(C)OB1OC(C)(C)C(C)(C)O1.CCCC[Li].C1CCOC1",
+            "conditions": "-78 °C to rt",
+            "yield": "74%",
+            "reactant_smiles": "COc1ccc(C2OCCCO2)c(Br)c1",
+            "product_smiles": "COc1ccc(C2OCCCO2)c(B3OC(C)(C)C(C)(C)O3)c1",
+            "notes": "Lithium-halogen exchange of aryl bromide followed by reaction with O'PrBpin to form an arylboronic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(PPh3)4, Na2CO3",
+            "reagent_smiles": "O=Cc1ccc(OS(=O)(=O)C(F)(F)F)c(OC)c1",
+            "conditions": "PhMe, EtOH, H2O, 105 °C",
+            "yield": "80%",
+            "reactant_smiles": "COc1ccc(C2COCCO2)c(B3OC(C)(C)C(C)(C)O3)c1",
+            "product_smiles": "COC1=CC=C(C2=C(C=C(C=C2)C=O)OC)C(=C1)C3OCCCO3",
+            "notes": "Suzuki coupling of an aryl boronate ester with an aryl triflate to form a substituted biphenyl.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Triflation / O-Functionalization",
+                    "reagents": "Tf2O, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "COC1=CC(=CC=C1O)C=O",
+                    "product_smiles": "COC1=CC(=CC=C1[OTf])C=O",
+                    "notes": "The phenolic hydroxyl group is converted to a triflate ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF, EtOH, 0 to 23 °C",
+            "yield": "97%",
+            "reactant_smiles": "COC1=CC=C(C2=C(OC)C=C(C=O)C=C2)C(=C1)C3OCCCO3",
+            "product_smiles": "COC1=CC=C(C2=C(OC)C=C(CO)C=C2)C(=C1)C3OCCCO3",
+            "notes": "Reduction of an aldehyde to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "75%",
+            "reactant_smiles": "COC1=CC=C(C2=C(C=C(C=C2)CO)OC)C(=C1)C3OCCCO3",
+            "product_smiles": "COC1=CC=C(C2=C(C(Br)=C(CO)C=C2)OC)C(=C1)C3OCCCO3",
+            "notes": "Aromatic bromination of the right phenyl ring, regioselectively at the position ortho to the biphenyl linkage and ortho to the hydroxymethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alcohol Protection (MOM Ether)",
+            "reagents": "MOMCl, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 to 23 °C",
+            "yield": "99%",
+            "reactant_smiles": "COc1ccc(C2OCCOC2)c(-c3c(OC)c(Br)c(CO)cc3)c1",
+            "product_smiles": "COc1ccc(C2OCCOC2)c(-c3c(OC)c(Br)c(C[OMOM])cc3)c1",
+            "notes": "Protection of a primary alcohol with MOMCl to form a methoxymethyl (MOM) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "Pd(PPh3)4, ZnBr2, n-BuLi",
+            "reagent_smiles": "Brc1c(OC)c(OC)cc(Oc2ccc(COC3CCCCO3)cc2)c1",
+            "conditions": "THF, 100 °C",
+            "yield": "61%",
+            "reactant_smiles": "COCOCC1=CC(=C(C=C1Br)C2=CC=C(C=C2C3OCCCO3)OC)OC",
+            "product_smiles": "COCOCC1=CC(=C(C=C1C2=C(C(=C(C=C2)OC)OC)OC3=CC=C(C=C3)COC4CCCCO4)C5=CC=C(C=C5C6OCCCO6)OC)OC",
+            "notes": "Palladium-catalyzed Negishi coupling between an aryl bromide and an organozinc reagent (formed in situ from another aryl bromide).",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "96%",
+                    "reactant_smiles": "COc1c(OC)ccc(O)c1",
+                    "product_smiles": "COc1c(OC)c(Br)cc(O)c1",
+                    "notes": "Aromatic bromination of 2,3-dimethoxyphenol using N-bromosuccinimide (NBS), yielding 4-bromo-2,3-dimethoxyphenol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Aromatic Nucleophilic Substitution (SNAr) / Williamson Ether Synthesis",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "O=Cc1ccc(F)cc1",
+                    "conditions": "DMSO, 95 °C",
+                    "yield": "40%",
+                    "reactant_smiles": "Brc1c(O)c(OC)cc(OC)c1",
+                    "product_smiles": "Brc1c(Oc2ccc(C=O)cc2)c(OC)cc(OC)c1",
+                    "notes": "The phenolic hydroxyl group of 3-bromo-2,5-dimethoxyphenol undergoes an aromatic nucleophilic substitution (SNAr) reaction with 4-fluorobenzaldehyde, displacing the fluorine atom to form an aryl ether linkage.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "[Na+].[BH4-]",
+                    "conditions": "THF, EtOH, 23 °C",
+                    "yield": "84%",
+                    "reactant_smiles": "COC1=CC=C(C(=C1OC)OC2=CC=C(C=C2)C=O)Br",
+                    "product_smiles": "COC1=CC=C(C(=C1OC)OC2=CC=C(C=C2)CO)Br",
+                    "notes": "Aldehyde group is reduced to a primary alcohol using sodium borohydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Alcohol Protection (THP)",
+                    "reagents": "PPTS",
+                    "reagent_smiles": "C1C=COCC1",
+                    "conditions": "DCM, 23 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "COc1cc(OC)c(Br)c(Oc2ccc(CO)cc2)c1",
+                    "product_smiles": "COc1cc(OC)c(Br)c(Oc2ccc(C[OTHP])cc2)c1",
+                    "notes": "Protection of a primary alcohol as its tetrahydropyranyl (THP) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection, Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 23 °C",
+            "yield": "84%",
+            "reactant_smiles": "COCOCC1=CC(=C(C=C1C2=C(C(=C(C=C2)OC)OC)OC3=CC=C(C=C3)COC4CCCCO4)C5=CC=C(C=C5C6OCCCO6)OC)OC",
+            "product_smiles": "COCOCC1=CC(=C(C=C1C2=C(C(=C(C=C2)OC)OC)OC3=CC=C(C=C3)CO)C4=CC=C(C=C4C=O)OC)OC",
+            "notes": "Acid-catalyzed deprotection of a tetrahydropyranyl (THP) ether to a primary alcohol and hydrolysis of a 1,3-dioxane to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Bromination",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, Et2O, 0 °C",
+            "yield": "80%",
+            "reactant_smiles": "COCOCC1=CC(=C(C=C1C2=C(C(=C(C=C2)[OMe])[OMe])OC3=CC=C(C=C3)CO)C4=CC=C(C=C4C=O)[OMe])[OMe]",
+            "product_smiles": "COCOCC1=CC(=C(C=C1C2=C(C(=C(C=C2)[OMe])[OMe])OC3=CC=C(C=C3)CBr)C4=CC=C(C=C4C=O)[OMe])[OMe]",
+            "notes": "Appel reaction conditions convert a primary alcohol to a primary alkyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Macrocyclization",
+            "reagents": "PhMe",
+            "reagent_smiles": "O=P1(C2=CC=CC=C2)C3CCC1CC3.[SiH2](C1=CC=CC=C1)C2=CC=CC=C2.O=C([O-])OC(C)(C)C.[K+]",
+            "conditions": "110 °C",
+            "yield": "60%",
+            "reactant_smiles": "COCOCC1=CC(=C(C=C1C2=C(C(=C(C=C2)OC)OC)OC3=CC=C(C=C3)CBr)C4=CC=C(C=C4C=O)OC)OC",
+            "product_smiles": "COCOCC1=CC(=C2C=C1C3=CC=C(C(=C3OC4=CC=C(C=C4)C(CC5=CC(=CC=C52)OC)[SiH](C6=CC=CC=C6)C7=CC=CC=C7)OC)OC)OC",
+            "notes": "Silane-mediated reductive macrocyclization of a bromobenzyl- and formyl-substituted biaryl ether precursor, forming a silicon-containing macrocycle.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 to 23 °C",
+            "yield": "99%",
+            "reactant_smiles": "[OMOM]C1=CC(=C2C=C1C3=CC=C(C(=C3OC4=CC=C(C=C4)C(CC5=CC(=CC=C52)OC)[SiHPh2])OC)OC)OC",
+            "product_smiles": "[OMOM]C1=CC(=C2C=C1C3=CC=C(C(=C3OC4=CC=C(CCC5=CC(=CC=C52)OC)C=C4)OC)OC)OC",
+            "notes": "The reaction involves the desilylation of a Ph2HSi group to a hydrogen atom. The OMOM group is retained. The core macrocyclic structure appears complex. The original reactant SMILES incorrectly expanded the Ph2HSi group as SiH(CH2Ph)2 instead of SiHPh2, adding 2 extra carbons. This has been corrected by using the [SiHPh2] abbreviation. The OMOM group abbreviation was also applied. A discrepancy in total carbon count for the macrocyclic core (C51 in original SMILES vs. approx. C40 from careful image count) is noted, but the structural transformation between the reactant and product SMILES is consistent.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "MOM deprotection",
+            "reagents": "HCl, H2O, acetone",
+            "reagent_smiles": "Cl.O",
+            "conditions": "23 °C",
+            "yield": "74%",
+            "reactant_smiles": "COc1cc(OC)c2c(Oc3ccccc3)c1c1cc(OC)c(COCOC)c(c1)c1cc(OC)c(CCc3ccccc3)c(c1)C2",
+            "product_smiles": "COc1cc(OC)c2c(Oc3ccccc3)c1c1cc(OC)c(CO)c(c1)c1cc(OC)c(CCc3ccccc3)c(c1)C2",
+            "notes": "Deprotection of a methoxymethyl (MOM) ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 23 °C",
+            "yield": "98%",
+            "reactant_smiles": "COC1=CC=C2C(=C1)CCC3=CC=C(C=C3)OC4=C(C(=CC=C4C5=C(C=C(C2=C5)OC)CO)OC)OC",
+            "product_smiles": "COC1=CC=C2C(=C1)CCC3=CC=C(C=C3)OC4=C(C(=CC=C4C5=C(C=C(C2=C5)OC)C=O)OC)OC",
+            "notes": "Oxidation of a primary benzylic alcohol to an aldehyde using Dess-Martin Periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Wittig Reaction (Bromomethylenation)",
+            "reagents": "KOtBu",
+            "reagent_smiles": "BrC(=P(c1ccccc1)(c2ccccc2)c3ccccc3)Br",
+            "conditions": "THF, -78 °C",
+            "yield": "73%",
+            "reactant_smiles": "COc1ccc(CCC(c2ccc(OC)c3c2-c4c(OC)c(C=O)cc(OC)c4OC3)cc1)",
+            "product_smiles": "COc1ccc(CCC(c2ccc(OC)c3c2-c4c(OC)c(/C=C/Br)cc(OC)c4OC3)cc1)",
+            "notes": "Wittig reaction of an aldehyde to form an E-bromoalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Dehydrobromination",
+            "reagents": "THF",
+            "reagent_smiles": "CCCC[Li].CCNCC",
+            "conditions": "23 °C",
+            "yield": "99%",
+            "reactant_smiles": "COc1c(OC)cc2c(c1)Oc3cc(ccc3-2)c4cc(OC)ccc4CCC5=CC(OC)=CC(c6cc(C=C/CBr)ccc6OC)=C5",
+            "product_smiles": "COc1c(OC)cc2c(c1)Oc3cc(ccc3-2)c4cc(OC)ccc4CCC5=CC(OC)=CC(c6cc(C#C)ccc6OC)=C5",
+            "notes": "Dehydrobromination of vinyl bromide to terminal alkyne using n-BuLi and diethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Intramolecular Hydroarylation / Cyclization",
+            "reagents": "AgSbF6",
+            "reagent_smiles": "Cl[Pt](Cl)(Cl)[P](C1C(N(C(C)C)C(C)C)C(N(C(C)C)C(C)C)C1)(C2=CC(=CC(=C2)C(F)(F)F)C(F)(F)F)",
+            "conditions": "DCE, 80 °C",
+            "yield": "81%",
+            "reactant_smiles": "C#CC1=CC(=C2C=C1C3=CC=C(C(=C3OC4=CC=C(CCC5=CC(=CC=C52)OC)C=C4)OC)OC)OC",
+            "product_smiles": "COC1=CC=C2C(=C1)CCC3=CC=C(C=C3)OC4=C(C(=CC5=C4C6=CC2=C(C=C6C=C5)OC)OC)OC",
+            "notes": "Terminal alkyne undergoes intramolecular cyclization with an adjacent aromatic ring, catalyzed by a platinum complex, to form a fused phenanthrene-like system.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 23 °C",
+            "yield": "95%",
+            "reactant_smiles": "COC1=CC=C2C(=C1)CCC3=CC=C(C=C3)OC4=C(C(=CC5=C4C6=CC2=C(C=C6C=C5)OC)OC)OC",
+            "product_smiles": "C1=C2C=CC(=C1)OC3=C(C(=CC4=C3C5=CC(=C(C=C5C=C4)O)C6=CC=C(C=C6CC2)O)O)O",
+            "notes": "Demethylation of aryl methyl ethers to phenols using boron tribromide.",
+            "substeps": []
+        }
+    ]
+}

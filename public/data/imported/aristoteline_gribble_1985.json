@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aristoteline-gribble-1985",
+        "molecule_name": "Aristoteline",
+        "class": "Natural Product",
+        "author": "Gribble",
+        "year": 1985
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "Br₂",
+            "reagent_smiles": "CC1CO1.BrBr",
+            "conditions": "",
+            "yield": "83%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C=CN2S(=O)(=O)[Ph]",
+            "product_smiles": "C1=CC=C2C(=C1)C(=CN2S(=O)(=O)[Ph])Br",
+            "notes": "Electrophilic bromination of an N-phenylsulfonyl indole at the 3-position using bromine in the presence of propylene oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide Ring Opening / Lithiation-Alkylation",
+            "reagents": "tBuLi, BF3",
+            "reagent_smiles": "C1CO1",
+            "conditions": "",
+            "yield": "87%",
+            "reactant_smiles": "C1=CC=C2C(=C1)C(=CN2S(=O)(=O)[Ph])Br",
+            "product_smiles": "C1=CC=C2C(=C1)C(=CN2S(=O)(=O)[Ph])CCO",
+            "notes": "Lithiation of 3-bromoindole derivative followed by nucleophilic ring opening of ethylene oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaHCO3",
+            "reagent_smiles": "CC1=C[C@@H](C(C)(C)N)CCC1",
+            "conditions": "MeCN",
+            "yield": "69%",
+            "reactant_smiles": "OCCC1=CN(S(=O)(=O)c2ccccc2)C3=CC=CC=C31",
+            "product_smiles": "CC1=C[C@@H](C(C)(C)NCCC2=CN(S(=O)(=O)c3ccccc3)C4=C2C=CC=C4)CCC1",
+            "notes": "Reductive amination of an indole-based alcohol (likely via in situ oxidation to aldehyde) with a chiral menthane-like amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "O₂, Cu(OAc)₂",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1=CC[C@@H](CC1)C(C)(C)NCCC2=CN(C3=C2C=CC=C3)S(=O)(=O)[Ph]",
+            "product_smiles": "CC1=CC[C@@H](CC1)C(C)(C)[N+]([O-])=C(CC2=CN(C3=C2C=CC=C3)S(=O)(=O)[Ph])",
+            "notes": "Oxidation of a secondary amine to an iminium N-oxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Nitrone Cycloaddition / Cascade",
+            "reagents": "toluene",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "64%",
+            "reactant_smiles": "c1ccc2c(c1)n(cc2CC=C[N+]([O-])[C@H](C(C)(C)C)C3=CCC(C)CC3)S(=O)(=O)c4ccccc4",
+            "product_smiles": "CC1(C)N2C([C@H](CC3=CN(C4=CC=CC=C34)S(=O)(=O)c5ccccc5))OC([C@@H]6CCC(C)CC16)C2",
+            "notes": "Intramolecular reaction of an N-phenylsulfonyl-indole derivative with a nitrone and cyclohexene moiety, forming a complex polycyclic alkaloid structure. The product structure as drawn appears to have 3 fewer carbons than the reactant, suggesting a complex rearrangement or carbon loss during the reaction which is not typical for a simple 3+2 cycloaddition.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction / Deprotection / Ring Opening",
+            "reagents": "Zn",
+            "reagent_smiles": "CC(=O)O.O",
+            "conditions": "50 °C",
+            "yield": "96%",
+            "reactant_smiles": "c1ccc2c(c1)c(C[C@@H]1N3[C@@H](OC4(C(C)(C))CCC[C@@H]3[C@@H]14))cn2S(=O)(=O)c5ccccc5",
+            "product_smiles": "c1ccc2c(c1)c(C[C@@H]3N4[C@H](O)C5(C(C)(C))CC[C@@H]4[C@@H]35)cn2",
+            "notes": "Reductive opening of the N,O-bridged system and deprotection of the N-phenylsulfonyl group on the indole ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular cyclization / dehydration",
+            "reagents": "PTSA",
+            "reagent_smiles": "",
+            "conditions": "benzene, reflux",
+            "yield": "28%",
+            "reactant_smiles": "CC1(C)[C@H]2CCC(C)([C@H](C2)[C@@H](CC3=CNC4=CC=CC=C34)N1)O",
+            "product_smiles": "CC1(C)[C@H]2CC[C@@H](C)[C@@]3([C@H]2N(C1)C4=C5C=CC=CC5=C3[C@H]4)[nH]",
+            "notes": "Acid-catalyzed intramolecular cyclization of an indole-containing alcohol to form the pentacyclic (+)-Aristoteline.",
+            "substeps": []
+        }
+    ]
+}

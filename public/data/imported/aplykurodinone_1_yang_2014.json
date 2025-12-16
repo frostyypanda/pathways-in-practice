@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aplykurodinone-1-yang-2014",
+        "molecule_name": "Aplykurodinone-1",
+        "class": "Natural Product",
+        "author": "Yang",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydrochlorination / Addition reaction",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "10 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=C1CC[C@@H](C)CC1=O)C",
+            "product_smiles": "C[C@@H]1CCC(C(=O)C1)C(C)(C)Cl",
+            "notes": "Addition of HCl across the enone double bond, forming a tertiary alkyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Favorskii Rearrangement / Ring Opening / Dehydrohalogenation",
+            "reagents": "NaOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "15 °C to rt",
+            "yield": "57% (2 steps)",
+            "reactant_smiles": "C[C@@H]1CCC(=O)[C@H]1C(C)(C)Cl",
+            "product_smiles": "O=C(O)C[C@H](C)CCC=C(C)C",
+            "notes": "Base-promoted Favorskii-like rearrangement of an alpha-chloro ketone leading to ring opening and alkene formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Esterification",
+            "reagents": "EDCI, DMAP",
+            "reagent_smiles": "CC1=C[C@H](CCC1)O",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "96%",
+            "reactant_smiles": "CC(=CCC[C@@H](C)CC(=O)O)C",
+            "product_smiles": "CC(=CCC[C@@H](C)CC(=O)O[C@H]1CCCC(=C1)C)C",
+            "notes": "Carboxylic acid is coupled with a cyclic allylic alcohol to form an ester using EDCI and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Claisen rearrangement / Cyclization",
+            "reagents": "LDA, TBSCl, HMPA",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt, toluene, 80 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC[C@@H](C)CC(=O)O[C@@H]1CCC=C(C)C1)C",
+            "product_smiles": "CC(=CCCC(C)C1=C([OTBS])[C@@H]2CC3CCC3[C@H]21)C",
+            "notes": "Intramolecular cyclization of an ester, likely involving enolate formation with LDA, silylation with TBSCl to form a ketene silyl acetal (silyl enol ether), followed by a cyclization/rearrangement. The product structure shown is bicyclic with a silyl enol ether functionality. The methyl group originally on the cyclohexene double bond appears to have migrated to one of the bridgehead carbons in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "-78 °C to rt",
+            "yield": "60% (2 steps)",
+            "reactant_smiles": "CC(=CCC[C@H](C)[C@@](C)(C(=O)[OTBS])[C@]1(C)C=CCCC1)C",
+            "product_smiles": "CC(=CCC[C@H](C)[C@@](C)(CO)[C@]1(C)C=CCCC1)C",
+            "notes": "Reduction of a tert-butyldimethylsilyl (TBS) ester to a primary alcohol using DIBAL-H. Stereochemistry at the chiral center in the side chain was corrected. All stereocenters are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "C[C@]1(C=CCCC1)[C@H](CO)[C@H](C)CCC=C(C)C",
+            "product_smiles": "C[C@]1(C=CCCC1)[C@H](C=O)[C@H](C)CCC=C(C)C",
+            "notes": "Oxidation of primary alcohol to aldehyde using Dess-Martin periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig reaction",
+            "reagents": "MOMPPh3Cl, NaHMDS",
+            "reagent_smiles": "COC[P+](c1ccccc1)(c2ccccc2)c3ccccc3.[Cl-].[Na+]N(Si(C)(C)C)Si(C)(C)C",
+            "conditions": "THF, 0 °C",
+            "yield": "96%",
+            "reactant_smiles": "C=C(C)CCC[C@@H](C)[C@@](C)(C=O)[C@]1(C)C=CCCC1",
+            "product_smiles": "C=C(C)CCC[C@@H](C)[C@@](C)(C=COC)[C@]1(C)C=CCCC1",
+            "notes": "Aldehyde converted to enol ether using a methoxymethyltriphenylphosphonium ylide.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Enol ether hydrolysis",
+            "reagents": "p-TsOH, DCM, H2O",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "83%",
+            "reactant_smiles": "CC(=CCC[C@@H](C)[C@](C)(C=COC)[C@]1(C)C=CCCC1)C",
+            "product_smiles": "CC(=CCC[C@@H](C)[C@](C)(CC=O)[C@]1(C)C=CCCC1)C",
+            "notes": "Acid-catalyzed hydrolysis of a methyl enol ether to form an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Aldol-type cyclization and reduction",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "toluene, 160 °C",
+            "yield": "90%",
+            "reactant_smiles": "C[C@@]12CCC=CC1[C@@H](C[C@@H](C)C(CC=O)(CC=C(C)C))C2",
+            "product_smiles": "C[C@@]12CCC=CC1[C@@H](C[C@@H]3(C)C(CC=C(C)C)C[C@H](O)3)C2",
+            "notes": "Intramolecular cyclization of an aldehyde to form a fused 5-membered ring alcohol. The aldehyde group reduces to an alcohol during the reaction. A new 5-membered carbocyclic ring is formed, fusing to the decalin system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Epoxidation",
+            "reagents": "VO(acac)2, t-BuOOH",
+            "reagent_smiles": "CC(C)(C)OO.CC(=O)C(C(=O)C)[O-].CC(=O)C(C(=O)C)[O-].[O-][V]=O",
+            "conditions": "DCM, 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "C[C@@]12CCC=C[C@]1C[C@]3([C@H](O)CC[C@H]23)[C@@H](C)CCC=C(C)C",
+            "product_smiles": "C[C@@]12CC[C@@H]3O[C@@H]3[C@]1C[C@]4([C@H](O)CC[C@H]24)[C@@H](C)CCC=C(C)C",
+            "notes": "Stereoselective epoxidation of the internal double bond in the cyclohexene ring, forming an alpha-epoxide. The remote alcohol and terminal alkene in the side chain are unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC[C@@H][C@@]1(C)C[C@@H]([C@@H]2[C@H]3[C@@H](CC[C@@]21C)O3)O)C",
+            "product_smiles": "CC(=CCC[C@@H][C@@]1(C)CC(=O)[C@@H]2[C@H]3[C@@H](CC[C@@]21C)O3)C",
+            "notes": "Oxidation of a secondary alcohol to a ketone using Dess-Martin periodinane (DMP).",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Epoxide opening / Rearrangement",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "81% (2 steps)",
+            "reactant_smiles": "CC(=CCC[C@@H](C)[C@@]1(C)CC(=O)[C@@H]2[C@@H]3[C@@H](CC[C@@]21C)O3)C",
+            "product_smiles": "CC(=CCC[C@@H](C)[C@@]1(C)CC(=O)[C@@H]2C=C[C@@H](O)[C@@H]2CC1)C",
+            "notes": "Epoxide ring is opened, followed by a rearrangement and formation of a double bond and a hydroxyl group in the 6-membered ring. DBU acts as a non-nucleophilic base.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Mitsunobu Esterification",
+            "reagents": "PPh3, DIAD",
+            "reagent_smiles": "COC(=O)CC(=O)O",
+            "conditions": "THF, 0 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC(=CCC[C@@H](C)[C@]1(C)CC(=O)C2=C[C@H](CC[C@@]21C)O)C",
+            "product_smiles": "CC(=CCC[C@@H](C)[C@]1(C)CC(=O)C2=C[C@@H](CC[C@@]21C)OC(=O)CC(=O)OC)C",
+            "notes": "Mitsunobu esterification of a secondary alcohol with methyl hydrogen malonate, resulting in inversion of stereochemistry at the alcohol-bearing carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Michael Addition / Lactonization",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 60 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC(=CCC[C@@H](C)[C@H]1CC(=O)C2=C[C@H](CC[C@]12C)OC(=O)CC(=O)OC)C",
+            "product_smiles": "CC(=CCC[C@@H](C)[C@H]1CC(=O)[C@@H]2[C@@H]3[C@H](CC[C@]12C)OC(=O)[C@H]3C(=O)OC)C",
+            "notes": "Intramolecular Michael addition of the methyl malonate enolate to the α,β-unsaturated ketone, followed by lactone ring closure, forming a new fused 5-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Decarboxylative Lactone Ring Expansion",
+            "reagents": "NaCl, DMSO, H2O",
+            "reagent_smiles": "",
+            "conditions": "120 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC(=CCC[C@@H](C)[C@@H]1CC(=O)[C@H]2[C@H]3[C@H](CC[C@]12C)OC(=O)[C@@H]3C(=O)OC)C",
+            "product_smiles": "CC(=CCC[C@@H](C)[C@@H]1CC(=O)[C@H]2[C@H]3CC(=O)O[C@@H]3CC[C@]12C)C",
+            "notes": "Decarboxylation of methyl ester and subsequent 5-membered lactone ring expansion to a 6-membered lactone.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "asciminib-scemblix-novartis-unknown-2024",
+        "molecule_name": "Asciminib (Scemblix Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acyl Chloride Formation",
+            "reagents": "SOCl2",
+            "reagent_smiles": "",
+            "conditions": "DMF, toluene, 80 °C",
+            "yield": "",
+            "reactant_smiles": "O=C(O)c1cc(Br)c(Cl)nc1",
+            "product_smiles": "O=C(Cl)c1cc(Br)c(Cl)nc1",
+            "notes": "Conversion of a carboxylic acid to an acyl chloride using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amide Formation (Acylation)",
+            "reagents": "DIPEA",
+            "reagent_smiles": "C1=C(C=CC(=C1)OC(Cl)(F)F)N",
+            "conditions": "THF, 16 °C to rt",
+            "yield": "",
+            "reactant_smiles": "O=C(Cl)c1ccc(Br)c(Cl)n1",
+            "product_smiles": "C1=C(C=CC(=C1)OC(Cl)(F)F)NC(=O)C2=CN=C(C(=C2)Br)Cl",
+            "notes": "Acylation of an aniline with a pyridine carbonyl chloride to form an amide.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Free-radical chlorination",
+                    "reagents": "CCl4",
+                    "reagent_smiles": "ClCl",
+                    "conditions": "reflux",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)C(=O)N(C3=CC=C(C=C3)OC(F)F)C2=O",
+                    "product_smiles": "C1=CC2=C(C=C1)C(=O)N(C3=CC=C(C=C3)OC(Cl)(F)F)C2=O",
+                    "notes": "Chlorination of the difluoromethyl group to chlorodifluoromethyl using elemental chlorine in carbon tetrachloride under reflux conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "Gabriel synthesis deprotection / Amine deprotection",
+                    "reagents": "N2H4",
+                    "reagent_smiles": "NN.CC(C)O",
+                    "conditions": "iPrOH, reflux",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC2=C(C=C1)C(=O)N(C3=CC=C(C=C3)OC(Cl)(F)F)C2=O",
+                    "product_smiles": "NC1=CC=C(OC(F)(F)Cl)C=C1",
+                    "notes": "Deprotection of a phthalimide-protected amine using hydrazine to yield a primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "iPrOH",
+            "reagent_smiles": "C1CNC[C@@H]1O",
+            "conditions": "140 °C",
+            "yield": "",
+            "reactant_smiles": "FC(F)(Cl)Oc1ccc(NC(=O)c2cc(Br)c(Cl)nc2)cc1",
+            "product_smiles": "FC(F)(Cl)Oc1ccc(NC(=O)c2cc(Br)c(N3CC[C@@H](C3)O)nc2)cc1",
+            "notes": "A nucleophilic aromatic substitution reaction where (S)-pyrrolidin-3-ol replaces the chlorine atom on the pyridine ring. The stereochemistry of the pyrrolidine is retained in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(PPh3)4, K3PO4",
+            "reagent_smiles": "CC1(C)OB(OC(C)(C)C1)c2ccn(C3CCCCO3)n2",
+            "conditions": "toluene, 110 °C",
+            "yield": "",
+            "reactant_smiles": "ClC(F)(F)Oc1ccc(NC(=O)c2cc(Br)c(N3CC[C@H](O)C3)nc2)cc1",
+            "product_smiles": "ClC(F)(F)Oc1ccc(NC(=O)c2cc(c(N3CC[C@H](O)C3)nc2)c4ccn(C5CCCCO5)n4)cc1",
+            "notes": "Suzuki-Miyaura coupling to replace bromine with a pyrazole boronate ester, forming Asciminib.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, DCM",
+            "reagent_smiles": "",
+            "conditions": "10 °C to rt",
+            "yield": "",
+            "reactant_smiles": "N1=CC(C(=O)NC2=CC=C(OC(F)(F)Cl)C=C2)=CC(N3CC[C@@H](O)C3)=C1C4=CC=NN4C5CCCCO5",
+            "product_smiles": "C1=C(C=CC(=C1)OC(Cl)(F)F)NC(=O)C2=CN=C(C(=C2)C3=CC=NN3)N4CC[C@@H](C4)O",
+            "notes": "Acid-catalyzed removal of N-tetrahydropyran (THP) protecting group from the pyrazole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,255 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "amphirionin-britton-2015",
+        "molecule_name": "Amphirionin",
+        "class": "Natural Product",
+        "author": "Britton",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "imidazole, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "94%",
+            "reactant_smiles": "C#CCCCO",
+            "product_smiles": "C#CCCCO[TBS]",
+            "notes": "Protection of a primary alcohol with tert-butyldimethylsilyl (TBS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Hydrozirconation / Iodination",
+            "reagents": "Zr(Cp2)Cl2, Me3Al, H2O, I2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, THF, -78 °C to 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "C#CCCCO[TBS]",
+            "product_smiles": "[TBS]OCCC/C(=C/I)/C",
+            "notes": "Terminal alkyne is converted to a Z-vinyl iodide via hydrozirconation and subsequent electrophilic quench with iodine. The TBS protecting group remains intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Boronation via Lithium-Halogen Exchange",
+            "reagents": "bipy, n-BuLi, B(OiPr)3",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "[OTBS]CCC\\C(C)=C/I",
+            "product_smiles": "[OTBS]CCC\\C(C)=C/B(O)O",
+            "notes": "Conversion of a vinyl iodide to a vinyl boronic acid via lithium-halogen exchange followed by transmetallation with triisopropyl borate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Boronic acid to trifluoroborate conversion",
+            "reagents": "KHF2",
+            "reagent_smiles": "O.CC#N",
+            "conditions": "MeCN",
+            "yield": "45%",
+            "reactant_smiles": "[OTBS]CCCO/C(=C\\B(O)O)/C",
+            "product_smiles": "[K+].[OTBS]CCCO/C(=C\\[B-](F)(F)F)/C",
+            "notes": "Conversion of a vinyl boronic acid to its potassium vinyl trifluoroborate salt, protecting the boron moiety and making it more stable for further reactions.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "CsCO3, Pd(PPh3)4",
+            "reagent_smiles": "BrC(=C)CC#[TMS]",
+            "conditions": "THF, 55 °C",
+            "yield": "68%",
+            "reactant_smiles": "CCCO[OTBS]/C(C)=C/B(F)(F)F.[K+]",
+            "product_smiles": "CCCO[OTBS]/C(C)=C/C(=C)CC#[TMS]",
+            "notes": "Suzuki-Miyaura coupling of a potassium trifluoroborate with a vinyl bromide to form a substituted diene.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Organocopper Coupling / Alkylation",
+                    "reagents": "MeMgl, CuBr",
+                    "reagent_smiles": "[TMS]C#C.C[Mg]I.Br[Cu]",
+                    "conditions": "THF, 0 °C to 50 °C",
+                    "yield": "74%",
+                    "reactant_smiles": "C=C(CBr)Br",
+                    "product_smiles": "C=C(CC#C[TMS])Br",
+                    "notes": "Copper-catalyzed alkylation of the primary alkyl bromide with trimethylsilylacetylene (via its Grignard reagent) to form an alkyne, leaving the vinylic bromide untouched.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "[OTBS]CCC/C(=C/C(=C)CC#C[TMS])/C",
+            "product_smiles": "C#CCC(=C)/C=C(\\C)/CCCO",
+            "notes": "Deprotection of TBS and TMS silyl ethers to alcohol and terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "65%",
+            "reactant_smiles": "C#CCC(=C)/C=C(\\C)/CCCO",
+            "product_smiles": "C#CCC(=C)/C=C(\\C)/CCC=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin Periodinane (DMP) and sodium bicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nozaki-Hiyama-Kishi reaction (Cr(II)-mediated allylation)",
+            "reagents": "CrCl2, NiCl2",
+            "reagent_smiles": "C=C(C[C@@H]1[C@H](C[C@@H](C)O1)[OTBS])I",
+            "conditions": "DMF, 0 °C",
+            "yield": "61%",
+            "reactant_smiles": "O=CCC/C=C(\\C)C(=C)CC#C",
+            "product_smiles": "O[C@H](CCC/C=C(\\C)C(=C)CC#C)C(=C)C[C@@H]1[C@H](C[C@@H](C)O1)[OTBS]",
+            "notes": "Addition of a chiral iodo-alkene reagent to an aldehyde, forming a new C-C bond and a secondary alcohol. Stereochemistry at the newly formed alcohol and the THF ring's C5 position was corrected.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Hydroiodination of Alkyne / Iodo-addition",
+                    "reagents": "NaI, TMSCl, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN",
+                    "yield": "46%",
+                    "reactant_smiles": "C#CCCCO",
+                    "product_smiles": "C=C(CCCO)I",
+                    "notes": "The terminal alkyne undergoes addition of iodine and hydrogen to form a vinyl iodide. The alcohol group remains unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Swern Oxidation",
+                    "reagents": "DMSO, (COCl)₂",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂, -78 °C",
+                    "yield": "70%",
+                    "reactant_smiles": "C=C(I)CCCO",
+                    "product_smiles": "C=C(I)CCC=O",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde via Swern oxidation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Asymmetric α-chlorination",
+                    "reagents": "NCS",
+                    "reagent_smiles": "C[C@@H]1C(=O)N(C)[C@@H](C(C)(C)C)N1.FC(F)(F)C(=O)O",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "61%",
+                    "reactant_smiles": "C=C(CCC=O)I",
+                    "product_smiles": "C=C(C[C@H](C=O)Cl)I",
+                    "notes": "Asymmetric α-chlorination of an aldehyde catalyzed by a chiral imidazolidinone in the presence of TFA.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Aldol Addition",
+                    "reagents": "LDA, acetone",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "64%",
+                    "reactant_smiles": "C=C(C[C@H](C=O)Cl)I",
+                    "product_smiles": "C=C(C[C@H]([C@H](CC(=O)C)O)Cl)I",
+                    "notes": "Stereoselective aldol addition of acetone enolate to a chiral aldehyde, producing a beta-hydroxy ketone with two new chiral centers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Ketone Reduction",
+                    "reagents": "NMe4BH(OAc)3",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, AcOH, -40 °C",
+                    "yield": "79%",
+                    "reactant_smiles": "C=C(C[C@H]([C@@H](CC(=O)C)O)Cl)I",
+                    "product_smiles": "C=C(C[C@H]([C@@H](C[C@@H](C)O)O)Cl)I",
+                    "notes": "Stereoselective reduction of a ketone to a secondary alcohol. The ketone carbonyl is reduced to a secondary alcohol with S-configuration. The stereochemistry of the existing alcohol (S) and chloro (R) groups is maintained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.6",
+                    "reaction_type": "Intramolecular Etherification / Cyclization",
+                    "reagents": "",
+                    "reagent_smiles": "",
+                    "conditions": "μ wave, MeOH, 120 °C",
+                    "yield": "72%",
+                    "reactant_smiles": "C=C(C[C@H]([C@@H](C[C@H](C)O)O)Cl)I",
+                    "product_smiles": "C=C(C[C@@H]1[C@@H](C[C@@H](C)O1)O)I",
+                    "notes": "Intramolecular cyclization to form a tetrahydrofuran ring. The hydroxyl group at C2 and the chloride at C5 of the reactant form the ether linkage. The hydroxyl group at C4 remains. Stereochemistry at C2 (bearing methyl) and C5 (bearing vinyl iodide side chain) appears to be inverted from (S) to (R) during cyclization, while C4 (bearing hydroxyl) retains its (R) configuration.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.7",
+                    "reaction_type": "Alcohol Silylation / Protecting Group Chemistry",
+                    "reagents": "TBSCl",
+                    "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.ClCCl",
+                    "conditions": "CH2Cl2, 0°C",
+                    "yield": "83%",
+                    "reactant_smiles": "C=C(C[C@H]1[C@H](C[C@@H](C)O1)O)I",
+                    "product_smiles": "C=C(C[C@H]1[C@H](C[C@@H](C)O1)[OTBS])I",
+                    "notes": "Protection of a secondary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "C#CCC(=C)/C=C(\\C)/CC[C@@H](C(=C)C[C@H]1[C@H](C[C@@H](C)O1)[OTBS])O",
+            "product_smiles": "C#CCC(=C)/C=C(\\C)/CC[C@@H](C(=C)C[C@H]1[C@H](C[C@@H](C)O1)O)O",
+            "notes": "Deprotection of a TBS silyl ether to a hydroxyl group using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Stille coupling",
+            "reagents": "[Ph₂PO₂][NBu₄], Pd(PPh₃)₄, CuTC",
+            "reagent_smiles": "C=CCCC=C[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "DMF",
+            "yield": "71%",
+            "reactant_smiles": "C/C(=C/C(=C)C/C(=C/I)/C)/CC[C@@H](C(=C)C[C@H]1[C@H](C[C@@H](C)O1)O)O",
+            "product_smiles": "C=CCC/C=C/C=C(\\C)/CC(=C)/C=C(\\C)/CC[C@@H](C(=C)C[C@H]1[C@H](C[C@@H](C)O1)O)O",
+            "notes": "Alkene-alkene Stille cross-coupling replaces a vinyl iodide with an octa-1,7-dien-1-yl moiety.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Takai Olefination",
+                    "reagents": "CrCl2, CHI3",
+                    "reagent_smiles": "Cl[Cr]Cl.IC(I)I",
+                    "conditions": "THF, 0 °C",
+                    "yield": "61%",
+                    "reactant_smiles": "C=CCCC=O",
+                    "product_smiles": "I\\C=C/CCC=C",
+                    "notes": "Conversion of an aldehyde to a Z-vinyl iodide using chromium(II) chloride and iodoform.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Lithium-halogen exchange, Transmetalation",
+                    "reagents": "tBuLi, Bu3SnCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "63%",
+                    "reactant_smiles": "I/C=C/CCC=C",
+                    "product_smiles": "[Sn](CCCC)(CCCC)CCCC/C=C/CCC=C",
+                    "notes": "Conversion of a vinyl iodide to a vinyl stannane with retention of double bond stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

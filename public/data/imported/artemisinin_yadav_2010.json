@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "artemisinin-yadav-2010",
+        "molecule_name": "Artemisinin",
+        "class": "Natural Product",
+        "author": "Yadav",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxidation",
+            "reagents": "NaOH, H2O2",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "74%",
+            "reactant_smiles": "CC(=C1CC[C@@H](C)CC1=O)C",
+            "product_smiles": "C[C@@H]1CCC(=O)C2(C1)OC(C)(C)2",
+            "notes": "Weitz-Scheffer epoxidation of (R)-pulegone, an α,β-unsaturated ketone, to form an α,β-epoxy ketone (a spiro epoxide).",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxide Ring Opening / Thiolate Substitution",
+            "reagents": "NaSPh",
+            "reagent_smiles": "[Na+].[S-]c1ccccc1",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H]1CCC(=O)C2(CC1)OC(C)(C)2",
+            "product_smiles": "C[C@@H]1CCC(=O)C(Sc2ccccc2)CC1",
+            "notes": "Nucleophilic ring opening of a spiro-epoxide with sodium thiophenolate, leading to substitution of the dimethyloxirane group with a thiophenyl group. The methyl stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "95%",
+            "reactant_smiles": "O=C1C(Sc2ccccc2)CC[C@H](C)C1",
+            "product_smiles": "O=C1C(S(=O)c2ccccc2)CC[C@H](C)C1",
+            "notes": "Oxidation of a sulfide to a sulfoxide using m-CPBA.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Stereoselective Alkylation / Reductive Removal of Chiral Auxiliary",
+            "reagents": "LDA, Hg amalgam",
+            "reagent_smiles": "CC1(C)OC(C)(CCBr)OC1",
+            "conditions": "wet THF",
+            "yield": "50%",
+            "reactant_smiles": "O=C1C(S(=O)c2ccccc2)CC[C@H](C)CC1",
+            "product_smiles": "C[C@@H]1CCCC(=O)[C@H]1CCC2(C)OCC(C)(C)CO2",
+            "notes": "Alpha-alkylation of a cyclohexanone, where the phenylsulfinyl group acts as a chiral auxiliary to direct the alkylation. The auxiliary is then reductively removed.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrazone Formation",
+            "reagents": "TsNHNH2",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)NN)cc1",
+            "conditions": "neat",
+            "yield": "86%",
+            "reactant_smiles": "C[C@@H]1CCCC(=O)[C@H]1CCC2(C)OCC(C)(C)CO2",
+            "product_smiles": "C[C@@H]1CCCC(=NNS(=O)(=O)c2ccc(C)cc2)[C@H]1CCC3(C)OCC(C)(C)CO3",
+            "notes": "Ketone undergoes condensation with p-toluenesulfonyl hydrazide to form the corresponding tosyl hydrazone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Shapiro reaction",
+            "reagents": "n-BuLi, TMEDA then DMF",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "70%",
+            "reactant_smiles": "C[C@@H]1CC[C@H](CCC2(C)OCCOC2)C(=NNS(=O)(=O)c3ccc(C)cc3)C1",
+            "product_smiles": "C[C@@H]1CC=C(C=O)[C@H](CCC2(C)OCCOC2)CC1",
+            "notes": "Conversion of a tosylhydrazone to an alpha,beta-unsaturated aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Addition / Silyl Addition",
+            "reagents": "Al(TMS)₃",
+            "reagent_smiles": "",
+            "conditions": "Et₂O",
+            "yield": "",
+            "reactant_smiles": "C[C@H]1CCC=C([C@H]1CCC2(C)OCC(C)(C)CO2)C(=O)H",
+            "product_smiles": "C[C@H]1CCC=C([C@H]1CCC2(C)OCC(C)(C)CO2)[C@H](O)[TMS]",
+            "notes": "Nucleophilic addition of a trimethylsilyl group from tris(trimethylsilyl)aluminum to an α,β-unsaturated aldehyde, forming an α-silyl alcohol with specific diastereoselectivity. The hydrogen on the aldehyde carbon is added along with the TMS group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Esterification",
+            "reagents": "Ac₂O, DMAP",
+            "reagent_smiles": "CC(=O)OC(=O)C.CN(C)c1ccncc1",
+            "conditions": "",
+            "yield": "88%",
+            "reactant_smiles": "C[C@@H]1CCC=C([C@H]1CCC2(C)OCC(C)(C)CO2)[C@@H](O)[TMS]",
+            "product_smiles": "C[C@@H]1CCC=C([C@H]1CCC2(C)OCC(C)(C)CO2)[C@@H](OC(=O)C)[TMS]",
+            "notes": "Acetylation of a secondary alcohol with acetic anhydride and DMAP. The yield stated is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Ireland-Claisen rearrangement",
+            "reagents": "LDEA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "63%",
+            "reactant_smiles": "C[C@@H]1CCC=C([C@H]1CCC(C)(C)OC1CC(C)(C)O1)[C@@](H)(OC(=O)C)[TMS]",
+            "product_smiles": "C[C@@H]1CC[C@H](CC(=O)O)/C(=C(\\H)/[TMS])/[C@H]1CCC(C)(C)OC1CC(C)(C)O1",
+            "notes": "Ireland-Claisen rearrangement of an allyl silyl ketene acetal (formed in situ from allyl acetate and TMS) to yield a gamma,delta-unsaturated carboxylic acid with an exocyclic alkene. The TMS group is retained on the product alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alpha-alkylation (Methylation)",
+            "reagents": "2 equiv. LDA, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "97%",
+            "reactant_smiles": "C[C@H]1CC[C@@H](CC(=O)O)/C(=C(/[H])\\[TMS])/[C@H]1CCC2(C)(C)OCC(C)(C)O2",
+            "product_smiles": "C[C@H]1CC[C@@H]([C@@H](C)C(=O)O)/C(=C(/[H])\\[TMS])/[C@H]1CCC2(C)(C)OCC(C)(C)O2",
+            "notes": "Alpha-methylation of the carboxylic acid to form a new stereocenter, via enolate formation with LDA followed by alkylation with methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ozonolysis / Oxidative Cleavage and Cyclization",
+            "reagents": "O3/O2, SiO2, 3M H2SO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "35%",
+            "reactant_smiles": "C[C@H]1C[C@@H](CCC2(C)OCC(C)(C)CO2)[C@H]([C@H](C)C(=O)O)C=C([Si](C)(C)C)\\[H]1",
+            "product_smiles": "C[C@H]1CC[C@H]2[C@H](C)C(=O)O[C@H]3[C@]42[C@H]1CC[C@](C)(O3)OO4",
+            "notes": "Ozonolysis of a silyl enol ether followed by cyclization and peroxide formation to yield Artemisinin.",
+            "substeps": []
+        }
+    ]
+}

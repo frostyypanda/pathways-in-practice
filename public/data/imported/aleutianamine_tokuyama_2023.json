@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aleutianamine-tokuyama-2023",
+        "molecule_name": "Aleutianamine",
+        "class": "Natural Product",
+        "author": "Tokuyama",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Iodination",
+            "reagents": "ICl, Na₂CO₃",
+            "reagent_smiles": "",
+            "conditions": "Et₂O, H₂O, 50 °C",
+            "yield": "62%",
+            "reactant_smiles": "COc1ccc(N)c(OC)c1",
+            "product_smiles": "COC1=CC=C(C(=C1OC)N)I",
+            "notes": "Iodination of 2,4-dimethoxyaniline with ICl to form 6-iodo-2,4-dimethoxyaniline.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaHCO3, acetone, H2O",
+            "reagent_smiles": "COC(=O)/C=C/CBr",
+            "conditions": "80 °C",
+            "yield": "43%",
+            "reactant_smiles": "COC1=CC=C(C(=C1OC)N)I",
+            "product_smiles": "COC1=CC=C(C(=C1OC)NC/C=C/C(=O)OC)I",
+            "notes": "N-alkylation of an aromatic amine with methyl 4-bromobut-2-enoate (Michael-type addition is not occurring, this is SN2 on the primary alkyl bromide).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Palladium-catalyzed cyclization (Indole synthesis)",
+            "reagents": "Pd(OAc)₂, P(o-Tol)₃, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 100 °C",
+            "yield": "97%",
+            "reactant_smiles": "COC1=CC=C(C(=C1OC)NC/C=C/C(=O)OC)I",
+            "product_smiles": "COC1=CC=C2C(=CNC2=C1OC)CC(=O)OC",
+            "notes": "Intramolecular palladium-catalyzed cyclization of an iodoaniline derivative to form a 5,6-dimethoxy-3-(methoxycarbonylmethyl)indole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF, 0 °C",
+            "yield": "97%",
+            "reactant_smiles": "COc1c(OC)c2ccc([nH]2)c1CC(=O)OC",
+            "product_smiles": "COc1c(OC)c2ccc([nH]2)c1CCO",
+            "notes": "Methyl ester reduced to primary alcohol using lithium aluminum hydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mitsunobu Azidation",
+            "reagents": "DIAD, PPh3",
+            "reagent_smiles": "O=P([N-]=N#N)(Oc1ccccc1)Oc1ccccc1",
+            "conditions": "toluene, 0 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "COc1cc(OC)c2c(c1)[nH]c(CCO)c2",
+            "product_smiles": "COc1cc(OC)c2c(c1)[nH]c(CCN=[N+]=[N-])c2",
+            "notes": "Mitsunobu reaction converting a primary alcohol to an azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Sulfonylation",
+            "reagents": "TsCl, t-BuOK",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "[N3]CCc1[nH]c2ccc(OC)c(OC)c12",
+            "product_smiles": "[N3]CCc1N([Ts])c2ccc(OC)c(OC)c12",
+            "notes": "Protection of the indole nitrogen with a tosyl group (N-sulfonylation).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cyclization, Oxidation",
+            "reagents": "PIFA, TMSOTf",
+            "reagent_smiles": "",
+            "conditions": "HFIP, H2O, 0 °C",
+            "yield": "35%",
+            "reactant_smiles": "COc1cc(OC)c2c(c1)c(CCN=[N+]=[N-])n([Ts])c2",
+            "product_smiles": "COc1ccc2c(=O)c1C3=CN(C(=C32)C4=NCCC4)[Ts]",
+            "notes": "Intramolecular oxidative cyclization of azidoethyl indole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide formation and Cyclization",
+            "reagents": "",
+            "reagent_smiles": "[OTBS][C@@H](C1=C(C=CC=C1)Cl)C(=O)SC2=CC(=CC=C2CCN)OC",
+            "conditions": "MeOH, rt",
+            "yield": "57%",
+            "reactant_smiles": "COC1=CC2=NCCC3=CN(S(=O)(=O)C4=CC=C(C)C=C4)C(=C32)C1=O",
+            "product_smiles": "S(=O)(=O)C6=CC=C(C)C=C6N1C=C2CCN=C3C=C(OC)C(=O)N(CCC4=CC=C(C=C4SC(=O)[C@@H](C5=C(C=CC=C5)Cl)[OTBS])OC)C1=C23",
+            "notes": "Amine addition to quinone-imine system with amide formation and ring rearrangement.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Protection Reaction",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, rt",
+                    "yield": "",
+                    "reactant_smiles": "C1=CC(=C(C=C1)Cl)[C@@H](C(=O)O)O",
+                    "product_smiles": "[OTBS][C@@H](C1=C(C=CC=C1)Cl)C(=O)O[TBS]",
+                    "notes": "Protection of the secondary alcohol and the carboxylic acid using TBSCl and imidazole to form the TBS ether and silyl ester, respectively.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Deprotection / Hydrolysis",
+                    "reagents": "K2CO3, MeOH, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "84% (2 steps)",
+                    "reactant_smiles": "ClC1=CC=CC=C1[C@@H]([OTBS])C(=O)[OTBS]",
+                    "product_smiles": "ClC1=CC=CC=C1[C@@H]([OTBS])C(=O)O",
+                    "notes": "Base-catalyzed hydrolysis of silyl ester and silyl ether to an alpha-hydroxy carboxylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Thioesterification and Intramolecular Cyclization",
+                    "reagents": "DCC",
+                    "reagent_smiles": "CC(C)(C)OC(=O)NCCC1=CC=C(OC)C=C1S",
+                    "conditions": "THF, rt",
+                    "yield": "89%",
+                    "reactant_smiles": "CC(C)(C)[Si](C)(C)O[C@@H](C1=C(C=CC=C1)Cl)C(=O)O",
+                    "product_smiles": "O=C1[C@@H](O[Si](C)(C)C(C)(C)C)c2c(Cl)cccc2-c3c(S1)cc(OC)cc3CCNC(=O)OC(C)(C)C",
+                    "notes": "Carboxylic acid reacts with thiol to form a thioester, followed by intramolecular cyclization forming a dibenzo[b,e]thiopyran-9-one derivative. The chlorine atom remains on the reactant-derived phenyl ring.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Boc Deprotection",
+                    "reagents": "HCl, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "1,4-dioxane, rt",
+                    "yield": "99%",
+                    "reactant_smiles": "[Boc]NCCC1=C(SC(=O)[C@@H](C2=C(Cl)C=CC=C2)[OTBS])C=C(OC)C=C1",
+                    "product_smiles": "NCCC1=C(SC(=O)[C@@H](C2=C(Cl)C=CC=C2)[OTBS])C=C(OC)C=C1",
+                    "notes": "Deprotection of a Boc-protected amine to form a primary amine.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Cyclization / Dearomatization",
+            "reagents": "PIFA",
+            "reagent_smiles": "",
+            "conditions": "TFE, rt, air",
+            "yield": "64%",
+            "reactant_smiles": "Cc1ccc(S(=O)(=O)N2C=C3C=C4C(=O)C=C(NCCC5=CC(OC)=C(SC(=O)[C@@H](O[Si](C)(C)C(C)(C)C)c6ccccc6Cl)C=C5)CCN4C3=C2)cc1",
+            "product_smiles": "Cc1ccc(S(=O)(=O)N2C=C3C=C4C(=O)C=C(N)C5([C@@](SC(=O)[C@@H](O[Si](C)(C)C(C)(C)C)c6ccccc6Cl)(CCN5C4=C3C2=C1)C=CC(=O)C=C)cc1",
+            "notes": "Intramolecular oxidative cyclization forming a new spiro[cyclohexadienone-quinoline] system. The thioester sulfur and the ethylamine alpha-carbon cyclize onto the quinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Bromination",
+            "reagents": "PyHBr3",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, MeCN, 35 °C",
+            "yield": "29%",
+            "reactant_smiles": "[Ts]N1C=C2CCN=C3C2=C1C(=O)C4=C3[C@@]5(C=CC(=O)C=C5SC(=O)[C@@H](C6=C(C=CC=C6)Cl)[OTBS])CCN4",
+            "product_smiles": "[Ts]N1C=C2CCN=C3C2=C1C(=O)C4=C3[C@@]5(C=C(Br)C(=O)C=C5SC(=O)[C@@H](C6=C(C=CC=C6)Cl)[OTBS])CCN4",
+            "notes": "Electrophilic bromination of an enone within a complex fused ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "CuBr2",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 80 °C, air",
+            "yield": "33%",
+            "reactant_smiles": "[Ts]N1C=C2C(=O)C(Br)=C(C(=O)C3=C2C1)C4=C3[C@@]5(CCC([NH])C4)S[C@@H](C(=O)C6=CC=CC=C6Cl)[OTBS]",
+            "product_smiles": "[Ts]N1C=C2C(=O)C(Br)=C(C(=O)C3=C2C1)C4=C3[C@@]5(CCC([NH])C4)S[C@@H]6C[NH]CC[C@@]56",
+            "notes": "Intramolecular cyclization of a polycyclic thioester forming a new 7-membered sulfur-nitrogen containing ring, with elimination of the 2-chlorophenyl-substituted silyloxy acetate moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "39%",
+            "reactant_smiles": "C1CN=C2C3=C(C(=O)C4=C2[C@@]56C=C(C(=O)C=C5S[C@H](C6)N4)Br)N(C=C13)[Ts]",
+            "product_smiles": "C1C[N+]2=C3C4=C(C(=O)C5=C3[C@@]67C[C@H]2C(=CC7=C[C@H](N5)S6)Br)N(C=C14)[Ts]",
+            "notes": "Luche-type reduction of an α,β-unsaturated ketone and imine, resulting in a rearranged product with an iminium ion.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "N-Deprotection",
+            "reagents": "NaOMe",
+            "reagent_smiles": "[Na+].[OMe-]",
+            "conditions": "THF, MeOH, 0 °C",
+            "yield": "76%",
+            "reactant_smiles": "C1C[N+]2=C3C4=C(C(=O)C5=C3[C@@]67C[C@H]2C(=CC7=C[C@@H](N5)S6)Br)N([Ts])C=C14",
+            "product_smiles": "C1C[N+]2=C3C4=C(C(=O)C5=C3[C@@]67C[C@H]2C(=CC7=C[C@@H](N5)S6)Br)NC=C14",
+            "notes": "Deprotection of a tosyl group (N-Ts to N-H) using sodium methoxide.",
+            "substeps": []
+        }
+    ]
+}

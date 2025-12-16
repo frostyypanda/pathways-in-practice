@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "aplidiopsamine-a-lindsley-2012",
+        "molecule_name": "Aplidiopsamine A",
+        "class": "Natural Product",
+        "author": "Lindsley",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Silylation / Protection",
+            "reagents": "TIPSCI, imidazole",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C1=CNC=C1",
+            "product_smiles": "[TIPS]N1C=CC=C1",
+            "notes": "N-Silylation of pyrrole using TIPSCI.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "MeCN, rt",
+            "yield": "",
+            "reactant_smiles": "[TIPS]N1C=CC=C1",
+            "product_smiles": "[TIPS]N1C=CC(=C1)Br",
+            "notes": "Electrophilic bromination of N-TIPS pyrrole at the 3-position.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Miyaura borylation",
+            "reagents": "HBPin, [PdCl2(MeCN)2], Et3N",
+            "reagent_smiles": "",
+            "conditions": "toluene, 90 °C",
+            "yield": "79% (3 steps)",
+            "reactant_smiles": "[TIPS]N1C=CC(Br)=C1",
+            "product_smiles": "[TIPS]N1C=CC(B2OC(C)(C)C(C)(C)O2)=C1",
+            "notes": "Miyaura borylation of a N-TIPS-3-bromopyrrole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Suzuki coupling",
+            "reagents": "SPhos, Pd(OAc)2, K3PO4",
+            "reagent_smiles": "Nc1ccccc1I",
+            "conditions": "t-BuOH, H2O, rt",
+            "yield": "",
+            "reactant_smiles": "[TIPS]N1C=CC(=C1)B2OC(C)(C)C(C)(C)O2",
+            "product_smiles": "[TIPS]N1C=CC(=C1)C2=CC=CC=C2N",
+            "notes": "Suzuki coupling of an N-TIPS-pyrrole boronic ester with 1-iodo-2-aminobenzene.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "NaOMe",
+            "reagent_smiles": "[Na+].[OMe-]",
+            "conditions": "MeOH, rt",
+            "yield": "96% (2 steps)",
+            "reactant_smiles": "[TIPS]N1C=CC(=C1)C2=CC=CC=C2N",
+            "product_smiles": "C1=CC=C(C(=C1)C2=CNC=C2)N",
+            "notes": "Deprotection of a TIPS-protected pyrrole via removal of the silyl group from nitrogen, likely using sodium methoxide in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide formation / Acylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "C(C(=O)Br)Br",
+            "conditions": "CH2Cl2, rt",
+            "yield": "86%",
+            "reactant_smiles": "C1=CC=C(C(=C1)C2=CNC=C2)N",
+            "product_smiles": "C1=CC=C(C(=C1)C2=CNC=C2)NC(=O)CBr",
+            "notes": "Acylation of an aniline with bromoacetyl bromide to form a bromoacetamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-alkylation",
+            "reagents": "adenine, NaH",
+            "reagent_smiles": "",
+            "conditions": "DMF, 50 °C",
+            "yield": "55%",
+            "reactant_smiles": "C1=CC=C(C(=C1)C2=CNC=C2)NC(=O)CBr",
+            "product_smiles": "C1=CC=C(C(=C1)C2=CNC=C2)NC(=O)CN3C=NC4=C3N=CN=C4N",
+            "notes": "The bromoacetyl group undergoes N-alkylation with adenine, replacing the bromine with the N9 of adenine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Bischler-Napieralski cyclization",
+            "reagents": "HCl, dioxane",
+            "reagent_smiles": "",
+            "conditions": "130 °C",
+            "yield": "45%",
+            "reactant_smiles": "C1=CC=C(C(=C1)C2=CNC=C2)NC(=O)CN3C=NC4=C3N=CN=C4N",
+            "product_smiles": "C1=CC2=C(C=C1)N=C(CN3C=NC4=C3N=CN=C4N)C5=C2C=CN5",
+            "notes": "Intramolecular Bischler-Napieralski cyclization of an amide containing a pyrrole and adenine moiety, forming an indolo[2,3-c]quinoline system.",
+            "substeps": []
+        }
+    ]
+}

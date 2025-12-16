@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "albocycline-andrade-2017",
+        "molecule_name": "Albocycline",
+        "class": "Natural Product",
+        "author": "Andrade",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "LDA, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, HMPA, -78 °C",
+            "yield": "82%",
+            "reactant_smiles": "C[C@H](CC(=O)OC)O",
+            "product_smiles": "C[C@H](O)[C@@H](C)C(=O)OC",
+            "notes": "Methylation of methyl 3-hydroxybutanoate at the alpha-position to form methyl 2,3-dimethyl-3-hydroxybutanoate, with retention of stereochemistry at the beta-carbon and formation of a new chiral center at the alpha-carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection",
+            "reagents": "La(OTf)3",
+            "reagent_smiles": "COc1ccc(COC(=N)C(Cl)(Cl)Cl)cc1",
+            "conditions": "toluene",
+            "yield": "80%",
+            "reactant_smiles": "C[C@H](O)[C@H](C)C(=O)OC",
+            "product_smiles": "C[C@H]([PMBO])[C@H](C)C(=O)OC",
+            "notes": "PMB ether formation from a secondary alcohol",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "C[C@H]([C@@H](C)O[PMB])C(=O)OC",
+            "product_smiles": "C[C@@H](CO)[C@@H](C)O[PMB]",
+            "notes": "Methyl ester is reduced to a primary alcohol using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Tosylation",
+            "reagents": "TsCl, Et3N",
+            "reagent_smiles": "ClS(=O)(=O)C1=CC=C(C)C=C1.CCN(CC)CC",
+            "conditions": "",
+            "yield": "94%",
+            "reactant_smiles": "[PMB]O[C@H](C)[C@H](C)CO",
+            "product_smiles": "[PMB]O[C@H](C)[C@H](C)O[Ts]",
+            "notes": "Primary alcohol is converted to a tosylate. The two chiral centers maintain their (R,R) configuration.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Grignard Reaction (Nucleophilic Substitution)",
+            "reagents": "TMEDA",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "Et2O, rt",
+            "yield": "84%",
+            "reactant_smiles": "[PMB]O[C@H](C)[C@@H](C)CH2[OTs]",
+            "product_smiles": "[PMB]O[C@H](C)[C@@H](C)CH2CH2CH=CH2",
+            "notes": "Grignard reagent displaces tosylate group with an allyl group, forming a new C-C bond and extending the alkyl chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cross-Metathesis",
+            "reagents": "HG-II",
+            "reagent_smiles": "C=C(C)C=O",
+            "conditions": "CH2Cl2",
+            "yield": "89%",
+            "reactant_smiles": "C=CCC[C@@H](C)[C@H](C)O[PMB]",
+            "product_smiles": "C/C(=C\\CC[C@@H](C)[C@H](C)O[PMB])/C=O",
+            "notes": "Olefin cross-metathesis of a terminal alkene with methacrolein, forming an E-configured α,β-unsaturated aldehyde. Stereochemistry of the chiral centers is maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Macrocyclization, Imine addition",
+            "reagents": "SnCl4, LiHMDS",
+            "reagent_smiles": "C/C=C(\\C)/C=N[S@](=O)C(C)(C)C",
+            "conditions": "CH2Cl2, THF",
+            "yield": "68%",
+            "reactant_smiles": "C/C(=C\\CC[C@H](C)[C@@H](C)O[PMB])/C=O",
+            "product_smiles": "C[C@H]1CC/C(=C/C[C@H](O)CC/C=C(\\C)C=N[S@](=O)C(C)(C)C)C=C1[C@@H](C)[C@H](C)O[PMB]",
+            "notes": "A chiral sulfinylimine undergoes macrocyclization with an aldehyde. The reaction forms a 14-membered macrocycle with new alcohol and imine functionalities. The reactant has one PMB group, but the product shows two PMB groups. The second PMB group's origin is unclear from the provided reaction scheme (reagents do not indicate an additional PMB source).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "O-methylation",
+            "reagents": "Me3OBF4, Proton Sponge",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "82%",
+            "reactant_smiles": "C/C(=C/C[C@@H](/C(=C/CC[C@H](C)[C@H](C)O[PMB])/C)O)/C=N/[S@](=O)C(C)(C)C",
+            "product_smiles": "C/C(=C/C[C@@H](/C(=C/CC[C@H](C)[C@H](C)O[PMB])/C)OC)/C=N/[S@](=O)C(C)(C)C",
+            "notes": "Methylation of a secondary alcohol to a methyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nucleophilic Addition/Rearrangement",
+            "reagents": "LiHMDS, THF, TMSOTf",
+            "reagent_smiles": "O1N(S(=O)(=O)c2ccccc2)C1c3ccccc3",
+            "conditions": "-78°C",
+            "yield": "78%",
+            "reactant_smiles": "C[C@H]1(OC)/C=C(C)/CC[C@@H](C)[C@H](O[PMB])/C=C(C)/C=N/[S@](=O)C(C)(C)C1",
+            "product_smiles": "C[C@H]1(OC)/C=C(C)/CC[C@@H](C)[C@H](O[PMB])/C(C)=C/[C@H](O[TMS])/C=N/[S@](=O)C(C)(C)C1",
+            "notes": "Addition of oxaziridine-derived species to imine followed by double bond rearrangement and silyl trapping to form an OTMS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "COP(=O)(CC(=O)OC)OC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CO[C@@H]1/C=C(\\C)CCC[C@H](O[PMB])[C@@H](C)CC/C=C/[C@](C)([OTMS])C(=N[S@](=O)C(C)(C)C)C1",
+            "product_smiles": "CO[C@@H]1/C=C(\\C)CCC[C@H](O[PMB])[C@@H](C)CC/C=C/[C@](C)([OTMS])C(=C/C(=O)OC)C1",
+            "notes": "Horner-Wadsworth-Emmons olefination of a chiral sulfinyl imine to form an alpha,beta-unsaturated ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection (PMB ether)",
+            "reagents": "DDQ, H2O",
+            "reagent_smiles": "N#CC1=C(Cl)C(=O)C(Cl)=C(C#N)C1=O.O",
+            "conditions": "CHCl2",
+            "yield": "78%",
+            "reactant_smiles": "COC(=O)/C=C/[C@](C)(O[TMS])/C=C/[C@H](OC)C=C(C)CC[C@@H](C)C[C@@H](O[PMB])1CCCC1",
+            "product_smiles": "COC(=O)/C=C/[C@](C)(O[TMS])/C=C/[C@H](OC)C=C(C)CC[C@@H](C)C[C@@H](O)1CCCC1",
+            "notes": "Oxidative deprotection of a PMB ether to form a hydroxyl group using DDQ.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Lactonization",
+            "reagents": "DCC, DMAP",
+            "reagent_smiles": "",
+            "conditions": "CHCl3",
+            "yield": "",
+            "reactant_smiles": "O[C@@H](C)C[C@H](C)CC/C=C(\\C)/[C@H]([OMe])/C=C/[C@](C)([OTMS])/C=C/C(=O)O",
+            "product_smiles": "C[C@H]1CC/C=C(\\C)/[C@H]([OMe])/C=C/[C@](C)([OTMS])/C=C/C(=O)O[C@@H]1C",
+            "notes": "Formation of a macrocyclic lactone via DCC/DMAP coupling.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Deprotection (Desilylation)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "CC[C@H]1OC(=O)/C=C/[C@](C)(OSi(C)(C)C)/C=C/[C@H](OC)/C=C(/C)[C@H](C)CC1",
+            "product_smiles": "CC[C@H]1OC(=O)/C=C/[C@](C)(O)/C=C/[C@H](OC)/C=C(/C)[C@H](C)CC1",
+            "notes": "Hydrolysis of trimethylsilyl (TMS) ether to a hydroxyl group using TBAF.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "ajone-wirth-2018",
+        "molecule_name": "Ajone",
+        "class": "Natural Product",
+        "author": "Wirth",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "thiourea",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "OCCCSBr",
+            "product_smiles": "OCCCSC(=[NH2+])N",
+            "notes": "Formation of an S-alkylisothiouronium salt from 3-bromopropan-1-ol and thiourea.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "S-Alkylation",
+            "reagents": "KOH",
+            "reagent_smiles": "C#CCBr",
+            "conditions": "",
+            "yield": "56%",
+            "reactant_smiles": "C(CO)CSC(=[NH2+])N",
+            "product_smiles": "C#CCSCCCO",
+            "notes": "S-alkylation of a hydroxypropyl isothiouronium salt with propargyl bromide, followed by removal of the nitrogen-containing group to form a thioether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol functionalization / Redox selenation",
+            "reagents": "PBu3",
+            "reagent_smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])[Se]C#N",
+            "conditions": "",
+            "yield": "65%",
+            "reactant_smiles": "C#CCSCCCO",
+            "product_smiles": "C#CCSCCC[Se]C1=CC=C(C(=C1)[N+](=O)[O-])",
+            "notes": "Substitution of the alcohol group with a 2-nitrophenyl selenide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Hydrothiolation",
+            "reagents": "ACCN, Toluene",
+            "reagent_smiles": "CC(=O)S",
+            "conditions": "85 °C",
+            "yield": "50%",
+            "reactant_smiles": "C#CCSCCC[Se]C1=CC=CC=C1[N+](=O)[O-]",
+            "product_smiles": "CC(=O)S/C=C\\CSCCC[Se]C1=CC=CC=C1[N+](=O)[O-]",
+            "notes": "Radical hydrothiolation of a terminal alkyne with thioacetic acid, yielding the Z-vinyl thioacetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Thioester hydrolysis / Deprotection",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "CC(=O)S/C=C/CSCCC[Se]C1=CC=CC=C1[N+](=O)[O-]",
+            "product_smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])[Se]CCCSC/C=C/SH",
+            "notes": "Hydrolysis of a thioester to a thiol using potassium hydroxide in methanol. The trans double bond stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Thiol-Disulfide Exchange / Allylation",
+            "reagents": "DCM",
+            "reagent_smiles": "C=CCSS(=O)(=O)c1ccc(C)cc1",
+            "conditions": "-78 °C",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])[Se]CCCSCC=CSH",
+            "product_smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])[Se]CCCSCCSSCC=C",
+            "notes": "Nucleophilic addition of terminal thiol to allyl tosylsulfide, forming a disulfide bond and incorporating the allyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Grieco elimination",
+            "reagents": "",
+            "reagent_smiles": "O=O",
+            "conditions": "THF, 0 °C",
+            "yield": "27%",
+            "reactant_smiles": "C=CCSS/C=C/CSCCC[Se]c1ccccc1[N+](=O)[O-]",
+            "product_smiles": "C=CCSS(=O)C/C=C\\CC=C",
+            "notes": "Oxidation of selenide to a selenooxide intermediate followed by elimination to form Ajoene.",
+            "substeps": []
+        }
+    ]
+}

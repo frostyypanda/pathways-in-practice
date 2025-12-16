@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "arabilin-parker-2011",
+        "molecule_name": "Arabilin",
+        "class": "Natural Product",
+        "author": "Parker",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Protection (Alcohol Silylation)",
+            "reagents": "TBDMSCl, Et3N, DMAP",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)Cl.CCN(CC)CC.CN(C)c1ccncc1",
+            "conditions": "DMF, 40 °C",
+            "yield": "62%",
+            "reactant_smiles": "OC/C=C/CO",
+            "product_smiles": "OC/C=C/C[OTBDMS]",
+            "notes": "Selective monosilylation of a primary diol using TBDMSCl to protect one hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "95%",
+            "reactant_smiles": "OC/C=C/CO[TBDMS]",
+            "product_smiles": "[Ms]OC/C=C/CO[TBDMS]",
+            "notes": "Primary alcohol is converted to a mesylate. The TBDMS protected alcohol remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Allylic Alkylation",
+            "reagents": "NaH, NaI",
+            "reagent_smiles": "O=P(OCC(F)(F)F)(OCC(F)(F)F)CC(=O)OCC",
+            "conditions": "THF, rt",
+            "yield": "72%",
+            "reactant_smiles": "[OTBS]C/C=C/C[OMs]",
+            "product_smiles": "CCOC(=O)C(P(=O)(OCC(F)(F)F)OCC(F)(F)F)C/C=C/C[OTBS]",
+            "notes": "Allylic substitution of mesylate with a stabilized phosphonate carbanion, forming a new carbon-carbon bond while preserving the alkene stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Still-Gennari olefination",
+            "reagents": "KHMDS, 18-crown-6",
+            "reagent_smiles": "CC(=CI)C=O",
+            "conditions": "THF, -78 °C",
+            "yield": "71%",
+            "reactant_smiles": "CCOC(=O)C(P(=O)(OCC(F)(F)F)(OCC(F)(F)F))C/C=C/C[OTBS]",
+            "product_smiles": "CCOC(=O)\\C(=C(C)/C=C/I)/C/C=C/C[OTBS]",
+            "notes": "Still-Gennari olefination of a phosphonate with an iodo-aldehyde to form a conjugated Z-diene, with a change from TIPS to TBS in reactant and product.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)/C(=C/C/C=C/CC[OTBS])C(=C/I)\\C",
+            "product_smiles": "[OTBS]CC/C=C/C/C(=C(/CO)C(=C/I)\\C)",
+            "notes": "Ester group reduced to primary alcohol using DIBAL-H. The TBS protecting group and both alkene functionalities are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acetylation",
+            "reagents": "Ac2O, DMAP, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "98%",
+            "reactant_smiles": "[OTBS]CC/C=C/C(CO)=C(/I)\\C",
+            "product_smiles": "[OTBS]CC/C=C/C(C[OAc])=C(/I)\\C",
+            "notes": "Acetylation of a primary alcohol to form an acetate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "I/C=C(C)/C=C(\\COC(C)=O)CCC/C=C/CO[OTBS]",
+            "product_smiles": "I/C=C(C)/C=C(\\COC(C)=O)CCC/C=C/CO",
+            "notes": "Deprotection of a TBS silyl ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Sharpless asymmetric epoxidation",
+            "reagents": "Ti(OiPr)4, (+)-DET, t-BuOOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "92%",
+            "reactant_smiles": "C/C(=C/I)/C=C(/C/C=C/CO)/C[OAc]",
+            "product_smiles": "C/C(=C/I)/C=C(/C[C@H]1[C@H](CO)O1)/C[OAc]",
+            "notes": "Sharpless asymmetric epoxidation of an allylic alcohol to form a cis epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular cyclization / Epoxide ring opening",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "100%",
+            "reactant_smiles": "C/C(=C/I)/C=C(/C[C@H]1O[C@H](CO)1)\\COC(=O)C",
+            "product_smiles": "C/C(=C/I)/C=C/1\\C[C@H]([C@H](CO)O)OC1",
+            "notes": "Base-catalyzed hydrolysis of acetate, followed by intramolecular nucleophilic attack of the resulting hydroxyl group on the epoxide, forming a tetrahydrofuran ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "NaIO4, AgNO3, KOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH/H2O then EtOH/H2O, 0 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "C/C(=C/I)/C=C/1\\C[C@]([H])([C@H](CO)O)OC1",
+            "product_smiles": "C/C(=C/I)/C=C/1\\C[C@]([H])(C(=O)O)OC1",
+            "notes": "Oxidative cleavage of a vicinal diol using sodium periodate, followed by oxidation of the intermediate to a carboxylic acid using silver nitrate and potassium hydroxide (similar to Tollens' reaction).",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Carboxylic Acid Activation (to Acyl Imidazole)",
+            "reagents": "CDI",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "93%",
+            "reactant_smiles": "O=C(O)[C@@H]1OC(=C/C(=C/I)/C)CC1",
+            "product_smiles": "O=C(N1C=NC=C1)[C@@H]2OC(=C/C(=C/I)/C)CC2",
+            "notes": "Conversion of a carboxylic acid to an acyl imidazole using CDI. The stereochemistry of the chiral center and the diene system is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Intramolecular Cyclization / Lactonization",
+            "reagents": "NaH, n-BuLi, DBU",
+            "reagent_smiles": "CCOC(=O)CC(C)C(=O)C",
+            "conditions": "THF, -78 °C, then PhH, reflux",
+            "yield": "55% (2 steps)",
+            "reactant_smiles": "C/C(=C/I)/C=C/1C[C@@H](C(=O)N2C=CN=C2)OC1",
+            "product_smiles": "C/C(=C/I)/C=C/1C[C@@H](C2=C(C)C(=C(C)C(=O)O2)O)OC1",
+            "notes": "Base-catalyzed cyclization of an acyl imidazole with a β-keto ester to form a pyrone derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Methylation (O-methylation)",
+            "reagents": "MeOSO₂F",
+            "reagent_smiles": "COS(=O)(=O)F",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "CC1=C(O)C(=O)C(C)=C(O1)[C@@H]2OC/C=C(\\I)/C=C2",
+            "product_smiles": "CC1=C(OC)C(=O)C(C)=C(O1)[C@@H]2OC/C=C(\\I)/C=C2",
+            "notes": "Methylation of a hydroxyl group on a pyran-4-one ring using methyl fluorosulfonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Stille-Kelly coupling",
+            "reagents": "",
+            "reagent_smiles": "C[Sn](C)(C)[Sn](C)(C)C.[Pd](P(c1ccccc1)(c2ccccc2)c3ccccc3)(P(c1ccccc1)(c2ccccc2)c3ccccc3)(P(c1ccccc1)(c2ccccc2)c3ccccc3)P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "benzene, reflux",
+            "yield": "86%",
+            "reactant_smiles": "C2=C(C)C(=O)C(=C(OC)O2)C[C@@H]1OC/C=C(\\C=C(/I)C)C1",
+            "product_smiles": "C2=C(C)C(=O)C(=C(OC)O2)C[C@@H]1OC/C=C(\\C=C(/[Sn](C)(C)C)C)C1",
+            "notes": "Stille-Kelly coupling of vinyl iodide with hexamethylditin to form a vinyl stannane.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd(PPh₃)₄, CuTC",
+            "reagent_smiles": "O=[N+]([O-])c1ccc(/C=C/C/C(\\C)=C/I)cc1",
+            "conditions": "DMF, rt",
+            "yield": "73%",
+            "reactant_smiles": "[Sn](C)(C)C/C=C(\\C)/C=C/C=C1CC[C@H](O1)C2=C(C)C(=O)C(=C(OC)O2)C",
+            "product_smiles": "O=[N+]([O-])c1ccc(/C=C/C/C(\\C)=C/C=C/C=C1CC[C@H](O1)C2=C(C)C(=O)C(=C(OC)O2)C)cc1",
+            "notes": "Stille coupling of a stannane with an aryl iodide to form (-)-Arabilin.",
+            "substeps": [
+                {
+                    "step_id": "15.1",
+                    "reaction_type": "Alpha-iodination / C-H activation",
+                    "reagents": "NaH, I2",
+                    "reagent_smiles": "",
+                    "conditions": "-30 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CP(=O)(OCC(F)(F)F)OCC(F)(F)F",
+                    "product_smiles": "CCOC(=O)C(I)P(=O)(OCC(F)(F)F)OCC(F)(F)F",
+                    "notes": "Alpha-carbon of the phosphonate is deprotonated by NaH, followed by reaction with iodine to form an alpha-iodo phosphonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.2",
+                    "reaction_type": "Still-Gennari olefination",
+                    "reagents": "Still-Gennari olefination",
+                    "reagent_smiles": "O=CC(C)=C/C1=CC=C([N+]([O-])=O)C=C1.[NaH]",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=P(C(I)C(=O)OCC)(OCC(F)(F)F)OCC(F)(F)F",
+                    "product_smiles": "CCOC(=O)/C(=C/I)C/C=C(\\C1=CC=C([N+]([O-])=O)C=C1)",
+                    "notes": "Wittig-type olefination of an aldehyde with an iodophosphonate to form a conjugated diene, resulting in a Z-alkene at the ester end and an E-alkene at the aryl end.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.3",
+                    "reaction_type": "Reduction",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, -78 °C",
+                    "yield": "42% (3 steps)",
+                    "reactant_smiles": "CCOC(=O)/C(=C\\C(=C\\C1=CC=C(C=C1)[N+](=O)[O-])\\C)/I",
+                    "product_smiles": "C/C(=C\\C1=CC=C(C=C1)[N+](=O)[O-])/C=C(/CO)\\I",
+                    "notes": "Ester group is reduced to a primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.4",
+                    "reaction_type": "Appel reaction",
+                    "reagents": "PPh3, CBr4",
+                    "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3.C(Br)(Br)(Br)Br",
+                    "conditions": "MeCN, 0 °C",
+                    "yield": "91%",
+                    "reactant_smiles": "C/C(=C\\C1=CC=C(C=C1)[N+](=O)[O-])/C=C(/I)\\CO",
+                    "product_smiles": "C/C(=C\\C1=CC=C(C=C1)[N+](=O)[O-])/C=C(/I)\\CBr",
+                    "notes": "Appel reaction converting a primary alcohol to a primary alkyl bromide, retaining the configuration of the double bonds.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "15.5",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "[Na+].[BH4-]",
+                    "conditions": "DMSO",
+                    "yield": "93%",
+                    "reactant_smiles": "C/C(=C\\C1=CC=C(C=C1)[N+](=O)[O-])/C=C(\\CBr)/I",
+                    "product_smiles": "C/C(=C\\C1=CC=C(C=C1)[N+](=O)[O-])/C=C(\\C)/I",
+                    "notes": "Reduction of an allylic bromide to an allylic methyl group using sodium borohydride.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}
