@@ -23,12 +23,12 @@
 | 4 (big) | 400 | 6,959 | 2025-12-16 13:09 | 2025-12-16 16:02 | 2h 53m | 6919 | 40 |
 | 5 | 400 | 6,562 | 2025-12-16 14:59 | 2025-12-16 17:10 | 2h 11m | 6540 | 22 |
 | 6 | 400 | 6,669 | 2025-12-16 17:26 | 2025-12-16 18:50 | 1h 24m | 6610 | 59 |
+| 7 | 400 | 6,152 | 2025-12-16 19:05 | 2025-12-16 20:10 | 1h 5m | 6126 | 26 |
 
 ## Pending Batches
 
 | Batch | IDs | Requests | Submitted | Job Name |
 |-------|-----|----------|-----------|----------|
-| 7 | 4909-5392 | 6,152 | 2025-12-16 19:05 | `batches/y5i1360gqy0e89maekquvekh3blaj8a36jm7` |
 | 8 | 5393-5855 | 6,538 | 2025-12-16 19:50 | `batches/x1c8fyjql6p97mveky0bmt9ixv0tbtcln56j` |
 
 ## Planned Batches
@@ -49,11 +49,12 @@
 
 | Metric | Count |
 |--------|-------|
-| Syntheses processed | 1,505 |
-| Total steps in DB | 25,174 |
-| Remaining syntheses | 2,123 |
-| Estimated remaining steps | ~33,600 |
-| Batches remaining | 6 (at 400/batch) |
+| Syntheses processed | 1,905 |
+| Total steps in DB | 31,300 |
+| Remaining syntheses | 1,731 |
+| Estimated remaining steps | ~27,500 |
+| Batches remaining | 5 (at 400/batch) |
+| **Progress** | **52.4%** |
 
 ## Cost Estimation
 
