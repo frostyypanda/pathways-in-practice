@@ -31,12 +31,12 @@
 | Batch | IDs | Requests | Submitted | Job Name |
 |-------|-----|----------|-----------|----------|
 | 9 | 5856-6337 | 6,095 | 2025-12-16 20:30 | `batches/zh6eshexnsyp1ty6bb72508w6qarmhrfhv3a` |
+| 10 | 6338-6881 | 6,042 | 2025-12-16 20:40 | `batches/ow54pw48gg3mz3bxpbyuhn5q6e7kbrthffmp` |
 
 ## Pre-built Batch Files
 
 | Batch | IDs | Requests | File |
 |-------|-----|----------|------|
-| 10 | 6338-6881 | 6,042 | `batch_6338-6881.jsonl` |
 | 11 | 6882-7305 | 6,824 | `batch_6882-7305.jsonl` |
 | 12 | 7306-7428 | 1,997 | `batch_7306-7428.jsonl` |
 
