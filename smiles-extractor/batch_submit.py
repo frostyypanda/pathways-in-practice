@@ -3,20 +3,27 @@
 Batch Submit - Submit SMILES extraction jobs to Gemini Batch API.
 
 Usage:
+    # Build batch using ID range (RECOMMENDED - stable, won't shift)
+    python batch_submit.py --from-id 5856 --to-id 6337 --build-only
+    # Creates: batch_5856-6337.jsonl
+
+    # List remaining batches with ID ranges
+    python batch_submit.py --list-batches
+
     # Submit specific syntheses
     python batch_submit.py --synthesis-ids 3829,3842,3867,3869
 
-    # List batch plan for all unprocessed syntheses
-    python batch_submit.py --list-batches
+    # Build only (don't upload)
+    python batch_submit.py --from-id 5856 --to-id 6337 --build-only
 
-    # Submit batch 1 (first 100 unprocessed syntheses)
-    python batch_submit.py --batch-num 1
-
-    # Submit batch with custom size
-    python batch_submit.py --batch-num 1 --batch-size 50
+    # Submit pre-built file
+    python submit_file.py batch_5856-6337.jsonl
 
     # Dry run
-    python batch_submit.py --batch-num 1 --dry-run
+    python batch_submit.py --from-id 5856 --to-id 6337 --dry-run
+
+Note: --batch-num uses a sliding window that shifts after imports.
+      Prefer --from-id/--to-id for predictable behavior.
 """
 
 import argparse
@@ -128,6 +135,7 @@ def list_batches(batch_size: int):
     print(f"Avg steps per synthesis: {total_steps / total_syntheses:.1f}")
     print()
 
+    print("\nBatches:")
     for batch_num in range(1, num_batches + 1):
         start = (batch_num - 1) * batch_size
         end = min(start + batch_size, total_syntheses)
@@ -136,7 +144,14 @@ def list_batches(batch_size: int):
         # Count steps for this batch
         batch_steps = sum(step_counts.get(sid, 0) for sid in batch_ids)
 
-        print(f"Batch {batch_num:2d}: {len(batch_ids):3d} syntheses (IDs {batch_ids[0]}-{batch_ids[-1]}), ~{batch_steps} steps")
+        print(f"  {batch_ids[0]}-{batch_ids[-1]}: {len(batch_ids):3d} syntheses, ~{batch_steps} steps")
+
+    print("\nCommands to build each batch:")
+    for batch_num in range(1, num_batches + 1):
+        start = (batch_num - 1) * batch_size
+        end = min(start + batch_size, total_syntheses)
+        batch_ids = all_ids[start:end]
+        print(f"  python batch_submit.py --from-id {batch_ids[0]} --to-id {batch_ids[-1]} --build-only")
 
 
 def get_synthesis_name(conn, synthesis_id: int) -> str:
@@ -331,8 +346,11 @@ def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False, bat
     # Write JSONL file
     if output_file:
         jsonl_path = Path(__file__).parent / output_file
-    elif batch_num:
-        jsonl_path = Path(__file__).parent / f"batch{batch_num}_requests.jsonl"
+    elif synthesis_ids:
+        # Auto-name based on ID range
+        min_id = min(synthesis_ids)
+        max_id = max(synthesis_ids)
+        jsonl_path = Path(__file__).parent / f"batch_{min_id}-{max_id}.jsonl"
     else:
         jsonl_path = Path(__file__).parent / "batch_requests.jsonl"
 
@@ -398,6 +416,16 @@ def main():
         action="store_true",
         help="Show batch plan without submitting"
     )
+    parser.add_argument(
+        "--from-id",
+        type=int,
+        help="Start synthesis ID (inclusive)"
+    )
+    parser.add_argument(
+        "--to-id",
+        type=int,
+        help="End synthesis ID (inclusive)"
+    )
     parser.add_argument("--base-path", default=DEFAULT_BASE_PATH, help="Base path for images")
     parser.add_argument("--dry-run", action="store_true", help="Don't submit, just show what would be done")
     parser.add_argument("--build-only", action="store_true", help="Build JSONL file only, don't upload or submit")
@@ -411,7 +439,15 @@ def main():
         return
 
     # Determine synthesis IDs
-    if args.batch_num:
+    if args.from_id and args.to_id:
+        # Get all unprocessed IDs in the range
+        all_unprocessed = get_unprocessed_synthesis_ids()
+        synthesis_ids = [sid for sid in all_unprocessed if args.from_id <= sid <= args.to_id]
+        if not synthesis_ids:
+            print(f"Error: No unprocessed syntheses in range {args.from_id}-{args.to_id}")
+            return
+        print(f"IDs {args.from_id}-{args.to_id}: {len(synthesis_ids)} syntheses")
+    elif args.batch_num:
         synthesis_ids = get_batch_synthesis_ids(args.batch_num, args.batch_size)
         if not synthesis_ids:
             print(f"Error: Batch {args.batch_num} is empty or out of range")
@@ -421,7 +457,7 @@ def main():
         synthesis_ids = [int(x.strip()) for x in args.synthesis_ids.split(",")]
     else:
         parser.print_help()
-        print("\nError: Must specify either --synthesis-ids, --batch-num, or --list-batches")
+        print("\nError: Must specify --from-id/--to-id, --synthesis-ids, --batch-num, or --list-batches")
         return
 
     submit_batch(
