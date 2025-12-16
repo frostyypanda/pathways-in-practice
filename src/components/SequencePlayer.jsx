@@ -6,24 +6,7 @@ import OrganicArrow from './OrganicArrow';
 const SequencePlayer = ({ sequence, synthesis, quizSettings, currentStepIndex, setCurrentStepIndex, isLandscape, isInSubsteps, onEnterSubsteps, onExitSubsteps }) => {
     const [revealedParts, setRevealedParts] = useState({});
 
-    // Reset revealed parts when step changes
-    useEffect(() => {
-        setRevealedParts({});
-    }, [currentStepIndex]);
-
-    if (!sequence || sequence.length === 0) {
-        return <div>No synthesis data available.</div>;
-    }
-
-    const currentStep = sequence[currentStepIndex];
-    const totalSteps = sequence.length;
-    const hasSubsteps = currentStep.substeps && currentStep.substeps.length > 0;
-
-    // Adjust canvas dimensions for landscape
-    const canvasWidth = isLandscape ? 200 : 300;
-    const canvasHeight = isLandscape ? 120 : 250;
-    const reagentWidth = isLandscape ? 130 : 150;
-    const reagentHeight = isLandscape ? 60 : 80;
+    const totalSteps = sequence?.length || 0;
 
     const handleNext = () => {
         if (currentStepIndex < totalSteps - 1) {
@@ -36,6 +19,41 @@ const SequencePlayer = ({ sequence, synthesis, quizSettings, currentStepIndex, s
             setCurrentStepIndex(currentStepIndex - 1);
         }
     };
+
+    // Reset revealed parts when step changes
+    useEffect(() => {
+        setRevealedParts({});
+    }, [currentStepIndex]);
+
+    // Keyboard navigation
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            // Don't trigger if user is typing in an input
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+            if (e.key === 'ArrowRight') {
+                handleNext();
+            } else if (e.key === 'ArrowLeft') {
+                handlePrev();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [currentStepIndex, totalSteps]);
+
+    if (!sequence || sequence.length === 0) {
+        return <div>No synthesis data available.</div>;
+    }
+
+    const currentStep = sequence[currentStepIndex];
+    const hasSubsteps = currentStep.substeps && currentStep.substeps.length > 0;
+
+    // Adjust canvas dimensions for landscape
+    const canvasWidth = isLandscape ? 200 : 300;
+    const canvasHeight = isLandscape ? 120 : 250;
+    const reagentWidth = isLandscape ? 130 : 150;
+    const reagentHeight = isLandscape ? 60 : 80;
 
     const isVisible = (partId) => {
         // Visible if quiz setting is false (not hidden) OR if explicitly revealed
