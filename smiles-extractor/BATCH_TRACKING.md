@@ -32,12 +32,12 @@
 |-------|-----|----------|-----------|----------|
 | 9 | 5856-6337 | 6,095 | 2025-12-16 20:30 | `batches/zh6eshexnsyp1ty6bb72508w6qarmhrfhv3a` |
 | 10 | 6338-6881 | 6,042 | 2025-12-16 20:40 | `batches/ow54pw48gg3mz3bxpbyuhn5q6e7kbrthffmp` |
+| 11 | 6882-7305 | 6,824 | 2025-12-16 20:45 | `batches/kk4ip2j4w0ymugxgz1e6q53e7yapbo3g6l1g` |
 
 ## Pre-built Batch Files
 
 | Batch | IDs | Requests | File |
 |-------|-----|----------|------|
-| 11 | 6882-7305 | 6,824 | `batch_6882-7305.jsonl` |
 | 12 | 7306-7428 | 1,997 | `batch_7306-7428.jsonl` |
 
 ### Notes
