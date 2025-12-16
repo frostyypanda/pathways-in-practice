@@ -25,13 +25,13 @@
 | 6 | 400 | 6,669 | 2025-12-16 17:26 | 2025-12-16 18:50 | 1h 24m | 6610 | 59 |
 | 7 | 400 | 6,152 | 2025-12-16 19:05 | 2025-12-16 20:10 | 1h 5m | 6126 | 26 |
 | 8 | 400 | 6,538 | 2025-12-16 19:50 | 2025-12-16 20:25 | 35m | 6496 | 42 |
+| 9 | 400 | 6,095 | 2025-12-16 20:30 | 2025-12-16 21:15 | 45m | 6056 | 39 |
+| 10 | 400 | 6,042 | 2025-12-16 20:40 | 2025-12-16 21:20 | 40m | 6008 | 34 |
 
 ## Pending Batches
 
 | Batch | IDs | Requests | Submitted | Job Name |
 |-------|-----|----------|-----------|----------|
-| 9 | 5856-6337 | 6,095 | 2025-12-16 20:30 | `batches/zh6eshexnsyp1ty6bb72508w6qarmhrfhv3a` |
-| 10 | 6338-6881 | 6,042 | 2025-12-16 20:40 | `batches/ow54pw48gg3mz3bxpbyuhn5q6e7kbrthffmp` |
 | 11 | 6882-7305 | 6,824 | 2025-12-16 20:45 | `batches/kk4ip2j4w0ymugxgz1e6q53e7yapbo3g6l1g` |
 | 12 | 7306-7428 | 1,997 | 2025-12-16 20:50 | `batches/x2gjk57mvm7p1emhkieucx5suhpb0vc85jkw` |
 
@@ -44,12 +44,12 @@
 
 | Metric | Count |
 |--------|-------|
-| Syntheses processed | 2,305 |
-| Total steps in DB | 37,796 |
-| Remaining syntheses | 1,331 |
-| Estimated remaining steps | ~21,000 |
-| Batches remaining | 4 (at 400/batch) |
-| **Progress** | **63.4%** |
+| Syntheses processed | 3,105 |
+| Total steps in DB | 49,860 |
+| Remaining syntheses | 531 |
+| Estimated remaining steps | ~8,800 |
+| Batches remaining | 2 |
+| **Progress** | **85.4%** |
 
 ## Cost Estimation
 
