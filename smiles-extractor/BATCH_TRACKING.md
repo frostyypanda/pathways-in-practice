@@ -30,14 +30,13 @@
 
 | Batch | IDs | Requests | Submitted | Job Name |
 |-------|-----|----------|-----------|----------|
-| - | - | - | - | - |
+| 9 | 5856-6337 | 6,095 | 2025-12-16 20:30 | `batches/zh6eshexnsyp1ty6bb72508w6qarmhrfhv3a` |
 
 ## Planned Batches
 
 | Batch | IDs | Command |
 |-------|-----|---------|
-| 9 | 5856-6337 | `python batch_submit.py --from-id 5856 --to-id 6337 --build-only` |
-| 10 | 6338-6881 | `python batch_submit.py --from-id 6338 --to-id 6881 --build-only` |
+| 10 | 6338-6881 | `python batch_submit.py --from-id 6338 --to-id 6881 --build-only` ✓ Built |
 | 11 | 6882-7305 | `python batch_submit.py --from-id 6882 --to-id 7305 --build-only` |
 | 12 | 7306-7428 | `python batch_submit.py --from-id 7306 --to-id 7428 --build-only` |
 
