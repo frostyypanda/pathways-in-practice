@@ -111,6 +111,21 @@ Add this TXT record to your DNS, then Azure will validate and provision SSL auto
 ## Notes
 
 - Azure Static Web Apps provides free SSL certificates
-- Client-side routing (React Router) works automatically
+- Client-side routing (React Router) requires `public/staticwebapp.config.json` with a `navigationFallback` rule (already configured)
 - PWA service worker is included in the build
 - All JSON data files are cached for offline use
+
+## SPA Routing Configuration
+
+The file `public/staticwebapp.config.json` enables client-side routing by telling Azure to serve `index.html` for all routes that don't match actual files. This is required for shared links (e.g., `/synthesis/some-id`) to work correctly.
+
+```json
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/data/*", "/assets/*", "*.js", "*.css", "*.png", "*.jpg", "*.svg", "*.ico", "*.json"]
+  }
+}
+```
+
+Without this config, direct links to routes return 404 because Azure looks for a literal file at that path.
