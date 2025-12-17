@@ -28,7 +28,7 @@ function SmilesRenderer() {
             />
             {smiles && (
               <div style={{ background: '#fff', borderRadius: '4px', display: 'flex', justifyContent: 'center' }}>
-                <MoleculeCanvas smiles={smiles} width={300} height={200} />
+                <MoleculeCanvas key={smiles} smiles={smiles} width={300} height={200} />
               </div>
             )}
           </div>
