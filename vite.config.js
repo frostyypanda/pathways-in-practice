@@ -34,7 +34,20 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}']
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        runtimeCaching: [
+          {
+            urlPattern: /\/data\/.*\.json$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'synthesis-data',
+              expiration: {
+                maxEntries: 5000
+              },
+              networkTimeoutSeconds: 3
+            }
+          }
+        ]
       }
     })
   ],

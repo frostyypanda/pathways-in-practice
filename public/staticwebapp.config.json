@@ -2,5 +2,28 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/data/*", "/assets/*", "*.js", "*.css", "*.png", "*.jpg", "*.svg", "*.ico", "*.json"]
-  }
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache"
+  },
+  "routes": [
+    {
+      "route": "/data/*",
+      "headers": {
+        "Cache-Control": "no-cache, must-revalidate"
+      }
+    },
+    {
+      "route": "/index.html",
+      "headers": {
+        "Cache-Control": "no-cache, must-revalidate"
+      }
+    },
+    {
+      "route": "/assets/*",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    }
+  ]
 }

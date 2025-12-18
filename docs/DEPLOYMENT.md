@@ -113,7 +113,27 @@ Add this TXT record to your DNS, then Azure will validate and provision SSL auto
 - Azure Static Web Apps provides free SSL certificates
 - Client-side routing (React Router) requires `public/staticwebapp.config.json` with a `navigationFallback` rule (already configured)
 - PWA service worker is included in the build
-- All JSON data files are cached for offline use
+
+## Caching Strategy
+
+The app uses a **NetworkFirst** caching strategy for synthesis data:
+
+- **When online**: Always fetches fresh data from the server
+- **When offline**: Falls back to cached data
+- **Cache limit**: Up to 5000 JSON files (synthesis data)
+- **No time expiration**: Data stays cached until browser storage pressure
+
+### Cache Headers (staticwebapp.config.json)
+
+| Route | Cache-Control | Purpose |
+|-------|---------------|---------|
+| `/data/*` | `no-cache, must-revalidate` | Always check for updated synthesis data |
+| `/index.html` | `no-cache, must-revalidate` | Always get latest app version |
+| `/assets/*` | `public, max-age=31536000, immutable` | Vite hashed assets cached forever |
+
+### Service Worker (vite.config.js)
+
+The workbox config uses `NetworkFirst` for `/data/*.json` files with a 3-second network timeout. If the network takes longer than 3 seconds, it falls back to the cache immediately for better UX.
 
 ## SPA Routing Configuration
 
