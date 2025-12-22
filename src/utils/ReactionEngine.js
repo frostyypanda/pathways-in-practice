@@ -443,7 +443,10 @@ export function shuffleArray(array) {
  */
 export function initializeGame(problemSet) {
   const shuffledBottles = shuffleArray([...problemSet.bottles]);
-  const labels = ['A', 'B', 'C', 'D', 'E'].slice(0, problemSet.bottles.length);
+  // Generate labels A, B, C, ... for however many bottles we have
+  const labels = Array.from({ length: problemSet.bottles.length }, (_, i) =>
+    String.fromCharCode(65 + i) // 65 = 'A'
+  );
 
   const mapping = {};
   labels.forEach((label, index) => {
