@@ -1,10 +1,25 @@
 /**
  * Problem Set Generator - Uses full uniqueness validation
  *
+ * Usage:
+ *   node generate-problem-set.js [OPTIONS]
+ *
+ * Options:
+ *   -n, --bottles <N>      Number of bottles (default: 5)
+ *   -d, --difficulty <LVL> Difficulty level: easy, medium, hard, expert (default: medium)
+ *   --id <ID>              Problem set ID (default: generated_set)
+ *   --name <NAME>          Problem set name (default: auto-generated)
+ *
+ * Difficulty Levels:
+ *   easy:   Colored cations, many reactions, obvious differences
+ *   medium: Mix of colored/colorless, moderate reactions
+ *   hard:   Prefer colorless cations, fewer reactions, more deduction
+ *   expert: All colorless cations, minimal reactions, requires tertiary tests
+ *
  * Strategy:
- * 1. Generate candidate compound sets with good reactivity
+ * 1. Generate candidate compound sets based on difficulty constraints
  * 2. Validate UNIQUENESS using brute-force enumeration
- * 3. Score based on reactivity (precipitates, color diversity)
+ * 3. Score inversely for hard modes (fewer reactions = harder = better)
  * 4. Use tertiary interactions for disambiguation when needed
  */
 
@@ -14,6 +29,75 @@ import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// ============ Parse Command Line Arguments ============
+
+function parseArgs() {
+  const args = process.argv.slice(2);
+  const config = {
+    bottles: 5,
+    difficulty: 'medium',
+    id: 'generated_set',
+    name: null
+  };
+
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
+    if ((arg === '-n' || arg === '--bottles') && args[i + 1]) {
+      config.bottles = parseInt(args[++i], 10);
+    } else if ((arg === '-d' || arg === '--difficulty') && args[i + 1]) {
+      config.difficulty = args[++i].toLowerCase();
+    } else if (arg === '--id' && args[i + 1]) {
+      config.id = args[++i];
+    } else if (arg === '--name' && args[i + 1]) {
+      config.name = args[++i];
+    } else if (arg === '-h' || arg === '--help') {
+      console.log(`
+Problem Set Generator - Creates uniquely solvable chemistry puzzles
+
+Usage: node generate-problem-set.js [OPTIONS]
+
+Options:
+  -n, --bottles <N>      Number of bottles (default: 5)
+  -d, --difficulty <LVL> Difficulty: easy, medium, hard, expert (default: medium)
+  --id <ID>              Problem set ID (default: generated_set)
+  --name <NAME>          Problem set name
+
+Difficulty Levels:
+  easy:   Colored cations, many reactions, obvious differences
+  medium: Mix of colored/colorless, moderate reactions
+  hard:   Prefer colorless cations, fewer reactions, more deduction
+  expert: All colorless cations, minimal reactions, requires tertiary tests
+
+Examples:
+  node generate-problem-set.js -n 5 -d easy
+  node generate-problem-set.js -n 7 -d expert --id hard_challenge
+`);
+      process.exit(0);
+    }
+  }
+
+  // Validate difficulty
+  if (!['easy', 'medium', 'hard', 'expert'].includes(config.difficulty)) {
+    console.error(`Invalid difficulty: ${config.difficulty}. Use: easy, medium, hard, expert`);
+    process.exit(1);
+  }
+
+  // Auto-generate name if not provided
+  if (!config.name) {
+    const difficultyNames = {
+      easy: 'Beginner',
+      medium: 'Intermediate',
+      hard: 'Advanced',
+      expert: 'Expert'
+    };
+    config.name = `${difficultyNames[config.difficulty]} Challenge (${config.bottles} Probes)`;
+  }
+
+  return config;
+}
+
+const CONFIG = parseArgs();
 
 // ============ Fingerprint Functions (inline for Node.js compatibility) ============
 
@@ -356,51 +440,115 @@ const cationsData = JSON.parse(readFileSync(join(dataDir, 'cations.json'), 'utf8
 const allCompounds = getAllSolubleCompounds(reactions);
 console.log(`Total soluble compounds in database: ${allCompounds.length}`);
 
-// Categorize compounds
-const reactiveCations = ['ag+', 'ba2+', 'ca2+', 'cu2+', 'fe2+', 'fe3+', 'pb2+', 'ni2+', 'co2+', 'mn2+', 'zn2+', 'al3+', 'cr3+'];
-const reactiveAnions = ['oh-', 's2-', 'cl-', 'i-', 'br-', 'scn-', 'co3_2-', 'so4_2-', 'fe_cn_6_4-', 'cro4_2-'];
+// ============ Difficulty-Based Pool Building ============
+
+// Cations categorized by distinguishing features
+const coloredCations = ['cu2+', 'fe3+', 'ni2+', 'co2+', 'cr3+', 'mn2+']; // Have inherent solution color
+const colorlessCations = ['ag+', 'ba2+', 'ca2+', 'fe2+', 'pb2+', 'zn2+', 'al3+', 'mg2+', 'sr2+', 'cd2+', 'sn2+', 'hg2+', 'bi3+'];
 const spectatorCations = ['na+', 'k+', 'nh4+'];
 
-// Build focused pool for generation
-const pool = [];
+// Cations that require tertiary tests to distinguish
+const amphotericCations = ['al3+', 'zn2+']; // Hydroxides dissolve in excess base
+const silverGroupCations = ['ag+', 'pb2+']; // Both form white chlorides, need NH₃ dissolution test
 
-// Reactive cation compounds (with nitrate or chloride)
-for (const cation of reactiveCations) {
-  if (isSoluble(cation, 'no3-', reactions)) {
-    pool.push({
-      cation, anion: 'no3-',
-      formula: generateFormula(cation, 'no3-'),
-      name: generateName(cation, 'no3-', cationsData),
-      type: 'reactive-cation'
-    });
-  }
-  if (isSoluble(cation, 'cl-', reactions)) {
-    pool.push({
-      cation, anion: 'cl-',
-      formula: generateFormula(cation, 'cl-'),
-      name: generateName(cation, 'cl-', cationsData),
-      type: 'reactive-cation'
-    });
-  }
-}
+// Reactive anions
+const reactiveAnions = ['oh-', 's2-', 'cl-', 'i-', 'br-', 'scn-', 'co3_2-', 'so4_2-', 'fe_cn_6_4-', 'cro4_2-'];
+const smellAnions = ['s2-', 'ch3coo-']; // Distinctive smell
 
-// Reagent bottles (spectator cation + reactive anion)
-for (const cation of spectatorCations) {
-  for (const anion of reactiveAnions) {
-    if (isSoluble(cation, anion, reactions)) {
+function buildPoolForDifficulty(difficulty, cationsData, reactions) {
+  const pool = [];
+
+  // Select cation pools based on difficulty
+  let activeCations;
+  let reagentCations;
+
+  switch (difficulty) {
+    case 'easy':
+      // Easy: prefer colored cations, avoid ambiguous pairs
+      activeCations = [...coloredCations, 'ag+', 'ba2+', 'ca2+']; // Mix of colored + some distinct colorless
+      reagentCations = ['na+', 'k+']; // Simple reagents
+      break;
+
+    case 'medium':
+      // Medium: mix of colored and colorless
+      activeCations = [...coloredCations, ...colorlessCations.slice(0, 5)];
+      reagentCations = spectatorCations;
+      break;
+
+    case 'hard':
+      // Hard: prefer colorless cations, include some colored for minimal clues
+      activeCations = [...colorlessCations, 'fe2+']; // Mostly colorless
+      reagentCations = spectatorCations;
+      break;
+
+    case 'expert':
+      // Expert: ALL colorless cations, include amphoteric/silver group for tertiary tests
+      activeCations = colorlessCations.filter(c =>
+        cationsData[c]?.inherent_color === 'colorless'
+      );
+      // Include smell-based reagents for expert mode
+      reagentCations = ['na+', 'nh4+']; // Na for bases, NH4 for smell + dissolution tests
+      break;
+
+    default:
+      activeCations = [...coloredCations, ...colorlessCations.slice(0, 5)];
+      reagentCations = spectatorCations;
+  }
+
+  // Build active cation compounds (nitrate or chloride salts)
+  for (const cation of activeCations) {
+    if (isSoluble(cation, 'no3-', reactions)) {
       pool.push({
-        cation, anion,
-        formula: generateFormula(cation, anion),
-        name: generateName(cation, anion, cationsData),
-        type: 'reagent'
+        cation, anion: 'no3-',
+        formula: generateFormula(cation, 'no3-'),
+        name: generateName(cation, 'no3-', cationsData),
+        type: 'active',
+        isColorless: cationsData[cation]?.inherent_color === 'colorless',
+        isAmphoteric: amphotericCations.includes(cation),
+        isSilverGroup: silverGroupCations.includes(cation)
+      });
+    }
+    if (isSoluble(cation, 'cl-', reactions)) {
+      pool.push({
+        cation, anion: 'cl-',
+        formula: generateFormula(cation, 'cl-'),
+        name: generateName(cation, 'cl-', cationsData),
+        type: 'active',
+        isColorless: cationsData[cation]?.inherent_color === 'colorless',
+        isAmphoteric: amphotericCations.includes(cation),
+        isSilverGroup: silverGroupCations.includes(cation)
       });
     }
   }
+
+  // Build reagent compounds (spectator cation + reactive anion)
+  for (const cation of reagentCations) {
+    for (const anion of reactiveAnions) {
+      if (isSoluble(cation, anion, reactions)) {
+        pool.push({
+          cation, anion,
+          formula: generateFormula(cation, anion),
+          name: generateName(cation, anion, cationsData),
+          type: 'reagent',
+          hasSmell: smellAnions.includes(anion),
+          isColorless: true
+        });
+      }
+    }
+  }
+
+  return pool;
 }
 
+const pool = buildPoolForDifficulty(CONFIG.difficulty, cationsData, reactions);
+
+console.log(`\nConfiguration: ${CONFIG.bottles} bottles, ${CONFIG.difficulty} difficulty`);
 console.log(`Generation pool: ${pool.length} compounds`);
-console.log(`  - Reactive cation compounds: ${pool.filter(p => p.type === 'reactive-cation').length}`);
-console.log(`  - Reagent compounds: ${pool.filter(p => p.type === 'reagent').length}\n`);
+console.log(`  - Active compounds: ${pool.filter(p => p.type === 'active').length}`);
+console.log(`  - Reagent compounds: ${pool.filter(p => p.type === 'reagent').length}`);
+console.log(`  - Colorless: ${pool.filter(p => p.isColorless).length}`);
+console.log(`  - Amphoteric: ${pool.filter(p => p.isAmphoteric).length}`);
+console.log(`  - Silver group: ${pool.filter(p => p.isSilverGroup).length}\n`);
 
 // ============ Diversity-Aware Generation ============
 
@@ -600,14 +748,68 @@ function generateForcedExpansion(N, pool, reactions, cationsData, allCompounds, 
 
 // ============ Generate with Multiple Strategies ============
 
-const N = 5;
-const ATTEMPTS = 500;
-const ENTROPY_ATTEMPTS = 100;
+const N = CONFIG.bottles;
+const ATTEMPTS = CONFIG.difficulty === 'expert' ? 200 : 500; // Expert needs more careful selection
+const ENTROPY_ATTEMPTS = CONFIG.difficulty === 'expert' ? 200 : 100;
 let bestSet = null;
 let bestScore = -1;
 let bestValidation = null;
 let uniqueCount = 0;
 let nonUniqueCount = 0;
+
+// Scoring function that respects difficulty
+// For hard/expert: FEWER reactions = HIGHER score (harder puzzle)
+// For easy/medium: MORE reactions = HIGHER score (more visual feedback)
+function getDifficultyAdjustedScore(bottles, reactions, difficulty) {
+  const reactivity = getReactivityScore(bottles, reactions);
+
+  // Count colorless cations
+  const colorlessCount = bottles.filter(b =>
+    cationsData[b.cation]?.inherent_color === 'colorless'
+  ).length;
+
+  // Check for tertiary test requirements
+  const hasAmphotericPair = bottles.some(b => amphotericCations.includes(b.cation)) &&
+    bottles.some(b => b.anion === 'oh-');
+  const hasSilverGroupPair = bottles.filter(b => silverGroupCations.includes(b.cation)).length >= 2;
+  const hasSmellTest = bottles.some(b => smellAnions.includes(b.anion)) ||
+    bottles.some(b => b.cation === 'nh4+');
+
+  // Reactions per bottle (lower = harder)
+  const reactionsPerBottle = reactivity.reactionCount / bottles.length;
+
+  switch (difficulty) {
+    case 'easy':
+      // Easy: maximize reactions and color diversity
+      return reactivity.score;
+
+    case 'medium':
+      // Medium: balance between reactions and some colorless
+      return reactivity.score + colorlessCount * 2;
+
+    case 'hard':
+      // Hard: prefer fewer reactions, more colorless
+      return (
+        colorlessCount * 10 +           // Bonus for colorless cations
+        (10 - reactionsPerBottle) * 5 + // Bonus for fewer reactions per bottle
+        reactivity.timeEffectCount * 3   // Bonus for time effects (requires patience)
+      );
+
+    case 'expert':
+      // Expert: minimize reactions, require tertiary tests
+      return (
+        colorlessCount * 15 +                    // Strong bonus for colorless
+        (15 - reactionsPerBottle) * 8 +          // Strong bonus for sparse reactions
+        (hasAmphotericPair ? 50 : 0) +           // Bonus for requiring dissolution test
+        (hasSilverGroupPair ? 50 : 0) +          // Bonus for AgCl/PbCl2 disambiguation
+        (hasSmellTest ? 30 : 0) +                // Bonus for smell test requirement
+        reactivity.timeEffectCount * 5           // Bonus for time effects
+      );
+
+    default:
+      return reactivity.score;
+  }
+}
 
 const categories = categorizeByFeatures(pool, cationsData, reactions);
 console.log('Compound categories:');
@@ -634,12 +836,14 @@ for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
 
   uniqueCount++;
   const reactivity = getReactivityScore(candidates, reactions);
+  const adjustedScore = getDifficultyAdjustedScore(candidates, reactions, CONFIG.difficulty);
 
-  if (reactivity.score > bestScore) {
-    bestScore = reactivity.score;
+  if (adjustedScore > bestScore) {
+    bestScore = adjustedScore;
     bestSet = candidates;
     bestValidation = validation;
-    console.log(`  Attempt ${attempt}: Found UNIQUE set (score=${reactivity.score}, reactions=${reactivity.reactionCount}, colors=${reactivity.colorDiversity}, time=${reactivity.timeEffectCount})`);
+    const colorlessCount = candidates.filter(c => cationsData[c.cation]?.inherent_color === 'colorless').length;
+    console.log(`  Attempt ${attempt}: Found UNIQUE set (adj_score=${adjustedScore.toFixed(1)}, reactions=${reactivity.reactionCount}, colorless=${colorlessCount}/${N})`);
   }
 }
 
@@ -656,29 +860,27 @@ for (let attempt = 0; attempt < ENTROPY_ATTEMPTS; attempt++) {
   }
 
   const { bottles: candidates, requiredTools } = result;
-
-  // If requires tools, it's technically not fully unique from reactions alone
-  // But we still count it as valid
-  if (requiredTools.length === 0) {
-    uniqueCount++;
-  } else {
-    // Unique only with tools - still valid but mark it
-    uniqueCount++;
-  }
+  uniqueCount++;
 
   const reactivity = getReactivityScore(candidates, reactions);
+  let adjustedScore = getDifficultyAdjustedScore(candidates, reactions, CONFIG.difficulty);
 
-  // Prefer sets that don't require tools
-  const toolPenalty = requiredTools.length * 5;
-  const adjustedScore = reactivity.score - toolPenalty;
+  // For expert mode, requiring tools is actually a BONUS (makes it harder)
+  // For other modes, it's a penalty
+  if (CONFIG.difficulty === 'expert') {
+    adjustedScore += requiredTools.length * 20; // Bonus for needing extra tests
+  } else {
+    adjustedScore -= requiredTools.length * 5; // Penalty for other modes
+  }
 
   if (adjustedScore > bestScore) {
     bestScore = adjustedScore;
     bestSet = candidates;
     bestValidation = { unique: true, requiredTools };
     bestRequiredTools = requiredTools;
+    const colorlessCount = candidates.filter(c => cationsData[c.cation]?.inherent_color === 'colorless').length;
     const toolsStr = requiredTools.length > 0 ? ` (needs: ${requiredTools.join(', ')})` : '';
-    console.log(`  Expansion ${attempt}: Found set (score=${reactivity.score}, reactions=${reactivity.reactionCount}, colors=${reactivity.colorDiversity})${toolsStr}`);
+    console.log(`  Expansion ${attempt}: Found set (adj_score=${adjustedScore.toFixed(1)}, reactions=${reactivity.reactionCount}, colorless=${colorlessCount}/${N})${toolsStr}`);
   }
 }
 
@@ -775,16 +977,70 @@ if (bestRequiredTools.includes('pH')) {
   hints.push('Check pH - some compounds are acidic or basic');
 }
 
+// Determine required tools based on set composition (for expert mode hints)
+const detectedRequiredTools = [...bestRequiredTools];
+const hasAmphoteric = bottles.some(b => amphotericCations.includes(b.cation));
+const hasSilverGroup = bottles.filter(b => silverGroupCations.includes(b.cation)).length >= 2;
+const hasSmellCompound = bottles.some(b => smellAnions.includes(b.anion)) || bottles.some(b => b.cation === 'nh4+');
+const hasOH = bottles.some(b => b.anion === 'oh-');
+
+if ((hasAmphoteric || hasSilverGroup) && hasOH && !detectedRequiredTools.includes('tertiary')) {
+  detectedRequiredTools.push('tertiary');
+}
+if (hasSmellCompound && !detectedRequiredTools.includes('smell')) {
+  detectedRequiredTools.push('smell');
+}
+
+// Map CONFIG.difficulty to schema difficulty
+const difficultyMap = {
+  easy: 'beginner',
+  medium: 'intermediate',
+  hard: 'advanced',
+  expert: 'advanced'
+};
+
+// Generate description based on difficulty
+let description;
+if (CONFIG.difficulty === 'expert') {
+  const challenges = [];
+  if (hasAmphoteric) challenges.push('amphoteric behavior');
+  if (hasSilverGroup) challenges.push('tertiary dissolution tests');
+  if (hasSmellCompound) challenges.push('smell identification');
+  description = `Expert challenge - requires ${challenges.join(', ') || 'careful deduction'}`;
+} else if (CONFIG.difficulty === 'hard') {
+  description = 'Advanced challenge - colorless cations require careful precipitate analysis';
+} else if (bestRequiredTools.length > 0) {
+  description = `Auto-generated set - requires ${bestRequiredTools.join(' + ')} test for unique solution`;
+} else {
+  description = 'Auto-generated UNIQUE set - exactly one valid solution';
+}
+
+// Add difficulty-specific hints
+if (CONFIG.difficulty === 'hard' || CONFIG.difficulty === 'expert') {
+  const colorlessCount = bottles.filter(b => cationsData[b.cation]?.inherent_color === 'colorless').length;
+  if (colorlessCount >= N - 1) {
+    hints.unshift('Most cations are COLORLESS - you cannot rely on solution color');
+  }
+  if (hasSilverGroup && hasOH) {
+    hints.push('To distinguish AgCl from PbCl₂: add NH₄OH - AgCl dissolves, PbCl₂ doesn\'t');
+  }
+  if (hasAmphoteric && hasOH) {
+    hints.push('Al(OH)₃ and Zn(OH)₂ are both amphoteric - dissolve in EXCESS NaOH');
+    hints.push('Zn(OH)₂ also dissolves in NH₄OH, but Al(OH)₃ does NOT');
+  }
+  if (hasSmellCompound) {
+    hints.push('Smell test: Na₂S = rotten eggs, NH₄Cl + base = pungent ammonia');
+  }
+}
+
 // Create problem set JSON
 const problemSet = {
   problem_sets: {
-    generated_set: {
-      id: 'generated_set',
-      name: 'Generated Problem Set',
-      description: bestRequiredTools.length > 0
-        ? `Auto-generated set - requires ${bestRequiredTools.join(' + ')} test for unique solution`
-        : 'Auto-generated UNIQUE set - exactly one valid solution',
-      difficulty: 'intermediate',
+    [CONFIG.id]: {
+      id: CONFIG.id,
+      name: CONFIG.name,
+      description,
+      difficulty: difficultyMap[CONFIG.difficulty],
       bottles: bottles.map(b => ({
         label: b.label,
         cation: b.cation,
@@ -794,12 +1050,13 @@ const problemSet = {
       })),
       available_reagents: [],
       hints,
-      requiredTools: bestRequiredTools,
+      requiredTools: detectedRequiredTools,
       validation: {
         isUnique: true,
-        requiredTools: bestRequiredTools,
+        requiredTools: detectedRequiredTools,
         testedAgainst: allCompounds.length,
-        reactivityScore: reactivity.score
+        reactivityScore: reactivity.score,
+        difficultyNotes: `${N} probes, ${bottles.filter(b => cationsData[b.cation]?.inherent_color === 'colorless').length} colorless cations`
       }
     }
   },
