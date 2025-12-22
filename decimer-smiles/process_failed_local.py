@@ -21,6 +21,7 @@ from threading import Lock
 from datetime import datetime
 
 import psycopg2
+from psycopg2 import pool
 
 # Add azure dir to path for db_config
 SCRIPT_DIR = Path(__file__).parent
@@ -28,11 +29,13 @@ sys.path.insert(0, str(SCRIPT_DIR / "azure"))
 from db_config import DB_CONFIG
 
 # Paths
-FAILED_LIST = SCRIPT_DIR / "azure" / "failed_syntheses.txt"
 IMAGES_BASE = Path("/mnt/d/chemistry-scraped")
 
 # Thread-safe print lock
 print_lock = Lock()
+
+# Connection pool (initialized in main)
+connection_pool = None
 
 
 def log(msg: str, level: str = "INFO"):
@@ -42,9 +45,31 @@ def log(msg: str, level: str = "INFO"):
         print(f"[{timestamp}] [{level}] {msg}", flush=True)
 
 
+def init_connection_pool(min_conn: int = 2, max_conn: int = 4):
+    """Initialize the connection pool."""
+    global connection_pool
+    connection_pool = pool.ThreadedConnectionPool(
+        minconn=min_conn,
+        maxconn=max_conn,
+        **DB_CONFIG,
+        connect_timeout=10
+    )
+    log(f"Connection pool initialized ({min_conn}-{max_conn} connections)")
+
+
 def get_db_connection():
-    """Get PostgreSQL connection."""
-    return psycopg2.connect(**DB_CONFIG)
+    """Get connection from pool."""
+    global connection_pool
+    if connection_pool is None:
+        raise RuntimeError("Connection pool not initialized")
+    return connection_pool.getconn()
+
+
+def release_db_connection(conn):
+    """Return connection to pool."""
+    global connection_pool
+    if connection_pool and conn:
+        connection_pool.putconn(conn)
 
 
 def get_synthesis_id(synthesis_name: str) -> int:
@@ -57,7 +82,7 @@ def get_synthesis_id(synthesis_name: str) -> int:
         return result[0] if result else None
     finally:
         cur.close()
-        conn.close()
+        release_db_connection(conn)
 
 
 def get_existing_results_count(synthesis_id: int) -> int:
@@ -72,7 +97,22 @@ def get_existing_results_count(synthesis_id: int) -> int:
         return cur.fetchone()[0]
     finally:
         cur.close()
-        conn.close()
+        release_db_connection(conn)
+
+
+def get_failed_syntheses(limit: int = None) -> list:
+    """Get list of failed syntheses from database."""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        query = "SELECT name FROM synthesis WHERE status = 'failed' ORDER BY name"
+        if limit:
+            query += f" LIMIT {limit}"
+        cur.execute(query)
+        return [row[0] for row in cur.fetchall()]
+    finally:
+        cur.close()
+        release_db_connection(conn)
 
 
 def save_smiles_result(conn, synthesis_id: int, image_filename: str, smiles: str,
@@ -100,7 +140,6 @@ def save_smiles_result(conn, synthesis_id: int, image_filename: str, smiles: str
 def mark_synthesis_completed(synthesis_name: str, worker_id: str, successful: int, failed: int, image_count: int):
     """Mark synthesis as completed in database."""
     conn = get_db_connection()
-    conn.autocommit = True
     cur = conn.cursor()
     try:
         cur.execute("""
@@ -113,9 +152,10 @@ def mark_synthesis_completed(synthesis_name: str, worker_id: str, successful: in
                 image_count = %s
             WHERE name = %s
         """, (worker_id, successful, failed, image_count, synthesis_name))
+        conn.commit()
     finally:
         cur.close()
-        conn.close()
+        release_db_connection(conn)
 
 
 def process_single_synthesis(synthesis_name: str, worker_id: str) -> dict:
@@ -178,10 +218,12 @@ def process_single_synthesis(synthesis_name: str, worker_id: str) -> dict:
         # Check if already has results in database
         existing_count = get_existing_results_count(synthesis_id)
         if existing_count >= len(image_files):
+            # Mark as completed since all images have results
+            mark_synthesis_completed(synthesis_name, worker_id, existing_count, 0, len(image_files))
             result["status"] = "skipped"
             result["skipped"] = True
             result["successful"] = existing_count
-            log(f"[{worker_id}] SKIP {synthesis_name}: already has {existing_count} results in DB")
+            log(f"[{worker_id}] SKIP {synthesis_name}: already has {existing_count} results in DB (marked completed)")
             return result
 
         log(f"[{worker_id}] START {synthesis_name} ({len(image_files)} images, {existing_count} existing)")
@@ -255,23 +297,9 @@ def process_single_synthesis(synthesis_name: str, worker_id: str) -> dict:
 
     finally:
         if conn:
-            conn.close()
+            release_db_connection(conn)
 
     return result
-
-
-def load_failed_list(limit: int = None) -> list:
-    """Load failed synthesis names from file."""
-    if not FAILED_LIST.exists():
-        raise FileNotFoundError(f"Failed list not found: {FAILED_LIST}")
-
-    with open(FAILED_LIST) as f:
-        names = [line.strip() for line in f if line.strip()]
-
-    if limit:
-        names = names[:limit]
-
-    return names
 
 
 def main():
@@ -298,25 +326,23 @@ def main():
 
     args = parser.parse_args()
 
-    # Load failed list
+    # Initialize connection pool (max connections = threads + 1 for queries)
     try:
-        syntheses = load_failed_list(args.limit)
-    except FileNotFoundError as e:
-        print(f"Error: {e}")
-        sys.exit(1)
-
-    if not syntheses:
-        print("No syntheses to process.")
-        return
-
-    # Test database connection
-    try:
-        conn = get_db_connection()
-        conn.close()
-        log("Database connection OK")
+        init_connection_pool(min_conn=2, max_conn=args.threads + 2)
     except Exception as e:
         log(f"Database connection failed: {e}", "ERROR")
         sys.exit(1)
+
+    # Get failed syntheses from database
+    try:
+        syntheses = get_failed_syntheses(args.limit)
+    except Exception as e:
+        log(f"Failed to query database: {e}", "ERROR")
+        sys.exit(1)
+
+    if not syntheses:
+        print("No failed syntheses to process.")
+        return
 
     # Dry run - check what needs processing
     if args.dry_run:
