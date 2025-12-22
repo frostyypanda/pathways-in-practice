@@ -52,8 +52,8 @@ function Qualitative() {
         setCationsData(cations.cations);
         setProblemSets(problems.problem_sets);
 
-        // Start with classic_5 by default
-        const defaultSet = problems.problem_sets['classic_5'];
+        // Start with transition_metals by default (colorful solutions!)
+        const defaultSet = problems.problem_sets['transition_metals'];
         setCurrentProblemSet(defaultSet);
         initGame(defaultSet);
 
@@ -194,6 +194,59 @@ function Qualitative() {
       }
     }
     return null;
+  };
+
+  // Color mixing map for combining solution colors
+  const colorMixMap = {
+    'light-blue+orange': 'olive-green',
+    'light-blue+light-green': 'turquoise',
+    'light-blue+pink': 'purple',
+    'light-blue+green': 'teal',
+    'orange+light-green': 'yellow-brown',
+    'orange+pink': 'brown',
+    'orange+green': 'brown',
+    'light-green+pink': 'gray',
+    'light-green+orange': 'yellow-brown',
+    'pink+light-green': 'gray',
+    'pink+orange': 'brown',
+    'green+pink': 'gray',
+    'green+orange': 'brown',
+  };
+
+  // Get mixed color from two colors
+  const mixColors = (color1, color2) => {
+    if (!color1) return color2;
+    if (!color2) return color1;
+    if (color1 === color2) return color1;
+
+    // Try both orderings in the map
+    const key1 = `${color1}+${color2}`;
+    const key2 = `${color2}+${color1}`;
+    return colorMixMap[key1] || colorMixMap[key2] || 'brown'; // Default to brown for unknown mixes
+  };
+
+  // Get inherent solution color from cations in the well (with mixing)
+  const getInherentSolutionColor = (substances) => {
+    const colors = [];
+    for (const substance of substances) {
+      const cation = substance.cation;
+      if (cation && cationsData[cation]) {
+        const inherentColor = cationsData[cation].inherent_color;
+        if (inherentColor && inherentColor !== 'colorless' && !colors.includes(inherentColor)) {
+          colors.push(inherentColor);
+        }
+      }
+    }
+
+    if (colors.length === 0) return null;
+    if (colors.length === 1) return colors[0];
+
+    // Mix multiple colors together
+    let mixed = colors[0];
+    for (let i = 1; i < colors.length; i++) {
+      mixed = mixColors(mixed, colors[i]);
+    }
+    return mixed;
   };
 
   if (loading) {
@@ -356,8 +409,21 @@ function Qualitative() {
                               >
                                 {cell && state ? (
                                   <div className="absolute inset-0 flex flex-col justify-end">
-                                    {/* Background tint */}
-                                    <div className="absolute inset-0 z-10 bg-blue-400/10"></div>
+                                    {/* Solution color tint - use reaction color or inherent cation color */}
+                                    {(() => {
+                                      const solutionColor = state.solutionColor && state.solutionColor !== 'colorless'
+                                        ? state.solutionColor
+                                        : getInherentSolutionColor(cell.substances);
+                                      return (
+                                        <div
+                                          className={`absolute inset-0 z-10 transition-all duration-[3000ms] ${
+                                            solutionColor
+                                              ? `${getColorClass(solutionColor)} opacity-50`
+                                              : 'bg-blue-400/10'
+                                          }`}
+                                        ></div>
+                                      );
+                                    })()}
 
                                     {/* Gas bubbles */}
                                     {state.hasGas && (
@@ -373,9 +439,9 @@ function Qualitative() {
                                     )}
 
                                     {/* Precipitate */}
-                                    {state.color && state.color !== 'colorless' && (
+                                    {state.precipitateColor && state.precipitateColor !== 'colorless' && (
                                       <div
-                                        className={`z-30 w-full h-1/3 ${getColorClass(state.color)} border-t border-black/20 opacity-95 rounded-b-full shadow-lg transition-colors duration-1000`}
+                                        className={`z-30 w-full h-1/3 ${getColorClass(state.precipitateColor)} border-t border-black/20 opacity-95 rounded-b-full shadow-lg transition-all duration-[3000ms]`}
                                       />
                                     )}
 

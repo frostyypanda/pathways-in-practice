@@ -152,9 +152,19 @@ export function calculateWellState(wellData, reactionRules, currentTime) {
 
     // Handle solution color changes (no precipitate, just solution color)
     if (effectiveReaction.type === 'solution') {
-      state.solutionColor = effectiveReaction.color;
+      let color = effectiveReaction.color;
+
+      // Check for time-dependent color change
+      if (effectiveReaction.time_effect) {
+        const delay = effectiveReaction.time_effect.delay_ms || 5000;
+        if (elapsed > delay) {
+          color = effectiveReaction.time_effect.change_to;
+        }
+      }
+
+      state.solutionColor = color;
       if (!state.precipitateColor) {
-        state.color = effectiveReaction.color;
+        state.color = color;
       }
       state.reactionType = state.reactionType || 'solution';
       if (effectiveReaction.notes) state.notes.push(effectiveReaction.notes);
@@ -336,6 +346,7 @@ export function getColorClass(colorName) {
 
     // Browns
     'brown': 'bg-amber-800',
+    'yellow-brown': 'bg-amber-600',
 
     // Greens
     'green': 'bg-green-500',
@@ -352,6 +363,7 @@ export function getColorClass(colorName) {
     'dark-blue': 'bg-blue-900',
     'prussian-blue': 'bg-blue-900',
     'turquoise': 'bg-cyan-400',
+    'teal': 'bg-teal-500',
     'bluer': 'bg-blue-500',
     'blue-green': 'bg-teal-500',
 

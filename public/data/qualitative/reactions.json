@@ -8,13 +8,14 @@
       },
       "co3_2-": {
         "type": "precipitate", "color": "cream", "product": "Ag₂CO₃",
-        "time_effect": { "change_to": "brown" },
+        "time_effect": { "delay_ms": 8000, "change_to": "brown" },
         "soluble_in": ["hno3"]
       },
       "cl-": {
         "type": "precipitate", "color": "white", "product": "AgCl",
+        "time_effect": { "delay_ms": 10000, "change_to": "gray", "trigger": "light" },
         "soluble_in": ["nh3"],
-        "notes": "Pink under UV light"
+        "notes": "Darkens in light"
       },
       "s2-": { "type": "precipitate", "color": "black", "product": "Ag₂S" },
       "so4_2-": { "type": "precipitate", "color": "white", "product": "Ag₂SO₄", "notes": "Rare precipitate" },
@@ -23,11 +24,16 @@
       "cr2o7_2-": { "type": "precipitate", "color": "brown-red", "product": "Ag₂Cr₂O₇" },
       "scn-": { "type": "precipitate", "color": "white", "product": "AgSCN", "soluble_in": ["nh3_dilute"] },
       "i-": { "type": "precipitate", "color": "yellowish", "product": "AgI" },
-      "br-": { "type": "precipitate", "color": "light-yellow", "product": "AgBr", "soluble_in": ["nh3_conc"] },
+      "br-": {
+        "type": "precipitate", "color": "light-yellow", "product": "AgBr",
+        "time_effect": { "delay_ms": 8000, "change_to": "gray", "trigger": "light" },
+        "soluble_in": ["nh3_conc"],
+        "notes": "Darkens in light"
+      },
       "po4_3-": { "type": "precipitate", "color": "brown-yellow", "product": "Ag₃PO₄", "soluble_in": ["hno3"] },
       "hco3-": {
         "type": "precipitate", "color": "white-light-yellow", "product": "Ag₂CO₃",
-        "time_effect": { "change_to": "brown" }
+        "time_effect": { "delay_ms": 8000, "change_to": "brown" }
       },
       "so3_2-": {
         "type": "precipitate", "color": "white", "product": "Ag₂SO₃",
@@ -67,24 +73,29 @@
     "fe2+": {
       "oh-": {
         "type": "precipitate", "color": "olive-green", "product": "Fe(OH)₂",
-        "time_effect": { "change_to": "brown", "trigger": "oxidation" }
+        "time_effect": { "delay_ms": 10000, "change_to": "brown", "trigger": "oxidation" }
       },
       "nh3": {
         "type": "precipitate", "color": "green-brown", "product": "Fe(OH)₂",
-        "time_effect": { "change_to": "brown", "trigger": "oxidation" }
+        "time_effect": { "delay_ms": 10000, "change_to": "brown", "trigger": "oxidation" }
       },
       "co3_2-": { "type": "precipitate", "color": "green", "product": "FeCO₃" },
       "s2-": { "type": "precipitate", "color": "black", "product": "FeS" },
       "fe_cn_6_4-": {
-        "type": "precipitate", "color": "dark-blue", "product": "Fe₂[Fe(CN)₆]",
-        "time_effect": { "change_to": "dark-blue", "trigger": "oxidation" }
+        "type": "precipitate", "color": "light-blue", "product": "Fe₂[Fe(CN)₆]",
+        "time_effect": { "delay_ms": 6000, "change_to": "dark-blue", "trigger": "oxidation" }
       },
       "fe_cn_6_3-": { "type": "precipitate", "color": "dark-blue", "product": "Fe₃[Fe(CN)₆]₂", "notes": "Turnbull's blue" },
       "scn-": {
-        "type": "solution", "color": "blood-red",
+        "type": "solution", "color": "colorless", "product": "Fe²⁺ + SCN⁻",
+        "time_effect": { "delay_ms": 8000, "change_to": "blood-red", "trigger": "oxidation" },
         "notes": "After oxidation to Fe³⁺"
       },
-      "i-": { "type": "solution", "color": "brown", "notes": "Oxidizes" },
+      "i-": {
+        "type": "solution", "color": "colorless",
+        "time_effect": { "delay_ms": 8000, "change_to": "brown", "trigger": "oxidation" },
+        "notes": "Oxidizes to I₂"
+      },
       "mno4-": { "type": "decolorization", "notes": "Reduces permanganate, decolorizes" },
       "ch3coo-": { "type": "solution", "color": "yellowish" },
       "hcoo-": { "type": "solution", "color": "yellowish" },
@@ -182,8 +193,8 @@
     },
     "co2+": {
       "oh-": {
-        "type": "precipitate", "color": "blue", "product": "Co(OH)₂",
-        "time_effect": { "change_to": "brown", "trigger": "oxidation" }
+        "type": "precipitate", "color": "pink", "product": "Co(OH)₂",
+        "time_effect": { "delay_ms": 12000, "change_to": "brown", "trigger": "oxidation" }
       },
       "nh3": {
         "type": "complex", "color": "brown", "product": "[Co(NH₃)₆]²⁺",
@@ -196,7 +207,7 @@
     "mn2+": {
       "oh-": {
         "type": "precipitate", "color": "white", "product": "Mn(OH)₂",
-        "time_effect": { "change_to": "brown", "trigger": "oxidation" }
+        "time_effect": { "delay_ms": 10000, "change_to": "brown", "trigger": "oxidation" }
       },
       "nh3": { "type": "precipitate", "color": "white", "product": "Mn(OH)₂" },
       "co3_2-": { "type": "precipitate", "color": "white", "product": "MnCO₃" },
