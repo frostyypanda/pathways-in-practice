@@ -52,8 +52,8 @@ function Qualitative() {
         setCationsData(cations.cations);
         setProblemSets(problems.problem_sets);
 
-        // Start with transition_metals by default (colorful solutions!)
-        const defaultSet = problems.problem_sets['transition_metals'];
+        // Start with generated_set by default (auto-generated with precipitate reactions)
+        const defaultSet = problems.problem_sets['generated_set'];
         setCurrentProblemSet(defaultSet);
         initGame(defaultSet);
 
