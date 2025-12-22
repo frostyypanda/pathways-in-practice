@@ -313,6 +313,31 @@ function Qualitative() {
           </div>
         </header>
 
+        {/* Solution Reveal - Top of Page */}
+        {showSolution && gameState && (
+          <div className="mb-6 p-6 bg-amber-900/40 border-2 border-amber-500/50 rounded-2xl shadow-lg">
+            <h4 className="text-lg font-bold text-amber-400 mb-4 uppercase tracking-wide flex items-center gap-2">
+              <FlaskConical size={20} />
+              Solution Key
+            </h4>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+              {gameState.labels.map(label => (
+                <div key={label} className="flex flex-col items-center gap-2 p-3 bg-slate-900/50 rounded-xl">
+                  <span className="w-10 h-10 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-lg shadow-md">
+                    {label}
+                  </span>
+                  <span className="font-mono text-amber-200 text-sm text-center">
+                    {gameState.mapping[label].formula}
+                  </span>
+                  <span className="text-slate-400 text-xs text-center leading-tight">
+                    {gameState.mapping[label].name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Toolbox */}
         <div className="flex flex-wrap gap-2 bg-slate-800 p-3 rounded-xl mb-6 border border-slate-700">
           {/* Bottle Selection */}
@@ -595,27 +620,6 @@ function Qualitative() {
                 </button>
               </div>
 
-              {/* Solution reveal */}
-              {showSolution && gameState && (
-                <div className="mt-4 p-4 bg-amber-900/30 border border-amber-600/50 rounded-xl">
-                  <h4 className="text-sm font-bold text-amber-400 mb-3 uppercase tracking-wide">Solution</h4>
-                  <div className="grid gap-2">
-                    {gameState.labels.map(label => (
-                      <div key={label} className="flex items-center gap-3 text-sm">
-                        <span className="w-8 h-8 rounded bg-amber-600 text-white flex items-center justify-center font-bold">
-                          {label}
-                        </span>
-                        <span className="font-mono text-amber-200">
-                          {gameState.mapping[label].formula}
-                        </span>
-                        <span className="text-slate-400">
-                          ({gameState.mapping[label].name})
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* Hints */}
