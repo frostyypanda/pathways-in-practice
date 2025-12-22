@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "rugulovasine-a-zhang-2013",
+        "molecule_name": "Rugulovasine A",
+        "class": "Natural Product",
+        "author": "Zhang",
+        "year": 2013
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "TMSCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C(CC(=O)O)[C@@H](C(=O)O)N",
+            "product_smiles": "COC(=O)CC[C@@H](C(=O)OC)N",
+            "notes": "Dimethyl esterification of a glutamic acid derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amine protection",
+            "reagents": "Boc₂O, NEt₃",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "95% (2 steps)",
+            "reactant_smiles": "COC(=O)CC[C@@H](C(=O)OC)N",
+            "product_smiles": "[Boc]N[C@@H](C(=O)OC)CC(=O)OC",
+            "notes": "Protection of the primary amine to a Boc-carbamate, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amine bis-Boc protection",
+            "reagents": "Boc₂O, DMAP",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C.CN(C)c1ccncc1",
+            "conditions": "MeCN",
+            "yield": "98%",
+            "reactant_smiles": "[Boc]N[C@@H](CCC(=O)OC)C(=O)OC",
+            "product_smiles": "N([Boc])([Boc])[C@@H](CCC(=O)OC)C(=O)OC",
+            "notes": "Secondary amine protected with a second Boc group to form a di-Boc protected amine. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction (Ester to Aldehyde)",
+            "reagents": "DIBAL, Et₂O",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "85%",
+            "reactant_smiles": "[Boc]N([Boc])[C@@H](C(=O)OC)CCC(=O)OC",
+            "product_smiles": "[Boc]N([Boc])[C@@H](C(=O)OC)CCC=O",
+            "notes": "Selective reduction of a methyl ester to an aldehyde with DIBAL at low temperature, maintaining another methyl ester and a bis-Boc protected amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Indole synthesis via Palladium-catalyzed cyclization",
+            "reagents": "Pd(OAc)₂, DABCO",
+            "reagent_smiles": "Nc1c(I)c([N+](=O)[O-])ccc1",
+            "conditions": "DMF, 80 °C",
+            "yield": "80%",
+            "reactant_smiles": "[Boc]N([C@@H](CCC=O)C(=O)OC)[Boc]",
+            "product_smiles": "O=[N+]([O-])c1cccc2[nH]c(C[C@H](C(=O)OC)N([Boc])[Boc])cc12",
+            "notes": "Palladium-catalyzed cyclization of a substituted iodo-aniline with an aldehyde to form a 7-nitroindole derivative. The stereochemistry at the chiral center is inverted from reactant to product as indicated by the change from a wedge to a dash bond.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Sandmeyer Reaction",
+                    "reagents": "NaNO2, H2SO4, AcOH, KI",
+                    "reagent_smiles": "",
+                    "conditions": "70 °C, 40 °C",
+                    "yield": "69%",
+                    "reactant_smiles": "C1=CC(=C(C(=C1)[N+](=O)[O-])N)[N+](=O)[O-]",
+                    "product_smiles": "C1=CC(=C(C(=C1)[N+](=O)[O-])I)[N+](=O)[O-]",
+                    "notes": "Diazotization of an aniline derivative followed by iodination.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Selective Nitro Reduction (Bechamp Reduction)",
+                    "reagents": "Fe, AcOH, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "110 °C, reflux",
+                    "yield": "54%",
+                    "reactant_smiles": "C1=CC(=C(C(=C1)[N+](=O)[O-])I)[N+](=O)[O-]",
+                    "product_smiles": "C1=CC(=C(C(=C1)N)I)[N+](=O)[O-]",
+                    "notes": "Selective reduction of one nitro group to an amine, leaving the other nitro group and the iodo group intact.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Indole N-protection",
+            "reagents": "Boc2O, DMAP",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(C)(C)C",
+            "conditions": "MeCN, rt",
+            "yield": "95%",
+            "reactant_smiles": "[Boc]N([C@@H](CC1=CNC2=C1C(=CC=C2)[N+](=O)[O-])C(=O)OC)[Boc]",
+            "product_smiles": "[Boc]N1C=C(C[C@@H](C(=O)OC)N([Boc])[Boc])C2=C1C=CC=C2[N+](=O)[O-]",
+            "notes": "The indole nitrogen, initially an N-H, is protected with a Boc group using di-tert-butyl dicarbonate (Boc2O) and DMAP. The stereochemistry and the N(Boc)2 group on the side chain remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nitro group reduction",
+            "reagents": "Zn, AcOH",
+            "reagent_smiles": "",
+            "conditions": "DMF, CH2Cl2, 80°C, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "[Boc]N1C=C(C[C@@H]([CO2Me])N([Boc])[Boc])C2=C1C=CC=C2[N+](=O)[O-]",
+            "product_smiles": "[Boc]N1C=C(C[C@@H]([CO2Me])N([Boc])[Boc])C2=C1C=CC=C2N",
+            "notes": "Reduction of the indole C7 nitro group to an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Sandmeyer reaction (Diazotization and Iodination)",
+            "reagents": "NaNO2, KI/I2",
+            "reagent_smiles": "",
+            "conditions": "5%HCl, THF",
+            "yield": "74%",
+            "reactant_smiles": "[Boc]N1C=C(C[C@@H](C(=O)OC)N([Boc])[Boc])C2=C1C=CC=C2N",
+            "product_smiles": "[Boc]N1C=C(C[C@@H](C(=O)OC)N([Boc])[Boc])C2=C1C=CC=C2I",
+            "notes": "Conversion of an aromatic amine to an aryl iodide via diazotization.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Selective N-Boc Deprotection",
+            "reagents": "Mg(ClO4)2",
+            "reagent_smiles": "",
+            "conditions": "MeCN, reflux",
+            "yield": "98%",
+            "reactant_smiles": "[Boc]N1C=C(C[C@@H](C(=O)OC)N([Boc])[Boc])C2=C1C=CC=C2I",
+            "product_smiles": "[Boc]N[C@@H](CC1=CN([Boc])C2=C1C(=CC=C2)I)C(=O)OC",
+            "notes": "Selective deprotection of one Boc group from a geminal bis-Boc amine, catalyzed by Mg(ClO4)2, resulting in a secondary Boc-protected amine. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "N-Methylation",
+            "reagents": "Ag2O, CH3I",
+            "reagent_smiles": "[Ag]O[Ag].CI",
+            "conditions": "DMF, 60 °C",
+            "yield": "83%",
+            "reactant_smiles": "[Boc]N[C@@H](CC1=CN([Boc])C2=C1C(=CC=C2)I)C(=O)OC",
+            "product_smiles": "[Boc]N(C)[C@@H](CC1=CN([Boc])C2=C1C(=CC=C2)I)C(=O)OC",
+            "notes": "N-Methylation of a secondary Boc-protected amine to a tertiary N-methyl Boc-protected amine using silver oxide and methyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Ketone Formation / Cyclization",
+            "reagents": "",
+            "reagent_smiles": "CC(C)(C)[Li].C1CCOC1",
+            "conditions": "-78 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N(C)[C@H](CC1=CN(C2=C1C(=CC=C2)I)C(=O)OC(C)(C)C)C(=O)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N(C)[C@H]1CC(=O)C2=C3C(=CC=C2)N(C(=O)OC(C)(C)C)C=C31",
+            "notes": "Intramolecular cyclization of an iodo-indole derivative. Halogen-metal exchange with t-BuLi is followed by intramolecular addition of the resulting aryl lithium to the methyl ester, forming a new six-membered ring with a ketone and a new chiral center. The Boc protecting groups are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reductive Allene Formation / Propargylation",
+            "reagents": "CrCl3, LiAlH4",
+            "reagent_smiles": "C#CCBr",
+            "conditions": "THF/HMPA, rt",
+            "yield": "66%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N(C)C1CC2=CN(C(=O)OC(C)(C)C)C=C3C=CC=CC3=C2C1=O",
+            "product_smiles": "CC(C)(C)OC(=O)N(C)[C@H]1CC2=CN(C(=O)OC(C)(C)C)C=C3C=CC=CC3=C2[C@]1(O)C=C=C",
+            "notes": "Reductive coupling of a ketone with propargyl bromide to form an allene and a tertiary alcohol. Stereochemistry at the two adjacent chiral centers is cis for the NMeBoc and OH groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Carbonylation / Cyclization",
+            "reagents": "Ru3(CO)12, 2,4,6-collidine, CO",
+            "reagent_smiles": "",
+            "conditions": "100 °C, 1 atm CO",
+            "yield": "58%",
+            "reactant_smiles": "C=C=C[C@@]1(O)C2=CC=CC3=C2C(=CN3[Boc])C[C@H]1[NMeBoc]",
+            "product_smiles": "[NMeBoc][C@@H]1CC2=CN([Boc])C3=C2C(=CC=C3)[C@]41C=C(C)C(=O)O4",
+            "notes": "Ruthenium-catalyzed carbonylation and cyclization of an allenyl alcohol to form a α,β-unsaturated lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "N-Boc Deprotection",
+            "reagents": "Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH/THF",
+            "yield": "75%",
+            "reactant_smiles": "CC1=CC(=O)O[C@]2([C@H](CC3=C[N]([Boc])C4=C3C=CC=C4)[N](C)[Boc])C1",
+            "product_smiles": "CC1=CC(=O)O[C@]2([C@H](CC3=CNC4=C3C=CC=C4)[N](C)[Boc])C1",
+            "notes": "Indole N-Boc deprotection using cesium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Boc deprotection",
+            "reagents": "TMSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "87%",
+            "reactant_smiles": "CC1=C[C@@]2(C3=CC=CC4=C3C(=CN4)C[C@H]2[NMeBoc])OC1=O",
+            "product_smiles": "CC1=C[C@@]2(C3=CC=CC4=C3C(=CN4)C[C@H]2NC)OC1=O",
+            "notes": "Deprotection of N-Boc group to N-methyl amine, forming Rugulovasine A.",
+            "substeps": []
+        }
+    ]
+}

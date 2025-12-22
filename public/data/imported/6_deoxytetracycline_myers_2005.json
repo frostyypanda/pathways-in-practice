@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "6-deoxytetracycline-myers-2005",
+        "molecule_name": "6-Deoxytetracycline",
+        "class": "Natural Product",
+        "author": "Myers",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Microbial Oxidation (cis-dihydroxylation)",
+            "reagents": "A. eutrophus B9",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "79%",
+            "reactant_smiles": "O=C(O)C1=CC=CC=C1",
+            "product_smiles": "O=C(O)[C@H]1[C@@H](O)[C@@H](O)C=CC=C1",
+            "notes": "Microbial oxidation of benzoic acid to a 1-carboxy-2,3-dihydroxycyclohexa-4,6-diene derivative. The product's visual representation in the screenshot contains a topological inconsistency: it shows three adjacent saturated chiral carbons within a 6-membered ring that also contains two double bonds, which is impossible. The provided product SMILES reflects the most plausible interpretation of the relative stereochemistry (COOH-wedge, adjacent OH-dash, next adjacent OH-dash) and number of substituents, while acknowledging the inherent contradiction in the drawing where a chiral carbon is also implied to be part of a double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "EtOAc",
+            "yield": "83%",
+            "reactant_smiles": "O=C(O)[C@@]1(O)[C@@H](O)CC=CC1",
+            "product_smiles": "O=C(O)[C@@]1(O)[C@@H](O)C[C@@H]2O[C@@H]2C1",
+            "notes": "Epoxidation of a cyclohexene derivative with mCPBA to form an epoxide syn to the existing hydroxyl and carboxylic acid groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Esterification",
+            "reagents": "TMSCHN₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=C[C@]([C@@H]([C@H]2[C@@H]1O2)O)(C(=O)O)O",
+            "product_smiles": "COC(=O)[C@]1(C=C[C@@H]2[C@H]([C@H]1O)O2)O",
+            "notes": "Methylation of a carboxylic acid to its corresponding methyl ester using (trimethylsilyl)diazomethane.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Silylation / Alcohol Protection",
+            "reagents": "TBSOTf, Et3N",
+            "reagent_smiles": "CCN(CC)CC.C[Si](C)(C(C)(C)C)OS(=O)(=O)C(F)(F)F",
+            "conditions": "",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "COC(=O)[C@@]1(O)[C@H](O)C=C[C@@H]2O[C@@H]12",
+            "product_smiles": "COC(=O)[C@@]1([OTBS])[C@H]([OTBS])C=C[C@@H]2O[C@@H]12",
+            "notes": "Protection of two hydroxyl groups as TBS ethers, leaving the epoxide and methyl ester untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acylation / Nucleophilic Addition",
+            "reagents": "THF",
+            "reagent_smiles": "[Li]C1=C(CN(C)CC)ON=C1OCC2=CC=CC=C2",
+            "conditions": "-78 °C",
+            "yield": "73%",
+            "reactant_smiles": "[TBS]O[C@@H]1C=C[C@@H](O[TBS])[C@@H]2[C@](C(=O)OC)O2C1",
+            "product_smiles": "[TBS]O[C@@H]1C=C[C@@H](O[TBS])[C@@H]2[C@](C(=O)C3=C(CN(C)CC)ON=C3OCC4=CC=CC=C4)O2C1",
+            "notes": "Nucleophilic addition of lithiated isoxazole to methyl ester, forming a ketone. Epoxide and silyl ethers are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular rearrangement/cyclization",
+            "reagents": "LiOTf",
+            "reagent_smiles": "",
+            "conditions": "toluene, 60 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H]1C=C[C@H]2[C@@](C(=O)C3=C(CN(C)C)ON=C3[OBn])([C@@H]1[OTBS])O2",
+            "product_smiles": "[OTBS][C@@H]1CC[C@H]([OTBS])C[C@H]2[C@H]3[C@@H]([C@@H](N(C)C)C4=C([OBn])N=O4)[C@]5(C(=O)[C@H](O)[C@@]35)[C@H]2",
+            "notes": "Intramolecular cyclization involving the cyclohexene double bond, opening of the spiro-furan to a hydroxyl group, and formation of a new fused ring system, leading to a tetracyclic core.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "62% (2 steps)",
+            "reactant_smiles": "CN(C)[C@H]1[C@@H]2C=C[C@@H]([OTBS])[C@H]([OTBS])(O)[C@H]3C(=O)C4=C(C(=NO4)OCC5=CC=CC=C5)[C@@]1([H])[C@]23[H]",
+            "product_smiles": "CN(C)[C@H]1[C@@H]2C=C[C@@H](O)[C@H]([OTBS])(O)[C@H]3C(=O)C4=C(C(=NO4)OCC5=CC=CC=C5)[C@@]1([H])[C@]23[H]",
+            "notes": "Selective deprotection of a TBS ether to a hydroxyl group. The TBS ether at the C7 equivalent (wedge bond) is removed, while the geminal TBS ether and hydroxyl at the C6 equivalent (both dash bonds) remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dehydration",
+            "reagents": "PPh3, DEAD, NBSH, toluene",
+            "reagent_smiles": "",
+            "conditions": "toluene",
+            "yield": "74%",
+            "reactant_smiles": "[OTBS][C@H]1C[C@@H](O)C=C[C@@H]2[C@@H](N(C)C)C3=C(C(=O)[C@H]1O)c4([OBn])=NOC4=C3",
+            "product_smiles": "[OTBS][C@H]1C=CC[C@@H]2[C@@H](N(C)C)C3=C(C(=O)[C@H]1O)c4([OBn])=NOC4=C3",
+            "notes": "Dehydration of a secondary alcohol to form a new alkene in the leftmost ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H]1C=CC[C@H]2[C@@H](C3=C(C(=O)[C@]21O)c4c(OCC5=CC=CC=C5)on=c4)N(C)C",
+            "product_smiles": "CN(C)[C@H]1[C@@H]2CC=C[C@H]([C@@]2(C(=O)C3=C1c4c(OCC5=CC=CC=C5)on=c4)O)O",
+            "notes": "Acid-catalyzed hydrolysis of TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation and Alkene Reduction",
+            "reagents": "IBX, DMSO",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN(C)[C@H]1[C@@H]2[C@@H]3C=C[C@@H](O)C[C@@H]3[C@@]2(O)C(=O)C4=C1ON=C4[OBn]",
+            "product_smiles": "CN(C)[C@H]1[C@@H]2[C@@H]3CC(=O)C[C@@H]3[C@@]2(O)C(=O)C4=C1ON=C4[OBn]",
+            "notes": "Oxidation of a secondary allylic alcohol to a ketone, accompanied by the reduction of the adjacent alkene double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Protection (Silyl Ether Formation)",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "66%",
+            "reactant_smiles": "CN(C)[C@H]1[C@@H]2CC=CC(=O)[C@@]2(C(=O)C3=C1ON=C3OCC4=CC=CC=C4)O",
+            "product_smiles": "CN(C)[C@H]1[C@@H]2CC=CC(=O)[C@@]2(C(=O)C3=C1ON=C3OCC4=CC=CC=C4)[OTBS]",
+            "notes": "Formation of a TBS silyl ether from a tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Cyclization / [4+2] Cycloaddition",
+            "reagents": "LDA, TMEDA",
+            "reagent_smiles": "CC1=C(C(=O)OC2=CC=CC=C2)C([OBoc])=CC=C1",
+            "conditions": "-78 to 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "[OTBS][C@]12[C@@H](CC=CC1=O)[C@H](C3=C(C2=O)C(=NO3)[OBn])N(C)C",
+            "product_smiles": "[OBoc]C1=C2C(=CC=C1)[C@](C)([C@@H]3C[C@@H]4[C@H](C5=C(C(=O)[C@]4(C(=C3C2=O)O)[OTBS])C(=NO5)[OBn])N(C)C)",
+            "notes": "Complex cyclization of reactant with benzylic diene, resulting in a tetracycline core with a newly formed aromatic ring. A methyl group and a hydroxyl group are introduced, and existing rings are saturated.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "HF",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@]12[C@@H](C[C@H]3C(=C1O)C(=O)C4=C(C=CC=C4[C@@]3C)O[Boc])[C@H](C5=C(C2=O)C(=NO5)OCC6=CC=CC=C6)N(C)C",
+            "product_smiles": "C[C@@]1C2=CC=CC(=C2C(=O)C3=C([C@@]4([C@H](C[C@H]13)[C@H](C5=C(C4=O)C(=NO5)OCC6=CC=CC=C6)N(C)C)O)O)O",
+            "notes": "Removal of Boc and TBS protecting groups from the phenol and tertiary alcohol, respectively.",
+            "substeps": []
+        }
+    ]
+}

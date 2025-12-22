@@ -1,0 +1,302 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "macrocidin-a-suzuki-2010",
+        "molecule_name": "Macrocidin A",
+        "class": "Natural Product",
+        "author": "Suzuki",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sonogashira Coupling",
+            "reagents": "Cul, NaI, K2CO3",
+            "reagent_smiles": "C=CCI",
+            "conditions": "acetone",
+            "yield": "85%",
+            "reactant_smiles": "C#CCO",
+            "product_smiles": "C=CCC#CCO",
+            "notes": "Sonogashira coupling of propargyl alcohol with 3-iodo-1-propene.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkyne Reduction (to Z-alkene)",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4].C1CCOC1",
+            "conditions": "THF, 70 °C",
+            "yield": "74%",
+            "reactant_smiles": "C=CCC#CCO",
+            "product_smiles": "C=CCC/C=C\\CO",
+            "notes": "Reduction of an internal alkyne to a Z-alkene using Lithium Aluminum Hydride (LiAlH4). The alkene remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sharpless asymmetric epoxidation",
+            "reagents": "(+)-DET, t-BuOOH, Ti(Oi-Pr)4, 4 Å MS",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 °C",
+            "yield": "80%",
+            "reactant_smiles": "C=CC/C=C/CO",
+            "product_smiles": "C=CC[C@@H]1O[C@@H](CO)1",
+            "notes": "Sharpless asymmetric epoxidation of the allylic alcohol moiety, forming a cis-epoxide with specific stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Protection (Alcohol Silylation)",
+            "reagents": "TBDPSCl, im",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "99%",
+            "reactant_smiles": "C=CC[C@H]1[C@@H](CO)O1",
+            "product_smiles": "C=CC[C@H]1[C@@H](C[OTBDPS])O1",
+            "notes": "Protection of a primary alcohol as a TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "Rh(PPh)3Cl, H2O2",
+            "reagent_smiles": "C1=CC2=C(C=C1)O[B]O2",
+            "conditions": "THF, 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "C=CCC[C@H]1[C@H](C[OTBDPS])O1",
+            "product_smiles": "OCCC[C@H]1[C@H](C[OTBDPS])O1",
+            "notes": "Rhodium-catalyzed hydroboration-oxidation of a terminal alkene to a primary alcohol, with an epoxide and OTBDPS group remaining untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Swern oxidation",
+            "reagents": "DMSO, TEA, (COCl)2",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "99%",
+            "reactant_smiles": "[OTBDPS]C[C@@H]1O[C@H](CCCO)1",
+            "product_smiles": "[OTBDPS]C[C@@H]1O[C@H](CCC=O)1",
+            "notes": "Primary alcohol oxidized to an aldehyde, retaining the epoxide and silyl ether protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "LDA, HMPA",
+            "reagent_smiles": "CCOP(=O)(OCC)C(C)C1=CC(=O)OC(C)(C)O1",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "96%",
+            "reactant_smiles": "[OTBDPS]OC[C@@H]3[C@H](CCC=O)O3",
+            "product_smiles": "C(C2=CC(=O)OC(C)(C)O2)/C(C)=C\\CCC[C@H]1[C@@H](CO[OTBDPS])O1",
+            "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde to form an E-alkene.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Acylation / Knoevenagel-like condensation / Enolization",
+                    "reagents": "py",
+                    "reagent_smiles": "CCC(=O)Cl",
+                    "conditions": "DCM",
+                    "yield": "93%",
+                    "reactant_smiles": "CC1(C)OC(=O)CC(=O)O1",
+                    "product_smiles": "CCC(=C1C(=O)OC(C)(C)OC1=O)O",
+                    "notes": "Acylation of the active methylene of Meldrum's acid derivative with propionyl chloride, followed by enolization.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Decarboxylation-Dehydration",
+                    "reagents": "acetone, PhMe",
+                    "reagent_smiles": "",
+                    "conditions": "80 °C",
+                    "yield": "77%",
+                    "reactant_smiles": "CCC(=C1C(=O)OC(C)(C)OC1=O)O",
+                    "product_smiles": "CCC1=CC(=O)OC(C)(C)O1",
+                    "notes": "Thermal decarboxylation and dehydration of a Meldrum's acid enol derivative to an alpha,beta-unsaturated 1,3-dioxin-4-one.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Substitution/Phosphonylation",
+                    "reagents": "LDA, P(OEt)₂Cl, H₂O₂",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "74%",
+                    "reactant_smiles": "CCC1=CC(=O)OC(C)(C)O1",
+                    "product_smiles": "CCOP(=O)(C(C)C1=CC(=O)OC(C)(C)O1)OCC",
+                    "notes": "Transformation of an α,β-unsaturated lactone, where the ethyl group at the β-position is replaced by a 1-(diethoxyphosphoryl)ethyl group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Silyl ether hydrolysis)",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C/C(=C\\CC[C@H]1[C@H](C[OTBDPS])O1)/C4=CC(=O)OC(C)(C)O4",
+            "product_smiles": "C/C(=C\\CC[C@H]1[C@H](CO)O1)/C2=CC(=O)OC(C)(C)O2",
+            "notes": "Deprotection of a TBDPS silyl ether to a primary alcohol using TBAF.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Epoxide opening / Halohydrin formation",
+            "reagents": "NaI, HOAc, B(OAc)3",
+            "reagent_smiles": "",
+            "conditions": "acetone, -20 to 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "C/C(=C\\CC[C@H]1[C@@H](CO)O1)/C2=CC(=O)OC(C)(C)O2",
+            "product_smiles": "C/C(=C\\CC[C@H](O)[C@H](I)CO)/C1=CC(=O)OC(C)(C)O1",
+            "notes": "Stereoselective epoxide ring opening using NaI/HOAc/B(OAc)3 to form a vicinal iodohydrin. The epoxide is opened via an SN2-like attack of iodide at the more accessible carbon, inverting its stereochemistry, while the other carbon retains its configuration upon protonation/hydroxylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "H2, CF3CH2OH, (t-Bu)2P Ir-complex catalyst",
+            "reagent_smiles": "",
+            "conditions": "40 °C",
+            "yield": "96%",
+            "reactant_smiles": "C/C(=C\\CC[C@@H]([C@@H](CO)I)O)/C1=CC(=O)OC(C)(C)O1",
+            "product_smiles": "C[C@H](CCC[C@@H]([C@@H](CO)I)O)C1=CC(=O)OC(C)(C)O1",
+            "notes": "Asymmetric hydrogenation of an α,β-unsaturated ester using a chiral iridium phosphine catalyst, creating a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Epoxide formation (intramolecular Williamson ether synthesis)",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "C[C@H](CCC[C@@H](O)[C@H](I)CO)C1=CC(=O)OC(C)(C)O1",
+            "product_smiles": "C[C@H](CCC[C@H]1[C@H](CO)O1)C2=CC(=O)OC(C)(C)O2",
+            "notes": "Intramolecular cyclization to form an epoxide from a vicinal iodo-diol under basic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P, DEAD, PhMe",
+            "reagent_smiles": "OC1=CC=C(C=C1)C[C@H](C(=O)OC)N(C(=O)OCC[Si](C)(C)C)CC2=CC=C(N3)C=C2",
+            "conditions": "",
+            "yield": "89%",
+            "reactant_smiles": "O=C1OC(C)(C)C=C(C1)[C@@H](C)CCC[C@@H]2O[C@H](CO)2",
+            "product_smiles": "O=C1OC(C)(C)C=C(C1)[C@@H](C)CCC[C@@H]2O[C@H](COC3=CC=C(C=C3)C[C@H](C(=O)OC)N(C(=O)OCC[Si](C)(C)C)CC4=CC=C(N3)C=C4)2",
+            "notes": "Mitsunobu etherification of a primary alcohol with a phenol derivative.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Amine Protection",
+                    "reagents": "",
+                    "reagent_smiles": "ClC(=O)OCC[Si](C)(C)C.[Na+].[Na+].[CO3-2]",
+                    "conditions": "CHCl3/H2O, 0 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "COC(=O)[C@@H](CC1=CC=C(C=C1)O)[NH3+].Cl-",
+                    "product_smiles": "COC(=O)[C@@H](CC1=CC=C(C=C1)O)NC(=O)OCC[Si](C)(C)C",
+                    "notes": "Amine protection of a primary amine using 2-(trimethylsilyl)ethoxycarbonyl chloride (TeoccCl) and sodium carbonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "O-Alkylation",
+                    "reagents": "",
+                    "reagent_smiles": "C=CCBr.[K+].[O-]C([O-])=O",
+                    "conditions": "DMF",
+                    "yield": "91%",
+                    "reactant_smiles": "[NHTeoc][C@H](CC1=CC=C(C=C1)O)C(=O)OC",
+                    "product_smiles": "C=CCOC1=CC=C(C=C1)C[C@H](C(=O)OC)[NHTeoc]",
+                    "notes": "O-allylation of a phenolic hydroxyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "N-Alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "BrCC1=CC=C(C=C1)[N-]=[N+]=[N-]",
+                    "conditions": "DMF",
+                    "yield": "67%",
+                    "reactant_smiles": "C=CCOC1=CC=C(C=C1)C[C@@H](C(=O)OC)NH[Teoc]",
+                    "product_smiles": "C=CCOC1=CC=C(C=C1)C[C@@H](C(=O)OC)N(CC2=CC=C(C=C2)[N-]=[N+]=[N-])[Teoc]",
+                    "notes": "N-alkylation of a secondary amine with a benzyl bromide, where the Teoc protecting group is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Allyl Ether Deprotection",
+                    "reagents": "morpholine, Pd(PPh3)4",
+                    "reagent_smiles": "",
+                    "conditions": "THF",
+                    "yield": "84%",
+                    "reactant_smiles": "C=CCOC1=CC=C(C=C1)C[C@@H](C(=O)OC)N(CC2=CC=C(C=C2)[N-]=[N+]=N)[Teoc]",
+                    "product_smiles": "O=C(OC)[C@@H](CC1=CC=C(C=C1)O)N(CC2=CC=C(C=C2)[N-]=[N+]=N)[Teoc]",
+                    "notes": "Palladium-catalyzed deprotection of allyl ether to form a phenol, retaining the configuration of the chiral center.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "91%",
+            "reactant_smiles": "C[C@@H]1CCC[C@@H]2[C@H](COC3=CC=C(C=C3)C[C@H](C(=O)OC)N([Teoc])CC4=CC=C(C=C4)N=[N+]=[N-])O2C=CC(=O)OC(C)(C)O1",
+            "product_smiles": "C[C@@H]1CCC[C@@H]2[C@H](COC3=CC=C(C=C3)C[C@H](C(=O)OC)NCC4=CC=C(C=C4)N=[N+]=[N-])O2C=CC(=O)OC(C)(C)O1",
+            "notes": "Deprotection of a Teoc-protected amine to yield a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Macrocyclization",
+            "reagents": "PhMe",
+            "reagent_smiles": "",
+            "conditions": "110 °C",
+            "yield": "86%",
+            "reactant_smiles": "O=C1OC(C)(C)OC(=C1)[C@H](C)CCC[C@H](C[C@@H]2O2)OC3=CC=C(C=C3)C[C@@H](C(=O)OC)NCC4=CC=C(C=C4)[N-]=[N+]=[N-]",
+            "product_smiles": "C[C@H]1CCC[C@H]2[C@@H](COC3=CC=C(C=C3)C[C@@H](C(=O)OC)N(CC4=CC=C(C=C4)[N-]=[N+]=[N-])C(=O)CC(=O)[C@H]1)O2",
+            "notes": "Intramolecular cyclization of an amine with a dioxanone derivative, leading to a macrocyclic amide and a β-diketone system with the loss of acetone. The epoxide and azide groups remain untouched. Stereochemistry of chiral centers and epoxide are maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Lacey-Dieckmann condensation",
+            "reagents": "t-BuOK",
+            "reagent_smiles": "",
+            "conditions": "t-BuOH/THF",
+            "yield": "87%",
+            "reactant_smiles": "C[C@H]1CCC[C@H]2O[C@@H]2COC3=CC=C(C=C3)C[C@@H](C(=O)OC)N(CC4=CC=C(C=C4)N=N#N)C(=O)CC(=O)C1",
+            "product_smiles": "C[C@H]1CCC[C@H]2O[C@@H]2COC3=CC=C(C=C3)C[C@H]4N(CC5=CC=C(C=C5)N=N#N)C(=O)C(=CO)C(=O)C4",
+            "notes": "Intramolecular Lacey-Dieckmann condensation forming a 5-membered enolized lactam ring system from a macrocyclic beta-keto ester, with elimination of methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Azide reduction",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "MeOH/THF",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]\\1CCC[C@@H]2[C@H](COC3=CC=C(C=C3)C[C@H]4C(=O)/C(=C1\\O)/C(=O)N4CC5=CC=C(C=C5)[N-]=[N+]=[N-])O2",
+            "product_smiles": "C[C@@H]\\1CCC[C@@H]2[C@H](COC3=CC=C(C=C3)C[C@H]4C(=O)/C(=C1\\O)/C(=O)N4CC5=CC=C(C=C5)N)O2",
+            "notes": "Reduction of an aryl azide group to a primary aryl amine using catalytic hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Oxidative Deprotection",
+            "reagents": "DDQ, H₂O",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "78% (2 steps)",
+            "reactant_smiles": "C[C@@H]\\1CCC[C@@H]2[C@H](COC3=CC=C(C=C3)C[C@H]4C(=O)/C(=C1\\O)/C(=O)N4CC5=CC=C(C=C5)N)O2",
+            "product_smiles": "C[C@@H]/1CCC[C@@H]2[C@H](COC3=CC=C(C=C3)C[C@H]4C(=O)/C(=C1/O)/C(=O)N4)O2",
+            "notes": "Oxidative deprotection of a p-aminobenzyl group from an imide using DDQ to form the N-H imide.",
+            "substeps": []
+        }
+    ]
+}

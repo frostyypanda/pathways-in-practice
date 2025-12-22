@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "myxalamide-a-kobayashi-2012",
+        "molecule_name": "Myxalamide A",
+        "class": "Natural Product",
+        "author": "Kobayashi",
+        "year": 2012
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Acylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "CC/C=C(\\C)/C(=O)Cl.CCN(CC)CC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC(C)[C@@H]1COC(=O)N1",
+            "product_smiles": "CC/C=C(\\C)/C(=O)N1[C@@H](COC1=O)C(C)C",
+            "notes": "N-acylation of a chiral oxazolidinone with a chiral acyl chloride using triethylamine as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Enol silyl ether formation",
+            "reagents": "NaHMDS, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "63%",
+            "reactant_smiles": "CC/C=C(\\C)/C(=O)N1[C@@H](COC1=O)C(C)C",
+            "product_smiles": "CC/C=C(\\C)C(C)=C([OTBS])N1[C@@H](COC1=O)C(C)C",
+            "notes": "Formation of a silyl enol ether by deprotonation alpha to the carbonyl and trapping with TBSCl. The original E-configured alkene and the oxazolidinone chiral center are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mukiyama aldol",
+            "reagents": "TiCl4",
+            "reagent_smiles": "CC[C@@H](C)/C=C(/C)\\C=O",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "O=C1OC[C@H](C(C)C)N1C(=O)\\C(=C(/C)/C=C/C)/O[TBS]",
+            "product_smiles": "CC[C@@H](C)CC[C@H](O)[C@H](C)/C=C(\\C)/C(=O)N1[C@H](C(C)C)COC1=O",
+            "notes": "Mukiyama aldol reaction to extend the chain with an aldehyde, involving an oxazolidinone chiral auxiliary. The silyl enol ether is hydrolyzed and a new carbon-carbon bond forms, adding a hydroxyl group to the product. The TBS group is lost in the reaction.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Swern oxidation",
+                    "reagents": "(COCl)2, DMSO, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "",
+                    "reactant_smiles": "CC[C@H](C)CO",
+                    "product_smiles": "CC[C@H](C)C=O",
+                    "notes": "Primary alcohol (R)-2-methylbutan-1-ol is oxidized to (R)-2-methylbutanal.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Oxidation (based on text label, though inconsistent with drawn structures)",
+                    "reagents": "Swern oxidation",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC[C@H](C)C=O",
+                    "product_smiles": "CCOC(=O)C(=C(C)P(c1ccccc1)(c2ccccc2)c3ccccc3)",
+                    "notes": "The reactant shown is (S)-2-methylbutanal. The product shown is ethyl 2-(triphenylphosphoranylidene)propanoate. The reaction text label is 'Swern oxidation'. Chemically, Swern oxidation converts alcohols to aldehydes/ketones. The given reactant is already an aldehyde, and the 'product' is a phosphorus ylide (Wittig reagent), not a typical product of Swern oxidation from an aldehyde. The presented reaction step is chemically inconsistent if interpreted as a transformation from the drawn reactant to the drawn product under 'Swern oxidation' conditions. The SMILES are validated against the drawn structures and text labels as they appear, not chemical plausibility of the overall transformation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Wittig olefination",
+                    "reagents": "Wittig olefination",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C(=P(c1ccccc1)(c2ccccc2)c3ccccc3)C",
+                    "product_smiles": "CC[C@H](C)/C=C(\\C(=O)OCC)C",
+                    "notes": "Wittig olefination of an aldehyde (implied from the reactant's ylide structure) to form an alpha,beta-unsaturated ester with E-configured double bond and an S-configured chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.4",
+                    "reaction_type": "Reduction",
+                    "reagents": "DIBALH",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "92%",
+                    "reactant_smiles": "CC[C@H](C)/C=C(\\C)/C(=O)OCC",
+                    "product_smiles": "CC[C@H](C)/C=C(\\C)/CO",
+                    "notes": "Ester reduction to a primary alcohol using DIBALH, retaining alkene and stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.5",
+                    "reaction_type": "Oxidation",
+                    "reagents": "MnO2",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "88%",
+                    "reactant_smiles": "CC[C@H](C)\\C=C(\\C)/CO",
+                    "product_smiles": "CC[C@H](C)\\C=C(\\C)/C=O",
+                    "notes": "Primary alcohol oxidation to aldehyde using manganese dioxide",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Reduction",
+            "reagents": "LiBH4",
+            "reagent_smiles": "CO.O(CC)CC.[Li][BH4]",
+            "conditions": "MeOH, Et2O",
+            "yield": "",
+            "reactant_smiles": "CC[C@@H](C)C[C@@H](C)[C@@H](O)[C@H](C)/C=C(\\C)/C(=O)N1[C@@H](C(C)C)COC1=O",
+            "product_smiles": "CC[C@@H](C)C[C@@H](C)[C@@H](O)[C@H](C)/C=C(\\C)/CO",
+            "notes": "Amide reduction to primary alcohol and concomitant cleavage of the chiral oxazolidinone auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "91% (2 steps)",
+            "reactant_smiles": "CC[C@H](C)CC(C)[C@@H]([C@H](C)/C=C(\\C)/CO)O",
+            "product_smiles": "CC[C@H](C)CC(C)[C@@H]([C@H](C)/C=C(\\C)/C=O)O",
+            "notes": "Selective oxidation of primary allylic alcohol to an alpha,beta-unsaturated aldehyde using manganese dioxide. Stereocenters and alkene geometry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Seyferth-Gilbert homologation",
+            "reagents": "THF",
+            "reagent_smiles": "O=P(OC)(OC)C=[N+]=[N-].[K+].CC(C)(C)[O-]",
+            "conditions": "",
+            "yield": "75%",
+            "reactant_smiles": "CC[C@H](C)C[C@@H](O)[C@H](C)/C=C(\\C)/C=O",
+            "product_smiles": "CC[C@H](C)C[C@@H](O)[C@H](C)/C=C(\\C)/C#C",
+            "notes": "Seyferth-Gilbert homologation converts an α,β-unsaturated aldehyde into a terminal alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrozirconation / Iodination",
+            "reagents": "HZrCp2Cl, I2",
+            "reagent_smiles": "II",
+            "conditions": "THF",
+            "yield": "58%",
+            "reactant_smiles": "CC[C@H](C)CH2[C@H](C)[C@@H](O)[C@H](C)/C=C(\\C)/C#C",
+            "product_smiles": "CC[C@H](C)CH2[C@H](C)[C@@H](O)[C@H](C)/C=C(\\C)/C=C/I",
+            "notes": "Terminal alkyne is converted to a (E)-vinyl iodide via hydrozirconation with Schwartz's reagent (HZrCp2Cl) followed by iodination with I2. The stereochemistry of the existing Z-alkene remains unchanged.",
+            "substeps": []
+        }
+    ]
+}

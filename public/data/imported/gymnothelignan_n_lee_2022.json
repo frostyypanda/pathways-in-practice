@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "gymnothelignan-n-lee-2022",
+        "molecule_name": "Gymnothelignan N",
+        "class": "Natural Product",
+        "author": "Lee",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Cyclization / Heterocycle formation",
+            "reagents": "CS₂, KOH",
+            "reagent_smiles": "",
+            "conditions": "H₂O, reflux",
+            "yield": "86%",
+            "reactant_smiles": "C1=CC=C(C=C1)C[C@H](CO)N",
+            "product_smiles": "S1C(=S)N[C@H](CC2=CC=CC=C2)C1",
+            "notes": "Cyclization of a primary amino alcohol with carbon disulfide to form a thiazolidine-2-thione.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Acylation",
+            "reagents": "nBuLi",
+            "reagent_smiles": "CCC(=O)Cl",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "S=C1N[C@@H](CC2=CC=CC=C2)CS1",
+            "product_smiles": "CCC(=O)N1[C@@H](CC2=CC=CC=C2)CSC1=S",
+            "notes": "N-acylation of a chiral 1,3-thiazolidine-2-thione using propanoyl chloride, maintaining the stereochemistry at the chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Aldol Reaction (Evans type)",
+            "reagents": "TiCl4, NMP, CH2Cl2",
+            "reagent_smiles": "COc1cc2ococ2c(C=O)c1.CCN(C(C)C)C(C)C",
+            "conditions": "0 °C",
+            "yield": "97%",
+            "reactant_smiles": "CCC(=O)N1[C@H](CC2=CC=CC=C2)CSC1=S",
+            "product_smiles": "C[C@H]([C@H](COc1cc2ococ2cc1)O)C(=O)N1[C@H](CC2=CC=CC=C2)CSC1=S",
+            "notes": "Asymmetric aldol reaction between a chiral thiazolidinethione auxiliary and an aromatic aldehyde, forming two new stereocenters with high selectivity.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lactonization, Stereoselective Synthesis",
+            "reagents": "LDA, CH₂Br₂, LiHMDS, sBuLi, nBuLi, HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to -20 °C, rt",
+            "yield": "94%",
+            "reactant_smiles": "C[C@H]([C@H](C1=CC(=C2C(=C1)OCO2)OC)O)C(=O)N3[C@H](CC4=CC=CC=C4)CSC3=S",
+            "product_smiles": "C[C@H]1CC(=O)O[C@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "notes": "Stereoselective conversion of a chiral auxiliary-derived α-hydroxy amide to a γ-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alkylation",
+            "reagents": "MeI, LiHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "95%",
+            "reactant_smiles": "COC1=CC(=C2C(=C1)OCO2)[C@H]3OC(=O)C[C@H]3C",
+            "product_smiles": "COC1=CC(=C2C(=C1)OCO2)[C@H]3OC(=O)C(C)(C)C3",
+            "notes": "Methylation of the alpha-carbon of the lactone, converting a chiral center to a quaternary carbon with two methyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Addition / Lactone Ring Opening-Recyclization",
+            "reagents": "nBuLi",
+            "reagent_smiles": "BrC1=C(OC)C(O[Si](C)(C)C(C)(C)C)=CC(OC)=C1",
+            "conditions": "THF, -78 °C",
+            "yield": "89%",
+            "reactant_smiles": "C[C@H]1[C@@H](C)C(=O)O[C@H]1C2=CC(=C3C(=C2)OCO3)OC",
+            "product_smiles": "COc1cc(OC)c(O[Si](C)(C)C(C)(C)C)cc1C2(O)O[C@H](c3cc(OC)c4ococc4c3)[C@H](C)[C@@H]2C",
+            "notes": "Aryl lithium reagent adds to the lactone carbonyl, followed by ring opening and subsequent cyclization to form a tetrahydrofuran derivative. The new tertiary alcohol stereocenter is formed as a mixture of diastereomers (racemic) as indicated by the wavy bond.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Electrophilic Aromatic Substitution (Bromination)",
+                    "reagents": "NaH, NBS",
+                    "reagent_smiles": "",
+                    "conditions": "CHCl3, -45 to 60 °C",
+                    "yield": "44%",
+                    "reactant_smiles": "COc1c(O)c(OC)ccc1",
+                    "product_smiles": "COc1c(O)c(OC)cc(Br)c1",
+                    "notes": "Aromatic bromination of 2,6-dimethoxyphenol using N-bromosuccinimide (NBS) and sodium hydride (NaH) as a base. The bromine is introduced para to the hydroxyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Silyl Ether Formation (Phenol Protection)",
+                    "reagents": "DMAP",
+                    "reagent_smiles": "[TBS]Cl.C1=CNC=N1",
+                    "conditions": "CH2Cl2",
+                    "yield": "86%",
+                    "reactant_smiles": "Brc1c(OC)cc(O)c(OC)c1",
+                    "product_smiles": "Brc1c(OC)cc([OTBS])c(OC)c1",
+                    "notes": "Phenolic hydroxyl group is protected as a tert-butyldimethylsilyl (TBS) ether.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Etherification",
+            "reagents": "BF3•OEt2, NaBH3CN",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "88%",
+            "reactant_smiles": "COC1=CC([OTBS])=C(OC)C=C1[C@H]2OC(C)C(C)[C@@H](O)C2c3cc4oco4c(OC)c3",
+            "product_smiles": "COC1=CC([OTBS])=C(OC)C=C1[C@@H]2O[C@H](C)[C@@H](C)[C@H](C3=CC4=C(OCO4)C=C3OC)C2",
+            "notes": "Reductive etherification of a cyclic hemiacetal to a tetrahydrofuran derivative. The hydroxyl group is reduced to hydrogen. The reaction proceeds with specific stereoselectivity, fixing the relative stereochemistry of the furan ring. TBS protecting group maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H]1[C@H](C)O[C@@H](c2cc(OC)c([OTBS])cc2OC)[C@@H](c3cc(OC)c4c(c3)OCO4)[C@H]1C",
+            "product_smiles": "C[C@@H]1[C@H](C)O[C@@H](c2cc(OC)c(O)cc2OC)[C@@H](c3cc(OC)c4c(c3)OCO4)[C@H]1C",
+            "notes": "Deprotection of a TBS ether to an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "PIDA, HFIP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "78%",
+            "reactant_smiles": "C[C@H]1[C@@H](C)[C@H](C2=CC(=C(C(=C2)OC)O)OC)O[C@H]1C3=CC(=C4C(=C3)OCO4)OC",
+            "product_smiles": "C[C@H]1[C@@H](C)[C@H]2[C@]3(C=C(C(=O)C(=C3)OC)OC)C4=C(C=C5C(=C4OC)OCO5)[C@H]1O2",
+            "notes": "Oxidative cyclization of a furofuran lignan precursor to form Gymnothelignan N, involving spirodienone formation and further cyclization.",
+            "substeps": []
+        }
+    ]
+}

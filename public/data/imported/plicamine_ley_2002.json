@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "plicamine-ley-2002",
+        "molecule_name": "Plicamine",
+        "class": "Natural Product",
+        "author": "Ley",
+        "year": 2002
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification, Silylation",
+            "reagents": "TMSCl, MeOH",
+            "reagent_smiles": "Cl[Si](C)(C)C.CO",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "C1=C(C=CC(=C1)O)[C@@H](C(=O)O)N",
+            "product_smiles": "COC(=O)[C@@H](C1=CC=C(C=C1)O[Si](C)(C)C)N",
+            "notes": "Simultaneous esterification of the carboxylic acid and silylation of the phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection",
+            "reagents": "Amberlyst-21",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "N[C@@H](C(=O)OC)c1ccc([OTMS])cc1",
+            "product_smiles": "N[C@@H](C(=O)OC)c1ccc(O)cc1",
+            "notes": "Acid-catalyzed deprotection of an O-TMS ether to a phenol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amidation / Aminolysis of ester",
+            "reagents": "MeNH2",
+            "reagent_smiles": "CN",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@H](C1=CC=C(C=C1)O)N",
+            "product_smiles": "CNC(=O)[C@H](C1=CC=C(C=C1)O)N",
+            "notes": "Methyl ester of tyrosine derivative converted to N-methyl amide using methylamine. Stereochemistry at the alpha-carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Imine formation",
+            "reagents": "",
+            "reagent_smiles": "O=CC1=CC2=C(OCO2)C=C1",
+            "conditions": "EtOAc, rt",
+            "yield": "",
+            "reactant_smiles": "CNC(=O)[C@H](C1=CC=C(C=C1)O)N",
+            "product_smiles": "CNC(=O)C(C1=CC=C(C=C1)O)N=CC2=CC=C3C(=C2)OCO3",
+            "notes": "Condensation of a primary amine with an aldehyde to form an imine. The chiral center at the amine is lost upon imine formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Imine reduction",
+            "reagents": "polymer-supported NMe3BH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH/CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CNC(=O)C(C1=CC=C(C=C1)O)N=CC2=CC=C3C(=C2)OCO3",
+            "product_smiles": "CNC(=O)[C@H](C1=CC=C(C=C1)O)NCC2=CC=C3C(=C2)OCO3",
+            "notes": "Reduction of an imine to a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-Acylation",
+            "reagents": "(CF3CO)2O, poly-DMAP, polyvinylpyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "91% (6 steps)",
+            "reactant_smiles": "CNC(=O)[C@H](C1=CC=C(C=C1)O)NCC2=CC=C3C(=C2)OCO3",
+            "product_smiles": "CNC(=O)[C@H](C1=CC=C(C=C1)O)N(CC2=CC=C3C(=C2)OCO3)C(=O)C(F)(F)F",
+            "notes": "Secondary amine is acylated with trifluoroacetic anhydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Oxidative Spirocyclization",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)OI(c1ccc([*])cc1)OC(=O)C",
+            "conditions": "CF3CH2OH, -5 °C",
+            "yield": "82%",
+            "reactant_smiles": "CNC(=O)[C@@H](C1=CC=C(C=C1)O)N(CC2=CC=C3C(=C2)OCO3)C(=O)C(F)(F)F",
+            "product_smiles": "CNC(=O)[C@@H]1C2(C=CC(=O)C=C2)C3=C(C=C4C(=C3)OCO4)CN1C(=O)C(F)(F)F",
+            "notes": "Spirocyclization of an N-trifluoroacetyl amide onto a phenolic ring, facilitated by a polymer-supported hypervalent iodine reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "Polymer-supported difluoromethanesulfonic acid",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CNC(=O)[C@@H]1C2(C=CC(=O)C=C2)C3=C(C=C4C(=C3)OCO4)CN1C(=O)C(F)(F)F",
+            "product_smiles": "CN1[C@H]2CC(=O)C=C[C@]32C4=C(C=C5C(=C4)OCO5)CN([C@@H]3C1=O)C(=O)C(F)(F)F",
+            "notes": "Acid-catalyzed intramolecular cyclization reaction forming a lactam ring and reducing one alkene in the cyclohexadienone ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "1,2-Reduction of α,β-unsaturated ketone (enone)",
+            "reagents": "",
+            "reagent_smiles": "[N+](C)(C)C.[BH4-]",
+            "conditions": "MeOH/CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CN1[C@H]2CC(=O)C=C[C@]32C4=C(C=C5C(=C4)OCO5)CN([C@H]3C1=O)C(=O)C(F)(F)F",
+            "product_smiles": "CN1[C@H]2C[C@@H](O)C=C[C@]32C4=C(C=C5C(=C4)OCO5)CN([C@H]3C1=O)C(=O)C(F)(F)F",
+            "notes": "Selective reduction of the ketone to an allylic alcohol using polymer-supported (or analogous) borohydride reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "O-methylation",
+            "reagents": "TMSCHN₂, sulfonic acid resin",
+            "reagent_smiles": "",
+            "conditions": "MeOH/CH₂Cl₂",
+            "yield": "",
+            "reactant_smiles": "CN1C(=O)[C@@]2(CC3=C(C=C(C4=C3OCO4)C5)C=C[C@@H](O)[C@@H]5[C@H]2[N@H](C(=O)C(F)(F)F)C1)",
+            "product_smiles": "CN1C(=O)[C@@]2(CC3=C(C=C(C4=C3OCO4)C5)C=C[C@@H](OC)[C@@H]5[C@H]2[N@H](C(=O)C(F)(F)F)C1)",
+            "notes": "O-methylation of a secondary alcohol to a methyl ether using trimethylsilyldiazomethane and an acid catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection (Trifluoroacetamide hydrolysis)",
+            "reagents": "PS-NMe3OH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, microwave, 100 °C",
+            "yield": "96%",
+            "reactant_smiles": "COc1cc[C@H]2[C@@H]3[C@H](C)[C@H](N(C)[C@H]4[C@@H]3C5=C(C=C6C(=C5)OCO6)C[N@H](C4=O)C(=O)C(F)(F)F)C=C2",
+            "product_smiles": "COc1cc[C@H]2[C@@H]3[C@H](C)[C@H](N(C)[C@H]4[C@@H]3C5=C(C=C6C(=C5)OCO6)C[N@H](C4=O))C=C2",
+            "notes": "Base-catalyzed deprotection of the trifluoroacetyl group to reveal a secondary amide.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "N-alkylation",
+            "reagents": "Resin-bound NEt3(NaCO3), Resin-bound NHCH2CH2SH",
+            "reagent_smiles": "C1=C(C=CC(=C1)O)CCBr",
+            "conditions": "MeCN, microwave, 140 °C",
+            "yield": "",
+            "reactant_smiles": "COC1C=CC[C@H]2[C@]34c5cc6c(oco6)cc5CN[C@@H]4C[C@@H]2N(C)C(=O)N3",
+            "product_smiles": "CN1[C@H]2C[C@H](C=C[C@]32C4=C(C=C5C(=C4)OCO5)CN(CCC6=CC=C(O)C=C6)[C@@H]3C1=O)OC",
+            "notes": "N-alkylation of a secondary amine in the piperidine ring with 2-(4-hydroxyphenyl)ethyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "PS-SO3H, Clay scavenger",
+            "reagent_smiles": "[Cr](=O)(=O)=O.CC1=CC(=NN1)S(=O)(=O)O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN1[C@H]2C[C@H](OC)[C@@H](C=C)[C@]32C4=CC5=C(C=C4CN(CCC6=CC=C(O)C=C6)C[C@@H]3C1=O)OCO5",
+            "product_smiles": "CN1[C@H]2C[C@H](OC)[C@@H](C=C)[C@]32C4=CC5=C(C=C4CN(CCC6=CC=C(O)C=C6)C(=O)[C@@H]3C1=O)OCO5",
+            "notes": "Oxidation of a methylene group in a lactam-like ring to a carbonyl group using chromium trioxide with a pyrazole-sulfonic acid ligand, in the presence of PS-SO3H and a clay scavenger.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "flueggacosine-c-wood-2024",
+        "molecule_name": "Flueggacosine C",
+        "class": "Natural Product",
+        "author": "Wood",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Wittig reaction",
+            "reagents": "KHMDS, THF",
+            "reagent_smiles": "COC(=O)CCC[P+](c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "0 °C",
+            "yield": "80%",
+            "reactant_smiles": "C1CC(=O)C2=CC=C(C=C12)Br",
+            "product_smiles": "COC(=O)CCC=C1CCC2=CC(=CC=C12)Br",
+            "notes": "Wittig olefination of an indenone with a stabilized phosphonium ylide precursor, forming a mixture of E/Z isomers.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkene Reduction",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "90%",
+            "reactant_smiles": "COC(=O)CCC=C(C=C1)CC2=CC=C(Br)C=C12",
+            "product_smiles": "COC(=O)CCCC(C=C1)CC2=CC=C(Br)C=C12",
+            "notes": "Selective reduction of the exocyclic alkene in the side chain using TFA and DCM.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "BH3, H2O, H2O2, NaOH, THF",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "50%",
+            "reactant_smiles": "COC(=O)CCCC1=CCC2=CC(=CC=C12)Br",
+            "product_smiles": "COC(=O)CCC[C@H]1C2=CC=C(C=C2C[C@@H]1O)Br",
+            "notes": "Anti-Markovnikov hydration of an alkene (indene double bond) with syn-addition, forming a trans-diol relative to the side chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "90%",
+            "reactant_smiles": "COC(=O)CCC[C@@H]1C2=CC=C(Br)C=C2C[C@H]1O",
+            "product_smiles": "COC(=O)CCC[C@@H]1C2=CC=C(Br)C=C2CC1=O",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxime formation",
+            "reagents": "NH2OH, isopropanol, pyridine",
+            "reagent_smiles": "",
+            "conditions": "40 °C",
+            "yield": "72%",
+            "reactant_smiles": "COC(=O)CCC[C@H]1CC(=O)C2=CC(Br)=CC=C12",
+            "product_smiles": "COC(=O)CCC[C@H]1C(=NO)CC2=CC(Br)=CC=C12",
+            "notes": "Ketone of indanone ring is converted to an oxime using hydroxylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidative cyclization and functionalization",
+            "reagents": "PIDA, AcOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CCC[C@@H]1C2=CC=C(C=C2C\\C1=N\\O)Br",
+            "product_smiles": "CC(=O)O[C@]1(CC2=CC(=CC=C2[C@@H]1CCCC(=O)OC)Br)N=O",
+            "notes": "Oxidative cyclization of an indoline oxime to form a fused bicyclic nitroso acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ring expansion / Lactam formation",
+            "reagents": "LiOMe",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "39% (2 steps)",
+            "reactant_smiles": "CC(=O)O[C@]1(CC2=CC(=CC=C2[C@@H]1CCCC(=O)OC)Br)N=O",
+            "product_smiles": "COC(=O)CCC[C@H]1C2=CC=C(C=C2CC(=O)N1O)Br",
+            "notes": "Acetate deprotection, N-oxide reduction/rearrangement, and lactam ring formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "AcOH",
+            "reagent_smiles": "[Zn]",
+            "conditions": "110 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CCC[C@H]1C2=CC=C(C=C2CC(=O)N1O)Br",
+            "product_smiles": "COC(=O)CCC[C@H]1C2=CC=C(C=C2CC(=O)N1)Br",
+            "notes": "Reductive cleavage of N-O bond in an N-hydroxy lactam to form a lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Intramolecular Cyclization",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "[AlH](CC(C)C)CC(C)C",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "COC(=O)CCC[C@H]1C2=CC=C(C=C2CC(=O)N1)Br",
+            "product_smiles": "BrC1=CC=C2[C@H]3N4C(=O)CC2[C@H]3CC[C@@H](O)C4",
+            "notes": "Ester reduction to alcohol followed by intramolecular cyclization via intermediate imine formation with the secondary amine, forming a new 6-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Deoxygenation",
+            "reagents": "BF3, Et3SiH",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "46% (3 steps)",
+            "reactant_smiles": "Brc1ccc2c(c1)CC(=O)N3[C@@H](O)[C@H]2CCC3",
+            "product_smiles": "C1CCN2[C@@H](C1)C3=CC=C(C=C3CC2=O)Br",
+            "notes": "Deoxygenation of a secondary alcohol (carbinol) to a methylene group. The reaction conditions (BF3, Et3SiH, DCM) are characteristic of a Lewis acid-catalyzed reductive deoxygenation using a silane. The reported yield is for 3 steps, not this individual step.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "toluene, 110 °C",
+            "yield": "39%",
+            "reactant_smiles": "C1CCN2[C@H](C1)C3=CC=C(C=C3CC2=O)Br",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)C1=CC=C2C(=C1)CC(=O)N3CCCC[C@H]23",
+            "notes": "Stille coupling of an aryl bromide with hexabutylditin (bis(tributyltin)) catalyzed by tetrakis(triphenylphosphine)palladium(0) to form the corresponding arylstannane.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd2(dba)3, CuDPP, AsPh3",
+            "reagent_smiles": "O=C1C=C2[C@H]3C(=O)OC=C(C12)[C@@H]3N(CCC(=O)S[Ts])",
+            "conditions": "THF, hexanes",
+            "yield": "43%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)C1=CC=C2C(=C1)CC(=O)N3CCCC[C@@H]23",
+            "product_smiles": "O=C1C=C2[C@H]3C(=O)OC=C(C12)[C@@H]3N(CCC(=O)c4ccc5c(c4)CC(=O)N6CCCC[C@@H]56)",
+            "notes": "Stille coupling of an aryl tributyltin with a cyclic imide-lactone thioester, forming a new C-C bond between the aryl ring and a carbonyl carbon.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "O-alkylation and Tautomerization",
+                    "reagents": "KOH, BnBr, EtOH",
+                    "reagent_smiles": "",
+                    "conditions": "40 °C",
+                    "yield": "58%",
+                    "reactant_smiles": "Oc1ncccc1O",
+                    "product_smiles": "O=C1NC=CC(=C1)[OBn]",
+                    "notes": "The 3-hydroxyl group is O-benzylated and the 2-hydroxyl group tautomerizes to a 2-pyridone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "N-alkylation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "CC(C)(C)OC(=O)CCCBr",
+                    "conditions": "DMF, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "O=C1NC=CC(OCC2=CC=CC=C2)=C1",
+                    "product_smiles": "CC(C)(C)OC(=O)CCCN1C=CC=C(C1=O)OCC2=CC=CC=C2",
+                    "notes": "N-alkylation of 4-benzyloxy-2-pyridone with tert-butyl 4-bromobutanoate via deprotonation with NaH.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Hydrogenolysis / Debenzylation",
+                    "reagents": "H2, Pd/C, EtOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "54% (2 steps)",
+                    "reactant_smiles": "[tBu]OC(=O)CCCN1C(=O)C([OBn])=CC=C1",
+                    "product_smiles": "[tBu]OC(=O)CCCN1C(=O)C(O)=CC=C1",
+                    "notes": "Deprotection of benzyl ether to hydroxyl group by catalytic hydrogenation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Cascade Reaction",
+                    "reagents": "DCC",
+                    "reagent_smiles": "C=C=CC(=O)O",
+                    "conditions": "DCM, 45 °C",
+                    "yield": "42%",
+                    "reactant_smiles": "[tBu]OC(=O)CCCN1C(=O)C(O)=CCC1",
+                    "product_smiles": "[tBu]OC(=O)CCCN1C(=O)[C@H]2[C@@H]3[C@@H](C=C2)[C@H]4[C@@H](OC(=O)C=C4)[C@H]3C1=O",
+                    "notes": "A 3-hydroxy-2-pyridone derivative reacts with propadienoic acid in the presence of DCC to form a complex polycyclic imide-lactone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.5",
+                    "reaction_type": "Deprotection (tert-butyl ester hydrolysis)",
+                    "reagents": "TMSOTf, 2,6-lutidine",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "",
+                    "reactant_smiles": "[tBu]OC(=O)CCCN1C(=O)[C@@H]2C=C[C@@]3([C@H]2C(=O)1)OC(=O)C(=C)C3",
+                    "product_smiles": "OC(=O)CCCN1C(=O)[C@@H]2C=C[C@@]3([C@H]2C(=O)1)OC(=O)C(=C)C3",
+                    "notes": "Acidic cleavage of a tert-butyl ester to a carboxylic acid. The complex bridged imide/lactone cage was corrected to accurately reflect its structure, including an imide functionality and an exocyclic methylene on the lactone ring. Stereochemistry was preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.6",
+                    "reaction_type": "Thioesterification",
+                    "reagents": "DMAP, DCC, TolSH, DCM",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "67%",
+                    "reactant_smiles": "O=C(O)CCCN1C(=O)[C@@H]2C3=CC(=O)OC3[C@@H]2C1=O",
+                    "product_smiles": "Cc1ccc(C)cc1SC(=O)CCCN1C(=O)[C@@H]2C3=CC(=O)OC3[C@@H]2C1=O",
+                    "notes": "Thioester formation via activation of carboxylic acid with DCC/DMAP and reaction with p-toluenethiol (TolSH). The yield is reported for 2 steps.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Hydroboration",
+            "reagents": "CuCl, Xantphos, B2Pin2, LiOtBu, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF, 60 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1C[C@@H]2CCCN2C3=C1C=CC(=C3)C(=O)CCCN4C(=O)[C@@H]5CC6=C[C@H](O5)C(=O)O6",
+            "product_smiles": "CC1(C)OB(OC1(C)C)[C@H]2C[C@H]3C(=O)O[C@H]4C[C@@H]3[N](C(=O)C4)CCC(=O)C5=CC(=O)C6=C(CC[C@@H]7CCCCN67)C=C5",
+            "notes": "Copper-catalyzed hydroboration of an alkene with bis(pinacolato)diboron (B2Pin2), forming a C-Bpin bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidation",
+            "reagents": "NaBO3, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "21% (2 steps)",
+            "reactant_smiles": "B(OC(C)(C)C(C)(C)O)[C@@H]1C(=O)N(CCCC(=O)c2ccc3c(c2)[C@@H]4CCCCN4C3=O)C(=O)C2=CC(=O)O[C@@H]3[C@H]2[C@H]1C3",
+            "product_smiles": "O[C@@H]1C(=O)N(CCCC(=O)c2ccc3c(c2)[C@@H]4CCCCN4C3=O)C(=O)C2=CC(=O)O[C@@H]3[C@H]2[C@H]1C3",
+            "notes": "Oxidation of a boronate to a secondary alcohol with retention of stereochemistry.",
+            "substeps": []
+        }
+    ]
+}

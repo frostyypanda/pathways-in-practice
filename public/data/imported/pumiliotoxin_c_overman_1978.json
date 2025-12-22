@@ -1,0 +1,97 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pumiliotoxin-c-overman-1978",
+        "molecule_name": "Pumiliotoxin C",
+        "class": "Natural Product",
+        "author": "Overman",
+        "year": 1978
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acyl Azide Formation",
+            "reagents": "Hunig's base, acetone, NaN3, H2O",
+            "reagent_smiles": "CCOC(=O)Cl",
+            "conditions": "0°C",
+            "yield": "",
+            "reactant_smiles": "C=C/C=C/C(=O)O",
+            "product_smiles": "C=C/C=C/C(=O)N=[N+]=[N-]",
+            "notes": "Conversion of a carboxylic acid to an acyl azide via activation with ethyl chloroformate and subsequent reaction with sodium azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Curtius Rearrangement",
+            "reagents": "4-tert-butylcatechol, toluene",
+            "reagent_smiles": "C1=CC=C(C=C1)CO",
+            "conditions": "reflux",
+            "yield": "49-56% (2 steps)",
+            "reactant_smiles": "C=C/C=C/C(=O)N=[N+]=[N-]",
+            "product_smiles": "C=C/C=C/N[Cbz]",
+            "notes": "Curtius rearrangement of an acyl azide to form an isocyanate, which is then trapped by benzyl alcohol to yield a Cbz-protected amine (carbamate).",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "4-tert-butylcatechol",
+            "reagent_smiles": "C/C=C/C=O",
+            "conditions": "110°C",
+            "yield": "76%",
+            "reactant_smiles": "C=CC=CN[Cbz]",
+            "product_smiles": "C[C@H]1CC=C[C@@H]([C@H]1C=O)N[Cbz]",
+            "notes": "Diels-Alder cycloaddition of N-Cbz-1,3-butadien-1-amine with (E)-but-2-enal to form a substituted cyclohexene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Horner Wadsworth Emmons Olefination",
+            "reagents": "THF",
+            "reagent_smiles": "P(=O)(OC)(OC)C=C(ONa)CCC",
+            "conditions": "-10°C, reflux",
+            "yield": "66%",
+            "reactant_smiles": "C[C@@H]1CC=C[C@H](C=O)[C@H]([NHCbz])1",
+            "product_smiles": "C[C@@H]1CC=C[C@H](/C=C/C(=O)CCC)[C@H]([NHCbz])1",
+            "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde with a phosphonate enolate to form an alpha,beta-unsaturated ketone. The reaction introduces an E-configured double bond.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Horner-Wadsworth-Emmons type reaction / Phosphonate ester condensation",
+                    "reagents": "",
+                    "reagent_smiles": "[Li]C[P](=O)(OC)OC",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCCC(=O)OCC",
+                    "product_smiles": "CCCC(=O)CP(=O)(OC)OC",
+                    "notes": "Addition of a lithiated dimethyl methylphosphonate to an ethyl ester, leading to a beta-keto phosphonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Deprotonation / Enolate formation",
+                    "reagents": "NaH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -10°C",
+                    "yield": "",
+                    "reactant_smiles": "CCC(=O)CP(=O)(OC)OC",
+                    "product_smiles": "CCC/C(=C/P(=O)(OC)OC)/O[Na]",
+                    "notes": "Deprotonation of a beta-keto phosphonate to form a sodium enolate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "H2, Pd/C, HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "95%",
+            "reactant_smiles": "CCCC(=O)/C=C/[C@@H]1[C@H](NC(=O)OCC2=CC=CC=C2)[C@H](C)C=CCC1",
+            "product_smiles": "CCC[C@@H]1CCC[C@H]2C[C@H](C)[C@@H](N1)C[C@@H]2",
+            "notes": "Hydrogenation of cyclohexene and alpha,beta-unsaturated ketone, Cbz deprotection, and intramolecular reductive amination to form the decahydroquinoline ring system.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "fluprostenol-li-2024",
+        "molecule_name": "Fluprostenol",
+        "class": "Natural Product",
+        "author": "Li",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Enzymatic Acetylation",
+            "reagents": "pancreatin, Et3N",
+            "reagent_smiles": "CC(=O)OC=C",
+            "conditions": "THF",
+            "yield": "65%",
+            "reactant_smiles": "O[C@H]1C=C[C@@H](C1)O",
+            "product_smiles": "O[C@H]1C=C[C@@H](C1)[OAc]",
+            "notes": "Selective enzymatic acetylation of one hydroxyl group of a trans-1,4-cyclopentenediol using vinyl acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Rearrangement (Johnson-Claisen)",
+            "reagents": "o-NO2PhOH",
+            "reagent_smiles": "C(OCC)(OCC)OCC",
+            "conditions": "180 °C",
+            "yield": "",
+            "reactant_smiles": "O[C@@H]1CC[C@H](OC(=O)C)C=C1",
+            "product_smiles": "CCOC(=O)C[C@@H]1CC[C@H](OC(=O)C)C=C1",
+            "notes": "Johnson-Claisen rearrangement of an allylic alcohol with triethyl orthoformate, converting the hydroxyl group to an ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis, Lactonization",
+            "reagents": "K2CO3, MeOH",
+            "reagent_smiles": "[K+].[K+].[O-]C(=O)[O-].CO",
+            "conditions": "solvent: MeOH",
+            "yield": "63%",
+            "reactant_smiles": "CCOC(=O)C[C@H]1CC=C[C@H]1[OAc]",
+            "product_smiles": "C1=C[C@H]2CC(=O)O[C@H]2C1",
+            "notes": "Hydrolysis of ethyl ester and acetate, followed by intramolecular lactonization. Yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Bromohydrin formation / Halohydroxylation",
+            "reagents": "NBS, H2O, DMSO, CHCl3",
+            "reagent_smiles": "",
+            "conditions": "10 °C",
+            "yield": "69%",
+            "reactant_smiles": "O=C1O[C@@H]2[C@@H]1C=CC2",
+            "product_smiles": "O=C1O[C@@H]2[C@@H]1[C@@H](Br)[C@H](O)C2",
+            "notes": "Formation of a bromohydrin from an alkene using N-bromosuccinimide (NBS) and water.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Negishi Coupling",
+            "reagents": "NiBr2*glyme, Zn, MgCl2, TMS-imidazole, pyridine, DMA",
+            "reagent_smiles": "FC(F)(F)C1=CC(=CC=C1)OC[C@H](O)/C=C/Br",
+            "conditions": "DMA (solvent)",
+            "yield": "80%",
+            "reactant_smiles": "O=C1O[C@H]2[C@H]3C[C@H](O)[C@@H](Br)[C@@H]3C21",
+            "product_smiles": "FC(F)(F)C1=CC(=CC=C1)OC[C@H](O)/C=C/[C@@H]2[C@H]3C[C@H](O)[C@H]4C(=O)O[C@H]4C23",
+            "notes": "Negishi coupling of the bromo-lactone with the trifluoromethylphenyl allyl alcohol derivative, replacing bromine with the allyl chain.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Bromination of alkyne",
+                    "reagents": "NBS, AgNO3",
+                    "reagent_smiles": "",
+                    "conditions": "Acetone",
+                    "yield": "",
+                    "reactant_smiles": "C#C[C@H](COC1=CC(=CC=C1)C(F)(F)F)O",
+                    "product_smiles": "BrC#C[C@H](COC1=CC(=CC=C1)C(F)(F)F)O",
+                    "notes": "Terminal alkyne is brominated using NBS/AgNO3. Stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Alkyne Reduction (to trans alkene)",
+                    "reagents": "LiAlH4, AlCl3, Et2O",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "84% (2 steps)",
+                    "reactant_smiles": "C1=CC(=CC(=C1)C(F)(F)F)OC[C@@H](C#CBr)O",
+                    "product_smiles": "C1=CC(=CC(=C1)C(F)(F)F)OC[C@@H](/C=C\\Br)O",
+                    "notes": "Reduction of the alkyne to a trans alkene. The stereochemistry at the chiral alcohol carbon is maintained. The bromine substituent remains.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=CC(=C1)C(F)(F)F)OC[C@@H](O)/C=C/[C@@H]2[C@H]3CC(=O)O[C@H]3C[C@H]2O",
+            "product_smiles": "C1=CC(=CC(=C1)C(F)(F)F)OC[C@@H](O)/C=C/[C@@H]2[C@H]3C[C@H](O)O[C@H]3C[C@H]2O",
+            "notes": "Partial reduction of a gamma-lactone to a gamma-lactol (hemiacetal).",
+            "substeps": []
+        }
+    ]
+}

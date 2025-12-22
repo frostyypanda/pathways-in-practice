@@ -1,0 +1,278 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "muanlactam-lera-2025",
+        "molecule_name": "Muanlactam",
+        "class": "Natural Product",
+        "author": "Lera",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (Williamson Ether Synthesis)",
+            "reagents": "PMBCI, TBAI, NaH",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "96%",
+            "reactant_smiles": "C(CO)O",
+            "product_smiles": "[PMB]OCCO",
+            "notes": "Ethylene glycol is protected at one hydroxyl group with a p-methoxybenzyl (PMB) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Allylic Alkylation / Hydroxyalkylation",
+            "reagents": "(S)-BINAP, Cs2CO3, [Ir(cod)Cl]2, allyl acetate, 4-chloro-3-nitrobenzoic acid",
+            "reagent_smiles": "",
+            "conditions": "THF, 120 °C",
+            "yield": "89%",
+            "reactant_smiles": "[PMB]OCCO",
+            "product_smiles": "[PMB]OCC[C@@H](O)CC=C",
+            "notes": "Iridium-catalyzed asymmetric allylic alkylation of 2-(4-methoxybenzyloxy)ethanol with allyl acetate to form a chiral alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+            "reagents": "imidazole, DMF",
+            "reagent_smiles": "CC(C)(C)[Si](C)(C)Cl",
+            "conditions": "",
+            "yield": "86%",
+            "reactant_smiles": "[PMBO]CH2[C@@H](O)CH2CH=CH2",
+            "product_smiles": "[PMBO]CH2[C@@H]([OTBS])CH2CH=CH2",
+            "notes": "Protection of a secondary alcohol as a TBS ether using TBDMSCl and imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Cleavage / Lemieux-Johnson Oxidation",
+            "reagents": "K2OsO4, 2,6-lutidine, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "dioxane, H2O",
+            "yield": "93%",
+            "reactant_smiles": "C=CC[C@@H]([OTBS])CH2[PMBO]",
+            "product_smiles": "[OTBS][C@@H](CC=O)CH2[PMBO]",
+            "notes": "Oxidative cleavage of an terminal alkene to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ir-catalyzed Asymmetric Allylation",
+            "reagents": "(S)-BINAP, Cs2CO3, [Ir(cod)Cl]2, allyl acetate, m-NO2BzOH",
+            "reagent_smiles": "",
+            "conditions": "iPrOH, 100 °C",
+            "yield": "86%",
+            "reactant_smiles": "[PMBO]C[C@@H]([OTBS])CC=O",
+            "product_smiles": "[PMBO]C[C@@H]([OTBS])C[C@H](O)CC=C",
+            "notes": "Ir-catalyzed asymmetric allylation of an aldehyde with allyl acetate. The reaction forms a new (S)-configured stereocenter at the alcohol, while retaining the (R)-configuration at the existing OTBS-bearing stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alcohol Silylation / Alcohol Protection",
+            "reagents": "TESOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "98%",
+            "reactant_smiles": "C=CC[C@@H](C[C@@H](CO[PMB])O[TBS])O",
+            "product_smiles": "C=CC[C@@H](C[C@@H](CO[PMB])O[TBS])O[TES]",
+            "notes": "Silylation of a secondary alcohol with TESOTf.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Cleavage (Lemieux-Johnson Oxidation)",
+            "reagents": "K2OsO4, 2,6-lutidine, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "dioxane, H2O",
+            "yield": "93%",
+            "reactant_smiles": "O[PMB]CH2[C@H]([OTBS])CH2[C@H]([OTES])CC=C",
+            "product_smiles": "O[PMB]CH2[C@H]([OTBS])CH2[C@H]([OTES])CC=O",
+            "notes": "Oxidative cleavage of a terminal alkene to an aldehyde, with loss of one carbon (from the terminal CH2= group).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Horner-Wadsworth-Emmons reaction",
+            "reagents": "nBuLi, DMPU",
+            "reagent_smiles": "CCOC(=O)/C=C/CP(=O)(OCC)OCC",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "[PMB]OC[C@H]([OTBS])C[C@H]([OTES])CCC=O",
+            "product_smiles": "[PMB]OC[C@H]([OTBS])C[C@H]([OTES])C/C=C/C=C/C(=O)OCC",
+            "notes": "An aldehyde undergoes a Horner-Wadsworth-Emmons reaction with an ethyl 4-(diethoxyphosphoryl)but-2-enoate reagent in the presence of nBuLi and DMPU to form a diene ethyl ester. The stereochemistry of the chiral centers is preserved, and the new double bonds are formed as trans.",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Michaelis-Arbuzov reaction",
+                    "reagents": "P(OEt)3",
+                    "reagent_smiles": "",
+                    "conditions": "reflux",
+                    "yield": "99%",
+                    "reactant_smiles": "CCOC(=O)/C=C/CBr",
+                    "product_smiles": "CCOC(=O)/C=C/CP(=O)(OCC)OCC",
+                    "notes": "Conversion of an alkyl bromide to an alkyl phosphonate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (PMB ether)",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, H2O",
+            "yield": "92%",
+            "reactant_smiles": "CCOC(=O)/C=C/C=C/C[C@@H](C[C@@H](CO[PMB])[OTBS])O[Si](CC)(CC)CC",
+            "product_smiles": "CCOC(=O)/C=C/C=C/C[C@@H](C[C@@H](CO)[OTBS])O[Si](CC)(CC)CC",
+            "notes": "PMB ether is selectively cleaved to a primary alcohol using DDQ in a mixed solvent system.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "91%",
+            "reactant_smiles": "CCOC(=O)/C=C/C=C/C[C@@H](C[C@@H](CO)[OTBS])[OTES]",
+            "product_smiles": "CCOC(=O)/C=C/C=C/C[C@@H](C[C@@H](C=O)[OTBS])[OTES]",
+            "notes": "Primary alcohol is oxidized to an aldehyde using DMP/pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Homologation / Boron-containing alkene synthesis",
+            "reagents": "2,2,6,6-TMP, nBuLi",
+            "reagent_smiles": "CC1(C)C(C)(C)OB(B2OC(C)(C)C(C)(C)O2)O1",
+            "conditions": "THF, -78 °C",
+            "yield": "93%",
+            "reactant_smiles": "CCOC(=O)/C=C/C=C/C[C@@H](C[C@@H](C=O)[OTBS])[OTES]",
+            "product_smiles": "CCOC(=O)/C=C/C=C/C[C@H](C[C@H](/C=C(B1OC(C)(C)C(C)(C)O1))[OTBS])[OTES]",
+            "notes": "Aldehyde converted to vinyl borane (E-alkene) with retention of adjacent chiral center's configuration but inversion of the distal one, possibly by a kinetic deprotonation of the alpha-carbon of the aldehyde followed by reaction with B2pin2. (Correction: stereocenters are inverted relative to reactant - from wedge to dashed)",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(PPh3)4, Tl2CO3",
+            "reagent_smiles": "I/C=C/C(C)=C/CP(=O)(OCC)OCC",
+            "conditions": "THF, H2O",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)/C=C/C=C/C=C/[C@H](O[Si](CC)(CC)CC)[C@@H]([OTBS])/C=C/B1OC(C)(C)C(C)(C)O1",
+            "product_smiles": "CCOC(=O)/C=C/C=C/C=C/[C@H](O[Si](CC)(CC)CC)[C@@H]([OTBS])/C=C/C=C/C(C)=C/CP(=O)(OCC)OCC",
+            "notes": "Suzuki-Miyaura cross-coupling of a vinyl boronate ester (Bpin) with a vinyl iodide to form a conjugated diene system.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Hydroiodination",
+                    "reagents": "Red-Al, Et2O, I2, EtOAc",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "CC#CCO",
+                    "product_smiles": "C/C(=C/CO)/I",
+                    "notes": "Hydroiodination of an alkyne to form a Z-vinyl iodide, likely via carbometalation with Red-Al and subsequent iodination.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Allylic alcohol to phosphonate (Arbuzov-type reaction)",
+                    "reagents": "P(OEt)3, ZnI2",
+                    "reagent_smiles": "CCOP(OCC)OCC.I[Zn]I",
+                    "conditions": "85 °C",
+                    "yield": "88%",
+                    "reactant_smiles": "C/C(I)=C\\CO",
+                    "product_smiles": "CCOP(=O)(C/C(I)=C\\C)OCC",
+                    "notes": "Conversion of an E-allylic alcohol to the corresponding E-allylic phosphonate via an Arbuzov-type reaction, likely involving in-situ formation of an allylic iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Stille coupling",
+                    "reagents": "Pd(MeCN)2Cl2",
+                    "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/S[n](CCCC)(CCCC)CCCC",
+                    "conditions": "DMF, THF",
+                    "yield": "63%",
+                    "reactant_smiles": "CCOP(=O)(OCC)CC/C=C(\\I)C",
+                    "product_smiles": "CCOP(=O)(OCC)CC/C=C(\\C=C/S[n](CCCC)(CCCC)CCCC)C",
+                    "notes": "Stille coupling of an iodoalkene phosphonate with a bis-stannane to replace iodine with a vinylstannane moiety, forming a new conjugated diene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Iododestannylation",
+                    "reagents": "NIS, MeCN",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C",
+                    "yield": "99%",
+                    "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(=C\\CP(=O)(OCC)OCC)/C",
+                    "product_smiles": "CCOP(=O)(OCC)CC\\C=C(/C)\\C=C/I",
+                    "notes": "The tributyltin group of the dienyl phosphonate is selectively replaced by an iodine atom using N-iodosuccinimide. Both double bond stereochemistries are preserved: the first double bond (from the halogen/stannyl group) is Z, and the second double bond (with the methyl group) is E.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "N-Silyloxycarbonylation",
+            "reagents": "TBSOTf, 2,6-lutidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "86%",
+            "reactant_smiles": "CCC/C=C/C=C/C[C@H]([NHBoc])C/C=C/C=C(/C)\\C=C\\C=C\\[C@@H]([OTES])C[C@H]([OTBS])C/C=C/C=C/[CO2Et]",
+            "product_smiles": "CCC/C=C/C=C/C[C@H](NC(=O)O[TBS])C/C=C/C=C(/C)\\C=C\\C=C\\[C@@H]([OTES])C[C@H]([OTBS])C/C=C/C=C/[CO2Et]",
+            "notes": "Formation of N-TBS-carbamate from N-Boc-carbamate via N-acylation using TBSOTf.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "KOH, EtOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CCC/C=C/C=C/C[C@H](N[C](=O)O[TBS])C/C=C/C=C(/C)\\C=C\\C=C/[C@H]([OTBS])C[C@H]([OTES])C[C@H]([OTBS])C/C=C/C=C/C(=O)OCC",
+            "product_smiles": "CCC/C=C/C=C/C[C@H](N)C/C=C/C=C(/C)\\C=C\\C=C/[C@H]([OTBS])C[C@H]([OTES])C[C@H]([OTBS])C/C=C/C=C/C(=O)OCC",
+            "notes": "Hydrolysis of N-TBS carbamate to primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "TMSOK",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCC/C=C/C=C/C[C@H](C/C=C/C=C(C)/C=C/C=C/[C@H](C[C@H](C/C=C/C=C/C(=O)OCC)[OTES])[OTBS])N",
+            "product_smiles": "CCC/C=C/C=C/C[C@H](C/C=C/C=C(C)/C=C/C=C/[C@H](C[C@H](C/C=C/C=C/C(=O)O)[OTES])[OTBS])N",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Macrolactamization",
+            "reagents": "HATU, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "21% (3 steps)",
+            "reactant_smiles": "N[C@H](C/C=C/C=C/C)C/C=C/C=C(/C)\\C=C\\C=C\\CCCC[C@H](O[Si](C)(C)C(C)(C)C)CCCC[C@H](O[Si](CC)(CC)CC)C/C=C/C=C/C(=O)O",
+            "product_smiles": "N1[C@H](C/C=C/C=C/C)C/C=C/C=C(/C)\\C=C\\C=C\\CCCC[C@H](O[Si](C)(C)C(C)(C)C)CCCC[C@H](O[Si](CC)(CC)CC)C/C=C/C=C/C(=O)N1",
+            "notes": "Intramolecular amide coupling (macrolactamization) of a linear amino acid precursor to form Muanlactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "18",
+            "reaction_type": "Deprotection",
+            "reagents": "HF, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "91%",
+            "reactant_smiles": "CCC/C=C/C=C/C[C@@H]1C/C=C/C=C(C)/C=C/C=C/[C@H](C[C@H](C/C=C/C=C/C(=O)N1)[OTES])[OTBS]",
+            "product_smiles": "CCC/C=C/C=C/C[C@@H]1C/C=C/C=C(C)/C=C/C=C/[C@H](C[C@H](C/C=C/C=C/C(=O)N1)O)O",
+            "notes": "Deprotection of TBS and TES silyl ethers to hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

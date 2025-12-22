@@ -1,0 +1,192 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "melodinine-e-beaudry-2019",
+        "molecule_name": "Melodinine E",
+        "class": "Natural Product",
+        "author": "Beaudry",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CCCCN",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CCCC=O",
+            "product_smiles": "CCCC=NCCCC",
+            "notes": "Condensation of butanal with butylamine to form N-butylbutan-1-imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Imino-ene reaction / [4+2] cycloaddition",
+            "reagents": "toluene",
+            "reagent_smiles": "C=CC#N",
+            "conditions": "150 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCN=CCC",
+            "product_smiles": "CCCCN=CC(CC)(CC#N)CC#N",
+            "notes": "Addition of acrylonitrile to an imine, forming a new imine with a quaternary carbon center and two cyanoethyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Imine Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91% (3 steps)",
+            "reactant_smiles": "CCCCN=CC(CC)(CCC#N)CCC#N",
+            "product_smiles": "O=CC(CC)(CCC#N)CCC#N",
+            "notes": "Hydrolysis of imine to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reductive Amination",
+            "reagents": "AcOH, MeOH, NaB(CN)H3",
+            "reagent_smiles": "C1=CC(=C(C=C1)N)I",
+            "conditions": "90 °C, then 50 °C",
+            "yield": "95%",
+            "reactant_smiles": "CCC(CCC#N)(CCC#N)C=O",
+            "product_smiles": "CCC(CCC#N)(CCC#N)CNC1=C(C=CC=C1)I",
+            "notes": "Aldehyde undergoes reductive amination with 2-iodoaniline using NaBH3CN as the reducing agent.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular cyclization (Lactam formation)",
+            "reagents": "HCl, NaOH",
+            "reagent_smiles": "",
+            "conditions": "Dioxane, 100 °C",
+            "yield": "98%",
+            "reactant_smiles": "CCC(CCC#N)(CCC#N)CNC1=C(C=CC=C1)I",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)I",
+            "notes": "Intramolecular cyclization of a secondary amine with one of the nitrile groups to form a 6-membered lactam. One nitrile group remains intact. The stereocenter in the product is preserved as shown in the image.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Sonogashira coupling",
+            "reagents": "Pd(PPh3)4, CuI, Et3N",
+            "reagent_smiles": "C#CC(OCC)(OCC)OCC",
+            "conditions": "MeCN",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)I",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(OCC)(OCC)OCC",
+            "notes": "Sonogashira coupling of an aryl iodide with triethoxyethyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(OCC)(OCC)OCC",
+            "product_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(=O)OCC",
+            "notes": "Acid-catalyzed hydrolysis of triethyl orthoester to ethyl ester (2 steps).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrostannylation",
+            "reagents": "Bu3SnH, THF",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)C#CC(=O)OCC",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C(=C/C(=O)OCC)/C1=C(C=CC=C1)N2C[C@@](CC)(CCC#N)CCC2=O",
+            "notes": "Alkyne hydrostannylation to form a vinyl stannane. Stereochemistry of quaternary carbon is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Iododestannylation",
+            "reagents": "I2",
+            "reagent_smiles": "I2",
+            "conditions": "",
+            "yield": "64%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C(=C/C(=O)OCC)/C1=C(C=CC=C1)N2C[C@](CC)(CCC#N)CCC2=O",
+            "product_smiles": "CC[C@](CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)/C(=C/C(=O)OCC)/I",
+            "notes": "Iododestannylation reaction. Yield given over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Radical cyclization (Stannane-mediated)",
+            "reagents": "Bu3SnH, Et3B, Air",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "81%",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N(C1)C2=C(C=CC=C2)/C=C(/I)C(=O)OCC",
+            "product_smiles": "CC[C@]1(CCC#N)CCC(=O)N2C3=C(C=CC=C3C(CC(=O)OCC)C2)C1",
+            "notes": "Intramolecular radical cyclization of an iodo-alkene onto an N-aryl lactam system, forming a new 5-membered ring. The two new chiral centers in the product are indicated by wavy bonds, signifying a mixture of diastereomers.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Dehydrogenation / Aromatization",
+            "reagents": "NBS",
+            "reagent_smiles": "C1CC(=O)N(Br)C(=O)C1.ClC(Cl)(Cl)Cl",
+            "conditions": "CCl4, 100 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC[C]1(CCC#N)CCC(=O)N2C3=C(C=CC=C3)C(CC(=O)OCC)C12",
+            "product_smiles": "CC[C]1(CCC#N)CCC(=O)N2C3=C(C=CC=C3)C(=C12)CC(=O)OCC",
+            "notes": "Dehydrogenation of a reduced indole derivative to an indole using N-bromosuccinimide (NBS). The two stereocenters in the reactant are eliminated to form a double bond in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Nitrile Reduction",
+            "reagents": "CoCl2, NaBH4",
+            "reagent_smiles": "[Co+2].[Cl-].[Cl-].[Na+].[BH4-].CO",
+            "conditions": "MeOH",
+            "yield": "85%",
+            "reactant_smiles": "CC[C@@]1(CCC#N)CCC(=O)N2C3=C(C=CC=C3)C(=C12)C[EtO2C]",
+            "product_smiles": "CC[C@@]1(CCCN)CCC(=O)N2C3=C(C=CC=C3)C(=C12)C[EtO2C]",
+            "notes": "Nitrile group is reduced to a primary amine using CoCl2 and NaBH4. Stereochemistry at the spiro center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Intramolecular Amide Formation / Lactamization",
+            "reagents": "NaOMe",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 80 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@@]1(CCCN)CCCC(=O)N2C3=C(C=CC=C3)C(=C12)CC(=O)OCC",
+            "product_smiles": "CC[C@@]12CCCNC(=O)CC3=C1N(C4=C3C=CC=C4)C(=O)CCC2",
+            "notes": "Intramolecular cyclization of amino ester to form an 8-membered lactam. The original 6-membered lactam and the spiro-center with its ethyl group are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Bromination / Rearrangement / Cyclization",
+            "reagents": "NBS",
+            "reagent_smiles": "O=C(NBr)C(=O)CC",
+            "conditions": "CH2Cl2, rt",
+            "yield": "47% (2 steps)",
+            "reactant_smiles": "CC[C@]12CCCNC(=O)CC3=C1N(C4=C3C=CC=C4)C(=O)CC2",
+            "product_smiles": "CCN1C2=C(C=CC=C2)C(Br)C3(C(=O)C[C@H]4N(C1)C(=O)CCC34)C",
+            "notes": "Complex bromination and rearrangement of a polycyclic indole derivative with an ethyl group migrating from a spiro carbon to the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Elimination",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "75%",
+            "reactant_smiles": "CCC12CCCN3C(=O)C[C@]4(C5=C(C=CC=C5)N(C(=O)CC1)C243)Br",
+            "product_smiles": "CCC12CCCN3C(=O)C=C4C5=C(C=CC=C5)N(C(=O)CC1)C423",
+            "notes": "Dehydrobromination of a brominated polycyclic amine to form an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        }
+    ]
+}

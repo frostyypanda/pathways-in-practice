@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tetrabenazine-rishel-2009",
+        "molecule_name": "Tetrabenazine",
+        "class": "Natural Product",
+        "author": "Rishel",
+        "year": 2009
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Acylation",
+            "reagents": "Boc₂O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COc1cc2c(cc1OC)C=NCCC2",
+            "product_smiles": "COc1cc2c(cc1OC)C=[N+](CCC2)[Boc]",
+            "notes": "Acylation of the imine nitrogen with Boc₂O to form an N-acyliminium ion.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Asymmetric Conjugate Addition / Enantioselective Mannich Reaction",
+            "reagents": "Pd(BINAP)",
+            "reagent_smiles": "CC(C)OC(=O)CC(=O)OC(C)C",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "94%",
+            "reactant_smiles": "[Boc][N+]1=CC2=C(CC1)C=C(OC)C(OC)=C2",
+            "product_smiles": "CC(C)OC(=O)C([C@H]1C2=C(CCN1[Boc])C=C(C(=C2)OC)OC)C(=O)OC(C)C",
+            "notes": "Enantioselective conjugate addition of diisopropyl malonate to an iminium ion, catalyzed by Pd(BINAP), forming a new chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Selective Ester Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "i-PrOH-H₂O, 70 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)OC(=O)C([C@@H]1C2=C(CCN1[Boc])C=C(C(=C2)OC)OC)C(=O)OC(C)C",
+            "product_smiles": "CC(C)OC(=O)C([C@@H]1C2=C(CCN1[Boc])C=C(C(=C2)OC)OC)C(=O)O",
+            "notes": "Selective hydrolysis of one isopropyl ester group of a malonate derivative using sodium hydroxide under heating.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Decarboxylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF, 80 °C",
+            "yield": "79%",
+            "reactant_smiles": "CC(C)OC(=O)C([C@@H]1C2=C(CCN1[Boc])C=C(C(=C2)OC)OC)C(=O)O",
+            "product_smiles": "CC(C)OC(=O)C[C@@H]1C2=C(CCN1[Boc])C=C(C(=C2)OC)OC",
+            "notes": "Decarboxylation of an isopropyl malonate derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Ester Reduction (to Aldehyde)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, hexanes, -78 °C",
+            "yield": "76%",
+            "reactant_smiles": "[Boc]N1CCC2=C(C=C(OC)C(OC)=C2)[C@H]1CC(=O)OC(C)C",
+            "product_smiles": "[Boc]N1CCC2=C(C=C(OC)C(OC)=C2)[C@H]1CC=O",
+            "notes": "Partial reduction of an isopropyl ester to an aldehyde using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nozaki-Hiyama-Kishi coupling",
+            "reagents": "NiCl2, CrCl2",
+            "reagent_smiles": "CC(C)CC(=C)I",
+            "conditions": "DMF, 26 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CCC2=CC(=C(C=C2[C@H]1CC=O)OC)OC",
+            "product_smiles": "[Boc]N1CCC2=CC(=C(C=C2[C@H]1C[C@H](O)C(=C)CC(C)C)OC)OC",
+            "notes": "Nozaki-Hiyama-Kishi coupling of an aldehyde with an organoiodide, forming a secondary alcohol and extending the carbon chain.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Dess-Martin oxidation",
+            "reagents": "DMP, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "0 °C",
+            "yield": "82%",
+            "reactant_smiles": "CC(C)CC(=C)C(C[C@@H]1C2=C(CCN1[Boc])C=C(C(=C2)OC)OC)O",
+            "product_smiles": "CC(C)CC(=C)C(=O)C[C@@H]1C2=C(CCN1[Boc])C=C(C(=C2)OC)OC",
+            "notes": "Oxidation of a secondary alcohol to a ketone. Yield reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive deprotection and cyclization",
+            "reagents": "TFA, i-Pr3SiH, Me2S",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "46%",
+            "reactant_smiles": "COc1cc2c(cc1OC)N(C(=O)OC(C)(C)C)[C@H](CC(=O)C(=C)CCC(C)C)CC2",
+            "product_smiles": "COc1cc2c(cc1OC)N3CCC[C@H]2[C@H](C3)CC(=O)[C@H](CCC(C)C)C",
+            "notes": "Reductive cleavage of Boc protecting group and alkene reduction using TFA and triisopropylsilane, followed by intramolecular cyclization to form Tetrabenazine.",
+            "substeps": []
+        }
+    ]
+}

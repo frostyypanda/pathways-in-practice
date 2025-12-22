@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "mikanokryptin-maimone-2017",
+        "molecule_name": "Mikanokryptin",
+        "class": "Natural Product",
+        "author": "Maimone",
+        "year": 2017
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Allylic chlorination",
+            "reagents": "Na2CO3, SO2Cl2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@H]1CC=C(C)C(=O)C1",
+            "product_smiles": "CC1=CC[C@@H](CC1=O)C(=C)CCl",
+            "notes": "Allylic chlorination of (+)-Carvone, replacing the isopropylidene group with a chloromethylidene group. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Luche reduction",
+            "reagents": "CeCl3•7H2O, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CC1=CC[C@@H](CC1=O)C(=C)CCl",
+            "product_smiles": "CC1=CC[C@@H](C[C@@H]1O)C(=C)CCl",
+            "notes": "Selective 1,2-reduction of an α,β-unsaturated ketone to an allylic alcohol. The ketone at C-6 is reduced to an alcohol with a specific stereochemistry (wedge). The carbon with the exocyclic alkene side chain at C-4 maintains its original stereochemistry (wedge). The yield is stated for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Protection",
+            "reagents": "TBDPSCl, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "90%",
+            "reactant_smiles": "CC1=CC[C@@H](C[C@@H]1O)C(=C)CCl",
+            "product_smiles": "CC1=CC[C@@H](C[C@@H]1[OTBDPS])C(=C)CCl",
+            "notes": "Protection of a secondary alcohol as a TBDPS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, pyridine, DMS",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC1=CC[C@@H](C[C@@H]1[OTBDPS])C(=C)CCl",
+            "product_smiles": "C=C(CCl)[C@@H](CC=O)C[C@@H](C(=O)C)[OTBDPS]",
+            "notes": "Ozonolysis of an alkene, cleaving the carbon-carbon double bond to form an acyclic ketone and an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Aldol Cyclization / Dehydration",
+            "reagents": "piperidine, AcOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "42% (2 steps)",
+            "reactant_smiles": "C=C(CCl)[C@@H](CC=O)C[C@@H](C(=O)C)[OTBDPS]",
+            "product_smiles": "C=C(CCl)[C@@H]1C[C@@H](C(=C1C=O)C)[OTBDPS]",
+            "notes": "Intramolecular aldol condensation of a keto-aldehyde to form a cyclopentene ring. The stereochemistry at the carbon bearing the chloro-alkene group inverts from R to S during the reaction.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Indium-mediated allylation / Barbier-type reaction",
+            "reagents": "In",
+            "reagent_smiles": "COC(=O)/C=C(\\Br)C(OC)OC",
+            "conditions": "DMF, H2O, rt",
+            "yield": "67%",
+            "reactant_smiles": "C=C(CCl)C[C@@H]1[C@@H]([OTBDPS])C=C(C)C(C=O)C1",
+            "product_smiles": "C=C(CCl)C[C@@H]1[C@@H]([OTBDPS])C=C(C)C([C@H](O)[C@@H](C(OC)OC)C(=C)C(=O)OC)C1",
+            "notes": "Indium-mediated allylation of an aldehyde with an E-bromoalkene, leading to the formation of a new carbon-carbon bond and two new stereocenters with high diastereoselectivity.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Baylis-Hillman Reaction",
+                    "reagents": "DABCO, H2O",
+                    "reagent_smiles": "C=CC(=O)OC",
+                    "conditions": "rt",
+                    "yield": "67%",
+                    "reactant_smiles": "O=CC(OC)OC",
+                    "product_smiles": "C=C(C(=O)OC)C(O)C(OC)OC",
+                    "notes": "Baylis-Hillman reaction between a dimethyl acetal substituted aldehyde and methyl acrylate to form an alpha-methylene-beta-hydroxy ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Allylic bromination / rearrangement",
+                    "reagents": "NBS, DMS",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C to rt",
+                    "yield": "61%",
+                    "reactant_smiles": "C=C(C(=O)OC)C(O)C(OC)OC",
+                    "product_smiles": "COC(=O)/C(CBr)=C\\C(OC)OC",
+                    "notes": "Rearrangement of a tertiary alcohol with a vinyl group to an allylic bromide with E-stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Silylation",
+            "reagents": "TESOTf, 2,4,6-collidine",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 to 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "C=C(CCl)[C@@H]1C[C@H](C(=C1[C@@H]([C@H](C(OC)OC)C(=C)C(=O)OC)O)C)O[TBDPS]",
+            "product_smiles": "CC[Si](CC)(CC)O[C@@H]([C@H](C=O)C(=C)C(=O)OC)C1=C(C)C(C[C@H]1C(=C)CCl)O[TBDPS]",
+            "notes": "Silylation of secondary alcohol and concurrent hydrolysis of dimethyl acetal to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reductive Cyclization / Intramolecular Lactonization",
+            "reagents": "SnCl2, NaI",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "90%",
+            "reactant_smiles": "[TBDPS]O[C@H]1CC(=C(C))C(=C([C@H](O[TES])[C@@H](C=O)C(=C)C(=O)OC))[C@H](C(=C)CCl)C1",
+            "product_smiles": "[TBDPS]O[C@H]1CC(=C(C))C(=C([C@H](O[TES])[C@H]2[C@H](C(=C)C(=O)O2)))[C@H](C(=C))[C@H]3C1",
+            "notes": "Intramolecular cyclization of an aldehyde and methyl ester with an allyl chloride fragment to form a complex fused bicyclic alpha-methylene-gamma-lactone and a seven-membered ring system. The chloride and methyl ester are lost in the cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Michael Addition",
+            "reagents": "NaOMe",
+            "reagent_smiles": "[Na+].[MeO-]",
+            "conditions": "MeOH, CH2Cl2, rt",
+            "yield": "",
+            "reactant_smiles": "[Et3Si]O[C@H]1C2=C(C)[C@@H](C[C@H]2C(=C)C[C@H]3[C@H]1C(=C)C(=O)O3)[OTBDPS]",
+            "product_smiles": "[Et3Si]O[C@H]1C2=C(C)[C@@H](C[C@H]2C(=C)C[C@H]3[C@H]1[C@@H](OC)C(=O)O3)[OTBDPS]",
+            "notes": "Methoxide conjugate addition to the α,β-unsaturated lactone, forming a new stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrogenation",
+            "reagents": "AcOH, PtO2, H2",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "96%",
+            "reactant_smiles": "[OTES][C@H]1C2=C(C)[C@H](C[C@H]2C(=C)C[C@H]3[C@H]1[C@@H](COC)C(=O)O3)[OTBDPS]",
+            "product_smiles": "[OTES][C@H]1C2=C(C)[C@H](C[C@H]2[C@@H](C)C[C@H]3[C@H]1[C@@H](COC)C(=O)O3)[OTBDPS]",
+            "notes": "Hydrogenation of exocyclic alkene to a methyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection, Elimination",
+            "reagents": "TBAF, DBU",
+            "reagent_smiles": "",
+            "conditions": "THF, rt then PhMe, CH2Cl2, 120 °C",
+            "yield": "69%",
+            "reactant_smiles": "CC[Si](CC)(CC)O[C@H]1C2=C(C)[C@H](C[C@H]2[C@@H](C)C[C@H]3[C@H]1[C@H](OC)C(=O)O3)[OTBDPS]",
+            "product_smiles": "O[C@H]1C2=C(C)[C@H](C[C@H]2[C@@H](C)C[C@H]3[C@H]1C(=C)C(=O)O3)O",
+            "notes": "Double deprotection of silyl ethers (TES and TBDPS) to form hydroxyl groups, followed by elimination of methoxy group to form an α-methylene-γ-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "97%",
+            "reactant_smiles": "C[C@H]1C[C@H]2[C@H](C(=C)C(=O)O2)[C@H](C3=C(C)[C@H](C[C@@H]13)O)O",
+            "product_smiles": "C[C@H]1C[C@H]2[C@H](C(=C)C(=O)O2)[C@H](C3=C(C)C(=O)C(=C)[C@@H]13)O",
+            "notes": "Oxidation of a secondary alcohol to a ketone and an adjacent methylene group to an exocyclic methylene on the five-membered ring.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,377 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "enteropeptin-a-ting-2024",
+        "molecule_name": "Enteropeptin A",
+        "class": "Natural Product",
+        "author": "Ting",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acetal formation, Esterification, N-alkylation",
+            "reagents": "H2SO4, MeOH, Et2O",
+            "reagent_smiles": "O=CC(=O)O",
+            "conditions": "",
+            "yield": "90%",
+            "reactant_smiles": "C1=CC=C(C=C1)COC(=O)N",
+            "product_smiles": "COC(OC)(C(=O)OC)NC(=O)OCC1=CC=CC=C1",
+            "notes": "Benzyl carbamate reacts with glyoxylic acid, followed by acetal formation and methyl esterification in the presence of methanol and sulfuric acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Phosphonylation (Pudovik-type / Arbuzov-type variant)",
+            "reagents": "",
+            "reagent_smiles": "P(OC)(OC)OC.P(Cl)(Cl)Cl",
+            "conditions": "toluene, 70 °C",
+            "yield": "90%",
+            "reactant_smiles": "COC(C(=O)OC)NC(=O)OCC1=CC=CC=C1",
+            "product_smiles": "COC(=O)C(NC(=O)OCC1=CC=CC=C1)P(=O)(OC)OC",
+            "notes": "Conversion of alpha-methoxy ester to alpha-phosphonoester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection (Hydrogenolysis)",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "99%",
+            "reactant_smiles": "COC(=O)C(NC(=O)OCC1=CC=CC=C1)P(=O)(OC)OC",
+            "product_smiles": "COC(=O)C(N)P(=O)(OC)OC",
+            "notes": "Hydrogenation of a benzyl carbamate (Cbz) protecting group to yield a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amidation / Peptide Coupling",
+            "reagents": "NMM",
+            "reagent_smiles": "O=C1C2=CC=CC=C2C(=O)N1CC(=O)O.CC(C)COC(=O)Cl",
+            "conditions": "THF, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "COC(=O)C(N)P(=O)(OC)OC",
+            "product_smiles": "COC(=O)C(NC(=O)CN1C(=O)C2=CC=CC=C2C1=O)P(=O)(OC)OC",
+            "notes": "Amidation of an alpha-amino phosphonate methyl ester with N-phthaloylglycine using isobutyl chloroformate and NMM.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Imide formation / N-alkylation",
+                    "reagents": "Et3N",
+                    "reagent_smiles": "NCC(=O)O",
+                    "conditions": "toluene, reflux",
+                    "yield": "98%",
+                    "reactant_smiles": "C1=CC=C2C(=C1)C(=O)NC2=O",
+                    "product_smiles": "C1=CC2=C(C=C1)C(=O)N(CC(=O)O)C2=O",
+                    "notes": "Phthalimide reacts with glycine in the presence of triethylamine to form N-(carboxymethyl)phthalimide.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "N-deprotection / C-P bond cleavage",
+            "reagents": "TMG",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "80%",
+            "reactant_smiles": "COC(=O)C(NC(=O)CN1C(=O)C2=CC=CC=C2C1=O)P(=O)(OC)OC",
+            "product_smiles": "[Cbz]N(C)CCC=O",
+            "notes": "Transformation of a phosphonate ester with an N-phthalimide group to N-methyl-N-Cbz-3-aminopropanal.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amidation (Formylation)",
+                    "reagents": "",
+                    "reagent_smiles": "CCOC=O",
+                    "conditions": "",
+                    "yield": "99%",
+                    "reactant_smiles": "NCCCO",
+                    "product_smiles": "O=CNCCCO",
+                    "notes": "Amidation of 3-aminopropan-1-ol with ethyl formate to form N-(3-hydroxypropyl)formamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4, THF",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to rt",
+                    "yield": "58%",
+                    "reactant_smiles": "O=CNCCCCO",
+                    "product_smiles": "CNCCCCO",
+                    "notes": "LiAlH4 reduces the formamide (secondary amide) to a secondary amine. The primary alcohol is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Amine protection",
+                    "reagents": "CbzCl, KOH",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, H₂O",
+                    "yield": "82%",
+                    "reactant_smiles": "CNCCCO",
+                    "product_smiles": "[Cbz]N(C)CCCO",
+                    "notes": "N-methylation and Cbz protection of a primary amine to a secondary, Cbz-protected amine",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Oxidation",
+                    "reagents": "DMP, DCM",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "85%",
+                    "reactant_smiles": "CN(CCCO)[Cbz]",
+                    "product_smiles": "CN(CCC=O)[Cbz]",
+                    "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin Periodinane.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "C-C bond formation / Knoevenagel-type",
+            "reagents": "TMG, DCM, Lil, EtOAc",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "56%",
+            "reactant_smiles": "CN(CCC=O)[Cbz]",
+            "product_smiles": "O=C1C2=CC=CC=C2C(=O)N1CC(=O)N/C(=C(/C(=O)O)\\CC[N](C)[Cbz])",
+            "notes": "Transformation of an aldehyde to an alpha,beta-unsaturated carboxylic acid and incorporation of an N-phthaloyl-glycine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling",
+            "reagents": "EDC, NMM, HOAt",
+            "reagent_smiles": "COC(=O)[C@H](N)C[S][Trt]",
+            "conditions": "DMF, 0 °C",
+            "yield": "61%",
+            "reactant_smiles": "[Cbz]N(C)CCC/C=C(/C(=O)O)\\NC(=O)CN1C(=O)C2=CC=CC=C2C1=O",
+            "product_smiles": "[Cbz]N(C)CCC/C=C(/C(=O)N[C@H](C[S][Trt])C(=O)OC)\\NC(=O)CN1C(=O)C2=CC=CC=C2C1=O",
+            "notes": "An acid-amine coupling reaction forming an amide bond using EDC/HOAt reagents. The carboxylic acid of the reactant is coupled with the amine of the amino acid methyl ester.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Thiol Protection",
+                    "reagents": "TrCl, NaOAc",
+                    "reagent_smiles": "Cl[Tr].[Na+].CC(=O)[O-]",
+                    "conditions": "DMF",
+                    "yield": "97%",
+                    "reactant_smiles": "N[C@@H](CS)C(=O)O",
+                    "product_smiles": "N[C@@H](C[Tr]S)C(=O)O",
+                    "notes": "Protection of the thiol group of L-cysteine with a trityl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Esterification",
+                    "reagents": "SOCl2, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "0 °C to reflux",
+                    "yield": "85%",
+                    "reactant_smiles": "N[C@H](C(=O)O)CS[Tr]",
+                    "product_smiles": "N[C@H](C(=O)OC)CS[Tr]",
+                    "notes": "Fischer esterification of a protected L-cysteine derivative to its methyl ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection (Thiol)",
+            "reagents": "TFA, iPr3SiH",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "92%",
+            "reactant_smiles": "O=C1C2=CC=CC=C2C(=O)N1CC(=O)N=C(\\C(=O)N[C@H](C[STrt])C(=O)OC)/CC[N](C)[Cbz]",
+            "product_smiles": "O=C1C2=CC=CC=C2C(=O)N1CC(=O)N=C(\\C(=O)N[C@H](CS)C(=O)OC)/CC[N](C)[Cbz]",
+            "notes": "Deprotection of trityl-protected thiol (STrt) to free thiol (SH) using TFA and triisopropylsilane. The Cbz protecting group on the amine remains intact, as do the phthalimide, dehydroalanine, and methyl ester moieties.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Thia-Michael Cyclization",
+            "reagents": "PhCF3",
+            "reagent_smiles": "O=P([SH])O1c2ccccc2c(O1)c3ccccc3",
+            "conditions": "150 °C, mw",
+            "yield": "61%",
+            "reactant_smiles": "C[N](C(=O)OCc1ccccc1)CCC/C=C(/C(=O)N[C@H](CS)C(=O)OC)\\NC(=O)CN1C(=O)C2=C(C=CC=C2)C1=O",
+            "product_smiles": "C[N](C(=O)OCc1ccccc1)CC[C@@]1SC[C@H](C(=O)OC)NC(=O)[C@H]1NC(=O)CN2C(=O)C3=CC=CC=C3C2=O",
+            "notes": "Intramolecular cyclization of an alkene and a thiol group to form a 6-membered cyclic thioether. Three new chiral centers are formed or maintained.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "No apparent transformation",
+            "reagents": "DBU",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "48%",
+            "reactant_smiles": "O=C1c2ccccc2C(=O)N1CC(=O)N[C@@H](CCC[N](C)C(=O)OCC3=CC=CC=C3)C4SC[C@@H](C(=O)OC)N4",
+            "product_smiles": "O=C1c2ccccc2C(=O)N1CC(=O)N[C@@H](CCC[N](C)C(=O)OCC3=CC=CC=C3)C4SC[C@@H](C(=O)OC)N4",
+            "notes": "The reactant and product structures are identical. This could represent a purification step, a failed reaction, or an intermediate step where no chemical transformation occurs to the depicted structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiI",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, reflux",
+            "yield": "",
+            "reactant_smiles": "CN(CCC[C@]1(C(=O)N[C@@H](CS1)C(=O)OC)NC(=O)CN2C(=O)C3=CC=CC=C3C2=O)[Cbz]",
+            "product_smiles": "CN(CCC[C@]1(C(=O)N[C@@H](CS1)C(=O)O)NC(=O)CN2C(=O)C3=CC=CC=C3C2=O)[Cbz]",
+            "notes": "Methyl ester hydrolysis to a carboxylic acid using Lithium iodide in ethyl acetate under reflux conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Amide Coupling / Peptide Synthesis",
+            "reagents": "EDC, NMM, HOAt",
+            "reagent_smiles": "N[C@@H]1CCCN1C(=O)[C@@H]2CCCN2C(=O)[C@@H](OC(C)(C)C)[C@H](OC(C)(C)C)C(=O)OC(C)(C)C",
+            "conditions": "DMF, 0 °C to rt",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "O=C1C(=O)N(CC(=O)N[C@@H]2(C(=O)N[C@H](C(=O)O)C[S]3)CCC(N(C)C(=O)OCC4=CC=CC=C4)[CH]3)c5ccccc15",
+            "product_smiles": "O=C1C(=O)N(CC(=O)N[C@@H]2(C(=O)N[C@H](C(=O)N[C@@H]3CCCN3C(=O)[C@@H]4CCCN4C(=O)[C@@H](OC(C)(C)C)[C@H](OC(C)(C)C)C(=O)OC(C)(C)C)C[S]5)CCC(N(C)C(=O)OCC6=CC=CC=C6)[CH]5)c7ccccc17",
+            "notes": "Amide bond formation between carboxylic acid and N-terminal amine.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "N-protection",
+                    "reagents": "FmocCl, Na2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "dioxane, H2O, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "N1CCC[C@H]1C(=O)O",
+                    "product_smiles": "[Fmoc]N1CCC[C@H]1C(=O)O",
+                    "notes": "N-protection of (S)-proline with Fmoc chloride to form N-Fmoc-(S)-proline.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Peptide Coupling (Amide Formation)",
+                    "reagents": "NMM",
+                    "reagent_smiles": "[tBu]OC(=O)[C@H]1CCCN1.ClC(=O)OCH2CH(C)C",
+                    "conditions": "THF, -20 °C",
+                    "yield": "91%",
+                    "reactant_smiles": "[Fmoc]N1CCC[C@H]1C(=O)O",
+                    "product_smiles": "[Fmoc]N1CCC[C@H]1C(=O)N2CCC[C@H]2C(=O)O[tBu]",
+                    "notes": "Synthesis of Fmoc-Pro-Pro-OtBu dipeptide via mixed anhydride method.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Ester Deprotection (acid-catalyzed hydrolysis)",
+                    "reagents": "TFA",
+                    "reagent_smiles": "",
+                    "conditions": "DCM",
+                    "yield": "99%",
+                    "reactant_smiles": "[Fmoc]N1CCC[C@H]1C(=O)N2CCC[C@H]2C(=O)[OtBu]",
+                    "product_smiles": "[Fmoc]N1CCC[C@H]1C(=O)N2CCC[C@H]2C(=O)O",
+                    "notes": "Cleavage of a tert-butyl ester to a carboxylic acid using trifluoroacetic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Amide Coupling (Peptide Synthesis)",
+                    "reagents": "HOAt, EDC",
+                    "reagent_smiles": "N[C@@H](C[OtBu])C(=O)[OtBu]",
+                    "conditions": "DMF, 0 °C to rt",
+                    "yield": "81%",
+                    "reactant_smiles": "[Fmoc]N1CCC[C@H]1C(=O)O",
+                    "product_smiles": "[Fmoc]N1CCC[C@H]1C(=O)N[C@@H](C[OtBu])C(=O)[OtBu]",
+                    "notes": "Amide bond formation between N-Fmoc-L-proline and O-tert-butyl-L-serine tert-butyl ester using EDC/HOAt coupling reagents.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.5",
+                    "reaction_type": "Deprotection",
+                    "reagents": "piperidine",
+                    "reagent_smiles": "",
+                    "conditions": "DMF",
+                    "yield": "75%",
+                    "reactant_smiles": "[Fmoc]N1CCC[C@@H]1C(=O)N2CCC[C@@H]2C(=O)N[C@@H](C[OtBu])C(=O)[OtBu]",
+                    "product_smiles": "HN1CCC[C@@H]1C(=O)N2CCC[C@@H]2C(=O)N[C@@H](C[OtBu])C(=O)[OtBu]",
+                    "notes": "Fmoc protecting group removal from the N-terminus of a peptide containing two proline residues and a serine derivative (with OtBu ether and ester).",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection (Phthalimide deprotection)",
+            "reagents": "DCM",
+            "reagent_smiles": "C(CN)N.CO",
+            "conditions": "MeOH, 40 °C",
+            "yield": "",
+            "reactant_smiles": "CC(C)COC(=O)[C@@](COC(C)(C)C)NC(=O)[C@@H]1CCCN1C(=O)[C@@H]2CCCN2C(=O)[C@@](CSCCCN(C)C(=O)OCC3=CC=CC=C3)NC(=O)CN4C(=O)C5=C(C=CC=C5)C4=O",
+            "product_smiles": "CC(C)COC(=O)[C@@](COC(C)(C)C)NC(=O)[C@@H]1CCCN1C(=O)[C@@H]2CCCN2C(=O)[C@@](CSCCCN(C)C(=O)OCC3=CC=CC=C3)NC(=O)CN",
+            "notes": "Deprotection of N-terminal phthalimide group of glycine using ethylenediamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Peptide Coupling",
+            "reagents": "EDC, HOAt, NMM",
+            "reagent_smiles": "CC(C)(C)OC(=O)N[C@@H](CCSC)C(=O)N[C@@H](CCCCNC(=O)OC(C)(C)C)C(=O)O",
+            "conditions": "DMF, 0 °C to rt",
+            "yield": "53%",
+            "reactant_smiles": "NC(=O)CN[C@@H](CCCCN(C)C(=O)OCC1=CC=CC=C1)C(=O)N[C@@H](CCSC)C(=O)N2CCC[C@@H]2C(=O)N3CCC[C@@H]3C(=O)N[C@@H](COC(C)(C)C)C(=O)OC(C)(C)C",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@@H](CCSC)C(=O)N[C@@H](CCCCNC(=O)OC(C)(C)C)C(=O)NC(=O)CN[C@@H](CCCCN(C)C(=O)OCC1=CC=CC=C1)C(=O)N[C@@H](CCSC)C(=O)N2CCC[C@@H]2C(=O)N3CCC[C@@H]3C(=O)N[C@@H](COC(C)(C)C)C(=O)OC(C)(C)C",
+            "notes": "N-terminal extension of a peptide via amide coupling using EDC/HOAt/NMM. The Boc-Met-Lys(Boc)-OH peptide is coupled to the free N-terminus of the reactant peptide (Glycine residue). The reaction proceeds over 2 steps.",
+            "substeps": [
+                {
+                    "step_id": "14.1",
+                    "reaction_type": "Amine Protection (Boc)",
+                    "reagents": "NaOH, Boc2O",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "CSCC[C@@H](C(=O)O)N",
+                    "product_smiles": "[Boc]N[C@@H](CCSC)C(=O)O",
+                    "notes": "Boc protection of the amine group of L-methionine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.2",
+                    "reaction_type": "Carbodiimide coupling / Active ester formation",
+                    "reagents": "DCC",
+                    "reagent_smiles": "O=C1CCC(=O)N1O",
+                    "conditions": "THF, 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[Boc]N[C@@H](CCSC)C(=O)O",
+                    "product_smiles": "[Boc]N[C@@H](CCSC)C(=O)ON1C(=O)CCC1=O",
+                    "notes": "Formation of N-hydroxysuccinimide (NHS) ester from a carboxylic acid using DCC as a coupling agent.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.3",
+                    "reaction_type": "Peptide Coupling",
+                    "reagents": "NaHCO3",
+                    "reagent_smiles": "N[C@@H](C(=O)O)CCCCN[Boc]",
+                    "conditions": "THF, H2O",
+                    "yield": "65% (2 steps)",
+                    "reactant_smiles": "[Boc]N[C@@H](CCSC)C(=O)ON1C(=O)CCC1=O",
+                    "product_smiles": "[Boc]N[C@@H](CCSC)C(=O)N[C@@H](C(=O)O)CCCCN[Boc]",
+                    "notes": "Amide bond formation between N-Boc-protected methionine NHS ester and D-lysine derivative.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection",
+            "reagents": "TMSBr, thioanisole, TFA",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "[Boc]N[C@H](CCCCN[Boc])C(=O)N[C@H](CCSC)C(=O)N[CH2]C(=O)N[C@H]1(CCCCN(C)[Cbz])C(=O)N2[C@@H](C(=O)N3CCC[C@H]3C(=O)N4CCC[C@H]4C(=O)N[C@@H](C[OtBu])C(=O)N[C@H](C[OtBu])C(=O)[OtBu])CS[C@H]12",
+            "product_smiles": "N[C@H](CCCCN)C(=O)N[C@H](CCSC)C(=O)N[CH2]C(=O)N[C@H]1(CCCCN(C)H)C(=O)N2[C@@H](C(=O)N3CCC[C@H]3C(=O)N4CCC[C@H]4C(=O)N[C@@H](CO)C(=O)N[C@H](CO)C(=O)O)CS[C@H]12",
+            "notes": "Global deprotection of Boc, Cbz, and tert-butyl protecting groups to yield Enteropeptin A.",
+            "substeps": []
+        }
+    ]
+}

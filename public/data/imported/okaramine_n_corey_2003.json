@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "okaramine-n-corey-2003",
+        "molecule_name": "Okaramine N",
+        "class": "Natural Product",
+        "author": "Corey",
+        "year": 2003
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Imine formation",
+            "reagents": "",
+            "reagent_smiles": "CC(=CC=O)C",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@H](CC1=CNC2=CC=CC=C12)N",
+            "product_smiles": "COC(=O)[C@H](N=CC=C(C)C)CC1=CNC2=CC=CC=C12",
+            "notes": "Condensation reaction between an amine and an aldehyde to form an imine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Imine Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@H](CC1=C[NH]C2=C1C=CC=C2)N=CC=C(C)C",
+            "product_smiles": "COC(=O)[C@H](CC1=C[NH]C2=C1C=CC=C2)NCC=C(C)C",
+            "notes": "Reduction of an imine to a secondary amine using sodium borohydride in methanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Urea Formation",
+            "reagents": "BOPCI",
+            "reagent_smiles": "COc(=O)[C@@H](CC1=CN(C(C)(C)C=C)C2=C1C=CC=C2)N[Fmoc]",
+            "conditions": "",
+            "yield": "70% (3 steps)",
+            "reactant_smiles": "COc(=O)[C@@H](CC1=CNC2=C1C=CC=C2)NCC=C(C)C",
+            "product_smiles": "O=C(N([Fmoc])[C@@H](C(=O)OC)CC1=CN(C(C)(C)C=C)C2=C1C=CC=C2)N(CC=C(C)C)[C@@H](C(=O)OC)CC3=CNC4=C3C=CC=C4",
+            "notes": "Formation of a urea linkage between an N-Fmoc protected amino ester and an N-alkyl amino ester, both derived from tryptophan.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Amine protection",
+                    "reagents": "Boc2O, DMAP, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)[C@H](N)CC1=CNC2=CC=CC=C12",
+                    "product_smiles": "COC(=O)[C@H](N[Boc])CC1=CNC2=CC=CC=C12",
+                    "notes": "N-protection of a primary amine to form a Boc carbamate, with retention of stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Indole Reduction",
+                    "reagents": "NaBH3CN, AcOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "60%",
+                    "reactant_smiles": "CC(C)(C)OC(=O)N[C@@](H)(C(=O)OC)CC1=CNC2=CC=CC=C12",
+                    "product_smiles": "CC(C)(C)OC(=O)N[C@@](H)(C(=O)OC)CC1CC2=CC=CC=C2[NH]1",
+                    "notes": "Reduction of the indole C2=C3 double bond to form a 3-substituted indoline. A new chiral center is formed at C3 of the indoline ring, which is depicted as racemic by a wavy bond.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "N-Alkylation / Propargylation",
+                    "reagents": "CuCl, i-Pr2EtN",
+                    "reagent_smiles": "C#CC(C)(C)OC(=O)C",
+                    "conditions": "THF, reflux",
+                    "yield": "95%",
+                    "reactant_smiles": "[Boc]N[C@H](CC1CNC2=CC=CC=C12)C(=O)OC",
+                    "product_smiles": "C#CC(C)(C)N1CC(C[C@H](C(=O)OC)N[Boc])C2=C1C=CC=C2",
+                    "notes": "Copper-catalyzed N-alkylation of indoline with a propargyl acetate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.4",
+                    "reaction_type": "Dehydrogenation / Aromatization",
+                    "reagents": "DDQ",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C#CC(C)(C)N1CC(C[C@@H](C(=O)OC)NC(=O)OC(C)(C)C)C2=C1C=CC=C2",
+                    "product_smiles": "C#CC(C)(C)N1C=C(C[C@@H](C(=O)OC)NC(=O)OC(C)(C)C)C2=C1C=CC=C2",
+                    "notes": "Dehydrogenation of an indoline to an indole using DDQ.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.5",
+                    "reaction_type": "Partial Hydrogenation (Alkyne to Alkene)",
+                    "reagents": "H2, Pd/C, quinoline",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C#CC(C)(C)N1C=C(C[C@@H]([CO2Me])[NHBoc])C2=C1C=CC=C2",
+                    "product_smiles": "C=CC(C)(C)N1C=C(C[C@@H]([CO2Me])[NHBoc])C2=C1C=CC=C2",
+                    "notes": "Partial hydrogenation of the alkyne group on the N-substituent of the indole to an alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.6",
+                    "reaction_type": "Carboxylic Acid Derivative Formation (Methyl Ester to Acyl Chloride)",
+                    "reagents": "SOCl2",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH",
+                    "yield": "",
+                    "reactant_smiles": "C=CC(C)(C)N1C=C(C[C@@H](N[Boc])C(=O)OC)C2=C1C=CC=C2",
+                    "product_smiles": "C=CC(C)(C)N1C=C(C[C@@H](N[Boc])C(=O)Cl)C2=C1C=CC=C2",
+                    "notes": "Methyl ester is converted to an acyl chloride using thionyl chloride. Stereochemistry at the alpha-carbon is retained. The Boc protecting group and the N-allyl indole core remain unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.7",
+                    "reaction_type": "Deprotection, Hydrolysis",
+                    "reagents": "LiOH",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=CC(C)(C)N1C=C(C[C@@H](C(=O)Cl)[NHBoc])C2=C1C=CC=C2",
+                    "product_smiles": "C=CC(C)(C)N1C=C(C[C@@H](C(=O)O)N)C2=CC=CC=C21",
+                    "notes": "Basic hydrolysis of acyl chloride and deprotection of Boc-protected amine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.8",
+                    "reaction_type": "Amine protection",
+                    "reagents": "Fmoc-Cl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "C=CC(C)(C)N1C=C(C[C@@H](C(=O)O)N)C2=CC=CC=C21",
+                    "product_smiles": "C=CC(C)(C)N1C=C(C[C@@H](C(=O)O)N[Fmoc])C2=CC=CC=C21",
+                    "notes": "Protection of primary amine with Fmoc group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidative Macrocyclization",
+            "reagents": "Pd(OAc)2, H2O, O2",
+            "reagent_smiles": "",
+            "conditions": "AcOH/dioxane, 1 atm O2",
+            "yield": "44%",
+            "reactant_smiles": "C=CC(C)(C)N1C=C(C[C@@]([2H])([NH][Fmoc])(C(=O)N(CC=C(C)C)[C@@H](CC2=CNC3=C2C=CC=C3)C(=O)OC))C4=C1C=CC=C4",
+            "product_smiles": "C=CC(C)(C)N1C=C(C[C@@H]([NH][Fmoc])(C(=O)N2/C=C\\C(C)(C)C3=C(C[C@@H]2C(=O)OC)C4=CC=CC=C4N3))C5=C1C=CC=C5",
+            "notes": "Pd-catalyzed intramolecular oxidative cyclization to form a 13-membered macrocycle and a fused indole ring. Deuterium at one chiral center is replaced by hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Fmoc Deprotection, Intramolecular Lactamization",
+            "reagents": "Et2NH, THF",
+            "reagent_smiles": "CCNCC",
+            "conditions": "THF",
+            "yield": "95%",
+            "reactant_smiles": "C=CC(C)(C)N1C=C(C[C@H](N[Fmoc])C(=O)N2C=C(C)C(C)(C)C3=C(C[C@H](C(=O)OC)C2)C4=CC=CC=C4N3)C5=C1C=CC=C5",
+            "product_smiles": "C=CC(C)(C)N1C=C(C[C@H]2C(=O)N3C=C(C)C(C)(C)C4=C(C[C@H]3C(=O)N2)C5=C(C=CC=C5)N4)C6=C1C=CC=C6",
+            "notes": "Fmoc protecting group is removed by diethylamine, followed by intramolecular cyclization via amide formation (diketopiperazine formation) to yield the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Diels-Alder Cycloaddition",
+            "reagents": "",
+            "reagent_smiles": "CN1N=C(=O)NC1=O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=CC(C)(C)N1C2=CC=CC=C2C=C1C[C@H]3C(=O)N[C@@H](C)C(=O)N(C4=C(C[C@H]3)C5=CC=CC=C5N4)/C=C(/C)C",
+            "product_smiles": "C=CC(C)(C)N1C2=CC=CC=C2C=C1C[C@H]3C(=O)N[C@@H](C)C(=O)N(C4=C(C[C@H]3)C5=CC=CC=C5N4)C[C@@H]6[C@](C)(C)[C@@]7(N(C)C(=O)N[C@@H]8C(=O)N78)N6",
+            "notes": "Diels-Alder reaction between an electron-rich indole derivative and N-methyl-1,2,4-triazoline-3,5-dione (MTAD) as the dienophile.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Photooxygenation, Rearrangement, Reduction",
+            "reagents": "metylene blue",
+            "reagent_smiles": "O=O.COC.CSC",
+            "conditions": "sunlamp",
+            "yield": "",
+            "reactant_smiles": "C=CC(C)(C)N1C2=C(C=CC=C2)C3=C1N4C(=O)[C@@H](C)CC6(C7=C(C=CC=C7)N=C6C(C)(C)/C=C\\N5C(=O)[C@H]C3)N8C(=O)N(C)C(=O)N8",
+            "product_smiles": "C[C](C)N1[C@H]2[C@@]3(O)C4=C(C=CC=C4)[C@]2(CC(C)(C)N1)N5C(=O)[C@@H](C)CC6(C7=C(C=CC=C7)N=C6C(C)(C)\\C=C/N8C(=O)[C@H]C4)N9C(=O)N(C)C(=O)N9",
+            "notes": "Singlet oxygen photooxygenation of N-alkenylindole, followed by rearrangement and reduction with dimethyl sulfide, forming a hydroxylated hexahydropyrroloindole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement",
+            "reagents": "",
+            "reagent_smiles": "",
+            "conditions": "110 °C",
+            "yield": "70%",
+            "reactant_smiles": "C=CC(C)(C)N1C2=CC=CC=C2[C@@]3(O)C[C@@H]4C(=O)N5C(=O)N(C)[NH]C(=O)N(C[C@@]6(C=C(C)C)C7=CC=CC=C7[NH]C6)C=C/C(C)(C)[C@H]4[C@H]3C(=O)N1",
+            "product_smiles": "C=CC(C)(C)N1C2=CC=CC=C2[C@@]3(O)C[C@@H]4C(=O)N5[C@@H](C[C@@]6(C=C(C)C)C7=CC=CC=C7[NH]C6)CC[C@H]5[C@H]4[C@H]3C(=O)N1",
+            "notes": "Intramolecular cyclization and rearrangement via thermal conditions to form Okaramine N. The reported yield is for an overall 3-step sequence.",
+            "substeps": []
+        }
+    ]
+}

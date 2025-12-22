@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "spiroindimicin-a-smith-2021",
+        "molecule_name": "Spiroindimicin A",
+        "class": "Natural Product",
+        "author": "Smith",
+        "year": 2021
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Sulfonylation",
+            "reagents": "i-Pr2NEt",
+            "reagent_smiles": "ClS(=O)(=O)[Ph]",
+            "conditions": "CH3CN, rt to 80 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC(=C2C=CNC2=C1)[N+](=O)[O-]",
+            "product_smiles": "C1=CC(=C2C=CN(S(=O)(=O)[Ph])C2=C1)[N+](=O)[O-]",
+            "notes": "N-sulfonylation of 7-nitroindole using phenylsulfonyl chloride and diisopropylethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "Zn, AcOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "96%",
+            "reactant_smiles": "O=[N+]([O-])c1cccc2c1c=cn2S(=O)(=O)[Ph]",
+            "product_smiles": "Nc1cccc2c1c=cn2S(=O)(=O)[Ph]",
+            "notes": "Reduction of a nitro group to an amino group on an indole core, with a phenylsulfonyl protecting group on the indole nitrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Chlorination",
+            "reagents": "NCS, DMF",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "65%",
+            "reactant_smiles": "Nc1cccc2c(c1)C=CN2S(=O)(=O)[Ph]",
+            "product_smiles": "Nc1c(Cl)ccc2c1C=CN2S(=O)(=O)[Ph]",
+            "notes": "Aromatic chlorination of an N-phenylsulfonyl indole derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sandmeyer Reaction / Diazotization-Iodination",
+            "reagents": "NaNO2, HCl, KI",
+            "reagent_smiles": "",
+            "conditions": "H2O",
+            "yield": "67%",
+            "reactant_smiles": "Nc1c(Cl)ccc2c1nc(cc2)S(=O)(=O)[Ph]",
+            "product_smiles": "Ic1c(Cl)ccc2c1nc(cc2)S(=O)(=O)[Ph]",
+            "notes": "Sandmeyer-type reaction where an aryl amine is converted to an aryl iodide via a diazonium salt intermediate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki Coupling",
+            "reagents": "Pd(OAc)2, SPPhos, K2CO3, THF, H2O",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1C=C(B2OC(C)(C)C(C)(C)O2)C2=C1C=CC(=C2)Cl",
+            "conditions": "70°C",
+            "yield": "99%",
+            "reactant_smiles": "Clc1c(I)c2c(c1)C=CN2S(=O)(=O)c3ccccc3",
+            "product_smiles": "CC(C)(C)OC(=O)N1C=C(c2c1cc(Cl)c2)c3c4C=CN(C4=CC=C3Cl)S(=O)(=O)c5ccccc5",
+            "notes": "Suzuki coupling of an aryl iodide indole with an N-Boc-protected indole boronic acid pinacol ester to form a bis-indole product. The iodine is replaced by the N-Boc indole moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Electrophilic Iodination",
+            "reagents": "NIS, p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "68%",
+            "reactant_smiles": "[Boc]N1C=C(C2=C1C=CC(=C2)Cl)C3=C4C=CN(C4=CC=C3Cl)S(=O)(=O)[Ph]",
+            "product_smiles": "[Boc]N1C=C(C2=C1C=CC(=C2)Cl)C3=C4C(I)=CN(C4=CC=C3Cl)S(=O)(=O)[Ph]",
+            "notes": "Electrophilic iodination of the indole C2 position.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd-PEPPSI-IPr, Cs2CO3, 4 A MS",
+            "reagent_smiles": "COC(=O)c1[nH]c(C(=O)OC)c(Sn(C)(C)C)c1",
+            "conditions": "dioxane, 90 °C",
+            "yield": "68%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C=C(C2=C1C=CC(=C2)Cl)C3=C4C(=CN(C4=CC=C3Cl)S(=O)(=O)[Ph])I",
+            "product_smiles": "CC(C)(C)OC(=O)N1C=C(C2=C1C=CC(=C2)Cl)C3=C4C(=CN(C4=CC=C3Cl)S(=O)(=O)[Ph])C6=C(C(=O)OC)NC(=C6)C(=O)OC",
+            "notes": "Stille coupling of an iodo-indole with a pyrrole stannane, forming a new C-C bond.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "C-H Functionalization / Oxidative C-H Esterification",
+                    "reagents": "Fe(acac)3, CCl4, MeOH",
+                    "reagent_smiles": "",
+                    "conditions": "115 °C",
+                    "yield": "82%",
+                    "reactant_smiles": "COC(=O)c1[nH]ccc1",
+                    "product_smiles": "COC(=O)c1[nH]c(C(=O)OC)cc1",
+                    "notes": "Direct introduction of a methoxycarbonyl group at the 4-position of a 2-methoxycarbonylpyrrole using Fe(acac)3 catalyst.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Iodination (of pyrrole), followed by reduction (implied by 'then Zn')",
+                    "reagents": "NIS, Zn",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 90 °C then DMA, 120 °C",
+                    "yield": "57%",
+                    "reactant_smiles": "COC(=O)C1=CC=C(C(=O)OC)N1",
+                    "product_smiles": "COC(=O)C1=CC(=C(C(=O)OC)N1)I",
+                    "notes": "Regioselective iodination of the pyrrole ring at the 3-position, followed by a reaction involving Zn.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Stille coupling",
+                    "reagents": "Pd(PPh3)4",
+                    "reagent_smiles": "C[Sn](C)(C)[Sn](C)(C)C",
+                    "conditions": "PhMe",
+                    "yield": "91%",
+                    "reactant_smiles": "COC(=O)C1=CC(=C(C(=O)OC)N1)I",
+                    "product_smiles": "COC(=O)C1=CC(=C(C(=O)OC)N1)[Sn](C)(C)C",
+                    "notes": "Iodo-pyrrole derivative undergoes Stille coupling with hexamethylditin, catalyzed by Pd(PPh3)4, to yield a trimethylstannyl-pyrrole.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Iodination",
+            "reagents": "I2, KOH",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "94%",
+            "reactant_smiles": "COC(=O)C1=C2C=C(N(C(=O)OC(C)(C)C)C1=C2Cl)C3=C4C(C=CN(S(=O)(=O)C5=CC=CC=C5)C4=CC=C3Cl)C6=C(C(=O)OC)[NH]C=C6",
+            "product_smiles": "COC(=O)C1=C2C=C(N(C(=O)OC(C)(C)C)C1=C2Cl)C3=C4C(C=CN(S(=O)(=O)C5=CC=CC=C5)C4=CC=C3Cl)C6=C(C(=O)OC)[NH]C(I)=C6",
+            "notes": "Iodination of the central pyrrole ring in Spiroindimicin A precursor.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization / C-C and C-N Bond Formation",
+            "reagents": "Pd-PEPPSI-IPr, Cs2CO3",
+            "reagent_smiles": "",
+            "conditions": "neat, 150 °C, PhMe, 115 °C",
+            "yield": "53%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C=C(C2=C1C=CC(=C2)Cl)C3=C4C(=CN(C4=CC=C3Cl)S(=O)(=O)c5ccccc5)C6=C(C(=O)OC)NC(=C6I)C(=O)OC",
+            "product_smiles": "COC(=O)C1=C2C3=CN(C4=C3C(=C(C=C4)Cl)[C@]5(C=NC6=C5C=C(C=C6)Cl)C2=C(C(=O)OC)N1)S(=O)(=O)c1ccccc1",
+            "notes": "The reaction involves a complex intramolecular cyclization forming a spiro system. The yield is 53%.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Deprotection / Intramolecular Cyclization",
+            "reagents": "Bu4NOH",
+            "reagent_smiles": "",
+            "conditions": "THF, 80 °C",
+            "yield": "65%",
+            "reactant_smiles": "COC(=O)c1c(C(=O)OC)[nH]c2c1C=CC(C3=C4C(=C(Cl)C=C4)[C@@]5(C=NC6=C5C=C(Cl)C=C6)C7=CC=CC=C7N(S(=O)(=O)c8ccccc8)3)=C2",
+            "product_smiles": "COC(=O)c1c(C(=O)OC)[nH]c2c1C=CC(C3=C4C(=C(Cl)C=C4)[C@@]5(C=NC6=C5C=C(Cl)C=C6)C7=CC=CC=C7[NH]3)=C2",
+            "notes": "Deprotection of N-benzenesulfonyl group and intramolecular cyclization/rearrangement to form Spiroindimicin A.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "okinonellin-b-romo-1998",
+        "molecule_name": "Okinonellin B",
+        "class": "Natural Product",
+        "author": "Romo",
+        "year": 1998
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Lactonolysis / Weinreb Amide Formation",
+            "reagents": "(MeO)MeNH₂Cl, Me₃Al",
+            "reagent_smiles": "",
+            "conditions": "PhH, 0 °C",
+            "yield": "97 %",
+            "reactant_smiles": "O=C1OC[C@@H](O[Bn])C1",
+            "product_smiles": "CN(OC)C(=O)C[C@@H](CO)O[Bn]",
+            "notes": "Lactone ring-opening reaction facilitated by trimethylaluminum, using N,O-dimethylhydroxylamine hydrochloride to form a Weinreb amide with concomitant primary alcohol formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Silylation",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C)(C)C(C)(C)C.C1=CNC=N1",
+            "conditions": "DMF, 24 °C",
+            "yield": "81%",
+            "reactant_smiles": "CN(C(=O)C[C@@H](CO)OCC1=CC=CC=C1)OC",
+            "product_smiles": "C[Si](C)(C(C)(C)C)OC[C@@H](CC(=O)N(C)OC)OCC1=CC=CC=C1",
+            "notes": "Protection of a primary alcohol as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Weinreb Ketone Synthesis (Grignard Addition)",
+            "reagents": "Mg",
+            "reagent_smiles": "[TBS]C#CCCCBr",
+            "conditions": "Et2O, Δ, -78 °C → 0 °C",
+            "yield": "87 %",
+            "reactant_smiles": "CN(OC)C(=O)C[C@@H](O[Bn])CO[TBS]",
+            "product_smiles": "[TBS]C#CCCC(=O)C[C@@H](O[Bn])CO[TBS]",
+            "notes": "Grignard addition of the TBS-protected bromoalkyne to the Weinreb amide, forming a ketone. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Tebbe olefination",
+            "reagents": "Me₃Al, [Ti(Cp)₂Cl₂]",
+            "reagent_smiles": "",
+            "conditions": "THF, - 40 °C",
+            "yield": "81 %",
+            "reactant_smiles": "[TBS]C#CCCCCC(=O)C[C@@H]([OBn])CO[OTBS]",
+            "product_smiles": "[TBS]C#CCC(=C)C[C@@H]([OBn])CO[OTBS]",
+            "notes": "Tebbe olefination of a ketone to a terminal alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 -> 24 °C",
+            "yield": "83 %",
+            "reactant_smiles": "[TBS]C#CCCCC(=C)C[C@@H](OCC1=CC=CC=C1)CO[TBS]",
+            "product_smiles": "C#CCCCC(=C)C[C@@H](CO)OCC1=CC=CC=C1",
+            "notes": "Simultaneous deprotection of two TBS silyl ethers to terminal alkyne and primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)₂, DMSO, Et₃N",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂, - 78 °C",
+            "yield": "95%",
+            "reactant_smiles": "C#CCCCC(=C)C[C@@H](CO)[OBn]",
+            "product_smiles": "C#CCCCC(=C)C[C@@H](C=O)[OBn]",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Swern conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Beta-Lactone Synthesis",
+            "reagents": "ZnCl2",
+            "reagent_smiles": "C/C=C(\\S[Py])[OTBS]",
+            "conditions": "CH2Cl2, 25 °C",
+            "yield": "73%",
+            "reactant_smiles": "C#CCCCC(=C)C[C@@H](C=O)OCC1=CC=CC=C1",
+            "product_smiles": "C#CCCCC(=C)C[C@@H]([C@H]1[C@@H](C)C(=O)O1)OCC2=CC=CC=C2",
+            "notes": "Formation of a beta-lactone (oxetan-2-one) by addition of a silyl enol ether equivalent to an aldehyde, followed by cyclization.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Rearrangement, Lactone opening/re-formation",
+            "reagents": "BCl3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, - 78 °C",
+            "yield": "65 %",
+            "reactant_smiles": "C#CCCCC(=C)C[C@H]([OBn])[C@H]2O[C@H](C(=O)[C@H]2)[C@@H]3C[C@H]3",
+            "product_smiles": "C#CCCCC(=C)C[C@H]1OC(=O)[C@@H](O)[C@@H]([OMe])1",
+            "notes": "Lewis acid-mediated rearrangement of a bicyclic lactone, involving cleavage of the OBn protecting group to OH, subsequent ring opening, and formation of a methoxy group and a new lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Negishi Coupling via Zr-catalyzed Alkyne Methylalumination",
+            "reagents": "Me3Al, [Zr(Cp2)Cl2], H2O, [Pd2dba3], ZnCl2, Ph3As",
+            "reagent_smiles": "I/C=C/C[C@H](C)CCCC1=CC=CO1",
+            "conditions": "CH2Cl2, -23 °C, NMP, 25 °C",
+            "yield": "15 %",
+            "reactant_smiles": "C#CCCCC(=C)C[C@H]1[C@@H]([C@@H](C(=O)O1)OC)O",
+            "product_smiles": "O=C1O[C@H](C(=C)CCC/C=C(/C)CCC[C@H](C)CCCC2=CC=CO2)[C@@H](O)[C@@H]1C",
+            "notes": "Zr-catalyzed methylalumination of the terminal alkyne in the reactant forms a vinyl organoaluminum species, which then undergoes Negishi coupling with the E-vinyl iodide reagent to form the product with a Z-configured internal double bond.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Nucleophilic Alkylation (SN2)",
+                    "reagents": "THF",
+                    "reagent_smiles": "[Li]C1SCCS1",
+                    "conditions": "-45 °C -> 20 °C",
+                    "yield": "74%",
+                    "reactant_smiles": "C[C@@H](CI)COCC1=CC=CC=C1",
+                    "product_smiles": "C[C@@H](CC1SCCCS1)COCC2=CC=CC=C2",
+                    "notes": "Stereoselective SN2 displacement of iodide by a 2-lithio-1,3-dithiane anion to form a new C-C bond, preserving the existing stereocenter.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Dithiane Alkylation",
+                    "reagents": "t-BuLi",
+                    "reagent_smiles": "C1=COC=C1CBr",
+                    "conditions": "THF, -78 °C -> -45 °C",
+                    "yield": "59%",
+                    "reactant_smiles": "CC(COCc1ccccc1)[C@H]CC2(SCCCS2)",
+                    "product_smiles": "CC(COCc1ccccc1)[C@H]CC2(CC3=COC=C3)SCCCS2",
+                    "notes": "Deprotonation of the 1,3-dithiane with t-BuLi, followed by alkylation with 3-bromomethylfuran. The 1,3-dithiane has a spiro carbon which undergoes alkylation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Desulfurization, Hydrogenolysis",
+                    "reagents": "W-2 Raney-Nickel, Ca (2.2 eq.), NH3",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 40 °C, Et2O, -33 °C",
+                    "yield": "47 %",
+                    "reactant_smiles": "C[C@H](CC1(CC2=COC=C2)SCCCS1)COCC3=CC=CC=C3",
+                    "product_smiles": "C[C@H](CC1=COC=C1)CO",
+                    "notes": "Raney-Nickel catalyzed desulfurization of a 1,3-dithiane to an alkane, and hydrogenolysis of a benzyl ether to a primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Swern oxidation",
+                    "reagents": "(COCl)2, DMSO, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, -78 °C -> 0 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "C[C@H](CCCC1=COC=C1)CO",
+                    "product_smiles": "C[C@H](CCCC1=COC=C1)C=O",
+                    "notes": "Primary alcohol oxidized to aldehyde using Swern oxidation conditions.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.5",
+                    "reaction_type": "Takai olefination",
+                    "reagents": "CHI3, CrCl2",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "41%",
+                    "reactant_smiles": "C[C@H](CCCC1=COC=C1)C=O",
+                    "product_smiles": "C[C@H](CCCC1=COC=C1)/C=C/I",
+                    "notes": "Takai olefination of an aldehyde to form a vinyl iodide.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

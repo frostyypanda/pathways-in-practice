@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nominine-gin-2006",
+        "molecule_name": "Nominine",
+        "class": "Natural Product",
+        "author": "Gin",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Directed ortho metalation (DOM), Addition",
+            "reagents": "t-BuLi",
+            "reagent_smiles": "ClCC(=O)N(C)OC.CCOCC",
+            "conditions": "Et2O, -23 °C",
+            "yield": "52%",
+            "reactant_smiles": "COC1=CC=C(C=C1)C(OC)OC",
+            "product_smiles": "COC1=CC=C(C(OC)OC)C(C(=O)CCl)=C1",
+            "notes": "Ortho-lithiation of the acetal-protected dimethoxybenzene derivative, followed by addition to a Weinreb amide to install a chloroacetyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "SN2 Substitution",
+            "reagents": "NaN3",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "95%",
+            "reactant_smiles": "ClCC(=O)c1c(C(OC)OC)ccc(OC)c1",
+            "product_smiles": "[N-]=[N+]=NCC(=O)c1c(C(OC)OC)ccc(OC)c1",
+            "notes": "Chloride is replaced by an azide group via nucleophilic substitution.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Intramolecular cyclization (acid-catalyzed)",
+            "reagents": "AcCl, MeOH",
+            "reagent_smiles": "CC(=O)Cl.CO",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "COc1cc(OC)c(C(OC)OC)c(C(=O)C[N-]=[N+]=[N-])c1",
+            "product_smiles": "COc1cc(OC)c2c1OC(OC)(CN=[N+]=[N-])CH(OC)C2",
+            "notes": "Acid-catalyzed cyclization involving a ketone and a dimethyl acetal group, forming a dihydrobenzofuran ring system. The ketone oxygen becomes the furan ring oxygen, and the ketone carbon gains a methoxy group from the solvent. The acetal carbon also retains a methoxy group. The stereocenters in the product are depicted with squiggly bonds, indicating undefined or racemic stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Staudinger olefination",
+            "reagents": "Bu3P, NaBH(OAc)3",
+            "reagent_smiles": "N#CC1=CC(C(C)C=O)CCC1.P(CCCC)(CCCC)CCCC.[Na+].[BH](OC(=O)C)(OC(=O)C)OC(=O)C",
+            "conditions": "CH2Cl2",
+            "yield": "79%",
+            "reactant_smiles": "COc1ccc2c(c1)OC(OC)C2(C[N-]=[N+]=[N-])OC",
+            "product_smiles": "COc1ccc2c(c1)OC(OC)C2(CNCC(C)c3cc(C#N)CCC3)OC",
+            "notes": "Staudinger reduction of an azide followed by reductive amination of an aldehyde.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Michael addition",
+                    "reagents": "Et2AlCN, Bu4NPh3SiF2, Tf2O",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "81%",
+                    "reactant_smiles": "CC1=CC(=O)CCC1",
+                    "product_smiles": "CC1(C#N)CCC=C([OTf])C1",
+                    "notes": "Michael addition of cyanide followed by enol triflate formation.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Nitrile Reduction to Aldehyde",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe, 0 °C",
+                    "yield": "92%",
+                    "reactant_smiles": "CC1(C#N)CCCC(=C1)[OTf]",
+                    "product_smiles": "CC1(C=O)CCCC(=C1)[OTf]",
+                    "notes": "Partial reduction of a nitrile to an aldehyde using DIBAL-H.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Cyanation (Palladium-catalyzed)",
+                    "reagents": "Cu(CN)2, Pd(PPh3)4",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, 60 °C",
+                    "yield": "85%",
+                    "reactant_smiles": "CC1(C=O)CCC=C(OS(=O)(=O)C(F)(F)F)C1",
+                    "product_smiles": "CC1(C=O)CCC=C(C#N)C1",
+                    "notes": "Palladium-catalyzed cyanation of an enol triflate to form a vinyl nitrile, with retention of the aldehyde and methyl groups on the allylic carbon.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Cyclization / Rearrangement",
+            "reagents": "CF3CO2H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "93%",
+            "reactant_smiles": "N#CC1=CCC(C)(C[NH]CC2(Oc3ccc(OC)c4c3C2(OC)))CC1",
+            "product_smiles": "N#CC1=CCC(C)(C[N+]2=CC(=C([O-])C3=C2C=CC=C3))CC1",
+            "notes": "Acid-catalyzed intramolecular cyclization and rearrangement of a secondary amine attached to a benzofuran derivative, forming a quinoline-4-olate system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Huisgen cycloaddition",
+            "reagents": "THF",
+            "reagent_smiles": "",
+            "conditions": "sealed tube, 180 °C",
+            "yield": "20%",
+            "reactant_smiles": "N#CC=C1CCC(C)(C[N+]2=CC3=C(C=CC=C3)C(=C2)[O-])C1",
+            "product_smiles": "COc1ccc2c(c1)C(=O)[C@@H]3N4CCC(C#N)(C3)C4C2",
+            "notes": "Huisgen cycloaddition of a zwitterionic quinolinium-methide with a cyclohexene nitrile derivative to form a complex polycyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "NaBH4, EtOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COc1ccc2c(c1)[C@]3(C#N)C(=O)[C@@H]4N5C[C@@H]6CCCC[C@@H]6C5[C@@H]34",
+            "product_smiles": "COc1ccc2c(c1)C(O)(C#N)[C@@H]3N4C[C@@H]5CCCC[C@@H]5C4[C@@H]23",
+            "notes": "Reduction of a ketone to a secondary alcohol with creation of a racemic center.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Chlorination",
+            "reagents": "SOCl2, CH2Cl2",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "COc1ccc2c(c1)C(O)(C#N)[C@@H]3N4CC[C@H]5CC[C@@H]4C35",
+            "product_smiles": "COc1ccc2c(c1)C(Cl)(C#N)[C@@H]3N4CC[C@H]5CC[C@@H]4C35",
+            "notes": "Chlorination of a tertiary alcohol at a spiro center using thionyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Radical Dehalogenation / Reduction",
+            "reagents": "Bu3SnH, AIBN",
+            "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)H.CC(C)(C#N)N=NC(C)(C)C#N",
+            "conditions": "PhH",
+            "yield": "68%",
+            "reactant_smiles": "COC1=CC=C2[C@@H]3N4CCCC4C3(Cl)(C#N)C2=C1",
+            "product_smiles": "COC1=CC=C2[C@@H]3N4CCCC4C3(C#N)C2=C1",
+            "notes": "(3 steps)",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Partial Reduction",
+            "reagents": "DIBAL-H, PhMe",
+            "reagent_smiles": "CC(C)C[AlH]CC(C)C.Cc1ccccc1",
+            "conditions": "0 °C",
+            "yield": "85%",
+            "reactant_smiles": "COC1=CC=C2C(=C1)CC3C4C5CCCC4(C#N)[C@H]2N3C5",
+            "product_smiles": "COC1=CC=C2C(=C1)CC3C4C5CCCC4(C=O)[C@H]2N3C5",
+            "notes": "Partial reduction of a nitrile group to an aldehyde using DIBAL-H. The stereochemistry at one chiral center was maintained as depicted by the wedge hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Wittig olefination",
+            "reagents": "",
+            "reagent_smiles": "C=[P]([Ph])([Ph])[Ph]",
+            "conditions": "",
+            "yield": "96%",
+            "reactant_smiles": "COC1=CC=C2[C@@]3([C@@H](N4C3CC5CC45)C=O)C=C12",
+            "product_smiles": "COC1=CC=C2[C@@]3([C@@H](N4C3CC5CC45)C=C)C=C12",
+            "notes": "Conversion of an aldehyde to an alkene using a Wittig reagent.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Birch reduction",
+            "reagents": "Na, NH3, i-PrOH/THF",
+            "reagent_smiles": "",
+            "conditions": "-78 °C",
+            "yield": "97%",
+            "reactant_smiles": "C=C[C@]12CCC[C@H]3N(C1)[C@@]4([C@H]2C3)c5ccc(OC)cc45",
+            "product_smiles": "C=C[C@]12CCC[C@H]3N(C1)[C@@]4([C@H]2C3)C5=C(C(=O)CC5)C4",
+            "notes": "Birch reduction of an aromatic methoxy ether to a cyclohexenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Diels-Alder cycloaddition",
+            "reagents": "pyrrolidine, MeOH",
+            "reagent_smiles": "C1CCCN1",
+            "conditions": "60 °C",
+            "yield": "78%",
+            "reactant_smiles": "C=C[C@]12C[C@@H]3N(C[C@H]4CC5=C1[C@@H](C(=O)CC5)C4)C3C2",
+            "product_smiles": "C1CN2C3C4C(C1)C5(C(=O)CC[C@H]5[C@@H]2[C@@H]3C4)C6CC6",
+            "notes": "Intramolecular Diels-Alder cycloaddition of an enone and a vinyl group, forming a complex fused polycyclic system. Pyrrolidine likely acts as a catalyst to form an enamine from the ketone, which then participates as the dienophile.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Wittig olefination",
+            "reagents": "THF",
+            "reagent_smiles": "C=[P](c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "C1CC2CN3C4C2C5(C1)C6CC7C[C@@H]5[C@H]3[C@H]4CC7=O",
+            "product_smiles": "C=C1CC23CC4C5C6CCCC57[C@@H]3CC1C[C@@H]2[C@H]7N4C6",
+            "notes": "Wittig olefination of a ketone to form an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "O=[Se]=O.CC(C)(C)OO",
+            "conditions": "",
+            "yield": "66%",
+            "reactant_smiles": "C=C1CC23CC4C5C6CCCC57[C@H]3[C@@H]8CC1CC2[C@H]7N4C6",
+            "product_smiles": "C=C1C[C@H]2[C@H]3C4C5C6CCCC57[C@H]3[C@@H]8C[C@H](O)CC2[C@H]7N4C6",
+            "notes": "Allylic oxidation of the methylene group adjacent to the exocyclic alkene to form an allylic alcohol. Catalyzed by SeO2 with t-BuOOH as stoichiometric oxidant.",
+            "substeps": []
+        }
+    ]
+}

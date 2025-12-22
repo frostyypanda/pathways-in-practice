@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "scabrolide-b-furstner-2024",
+        "molecule_name": "Scabrolide B",
+        "class": "Natural Product",
+        "author": "Furstner",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ring-Closing Metathesis, Silyl Protection",
+            "reagents": "HG-II, NaH, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 65 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@](C)(O)CCC=C(C)C",
+            "product_smiles": "C[C@@]([OTBS])1C=CCC1",
+            "notes": "Silylation of (R)-Linalool followed by ring-closing metathesis using a Hoveyda-Grubbs catalyst to form a cyclic TBS ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "RuCl3, Mg(OAc)2",
+            "reagent_smiles": "CC(C)(C)OO",
+            "conditions": "DCM",
+            "yield": "55%",
+            "reactant_smiles": "[OTBS][C@@]1(C)CCC=C1",
+            "product_smiles": "[OTBS][C@@]1(C)C=CC(=O)C1",
+            "notes": "Allylic oxidation of a cyclopentene to a cyclopentenone using t-butyl hydroperoxide and a ruthenium catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diels-Alder Cycloaddition",
+            "reagents": "",
+            "reagent_smiles": "C=CC=C.[Al](Cl)(Cl)Cl",
+            "conditions": "toluene",
+            "yield": "",
+            "reactant_smiles": "C[C@@]1([OTBS])C=CC(=O)C1",
+            "product_smiles": "C[C@@]1([OTBS])CC(=O)[C@@H]2CC=CC[C@@H]21",
+            "notes": "A Diels-Alder reaction between a cyclic dienophile and 1,3-butadiene, catalyzed by AlCl3, forming a bicyclic product. The stereochemistry at the OTBS-bearing carbon is retained, and new bridgehead hydrogens are formed syn to each other, anti to the incoming diene.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ketone Reduction",
+            "reagents": "L-selectride",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "69% (2 steps)",
+            "reactant_smiles": "[OTBS][C@]1(C(=O)C[C@@H]2[C@@H]1CC=CC2)",
+            "product_smiles": "[OTBS][C@]1(C[C@H](O)[C@@H]2[C@@H]1CC=CC2)",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol using L-selectride. The new alcohol group is formed with a dashed bond (anti to the adjacent bridgehead hydrogen) and the cis-fused bridgehead stereochemistry is retained. The OTBS group stereochemistry is also retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "OsO4, NMO",
+            "reagent_smiles": "",
+            "conditions": "THF, acetone, H2O, 65 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@]12CC[C@H](O)[C@@H]1C=CCC2",
+            "product_smiles": "[OTBS][C@]12CC[C@H](O)[C@@H]1C[C@H](O)[C@H](O)CC2",
+            "notes": "Stereoselective dihydroxylation of the cyclohexene double bond, retaining existing stereocenters and forming syn-diols.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, acetone, H2O",
+            "yield": "",
+            "reactant_smiles": "O[C@]12C[C@]([OTBS])[C@H]3[C@@H](O)C[C@H](O)CC13[C@@H]2",
+            "product_smiles": "O[C@]12C[C@]([OTBS])[C@H]3[C@@](CC=O)C[C@](CC=O)CC13[C@@H]2",
+            "notes": "Oxidation of a vicinal diol to a dialdehyde. The product structure as depicted in the screenshot shows the formation of exocyclic aldehyde chains (R-CH2CHO) on carbons that were previously secondary alcohols within the ring, while maintaining the bicyclic ring system. This is an unusual transformation for NaIO4, which typically performs oxidative cleavage of vicinal diols, leading to ring opening.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidation/Lactonization",
+            "reagents": "PDC",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "O=CCC[C@H]1[C@@H](CC=O)[C@@H]2C[C@H](O)C[C@@]1([OTBS])C2",
+            "product_smiles": "O=CCC[C@H]1[C@@H]2C(=O)O[C@H](C[C@@]3([OTBS])C2)C[C@H]13",
+            "notes": "Oxidation of a primary alcohol to an aldehyde, followed by lactonization with a second aldehyde group to form a gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@]1[C@@H][C@H]2[C@@H](CC(=O)O2)[C@@H]1CC=O",
+            "product_smiles": "[OTBS][C@]1[C@@H][C@H]2[C@@H](CC(=O)O2)[C@@H]1CCO",
+            "notes": "Aldehyde group is reduced to a primary alcohol using sodium borohydride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Selenoxide Elimination",
+            "reagents": "Bu3P, H2O2",
+            "reagent_smiles": "C1=CC=C(C(=C1)[N+](=O)[O-])[Se]C#N",
+            "conditions": "THF",
+            "yield": "88%",
+            "reactant_smiles": "[OTBS]C1(C)C[C@@H]2[C@@H](CC(=O)O2)[C@@H]1CCO",
+            "product_smiles": "C=C[C@@H]1[C@@H]2CC(=O)O[C@@H]2C[C]1(C)[OTBS]",
+            "notes": "Oxidative selenoxide elimination of a primary alcohol to form a vinyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O3, Ph3P",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "C=C[C@H]1C[C@H]2C(=O)OC[C@H]2[C@H]1[C@](C)([OTBS])",
+            "product_smiles": "O=C[C@H]1C[C@H]2C(=O)OC[C@H]2[C@H]1[C@](C)([OTBS])",
+            "notes": "Ozonolysis of terminal alkene to aldehyde with reductive workup.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Olefination",
+            "reagents": "NaHMDS, [PPh₃CH₂I]",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "69% (2 steps)",
+            "reactant_smiles": "[OTBS][C@]1(C)C[C@H]2[C@H](CC(=O)O2)[C@H]1C=O",
+            "product_smiles": "[OTBS][C@]1(C)C[C@H]2[C@H](CC(=O)O2)[C@H]1/C=C/I",
+            "notes": "Aldehyde converted to (E)-vinyl iodide via a Wittig-type olefination reaction. The OTBS protecting group and lactone functionality remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Tandem Cyclization / Diels-Alder type",
+            "reagents": "La(OTf)3, TMP, TIPSOTf",
+            "reagent_smiles": "C=C(C)[C@H]1CC=CC(=O)C1",
+            "conditions": "DCM",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@]1(C)C[C@H]2[C@H](CC(=O)O2)[C@@H]1/C=C\\I",
+            "product_smiles": "[OTMS][C@@]1(C)C[C@@H]2[C@H](C(=O)O[C@H]2)[C@H]3[C@H](/C=C\\I)[C@H]1[C@@H](C[C@H](C)C=C3[OTIPS])C",
+            "notes": "Lewis acid-catalyzed formal cycloaddition and cyclization, introducing a silyl protecting group (OTIPS).",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Asymmetric Conjugate Addition (1,4-addition)",
+                    "reagents": "(R)-DTBM-SEGPHOS, [Rh(cod)Cl]₂, iPr₂NEt, neopentyl glycol, hexanes, MeOH, H₂O",
+                    "reagent_smiles": "C=C(C)B1OCC(C)(C)C(C)(C)O1",
+                    "conditions": "70 °C",
+                    "yield": "87%",
+                    "reactant_smiles": "C1C=CC(=O)CC1",
+                    "product_smiles": "C=C(C)[C@H]1CCCC(=O)C1",
+                    "notes": "Asymmetric rhodium-catalyzed 1,4-addition of an isopropenyl group (from isopropenyl boronic acid pinacol ester) to cyclohex-2-en-1-one to form (R)-3-isopropenylcyclohexan-1-one.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Enol ether formation",
+                    "reagents": "nBuLi, TMP, TMSCl",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "C=C(C)[C@@H]1CCCC(=O)C1",
+                    "product_smiles": "C=C(C)[C@@H]1CCC=C(C1)[OTMS]",
+                    "notes": "Formation of a silyl enol ether using n-butyllithium and a hindered base (TMP for LTMP) followed by TMSCl trapping.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Enol Silyl Ether Deprotection/Ketone Formation",
+                    "reagents": "Pd₂(dba)₃",
+                    "reagent_smiles": "C=CCOC(=O)OCC=C",
+                    "conditions": "MeCN",
+                    "yield": "56% (2 steps)",
+                    "reactant_smiles": "C=C(C)[C@@H]1CCC=C(O[TMS])C1",
+                    "product_smiles": "C=C(C)[C@@H]1CC=CC(=O)C1",
+                    "notes": "Palladium-catalyzed conversion of an enol silyl ether to an alpha,beta-unsaturated ketone. Diallyl carbonate is used as a co-reagent, likely as a sacrificial allyl donor or scavenger.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection, Oxidation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "C=C(C)[C@@H]1C[C@H]2CCC(=C([OTIPS]))C[C@H]1[C@@H]2[C@H]3[C@H](/C=C\\I)[C@@](C)([OTMS])C[C@@H]3OC2=O",
+            "product_smiles": "C=C(C)[C@@H]1C[C@H]2CCC(=O)C[C@H]1[C@@H]2[C@H]3[C@H](/C=C\\I)[C@@](C)([OTMS])C[C@@H]3OC2=O",
+            "notes": "Selective deprotection of TIPS enol ether to form a ketone. The TMS ether, lactone, isopropenyl group, and vinyl iodide remain intact. The reaction also involves reduction of the C=C double bond that was part of the enol ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Intramolecular Heck Reaction",
+            "reagents": "tBuOK, Pd(PPh3)4",
+            "reagent_smiles": "CC(C)C1=CC=CC(=C1O)C(C)C",
+            "conditions": "toluene, 60 °C",
+            "yield": "",
+            "reactant_smiles": "C=C(C)[C@H]1C[C@H](CC(=O)C1)[C@H]2[C@@H]3[C@H](/C=C\\I)[C@@](C)(C[C@@H]3OC2=O)[OTMS]",
+            "product_smiles": "C=C(C)[C@H]1CC(=O)C[C@H]1[C@H]2C3=CC[C@@H]4[C@@H]5[C@@](C)(C[C@@H]4OC(=O)[C@H]25)[OTMS]",
+            "notes": "Intramolecular Heck reaction of an aryl iodide and an alkene forms a new C-C bond and a 7-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "O₂, P(OMe)₃, DBU",
+            "reagent_smiles": "",
+            "conditions": "MeCN",
+            "yield": "39%",
+            "reactant_smiles": "CC(=C)[C@@H]1CC(=O)C[C@H]2[C@H]1C=C[C@H]3[C@H](C[C@@]4(C)O[Si](C)(C)C)OC(=O)[C@@H]243",
+            "product_smiles": "CC(=C)[C@@H]1CC(=O)C=C[C@H]2[C@H]1C(O)[C@H]3[C@H](C[C@@]4(C)O[Si](C)(C)C)OC(=O)[C@@H]243",
+            "notes": "Allylic oxidation of alkene to allylic alcohol with double bond migration. The reaction is stated to occur in 2 steps, but only the overall transformation is shown.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Oxidation & Deprotection & Alkene Reduction",
+            "reagents": "MeReO3",
+            "reagent_smiles": "",
+            "conditions": "toluene, 60 °C",
+            "yield": "52%",
+            "reactant_smiles": "CC(=C)[C@@H]1C[C@H]2[C@H]3[C@H]4C(=O)[C@](O)([C@H]2CC1)C=C[C@H]5[C@@](C)([OTMS])[C@H]4OC(=O)[C@H]3C5",
+            "product_smiles": "CC(=C)[C@@H]1C[C@H]2[C@H]3[C@H]4C(=O)C=C([C@](O)([C@H]2CC1))[C@H]5[C@@](C)(O)[C@H]4OC(=O)[C@H]3C5",
+            "notes": "Oxidation of the alpha-methylene to form an alpha,beta-unsaturated ketone in the 6-membered ring, reduction of the alkene in the 7-membered ring, and hydrolysis of the OTMS group to a hydroxyl group. This transformation converts Scabrolide A (reactant) to Scabrolide B (product).",
+            "substeps": []
+        },
+        {
+            "step_id": "17",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "51%",
+            "reactant_smiles": "C=C(C)[C@@H]1C[C@@H]2C(=C[C@H]([C@H]3[C@@H]4[C@H](C[C@]3(C)O)OC(=O)[C@@H]24)O)C(=O)C1",
+            "product_smiles": "C=C(C)[C@@H]1C[C@@H]2C(=CC(=O)[C@H]3[C@@H]4[C@H](C[C@]3(C)O)OC(=O)[C@@H]24)C(=O)C1",
+            "notes": "Manganese dioxide oxidation of an allylic secondary alcohol to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "tecomanine-uyeda-2025",
+        "molecule_name": "Tecomanine",
+        "class": "Natural Product",
+        "author": "Uyeda",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-alkylation",
+            "reagents": "K2CO3, KI",
+            "reagent_smiles": "[Ts]N([Boc])H",
+            "conditions": "DMF, 50 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=C(Cl)Cl)CCl",
+            "product_smiles": "[Ts]N([Boc])CC(=C(Cl)Cl)C",
+            "notes": "The primary alkyl chloride reacts with the N-H of N-Boc-4-methylbenzenesulfonamide via an SN2-like reaction (likely with K2CO3 as base) to form the N-alkylated product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "89%",
+            "reactant_smiles": "CC(=C(Cl)Cl)CN([Boc])[Ts]",
+            "product_smiles": "CC(=C(Cl)Cl)CNH[Ts]",
+            "notes": "Boc deprotection of the N-Boc-tosylamide to yield the secondary tosylamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "DIAD, PPh3",
+            "reagent_smiles": "C=C(C)C=CCO",
+            "conditions": "THF",
+            "yield": "85%",
+            "reactant_smiles": "CC(=C(Cl)Cl)CN[Ts]",
+            "product_smiles": "[Ts]N(CC(=C(Cl)Cl)C)(CC(=CC=C)C)",
+            "notes": "Mitsunobu reaction of a primary sulfonamide with an allylic alcohol to form a tertiary sulfonamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nickel-catalyzed reductive cyclization",
+            "reagents": "Zn, NMP",
+            "reagent_smiles": "Cl[Ni](Cl)c1ccc2c(c1)[C@@H]3[C@@H](C2)OC(=N3)c4cncc(c4)c5nc6c(ccc7c57)[C@@H]8[C@@H]6O8",
+            "conditions": "THF, 0 °C",
+            "yield": "52%",
+            "reactant_smiles": "[Ts]N(CC(C)=C(Cl)Cl)CC/C=C(/C)C=C",
+            "product_smiles": "[Ts]N1CC=C(C)C2=C(C)C=CC[C@H]12",
+            "notes": "Intramolecular cyclization of an N-tosyl diene-amine with a gem-dichlorovinyl group to form a fused bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydroboration-Oxidation",
+            "reagents": "NaBO3, H2O",
+            "reagent_smiles": "CC(C)(C)[BH2]",
+            "conditions": "THF, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "[Ts]N1CC=C(C)C2[C@@H]1CC=C(C)C2",
+            "product_smiles": "[Ts]N1CC=C(C)C2[C@@H]1CC[C@H](C)[C@@H](O)C2",
+            "notes": "Anti-Markovnikov hydration of the cyclopentene alkene with stereoselective formation of alcohol and methyl groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C to r.t.",
+            "yield": "78%",
+            "reactant_smiles": "C[C@H]1C[C@@H](O)[C@H]2C=C(C)CN([Ts])C[C@H]12",
+            "product_smiles": "C[C@H]1CC(=O)[C@H]2C=C(C)CN([Ts])C[C@H]12",
+            "notes": "Oxidation of secondary alcohol to ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Isomerization/Rearrangement",
+            "reagents": "HCl, MeOH, DCM",
+            "reagent_smiles": "Cl.CO.ClCCl",
+            "conditions": "",
+            "yield": "72%",
+            "reactant_smiles": "[Ts]N1CC[C@]2([H])C(C)=C3CN1C3C(=O)[C@H](C)C2",
+            "product_smiles": "[Ts]N1C[C@@H](C)[C@]2([H])C3=CC(=O)[C@H](C)C3=C2C1",
+            "notes": "Acid-catalyzed [1,5]-methyl shift with double bond migration and new chiral center formation.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Luche Reduction (alpha,beta-unsaturated ketone to allylic alcohol)",
+            "reagents": "CeCl3, NaBH4",
+            "reagent_smiles": "[Ce+3].[Cl-].[Cl-].[Cl-].[Na+].[BH4-]",
+            "conditions": "MeOH, -78 °C",
+            "yield": "87%",
+            "reactant_smiles": "C[C@@H]1CN(C[C@H]2[C@H](C)C(=O)C=C12)[Ts]",
+            "product_smiles": "C[C@@H]1CN(C[C@H]2[C@H](C)[C@@H](O)C=C12)[Ts]",
+            "notes": "Selective 1,2-reduction of an alpha,beta-unsaturated ketone using CeCl3 and NaBH4 to form an allylic alcohol with defined stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Deprotection",
+            "reagents": "",
+            "reagent_smiles": "[Na].c1ccc2ccccc2c1",
+            "conditions": "DME, -50 °C",
+            "yield": "",
+            "reactant_smiles": "[Ts]N1CC[C@@H](C)[C@@]2([H])[C@H](C)C(O)=C[C@@H]21",
+            "product_smiles": "N1CC[C@@H](C)[C@@]2([H])[C@H](C)C(O)=C[C@@H]21",
+            "notes": "Reductive deprotection of a tosyl (Ts) group from nitrogen using sodium and naphthalene.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Reductive Amination",
+            "reagents": "HCHO, NaBH3CN, AcOH, MeCN",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]1C[C@H]2NCCC3=CC(O)C[C@H](C)[C@@H]3[C@H]12",
+            "product_smiles": "C[C@@H]1C[C@H]2N(C)CCC3=CC(O)C[C@H](C)[C@@H]3[C@H]12",
+            "notes": "Reductive N-methylation of a secondary amine to a tertiary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP, NaHCO3, DCM",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "47% (3 steps)",
+            "reactant_smiles": "C[C@H]1N(C)C[C@@H]2[C@@H](C)C=C(O)C2=C1",
+            "product_smiles": "C[C@H]1N(C)C[C@@H]2[C@@H](C)C(=O)C=C2C1",
+            "notes": "Dess-Martin Periodinane (DMP) oxidation of an allylic alcohol to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        }
+    ]
+}

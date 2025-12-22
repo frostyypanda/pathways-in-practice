@@ -1,0 +1,241 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "savaysa-edoxaban-daiichi-sankyo-unknown-2024",
+        "molecule_name": "Savaysa (Edoxaban Daiichi-Sankyo)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxide opening / Nucleophilic addition",
+            "reagents": "NaN₃, NH₄Cl",
+            "reagent_smiles": "",
+            "conditions": "DMF, 76 °C",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)[C@H]1CC[C@@H]2[C@H](C1)O2",
+            "product_smiles": "CCOC(=O)[C@H]1CC[C@@H](O)[C@H]([N-]=[N+]=N)C1",
+            "notes": "Nucleophilic ring opening of an epoxide with azide (N₃⁻) forming a trans-diol monoazide. Stereochemistry inversion at the site of azide attack.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Azide Reduction, Amine Protection",
+            "reagents": "5% Pd/C, H2",
+            "reagent_smiles": "CC(C)(C)OC(=O)OC(=O)OC(C)(C)C",
+            "conditions": "EtOAc, rt",
+            "yield": "68%",
+            "reactant_smiles": "CCOC(=O)[C@H]1CC([C@@H]([N-]=[N+]=N))[C@H](O)CC1",
+            "product_smiles": "CCOC(=O)[C@H]1CC([C@@H](NC(=O)OC(C)(C)C))[C@H](O)CC1",
+            "notes": "The azide group is reduced to an amine, which is then protected as a Boc carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "CH2Cl2, -10 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@H]1CC[C@H]([C@@H](C1)NC(=O)OC(C)(C)C)O",
+            "product_smiles": "CCOC(=O)[C@H]1CC[C@H]([C@@H](C1)NC(=O)OC(C)(C)C)[OMs]",
+            "notes": "Conversion of a secondary alcohol to a mesylate using methanesulfonyl chloride (MsCl) and triethylamine (Et3N). The stereochemistry at the chiral centers is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Substitution (SN2)",
+            "reagents": "NaN3",
+            "reagent_smiles": "[Na+].[N-]=[N+]=[N-]",
+            "conditions": "DMF, 75 °C",
+            "yield": "32% (2 steps)",
+            "reactant_smiles": "CCOC(=O)[C@H]1CC[C@H]([C@@H](C1)[NHBoc])[OMs]",
+            "product_smiles": "CCOC(=O)[C@H]1CC[C@@H]([C@@H](C1)[NHBoc])[N-]=[N+]=[N-]",
+            "notes": "SN2 displacement of a mesylate by azide with inversion of configuration at the stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Azide Reduction",
+            "reagents": "10% Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, EtOH",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@H]1[C@@H]([NH][Boc])[C@@H](N=[N+]=[N-])CCC1",
+            "product_smiles": "CCOC(=O)[C@H]1[C@@H]([NH][Boc])[C@@H](N)CCC1",
+            "notes": "Reduction of an azide to a primary amine using palladium on carbon and hydrogen.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amine protection (Cbz)",
+            "reagents": "CbzCl, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "67% (2 steps)",
+            "reactant_smiles": "CCOC(=O)[C@H]1CCC[C@@H](N)[C@@H](N[Boc])C1",
+            "product_smiles": "CCOC(=O)[C@H]1CCC[C@@H](N[Cbz])[C@@H](N[Boc])C1",
+            "notes": "Selective protection of the primary amine with a Cbz group.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "[Li]O",
+            "conditions": "THF, H2O, rt",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@H]1CC[C@H]([NH][Boc])[C@H](C1)[NH][Cbz]",
+            "product_smiles": "OC(=O)[C@H]1CC[C@H]([NH][Boc])[C@H](C1)[NH][Cbz]",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid, retaining all stereochemistry and protecting groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Amide Coupling",
+            "reagents": "Me2NH·HCl, EDCI, HOBt, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "76% (2 steps)",
+            "reactant_smiles": "O=C(O)[C@H]1CC([C@@H]N[Boc])[C@@H](N[Cbz])CC1",
+            "product_smiles": "O=C(N(C)C)[C@H]1CC([C@@H]N[Boc])[C@@H](N[Cbz])CC1",
+            "notes": "Carboxylic acid is converted to an N,N-dimethylamide via EDCI/HOBt coupling with dimethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Cbz Deprotection (Hydrogenolysis)",
+            "reagents": "10% Pd/C, H2",
+            "reagent_smiles": "CO.[Pd]",
+            "conditions": "MeOH, rt",
+            "yield": "93%",
+            "reactant_smiles": "[Boc]N[C@@H]1[C@@H]([Cbz]N)CCC[C@H]1C(=O)N(C)C",
+            "product_smiles": "[Boc]N[C@@H]1[C@@H](N)CCC[C@H]1C(=O)N(C)C",
+            "notes": "Hydrogenolysis of the Cbz protecting group to yield a primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Salt formation",
+            "reagents": "Oxalic acid",
+            "reagent_smiles": "O=C(O)C(=O)O",
+            "conditions": "MeCN, rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N[C@H]1[C@H](N)CC[C@@H](C(=O)N(C)C)CC1",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@H]1[C@H](N)CC[C@@H](C(=O)N(C)C)CC1.O=C(O)C(=O)O",
+            "notes": "Formation of an oxalic acid salt from an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amide Coupling / Acylation",
+            "reagents": "MeCN, Et3N",
+            "reagent_smiles": "CCOC(=O)C(=O)NC1=NC=C(C=C1)Cl.CCN(CC)CC.CC#N",
+            "conditions": "60 °C to rt",
+            "yield": "86%",
+            "reactant_smiles": "[Boc]N[C@@H]1C[C@H](CC[C@H]1N)C(=O)N(C)C.C(=O)(C(=O)O)O",
+            "product_smiles": "[Boc]N[C@@H]1C[C@H](CC[C@H]1NC(=O)C(=O)NC2=NC=C(C=C2)C)C(=O)N(C)C",
+            "notes": "Amine of cyclohexane derivative undergoes amide coupling with an ethyl oxalyl pyridylamide. The reagent structure shows a chloro-substituted pyridine, but the product structure shows a methyl-substituted pyridine. The product SMILES has been corrected to reflect the methyl group as shown in the product structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "MsOH",
+            "reagent_smiles": "CC#N",
+            "conditions": "MeCN, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@@H]1[C@@H](NC(=O)C(=O)NC2=NC=C(C=C2)Cl)C[C@H](C(=O)N(C)C)CC1",
+            "product_smiles": "N[C@@H]1[C@@H](NC(=O)C(=O)NC2=NC=C(C=C2)Cl)C[C@H](C(=O)N(C)C)CC1",
+            "notes": "Acid-catalyzed removal of the tert-butoxycarbonyl (Boc) protecting group from an amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Amide Coupling",
+            "reagents": "HOBt, EDCI, Et3N",
+            "reagent_smiles": "CN1CCC2=C(C1)SC(=N2)C(=O)O",
+            "conditions": "MeCN, 0 °C to rt",
+            "yield": "93%",
+            "reactant_smiles": "CN(C)C(=O)[C@H]1C[C@H](NC(=O)C(=O)NC2=NC=C(Cl)C=C2)CC[C@H]1N",
+            "product_smiles": "CN(C)C(=O)[C@H]1C[C@H](NC(=O)C(=O)NC2=NC=C(Cl)C=C2)CC[C@H]1NC(=O)C3=NC4=C(CN(C)CC4)S3",
+            "notes": "Amide bond formation between a primary amine and a carboxylic acid using HOBt/EDCI coupling reagents.",
+            "substeps": [
+                {
+                    "step_id": "13.1",
+                    "reaction_type": "Hantzsch-type thiazole synthesis",
+                    "reagents": "NH2CN, S8, pyrrolidine",
+                    "reagent_smiles": "",
+                    "conditions": "2-propanol, 50 °C",
+                    "yield": "",
+                    "reactant_smiles": "CN1CCC(=O)CC1",
+                    "product_smiles": "CN1CCC2=C(CC1)SC(=N2)N",
+                    "notes": "Formation of a bicyclic aminothiazole from a cyclic ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.2",
+                    "reaction_type": "Sandmeyer Reaction",
+                    "reagents": "NaNO₂, 48% HBr",
+                    "reagent_smiles": "",
+                    "conditions": "H₂O, 30 °C",
+                    "yield": "",
+                    "reactant_smiles": "CN1CCC2=C(C1)SC(=N2)N",
+                    "product_smiles": "CN1CCC2=C(C1)SC(=N2)Br",
+                    "notes": "Replacement of an aromatic amino group with bromine via a diazonium intermediate (Sandmeyer-type reaction).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.3",
+                    "reaction_type": "Salt Formation",
+                    "reagents": "NaOH, H2O, p-TSOH",
+                    "reagent_smiles": "",
+                    "conditions": "MeOH, 30 °C",
+                    "yield": "78% (4 steps)",
+                    "reactant_smiles": "CN1CCC2=C(C1)SC(=N2)Br",
+                    "product_smiles": "CN1CCC2=C(C1)SC(=N2)Br.Cc1ccc(S(=O)(=O)O)cc1",
+                    "notes": "Formation of the p-toluenesulfonic acid (TsOH) salt from the free base.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.4",
+                    "reaction_type": "Lithiation, Carboxylation",
+                    "reagents": "2 M NaOH, n-BuLi, CO2",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -40 °C to -30 °C",
+                    "yield": "",
+                    "reactant_smiles": "CN1CCC2=C(C1)SC(=N2)Br.Cc1ccc(S(=O)(=O)O)cc1",
+                    "product_smiles": "CN1CCC2=C(C1)SC(=N2)C(=O)O[Li]",
+                    "notes": "Bromine is replaced by a lithium carboxylate group. The reaction proceeds via lithiation (halogen-metal exchange) followed by carboxylation with CO2.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "13.5",
+                    "reaction_type": "Acidification / Salt formation",
+                    "reagents": "1 N HCl",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH",
+                    "yield": "90% (2 steps)",
+                    "reactant_smiles": "CN1CCC2=C(C1)SC(=N2)C(=O)[O-].[Li+]",
+                    "product_smiles": "[Cl-].C[N+]1CCC2=C(C1)SC(=N2)C(=O)O",
+                    "notes": "Conversion of lithium carboxylate to free carboxylic acid and formation of amine hydrochloride salt.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Salt Formation",
+            "reagents": "TsOH",
+            "reagent_smiles": "CCO.O",
+            "conditions": "85% EtOH-H2O, 60 °C to rt",
+            "yield": "89%",
+            "reactant_smiles": "CN(C)C(=O)[C@H]1CC[C@H]([C@@H](C1)NC(=O)C2=NC3=C(CN(C)CC3)S2)NC(=O)C(=O)NC4=NC=C(C=C4)Cl",
+            "product_smiles": "CN(C)C(=O)[C@H]1CC[C@H]([C@@H](C1)NC(=O)C2=NC3=C(CN(C)CC3)S2)NC(=O)C(=O)NC4=NC=C(C=C4)Cl.CC1=CC=C(C=C1)S(=O)(=O)O.O",
+            "notes": "Edoxaban (Savaysa) forms a tosylate salt and a hydrate in the presence of p-toluenesulfonic acid in ethanol/water.",
+            "substeps": []
+        }
+    ]
+}

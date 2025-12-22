@@ -1,0 +1,218 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "homoharringtonine-beaudry-2019",
+        "molecule_name": "Homoharringtonine",
+        "class": "Natural Product",
+        "author": "Beaudry",
+        "year": 2019
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Furanone formation",
+            "reagents": "LDA, DBU",
+            "reagent_smiles": "CCOC(=O)CCl",
+            "conditions": "THF",
+            "yield": "57%",
+            "reactant_smiles": "CC(=O)CCC[OTBS]",
+            "product_smiles": "[OTBS]CC1=CC(=O)CO1",
+            "notes": "Intramolecular cyclization of an alpha-chloro ester and ketone to form a 2(5H)-furanone.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "O-methylation / Furan aromatization",
+            "reagents": "NaH, HMPA, Me2SO4",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "80%",
+            "reactant_smiles": "O=C1OC(=C(CCC[OTBS]))C1",
+            "product_smiles": "COc1cc(CCC[OTBS])co1",
+            "notes": "O-methylation of a 2(5H)-furanone derivative, followed by aromatization to a furan ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Friedel-Crafts alkylation",
+            "reagents": "2,6-lutidine",
+            "reagent_smiles": "ClCC1=CC(CC[NHTFA])=C2OCOC2=C1",
+            "conditions": "CF3CH2OH",
+            "yield": "68%",
+            "reactant_smiles": "[OTBS]CCCC1=CC(=CO1)OC",
+            "product_smiles": "[OTBS]CCCC1=C(CC2=CC(CC[NHTFA])C3=C(OCO3)C=C2)C(OC)=CO1",
+            "notes": "Friedel-Crafts alkylation of a furan derivative with a benzyl chloride derivative.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Amide Formation (Acylation)",
+                    "reagents": "TFAA, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "benzene, 0 °C",
+                    "yield": "87%",
+                    "reactant_smiles": "C1=CC2=C(C=C1CCN)OCO2",
+                    "product_smiles": "C1=CC2=C(C=C1CCNC(=O)C(F)(F)F)OCO2",
+                    "notes": "Primary amine is acylated with trifluoroacetic anhydride (TFAA) to form an N-trifluoroacetamide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Chloromethylation / Electrophilic Aromatic Substitution",
+                    "reagents": "CH2O, HCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "96%",
+                    "reactant_smiles": "O1COC2=C1C=CC(CC[NHTFA])C2",
+                    "product_smiles": "O1COC2=C1C=C(CCl)C(CC[NHTFA])C2",
+                    "notes": "Chloromethylation of the aromatic ring para to the methylenedioxy group and ortho to the ethylamine substituent.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC1=C(CC2=CC3=C(C=C2CC[NHTFA])OCO3)OC(=C1)CC[OTBS]",
+            "product_smiles": "COC1=C(CC2=CC3=C(C=C2CC[NHTFA])OCO3)OC(=C1)CCCO",
+            "notes": "Deprotection of tert-butyldimethylsilyl (TBS) ether to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "",
+            "yield": "69%",
+            "reactant_smiles": "COC1=C(CC2=C(CCNC(=O)C(F)(F)F)C=C3C(=C2)OCO3)OC(=C1)CCCO",
+            "product_smiles": "COC1=C(CC2=C(CCNC(=O)C(F)(F)F)C=C3C(=C2)OCO3)OC(=C1)CCCOS(=O)(=O)C",
+            "notes": "Alcohol converted to mesylate ester. Yield reported over 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular cyclization, N-deprotection, mesylate displacement",
+            "reagents": "LiOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "62-85%",
+            "reactant_smiles": "COC1=C(CC2=C(CC[NHTFA])C=C3C(=C2)OCO3)OC(=C1)CCC[OMs]",
+            "product_smiles": "COc1c2oc(cc1)CCCn3CCC(Cc4ccc(c(c4)OCO)CC3)C2",
+            "notes": "Intramolecular cyclization forming a 10-membered aza-macrocycle, involving deprotection of N-trifluoroacetamide and nucleophilic attack on carbon bearing a mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative Cyclization",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "CF3CH2OH",
+            "yield": "60%",
+            "reactant_smiles": "COC1=C2CC3=C(CCNCCCC(=C1)O2)C=C4C(=C3)OCO4",
+            "product_smiles": "COC1=C[C@@]23CCCN3CCC4=CC5=C(C=C4[C@]2([2H])C1=O)OCO5",
+            "notes": "Intramolecular oxidative cyclization of a furan-containing amine to form a complex polycyclic alkaloid core. DDQ acts as an oxidant, and trifluoroethanol is the solvent.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Transfer Hydrogenation (Ketone Reduction)",
+            "reagents": "HCO2H, NEt3, (R,R)-N-tosyl-1,2-diphenylethylenediamine ruthenium(II) p-cymene complex",
+            "reagent_smiles": "CC(C)C1=CC=C(C)C=C1",
+            "conditions": "",
+            "yield": "50%",
+            "reactant_smiles": "COC1=C[C@@]23CCCN3CCC4=CC5=C(C=C4[C@]2([H])C1=O)OCO5",
+            "product_smiles": "COC1=C[C@@]23CCCN3CCC4=CC5=C(C=C4[C@H]2[C@@H]1O)OCO5",
+            "notes": "Stereoselective reduction of a ketone to a secondary alcohol using a chiral ruthenium catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification",
+            "reagents": "Et3N, DMAP",
+            "reagent_smiles": "CC(C)(/C=C/C[C@@]1(CC(=O)O1)C(=O)O)OCC2=CC=CC=C2.ClC1=C(Cl)C(C(=O)Cl)=CC(Cl)=C1Cl",
+            "conditions": "",
+            "yield": "84%",
+            "reactant_smiles": "COC1=C[C@]23CCCN3CCC4=CC5=C(C=C4[C@@H]2[C@H]1O)OCO5",
+            "product_smiles": "COC1=C[C@]23CCCN3CCC4=CC5=C(C=C4[C@@H]2[C@H]1OC(=O)[C@@]6(CC(=O)O6)C(/C=C/C(C)(C)OCC7=CC=CC=C7))OCO5",
+            "notes": "Esterification of the C13 hydroxyl group of a cephalotaxine derivative with a complex lactone-acid side chain, likely via in-situ acid chloride formation.",
+            "substeps": [
+                {
+                    "step_id": "9.1",
+                    "reaction_type": "Protection (acetal formation)",
+                    "reagents": "TMSCl, TMS₂NH, TMSOTf, CH₂Cl₂",
+                    "reagent_smiles": "CC(C)(C)C=O",
+                    "conditions": "RT",
+                    "yield": "82%",
+                    "reactant_smiles": "O=C(O)C[C@@H](O)C(=O)O",
+                    "product_smiles": "CC(C)(C)[C@H]1OC(=O)O[C@H]1CC(=O)O",
+                    "notes": "Formation of a 1,3-dioxolan-2-one derivative from (R)-malic acid and pivalaldehyde.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.2",
+                    "reaction_type": "Asymmetric Alkylation / Hydrolysis",
+                    "reagents": "LiHMDS, allyl bromide",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "59%",
+                    "reactant_smiles": "O=C1O[C@H](C(C)(C)C)[C@@H](CC(=O)O)O1",
+                    "product_smiles": "C=CC[C@@](CC(=O)O)(C(=O)O)O",
+                    "notes": "Asymmetric alpha-alkylation of a chiral cyclic carbonate auxiliary with allyl bromide, followed by hydrolysis to yield a chiral diacid with a tertiary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.3",
+                    "reaction_type": "Selective Esterification",
+                    "reagents": "BnOH, NaH",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C to RT",
+                    "yield": "85%",
+                    "reactant_smiles": "C=CC[C@](CC(=O)O)(C(=O)O)O",
+                    "product_smiles": "C=CC[C@](CC(=O)O)(C(=O)OCC1=CC=CC=C1)O",
+                    "notes": "One of the carboxylic acid groups is selectively esterified with benzyl alcohol. The tertiary hydroxyl group and the other carboxylic acid remain unchanged. Stereochemistry at the chiral center is retained.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.4",
+                    "reaction_type": "Yamaguchi lactonization",
+                    "reagents": "DMAP, Et3N, CH2Cl2",
+                    "reagent_smiles": "Clc1cc(Cl)cc(Cl)c1C(=O)Cl.CCN(CC)CC",
+                    "conditions": "CH2Cl2",
+                    "yield": "67%",
+                    "reactant_smiles": "C=CC[C@](CC(=O)O)(C(=O)OCC1=CC=CC=C1)O",
+                    "product_smiles": "C=CC[C@]1(CC(=O)O1)C(=O)OCC2=CC=CC=C2",
+                    "notes": "Intramolecular esterification (lactone formation) via Yamaguchi lactonization. The hydroxyl group and carboxylic acid group cyclize to form a 5-membered lactone ring, retaining the stereochemistry at the chiral center.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "9.5",
+                    "reaction_type": "Cross Metathesis, Ester Hydrolysis",
+                    "reagents": "Grubbs II catalyst",
+                    "reagent_smiles": "C=CC(C)(C)OCC1=CC=CC=C1",
+                    "conditions": "rt",
+                    "yield": "61%",
+                    "reactant_smiles": "C=CC[C@@]1(CC(=O)O1)C(=O)OCC2=CC=CC=C2",
+                    "product_smiles": "CC(C)(/C=C/C[C@@]1(CC(=O)O1)C(=O)O)OCC2=CC=CC=C2",
+                    "notes": "Cross-metathesis between the terminal alkene of the reactant and the provided alkene reagent, followed by hydrolysis of the benzyl ester to a carboxylic acid. The chiral center and E-stereochemistry of the newly formed alkene are maintained/formed.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Lactone Alcoholysis / Esterification",
+            "reagents": "MeONa, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[OBn]C(C)(C)/C=C/C[C@]1(CC(=O)O1)C(=O)O[C@@H]2C(=C[C@@]34CCCN4CCC5=C(C=C6C(=C5)OCO6)[C@H]23)OC",
+            "product_smiles": "[OBn]C(C)(C)/C=C/C[C@](O)(CC(=O)OC)C(=O)O[C@@H]1C(=C[C@@]23CCCN3CCC4=C(C=C5C(=C4)OCO5)[C@H]12)OC",
+            "notes": "Base-catalyzed ring-opening of a gamma-lactone to form an alpha-hydroxy methyl ester. The Cephalotaxine core remains unchanged.",
+            "substeps": []
+        }
+    ]
+}

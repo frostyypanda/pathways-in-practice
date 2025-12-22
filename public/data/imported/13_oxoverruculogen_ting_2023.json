@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "13-oxoverruculogen-ting-2023",
+        "molecule_name": "13-oxoverruculogen",
+        "class": "Natural Product",
+        "author": "Ting",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "",
+            "reagents": "toluene",
+            "reagent_smiles": "O=C(N)OCC1=CC=CC=C1",
+            "conditions": "40 °C",
+            "yield": "84%",
+            "reactant_smiles": "OCC(O)C(=O)O",
+            "product_smiles": "[Cbz]NC(O)C(=O)O",
+            "notes": "Conversion of 2,3-dihydroxypropanoic acid to N-Cbz-serine. The amination and N-Cbz protection using benzyl carbamate are not standard direct transformations from the reactant shown.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Esterification and Alcohol Methylation",
+            "reagents": "MeOH, HCl",
+            "reagent_smiles": "COC(OC)OC",
+            "conditions": "55 °C",
+            "yield": "67%",
+            "reactant_smiles": "[Cbz]NC(O)C(=O)O",
+            "product_smiles": "[Cbz]NC(OC)C(=O)OC",
+            "notes": "Carboxylic acid is esterified to a methyl ester, and the alpha-hydroxyl group is methylated to a methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Phosphonylation",
+            "reagents": "PCl3, P(OMe)3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "toluene, 75 °C",
+            "yield": "79%",
+            "reactant_smiles": "COC(C(=O)OC)N[Cbz]",
+            "product_smiles": "COC(=O)C(N[Cbz])P(=O)(OC)OC",
+            "notes": "Conversion of an alpha-methoxy ester to an alpha-phosphonate ester with Cbz-protected amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH, MeOH, H₂O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)C([NHCbz])P(=O)(OC)OC",
+            "product_smiles": "COP(=O)(C(C(=O)O)[NHCbz])OC",
+            "notes": "Hydrolysis of a methyl ester to a carboxylic acid under basic conditions, with an alpha-phosphonate and Cbz-protected amine remaining unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Coupling (Peptide Coupling)",
+            "reagents": "DCC, iPr2NEt, HOBt",
+            "reagent_smiles": "N1CCC[C@@H]1C(=O)OCC2=CC=CC=C2",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "COP(=O)(C(C(=O)O)N[Cbz])OC",
+            "product_smiles": "COP(=O)(C(N[Cbz])C(=O)N1CCC[C@H]1C(=O)OCC2=CC=CC=C2)OC",
+            "notes": "Amide formation between a carboxylic acid and a secondary amine via peptide coupling conditions using DCC/HOBt.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrogenation / Deprotection / Cyclization",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "AcOH, MeOH",
+            "yield": "96%",
+            "reactant_smiles": "COP(=O)(OC)[C@@H](N[Cbz])C(=O)N1CCC[C@@H]1[C](=O)[OBn]",
+            "product_smiles": "COP(=O)(OC)[C@@H]1C(=O)N2CCC[C@@H]2C(=O)N1",
+            "notes": "Deprotection of Cbz and benzyl ester followed by intramolecular cyclization to form a diketopiperazine. Reaction is part of a 3-step sequence.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Horner-Wadsworth-Emmons reaction",
+            "reagents": "KOtBu, CH2Cl2",
+            "reagent_smiles": "CC(C)(C)OC(=O)N1C=C(C=O)C2=CC=C(OC)C=C21",
+            "conditions": "-78 °C to rt",
+            "yield": "72%",
+            "reactant_smiles": "O=C1N(C2CCC[C@@H]2)C(=O)[C@H](P(=O)(OC)OC)N1",
+            "product_smiles": "CC(C)(C)OC(=O)N1C=C(/C=C\\2C(=O)N3CCC[C@@]3C(=O)N2)C4=C1C=C(OC)C=C4",
+            "notes": "Horner-Wadsworth-Emmons reaction between a phosphonate and an aldehyde to form an E-alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-Alkylation",
+            "reagents": "NaH",
+            "reagent_smiles": "C1CC1=CCBr",
+            "conditions": "DMF",
+            "yield": "95%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C=C(C=C2C(=O)N3CCC[C@H]3C(=O)[NH]2)C5=C1C=C(C=C5)OC",
+            "product_smiles": "CC(C)(C)OC(=O)N1C=C(C=C2C(=O)N3CCC[C@H]3C(=O)N2CC=C4CC4)C5=C1C=C(C=C5)OC",
+            "notes": "N-alkylation of the secondary amine (NH group) on the diketopiperazine core of the reactant with a cyclopropyl-substituted alkyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Intramolecular Cyclization, Deprotection",
+            "reagents": "Rh(PPh3)3, PPh3, TFA",
+            "reagent_smiles": "",
+            "conditions": "toluene, 90 °C, CH2Cl2",
+            "yield": "45%",
+            "reactant_smiles": "[Boc]N1C=C(/C=C\\2/C(=O)N3CCC[C@H]3C(=O)N2CC/C=C/C1CC1)C5=C1C=C(C=C5)OC",
+            "product_smiles": "CC(=C[C@@H]1C2=C(C=C3C(=O)N4CCC[C@H]4C(=O)N13)C5=C(C=C(C=C5)OC)N2)C",
+            "notes": "Rhodium-catalyzed intramolecular cyclization/hydroarylation to form a new polycyclic system, followed by Boc deprotection.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC(=C[C@H]1C2=C(C=C3C(=O)N4CCC[C@@H]4C(=O)N13)C5=C(C=C(C=C5)OC)N2)C",
+            "product_smiles": "CC(=C[C@H]1C2=C(C3=C(C=C(C=C3)OC)N2)[C@H]([C@]4(C(=O)N5CCC[C@@H]5C(=O)N14)O)O)C",
+            "notes": "Oxidative dihydroxylation of the internal alkene in the pyrimidine-fused indole system.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "N-Alkylation",
+            "reagents": "KOH, 18-crown-6",
+            "reagent_smiles": "CC(=CCCl)C",
+            "conditions": "benzene",
+            "yield": "60%",
+            "reactant_smiles": "CC(=C)[C@@H]1C2=C(C3=C(C=C(C=C3)OC)N2)[C@H]([C@]4(O)(O)C(=O)N5CCC[C@@H]5C(=O)N14)",
+            "product_smiles": "CC(=C)CN1C2=C(C3=C(C=C(C=C3)OC)N2)[C@@H]([C@]4(O)(O)C(=O)N5CCC[C@@H]5C(=O)N14)",
+            "notes": "N-alkylation of the indole nitrogen using 1-chloro-3-methylbut-2-ene, proceeding with inversion of stereochemistry at the bridgehead carbon adjacent to the spiro system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Enzymatic Oxidative Cyclization (Peroxide Formation)",
+            "reagents": "FtmOx1, O2, α-ketoglutarate, L-ascorbate, (NH4)Fe(SO4)2",
+            "reagent_smiles": "",
+            "conditions": "37 °C",
+            "yield": "62%",
+            "reactant_smiles": "CC(=CCN1C2=C(C=CC(=C2)OC)C3=C1[C@H](C=C(C)C)N4C(=O)[C@H]5CCCN5C(=O)[C@@]4([C@@H]3O)O)C",
+            "product_smiles": "N1([C@@H]2OCCOC(C)(C)C2)C3=C(C=CC(=C3)OC)C4=C1[C@H](C=C(C)C)N5C(=O)[C@H]6CCCN6C(=O)[C@@]5([C@@H]4O)O",
+            "notes": "The prenyl group on the indole nitrogen is oxidized and cyclized to form a cyclic peroxide (endoperoxide) via an enzymatic reaction. The rest of the molecule remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Oxidation",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "MeCN, 70 °C",
+            "yield": "55%",
+            "reactant_smiles": "CC(=C[C@@H]1N2C3=C(C=CC(=C3)OC)C4=C2[C@H](CC(C)(C)OO1)N5C(=O)[C@@H]6CCCN6C(=O)[C@@]5(C(O)O))C",
+            "product_smiles": "CC(=C[C@@H]1N2C3=C(C=CC(=C3)OC)C4=C2[C@H](CC(C)(C)OO1)N5C(=O)[C@@H]6CCCN6C(=O)[C@@]5(C=O))C",
+            "notes": "Oxidation of a geminal diol to a ketone using DDQ.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lacosamide-vimpat-ucb-unknown-2024",
+        "molecule_name": "Lacosamide (Vimpat UCB)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Protection (THP Ether Formation)",
+            "reagents": "PPTS",
+            "reagent_smiles": "C1CCC=CO1",
+            "conditions": "CH2Cl2, rt",
+            "yield": "95%",
+            "reactant_smiles": "CCOC(=O)[C@H](C)O",
+            "product_smiles": "CCOC(=O)[C@H](C)[OTHP]",
+            "notes": "Protection of a secondary alcohol with dihydropyran to form a THP ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@H](C)[OTHP]",
+            "product_smiles": "C[C@H](C=O)[OTHP]",
+            "notes": "Stereospecific reduction of an ethyl ester to an aldehyde using DIBAL-H, preserving the THP protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Horner-Wadsworth-Emmons Olefination",
+            "reagents": "NaH",
+            "reagent_smiles": "CCOC(=O)CP(=O)(OCC)OCC",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@H](C=O)[OTHP]",
+            "product_smiles": "CCOC(=O)/C=C/[C@H](C)[OTHP]",
+            "notes": "Horner-Wadsworth-Emmons olefination of an aldehyde to form an alpha,beta-unsaturated ester, retaining the chiral center's stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "75% (3 steps)",
+            "reactant_smiles": "CCOC(=O)\\C=C/[C@@H](C)[OTHP]",
+            "product_smiles": "C[C@@H](\\C=C/CO)[OTHP]",
+            "notes": "Reduction of an alpha,beta-unsaturated ethyl ester to the corresponding primary allylic alcohol using DIBAL-H. The THP protecting group and the stereocenter configuration are retained. The trans configuration of the double bond is also retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Williamson Ether Synthesis / O-methylation",
+            "reagents": "NaH, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]([OTHP])/C=C/CO",
+            "product_smiles": "C[C@@H]([OTHP])/C=C/COC",
+            "notes": "The primary alcohol is methylated to form a methyl ether. The stereochemistry of the chiral center and the E-alkene configuration are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "THP Deprotection",
+            "reagents": "",
+            "reagent_smiles": "CC(=O)Cl.CO",
+            "conditions": "rt",
+            "yield": "78%",
+            "reactant_smiles": "C[C@@H](/C=C/COC)[OTHP]",
+            "product_smiles": "C[C@@H](/C=C/COC)O",
+            "notes": "Deprotection of a THP ether to a secondary alcohol using acetyl chloride and methanol. The yield is for two steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Carbamate Formation",
+            "reagents": "TCA-NCO",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C, 1h",
+            "yield": "",
+            "reactant_smiles": "C[C@H](O)/C=C/COC",
+            "product_smiles": "C[C@H](/C=C/COC)OC(=O)NC(=O)C(Cl)(Cl)Cl",
+            "notes": "Alcohol reacts with trichloroacetyl isocyanate (TCA-NCO) to form an N-trichloroacetylcarbamate. The stereochemistry at the chiral center is retained (R).",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Deprotection",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, rt",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "C[C@@H](/C=C/COC)OC(=O)NC(=O)C(Cl)(Cl)Cl",
+            "product_smiles": "C[C@@H](/C=C/COC)OC(=O)N",
+            "notes": "Deprotection of a trichloroacetyl carbamate to a primary carbamate, forming Lacosamide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Allylic Rearrangement / N-Acetylation",
+            "reagents": "TFAA, Et3N, MeMgBr",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C then THF, -10 °C to rt",
+            "yield": "74%",
+            "reactant_smiles": "C[C@H](OC(=O)N)/C=C/COC",
+            "product_smiles": "C/C=C/[C@H](NC(=O)C)COC",
+            "notes": "Sigmatropic rearrangement of an allylic carbamate to an acetamide with double bond migration and stereocenter shift.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Cleavage",
+            "reagents": "RuCl3·H2O, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "acetone/H2O",
+            "yield": "79%",
+            "reactant_smiles": "C/C=C/[C@@H](COC)N[Ac]",
+            "product_smiles": "N[Ac][C@H](COC)C(=O)O",
+            "notes": "Oxidative cleavage of the carbon-carbon double bond (alkene) to a carboxylic acid, using Lemieux-Johnson conditions (RuCl3/NaIO4). The stereocenter at the amide-bearing carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Amide formation / Carboxylic acid activation",
+            "reagents": "IBCF, NMM, BnNH2",
+            "reagent_smiles": "",
+            "conditions": "THF, -20 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "CC(=O)N[C@H](COC)C(=O)O",
+            "product_smiles": "CC(=O)N[C@H](COC)C(=O)NCC1=CC=CC=C1",
+            "notes": "Amide coupling of a carboxylic acid with benzylamine, forming Lacosamide.",
+            "substeps": []
+        }
+    ]
+}

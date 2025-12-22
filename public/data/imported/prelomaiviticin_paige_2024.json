@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "prelomaiviticin-paige-2024",
+        "molecule_name": "Prelomaiviticin",
+        "class": "Natural Product",
+        "author": "Paige",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "O-Methylation",
+            "reagents": "Ag₂O, MeI",
+            "reagent_smiles": "[Ag]2O.CI",
+            "conditions": "CH₂Cl₂, 65 °C",
+            "yield": "92%",
+            "reactant_smiles": "C1=CC(=C2C(=C1)C(=O)C=CC2=O)O",
+            "product_smiles": "COC1=C2C(=CC=C1)C(=O)C=CC2=O",
+            "notes": "Methylation of a phenolic hydroxyl group on a naphthoquinone to form a methoxy ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Bromination",
+            "reagents": "Br2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CHCl3, 0 °C to rt",
+            "yield": "86%",
+            "reactant_smiles": "COC1=C2C(=CC=C1)C(=O)C=CC2=O",
+            "product_smiles": "COC1=C2C(=CC=C1)C(=O)C(=CC2=O)Br",
+            "notes": "Electrophilic bromination of a methoxy-substituted 1,4-naphthoquinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "Na2S2O4, Et2O, H2O",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC1=C2C(=CC=C1)C(=O)C(=CC2=O)Br",
+            "product_smiles": "COC1=C2C(=CC=C1)C(=C(C=C2O)Br)O",
+            "notes": "Reduction of a brominated methoxy-quinone to a brominated methoxy-hydroquinone using sodium dithionite.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "O-Methylation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "CS(=O)(=O)Oc1ccc(C)cc1",
+            "conditions": "acetone, 85 °C",
+            "yield": "47% (2 steps)",
+            "reactant_smiles": "COc1ccc2c(c1O)c(Br)c(O)cc2",
+            "product_smiles": "COc1ccc2c(c1OC)c(Br)c(OC)cc2",
+            "notes": "Two phenolic hydroxyl groups are methylated to form methyl ethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Borylation",
+            "reagents": "B2Pin2, PdCl2dppf, KOAc",
+            "reagent_smiles": "",
+            "conditions": "100 °C, dioxane",
+            "yield": "87%",
+            "reactant_smiles": "COc1cccc2c(c1OC)c(Br)c(OC)c2",
+            "product_smiles": "COc1cccc2c(c1OC)c([BPin])c(OC)c2",
+            "notes": "Palladium-catalyzed borylation of an aryl bromide to form an arylboronic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Suzuki-Miyaura Coupling followed by Intramolecular Cyclization",
+            "reagents": "Pd(OAc)2, SPhos, K3PO4",
+            "reagent_smiles": "O=Cc1c(I)cc(CC)c(OC)c1",
+            "conditions": "dioxane, H2O, 90 °C",
+            "yield": "81%",
+            "reactant_smiles": "COC1=CC=CC2=C1C=C(OC)C([B]3OC(C)(C)C(C)(C)O3)=C2OC",
+            "product_smiles": "COc1ccc2c(c1)c(OC)c(C3=C(C=C(CC)C=C3)C4OC(O4)C)cc5c2O",
+            "notes": "Suzuki-Miyaura cross-coupling of an aryl boronic ester with an aryl iodide, followed by an intramolecular cyclization to form a fused 1,3-dioxolane ring from the aldehyde and two methoxy groups.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Cross-coupling",
+                    "reagents": "BET3, PdCl2dppf, Cs2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 70 °C",
+                    "yield": "91%",
+                    "reactant_smiles": "O=Cc1cc(Br)cc(O)c1",
+                    "product_smiles": "CCC1=CC(=CC(=C1)C=O)O",
+                    "notes": "Aromatic C-Br bond replaced by an ethyl group via palladium-catalyzed cross-coupling with triethylborane (Negishi-type or similar).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "O-Methylation (Williamson Ether Synthesis)",
+                    "reagents": "MeI, K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "acetone, 60 °C",
+                    "yield": "78%",
+                    "reactant_smiles": "CCC1=CC(=CC(=C1)C=O)O",
+                    "product_smiles": "CCC1=CC(=CC(=C1)C=O)OC",
+                    "notes": "O-methylation of a phenol using methyl iodide and potassium carbonate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4, THF, MeOH",
+                    "reagent_smiles": "[Na+].[BH4-]",
+                    "conditions": "0 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CCC1=CC(=CC(=C1)C=O)OC",
+                    "product_smiles": "CCC1=CC(=CC(=C1)CO)OC",
+                    "notes": "Aldehyde is reduced to a primary alcohol using sodium borohydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Directed ortho-metalation, Iodination",
+                    "reagents": "nBuLi, I2",
+                    "reagent_smiles": "CCCC[Li].II.CCOCC",
+                    "conditions": "Et2O, -78 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "OCC1=CC(OC)=CC(CC)=C1",
+                    "product_smiles": "OCC1=C(I)C(OC)=CC(CC)=C1",
+                    "notes": "Ortho-lithiation directed by methoxy group, followed by electrophilic iodination.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Oxidation",
+                    "reagents": "PCC",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2",
+                    "yield": "55%",
+                    "reactant_smiles": "CCC1=CC(=C(C(=C1)CO)I)OC",
+                    "product_smiles": "CCC1=CC(=C(C(=C1)C=O)I)OC",
+                    "notes": "Oxidation of a primary benzylic alcohol to an aldehyde.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Aldehyde Oxidation",
+            "reagents": "H2O2, NaOH",
+            "reagent_smiles": "",
+            "conditions": "MeOH, H2O, 90 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1=CC(=C(C(=C1)C=O)C2=C(C3=CC=CC(=C3C(=C2)OC)OC)OC)OC",
+            "product_smiles": "CCC1=CC(=C(C2=C(C3=CC=CC(=C3C(=C2)OC)OC)OC)C(=C1)C(=O)O)OC",
+            "notes": "Oxidation of an aldehyde group to a carboxylic acid group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Intramolecular Friedel-Crafts Acylation",
+            "reagents": "Cyanuric chloride, TiCl4, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "42% (2 steps)",
+            "reactant_smiles": "CCC1=CC(=C(C2=C(C3=CC=CC(=C3C(=C2)OC)OC)OC)C(=C1)C(=O)O)OC",
+            "product_smiles": "CCC1=CC2=C(C(=C1)OC)C3=C(C4=CC=CC(=C4C(=C3C2=O)OC)OC)OC",
+            "notes": "Intramolecular Friedel-Crafts acylation of a biaryl carboxylic acid to form a pentacyclic ketone structure.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "O-Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -70 to -20 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1=CC(OC)=C2C(=O)C3=C(C4=C(OC)C=CC(OC)=C4C3=C2C(OC)=C1)=O",
+            "product_smiles": "CCC1=CC2=C(C(=C1)O)C3=C(C2=O)C(=O)C4=C(C=CC=C4C3=O)O",
+            "notes": "O-demethylation reaction. The reactant image clearly depicts four methoxy groups. However, the product image shows only two hydroxyl groups, corresponding to two of the original methoxy positions. The other two positions that were methoxy groups in the reactant are depicted as unsubstituted aromatic carbons in the product. This constitutes an inconsistency in the reaction representation, as BBr3 typically effects complete O-demethylation of methyl ethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrazone formation / Condensation",
+            "reagents": "NH2NH2",
+            "reagent_smiles": "NN.CCO",
+            "conditions": "EtOH, 90 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1=CC2=C(C(=C1)O)C3=C(C2=O)C(=O)C4=C(C=CC=C4C3=O)O",
+            "product_smiles": "CCC1=CC2=C(C(=C1)O)C3=C(C2=NN)C(=O)C4=C(C=CC=C4C3=O)O",
+            "notes": "Formation of a hydrazone from a ketone in a polycyclic system using hydrazine.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "MnO2, MgSO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "52% (3 steps)",
+            "reactant_smiles": "CCC1=CC2=C(C(=C1)O)C3=C(C2=NN)C(=O)C4=C(C=CC=C4C3=O)O",
+            "product_smiles": "CCC1=CC2=C(C(=C1)O)C3=C(C2=[N+]=[N-])C(=O)C4=C(C=CC=C4C3=O)O",
+            "notes": "Oxidation of a hydrazone (C=N-NH2) to a diazo group (C=N=N). The reported yield is for 3 steps, not just this single step.",
+            "substeps": []
+        }
+    ]
+}

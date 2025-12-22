@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "2-ketoferruginol-wang-2023",
+        "molecule_name": "2-Ketoferruginol",
+        "class": "Natural Product",
+        "author": "Wang",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Wittig reaction",
+            "reagents": "",
+            "reagent_smiles": "[P]([Ph])([Ph])[Ph]=C(C)C(=O)OCC",
+            "conditions": "toluene, rt",
+            "yield": "",
+            "reactant_smiles": "COC1=CC=C(CCC=O)C=C1",
+            "product_smiles": "CCOC(=O)/C(C)=C\\CCC1=CC=C(C=C1)OC",
+            "notes": "Wittig reaction of an aldehyde with an ethyl 2-(triphenylphosphoranylidene)propanoate ylide to form an E-alpha,beta-unsaturated ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "toluene, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C(=C/CCC1=CC=C(C=C1)OC)/C",
+            "product_smiles": "C/C(=C/CCC1=CC=C(C=C1)OC)/CO",
+            "notes": "Reduction of an alpha,beta-unsaturated ethyl ester to a primary allylic alcohol with DIBAL-H. The E-stereochemistry of the double bond is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Bromination (Appel reaction)",
+            "reagents": "CBr4, PPh3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\CCC1=CC=C(C=C1)OC)/CO",
+            "product_smiles": "C/C(=C\\CCC1=CC=C(C=C1)OC)/CBr",
+            "notes": "Conversion of a primary alcohol to a primary bromide using Appel reaction conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Allylic Alkylation / Sonogashira Coupling variant",
+            "reagents": "Na2SO3, CuI, K2CO3, DBU",
+            "reagent_smiles": "C#CC(C)(C)O[Bz]",
+            "conditions": "DMF, 23 °C",
+            "yield": "41% (4 steps)",
+            "reactant_smiles": "C/C(=C/CBr)\\CCC1=CC=C(C=C1)OC",
+            "product_smiles": "C/C(=C/CC#CC(C)(C)O[Bz])\\CCC1=CC=C(C=C1)OC",
+            "notes": "Allylic bromide undergoes coupling with 2-methyl-3-butyn-2-yl benzoate, replacing the bromine atom with the propargyl moiety. The E-alkene stereochemistry is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Gold-catalyzed intramolecular cyclization",
+            "reagents": "Au(SMe2)Cl, AgNTf2",
+            "reagent_smiles": "",
+            "conditions": "toluene, -25 °C",
+            "yield": "86%",
+            "reactant_smiles": "C/C(=C\\CCC1=CC=C(C=C1)OC)/CC#CC(C)(C)[OBz]",
+            "product_smiles": "CC1(C)C=C(C[C@]2(C)C3=C(C=CC(=C3)OC)CC[C@H]12)[OBz]",
+            "notes": "Intramolecular gold-catalyzed cyclization of an enyne, forming a fused tricyclic system with an aromatic ring. The tertiary alcohol is protected as a benzoyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Enol ester hydrolysis / Deprotection",
+            "reagents": "NaOH, MeOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "23 °C",
+            "yield": "95%",
+            "reactant_smiles": "COc1ccc2c(c1)C[C@@H]3C(C)(C)CC=C(O[Bz])C[C@]23C",
+            "product_smiles": "COc1ccc2c(c1)C[C@@H]3C(C)(C)CC(=O)C[C@]23C",
+            "notes": "Hydrolysis of a benzoyl enol ester to form a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "AlCl3, NBS",
+            "reagent_smiles": "O=C1CC(=O)N(Br)C1.Cl[Al](Cl)Cl",
+            "conditions": "DCM, 23 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC1(C)CC(=O)C[C@]2(C)C3=C(C=CC(=C3)OC)CC[C@@]12",
+            "product_smiles": "CC1(C)CC(=O)C[C@]2(C)C3=C(CC[C@@H]12)C=C(C(=C3)OC)Br",
+            "notes": "Bromination of the electron-rich aromatic ring, ortho to the methoxy group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Suzuki-Miyaura Coupling",
+            "reagents": "Pd(dppf)Cl2, Cs2CO3",
+            "reagent_smiles": "C=C(C)[B-](F)(F)F.[K+]",
+            "conditions": "THF, H2O, 100 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)CC(=O)C[C@]2(C)C3=C(CC[C@@]12C)C=C(C(=C3)OC)Br",
+            "product_smiles": "C=C(C)C1=CC2=C(C=C1OC)[C@@]3(C)CC(=O)CC(C)(C)[C@@H]3CC2",
+            "notes": "Suzuki-Miyaura coupling of an aryl bromide with potassium isopropenyltrifluoroborate.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 23 °C",
+            "yield": "83%",
+            "reactant_smiles": "CC(=C)C1=CC(OC)=C2C=C1CC[C@@H]3[C@]4(C)CC(=O)C(C)(C)[C@@H]4CC3",
+            "product_smiles": "CC(C)C1=CC(OC)=C2C=C1CC[C@@H]3[C@]4(C)CC(=O)C(C)(C)[C@@H]4CC3",
+            "notes": "Hydrogenation of the isopropenyl group to an isopropyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Demethylation",
+            "reagents": "BBr3",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 °C",
+            "yield": "85%",
+            "reactant_smiles": "O=C1CC(C)(C)[C@H]2C[C@]3(C)CCC4=C(C(C)C)C(OC)=CC=C4321",
+            "product_smiles": "O=C1CC(C)(C)[C@H]2C[C@]3(C)CCC4=C(C(C)C)C(O)=CC=C4321",
+            "notes": "Aryl methyl ether demethylation to phenol using boron tribromide.",
+            "substeps": []
+        }
+    ]
+}

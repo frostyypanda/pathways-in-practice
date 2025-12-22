@@ -377,7 +377,7 @@ def submit_batch(synthesis_ids: list, base_path: str, dry_run: bool = False, bat
     print("\nSubmitting batch job...")
     display_name = f"smiles-batch{batch_num}-{datetime.now().strftime('%Y%m%d-%H%M%S')}" if batch_num else f"smiles-extraction-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
     batch_job = client.batches.create(
-        model="gemini-3-flash",
+        model="gemini-2.5-flash",
         src=uploaded_file.name,
         config={"display_name": display_name}
     )

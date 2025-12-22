@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "6-epi-ophiobolin-n-maimone-2016",
+        "molecule_name": "6-epi-Ophiobolin N",
+        "class": "Natural Product",
+        "author": "Maimone",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Asymmetric Simmons-Smith Cyclopropanation",
+            "reagents": "Et2Zn, CH2I2",
+            "reagent_smiles": "CN(C)C(=O)[C@@H]1[C@@H](C(=O)N(C)C)O[B](CCCC)O1",
+            "conditions": "DME, CH2Cl2, 0 to 25 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC/C(=C/CC/C(=C/CO)/C)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC[C@@]1(C)C[C@H]1CO)/C)C",
+            "notes": "Asymmetric cyclopropanation of the terminal alkene of farnesol using a chiral borane catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Appel reaction",
+            "reagents": "I2, PPh3, imidazole",
+            "reagent_smiles": "II.P(c1ccccc1)(c2ccccc2)c3ccccc3.c1cncn1",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC/C(=C/CC[C@@]1(C)C[C@H]1CO)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC[C@@]1(C)C[C@H]1CI)/C)C",
+            "notes": "Iodination of a primary alcohol using Appel reaction conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Organocuprate Addition / Rearrangement / Acylation",
+            "reagents": "t-BuLi, CuI, DMS, Et2O, pentane, THF, Cl3COCl",
+            "reagent_smiles": "O=C1C=C[C@H]2[C@@H]([OTBS])C12",
+            "conditions": "",
+            "yield": "60%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC[C]1[C@H](C)[C@H](C[I])1)/C)C",
+            "product_smiles": "O=C1[C@H](C(=O)C(Cl)(Cl)Cl)[C@H](C=C[C@](C)(CC/C=C(\\C)/CCC=C(C)C))[C@H]([OTBS])[C@@H](C)1",
+            "notes": "Alkyl iodide is converted to an organocuprate, which adds to the bicyclic enone. This is followed by a ring-opening and rearrangement cascade (likely to form the cyclopentanone ring from the bicyclic cyclopropane-enone) and subsequent acylation with trichloromethyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ketone Reduction & Acetylation",
+            "reagents": "DIBAL, n-BuLi then DMAP, Ac₂O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "80%",
+            "reactant_smiles": "C=C[C@@](C)(CC/C=C(\\C)/CCC=C(C)C)C[C@@H]1C[C@](C)([OTBS])CC2C1C(=O)[C@H](C(=O)[CCl3])CC2",
+            "product_smiles": "C=C[C@@](C)(CC/C=C(\\C)/CCC=C(C)C)C[C@@H]1C[C@](C)([OTBS])CC2C1[C@H]([OAc])[C@H](C(=O)[CCl3])CC2",
+            "notes": "The bicyclic ketone is reduced to a secondary alcohol using DIBAL, then acetylated with acetic anhydride and pyridine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular radical cyclization / Reductive cyclization",
+            "reagents": "Et3B, air, (TMS)3SiH",
+            "reagent_smiles": "CC1(C)O[C@@H](CC(C2=CC=C3C(=C2)C4=C(C=CC=C4)S3)(C5=CC6=C(C=C5)SC7=C6C=CC=C7)O)[C@@H](C(C8=CC=C9C(=C8)C%10=C(C=CC=C%10)S9)(C%11=CC%12=C(C=C%11)SC%13=C%12C=CC=C%13)O)O1",
+            "conditions": "cyclopentane, -10 °C",
+            "yield": "56%",
+            "reactant_smiles": "C[C@]1([OTBS])[C@H](CC2C(=O)C(Cl)(Cl)Cl)[C@H]2[C@H](C(C=C)(C)CC/C=C(\\C)/CCC=C(C)C)[C@H]1[OAc]",
+            "product_smiles": "CCC=C(C)C[C@@H]1C[C@H](C)[C@@H]2[C@H]1C[C@H]3[C@H]([OAc])C[C@]4(C)[OTBS]C[C@H]3C(=O)C(Cl)(Cl)C2",
+            "notes": "Intramolecular cyclization of an alkene and vinyl group onto a trichloromethyl ketone, resulting in ring formation and reduction of one chlorine from CCl3 to CCl2.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Corey-Chaykovsky Epoxidation",
+            "reagents": "Me3SI, n-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "60%",
+            "reactant_smiles": "CC(=CCC[C@@H](C)[C@@H]1CC[C@@]2(C)C[C@@H]3[C@H]([C@H](C[C@@]3(C)[OTBS])[OAc])C(=O)C(C[C@H]12)(Cl)Cl)C",
+            "product_smiles": "CC(=CCC[C@@H](C)[C@@H]1CC[C@@]2(C)C[C@@]3(C)[C@@](C)(C[C@H]([C@@H]3[C@@]4(CO4)C(C[C@H]12C)(Cl)Cl)[OAc])[OTBS])C",
+            "notes": "The reaction depicts the epoxidation of a ketone. The provided reactant SMILES appears to omit a methylene (CH2) group between the ketone and the gem-dichloro carbons, differing from the visual representation in the screenshot. The product SMILES also contains an extra chiral center/methyl group in the region of the TBSO ether, which is not present in the reactant SMILES or the visual product. Corrections for stereochemistry and abbreviations have been made while retaining the overall connectivity as per the provided SMILES strings, despite these discrepancies.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Cleavage / Elimination",
+            "reagents": "Li-Naphthalenide",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "77%",
+            "reactant_smiles": "CC(=CCC[C@@H](C)[C@@H]1CCC2(C)C[C@@H](C([C@@H]([Ac])O[C@]3(Cl)Cl)C[C@@H]4C[C@@H](C)[C@](C)([OTBS])C4)[C@H]21",
+            "product_smiles": "CC(=CCC[C@@H](C)[C@@H]1CC[C@@]2(C)C[C@@H]3[C@@H](/C(=C\\C[C@H]12)/CO)[C@H](C[C@@]3(C)[OTBS])O)C",
+            "notes": "Reductive removal of gem-dichloride and ether bridge, concomitant with acetate hydrolysis and formation of new alkene and exocyclic hydroxymethyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Swern oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "78%",
+            "reactant_smiles": "CC(=CCC[C@H](C)[C@@H]1C[C@H]2CC3=CC(CO)[C@H]4C[C@@H](C)C[C@]1(C)C2C3[C@@](C)([OTBS])[C@@H]4O",
+            "product_smiles": "CC(=CCC[C@H](C)[C@@H]1C[C@H]2CC3=CC(C=O)[C@H]4C[C@@H](C)C[C@]1(C)C2C3[C@@](C)([OTBS])[C@@]4=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde and a secondary alcohol to a ketone.",
+            "substeps": []
+        }
+    ]
+}

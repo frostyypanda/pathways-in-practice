@@ -20,7 +20,24 @@ Pathways Practice is deployed to Azure Static Web Apps with a custom domain.
 
 ## Deploy Steps
 
-### 1. Build the production version
+### 1. Export fresh data from database
+
+**IMPORTANT**: Always export the latest data from the database before deploying!
+
+**Time estimate**: ~10-15 minutes for ~4000 syntheses. Run in background while doing other tasks:
+
+```bash
+cd smiles-extractor
+source venv/bin/activate
+python export_json.py --all --update-index &
+
+# Check progress:
+tail -f nohup.out  # or just wait for completion
+```
+
+This exports all syntheses with steps to `public/data/imported/` and updates `public/data/index.json`.
+
+### 2. Build the production version
 
 ```bash
 npm run build
@@ -28,34 +45,30 @@ npm run build
 
 This creates the `dist/` folder with optimized assets.
 
-### 2. Get deployment token
+### 3. Get deployment token
 
 ```bash
 az staticwebapp secrets list --name pathways-practice-app --resource-group pathways-practice --query "properties.apiKey" -o tsv
 ```
 
-### 3. Deploy to Azure Static Web Apps
+### 4. Deploy to Azure Static Web Apps
 
 ```bash
 swa deploy ./dist --deployment-token <YOUR_TOKEN> --env production
 ```
 
-## Quick Deploy Script
-
-Add to `package.json`:
-
-```json
-{
-  "scripts": {
-    "deploy": "npm run build && swa deploy ./dist --deployment-token <YOUR_TOKEN> --env production"
-  }
-}
-```
-
-Then run:
+## Quick Deploy Script (Full Workflow)
 
 ```bash
-npm run deploy
+# 1. Export from database
+cd smiles-extractor && source venv/bin/activate && python export_json.py --all --update-index && cd ..
+
+# 2. Build
+npm run build
+
+# 3. Get token and deploy
+TOKEN=$(az staticwebapp secrets list --name pathways-practice-app --resource-group pathways-practice --query "properties.apiKey" -o tsv)
+swa deploy ./dist --deployment-token $TOKEN --env production
 ```
 
 ## DNS Configuration (easyname)

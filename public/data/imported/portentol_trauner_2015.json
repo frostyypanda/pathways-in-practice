@@ -1,0 +1,169 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "portentol-trauner-2015",
+        "molecule_name": "Portentol",
+        "class": "Natural Product",
+        "author": "Trauner",
+        "year": 2015
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol Silylation / Protection",
+            "reagents": "TESCl, imid, DMAP",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "99%",
+            "reactant_smiles": "C[C@@H](CO)C(=O)OC",
+            "product_smiles": "[OTES]C[C@@H](C)C(=O)OC",
+            "notes": "Silylation of the primary alcohol of Roche Ester to form its TES ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM",
+            "yield": "86%",
+            "reactant_smiles": "[OTES]C[C@H](C)C(=O)OC",
+            "product_smiles": "[OTES]C[C@H](C)C=O",
+            "notes": "Partial reduction of a methyl ester to an aldehyde using DIBAL-H. The TES protecting group and the stereocenter are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Evans Aldol reaction",
+            "reagents": "Bu2BOTf, Et3N",
+            "reagent_smiles": "CCC(=O)N1[C@H]([Bn])COC1=O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "O=C[C@H](C)C[OTES]",
+            "product_smiles": "[OTES]C[C@H](C)[C@@H](O)[C@@H](C)C(=O)N1[C@H]([Bn])COC1=O",
+            "notes": "Chiral auxiliary-mediated aldol reaction between an aldehyde and an N-acyloxazolidinone.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "PMB ether formation",
+            "reagents": "PMB-OC(NH)CCl3, Sc(OTf)3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "52% (2 steps)",
+            "reactant_smiles": "[TESO]C[C@@H](C)[C@@H]([C@@H](C)C(=O)N1[C@H]([Bn])COC1=O)O",
+            "product_smiles": "[TESO]C[C@@H](C)[C@@H](O[PMB])[C@@H](C)C(=O)N1[C@H]([Bn])COC1=O",
+            "notes": "PMB ether formation from alcohol, retaining stereochemistry. The PMB protecting group is abbreviated as [PMB] in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Swern oxidation",
+            "reagents": "DMSO, (COCl)2, Et3N",
+            "reagent_smiles": "",
+            "conditions": "(52%, 2 steps)",
+            "yield": "",
+            "reactant_smiles": "[TES]OC[C@H](C)[C@H](O[PMB])[C@H](C)C(=O)N1[C@H]([Bn])COC1=O",
+            "product_smiles": "O=C[C@H](C)[C@H](O[PMB])[C@H](C)C(=O)N1[C@H]([Bn])COC1=O",
+            "notes": "Oxidation of a primary alcohol protected as TES ether to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Stereoselective Aldol / Oxidation / Lactonization",
+            "reagents": "Cy2BCl, Et3N, then pH 7 buffer, H2O2",
+            "reagent_smiles": "CC[Si](CC)(CC)O[C@H](C)[C@H](O[Si](C)(C)C)[C@@H](C)C(=O)C",
+            "conditions": "Et2O, 0 °C to rt, then -78 °C to -40 °C, THF",
+            "yield": "71%",
+            "reactant_smiles": "C[C@H](C=O)[C@@H]([C@@H](C)C(=O)N1[C@H](CC2=CC=CC=C2)COC1=O)OCC3=CC=C(C=C3)OC",
+            "product_smiles": "CC[Si](CC)(CC)O[C@H](C)[C@H](O[Si](C)(C)C)[C@@H](C)C(=O)[C@H](C)[C@@H]1CC[C@@H](OCC2=CC=C(C=C2)OC)[C@H](C)C(=O)O1",
+            "notes": "A stereoselective boron-mediated aldol reaction between the chiral auxiliary-derived imide and the reagent, followed by oxidation and intramolecular lactonization.",
+            "substeps": [
+                {
+                    "step_id": "6.1",
+                    "reaction_type": "Alpha-alkylation, Silyl ether formation",
+                    "reagents": "LDA, MeI, DMI, TESCl",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C[C@@H](C)O",
+                    "product_smiles": "CCOC(=O)[C@@H](C)[C@@H](C)O[TES]",
+                    "notes": "Alpha-methylation of an ester and protection of secondary alcohol as a TES ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.2",
+                    "reaction_type": "Partial Reduction (Ester to Aldehyde)",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "-78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)[C@@H](C)[C@H](O[TES])C",
+                    "product_smiles": "[TES]O[C@H](C)[C@@H](C)C=O",
+                    "notes": "Ester is reduced to an aldehyde using DIBAL-H at low temperature, preserving stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.3",
+                    "reaction_type": "Aldol Reaction",
+                    "reagents": "Cy2BCl, Et3N",
+                    "reagent_smiles": "CC(=O)C[C@@H](C)[OBz]",
+                    "conditions": "",
+                    "yield": "65%",
+                    "reactant_smiles": "[TES]O[C@H](C)[C@H](C)C=O",
+                    "product_smiles": "[TES]O[C@H](C)[C@H](C)[C@@H](O)[C@H](C)C(=O)[C@@H](C)[OBz]",
+                    "notes": "Stereoselective aldol reaction between an aldehyde and a ketone-derived boron enolate, forming a new C-C bond and controlling four new chiral centers.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.4",
+                    "reaction_type": "Alcohol Protection (Silylation)",
+                    "reagents": "TMSCl, TMS₂NH",
+                    "reagent_smiles": "",
+                    "conditions": "pyridine",
+                    "yield": "99%",
+                    "reactant_smiles": "[TES]O[C@H](C)[C@@H](C)[C@H]([C@@H](C)C(=O)[C@H](C)[OBz])O",
+                    "product_smiles": "[TES]O[C@H](C)[C@@H](C)[C@H]([C@@H](C)C(=O)[C@H](C)[OBz])O[TMS]",
+                    "notes": "Protection of a secondary alcohol as a trimethylsilyl (TMS) ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "6.5",
+                    "reaction_type": "Reductive Transformation",
+                    "reagents": "SmI2",
+                    "reagent_smiles": "[Sm+2].[I-].[I-]",
+                    "conditions": "",
+                    "yield": "97%",
+                    "reactant_smiles": "C[C@H](O[TES])[C@@H](C)[C@H](O[TMS])[C@@H](C)C(=O)[C@H](C)[OBz]",
+                    "product_smiles": "C[C@H](O[TES])[C@@H](C)[C@H](O[TMS])[C@@H](C)C(=O)CC",
+                    "notes": "Reductive cleavage of alpha-benzoyloxy ketone to form an ethyl ketone.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Oxidative deprotection",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "84%",
+            "reactant_smiles": "[TES]O[C@H](C)[C@@H](C)[C@@H]([C@@H](C)C(=O)[C@@H](C)[C@H]1C[C@@H]([C@@H](C)C(=O)O1)O[PMB])O[TMS]",
+            "product_smiles": "[TES]O[C@H](C)[C@@H](C)[C@@H]([C@@H](C)C(=O)[C@@H](C)[C@H]1C[C@@H]([C@@H](C)C(=O)O1)O)O[TMS]",
+            "notes": "Oxidative deprotection of a p-methoxybenzyl (PMB) ether using DDQ.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Swern Oxidation & Polycyclization",
+            "reagents": "DMSO, TFAA, Et3N, MeOH",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C then rt",
+            "yield": "35%",
+            "reactant_smiles": "[TES]O[C@H](C)[C@@H](C)O[TMS][C@H](C)C(=O)[C@@H](C)[C@H]1CC[C@H](O)[C@@H](C)C(=O)O1",
+            "product_smiles": "C[C@@H]1[C@@H](C)O[C@]2(C)[C@H](O)C[C@H](C)[C@@]3(C)[C@@H](C(=O)O[C@]23C(=O)O1)",
+            "notes": "Swern-type oxidation of secondary alcohol, followed by cascade cyclization and deprotection of silyl ethers to form Portentol. The TES and TMS protecting groups present on the reactant are absent in the product, implying deprotection occurred during the reaction sequence/workup.",
+            "substeps": []
+        }
+    ]
+}

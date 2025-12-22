@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "posaconazole-noxafil-schering-plough-unknown-2024",
+        "molecule_name": "Posaconazole (Noxafil Schering-Plough)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination (Substitution)",
+            "reagents": "PBr3",
+            "reagent_smiles": "Br3P",
+            "conditions": "DCM, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "C=C(CO)C1=C(C=C(C=C1)F)F",
+            "product_smiles": "C=C(CBr)C1=C(C=C(C=C1)F)F",
+            "notes": "Conversion of an allylic alcohol to an allylic bromide using phosphorus tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Malonic Ester Synthesis",
+            "reagents": "",
+            "reagent_smiles": "CCOC(=O)C(=O)C(O[Na])C(=O)OCC",
+            "conditions": "THF, rt",
+            "yield": "90%",
+            "reactant_smiles": "C=C(CBr)C1=C(C=C(C=C1)F)F",
+            "product_smiles": "CCOC(=O)C(CC(=C)C1=C(C=C(C=C1)F)F)C(=O)OCC",
+            "notes": "Nucleophilic substitution of an allylic bromide with sodium diethyl 2-oxomalonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4, LiCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "88%",
+            "reactant_smiles": "CCOC(=O)C(CC(=C)C1=C(C=C(C=C1)F)F)C(=O)OCC",
+            "product_smiles": "C=C(CC(CO)CO)C1=C(C=C(C=C1)F)F",
+            "notes": "Di-ester reduction to diol using NaBH4 and LiCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Enzymatic regioselective monoacetylation",
+            "reagents": "SP 435 (hydrolase)",
+            "reagent_smiles": "C=COC(=O)C",
+            "conditions": "CH3CN, 0 °C",
+            "yield": "90%",
+            "reactant_smiles": "C=C(C1=C(C=C(C=C1)F)F)C(CO)CO",
+            "product_smiles": "C=C(C1=C(C=C(C=C1)F)F)[C@H](CO)[OAc]",
+            "notes": "Regioselective and enantioselective monoacetylation of a 1,1-bis(hydroxymethyl)alkene derivative, catalyzed by hydrolase, yielding the (S)-acetate.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Iodocyclization",
+            "reagents": "I2, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "CH3CN, 0 °C to rt",
+            "yield": "86%",
+            "reactant_smiles": "C=C(C[C@@H](CO)[OAc])C1=C(C=C(C=C1)F)F",
+            "product_smiles": "[OAc]C[C@H]1C[C@](CI)(C2=C(C=C(C=C2)F)F)OC1",
+            "notes": "Intramolecular cyclization of an alkene and primary alcohol in the presence of iodine and base to form a tetrahydrofuran ring with concurrent iodination.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "DMF, DMPU",
+            "reagent_smiles": "[Na+].n1cn[n-]1",
+            "conditions": "100 °C",
+            "yield": "",
+            "reactant_smiles": "[OAc]C[C@H]1C[C@](CI)(C2=C(C=C(C=C2)F)F)OC1",
+            "product_smiles": "[OAc]C[C@H]1C[C@](CN2C=NC=N2)(C3=CC=C(C=C3F)F)OC1",
+            "notes": "SN2 displacement of iodomethyl group by 1,2,4-triazolide.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis",
+            "reagents": "NaOH",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "90%",
+            "reactant_smiles": "[OAc]C[C@H]1C[C@](CN2C=NC=N2)(C3=C(C=C(C=C3)F)F)OC1",
+            "product_smiles": "C1=CC(=C(C=C1F)F)[C@]2(C[C@H](CO)CO2)CN3C=NC=N3",
+            "notes": "Ester hydrolysis of an acetate to a primary alcohol. Reaction yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alcohol Activation / Sulfonate Ester Formation",
+            "reagents": "Et3N, p-ClPhSO2Cl",
+            "reagent_smiles": "CCN(CC)CC.ClS(=O)(=O)c1ccc(Cl)cc1",
+            "conditions": "DCM, rt",
+            "yield": "76%",
+            "reactant_smiles": "C1=CC(=C(C=C1F)F)[C@]2(C[C@H](CO)CO2)CN3C=NC=N3",
+            "product_smiles": "C1=CC(=C(C=C1F)F)[C@]2(C[C@H](COS(=O)(=O)c3ccc(Cl)cc3)CO2)CN3C=NC=N3",
+            "notes": "Formation of a p-chlorobenzylsulfonate ester from a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "NaOH",
+            "reagent_smiles": "C1=C(C=CC(=C1)N2CCN(CC2)C3=CC=C(C=C3)O)N",
+            "conditions": "DMSO, rt",
+            "yield": "96%",
+            "reactant_smiles": "C1=CC(=C(C=C1F)F)[C@]2(C[C@@H](COC(=O)CC1=CC=CC=C1)CO2)CN3C=NC=N3",
+            "product_smiles": "C1=CC(=C(C=C1F)F)[C@]2(C[C@@H](COC3=CC=C(C=C3)N4CCN(CC4)C5=CC=C(C=C5)N)CO2)CN6C=NC=N6",
+            "notes": "An ester leaving group (-O-C(=O)CH2Ph, implied by 'OCbs' label but drawn out) is displaced by a phenolic hydroxyl group of a substituted piperazine derivative, forming an ether linkage. The reaction proceeds with retention of stereochemistry at the tetrahydrofuran ring chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Carbamate formation / Amine acylation",
+            "reagents": "DCM",
+            "reagent_smiles": "O=C(Cl)Oc1ccccc1",
+            "conditions": "rt",
+            "yield": "97%",
+            "reactant_smiles": "N1C=NC=N1C[C@@]2(C[C@H](COC3=CC=C(C=C3)N4CCN(CC4)C5=CC=C(N)C=C5)OC2)C6=C(F)C=C(F)C=C6",
+            "product_smiles": "N1C=NC=N1C[C@@]2(C[C@H](COC3=CC=C(C=C3)N4CCN(CC4)C5=CC=C(NC(=O)Oc6ccccc6)C=C5)OC2)C7=C(F)C=C(F)C=C7",
+            "notes": "The primary aromatic amine reacts with phenyl chloroformate to form an N-phenyl carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Triazolone Formation / Cyclocondensation",
+            "reagents": "DBU, toluene",
+            "reagent_smiles": "N[C@H](NC=O)[C@H](OCC1=CC=CC=C1)[C@H](CC)C",
+            "conditions": "75 to 110 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)OC(=O)NC2=CC=C(C=C2)N3CCN(CC3)C4=CC=C(C=C4)OC[C@@H]5C[C@](CN6C=NC=N6)(C7=C(F)C=C(F)C=C7)OC5",
+            "product_smiles": "CC[C@H]([C@H](C)OCC1=CC=CC=C1)N2C(=O)N(C=N2)C3=CC=C(C=C3)N4CCN(CC4)C5=CC=C(C=C5)OC[C@@H]6C[C@](CN7C=NC=N7)(C8=C(F)C=C(F)C=C8)OC6",
+            "notes": "Formation of Posaconazole via cyclocondensation of a phenyl carbamate with a chiral N-formyl diamine.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Reduction",
+                    "reagents": "Red-Al",
+                    "reagent_smiles": "",
+                    "conditions": "toluene, -10 °C to 0 °C",
+                    "yield": "94%",
+                    "reactant_smiles": "C[C@@H](C(=O)N1CCCC1)[OBn]",
+                    "product_smiles": "C[C@@H]([OBn])C(=O)H",
+                    "notes": "Reduction of a pyrrolidine amide to an aldehyde, maintaining stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Hydrazone formation",
+                    "reagents": "NH₂NHCHO",
+                    "reagent_smiles": "O=CNNC",
+                    "conditions": "hexane, rt",
+                    "yield": "81%",
+                    "reactant_smiles": "O=C[C@H](C)[OBn]",
+                    "product_smiles": "[C@H](C)[OBn]\\C=N/NC=O",
+                    "notes": "An aldehyde is converted to an N-formylhydrazone using formylhydrazine. The stereochemistry at the chiral center is retained (R-configuration). The E-isomer of the hydrazone is formed.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Silylation",
+                    "reagents": "Et3N, TBDMSCl",
+                    "reagent_smiles": "",
+                    "conditions": "TBME, rt",
+                    "yield": "95%",
+                    "reactant_smiles": "C[C@@H](/C=N/NC=O)OCC1=CC=CC=C1",
+                    "product_smiles": "C[C@@H](/C=N/N=C/[OTBDMS])OCC1=CC=CC=C1",
+                    "notes": "Silylation of a formamide derivative to form an O-silyl imine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Grignard Addition / Nucleophilic Addition",
+                    "reagents": "",
+                    "reagent_smiles": "CC[Mg]Cl",
+                    "conditions": "THF, toluene, 0 °C to rt",
+                    "yield": "95%",
+                    "reactant_smiles": "C[C@@H]([OBn])\\C=N\\N=C/O[TBDMS]",
+                    "product_smiles": "C[C@@H]([OBn])[C@H](CC)NC(=O)H",
+                    "notes": "Grignard reagent (EtMgCl) adds to the imine carbon of the hydrazone, followed by hydrolysis of the TBDMS enol ether and conversion of the hydrazone/imine system into a formamide group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection (Hydrogenolysis of Benzyl Ether)",
+            "reagents": "Pd/C, HCO2H",
+            "reagent_smiles": "",
+            "conditions": "rt to 40 °C",
+            "yield": "80%",
+            "reactant_smiles": "CC[C@@H](C[C@H](C)OCc1ccccc1)N2C(=O)N(C=N2)c3ccc(N4CCN(CC4)c5ccc(OC[C@H]6C[C@@]7(OC[C@H]6c8c(F)cc(F)cc8)N9N=CN=C9)cc5)cc3",
+            "product_smiles": "CC[C@@H](C[C@H](C)O)N1C(=O)N(C=N1)c2ccc(N3CCN(CC3)c4ccc(OC[C@H]5C[C@@]6(OC[C@H]5c7c(F)cc(F)cc7)N8N=CN=C8)cc4)cc2",
+            "notes": "Deprotection of a benzyl ether to yield the corresponding alcohol (Posaconazole). The reaction is stated to occur in 2 steps, but only one is shown.",
+            "substeps": []
+        }
+    ]
+}

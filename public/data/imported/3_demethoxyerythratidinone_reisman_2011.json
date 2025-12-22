@@ -1,0 +1,121 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "3-demethoxyerythratidinone-reisman-2011",
+        "molecule_name": "3-Demethoxyerythratidinone",
+        "class": "Natural Product",
+        "author": "Reisman",
+        "year": 2011
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Oxidative dearomatization",
+            "reagents": "MeOH",
+            "reagent_smiles": "CC(=O)O[I](OC(=O)C)c1ccccc1",
+            "conditions": "0°C",
+            "yield": "87%",
+            "reactant_smiles": "COC1=CC(=C(C=C1)O)Br",
+            "product_smiles": "O=C1C(Br)=CC(OC)(OC)C=C1",
+            "notes": "Oxidative dearomatization of a 2-bromo-4-methoxyphenol using phenyliodine(III) diacetate, forming a 2-bromo-4,4-dimethoxycyclohexa-2,5-dien-1-one.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Imine Formation / Condensation",
+            "reagents": "Ti(OEt)4, THF",
+            "reagent_smiles": "[t-Bu][S@@](=O)N",
+            "conditions": "70°C",
+            "yield": "85%",
+            "reactant_smiles": "BrC1=CC(OC)(OC)C=CC1=O",
+            "product_smiles": "BrC1=CC(OC)(OC)C=CC1=N[S@@](=O)[t-Bu]",
+            "notes": "Chiral sulfinylimine formation from an enone and tert-butylsulfinamide, mediated by titanium ethoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Dearomatizing cyclization (via nucleophilic addition and intramolecular cyclization)",
+            "reagents": "",
+            "reagent_smiles": "COc1cc(CCCl)c(OC)c([Li])c1",
+            "conditions": "Et2O, -78°C then 1N HCl, -78 to 23°C",
+            "yield": "74%",
+            "reactant_smiles": "COC(OC)C1=CC=C(Br)C(=N[S@](=O)C(C)(C)C)C1",
+            "product_smiles": "COc1cc2ccc([C@@]34C=CC(=O)C=C3Br)N(CCC2=C1OC)[S@](=O)C(C)(C)C",
+            "notes": "Intramolecular dearomatizing cyclization of an N-sulfinyl imine with an organolithium reagent, followed by acid workup to form a complex polycyclic quinone imine derivative.",
+            "substeps": [
+                {
+                    "step_id": "3.1",
+                    "reaction_type": "Chlorination / Appel reaction variant",
+                    "reagents": "Cl3CCN, PPh3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0°C",
+                    "yield": "93%",
+                    "reactant_smiles": "COC1=C(C=C(C=C1)CCO)OC",
+                    "product_smiles": "COC1=C(C=C(C=C1)CCCl)OC",
+                    "notes": "Conversion of a primary alcohol to an alkyl chloride using trichloroacetonitrile and triphenylphosphine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.2",
+                    "reaction_type": "Electrophilic Aromatic Bromination",
+                    "reagents": "Br2",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0°C",
+                    "yield": "quantitative",
+                    "reactant_smiles": "[OMe]C1=C([OMe])C=C(CCCl)C=C1",
+                    "product_smiles": "[OMe]C1=C([OMe])C(Br)=C(CCCl)C=C1",
+                    "notes": "Bromination of an activated benzene ring, occurring at the most activated position ortho to one methoxy group and ortho/para to the other substituents.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "3.3",
+                    "reaction_type": "Halogen-lithium exchange",
+                    "reagents": "t-BuLi",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O, -78°C",
+                    "yield": "",
+                    "reactant_smiles": "COC1=C(C=C(C(=C1)CCCl)Br)OC",
+                    "product_smiles": "COC1=C(C=C(C(=C1)CCCl)[Li])OC",
+                    "notes": "Bromine-lithium exchange to form an aryl lithium intermediate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Stille Coupling",
+            "reagents": "Pd2(dba)3, AsPh3",
+            "reagent_smiles": "CCOC=C[Sn](CCCC)CCCC",
+            "conditions": "DMF, 100°C",
+            "yield": "85%",
+            "reactant_smiles": "[t-Bu][S@@](=O)N1CCC2=C(C=C(C(=C2)OC)OC)[C@@]31C=CC(=O)C=C3Br",
+            "product_smiles": "CCOC=CC1=CC(=O)C=C[C@]12C3=C(CCN2[S@@](=O)[t-Bu])C=C(C(=C3)OC)OC",
+            "notes": "Stille coupling of a vinyl stannane with a vinyl bromide to form a new carbon-carbon double bond, replacing the bromine.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Cyclization / Imine Formation",
+            "reagents": "HCl, Et2O, THF",
+            "reagent_smiles": "",
+            "conditions": "0°C",
+            "yield": "88%",
+            "reactant_smiles": "CCOC=CC1=CC(=O)C=C[C@]12C3=C(CCN2[S@](=O)C(C)(C)C)C=C(C(=C3)OC)OC",
+            "product_smiles": "COC1=CC2=C(C=C1OC)[C@]34C=CC(=O)C=C4C=CN3CC2",
+            "notes": "Pummerer-type cyclization of a vinyl sulfoxide precursor.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction (Hydrogenation)",
+            "reagents": "H2, Pd/CaCO3",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 23°C",
+            "yield": "65%",
+            "reactant_smiles": "COc1cc(OC)c2c1CC[C@H]3N=C4[C@]23C=CC(=O)C=C4",
+            "product_smiles": "COc1cc(OC)c2c1CC[C@H]3NC4[C@@H]([C@]23C=CC(=O)C=C4)",
+            "notes": "Catalytic hydrogenation of an imine to a secondary amine, reducing the C=N double bond and forming a new chiral center. Stereochemistry of existing centers is retained, and the new chiral center's stereochemistry is specific.",
+            "substeps": []
+        }
+    ]
+}

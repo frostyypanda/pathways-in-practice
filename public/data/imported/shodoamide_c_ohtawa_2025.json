@@ -1,0 +1,254 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "shodoamide-c-ohtawa-2025",
+        "molecule_name": "Shodoamide C",
+        "class": "Natural Product",
+        "author": "Ohtawa",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Alcohol protection (Silyl ether formation)",
+            "reagents": "TBDPSCl, imidazole, DMAP",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "C[C@H](CC(=O)OC)O",
+            "product_smiles": "C[C@H](CC(=O)OC)[OTBDPS]",
+            "notes": "Protection of a secondary alcohol with tert-butyldiphenylsilyl (TBDPS) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Reduction (Ester to Alcohol)",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "84%",
+            "reactant_smiles": "C[C@H](CC(=O)OC)[OTBDPS]",
+            "product_smiles": "C[C@H](CCO)[OTBDPS]",
+            "notes": "Reduction of a methyl ester to a primary alcohol using DIBAL-H. The TBDPS protecting group is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "TEMPO, PhI(OAc)₂",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "",
+            "reactant_smiles": "[TBDPSO][C@H](C)CCO",
+            "product_smiles": "[TBDPSO][C@H](C)CC=O",
+            "notes": "TEMPO/hypervalent iodine mediated oxidation of primary alcohol to aldehyde, with a TBDPS protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Wittig reaction",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "[O-]C(=O)CCCCCC[P+](c1ccccc1)(c2ccccc2)c3ccccc3.[Br-]",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@H](CC=O)[OTBDPS]",
+            "product_smiles": "C[C@H](C/C=C\\CCCCC(=O)O)[OTBDPS]",
+            "notes": "Wittig reaction of an aldehyde with a phosphonium ylide to form a Z-alkene with a carboxylic acid functionality. The reaction occurs between the aldehyde and the ylide generated in situ by NaHMDS from the phosphonium salt.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "SN2 reaction / Quaternization of Phosphine",
+                    "reagents": "PPh3",
+                    "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3",
+                    "conditions": "toluene, reflux",
+                    "yield": "56%",
+                    "reactant_smiles": "BrCCCCCC(=O)O",
+                    "product_smiles": "O=C(O)CCCCCC[P+](c1ccccc1)(c2ccccc2)c3ccccc3.[Br-]",
+                    "notes": "SN2 reaction of a primary alkyl bromide with triphenylphosphine to form a phosphonium salt.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "83% (3 steps)",
+            "reactant_smiles": "C[C@H](C/C=C\\CCCCC(=O)O)[OTBDPS]",
+            "product_smiles": "C[C@H](CCCCCCCC(=O)O)[OTBDPS]",
+            "notes": "Catalytic hydrogenation of a Z-alkene to an alkane, carboxylic acid and TBDPS protecting group remain intact. The stereocenter configuration is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Carboxylic Acid Activation / Mixed Anhydride Formation",
+            "reagents": "PivCl, Et₃N",
+            "reagent_smiles": "CC(C)(C)C(=O)Cl.CCN(CC)CC",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H]([OTBDPS])CCCCCCCC(=O)O",
+            "product_smiles": "C[C@H]([OTBDPS])CCCCCCCC(=O)OC(=O)C(C)(C)C",
+            "notes": "Formation of a mixed anhydride from a carboxylic acid using pivaloyl chloride and triethylamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide formation (with chiral auxiliary)",
+            "reagents": "nBuLi",
+            "reagent_smiles": "O=C1OC[C@@H](CC2=CC=CC=C2)N1",
+            "conditions": "THF",
+            "yield": "75%",
+            "reactant_smiles": "C[C@H](CCCCCC(=O)OC(C)(C)C)[OTBDPS]",
+            "product_smiles": "C[C@H](CCCCCC(=O)N1[C@@H](CC2=CC=CC=C2)COC1=O)[OTBDPS]",
+            "notes": "Amide bond formation between an ester and a chiral oxazolidinone auxiliary.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Alpha-alkylation",
+            "reagents": "NaHMDS, MeI",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "86%",
+            "reactant_smiles": "[OTBDPS][C@H](C)CCCCCCC(=O)N1[C@H](Cc2ccccc2)COC1=O",
+            "product_smiles": "[OTBDPS][C@H](C)CCCCCC[C@@H](C)C(=O)N1[C@H](Cc2ccccc2)COC1=O",
+            "notes": "Methylation of the alpha-carbon of the acyl oxazolidinone chiral auxiliary, introducing a new stereocenter with methyl in the 'up' position.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction",
+            "reagents": "LiBH4",
+            "reagent_smiles": "[Li+].[BH4-]",
+            "conditions": "EtOH, Et2O, 0 °C",
+            "yield": "88%",
+            "reactant_smiles": "[OTBDPS]O[C@@H](C)CCCCCC[C@H](C)C(=O)N1[C@@H](CC2=CC=CC=C2)COC1=O",
+            "product_smiles": "[OTBDPS]O[C@@H](C)CCCCCC[C@H](C)CO",
+            "notes": "Stereoselective reduction of an amide (chiral auxiliary) to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "C[C@H](CCCCCC[C@@H](C)[OTBDPS])CO",
+            "product_smiles": "C[C@H](CCCCCC[C@@H](C)[OTBDPS])C=O",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using Dess-Martin periodinane.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Corey-Fuchs reaction (aldehyde to gem-dibromoalkene)",
+            "reagents": "CBr4, PPh3, Zn",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "83%",
+            "reactant_smiles": "C[C@H]([OTBDPS])CCCCCC[C@@H](C)C=O",
+            "product_smiles": "C[C@H]([OTBDPS])CCCCCC[C@@H](C)C=C(Br)Br",
+            "notes": "Aldehyde converted to a gem-dibromoalkene. The yield is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reductive Debromination",
+            "reagents": "",
+            "reagent_smiles": "[SnH](CCCC)(CCCC)CCCC.P(c1ccccc1)(c2ccccc2)c3ccccc3.P(c4ccccc4)(c5ccccc5)c6ccccc6.P(c7ccccc7)(c8ccccc8)c9ccccc9.P(c%10ccccc%10)(c%11ccccc%11)c%12ccccc%12.[Pd]",
+            "conditions": "CH2Cl2",
+            "yield": "96%",
+            "reactant_smiles": "[OTBDPS][C@@H](C)CCCCCC[C@H](C)C=C(Br)Br",
+            "product_smiles": "[OTBDPS][C@@H](C)CCCCCC[C@H](C)/C=C/Br",
+            "notes": "Reductive elimination of one bromine from a geminal dibromoalkene to form a (Z)-bromoalkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "BF3*OEt2",
+            "reagent_smiles": "COc1ccc(C=O)c(O)c1",
+            "conditions": "CH2Cl2",
+            "yield": "97%",
+            "reactant_smiles": "C[C@H]([OTBDPS])CCCCCC[C@@H](C)/C=C\\Br",
+            "product_smiles": "C[C@H](O)CCCCCC[C@@H](C)/C=C\\Br",
+            "notes": "Acid-catalyzed deprotection of a TBDPS silyl ether to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd(PPh3)4",
+            "reagent_smiles": "[Sn](CCCC)(CCCC)CCCC/C=C\\C(=O)NC[C@H](O)[C@H](O)CO",
+            "conditions": "toluene, reflux",
+            "yield": "82%",
+            "reactant_smiles": "C[C@H](O)CCCCCC[C@@H](C)/C=C/Br",
+            "product_smiles": "C[C@H](O)CCCCCC[C@@H](C)/C=C/C=C\\C(=O)NC[C@H](O)[C@H](O)CO",
+            "notes": "Stille coupling of a vinyl bromide with a vinyl stannane to form a dienamide.",
+            "substeps": [
+                {
+                    "step_id": "14.1",
+                    "reaction_type": "Acetal formation (1,3-dioxolane)",
+                    "reagents": "p-TsOH•H₂O",
+                    "reagent_smiles": "CC(C)(OC)OC",
+                    "conditions": "toluene, reflux",
+                    "yield": "94%",
+                    "reactant_smiles": "COC(=O)[C@H](O)[C@H](O)C(=O)OC",
+                    "product_smiles": "CC1(C)O[C@H]([C@@H](C(=O)OC)O1)C(=O)OC",
+                    "notes": "Formation of a 1,3-dioxolane acetal from a diol using 2,2-dimethoxypropane under acid catalysis.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.2",
+                    "reaction_type": "Ammonolysis",
+                    "reagents": "NH3, MeOH",
+                    "reagent_smiles": "N.CO",
+                    "conditions": "",
+                    "yield": "45%",
+                    "reactant_smiles": "CC1(C)O[C@@H]([C@@H](C(=O)OC)O1)C(=O)OC",
+                    "product_smiles": "CC1(C)O[C@@H]([C@@H](C(=O)OC)O1)C(=O)N",
+                    "notes": "Ammonolysis of one methyl ester group to an amide, preserving acetonide and stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.3",
+                    "reaction_type": "Reduction",
+                    "reagents": "LiAlH4",
+                    "reagent_smiles": "[Li][AlH4]",
+                    "conditions": "THF, rt to 70 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC1(C)O[C@@H](C(=O)N)[C@H](C(=O)OC)O1",
+                    "product_smiles": "CC1(C)O[C@H](CN)[C@@H](CO)O1",
+                    "notes": "LiAlH4 reduction of a methyl ester to a primary alcohol and an amide to a primary amine, preserving the 1,3-dioxolane ketal.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.4",
+                    "reaction_type": "Amide Coupling",
+                    "reagents": "EDCI, DMAP",
+                    "reagent_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(=O)O",
+                    "conditions": "CH2Cl2",
+                    "yield": "78%",
+                    "reactant_smiles": "CC1(C)O[C@@H](CN)[C@@H](CO)O1",
+                    "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(=O)NC[C@@H]1[C@@H](CO)OC(C)(C)O1",
+                    "notes": "Amide formation from primary amine and carboxylic acid using EDCI/DMAP coupling reagents. The primary amine of the dioxolane derivative reacts with the tributyltin acrylic acid.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.5",
+                    "reaction_type": "Ketal Deprotection",
+                    "reagents": "BCl3",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, -78 °C",
+                    "yield": "83%",
+                    "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(=O)NC[C@@H]1O[C](C)(C)O[C@@H](CO)C1",
+                    "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(=O)NC[C@@H](O)[C@@H](CO)O",
+                    "notes": "Deprotection of an isopropylidene ketal to a vicinal diol.",
+                    "substeps": []
+                }
+            ]
+        }
+    ]
+}

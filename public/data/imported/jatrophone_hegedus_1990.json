@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "jatrophone-hegedus-1990",
+        "molecule_name": "Jatrophone",
+        "class": "Natural Product",
+        "author": "Hegedus",
+        "year": 1990
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination / Halogenation (Electrophilic Addition)",
+            "reagents": "Br₂, CCl₄",
+            "reagent_smiles": "BrBr.ClC(Cl)(Cl)Cl",
+            "conditions": "0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1C=CC(=O)C1",
+            "product_smiles": "O=C1C(Br)C(Br)C(C)CC1",
+            "notes": "Electrophilic addition of bromine across the double bond of 4-methylcyclopent-2-en-1-one to form a vicinal dibromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dehydrohalogenation",
+            "reagents": "Et3N",
+            "reagent_smiles": "",
+            "conditions": "CCl4, 0 °C",
+            "yield": "55%",
+            "reactant_smiles": "O=C1C(Br)C(Br)CC(C)C1",
+            "product_smiles": "O=C1C(Br)=CCC(C)C1",
+            "notes": "Elimination of HBr from a vicinal dibromoketone to form an alpha,beta-unsaturated bromoketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ketal formation",
+            "reagents": "PhH",
+            "reagent_smiles": "OCCO.Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "reflux",
+            "yield": "54%",
+            "reactant_smiles": "O=C1C(Br)=CC(C)C1",
+            "product_smiles": "CC1CC(Br)=C[C@@]2(OCCO2)C1",
+            "notes": "Formation of an ethylene glycol ketal from a ketone, catalyzed by p-toluenesulfonic acid. The double bond and bromine substituent remain unchanged. The new spiro center's stereochemistry is indicated by dashed/wedged bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxide opening / C-C bond formation",
+            "reagents": "nBuLi",
+            "reagent_smiles": "CC1CO1",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "66%",
+            "reactant_smiles": "CC1C=C([C@]2(C1)OCCO2)Br",
+            "product_smiles": "CC1C=C(CC(C)O)[C@]2(C1)OCCO2",
+            "notes": "Lithiation of vinyl bromide followed by addition to propylene oxide (epoxide)",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Protection (Silylation)",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "94%",
+            "reactant_smiles": "CC1CC(=C(CC(O)C)[C@@]2(C1)OCCO2)",
+            "product_smiles": "CC1CC(=C(CC([OTBS])C)[C@@]2(C1)OCCO2)",
+            "notes": "Secondary alcohol is protected as a TBS ether using TBSCl and imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ketal Hydrolysis",
+            "reagents": "(CO2H)2, DCM, H2O",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "87%",
+            "reactant_smiles": "[C@]1(OCCO1)C(C)CC=C(CC(C)[OTBS])C1",
+            "product_smiles": "O=C1C(C)CC=C(CC(C)[OTBS])C1",
+            "notes": "Deprotection of a 1,3-dioxolane ketal to yield an alpha,beta-unsaturated cyclopentenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Nucleophilic Addition / Carbon-Carbon Bond Formation",
+            "reagents": "nBuLi",
+            "reagent_smiles": "CCC1SCCCS1",
+            "conditions": "THF, -40 °C to rt",
+            "yield": "59%",
+            "reactant_smiles": "O=C1C(=C(CC(C)[OTBS]))CC(C)C1",
+            "product_smiles": "CCC1(O)(C2=CC(CC(C)[OTBS])CC(C)C2)SCCCS1",
+            "notes": "Addition of 2-ethyl-1,3-dithianyl anion to a cyclic enone, forming a spiro tertiary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Dithiane Deprotection",
+            "reagents": "CaCO3, HgCl2",
+            "reagent_smiles": "Cl[Hg]Cl",
+            "conditions": "CH3CN, H2O, 50 °C",
+            "yield": "",
+            "reactant_smiles": "CC[C@](O)([C@]1(SCCS1))C2=C(CC(C)[OTBS])C[C@@H](C)CC2",
+            "product_smiles": "CCC(=O)[C@](O)1C[C@@H](C)C=C(CC(C)[OTBS])C1",
+            "notes": "Dithiane protecting group is removed to unmask a ketone, retaining stereochemistry at other centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "Bu4NF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CCC(=O)[C@]1(C[C@@H](C)C=C1CC(C)[OTBS])O",
+            "product_smiles": "CCC(=O)[C@]1(C[C@@H](C)C=C1CC(C)O)O",
+            "notes": "Deprotection of TBS silyl ether to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Protection (Silylation)",
+            "reagents": "BSA",
+            "reagent_smiles": "C/C(=N\\[Si](C)(C)C)/O[Si](C)(C)C",
+            "conditions": "DMF, 65 °C",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "CC[C@H]1C=C(CC(C)O)[C@](C1)(C(=O)CC)O",
+            "product_smiles": "CCC(=O)[C@]1(C[C@H](C)C=C1CC(C)O[Si](C)(C)C)O[Si](C)(C)C",
+            "notes": "Both hydroxyl groups (one tertiary, one secondary) are protected as trimethylsilyl (TMS) ethers using N,O-bis(trimethylsilyl)acetamide (BSA). The relative stereochemistry of the chiral centers remains unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Aldol Addition",
+            "reagents": "LDA",
+            "reagent_smiles": "O=CCC(C)(C)C=C[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "THF, -78 to -10 °C",
+            "yield": "43%",
+            "reactant_smiles": "CCC(=O)[C@]1(C[C@@H](C)C=C1CC(C)[OTMS])[OTMS]",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(C)(C)CC(C(C)C(=O)[C@]1(C[C@@H](C)C=C1CC(C)[OTMS])[OTMS])O",
+            "notes": "Stereoselective aldol addition of a chiral ketone enolate to a stannyl-substituted aldehyde. Note that the reactant ketone is shown as a propionyl group (alpha-CH2), but the product shows an alpha-methyl group (alpha-CH(CH3)) at the same position, implying an additional methylation step not explicitly shown or a drawing inconsistency.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "1,4-addition",
+                    "reagents": "nBuLi, CuCN, BF3OEt2, thiophene, THF",
+                    "reagent_smiles": "CC(C)=CC(=O)OC",
+                    "conditions": "-78 to 0 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/[Sn](CCCC)(CCCC)CCCC",
+                    "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(C)(C)CC(=O)OC",
+                    "notes": "1,4-addition of a vinyl stannyl cuprate (derived from bis(tributylstannyl)ethene) to methyl 3-methylbut-2-enoate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Reduction (Ester to Aldehyde)",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "-78 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "[Sn]Bu3/C=C/C(C)(C)CC(=O)OC",
+                    "product_smiles": "[Sn]Bu3/C=C/C(C)(C)CC=O",
+                    "notes": "Partial reduction of a methyl ester to an aldehyde using DIBAL-H at low temperature, with retention of the E-alkene and tributyltin group.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Oxidation",
+            "reagents": "NCS",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "DMSO, PhH, -25 °C to rt",
+            "yield": "97%",
+            "reactant_smiles": "[Bu3Sn]/C=C/C(C)(C)CC(O)C(C)C(=O)[C@]1([OTMS])C[C@@H](C)C=C(CC(C)[OTMS])C1",
+            "product_smiles": "[Bu3Sn]/C=C/C(C)(C)CC(=O)C(C)C(=O)[C@]1([OTMS])C[C@@H](C)C=C(CC(C)[OTMS])C1",
+            "notes": "Secondary alcohol oxidized to ketone using Swern-like conditions (NCS, DMSO, Et3N).",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Desilylation, Cyclization (intramolecular SN2' or similar), Lactone formation",
+            "reagents": "TAS-F",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C",
+            "yield": "64%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(C)(C)CC(=O)C(C)C(=O)[C@]1(C[C@@H](C)C=C1CC(C)O[Si](C)(C)C)O[Si](C)(C)C",
+            "product_smiles": "O=C1OC([C@]2(C[C@@H](C)C=C2CC(C)O))C=C1CC(C)(C)/C=C/CCCC[Sn](CCCC)(CCCC)",
+            "notes": "Desilylation of one TMS ether and intramolecular cyclization involving the other TMS ether and one ketone to form an alpha,beta-unsaturated gamma-lactone.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Oxidation (Swern-like)",
+            "reagents": "NCS, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "PhH, -25 oC to rt",
+            "yield": "",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(C)(C)CC1=CC(=O)O[C@@]2(C1)C3=C(CC(C)O)[C@H](C)CC32",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(C)(C)CC1=CC(=O)O[C@@]2(C1)C3=C(CC(=O)C)[C@H](C)CC32",
+            "notes": "Swern-like oxidation of a secondary alcohol to a ketone. The tributylstannyl group and all stereocenters remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Enol Triflation",
+            "reagents": "NaHMDS, PhNTf2",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "76%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(C)(C)CC1=CC(=O)[C@]2(C[C@@H](C)C=C2CC(=O)C)O1",
+            "product_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(C)(C)CC1=CC(=O)[C@]2(C[C@@H](C)C=C2/C=C(\\OS(=O)(=O)C(F)(F)F)/C)O1",
+            "notes": "Conversion of an acetyl group to an enol triflate via deprotonation and trapping with N-phenylbis(trifluoromethanesulfonimide).",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Carbonylative Cyclization",
+            "reagents": "DMF, LiCl",
+            "reagent_smiles": "[Pd](Cl)(Cl)(N#CC)(N#CC).[C-]#[O+]",
+            "conditions": "",
+            "yield": "24%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)/C=C/C(C)(C)CC(=O)C1=C(O[C@@]2(C=C(/C)OS(=O)(=O)C(F)(F)F)[C@H]3CC=C23)O1",
+            "product_smiles": "C[C@H]1CC=C([C@@]23OC(=O)C=C2)C(=O)/C=C/C(C)(C)CC(=O)C=C(C)C3",
+            "notes": "Intramolecular carbonylative cyclization via Stille coupling, forming a complex macrocyclic structure with a spiro-fused tricyclic core and two new ketone groups.",
+            "substeps": []
+        }
+    ]
+}

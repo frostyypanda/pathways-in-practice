@@ -1,0 +1,266 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "pseudomonic-acid-c-keck-1985",
+        "molecule_name": "Pseudomonic acid C",
+        "class": "Natural Product",
+        "author": "Keck",
+        "year": 1985
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Glycoside Formation / O-Benzylation",
+            "reagents": "BnOH, p-TsOH",
+            "reagent_smiles": "",
+            "conditions": "neat, 60 °C",
+            "yield": "81%",
+            "reactant_smiles": "C1[C@@H]([C@H]([C@@H]([C@H](O)O1)O)O)O",
+            "product_smiles": "C1=CC=C(C=C1)COC2[C@@H]([C@H]([C@@H](CO2)O)O)O",
+            "notes": "Anomeric hydroxyl group of D-glucopyranose is selectively benzylated to form a benzyl glycoside. The anomeric center retains a wavy bond, indicating a mixture of alpha and beta anomers.",
+            "substeps": [
+                {
+                    "step_id": "1.1",
+                    "reaction_type": "Alpha-Alkylation / Enolate Methylation",
+                    "reagents": "LDA, MeI",
+                    "reagent_smiles": "CI",
+                    "conditions": "THF, -78 °C to rt",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)C[C@H](C)O",
+                    "product_smiles": "CCOC(=O)[C@@H](C)[C@H](C)O",
+                    "notes": "Methylation of the alpha-carbon of an ethyl ester using LDA as base and methyl iodide as electrophile, resulting in the formation of a new chiral center with anti-stereoselectivity relative to the existing hydroxyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "1.2",
+                    "reaction_type": "Silyl ether formation",
+                    "reagents": "TBSCl, imidazole",
+                    "reagent_smiles": "",
+                    "conditions": "DMF, rt",
+                    "yield": "90% (2 steps)",
+                    "reactant_smiles": "CCOC(=O)[C@@H](C)[C@H](C)O",
+                    "product_smiles": "CCOC(=O)[C@@H](C)[C@H](C)[OTBS]",
+                    "notes": "Protection of a secondary alcohol as a TBS ether, retaining stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "1.3",
+                    "reaction_type": "Reduction (Ester to Aldehyde)",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "CH₂Cl₂, -78 °C",
+                    "yield": "87%",
+                    "reactant_smiles": "CCOC(=O)[C@@H](C)[C@@H](C)O[TBS]",
+                    "product_smiles": "O=C[C@@H](C)[C@@H](C)O[TBS]",
+                    "notes": "Ester is selectively reduced to an aldehyde using DIBAL-H, preserving the TBS ether and both chiral centers.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Protection (Acetonide formation)",
+            "reagents": "",
+            "reagent_smiles": "CC(C)(OC)OC.Cc1ccc(S(=O)(=O)O)cc1",
+            "conditions": "acetone, rt",
+            "yield": "90%",
+            "reactant_smiles": "[Bn]O[C@H]1[C@H](O)[C@@H](O)[C@H](O)CO1",
+            "product_smiles": "[Bn]O[C@H]1OC[C@H](O)[C@@H]2O[C](C)(C)O[C@H]2[C@H]1",
+            "notes": "Formation of an acetonide from vicinal diols on a pyranose sugar using 2,2-dimethoxypropane and p-toluenesulfonic acid catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Thiocarbonylation / Esterification (Barton-McCombie precursor formation)",
+            "reagents": "MeLi; PhOCSCl",
+            "reagent_smiles": "[Li]C.ClC(=S)Oc1ccccc1",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "CC1(C)O[C@@H]2[C@H](CO[C]([C@@H]2O1)[OBn])O",
+            "product_smiles": "CC1(C)O[C@@H]2[C@H](CO[C]([C@@H]2O1)[OBn])OC(=S)Oc3ccccc3",
+            "notes": "Conversion of a secondary alcohol to a O-phenyl thiocarbonate, typically an intermediate for Barton-McCombie deoxygenation. The anomeric carbon has undefined stereochemistry (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Keck radical allylation",
+            "reagents": "hv (λ > 300 nm)",
+            "reagent_smiles": "C=CC[Sn](CCCC)(CCCC)CCCC",
+            "conditions": "toluene",
+            "yield": "90%",
+            "reactant_smiles": "O1C(C[C@@H](OC(=S)OC2=CC=CC=C2)[C@H]3OC(C)(C)O[C@H]3[C@H]1OCC4=CC=CC=C4)",
+            "product_smiles": "O1C(C[C@@H](CC=C)[C@H]2OC(C)(C)O[C@H]2[C@H]1OCC3=CC=CC=C3)",
+            "notes": "Keck radical allylation replacing the phenoxythiocarbonyl group with an allyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Lemieux-Johnson oxidation",
+            "reagents": "OsO4, NaIO4",
+            "reagent_smiles": "",
+            "conditions": "THF, H2O, 0 °C",
+            "yield": "",
+            "reactant_smiles": "C=CC[C@@H]1CO[C]([C@H]2[C@H]1OC(C)(C)O2)[OBn]",
+            "product_smiles": "CC1(C)O[C@H]2[C@@H](CC=O)CO[C]([C@H]2O1)[OBn]",
+            "notes": "Lemieux-Johnson oxidation (oxidative cleavage of an alkene, specifically an allyl group, to an aldehyde). The stereochemistry of the bicyclic core is retained, except for the anomeric carbon where the OBn group remains with a wavy bond (unspecified stereochemistry).",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "NaBH4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC1(C)O[C@@H]2[C@@H](CC=O)CO[C@H]([C@@H]2O1)[OBn]",
+            "product_smiles": "CC1(C)O[C@@H]2[C@@H](CCO)CO[C@H]([C@@H]2O1)[OBn]",
+            "notes": "Aldehyde reduced to primary alcohol. The 85% yield is for two steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "CC1(C)O[C@@H]2[C@@H](CCO)CO[C@H]([C@@H]2O1)[OBn]",
+            "product_smiles": "CC1(C)O[C@@H]2[C@@H](CCOS(=O)(=O)C)CO[C@H]([C@@H]2O1)[OBn]",
+            "notes": "Primary alcohol converted to a mesylate. The anomeric carbon has a wavy bond indicating a mixture of anomers; the SMILES represents one specific anomer.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "KSPh",
+            "reagent_smiles": "",
+            "conditions": "DMF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@@H]2[C@H](CC[OMs])CO[C@H]([C@@H]2O1)O[Bn]",
+            "product_smiles": "CC1(C)O[C@@H]2[C@H](CCS[Ph])CO[C@H]([C@@H]2O1)O[Bn]",
+            "notes": "Displacement of the mesylate leaving group by thiophenoxide. The stereochemistry at the carbon bearing the substituted ethyl chain is preserved (SN2 reaction).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "CH3CO3H, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "0 °C to rt",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "CC1(C)O[C@H]2[C@@H](CC[S][Ph])CO[C]([C@@H]2O1)[OBn]",
+            "product_smiles": "CC1(C)O[C@H]2[C@@H](CC[S](=O)(=O)[Ph])CO[C]([C@@H]2O1)[OBn]",
+            "notes": "Oxidation of phenyl thioether to phenyl sulfone. The anomeric stereocenter (C1) is depicted with a wavy bond in the screenshot, indicating unspecified stereochemistry, so 'C' is used in the SMILES. Abbreviations '[Ph]' for Phenyl and '[OBn]' for O-Benzyl are applied as they appear abbreviated in the screenshot.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Aldol-type addition (sulfone-mediated)",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "O=C[C@H](C)[C@@H]([OTBS])C",
+            "conditions": "THF, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC1(C)O[C@@H]2[C@@H](CCS(=O)(=O)c3ccccc3)CO[C@H]([C@@H]2O1)OCc4ccccc4",
+            "product_smiles": "CC1(C)O[C@@H]2[C@@H](C[C@H](S(=O)(=O)c3ccccc3)[C@H](O)[C@H](C)[C@H]([OTBS])C)CO[C@H]([C@@H]2O1)OCc4ccccc4",
+            "notes": "Addition of a sulfone-stabilized carbanion to an aldehyde, forming a new C-C bond and an alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, pyridine",
+            "reagent_smiles": "",
+            "conditions": "rt",
+            "yield": "",
+            "reactant_smiles": "[OTBS][C@@H](C)[C@H](C)[C@@H](O)[C@H](S(=O)(=O)[Ph])C[C@@H]1CO[C](O[Bn])[C@H]2O[C@](C)(C)O[C@@H]12",
+            "product_smiles": "[OTBS][C@@H](C)[C@H](C)[C@@H](O[Ms])[C@H](S(=O)(=O)[Ph])C[C@@H]1CO[C](O[Bn])[C@H]2O[C@](C)(C)O[C@@H]12",
+            "notes": "Conversion of a secondary alcohol to a mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Julia-Lythgoe Olefination",
+            "reagents": "Li, NH3(l)",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "37% (5 steps)",
+            "reactant_smiles": "[OTBS][C@@H](C)[C@H](C)[C@@H](O[Ms])[C@@H](S(=O)(=O)c1ccccc1)C[C@H]2O[C@@H]1C(C)(C)O[C@@H]1[C@H]2O[CH](OCCc3ccccc3)",
+            "product_smiles": "[OTBS][C@@H](C)[C@H](C)/C=C/C[C@H]2O[C@@H]1C(C)(C)O[C@@H]1[C@H]2O[CH](O)",
+            "notes": "Julia-Lythgoe olefination of a mesylate/phenyl sulfone to form a trans alkene, accompanied by debenzylation of the anomeric protecting group.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Wittig olefination",
+            "reagents": "DCE, MeOH, K2CO3",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3=C(C(=O)C)",
+            "conditions": "75 °C, rt",
+            "yield": "64%",
+            "reactant_smiles": "[TBS]O[C@@H](C)[C@H](C)/C=C/C[C@H]1O[CH](O)[C@@H]2OC(C)(C)O[C@H]2CC[C@H]1",
+            "product_smiles": "[TBS]O[C@@H](C)[C@H](C)/C=C/C[C@H]1O[C@@H](CC(=O)C)[C@@H]2OC(C)(C)O[C@H]2CC[C@H]1",
+            "notes": "Wittig reaction replaces the anomeric hydroxyl group with a 2-oxopropyl chain, extending the carbon skeleton.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Horner-Wadsworth-Emmons olefination",
+            "reagents": "LiHMDS",
+            "reagent_smiles": "CCOP(=O)(CC(=O)OCCCCCCC(=O)OC)OCC",
+            "conditions": "dioxane, 25 °C",
+            "yield": "75%",
+            "reactant_smiles": "CC(C)[C@H]([OTBS])[C@@H](C)/C=C/C[C@H]1CO[C@@H](CC(=O)C)[C@H]2[C@@H]1OC(C)(C)O2",
+            "product_smiles": "CC(C)[C@H]([OTBS])[C@@H](C)/C=C/C[C@H]1CO[C@@H](C/C(=C/C(=O)OCCCCCCCC(=O)OC)/C)[C@H]2[C@@H]1OC(C)(C)O2",
+            "notes": "Horner-Wadsworth-Emmons olefination of a methyl ketone. The product structure shown in the screenshot contains an ester chain with 8 methylene units (O(CH2)8), while the drawn reagent structure shows 7 methylene units (O(CH2)7). The product SMILES reflects the drawn product structure as it appears in the screenshot.",
+            "substeps": [
+                {
+                    "step_id": "14.1",
+                    "reaction_type": "Reduction",
+                    "reagents": "NaBH4",
+                    "reagent_smiles": "",
+                    "conditions": "EtOH, 0 °C",
+                    "yield": "97%",
+                    "reactant_smiles": "O=CCCCCCCCC(=O)OC",
+                    "product_smiles": "OCCCCCCCCC(=O)OC",
+                    "notes": "Selective reduction of an aldehyde to a primary alcohol using sodium borohydride, leaving the methyl ester intact.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "14.2",
+                    "reaction_type": "Steglich Esterification",
+                    "reagents": "DMAP, DCC",
+                    "reagent_smiles": "CCOP(=O)(CC(=O)O)OCC",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "OCCCCCCCCCC(=O)OC",
+                    "product_smiles": "CCOP(=O)(CC(=O)OCCCCCCCCCC(=O)OC)OCC",
+                    "notes": "Steglich esterification of a long-chain hydroxy methyl ester with diethyl 2-phosphonoacetic acid to form a phosphonoacetate ester.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Deprotection (Acetonide & Silyl Ether Hydrolysis)",
+            "reagents": "AcOH",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "93%",
+            "reactant_smiles": "C[C@@H]([OTBS])[C@H](C)/C=C/C[C@@H]1C[C@H](C/C(=C/C(=O)OCCCCCCCC(=O)OC)/C)O[C@@H]2[C@H]1OC(C)(C)O2",
+            "product_smiles": "C[C@@H](O)[C@H](C)/C=C/C[C@@H]1C[C@@H](C/C(=C/C(=O)OCCCCCCCC(=O)OC)/C)[C@@H](O)[C@H](O)O1",
+            "notes": "Hydrolysis of acetonide protecting group to a 1,2-diol and deprotection of TBS ether to a secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "16",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "KOH, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "EtOH, THF",
+            "yield": "",
+            "reactant_smiles": "C[C@H](O)[C@H](C)/C=C/C[C@@H]1O[C@H](C/C(=C/C(=O)OCCCCCCCC(=O)OC)/C)[C@H](O)[C@H]1O",
+            "product_smiles": "C[C@H](O)[C@H](C)/C=C/C[C@@H]1O[C@H](C/C(=C/C(=O)OCCCCCCCC(=O)O)/C)[C@H](O)[C@H]1O",
+            "notes": "Hydrolysis of the methyl ester of pseudomonic acid C to the free carboxylic acid using base.",
+            "substeps": []
+        }
+    ]
+}

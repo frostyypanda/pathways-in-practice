@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "teflaro-ceftaroline-takeda-unknown-2024",
+        "molecule_name": "Teflaro (Ceftaroline Takeda)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Mesylation / Sulfonate Esterification",
+            "reagents": "MsC, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "MeCN, -40 °C",
+            "yield": "94%",
+            "reactant_smiles": "C1=CC=C(C=C1)CC(=O)N[C@@H]2C(=O)N3C(=C(CS[C@H]23)O)C(=O)OCH(c4ccccc4)c5ccccc5",
+            "product_smiles": "C1=CC=C(C=C1)CC(=O)N[C@@H]2C(=O)N3C(=C(CS[C@H]23)OS(=O)(=O)C)C(=O)OCH(c4ccccc4)c5ccccc5",
+            "notes": "The hydroxyl group on the thiazine ring of the cephalosporin derivative is converted to a methanesulfonate (mesylate) ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Nucleophilic Substitution",
+            "reagents": "MeONa, MeOH",
+            "reagent_smiles": "C1=CN=CC=C1C2=CSC(=N2)S",
+            "conditions": "THF, 0 °C",
+            "yield": "78%",
+            "reactant_smiles": "CS(=O)(=O)OC1=C(C(=O)OC(c2ccccc2)c3ccccc3)N2C(=O)[C@H]([C@H]2SC1)NC(=O)CC4=CC=CC=C4",
+            "product_smiles": "C1=CC=C(C=C1)CC(=O)N[C@H]2C(=O)N3C(=C(CS[C@H]23)SC4=NC(=CS4)C5=CC=NC=C5)C(=O)OC(c6ccccc6)c7ccccc7",
+            "notes": "Nucleophilic substitution of a mesylate leaving group by a thiolate. The mesylate is displaced by the 2-mercapto-5-(pyridin-4-yl)thiazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alkylation",
+            "reagents": "",
+            "reagent_smiles": "CI",
+            "conditions": "THF, rt",
+            "yield": "97%",
+            "reactant_smiles": "O=C(OCH([Ph])[Ph])C1=C(CS[C@@H]2[C@@H](C(=O)N12)NC(=O)CC3=CC=CC=C3)SC4=NC(=CS4)C5=CC=NC=C5",
+            "product_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)OCH([Ph])[Ph])N4C(=O)[C@H]([C@H]4SC3)NC(=O)CC5=CC=CC=C5.[I-]",
+            "notes": "Quaternization of the pyridine nitrogen with methyl iodide, forming an iodide salt.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amide Deprotection / Hydrolysis",
+            "reagents": "PCl5, pyridine, i-BuOH",
+            "reagent_smiles": "",
+            "conditions": "0 °C, 30 min then -10 °C to rt",
+            "yield": "87%",
+            "reactant_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)OCH(c4ccccc4)c5ccccc5)N6C(=O)[C@H]([C@H]6SC3)NC(=O)CC7=CC=CC=C7.[I-]",
+            "product_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)OCH(c4ccccc4)c5ccccc5)N6C(=O)[C@H]([C@H]6SC3)N.[Cl-]",
+            "notes": "The phenylacetyl protecting group is removed by amide hydrolysis using PCl5 and pyridine, yielding the primary amine. The counterion of the pyridinium group changes from iodide (I-) to chloride (Cl-).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (Ester Hydrolysis)",
+            "reagents": "HCl (conc)",
+            "reagent_smiles": "",
+            "conditions": "MeCN, EtOAc, rt",
+            "yield": "74%",
+            "reactant_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)OCH(C4=CC=CC=C4)C5=CC=CC=C5)N6C(=O)[C@H](N)[C@@H]6SC3.[Cl-]",
+            "product_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)[O-])N6C(=O)[C@H](N)[C@@H]6SC3.[Cl-].[Cl-]",
+            "notes": "Hydrolysis of benzhydryl ester to carboxylate in acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide bond formation, Phosphoramidate hydrolysis",
+            "reagents": "2 M AcONa, then 1% HOAc (aq)",
+            "reagent_smiles": "CCO/N=C(/C(=O)Cl)\\C1=NSC(=N1)NP(=O)(Cl)Cl",
+            "conditions": "0 °C to rt",
+            "yield": "77%",
+            "reactant_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)[O-])N4C(=O)[C@H]([C@H]4SC3)N",
+            "product_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)[O-])N4C(=O)[C@H]([C@H]4SC3)NC(=O)/C(=N\\OC)/C5=NSC(=N5)NP(=O)(O)O",
+            "notes": "Acylation of the primary amine on the cephalosporin core with an acyl halide, followed by hydrolysis of the phosphoramidate ethyl ester to the phosphonic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrolysis / Phosphoramidate to Phosphonate",
+            "reagents": "HOAc",
+            "reagent_smiles": "",
+            "conditions": "aq",
+            "yield": "68%",
+            "reactant_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)[O-])N4C(=O)[C@@H]([C@H]4SC3)NC(=O)/C(=N/OC)/C5=NSC(=N5)NP(=O)(O)O",
+            "product_smiles": "C[N+]1=CC=C(C=C1)C2=CSC(=N2)SC3=C(C(=O)[O-])N4C(=O)[C@@H]([C@H]4SC3)NC(=O)/C(=N/OC)/C5=NSC(=N5)P(=O)(O)O",
+            "notes": "Acid-catalyzed hydrolysis of an N-phosphorylated aminothiazole derivative, resulting in the direct attachment of phosphonic acid to the thiazole ring.",
+            "substeps": []
+        }
+    ]
+}

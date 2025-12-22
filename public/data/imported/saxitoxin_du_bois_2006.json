@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "saxitoxin-du-bois-2006",
+        "molecule_name": "Saxitoxin",
+        "class": "Natural Product",
+        "author": "Du Bois",
+        "year": 2006
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hydroxylation",
+            "reagents": "FrbA-Rd10bb, α-ketoglutaric acid, L-ascorbic acid, antifoam 204, ammonium iron (II) sulfate, sodium phosphate",
+            "reagent_smiles": "",
+            "conditions": "pH 7, air",
+            "yield": "",
+            "reactant_smiles": "O=C(O)[C@@H]1CCCN1",
+            "product_smiles": "O=C(O)[C@@H]1NC[C@H](O)C1",
+            "notes": "Stereoselective C4-hydroxylation of L-proline to form trans-4-hydroxy-L-proline, likely enzyme-catalyzed.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-Protection",
+            "reagents": "Boc2O, Na2CO3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "61% (2 steps)",
+            "reactant_smiles": "C1CN[C@@H]([C@H]1O)C(=O)O",
+            "product_smiles": "[Boc]N1CC[C@@H]([C@H]1C(=O)O)O",
+            "notes": "N-protection of a secondary amine with Boc anhydride in the presence of sodium carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "TBSCl, imidazole",
+            "reagent_smiles": "Cl[Si](C(C)(C)C)(C)C.C1=CNC=N1",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1CC[C@@H](O)[C@H]1C(=O)O",
+            "product_smiles": "CC(C)(C)OC(=O)N1CC[C@@H]([OTBS])[C@H]1C(=O)O",
+            "notes": "Secondary alcohol is protected as a tert-butyldimethylsilyl (TBS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Esterification / Active Ester Formation",
+            "reagents": "DIC, DMAP",
+            "reagent_smiles": "C1=CC2=C(C=C1)C(=O)N(C2=O)O",
+            "conditions": "CH2Cl2",
+            "yield": "66%",
+            "reactant_smiles": "[Boc]N1CC[C@@H](C(=O)O)[C@H]1[OTBS]",
+            "product_smiles": "[Boc]N1CC[C@@H]([C@H]1C(=O)ON2C(=O)C3=CC=CC=C3C2=O)[OTBS]",
+            "notes": "Esterification of a carboxylic acid with N-hydroxyphthalimide to form an active ester, using DIC and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Reductive Coupling / Alkylation",
+            "reagents": "Zn powder, NiCl2*glyme",
+            "reagent_smiles": "CC1=CC(C)=C(C(C)=C1)[S@](=O)/N=C/[C@@H](CO[Bn])N[Fmoc]",
+            "conditions": "DMF",
+            "yield": "80%",
+            "reactant_smiles": "[Boc]N1CC[C@@H]([C@H]1C(=O)ON2C(=O)C3=CC=CC=C3C2=O)[OTBS]",
+            "product_smiles": "[Boc]N1CC[C@@H]([C@H]1[OTBS])N[C@H]([S@](=O)C2=CC(C)=C(C(C)=C2)C)[C@@H](O[Bn])N[Fmoc]",
+            "notes": "Chiral auxiliary-mediated reductive coupling of pyrrolidine derivative with sulfinyl imine, replacing phthalimido ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, dioxane",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]N1CC[C@@H]([OTBS])[C@H]1[C@@H](N[S@](=O)C2=C(C)C=C(C)C=C2C)[C@@H](NH[Fmoc])[OBn]",
+            "product_smiles": "HN1CC[C@@H](O)[C@H]1[C@@H](N)[C@@H](NH[Fmoc])[OBn]",
+            "notes": "Acidic deprotection of Boc carbamate, aryl sulfinamide, and silyl ether (OTBS).",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Cyclization, Double Guanidinylation",
+            "reagents": "HgO, Et3N",
+            "reagent_smiles": "CC(C)(C)OC(=O)N=C(SC)NC(=O)OC(C)(C)C",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[Fmoc]N[C@@H](CO[Bn])[C@@H](N)[C@H]1C[C@@H](O)CC[NH]1",
+            "product_smiles": "[Boc]N1C[C@@H](O)C[C@H]12N([Boc])C(=N[Boc])N([Boc])C(=N[Boc])N([C@@H]([C@@H](CO[Bn])N[Fmoc]))2",
+            "notes": "Intramolecular cyclization and double guanidinylation to form a fused bicyclic guanidine system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Fmoc Deprotection / Intramolecular Cyclization",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "C1CCNCC1",
+            "conditions": "",
+            "yield": "75% (3 steps)",
+            "reactant_smiles": "[Fmoc]N[C@@H](CO[Bn])[C@@H](NC(=N[Boc])N([Boc])[C@@H]1[C@H](O)CC[N@]1[Boc])",
+            "product_smiles": "[Boc]NC(=N[Boc])N[C@H]1[C@H](CO[Bn])N/C(=N/[Boc])/N2CC[C@H]([C@@H]12)O",
+            "notes": "Fmoc protecting group is removed by piperidine, followed by intramolecular cyclization to form a bicyclic guanidine system. The product is a fully Boc-protected bicyclic guanidine derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "",
+            "reagent_smiles": "CC1(C)CCC(C)(C)[N+]([O-])O1.[Na+].[O-]Cl.[Na+].O=C([O-])O.O",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C(=NC(=O)OC(C)(C)C)[C@@H]2[C@H](COCC3=CC=CC=C3)N(C(=O)OC(C)(C)C)[C@@H](C[C@@H]12)O",
+            "product_smiles": "CC(C)(C)OC(=O)N1C(=NC(=O)OC(C)(C)C)[C@@H]2[C@H](COCC3=CC=CC=C3)N(C(=O)OC(C)(C)C)C(=O)C[C@@H]12",
+            "notes": "Oxidation of a secondary alcohol to a ketone using TEMPO and sodium hypochlorite.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Oxidative Cyclization / Dearomatization",
+            "reagents": "PIFA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "82% (2 steps)",
+            "reactant_smiles": "CC(C)(C)OC(=O)N1C(=O)[C@@H]2CCC3N1[C@@H]2[C@H](COCC4=CC=CC=C4)[C@@H](N)C(NC(=O)OC(C)(C)C)=N3",
+            "product_smiles": "CC(C)(C)OC(=O)N1[C@H]2C[C@H](COCC3=CC=CC=C3)[C@@H]4N2C(=O)CC[C@H]4[C@@H]5N1C[C@@H](N)[C@@H]5N(C(=O)OC(C)(C)C)",
+            "notes": "Intramolecular cyclization of a bicyclic guanidine to form a tricyclic system. The exocyclic NHBoc group cyclizes with a cyclic NH, oxidizing the guanidine and forming a new 5-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection, Hydration",
+            "reagents": "BCl3 then HCl",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "81%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N=C1N[C@H](COCC2=CC=CC=C2)[C@H]3[C@]4(C(=O)CCN14)NC(=NC(=O)OC(C)(C)C)N3",
+            "product_smiles": "[NH2+]=C1N[C@H](CO)[C@@H]2[C@]3(C(O)(O)CCN13)NC(=N[NH2+])C2N",
+            "notes": "Deprotection of benzyl ether and two Boc groups, followed by hydration of lactam and guanidine-like imines to form gem-diol and guanidinium ions.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Carbamate formation",
+            "reagents": "formic acid",
+            "reagent_smiles": "O=C=NS(=O)(=O)Cl",
+            "conditions": "5 °C to rt",
+            "yield": "76%",
+            "reactant_smiles": "C1[C@H]2N3C(=[NH2+])N[C@H]4[C@H](CO)[C@H]5NC(=[NH2+])N3[C@H]5[C@H]4(C1(O)O)C2",
+            "product_smiles": "C1[C@H]2N3C(=[NH2+])N[C@H]4[C@H](COC(=O)N)[C@H]5NC(=[NH2+])N3[C@H]5[C@H]4(C1(O)O)C2",
+            "notes": "Formation of a carbamate ester from a primary alcohol using chlorosulfonyl isocyanate.",
+            "substeps": []
+        }
+    ]
+}

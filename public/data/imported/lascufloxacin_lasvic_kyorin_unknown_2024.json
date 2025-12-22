@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "lascufloxacin-lasvic-kyorin-unknown-2024",
+        "molecule_name": "Lascufloxacin (Lasvic Kyorin)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "N-Acylation (Carbamate Formation)",
+            "reagents": "CbzCl, NaHCO3",
+            "reagent_smiles": "ClC(=O)OCC1=CC=CC=C1",
+            "conditions": "30 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)CCNCC(=O)OCC",
+            "product_smiles": "CCOC(=O)CCN([Cbz])CC(=O)OCC",
+            "notes": "Protection of secondary amine with benzyloxycarbonyl (Cbz) group.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dieckmann Condensation / Cyclization",
+            "reagents": "NaOEt, HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "75% (2 steps)",
+            "reactant_smiles": "[OEt]C(=O)CN([Cbz])CCC(=O)[OEt]",
+            "product_smiles": "[OEt]C(=O)[C@H]1CN(CC1=O)[Cbz]",
+            "notes": "Intramolecular Dieckmann condensation to form a pyrrolidinone, followed by acidic workup.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Hydrogenation (Ketone Reduction)",
+            "reagents": "H2, [RuCl2(C6H6)]2, (S)-BINAP",
+            "reagent_smiles": "",
+            "conditions": "DCM, 55 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@@H]1CN([Cbz])CC1=O",
+            "product_smiles": "CCOC(=O)[C@@H]1CN([Cbz])C[C@@H]1O",
+            "notes": "Asymmetric hydrogenation of a cyclic ketone to a chiral alcohol, retaining the stereochemistry of the existing chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis",
+            "reagents": "NaOH, HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH/H2O, 10 °C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)[C@H]1CN(C[C@@H]1O)[Cbz]",
+            "product_smiles": "O=C(O)[C@H]1CN(C[C@@H]1O)[Cbz]",
+            "notes": "Hydrolysis of an ethyl ester to a carboxylic acid, retaining stereochemistry. The N-Cbz protecting group and hydroxyl group remain untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide Formation",
+            "reagents": "HOBt, EDCI",
+            "reagent_smiles": "C1CC1N",
+            "conditions": "THF, rt to 40 °C",
+            "yield": "60%",
+            "reactant_smiles": "[Cbz]N2C[C@H]([C@@H](C2)O)C(=O)O",
+            "product_smiles": "[Cbz]N2C[C@H]([C@@H](C2)O)C(=O)NC3CC3",
+            "notes": "Carboxylic acid of the pyrrolidine derivative is coupled with cyclopropylamine to form an amide. The yield indicated (60%) is for 3 steps, not just this single step. Stereochemistry at C3 and C4 of the pyrrolidine ring was corrected from (3S,4S) to (3R,4R) to match the visual representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Amide Reduction",
+            "reagents": "BH3",
+            "reagent_smiles": "",
+            "conditions": "THF, 45 °C",
+            "yield": "",
+            "reactant_smiles": "[Cbz]N1C[C@@H](C(=O)NC2CC2)[C@H](O)C1",
+            "product_smiles": "[Cbz]N1C[C@@H](CNC2CC2)[C@H](O)C1",
+            "notes": "Reduction of an amide to a secondary amine using borane.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "No chemical transformation observed",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "21 °C",
+            "yield": "90% (2 steps)",
+            "reactant_smiles": "[Cbz]N2C[C@H](CNC3CC3)[C@@H](C2)O",
+            "product_smiles": "[Cbz]N2C[C@H](CNC3CC3)[C@@H](C2)O",
+            "notes": "The reactant and product structures are identical in the screenshot. The transformation is under acidic conditions. Stereochemistry for the pyrrolidine ring was corrected to match the trans relationship shown (wedge and dash). The Cbz protecting group was abbreviated to match the screenshot representation.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "N-alkylation",
+            "reagents": "BnBr, NaHCO3",
+            "reagent_smiles": "",
+            "conditions": "EtOH/H2O, 40 °C",
+            "yield": "",
+            "reactant_smiles": "[Cbz]N1CC[C@H](O)[C@@H](C[NH]C2CC2)C1",
+            "product_smiles": "[Cbz]N1CC[C@H](O)[C@@H](C[N]([Bn])C2CC2)C1",
+            "notes": "N-alkylation of the secondary amine of the cyclopropylmethyl group using benzyl bromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Fluorination",
+            "reagents": "POSF, DBU",
+            "reagent_smiles": "",
+            "conditions": "PhCH3, 5 to 25 °C",
+            "yield": "79% (2 steps)",
+            "reactant_smiles": "C1=CC=C(C=C1)CN(C[C@H]2CN(C[C@@H]2O)C(=O)OCC3=CC=CC=C3)C4CC4",
+            "product_smiles": "C1=CC=C(C=C1)CN(C[C@H]2CN(C[C@H]2F)C(=O)OCC3=CC=CC=C3)C4CC4",
+            "notes": "Stereoselective fluorination of a secondary alcohol with inversion of configuration at the reacting stereocenter.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Hydrogenolysis, Reductive Deprotection",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "",
+            "reactant_smiles": "[Cbz]N1CC[C@@H](F)[C@@H](CN(C2CC2)[Bn])C1",
+            "product_smiles": "C1CC1NC[C@H]2CNC[C@H]2F",
+            "notes": "Double hydrogenolysis of benzyl (Bn) and carbobenzyloxy (Cbz) protecting groups.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Salt Formation",
+            "reagents": "HCl/MeOH",
+            "reagent_smiles": "Cl.CO",
+            "conditions": "",
+            "yield": "27%",
+            "reactant_smiles": "C1CC1NC[C@@H]2CNC[C@H](F)C2",
+            "product_smiles": "C1CC1NC[C@@H]2CNC[C@H](F)C2.Cl.Cl",
+            "notes": "Formation of dihydrochloride salt. Yield reported is for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Nucleophilic Aromatic Substitution (SNAr)",
+            "reagents": "TEA",
+            "reagent_smiles": "CC(=O)OB(OC(=O)C)OC(=O)C1=CN(CCF)C2=C(C(=C(C=C2C1=O)F)F)OC",
+            "conditions": "DMSO, rt",
+            "yield": "",
+            "reactant_smiles": "C1CC1NC[C@@H]2C[C@H](F)[NH]C2.Cl.Cl",
+            "product_smiles": "CC(=O)OB(OC(=O)C)OC(=O)C1=CN(CCF)C2=C(C(=C(C=C2C1=O)F)N3C[C@@H](CNC4CC4)[C@H](F)C3)OC",
+            "notes": "Nucleophilic aromatic substitution of a fluorine atom on the quinolone core by the pyrrolidine secondary amine.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Formylation",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "CCOC(OCC)OCC.CC(=O)OC(=O)C",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "COC(=O)CC(=O)c1c(F)c(F)c(OC)c(F)c1F",
+                    "product_smiles": "COC(=O)C(C=O)C(=O)c1c(F)c(F)c(OC)c(F)c1F",
+                    "notes": "Alpha-formylation of a beta-keto ester using triethyl orthoformate and acetic anhydride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Quinolone Synthesis, Annulation, Cyclization",
+                    "reagents": "K2CO3",
+                    "reagent_smiles": "",
+                    "conditions": "DMSO, 47 to 78 °C",
+                    "yield": "53%",
+                    "reactant_smiles": "COC1=C(F)C(F)=CC(F)=C1C(=O)C(C=O)C(=O)OC",
+                    "product_smiles": "COC1=C(F)C(F)=C2N(CCF)C=C(C(=O)OC)C2=C1F",
+                    "notes": "Base-catalyzed intramolecular cyclization of a polyfluorinated β-keto ester bearing an aldehyde, forming a quinolone derivative with an N-2-fluoroethyl substituent. The nitrogen source (2-fluoroethylamine) is implicitly involved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Functional Group Interconversion (Boronate Ester Formation)",
+                    "reagents": "B(OH)3, Ac2O, NH2",
+                    "reagent_smiles": "B(O)(O)O.CC(=O)OC(=O)C",
+                    "conditions": "20 to 57 °C, then 0 °C in acetone",
+                    "yield": "97%",
+                    "reactant_smiles": "COC1=C2C(=CC(=C1F)F)C(=O)C(=CN2CCF)C(=O)OC",
+                    "product_smiles": "COC1=C2C(=CC(=C1F)F)C(=O)C(=CN2CCF)C(=O)OB(OC(=O)C)OC(=O)C",
+                    "notes": "Conversion of a methyl ester to a boronate ester using boric acid (B(OH)3) and acetic anhydride (Ac2O). The original methyl ester group is replaced by a -C(=O)OB(OAc)2 moiety.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Salt Formation",
+            "reagents": "IPA, HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "55 to 5 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=O)OB(OC(=O)C)OC(=O)C1=CN(CCF)C2=C(C(=C(C=C2C1=O)F)N3C[C@H](CNC4CC4)[C@H](C3)F)OC",
+            "product_smiles": "CC(=O)OB(OC(=O)C)OC(=O)C1=CN(CCF)C2=C(C(=C(C=C2C1=O)F)N3C[C@H](CNC4CC4)[C@H](C3)F)OC.Cl",
+            "notes": "Formation of the HCl salt of Lascufloxacin derivative.",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Boronate ester hydrolysis",
+            "reagents": "EtOH, H2O",
+            "reagent_smiles": "",
+            "conditions": "72 to 7 °C",
+            "yield": "73%",
+            "reactant_smiles": "COC1=C2C(=CC(=C1N3C[C@H](CNC4CC4)[C@@H](C3)F)F)C(=O)C(=CN2CCF)C(=O)O[B](OC(=O)C)OC(=O)C.Cl",
+            "product_smiles": "COC1=C2C(=CC(=C1N3C[C@H](CNC4CC4)[C@@H](C3)F)F)C(=O)C(=CN2CCF)C(=O)O.Cl",
+            "notes": "Hydrolysis of a carboxylic acid boronate ester to form the free carboxylic acid, Lascufloxacin.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,193 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "preussochrome-a-koert-2020",
+        "molecule_name": "Preussochrome A",
+        "class": "Natural Product",
+        "author": "Koert",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Ketene dithioacetal formation",
+            "reagents": "LiHMDS, CS2, MeI",
+            "reagent_smiles": "C[Si](C)(C)N([Li])Si(C)(C)C.CI.S=C=S",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "",
+            "reactant_smiles": "COC1=C(O)C(C(=O)C)=CC=C1",
+            "product_smiles": "COC1=C(O)C(C(=O)C=C(SC)SC)=CC=C1",
+            "notes": "Conversion of a methyl ketone to a ketene dithioacetal via enolate formation, reaction with carbon disulfide, and subsequent methylation.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "KOH",
+            "reagent_smiles": "",
+            "conditions": "reflux",
+            "yield": "68%",
+            "reactant_smiles": "COC1=C(C(=CC=C1)O)C(=O)C=C(SC)SC",
+            "product_smiles": "COC1=C2C(=O)C=C(OC2=CC=C1)SC",
+            "notes": "Formation of a chromone derivative from an ortho-hydroxyketone via intramolecular cyclization, with the loss of one methylthio (SMe) group. The 68% yield is stated for '3 steps'.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Oxidation",
+            "reagents": "mCPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "90%",
+            "reactant_smiles": "COC1=C2C(=O)C=C(OC2=CC=C1)SC",
+            "product_smiles": "COC1=C2C(=O)C=C(OC2=CC=C1)S(=O)(=O)C",
+            "notes": "Oxidation of a methylthioether to a methylsulfone using mCPBA.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Nucleophilic Aromatic Substitution / Thiolation",
+            "reagents": "K2CO3",
+            "reagent_smiles": "C[C@H]([C@H]([C@H](CO)O)[OBn])S",
+            "conditions": "DMF, rt",
+            "yield": "94%",
+            "reactant_smiles": "COC1=C2C(=O)C=C(OC2=CC=C1)S(=O)(=O)C",
+            "product_smiles": "C[C@H]([C@H]([C@H](CO)O)[OBn])SC2=CC(=O)C3=C(C=CC=C3O2)OC",
+            "notes": "Nucleophilic substitution of the methyl sulfone on an activated coumarin by a chiral thiol, forming a thioether. The stereochemistry of the chiral side chain is preserved.",
+            "substeps": [
+                {
+                    "step_id": "4.1",
+                    "reaction_type": "Mitsunobu reaction",
+                    "reagents": "PPh3, DIAD, BzSH",
+                    "reagent_smiles": "",
+                    "conditions": "THF/Toluene, 0 °C to rt",
+                    "yield": "71%",
+                    "reactant_smiles": "C=C[C@H]([C@@H](C)O)O[Bn]",
+                    "product_smiles": "C=C[C@H]([C@H](C)S[Bz])O[Bn]",
+                    "notes": "Mitsunobu reaction to invert the alcohol and substitute with a thiobenzoyl group. The benzyloxy group (OBn) remains unchanged.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.2",
+                    "reaction_type": "Dihydroxylation",
+                    "reagents": "K₂[OsO₂(OH)₄], NMO·H₂O",
+                    "reagent_smiles": "",
+                    "conditions": "Acetone/H₂O, rt",
+                    "yield": "91%",
+                    "reactant_smiles": "C=C[C@H]([C@@H](C)[SBz])[OBn]",
+                    "product_smiles": "C[C@@H]([SBz])[C@H]([OBn])[C@@H](O)CO",
+                    "notes": "Alkene dihydroxylation to form a vicinal diol, retaining existing stereochemistry and introducing new stereochemistry at the dihydroxylated carbon.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "4.3",
+                    "reaction_type": "Thioester hydrolysis",
+                    "reagents": "NaOMe",
+                    "reagent_smiles": "[Na+].[O-]C",
+                    "conditions": "MeOH, 0 °C",
+                    "yield": "76%",
+                    "reactant_smiles": "C[C@H]([C@@H]([C@H](CO)O)[OBn])[SBz]",
+                    "product_smiles": "C[C@H]([C@@H]([C@H](CO)O)[OBn])[SH]",
+                    "notes": "Hydrolysis of a thiobenzoate to a thiol, preserving stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Silyl Ether Formation",
+            "reagents": "TESCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "C[C@@H]([C@H]([C@H](CO)O)OCC1=CC=CC=C1)SC2=CC(=O)C3=C(C=CC=C3O2)OC",
+            "product_smiles": "C[C@@H]([C@H]([C@H](CO[TES])O[TES])[OBn])SC2=CC(=O)C3=C(C=CC=C3O2)OC",
+            "notes": "Protection of primary and secondary hydroxyl groups with triethylsilyl (TES) ethers.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Swern Oxidation",
+            "reagents": "(COCl)2, DMSO, Et3N",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 to -40 °C",
+            "yield": "90%",
+            "reactant_smiles": "COc1cccc2c1oc(=O)c(S[C@H](C)[C@@H]([OBn])[C@H]([OTES])C[OTES])c2",
+            "product_smiles": "COc1cccc2c1oc(=O)c(S[C@H](C)[C@@H]([OBn])[C@H]([OTES])C=O)c2",
+            "notes": "Primary alcohol is oxidized to an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Pinnick oxidation",
+            "reagents": "NaClO2, NaH2PO4.H2O, 2-methylbutene",
+            "reagent_smiles": "",
+            "conditions": "tBuOH/H2O, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[OTES][C@H](C=O)[C@@H]([C@H](C)SC1=CC(=O)C2=C(C=CC=C2O1)[OMe])[OBn]",
+            "product_smiles": "[OTES][C@H]([C@@H]([C@H](C)SC1=CC(=O)C2=C(C=CC=C2O1)[OMe])[OBn])C(=O)O",
+            "notes": "Aldehyde is oxidized to a carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Esterification",
+            "reagents": "TMSCHN₂",
+            "reagent_smiles": "",
+            "conditions": "Toluene, MeOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "[OTES][C@H]([C@@H]([C@H](C)SC1=CC(=O)C2=C(C=CC=C2O1)OC)[OBn])C(=O)O",
+            "product_smiles": "[OTES][C@H]([C@@H]([C@H](C)SC1=CC(=O)C2=C(C=CC=C2O1)OC)[OBn])C(=O)OC",
+            "notes": "Methylation of a carboxylic acid to its corresponding methyl ester using trimethylsilyldiazomethane (TMSCHN₂).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "AcOH",
+            "reagent_smiles": "CC(=O)O",
+            "conditions": "",
+            "yield": "61%",
+            "reactant_smiles": "COC1=CC=CC2=C1OC(=O)C=C(S[C@@H](C)[C@H](OCC3=CC=CC=C3)[C@@H]([OTES])C(=O)OC)2",
+            "product_smiles": "COC1=CC=CC2=C1OC(=O)C=C(S[C@@H](C)[C@H](OCC3=CC=CC=C3)[C@@H](O)C(=O)OC)2",
+            "notes": "Hydrolysis of triethylsilyl (TES) ether to alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "C[C@@H]([C@H]([C@@H](C(=O)OC)O)[OBn])SC1=CC(=O)C2=C(C=CC=C2O1)OC",
+            "product_smiles": "C[C@@H]([C@H](C(=O)C(=O)OC)[OBn])SC1=CC(=O)C2=C(C=CC=C2O1)OC",
+            "notes": "Oxidation of a secondary alcohol to a ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "CH2Cl2",
+            "reagent_smiles": "Cl[Sn](Cl)(Cl)Cl",
+            "conditions": "30 °C",
+            "yield": "62% (2 steps)",
+            "reactant_smiles": "C[C@@H]([C@H](C(=O)C(=O)OC)OCC1=CC=CC=C1)SC2=CC(=O)C3=C(C=CC=C3O2)[OMe]",
+            "product_smiles": "C[C@H]1[C@H]([C@](C2=C(OC3=CC=CC(=C3C2=O)[OMe])S1)(C(=O)OC)O)OCC4=CC=CC=C4",
+            "notes": "Intramolecular cyclization of a thiocoumarin derivative via a Lewis acid (SnCl4) to form a fused thiopyran ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection / Demethylation",
+            "reagents": "",
+            "reagent_smiles": "B(Cl)(Cl)Cl",
+            "conditions": "CH2Cl2, -20 °C",
+            "yield": "61%",
+            "reactant_smiles": "COC1=CC=C2C(=O)C3=C(OC2=C1)S[C@H](C)[C@@H](OCc4ccccc4)[C@@]3(O)C(=O)OC",
+            "product_smiles": "OC1=CC=C2C(=O)C3=C(OC2=C1)S[C@H](C)[C@@H](O)[C@@]3(O)C(=O)OC",
+            "notes": "Benzyl ether deprotection and methyl ether demethylation using boron trichloride.",
+            "substeps": []
+        }
+    ]
+}

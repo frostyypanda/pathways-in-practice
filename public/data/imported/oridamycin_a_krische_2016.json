@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "oridamycin-a-krische-2016",
+        "molecule_name": "Oridamycin A",
+        "class": "Natural Product",
+        "author": "Krische",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Catalytic Asymmetric Allylic Alkylation (AA) / Alcohol Addition to Epoxide (Isoprene Oxide)",
+            "reagents": "Ir catalyst (drawn), K3PO4",
+            "reagent_smiles": "CC1(C)OC1",
+            "conditions": "THF, 60 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=O)CCCO",
+            "product_smiles": "C=C[C@@](C)(CO)[C@H](CCC(=O)C)O",
+            "notes": "An acyclic alcohol undergoes a catalytic allylic alkylation with isoprene oxide, leading to the formation of a diol with a ketone and an alkene. The reaction is stereoselective, creating two new chiral centers.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection / Silylation",
+            "reagents": "Et3N",
+            "reagent_smiles": "C=CC[Si](Me)(Me)Cl",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "C=C[C@@](C)(CO)[C@@H](CCC(=O)C)O",
+            "product_smiles": "C=CC[Si](Me)(Me)OC[C@@](C)(C=C)[C@@H](CCC(=O)C)O",
+            "notes": "Selective silylation of the primary alcohol with allyldimethylsilyl chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Ring-Closing Metathesis (RCM)",
+            "reagents": "Grubbs-II",
+            "reagent_smiles": "Cl[Ru](Cl)(P(C1CCCCC1)(C2CCCCC2)C3CCCCC3)(C4=N(C5=C(C)C=C(C)C=C5C)CCN4C6=C(C)C=C(C)C=C6C)=CC7=CC=CC=C7",
+            "conditions": "PhMe, 100 °C",
+            "yield": "79%",
+            "reactant_smiles": "C=CCC[Si](C)(C)OC[C@@](C)(C=C)[C@H](CCC(=O)C)O",
+            "product_smiles": "CC(=O)CC[C@H](O)[C@@]1(C)C=CC[Si](C)(C)OC1",
+            "notes": "Reactant SMILES was corrected to accurately represent a homoallyldimethylsilyl ether (C=CCC[Si]) as depicted in the reactant image. The provided reagent SMILES was identified as junk and replaced with the correct SMILES for Grubbs-II catalyst. Product SMILES was corrected to maintain the 'R' stereochemistry on the quaternary carbon ([C@@]1(C)), consistent with the reactant and the product image. A notable chemical inconsistency exists between the drawn reactant and product structures: the reactant, possessing a homoallyldimethylsilyl group and a vinyl group, would typically undergo RCM to form an 8-membered ring. However, the product depicted shows a 6-membered cyclic silyl ether, which would instead result from the RCM of a vinyl group with an *allyldimethylsilyl* group. The generated SMILES accurately represent their respective drawings, but the overall transformation as drawn contains this discrepancy.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sakurai Allylation",
+            "reagents": "ZnCl2, CH2Cl2",
+            "reagent_smiles": "[Zn+2].[Cl-].[Cl-]",
+            "conditions": "25 °C",
+            "yield": "92%",
+            "reactant_smiles": "CC(=O)CC[C@@H](O)[C@@]1(C)CH2O[Si](C)(C)OCH2/C=C\\C1",
+            "product_smiles": "C=C[C@H]1CC[C@@](C)(O[C@H]2CC[C@H](CO)C12)",
+            "notes": "Sakurai Allylation of a ketone-alcohol with a cyclic silyl ether to form a bicyclic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Suzuki Cross-Coupling",
+            "reagents": "Pd(dppf)Cl2, KF, H2O, THF, DMF",
+            "reagent_smiles": "C1CCC2CCCC1B2.Brc1ccc2[nH]c3ccccc3c2c1",
+            "conditions": "25 °C, 50 °C",
+            "yield": "66%",
+            "reactant_smiles": "OC[C@](C)([C@@H]1C=C)C[C@@H]2C[C@@]1(C)OC2",
+            "product_smiles": "OC[C@](C)([C@@H]1CC[nH]2c3ccccc3c4ccc(C1)cc24)C[C@@H]5C[C@@]1(C)O5",
+            "notes": "The vinyl group of the reactant undergoes hydroboration followed by Suzuki cross-coupling with 2-bromocarbazole to form a new C-C bond, extending the carbon chain with a carbazole moiety.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX, DMSO",
+            "reagent_smiles": "",
+            "conditions": "50 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@@]1(C)[C@H]2CC[C@H](O1)[C@H](C)[C@@](CO)(CC3=CC4=C(C=C3)C5=C(C=CC=C5)N4)C2",
+            "product_smiles": "C[C@@]1(C)[C@H]2CC[C@H](O1)[C@H](C)C(=O)(CC3=CC4=C(C=C3)C5=C(C=CC=C5)N4)C2",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Pinnick oxidation",
+            "reagents": "NaClO4, NaH2PO4.H2O, resorcinol",
+            "reagent_smiles": "",
+            "conditions": "DMSO, H2O, 0 °C",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "c1ccc2c(c1)[nH]c3ccc(CC[C@H]4[C@@](C)(C=O)C5CC[C@]6(C)O[C@]4(C)C56)cc32",
+            "product_smiles": "c1ccc2c(c1)[nH]c3ccc(CC[C@H]4[C@@](C)(C(=O)O)C5CC[C@]6(C)O[C@]4(C)C56)cc32",
+            "notes": "Pinnick oxidation of an aldehyde to a carboxylic acid, preserving all stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Friedel-Craft cyclization",
+            "reagents": "TiCl4",
+            "reagent_smiles": "",
+            "conditions": "DCE, 75 °C",
+            "yield": "81%",
+            "reactant_smiles": "C[C@@]1(C(=O)O)[C@H]2CC[C@@H]3[C@H]4O[C@H]4[C@@H](C[C@H]3CCC5=CC6=C(N5)C=CC=C6)C[C@H]2C",
+            "product_smiles": "C[C@@]12CC[C@@H]([C@](C)([C@@H]2CCC3=CC4=C(C=C31)C5=C(C=CC=C5)N4)C(=O)O)O",
+            "notes": "Intramolecular Friedel-Crafts cyclization forms a new six-membered aliphatic ring, and the epoxide opens to a hydroxyl group catalyzed by TiCl4.",
+            "substeps": []
+        }
+    ]
+}

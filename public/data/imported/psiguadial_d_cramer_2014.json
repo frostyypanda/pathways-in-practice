@@ -1,0 +1,108 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "psiguadial-d-cramer-2014",
+        "molecule_name": "Psiguadial D",
+        "class": "Natural Product",
+        "author": "Cramer",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Dihydroxylation",
+            "reagents": "KMnO4, NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1=C[C@H]2[C@@H](CC1)C2(C)C",
+            "product_smiles": "CC1(C)[C@@H]2CC[C@](C)([C@H]([C@@H]21)O)O",
+            "notes": "Dihydroxylation of the alkene. The product shows anti-dihydroxylation, which is typically not observed with KMnO4 (which gives syn-dihydroxylation). The SMILES reflects the drawn anti-diol product.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Vicinal Diol Cleavage / Oxidative Rearrangement",
+            "reagents": "NaIO4, SiO2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "98%",
+            "reactant_smiles": "C[C@@H]1CC[C@@H]2[C@H](O)[C@@](O)(C)[C@H]1C(C)(C)C2",
+            "product_smiles": "CC(=O)CCC[C@@H]1[C@H](C=O)C1(C)C",
+            "notes": "Oxidative cleavage of a vicinal diol leading to a ring-opened product with subsequent cyclopropane formation/rearrangement, resulting in an aldehyde and a methyl ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Wittig reaction",
+            "reagents": "BuLi, LiBr",
+            "reagent_smiles": "[P+](c1ccccc1)(c2ccccc2)c3ccccc3C(C)CCC1OCCO1",
+            "conditions": "-100 °C",
+            "yield": "69%",
+            "reactant_smiles": "CC(=O)CC[C@@H]1[C@H](C=O)C1(C)C",
+            "product_smiles": "C/C(=C\\[C@H]1[C@@H](CCC(=O)C)C1(C)C)/CCC2OCCO2",
+            "notes": "Wittig reaction between an aldehyde and a phosphonium ylide (generated in situ from triphenylphosphonium salt and base) to form an E-alkene. The ketone and acetal groups remain unaffected.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "pTsOH",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "94%",
+            "reactant_smiles": "C/C(=C\\[C@H]1[C@H](CCC(=O)C)C1(C)C)/CCC2OCCO2",
+            "product_smiles": "C/C(=C\\[C@H]1[C@H](CCC(=O)C)C1(C)C)/CCC=O",
+            "notes": "Acetal deprotection to aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Intramolecular Reductive Cyclization",
+            "reagents": "SmI2",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "61%",
+            "reactant_smiles": "C/C(=C\\[C@H]1[C@H](CCC(=O)C)C1(C)C)/CCC=O",
+            "product_smiles": "CC1=C2[C@H]3C[C@H](O)[C@H](C)C2(C)[C@H]1C[C@@H](O)CC3(C)C",
+            "notes": "Intramolecular samarium diiodide mediated reductive coupling (Barbier-type reaction) of a keto-aldehyde and an alkene, forming a complex polycyclic diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Cyclic Thiocarbonate Formation",
+            "reagents": "CSCl2, DMAP",
+            "reagent_smiles": "ClC(=S)Cl.CN(C)C1=CC=NC=C1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC1=C2[C@H]3[C@@H](CC[C@]2(C)[C@@H](O)[C@H](O)CC1)C3(C)C",
+            "product_smiles": "CC1=C2[C@H]3[C@@H](CC[C@]2(C)[C@@H]4OC(=S)O[C@H]4CC1)C3(C)C",
+            "notes": "Formation of a cyclic thiocarbonate from a vicinal diol using thiophosgene and DMAP.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Corey-Winter type deoxygenation/ring expansion",
+            "reagents": "",
+            "reagent_smiles": "CN1CCP(c2ccccc2)N1",
+            "conditions": "",
+            "yield": "66%",
+            "reactant_smiles": "C/C/1=C\\[C@H](C)2[C@@H]3C(C)(C)C3CC[C@@]4[C@@H](CC2)OC(=S)O4",
+            "product_smiles": "C/C/1=C\\CC/C(=C/[C@H]2[C@@H](CC1)C2(C)C)/C",
+            "notes": "Deoxygenation of cyclic thiocarbonate via phosphoramidite, resulting in ring expansion to a macrocyclic diene and removal of the thiocarbonate moiety. The reaction occurs in 2 steps, and the 66% yield is for these two steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Complex cascade cyclization",
+            "reagents": "MeOH",
+            "reagent_smiles": "O=Cc1c(O)c([CH](OC)c2ccccc2)c(O)c(C=O)c1O",
+            "conditions": "40 °C",
+            "yield": "26%",
+            "reactant_smiles": "C/C/1=C\\CC/C(=C/[C@H]2[C@@H](CC1)C2(C)C)/C",
+            "product_smiles": "CC(C)[C@@H]1CCC/C(=C/C[C@@]2(C)[C@H]([C@H](C)CC1)OC3=C(C=O)C(O)=C(C=O)C(O)=C3[C@H]2c4ccccc4)/C",
+            "notes": "Cascade cyclization of a bicyclic terpene with a functionalized aromatic aldehyde, forming Psiguadial D.",
+            "substeps": []
+        }
+    ]
+}

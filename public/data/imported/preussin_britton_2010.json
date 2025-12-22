@@ -1,0 +1,120 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "preussin-britton-2010",
+        "molecule_name": "Preussin",
+        "class": "Natural Product",
+        "author": "Britton",
+        "year": 2010
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Tosylation",
+            "reagents": "",
+            "reagent_smiles": "Cc1ccc(S(=O)(=O)Cl)cc1.n1ccccc1",
+            "conditions": "0 °C",
+            "yield": "54%",
+            "reactant_smiles": "C1CC(=O)N[C@@H]1CO",
+            "product_smiles": "C1CC(=O)N[C@@H]1C[OTs]",
+            "notes": "Tosylation of a primary alcohol to form a tosylate ester, retaining stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Substitution/Rearrangement (formal)",
+            "reagents": "THF",
+            "reagent_smiles": "CCCCCCCCCC#[Li]",
+            "conditions": "-78 °C to rt",
+            "yield": "82%",
+            "reactant_smiles": "O=C1NCC[C@@H]1CO[OTs]",
+            "product_smiles": "CCCCCCCCC[C@@H]1CCC(=O)N1",
+            "notes": "Formal replacement of a chiral (R)-methylene tosylate group with a (R)-nonyl group at the same carbon center. The lithium acetylide reagent, Li-C≡C-C9H19, seems to act as a source for the C9H19 group, with the acetylide carbons not incorporated into the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "N-Acylation",
+            "reagents": "n-BuLi, ClCO2Me",
+            "reagent_smiles": "",
+            "conditions": "THF, hexane, -78 °C",
+            "yield": "97%",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CCC(=O)N1",
+            "product_smiles": "CCCCCCCCC[C@@H]1CCC(=O)N1C(=O)OC",
+            "notes": "N-acylation of a pyrrolidinone using n-BuLi and methyl chloroformate.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "LiBEt3H",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 - 0 °C",
+            "yield": "",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CCC(=O)N1C(=O)OC",
+            "product_smiles": "CCCCCCCCC[C@@H]1CCC(N1C(=O)OC)O",
+            "notes": "Reduction of a lactam carbonyl to a hemiaminal using Lithium Triethylborohydride. The stereochemistry of the newly formed alcohol is unspecified (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Acetalization",
+            "reagents": "CSA, Me2C(OMe)2",
+            "reagent_smiles": "CC(OC)(OC)C",
+            "conditions": "CH2Cl2, 0°C",
+            "yield": "68% (2 steps)",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CCC(O)N1C(=O)OC",
+            "product_smiles": "CCCCCCCCC[C@@H]1CCC(OC)N1C(=O)OC",
+            "notes": "O-methylation of a hemiaminal to an O-methylated hemiaminal via transacetalization with 2,2-dimethoxypropane.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Elimination",
+            "reagents": "TMSOTf, DIPEA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "89%",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CCC(OC)N1C(=O)OC",
+            "product_smiles": "O=C(OC)N1C=CC[C@@H]1CCCCCCCCC",
+            "notes": "Dehydroalkoxylation of a pyrrolidine derivative to form a 2-pyrroline.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Paterno-Büchi reaction",
+            "reagents": "hv",
+            "reagent_smiles": "O=Cc1ccccc1",
+            "conditions": "MeCN",
+            "yield": "53%",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1CC=CN1C(=O)OC",
+            "product_smiles": "CCCCCCCCC[C@@H]1C[C@H]2[C@H]([C@@H](O2)c3ccccc3)N1C(=O)OC",
+            "notes": "[2+2] cycloaddition between alkene (pyrroline) and carbonyl (benzaldehyde) to form an oxetane.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation / Hydrogenolysis",
+            "reagents": "H₂",
+            "reagent_smiles": "O[Pd]O.CO",
+            "conditions": "MeOH, rt",
+            "yield": "81%",
+            "reactant_smiles": "CCCCCCCCC[C@@H]1C[C@H]2[C@H]([C@H](O2)[Ph])[C@@H]1N(C(=O)OC)",
+            "product_smiles": "CCCCCCCCC[C@@H]1C[C@H](O)[C@H](C[Ph])N1C(=O)OC",
+            "notes": "Reductive opening of a bicyclic ether (oxolane) to form a hydroxyl group and a benzyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reduction (Carbamate to Amine)",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "THF, 66°C",
+            "yield": "91%",
+            "reactant_smiles": "O=C(OC)N1[C@@H](CCCCCCCCC)C[C@@H](O)[C@@H](Cc2ccccc2)1",
+            "product_smiles": "CN1[C@@H](CCCCCCCCC)C[C@@H](O)[C@@H](Cc2ccccc2)1",
+            "notes": "Reduction of an N-carbomethoxy pyrrolidine to an N-methyl pyrrolidine.",
+            "substeps": []
+        }
+    ]
+}

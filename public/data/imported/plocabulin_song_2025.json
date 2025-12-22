@@ -1,0 +1,205 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "plocabulin-song-2025",
+        "molecule_name": "Plocabulin",
+        "class": "Natural Product",
+        "author": "Song",
+        "year": 2025
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Finkelstein reaction (Halogen Exchange)",
+            "reagents": "NaI",
+            "reagent_smiles": "",
+            "conditions": "acetone, 75°C",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)C[C@H](O)CCl",
+            "product_smiles": "CCOC(=O)C[C@H](O)CI",
+            "notes": "Chloride is exchanged for iodide at the primary alkyl halide position. The stereochemistry at the adjacent chiral center (bearing the hydroxyl group) is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alcohol Protection / Silylation",
+            "reagents": "TBDPSCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "87% (2 steps)",
+            "reactant_smiles": "IC[C@@H](O)CC(=O)OCC",
+            "product_smiles": "IC[C@@H](O[TBDPS])CC(=O)OCC",
+            "notes": "A secondary alcohol is protected as a tert-butyldiphenylsilyl (TBDPS) ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Cross-coupling",
+            "reagents": "vinylMgBr, CuI, P(OEt)3, DMPU",
+            "reagent_smiles": "",
+            "conditions": "THF, -45 °C",
+            "yield": "82%",
+            "reactant_smiles": "CCOC(=O)C[C@@H](C[I])O[TBDPS]",
+            "product_smiles": "C=CCC[C@@H](CC(=O)OCC)O[TBDPS]",
+            "notes": "Vinyl Grignard cross-coupling with an alkyl iodide, catalyzed by copper.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ozonolysis",
+            "reagents": "O₃, PPh₃",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "86%",
+            "reactant_smiles": "C=CC[C@@H](CC(=O)OCC)[OTBDPS]",
+            "product_smiles": "CCOC(=O)C[C@@H](CC=O)[OTBDPS]",
+            "notes": "Ozonolysis of a terminal alkene to form an aldehyde.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Wittig reaction",
+            "reagents": "(Ph3PCH2I)I, NaHMDS",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "52%",
+            "reactant_smiles": "CCOC(=O)C[C@@H](CC=O)[OTBDPS]",
+            "product_smiles": "CCOC(=O)C[C@@H](C/C=C/I)[OTBDPS]",
+            "notes": "Wittig reaction to convert an aldehyde to a Z-vinyl iodide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Reduction",
+            "reagents": "DIBAL-H",
+            "reagent_smiles": "",
+            "conditions": "DCM, -78 °C",
+            "yield": "91%",
+            "reactant_smiles": "CCOC(=O)C[C@H](C/C=C/I)[OTBDPS]",
+            "product_smiles": "O=CCC[C@H](C/C=C/I)[OTBDPS]",
+            "notes": "Ester reduction to aldehyde using DIBAL-H, maintaining the configuration of the chiral center and the geometry of the alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig reaction",
+            "reagents": "(Ph3PCH2CH3)I, n-BuLi",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "71%",
+            "reactant_smiles": "[OTBDPS][C@H](C/C=C\\I)CC=O",
+            "product_smiles": "[OTBDPS][C@H](C/C=C\\I)C/C=C\\C",
+            "notes": "Wittig reaction of an aldehyde to form a Z-alkene. The chiral center configuration and existing Z-alkene stereochemistry are preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ullmann-type C-N Coupling",
+            "reagents": "CuI, DMEDA, Cs2CO3",
+            "reagent_smiles": "CC(C)(C)[C@H](NC(=O)OC(C)(C)C)C(=O)N",
+            "conditions": "DME, 55 °C",
+            "yield": "89%",
+            "reactant_smiles": "C/C=C\\C[C@@H](C/C=C\\I)[OTBDPS]",
+            "product_smiles": "C/C=C\\C[C@@H](C/C=C\\NC(=O)[C@H](C(C)(C)C)N[Boc])[OTBDPS]",
+            "notes": "Copper-catalyzed coupling of a vinyl iodide with Boc-protected tert-leucinamide, retaining stereochemistry at both chiral centers and alkene geometries.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection",
+            "reagents": "ethylene glycol",
+            "reagent_smiles": "",
+            "conditions": "200 °C",
+            "yield": "91%",
+            "reactant_smiles": "C/C=C\\C[C@@H](C/C=C\\NC(=O)[C@H](C(C)(C)C)N[Boc])[OTBDPS]",
+            "product_smiles": "C/C=C\\C[C@@H](C/C=C\\NC(=O)[C@H](C(C)(C)C)N)[OTBDPS]",
+            "notes": "Boc deprotection via thermolysis in ethylene glycol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amide Coupling",
+            "reagents": "TATU, HOAt, DIPEA",
+            "reagent_smiles": "I/C=C/C=C/C(=O)O",
+            "conditions": "DCM, DMF, 25 °C",
+            "yield": "80%",
+            "reactant_smiles": "C/C=C\\C[C@@H](C/C=C\\NC(=O)[C@H](C(C)(C)C)N)[OTBDPS]",
+            "product_smiles": "C/C=C\\C[C@@H](C/C=C\\NC(=O)[C@H](C(C)(C)C)NC(=O)/C=C/C=C/I)[OTBDPS]",
+            "notes": "Amide bond formation between a primary amine and a carboxylic acid.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Hydroiodination",
+                    "reagents": "NaI",
+                    "reagent_smiles": "CC(=O)O",
+                    "conditions": "AcOH, 70 °C",
+                    "yield": "90%",
+                    "reactant_smiles": "C#CC(=O)OCC",
+                    "product_smiles": "CCOC(=O)/C=C\\I",
+                    "notes": "Hydroiodination of an alkyne (ethyl propiolate) to form an alpha,beta-unsaturated iodo-ester (ethyl (Z)-3-iodoacrylate).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Ester Reduction",
+                    "reagents": "DIBAL-H",
+                    "reagent_smiles": "",
+                    "conditions": "DCM, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)/C=C\\I",
+                    "product_smiles": "O=C/C=C\\I",
+                    "notes": "Partial reduction of an alpha,beta-unsaturated ester to an aldehyde using DIBAL-H, retaining the Z-stereochemistry of the double bond.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Horner-Wadsworth-Emmons Reaction",
+                    "reagents": "KHMDS, 18-crown-6",
+                    "reagent_smiles": "CCOC(=O)CP(=O)(OCC(F)(F)F)OCC(F)(F)F",
+                    "conditions": "THF, -78 °C",
+                    "yield": "66%",
+                    "reactant_smiles": "I/C=C/C=O",
+                    "product_smiles": "I/C=C/C=C/C(=O)OCC",
+                    "notes": "Horner-Wadsworth-Emmons reaction of an alpha,beta-unsaturated aldehyde with a phosphonate ester to form a conjugated diene ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.4",
+                    "reaction_type": "Ester Hydrolysis",
+                    "reagents": "LiOH, MeOH, H2O",
+                    "reagent_smiles": "",
+                    "conditions": "40 °C",
+                    "yield": "91%",
+                    "reactant_smiles": "CCOC(=O)/C=C/C=C/I",
+                    "product_smiles": "OC(=O)/C=C/C=C/I",
+                    "notes": "Base-catalyzed hydrolysis of an ethyl ester to a carboxylic acid, retaining the diene and iodide functionality and stereochemistry.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 25 °C",
+            "yield": "82%",
+            "reactant_smiles": "C/C=C\\C[C@H](C/C=C\\NC(=O)[C@@H](C(C)(C)C)NC(=O)/C=C\\C=C/C(=C\\[C@@H](C)[C@@H]1CC=C(C(=O)O1)OC)/C)[OTBDPS]",
+            "product_smiles": "C/C=C\\C[C@H](C/C=C\\NC(=O)[C@@H](C(C)(C)C)NC(=O)/C=C\\C=C/C(=C\\[C@@H](C)[C@@H]1CC=C(C(=O)O1)OC)/C)O",
+            "notes": "Deprotection of a TBDPS silyl ether to a hydroxyl group.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Carbamate formation",
+            "reagents": "TCAI, Al2O3",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C, 25 °C",
+            "yield": "98%",
+            "reactant_smiles": "C/C=C/C[C@@H](C/C=C/NC(=O)[C@H](C(C)(C)C)NC(=O)/C=C/C=C/C(=C/[C@H](C)[C@@H]1CC=C(C(=O)O1)OC)/C)O",
+            "product_smiles": "C/C=C/C[C@@H](C/C=C/NC(=O)[C@H](C(C)(C)C)NC(=O)/C=C/C=C/C(=C/[C@H](C)[C@@H]1CC=C(C(=O)O1)OC)/C)OC(=O)N",
+            "notes": "Secondary alcohol is converted into a carbamate.",
+            "substeps": []
+        }
+    ]
+}

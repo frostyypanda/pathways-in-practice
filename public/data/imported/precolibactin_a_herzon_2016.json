@@ -1,0 +1,157 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "precolibactin-a-herzon-2016",
+        "molecule_name": "Precolibactin A",
+        "class": "Natural Product",
+        "author": "Herzon",
+        "year": 2016
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Hantzsch Thiazole Synthesis",
+            "reagents": "BrCH₂(O)CO₂H, CaCO₃",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 23 °C",
+            "yield": "74%",
+            "reactant_smiles": "[Boc]NCC(=S)N",
+            "product_smiles": "[Boc]NCC1=CSC(=N1)C(=O)[OEt]",
+            "notes": "Formation of a thiazole ring from a Boc-protected thioamide and bromoacetic acid in ethanol, yielding an ethyl ester. Note on reagent: The reagent is listed as BrCH₂(O)CO₂H (bromoacetic acid), but the product contains an ethyl ester (COOEt), suggesting the actual reagent was ethyl bromoacetate (BrCH₂COOEt) or in situ esterification occurred.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Boc Deprotection, Ester Hydrolysis",
+            "reagents": "HCl",
+            "reagent_smiles": "[ClH]",
+            "conditions": "CH2Cl2, dioxane",
+            "yield": "99%",
+            "reactant_smiles": "CCOC(=O)C1=CSC(=N1)CN[Boc]",
+            "product_smiles": "[NH3+]CC1=NC=C(C(=O)O)S1.[Cl-]",
+            "notes": "Deprotection of Boc group from amine and hydrolysis of ethyl ester to carboxylic acid under acidic conditions.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide Coupling",
+            "reagents": "CF3CO2Ag, Et3N",
+            "reagent_smiles": "[Boc]NC1(CC1)C(=O)CC(=O)SC(C)(C)C",
+            "conditions": "DMF, 0 °C",
+            "yield": "55%",
+            "reactant_smiles": "[NH3+]CC1=NC(=CS1)C(=O)O.[Cl-]",
+            "product_smiles": "[Boc]NC1(CC1)C(=O)CC(=O)NCC2=NC(=CS2)C(=O)O",
+            "notes": "Amide bond formation via coupling of a primary amine (thiazole derivative) with a thioester (cyclopropyl derivative), replacing the thiolate with the amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, dioxane",
+            "yield": "99%",
+            "reactant_smiles": "[Boc]NC1(CC1)C(=O)CC(=O)NCC2=NC(=CS2)C(=O)O",
+            "product_smiles": "NC1(CC1)C(=O)CC(=O)NCC2=NC(=CS2)C(=O)O",
+            "notes": "Boc group deprotection using HCl.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Amide bond formation / Thioester acylation",
+            "reagents": "CF3CO2Ag, Et3N",
+            "reagent_smiles": "CCCCCCCCCCCCC(=O)N[C@H](CCC(=O)N)C(=O)N[C@@H](C)CC(=O)CC(=O)SC(C)(C)C",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "C1CC1(N)C(=O)CC(=O)NCC2=NC(=CS2)C(=O)O",
+            "product_smiles": "CCCCCCCCCCCCC(=O)N[C@H](CCC(=O)N)C(=O)N[C@@H](C)CC(=O)CC(=O)NC1(CC1)C(=O)CC(=O)NCC2=NC(=CS2)C(=O)O",
+            "notes": "Acylation of the cyclopropane-containing amino amide with a peptide-beta-keto thioester, forming a new amide bond and incorporating the entire peptide fragment.",
+            "substeps": [
+                {
+                    "step_id": "5.1",
+                    "reaction_type": "Amide coupling",
+                    "reagents": "EDC-HCl, HOBt, DIPEA",
+                    "reagent_smiles": "C=CCC[C@@H](C)[NH3+].Cl-",
+                    "conditions": "THF, rt",
+                    "yield": "84%",
+                    "reactant_smiles": "[Boc]N[C@H](CC(=O)N)C(=O)O",
+                    "product_smiles": "C=CCC[C@@H](C)NC(=O)[C@H](CC(=O)N)N[Boc]",
+                    "notes": "Amide bond formation between a Boc-protected amino acid and a chiral amine hydrochloride using EDC-HCl/HOBt/DIPEA coupling reagents.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.2",
+                    "reaction_type": "Boc Deprotection",
+                    "reagents": "HCl",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, dioxane",
+                    "yield": "99%",
+                    "reactant_smiles": "C=CCC[C@H](C)NC(=O)[C@@H](CC(=O)N)N[Boc]",
+                    "product_smiles": "C=CCC[C@H](C)NC(=O)[C@@H](CC(=O)N)[NH3+].[Cl-]",
+                    "notes": "Deprotection of Boc-protected amine using HCl to form an ammonium hydrochloride salt.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.3",
+                    "reaction_type": "Amide formation / Acylation",
+                    "reagents": "myristoyl chloride, Et3N, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "82%",
+                    "reactant_smiles": "C=CCC[C@H](C)NC(=O)[C@@H]([NH3+])CC(=O)N.[Cl-]",
+                    "product_smiles": "CCCCCCCCCCCCC(=O)N[C@@H](CC(=O)N)C(=O)N[C@H](C)CCC=C",
+                    "notes": "Amide bond formation at the alpha-amine of an asparagine derivative using myristoyl chloride, with preservation of existing stereocenters.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.4",
+                    "reaction_type": "Oxidative Cleavage",
+                    "reagents": "NaIO4, RuCl3",
+                    "reagent_smiles": "[Na+].[O-]I(=O)(=O)=O.Cl[Ru](Cl)Cl.O.CCOC(=O)C.CC#N",
+                    "conditions": "H2O, EtOAc, CH3CN, 50 C",
+                    "yield": "95%",
+                    "reactant_smiles": "CCCCCCCCCCCCCCC(=O)N[C@H](CC(=O)N)C(=O)N[C@@H](C)CCCC=C",
+                    "product_smiles": "CCCCCCCCCCCCCCC(=O)N[C@H](CC(=O)N)C(=O)N[C@@H](C)CCCC(=O)O",
+                    "notes": "Oxidative cleavage of a terminal alkene to a carboxylic acid using Lemieux-Johnson conditions (NaIO4, RuCl3).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "5.5",
+                    "reaction_type": "Carboxylic Acid Coupling / Beta-Keto Thioester Formation",
+                    "reagents": "CDI, Mg(OEt)2",
+                    "reagent_smiles": "O=C(O)CC(=O)[StBu]",
+                    "conditions": "",
+                    "yield": "95%",
+                    "reactant_smiles": "CCCCCCCCCCCCC(=O)N[C@H](CC(=O)N)C(=O)N[C@@H](C)CCC(=O)O",
+                    "product_smiles": "CCCCCCCCCCCCC(=O)N[C@H](CC(=O)N)C(=O)N[C@@H](C)CCC(=O)CH2C(=O)[StBu]",
+                    "notes": "The carboxylic acid of the reactant is coupled with a beta-keto thioester reagent to extend the chain, forming a new C-C bond and a beta-keto thioester moiety. The stereochemistry of the chiral centers is preserved.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Intramolecular Cyclization",
+            "reagents": "K2CO3, CH3OH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "67%",
+            "reactant_smiles": "CCCCCCCCCCCCC(=O)N[C@H](CC(=O)N)C(=O)N[C@H](C)CCC(=O)CC(=O)CNC1(CC1)C(=O)CC(=O)NCC2=NC(=CS2)C(=O)O",
+            "product_smiles": "CCCCCCCCCCCCC(=O)N[C@H](CC(=O)N)C(=O)N[C@H](C)CCC1=C2C(=CC(=O)N1CC3=NC(=CS3)C(=O)O)C4(CC4)NC2=O",
+            "notes": "Intramolecular base-catalyzed cyclization of a linear precursor to form a complex bicyclic core, involving the formation of new C-C and C-N bonds.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Amide Coupling / Peptide Synthesis",
+            "reagents": "EDC HCl, NHS, Et3N, L-(+)-cysteine, DMF",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "89%",
+            "reactant_smiles": "CCCCCCCCCCC(=O)N[C@H](CC(=O)N)C(=O)N[C@@H](C)CCC1=CC(=O)NC(=O)C(C2CC2)=C1N(CC3=NC(=CS3)C(=O)O)",
+            "product_smiles": "CCCCCCCCCCC(=O)N[C@H](CC(=O)N)C(=O)N[C@@H](C)CCC1=CC(=O)NC(=O)C(C2CC2)=C1N(CC3=NC(=CS3)C(=O)N[C@H](CS)C(=O)O)",
+            "notes": "Amide coupling of the thiazole carboxylic acid with L-cysteine using EDC/NHS coupling reagents.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "thalidomide-grunenthal-1957",
+        "molecule_name": "Thalidomide",
+        "class": "Natural Product",
+        "author": "Grunenthal",
+        "year": 1957
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Esterification",
+            "reagents": "PhOH, DCC, pyridine",
+            "reagent_smiles": "",
+            "conditions": "EtOAc, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]NC(CCC(=O)O[Bn])C(=O)O",
+            "product_smiles": "[Boc]NC(CCC(=O)O[Bn])C(=O)O[Ph]",
+            "notes": "Esterification of a carboxylic acid with phenol using DCC coupling.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection (Benzyl ester hydrogenolysis)",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "93% (2 steps)",
+            "reactant_smiles": "[Boc]NC(CCC(=O)O[Bn])C(=O)O[Ph]",
+            "product_smiles": "[Boc]NC(CCC(=O)O)C(=O)O[Ph]",
+            "notes": "Catalytic hydrogenation of the benzyl ester to a carboxylic acid, while preserving the Boc-amine and phenyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Amide formation, Cyclization",
+            "reagents": "BnONH2, EDC, NEt3",
+            "reagent_smiles": "Oc1nccn2c1cccc2",
+            "conditions": "DCM, rt",
+            "yield": "71%",
+            "reactant_smiles": "[Boc]NHC(CCC(=O)O)C(=O)O[Ph]",
+            "product_smiles": "[Boc]NHC1CCC(=O)N(O[Bn])C1=O",
+            "notes": "Intramolecular cyclization forming a glutarimide derivative via amide coupling with benzyloxyamine and subsequent displacement of phenyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "HCl gas",
+            "reagent_smiles": "",
+            "conditions": "DCM, rt",
+            "yield": "",
+            "reactant_smiles": "[Boc]NC1CCC(=O)N(O[Bn])C1=O",
+            "product_smiles": "NC1CCC(=O)N(O[Bn])C1=O",
+            "notes": "Deprotection of a Boc-protected amine using HCl gas.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Imide formation",
+            "reagents": "NEt3, 4A MS",
+            "reagent_smiles": "C1=CC2=C(C=C1)C(=O)OC2=O",
+            "conditions": "THF, reflux",
+            "yield": "70% (2 steps)",
+            "reactant_smiles": "C1=CC=C(C=C1)CON2C(=O)CCC(C2=O)N",
+            "product_smiles": "C1=CC=C(C=C1)CON2C(=O)CCC(C2=O)N3C(=O)C4=C(C=CC=C4)C3=O",
+            "notes": "Primary amine reacts with phthalic anhydride to form an imide, replacing the amine with the phthalimide group.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Hydrogenolysis",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "",
+            "conditions": "MeOH",
+            "yield": "89%",
+            "reactant_smiles": "C1=CC=C(C=C1)CON2C(=O)CCC(C2=O)N3C(=O)C4=C(C=CC=C4)C3=O",
+            "product_smiles": "C1=CC2=C(C=C1)C(=O)N(C3CCC(=O)N(C3=O)O)C2=O",
+            "notes": "Deprotection of N-benzyloxyglutarimide to N-hydroxyglutarimide via catalytic hydrogenation.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Deoxygenation",
+            "reagents": "NEt3, DMAP",
+            "reagent_smiles": "O=C(CBr)c1ccccc1",
+            "conditions": "MeCN",
+            "yield": "80%",
+            "reactant_smiles": "O=C1C2=CC=CC=C2C(=O)N1C3CCC(=O)N(O)C3=O",
+            "product_smiles": "O=C1C2=CC=CC=C2C(=O)N1C3CCC(=O)NC3=O",
+            "notes": "Deoxygenation of N-hydroxyglutarimide derivative to form thalidomide.",
+            "substeps": []
+        }
+    ]
+}

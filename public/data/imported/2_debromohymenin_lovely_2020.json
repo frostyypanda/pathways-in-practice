@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "2-debromohymenin-lovely-2020",
+        "molecule_name": "2-Debromohymenin",
+        "class": "Natural Product",
+        "author": "Lovely",
+        "year": 2020
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Iodination",
+            "reagents": "I2, KI, H2O, NaOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CN=CN1",
+            "product_smiles": "C1=NC(=C(I)N1)I",
+            "notes": "Di-iodination of imidazole to 4,5-diiodo-1H-imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "N-sulfonylation",
+            "reagents": "NaH",
+            "reagent_smiles": "CN(C)S(=O)(=O)Cl",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "IC1=C(I)N=CN1",
+            "product_smiles": "CN(C)S(=O)(=O)N1C=NC(=C1I)I",
+            "notes": "N-sulfonylation of 4,5-diiodo-1H-imidazole using N,N-dimethylsulfamoyl chloride and sodium hydride as a base.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Reductive Deiodination / Halogen-Metal Exchange",
+            "reagents": "EtMgBr",
+            "reagent_smiles": "CC[Mg]Br",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "CN(C)S(=O)(=O)N1C=NC(=C1I)I",
+            "product_smiles": "CN(C)S(=O)(=O)N1C=C(I)N=C1",
+            "notes": "One iodine substituent on the imidazole ring is selectively removed via halogen-metal exchange (Grignard formation) with ethylmagnesium bromide, followed by protonolysis.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Sonogashira Cross Coupling",
+            "reagents": "Pd(PPh3)2Cl2, CuI, K2CO3",
+            "reagent_smiles": "C#CCN(OC)C(=O)OC(C)(C)C",
+            "conditions": "THF",
+            "yield": "91%",
+            "reactant_smiles": "CN(C)S(=O)(=O)N1C=C(I)N=C1",
+            "product_smiles": "CC(C)(C)OC(=O)N(OC)CC#CC1=CN(C=N1)S(=O)(=O)N(C)C",
+            "notes": "Sonogashira cross-coupling of an iodo-imidazole with a terminal alkyne to form a carbon-carbon triple bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection",
+            "reagents": "TFA, CH₂Cl₂",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CN(C)S(=O)(=O)n1cnc(C#CCN(OC)C(=O)OC(C)(C)C)c1",
+            "product_smiles": "CN(C)S(=O)(=O)n1cnc(C#CC[NH]OC)c1",
+            "notes": "Boc deprotection of the N-methoxycarbamate to yield the N-methoxyamine.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Acylation (Amide Formation)",
+            "reagents": "pyridine",
+            "reagent_smiles": "C1=CNC(=C1)C(=O)Cl",
+            "conditions": "THF",
+            "yield": "67%",
+            "reactant_smiles": "CN(C)S(=O)(=O)N1C=C(C#CCNOC)N=C1",
+            "product_smiles": "CN(C)S(=O)(=O)N1C=C(C#CCN(C(=O)C2=CC=CN2)OC)N=C1",
+            "notes": "Amide formation through the acylation of the N-O-methyl secondary amine with pyrrole-2-carbonyl chloride. Yield reported for 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Gold-catalyzed Intramolecular Alkyne Cyclization",
+            "reagents": "AuCl3",
+            "reagent_smiles": "[Au](Cl)ClCl",
+            "conditions": "dioxane, 120 °C",
+            "yield": "54%",
+            "reactant_smiles": "CN(C)S(=O)(=O)N1C=NC(C#CCN(OC)C(=O)c2ccc[nH]2)=C1",
+            "product_smiles": "CN(C)S(=O)(=O)N1C=NC(C2=CCN(OC)C(=O)c3c2ccc[nH]3)=C1",
+            "notes": "Intramolecular cyclization of an alkyne-amide-pyrrole derivative to form a fused azepinone ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrogenation",
+            "reagents": "H2, Pd/C",
+            "reagent_smiles": "CCO.[Pd]",
+            "conditions": "EtOH",
+            "yield": "91%",
+            "reactant_smiles": "CN(C)S(=O)(=O)N1C=C(C=C2C(=O)N(OC)CC=C(C=CN3)C2)N=C1",
+            "product_smiles": "CN(C)S(=O)(=O)N1C=C(C2C(=O)N(OC)CCC(C=CN3)C2)N=C1",
+            "notes": "Hydrogenation of two carbon-carbon double bonds in the seven-membered ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Diazo transfer / Azidation",
+            "reagents": "LDA, TsN3",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 to 0 °C",
+            "yield": "72%",
+            "reactant_smiles": "CN(C)S(=O)(=O)n1ncc(C2CCN(OC)C(=O)C3=C2C=CN3)c1",
+            "product_smiles": "CN(C)S(=O)(=O)n1nc(C2CCN(OC)C(=O)C3=C2C=CN3)c([N-]=[N+]=N)c1",
+            "notes": "Introduction of an azide group via deprotonation with LDA and subsequent reaction with tosyl azide.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "",
+            "conditions": "THF, -60 °C",
+            "yield": "80%",
+            "reactant_smiles": "CN(C)S(=O)(=O)N1C=C(C2CCN(C(=O)C3=C2C=CN3)OC)N=C1[N-]=[N+]=N",
+            "product_smiles": "CN(C)S(=O)(=O)N1C=C(C2CCN(C(=O)C3=C2C(=CN3)Br)OC)N=C1[N-]=[N+]=N",
+            "notes": "Bromination of the pyrrole ring using NBS.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Hydrolysis, Rearrangement/Deprotection",
+            "reagents": "HCl, H2O",
+            "reagent_smiles": "",
+            "conditions": "dioxane, rt",
+            "yield": "76%",
+            "reactant_smiles": "CN(C)S(=O)(=O)N1C(N=[N+]=[N-])=NC(C2CCN(C(=O)C3=C2C(=CN3)Br)OC)=N1",
+            "product_smiles": "CON1CCC(C2CCN(C(=O)C3=C2C(=CN3)Br)OC)c4cn[nH]c4",
+            "notes": "Acidic hydrolysis of N-dimethylsulfamoyl group and transformation of 5-azido-1,2,4-triazole into 1H-imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reduction",
+            "reagents": "Mo(CO)6, MeCN:H2O",
+            "reagent_smiles": "[Mo](C#O)(C#O)(C#O)(C#O)(C#O)(C#O)",
+            "conditions": "MeCN:H2O",
+            "yield": "63%",
+            "reactant_smiles": "BrC1=CN[H]C2=C1C(=O)N(OC)CCC2[C@@H](C3=NC(N=[N+]=[N-])N[H]3)",
+            "product_smiles": "BrC1=CN[H]C2=C1C(=O)N[H]CCC2[C@@H](C3=NC(N)N[H]3)",
+            "notes": "Reduction of azide group to amine and N-methoxyamide to amide. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        }
+    ]
+}

@@ -1,0 +1,168 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "hyacinthacine-a1-landais-2005",
+        "molecule_name": "Hyacinthacine A1",
+        "class": "Natural Product",
+        "author": "Landais",
+        "year": 2005
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reductive Amination",
+            "reagents": "NaBH4",
+            "reagent_smiles": "COC1=CC=C(C=C1)C=O",
+            "conditions": "CH2Cl2, EtOH",
+            "yield": "",
+            "reactant_smiles": "COC(=O)[C@@H](CO)N",
+            "product_smiles": "[PMB]N[C@@H](CO)C(=O)OC",
+            "notes": "Formation of a secondary amine via reductive amination using p-methoxybenzaldehyde and sodium borohydride. Stereochemistry at the alpha-carbon is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Amine Protection",
+            "reagents": "Boc2O, Et3N",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "[PMB]N[C@H](CO)C(=O)OC",
+            "product_smiles": "[Boc]N([PMB])[C@H](CO)C(=O)OC",
+            "notes": "Protection of a secondary amine with a Boc group using di-tert-butyl dicarbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Alcohol Protection (BOM Ether Formation)",
+            "reagents": "",
+            "reagent_smiles": "ClCOC1=CC=CC=C1.CCN(CC)CC",
+            "conditions": "DMF",
+            "yield": "",
+            "reactant_smiles": "[Boc]N([PMB])[C@H](CO)C(=O)OC",
+            "product_smiles": "[Boc]N([PMB])[C@H](CO[BOM])C(=O)OC",
+            "notes": "Protection of a primary alcohol as its benzyloxymethyl (BOM) ether using benzyloxymethyl chloride (BOMCl) and triethylamine (Et3N) in DMF.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF",
+            "yield": "27% (4 steps)",
+            "reactant_smiles": "[Boc]N([PMB])[C@@H](C(=O)OC)[BOMO]",
+            "product_smiles": "[Boc]N([PMB])[C@@H]([BOMO])CO",
+            "notes": "Reduction of a methyl ester to a primary alcohol. Stereochemistry at the adjacent chiral center is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation",
+            "reagents": "IBX",
+            "reagent_smiles": "",
+            "conditions": "MeCN, reflux",
+            "yield": "",
+            "reactant_smiles": "[Boc]N([PMB])[C@@H](CO)O[BOMO]",
+            "product_smiles": "[Boc]N([PMB])[C@@H](C=O)O[BOMO]",
+            "notes": "Oxidation of a primary alcohol to an aldehyde using IBX.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Enantioselective Aldol Reaction",
+            "reagents": "i-Pr2NEt",
+            "reagent_smiles": "C1=COC(=C1)C=O.C1CC2=N[N+]([H])C(=N2C1)C3=C(F)C(F)=C(F)C(F)=C3F.F[B-](F)(F)F",
+            "conditions": "CH2Cl2, rt",
+            "yield": "71%",
+            "reactant_smiles": "[Boc]N([PMB])[C@@H](C=O)C[BOMO]",
+            "product_smiles": "[Boc]N([PMB])[C@@H](C[BOMO])[C@@H](O)C(=O)C1=CC=CO1",
+            "notes": "Organocatalytic enantioselective aldol reaction of an N-protected amino aldehyde with 2-furfural, mediated by a chiral imidazolidinone catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "N-deprotection",
+            "reagents": "CAN",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "74%",
+            "reactant_smiles": "CC(C)(C)OC(=O)N([PMB])[C@H](C[BOMO])[C@H](C(=O)C3=CC=CO3)O",
+            "product_smiles": "CC(C)(C)OC(=O)N[C@H](C[BOMO])[C@H](C(=O)C2=CC=CO2)O",
+            "notes": "N-deprotection of the PMB group to yield a secondary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Diastereoselective Ketone Reduction",
+            "reagents": "ZnCl2, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "Et2O, THF, 0 C - rt",
+            "yield": "73%",
+            "reactant_smiles": "[Boc]N[C@H](C[BOMO])[C@H](O)C(=O)C1=CC=CO1",
+            "product_smiles": "[Boc]N[C@H](C[BOMO])[C@H](O)[C@@H](O)C1=CC=CO1",
+            "notes": "Diastereoselective reduction of a furanoyl ketone to a 1,2-diol using sodium borohydride in the presence of zinc chloride.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Boc Deprotection",
+            "reagents": "ZnBr2, m-cresol",
+            "reagent_smiles": "",
+            "conditions": "Et2O, CH2Cl2, 0 oC - rt",
+            "yield": "49%",
+            "reactant_smiles": "[Boc]N[C@H](CO[BOMO])[C@H](O)[C@@H](O)C1=CC=CO1",
+            "product_smiles": "N[C@H](CO[BOMO])[C@H](O)[C@@H](O)C1=CC=CO1",
+            "notes": "Deprotection of Boc-protected amine to the corresponding primary amine.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Photooxygenation / Oxidative Cyclization",
+            "reagents": "TPP, O2",
+            "reagent_smiles": "P(c1ccccc1)(c2ccccc2)c3ccccc3.CCN(CC)CC",
+            "conditions": "Light",
+            "yield": "",
+            "reactant_smiles": "[BOMO]C[C@@H]([C@H]([C@@H](C2=CC=CO2)O)O)N",
+            "product_smiles": "[BOMO]C[C@@H]2[C@H]([C@H](C3=CCC(=O)N32)O)O",
+            "notes": "Photooxygenation of furan followed by cyclization and rearrangement to form a bicyclic lactam.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Isomerization",
+            "reagents": "MeOH, Et3N",
+            "reagent_smiles": "CCN(CC)CC.CO",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)COCOC[C@@H]2[C@H]([C@H](C3=CCC(=O)N32)O)O",
+            "product_smiles": "C1=CC=C(C=C1)COCOC[C@@H]2[C@H]([C@H]([C@H]3C=CC(=O)N32)O)O",
+            "notes": "Double bond migration, creating a new chiral center at the bridgehead position.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Hydrogenation, Deprotection",
+            "reagents": "PtO2, H2",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "27% (3 steps)",
+            "reactant_smiles": "O=C1N2C[C@@H](COC(C1=CC=CC=C1))[C@H](O)[C@H](O)[C@H]2C=C1",
+            "product_smiles": "O=C1N2C[C@@H](CO)[C@H](O)[C@H](O)[C@H]2CC1",
+            "notes": "Hydrogenation of the internal alkene and deprotection of the benzyloxymethyl (BOM) ether to a primary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Lactam Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "[Li][AlH4]",
+            "conditions": "THF",
+            "yield": "32%",
+            "reactant_smiles": "O[C@H]1[C@@H](O)[C@@H](CO)N2[C@H]1CC(=O)C2",
+            "product_smiles": "O[C@H]1[C@H](O)[C@H](O)[C@@H](CO)N2[C@H]1CC[C@@H]2O",
+            "notes": "Reduction of a bicyclic lactam to a pyrrolizidine alkaloid (Hyacinthacine A1). The carbonyl group of the lactam is reduced to a hydroxyl group, creating a new stereocenter with an 'up' configuration for the hydroxyl.",
+            "substeps": []
+        }
+    ]
+}

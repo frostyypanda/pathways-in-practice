@@ -1,0 +1,144 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "terrein-weinreb-1974",
+        "molecule_name": "Terrein",
+        "class": "Natural Product",
+        "author": "Weinreb",
+        "year": 1974
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Williamson Ether Synthesis / Benzyl Protection",
+            "reagents": "BnCl, NaOH",
+            "reagent_smiles": "ClCc1ccccc1.[Na+].[OH-]",
+            "conditions": "H2O, reflux",
+            "yield": "",
+            "reactant_smiles": "C1=C[C@H](C[C@H]1O)O",
+            "product_smiles": "[Bn]O[C@H]1C=C[C@H](O[Bn])C1",
+            "notes": "Benzyl protection of a vicinal diol to form a dibenzyl ether. The relative cis stereochemistry of the alcohol groups is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Epoxidation",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2",
+            "yield": "",
+            "reactant_smiles": "[OBn][C@@H]1C=C[C@@H]([OBn])C1",
+            "product_smiles": "[OBn][C@@H]1C[C@@H]([OBn])[C@H]2[C@@H]1O2",
+            "notes": "Epoxidation of a cyclopentene with retention of relative stereochemistry for the benzyloxy groups and syn-addition of the epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Epoxide Ring Opening / Diol Formation",
+            "reagents": "H2SO4",
+            "reagent_smiles": "O=S(=O)=O",
+            "conditions": "DME",
+            "yield": "86%",
+            "reactant_smiles": "[Bn]O[C@H]1C[C@H]([C@H]2[C@@H]1O2)O[Bn]",
+            "product_smiles": "[Bn]O[C@H]1C[C@H]([C@@H]([C@H]1O)O)O[Bn]",
+            "notes": "Acid-catalyzed epoxide ring opening to yield a trans-diol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Protection",
+            "reagents": "MOMCl, NaH",
+            "reagent_smiles": "COCCl.[NaH]",
+            "conditions": "DMF",
+            "yield": "85%",
+            "reactant_smiles": "[Bn]O[C@H]1C[C@H]([C@@H]([C@@H]1O)O)O[Bn]",
+            "product_smiles": "[Bn]O[C@H]1C[C@H]([C@@H]([C@@H]1OMOM)OMOM)O[Bn]",
+            "notes": "Protection of vicinal diol to bis-MOM ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection (Birch reduction)",
+            "reagents": "Na/NH₃",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "62%",
+            "reactant_smiles": "[Bn]O[C@H]1C[C@@H](O[Bn])[C@@H](O[MOM])[C@H]1O[MOM]",
+            "product_smiles": "O[C@H]1C[C@@H](O)[C@@H](O[MOM])[C@H]1O[MOM]",
+            "notes": "Deprotection of benzyl ethers to hydroxyl groups using Na/NH₃, leaving MOM ethers intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation (Jones Oxidation)",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "",
+            "reactant_smiles": "[MOM][C@H]1[C@@H](C[C@@H]([C@@H]1[MOM])O)O",
+            "product_smiles": "[MOM][C@H]1C(CC(=O)[C@@H]1[MOM])O",
+            "notes": "Oxidation of a secondary alcohol to a ketone. One secondary alcohol remains, but its stereochemistry is depicted as wavy (unspecified) in the product.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Elimination / Dehydration",
+            "reagents": "Ac2O, pyridine",
+            "reagent_smiles": "",
+            "conditions": "-20 °C",
+            "yield": "66%",
+            "reactant_smiles": "O=C1C[C@@H](OCOC)[C@H](OCOC)C(O)C1",
+            "product_smiles": "O=C1[C@@H](OCOC)[C@H](OCOC)C=C1",
+            "notes": "Dehydration of a secondary alcohol to form an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Grignard Addition",
+            "reagents": "Et2O",
+            "reagent_smiles": "C=CC[Mg]Br",
+            "conditions": "-78 °C",
+            "yield": "58%",
+            "reactant_smiles": "[OMOM][C@H]1C=CC(=O)[C@@H]1[OMOM]",
+            "product_smiles": "C=CCC1(O)C=C[C@@H]([OMOM])[C@H]1[OMOM]",
+            "notes": "Nucleophilic addition of allylmagnesium bromide to a cyclopentenone ketone, forming a tertiary alcohol. The newly formed chiral center at the alcohol is shown as a mixture of stereoisomers (wavy bond).",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxidation",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "acetone",
+            "yield": "30%",
+            "reactant_smiles": "C=CCC1(O)[C@@H]([OMOM])[C@H]([OMOM])C=C1",
+            "product_smiles": "C=CCC1=CC(=O)[C@@H]([OMOM])[C@H]1[OMOM]",
+            "notes": "Jones oxidation of a secondary alcohol to an alpha,beta-unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Alkene Isomerization",
+            "reagents": "NaOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "50%",
+            "reactant_smiles": "C=CCC1=CC(=O)[C@@H]([C@H]1[OMOM])[OMOM]",
+            "product_smiles": "C/C=C/C1=CC(=O)[C@@H]([C@H]1[OMOM])[OMOM]",
+            "notes": "Base-catalyzed isomerization of a terminal alkene to an internal trans alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 62 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1C=C(C/C=C/C)[C@H](O[CH2]OC)[C@@H]1O[CH2]OC",
+            "product_smiles": "O=C1C=C(C/C=C/C)[C@H](O)[C@@H]1O",
+            "notes": "Acid-catalyzed hydrolysis of methoxymethyl (MOM) ethers to hydroxyl groups.",
+            "substeps": []
+        }
+    ]
+}

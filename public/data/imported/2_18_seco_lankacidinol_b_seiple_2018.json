@@ -1,0 +1,181 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "2-18-seco-lankacidinol-b-seiple-2018",
+        "molecule_name": "2,18-Seco-Lankacidinol B",
+        "class": "Natural Product",
+        "author": "Seiple",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Epoxide Ring Opening, Silylation",
+            "reagents": "n-BuLi, HMPA, TBSCl",
+            "reagent_smiles": "BrC#C",
+            "conditions": "",
+            "yield": "78%",
+            "reactant_smiles": "O[PMB]C[C@@H]1CO1",
+            "product_smiles": "CC#CC[C@@H](O[TBS])CO[PMB]",
+            "notes": "The drawn reagent shows bromoacetylene (BrC#C), but the product contains a methylacetylene moiety (CC#C-). This indicates a discrepancy between the drawn reagent and the product structure. The reaction proceeds via nucleophilic attack of an acetylide on the less hindered carbon of the epoxide, followed by silylation of the resulting alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Deprotection (PMB ether)",
+            "reagents": "DDQ",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC#CC[C@@H](C[OPMB])[OTBS]",
+            "product_smiles": "CC#CC[C@@H](CO)[OTBS]",
+            "notes": "Oxidative deprotection of p-methoxybenzyl (PMB) ether to a primary alcohol using DDQ, while retaining the tert-butyldimethylsilyl (TBS) ether and alkyne.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Mitsunobu Reaction",
+            "reagents": "PPh3, DEAD",
+            "reagent_smiles": "C1=CC2=C(C=C1)SC(=N2)S",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "CC#CC[C@@H](CO)[OTBS]",
+            "product_smiles": "CC#CC[C@@H](CSC1=NC2=C(C=CC=C2)S1)[OTBS]",
+            "notes": "A primary alcohol is converted to a thioether via a Mitsunobu reaction. The stereochemistry at the adjacent chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Oxidation",
+            "reagents": "H2O2, (NH4)6Mo7O24",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "91%",
+            "reactant_smiles": "CC#CC[C@H](CSC1=NC2=C(C=CC=C2)S1)[OTBS]",
+            "product_smiles": "CC#CC[C@H](CS(=O)(=O)C1=NC2=C(C=CC=C2)S1)[OTBS]",
+            "notes": "Oxidation of a thioether to a sulfone. The reaction is reported to proceed in 2 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Julia-Kocienski Olefination",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "CCOC(=O)/C=C(/C)/C=O",
+            "conditions": "DMF, -40 °C",
+            "yield": "",
+            "reactant_smiles": "CC#CC[C@@H](CS(=O)(=O)C1=NC2=C(C=CC=C2)S1)[OTBS]",
+            "product_smiles": "CC#CC[C@@H](/C=C/C(=C/C(=O)OCC)/C)[OTBS]",
+            "notes": "Julia-Kocienski olefination of a sulfone with an alpha,beta-unsaturated aldehyde containing an ethyl ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Ester Reduction",
+            "reagents": "DIBAL",
+            "reagent_smiles": "[AlH](CC(C)C)CC(C)C",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "99%",
+            "reactant_smiles": "CC#CC[C@@H](/C=C/C(=C(C)C(=O)OCC))[OTBS]",
+            "product_smiles": "CC#CC[C@@H](/C=C/C(=C(C)CO))[OTBS]",
+            "notes": "Reduction of an alpha,beta-unsaturated ester to an allylic alcohol using DIBAL-H.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Hydrostannylation",
+            "reagents": "Pd(OAc)2, PCy3, HSnBu3",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "85%",
+            "reactant_smiles": "CC#CC[C@H]([OTBS])/C=C/C(C)=C\\CO",
+            "product_smiles": "[Sn](CCCC)(CCCC)CCCC/C(C)=C/C[C@H]([OTBS])/C=C/C(C)=C\\CO",
+            "notes": "Palladium-catalyzed hydrostannylation of a terminal alkyne, forming a vinylstannane.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Stille coupling",
+            "reagents": "Pd(PPh3)4, CuTC, Ph2PO2NBu4",
+            "reagent_smiles": "C[C@H]1[C@@H](C[C@@H](O[Si](C)(C)C(C)(C)C)/C=C/I)OC(=O)C(=C1O)C",
+            "conditions": "",
+            "yield": "73%",
+            "reactant_smiles": "CCCC[Sn](CCCC)(CCCC)C(=C/C[C@@H]([OTBS])/C=C/C(=C/CO)/C)C",
+            "product_smiles": "C[C@H]1[C@@H](C[C@@H](O[Si](C)(C)C(C)(C)C)/C=C/C(=C/C[C@@H]([OTBS])/C=C/C(=C/CO)/C)C)OC(=O)C(=C1O)C",
+            "notes": "Formation of 2,18-Seco-Lankacidol B",
+            "substeps": [
+                {
+                    "step_id": "8.1",
+                    "reaction_type": "Asymmetric Aldol Addition",
+                    "reagents": "TiCl4, i-Pr2EtN",
+                    "reagent_smiles": "O=C/C=C/I",
+                    "conditions": "CH2Cl2, -78 °C",
+                    "yield": "70%",
+                    "reactant_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C",
+                    "product_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@H](O)/C=C/I",
+                    "notes": "An asymmetric aldol addition of (E)-3-iodoacrolein to a chiral acyl thiazolidinethione, promoted by TiCl4 and i-Pr2EtN, generating a new chiral center with specific stereochemistry.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.2",
+                    "reaction_type": "Silylation",
+                    "reagents": "TBSOTf, 2,6-lut.",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, 0 °C",
+                    "yield": "93%",
+                    "reactant_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@@H](/C=C/I)O",
+                    "product_smiles": "CC(C)[C@@H]1CSC(=S)N1C(=O)C[C@@H](/C=C/I)O[TBS]",
+                    "notes": "Protection of secondary alcohol as a TBS ether using TBSOTf and 2,6-lutidine.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.3",
+                    "reaction_type": "Amide Reduction",
+                    "reagents": "DIBAL",
+                    "reagent_smiles": "",
+                    "conditions": "CH2Cl2, -78 °C",
+                    "yield": "98%",
+                    "reactant_smiles": "[iPr][C@@H]1CSC(=S)N1C(=O)C[C@@H](/C=C/I)[OTBS]",
+                    "product_smiles": "[OTBS][C@@H](/C=C/I)CC=O",
+                    "notes": "DIBAL reduction of a chiral auxiliary-derived amide to an aldehyde. The stereocenter bearing the OTBS group is preserved.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.4",
+                    "reaction_type": "Evans asymmetric aldol",
+                    "reagents": "TiCl4, i-Pr2EtN",
+                    "reagent_smiles": "CCC[C@@H](C)C(=O)N1[C@@H](CC2=CC=CC=C2)COC1=O",
+                    "conditions": "CH2Cl2, -78 to 0 °C",
+                    "yield": "",
+                    "reactant_smiles": "[OTBS][C@@H](/C=C/I)CC=O",
+                    "product_smiles": "[OTBS][C@H](/C=C/I)C[C@H](O)[C@H](C)C(=O)[C@@H](C)CCC(=O)N1[C@@H](CC2=CC=CC=C2)COC1=O",
+                    "notes": "An Evans asymmetric aldol reaction of an iodoalkene aldehyde with a chiral auxiliary, followed by removal of the auxiliary.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "8.5",
+                    "reaction_type": "Intramolecular cyclization",
+                    "reagents": "NaOMe",
+                    "reagent_smiles": "",
+                    "conditions": "THF, 0 °C",
+                    "yield": "90%",
+                    "reactant_smiles": "O=C1OC[C@@H]([Bn])N1C(=O)[C@H](C)C(=O)[C@H](C)[C@H](O)C[C@H]([OTBS])/C=C/I",
+                    "product_smiles": "O=C1OC(C[C@H]([OTBS])/C=C/I)[C@H](C)C(O)=C(C)C1",
+                    "notes": "Base-mediated intramolecular cyclization leading to the formation of a dihydropyranone ring, with concomitant removal of the chiral oxazolidinone auxiliary.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (Silyl Ether Hydrolysis)",
+            "reagents": "HF • Py",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "81%",
+            "reactant_smiles": "O[TBS][C@H](/C=C/C(=C/C[C@H](/C=C/C(=C/CO)/C)O[TBS])/C)C[C@@H]1[C@H](C)C(=C(C)C(=O)O1)O",
+            "product_smiles": "C/C(=C/C[C@H](/C=C/C(=C/CO)/C)O)/C=C/[C@H](C[C@@H]1[C@H](C)C(=C(C)C(=O)O1)O)O",
+            "notes": "Acid-catalyzed deprotection of two TBS ethers to yield the corresponding diol.",
+            "substeps": []
+        }
+    ]
+}

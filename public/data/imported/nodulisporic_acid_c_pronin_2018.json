@@ -1,0 +1,302 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "nodulisporic-acid-c-pronin-2018",
+        "molecule_name": "Nodulisporic Acid C",
+        "class": "Natural Product",
+        "author": "Pronin",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Conjugate Addition / Silyl Enol Ether Formation",
+            "reagents": "Chiral ferrocene ligand (specifically [(R,R)-1,2-bis(2,4-di-tert-butylphosphino)ferrocenyl]ethyl-bis(2-furyl)phosphine, implied from structure), LiCl, HMPA, Et3N",
+            "reagent_smiles": "Br[Mg]CC=C(C)C.BrCu.CS(C)C.Cl[Si](C(C)C)(C(C)C)C(C)C",
+            "conditions": "MTBE, -78C",
+            "yield": "95%",
+            "reactant_smiles": "CC1=CCCC1=O",
+            "product_smiles": "CC(C)=CCC[C@@H]1CCC(=C(C)[OTIPS])C1",
+            "notes": "A copper-catalyzed conjugate addition of a Grignard reagent to an enone, followed by trapping of the resulting enolate with TIPSCl to form a silyl enol ether. The reaction is stereoselective.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Allylation / Propargylation",
+            "reagents": "InBr3",
+            "reagent_smiles": "C#CCCCO[OTBS]",
+            "conditions": "CH2Cl2, 23°C",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC[C@@H]1CCC(=C1C)[OTIPS])C",
+            "product_smiles": "CC(=CCC[C@@H]1CCC(=O)[C@]1(C)C(=C)CCCO[OTBS])C",
+            "notes": "Indium-mediated allylation of a silyl enol ether with a propargyl TBS ether reagent, leading to the formation of a ketone, a new chiral center, and an exocyclic alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Deprotection",
+            "reagents": "HCl, MeOH",
+            "reagent_smiles": "",
+            "conditions": "0°C",
+            "yield": "52%",
+            "reactant_smiles": "O=C1C(C)(C)[C](C=C)(CCC[OTBS])[C@H](CCC=C(C)C)C1",
+            "product_smiles": "O=C1C(C)(C)[C](C=C)(CCCCO)[C@H](CCC=C(C)C)C1",
+            "notes": "TBS ether deprotection to alcohol (reaction occurred in 2 steps according to yield note)",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Cyanohydrin formation",
+            "reagents": "TMSCN, Sc(OTf)3",
+            "reagent_smiles": "",
+            "conditions": "Et2O, rt",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC[C@H]1CCC(=O)[C@]1(C)C(=C)CCCO)C",
+            "product_smiles": "CC(=CCC[C@H]1CC[C@@](C#N)([C@]1(C)C(=C)CCCO)O[Si](C)(C)C)C",
+            "notes": "Lewis acid-catalyzed addition of trimethylsilyl cyanide to a ketone, forming a TMS-protected cyanohydrin. Stereochemistry is controlled at the newly formed chiral center.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Allylic Oxidation",
+            "reagents": "SeO2, TBHP",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, rt",
+            "yield": "48%",
+            "reactant_smiles": "CC(C)=CCC[C@@H]1CC[C@](C#N)(C)(O[Si](C)(C)C)(C(=C)CCCO)C1",
+            "product_smiles": "CCC/C=C(\\CO)C[C@@H]1CC[C@](C#N)(C)(O[Si](C)(C)C)(C(=C)CCCO)C1",
+            "notes": "Oxidation of a methyl group on the terminal alkene of the side chain to a primary alcohol (CH2OH). The E-alkene geometry is formed/maintained. Stereochemistry of the cyclopentane core and its other substituents is preserved.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Dess Martin oxidation",
+            "reagents": "DMP, Na2HPO4",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, 0 °C to rt",
+            "yield": "68%",
+            "reactant_smiles": "C/C(=C\\CC[C@H]1CC[C@](C#N)(C)([OTMS])[C@]2(C(=C)CCCO)C1)/CO",
+            "product_smiles": "C/C(=C\\CC[C@H]1CC[C@](C#N)(C)([OTMS])[C@]2(C(=C)CCC=O)C1)/C=O",
+            "notes": "Dess-Martin periodinane (DMP) oxidation of two primary alcohol groups to aldehydes.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Reductive Cascade Cyclization",
+            "reagents": "Fe(acac)₃, Na₂HPO₄, PhSiH₂(Oi-Pr), (CH₂OH)₂",
+            "reagent_smiles": "",
+            "conditions": "AcOEt",
+            "yield": "",
+            "reactant_smiles": "O=C/C=C(/C)CC[C@@H]1C[C@@H]2CC[C@@]1(C#N)(O[Si](C)(C)C)C2([C@](C)([C@@H](C=C)CCC=O))",
+            "product_smiles": "O=CC([C@@H]3CC[C@@H]2C[C@@]1(C#N)(O[Si](C)(C)C)C2([C@](C)C3O))C[C@@H]1",
+            "notes": "Cascade cyclization of a bicyclic alkene-aldehyde to form a tetracyclic alcohol-aldehyde product, involving multiple C-C and C-O bond formations and a reduction. The long unsaturated aldehyde chain from the reactant's left bridgehead is integrated into a new 6-membered ring, and the terminal aldehyde is reduced to an alcohol. The vinyl-aldehyde chain on the right side also cyclizes to form part of the new 6-membered ring and becomes an aldehyde group. This reaction involves the formation of two new rings and two new stereocenters.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Hydrolysis (Cyanohydrin to Ketone)",
+            "reagents": "HCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "41%",
+            "reactant_smiles": "C[C@@]12CC[C@@H](O)C(C=O)[C@@]1(C)CC[C@H]3[C@H]4C[C@@](C#N)(O[TMS])[C@@]23C4",
+            "product_smiles": "C[C@@]12CC[C@@H](O)C(C=O)[C@@]1(C)CC[C@H]3[C@H]4C[C](=O)[C@@]23C4",
+            "notes": "Hydrolysis of a TMS-protected cyanohydrin, converting the C(CN)(OTMS) group to a ketone C(=O). All other parts of the polycyclic structure remain unchanged, including stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Esterification (O-Acylation)",
+            "reagents": "Piv2O, Et3N, DMAP",
+            "reagent_smiles": "",
+            "conditions": "PhMe, 80 °C",
+            "yield": "55%",
+            "reactant_smiles": "C[C@]12CC[C@@H]([C@@](C)(C=O)[C@@H]2CC[C@H]3CCC(=O)[C@]31C)O",
+            "product_smiles": "C[C@]12CC[C@@H]([C@@](C)(C=O)[C@@H]2CC[C@H]3CCC(=O)[C@]31C)[OPiv]",
+            "notes": "Acylation of a secondary alcohol with pivalic anhydride to form a pivalate ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Horner-Wadsworth-Emmons reaction",
+            "reagents": "LIHMDS",
+            "reagent_smiles": "CCOC(=O)/C(=C/CP(=O)(OCC)OCC)/C",
+            "conditions": "THF, rt",
+            "yield": "92%",
+            "reactant_smiles": "C[C@]12CCC(=O)C1CC[C@H]3[C@H]2C[C@H](C)[C@@]4(C)C3CC([C@@]([OPiv])(C)C=O)",
+            "product_smiles": "C[C@]12CCC(=O)C1CC[C@H]3[C@H]2C[C@H](C)[C@@]4(C)C3CC([C@@]([OPiv])(C)/C=C/C=C(\\C)/C(=O)OCC)",
+            "notes": "Horner-Wadsworth-Emmons reaction of an aldehyde with an α-phosphonoester to form an E,E-diene ester.",
+            "substeps": [
+                {
+                    "step_id": "10.1",
+                    "reaction_type": "Silylation, vinyl group formation",
+                    "reagents": "LDA, TMSCl, NBS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC=C(C)C(=O)OCC",
+                    "product_smiles": "C=C/C(=C(/OCC)\\[OTMS])\\C",
+                    "notes": "Formation of a silyl ketene acetal with a vinyl group at the alpha position from an alpha,beta-unsaturated ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.2",
+                    "reaction_type": "Electrophilic Bromination / Halogenation",
+                    "reagents": "NBS",
+                    "reagent_smiles": "",
+                    "conditions": "THF, -78 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCO/C([OTMS])=C(\\C)/C=C",
+                    "product_smiles": "CCOC(=O)/C(=C\\CBr)/C",
+                    "notes": "Bromination of a silylated ketene acetal (enol ether) leading to an alpha,beta-unsaturated bromoester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "10.3",
+                    "reaction_type": "Arbusov reaction",
+                    "reagents": "P(OEt)3",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "65% (2 steps)",
+                    "reactant_smiles": "BrCC=C(C)C(=O)OCC",
+                    "product_smiles": "CCOC(=O)C(C)=CCP(=O)(OCC)OCC",
+                    "notes": "Arbusov reaction of an alkyl bromide with triethyl phosphite to form a diethyl phosphonate.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Stille Coupling",
+            "reagents": "RuPhos Pd G4, NaHMDS, Bu3SnCl",
+            "reagent_smiles": "O=N(=O)C1=C(Cl)C(C2=C1[C@@H]([C@H]3C2=CC(C)(C)OC3(C)C)O[TIPS])=C(CC=C(C)C)C=C1",
+            "conditions": "PhMe, 50 °C",
+            "yield": "44%",
+            "reactant_smiles": "CCOC(=O)/C(=C/C=C/[C@@H]1C[C@H]2C[C@H]3C(=O)C[C@](C)(CC[C@H](OC(=O)C(C)(C)C)[C@]2(C)[C@H]1CC3)C)/C",
+            "product_smiles": "CCOC(=O)/C(=C/C=C/[C@@H]1C[C@H]2C[C@H]3C(=O)C[C@](C)(CC[C@H](OC(=O)C(C)(C)C)[C@]2(C)[C@H]1CC3C4=C(C=C(CC=C(C)C)C(=C4[N+]([O-])=O)C5=C([C@@H]([C@H]6C5=CC(C)(C)OC6(C)C)O[TIPS])C)C)/C",
+            "notes": "Stille coupling between a complex decalin-fused enoate and a highly substituted aryl chloride to form a new C-C bond at a bridgehead carbon of the decalin.",
+            "substeps": [
+                {
+                    "step_id": "11.1",
+                    "reaction_type": "Sandmeyer-like reaction (Diazotization followed by Iodination)",
+                    "reagents": "",
+                    "reagent_smiles": "O=NOC(C)(C)C.[Cu]I",
+                    "conditions": "MeCN, 60°C",
+                    "yield": "65%",
+                    "reactant_smiles": "Nc1c(Br)cc(Cl)cc1Br",
+                    "product_smiles": "Ic1c(Br)cc(Cl)cc1Br",
+                    "notes": "Aminobenzene derivative undergoes diazotization/iodination to replace amine with iodide.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.2",
+                    "reaction_type": "Formylation, Halogen-metal exchange",
+                    "reagents": "i-PrMgCl, DMF",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe, -78°C",
+                    "yield": "82%",
+                    "reactant_smiles": "C1=C(C(=C(C=C1Cl)Br)I)Br",
+                    "product_smiles": "O=Cc1c(Br)cc(Cl)cc1Br",
+                    "notes": "An aryl iodide undergoes halogen-metal exchange with i-PrMgCl to form an arylmagnesium intermediate, which is then trapped by DMF to yield an aldehyde upon workup.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.3",
+                    "reaction_type": "Electrophilic Aromatic Nitration",
+                    "reagents": "HNO3, H2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "99%",
+                    "reactant_smiles": "O=Cc1c(Br)cc(Br)c(Cl)c1",
+                    "product_smiles": "O=Cc1c(Br)c([N+](=O)[O-])c(Br)c(Cl)c1",
+                    "notes": "Nitration of 2,4-dibromo-5-chlorobenzaldehyde to introduce a nitro group at the 3-position.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.4",
+                    "reaction_type": "Asymmetric Allylation / Organozinc Addition",
+                    "reagents": "",
+                    "reagent_smiles": "C[C@]12CC[C@@H](O)[C@H](N3CCOCC3)[C@H]1C2(C)C.[Zn](C=C(C)C)(C=C(C)C).[Zn](CC)(CC)",
+                    "conditions": "PhMe, -20 °C",
+                    "yield": "",
+                    "reactant_smiles": "C1=C(C(=C(C(=C1Br)C(=O)H)Br)[N+](=O)[O-])Cl",
+                    "product_smiles": "CC(=C[C@@H](C1=C(C=C(C(=C1Br)[N+](=O)[O-])Cl)Br)O)C",
+                    "notes": "Asymmetric addition of 3-methylbut-2-enyl group to an aldehyde, catalyzed by a chiral amino alcohol and diethylzinc, forming a chiral secondary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.5",
+                    "reaction_type": "Sonogashira coupling",
+                    "reagents": "PdCl2(PPh3)2, CuI, Et3N",
+                    "reagent_smiles": "C#CC(C)(C)O",
+                    "conditions": "60 °C",
+                    "yield": "",
+                    "reactant_smiles": "CC(=C[C@@H](O)c1c(Br)cc(Cl)c([N+]([O-])=O)c1Br)C",
+                    "product_smiles": "CC(=C[C@@H](O)c1c(C#CC(C)(C)O)cc(Cl)c([N+]([O-])=O)c1Br)C",
+                    "notes": "A Sonogashira coupling reaction replaces one of the aromatic bromines (ortho to the chiral alcohol and para to the remaining bromine) with 3-methylbut-1-yn-3-ol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.6",
+                    "reaction_type": "Alcohol Protection (Silyl Ether Formation)",
+                    "reagents": "TIPSOTf, Et3N",
+                    "reagent_smiles": "",
+                    "conditions": "PhMe, -10 °C",
+                    "yield": "71%",
+                    "reactant_smiles": "OC(C)(C)C#Cc1c([C@@H](O)C=C(C)C)c(Br)c([N+](=O)[O-])c(Cl)c1",
+                    "product_smiles": "OC(C)(C)C#Cc1c([C@@H]([OTIPS])C=C(C)C)c(Br)c([N+](=O)[O-])c(Cl)c1",
+                    "notes": "Protection of the allylic alcohol as a TIPS silyl ether.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.7",
+                    "reaction_type": "Gold-catalyzed intramolecular cyclization",
+                    "reagents": "IPrAuCl, AgSbF6",
+                    "reagent_smiles": "",
+                    "conditions": "H2O, THF, 60 °C",
+                    "yield": "89%",
+                    "reactant_smiles": "Brc1c([N+](=O)[O-])c(Cl)c(C#CC(C)(C)O)cc1[C@@H]([OTIPS])C=C(C)C",
+                    "product_smiles": "[OTIPS][C@H]1C(C)(C)C=C(C)C(C)(C)O[C@H]2c3c(Cl)c([N+](=O)[O-])c(Br)c4c3124",
+                    "notes": "Intramolecular cyclization of an enyne-tertiary alcohol system to form a fused indane-dihydropyran tricyclic product.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "11.8",
+                    "reaction_type": "Stille cross coupling",
+                    "reagents": "PdCl2(PPh3)2",
+                    "reagent_smiles": "[Sn](CCCC)(CCCC)(CCCC)CC=C(C)C",
+                    "conditions": "DMF, 125 °C",
+                    "yield": "72%",
+                    "reactant_smiles": "O[TIPS][C@@H]1C2=C(C=C(C(=C2Br)[N+](=O)[O-])Cl)C3=CC(C)(C)OC(C)(C)[C@@H]31",
+                    "product_smiles": "CC(=CCC1=C(C(=CC2=C1[C@@H]([C@@H]3C2=CC(C)(C)OC3(C)C)O[TIPS])Cl)[N+](=O)[O-])C",
+                    "notes": "Stille cross coupling reaction where an aryl bromide is replaced by an isoprenyl group from an organotin reagent. Stereochemistry at the chiral centers is retained.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Reductive Cyclization / Indole Formation",
+            "reagents": "Zn, AcOH",
+            "reagent_smiles": "[Zn].CC(=O)O",
+            "conditions": "EtOH, r.t.",
+            "yield": "",
+            "reactant_smiles": "CCOC(=O)/C(C)=C/C=C/[C@H](C)[C@H](O[Piv])CC[C@H]1C2(C)C[C@H]3[C@@H](C(=O)C2)C[C@H]1C4=C(C=C([N+](=O)[O-])C(CC=C(C)C)=C4)[C@H](O[TIPS])[C@H]5OC(C)(C)/C=C/5",
+            "product_smiles": "CCOC(=O)/C(C)=C/C=C/[C@H](C)[C@H](O[Piv])CC[C@H]1C2(C)C[C@@H]3[C@H]2C(=C4N3)C5=CC(CC=C(C)C)=C4C=C5[C@H](O[TIPS])[C@H]6OC(C)(C)/C=C/6",
+            "notes": "Reductive cyclization of the nitro group and a ketone to form an indole-like ring system.",
+            "substeps": []
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "TAS-F",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "73% (2 steps)",
+            "reactant_smiles": "CCOC(=O)/C(=C/C=C/C1(C)C2C[C@H]3[C@@H]4CC5=C([C@@]4(C)[C@@]3(C)[C@@H](C[C@@H]1[OPiv])C2(C)C)NC6=C(CC=C(C)C)C7=C(C=C56)C8=CC(C)(C)OC(C)(C)[C@H]8[C@@H]7O[Si](C(C)C)(C(C)C)C(C)C)/C",
+            "product_smiles": "CCOC(=O)/C(=C/C=C/C1(C)C2C[C@@H](C[C@@H]1[OPiv])[C@]3(C)[C@@H](C2)C4=C3NC5=C(CC=C(C)C)C6=C(C=C54)C7=CC(C)(C)OC(C)(C)[C@H]7[C@@H]6O)/C",
+            "notes": "Deprotection of TIPS ether to hydroxyl group. The OPiV group was corrected to its abbreviated form as shown in the screenshot. Note: The original SMILES for reactant and product appears to have an incorrect attachment point for the OPiV group, placing it on the spiro carbon C1 instead of a secondary carbon within the polycyclic system, and misrepresenting its stereochemistry. This deeper structural error cannot be fully corrected by simple string manipulation, but the compositional error (ether vs. pivalate) was addressed.",
+            "substeps": []
+        }
+    ]
+}

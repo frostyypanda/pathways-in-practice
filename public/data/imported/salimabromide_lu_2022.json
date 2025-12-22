@@ -1,0 +1,156 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "salimabromide-lu-2022",
+        "molecule_name": "Salimabromide",
+        "class": "Natural Product",
+        "author": "Lu",
+        "year": 2022
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard Reaction / Organocuprate Alkylation",
+            "reagents": "LiCuCl4",
+            "reagent_smiles": "C[Mg]Br",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "55%",
+            "reactant_smiles": "COC(=O)C1=C(Br)C=C(CBr)C=C1",
+            "product_smiles": "CCC1=CC=C(Br)C(C(C)(C)O)=C1",
+            "notes": "A Grignard reagent (MeMgBr) in the presence of LiCuCl4 (likely forming a cuprate or similar species) reacts with the reactant. The methyl ester is transformed into a tertiary alcohol by addition of two methyl groups, and the benzylic bromide is substituted by a methyl group, forming an ethyl group. The aromatic bromine remains untouched.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Dehydration",
+            "reagents": "TsOH•H2O",
+            "reagent_smiles": "",
+            "conditions": "toluene, 100 °C",
+            "yield": "88%",
+            "reactant_smiles": "CCC1=CC(=C(C=C1)C(C)(C)O)Br",
+            "product_smiles": "CCC1=CC(=C(C=C1)C(=C)C)Br",
+            "notes": "Dehydration of a tertiary alcohol to form an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Grignard Reaction / Conjugate Addition / Trapping",
+            "reagents": "Mg, LiBr, CuBr•SMe2, TMSCl",
+            "reagent_smiles": "C1C=CC(=O)C=CC1",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1=CC(=C(C=C1)C(=C)C)Br",
+            "product_smiles": "CCC1=CC(=C(C=C1)C(=C)C)[C@H]2CCC=C([OTMS])CC2",
+            "notes": "Grignard reagent formation followed by conjugate addition to tropone and subsequent trapping of the enolate with TMSCl, forming an enol silyl ether.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Lewis acid catalyzed [4+3] cycloaddition",
+            "reagents": "ZnBr2",
+            "reagent_smiles": "CCOC1OCCCO1",
+            "conditions": "DCM, rt",
+            "yield": "63% (2 steps)",
+            "reactant_smiles": "CCC1=CC(C(=C)C)=CC([C@H]2CCC=C([OTMS])CC2)=C1",
+            "product_smiles": "CCC1=CC(C(=C)C)=CC([C@H]2CCC=C(C(=O))[C@H]3C4OCCCO4C2)=C1",
+            "notes": "Lewis acid catalyzed formal [4+3] cycloaddition between a silyl enol ether and an orthoester to form a cycloheptenone with a spiro-fused 1,3-dioxane.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Organometallic Addition / Luche-type addition",
+            "reagents": "MeLi, CeCl3",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "CCC1=CC=C(C(=C)C)C(=C1)[C@@H]2CC=CC(=O)[C@H](C3OCCCO3)C2",
+            "product_smiles": "CCC1=CC=C(C(=C)C)C(=C1)[C@@H]2CC=CC([C@@](C)(O))C([C@H](C3OCCCO3))C2",
+            "notes": "Methyl lithium addition to a cyclooctenone ketone, mediated by cerium chloride, forming a tertiary alcohol. Stereoselective addition at the ketone to give the depicted product.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Oxidation (Allylic Alcohol to Enone)",
+            "reagents": "PCC, Al2O3",
+            "reagent_smiles": "",
+            "conditions": "DCE, 60 °C",
+            "yield": "83%",
+            "reactant_smiles": "CCC1=CC=C(C(=C)C)C(=C1)[C@H]2CCC[C@@H](C3OCCCO3)CC(C)(O)=C2",
+            "product_smiles": "CCC1=CC=C(C(=C)C)C(=C1)[C@H]2CCC[C@@H](C3OCCCO3)CC(=O)C=C(C)2",
+            "notes": "Oxidation of a tertiary allylic alcohol to an alpha,beta-unsaturated ketone (enone) with double bond migration. The 83% yield is reported over two steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Intramolecular Reductive Cyclization / C-C Bond Formation",
+            "reagents": "Fe(acac)3, PhSiH3, KH2PO4",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 60 °C",
+            "yield": "28%",
+            "reactant_smiles": "CCC1=CC=C(C(=C)C)C(=C1)[C@@H]2CCC(=O)C=C(C)[C@]2C3OCCCO3",
+            "product_smiles": "CCC1=CC2=C(C=C1)C(C)(C)C3(C)CC(=O)CC[C@]23CC4OCCCO4",
+            "notes": "An intramolecular reductive cyclization of a dienone (ene-ene reaction) leading to a complex polycyclic product with a bridged system. The isopropenyl group participates in the cyclization. Stereochemistry at the chiral centers is crucial.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Selenoxide Elimination (Grieco Elimination)",
+            "reagents": "LiHMDS, PhSeCl, H₂O₂, HOAc",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "73%",
+            "reactant_smiles": "CCC1=CC=C2[C@H]3CC(C)(C)[C@]4(C)C(=O)CCC[C@H]2C34CC5OCCCO5",
+            "product_smiles": "CCC1=CC=C2[C@H]3CC(C)(C)[C@]4(C)C(=O)C=CC[C@H]2C34CC5OCCCO5",
+            "notes": "Formation of an α,β-unsaturated ketone from a ketone via selenoxide elimination.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Aromatizing Triflation",
+            "reagents": "KHMDS, PhNTf2",
+            "reagent_smiles": "",
+            "conditions": "THF, -78 °C",
+            "yield": "79%",
+            "reactant_smiles": "CCC1=CC2=C(C=C1)C(C)(C)C3(CC(=O)C=C[C@H]2C3)C4OCCCO4",
+            "product_smiles": "CCC1=CC2=C(C=C1)C(C)(C)C3(C4=C(OS(=O)(=O)C(F)(F)F)C=C(C=C4)[C@H]2)C3C5OCCCO5",
+            "notes": "A cyclohexenone-like ring in the reactant undergoes deprotonation, aromatization, and formation of a vinyl triflate (OTf) group. The bicyclic core and the spiro-dioxane remain intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Palladium-catalyzed reductive defunctionalization (hydrogenolysis of aryl triflate)",
+            "reagents": "Pd(OAc)2, dppp, HCO2Na",
+            "reagent_smiles": "",
+            "conditions": "DMF, 60 °C",
+            "yield": "83%",
+            "reactant_smiles": "CCC1=CC2=C(C=C1)[C@@H]3c4ccc(OS(=O)(=O)C(F)(F)F)cc4C(C)(C)(CC5OCCOC5)C3C2",
+            "product_smiles": "CCC1=CC2=C(C=C1)[C@@H]3c4ccccc4C(C)(C)(CC5OCCOC5)C3C2",
+            "notes": "Reductive removal of an aryl triflate group using palladium catalysis and sodium formate, forming a new aromatic ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Jones Oxidation / Intramolecular Cyclization",
+            "reagents": "CrO3, H2SO4",
+            "reagent_smiles": "",
+            "conditions": "acetone, H2O, rt",
+            "yield": "58%",
+            "reactant_smiles": "CCC1=CC2=C(C=C1)C(C)(C)C3C=CC(CC4OCCCO4)=C[C@H]2C3",
+            "product_smiles": "CCC1=CC2=C(C=C1)C3(C)(C)OC(=O)C=C(C(=O)[C@H]2)[C@H]3",
+            "notes": "Oxidation of a 1,3-dioxane protected aldehyde (via methylene spacer) and a diene to form a lactone/diketone bicyclic system.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Electrophilic Aromatic Bromination",
+            "reagents": "TfOH",
+            "reagent_smiles": "CC1(C)C(=O)N(Br)C(=O)N1Br",
+            "conditions": "HFIP, rt, 60 °C",
+            "yield": "61%",
+            "reactant_smiles": "CCC1=CC=C2C(=C1)[C@@H]3C4C=CC(=O)C3OC(=O)C4[C@@]2(C)C",
+            "product_smiles": "CCC1=C(C2=C(C=C1Br)[C@@]2(C)C3C=CC(=O)C4[C@@H]2C3C(=O)O4)Br",
+            "notes": "Bromination of the electron-rich aromatic ring in a polycyclic structure using 1,3-dibromo-5,5-dimethylhydantoin (DBDMH) and triflic acid (TfOH) in hexafluoroisopropanol (HFIP).",
+            "substeps": []
+        }
+    ]
+}

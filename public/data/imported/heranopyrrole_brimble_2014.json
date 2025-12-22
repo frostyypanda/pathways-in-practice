@@ -1,0 +1,253 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "heranopyrrole-brimble-2014",
+        "molecule_name": "Heranopyrrole",
+        "class": "Natural Product",
+        "author": "Brimble",
+        "year": 2014
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Sharpless asymmetric epoxidation",
+            "reagents": "Ti(OiPr)4, TBHP, (-)-DIPT",
+            "reagent_smiles": "",
+            "conditions": "DCM, -20 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=CCC/C(=C/CO)/C)C",
+            "product_smiles": "CC(=CCC[C@]1(C)[C@H](CO)O1)C",
+            "notes": "Sharpless asymmetric epoxidation of geraniol, a primary allylic alcohol, to form a specific enantiomer of the epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Mesylation",
+            "reagents": "MsCl, Et3N",
+            "reagent_smiles": "CS(=O)(=O)Cl.CCN(CC)CC",
+            "conditions": "DCM, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC(=CCC[C@@](C)1O[C@H](CO)C1)C",
+            "product_smiles": "CC(=CCC[C@@](C)1O[C@H](C[OMs])C1)C",
+            "notes": "Conversion of a primary alcohol to its mesylate.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Sharpless Asymmetric Dihydroxylation",
+            "reagents": "K2CO3, K3Fe(CN)6, (DHQ)2PHAL, OsO4, CH3SO2NH2",
+            "reagent_smiles": "",
+            "conditions": "H2O/t-BuOH, 0 °C",
+            "yield": "",
+            "reactant_smiles": "CC(=CCC[C@]1(C)[C@H](C[OMs])O1)C",
+            "product_smiles": "CC(C)([C@H](CC[C@]1(C)[C@H](C[OMs])O1)O)O",
+            "notes": "Sharpless asymmetric dihydroxylation of a terminal alkene, forming a diol with specific stereochemistry. The epoxide and mesylate groups remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Epoxide opening / Cyclization",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "toluene, 0 °C",
+            "yield": "65% (2 steps)",
+            "reactant_smiles": "CC(C)([C@H](CC[C@]1(C)[C@H](CO[OMs])O1)O)O",
+            "product_smiles": "CC(C)([C@H]1CC[C@@](C)([C@@H](CO[OMs])O)O1)O",
+            "notes": "Acid-catalyzed intramolecular epoxide opening of a secondary alcohol into a tetrahydrofuran ring.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxide Formation / Intramolecular Williamson Ether Synthesis",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "CC(C)([C@@H]1CC[C@@](C)([C@@H](C[OMs])O)O1)O",
+            "product_smiles": "CC(C)([C@@H]1CC[C@@](C)([C@@H]2CO2)O1)O",
+            "notes": "Base-mediated intramolecular cyclization of a vicinal mesylate and alcohol to form an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Alcohol Silylation / Protecting Group Formation",
+            "reagents": "TESCl, imidazole",
+            "reagent_smiles": "",
+            "conditions": "DMF, rt",
+            "yield": "80%",
+            "reactant_smiles": "CC(C)([C@@H]1CC[C@@](C)(C[C@H]2CO2)O1)O",
+            "product_smiles": "[OTES]C(C)(C)[C@@H]1CC[C@@](C)(C[C@H]2CO2)O1",
+            "notes": "A tertiary alcohol is protected as a triethylsilyl (TES) ether using TESCl and imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Epoxide opening / Grignard addition",
+            "reagents": "CuCl",
+            "reagent_smiles": "C=CCMgBr",
+            "conditions": "Et2O, -20 °C",
+            "yield": "80%",
+            "reactant_smiles": "C(C)(C)[OTES][C@H]1CC[C@@](C)([C@@H]2CO2)O1",
+            "product_smiles": "C=CCC[C@H](O)[C@@](C)1CC[C@H](C(C)(C)[OTES])O1",
+            "notes": "A copper-catalyzed allyl Grignard reagent adds to the terminal carbon of the epoxide, opening the ring and forming a new secondary alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Silyl Ether Formation / Alcohol Protection",
+            "reagents": "TESCl, imidazole",
+            "reagent_smiles": "Cl[Si](CC)(CC)CC.c1c[nH]cn1",
+            "conditions": "DMF, 0 °C",
+            "yield": "85%",
+            "reactant_smiles": "C=CC[C@@H](O)C[C@]1(C)CC[C@H](C(C)(C)[OTES])O1",
+            "product_smiles": "C=CC[C@@H]([OTES])C[C@]1(C)CC[C@H](C(C)(C)[OTES])O1",
+            "notes": "Protection of a secondary alcohol as a triethylsilyl (TES) ether using TESCl and imidazole.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Oxymercuration-Demercuration",
+            "reagents": "Hg(OAc)2, NaBH4",
+            "reagent_smiles": "",
+            "conditions": "THF/H2O, rt then 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "C=CCC[C@H]([OTES])[C@]1(C)CC[C@@H](C(C)(C)[OTES])O1",
+            "product_smiles": "[OTES][C@H](CCC(C)O)[C@]1(C)CC[C@@H](C(C)(C)[OTES])O1",
+            "notes": "Oxymercuration-demercuration of a terminal alkene results in the Markovnikov addition of water, forming a secondary alcohol. Stereochemistry of the newly formed chiral center is not specified in the product, implying a racemic mixture.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "Ph3P, DIED",
+            "reagent_smiles": "SC1=NN=N(N1)c2ccccc2",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "85%",
+            "reactant_smiles": "C[C@]1OC([C@@H](C(C)(C)[OTES]))[C@@H]([C@H]([OTES])CCC(C)O)C1",
+            "product_smiles": "C[C@]1OC([C@@H](C(C)(C)[OTES]))[C@@H]([C@H]([OTES])CCC(C)SC2=NN=N(N2)c3ccccc3)C1",
+            "notes": "Mitsunobu reaction converting a secondary alcohol to a thioether using 1-phenyl-1H-tetrazole-5-thiol. Stereochemistry at the reacting center is not explicitly shown in the diagram, so it is not defined in the SMILES.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Oxidation",
+            "reagents": "m-CPBA",
+            "reagent_smiles": "",
+            "conditions": "DCM, 0 °C",
+            "yield": "75%",
+            "reactant_smiles": "[OTES][C@H](CCC(C)SC1=NN(c2ccccc2)N=N1)[C@]2(C)CC[C@H](C(C)(C)[OTES])O2",
+            "product_smiles": "[OTES][C@H](CCC(C)S(=O)(=O)C1=NN(c2ccccc2)N=N1)[C@]2(C)CC[C@H](C(C)(C)[OTES])O2",
+            "notes": "Oxidation of a thioether to a sulfone using m-CPBA.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Julia olefination",
+            "reagents": "NaHMDS",
+            "reagent_smiles": "[Boc]N1C=C(C=C([N+](=O)[O-])C1)CC=O",
+            "conditions": "THF, -78 °C",
+            "yield": "30%",
+            "reactant_smiles": "Cc1cnnc(n1c2ccccc2)S(=O)(=O)[C@@H](C)CC[C@@H](O[OTES])C[C@]3(C)CC[C@@H](C(C)(C)[OTES])O3",
+            "product_smiles": "[OTES]O[C@H](CC/C(C)=C\\CC[Boc]N1C=C(C=C([N+](=O)[O-])C1))C[C@]2(C)CC[C@@H](C(C)(C)[OTES])O2",
+            "notes": "Julia olefination of a sulfone with a pyrrole aldehyde to form an E-alkene. Two OTES protecting groups are present.",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Nitration",
+                    "reagents": "HNO3, acetic anhydride",
+                    "reagent_smiles": "",
+                    "conditions": "-50 °C",
+                    "yield": "55%",
+                    "reactant_smiles": "C1=CNC=C1",
+                    "product_smiles": "O=[N+]([O-])C1=CNC=C1",
+                    "notes": "Nitration of pyrrole at the C-2 position.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "N-Acylation (Benzoylation)",
+                    "reagents": "K2CO3, NaI",
+                    "reagent_smiles": "O=C(Cl)c1ccccc1",
+                    "conditions": "DMF, rt",
+                    "yield": "100%",
+                    "reactant_smiles": "O=[N+]([O-])C1=CC=C[NH]1",
+                    "product_smiles": "O=[N+]([O-])C1=CC=C[N]([Bz])1",
+                    "notes": "N-Benzoylation of 2-nitropyrrole.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Iodination",
+                    "reagents": "NIS, MeCN",
+                    "reagent_smiles": "",
+                    "conditions": "60 °C",
+                    "yield": "80%",
+                    "reactant_smiles": "[Boc]N1C([N+](=O)[O-])=CC=C1",
+                    "product_smiles": "[Boc]N1C([N+](=O)[O-])=CC(I)=C1",
+                    "notes": "Iodination of N-Boc-2-nitropyrrole at the 4-position using N-iodosuccinimide (NIS).",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Stille coupling",
+                    "reagents": "Pd(dppf)Cl2",
+                    "reagent_smiles": "C=C[Sn](CCCC)(CCCC)CCCC",
+                    "conditions": "DMF, 80 °C",
+                    "yield": "84%",
+                    "reactant_smiles": "N1([Bz])C([N+](=O)[O-])=CC(I)=C1",
+                    "product_smiles": "N1([Bz])C([N+](=O)[O-])=CC(C=C)=C1",
+                    "notes": "Stille coupling of an iodopyrrole with tributyl(vinyl)tin to install a vinyl group.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.5",
+                    "reaction_type": "Oxidative cleavage",
+                    "reagents": "PIDA, H2SO4",
+                    "reagent_smiles": "",
+                    "conditions": "MeCN, 0 °C",
+                    "yield": "45%",
+                    "reactant_smiles": "C=Cc1ccc([N+](=O)[O-])n1[Boc]",
+                    "product_smiles": "O=CCCc1ccc([N+](=O)[O-])n1[Boc]",
+                    "notes": "Oxidative cleavage of the vinyl group to a 3-oxopropyl (aldehyde) group on the N-Boc-2-nitropyrrole core.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Shi asymmetric epoxidation",
+            "reagents": "Shi cat., Oxone, K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeCN/DME/buffer, 0 °C",
+            "yield": "82%",
+            "reactant_smiles": "[OTES][C@H](CC/C(=C/CC1=CN(C(=C1)[N+](=O)[O-])C(=O)OC(C)(C)C)/C)[C@]2(C)CC[C@@H](C(C)(C)[OTES])O2",
+            "product_smiles": "[OTES][C@H](CC[C@]1(C)[C@@H](CC2=CN(C(=C2)[N+](=O)[O-])C(=O)OC(C)(C)C)O1)[C@]3(C)CC[C@@H](C(C)(C)[OTES])O3",
+            "notes": "Epoxidation of an alkene",
+            "substeps": []
+        },
+        {
+            "step_id": "14",
+            "reaction_type": "Desilylation",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "THF, 0 °C to rt",
+            "yield": "",
+            "reactant_smiles": "[N+](=O)[O-]C1=CN([Boc])C=C1CCC[C@H]2O[C@](C)(C[C@]3(C)(CC[C@@H](O[TES])O3)C(C)(C)O[TES])C2",
+            "product_smiles": "[N+](=O)[O-]C1=CN([Boc])C=C1CCC[C@H]2O[C@](C)(C[C@]3(C)(CC[C@@H](O)O3)C(C)(C)O)C2",
+            "notes": "Deprotection of two triethylsilyl (TES) ethers to hydroxyl groups using TBAF, leaving the epoxide and Boc group intact.",
+            "substeps": []
+        },
+        {
+            "step_id": "15",
+            "reaction_type": "Epoxide opening / Cyclization / Deprotection",
+            "reagents": "CSA",
+            "reagent_smiles": "",
+            "conditions": "toluene, 0 to 50 °C",
+            "yield": "80% (2 steps)",
+            "reactant_smiles": "O=[N+]([O-])c1cn([Boc])cc1C[C@H]2O[C@@](C)2C[C@@H](O)[C@]3(C)O[C@H]4CC[C@@](C)([C@H](O)C(C)(C)O)O4",
+            "product_smiles": "O=[N+]([O-])c1cn([H])cc1C[C@@H]2O[C@](C)2C[C@@H](O)[C@]3(C)O[C@H]4CC[C@@](C)([C@H](O)C(C)(C)O)O4",
+            "notes": "Acid-catalyzed epoxide opening with subsequent cyclization to form a furan ring, and Boc group deprotection from the pyrrole nitrogen.",
+            "substeps": []
+        }
+    ]
+}

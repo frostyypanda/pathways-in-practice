@@ -1,0 +1,217 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "humulene-corey-1967",
+        "molecule_name": "Humulene",
+        "class": "Natural Product",
+        "author": "Corey",
+        "year": 1967
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Reduction",
+            "reagents": "LiAlH4, AlCl3, Et2O",
+            "reagent_smiles": "[Li][AlH4].Cl[Al](Cl)Cl.CCOCC",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "COC(=O)/C=C(\\C)CC(=O)OC",
+            "product_smiles": "OC/C=C(\\C)CCO",
+            "notes": "Reduction of a diester to a diol using LiAlH4 and AlCl3.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Bromination of primary alcohols",
+            "reagents": "PBr3",
+            "reagent_smiles": "BrP(Br)Br",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\CO)/CCO",
+            "product_smiles": "C/C(=C\\CBr)/CCBr",
+            "notes": "Conversion of a diol to a dibromide using PBr3, retaining the Z-stereochemistry of the double bond.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Allylic Substitution",
+            "reagents": "(CH3)3N+CH2Ph, Cl2CHCO2-",
+            "reagent_smiles": "",
+            "conditions": "Acetone",
+            "yield": "",
+            "reactant_smiles": "BrCC/C=C(\\CBr)C",
+            "product_smiles": "ClC(Cl)C(=O)OC/C=C(\\C)CCBr",
+            "notes": "One allylic bromide is replaced by a dichloroacetate group. The E-stereochemistry of the double bond is retained. This reaction uses a phase-transfer catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Ester Hydrolysis / Deprotection",
+            "reagents": "HO-",
+            "reagent_smiles": "[OH-]",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "ClC(Cl)C(=O)O/C=C(C)\\CCBr",
+            "product_smiles": "BrCC/C(C)=C/CO",
+            "notes": "Ester hydrolysis of a dichloromethyl ester using hydroxide to yield an allylic alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Alcohol Protection",
+            "reagents": "H+",
+            "reagent_smiles": "C1C=COCC1",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\CO)/CCBr",
+            "product_smiles": "C/C(=C\\CO[THP])/CCBr",
+            "notes": "Protection of a primary alcohol as a tetrahydropyranyl (THP) ether using dihydropyran and an acid catalyst.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Phosphonium Salt Formation (Wittig precursor)",
+            "reagents": "",
+            "reagent_smiles": "P([Ph])([Ph])[Ph]",
+            "conditions": "CH3CN, 80 °C",
+            "yield": "",
+            "reactant_smiles": "[THPO]C/C=C(\\C)/CCBr",
+            "product_smiles": "[THPO]C/C=C(\\C)/CC[P+]([Ph])([Ph])[Ph].[Br-]",
+            "notes": "Formation of a phosphonium salt from an alkyl bromide and triphenylphosphine.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Wittig olefination",
+            "reagents": "DMSO",
+            "reagent_smiles": "C=CC(C)(C)CC(=C/C)/COC(=O)C1=C(C)C=C(C)C=C1C",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Br-].C/C(=C/CO[Thp])CCP(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "product_smiles": "C/C(=C/CO[Thp])CC/C=C/CC(C)(C)CC(=C/C)/COC(=O)C2=C(C)C=C(C)C=C2C",
+            "notes": "Wittig olefination of a phosphonium ylide (derived from the phosphonium bromide reactant) with an aldehyde reagent, forming a new E-alkene.",
+            "substeps": [
+                {
+                    "step_id": "7.1",
+                    "reaction_type": "Nucleophilic Substitution",
+                    "reagents": "",
+                    "reagent_smiles": "CC1=CC(=C(C(=C1)C)C(=O)[O-])C.C[N+](C)(C)Cc1ccccc1.CCO",
+                    "conditions": "EtOH, 80 °C",
+                    "yield": "",
+                    "reactant_smiles": "C/C(=C\\COC(=O)C)/CCl",
+                    "product_smiles": "CC1=CC(=C(C(=C1)C)C(=O)OC/C(=C\\COC(=O)C)C)C",
+                    "notes": "Allylic chloride is substituted by a carboxylate group to form an ester, maintaining E-stereochemistry of the alkene.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.2",
+                    "reaction_type": "Hydrolysis",
+                    "reagents": "",
+                    "reagent_smiles": "[OH-]",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "Cc1c(C)cc(C)c1C(=O)OC/C(=C\\COC(=O)C)/C",
+                    "product_smiles": "Cc1c(C)cc(C)c1C(=O)OC/C(=C\\CO)/C",
+                    "notes": "Hydrolysis of an acetate ester to a primary alcohol.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.3",
+                    "reaction_type": "Halogenation",
+                    "reagents": "PBr3",
+                    "reagent_smiles": "",
+                    "conditions": "Et2O",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CC(=C(C(=C1)C)C(=O)OC/C(=C/CO)/C)C",
+                    "product_smiles": "CC1=CC(=C(C(=C1)C)C(=O)OC/C(=C/CBr)/C)C",
+                    "notes": "Conversion of a primary allylic alcohol to an allylic bromide using PBr3.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.4",
+                    "reaction_type": "Substitution / Carbon-Carbon bond formation",
+                    "reagents": "EtMgBr",
+                    "reagent_smiles": "CC(C)C=NC1CCCCC1",
+                    "conditions": "THF",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CC(=C(C(=C1)C)C(=O)OC/C(=C/CBr)/C)C",
+                    "product_smiles": "CC1=CC(=C(C(=C1)C)C(=O)OC/C(=C/CC(C)(C)C=NC2CCCCC2)/C)C",
+                    "notes": "An allylic bromide reacts to form a new carbon-carbon bond, incorporating parts of an imine structure.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "7.5",
+                    "reaction_type": "Imine Hydrolysis",
+                    "reagents": "H₂C₂O₄, H₂O",
+                    "reagent_smiles": "O=C(O)C(=O)O.O",
+                    "conditions": "",
+                    "yield": "",
+                    "reactant_smiles": "CC1=CC(=C(C(=C1)C)C(=O)OC/C(=C/CC(C)(C)C=NC2CCCCC2)/C)C",
+                    "product_smiles": "CC1=CC(=C(C(=C1)C)C(=O)OC/C(=C/CC(C)(C)C=O)/C)C",
+                    "notes": "Hydrolysis of an imine to an aldehyde using oxalic acid and water.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Ester Reduction",
+            "reagents": "LiAlH4",
+            "reagent_smiles": "",
+            "conditions": "Et2O",
+            "yield": "",
+            "reactant_smiles": "[THPO]C/C=C(\\C)CC/C=C\\CC(C)(C)CC/C=C(/C)COC(=O)C1=C(C)C=C(C)C=C1C",
+            "product_smiles": "[THPO]C/C=C(\\C)CC/C=C\\CC(C)(C)CC/C=C(/C)CO",
+            "notes": "Reduction of a 2,4,6-trimethylbenzoate ester to a primary alcohol using lithium aluminum hydride. THP ether and alkene groups are retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection (THP ether hydrolysis)",
+            "reagents": "H+, MeOH",
+            "reagent_smiles": "CO.[H+]",
+            "conditions": "MeOH",
+            "yield": "",
+            "reactant_smiles": "CC1C/C=C(\\[CH2]O[THPO])/[CH2][CH2]/C=C(C)/[CH2]C(C)(C)/C=C(\\C)/C1[CH2]O",
+            "product_smiles": "CC1C/C=C(\\[CH2]O)/[CH2][CH2]/C=C(C)/[CH2]C(C)(C)/C=C(\\C)/C1[CH2]O",
+            "notes": "Acid-catalyzed hydrolysis of a THP ether to yield the corresponding alcohol. All other functional groups, including a second primary alcohol and three E-configured double bonds within a 12-membered macrocycle, remain unchanged.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Substitution (Alcohol to Alkyl Bromide)",
+            "reagents": "PBr3",
+            "reagent_smiles": "",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "OC/C=C(/C)C1CCC/C=C\\C(C)(C)CC/C=C(/C)CO1",
+            "product_smiles": "BrC/C=C(/C)C1CCC/C=C\\C(C)(C)CC/C=C(/C)CBr1",
+            "notes": "Conversion of a macrocyclic diol to the corresponding dibromide using PBr3. The E/Z stereochemistry of the double bonds is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Reductive Cyclization",
+            "reagents": "Ni(CO)4",
+            "reagent_smiles": "",
+            "conditions": "NMP, 50 °C",
+            "yield": "",
+            "reactant_smiles": "BrC/C=C(\\C)CC/C=C/CC(C)(C)C/C=C(\\C)CBr",
+            "product_smiles": "CC(C)/C1=C(\\C)CCC/C=C/CC/C=C(\\C)C1",
+            "notes": "Intramolecular reductive cyclization of a bis-allylic dibromide to form (1E,4E,8E)-humulene using nickel tetracarbonyl.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "Photoisomerization",
+            "reagents": "hv",
+            "reagent_smiles": "c1ccc(SSc2ccccc2)cc1",
+            "conditions": "cyclohexane",
+            "yield": "",
+            "reactant_smiles": "C/C/1=C\\CC/C(=C/CC(C)(C)/C=C\\C1)/C",
+            "product_smiles": "C/C/1=C\\CC/C(=C/CC(C)(C)/C=C\\C1)/C",
+            "notes": "Reactant and product are drawn as identical structures ((E,E,Z)-alpha-humulene). The conditions (hv, PhSSPh) suggest a photo-induced isomerization.",
+            "substeps": []
+        }
+    ]
+}

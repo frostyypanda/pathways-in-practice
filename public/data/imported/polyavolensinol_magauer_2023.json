@@ -1,0 +1,145 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "polyavolensinol-magauer-2023",
+        "molecule_name": "Polyavolensinol",
+        "class": "Natural Product",
+        "author": "Magauer",
+        "year": 2023
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Bromination",
+            "reagents": "PBr3, Et2O",
+            "reagent_smiles": "",
+            "conditions": "-41 °C to -9 °C",
+            "yield": "90%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC/C(=C/CO)/C)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC/C(=C/CBr)/C)/C)C",
+            "notes": "Conversion of a primary alcohol to a primary alkyl bromide using phosphorus tribromide.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Alkylation / C-C bond formation",
+            "reagents": "nBuLi",
+            "reagent_smiles": "O=S(c1ccccc1)(=O)N1C=CC2=CC=CC=C21",
+            "conditions": "THF, -78 °C to rt",
+            "yield": "80%",
+            "reactant_smiles": "CC(=CCC/C(=C/CC/C(=C/CBr)/C)/C)C",
+            "product_smiles": "CC(=CCC/C(=C/CC/C(=C/CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c3ccccc3)/C)/C)C",
+            "notes": "Alkylation of the C3-position of N-phenylsulfonylindole, deprotonated by nBuLi, with an alkyl bromide.",
+            "substeps": [
+                {
+                    "step_id": "2.1",
+                    "reaction_type": "Oxidation / Chlorination",
+                    "reagents": "SOCl2, H2O2",
+                    "reagent_smiles": "",
+                    "conditions": "rt",
+                    "yield": "99%",
+                    "reactant_smiles": "C1=CC=C(C=C1)S",
+                    "product_smiles": "C1=CC=C(C=C1)S(=O)(=O)Cl",
+                    "notes": "Oxidation of benzenethiol to benzenesulfonyl chloride.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "2.2",
+                    "reaction_type": "N-sulfonylation",
+                    "reagents": "NaOH",
+                    "reagent_smiles": "C1=CC2=C(C=C1)NC=C2",
+                    "conditions": "THF, 0 °C to rt",
+                    "yield": "99%",
+                    "reactant_smiles": "O=S(=O)(Cl)c1ccccc1",
+                    "product_smiles": "O=S(=O)(c1ccccc1)N1C=CC2=CC=CC=C21",
+                    "notes": "Indole undergoes N-sulfonylation with benzenesulfonyl chloride under basic conditions.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Asymmetric Dihydroxylation (Sharpless AD)",
+            "reagents": "K₂OsO₄, K₂CO₃, K₃[Fe(CN)₆], CH₃SO₂NH₂",
+            "reagent_smiles": "CC[C@H]1CN2CCC3=CC=CC=C3C2[C@@H]([C@H]1OC4=NC5=CC=CC=C5N=C4O[C@H]6C[C@H]7C8=CC=CC=C8C[N+]9=C7CC[C@H]9[C@H]6CC)C=C",
+            "conditions": "tBuOH, H₂O, THF, rt to 0 °C",
+            "yield": "73%",
+            "reactant_smiles": "O=S(=O)([Ph])N1C=C(CC/C=C(\\C)/CC/C=C(\\C)/C[C@@H]2CCC(C)(C)C=C2)C2=CC=CC=C21",
+            "product_smiles": "O=S(=O)([Ph])N1C=C(CC/C=C(\\C)/CC/C=C(\\C)/C[C@@H]2CCC(C)(C)[C@H](O)[C@H](C)O2)C2=CC=CC=C21",
+            "notes": "Asymmetric dihydroxylation of the terminal cyclohexene double bond, forming a syn-diol. The phenylsulfonyl protecting group on the indole and the two internal E-alkenes in the side chain are preserved. The chiral center in the cyclohexene ring is also preserved. The reaction uses a chiral ligand (DHQD)₂PHAL.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Mesylation / Esterification",
+            "reagents": "MsCl, pyridine",
+            "reagent_smiles": "CS(=O)(=O)Cl.n1ccccc1",
+            "conditions": "CH₂Cl₂",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c1ccccc1)/CC/C=C(\\C)/CC[C@H](C(C)(C)O)O",
+            "product_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c1ccccc1)/CC/C=C(\\C)/CC[C@H](C(C)(C)O)OS(=O)(=O)C",
+            "notes": "Secondary alcohol converted to mesylate (sulfonate ester). Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Epoxide Formation / Intramolecular Cyclization",
+            "reagents": "K2CO3",
+            "reagent_smiles": "",
+            "conditions": "MeOH, 0 °C to rt",
+            "yield": "98%",
+            "reactant_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c3ccccc3)/CC/C=C(\\C)/CC[C@H](C(C)(C)O)[OMs]",
+            "product_smiles": "C/C(=C\\CC1=CC2=C(C=CC=C2)N1S(=O)(=O)c3ccccc3)/CC/C=C(\\C)/CC[C@H]4C(C)(C)O4",
+            "notes": "Intramolecular cyclization of a tertiary alcohol onto a mesylate to form an epoxide.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "N-deprotection",
+            "reagents": "KOH, MeOH",
+            "reagent_smiles": "",
+            "conditions": "60 °C",
+            "yield": "88%",
+            "reactant_smiles": "CC1(C)OC1C[C@@H]2C(C)(C)[C@@]3([H])[C@H]4CC=C(C)C[C@@H]4[C@@H](C)CC3C2CC=C(C)C5=CC6=C(C=CC=C6)N(S(=O)(=O)c1ccccc1)5",
+            "product_smiles": "CC1(C)OC1C[C@@H]2C(C)(C)[C@@]3([H])[C@H]4CC=C(C)C[C@@H]4[C@@H](C)CC3C2CC=C(C)C5=CC6=C(C=CC=C6)N5",
+            "notes": "Base-mediated deprotection of N-phenylsulfonyl indole to yield Polyavolensinol.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Electrophilic Bromination",
+            "reagents": "NBS",
+            "reagent_smiles": "CCN(CC)CC",
+            "conditions": "CH2Cl2, -35 °C to -20 °C",
+            "yield": "91%",
+            "reactant_smiles": "c1ccc2[nH]c(C/C(=C/CC/C=C(\\C)/CC[C@@H](C)C3(C)OC3)c2c1",
+            "product_smiles": "c1ccc2[nH]c(Br)c(C/C(=C/CC/C=C(\\C)/CC[C@@H](C)C3(C)OC3)c2c1",
+            "notes": "Electrophilic bromination of the indole C2 position.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Epoxide opening / Cascade cyclization",
+            "reagents": "BF3•OEt2",
+            "reagent_smiles": "",
+            "conditions": "CH2Cl2, -78 °C",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\CC1=C(C2=C(C=CC=C2)N1)Br)/CC/C=C(\\C)\\CC[C@H]3C(C)(C)O3",
+            "product_smiles": "CC1(C)[C@H](O)[C@@H]2CC[C@@](C)3[C@H](CC4=C(C5=C(C=CC=C5)N43)Br)[C@H]2(C)CCC1",
+            "notes": "Cascade cyclization reaction involving epoxide opening and indole addition to form a complex polycyclic structure. The reactant's second double bond was corrected from E to Z. The product's SMILES was corrected by adding stereochemical descriptors based on the image's wedges/dashes. However, the initial provided product SMILES `CC1(C)C2CCC3(C)C(CC4=C(C5=C(C=CC=C5)N43)Br)C2(C)CCC1O` had discrepancies in methyl group placement compared to the image (e.g., C2 in SMILES has a methyl, but the corresponding spiro carbon in the image does not; the spiro carbon connected to the indole N in the image has a methyl, but the corresponding part of the SMILES does not). The corrected product SMILES attempts to map the stereochemistry onto the closest structural interpretation of the original SMILES, but these underlying structural discrepancies remain a challenge.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Reductive Dehalogenation",
+            "reagents": "Pd/C, H2",
+            "reagent_smiles": "",
+            "conditions": "EtOH, rt",
+            "yield": "22% (2 steps)",
+            "reactant_smiles": "C[C@@]12CC[C@@](C)(O)[C@H]1CC[C@@]13C[C@H](C)C2(C)[C@H]1CC1=C(Br)C4=CC=CC=C4N31",
+            "product_smiles": "C[C@@]12CC[C@@](C)(O)[C@H]1CC[C@@]13C[C@H](C)C2(C)[C@H]1CC1=CC4=CC=CC=C4N31",
+            "notes": "Reductive debromination of the 3-bromoindole moiety.",
+            "substeps": []
+        }
+    ]
+}

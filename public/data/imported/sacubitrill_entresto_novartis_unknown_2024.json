@@ -1,0 +1,132 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "sacubitrill-entresto-novartis-unknown-2024",
+        "molecule_name": "Sacubitrill (Entresto Novartis)",
+        "class": "Natural Product",
+        "author": "Unknown",
+        "year": 2024
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Grignard reaction, Epoxide opening",
+            "reagents": "I2, CuI, 36% aq. HCl",
+            "reagent_smiles": "ClC[C@H]1OC1.Mg",
+            "conditions": "THF, 45-50 °C then -15 to 20 °C",
+            "yield": "92%",
+            "reactant_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)Br",
+            "product_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)C[C@@H](CCl)O",
+            "notes": "Formation of a Grignard reagent from 4-bromobiphenyl and magnesium, followed by nucleophilic addition to (R)-epichlorohydrin, and acidic workup to form (R)-1-chloro-4-(biphenyl-4-yl)butan-2-ol.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Mitsunobu reaction",
+            "reagents": "PPh3, DEAD, Succinimide",
+            "reagent_smiles": "C1CC(=O)NC1=O.P(c1ccccc1)(c2ccccc2)c3ccccc3.CCOC(=O)N=NOC(=O)OCC",
+            "conditions": "toluene, 0-5 °C",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)C[C@H](CCl)O",
+            "product_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)C[C@@H](CCl)N3C(=O)CCC3=O",
+            "notes": "Mitsunobu reaction of a secondary alcohol with succinimide, leading to an N-alkylated succinimide with inversion of stereochemistry.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Hydrolysis",
+            "reagents": "36% aq. HCl, then 30% NaOH, then 34% aq. HCl",
+            "reagent_smiles": "",
+            "conditions": "EtOH",
+            "yield": "",
+            "reactant_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)C[C@@H](CCl)N3C(=O)CCC3=O",
+            "product_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)C[C@@H](CO)N",
+            "notes": "Hydrolysis of N-alkylsuccinimide to primary amine and hydrolysis of alkyl chloride to primary alcohol. Stereochemistry at the chiral center is retained.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Amine protection",
+            "reagents": "Boc₂O, 30% aq. NaOH, EtOH, H₂O",
+            "reagent_smiles": "",
+            "conditions": "55-60 °C",
+            "yield": "90%",
+            "reactant_smiles": "C1=CC=C(C=C1)C2=CC=C(C=C2)C[C@H](CO)N",
+            "product_smiles": "[Boc]N[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)CO",
+            "notes": "Protection of the primary amine with a Boc group. The yield of 90% is noted as being over 3 steps.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Oxidation (TEMPO-mediated)",
+            "reagents": "TEMPO, NaClO, NaHCO3, Na2S2O3",
+            "reagent_smiles": "",
+            "conditions": "iPrOAc, H2O, 0-5 °C",
+            "yield": "",
+            "reactant_smiles": "[Boc]NH[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)CO",
+            "product_smiles": "[Boc]NH[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)C=O",
+            "notes": "Primary alcohol is oxidized to an aldehyde using TEMPO/NaClO system.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Wittig olefination",
+            "reagents": "iPrOAc",
+            "reagent_smiles": "CCOC(=O)C(=C)P(c1ccccc1)(c2ccccc2)c3ccccc3",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "[Boc]N[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)C=O",
+            "product_smiles": "[Boc]N[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)/C=C(/C)C(=O)OCC",
+            "notes": "Wittig reaction of an aldehyde with an ester-stabilized ylide to form an alpha,beta-unsaturated ethyl ester. The (S)-stereochemistry at the chiral center is retained, and an (E)-alkene is formed.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ester hydrolysis",
+            "reagents": "LiOH",
+            "reagent_smiles": "",
+            "conditions": "H2O, EtOH, reflux",
+            "yield": "75% (3 steps)",
+            "reactant_smiles": "CCOC(=O)/C(=C/[C@@H](CC1=CC=C(C=C1)C2=CC=CC=C2)[Boc]NH)/C",
+            "product_smiles": "C/C(=C\\[C@@H](CC1=CC=C(C=C1)C2=CC=CC=C2)[Boc]NH)/C(=O)O",
+            "notes": "Hydrolysis of an ethyl ester to its corresponding carboxylic acid.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Asymmetric Hydrogenation",
+            "reagents": "H2, [Ru(p-cymene)]2, Ferrocene-based chiral phosphine catalyst",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 40 °C, iPrOAc, heptane, reflux",
+            "yield": "",
+            "reactant_smiles": "C/C(=C\\[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)N[Boc])/C(=O)O",
+            "product_smiles": "C[C@H](C[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)N[Boc])C(=O)O",
+            "notes": "Asymmetric hydrogenation of an α,β-unsaturated carboxylic acid derivative, creating a new chiral center and preserving the configuration of the existing one. The E-double bond is reduced.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Boc Deprotection & Esterification",
+            "reagents": "SOCl2",
+            "reagent_smiles": "",
+            "conditions": "EtOH, 70 °C",
+            "yield": "",
+            "reactant_smiles": "C[C@H](C[C@@H](CC1=CC=C(C=C1)C2=CC=CC=C2)N[Boc])C(=O)O",
+            "product_smiles": "CCOC(=O)[C@H](C)C[C@@H](CC1=CC=C(C=C1)C2=CC=CC=C2)N",
+            "notes": "The Boc protecting group is cleaved under acidic conditions (generated from SOCl2 reaction with carboxylic acid/alcohol), and the carboxylic acid is esterified with ethanol.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Amidation, Dehydrogenation",
+            "reagents": "pyridine",
+            "reagent_smiles": "C1CC(=O)OC1=O",
+            "conditions": "rt",
+            "yield": "98% (2 steps)",
+            "reactant_smiles": "CCOC(=O)[C@H](C)C[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)N",
+            "product_smiles": "CCOC(=O)/C(C)=C\\[C@H](CC1=CC=C(C=C1)C2=CC=CC=C2)NC(=O)CCC(=O)O",
+            "notes": "Amidation of the primary amine with succinic anhydride, followed by dehydrogenation (oxidation) to form an alpha,beta-unsaturated ester.",
+            "substeps": []
+        }
+    ]
+}

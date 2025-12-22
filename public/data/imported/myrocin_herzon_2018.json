@@ -1,0 +1,229 @@
+{
+    "$schema": "../schema.json",
+    "meta": {
+        "id": "myrocin-herzon-2018",
+        "molecule_name": "Myrocin",
+        "class": "Natural Product",
+        "author": "Herzon",
+        "year": 2018
+    },
+    "sequence": [
+        {
+            "step_id": "1",
+            "reaction_type": "Acid-catalyzed Condensation / Enamine Formation",
+            "reagents": "BnNHCO2Me, TsOH",
+            "reagent_smiles": "COC(=O)NCC1=CC=CC=C1.CS(=O)(=O)C1=CC=C(C)C=C1",
+            "conditions": "CHCl3, reflux",
+            "yield": "90%",
+            "reactant_smiles": "CC(=O)CC(OC)OC",
+            "product_smiles": "CC(=O)/C=C/N(CC1=CC=CC=C1)C(=O)OC",
+            "notes": "Condensation of a masked aldehyde (acetal) with a benzyl methyl carbamate to form an enone with a N-substituted carbamate.",
+            "substeps": []
+        },
+        {
+            "step_id": "2",
+            "reaction_type": "Enol Silyl Ether Formation",
+            "reagents": "KHMDS, TBSCl",
+            "reagent_smiles": "",
+            "conditions": "THF",
+            "yield": "99%",
+            "reactant_smiles": "CC(=O)/C=C/N([Bn])C(=O)OC",
+            "product_smiles": "C=C(/C=C/N([Bn])C(=O)OC)[OTBS]",
+            "notes": "Formation of an enol silyl ether from an enamide ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "3",
+            "reaction_type": "Diels-Alder reaction",
+            "reagents": "Jacobsen catalyst (Cr(III))",
+            "reagent_smiles": "C=C(C=O)",
+            "conditions": "CH2Cl2, 4A MS",
+            "yield": "93%",
+            "reactant_smiles": "C=C(/C=C/N([Bn])C(=O)OC)O[TBS]",
+            "product_smiles": "O[TBS]C1=CC[C@H](N([Bn])C(=O)OC)[C@](C)(C=O)C1",
+            "notes": "Chiral Cr(III) catalyst promotes a Diels-Alder reaction between a substituted diene and acrolein derivative to form a cyclohexene aldehyde with high stereocontrol.",
+            "substeps": []
+        },
+        {
+            "step_id": "4",
+            "reaction_type": "Wittig olefination",
+            "reagents": "",
+            "reagent_smiles": "[K+].N(Si(C)(C)C)Si(C)(C)C.[Br-].C[P+](c1ccccc1)(c1ccccc1)c1ccccc1",
+            "conditions": "THF",
+            "yield": "",
+            "reactant_smiles": "COC(=O)N(Cc1ccccc1)[C@H]1CC=C(O[Si](C)(C)C(C)(C)C)CC([C@@H](C=O)C)C1",
+            "product_smiles": "COC(=O)N(Cc1ccccc1)[C@H]1CC=C(O[Si](C)(C)C(C)(C)C)CC([C@@H](C=C)C)C1",
+            "notes": "Wittig olefination converts an aldehyde to an alkene.",
+            "substeps": []
+        },
+        {
+            "step_id": "5",
+            "reaction_type": "Deprotection / Hydrolysis",
+            "reagents": "1N HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, 70 °C",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@]1(C)CCC(=C([C@@H](N([Bn])C(=O)OC)C1)O[TBS])",
+            "product_smiles": "O=C1C=CC[C@](C)(C=C)CC1",
+            "notes": "Deprotection of TBS ether and N-benzylcarbamate, followed by rearrangement to an alpha-beta unsaturated ketone.",
+            "substeps": []
+        },
+        {
+            "step_id": "6",
+            "reaction_type": "Iodination / Electrophilic Addition",
+            "reagents": "I₂, Pyridine",
+            "reagent_smiles": "",
+            "conditions": "CH₂Cl₂",
+            "yield": "22%",
+            "reactant_smiles": "O=C1C=C[C@](C)(C=C)CC1",
+            "product_smiles": "O=C1C=C(I)[C@](C)(C=C)CC1",
+            "notes": "Iodination of an alpha,beta-unsaturated ketone at the beta-carbon.",
+            "substeps": []
+        },
+        {
+            "step_id": "7",
+            "reaction_type": "Ketal formation",
+            "reagents": "CH(OEt)3, TsOH",
+            "reagent_smiles": "C(CO)O",
+            "conditions": "",
+            "yield": "",
+            "reactant_smiles": "C=C[C@@]1(C)CCC(=O)C(=C1)I",
+            "product_smiles": "C=C[C@@]1(C)CCC2(C(=C1)I)OCCO2",
+            "notes": "Protection of ketone to form an ethylene ketal.",
+            "substeps": []
+        },
+        {
+            "step_id": "8",
+            "reaction_type": "Acylation / Halogen-metal exchange",
+            "reagents": "n-BuLi",
+            "reagent_smiles": "CN(OC)C(=O)C[OTBS]",
+            "conditions": "THF, -78 °C to RT",
+            "yield": "74%",
+            "reactant_smiles": "IC1=C2(OCCO2)CCC[C@@](C)(C=C)C1",
+            "product_smiles": "O=C(C[OTBS])C1=C2(OCCO2)CCC[C@@](C)(C=C)C1",
+            "notes": "Iodine-lithium exchange using n-BuLi, followed by acylation with N-methoxy-N-methyl-2-((tert-butyldimethylsilyl)oxy)acetamide (Weinreb amide). The carbon-iodine bond is replaced by a ketone with a TBS-protected alcohol.",
+            "substeps": []
+        },
+        {
+            "step_id": "9",
+            "reaction_type": "Deprotection, Protection",
+            "reagents": "TBAF, AllocCl, Pyridine",
+            "reagent_smiles": "",
+            "conditions": "THF, CH2Cl2, 0 °C to rt",
+            "yield": "54%",
+            "reactant_smiles": "C=C[C@@H](C)C1CC=C(C(=O)C[OTBS])C1(OCCO1)",
+            "product_smiles": "C=C[C@@H](C)C1CC=C(C(=O)CO[Alloc])C1(OCCO1)",
+            "notes": "Deprotection of TBS silyl ether to alcohol, followed by protection of the alcohol as an allyl carbonate.",
+            "substeps": []
+        },
+        {
+            "step_id": "10",
+            "reaction_type": "Acetal Hydrolysis",
+            "reagents": "1N HCl",
+            "reagent_smiles": "",
+            "conditions": "THF, rt",
+            "yield": "85%",
+            "reactant_smiles": "C=CCOCC(=O)C1=CC[C@@](C)(C=C)CC12OCCO2",
+            "product_smiles": "C=CCOCC(=O)C1=CC[C@@](C)(C=C)CC1=O",
+            "notes": "Hydrolysis of cyclic acetal (ketal) to form a cyclohexenone.",
+            "substeps": []
+        },
+        {
+            "step_id": "11",
+            "reaction_type": "Double Enolization/Silylation",
+            "reagents": "LiHMDS, TMSCl",
+            "reagent_smiles": "[Li]N(Si(C)(C)C)Si(C)(C)C.Cl[Si](C)(C)C",
+            "conditions": "THF, -78 °C",
+            "yield": "",
+            "reactant_smiles": "O=C1C=C(C(=O)OCC=C)C(=O)CC[C@@](C)(C=C)C1",
+            "product_smiles": "O=C1CC[C@@](C)(C=C)C=C(O[TMS])C(C(=CH-OCC=C))1",
+            "notes": "Formation of a silyl enol ether from the cyclic ketone and an O-silyl ketene acetal from the exocyclic ester.",
+            "substeps": []
+        },
+        {
+            "step_id": "12",
+            "reaction_type": "",
+            "reagents": "i-PrMgCl·LiCl",
+            "reagent_smiles": "C[C@H]1C2C[C@](C(=O)O[TMSE])C(=O)C2C1",
+            "conditions": "PhMe, -78 to 0 °C",
+            "yield": "92%",
+            "reactant_smiles": "[Alloc]O/C=C(\\C1=C[C@@](C)(C=C)CCC1=O)\\[TMS]O",
+            "product_smiles": "C=C[C@@]1(C)CCC2(C(=C1)C(=O)[C@](O[TMS])=C([C@@H](O))C3([C@](C(=O)O[TMSE]))(CC[C@H]4[C@H](C)C[C@@]432))",
+            "notes": "Intramolecular cyclization / bicyclic formation via addition of bicyclic ketone to enol ether",
+            "substeps": [
+                {
+                    "step_id": "12.1",
+                    "reaction_type": "Transesterification",
+                    "reagents": "PhMe",
+                    "reagent_smiles": "C[Si](C)(C)CCO",
+                    "conditions": "100 °C",
+                    "yield": "",
+                    "reactant_smiles": "CCOC(=O)CC(=O)C",
+                    "product_smiles": "CC(=O)CC(=O)[OTMSE]",
+                    "notes": "Transesterification of ethyl acetoacetate with 2-(trimethylsilyl)ethanol to form 2-(trimethylsilyl)ethyl acetoacetate.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.2",
+                    "reaction_type": "Alkylation",
+                    "reagents": "K2CO3, MeI",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "93%",
+                    "reactant_smiles": "CC(=O)CC(=O)OCC[Si](C)(C)C",
+                    "product_smiles": "CC(C(=O)C)C(=O)OCC[Si](C)(C)C",
+                    "notes": "Alpha-alkylation (methylation) of an acetoacetic ester.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.3",
+                    "reaction_type": "Michael Addition / Intramolecular Aldol Cyclization (Organocatalysis)",
+                    "reagents": "t-Bu-CH(NH2)-CH2-NEt2.TfOH, 3-NO2C6H4CO2H, CH2=CH-CH(OEt)2",
+                    "reagent_smiles": "[C@H](C(C)(C)C)([NH3+])CCN(CC)CC.[O-]S(=O)(=O)C(F)(F)F.O=N(=O)c1cccc(C(=O)O)c1.C=CC(OCC)OCC",
+                    "conditions": "",
+                    "yield": "32%",
+                    "reactant_smiles": "CC(=O)C(C)C(=O)O[TMSE]",
+                    "product_smiles": "O=C1CCC=C[C@](C)(C(=O)O[TMSE])C1",
+                    "notes": "Enantioselective Michael addition of a beta-keto ester to a diethoxybutene, followed by intramolecular cyclization, catalyzed by a chiral primary amine (TfOH salt) and 3-nitrobenzoic acid. Forms a chiral cyclohexenone derivative.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.4",
+                    "reaction_type": "Iodination",
+                    "reagents": "I2, pyridine",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "97%",
+                    "reactant_smiles": "O=C1C=CCC[C@@](C)([CO2TMSE])C1",
+                    "product_smiles": "O=C1C(I)=CC[C@@](C)([CO2TMSE])C1",
+                    "notes": "Alpha-iodination of an alpha,beta-unsaturated ketone.",
+                    "substeps": []
+                },
+                {
+                    "step_id": "12.5",
+                    "reaction_type": "Corey-Chaykovsky Reaction",
+                    "reagents": "NaH, CH3SOI",
+                    "reagent_smiles": "",
+                    "conditions": "",
+                    "yield": "64%",
+                    "reactant_smiles": "IC=C1C(=O)C[C@](C)(C(=O)OCC[Si](C)(C)C)CC1",
+                    "product_smiles": "O=C1C[C@](C)(C(=O)OCC[Si](C)(C)C)CCC2[C@@H](I)C12",
+                    "notes": "A Corey-Chaykovsky reaction is performed on an iodo-substituted cyclohexenone to form a bicyclic cyclopropane-fused ketone. The methyl and TMSE ester stereochemistry is preserved, while new stereochemistry is set at the cyclopropane iodine position.",
+                    "substeps": []
+                }
+            ]
+        },
+        {
+            "step_id": "13",
+            "reaction_type": "Deprotection",
+            "reagents": "TBAF",
+            "reagent_smiles": "",
+            "conditions": "DMF",
+            "yield": "64%",
+            "reactant_smiles": "C=C[C@@]1(C)CCC2(C(=C1)C(=O)C(=C3[C@](C)(CC[C@H]4C[C@@]432)C(=O)OCC[Si](C)(C)C)O)O[TMS]",
+            "product_smiles": "C=C[C@@]1(C)CCC2(C(=C1)C(=O)C(=C3[C@](C)(CC[C@H]4C[C@@]432)C(=O)O)O)O",
+            "notes": "Deprotection of trimethylsilyl (TMS) ether and 2-(trimethylsilyl)ethyl (TMSE) ester to hydroxyl and carboxylic acid respectively.",
+            "substeps": []
+        }
+    ]
+}
