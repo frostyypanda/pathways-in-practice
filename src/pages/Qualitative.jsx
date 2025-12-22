@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Pipette, ClipboardCheck, RotateCcw, FlaskConical,
-  CheckCircle, XCircle, Wind, StickyNote, Trash2, Home, ChevronDown
+  CheckCircle, XCircle, Wind, StickyNote, Trash2, Home, ChevronDown, Flame
 } from 'lucide-react';
 import {
   calculateWellState,
   getColorClass,
   getPhColor,
+  getFlameColor,
   initializeGame,
   checkSolution
 } from '../utils/ReactionEngine';
@@ -15,6 +16,7 @@ import {
 function Qualitative() {
   // Data from JSON files
   const [reactionRules, setReactionRules] = useState({});
+  const [cationsData, setCationsData] = useState({});
   const [problemSets, setProblemSets] = useState({});
   const [currentProblemSet, setCurrentProblemSet] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -30,20 +32,24 @@ function Qualitative() {
   const [selectedBottle, setSelectedBottle] = useState('A');
   const [now, setNow] = useState(Date.now());
   const [showProblemSelector, setShowProblemSelector] = useState(false);
+  const [showSolution, setShowSolution] = useState(false);
 
   // Load data from JSON files
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [reactionsRes, problemSetsRes] = await Promise.all([
+        const [reactionsRes, problemSetsRes, cationsRes] = await Promise.all([
           fetch('/data/qualitative/reactions.json'),
-          fetch('/data/qualitative/problem_sets.json')
+          fetch('/data/qualitative/problem_sets.json'),
+          fetch('/data/qualitative/cations.json')
         ]);
 
         const reactions = await reactionsRes.json();
         const problems = await problemSetsRes.json();
+        const cations = await cationsRes.json();
 
-        setReactionRules(reactions.reactions);
+        setReactionRules(reactions);
+        setCationsData(cations.cations);
         setProblemSets(problems.problem_sets);
 
         // Start with classic_5 by default
@@ -82,6 +88,7 @@ function Qualitative() {
     });
     setGuesses(initialGuesses);
     setResults(null);
+    setShowSolution(false);
     setSelectedBottle(game.labels[0]);
   };
 
@@ -109,6 +116,7 @@ function Qualitative() {
       substances: [],
       phTested: false,
       smellTested: false,
+      flameTested: false,
       lastInteraction: Date.now()
     };
 
@@ -135,6 +143,12 @@ function Qualitative() {
         ...prev,
         [key]: { ...current, smellTested: !current.smellTested }
       }));
+    } else if (activeTool === 'flame') {
+      if (current.substances.length === 0) return;
+      setGrid(prev => ({
+        ...prev,
+        [key]: { ...current, flameTested: !current.flameTested }
+      }));
     }
   };
 
@@ -158,9 +172,28 @@ function Qualitative() {
     const smellMap = {
       'odorless': 'Odorless',
       'pungent': 'Pungent',
-      'rotten-eggs': 'Rotten Eggs'
+      'rotten-eggs': 'Rotten Eggs',
+      'vinegar': 'Vinegar',
+      'sulfur-dioxide': 'SO₂ (Sulfur)'
     };
     return smellMap[smell] || smell;
+  };
+
+  // Get flame test result for a well's substances
+  const getFlameTestResult = (substances) => {
+    for (const substance of substances) {
+      const cation = substance.cation;
+      if (cation && cationsData[cation]) {
+        const flameColor = cationsData[cation].flame_color;
+        if (flameColor) {
+          return {
+            color: flameColor,
+            cationName: cationsData[cation].name
+          };
+        }
+      }
+    }
+    return null;
   };
 
   if (loading) {
@@ -266,6 +299,15 @@ function Qualitative() {
           >
             <Wind size={20} />
           </button>
+          <button
+            onClick={() => setActiveTool('flame')}
+            className={`p-2 rounded-lg transition-all ${
+              activeTool === 'flame' ? 'bg-orange-500 text-white shadow-md' : 'hover:bg-slate-700 text-slate-400'
+            }`}
+            title="Flame Test"
+          >
+            <Flame size={20} />
+          </button>
 
           <div className="w-px bg-slate-700 mx-2"></div>
 
@@ -354,6 +396,27 @@ function Qualitative() {
                                       </div>
                                     )}
 
+                                    {/* Flame test indicator */}
+                                    {cell.flameTested && (() => {
+                                      const flameResult = getFlameTestResult(cell.substances);
+                                      return flameResult ? (
+                                        <div className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none">
+                                          <div className="flex flex-col items-center">
+                                            <div className={`w-6 h-8 ${getFlameColor(flameResult.color)} rounded-t-full opacity-80 animate-flicker shadow-lg`}></div>
+                                            <div className="bg-slate-900/90 text-white text-[7px] px-1.5 py-0.5 rounded mt-0.5 font-bold whitespace-nowrap">
+                                              {flameResult.color.replace('-', ' ')}
+                                            </div>
+                                          </div>
+                                        </div>
+                                      ) : (
+                                        <div className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none">
+                                          <div className="bg-slate-900/90 text-slate-400 text-[8px] px-2 py-1 rounded font-bold">
+                                            No flame color
+                                          </div>
+                                        </div>
+                                      );
+                                    })()}
+
                                     {/* Clear button */}
                                     <div
                                       onClick={(e) => clearWell(row, col, e)}
@@ -422,17 +485,52 @@ function Qualitative() {
                 ))}
               </div>
 
-              <button
-                onClick={handleCheckSolution}
-                disabled={results?.win}
-                className={`w-full mt-6 py-4 rounded-xl font-bold uppercase tracking-wide text-white transition-all ${
-                  results?.win
-                    ? 'bg-green-600 cursor-default'
-                    : 'bg-indigo-600 hover:bg-indigo-700 active:scale-98'
-                }`}
-              >
-                {results?.win ? 'Solved!' : 'Verify Analysis'}
-              </button>
+              <div className="flex gap-3 mt-6">
+                <button
+                  onClick={handleCheckSolution}
+                  disabled={results?.win}
+                  className={`flex-1 py-4 rounded-xl font-bold uppercase tracking-wide text-white transition-all ${
+                    results?.win
+                      ? 'bg-green-600 cursor-default'
+                      : 'bg-indigo-600 hover:bg-indigo-700 active:scale-98'
+                  }`}
+                >
+                  {results?.win ? 'Solved!' : 'Verify Analysis'}
+                </button>
+                <button
+                  onClick={() => setShowSolution(!showSolution)}
+                  className={`px-4 py-4 rounded-xl font-bold uppercase tracking-wide transition-all ${
+                    showSolution
+                      ? 'bg-amber-600 text-white'
+                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  }`}
+                  title="Show Solution"
+                >
+                  {showSolution ? 'Hide' : 'Reveal'}
+                </button>
+              </div>
+
+              {/* Solution reveal */}
+              {showSolution && gameState && (
+                <div className="mt-4 p-4 bg-amber-900/30 border border-amber-600/50 rounded-xl">
+                  <h4 className="text-sm font-bold text-amber-400 mb-3 uppercase tracking-wide">Solution</h4>
+                  <div className="grid gap-2">
+                    {gameState.labels.map(label => (
+                      <div key={label} className="flex items-center gap-3 text-sm">
+                        <span className="w-8 h-8 rounded bg-amber-600 text-white flex items-center justify-center font-bold">
+                          {label}
+                        </span>
+                        <span className="font-mono text-amber-200">
+                          {gameState.mapping[label].formula}
+                        </span>
+                        <span className="text-slate-400">
+                          ({gameState.mapping[label].name})
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Hints */}
@@ -461,6 +559,15 @@ function Qualitative() {
         }
         .animate-bounce {
           animation: bounce 0.6s infinite ease-in-out;
+        }
+        @keyframes flicker {
+          0%, 100% { opacity: 0.8; transform: scaleY(1); }
+          25% { opacity: 0.9; transform: scaleY(1.05); }
+          50% { opacity: 0.7; transform: scaleY(0.95); }
+          75% { opacity: 0.85; transform: scaleY(1.02); }
+        }
+        .animate-flicker {
+          animation: flicker 0.3s infinite ease-in-out;
         }
       `}</style>
     </div>

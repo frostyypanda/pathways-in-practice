@@ -1,136 +1,272 @@
 {
   "reactions": {
     "ag+": {
-      "oh-": { "color": "brown", "type": "precipitate", "product": "Ag₂O", "notes": "Decomposes to brown oxide" },
-      "nh3": { "color": "colorless", "type": "complex", "product": "[Ag(NH₃)₂]⁺", "notes": "Precipitate dissolves in excess" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "Ag₂CO₃" },
-      "cl-": { "color": "white", "type": "precipitate", "product": "AgCl", "time_effect": { "change_to": "gray", "delay_ms": 10000, "trigger": "light" } },
-      "s2-": { "color": "black", "type": "precipitate", "product": "Ag₂S" },
-      "so4_2-": { "color": "white", "type": "precipitate", "product": "Ag₂SO₄", "notes": "Slightly soluble" },
-      "cro4_2-": { "color": "red-brown", "type": "precipitate", "product": "Ag₂CrO₄" },
-      "i-": { "color": "yellow", "type": "precipitate", "product": "AgI", "time_effect": { "change_to": "gray", "delay_ms": 15000, "trigger": "light" } },
-      "br-": { "color": "pale-yellow", "type": "precipitate", "product": "AgBr", "time_effect": { "change_to": "gray", "delay_ms": 12000, "trigger": "light" } },
-      "scn-": { "color": "white", "type": "precipitate", "product": "AgSCN" }
+      "oh-": { "type": "precipitate", "color": "brown", "product": "Ag₂O" },
+      "nh3": {
+        "type": "precipitate", "color": "brown", "product": "Ag(OH)",
+        "excess_effect": { "type": "soluble", "color": "colorless", "product": "[Ag(NH₃)₂]⁺" }
+      },
+      "co3_2-": {
+        "type": "precipitate", "color": "cream", "product": "Ag₂CO₃",
+        "time_effect": { "change_to": "brown" },
+        "soluble_in": ["hno3"]
+      },
+      "cl-": {
+        "type": "precipitate", "color": "white", "product": "AgCl",
+        "soluble_in": ["nh3"],
+        "notes": "Pink under UV light"
+      },
+      "s2-": { "type": "precipitate", "color": "black", "product": "Ag₂S" },
+      "so4_2-": { "type": "precipitate", "color": "white", "product": "Ag₂SO₄", "notes": "Rare precipitate" },
+      "c2o4_2-": { "type": "precipitate", "color": "white", "product": "Ag₂C₂O₄", "soluble_in": ["hno3"] },
+      "cro4_2-": { "type": "precipitate", "color": "brown-red", "product": "Ag₂CrO₄" },
+      "cr2o7_2-": { "type": "precipitate", "color": "brown-red", "product": "Ag₂Cr₂O₇" },
+      "scn-": { "type": "precipitate", "color": "white", "product": "AgSCN", "soluble_in": ["nh3_dilute"] },
+      "i-": { "type": "precipitate", "color": "yellowish", "product": "AgI" },
+      "br-": { "type": "precipitate", "color": "light-yellow", "product": "AgBr", "soluble_in": ["nh3_conc"] },
+      "po4_3-": { "type": "precipitate", "color": "brown-yellow", "product": "Ag₃PO₄", "soluble_in": ["hno3"] },
+      "hco3-": {
+        "type": "precipitate", "color": "white-light-yellow", "product": "Ag₂CO₃",
+        "time_effect": { "change_to": "brown" }
+      },
+      "so3_2-": {
+        "type": "precipitate", "color": "white", "product": "Ag₂SO₃",
+        "excess_effect": { "type": "soluble" }
+      }
     },
     "ba2+": {
-      "oh-": { "type": "soluble", "notes": "No precipitate" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "BaCO₃" },
-      "cl-": { "type": "soluble" },
-      "s2-": { "type": "soluble" },
-      "so4_2-": { "color": "white", "type": "precipitate", "product": "BaSO₄", "notes": "Very insoluble" },
-      "cro4_2-": { "color": "yellow", "type": "precipitate", "product": "BaCrO₄" },
-      "c2o4_2-": { "color": "white", "type": "precipitate", "product": "BaC₂O₄" }
-    },
-    "ca2+": {
-      "oh-": { "color": "white", "type": "precipitate", "product": "Ca(OH)₂", "notes": "Slightly soluble" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "CaCO₃" },
-      "so4_2-": { "color": "white", "type": "precipitate", "product": "CaSO₄", "notes": "Slightly soluble" },
-      "c2o4_2-": { "color": "white", "type": "precipitate", "product": "CaC₂O₄" }
+      "oh-": { "type": "turbidity", "color": "white" },
+      "nh3": { "type": "turbidity", "color": "white", "notes": "Rare" },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "BaCO₃" },
+      "so4_2-": { "type": "precipitate", "color": "white", "product": "BaSO₄", "notes": "Fine precipitate" },
+      "c2o4_2-": { "type": "precipitate", "color": "white", "product": "BaC₂O₄", "soluble_in": ["hno3"] },
+      "cro4_2-": { "type": "precipitate", "color": "yellow", "product": "BaCrO₄" },
+      "cr2o7_2-": { "type": "precipitate", "color": "yellow-orange", "product": "BaCr₂O₇" },
+      "po4_3-": { "type": "precipitate", "color": "white", "product": "Ba₃(PO₄)₂", "notes": "Fine, soluble in HNO₃" },
+      "hco3-": { "type": "precipitate", "color": "white", "product": "BaCO₃", "soluble_in": ["hno3"] },
+      "so3_2-": { "type": "precipitate", "color": "white", "product": "BaSO₃", "soluble_in": ["hno3"] }
     },
     "cu2+": {
-      "oh-": { "color": "blue", "type": "precipitate", "product": "Cu(OH)₂", "notes": "Light blue, gelatinous" },
-      "nh3": { "color": "deep-blue", "type": "complex", "product": "[Cu(NH₃)₄]²⁺", "notes": "Precipitate dissolves in excess to deep blue" },
-      "co3_2-": { "color": "blue-green", "type": "precipitate", "product": "CuCO₃·Cu(OH)₂" },
-      "s2-": { "color": "black", "type": "precipitate", "product": "CuS" },
-      "fe_cn_6_4-": { "color": "red-brown", "type": "precipitate", "product": "Cu₂[Fe(CN)₆]" },
-      "i-": { "color": "white", "type": "precipitate", "product": "CuI", "notes": "Cu²⁺ reduced to Cu⁺, I₂ released" }
+      "oh-": { "type": "precipitate", "color": "blue", "product": "Cu(OH)₂" },
+      "nh3": {
+        "type": "precipitate", "color": "turquoise", "product": "Cu(OH)₂",
+        "excess_effect": { "type": "complex", "color": "deep-blue", "product": "[Cu(NH₃)₄]²⁺" }
+      },
+      "co3_2-": { "type": "precipitate", "color": "turquoise", "product": "CuCO₃·Cu(OH)₂" },
+      "s2-": { "type": "precipitate", "color": "black", "product": "CuS" },
+      "fe_cn_6_4-": { "type": "precipitate", "color": "red-brown", "product": "Cu₂[Fe(CN)₆]" },
+      "i-": {
+        "type": "mixed",
+        "solution_color": "brown",
+        "precipitate_color": "white",
+        "product": "CuI",
+        "notes": "Cu²⁺ reduced to Cu⁺, I₂ released"
+      },
+      "ch3coo-": { "type": "solution", "color": "bluer", "notes": "Solution becomes more blue" }
     },
     "fe2+": {
-      "oh-": { "color": "green-white", "type": "precipitate", "product": "Fe(OH)₂", "time_effect": { "change_to": "red-brown", "delay_ms": 5000, "trigger": "oxidation" } },
-      "nh3": { "color": "green-white", "type": "precipitate", "product": "Fe(OH)₂" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "FeCO₃" },
-      "s2-": { "color": "black", "type": "precipitate", "product": "FeS" },
-      "fe_cn_6_3-": { "color": "prussian-blue", "type": "precipitate", "product": "Fe₃[Fe(CN)₆]₂", "notes": "Turnbull's blue" },
-      "fe_cn_6_4-": { "color": "white", "type": "precipitate", "product": "Fe₂[Fe(CN)₆]", "notes": "Turns blue on oxidation" },
-      "scn-": { "type": "soluble", "notes": "No color (distinguishes from Fe³⁺)" }
+      "oh-": {
+        "type": "precipitate", "color": "olive-green", "product": "Fe(OH)₂",
+        "time_effect": { "change_to": "brown", "trigger": "oxidation" }
+      },
+      "nh3": {
+        "type": "precipitate", "color": "green-brown", "product": "Fe(OH)₂",
+        "time_effect": { "change_to": "brown", "trigger": "oxidation" }
+      },
+      "co3_2-": { "type": "precipitate", "color": "green", "product": "FeCO₃" },
+      "s2-": { "type": "precipitate", "color": "black", "product": "FeS" },
+      "fe_cn_6_4-": {
+        "type": "precipitate", "color": "dark-blue", "product": "Fe₂[Fe(CN)₆]",
+        "time_effect": { "change_to": "dark-blue", "trigger": "oxidation" }
+      },
+      "fe_cn_6_3-": { "type": "precipitate", "color": "dark-blue", "product": "Fe₃[Fe(CN)₆]₂", "notes": "Turnbull's blue" },
+      "scn-": {
+        "type": "solution", "color": "blood-red",
+        "notes": "After oxidation to Fe³⁺"
+      },
+      "i-": { "type": "solution", "color": "brown", "notes": "Oxidizes" },
+      "mno4-": { "type": "decolorization", "notes": "Reduces permanganate, decolorizes" },
+      "ch3coo-": { "type": "solution", "color": "yellowish" },
+      "hcoo-": { "type": "solution", "color": "yellowish" },
+      "f-": { "type": "turbidity", "color": "yellowish" },
+      "no2-": { "type": "solution", "color": "brown", "notes": "FeSO₄ + H₂SO₄: brown ring test" }
     },
     "fe3+": {
-      "oh-": { "color": "red-brown", "type": "precipitate", "product": "Fe(OH)₃" },
-      "nh3": { "color": "red-brown", "type": "precipitate", "product": "Fe(OH)₃" },
-      "co3_2-": { "color": "red-brown", "type": "precipitate", "product": "Fe(OH)₃", "notes": "CO₂ gas evolved" },
-      "s2-": { "color": "black", "type": "precipitate", "product": "Fe₂S₃", "notes": "Or reduction to Fe²⁺ + S" },
-      "fe_cn_6_3-": { "color": "brown", "type": "complex", "notes": "No precipitate, brown color" },
-      "fe_cn_6_4-": { "color": "prussian-blue", "type": "precipitate", "product": "Fe₄[Fe(CN)₆]₃", "notes": "Prussian blue - characteristic test" },
-      "scn-": { "color": "blood-red", "type": "complex", "product": "[Fe(SCN)]²⁺", "notes": "Characteristic test for Fe³⁺" }
-    },
-    "pb2+": {
-      "oh-": { "color": "white", "type": "precipitate", "product": "Pb(OH)₂", "notes": "Amphoteric - dissolves in excess" },
-      "nh3": { "color": "white", "type": "precipitate", "product": "Pb(OH)₂" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "PbCO₃" },
-      "cl-": { "color": "white", "type": "precipitate", "product": "PbCl₂", "notes": "Soluble in hot water" },
-      "s2-": { "color": "black", "type": "precipitate", "product": "PbS" },
-      "so4_2-": { "color": "white", "type": "precipitate", "product": "PbSO₄" },
-      "cro4_2-": { "color": "yellow", "type": "precipitate", "product": "PbCrO₄" },
-      "i-": { "color": "yellow", "type": "precipitate", "product": "PbI₂", "notes": "Golden crystals from hot solution" }
-    },
-    "zn2+": {
-      "oh-": { "color": "white", "type": "precipitate", "product": "Zn(OH)₂", "notes": "Amphoteric - dissolves in excess" },
-      "nh3": { "color": "colorless", "type": "complex", "product": "[Zn(NH₃)₄]²⁺", "notes": "Precipitate dissolves in excess" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "ZnCO₃" },
-      "s2-": { "color": "white", "type": "precipitate", "product": "ZnS", "notes": "In neutral/alkaline solution" },
-      "fe_cn_6_4-": { "color": "white", "type": "precipitate", "product": "Zn₂[Fe(CN)₆]" }
-    },
-    "ni2+": {
-      "oh-": { "color": "green", "type": "precipitate", "product": "Ni(OH)₂" },
-      "nh3": { "color": "blue-violet", "type": "complex", "product": "[Ni(NH₃)₆]²⁺", "notes": "Precipitate dissolves in excess" },
-      "co3_2-": { "color": "green", "type": "precipitate", "product": "NiCO₃" },
-      "s2-": { "color": "black", "type": "precipitate", "product": "NiS" }
-    },
-    "co2+": {
-      "oh-": { "color": "blue", "type": "precipitate", "product": "Co(OH)₂", "time_effect": { "change_to": "brown", "delay_ms": 8000, "trigger": "oxidation" } },
-      "nh3": { "color": "brown", "type": "complex", "product": "[Co(NH₃)₆]²⁺", "notes": "Oxidizes in air" },
-      "co3_2-": { "color": "pink", "type": "precipitate", "product": "CoCO₃" },
-      "s2-": { "color": "black", "type": "precipitate", "product": "CoS" },
-      "scn-": { "color": "blue", "type": "complex", "product": "[Co(SCN)₄]²⁻", "notes": "In concentrated solution" }
-    },
-    "mn2+": {
-      "oh-": { "color": "white", "type": "precipitate", "product": "Mn(OH)₂", "time_effect": { "change_to": "brown", "delay_ms": 6000, "trigger": "oxidation" } },
-      "nh3": { "color": "white", "type": "precipitate", "product": "Mn(OH)₂" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "MnCO₃" },
-      "s2-": { "color": "pink", "type": "precipitate", "product": "MnS" }
-    },
-    "cr3+": {
-      "oh-": { "color": "green", "type": "precipitate", "product": "Cr(OH)₃", "notes": "Amphoteric - dissolves in excess to green [Cr(OH)₄]⁻" },
-      "nh3": { "color": "green", "type": "precipitate", "product": "Cr(OH)₃" },
-      "co3_2-": { "color": "green", "type": "precipitate", "product": "Cr(OH)₃", "notes": "CO₂ evolved" }
-    },
-    "al3+": {
-      "oh-": { "color": "white", "type": "precipitate", "product": "Al(OH)₃", "notes": "Amphoteric - dissolves in excess" },
-      "nh3": { "color": "white", "type": "precipitate", "product": "Al(OH)₃", "notes": "Does not dissolve in excess NH₃" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "Al(OH)₃", "notes": "CO₂ evolved" },
-      "s2-": { "color": "white", "type": "precipitate", "product": "Al(OH)₃", "notes": "Hydrolysis, H₂S evolved" }
-    },
-    "mg2+": {
-      "oh-": { "color": "white", "type": "precipitate", "product": "Mg(OH)₂" },
-      "nh3": { "color": "white", "type": "precipitate", "product": "Mg(OH)₂", "notes": "In absence of NH₄⁺ salts" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "MgCO₃" }
-    },
-    "hg2+": {
-      "oh-": { "color": "yellow", "type": "precipitate", "product": "HgO" },
-      "nh3": { "color": "white", "type": "precipitate", "product": "Hg(NH₂)Cl", "notes": "With HgCl₂" },
-      "cl-": { "color": "white", "type": "precipitate", "product": "Hg₂Cl₂", "notes": "For Hg₂²⁺" },
-      "s2-": { "color": "black", "type": "precipitate", "product": "HgS", "notes": "Red form initially, then black" },
-      "i-": { "color": "red", "type": "precipitate", "product": "HgI₂", "notes": "Dissolves in excess KI" }
-    },
-    "cd2+": {
-      "oh-": { "color": "white", "type": "precipitate", "product": "Cd(OH)₂" },
-      "nh3": { "color": "colorless", "type": "complex", "product": "[Cd(NH₃)₄]²⁺", "notes": "Precipitate dissolves in excess" },
-      "co3_2-": { "color": "white", "type": "precipitate", "product": "CdCO₃" },
-      "s2-": { "color": "yellow", "type": "precipitate", "product": "CdS" }
-    },
-    "sn2+": {
-      "oh-": { "color": "white", "type": "precipitate", "product": "Sn(OH)₂", "notes": "Amphoteric" },
-      "s2-": { "color": "brown", "type": "precipitate", "product": "SnS" }
+      "oh-": { "type": "precipitate", "color": "orange-brown", "product": "Fe(OH)₃" },
+      "nh3": { "type": "precipitate", "color": "red-brown", "product": "Fe(OH)₃" },
+      "co3_2-": { "type": "precipitate", "color": "brown", "product": "Fe(OH)₃", "notes": "CO₂ gas evolved" },
+      "s2-": { "type": "precipitate", "color": "black", "product": "Fe₂S₃" },
+      "fe_cn_6_4-": { "type": "precipitate", "color": "dark-blue", "product": "Fe₄[Fe(CN)₆]₃", "notes": "Prussian blue - characteristic test" },
+      "scn-": { "type": "complex", "color": "blood-red", "product": "[Fe(SCN)]²⁺", "notes": "Characteristic test for Fe³⁺" },
+      "i-": { "type": "solution", "color": "brown" },
+      "ch3coo-": { "type": "solution", "color": "brown-red" },
+      "hcoo-": { "type": "solution", "color": "brown-red", "notes": "Less intense than acetate" },
+      "f-": { "type": "complex", "color": "colorless", "notes": "Decolorizes Fe³⁺-SCN⁻ complex" }
     },
     "h+": {
-      "co3_2-": { "type": "gas", "product": "CO₂", "duration_ms": 6000, "notes": "Effervescence - CO₂ gas released" },
-      "hco3-": { "type": "gas", "product": "CO₂", "duration_ms": 6000, "notes": "Effervescence" },
-      "s2-": { "type": "gas", "product": "H₂S", "duration_ms": 8000, "notes": "Rotten egg smell" }
+      "oh-": { "type": "neutralization" },
+      "co3_2-": { "type": "gas", "product": "CO₂", "duration_ms": 6000 },
+      "s2-": { "type": "gas", "product": "H₂S", "smell": "rotten-eggs", "duration_ms": 8000 },
+      "cro4_2-": { "type": "solution", "color": "orange", "notes": "Chromate-dichromate equilibrium" },
+      "ch3coo-": { "type": "gas", "smell": "vinegar" },
+      "hco3-": { "type": "gas", "product": "CO₂", "duration_ms": 6000 },
+      "no2-": { "type": "gas", "smell": "vinegar-like" },
+      "so3_2-": { "type": "gas", "product": "SO₂", "smell": "sulfur-dioxide", "duration_ms": 8000 }
+    },
+    "k+": {
+      "clo4-": { "type": "precipitate", "color": "white", "product": "KClO₄" }
+    },
+    "nh4+": {
+      "s2-": { "type": "gas", "product": "H₂S", "smell": "rotten-eggs" },
+      "oh-": { "type": "gas", "product": "NH₃", "smell": "pungent", "notes": "When heated" }
+    },
+    "ni2+": {
+      "oh-": { "type": "precipitate", "color": "green", "product": "Ni(OH)₂" },
+      "nh3": {
+        "type": "precipitate", "color": "green", "product": "Ni(OH)₂",
+        "excess_effect": { "type": "complex", "color": "blue", "product": "[Ni(NH₃)₆]²⁺" }
+      },
+      "co3_2-": { "type": "precipitate", "color": "green", "product": "NiCO₃" },
+      "s2-": { "type": "precipitate", "color": "black", "product": "NiS" }
+    },
+    "al3+": {
+      "oh-": {
+        "type": "precipitate", "color": "white", "product": "Al(OH)₃",
+        "excess_effect": { "type": "soluble", "product": "[Al(OH)₄]⁻", "notes": "Amphoteric" }
+      },
+      "nh3": { "type": "precipitate", "color": "white", "product": "Al(OH)₃" },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "Al(OH)₃", "notes": "CO₂ evolved" },
+      "po4_3-": { "type": "precipitate", "color": "white", "product": "AlPO₄" }
+    },
+    "bi3+": {
+      "oh-": { "type": "precipitate", "color": "white", "product": "Bi(OH)₃", "heat_effect": { "color": "yellow" } },
+      "nh3": { "type": "precipitate", "color": "white", "product": "Bi(OH)₃", "heat_effect": { "color": "yellow" } },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "(BiO)₂CO₃", "heat_effect": { "color": "yellow" } },
+      "s2-": { "type": "precipitate", "color": "orange", "product": "Bi₂S₃" },
+      "scn-": {
+        "type": "precipitate", "color": "black", "product": "Bi(SCN)₃",
+        "excess_effect": { "type": "precipitate", "color": "orange" }
+      }
+    },
+    "ca2+": {
+      "oh-": { "type": "precipitate", "color": "white", "product": "Ca(OH)₂" },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "CaCO₃" },
+      "so4_2-": { "type": "turbidity", "color": "white", "product": "CaSO₄" },
+      "c2o4_2-": { "type": "precipitate", "color": "white", "product": "CaC₂O₄", "soluble_in": ["hno3"] }
+    },
+    "pb2+": {
+      "oh-": {
+        "type": "precipitate", "color": "white", "product": "Pb(OH)₂",
+        "excess_effect": { "type": "soluble", "notes": "Amphoteric" }
+      },
+      "nh3": { "type": "precipitate", "color": "white", "product": "Pb(OH)₂" },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "PbCO₃" },
+      "cl-": { "type": "precipitate", "color": "white", "product": "PbCl₂", "soluble_in": ["hot_water"] },
+      "s2-": { "type": "precipitate", "color": "black", "product": "PbS" },
+      "so4_2-": { "type": "precipitate", "color": "white", "product": "PbSO₄" },
+      "cro4_2-": { "type": "precipitate", "color": "yellow", "product": "PbCrO₄" },
+      "i-": { "type": "precipitate", "color": "yellow", "product": "PbI₂", "notes": "Golden crystals from hot solution" }
+    },
+    "zn2+": {
+      "oh-": {
+        "type": "precipitate", "color": "white", "product": "Zn(OH)₂",
+        "excess_effect": { "type": "soluble", "notes": "Amphoteric" }
+      },
+      "nh3": {
+        "type": "precipitate", "color": "white", "product": "Zn(OH)₂",
+        "excess_effect": { "type": "complex", "color": "colorless", "product": "[Zn(NH₃)₄]²⁺" }
+      },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "ZnCO₃" },
+      "s2-": { "type": "precipitate", "color": "white", "product": "ZnS" },
+      "fe_cn_6_4-": { "type": "precipitate", "color": "white", "product": "Zn₂[Fe(CN)₆]" }
+    },
+    "co2+": {
+      "oh-": {
+        "type": "precipitate", "color": "blue", "product": "Co(OH)₂",
+        "time_effect": { "change_to": "brown", "trigger": "oxidation" }
+      },
+      "nh3": {
+        "type": "complex", "color": "brown", "product": "[Co(NH₃)₆]²⁺",
+        "notes": "Oxidizes in air"
+      },
+      "co3_2-": { "type": "precipitate", "color": "pink", "product": "CoCO₃" },
+      "s2-": { "type": "precipitate", "color": "black", "product": "CoS" },
+      "scn-": { "type": "complex", "color": "blue", "product": "[Co(SCN)₄]²⁻", "notes": "In concentrated solution" }
+    },
+    "mn2+": {
+      "oh-": {
+        "type": "precipitate", "color": "white", "product": "Mn(OH)₂",
+        "time_effect": { "change_to": "brown", "trigger": "oxidation" }
+      },
+      "nh3": { "type": "precipitate", "color": "white", "product": "Mn(OH)₂" },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "MnCO₃" },
+      "s2-": { "type": "precipitate", "color": "pink", "product": "MnS" }
+    },
+    "cr3+": {
+      "oh-": {
+        "type": "precipitate", "color": "green", "product": "Cr(OH)₃",
+        "excess_effect": { "type": "soluble", "color": "green", "product": "[Cr(OH)₄]⁻" }
+      },
+      "nh3": { "type": "precipitate", "color": "green", "product": "Cr(OH)₃" },
+      "co3_2-": { "type": "precipitate", "color": "green", "product": "Cr(OH)₃", "notes": "CO₂ evolved" }
+    },
+    "hg2+": {
+      "oh-": { "type": "precipitate", "color": "yellow", "product": "HgO" },
+      "nh3": { "type": "precipitate", "color": "white", "product": "Hg(NH₂)Cl", "notes": "With HgCl₂" },
+      "cl-": { "type": "precipitate", "color": "white", "product": "Hg₂Cl₂", "notes": "For Hg₂²⁺" },
+      "s2-": { "type": "precipitate", "color": "black", "product": "HgS", "notes": "Initially red, then black" },
+      "i-": { "type": "precipitate", "color": "red", "product": "HgI₂", "soluble_in": ["ki_excess"] }
+    },
+    "cd2+": {
+      "oh-": { "type": "precipitate", "color": "white", "product": "Cd(OH)₂" },
+      "nh3": {
+        "type": "precipitate", "color": "white", "product": "Cd(OH)₂",
+        "excess_effect": { "type": "complex", "color": "colorless", "product": "[Cd(NH₃)₄]²⁺" }
+      },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "CdCO₃" },
+      "s2-": { "type": "precipitate", "color": "yellow", "product": "CdS" }
+    },
+    "sn2+": {
+      "oh-": {
+        "type": "precipitate", "color": "white", "product": "Sn(OH)₂",
+        "excess_effect": { "type": "soluble", "notes": "Amphoteric" }
+      },
+      "s2-": { "type": "precipitate", "color": "brown", "product": "SnS" }
+    },
+    "mg2+": {
+      "oh-": { "type": "precipitate", "color": "white", "product": "Mg(OH)₂" },
+      "nh3": { "type": "precipitate", "color": "white", "product": "Mg(OH)₂", "notes": "In absence of NH₄⁺" },
+      "co3_2-": { "type": "precipitate", "color": "white", "product": "MgCO₃" }
+    },
+    "mno4-": {
+      "c2o4_2-": { "type": "decolorization", "notes": "Oxalate reduces permanganate" }
+    },
+    "oh-": {
+      "cr2o7_2-": { "type": "solution", "color": "yellow", "notes": "Converts dichromate to chromate" }
     }
+  },
+  "ph_responses": {
+    "ag+": "neutral",
+    "ba2+": "neutral",
+    "cu2+": "neutral",
+    "fe2+": "neutral",
+    "fe3+": "slightly-acidic",
+    "h+": "acidic",
+    "k+": "neutral",
+    "li+": "neutral",
+    "na+": "neutral",
+    "nh4+": "slightly-acidic",
+    "ni2+": "neutral",
+    "al3+": "slightly-acidic",
+    "bi3+": "slightly-acidic",
+    "ca2+": "neutral",
+    "mno4-": "neutral",
+    "oh-": "basic"
   },
   "gas_properties": {
     "co2": { "name": "Carbon Dioxide", "smell": "odorless", "visual": "bubbles" },
     "h2s": { "name": "Hydrogen Sulfide", "smell": "rotten-eggs", "visual": "bubbles" },
-    "nh3": { "name": "Ammonia", "smell": "pungent", "visual": "none" }
+    "nh3": { "name": "Ammonia", "smell": "pungent", "visual": "none" },
+    "so2": { "name": "Sulfur Dioxide", "smell": "sulfur-dioxide", "visual": "none" }
   }
 }
