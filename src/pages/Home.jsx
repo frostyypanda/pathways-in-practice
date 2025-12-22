@@ -58,6 +58,10 @@ const Home = () => {
                     <p>Community-driven chemical synthesis library</p>
                 </div>
                 <div className="total-count">{syntheses.length} syntheses</div>
+                <nav className="header-nav">
+                    <Link to="/renderer" className="nav-link">Renderer</Link>
+                    <Link to="/quantitative" className="nav-link">Quantitative</Link>
+                </nav>
             </header>
 
             <div className="search-bar">
