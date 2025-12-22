@@ -118,16 +118,19 @@ export function calculateWellState(wellData, reactionRules, currentTime) {
       ? { ...reaction, ...reaction.excess_effect }
       : reaction;
 
-    // Handle gas evolution
+    // Handle gas evolution - only show bubbles for CO₂ (carbonate + acid)
     if (effectiveReaction.type === 'gas') {
-      const duration = effectiveReaction.duration_ms || 6000;
-      if (elapsed < duration) {
-        state.hasGas = true;
-        state.gasDuration = duration - elapsed;
+      const product = effectiveReaction.product;
+      // Only show visible gas bubbles for CO₂
+      if (product === 'CO₂') {
+        const duration = effectiveReaction.duration_ms || 6000;
+        if (elapsed < duration) {
+          state.hasGas = true;
+          state.gasDuration = duration - elapsed;
+        }
       }
-      if (effectiveReaction.smell) {
-        state.smell = effectiveReaction.smell;
-      }
+      // Note: H₂S and NH₃ don't show visible bubbles in practice
+      // Their presence is detected by smell, handled in determineSmell()
       if (effectiveReaction.notes) state.notes.push(effectiveReaction.notes);
     }
 
@@ -225,8 +228,8 @@ export function calculateWellState(wellData, reactionRules, currentTime) {
   // Calculate pH based on ions present
   state.phLevel = calculatePh(ions, reactionRules);
 
-  // Determine smell from reactions
-  state.smell = determineSmell(ions, reactions, wellData.substances);
+  // Determine smell from reactions - pass pH level for conditional smells
+  state.smell = determineSmell(ions, reactions, wellData.substances, state.phLevel);
 
   return state;
 }
@@ -270,42 +273,42 @@ export function calculatePh(ions, reactionRules) {
 }
 
 /**
- * Determine smell based on substances and reactions
+ * Determine smell based on substances, reactions, and pH
  * @param {Set} ions - Set of ions present
  * @param {Array} reactions - Active reactions
  * @param {Array} substances - Original substances
+ * @param {string} phLevel - Calculated pH level ('acidic', 'slightly-acidic', 'neutral', 'basic')
  * @returns {string} Smell description
  */
-export function determineSmell(ions, reactions, substances) {
-  // Check reactions for smell property
-  for (const reaction of reactions) {
-    if (reaction.smell) {
-      return reaction.smell;
-    }
-  }
+export function determineSmell(ions, reactions, substances, phLevel) {
+  const isAcidic = phLevel === 'acidic' || phLevel === 'slightly-acidic';
+  const isBasic = phLevel === 'basic';
 
-  // Check for H2S gas (acid + sulfide)
-  if (ions.has('h+') && ions.has('s2-')) {
+  // H₂S smell: sulfide + acidic conditions
+  // S²⁻ only releases H₂S when protonated by acid
+  if (ions.has('s2-') && isAcidic) {
     return 'rotten-eggs';
   }
 
-  // Check for NH3 (base + ammonium)
-  if (ions.has('oh-') && ions.has('nh4+')) {
+  // NH₃ smell: ammonium + basic conditions
+  // NH₄⁺ only releases NH₃ when deprotonated by base
+  if (ions.has('nh4+') && isBasic) {
     return 'pungent';
   }
 
-  // Check for SO2 (acid + sulfite)
-  if (ions.has('h+') && ions.has('so3_2-')) {
+  // SO₂ smell: sulfite + acid
+  if (ions.has('so3_2-') && isAcidic) {
     return 'sulfur-dioxide';
   }
 
-  // Check for vinegar smell (acid + acetate)
-  if (ions.has('h+') && ions.has('ch3coo-')) {
+  // Vinegar smell: acetate + acid (releases acetic acid vapor)
+  if (ions.has('ch3coo-') && isAcidic) {
     return 'vinegar';
   }
 
-  // Check for HCl (pungent when concentrated acid with chloride)
-  if (ions.has('h+') && ions.has('cl-')) {
+  // HCl smell: only when strongly acidic with chloride
+  // (concentrated HCl has pungent smell)
+  if (ions.has('cl-') && phLevel === 'acidic') {
     return 'pungent';
   }
 
