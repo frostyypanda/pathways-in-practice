@@ -240,29 +240,32 @@ export function calculateWellState(wellData, reactionRules, currentTime) {
 export function calculatePh(ions, reactionRules) {
   const phResponses = reactionRules?.ph_responses || {};
 
-  // Check specific pH responses first
+  // Count acidic vs basic responses from all ions present
+  let acidScore = 0;
+  let baseScore = 0;
+
   for (const ion of ions) {
-    if (phResponses[ion]) {
-      if (phResponses[ion] === 'acidic') return 'acidic';
-      if (phResponses[ion] === 'basic') return 'basic';
-      if (phResponses[ion] === 'slightly-acidic') return 'slightly-acidic';
-    }
+    const response = phResponses[ion];
+    if (response === 'acidic') acidScore += 2;
+    else if (response === 'slightly-acidic') acidScore += 1;
+    else if (response === 'basic') baseScore += 2;
   }
 
-  // Fallback to simple calculation
-  const acidicIons = ['h+'];
-  const basicIons = ['oh-', 'nh3', 'co3_2-'];
-
-  let acidCount = 0;
-  let baseCount = 0;
+  // Fallback: check common ions not in ph_responses
+  const strongAcids = ['h+'];
+  const strongBases = ['oh-'];
+  const weakBases = ['nh3', 'co3_2-', 's2-'];
 
   ions.forEach(ion => {
-    if (acidicIons.includes(ion)) acidCount++;
-    if (basicIons.includes(ion)) baseCount++;
+    if (strongAcids.includes(ion)) acidScore += 3;
+    if (strongBases.includes(ion)) baseScore += 3;  // OH- is a strong base
+    if (weakBases.includes(ion)) baseScore += 1;
   });
 
-  if (acidCount > baseCount) return 'acidic';
-  if (baseCount > acidCount) return 'basic';
+  // Determine overall pH
+  if (acidScore > baseScore + 1) return 'acidic';
+  if (acidScore > baseScore) return 'slightly-acidic';
+  if (baseScore > acidScore) return 'basic';
   return 'neutral';
 }
 
