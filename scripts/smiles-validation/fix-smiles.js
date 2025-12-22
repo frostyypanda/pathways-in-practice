@@ -20,132 +20,114 @@ require('dotenv').config({ path: path.join(__dirname, '../../smiles-extractor/.e
  * Safe regex replacements - order matters!
  *
  * Rules:
- * 1. Explicit H on C/O/N should be removed (renderer handles implicit H)
- * 2. Terminal alkyne H (C#CH) needs [H] brackets
- * 3. Si, Na, Mg, Li, K need brackets (not in organic subset)
- * 4. Fix common typos
+ * 1. Remove ALL explicit H outside brackets (renderer handles implicit H)
+ * 2. Remove spaces in SMILES
+ * 3. Wrap any non-element abbreviation in brackets (anything not B,C,N,O,P,S,F,I,Cl,Br)
+ * 4. [nBu] → CCCC (only nBu, because 'n' is aromatic nitrogen indicator)
  */
 const REPLACEMENTS = [
-    // === HYDROGEN FIXES (order matters - most specific first) ===
-
-    // Terminal alkyne: C#CH → C#C[H] (ONLY this case gets [H])
+    // === SPACES ===
     {
-        name: 'Terminal alkyne H → [H]',
-        pattern: /C#CH(?=[\s\.\)\]\|]|$)/g,
+        name: 'Remove spaces',
+        pattern: / +/g,
+        replacement: ''
+    },
+
+    // === LEADING H REMOVAL ===
+    // HO..., HC..., HN... at start of SMILES
+    {
+        name: 'Leading H → remove',
+        pattern: /^H(?=[A-Z])/g,
+        replacement: ''
+    },
+
+    // === HYPHEN REMOVAL IN ABBREVIATIONS ===
+    // [o-Ns] → [oNs], [t-Bu] → [tBu], [i-Pr] → [iPr], etc.
+    {
+        name: '[x-Y] → [xY] (remove hyphen)',
+        pattern: /\[([a-z])-([A-Za-z0-9]+)\]/g,
+        replacement: '[$1$2]'
+    },
+
+    // === [nBu] EXPANSION (only nBu because 'n' is aromatic) ===
+    {
+        name: '[nBu] → CCCC',
+        pattern: /\[nBu\]/g,
+        replacement: 'CCCC'
+    },
+
+    // === HYDROGEN REMOVAL ===
+    // Terminal alkyne protection first: C#CH → C#C[H]
+    {
+        name: 'Terminal alkyne C#CH → C#C[H]',
+        pattern: /C#CH(?![a-z])/g,
         replacement: 'C#C[H]'
     },
 
-    // Remove explicit H from carbon (CH3, CH2, CH → C)
-    // Must not be inside brackets, and H must be followed by digit or end
+    // Remove )H (H after closing paren, not in brackets)
     {
-        name: 'CH3 → C',
-        pattern: /(?<!\[)CH3(?!\])/g,
-        replacement: 'C'
-    },
-    {
-        name: 'CH2 → C',
-        pattern: /(?<!\[)CH2(?!\])/g,
-        replacement: 'C'
-    },
-    {
-        name: 'CH → C (terminal)',
-        pattern: /(?<!\[|#)CH(?=[\s\.\)\]\|]|$)/g,
-        replacement: 'C'
+        name: ')H → )',
+        pattern: /\)H(?![a-z])/g,
+        replacement: ')'
     },
 
-    // Remove explicit H from oxygen (OH → O)
+    // Remove ]H (H after closing bracket)
     {
-        name: 'OH → O',
-        pattern: /(?<!\[)OH(?=[\s\.\)\]\|]|$)/g,
-        replacement: 'O'
+        name: ']H → ]',
+        pattern: /\]H(?![a-z])/g,
+        replacement: ']'
     },
 
-    // Remove explicit H from nitrogen (NH2, NH → N)
+    // Remove (H) explicit hydrogen
     {
-        name: 'NH2 → N',
-        pattern: /(?<!\[)NH2(?!\])/g,
-        replacement: 'N'
+        name: '(H) → remove',
+        pattern: /\(H\)/g,
+        replacement: ''
     },
+
+    // Remove H after ring number: N2H → N2, C1H → C1
     {
-        name: 'NH → N',
-        pattern: /(?<!\[)NH(?=[\s\.\)\]\|]|$)/g,
-        replacement: 'N'
+        name: 'XnH → Xn (H after ring number)',
+        pattern: /([A-Z])(\d)H(?![a-z])/g,
+        replacement: '$1$2'
+    },
+
+    // === ABBREVIATION WRAPPING ===
+    // Wrap O + abbreviation as unit: OMe → [OMe], OAc → [OAc], OBz → [OBz], etc.
+    // Match O followed by capital + lowercase(s), NOT already in brackets, NOT Cl/Br
+    {
+        name: 'O+Abbrev → [OAbbrev]',
+        pattern: /(?<!\[)O([A-Z][a-z]+)(?!\])/g,
+        replacement: (match, abbrev) => {
+            // Don't wrap if it's a valid element
+            if (['Cl', 'Br'].includes(abbrev)) return match;
+            return '[O' + abbrev + ']';
+        }
+    },
+
+    // Wrap standalone abbreviations: Ts → [Ts], Bn → [Bn], Ph → [Ph], etc.
+    // Match capital + lowercase(s), NOT preceded by O or [, NOT already in brackets
+    {
+        name: 'Abbrev → [Abbrev]',
+        pattern: /(?<!\[|O)([A-Z][a-z]+)(?!\])/g,
+        replacement: (match, abbrev) => {
+            // Don't wrap valid elements
+            if (['Cl', 'Br'].includes(abbrev)) return match;
+            return '[' + abbrev + ']';
+        }
     },
 
     // === ELEMENT BRACKET FIXES ===
-
-    // Silyl/metal ethers (O + element as unit)
-    {
-        name: 'OSi → [OSi]',
-        pattern: /(?<!\[)OSi(?!\])/g,
-        replacement: '[OSi]'
-    },
-    {
-        name: 'ONa → [ONa]',
-        pattern: /(?<!\[)ONa(?!\])/g,
-        replacement: '[ONa]'
-    },
-    {
-        name: 'OMg → [OMg]',
-        pattern: /(?<!\[)OMg(?!\])/g,
-        replacement: '[OMg]'
-    },
-    {
-        name: 'OLi → [OLi]',
-        pattern: /(?<!\[)OLi(?!\])/g,
-        replacement: '[OLi]'
-    },
-    {
-        name: 'OK → [OK]',
-        pattern: /(?<!\[)OK(?!\])/g,
-        replacement: '[OK]'
-    },
-
-    // Standalone elements (when not preceded by O) - need brackets
-    {
-        name: 'Si → [Si]',
-        pattern: /(?<!\[|O)Si(?!\])/g,
-        replacement: '[Si]'
-    },
-    {
-        name: 'Na → [Na]',
-        pattern: /(?<!\[|O)Na(?!\])/g,
-        replacement: '[Na]'
-    },
-    {
-        name: 'Mg → [Mg]',
-        pattern: /(?<!\[|O)Mg(?!\])/g,
-        replacement: '[Mg]'
-    },
-    {
-        name: 'Li → [Li]',
-        pattern: /(?<!\[|O)Li(?!\])/g,
-        replacement: '[Li]'
-    },
+    // K and V need brackets (not in organic subset)
     {
         name: 'K → [K]',
-        pattern: /(?<!\[|O)K(?!\])/g,
+        pattern: /(?<!\[)K(?!\]|[a-z])/g,
         replacement: '[K]'
     },
     {
-        name: 'Zn → [Zn]',
-        pattern: /(?<!\[)Zn(?!\])/g,
-        replacement: '[Zn]'
-    },
-    {
-        name: 'Cu → [Cu]',
-        pattern: /(?<!\[)Cu(?!\])/g,
-        replacement: '[Cu]'
-    },
-    {
-        name: 'Fe → [Fe]',
-        pattern: /(?<!\[)Fe(?!\])/g,
-        replacement: '[Fe]'
-    },
-    {
-        name: 'Al → [Al]',
-        pattern: /(?<!\[)Al(?!\])/g,
-        replacement: '[Al]'
+        name: 'V → [V]',
+        pattern: /(?<!\[)V(?!\]|[a-z])/g,
+        replacement: '[V]'
     },
 
     // === TYPO FIXES ===

@@ -326,9 +326,9 @@ def main():
 
     args = parser.parse_args()
 
-    # Initialize connection pool (max connections = threads + 1 for queries)
+    # Initialize connection pool
     try:
-        init_connection_pool(min_conn=2, max_conn=args.threads + 2)
+        init_connection_pool(min_conn=10, max_conn=30)
     except Exception as e:
         log(f"Database connection failed: {e}", "ERROR")
         sys.exit(1)

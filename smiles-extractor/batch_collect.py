@@ -293,6 +293,13 @@ def _import_results_to_db(results: list):
         batch_data = []  # Collect data for batch insert
         BATCH_SIZE = 500
 
+        # Token tracking
+        total_prompt_tokens = 0
+        total_output_tokens = 0
+        total_thinking_tokens = 0
+        total_cached_tokens = 0
+        total_cost = 0.0
+
         print("\nProcessing results...")
         for i, result in enumerate(results):
             key = result.get('key', '')
@@ -330,6 +337,29 @@ def _import_results_to_db(results: list):
                 fail_count += 1
                 continue
 
+            # Extract token usage from response
+            usage = response.get('usageMetadata', {})
+            tokens_used = {
+                "prompt": usage.get('promptTokenCount', 0),
+                "output": usage.get('candidatesTokenCount', 0),
+                "thinking": usage.get('thoughtsTokenCount', 0),
+                "cached": usage.get('cachedContentTokenCount', 0),
+                "total": usage.get('totalTokenCount', 0),
+            }
+
+            # Calculate cost (Gemini 3 Flash batch pricing: 50% discount)
+            # Input: $0.25/1M, Output: $1.50/1M (includes thinking)
+            input_cost = (tokens_used["prompt"] / 1_000_000) * 0.25
+            output_cost = ((tokens_used["output"] + tokens_used["thinking"]) / 1_000_000) * 1.50
+            llm_cost = input_cost + output_cost
+
+            # Accumulate totals
+            total_prompt_tokens += tokens_used["prompt"]
+            total_output_tokens += tokens_used["output"]
+            total_thinking_tokens += tokens_used["thinking"]
+            total_cached_tokens += tokens_used["cached"]
+            total_cost += llm_cost
+
             # Get original SMILES from prefetched cache (O(1) lookup)
             existing_smiles = get_smiles_from_cache(smiles_cache, synthesis_id, base_filename)
 
@@ -350,9 +380,9 @@ def _import_results_to_db(results: list):
                 parsed.get("notes", ""),
                 json.dumps(parsed.get("corrections_made", [])),
                 json.dumps(parsed.get("continuity")) if parsed.get("continuity") else None,
-                "gemini-2.5-flash-batch",
-                None,  # Cost not available from batch
-                None,  # Tokens not available from batch
+                "gemini-3-flash-batch",
+                llm_cost,
+                tokens_used["total"],
                 datetime.now(),
             )
             batch_data.append(row)
@@ -378,6 +408,15 @@ def _import_results_to_db(results: list):
         print(f"Success: {success_count}")
         print(f"Failed: {fail_count}")
         print(f"Total: {len(results)}")
+        print(f"\n{'='*60}")
+        print(f"TOKEN USAGE & COST")
+        print(f"{'='*60}")
+        print(f"Prompt tokens:   {total_prompt_tokens:,}")
+        print(f"Output tokens:   {total_output_tokens:,}")
+        print(f"Thinking tokens: {total_thinking_tokens:,}")
+        print(f"Cached tokens:   {total_cached_tokens:,}")
+        print(f"{'='*60}")
+        print(f"Total cost:      ${total_cost:.4f}")
 
     finally:
         conn.close()

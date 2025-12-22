@@ -1,16 +1,19 @@
 # Batch Processing Tracking
 
-## Model Info
-- **Model**: gemini-2.5-flash
+## Model Info (Current)
+- **Model**: gemini-3-flash (updated Dec 2025)
 - **Mode**: Batch API (50% discount)
-- **Thinking**: Dynamic (default) - **DO NOT DISABLE**
-  - Tested: Dynamic thinking produces significantly better SMILES validation results
-  - Model decides when/how much to think (up to 24,576 tokens)
-  - Essential for accurate chemical structure reasoning
+- **Pricing (batch with 50% discount)**:
+  - Input: $0.25/1M tokens
+  - Output: $1.50/1M tokens
+  - Images: ~1500 tokens each
+
+## Previous Model (Batches 1-12)
+- **Model**: gemini-2.5-flash
+- **Thinking**: Dynamic (default)
 - **Pricing (batch)**:
   - Input: $0.075/1M tokens
   - Output: $0.30/1M tokens (includes thinking tokens)
-  - Images: ~1500 tokens each
 
 ## Completed Batches
 
@@ -30,7 +33,18 @@
 | 11 | 400 | 6,824 | 2025-12-16 20:45 | 2025-12-16 21:30 | 45m | 6781 | 43 |
 | 12 | 123 | 1,997 | 2025-12-16 20:50 | 2025-12-16 21:35 | 45m | 1987 | 10 |
 
-## ✅ PROCESSING COMPLETE
+## ⏳ PENDING: DECIMER Syntheses (Gemini 3 Flash)
+
+| Metric | Count |
+|--------|-------|
+| Syntheses to process | 464 |
+| Steps to process | 10,898 |
+| Model | gemini-3-flash |
+| Est. batches (400/batch) | 2 |
+
+These are syntheses processed by `process_failed_local.py` (DECIMER) that have `smiles_results` but no `synthesis_steps`.
+
+## ✅ PROCESSING COMPLETE (Batches 1-12)
 
 ### Notes
 - Test batch had overnight delay (manually collected next day)
@@ -41,11 +55,11 @@
 
 | Metric | Count |
 |--------|-------|
-| Syntheses processed | 3,627 |
-| Total steps in DB | 58,628 |
-| Remaining syntheses | 9 |
+| Syntheses in smiles_results | 4,091 |
+| Syntheses in synthesis_steps | 3,627 |
+| **Pending (DECIMER batch)** | **464** |
 | Batches completed | 12 |
-| **Progress** | **99.8%** ✅ |
+| **Progress** | **88.7%** |
 
 ## Cost Estimation
 
