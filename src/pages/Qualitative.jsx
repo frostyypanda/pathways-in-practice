@@ -52,8 +52,9 @@ function Qualitative() {
         setCationsData(cations.cations);
         setProblemSets(problems.problem_sets);
 
-        // Start with generated_set by default (auto-generated with precipitate reactions)
-        const defaultSet = problems.problem_sets['generated_set'];
+        // Start with first available problem set
+        const setIds = Object.keys(problems.problem_sets);
+        const defaultSet = problems.problem_sets[setIds[0]];
         setCurrentProblemSet(defaultSet);
         initGame(defaultSet);
 
@@ -379,20 +380,36 @@ function Qualitative() {
           <div className="xl:col-span-7">
             <div className="bg-slate-800 p-4 md:p-8 rounded-3xl border border-slate-700 shadow-xl">
               <div className="overflow-x-auto">
-                <table className="border-separate border-spacing-2 mx-auto">
+                {/* Dynamic grid: rows = probes, cols = probes + reagents */}
+                {(() => {
+                  const numProbes = gameState?.labels.length || 5;
+                  const numReagents = currentProblemSet?.available_reagents?.length || 0;
+                  const numRows = numProbes;
+                  const numCols = Math.max(numProbes, numProbes + numReagents);
+                  const rows = Array.from({ length: numRows }, (_, i) => i + 1);
+                  const cols = Array.from({ length: numCols }, (_, i) => i + 1);
+
+                  // Adaptive well sizes based on grid size
+                  const isLargeGrid = numCols > 6;
+                  const wellSize = isLargeGrid ? 'w-12 h-12 md:w-14 md:h-14' : 'w-16 h-16 md:w-20 md:h-20';
+                  const headerSize = isLargeGrid ? 'w-12 h-8 text-base' : 'w-16 h-10 text-xl';
+                  const cellSpacing = isLargeGrid ? 'border-spacing-1' : 'border-spacing-2';
+
+                  return (
+                <table className={`border-separate ${cellSpacing} mx-auto`}>
                   <thead>
                     <tr>
-                      <th className="w-10"></th>
-                      {[1, 2, 3, 4, 5].map(n => (
-                        <th key={n} className="w-16 h-10 text-xl font-bold text-slate-500">{n}</th>
+                      <th className="w-8"></th>
+                      {cols.map(n => (
+                        <th key={n} className={`${headerSize} font-bold text-slate-500`}>{n}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
-                    {[1, 2, 3, 4, 5].map(row => (
+                    {rows.map(row => (
                       <tr key={row}>
                         <td className="text-xl font-bold text-slate-500 text-center">{row}</td>
-                        {[1, 2, 3, 4, 5].map(col => {
+                        {cols.map(col => {
                           const cell = grid[`${row}-${col}`];
                           const state = cell ? calculateWellState(cell, reactionRules, now) : null;
 
@@ -403,7 +420,7 @@ function Qualitative() {
                                 style={{
                                   background: 'linear-gradient(90deg, #ffffff 50%, #1a1a1a 50%)'
                                 }}
-                                className={`w-16 h-16 md:w-20 md:h-20 rounded-full border-4 relative group overflow-hidden shadow-inner transition-all duration-300 ${
+                                className={`${wellSize} rounded-full border-4 relative group overflow-hidden shadow-inner transition-all duration-300 ${
                                   cell ? 'border-slate-500' : 'border-slate-600 border-dashed hover:border-indigo-400'
                                 }`}
                               >
@@ -502,6 +519,8 @@ function Qualitative() {
                     ))}
                   </tbody>
                 </table>
+                  );
+                })()}
               </div>
             </div>
           </div>
