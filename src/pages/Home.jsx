@@ -60,7 +60,7 @@ const Home = () => {
                 <div className="total-count">{syntheses.length} syntheses</div>
                 <nav className="header-nav">
                     <Link to="/renderer" className="nav-link">Renderer</Link>
-                    <Link to="/quantitative" className="nav-link">Quantitative</Link>
+                    <Link to="/qualitative" className="nav-link">Qualitative</Link>
                 </nav>
             </header>
 

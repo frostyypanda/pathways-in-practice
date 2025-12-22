@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Synthesis from './pages/Synthesis';
 import SmilesRenderer from './pages/SmilesRenderer';
-import Quantitative from './pages/Quantitative';
+import Qualitative from './pages/Qualitative';
 import useDeviceDetection from './hooks/useDeviceDetection';
 
 import MobileLandscapeView from './components/MobileLandscapeView';
@@ -23,7 +23,7 @@ function App() {
           <Route path="/synthesis/:id" element={<Synthesis />} />
           <Route path="/render" element={<SmilesRenderer />} />
           <Route path="/renderer" element={<SmilesRenderer />} />
-          <Route path="/quantitative" element={<Quantitative />} />
+          <Route path="/qualitative" element={<Qualitative />} />
         </Routes>
       </div>
     </Router>
